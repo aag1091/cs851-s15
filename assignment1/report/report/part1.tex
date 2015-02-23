@@ -1,0 +1,30 @@
+
+
+
+\section{Question 1}
+\label{part1}
+
+Write a program that extracts 10000 tweets with links from Twitter. 
+Reference - http://thomassileo.com/blog/2013/01/25/using-twitter-rest-api-v1-dot-1-with-python/ 
+Other resources are available 
+Note that only Twitter API 1.1 is currently available; version 1 code will no longer work. 
+	
+\begin{itemize}
+\item Save the tweets URIs, and the mapping to the link(s) each tweet contains 
+\item For each \url{t.co} link use ``curl –I –L'' to record the HTTP headers all the way to a terminal HTTP status (i.e. chase down all the redirects)
+\item How many unique final URIs? How many duplicate URIs?
+\item Build a histogram of how many redirects (every URI will have at least 1) \url {http://en.wikipedia.org/wiki/Histogram}
+Build a histogram of HTTP status codes encountered (you’ll have at least 20000: 10000 301s, and 10000+ more)
+\end{itemize}
+\subsection{Solution}
+
+The following steps were taken to extract tweets from twitter:
+\begin{itemize}
+	\item Consumer key, consumer secret key, OAUTH token, OAUTH secret token are collected by registering an application 
+	in Twitter.
+	\item Using above credentials and requests package for python I retrieved tweets from twitter 
+	\item Twitter response was saved as json in a local mongodb database.
+	\item All redirects are calculated using the requests api and saved in a separate table other then the one we used for saving in tweets.
+	\item Unique URI's, duplicate URI's are counted using set function in python.
+\end{itemize}
+\newpage

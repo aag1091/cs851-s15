@@ -1,0 +1,5 @@
+setwd("/Users/avinashgosavi/projects/cs851-s15/assignment1/create_data_for_graphs")
+myvalues <- read.csv("status_codes.txt")
+png("status_codes.png")
+hist(myvalues[,1],main="Status Codes Distribution ",freq=T,xlab="status codes",ylab="Frequency",ylim=c(0,30000),xlim=c(200,500))
+dev.off()

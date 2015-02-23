@@ -1,0 +1,5 @@
+setwd("/Users/avinashgosavi/projects/cs851-s15/assignment1/create_data_for_graphs")
+myvalues <- read.csv("no_of_redirects.txt")
+png("no_of_redirects.png")
+hist(myvalues[,1],main="Url Redirects Distribution ",freq=T,xlab="number of redirects",ylab="Frequency",ylim=c(0,12000),xlim=c(1,8))
+dev.off()

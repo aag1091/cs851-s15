@@ -1,0 +1,5 @@
+setwd("/Users/avinashgosavi/projects/cs851-s15/assignment1/create_data_for_graphs")
+myvalues <- read.csv("age.txt")
+png("age.png")
+hist(myvalues[,1],main="Delta(Age) ",freq=T,xlab="(tweet age - link age)",ylab="Frequency",ylim=c(0,8000),xlim=c(0,6000))
+dev.off()

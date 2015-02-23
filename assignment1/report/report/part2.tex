@@ -1,0 +1,27 @@
+
+\section{Question 2}
+\label{part2}
+Write a Python program that:
+\begin{itemize} 
+\item Uses ``Carbon Date'' to estimate the age of each links(s) in a tweet
+		-See:``http://ws-dl.blogspot.com/2013/04/2013-04-19-carbon-dating-web.html''
+\item Create a histogram of (Age\textsubscript{tweet} - Age\textsubscript{link})
+	    .Many (most?) deltas will be 0,but there should be many>0
+\item For these, compute: median, mean, std dev, std err 
+
+
+\item Use wget to download the text for all the links. Hold on to those,
+		 we'll come back to them later.
+		 -See :
+		 	   ``\url{http://superuser.com/questions/55040/save-a-single-web-page-with-background-images-with-wget}''
+		 	   ``\url{http://stackoverflow.com/questions/6348289/download-a-working-local-copy-of-a-webpage}''
+\end{itemize}
+
+\subsection{Solution}
+\begin{itemize}
+\item Phantomjs and Casperjs were the required for using Carbon Date library.
+\item I created a python scripts to retrieve and save details of links created date by using carbon date library.
+\item As it was taking time to retrieve the data using the library. I started running the code on multiple cloud server connected to a single mongodb server.
+\item To find an age of a link, I have written a python program `create_data_files.py' which will take the date and return days. 
+\item Mean, median, standard deviation and standard error are calculated using statistics python package.
+\end{itemize}
