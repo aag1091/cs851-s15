@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html xmlns:fb='http://www.facebook.com/2008/fbml' xmlns:og='http://ogp.me/ns#'>
+<head>
+<meta charset='UTF-8'>
+<title>SnappyTV - Featured Big Ten highlights</title>
+<meta content="Keep track of the latest highlights for Featured Big Ten highlights, and view snaps by clicking on the videos below.  Be the first to snap the hottest video clip and know what's live on TV." name='description'>
+<meta content='107875702605270' property='fb:app_id'>
+<meta content='Featured Big Ten highlights' property='og:title'>
+<meta content='tv_show' property='og:type'>
+<meta content='Featured Big Ten highlights' property='og:description'>
+<meta content='107875702605270' property='fb:app_id'>
+<meta content='http://www.snappytv.com/landing/b1g-network' property='og:url'>
+
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="rNYk0mTvtRU8yGj9/28JkkIphke1FgO/bvO5t57rnbA=" name="csrf-token" />
+<link href="http://static.snappytv.com/assets/brandspace.carousel-b055c9a8dd3fdc384bdc49d051f6a5ac.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.snappytv.com/assets/bootstrap-6c8f5f4e4733cf92ed275beb24769ec9.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.snappytv.com/assets/snappytv.global-5f0232eff633e141cfefac0c7e5a0b4f.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.snappytv.com/assets/brandspace.global-cb83ddb1a28d9cdf913b58b32371030c.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="http://static.snappytv.com/assets/modernizr-2.6.2-respond-1.1.0.min-fa859dba28438b0182bccf1810ead70a.js" type="text/javascript"></script>
+<style>
+  
+</style>
+
+</head>
+<body class='brandspace'>
+<div class='page-container brandspace-container'>
+<div class='content-container'>
+<header class='brandspace-header'>
+<a class='brandspace-title home' href='#home' id='brandspace-title'>
+Featured Big Ten highlights
+</a>
+<div class='btn-toolbar schedule-toolbar'>
+<div class='btn-group'>
+<a class='schedule-link' data-toggle='modal' href='#schedule-modal' id='btn-schedule'>
+View Schedule
+</a>
+</div>
+</div>
+<div class='brandspace-episode-title' id='brandspace-episode-title'></div>
+</header>
+<div class='bs-event-content'>
+<div class='carousel-container show in' id='carousel-events'>
+<div class='carousel-content'>
+<div id='carousel-scroll-wrap'>
+<ul class='carousel-scroll iscroll' id='carousel-event-list'></ul>
+</div>
+</div>
+<div class='nav-arrow nav-prev'></div>
+<div class='nav-arrow nav-next'></div>
+</div>
+<div class='full-mode player-container' data-state='flash' id='player-container'>
+<div class='watch-container'>
+<div class='watch-content hide-nav'>
+<a class='banner banner-top' id='banner-top' target='_blank'>
+<img alt='' class='banner-top-img' id='banner-top-img'>
+</a>
+<div class='flash-container no-flash' id='flash-container'>
+<div class='event-prestate hide' id='event-prestate'>
+<div class='event-prestate-metadata' id='event-prestate-metadata'></div>
+</div>
+<div id='flashPlayerContent'>
+<div class='install-flash row-fluid hide'>
+<div class='span4 offset4 text-center install-flash-wrap'>
+<p>
+To view this page ensure that Adobe Flash Player version
+10.3.0 or greater is installed.
+</p>
+<script>
+var pageHost = ((document.location.protocol == "https:") ? "https://" : "http://");
+document.write("<a href='http://www.adobe.com/go/getflashplayer'><img src='"+ pageHost + "www.adobe.com/images/shared/download_buttons/get_flash_player.gif' alt='Get Adobe Flash player' /></a>" );
+</script>
+</div>
+</div>
+</div>
+</div>
+<div class='flash-overlay-container no-flash' id='flash-overlay-container'>
+<div id='flashOverlayPlayerContent'>
+<div class='install-flash row-fluid hide'>
+<div class='span4 offset4 text-center install-flash-wrap'>
+<p>
+To view this page ensure that Adobe Flash Player version
+10.3.0 or greater is installed.
+</p>
+<script>
+var pageHost = ((document.location.protocol == "https:") ? "https://" : "http://");
+document.write("<a href='http://www.adobe.com/go/getflashplayer'><img src='"+ pageHost + "www.adobe.com/images/shared/download_buttons/get_flash_player.gif' alt='Get Adobe Flash player' /></a>" );
+</script>
+</div>
+</div>
+</div>
+</div>
+<div class='snapreel-container' id='snapreel-container'>
+<div class='snapreel' id='snapreel'></div>
+
+</div>
+<div class='image-snap-container' id='image-snap-container'>
+<img alt='' id='image-snap' src=''>
+</div>
+<div class='metadata-container'>
+<div class='snappy-sharing-links'>
+<a class='snappy-sharing twitter' href='#' target='_blank'></a>
+<a class='snappy-sharing facebook' href='#' target='_blank'></a>
+<a class='snappy-sharing more' href='#' id='share-more'></a>
+</div>
+<div class='player-title'>
+<div class='watch-title'></div>
+</div>
+<div class='watch-date snap-posted'></div>
+</div>
+<div class='main-overlay' id='main-overlay'>
+<div class='snappy-overlay-screen-wrap'>
+<div class='snappy-overlay-screen'></div>
+</div>
+<div class='snappy-sharing-overlay-wrap'>
+<div class='snappy-sharing-overlay'>
+<div class='header'>
+Share
+<div class='snappy-embedcode-close'></div>
+</div>
+<div class='sharing-row'>
+<input id='snappy-short-url-text' name='short_url' readonly='true' type='text' value=''>
+</div>
+<div class='snappy-sharing-links'>
+<a class='snappy-sharing twitter' href='#' target='_blank'></a>
+<a class='snappy-sharing facebook' href='#' target='_blank'></a>
+<a class='snappy-sharing gplus' href='#' target='_blank'></a>
+<a class='snappy-sharing linkedin' href='#' target='_blank'></a>
+<a class='snappy-sharing email' href='#' target='_blank'></a>
+</div>
+<div class='snappy-embedcode'>
+<h4>
+Embed Code
+</h4>
+<textarea id='snappy-embedcode-text' readonly='true'></textarea>
+</div>
+</div>
+</div>
+</div>
+<a class='nav-arrow nav-prev' href='#prev'></a>
+<a class='nav-arrow nav-next' href='#next'></a>
+</div>
+<div class='sidebar right' id='sidebar-playlist'>
+<a class='snap-notification' id='snap-notification'>0 New Snaps</a>
+<div class='watch-it-container'>
+<a class='btn-watch-it' id='btn-watch-it'></a>
+</div>
+<div class='event-playlist-container'>
+<div class='bs-loader dark hide' id='event-playlist-loader'></div>
+<div class='event-playlist-wrap' id='event-playlist-wrap'>
+<ul class='event-playlist-list iscroll' id='event-playlist'></ul>
+</div>
+</div>
+</div>
+</div>
+<div class='content-footer'>
+<div class='timeline-container'>
+<div class='timeline-bar' id='timeline-bar'>
+<div class='timeline-overlay bs-loader dark' id='timeline-overlay'>
+<div class='timeline-overlay-caret'></div>
+<div class='overlay-img'></div>
+<p class='overlay-title'></p>
+<div class='snap-playhead-type vod'></div>
+</div>
+<div class='timeline-progress-bar' id='timeline-progress-bar'></div>
+<ul class='timeline-marker-list' id='timeline-marker-list'></ul>
+<div class='timeline-caret' id='timeline-caret'></div>
+</div>
+<div class='timeline-timecodes' id='timeline-timecodes'>
+<div class='timeline-timecode start' id='event-timecode-start'>0:00</div>
+<div class='timeline-timecode end' id='event-timecode-end'>0:00</div>
+</div>
+</div>
+<div class='sidebar right'>
+<a class='watch-btn' id='btn-timeline-watch'></a>
+</div>
+</div>
+</div>
+</div>
+<div class='snap-feeds-container'>
+<div class='snap-feed-row'>
+<h2>Featured</h2>
+<div class='snaps-playlist-container col-4'>
+<ul class='snaps-playlist row-playlist' id='feed-featured'>
+<li>
+<div class='poster-container placeholder-snap'></div>
+</li>
+<li>
+<div class='poster-container placeholder-snap'></div>
+</li>
+<li>
+<div class='poster-container placeholder-snap'></div>
+</li>
+<li>
+<div class='poster-container placeholder-snap'></div>
+</li>
+</ul>
+<div class='nav-arrow nav-prev hide'></div>
+<div class='nav-arrow nav-next hide'></div>
+<div class='snapslist-status bs-loader'></div>
+</div>
+</div>
+<div class='snap-feed-row'>
+<h2>Recent</h2>
+<div class='snaps-playlist-container col-4'>
+<ul class='snaps-playlist row-playlist' id='feed-recent'>
+<li>
+<div class='poster-container placeholder-snap'></div>
+</li>
+<li>
+<div class='poster-container placeholder-snap'></div>
+</li>
+<li>
+<div class='poster-container placeholder-snap'></div>
+</li>
+<li>
+<div class='poster-container placeholder-snap'></div>
+</li>
+</ul>
+<div class='nav-arrow nav-prev hide'></div>
+<div class='nav-arrow nav-next hide'></div>
+<div class='snapslist-status bs-loader'></div>
+</div>
+</div>
+<div class='snap-feed-row snap-tag-feed tag-highlights'>
+<h2>
+Schools
+<div class='btn-group pull-right'>
+<a class='btn dropdown-toggle' data-toggle='dropdown' href='#'>
+<span class='tag-label'>Show All Schools</span>
+<span class='caret'></span>
+</a>
+<ul class='dropdown-menu' id='tag-group-641'>
+<li class='active tag-group-all'>
+<a class='feed-modifier' href='#filter-all'>Show All Schools</a>
+</li>
+<li class='tag-group tag-group-641' data-tag-id='1074'>
+<a class='feed-modifier' data-tag-id='1074' href='#filter-1074'>Illinois</a>
+</li>
+<li class='tag-group tag-group-641' data-tag-id='643'>
+<a class='feed-modifier' data-tag-id='643' href='#filter-643'>Indiana</a>
+</li>
+<li class='tag-group tag-group-641' data-tag-id='644'>
+<a class='feed-modifier' data-tag-id='644' href='#filter-644'>Iowa</a>
+</li>
+<li class='tag-group tag-group-641' data-tag-id='1169'>
+<a class='feed-modifier' data-tag-id='1169' href='#filter-1169'>Maryland</a>
+</li>
+<li class='tag-group tag-group-641' data-tag-id='645'>
+<a class='feed-modifier' data-tag-id='645' href='#filter-645'>Michigan</a>
+</li>
+<li class='tag-group tag-group-641' data-tag-id='646'>
+<a class='feed-modifier' data-tag-id='646' href='#filter-646'>Michigan State</a>
+</li>
+<li class='tag-group tag-group-641' data-tag-id='647'>
+<a class='feed-modifier' data-tag-id='647' href='#filter-647'>Minnesota</a>
+</li>
+<li class='tag-group tag-group-641' data-tag-id='648'>
+<a class='feed-modifier' data-tag-id='648' href='#filter-648'>Nebraska</a>
+</li>
+<li class='tag-group tag-group-641' data-tag-id='649'>
+<a class='feed-modifier' data-tag-id='649' href='#filter-649'>Northwestern</a>
+</li>
+<li class='tag-group tag-group-641' data-tag-id='650'>
+<a class='feed-modifier' data-tag-id='650' href='#filter-650'>Ohio State</a>
+</li>
+<li class='tag-group tag-group-641' data-tag-id='651'>
+<a class='feed-modifier' data-tag-id='651' href='#filter-651'>Penn State</a>
+</li>
+<li class='tag-group tag-group-641' data-tag-id='652'>
+<a class='feed-modifier' data-tag-id='652' href='#filter-652'>Purdue</a>
+</li>
+<li class='tag-group tag-group-641' data-tag-id='1170'>
+<a class='feed-modifier' data-tag-id='1170' href='#filter-1170'>Rutgers</a>
+</li>
+<li class='tag-group tag-group-641' data-tag-id='653'>
+<a class='feed-modifier' data-tag-id='653' href='#filter-653'>Wisconsin</a>
+</li>
+</ul>
+</div>
+</h2>
+<div class='snaps-playlist-container col-4'>
+<ul class='tag-feed-list snaps-playlist row-playlist' data-tag-group='641'>
+<li>
+<div class='poster-container placeholder-snap'></div>
+</li>
+<li>
+<div class='poster-container placeholder-snap'></div>
+</li>
+<li>
+<div class='poster-container placeholder-snap'></div>
+</li>
+<li>
+<div class='poster-container placeholder-snap'></div>
+</li>
+</ul>
+<div class='nav-arrow nav-prev hide'></div>
+<div class='nav-arrow nav-next hide'></div>
+<div class='snapslist-status bs-loader'></div>
+</div>
+</div>
+<div class='snap-feed-row snap-tag-feed tag-highlights'>
+<h2>
+Sport
+<div class='btn-group pull-right'>
+<a class='btn dropdown-toggle' data-toggle='dropdown' href='#'>
+<span class='tag-label'>Show All Sport</span>
+<span class='caret'></span>
+</a>
+<ul class='dropdown-menu' id='tag-group-654'>
+<li class='active tag-group-all'>
+<a class='feed-modifier' href='#filter-all'>Show All Sport</a>
+</li>
+<li class='tag-group tag-group-654' data-tag-id='658'>
+<a class='feed-modifier' data-tag-id='658' href='#filter-658'>Football</a>
+</li>
+<li class='tag-group tag-group-654' data-tag-id='815'>
+<a class='feed-modifier' data-tag-id='815' href='#filter-815'>Men's Basketball</a>
+</li>
+<li class='tag-group tag-group-654' data-tag-id='1001'>
+<a class='feed-modifier' data-tag-id='1001' href='#filter-1001'>Other Big Ten Sports</a>
+</li>
+</ul>
+</div>
+</h2>
+<div class='snaps-playlist-container col-4'>
+<ul class='tag-feed-list snaps-playlist row-playlist' data-tag-group='654'>
+<li>
+<div class='poster-container placeholder-snap'></div>
+</li>
+<li>
+<div class='poster-container placeholder-snap'></div>
+</li>
+<li>
+<div class='poster-container placeholder-snap'></div>
+</li>
+<li>
+<div class='poster-container placeholder-snap'></div>
+</li>
+</ul>
+<div class='nav-arrow nav-prev hide'></div>
+<div class='nav-arrow nav-next hide'></div>
+<div class='snapslist-status bs-loader'></div>
+</div>
+</div>
+<div class='snap-feed-row'>
+<h2>Recommended</h2>
+<div class='snaps-playlist-container col-4'>
+<ul class='snaps-playlist row-playlist' id='feed-recommended'>
+<li>
+<div class='poster-container placeholder-snap'></div>
+</li>
+<li>
+<div class='poster-container placeholder-snap'></div>
+</li>
+<li>
+<div class='poster-container placeholder-snap'></div>
+</li>
+<li>
+<div class='poster-container placeholder-snap'></div>
+</li>
+</ul>
+<div class='nav-arrow nav-prev hide'></div>
+<div class='nav-arrow nav-next hide'></div>
+<div class='snapslist-status bs-loader'></div>
+</div>
+</div>
+<div id='notifications'>
+<p></p>
+</div>
+<div class='bs-fresh-clips hide'>
+<div class='bs-fresh-clips-notice'>
+There are more snaps.. click to update, yo..
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='modal fade schedule-modal' id='schedule-modal'>
+<div class='modal-dialog'>
+<div class='modal-content'>
+<div class='modal-header'>
+<button class='close' data-dismiss='modal'>×</button>
+<h3>Schedule</h3>
+</div>
+<div class='schedule-search-container'>
+<input class='form-control' id='schedule-search' placeholder='Search schedule' type='text'>
+</div>
+<div class='modal-body'>
+<div class='event-schedule-status schedule-loading bs-loader'></div>
+<div class='content-container'>
+<div class='events-schedule' id='events-schedule'></div>
+<div class='schedule-load-more-container'>
+<div class='btn btn-default schedule-load-more hide' data-page='0' id='schedule-load-more'>Load More</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script id='carousel_event_item_template' type='text/template'>
+<a class='launch-event' data-created-at='{{created_at}}' data-duration='{{duration}}' data-eid='{{id}}' data-id='{{id}}' data-is-on-now='{{is_on_now}}' data-live-enabled='{{live_enabled}}' data-sid='{{live_archive_snap_id}}' data-timeend='{{timeend}}' data-timestart='{{timestart}}' data-title='{{episode_subtitle}}' data-type='{{type}}' href='/snaps/{{friendly_id}}'>
+<div class='live-label'>Live</div>
+<img class='carousel-image' height='135' src='{{show_img_bs}}' width='240'>
+<div class='play-icon playhead'></div>
+</a>
+<div class='carousel-item-metadata-container'>
+<div class='snap-event-time'>{{pretty_weekday_date}}, {{pretty_time_of_day}}</div>
+<div class='snap-episode-title'>{{episode_subtitle}}</div>
+</div>
+</script>
+<script id='event_prestate_template' type='text/template'>
+<div class='snap-episode-title'>{{episode_subtitle}}</div>
+<img class='snap-thumb' height='135' src='{{show_img_bs}}' width='240'>
+<div class='snap-event-time'>{{pretty_weekday_date}}, {{pretty_time_of_day}}</div>
+<div class='event-countdown'>
+Starting in
+<div class='event-countdown-time' id='event-countdown-time'></div>
+</div>
+</script>
+<script id='snap_feed_item_template' type='text/template'>
+<a class='poster-container launch-snap feed-snap' data-anim-jpg-url='{{anim_jpg_url}}' data-anim-json-url='{{anim_json_url}}' data-banner-href='{{banner_href}}' data-banner-src='{{banner_src}}' data-banner-type='{{banner_type}}' data-created-at='{{created_at}}' data-eid='{{eid}}' data-embedcode='{{embedcode}}' data-id='{{id}}' data-img-src='{{img_src}}' data-inpoint='{{inpoint}}' data-live-enabled='{{live_enabled}}' data-partner-id='{{partner_id}}' data-pcp='{{pcp}}' data-shorturl='{{shorturl}}' data-thumb='{{thumb}}' data-timeline-percent='{{timeline_percent}}' data-title='{{title}}' data-tweettext='{{tweettext}}' data-type='{{type}}' data-use-json-url='{{use_json_url}}' href='/snaps/{{friendly_id}}' title='{{title}}'>
+<div class='snap-thumb'>
+<img src='{{thumb}}'>
+<div class='snap-type'>
+{{snaptype}}
+</div>
+</div>
+<div class='snap-playhead-type {{snaptype}}'></div>
+</a>
+<div class='playlist-snap-metadata-container'>
+<div class='snap-title'>{{title}}</div>
+<div class='snap-show-title'>{{episode_title}}</div>
+<div class='snap-posted' data-created-at='{{created_at}}'>{{time_posted}}</div>
+</div>
+</script>
+<script id='schedule_link_template' type='text/template'>
+{{episode_subtitle}}
+</script>
+<script id='event_playlist_item_template' type='text/template'>
+<a class='poster-container launch-snap' data-anim-jpg-url='{{anim_jpg_url}}' data-anim-json-url='{{anim_json_url}}' data-banner-href='{{banner_href}}' data-banner-src='{{banner_src}}' data-banner-type='{{banner_type}}' data-created-at='{{created_at}}' data-eid='{{eid}}' data-embedcode='{{embedcode}}' data-href='{{friendly_id}}' data-id='{{id}}' data-img-src='{{img_src}}' data-inpoint='{{inpoint}}' data-live-enabled='{{live_enabled}}' data-partner-id='{{partner_id}}' data-pcp='{{pcp}}' data-shorturl='{{shorturl}}' data-thumb='{{thumb}}' data-timeline-percent='{{timeline_percent}}' data-title='{{title}}' data-tweettext='{{tweettext}}' data-type='{{type}}' data-use-json-url='{{use_json_url}}' href='#' title='{{title}}'>
+<div class='snap-thumb'>
+<img src='{{thumb}}'>
+<div class='snap-type'>
+{{snaptype}}
+</div>
+</div>
+<div class='snap-metadata'>
+{{#is_live}}
+<div class='watch-live label label-important'>Watch Live Now</div>
+{{/is_live}}
+<div class='snap-content'>{{title}}</div>
+<div class='snap-event-time'>{{eventtime}}</div>
+</div>
+</a>
+</script>
+<script id='event_timeline_marker_template' type='text/template'>
+<a class='timeline-marker {{classes}}' data-id='{{id}}' data-offset='{{offset}}' data-src='{{src}}' data-timeline-percent='{{timelinepercent}}' data-title='{{title}}' data-type='{{type}}' href='#'>
+<i></i>
+</a>
+</script>
+
+<script src="http://static.snappytv.com/assets/jquery-1.9.1.min-365b94711c774bad62419a7f2e0a75be.js" type="text/javascript"></script>
+<script src="http://static.snappytv.com/assets/timers-8583a698a3176755aa000c9e04797fae.js" type="text/javascript"></script>
+<script src="http://static.snappytv.com/assets/application-ba1d9ea5277fdce9f390c76cdfe9a80e.js" type="text/javascript"></script>
+<script src="http://static.snappytv.com/assets/application_web-005b631a173fbfd30d3c0017577801d5.js" type="text/javascript"></script>
+<script src="http://static.snappytv.com/assets/beacon-7a6f678c78a5abbcc59d82010cca835a.js" type="text/javascript"></script>
+<script src="http://static.snappytv.com/assets/utility-50b542c0d178b9bde669a560128f2cc4.js" type="text/javascript"></script>
+
+<script>
+  _stva = (typeof _stva != 'undefined') ? _stva : [];
+  _stva_server = '//stats.snappytv.com';
+  _stva_ref_id = "0";
+  $(document).ready(function () {
+    if(typeof snappytv != 'undefined' && typeof snappytv.Utility != 'undefined') snappytv.Utility.setSystemTime("2015-03-05 00:31:05 UTC");
+  });
+  function getPageReferrer (){ return document.referrer; }
+</script>
+
+<script src="http://static.snappytv.com/assets/packages/backbone_edge-c6656aa9051a3ab6634f5922593cc360.js" type="text/javascript"></script>
+<script src="http://static.snappytv.com/assets/packages/common_widget-322d04b36bf04df30d5e9ab912b3ccf7.js" type="text/javascript"></script>
+<script src="http://static.snappytv.com/assets/bootstrap.min-69ed8db6b5b9781802212017ea02a15a.js" type="text/javascript"></script>
+<script src="http://static.snappytv.com/assets/packages/show2-c52b34908156a5aa0759310257527ce3.js" type="text/javascript"></script>
+<script src="http://static.snappytv.com/assets/lib/juggernaut-application-1.0-4d7318adf352ac9d147de862c7e255ac.js" type="text/javascript"></script>
+<script>
+  if (typeof snappytv == 'undefined') snappytv = {};
+  snappytv.is_secure = ('https:' == document.location.protocol);
+  snappytv.juggernaut_config = {
+    'host': "node.snappytv.com",
+    'port': (!snappytv.is_secure) ? "80" : "443",
+    'secure': snappytv.is_secure
+  }
+</script>
+
+<script>
+  snappytv.env = false;
+  // page global is important here, this is what cpage init is looking for
+  // that is typically created by ifp which we don't use when doing an iframe onsite
+  var page = snappytv.wpage = new snappytv.cpage('bspace', {iframe: (top.location != document.location), jug: true});
+  
+  window.bs.data = {};
+  window.bs.data.events = [{"event":{"id":26578340,"eid":26578340,"episode_id":1354922,"episode_title":"Michigan Wolverines","episode_subtitle":"Big Ten Hockey: Michigan at Michigan State","channel_name":"BTN 1","time":"2015-02-08T00:30:02Z","date":"2015-02-07","timestart":"2015-02-08T00:30:02Z","timeend":"2015-02-08T04:30:00Z","created_at":"2015-02-08T00:30:02Z","duration":14398,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Sat, Feb  7","pretty_time_of_day":" 7:30 PM EST"}},{"event":{"id":26578708,"eid":26578708,"episode_id":1355290,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: Maryland at Iowa","channel_name":"BTN 1","time":"2015-02-08T19:30:01Z","date":"2015-02-08","timestart":"2015-02-08T19:30:01Z","timeend":"2015-02-08T23:00:00Z","created_at":"2015-02-08T19:30:01Z","duration":12599,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Sun, Feb  8","pretty_time_of_day":" 2:30 PM EST"}},{"event":{"id":26578709,"eid":26578709,"episode_id":1355291,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: Ohio State at Rutgers","channel_name":"BTN 1","time":"2015-02-08T22:00:02Z","date":"2015-02-08","timestart":"2015-02-08T22:00:02Z","timeend":"2015-02-09T02:00:00Z","created_at":"2015-02-08T22:00:02Z","duration":14398,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Sun, Feb  8","pretty_time_of_day":" 5:00 PM EST"}},{"event":{"id":26639133,"eid":26639133,"episode_id":1358437,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: MSU at Northwestern (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-02-10T23:30:01Z","date":"2015-02-10","timestart":"2015-02-10T23:30:01Z","timeend":"2015-02-11T03:30:00Z","created_at":"2015-02-10T23:30:01Z","duration":14399,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Tue, Feb 10","pretty_time_of_day":" 6:30 PM EST"}},{"event":{"id":26639144,"eid":26639144,"episode_id":1358448,"episode_title":"Maryland Terrapins","episode_subtitle":"Big Ten Women's Basketball: Rutgers at Maryland","channel_name":"BTN 1","time":"2015-02-11T01:30:02Z","date":"2015-02-10","timestart":"2015-02-11T01:30:02Z","timeend":"2015-02-11T05:30:00Z","created_at":"2015-02-11T01:30:02Z","duration":14398,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Tue, Feb 10","pretty_time_of_day":" 8:30 PM EST"}},{"event":{"id":26639134,"eid":26639134,"episode_id":1358438,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: Penn State at Ohio State (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-02-11T23:30:02Z","date":"2015-02-11","timestart":"2015-02-11T23:30:02Z","timeend":"2015-02-12T03:30:00Z","created_at":"2015-02-11T23:30:02Z","duration":14398,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Wed, Feb 11","pretty_time_of_day":" 6:30 PM EST"}},{"event":{"id":26639135,"eid":26639135,"episode_id":1358439,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: Indiana at Maryland (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-02-12T01:30:02Z","date":"2015-02-11","timestart":"2015-02-12T01:30:02Z","timeend":"2015-02-12T05:30:00Z","created_at":"2015-02-12T01:30:02Z","duration":14398,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Wed, Feb 11","pretty_time_of_day":" 8:30 PM EST"}},{"event":{"id":26639136,"eid":26639136,"episode_id":1358440,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: Minnesota at Iowa (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-02-12T23:30:02Z","date":"2015-02-12","timestart":"2015-02-12T23:30:02Z","timeend":"2015-02-13T03:30:00Z","created_at":"2015-02-12T23:30:02Z","duration":14398,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Thu, Feb 12","pretty_time_of_day":" 6:30 PM EST"}},{"event":{"id":26639148,"eid":26639148,"episode_id":1358452,"episode_title":"Ohio State Buckeyes","episode_subtitle":"Big Ten Hockey: WIsconsin at Ohio State","channel_name":"BTN 1","time":"2015-02-13T23:00:01Z","date":"2015-02-13","timestart":"2015-02-13T23:00:01Z","timeend":"2015-02-14T03:00:00Z","created_at":"2015-02-13T23:00:01Z","duration":14399,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Fri, Feb 13","pretty_time_of_day":" 6:00 PM EST"}},{"event":{"id":26639152,"eid":26639152,"episode_id":1358456,"episode_title":"Rutgers Scarlet Knights","episode_subtitle":"Big Ten Women's Basketball: Purdue at Rutgers","channel_name":"BTN 1","time":"2015-02-14T16:30:01Z","date":"2015-02-14","timestart":"2015-02-14T16:30:01Z","timeend":"2015-02-14T21:30:00Z","created_at":"2015-02-14T16:30:01Z","duration":17999,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Sat, Feb 14","pretty_time_of_day":"11:30 AM EST"}},{"event":{"id":26639153,"eid":26639153,"episode_id":1358457,"episode_title":"Northwestern Wildcats","episode_subtitle":"Big Ten Women's Basketball: Northwestern at Michigan ","channel_name":"BTN 1","time":"2015-02-14T18:30:01Z","date":"2015-02-14","timestart":"2015-02-14T18:30:01Z","timeend":"2015-02-14T22:30:00Z","created_at":"2015-02-14T18:30:01Z","duration":14399,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Sat, Feb 14","pretty_time_of_day":" 1:30 PM EST"}},{"event":{"id":26639156,"eid":26639156,"episode_id":1358460,"episode_title":"Ohio State Buckeyes","episode_subtitle":"Big Ten Women's Basketball: Ohio State at Illinois","channel_name":"BTN 1","time":"2015-02-14T20:30:01Z","date":"2015-02-14","timestart":"2015-02-14T20:30:01Z","timeend":"2015-02-15T00:30:00Z","created_at":"2015-02-14T20:30:01Z","duration":14399,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Sat, Feb 14","pretty_time_of_day":" 3:30 PM EST"}},{"event":{"id":26639158,"eid":26639158,"episode_id":1358462,"episode_title":"Penn State Nittany Lions","episode_subtitle":"Big Ten Hockey: Penn State at Michigan State","channel_name":"BTN 1","time":"2015-02-14T22:30:02Z","date":"2015-02-14","timestart":"2015-02-14T22:30:02Z","timeend":"2015-02-15T02:30:00Z","created_at":"2015-02-14T22:30:02Z","duration":14398,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Sat, Feb 14","pretty_time_of_day":" 5:30 PM EST"}},{"event":{"id":26639137,"eid":26639137,"episode_id":1358441,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: Maryland at Penn State (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-02-15T01:00:02Z","date":"2015-02-14","timestart":"2015-02-15T01:00:02Z","timeend":"2015-02-15T05:00:00Z","created_at":"2015-02-15T01:00:02Z","duration":14398,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Sat, Feb 14","pretty_time_of_day":" 8:00 PM EST"}},{"event":{"id":26639138,"eid":26639138,"episode_id":1358442,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: Iowa at Northwestern (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-02-15T19:30:02Z","date":"2015-02-15","timestart":"2015-02-15T19:30:02Z","timeend":"2015-02-15T23:30:00Z","created_at":"2015-02-15T19:30:02Z","duration":14398,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Sun, Feb 15","pretty_time_of_day":" 2:30 PM EST"}},{"event":{"id":26639139,"eid":26639139,"episode_id":1358443,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: Nebraska at Purdue (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-02-15T21:45:01Z","date":"2015-02-15","timestart":"2015-02-15T21:45:01Z","timeend":"2015-02-16T01:45:00Z","created_at":"2015-02-15T21:45:01Z","duration":14399,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Sun, Feb 15","pretty_time_of_day":" 4:45 PM EST"}},{"event":{"id":26639140,"eid":26639140,"episode_id":1358444,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: Minnesota at Indiana (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-02-16T00:00:02Z","date":"2015-02-15","timestart":"2015-02-16T00:00:02Z","timeend":"2015-02-16T04:00:00Z","created_at":"2015-02-16T00:00:02Z","duration":14398,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Sun, Feb 15","pretty_time_of_day":" 7:00 PM EST"}},{"event":{"id":26705988,"eid":26705988,"episode_id":1362463,"episode_title":"Purdue Boilermakers","episode_subtitle":"Big Ten Women's Basketball: Purdue at Ohio State","channel_name":"BTN 1","time":"2015-02-17T23:30:01Z","date":"2015-02-17","timestart":"2015-02-17T23:30:01Z","timeend":"2015-02-18T03:30:00Z","created_at":"2015-02-17T23:30:01Z","duration":14399,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Tue, Feb 17","pretty_time_of_day":" 6:30 PM EST"}},{"event":{"id":26705970,"eid":26705970,"episode_id":1362445,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: - Wisconsin at Penn State (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-02-18T23:30:01Z","date":"2015-02-18","timestart":"2015-02-18T23:30:01Z","timeend":"2015-02-19T03:30:00Z","created_at":"2015-02-18T23:30:01Z","duration":14399,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Wed, Feb 18","pretty_time_of_day":" 6:30 PM EST"}},{"event":{"id":26705971,"eid":26705971,"episode_id":1362446,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: - Northwestern at Minnesota (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-02-19T01:30:01Z","date":"2015-02-18","timestart":"2015-02-19T01:30:01Z","timeend":"2015-02-19T05:30:00Z","created_at":"2015-02-19T01:30:01Z","duration":14399,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Wed, Feb 18","pretty_time_of_day":" 8:30 PM EST"}},{"event":{"id":26705972,"eid":26705972,"episode_id":1362447,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: - Nebraska at Maryland (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-02-19T23:30:01Z","date":"2015-02-19","timestart":"2015-02-19T23:30:01Z","timeend":"2015-02-20T03:30:00Z","created_at":"2015-02-19T23:30:01Z","duration":14399,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Thu, Feb 19","pretty_time_of_day":" 6:30 PM EST"}},{"event":{"id":26705995,"eid":26705995,"episode_id":1362470,"episode_title":"Penn State Nittany Lions","episode_subtitle":"Big Ten Hockey: Minnesota at Penn State","channel_name":"BTN 1","time":"2015-02-20T23:00:01Z","date":"2015-02-20","timestart":"2015-02-20T23:00:01Z","timeend":"2015-02-21T03:00:00Z","created_at":"2015-02-20T23:00:01Z","duration":14399,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Fri, Feb 20","pretty_time_of_day":" 6:00 PM EST"}},{"event":{"id":26705994,"eid":26705994,"episode_id":1362469,"episode_title":"Minnesota Golden Gophers","episode_subtitle":"Big Ten Hockey: Minnesota at Penn State","channel_name":"BTN 1","time":"2015-02-20T23:00:01Z","date":"2015-02-20","timestart":"2015-02-20T23:00:01Z","timeend":"2015-02-21T03:00:00Z","created_at":"2015-02-20T23:00:01Z","duration":14399,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Fri, Feb 20","pretty_time_of_day":" 6:00 PM EST"}},{"event":{"id":26706003,"eid":26706003,"episode_id":1362478,"episode_title":"Minnesota Golden Gophers","episode_subtitle":"Big Ten Women's Basketball: Michigan at Minnesota","channel_name":"BTN 1","time":"2015-02-21T18:30:02Z","date":"2015-02-21","timestart":"2015-02-21T18:30:02Z","timeend":"2015-02-21T22:30:00Z","created_at":"2015-02-21T18:30:02Z","duration":14398,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Sat, Feb 21","pretty_time_of_day":" 1:30 PM EST"}},{"event":{"id":26706010,"eid":26706010,"episode_id":1362485,"episode_title":"Ohio State Buckeyes","episode_subtitle":"Big Ten Women's Basketball: Iowa at Ohio State","channel_name":"BTN 1","time":"2015-02-21T23:30:01Z","date":"2015-02-21","timestart":"2015-02-21T23:30:01Z","timeend":"2015-02-22T03:30:00Z","created_at":"2015-02-21T23:30:01Z","duration":14399,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Sat, Feb 21","pretty_time_of_day":" 6:30 PM EST"}},{"event":{"id":26705973,"eid":26705973,"episode_id":1362448,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: Iowa at Nebraska (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-02-22T19:30:01Z","date":"2015-02-22","timestart":"2015-02-22T19:30:01Z","timeend":"2015-02-22T23:30:00Z","created_at":"2015-02-22T19:30:01Z","duration":14399,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Sun, Feb 22","pretty_time_of_day":" 2:30 PM EST"}},{"event":{"id":26705974,"eid":26705974,"episode_id":1362449,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: Indiana at Rutgers (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-02-22T22:00:01Z","date":"2015-02-22","timestart":"2015-02-22T22:00:01Z","timeend":"2015-02-23T02:00:00Z","created_at":"2015-02-22T22:00:01Z","duration":14399,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Sun, Feb 22","pretty_time_of_day":" 5:00 PM EST"}},{"event":{"id":26705978,"eid":26705978,"episode_id":1362453,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: Michigan State at Illinois (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-02-23T00:00:02Z","date":"2015-02-22","timestart":"2015-02-23T00:00:02Z","timeend":"2015-02-23T04:00:00Z","created_at":"2015-02-23T00:00:02Z","duration":14398,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Sun, Feb 22","pretty_time_of_day":" 7:00 PM EST"}},{"event":{"id":26763837,"eid":26763837,"episode_id":1367055,"episode_title":"Minnesota Golden Gophers","episode_subtitle":"Big Ten Women's Basketball: Minnesota at Nebraska ","channel_name":"BTN 1","time":"2015-02-25T01:30:01Z","date":"2015-02-24","timestart":"2015-02-25T01:30:01Z","timeend":"2015-02-25T05:30:00Z","created_at":"2015-02-25T01:30:01Z","duration":14399,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Tue, Feb 24","pretty_time_of_day":" 8:30 PM EST"}},{"event":{"id":26763840,"eid":26763840,"episode_id":1367058,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: Indiana at Northwestern (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-02-25T23:30:02Z","date":"2015-02-25","timestart":"2015-02-25T23:30:02Z","timeend":"2015-02-26T03:30:00Z","created_at":"2015-02-25T23:30:02Z","duration":14398,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Wed, Feb 25","pretty_time_of_day":" 6:30 PM EST"}},{"event":{"id":26763841,"eid":26763841,"episode_id":1367059,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: Illinois at Iowa (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-02-26T01:30:02Z","date":"2015-02-25","timestart":"2015-02-26T01:30:02Z","timeend":"2015-02-26T05:30:00Z","created_at":"2015-02-26T01:30:02Z","duration":14398,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Wed, Feb 25","pretty_time_of_day":" 8:30 PM EST"}},{"event":{"id":26800066,"eid":26800066,"episode_id":1374863,"episode_title":"Big Ten Network","episode_subtitle":"BTN Live from Michigan State","channel_name":"BTN 1","time":"2015-02-26T22:00:01Z","date":"2015-02-26","timestart":"2015-02-26T22:00:01Z","timeend":"2015-02-27T00:00:00Z","created_at":"2015-02-26T22:00:01Z","duration":7199,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Thu, Feb 26","pretty_time_of_day":" 5:00 PM EST"}},{"event":{"id":26763845,"eid":26763845,"episode_id":1367063,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: Minnesota at Michigan State (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-02-26T23:30:02Z","date":"2015-02-26","timestart":"2015-02-26T23:30:02Z","timeend":"2015-02-27T03:30:00Z","created_at":"2015-02-26T23:30:02Z","duration":14398,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Thu, Feb 26","pretty_time_of_day":" 6:30 PM EST"}},{"event":{"id":26763853,"eid":26763853,"episode_id":1367071,"episode_title":"Ohio State Buckeyes","episode_subtitle":"Big Ten Hockey: Penn State at Ohio State","channel_name":"BTN 1","time":"2015-02-27T23:30:01Z","date":"2015-02-27","timestart":"2015-02-27T23:30:01Z","timeend":"2015-02-28T03:30:00Z","created_at":"2015-02-27T23:30:01Z","duration":14399,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Fri, Feb 27","pretty_time_of_day":" 6:30 PM EST"}},{"event":{"id":26763850,"eid":26763850,"episode_id":1367068,"episode_title":"Penn State Nittany Lions","episode_subtitle":"Big Ten Hockey: Penn State at Ohio State","channel_name":"BTN 1","time":"2015-02-27T23:30:01Z","date":"2015-02-27","timestart":"2015-02-27T23:30:01Z","timeend":"2015-02-28T03:30:00Z","created_at":"2015-02-27T23:30:01Z","duration":14399,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Fri, Feb 27","pretty_time_of_day":" 6:30 PM EST"}},{"event":{"id":26776750,"eid":26776750,"episode_id":1372454,"episode_title":"Minnesota Golden Gophers","episode_subtitle":"Big Ten Hockey: Michigan State at Minnesota","channel_name":"BTN 1","time":"2015-02-28T01:30:01Z","date":"2015-02-27","timestart":"2015-02-28T01:30:01Z","timeend":"2015-02-28T05:30:00Z","created_at":"2015-02-28T01:30:01Z","duration":14399,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Fri, Feb 27","pretty_time_of_day":" 8:30 PM EST"}},{"event":{"id":26776753,"eid":26776753,"episode_id":1372457,"episode_title":"Illinois Fighting Illini","episode_subtitle":"Big Ten Women's Basketball: Michigan at Illinois","channel_name":"BTN 1","time":"2015-02-28T16:30:01Z","date":"2015-02-28","timestart":"2015-02-28T16:30:01Z","timeend":"2015-02-28T20:30:00Z","created_at":"2015-02-28T16:30:01Z","duration":14399,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Sat, Feb 28","pretty_time_of_day":"11:30 AM EST"}},{"event":{"id":26776757,"eid":26776757,"episode_id":1372461,"episode_title":"Michigan Wolverines","episode_subtitle":"Big Ten Hockey: Wisconsin at Michigan","channel_name":"BTN 1","time":"2015-02-28T20:30:02Z","date":"2015-02-28","timestart":"2015-02-28T20:30:02Z","timeend":"2015-03-01T00:30:00Z","created_at":"2015-02-28T20:30:02Z","duration":14398,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Sat, Feb 28","pretty_time_of_day":" 3:30 PM EST"}},{"event":{"id":26776758,"eid":26776758,"episode_id":1372462,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: Northwestern at Illinois (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-02-28T23:30:01Z","date":"2015-02-28","timestart":"2015-02-28T23:30:01Z","timeend":"2015-03-01T03:30:00Z","created_at":"2015-02-28T23:30:01Z","duration":14399,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Sat, Feb 28","pretty_time_of_day":" 6:30 PM EST"}},{"event":{"id":26776761,"eid":26776761,"episode_id":1372465,"episode_title":"Northwestern Wildcats","episode_subtitle":"Big Ten Women's Basketball: Maryland at Northwestern","channel_name":"BTN 1","time":"2015-03-01T17:30:01Z","date":"2015-03-01","timestart":"2015-03-01T17:30:01Z","timeend":"2015-03-01T21:30:00Z","created_at":"2015-03-01T17:30:01Z","duration":14399,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Sun, Mar  1","pretty_time_of_day":"12:30 PM EST"}},{"event":{"id":26776763,"eid":26776763,"episode_id":1372467,"episode_title":"Minnesota Golden Gophers","episode_subtitle":"Big Ten Women's Basketball: Minnesota at Iowa","channel_name":"BTN 1","time":"2015-03-01T19:30:02Z","date":"2015-03-01","timestart":"2015-03-01T19:30:02Z","timeend":"2015-03-01T23:30:00Z","created_at":"2015-03-01T19:30:02Z","duration":14398,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Sun, Mar  1","pretty_time_of_day":" 2:30 PM EST"}},{"event":{"id":26776767,"eid":26776767,"episode_id":1372471,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: Purdue at Ohio State (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-03-02T00:00:02Z","date":"2015-03-01","timestart":"2015-03-02T00:00:02Z","timeend":"2015-03-02T03:30:00Z","created_at":"2015-03-02T00:00:02Z","duration":12598,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Sun, Mar  1","pretty_time_of_day":" 7:00 PM EST"}},{"event":{"id":26843455,"eid":26843455,"episode_id":1378176,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: Maryland at Rutgers (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-03-03T23:55:48Z","date":"2015-03-03","timestart":"2015-03-03T23:55:48Z","timeend":"2015-03-04T03:30:00Z","created_at":"2015-03-03T23:55:48Z","duration":12852,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Tue, Mar  3","pretty_time_of_day":" 6:55 PM EST"}},{"event":{"id":26843456,"eid":26843456,"episode_id":1378177,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: Michigan at Northwestern (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-03-04T01:30:02Z","date":"2015-03-03","timestart":"2015-03-04T01:30:02Z","timeend":"2015-03-04T05:30:00Z","created_at":"2015-03-04T01:30:02Z","duration":14398,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Tue, Mar  3","pretty_time_of_day":" 8:30 PM EST"}},{"event":{"id":26843466,"eid":26843466,"episode_id":1378187,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: Ohio State at Penn State (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-03-04T22:30:00Z","date":"2015-03-04","timestart":"2015-03-04T22:30:00Z","timeend":"2015-03-05T02:30:00Z","created_at":"2015-03-04T22:30:00Z","duration":14400,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Wed, Mar  4","pretty_time_of_day":" 5:30 PM EST"}},{"event":{"id":26843529,"eid":26843529,"episode_id":1378250,"episode_title":"BTN","episode_subtitle":"Big Ten Women's Basketball Tournament: Penn State vs. Indiana","channel_name":"BTN 2","time":"2015-03-04T22:30:00Z","date":"2015-03-04","timestart":"2015-03-04T22:30:00Z","timeend":"2015-03-05T02:30:00Z","created_at":"2015-03-04T22:30:00Z","duration":14400,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Wed, Mar  4","pretty_time_of_day":" 5:30 PM EST"}},{"event":{"id":26843468,"eid":26843468,"episode_id":1378189,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: Purdue at Michigan State (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-03-05T00:30:00Z","date":"2015-03-04","timestart":"2015-03-05T00:30:00Z","timeend":"2015-03-05T04:30:00Z","created_at":"2015-03-05T00:30:00Z","duration":14400,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Wed, Mar  4","pretty_time_of_day":" 7:30 PM EST"}},{"event":{"id":26843530,"eid":26843530,"episode_id":1378251,"episode_title":"BTN","episode_subtitle":"Big Ten Women's Basketball Tournament: Purdue vs. Wisconsin","channel_name":"BTN 2","time":"2015-03-05T01:00:00Z","date":"2015-03-04","timestart":"2015-03-05T01:00:00Z","timeend":"2015-03-05T05:00:00Z","created_at":"2015-03-05T01:00:00Z","duration":14400,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Wed, Mar  4","pretty_time_of_day":" 8:00 PM EST"}},{"event":{"id":26843475,"eid":26843475,"episode_id":1378196,"episode_title":"Big Ten Network","episode_subtitle":"Big Ten Basketball: Nebraska at Illinois (BTN Clipping Only)","channel_name":"BTN 1","time":"2015-03-05T02:30:00Z","date":"2015-03-04","timestart":"2015-03-05T02:30:00Z","timeend":"2015-03-05T05:30:00Z","created_at":"2015-03-05T02:30:00Z","duration":10800,"live_enabled":false,"live_archive_snap_id":null,"has_tweet_vol":false,"show_img_bs":"http://static.snappytv.com/banners/4105/original.jpg?1380055509","pretty_weekday_date":"Wed, Mar  4","pretty_time_of_day":" 9:30 PM EST"}}];
+  window.bs.settings = {
+    id:                 125,
+    title:              "Featured Big Ten highlights",
+    player:             "http://static.snappytv.com/player/snappytv.swf",
+    expressInstall:     "http://static.snappytv.com/player/expressInstall.swf",
+    static_host:        "http://static.snappytv.com",
+    static_secure_host: "https://staticsnappytv-a.akamaihd.net",
+    landing_path:       "/landing/b1g-network",
+    geo:                "US",
+    tz:                 "EST",
+    hasEventCarousel:   true,
+    initialSnap:        {"id":472751,"type":"VodSnap","eid":26578708,"title":"Aaron White Two-Hand Slam","created_at":"2015-02-08T21:13:05Z","inpoint":"2015-02-08T21:11:39Z","duration":32.0,"live_enabled":false,"has_tweet_vol":false,"anim_json_url":false,"anim_jpg_url":false,"use_json_url":false,"shorturl":"http://snpy.tv/1C7ODWO","embedcode":"<div class='snappytv-embed' style='position:relative;padding-top:56.25%;padding-bottom:37px;'><iframe src='http://www.snappytv.com/tc/472751' width='100%' height='100%' frameborder='0' scrolling='no' style='position:absolute;top:0;' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>","tweettext":"VIDEO - Aaron White Two-Hand Slam #BTN2Go","eventtime":"1:41:38","event_start":"2015-02-08T19:30:01Z","event_end":"2015-02-08T23:00:00Z","thumb":"http://media.snappytv.com/image/ld144p/330p330/2015-02-08T21-11-39.793Z--230x135.jpg?h=992a3d6794d666423853a17de2b90353","img_src":"http://media.snappytv.com/image/ld360p/330p330/2015-02-08T21-11-39.793Z--640x360.jpg?h=a5f48b005c02cd681c467ff402b2fa7a","partner_id":213,"pcp":"1151001"},
+    isMultiplayer:      false,
+    numEvents:          49,
+    useEventTitle:      true,
+    cd:                 "",
+    context:            "brandspace"
+  };
+</script>
+<script>
+  window.bs.init();
+</script>
+
+<link href="http://static.snappytv.com/assets/snapreel-fae46637f9d1f1aab258dd580d31e661.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="http://static.snappytv.com/assets/snapreel-219f0971449f4d4db947ffc63a6e55e6.js" type="text/javascript"></script>
+
+</body>
+</html>

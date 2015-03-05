@@ -1,0 +1,112 @@
+WARC/1.0
+WARC-Type: warcinfo
+Content-Type: application/warc-fields
+WARC-Date: 2015-03-05T00:30:16Z
+WARC-Record-ID: <urn:uuid:4c45486f-8244-460f-8ee6-e802368d54d0>
+WARC-Filename: url-20.warc
+WARC-Block-Digest: sha1:W45U5C3HWZRWJVMKMX7E4OUSTU5POXIY
+Content-Length: 290
+
+software: Wget/1.16.1 (darwin13.4.0)
+format: WARC File Format 1.0
+conformsTo: http://bibnum.bnf.fr/WARC/WARC_ISO_28500_version1_latestdraft.pdf
+robots: classic
+wget-arguments: "https://twitter.com/grandesmila/status/564543742875828225
+" "--warc-file=url-20" "--no-warc-compression" 
+
+
+
+WARC/1.0
+WARC-Type: request
+WARC-Target-URI: https://twitter.com/grandesmila/status/564543742875828225%0A
+Content-Type: application/http;msgtype=request
+WARC-Date: 2015-03-05T00:30:16Z
+WARC-Record-ID: <urn:uuid:46bf0e91-da76-48bc-9bb4-5098a0d0e4ec>
+WARC-IP-Address: 199.16.156.6
+WARC-Warcinfo-ID: <urn:uuid:4c45486f-8244-460f-8ee6-e802368d54d0>
+WARC-Block-Digest: sha1:K7PBPPFKC45DDHYNG6OUUVYV4AHF3MKR
+Content-Length: 181
+
+GET /grandesmila/status/564543742875828225%0A HTTP/1.1
+User-Agent: Wget/1.16.1 (darwin13.4.0)
+Accept: */*
+Accept-Encoding: identity
+Host: twitter.com
+Connection: Keep-Alive
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Record-ID: <urn:uuid:16addb18-f161-4681-888f-837e9d58cee3>
+WARC-Warcinfo-ID: <urn:uuid:4c45486f-8244-460f-8ee6-e802368d54d0>
+WARC-Concurrent-To: <urn:uuid:46bf0e91-da76-48bc-9bb4-5098a0d0e4ec>
+WARC-Target-URI: https://twitter.com/grandesmila/status/564543742875828225%0A
+WARC-Date: 2015-03-05T00:30:16Z
+WARC-IP-Address: 199.16.156.6
+WARC-Block-Digest: sha1:ESPWMTKE5OF7RBPR5THQT2DFDTQI7G42
+WARC-Payload-Digest: sha1:3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ
+Content-Type: application/http;msgtype=response
+Content-Length: 172
+
+HTTP/1.1 400 Bad Request
+content-length: 0
+date: Thu, 05 Mar 2015 00:30:16 UTC
+server: tsa_b
+x-connection-hash: cd3cc34399dfdb0ff257965378117c99
+x-response-time: 1
+
+
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Record-ID: <urn:uuid:97dcf472-d2bd-4e2f-b200-4713502d0067>
+WARC-Warcinfo-ID: <urn:uuid:4c45486f-8244-460f-8ee6-e802368d54d0>
+WARC-Target-URI: metadata://gnu.org/software/wget/warc/MANIFEST.txt
+WARC-Date: 2015-03-05T00:30:16Z
+WARC-Block-Digest: sha1:OUYDO23BPHJU2PPCBJJ5D2CJBERISA3G
+Content-Type: text/plain
+Content-Length: 48
+
+<urn:uuid:4c45486f-8244-460f-8ee6-e802368d54d0>
+
+
+WARC/1.0
+WARC-Type: resource
+WARC-Record-ID: <urn:uuid:da5bfe4c-bca6-4d05-b551-0353a9d1b7c0>
+WARC-Warcinfo-ID: <urn:uuid:4c45486f-8244-460f-8ee6-e802368d54d0>
+WARC-Concurrent-To: <urn:uuid:97dcf472-d2bd-4e2f-b200-4713502d0067>
+WARC-Target-URI: metadata://gnu.org/software/wget/warc/wget_arguments.txt
+WARC-Date: 2015-03-05T00:30:16Z
+WARC-Block-Digest: sha1:CHZLE2ECE7HFYPLMKEMTFZPZHDGZ4YNF
+Content-Type: text/plain
+Content-Length: 107
+
+"https://twitter.com/grandesmila/status/564543742875828225
+" "--warc-file=url-20" "--no-warc-compression" 
+
+
+WARC/1.0
+WARC-Type: resource
+WARC-Record-ID: <urn:uuid:2eacb301-6a62-4f5c-a1f7-6f33a4ee1a7f>
+WARC-Warcinfo-ID: <urn:uuid:4c45486f-8244-460f-8ee6-e802368d54d0>
+WARC-Concurrent-To: <urn:uuid:97dcf472-d2bd-4e2f-b200-4713502d0067>
+WARC-Target-URI: metadata://gnu.org/software/wget/warc/wget.log
+WARC-Date: 2015-03-05T00:30:16Z
+WARC-Block-Digest: sha1:YNLO3S6FSRAGMFZHAOVND4YTCPCG2ZGB
+Content-Type: text/plain
+Content-Length: 427
+
+Opening WARC file 'url-20.warc'.
+
+--2015-03-04 19:30:16--  https://twitter.com/grandesmila/status/564543742875828225%0A
+Resolving twitter.com... 199.16.156.6, 199.16.156.198, 199.16.156.38, ...
+Connecting to twitter.com|199.16.156.6|:443... connected.
+HTTP request sent, awaiting response... 400 Bad Request
+
+     0K                                                        0.00 =0s
+
+2015-03-04 19:30:16 ERROR 400: Bad Request.
+
+
+

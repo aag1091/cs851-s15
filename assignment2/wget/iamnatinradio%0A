@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>iamnatinradio</title>
+<meta name="description" content="Indie Rock Internet Radio - I'm into indie, rock, alternative, british and indie rock, including:Clap Your Hands Say Yeah, Arcade Fire, Imagine Dragons, The Strokes, Yeah Yeah Yeahs, Kasabian, Arctic Monkeys, Cage the Elephant, Two Door Cinema Club, Keaton Henson, The Wombats, Coldplay, The Futureheads, The Killers, Kaiser Chiefs, The Cribs, The Afternoons, White Lies, Neon Trees, The Vaccines, The Japanese Popstars, Los Campesinos!, Jukebox the Ghost, Sailor & I, The Naked and Famous, We Are the Grand, We Were Evergreen, knocking ghost, The Mispers, Naumenberg, Pixies, Doves, Travis, James, Butch Walker, OK Go, Just Jack, We Are Scientists, Big Deal, First Aid Kit, Franz Ferdinand, The Shins, The Black Keys, Morningwood, The Kooks, The Drums, The Lodger, The Fratellis, The Rifles, The Raid.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap -->
+<link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/assets/myradiostream/myradiostream.css" rel="stylesheet">
+<link href="/assets/myradiostream/station.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+<style>
+
+.jumbotron {
+	margin: 0;
+	color: #540812;
+}
+.top-unit {
+	background-color: #333333;
+	min-height: 155px;
+	background-image: url(/images/stripes.png);
+	color: #290702;	
+	padding: 20px;
+}
+</style>
+<script type="text/javascript" src="/SDK/MB_SDK_Web.js"></script>
+<script src="/assets/jquery/jquery-1.7.2.min.js"></script>
+<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+
+<body onload="loadPlayer();"><div id="fb-root"></div>
+<div id="loading-page">
+  <div id="sponsor-message">We are connecting you to your chosen broadcast<br />
+    <img src="/assets/images/loading.gif" alt=".   .  . ... .  .   ." /></div>
+</div>
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+      <a class="navbar-brand hidden-xs"><img src="http://myradiostream.com/images/myradiostream.png" alt="My Radio Stream" class="mainlogo img-responsive"></a><div style="float:left; width: 100px; height: 26px; margin-top:20px; overflow: hidden;"><div class="fb-like" data-href="https://www.facebook.com/pages/Myradiostream/792232594142360" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div></div></div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="http://myradiostream.com/pages/abuse.php?complaint=iamnatinradio"><span class="glyphicon glyphicon-search"></span><br class="hidden-xs" />Report Abuse</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="main-content">
+  <div class="text-center">
+
+
+  </div>
+  <div class="top-unit" style="background-color: #8F1603;">
+    <div id="player">
+      <div id="player-container">
+        <div id="mixstreamPlayer"></div>
+      </div>
+        <style>#currentSong a {color: #290702}</style>
+      <div id="currentSong" class="text-center"></div>
+      <div id="playeroptions"></div>
+    </div>
+  </div>
+  <div id="background" style="background-image: url(/station/uploads/background/41c033778e1616503b672f1499bb28d6d172fb31.jpg);background-repeat:repeat;">
+    <input type="hidden" name="IL_IN_TAG" value="1"/>
+    <div class="jumbotron" style="background-color:transparent !important;">
+      <div class="text-center">
+        <h1>iamnatinradio</h1>
+      </div>
+      <div class="station-description">
+
+<!-- Start Station Description -->
+
+<p>Indie Rock Internet Radio - I'm into indie, rock, alternative, british and indie rock, including:<br />Clap Your Hands Say Yeah, Arcade Fire, Imagine Dragons, The Strokes, Yeah Yeah Yeahs, Kasabian, Arctic Monkeys, Cage the Elephant, Two Door Cinema Club, Keaton Henson, The Wombats, Coldplay, The Futureheads, The Killers, Kaiser Chiefs, The Cribs, The Afternoons, White Lies, Neon Trees, The Vaccines, The Japanese Popstars, Los Campesinos!, Jukebox the Ghost, Sailor &amp; I, The Naked and Famous, We Are the Grand, We Were Evergreen, knocking ghost, The Mispers, Naumenberg, Pixies, Doves, Travis, James, Butch Walker, OK Go, Just Jack, We Are Scientists, Big Deal, First Aid Kit, Franz Ferdinand, The Shins, The Black Keys, Morningwood, The Kooks, The Drums, The Lodger, The Fratellis, The Rifles, The Raid.</p>
+
+<!-- End Station Description -->
+
+        <div class="panel panel-default">
+          <h1>Stream Info</h1>
+          <div id="streamStats"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="players-social">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Listen in your preferred player</h3>
+        <div class="alert alert-players-social alert-fixed-height">
+          <div class="row player-links">
+            <div class="col-xs-3 text-center"><a href="http://s18.myradiostream.com:12534/listen.pls" class="tuneInLink" id="Winamp"><img src="/images/winamp.png" alt="Listen in Winamp or iTunes" width="48" height="48" /></a><br />
+              <span class="player-link-info">Winamp/iTunes</span></div>
+            <div class="col-xs-3 text-center"><a href="http://myradiostream.com/18/12534.asx" class="tuneInLink" id="Windows Media Player"><img src="/images/wmp.png" alt="Listen in Windows Media Player" width="48" height="48" /></a><br />
+              <span class="player-link-info">Windows Player</span></div>
+            <div class="col-xs-3 text-center"><a href="http://s18.myradiostream.com:12534/listen.m3u" class="tuneInLink" id="VLC/Other Player"><img src="/images/vlc.png" alt="Listen in VLC Player" width="48" height="48" /></a><br />
+              <span class="player-link-info">VLC/Other players</span></div>
+            <div class="col-xs-3 text-center"><a href="http://myradiostream.com/mobile/iamnatinradio%0A" class="tuneInLink"><img src="/mobile/iamnatinradio%0A-sm.png" alt="Listen on iOS, Blackberry, Android" width="48" height="48" /></a><br />
+              <span class="player-link-info">Mobile</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3>Like our station? Spread the word!</h3>
+        <div class="alert alert-players-social alert-fixed-height">
+          <div class="row">
+            <div class="col-xs-3 text-center">
+              <div class="fb-like-container"><div class="fb-like" data-href="https://www.facebook.com/iamnatinradio" data-send="false" data-layout="box_count" data-width="100" data-show-faces="false"></div></div>
+            </div>
+            <div class="col-xs-3 text-center"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://myradiostream.com/iamnatinradio%0A" data-text="I'm listening to iamnatinradio" data-count="vertical">Tweet</a></div>
+            <div class="col-xs-3 text-center">
+              <div class="g-plusone" data-size="tall" data-href="http://myradiostream.com/iamnatinradio%0A"></div>
+            </div>
+            <div class="col-xs-3 text-center">
+              <div id="su-button"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr />
+<div class="container">
+  <div class="row">
+    <div class="col-md-6"> <a class="twitter-timeline"  href="https://twitter.com/iamnatinradio" data-screen-name="iamnatinradio" data-widget-id="284994599485833217">Tweets by @iamnatinradio</a>
+    </div>
+    <div class="col-md-6">
+      <div class="panel panel-default panel-fixed">
+        <h1>Facebook</h1>
+        <div style="margin-top: 10px; border-bottom: 1px solid #eee;"></div>
+        <div class="fb-like-box" data-href="https://www.facebook.com/iamnatinradio" data-height="300" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="true" data-show-border="false"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default panel-fixed">
+        <h1>Recent Tracks</h1>
+        <div id="recentTracks"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+var infolinks_pid = 2199890;
+var infolinks_wsid = 0;
+</script>
+<script type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></script>
+<style>
+#main-content {
+	margin-left: 160px;
+	margin-right: 160px;
+	min-width: 770px;
+}
+</style>
+<div style="position:absolute;top:76px;left:0px;">
+  <a href="http://www.tkqlhce.com/click-5732606-10988890" target="_top">
+<img src="http://www.lduhtrp.net/image-5732606-10988890" width="160" height="600" alt="" border="0"/></a>
+</div>
+<div style="position:absolute;top:76px;right:0px;">
+  <a href="http://www.jdoqocy.com/click-5732606-11665228" target="_top">
+<img src="http://www.lduhtrp.net/image-5732606-11665228" width="120" height="600" alt="" border="0"/></a>
+</div>
+<script src="/assets/js/myradiostream.js.php?s=18&amp;p=12534"></script>
+<script>
+	(function() { 
+		var li = document.createElement('script'); li.type = 'text/javascript'; li.async = true; 
+		li.src = 'https://platform.stumbleupon.com/1/widgets.js'; 
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(li, s); 
+	})(); 
+$("#su-button").html('<su:badge layout="5"></su:badge>');
+var flashvars = {};
+	flashvars.serverHost = "s18.myradiostream.com:12534/;";
+	flashvars.getStats = "0";
+	flashvars.autoStart = "1";
+	flashvars.textColour = "290702";
+	flashvars.buttonColour = "290702";
+var params = {};
+	params.bgcolor= "";
+	params.wmode="transparent";
+	
+
+function requestAdHandler() { 
+	var configurationObject = {     
+		"adType" : MB_AD_TYPE.AUDIO_WITH_BANNER,
+		"position" : MB_BANNER_POSITION.BOTTOM_RIGHT,
+		"genre" : MB_MUSIC_GENRES.MUSIC_ROCK
+	};
+
+	var userInfo = new Object();  
+	userInfo[MB_TARGETS.LANGUAGE]  =  MB_LANGUAGES.English;
+	setUserInformation(userInfo);
+
+	requestAd(configurationObject); 
+} 
+function mbPlayerLoaded(){ 
+	requestAdHandler();
+	$('#sponsor-message').html('A quick message from our sponsors<br /><img src="/assets/images/loading.gif" src=".   .  . ... .  .   ." />');
+} 
+
+function mbFinishedWithStatus(status) { 
+	loadPlayer();
+	if (status == 0) {
+		$('#currentSong').html('Loading your audio stream');
+		$('#sponsor-message').addClass('hidden');	
+	}
+}
+
+var ladheight = $('#leftbar-ad').outerHeight();
+var ladwidth = $('#leftbar-ad').outerWidth();
+
+
+var radheight = $('#rightbar-ad').outerHeight();
+var radwidth = $('#rightbar-ad').outerWidth();
+
+$('body').append('<style>@media (min-width:768px) {#main-content{min-height:'+ladheight+'px;margin-left:'+ladwidth+'px;margin-right:'+radwidth+'px;overflow:hidden;} }</style>');
+
+function loadPlayer() {
+	$('#mixstreamPlayer').html('<div class="alert alert-danger"><h2>IAMNATINRADIO IS CURRENTLY OFF AIR</h2></div>');
+	$('#loading-page').addClass('hidden');
+}
+
+</script>
+
+
+<div id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h6>Information</h6>
+        <ul>
+          <li><a href="http://myradiostream.com/pages/privacy.php" target="_blank">Privacy and Cookie Policy</a></li>
+          <li><a href="http://myradiostream.com/pages/terms.php" target="_blank">Terms of Service</a></li>
+          <li><a href="http://myradiostream.com/pages/copyright.php" target="_blank">Copyright Policy</a></li>
+          <li><a href="http://myradiostream.com/pages/abuse.php?complaint=listen" target="_top">Report Copyright / Trademark Violation</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h6>MyRadioStream</h6>
+        <ul>
+          <li><a href="http://myradiostream.com/pages/about.php" target="_blank">What is MyRadioStream?</a></li>
+          <li><a href="http://myradiostream.com/register.php">Create a Radio Station</a></li>
+          <li><a href="http://myradiostream.com/pages/faq.php" target="_blank">Frequently Asked Questions</a></li>
+          <li><a href="http://myradiostream.com/pages/support.php">Customer Support</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

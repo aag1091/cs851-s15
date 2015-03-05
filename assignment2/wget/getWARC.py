@@ -18,4 +18,4 @@ if __name__ == "__main__":
   for line in urls:
   	i+=1
   	name = "url-" + str(i)
-  	os.system("wget '%s' --warc-file='%s'" % (line, name))
+  	os.system("wget '%s' --warc-file='%s' --no-warc-compression" % (line, name))
