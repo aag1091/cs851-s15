@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>&nbsp;</title>
+  <style type="text/css">
+    h1 {
+      color: #888;
+      font-size: 25px;
+      margin: 0;
+    }
+    p {
+      margin: 1em 0 0;
+    }
+    #error {
+      background-color: #fff;
+      font-family: "Lucida Grande", sans-serif;
+      font-size: 13px;
+      padding: 60px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+    #error div {
+      background-color: #fff;
+      border: 1px solid #999;
+      padding: 1.7em 2em 1.9em;
+      border-radius: 8px;
+      margin: 0 auto;
+      width: 80%;
+      -moz-border-radius: 8px;
+      -webkit-border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <noscript>
+    <div id="error">
+      <div>
+        <h1>JavaScript Unavailable</h1>
+        <p>
+          We can't automatically redirect you because JavaScript isn't available.
+          <a href="http://api.viglink.com/api/referrer-redirect">Click here to continue</a>.
+        </p>
+      </div>
+    </div>
+  </noscript>
+
+  <script type="text/javascript">
+    ( function() {
+      var
+
+      opts = {
+        api_url: "//api.viglink.com/api/click",
+        timeout: 2000
+      },
+
+      $ = {
+        createEl: function( name, attributes, css, doc ) {
+          var i, el = ( doc || document ).createElement( name );
+          attributes = attributes || {};
+          css = css || {};
+
+          for( i in attributes ) {
+            if( attributes[i] !== undefined ) {
+              el[i] = attributes[i];
+            }
+          }
+          $.css( el, css );
+
+          return el;
+        },
+
+        css: function( el, css ) {
+          var i;
+
+          for( i in css ) {
+            try {
+              el.style[i] = css[i];
+            } catch( e ) {}
+          }
+
+          return el;
+        },
+
+        err: function( title, msg ) {
+          var wrapper_el = document.getElementById( "error" ) || $.createEl( "div" ),
+              inner_el = $.createEl( "div" ),
+              title_el = $.createEl( "h1" ),
+              msg_el = $.createEl( "p" );
+
+          wrapper_el.innerHTML = "";
+          wrapper_el.id = "error";
+          wrapper_el.appendChild( inner_el );
+          title_el.appendChild( document.createTextNode( title ) );
+          inner_el.appendChild( title_el );
+
+          if( msg ) {
+            msg_el.appendChild( document.createTextNode( msg ) );
+            inner_el.appendChild( msg_el );
+          }
+
+          document.body.appendChild( wrapper_el );
+        },
+
+        jsonp: function( params, callback ) {
+          var api_url, callback_name, ref_el, script;
+
+          params.jsonp = "jsonp";
+          params.format = "jsonp";
+
+          window.jsonp = ( function() {
+            var called = false;
+
+            return function() {
+              if( ! called ) {
+                called = true;
+                callback.apply( null, arguments );
+              }
+            };
+          }() );
+
+          params = $.toQuery( params );
+          api_url = opts.api_url + ( params.length ? '?' : '' ) + params;
+
+          setTimeout( window.jsonp, opts.timeout );
+
+          script = document.createElement( "script");
+          script.type = "text/javascript";
+          script.src = api_url;
+          ref_el = document.getElementsByTagName( "script" )[0];
+          ref_el.parentNode.insertBefore( script, ref_el );
+        },
+
+        toHash: function( str ) {
+          var i, ii, k, v, parts, params = {}, pairs = str.split( "&" );
+          for( i = 0, ii = pairs.length; i < ii; i++ ) {
+            parts = pairs[i].split( "=" );
+            // chrome throws an exception if the url part is improperly encoded
+            try { k = decodeURIComponent( parts[0] ); } catch( e ) { k = null; }
+            try { v = decodeURIComponent( parts[1] ); } catch( e ) { v = null; }
+            if( k !== null && v !== null ) {
+              params[k] = v;
+            }
+          }
+          return params;
+        },
+
+        toQuery: function( obj ) {
+          var k, qs = '';
+          for( k in obj ) {
+            if( obj[k] !== null && obj[k] !== undefined ) {
+              qs += '&' + encodeURIComponent( k ) + '=' + encodeURIComponent( obj[k] );
+            }
+          }
+          return qs.substr( 1 );
+        }
+      },
+
+      x = {
+        onApiClick: function( original, result, copts ) {
+          var i,
+              url = result || original,
+              redirect = function() { location.replace( url ); };
+
+          if( typeof copts === "object" && ( copts.tracking || copts.image ) ) {
+            i = $.createEl( copts.tracking ? "iframe" : "img",
+              { src: copts.tracking || copts.image },
+              { height: 0, width: 0, visibility: "hidden" }
+            );
+            document.body.appendChild( i );
+            setTimeout( redirect, opts.timeout );
+          } else {
+            redirect();
+          }
+        },
+
+        onLoad: function( e ) {
+          var params = $.toHash( ( location.search || location.hash || "#" ).substr( 1 ) );
+
+          if( ! params || ! params.key || ! params.out ) {
+            if( params.out ) {
+              location.replace( params.out );
+            } else {
+              $.err( "Missing Data", "We can't send you to that link because required data is missing." );
+            }
+            return false;
+          }
+
+          document.title = params.out;
+
+          $.jsonp( params, function() {
+            var args = Array.prototype.slice.call( arguments );
+            args.unshift( params.out );
+            x.onApiClick.apply( x, args );
+          } );
+        }
+      };
+
+      window.onload = x.onLoad;
+    }() );
+  </script>
+</body>
+</html>

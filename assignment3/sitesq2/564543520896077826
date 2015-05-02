@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+  <title>Join Team Yoshiki to get Yoshiki&#39;s latest news and share on your social networks while competing for a chance to win amazing Yoshiki prizes every month!</title>
+  
+  
+    <meta property="og:image" content="https://df597aa15708a5f9ffce-8ed3a97fb51f95368b6c7b1594c14a68.ssl.cf2.rackcdn.com/yoshiki-postimg-2-10.png" />
+  
+  
+  <meta property="og:title" content="Become Part of Team Yoshiki, Join Us Here" />
+  <meta property="og:site_name" content="Yoshiki" />
+  <meta name="description" content="Join Team Yoshiki to get Yoshiki&#39;s latest news and share on your social networks while competing for a chance to win amazing Yoshiki prizes every month!" />
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  
+  <script>
+
+    
+todos = []
+fired = false;
+function ready(f) {
+    todos.push(f)
+	if (!fired){
+	  fired = true;
+	  go_time();
+	}
+}
+
+ready(function() {
+  
+  var target =  'https://my.socialtoaster.com/st/campaign_landing/iframe/?key=yoshiki';
+  
+  var window_frame = document.getElementById("st-window");
+	if (location.hash){
+	  var start = location.hash.substring(1, 4);
+	  if (start == 'st_') {
+		  target = 'https://my.socialtoaster.com/st/campaign_loading/?key=yoshiki&source=iframe&redirect=' + location.hash.substring(4);
+	  }else if (start == 'la_'){
+		  target = 'https://my.socialtoaster.com/st/change_lang/?key=yoshiki&lang=' + location.hash.substring(4) + '&source=iframe&path=/st/campaign_landing/iframe/%3Fkey%3Dyoshiki';
+
+      }
+	  if (window_frame != null) {
+	  	window_frame.src = target
+	  	return
+	  }
+    }
+    if (window_frame != null) {
+	  window_frame.contentWindow.postMessage('st_please_resize_me:', target); 
+	}
+	var window_wrapper = document.getElementById("st-window-wrapper");
+	if (window_wrapper){
+	  
+		width = window_wrapper.style.width
+
+		if (width == '') {
+		  
+		    width = '790px';
+		  
+		}
+	  
+		target = target + st_passthrough_variables();
+		var i = document.createElement("iframe");
+		i.id = 'st-window';
+		i.src = target;
+		i.frameBorder = 0;
+		i.align = "center";
+		i.width = width;
+		i.height = window_wrapper.style.height;
+		i.style.border = 0;
+		i.setAttribute('allowTransparency', 'true');
+		
+		if (i.attachEvent) {
+		   i.attachEvent('onload', function() { i.contentWindow.postMessage('st_please_resize_me:', target)});
+		} else if (i.addEventListener) {
+		    i.addEventListener('load', function() { i.contentWindow.postMessage('st_please_resize_me:', target)}, false);
+	    }
+		
+		window_wrapper.appendChild(i);
+	}
+}); 
+function go_time(){
+  if (document.readyState !== "complete" ) {
+	setTimeout('go_time()', 10);
+  }else{
+	  while(todos.length > 0){
+		try{
+		  ready_item = todos.shift();
+		  ready_item();
+		  
+		}catch(ex){
+		 // console.log(ex);
+		}
+	  }
+	  fired = false;
+  }
+}
+var _gaq = _gaq || [];
+  _gaq.push(
+	['_setAccount', 'UA-1967132-8'],
+	['_setDomainName', 'socialtoaster.com'],
+	['_setAllowLinker', true],	
+	['_setCustomVar', 1, 'Key', 'yoshiki' ],
+	['_trackPageview']
+  );
+
+
+ready(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+});
+
+function st_passthrough_variables(){
+  var variables = ['utm_medium','utm_source','utm_campaign'];
+  var query_params = ''
+  for (var i=0; i< variables.length; i++){
+	var variable = variables[i]
+	var value = getParameterByName(variable)
+	if (value){
+	  query_params+='&' + variable + '=' + value;
+	}
+  }
+  return query_params
+  
+}
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+ 
+  
+if (window.addEventListener){
+    window.addEventListener( 'message',process_resize_message, false);
+}else if (window.attachEvent){
+    window.attachEvent('onmessage', process_resize_message);
+}
+function process_resize_message(message) {
+  
+  if ( message.data.indexOf(':') != -1){
+	raw_data = message.data.split(':')
+	if (raw_data[0] == 'st_do_resize'){
+		var size = parseInt(raw_data[1]);
+		if (!isNaN(size) && message.origin == 'https://my.socialtoaster.com'){
+		  ready(st_parent_do_resize(size));
+		}
+	}
+  }
+}
+function st_parent_do_resize(height){
+	var window = document.getElementById('st-window');
+	if (window){
+	    window.height = height + 60;
+	}
+}
+var loaded_domain = null;
+
+function st_please_resize_me(domain){
+      loaded_domain = domain
+      st_do_resize();
+      var overlay = document.getElementById('sb-overlay');
+      if (overlay != null && overlay.offsetParent != null ) {
+        var height = document.body.offsetHeight;
+        //var width = document.body.offsetWidth;
+        overlay.style.height = height + 'px';
+        overlay.style.width = '790px';
+      }
+}
+var using_scroll = false
+
+function st_do_resize(){
+  var height = st_get_full_height() + 10;
+  height = height + 'px'
+  if (parent && loaded_domain && !using_scroll){
+	parent.postMessage('st_do_resize:'+ height, loaded_domain);
+  }
+}
+
+function st_do_resize_scroll(){
+  var height = st_get_full_height() + 150
+  height = height + 'px'
+  using_scroll = true
+  if (parent && loaded_domain){
+	parent.postMessage('st_do_resize:'+ height, loaded_domain);
+  }
+}
+
+function st_get_full_height() {
+    var maxhabs = 0;
+    var maxhrel = document.body.offsetHeight; //get the offsetheight
+    var atotoffset=0;
+    var id="";
+
+    $.each($('body *:not(script)'),function(){//get all body elements
+        if ($(this).css('position') == 'absolute'){//is absolute?
+            if(typeof($(this).offset().top)!='undefined'){//defined?
+                if(atotoffset < $(this).offset().top+$(this).context.offsetHeight){
+                    atotoffset=$(this).offset().top+$(this).context.offsetHeight;
+                    idabs = $(this).context['id'];
+                }//works for -/+ margin top/bottom & top/bottom crosssbrowser
+            }
+        }
+    });
+    maxhabs = atotoffset;//absolute element offset position from the top
+    if(maxhrel>maxhabs){
+        return maxhrel;
+        //alert('higher:'+maxhrel);
+    }else{
+        return maxhabs;
+        //alert('higher:'+maxhabs+' for the element:'+idabs);
+    }
+}
+
+  
+  </script>
+
+  
+  
+      <style>
+
+body {
+text-align:center;
+background:#000000 url("") no-repeat center top;
+}
+</style>
+  
+
+<!-- generated -->
+  
+</head>
+  
+ 
+  <body style='margin: 0; padding: 0;' >
+    <h1 style="display: none;">Join Team Yoshiki to get Yoshiki&#39;s latest news and share on your social networks while competing for a chance to win amazing Yoshiki prizes every month!</h1>
+    <p style="display: none;">Join Team Yoshiki to get Yoshiki&#39;s latest news and share on your social networks while competing for a chance to win amazing Yoshiki prizes every month!</p>
+      <div id='st-window-wrapper' style='margin: 0 auto; text-align: center;' >
+      </div>
+
+  
+
+  <script>
+    function resizeIframe(height){
+        document.getElementById('st-window').height = parseInt(height)+60;
+    }
+  </script>
+</body>
+</html>
+

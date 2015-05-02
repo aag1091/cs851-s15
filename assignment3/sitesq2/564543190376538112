@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+	<meta charset="UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UwACVV9XGwYDV1lQAgY="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(4),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(5),"addEventListener"in window&&t(2),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(3),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:7,3:11,4:3,5:9,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1);t("loader").features.stn=!0,t(2),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(o){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=e(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=e(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var u=0;c>u;u++)n.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=l.info=NREUM.info;if(t&&t.licenseKey&&t.applicationID&&f&&f.body){s(h,function(e,n){e in t||(t[e]=n)}),l.proto="https"===p.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=f.createElement("script");e.src=l.proto+t.agent,f.body.appendChild(e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u="addEventListener",d="attachEvent",p=(""+location).split("?")[0],h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-593.min.js"},l=e.exports={offset:i(),origin:p,features:{}};f[u]?(f[u]("DOMContentLoaded",o,!1),c[u]("load",n,!1)):(f[d]("onreadystatechange",r),c[d]("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" type="image/png" href="http://thezoereport.com/wp-content/themes/thezoereport/favicon.ico">
+
+	<title>The Only Sunglasses You Need This Spring | The Zoe Report</title>
+
+	
+<!-- This site is optimized with the Yoast WordPress SEO plugin v2.0 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="http://thezoereport.com/sunglasses-need-spring/" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:description" content="Aviators are so last season. "/>
+<meta name="twitter:title" content="The Only Sunglasses You Need This Spring | The Zoe Report"/>
+<meta name="twitter:site" content="@thezoereport"/>
+<meta name="twitter:domain" content="The Zoe Report"/>
+<meta name="twitter:image:src" content="http://thezoereport.com/wp-content/uploads/2015/02/round-sunglasses.jpg"/>
+<meta name="twitter:creator" content="@nsdeam"/>
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="alternate" type="application/rss+xml" title="The Zoe Report &raquo; The Only Sunglasses You Need This Spring Comments Feed" href="http://thezoereport.com/sunglasses-need-spring/feed/" />
+<link rel='stylesheet' id='bfctzrwp_mpcss-css'  href='http://thezoereport.com/wp-content/plugins/bonfyre-concepts-wp-woocomm-tzr/js/mpop/mpop.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='bfctzrwp_maincss-css'  href='http://thezoereport.com/wp-content/plugins/bonfyre-concepts-wp-woocomm-tzr/css/bfctzrwp.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-layout-css'  href='//thezoereport.com/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=2.3.7' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-smallscreen-css'  href='//thezoereport.com/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=2.3.7' type='text/css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='woocommerce-general-css'  href='//thezoereport.com/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=2.3.7' type='text/css' media='all' />
+<link rel='stylesheet' id='flexslider-css-css'  href='http://thezoereport.com/wp-content/themes/thezoereport/static/stylesheets/flexslider.css?ver=2.2.0' type='text/css' media='all' />
+<link rel='stylesheet' id='screen-css-css'  href='http://thezoereport.com/wp-content/themes/thezoereport/static/stylesheets/screen.css?ver=1427750597' type='text/css' media='all' />
+<link rel='stylesheet' id='fancybox-css-css'  href='http://thezoereport.com/wp-content/themes/thezoereport/static/js/fancybox/jquery.fancybox.css?ver=2.1.5' type='text/css' media='all' />
+<link rel='stylesheet' id='wc-bundle-style-css'  href='http://thezoereport.com/wp-content/plugins/woocommerce-product-bundles/assets/css/bundles-style.css?ver=4.8.5' type='text/css' media='all' />
+<script type='text/javascript' src='http://thezoereport.com/wp-includes/js/jquery/jquery.js?ver=1.11.1'></script>
+<script type='text/javascript' src='http://thezoereport.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://thezoereport.com/wp-content/themes/thezoereport/static/js/zoe-dfp.js?ver=0.0.3'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://thezoereport.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://thezoereport.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.1.1" />
+<meta name="generator" content="WooCommerce 2.3.7" />
+<link rel='shortlink' href='http://thezoereport.com/?p=109187' />
+<script type="text/javascript">
+(function() {
+var hm = document.createElement('script'); hm.type ='text/javascript'; hm.async = true;
+hm.src = ('++u-heatmap-it+log-js').replace(/[+]/g,'/').replace(/-/g,'.');
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s);
+})();
+</script>
+		<meta name="sailthru.tags" content="eyewear" />
+		<script type='text/javascript'>
+		var dfp_ad_units_desktop = [];
+var dfp_ad_units_small_desktop = [];
+var dfp_ad_units_mobile = [];
+		var googletag = googletag || {};
+		googletag.cmd = googletag.cmd || [];
+		(function() {
+		var gads = document.createElement('script');
+		gads.async = true;
+		gads.type = 'text/javascript';
+		var useSSL = 'https:' == document.location.protocol;
+		gads.src = (useSSL ? 'https:' : 'http:') + 
+		'//www.googletagservices.com/tag/js/gpt.js';
+		var node = document.getElementsByTagName('script')[0];
+		node.parentNode.insertBefore(gads, node);
+		})();
+		</script>
+		<script type="text/javascript">
+		googletag.cmd.push(function() {
+			if ( zoe_dfp_screen == 'desktop') {
+dfp_ad_units_desktop[0] = googletag.defineSlot('/1109910/' + zoe_dfp_prefix + 'Header', [[970,90],[728,90]], 'div-gpt-ad-header').addService(googletag.pubads());
+dfp_ad_units_desktop[1] = googletag.defineSlot('/1109910/' + zoe_dfp_prefix + 'Header-Background', [1200,160], 'div-gpt-ad-header-background').addService(googletag.pubads());
+dfp_ad_units_desktop[2] = googletag.defineSlot('/1109910/' + zoe_dfp_prefix + 'Sidebar', [300,600], 'div-gpt-ad-sidebar').addService(googletag.pubads());
+dfp_ad_units_desktop[3] = googletag.defineSlot('/1109910/' + zoe_dfp_prefix + 'Gallery', [300,250], 'div-gpt-ad-gallery').addService(googletag.pubads());
+dfp_ad_units_desktop[4] = googletag.defineOutOfPageSlot('/1109910/' + zoe_dfp_prefix + 'Site-Skin', 'div-gpt-ad-site-skin').addService(googletag.pubads());
+dfp_ad_units_desktop[5] = googletag.defineOutOfPageSlot('/1109910/' + zoe_dfp_prefix + 'Site-Interstitial', 'div-gpt-ad-site-interstitial').addService(googletag.pubads());
+have_ad_units = true;
+}else if ( zoe_dfp_screen == 'small_desktop') {
+dfp_ad_units_small_desktop[0] = googletag.defineSlot('/1109910/' + zoe_dfp_prefix + 'Header', [[970,90],[728,90]], 'div-gpt-ad-header').addService(googletag.pubads());
+dfp_ad_units_small_desktop[1] = googletag.defineSlot('/1109910/' + zoe_dfp_prefix + 'Header-Background', [1200,160], 'div-gpt-ad-header-background').addService(googletag.pubads());
+dfp_ad_units_small_desktop[2] = googletag.defineSlot('/1109910/' + zoe_dfp_prefix + 'Sidebar', [300,600], 'div-gpt-ad-sidebar').addService(googletag.pubads());
+dfp_ad_units_small_desktop[3] = googletag.defineSlot('/1109910/' + zoe_dfp_prefix + 'Gallery', [300,250], 'div-gpt-ad-gallery').addService(googletag.pubads());
+dfp_ad_units_small_desktop[4] = googletag.defineOutOfPageSlot('/1109910/' + zoe_dfp_prefix + 'Site-Interstitial', 'div-gpt-ad-site-interstitial').addService(googletag.pubads());
+have_ad_units = true;
+}else if ( zoe_dfp_screen == 'mobile') {
+dfp_ad_units_mobile[0] = googletag.defineSlot('/1109910/' + zoe_dfp_prefix + 'Sidebar', [300,250], 'div-gpt-ad-sidebar').addService(googletag.pubads());
+dfp_ad_units_mobile[1] = googletag.defineSlot('/1109910/' + zoe_dfp_prefix + 'Midpage', [300,250], 'div-gpt-ad-midpage').addService(googletag.pubads());
+dfp_ad_units_mobile[2] = googletag.defineSlot('/1109910/' + zoe_dfp_prefix + 'Gallery', [300,250], 'div-gpt-ad-gallery').addService(googletag.pubads());
+dfp_ad_units_mobile[3] = googletag.defineOutOfPageSlot('/1109910/' + zoe_dfp_prefix + 'Site-Interstitial', 'div-gpt-ad-site-interstitial').addService(googletag.pubads());
+have_ad_units = true;
+}			if ( have_ad_units ) {
+				googletag.pubads().setTargeting('tags',["eyewear"]).setTargeting('category',["accessories"]).setTargeting('post_id',"109187").setTargeting('page_type',"post").setTargeting('post_type',"gallery");
+				googletag.pubads().enableSingleRequest();
+				googletag.pubads().enableAsyncRendering();
+				googletag.pubads().collapseEmptyDivs();
+				googletag.enableServices();
+			}
+		});
+		</script>
+				<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			// Create analytics object
+			ga('create', 'UA-9562182-1', 'auto');
+
+			ga('set', 'dimension1', '2015-02-06');
+ga('set', 'dimension2', 'Nicky Deam');
+
+			// Send analytics info
+			ga('send', 'pageview');
+
+		</script>
+			<script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
+			<!-- Begin comScore Tag -->
+		<script>
+			document.write(unescape("%3Cscript src='" + (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js' %3E%3C/script%3E"));
+		</script>
+		<script>
+			COMSCORE.beacon({ c1: "2", c2: "17920825" });
+		</script>
+		<!-- End comScore Tag -->
+		<meta name="sailthru.image.square" content="http://thezoereport.com/wp-content/uploads/2015/02/round-sunglasses-600x600.jpg">
+<meta name="sailthru.primary_tag" content="eyewear">
+<meta name="sailthru.title" content="The Only Sunglasses You Need This Spring">
+<meta property="og:site_name" content="The Zoe Report" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="fb:app_id" content="508144045926494" />
+<meta property="og:url" content="http://thezoereport.com/sunglasses-need-spring/" />
+<meta property="og:title" content="The Only Sunglasses You Need This Spring | The Zoe Report" />
+<meta property="og:description" content="Aviators are so last season." />
+<meta property="og:image" content="http://thezoereport.com/wp-content/uploads/2015/02/round-sunglasses.jpg" />
+<meta property="og:image:width" content="1291" />
+<meta property="og:image:height" content="800" />
+<meta property="og:image" content="http://thezoereport.com/wp-content/uploads/2015/03/Chloe-Round-Wire-Metal-Sunglasses-.jpg" />
+<meta property="og:image:width" content="800" />
+<meta property="og:image:height" content="800" />
+<meta property="og:image" content="http://thezoereport.com/wp-content/uploads/2015/03/Cutler-Two-Tone-Gradient-Sunglasses.jpg" />
+<meta property="og:image:width" content="800" />
+<meta property="og:image:height" content="800" />
+	<!--[if lt IE 9]>
+	  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+	  <script src="//s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
+	  <script src="//html5base.googlecode.com/svn-history/r38/trunk/js/selectivizr-1.0.3b.js"></script>
+	  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+	<link rel='stylesheet' id='screen-css'  href='http://thezoereport.com/wp-content/themes/thezoereport/static/stylesheets/ie.css' type='text/css'/>
+	<![endif]-->
+</head>
+
+<body class="single single-gallery postid-109187 no-skin">
+	<div class="page-wrapper">
+		<div class="page-container">
+			
+<header id="masthead" class="site-header" role="banner">
+	<div id='div-gpt-ad-header-background' class='dfp-ad dfp-header-background'>
+<div class='ad-wrapper'>
+	<script type='text/javascript'>
+		if ( typeof googletag != 'undefined' ) {
+		googletag.cmd.push(function() { googletag.display('div-gpt-ad-header-background'); });
+		}
+	</script>
+</div>
+</div>
+	<div class="ad-container page-top large">
+	<div id='div-gpt-ad-header' class='dfp-ad dfp-header'>
+<div class='ad-wrapper'>
+	<script type='text/javascript'>
+		if ( typeof googletag != 'undefined' ) {
+		googletag.cmd.push(function() { googletag.display('div-gpt-ad-header'); });
+		}
+	</script>
+</div>
+</div>
+</div>	<div class="navbar-container">
+		<nav class="navbar navbar-inverse" role="navigation">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+								<h4>
+												<a class="navbar-brand" href="/"><img src="http://thezoereport.com/wp-content/themes/thezoereport/images/logo.png" alt="The Zoe Report" /></a>
+								</h4>
+							</div>
+
+			<form role="search" method="get" id="searchform" action="http://thezoereport.com/">
+	<div><label class="screen-reader-text" for="s">Search for:</label>
+		<input type="text" value="search" name="s" id="s" />
+		<input type="submit" id="searchsubmit" value="Search" />
+		<span class="glyphicon glyphicon-search"></span>
+	</div>
+</form>			
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-main">
+				<ul id="menu-primary-navigation" class="nav nav-justified"><li id="menu-item-34660" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-34660 dropdown"><a href="http://thezoereport.com/fashion/">Fashion</a><div class="dropdown-menu">
+<ul class="sub-menu sub-menu-tag-list">
+	<li id="menu-item-93542" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-93542"><a href="http://thezoereport.com/tag/shopping-2/">shopping</a></li>
+	<li id="menu-item-93543" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-93543"><a href="http://thezoereport.com/tag/fashion-designers/">fashion designers</a></li>
+	<li id="menu-item-93544" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-93544"><a href="http://thezoereport.com/tag/street-style/">street style</a></li>
+	<li id="menu-item-93545" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-93545"><a href="http://thezoereport.com/tag/rachel-zoe-collection-2/">rachel zoe collection</a></li>
+	<li id="menu-item-93821" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-93821"><a href="http://thezoereport.com/tag/denim/">denim</a></li>
+	<li id="menu-item-93822" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-93822"><a href="http://thezoereport.com/tag/wedding-style/">Wedding Style</a></li>
+	<li id="menu-item-93824" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-93824"><a href="http://thezoereport.com/tag/styling-tips/">styling tips</a></li>
+	<li id="menu-item-93839" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-93839"><a href="http://thezoereport.com/tag/fashion-trends/">fashion trends</a></li>
+	<li id="menu-item-94176" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-94176"><a href="http://thezoereport.com/tag/women-of-style/">women of style</a></li>
+</ul>
+<ul class="sub-menu sub-menu-stories"><li id="menu-item-129172"><a href="http://thezoereport.com/70s-style-2/"><img width="150" height="150" src="http://thezoereport.com/wp-content/uploads/2015/04/1970s-style-lead-150x150.png" class="attachment-thumbnail wp-post-image" alt="1970s-style-lead" /><span class="title">#FBF: 14 Photos That Completely Explain &#039;70s <span class="last-word">Style</span></a></li><li id="menu-item-128233"><a href="http://thezoereport.com/mad-men-fashion-to-celebrate-the-finale/"><img width="150" height="150" src="http://thezoereport.com/wp-content/uploads/2015/04/lead-8003-150x150.jpg" class="attachment-thumbnail wp-post-image" alt="lead-800" /><span class="title">Mad Men Fashion To Celebrate The Final <span class="last-word">Season</span></a></li><li id="menu-item-128364"><a href="http://thezoereport.com/easter-dresses/"><img width="150" height="150" src="http://thezoereport.com/wp-content/uploads/2015/04/spring-dress-street-style-150x150.jpg" class="attachment-thumbnail wp-post-image" alt="spring dress street style" /><span class="title">What You Should Wear To Brunch This <span class="last-word">Sunday</span></a></li></ul></div></li>
+<li id="menu-item-34658" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-34658 dropdown"><a href="http://thezoereport.com/beauty/">Beauty</a><div class="dropdown-menu">
+<ul class="sub-menu sub-menu-tag-list">
+	<li id="menu-item-93547" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-93547"><a href="http://thezoereport.com/tag/nails/">nails</a></li>
+	<li id="menu-item-93548" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-93548"><a href="http://thezoereport.com/tag/hair/">hair</a></li>
+	<li id="menu-item-93549" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-93549"><a href="http://thezoereport.com/tag/makeup-2/">makeup</a></li>
+	<li id="menu-item-93550" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-93550"><a href="http://thezoereport.com/tag/skincare-2/">skincare</a></li>
+	<li id="menu-item-93551" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-93551"><a href="http://thezoereport.com/tag/beauty-trends/">beauty trends</a></li>
+	<li id="menu-item-93552" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-93552"><a href="http://thezoereport.com/tag/nail-art/">nail art</a></li>
+	<li id="menu-item-93826" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-93826"><a href="http://thezoereport.com/tag/makeup-tips/">makeup tips</a></li>
+</ul>
+<ul class="sub-menu sub-menu-stories"><li id="menu-item-129060"><a href="http://thezoereport.com/rainproof-beauty-products/"><img width="150" height="150" src="http://thezoereport.com/wp-content/uploads/2015/04/800-lead-150x150.jpg" class="attachment-thumbnail wp-post-image" alt="rain proof beauty products" /><span class="title">Beauty Buys That Combat April <span class="last-word">Showers</span></a></li><li id="menu-item-128356"><a href="http://thezoereport.com/best-undiscovered-perfume-brands/"><img width="150" height="150" src="http://thezoereport.com/wp-content/uploads/2015/04/Under-The-Radar-Perfumes-150x150.jpg" class="attachment-thumbnail wp-post-image" alt="Under The Radar Perfumes" /><span class="title">The Best Under-The-Radar Perfume <span class="last-word">Brands</span></a></li><li id="menu-item-128945"><a href="http://thezoereport.com/pastel-mascara/"><img width="150" height="150" src="http://thezoereport.com/wp-content/uploads/2015/04/lead3-150x150.jpg" class="attachment-thumbnail wp-post-image" alt="pastel mascara pastel makeup coral mascara" /><span class="title">Pops Of Pastel: The Mascara <span class="last-word">Edition</span></a></li></ul></div></li>
+<li id="menu-item-34657" class="center-align-drop menu-item menu-item-type-taxonomy menu-item-object-category current-gallery-ancestor current-menu-parent current-gallery-parent menu-item-has-children menu-item-34657 dropdown"><a href="http://thezoereport.com/accessories/">Accessories</a><div class="dropdown-menu">
+<ul class="sub-menu sub-menu-tag-list">
+	<li id="menu-item-93553" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-93553"><a href="http://thezoereport.com/tag/jewelry/">Jewelry</a></li>
+	<li id="menu-item-93555" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-93555"><a href="http://thezoereport.com/tag/handbags/">handbags</a></li>
+	<li id="menu-item-93586" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-93586"><a href="http://thezoereport.com/tag/footwear/">footwear</a></li>
+</ul>
+<ul class="sub-menu sub-menu-stories"><li id="menu-item-129225"><a href="http://thezoereport.com/handbag-charms/"><img width="150" height="150" src="http://thezoereport.com/wp-content/uploads/2015/04/800-lead1-150x150.jpg" class="attachment-thumbnail wp-post-image" alt="800-lead" /><span class="title">Bag Charms That Will Add Serious Personality To Your <span class="last-word">Purse</span></a></li><li id="menu-item-128777"><a href="http://thezoereport.com/olivia-palermo-bag/"><img width="150" height="150" src="http://thezoereport.com/wp-content/uploads/2015/04/Olivia-Palermo-150x150.jpg" class="attachment-thumbnail wp-post-image" alt="Olivia Palermo" /><span class="title">The Genius Feature We Wish All Handbags <span class="last-word">Had</span></a></li><li id="menu-item-128212"><a href="http://thezoereport.com/kendra-scott-color-bar/"><img width="150" height="150" src="http://thezoereport.com/wp-content/uploads/2015/04/kendra-scott-color-bar-150x150.jpg" class="attachment-thumbnail wp-post-image" alt="kendra-scott-color-bar" /><span class="title">The Latest In Customizable Jewelry (That&#039;s Also <span class="last-word">Affordable)</span></a></li></ul></div></li>
+<li id="menu-item-93559" class="center-align-drop menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-93559 dropdown"><a href="http://thezoereport.com/living/">Living</a><div class="dropdown-menu">
+<ul class="sub-menu sub-menu-tag-list">
+	<li id="menu-item-93827" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-93827"><a href="http://thezoereport.com/tag/decorating/">decorating</a></li>
+	<li id="menu-item-93557" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-93557"><a href="http://thezoereport.com/tag/travel/">travel</a></li>
+	<li id="menu-item-93829" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-93829"><a href="http://thezoereport.com/tag/eat-and-drink/">eat and drink</a></li>
+	<li id="menu-item-93835" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-93835"><a href="http://thezoereport.com/tag/tech-trends/">tech trends</a></li>
+	<li id="menu-item-93850" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-93850"><a href="http://thezoereport.com/tag/health-and-wellness/">health and wellness</a></li>
+	<li id="menu-item-94912" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-94912"><a href="http://thezoereport.com/tag/eco-friendly/">eco friendly</a></li>
+	<li id="menu-item-94151" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-94151"><a href="http://thezoereport.com/tag/women-of-style/">women of style</a></li>
+	<li id="menu-item-114491" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-114491"><a href="http://thezoereport.com/tag/wedding-style/">Wedding Style</a></li>
+</ul>
+<ul class="sub-menu sub-menu-stories"><li id="menu-item-127165"><a href="http://thezoereport.com/fashion-illustrators-instagram/"><img width="150" height="150" src="http://thezoereport.com/wp-content/uploads/2015/03/joseph-amar-bears-150x150.jpg" class="attachment-thumbnail wp-post-image" alt="joseph amar bears" /><span class="title">Shop Prints From The Top Fashion Illustrators On <span class="last-word">Instagram</span></a></li><li id="menu-item-127128"><a href="http://thezoereport.com/how-to-decorate-your-vanity/"><img width="150" height="150" src="http://thezoereport.com/wp-content/uploads/2015/03/lead-80010-150x150.jpg" class="attachment-thumbnail wp-post-image" alt="how to decorate your vanity" /><span class="title">6 Accessories You Need To Dress Up Your <span class="last-word">Vanity</span></a></li><li id="menu-item-124626"><a href="http://thezoereport.com/bungalow-one-decor-santa-monica/"><img width="150" height="150" src="http://thezoereport.com/wp-content/uploads/2015/03/SouthBedroom_HR-150x150.jpg" class="attachment-thumbnail wp-post-image" alt="SouthBedroom_HR" /><span class="title">Get A Room: Bungalow One in Santa <span class="last-word">Monica</span></a></li></ul></div></li>
+<li id="menu-item-34662" class="center-align-drop menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34662 dropdown"><a href="http://thezoereport.com/styling/">Styling</a><div class="dropdown-menu"><ul class="sub-menu sub-menu-stories"><li id="menu-item-128233"><a href="http://thezoereport.com/mad-men-fashion-to-celebrate-the-finale/"><img width="150" height="150" src="http://thezoereport.com/wp-content/uploads/2015/04/lead-8003-150x150.jpg" class="attachment-thumbnail wp-post-image" alt="lead-800" /><span class="title">Mad Men Fashion To Celebrate The Final <span class="last-word">Season</span></a></li><li id="menu-item-128365"><a href="http://thezoereport.com/a-buyers-guide-to-spring-denim/"><img width="150" height="150" src="http://thezoereport.com/wp-content/uploads/2015/04/Spring-Denim-Buyers-Guide-150x150.jpg" class="attachment-thumbnail wp-post-image" alt="Spring Denim Buyers Guide" /><span class="title">The Buyers&#039; Guide To Spring <span class="last-word">Denim</span></a></li><li id="menu-item-127399"><a href="http://thezoereport.com/how-to-wear-printed-pants-at-night/"><img width="150" height="150" src="http://thezoereport.com/wp-content/uploads/2015/03/Amal-Clooney-Printed-Pants-150x150.jpg" class="attachment-thumbnail wp-post-image" alt="Amal Clooney Printed Pants" /><span class="title">How To Wear Printed Pants For <span class="last-word">Evening</span></a></li></ul></div></li>
+<li id="menu-item-122759" class="menu-item menu-item-type-post_type menu-item-object-hub menu-item-122759"><a href="http://thezoereport.com/spring-style/">Spring Style</a></li>
+
+<li id="menu-item-tzrshop" class="right-align-drop menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-tzrshop dropdown">
+  <div class="tzrshop-navwrap">
+    <div class="tzrshop-navcont">
+      <a href="http://thezoereport.com/shop/">Box of Style</a><a href="http://thezoereport.com/cart/"><span class="tzrshop-navbagwrap"><img src="http://thezoereport.com/wp-content/plugins/bonfyre-concepts-wp-woocomm-tzr/img/ic-bag.png" class="tzrshop-navbagbg" /><span class="tzrshop-navccnt">0</span></span></a>
+      <hr class="tzrshop-mobnav-hr" />
+      <div class="tzrshop-mobnav-cont">
+        &nbsp;&bull; <a class="tzrwc-mobnav-a" href="http://thezoereport.com/cart/">My Cart</a><br />
+        &nbsp;&bull; <a class="tzrwc-mobnav-a" href="https://thezoereport.com/my-account/">My Account</a><br />
+        &nbsp;&bull; <a class="tzrwc-mobnav-a" href="http://thezoereport.com/box-of-style-faq/">FAQ</a><br />
+        
+        &nbsp;&bull; <a class="tzrwc-mobnav-a" href="https://thezoereport.com/my-account/">Sign in</a>
+      </div>
+    </div>
+  </div>
+  <div class="dropdown-menu">
+    
+    <div class="tzrwc-navloggedin"></div>
+    
+    <ul class="sub-menu sub-menu-tag-list">
+      <li id="menu-item-tzrcart" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-tzrcart"><a href="http://thezoereport.com/cart/">My Cart</a></li>
+      <li id="menu-item-tzraccount" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-tzraccount"><a href="https://thezoereport.com/my-account/">My Account</a></li>
+      <li id="menu-item-tzrlogin" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-tzrlogin"><a class="tzrwc-mobnav-a" href="https://thezoereport.com/my-account/">Sign in</a></li>
+      <hr style="border-color:#444;" /><li id="menu-item-tzrpb" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-tzrpb"><a href="http://thezoereport.com/box-of-style-faq/">FAQ</a></li>
+    </ul>
+    <ul class="sub-menu sub-menu-stories">
+                <li id="menu-item-tzrproductimg"><a href="http://thezoereport.com/box-of-style/box-of-style/"><img style="width:150px;height:auto;max-height:150px;" width="150" height="150" src="http://thezoereport.com/wp-content/uploads/2015/03/box-of-style-square.jpg" class="attachment-thumbnail wp-post-image" alt="Box of Style"><span class="title">Subscribe: Box of <span class="last-word">Style</span></span></a></li>
+              </ul>
+  </div>
+</li>
+        </ul>				
+			</div><!-- /.navbar-collapse -->
+		</nav>
+	</div>
+</header><!-- #masthead -->			<div class="content-wrapper">
+				<div id="main-content-container" class="content-container">	<div class="content">
+				<div class="content-column">
+			<div class="hero square default no-marquee">
+	<div class="hero-content">
+				<div class="category"><a href="http://thezoereport.com/tag/eyewear/">eyewear</a></div>
+		
+		
+		
+		<h1 class="title">The Only Sunglasses You Need This Spring</h1>
+		
+				
+			</div><!-- /hero-content -->
+	</div><div class="intro">
+	<p>Stow away your Wayfarers and give those aviators a rest because round sunglasses are <em>the</em> shape for spring. Blame it on this season&#8217;s retro resurgence or just a much needed change of pace, but there&#8217;s no getting around it (pun intended). The update? These versions feature metal rims and oversized lenses. Here, our favorites in every price range.</p>
+</div><section class="gallery ">
+	<div class="gallery-utility">
+		<div class="ad-label">Advertisement</div>
+		<div class="page-info"><span class="current-slide">1</span> of <span class="total-slides"></span></div>
+		<span class="mobile-gesture-indicator glyphicon glyphicon-transfer"></span>
+		<div class="controls">
+			<div class="control control-replay"><span class="glyphicon glyphicon-repeat gallery-replay"></span><button class="gallery-replay-text">Replay</button></div>
+			<div class="control control-fullscreen"><span class="glyphicon glyphicon-fullscreen"></span><button id="cta-fullscreen">Full Screen</button></div>
+			<div class="control control-view-all"><span class="glyphicon glyphicon-th"></span><button id="cta-view-all">View All</button></div>
+			<div class="control control-view-slideshow"><button id="cta-view-slideshow">View Slideshow</button><span class="glyphicon glyphicon-play"></span></div>
+		</div>
+	</div>
+	<div id="gallery-slideshow" class="gallery-slideshow swipe" data-facebook-url="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F" data-twitter-url="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;text=The+Only+Sunglasses+You+Need+This+Spring&#038;url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;via=thezoereport" data-pinterest-url="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;media=http%3A%2F%2Fthezoereport.com%2Fwp-content%2Fuploads%2F2015%2F02%2Fround-sunglasses.jpg&#038;description=The+Only+Sunglasses+You+Need+This+Spring" data-email-url="mailto:?subject=The%20Zoe%20Report%3A%20The%20Only%20Sunglasses%20You%20Need%20This%20Spring&#038;body=Aviators%20are%20so%20last%20season.:http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F">
+		<div class="slides swipe-wrap">
+								<div class="slide" data-slide-number="1">
+						<div class="image-container">
+							<div class="pinit-button">
+	<a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;media=http%3A%2F%2Fthezoereport.com%2Fwp-content%2Fuploads%2F2015%2F02%2Fround-sunglasses-600x600.jpg" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
+</div>							<div class="inner-container">
+																<a class="gallery-fullscreen" data-full-image="http://thezoereport.com/wp-content/uploads/2015/02/round-sunglasses.jpg" rel="gallery">
+									<img width="600" height="600" src="http://thezoereport.com/wp-content/uploads/2015/02/round-sunglasses-600x600.jpg" class="attachment-square" alt="round sunglasses" rel="group" />								</a>
+							</div>
+						</div>
+						<div class="info-container">
+							<div class="title-desc">
+								<div class="slide-title">
+																	</div>
+														<div class="slide-desc">
+								<p><em>Photo Courtesy of Chloe</em></p>
+							</div>
+
+														</div>
+							
+											</div>
+				</div>
+									<div class="slide" data-slide-number="2">
+						<div class="image-container">
+							<div class="pinit-button">
+	<a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;media=http%3A%2F%2Fthezoereport.com%2Fwp-content%2Fuploads%2F2015%2F03%2FLeith-Round-Sunglasses-600x600.jpg" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
+</div>							<div class="inner-container">
+																<a class="gallery-fullscreen" href="http://click.linksynergy.com/fs-bin/click?id=30KlfRmrMDo&amp;subid=0&amp;offerid=357613.1&amp;type=10&amp;tmpid=8156&amp;RD_PARM1=http%253A%252F%252Fshop.nordstrom.com%252Fs%252Fleith-round-sunglasses%252F3766214%253Fcm_cat%253Dpartner%2526cm_ite%253D1%2526cm_pla%253D10%2526cm_ven%253DLinkshare%2526siteId%253DJ84DHJLQkR4-PdKkYSORS1AwDyNBsRkn_Q" data-full-image="http://thezoereport.com/wp-content/uploads/2015/03/Leith-Round-Sunglasses.jpg" rel="gallery">
+									<img width="600" height="600" src="http://thezoereport.com/wp-content/uploads/2015/03/Leith-Round-Sunglasses-600x600.jpg" class="attachment-square" alt="leith round sunglasses" rel="group" />								</a>
+							</div>
+						</div>
+						<div class="info-container">
+							<div class="title-desc">
+								<div class="slide-title">
+																	</div>
+														</div>
+							
+												<div class="credits-container">
+							<ul class="credits">
+																<li><a class="product-name" href="http://click.linksynergy.com/fs-bin/click?id=30KlfRmrMDo&#038;subid=0&#038;offerid=357613.1&#038;type=10&#038;tmpid=8156&#038;RD_PARM1=http%253A%252F%252Fshop.nordstrom.com%252Fs%252Fleith-round-sunglasses%252F3766214%253Fcm_cat%253Dpartner%2526cm_ite%253D1%2526cm_pla%253D10%2526cm_ven%253DLinkshare%2526siteId%253DJ84DHJLQkR4-PdKkYSORS1AwDyNBsRkn_Q" target="_blank">Round Sunglasses</a>, 
+									<span class="product-brand">Leith</span>
+																			<span class="product-price">$34</span>
+																	</li>
+															</ul>
+						</div>
+						
+						<div class="share-panel-gallery">
+							<ul class="share-panel ">
+	<li class="facebook"><a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F" target="_blank">facebook</a></li>
+	<li class="twitter"><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;text=The+Only+Sunglasses+You+Need+This+Spring&#038;url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;via=thezoereport" target="_blank">twitter</a></li>
+	<li class="pinterest"><a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;media=http%3A%2F%2Fthezoereport.com%2Fwp-content%2Fuploads%2F2015%2F02%2Fround-sunglasses.jpg&#038;description=The+Only+Sunglasses+You+Need+This+Spring" data-pin-do="buttonPin" data-pin-config="none">pinterest</a></li>
+	<li class="email"><a href="/cdn-cgi/l/email-protection#201f5355424a4543541d7448450512107a4f450512107245504f52540513610512107448450512106f4e4c5905121073554e474c4153534553051210794f55051210XNeed%20This%20Spring&#038;body=Aviators%20are%20so%20last%20season.:http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F" target="_blank">Email</a></li>
+</ul>						</div>
+											</div>
+				</div>
+									<div class="slide" data-slide-number="3">
+						<div class="image-container">
+							<div class="pinit-button">
+	<a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;media=http%3A%2F%2Fthezoereport.com%2Fwp-content%2Fuploads%2F2015%2F02%2FChloe-Round-Wire-Metal-Sunglasses--600x600.jpg" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
+</div>							<div class="inner-container">
+																<a class="gallery-fullscreen" href="http://click.linksynergy.com/fs-bin/click?id=30KlfRmrMDo&amp;subid=0&amp;offerid=279712.1&amp;type=10&amp;tmpid=3600&amp;RD_PARM1=http%253A%252F%252Fwww.neimanmarcus.com%252FChloe-Carlina-Round-Wire-Metal-Sunglasses-Rose-Golden-Peach%252Fprod175680383%252Fp.prod%253F&amp;RD_PARM2=ecid%253DNMALRFeed&amp;RD_PARM3=J84DHJLQkR4%2526ci_src%253D14110925%2526ci_sku%253Dsku155381713" data-full-image="http://thezoereport.com/wp-content/uploads/2015/02/Chloe-Round-Wire-Metal-Sunglasses-.jpg" rel="gallery">
+									<img width="600" height="600" src="http://thezoereport.com/wp-content/uploads/2015/02/Chloe-Round-Wire-Metal-Sunglasses--600x600.jpg" class="attachment-square" alt="chloe sunglasses" rel="group" />								</a>
+							</div>
+						</div>
+						<div class="info-container">
+							<div class="title-desc">
+								<div class="slide-title">
+																	</div>
+														</div>
+							
+												<div class="credits-container">
+							<ul class="credits">
+																<li><a class="product-name" href="http://click.linksynergy.com/fs-bin/click?id=30KlfRmrMDo&#038;subid=0&#038;offerid=279712.1&#038;type=10&#038;tmpid=3600&#038;RD_PARM1=http%253A%252F%252Fwww.neimanmarcus.com%252FChloe-Carlina-Round-Wire-Metal-Sunglasses-Rose-Golden-Peach%252Fprod175680383%252Fp.prod%253F&#038;RD_PARM2=ecid%253DNMALRFeed&#038;RD_PARM3=J84DHJLQkR4%2526ci_src%253D14110925%2526ci_sku%253Dsku155381713" target="_blank">Carlina Round Wire Metal Sunglasses</a>, 
+									<span class="product-brand">Chloe</span>
+																			<span class="product-price">$346</span>
+																	</li>
+															</ul>
+						</div>
+						
+						<div class="share-panel-gallery">
+							<ul class="share-panel ">
+	<li class="facebook"><a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F" target="_blank">facebook</a></li>
+	<li class="twitter"><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;text=The+Only+Sunglasses+You+Need+This+Spring&#038;url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;via=thezoereport" target="_blank">twitter</a></li>
+	<li class="pinterest"><a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;media=http%3A%2F%2Fthezoereport.com%2Fwp-content%2Fuploads%2F2015%2F02%2Fround-sunglasses.jpg&#038;description=The+Only+Sunglasses+You+Need+This+Spring" data-pin-do="buttonPin" data-pin-config="none">pinterest</a></li>
+	<li class="email"><a href="/cdn-cgi/l/email-protection#5c632f293e36393f2861083439796e6c063339796e6c0e392c332e28796f1d796e6c083439796e6c13323025796e6c0f29323b303d2f2f392f796e6c053329796e6cXNeed%20This%20Spring&#038;body=Aviators%20are%20so%20last%20season.:http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F" target="_blank">Email</a></li>
+</ul>						</div>
+											</div>
+				</div>
+									<div class="slide" data-slide-number="4">
+						<div class="image-container">
+							<div class="pinit-button">
+	<a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;media=http%3A%2F%2Fthezoereport.com%2Fwp-content%2Fuploads%2F2015%2F02%2FCutler-Two-Tone-Gradient-Sunglasses1-600x600.jpg" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
+</div>							<div class="inner-container">
+																<a class="gallery-fullscreen" href="http://www.avenue32.com/us/two-tone-round-gradient-sunglasses-50801/?utm_source=shopstyle&amp;utm_medium=cpc&amp;utm_campaign=shopstyle" data-full-image="http://thezoereport.com/wp-content/uploads/2015/02/Cutler-Two-Tone-Gradient-Sunglasses1.jpg" rel="gallery">
+									<img width="600" height="600" src="http://thezoereport.com/wp-content/uploads/2015/02/Cutler-Two-Tone-Gradient-Sunglasses1-600x600.jpg" class="attachment-square" alt="round sunglasses" rel="group" />								</a>
+							</div>
+						</div>
+						<div class="info-container">
+							<div class="title-desc">
+								<div class="slide-title">
+																	</div>
+														</div>
+							
+												<div class="credits-container">
+							<ul class="credits">
+																<li><a class="product-name" href="http://www.avenue32.com/us/two-tone-round-gradient-sunglasses-50801/?utm_source=shopstyle&#038;utm_medium=cpc&#038;utm_campaign=shopstyle" target="_blank">Two Tone Round Gradient Sunglasses</a>, 
+									<span class="product-brand">Cutler &amp; Gross</span>
+																			<span class="product-price">$640</span>
+																	</li>
+															</ul>
+						</div>
+						
+						<div class="share-panel-gallery">
+							<ul class="share-panel ">
+	<li class="facebook"><a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F" target="_blank">facebook</a></li>
+	<li class="twitter"><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;text=The+Only+Sunglasses+You+Need+This+Spring&#038;url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;via=thezoereport" target="_blank">twitter</a></li>
+	<li class="pinterest"><a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;media=http%3A%2F%2Fthezoereport.com%2Fwp-content%2Fuploads%2F2015%2F02%2Fround-sunglasses.jpg&#038;description=The+Only+Sunglasses+You+Need+This+Spring" data-pin-do="buttonPin" data-pin-config="none">pinterest</a></li>
+	<li class="email"><a href="/cdn-cgi/l/email-protection#07387472656d6264733a536f622235375d6862223537556277687573223446223537536f6222353748696b7e223537547269606b66747462742235375e6872223537XNeed%20This%20Spring&#038;body=Aviators%20are%20so%20last%20season.:http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F" target="_blank">Email</a></li>
+</ul>						</div>
+											</div>
+				</div>
+									<div class="slide" data-slide-number="5">
+						<div class="image-container">
+							<div class="pinit-button">
+	<a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;media=http%3A%2F%2Fthezoereport.com%2Fwp-content%2Fuploads%2F2015%2F02%2FIllesteva-Round-Mirrored-Sunglasses1-600x600.jpg" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
+</div>							<div class="inner-container">
+																<a class="gallery-fullscreen" href="http://click.linksynergy.com/fs-bin/click?id=30KlfRmrMDo&amp;subid=0&amp;offerid=279712.1&amp;type=10&amp;tmpid=3600&amp;RD_PARM1=http%253A%252F%252Fwww.neimanmarcus.com%252FIllesteva-Alina-Round-Mirrored-Sunglasses-Silver%252Fprod173110206%252Fp.prod%253F&amp;RD_PARM2=ecid%253DNMALRFeed&amp;RD_PARM3=J84DHJLQkR4%2526ci_src%253D14110925%2526ci_sku%253Dsku153760928" data-full-image="http://thezoereport.com/wp-content/uploads/2015/02/Illesteva-Round-Mirrored-Sunglasses1.jpg" rel="gallery">
+									<img width="600" height="600" src="http://thezoereport.com/wp-content/uploads/2015/02/Illesteva-Round-Mirrored-Sunglasses1-600x600.jpg" class="attachment-square" alt="illesteva round sunglasses" rel="group" />								</a>
+							</div>
+						</div>
+						<div class="info-container">
+							<div class="title-desc">
+								<div class="slide-title">
+																	</div>
+														</div>
+							
+												<div class="credits-container">
+							<ul class="credits">
+																<li><a class="product-name" href="http://click.linksynergy.com/fs-bin/click?id=30KlfRmrMDo&#038;subid=0&#038;offerid=279712.1&#038;type=10&#038;tmpid=3600&#038;RD_PARM1=http%253A%252F%252Fwww.neimanmarcus.com%252FIllesteva-Alina-Round-Mirrored-Sunglasses-Silver%252Fprod173110206%252Fp.prod%253F&#038;RD_PARM2=ecid%253DNMALRFeed&#038;RD_PARM3=J84DHJLQkR4%2526ci_src%253D14110925%2526ci_sku%253Dsku153760928" target="_blank">Alina Round Mirrored Sunglasses</a>, 
+									<span class="product-brand">Illesteva</span>
+																			<span class="product-price">$220</span>
+																	</li>
+															</ul>
+						</div>
+						
+						<div class="share-panel-gallery">
+							<ul class="share-panel ">
+	<li class="facebook"><a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F" target="_blank">facebook</a></li>
+	<li class="twitter"><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;text=The+Only+Sunglasses+You+Need+This+Spring&#038;url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;via=thezoereport" target="_blank">twitter</a></li>
+	<li class="pinterest"><a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;media=http%3A%2F%2Fthezoereport.com%2Fwp-content%2Fuploads%2F2015%2F02%2Fround-sunglasses.jpg&#038;description=The+Only+Sunglasses+You+Need+This+Spring" data-pin-do="buttonPin" data-pin-config="none">pinterest</a></li>
+	<li class="email"><a href="/cdn-cgi/l/email-protection#26195553444c4345521b724e430314167c4943031416744356495452031567031416724e4303141669484a5f031416755348414a47555543550314167f4953031416XNeed%20This%20Spring&#038;body=Aviators%20are%20so%20last%20season.:http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F" target="_blank">Email</a></li>
+</ul>						</div>
+											</div>
+				</div>
+									<div class="slide" data-slide-number="6">
+						<div class="image-container">
+							<div class="pinit-button">
+	<a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;media=http%3A%2F%2Fthezoereport.com%2Fwp-content%2Fuploads%2F2015%2F02%2FMarc-By-Marc-Jacobs-Rose-Gold-Round-Sunglasses1-600x600.jpg" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
+</div>							<div class="inner-container">
+																<a class="gallery-fullscreen" href="http://www.anrdoezrs.net/links/3550561/type/dlg/http://www.shopbop.com/round-sunglasses-marc-by-jacobs/vp/v=1/1522934865.htm?folderID=2534374302024641&amp;colorId=74427&amp;extid=affprg_CJ_SB_US-1909792-ShopStyle.com-2178999" data-full-image="http://thezoereport.com/wp-content/uploads/2015/02/Marc-By-Marc-Jacobs-Rose-Gold-Round-Sunglasses1.jpg" rel="gallery">
+									<img width="600" height="600" src="http://thezoereport.com/wp-content/uploads/2015/02/Marc-By-Marc-Jacobs-Rose-Gold-Round-Sunglasses1-600x600.jpg" class="attachment-square" alt="marc by marc round sunglasses" rel="group" />								</a>
+							</div>
+						</div>
+						<div class="info-container">
+							<div class="title-desc">
+								<div class="slide-title">
+																	</div>
+														</div>
+							
+												<div class="credits-container">
+							<ul class="credits">
+																<li><a class="product-name" href="http://www.anrdoezrs.net/links/3550561/type/dlg/http://www.shopbop.com/round-sunglasses-marc-by-jacobs/vp/v=1/1522934865.htm?folderID=2534374302024641&#038;colorId=74427&#038;extid=affprg_CJ_SB_US-1909792-ShopStyle.com-2178999" target="_blank">Rose Gold Round Sunglasses</a>, 
+									<span class="product-brand">Marc by Marc Jacobs</span>
+																			<span class="product-price">$140</span>
+																	</li>
+															</ul>
+						</div>
+						
+						<div class="share-panel-gallery">
+							<ul class="share-panel ">
+	<li class="facebook"><a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F" target="_blank">facebook</a></li>
+	<li class="twitter"><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;text=The+Only+Sunglasses+You+Need+This+Spring&#038;url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;via=thezoereport" target="_blank">twitter</a></li>
+	<li class="pinterest"><a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;media=http%3A%2F%2Fthezoereport.com%2Fwp-content%2Fuploads%2F2015%2F02%2Fround-sunglasses.jpg&#038;description=The+Only+Sunglasses+You+Need+This+Spring" data-pin-do="buttonPin" data-pin-config="none">pinterest</a></li>
+	<li class="email"><a href="/cdn-cgi/l/email-protection#0e317d7b6c646b6d7a335a666b2b3c3e54616b2b3c3e5c6b7e617c7a2b3d4f2b3c3e5a666b2b3c3e416062772b3c3e5d7b6069626f7d7d6b7d2b3c3e57617b2b3c3eXNeed%20This%20Spring&#038;body=Aviators%20are%20so%20last%20season.:http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F" target="_blank">Email</a></li>
+</ul>						</div>
+											</div>
+				</div>
+									<div class="slide" data-slide-number="7">
+						<div class="image-container">
+							<div class="pinit-button">
+	<a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;media=http%3A%2F%2Fthezoereport.com%2Fwp-content%2Fuploads%2F2015%2F02%2FKyme-Blue-Lense-Round-Sunglasses1-600x600.jpg" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
+</div>							<div class="inner-container">
+																<a class="gallery-fullscreen" href="http://click.linksynergy.com/fs-bin/click?id=30KlfRmrMDo&amp;subid=0&amp;offerid=183381.1&amp;type=10&amp;tmpid=15518&amp;RD_PARM1=http%253A%252F%252Fwww.farfetch.com%252Fshopping%252Fitem10916586.aspx" data-full-image="http://thezoereport.com/wp-content/uploads/2015/02/Kyme-Blue-Lense-Round-Sunglasses1.jpg" rel="gallery">
+									<img width="600" height="600" src="http://thezoereport.com/wp-content/uploads/2015/02/Kyme-Blue-Lense-Round-Sunglasses1-600x600.jpg" class="attachment-square" alt="blue round sunglasses" rel="group" />								</a>
+							</div>
+						</div>
+						<div class="info-container">
+							<div class="title-desc">
+								<div class="slide-title">
+																	</div>
+														</div>
+							
+												<div class="credits-container">
+							<ul class="credits">
+																<li><a class="product-name" href="http://click.linksynergy.com/fs-bin/click?id=30KlfRmrMDo&#038;subid=0&#038;offerid=183381.1&#038;type=10&#038;tmpid=15518&#038;RD_PARM1=http%253A%252F%252Fwww.farfetch.com%252Fshopping%252Fitem10916586.aspx" target="_blank">Blue Lense Round Sunglasses</a>, 
+									<span class="product-brand">Kyme</span>
+																			<span class="product-price">$170</span>
+																	</li>
+															</ul>
+						</div>
+						
+						<div class="share-panel-gallery">
+							<ul class="share-panel ">
+	<li class="facebook"><a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F" target="_blank">facebook</a></li>
+	<li class="twitter"><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;text=The+Only+Sunglasses+You+Need+This+Spring&#038;url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;via=thezoereport" target="_blank">twitter</a></li>
+	<li class="pinterest"><a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;media=http%3A%2F%2Fthezoereport.com%2Fwp-content%2Fuploads%2F2015%2F02%2Fround-sunglasses.jpg&#038;description=The+Only+Sunglasses+You+Need+This+Spring" data-pin-do="buttonPin" data-pin-config="none">pinterest</a></li>
+	<li class="email"><a href="/cdn-cgi/l/email-protection#310e4244535b5452450c6559541403016b5e541403016354415e43451402701403016559541403017e5f5d4814030162445f565d5042425442140301685e44140301XNeed%20This%20Spring&#038;body=Aviators%20are%20so%20last%20season.:http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F" target="_blank">Email</a></li>
+</ul>						</div>
+											</div>
+				</div>
+									<div class="slide" data-slide-number="8">
+						<div class="image-container">
+							<div class="pinit-button">
+	<a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;media=http%3A%2F%2Fthezoereport.com%2Fwp-content%2Fuploads%2F2015%2F02%2FMiu-Miu-Pastel-Round-Sunglasses1-600x600.jpg" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
+</div>							<div class="inner-container">
+																<a class="gallery-fullscreen" href="http://click.linksynergy.com/fs-bin/click?id=30KlfRmrMDo&amp;subid=0&amp;offerid=366928.1&amp;type=10&amp;tmpid=2174&amp;RD_PARM1=http%3A%2F%2Fwww.&amp;RD_PARM2=saksfifthavenue.com%2Fmain%2FProductDetail.jsp%3F&amp;RD_PARM3=FOLDER%253C%253Efolder_id%3D2534374306418154%2526PRODUCT%253C%253Eprd_id%3D845524446782036%2526site_refer%3DAFF001%2526mid%3D13816%2526siteID%3DJ84DHJLQkR4-LZunGhM9BM9ezvCX5xYTJg%2526LScreativeid%3D1%2526LSlinkid%3D15%2526LSoid%3D203720" data-full-image="http://thezoereport.com/wp-content/uploads/2015/02/Miu-Miu-Pastel-Round-Sunglasses1.jpg" rel="gallery">
+									<img width="600" height="600" src="http://thezoereport.com/wp-content/uploads/2015/02/Miu-Miu-Pastel-Round-Sunglasses1-600x600.jpg" class="attachment-square" alt="miu miu round sunglasses" rel="group" />								</a>
+							</div>
+						</div>
+						<div class="info-container">
+							<div class="title-desc">
+								<div class="slide-title">
+																	</div>
+														</div>
+							
+												<div class="credits-container">
+							<ul class="credits">
+																<li><a class="product-name" href="http://click.linksynergy.com/fs-bin/click?id=30KlfRmrMDo&#038;subid=0&#038;offerid=366928.1&#038;type=10&#038;tmpid=2174&#038;RD_PARM1=http%3A%2F%2Fwww.&#038;RD_PARM2=saksfifthavenue.com%2Fmain%2FProductDetail.jsp%3F&#038;RD_PARM3=FOLDER%253C%253Efolder_id%3D2534374306418154%2526PRODUCT%253C%253Eprd_id%3D845524446782036%2526site_refer%3DAFF001%2526mid%3D13816%2526siteID%3DJ84DHJLQkR4-LZunGhM9BM9ezvCX5xYTJg%2526LScreativeid%3D1%2526LSlinkid%3D15%2526LSoid%3D203720" target="_blank">Pastel Round Sunglasses</a>, 
+									<span class="product-brand">Miu Miu</span>
+																			<span class="product-price">$360</span>
+																	</li>
+															</ul>
+						</div>
+						
+						<div class="share-panel-gallery">
+							<ul class="share-panel ">
+	<li class="facebook"><a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F" target="_blank">facebook</a></li>
+	<li class="twitter"><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;text=The+Only+Sunglasses+You+Need+This+Spring&#038;url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;via=thezoereport" target="_blank">twitter</a></li>
+	<li class="pinterest"><a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;media=http%3A%2F%2Fthezoereport.com%2Fwp-content%2Fuploads%2F2015%2F02%2Fround-sunglasses.jpg&#038;description=The+Only+Sunglasses+You+Need+This+Spring" data-pin-do="buttonPin" data-pin-config="none">pinterest</a></li>
+	<li class="email"><a href="/cdn-cgi/l/email-protection#af90dcdacdc5caccdb92fbc7ca8a9d9ff5c0ca8a9d9ffdcadfc0dddb8a9cee8a9d9ffbc7ca8a9d9fe0c1c3d68a9d9ffcdac1c8c3cedcdccadc8a9d9ff6c0da8a9d9fXNeed%20This%20Spring&#038;body=Aviators%20are%20so%20last%20season.:http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F" target="_blank">Email</a></li>
+</ul>						</div>
+											</div>
+				</div>
+									<div class="slide" data-slide-number="9">
+						<div class="image-container">
+							<div class="pinit-button">
+	<a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;media=http%3A%2F%2Fthezoereport.com%2Fwp-content%2Fuploads%2F2015%2F02%2FThe-Row-Leather-and-Acetate-Sunglasses1-600x600.jpg" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
+</div>							<div class="inner-container">
+																<a class="gallery-fullscreen" href="http://www.anrdoezrs.net/links/3550561/type/dlg/fragment/ItemSrv.ashx%7CSeasonId%3D61I%26CollectionId%3DDY9%26ItemId%3D2%26VendorColorId%3DQlJPV041%26SeasonMemoCode%3Dactual%26GenderMemoCode%3Dwomen%26CategoryId%3D%26SubLineMemoCode%3D/http://www.luisaviaroma.com/index.aspx?" data-full-image="http://thezoereport.com/wp-content/uploads/2015/02/The-Row-Leather-and-Acetate-Sunglasses1.jpg" rel="gallery">
+									<img width="600" height="600" src="http://thezoereport.com/wp-content/uploads/2015/02/The-Row-Leather-and-Acetate-Sunglasses1-600x600.jpg" class="attachment-square" alt="the row round sunglasses" rel="group" />								</a>
+							</div>
+						</div>
+						<div class="info-container">
+							<div class="title-desc">
+								<div class="slide-title">
+																	</div>
+														</div>
+							
+												<div class="credits-container">
+							<ul class="credits">
+																<li><a class="product-name" href="http://www.anrdoezrs.net/links/3550561/type/dlg/fragment/ItemSrv.ashx%7CSeasonId%3D61I%26CollectionId%3DDY9%26ItemId%3D2%26VendorColorId%3DQlJPV041%26SeasonMemoCode%3Dactual%26GenderMemoCode%3Dwomen%26CategoryId%3D%26SubLineMemoCode%3D/http://www.luisaviaroma.com/index.aspx?" target="_blank">Leather &amp; Acetate Round Sunglasses</a>, 
+									<span class="product-brand">The Row</span>
+																			<span class="product-price">$495</span>
+																	</li>
+															</ul>
+						</div>
+						
+						<div class="share-panel-gallery">
+							<ul class="share-panel ">
+	<li class="facebook"><a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F" target="_blank">facebook</a></li>
+	<li class="twitter"><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;text=The+Only+Sunglasses+You+Need+This+Spring&#038;url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;via=thezoereport" target="_blank">twitter</a></li>
+	<li class="pinterest"><a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;media=http%3A%2F%2Fthezoereport.com%2Fwp-content%2Fuploads%2F2015%2F02%2Fround-sunglasses.jpg&#038;description=The+Only+Sunglasses+You+Need+This+Spring" data-pin-do="buttonPin" data-pin-config="none">pinterest</a></li>
+	<li class="email"><a href="/cdn-cgi/l/email-protection#3a05494f58505f594e076e525f1f080a60555f1f080a685f4a55484e1f097b1f080a6e525f1f080a755456431f080a694f545d565b49495f491f080a63554f1f080aXNeed%20This%20Spring&#038;body=Aviators%20are%20so%20last%20season.:http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F" target="_blank">Email</a></li>
+</ul>						</div>
+											</div>
+				</div>
+									<div class="slide" data-slide-number="10">
+						<div class="image-container">
+							<div class="pinit-button">
+	<a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;media=http%3A%2F%2Fthezoereport.com%2Fwp-content%2Fuploads%2F2015%2F02%2FUrban-Aubrey-Round-Sunglasses1-600x600.jpg" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
+</div>							<div class="inner-container">
+																<a class="gallery-fullscreen" href="http://www.anrdoezrs.net/links/3550561/type/dlg/fragment/%2F/http://www.urbanoutfitters.com/urban/catalog/productdetail.jsp?id=31335680&amp;cm_mmc=CJ-_-Affiliates-_-ShopStyle.com-_-11292048" data-full-image="http://thezoereport.com/wp-content/uploads/2015/02/Urban-Aubrey-Round-Sunglasses1.jpg" rel="gallery">
+									<img width="600" height="600" src="http://thezoereport.com/wp-content/uploads/2015/02/Urban-Aubrey-Round-Sunglasses1-600x600.jpg" class="attachment-square" alt="purple round sunglasses" rel="group" />								</a>
+							</div>
+						</div>
+						<div class="info-container">
+							<div class="title-desc">
+								<div class="slide-title">
+																	</div>
+														</div>
+							
+												<div class="credits-container">
+							<ul class="credits">
+																<li><a class="product-name" href="http://www.anrdoezrs.net/links/3550561/type/dlg/fragment/%2F/http://www.urbanoutfitters.com/urban/catalog/productdetail.jsp?id=31335680&#038;cm_mmc=CJ-_-Affiliates-_-ShopStyle.com-_-11292048" target="_blank">Aubrey Round Sunglasses</a>, 
+									<span class="product-brand">Urban Outfitters</span>
+																			<span class="product-price">$16</span>
+																	</li>
+															</ul>
+						</div>
+						
+						<div class="share-panel-gallery">
+							<ul class="share-panel ">
+	<li class="facebook"><a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F" target="_blank">facebook</a></li>
+	<li class="twitter"><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;text=The+Only+Sunglasses+You+Need+This+Spring&#038;url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;via=thezoereport" target="_blank">twitter</a></li>
+	<li class="pinterest"><a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;media=http%3A%2F%2Fthezoereport.com%2Fwp-content%2Fuploads%2F2015%2F02%2Fround-sunglasses.jpg&#038;description=The+Only+Sunglasses+You+Need+This+Spring" data-pin-do="buttonPin" data-pin-config="none">pinterest</a></li>
+	<li class="email"><a href="/cdn-cgi/l/email-protection#07387472656d6264733a536f622235375d6862223537556277687573223446223537536f6222353748696b7e223537547269606b66747462742235375e6872223537XNeed%20This%20Spring&#038;body=Aviators%20are%20so%20last%20season.:http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F" target="_blank">Email</a></li>
+</ul>						</div>
+											</div>
+				</div>
+								
+				<div class="slide">
+					<div id="last-slide-container" class="last-slide-container">
+						<div class="end-info-container">
+							<div class="glyphicon glyphicon-repeat gallery-replay big"></div>
+							<div class="cat-title">
+																<div class="category"><a href="http://thezoereport.com/tag/eyewear/">eyewear</a></div>
+																<h1 class="title">The Only Sunglasses You Need This Spring</h1>
+							</div>
+						</div>
+						<div class="last-slide-share"></div>
+								<a href="http://thezoereport.com/how-makeup-is-really-made/">
+			<div class="next-up-container">
+				<div class="next-up">
+					<span class="next-up-badge">Next<br />Up</span>
+					<div class="next-up-image">
+						<img width="600" height="600" src="http://thezoereport.com/wp-content/uploads/2015/02/CAMA50141-600x600.jpg" class="attachment-square wp-post-image" alt="CAMA5014" />					</div>
+					<div class="next-up-content">
+						<div class="inner-container">
+														<span class="category">makeup</span>
+														<span class="title">5 Things To Know: How Makeup Is Really Made</span>
+							<button class="btn-view-slideshow">View Slideshow</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</a>
+		<div class="posts  two-col horizontal-small">
+	<div class="post odd has-thumb type-gallery row-odd">
+	<div class="post-inner-container">
+		<a href="http://thezoereport.com/spring-2015-handbag-trends/" target="_self">
+			<div class="post-image">
+								<img width="600" height="600" src="http://thezoereport.com/wp-content/uploads/2015/02/0-lead-8001-600x600.jpg" class="attachment-square wp-post-image" alt="spring 2015 handbag trends" />			</div>
+		</a>
+
+		<div class="post-content-container">
+            <div class="post-content">
+				<a class="category" href="http://thezoereport.com/tag/accessories-2/">accessories</a>
+				<h2 class="title">
+									<a href="http://thezoereport.com/spring-2015-handbag-trends/" target="_self">Spring 2015's Top Handbag Trends</a>
+								</h2>
+				
+				<span class="datestamp">February 6, 2015</span>
+							</div>
+		</div>
+	</div>
+
+</div><div class="post even has-thumb type-gallery row-odd">
+	<div class="post-inner-container">
+		<a href="http://thezoereport.com/how-to-wear-trousers/" target="_self">
+			<div class="post-image">
+								<img width="600" height="600" src="http://thezoereport.com/wp-content/uploads/2015/02/streetstyle13842-600x600.jpg" class="attachment-square wp-post-image" alt="trousers street style image" />			</div>
+		</a>
+
+		<div class="post-content-container">
+            <div class="post-content">
+				<a class="category" href="http://thezoereport.com/tag/styling-tips/">styling tips</a>
+				<h2 class="title">
+									<a href="http://thezoereport.com/how-to-wear-trousers/" target="_self">How To Rock Trousers Like A Fashion Girl</a>
+								</h2>
+				
+				<span class="datestamp">February 6, 2015</span>
+							</div>
+		</div>
+	</div>
+
+</div></div>
+					</div>
+
+				</div>
+					</div>
+		<div id="interstitial-ad" class="slide" style="">
+			<div class="image-container">
+				<div class="inner-container">
+					<div id='div-gpt-ad-gallery' class='dfp-ad dfp-gallery'>
+</div>
+				</div>
+			</div>
+			<div class="flex-direction-nav">
+				<a class="flex-next"></a>
+				<a class="flex-prev"></a>
+			</div>
+			<a class="ad-close"></a>
+		</div>
+	</div>
+</section>						<h2 class="section-break left no-bottom"><span>Shop this slideshow</span></h2>
+			<div class="product-grid-container">
+	<div class="product-grid product-carousel">
+		<div class="product-grid-items">
+								<div class="product start-row-xs start-row-s">
+												<a href="http://click.linksynergy.com/fs-bin/click?id=30KlfRmrMDo&#038;subid=0&#038;offerid=357613.1&#038;type=10&#038;tmpid=8156&#038;RD_PARM1=http%253A%252F%252Fshop.nordstrom.com%252Fs%252Fleith-round-sunglasses%252F3766214%253Fcm_cat%253Dpartner%2526cm_ite%253D1%2526cm_pla%253D10%2526cm_ven%253DLinkshare%2526siteId%253DJ84DHJLQkR4-PdKkYSORS1AwDyNBsRkn_Q">
+												<img width="300" height="300" src="http://thezoereport.com/wp-content/uploads/2015/02/Leith-Round-Sunglasses-300x300.jpg" class="attachment-product wp-post-image" alt="Leith Round Sunglasses" />						<h3 class="product-name">Round Sunglasses</h3>
+						<h4 class="product-brand-price">Leith, $34</h4>
+												</a>
+											</div>
+								<div class="product ">
+												<a href="http://click.linksynergy.com/fs-bin/click?id=30KlfRmrMDo&#038;subid=0&#038;offerid=279712.1&#038;type=10&#038;tmpid=3600&#038;RD_PARM1=http%253A%252F%252Fwww.neimanmarcus.com%252FChloe-Carlina-Round-Wire-Metal-Sunglasses-Rose-Golden-Peach%252Fprod175680383%252Fp.prod%253F&#038;RD_PARM2=ecid%253DNMALRFeed&#038;RD_PARM3=J84DHJLQkR4%2526ci_src%253D14110925%2526ci_sku%253Dsku155381713">
+												<img width="300" height="300" src="http://thezoereport.com/wp-content/uploads/2015/02/Chloe-Round-Wire-Metal-Sunglasses-300x300.jpg" class="attachment-product wp-post-image" alt="Chloe Round Wire Metal Sunglasses" />						<h3 class="product-name">Carlina Round Wire Metal Sunglasses</h3>
+						<h4 class="product-brand-price">Chloe, $346</h4>
+												</a>
+											</div>
+								<div class="product start-row-xs">
+												<a href="http://www.avenue32.com/us/two-tone-round-gradient-sunglasses-50801/?utm_source=shopstyle&#038;utm_medium=cpc&#038;utm_campaign=shopstyle">
+												<img width="300" height="300" src="http://thezoereport.com/wp-content/uploads/2015/02/Cutler-Two-Tone-Gradient-Sunglasses-300x300.jpg" class="attachment-product wp-post-image" alt="Cutler Two Tone Gradient Sunglasses" />						<h3 class="product-name">Two Tone Round Gradient Sunglasses</h3>
+						<h4 class="product-brand-price">Cutler &amp; Gross, $640</h4>
+												</a>
+											</div>
+								<div class="product start-row-s">
+												<a href="http://click.linksynergy.com/fs-bin/click?id=30KlfRmrMDo&#038;subid=0&#038;offerid=279712.1&#038;type=10&#038;tmpid=3600&#038;RD_PARM1=http%253A%252F%252Fwww.neimanmarcus.com%252FIllesteva-Alina-Round-Mirrored-Sunglasses-Silver%252Fprod173110206%252Fp.prod%253F&#038;RD_PARM2=ecid%253DNMALRFeed&#038;RD_PARM3=J84DHJLQkR4%2526ci_src%253D14110925%2526ci_sku%253Dsku153760928">
+												<img width="300" height="300" src="http://thezoereport.com/wp-content/uploads/2015/02/Illesteva-Round-Mirrored-Sunglasses-300x300.jpg" class="attachment-product wp-post-image" alt="Illesteva Round Mirrored Sunglasses" />						<h3 class="product-name">Alina Round Mirrored Sunglasses</h3>
+						<h4 class="product-brand-price">Illesteva, $220</h4>
+												</a>
+											</div>
+								<div class="product start-row-xs">
+												<a href="http://www.anrdoezrs.net/links/3550561/type/dlg/http://www.shopbop.com/round-sunglasses-marc-by-jacobs/vp/v=1/1522934865.htm?folderID=2534374302024641&#038;colorId=74427&#038;extid=affprg_CJ_SB_US-1909792-ShopStyle.com-2178999">
+												<img width="300" height="300" src="http://thezoereport.com/wp-content/uploads/2015/02/Marc-By-Marc-Jacobs-Rose-Gold-Round-Sunglasses-300x300.jpg" class="attachment-product wp-post-image" alt="Marc By Marc Jacobs Rose Gold Round Sunglasses" />						<h3 class="product-name">Rose Gold Round Sunglasses</h3>
+						<h4 class="product-brand-price">Marc by Marc Jacobs, $140</h4>
+												</a>
+											</div>
+								<div class="product ">
+												<a href="http://click.linksynergy.com/fs-bin/click?id=30KlfRmrMDo&#038;subid=0&#038;offerid=183381.1&#038;type=10&#038;tmpid=15518&#038;RD_PARM1=http%253A%252F%252Fwww.farfetch.com%252Fshopping%252Fitem10916586.aspx">
+												<img width="300" height="300" src="http://thezoereport.com/wp-content/uploads/2015/02/Kyme-Blue-Lense-Round-Sunglasses-300x300.jpg" class="attachment-product wp-post-image" alt="Kyme Blue Lense Round Sunglasses" />						<h3 class="product-name">Blue Lense Round Sunglasses</h3>
+						<h4 class="product-brand-price">Kyme, $170</h4>
+												</a>
+											</div>
+								<div class="product start-row-xs start-row-s">
+												<a href="http://click.linksynergy.com/fs-bin/click?id=30KlfRmrMDo&#038;subid=0&#038;offerid=366928.1&#038;type=10&#038;tmpid=2174&#038;RD_PARM1=http%3A%2F%2Fwww.&#038;RD_PARM2=saksfifthavenue.com%2Fmain%2FProductDetail.jsp%3F&#038;RD_PARM3=FOLDER%253C%253Efolder_id%3D2534374306418154%2526PRODUCT%253C%253Eprd_id%3D845524446782036%2526site_refer%3DAFF001%2526mid%3D13816%2526siteID%3DJ84DHJLQkR4-LZunGhM9BM9ezvCX5xYTJg%2526LScreativeid%3D1%2526LSlinkid%3D15%2526LSoid%3D203720">
+												<img width="300" height="300" src="http://thezoereport.com/wp-content/uploads/2015/02/Miu-Miu-Pastel-Round-Sunglasses-300x300.jpg" class="attachment-product wp-post-image" alt="Miu Miu Pastel Round Sunglasses" />						<h3 class="product-name">Pastel Round Sunglasses</h3>
+						<h4 class="product-brand-price">Miu Miu, $360</h4>
+												</a>
+											</div>
+								<div class="product ">
+												<a href="http://www.anrdoezrs.net/links/3550561/type/dlg/fragment/ItemSrv.ashx%7CSeasonId%3D61I%26CollectionId%3DDY9%26ItemId%3D2%26VendorColorId%3DQlJPV041%26SeasonMemoCode%3Dactual%26GenderMemoCode%3Dwomen%26CategoryId%3D%26SubLineMemoCode%3D/http://www.luisaviaroma.com/index.aspx?">
+												<img width="300" height="300" src="http://thezoereport.com/wp-content/uploads/2015/02/The-Row-Leather-and-Acetate-Sunglasses-300x300.jpg" class="attachment-product wp-post-image" alt="The Row Leather and Acetate Sunglasses" />						<h3 class="product-name">Leather &amp; Acetate Round Sunglasses</h3>
+						<h4 class="product-brand-price">The Row, $495</h4>
+												</a>
+											</div>
+								<div class="product start-row-xs">
+												<a href="http://www.anrdoezrs.net/links/3550561/type/dlg/fragment/%2F/http://www.urbanoutfitters.com/urban/catalog/productdetail.jsp?id=31335680&#038;cm_mmc=CJ-_-Affiliates-_-ShopStyle.com-_-11292048">
+												<img width="300" height="300" src="http://thezoereport.com/wp-content/uploads/2015/02/Urban-Aubrey-Round-Sunglasses-300x300.jpg" class="attachment-product wp-post-image" alt="Urban Outfitters Aubrey Round Sunglasses" />						<h3 class="product-name">Aubrey Round Sunglasses</h3>
+						<h4 class="product-brand-price">Urban Outfitters, $16</h4>
+												</a>
+											</div>
+					</div>
+	</div>
+</div>
+						<div class="share-panel-container clearfix">
+<ul class="share-panel post-end">
+	<li class="facebook"><a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F" target="_blank">facebook</a></li>
+	<li class="twitter"><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;text=The+Only+Sunglasses+You+Need+This+Spring&#038;url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;via=thezoereport" target="_blank">twitter</a></li>
+	<li class="pinterest"><a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;media=http%3A%2F%2Fthezoereport.com%2Fwp-content%2Fuploads%2F2015%2F02%2Fround-sunglasses.jpg&#038;description=The+Only+Sunglasses+You+Need+This+Spring" data-pin-do="buttonPin" data-pin-config="none">pinterest</a></li>
+	<li class="email"><a href="/cdn-cgi/l/email-protection#a897dbddcac2cdcbdc95fcc0cd8d9a98f2c7cd8d9a98facdd8c7dadc8d9be98d9a98fcc0cd8d9a98e7c6c4d18d9a98fbddc6cfc4c9dbdbcddb8d9a98f1c7dd8d9a98XNeed%20This%20Spring&#038;body=Aviators%20are%20so%20last%20season.:http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F" target="_blank">Email</a></li>
+</ul><dl class="meta">
+	<dt>Published</dt>
+	<dd>February 6, 2015</dd>
+				<dt>Trends</dt>
+		<dd><a href="http://thezoereport.com/tag/eyewear/" rel="tag">eyewear</a></dd>
+		
+</dl></div>		</div>
+		<aside id="sidebar-main" class="sidebar">
+	<ul class="share-panel ">
+	<li class="facebook"><a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F" target="_blank">facebook</a></li>
+	<li class="twitter"><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;text=The+Only+Sunglasses+You+Need+This+Spring&#038;url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;via=thezoereport" target="_blank">twitter</a></li>
+	<li class="pinterest"><a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F&#038;media=http%3A%2F%2Fthezoereport.com%2Fwp-content%2Fuploads%2F2015%2F02%2Fround-sunglasses.jpg&#038;description=The+Only+Sunglasses+You+Need+This+Spring" data-pin-do="buttonPin" data-pin-config="none">pinterest</a></li>
+	<li class="email"><a href="/cdn-cgi/l/email-protection#506f2325323a3533246d0438357562600a3f357562600235203f22247563117562600438357562601f3e3c2975626003253e373c3123233523756260093f25756260XNeed%20This%20Spring&#038;body=Aviators%20are%20so%20last%20season.:http%3A%2F%2Fthezoereport.com%2Fsunglasses-need-spring%2F" target="_blank">Email</a></li>
+</ul>	<div id="sidebar-sticky-marker"></div>
+	<div class="sidebar-content">
+		<div id='div-gpt-ad-sidebar' class='dfp-ad dfp-sidebar'>
+<div class='ad-wrapper'>
+	<script type='text/javascript'>
+		if ( typeof googletag != 'undefined' ) {
+		googletag.cmd.push(function() { googletag.display('div-gpt-ad-sidebar'); });
+		}
+	</script>
+</div>
+</div>
+			</div>
+</aside>
+	</div><!-- /.content -->
+			<div class="content">
+					<a href="http://thezoereport.com/how-makeup-is-really-made/">
+			<div class="next-up-container">
+				<div class="next-up">
+					<span class="next-up-badge">Next<br />Up</span>
+					<div class="next-up-image">
+						<img width="800" height="450" src="http://thezoereport.com/wp-content/uploads/2015/02/CAMA50141-800x450.jpg" class="attachment-wide wp-post-image" alt="CAMA5014" />					</div>
+					<div class="next-up-content">
+						<div class="inner-container">
+														<span class="category">makeup</span>
+														<span class="title">5 Things To Know: How Makeup Is Really Made</span>
+							<button class="btn-view-slideshow">View Slideshow</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</a>
+				</div>
+			<div id="pubexchange_below"></div>
+		<h4 class="supplemental-heading"><span>Editor's Picks</span></h4>
+	<div class="content">
+		<div class="posts three-col">
+	<div class="post odd has-thumb type-gallery row-odd">
+	<div class="post-inner-container">
+		<a href="http://thezoereport.com/how-to-shave-your-legs/" target="_self">
+			<div class="post-image">
+								<img width="600" height="600" src="http://thezoereport.com/wp-content/uploads/2015/03/how-to-shave-your-legs-lead-600x600.jpg" class="attachment-square wp-post-image" alt="how to shave your legs hacks for smooth legs shaving mistakes to avoid" />			</div>
+		</a>
+
+		<div class="post-content-container">
+            <div class="post-content">
+				<a class="category" href="http://thezoereport.com/tag/skincare-2/">skincare</a>
+				<h5 class="title">
+									<a href="http://thezoereport.com/how-to-shave-your-legs/" target="_self">Mistakes You Make Every Time You Shave Your Legs</a>
+								</h5>
+				
+				<span class="datestamp">March 31, 2015</span>
+								<a class="excerpt-link" href="http://thezoereport.com/how-to-shave-your-legs/" target="_self">
+					<p class="excerpt">And a few hacks that will change your life.</p>
+				</a>
+							</div>
+		</div>
+	</div>
+
+</div><div class="post even has-thumb type-gallery row-odd">
+	<div class="post-inner-container">
+		<a href="http://thezoereport.com/how-to-be-an-instagram-boss/" target="_self">
+			<div class="post-image">
+								<img width="600" height="600" src="http://thezoereport.com/wp-content/uploads/2015/03/Marc-600x600.jpg" class="attachment-square wp-post-image" alt="marc jacobs instagram" />			</div>
+		</a>
+
+		<div class="post-content-container">
+            <div class="post-content">
+				<a class="category" href="http://thezoereport.com/tag/fashion/">Fashion</a>
+				<h5 class="title">
+									<a href="http://thezoereport.com/how-to-be-an-instagram-boss/" target="_self">How To Be An Instagram Boss</a>
+								</h5>
+				
+				<span class="datestamp">March 29, 2015</span>
+								<a class="excerpt-link" href="http://thezoereport.com/how-to-be-an-instagram-boss/" target="_self">
+					<p class="excerpt">A few tips from the most fab feeds.</p>
+				</a>
+							</div>
+		</div>
+	</div>
+
+</div><div class="post odd has-thumb type-gallery row-even">
+	<div class="post-inner-container">
+		<a href="http://thezoereport.com/the-best-spring-dresses-for-under-100/" target="_self">
+			<div class="post-image">
+								<img width="600" height="600" src="http://thezoereport.com/wp-content/uploads/2015/03/Red-Dress-Street-Style-600x600.jpg" class="attachment-square wp-post-image" alt="red dress street style" />			</div>
+		</a>
+
+		<div class="post-content-container">
+            <div class="post-content">
+				<a class="category" href="http://thezoereport.com/tag/spring-2015/">spring 2015</a>
+				<h5 class="title">
+									<a href="http://thezoereport.com/the-best-spring-dresses-for-under-100/" target="_self">Stunning Spring Dresses For Under $100</a>
+								</h5>
+				
+				<span class="datestamp">March 31, 2015</span>
+								<a class="excerpt-link" href="http://thezoereport.com/the-best-spring-dresses-for-under-100/" target="_self">
+					<p class="excerpt">Drumroll please!</p>
+				</a>
+							</div>
+		</div>
+	</div>
+
+</div></div>
+	</div>
+	
+				</div><!-- /.content-container -->
+			</div><!-- /.content-wrapper -->
+			<footer id="colophon" class="site-footer" role="contentinfo">
+				<div class="footer-container">
+					<div class="content">
+						<div class="follow-us">
+							<span class="section-label">Follow Us:</span>
+							<ul class="follow-links">
+								<li class="facebook"><a href="http://facebook.com/thezoereport" target="_blank">Facebook</a></li>
+								<li class="twitter"><a href="http://twitter.com/thezoereport" target="_blank">Twitter</a></li>
+								<li class="instagram"><a href="http://instagram.com/thezoereport" target="_blank">Instagram</a></li>
+								<li class="pinterest"><a href="http://pinterest.com/thezoereport" target="_blank">Pinterest</a></li>
+								<li class="pose"><a href="http://pose.com/u/thezoereport/poses" target="_blank">Pose</a></li>
+								<li class="tumblr"><a href="http://thezoereport.tumblr.com" target="_blank">Tumblr</a></li>
+								<li class="gplus"><a href="http://plus.google.com/+thezoereport" target="_blank">Google Plus</a></li>
+								<li class="subscribe"><a href="/signup" target="_blank">Subscribe</a></li>
+							</ul>
+						</div>
+						<section class="feeds">
+	<script>(function(d, s, id) {
+	var js, pjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id; js.async = true;
+	js.src = "http://cdn.pubexchange.com/modules/partner/the_zoe_report";
+	pjs.parentNode.insertBefore(js, pjs);
+	}(document, 'script', 'pubexchange-jssdk'));</script>
+</section><ul id="menu-footer-navigation" class="menu"><li id="menu-item-34666" class="about menu-item menu-item-type-post_type menu-item-object-page menu-item-34666"><a href="http://thezoereport.com/about/">About</a></li>
+<li id="menu-item-34667" class="contact menu-item menu-item-type-post_type menu-item-object-page menu-item-34667"><a href="http://thezoereport.com/contact-us/">Contact</a></li>
+<li id="menu-item-34668" class="terms menu-item menu-item-type-post_type menu-item-object-page menu-item-34668"><a href="http://thezoereport.com/terms/">Terms &#038; Conditions</a></li>
+<li id="menu-item-34669" class="privacy-policy menu-item menu-item-type-post_type menu-item-object-page menu-item-34669"><a href="http://thezoereport.com/privacy/">Privacy Policy</a></li>
+<li id="menu-item-34670" class="editorial-policy menu-item menu-item-type-post_type menu-item-object-page menu-item-34670"><a href="http://thezoereport.com/editorial-policy/">Editorial Policy</a></li>
+<li id="menu-item-34671" class="edit-preferences menu-item menu-item-type-post_type menu-item-object-page menu-item-34671"><a href="http://thezoereport.com/edit-preferences/">Edit Preferences</a></li>
+<li id="menu-item-35435" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35435"><a href="http://rachelzoe.com">rachelzoe.com</a></li>
+<li id="menu-item-35436" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35436"><a href="https://www.dropbox.com/s/dq4l819dtzfut16/MediaKit.pdf">Advertise</a></li>
+</ul>						<span class="copyright">&copy;2015 Zoe Media Group, LLC.  All rights reserved.</span>
+					</div>
+					
+
+				</div>
+			</footer><!-- /#colophon -->
+		</div><!-- /.page-container -->
+	</div><!-- /.page-wrapper -->
+	<div id='div-gpt-ad-site-skin' class='dfp-ad dfp-site-skin'>
+<div class='ad-wrapper'>
+	<script type='text/javascript'>
+		if ( typeof googletag != 'undefined' ) {
+		googletag.cmd.push(function() { googletag.display('div-gpt-ad-site-skin'); });
+		}
+	</script>
+</div>
+</div>
+	<div id='div-gpt-ad-site-interstitial' class='dfp-ad dfp-site-interstitial'>
+<div class='ad-wrapper'>
+	<script type='text/javascript'>
+		if ( typeof googletag != 'undefined' ) {
+		googletag.cmd.push(function() { googletag.display('div-gpt-ad-site-interstitial'); });
+		}
+	</script>
+</div>
+</div>
+			<!-- Quantcast Tag -->
+		<script type="text/javascript">
+			var _qevents = _qevents || [];
+
+			(function() {
+				var elem = document.createElement('script');
+				elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+				elem.async = true;
+				elem.type = "text/javascript";
+				var scpt = document.getElementsByTagName('script')[0];
+				scpt.parentNode.insertBefore(elem, scpt);
+			})();
+
+			_qevents.push({
+				qacct:"p-83jWE9QP2btqA"
+			});
+		</script>
+		<noscript>
+			<div style="display:none;">
+				<img src="//pixel.quantserve.com/pixel/p-83jWE9QP2btqA.gif" border="0" height="1" width="1" alt="Quantcast"/>
+			</div>
+		</noscript>
+				<!-- START Nielsen Online SiteCensus V6.0 -->
+		<!-- COPYRIGHT 2012 Nielsen Online -->
+		<script type="text/javascript">
+			(function () {
+				var d = new Image(1, 1);
+				d.onerror = d.onload = function () {
+				  d.onerror = d.onload = null;
+				};
+				d.src = ["//secure-us.imrworldwide.com/cgi-bin/m?ci=us-806649h&cg=0&cc=1&si=", escape(window.location.href), "&rp=", escape(document.referrer), "&ts=compact&rnd=", (new Date()).getTime()].join('');
+			})();
+		</script>
+		<noscript>
+			<div>
+				<img src="//secure-us.imrworldwide.com/cgi-bin/m?ci=us-806649h&amp;cg=0&amp;cc=1&amp;ts=noscript" width="1" height="1" alt="" />
+			</div>
+		</noscript>
+		<!-- END Nielsen Online SiteCensus V6.0 -->
+				<noscript>
+			<img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=17920825&amp;cv=2.0&amp;cj=1" />
+		</noscript>
+			<!-- Crazyegg analytics -->
+		<script type="text/javascript">
+		setTimeout(function(){var a=document.createElement("script");
+		var b=document.getElementsByTagName("script")[0];
+		a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0020/5896.js?"+Math.floor(new Date().getTime()/3600000);
+		a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+		</script>
+				<!-- Sailthru Horizon -->
+		<script type="text/javascript" src="http://ak.sail-horizon.com/horizon/v1.js"></script> 
+		<!-- if loading for secure domain, use: https://ak.sail-horizon.com/horizon/v1.js --> 
+		<script type="text/javascript"> 
+			jQuery(function() { 
+				// Sailthru Concierge 
+				if (window.Sailthru) { 
+					Sailthru.setup(
+						{ 
+							domain: 'horizon.thezoereport.com'
+						}
+					);
+				} 
+			}); 
+		</script>
+				<script type='text/javascript'>
+			var _sf_async_config={};
+			/** CONFIGURATION START **/
+			_sf_async_config.uid = 59761; 
+			_sf_async_config.domain = 'thezoereport.com';
+			_sf_async_config.useCanonical = true;
+			_sf_async_config.sections = 'accessories';
+			_sf_async_config.authors = 'Nicky Deam';
+			/** CONFIGURATION END **/
+			(function(){
+				function loadChartbeat() {
+					window._sf_endpt=(new Date()).getTime();
+					var e = document.createElement('script');
+					e.setAttribute('language', 'javascript');
+					e.setAttribute('type', 'text/javascript');
+					e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+					document.body.appendChild(e);
+				}
+				var oldonload = window.onload;
+				window.onload = (typeof window.onload != 'function') ?
+				loadChartbeat : function() { oldonload(); loadChartbeat(); };
+			})();
+		</script>
+		<!-- AdRoll pixel -->
+	<script type="text/javascript">
+		adroll_adv_id = "VUWOMGL32NETFJVR6OVE4X";
+		adroll_pix_id = "QEW4SI2QBVE4ZENCBH7RIA";
+		(function () {
+		var oldonload = window.onload;
+		window.onload = function(){
+		__adroll_loaded=true;
+		var scr = document.createElement("script");
+		var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+		scr.setAttribute('async', 'true');
+		scr.type = "text/javascript";
+		scr.src = host + "/j/roundtrip.js";
+		((document.getElementsByTagName('head') || [null])[0] ||
+		document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+		if(oldonload){oldonload()}};
+		}());
+	</script>
+<script type='text/javascript' src='http://thezoereport.com/wp-content/plugins/bonfyre-concepts-wp-woocomm-tzr/js/mpop/mpop.js?ver=4.1.1'></script>
+<script type='text/javascript' src='http://thezoereport.com/wp-includes/js/jquery/ui/core.min.js?ver=1.11.2'></script>
+<script type='text/javascript' src='http://thezoereport.com/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.11.2'></script>
+<script type='text/javascript' src='//platform.twitter.com/widgets.js?ver=1.0.0'></script>
+<script type='text/javascript' src='//assets.pinterest.com/js/pinit.js?ver=1.0.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","i18n_view_cart":"View Cart","cart_url":"http:\/\/thezoereport.com\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='//thezoereport.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=2.3.7'></script>
+<script type='text/javascript' src='//thezoereport.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.60'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='//thezoereport.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=2.3.7'></script>
+<script type='text/javascript' src='//thezoereport.com/wp-content/plugins/woocommerce/assets/js/jquery-cookie/jquery.cookie.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","fragment_name":"wc_fragments"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='//thezoereport.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=2.3.7'></script>
+<script type='text/javascript' src='//platform.twitter.com/widgets.js?ver=1.0.0'></script>
+<script type='text/javascript' src='//assets.pinterest.com/js/pinit.js?ver=1.0.0'></script>
+<script type='text/javascript' src='http://thezoereport.com/wp-content/themes/thezoereport/static/js/fancybox/jquery.fancybox.pack.js?ver=2.1.5'></script>
+<script type='text/javascript' src='http://thezoereport.com/wp-content/themes/thezoereport/static/js/vendor.min.js?ver=1424806107'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var zoeVars = {"ajaxUrl":"http:\/\/thezoereport.com\/wp-admin\/admin-ajax.php","homeUrl":"http:\/\/thezoereport.com","themeUrl":"http:\/\/thezoereport.com\/wp-content\/themes\/thezoereport","modal":"tzr"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://thezoereport.com/wp-content/themes/thezoereport/static/js/zoe.min.js?ver=1427486720'></script>
+<script type='text/javascript' src='http://thezoereport.com/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.2'></script>
+<script type='text/javascript' src='http://thezoereport.com/wp-includes/js/jquery/ui/position.min.js?ver=1.11.2'></script>
+<script type='text/javascript' src='http://thezoereport.com/wp-includes/js/jquery/ui/menu.min.js?ver=1.11.2'></script>
+<script type='text/javascript' src='http://thezoereport.com/wp-includes/js/jquery/ui/autocomplete.min.js?ver=1.11.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var FB_WP=FB_WP||{};FB_WP.queue={_methods:[],flushed:false,add:function(fn){FB_WP.queue.flushed?fn():FB_WP.queue._methods.push(fn)},flush:function(){for(var fn;fn=FB_WP.queue._methods.shift();){fn()}FB_WP.queue.flushed=true}};window.fbAsyncInit=function(){FB.init({"xfbml":true,"appId":"508144045926494"});if(FB_WP && FB_WP.queue && FB_WP.queue.flush){FB_WP.queue.flush()}}
+/* ]]> */
+</script>
+<script type="text/javascript">(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="http:\/\/connect.facebook.net\/en_US\/all.js";fjs.parentNode.insertBefore(js,fjs)}(document,"script","facebook-jssdk"));</script>
+<div id="fb-root"></div><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"52b8a4990d","applicationID":"5338257","transactionName":"NAQDYxZQXkMAV01cVg1OIFQQWF9eTkdQW14PBExQBV1cVRNN","queueTime":0,"applicationTime":1181,"atts":"GEMAFV5KTU0=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-593.min.js"}</script><script type="text/javascript">
+/* <![CDATA[ */
+(function(){try{var s,a,i,j,r,c,l=document.getElementsByTagName("a"),t=document.createElement("textarea");for(i=0;l.length-i;i++){try{a=l[i].getAttribute("href");if(a&&a.indexOf("/cdn-cgi/l/email-protection") > -1  && (a.length > 28)){s='';j=27+ 1 + a.indexOf("/cdn-cgi/l/email-protection");if (a.length > j) {r=parseInt(a.substr(j,2),16);for(j+=2;a.length>j&&a.substr(j,1)!='X';j+=2){c=parseInt(a.substr(j,2),16)^r;s+=String.fromCharCode(c);}j+=1;s+=a.substr(j,a.length-j);}t.innerHTML=s.replace(/</g,"&lt;").replace(/>/g,"&gt;");l[i].setAttribute("href","mailto:"+t.value);}}catch(e){}}}catch(e){}})();
+/* ]]> */
+</script>
+</body>
+</html>

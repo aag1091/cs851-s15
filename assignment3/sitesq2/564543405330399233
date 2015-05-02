@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html class="action-post action-post-show hide-advanced-editing">
+<head>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"6aaa1492a6","applicationID":"13697","transactionName":"IVoNQENcCVVQEB1BCRFBTEdZXBI=","queueTime":1,"applicationTime":39,"agent":"js-agent.newrelic.com/nr-632.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"XQAOUVdACQAGXVY="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:20,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(3),window.onerror=e;try{throw new Error}catch(u){"stack"in u&&(t(4),t(5),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:8,3:3,4:7,5:6,6:21,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:21,2:22,ee:"QJf3ax",gos:"7eSDFh"}],6:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:22,2:21,ee:"QJf3ax"}],7:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:22,2:21,ee:"QJf3ax"}],8:[function(t,e){function n(){u.inPlace(this,p,"fn-")}function r(t,e){u.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),u=c(a),f=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),f.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,u.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:5,2:22,ee:"QJf3ax"}],9:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=n(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=n(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var f=0;c>f;f++)e.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:10,3:8,4:5,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],10:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],11:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:20,2:21,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===f.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=u.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),u=c.document,f=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:f,features:{}};u.addEventListener?(u.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(u.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:20,2:11,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],20:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],21:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],22:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:21,ee:"QJf3ax"}]},{},["G9z0Bl",4,9]);</script>
+  <title>kikuchi makoto nishigori atsushi the idolm@ster | #224038 | yande.re</title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="top" title="yande.re" href="/">
+  <link rel="canonical" href="https://yande.re/post/show/224038" />
+  <script type="text/javascript">
+    var css = ".javascript-hide { display: none !important; }";
+    var style = document.createElement("style"); style.type = "text/css";
+    if(style.styleSheet) // IE
+      style.styleSheet.cssText = css;
+    else
+      style.appendChild(document.createTextNode(css));
+    document.getElementsByTagName("head")[0].appendChild(style);
+  </script>
+
+    <meta property="og:title" content="kikuchi makoto nishigori atsushi the idolm@ster | #224038 | yande.re" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yande.re/post/show/224038" />
+<meta property="og:image" content="https://files.yande.re/sample/7629affddc264b546cbfd58b81b77b14/yande.re%20224038%20sample%20kikuchi_makoto%20nishigori_atsushi%20the_idolm%40ster.jpg" />
+<meta property="og:site_name" content="yande.re" />
+<meta property="og:description" content="kikuchi_makoto nishigori_atsushi the_idolm@ster" />
+<link rel="image_src" href="https://files.yande.re/sample/7629affddc264b546cbfd58b81b77b14/yande.re%20224038%20sample%20kikuchi_makoto%20nishigori_atsushi%20the_idolm%40ster.jpg" />
+  <meta name="twitter:card" content="photo" />
+  <meta name="twitter:site" content="@yande_re" />
+
+  <link rel="alternate" type="application/atom+xml" title="ATOM" href="https://yande.re/post/atom" />
+  <link rel="stylesheet" media="screen" href="https://assets.yande.re/assets/application-e08bda4d4377f4a696012f9b7ed947af.css" />
+
+  <script src="https://assets.yande.re/assets/application-e6bf5815813a5c8a260797de86e4de43.js"></script>
+  <script src="https://assets.yande.re/assets/moe-legacy/application-1d992bf3f5785fe4c17e5918c2e31952.js"></script>
+  <script type="text/javascript">
+  I18n.defaultLocale = "en";
+  I18n.locale = "en";
+</script>
+
+  <!--[if lt IE 8]>
+  <script src="/IE8.js" type="text/javascript"></script>
+  <![endif]-->
+  <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="yande.re" />
+  
+  <!--[if lt IE 7]>
+    <style type="text/css">
+      body div#post-view > div#right-col > div > div#note-container > div.note-body {
+        overflow: visible;
+      }
+    </style>
+    <script src="https://ie7-js.googlecode.com/svn/trunk/lib/IE7.js" type="text/javascript"></script>
+  <![endif]-->
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="k03leMtz3SoRcWW/nt618ftQ7lTfhXPs4Ygvvi/iET7yagDsZXi1F6024BDXzk0oM9Orc7XxaFDAb+ob4cf1EQ==" />
+</head>
+<body>
+  <div class="overlay-notice-container" id="notice-container" style="display: none;">
+  <table cellspacing=0 cellpadding=0> <tbody>
+    <tr> <td>
+      <div id="notice">
+      </div>
+    </td> </tr>
+  </tbody> </table>
+</div>
+
+      <div id="news-ticker" style="display: none">
+  <ul>
+    <li>[2014-12-24] NEKO WORKs' NEKOPARA in <a href="http://store.steampowered.com/app/333600">Steam</a> and <a href="https://denpasoft.com/shop/neko-para-vol-1/">Denpasoft (R-18 edition)</a>!</li>
+  </ul>
+
+  <a href="#" id="close-news-ticker-link">Close</a>
+</div>
+
+  <div id="header">
+    <div id="title"><h2 id="site-title"><a href="https://yande.re"><img alt="yande.re" id="logo" src="https://assets.yande.re/assets/logo_small-7d94e6ab9655014104792ef572cbedd4.png" width="484" height="75" /></a><span></span></h2></div>
+    <div class="clearfix" id="main-menu" data-controller="post">
+    <ul>
+      <li class="user"><a href="/user/home">My Account</a>
+        <a class="submenu-button" href="#">■</a>
+        <ul class="submenu">
+            <li><a id="login-link" class="login-button" href="/user/login">Login</a></li>
+            <li><a href="/user/signup"><span class="translation_missing" title="translation missing: en.layouts.menu.account.register">Register</span></a></li>
+            <li><a href="/user/reset_password">Reset Password</a></li>
+        </ul>
+      </li>
+      <li class="post"><a href="/post">Posts</a>
+        <a class="submenu-button" href="#">■</a>
+        <ul class="search-box">
+          <li>
+            <div>
+              <form action="/post" accept-charset="UTF-8" method="get">
+                <input type="text" name="tags" /><br />
+                <input type="submit" value="Search Posts" />
+</form>            </div>
+          </li>
+        </ul>
+        <ul class="submenu">
+          <li><a href="/post">View Posts</a></li>
+          <li><a class="search-link" href="/post">Search Posts</a></li>
+          <li><a href="/post/upload">Upload</a></li>
+          <li><a href="/post?tags=order%3Arandom">Random</a></li>
+          <li><a href="/post/popular_recent">Popular</a></li>
+          <li><a href="/post/similar">Image Search</a></li>
+          <li><a href="/history">History</a></li>
+        </ul>
+      </li>
+      <li class="comment"><a id="comments-link" href="/comment">Comments</a>
+        <a class="submenu-button" href="#">■</a>
+        <ul class="search-box">
+          <li>
+            <div>
+              <form action="/comment/search" accept-charset="UTF-8" method="get">
+                <input type="text" name="query" /><br />
+                <input type="submit" value="Search Comments" />
+</form>            </div>
+          </li>
+        </ul>
+        <ul class="submenu">
+          <li><a href="/comment">View Comments</a></li>
+          <li><a class="search-link" href="/comment/search">Search Comments</a></li>
+        </ul>
+      </li>
+      <li class="note"><a href="/note">Notes</a>
+        <a class="submenu-button" href="#">■</a>
+        <ul class="search-box">
+          <li>
+            <div>
+              <form action="/note/search" accept-charset="UTF-8" method="get">
+                <input type="text" name="query" /><br />
+                <input type="submit" value="Search Notes" />
+</form>            </div>
+          </li>
+        </ul>
+        <ul class="submenu">
+          <li><a href="/note">View Notes</a></li>
+          <li><a class="search-link" href="/note/search">Search Notes</a></li>
+          <li><a href="/post?tags=translation_request">Requests</a></li>
+        </ul>
+      </li>
+      <li class="artist"><a href="/artist?order=date">Artists</a>
+        <a class="submenu-button" href="#">■</a>
+        <ul class="search-box">
+          <li>
+            <div>
+              <form action="/artist" accept-charset="UTF-8" method="get">
+                <input type="text" name="name" /><br />
+                <input type="submit" value="Search Artists" />
+</form>            </div>
+          </li>
+        </ul>
+        <ul class="submenu">
+          <li><a href="/artist">View Artists</a></li>
+          <li><a class="search-link" href="/artist">Search Artists</a></li>
+          <li><a href="/artist/create">Create</a></li>
+        </ul>
+      </li>
+      <li class="tag"><a href="/tag?order=date">Tags</a>
+        <a class="submenu-button" href="#">■</a>
+        <ul class="search-box">
+          <li>
+            <div>
+              <form action="/tag" accept-charset="UTF-8" method="get">
+                <input type="text" name="name" /><br />
+                <input type="submit" value="Search Tags" />
+</form>            </div>
+          </li>
+        </ul>
+        <ul class="submenu">
+          <li><a href="/tag">View Tags</a></li>
+          <li><a class="search-link" href="/tag">Search Tags</a></li>
+          <li><a href="/tag/popular_by_day">Popular</a></li>
+          <li><a href="/tag_alias">Aliases</a></li>
+          <li><a href="/tag_implication">Implications</a></li>
+        </ul>
+      </li>
+      <li class="pool"><a href="/pool">Pools</a>
+        <a class="submenu-button" href="#">■</a>
+        <ul class="search-box">
+          <li>
+            <div>
+              <form action="/pool" accept-charset="UTF-8" method="get">
+                <input type="text" name="query" /><br />
+                <input type="submit" value="Search Pools" />
+</form>            </div>
+          </li>
+        </ul>
+        <ul class="submenu">
+          <li><a href="/pool">View Pools</a></li>
+          <li><a class="search-link" href="/pool">Search Pools</a></li>
+          <li><a href="/pool/create">Create New Pool</a></li>
+        </ul>
+      </li>
+      <li class="wiki"><a href="/wiki/show?title=help%3Ahome">Wiki</a>
+        <a class="submenu-button" href="#">■</a>
+        <ul class="search-box">
+          <li>
+            <div>
+              <form action="/wiki" accept-charset="UTF-8" method="get">
+                <input type="text" name="query" /><br />
+                <input type="submit" value="Search Wiki" />
+</form>            </div>
+          </li>
+        </ul>
+        <ul class="submenu">
+          <li><a href="/wiki">View Wiki Index</a></li>
+          <li><a class="search-link" href="/wiki">Search Wiki</a></li>
+          <li><a href="/wiki/add">Create New Page</a></li>
+        </ul>
+      </li>
+      <li class="forum"><a id="forum-link" href="/forum">Forum</a>
+        <a class="submenu-button" href="#">■</a>
+        <ul class="search-box">
+          <li>
+            <div>
+              <form action="/forum/search" accept-charset="UTF-8" method="get">
+                <input type="text" name="query" /><br />
+                <input type="submit" value="Search Forums" />
+</form>            </div>
+          </li>
+        </ul>
+        <ul class="submenu">
+          <li><a href="/forum">View Topics</a></li>
+          <li><a class="search-link" href="/forum">Search Forums</a></li>
+          <li><a href="/forum/new">New Topic</a></li>
+          <li><a id="forum-mark-all-read" style="display: none;" href="/forum/mark_all_read">Mark All Read</a></li>
+          <li class="forum-items-start"><span class="separator"></span></li>
+        </ul>
+      </li>
+      <li class="help"><a href="/help">Help</a>
+        <a class="submenu-button" href="#">■</a>
+        <ul class="submenu">
+            <li><a class="help-item post" href="/help/posts">Post Help</a>
+            <li><a class="help-item comment" href="/help/comments">Comment Help</a>
+            <li><a class="help-item note" href="/help/notes">Note Help</a>
+            <li><a class="help-item artist" href="/help/artists">Artist Help</a>
+            <li><a class="help-item tag" href="/help/tags">Tag Help</a>
+            <li><a class="help-item pool" href="/help/pools">Pool Help</a>
+            <li><a class="help-item wiki" href="/help/wiki">Wiki Help</a>
+            <li><a class="help-item forum" href="/help/forum">Forum Help</a>
+          <li><a href="/help">Site Help</a></li>
+        </ul>
+      </li>
+      <li class="static"><a href="/static/more">More »</a>
+      </li>
+      <li class="has-mail">
+        <a id="has-mail-notice" href="/dmail/inbox">New Mail</a>
+      </li>
+    </ul>
+    <span id='cn' style="display: none;">
+    </span>
+</div>
+
+  </div>
+  
+<div id="login-background" style="display: none;">&nbsp;</div>
+
+<div id="login-container" style="display: none;">
+  <div id="login-container-inner">
+    <div id="login-container-with-tabs">
+      <div>
+        <ul class="flat-list login-tabs" id="login-tabs">
+        <li id="tab-login"><a href="#">Login</a></li>
+        <li id="tab-reset"><a href="#">Reset Password</a></li>
+        </ul>
+      </div>
+      <div id="login" style="position: relative;">
+        <p id="tab-login-text" class="tab-header-text">
+          Please log in. To create a new account, enter the name and password you want to use.
+        </p>
+        <p id="tab-reset-text" class="tab-header-text">
+          If you supplied an email address when you signed up or added a email later, you can have your password reset.
+        </p>
+
+        <form id="login-popup" action="/user/authenticate" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="k9f6h5U6Ozv1fRhv5JdKs+ceUGuIQPV50aRVieb1D2Ly8B8TOzFTBkk6ncCth7JqL50VTOI07sXwQ5AsKNDrTQ==" />
+          <div style="position: absolute; top: 0; right: 0;">
+            <a href="#" id="login-popup-cancel" style="font-size: 1.2em; padding: 2px;">ⓧ</a>
+          </div>
+
+          <table class="form" style="width: 80%; max-width: 30em; margin-bottom: .5em; margin-left: auto; margin-right: auto;">
+            <tr>
+              <th style="width: 8em"><label class="block" for="login-popup-username">Name</label></th>
+              <td style="width: 10em" align=left><input id="login-popup-username" name="username" type="text" style="width: 100%;"></td>
+            </tr>
+            <tr id="login-popup-email-box">
+              <th><label class="block" for="login-popup-email">Email</label></th>
+              <td align=left><input id="login-popup-email" name="email" type="text" style="width: 100%;"></td>
+            </tr>
+            <tr id="login-popup-password-box">
+              <th><label class="block" for="login-popup-password">Password</label></th>
+              <td align=left><input id="login-popup-password" name="password" type="password" style="width: 100%;"></td>
+            </tr>
+            <tr id="login-popup-password-confirm-box" style="display: none;">
+              <th><label class="block" for="login-popup-password-confirm">Confirm Password</label></th>
+              <td align=left><input id="login-popup-password-confirm" name="password-confirm" type="password" style="width: 100%;"></td>
+            </tr>
+            <tr>
+              <th style="background: none;"></th>
+              <td align=left>
+              </td>
+            </tr>
+          </table>
+          <a href="#" id="login-popup-submit" style="margin-bottom: 1em; margin-left: auto; margin-right: auto;">Login</a>
+</form>
+        <div id="login-popup-notices" class="login-popup-notice">
+          <span id="login-popup-login-confirm-password">
+            This user name doesn&#39;t exist.  If you want to create a new account, just verify your password and log in.
+          </span>
+          <span id="login-popup-login-user-exists">
+            This user name exists.  If you want to create a new account, please choose a different name.
+          </span>
+          <span id="login-popup-reset-user-exists">
+            Enter the current email address you have registered in your profile.  You&#39;ll get an email containing your new password.
+          </span>
+          <span id="login-popup-reset-user-has-no-email">
+            You have no email address in your profile, so you can&#39;t have your password reset.
+          </span>
+          <span id="login-popup-reset-successful">
+            Password reset. Check your email in a few minutes
+          </span>
+          <span id="login-popup-reset-unknown-user">
+            That account does not exist.
+          </span>
+          <span id="login-popup-reset-blank">
+          </span>
+          <span id="login-popup-reset-user-email-incorrect">
+            The email address specified is not registered with this account.
+          </span>
+          <span id="login-popup-reset-user-email-invalid">
+            Delivery to this email address has failed.
+          </span>
+          <span id="login-popup-message">
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script type="text/javascript">document.observe("dom:loaded", function() { User.init(); });</script>
+
+
+
+    <div style="display: none;">Danbooru-based image board with a specialization in high-quality images.</div>
+
+  <!--[if lt IE 7]>
+  <div style="display: none;" id="old-browser">Your browser is very old, and this site will not display properly.
+    Please consider upgrading to a more recent web browser:
+    <a href="http://www.mozilla.com/firefox/">Firefox</a>,
+    <a href="http://www.opera.com/">Opera</a>,
+    <a href="http://www.microsoft.com/windows/internet-explorer/download-ie.aspx">Internet Explorer</a>.
+    <div style="text-align: right;" id="old-browser-hide">
+      <a href="#" onclick='$("old-browser").hide(); Cookie.put("hide-ie-nag", "1");'>(hide this message)</a>
+    </div>
+  </div>
+  <![endif]-->
+  <div class="overlay-notice-container" id="notice-container" style="display: none;">
+  <table cellspacing=0 cellpadding=0> <tbody>
+    <tr> <td>
+      <div id="notice">
+      </div>
+    </td> </tr>
+  </tbody> </table>
+</div>
+
+
+  <div class="blocked" id="block-reason" style="display: none;">
+  </div>
+
+  <div id="content">
+    <div id="post-view">
+      <script type="text/javascript"> Post.register_resp({"posts":[{"id":224038,"tags":"kikuchi_makoto nishigori_atsushi the_idolm@ster","created_at":1347031266,"creator_id":144722,"author":"gogotea28","change":1119783,"source":"","score":49,"md5":"7629affddc264b546cbfd58b81b77b14","file_size":1170935,"file_url":"https:\/\/files.yande.re\/image\/7629affddc264b546cbfd58b81b77b14\/yande.re%20224038%20kikuchi_makoto%20nishigori_atsushi%20the_idolm%40ster.jpg","is_shown_in_index":true,"preview_url":"https:\/\/assets.yande.re\/data\/preview\/76\/29\/7629affddc264b546cbfd58b81b77b14.jpg","preview_width":105,"preview_height":150,"actual_preview_width":211,"actual_preview_height":300,"sample_url":"https:\/\/files.yande.re\/sample\/7629affddc264b546cbfd58b81b77b14\/yande.re%20224038%20sample%20kikuchi_makoto%20nishigori_atsushi%20the_idolm%40ster.jpg","sample_width":1053,"sample_height":1500,"sample_file_size":221646,"jpeg_url":"https:\/\/files.yande.re\/image\/7629affddc264b546cbfd58b81b77b14\/yande.re%20224038%20kikuchi_makoto%20nishigori_atsushi%20the_idolm%40ster.jpg","jpeg_width":2809,"jpeg_height":4000,"jpeg_file_size":0,"rating":"s","has_children":true,"parent_id":216796,"status":"active","width":2809,"height":4000,"is_held":false,"frames_pending_string":"","frames_pending":[],"frames_string":"","frames":[]}],"pool_posts":[{"id":112612,"pool_id":2829,"post_id":224038,"active":true,"sequence":"29","next_post_id":224016,"prev_post_id":224002}],"pools":[{"id":2829,"name":"THE_iDOLM@STER_Visual_Collection_Vol_2","created_at":"2012-09-06T07:31:34.007Z","updated_at":"2012-09-18T14:20:33.843Z","user_id":53094,"is_public":true,"post_count":43,"description":""}],"tags":{"kikuchi_makoto":"character","nishigori_atsushi":"artist","the_idolm@ster":"copyright"},"votes":{}}); </script>
+
+    
+
+  <div class="status-notice" style="display: none;" id="resized_notice">
+    This image has been resized. Click on the <a class="highres-show" href="https://files.yande.re/image/7629affddc264b546cbfd58b81b77b14/yande.re%20224038%20kikuchi_makoto%20nishigori_atsushi%20the_idolm%40ster.jpg">View larger version</a> link in the sidebar for a high-quality version.
+    <a href="#" onclick="$(&#39;resized_notice&#39;).hide(); Cookie.put(&#39;hide_resized_notice&#39;, &#39;1&#39;); return false;">Hide this message</a>.
+    <script type="text/javascript">
+      if (Cookie.get("hide_resized_notice") != "1") {
+        $("resized_notice").show()
+      }
+    </script>
+  </div>
+  <div class="status-notice" style="display: none;" id="samples_disabled">
+    Image samples have been disabled. If you find this to be too slow, you can turn samples back on in your profile settings.
+  </div>
+
+  <div class="status-notice">
+    This post belongs to a <a href="/post/show/216796">parent post</a>.
+  </div>
+  <div class="status-notice">
+    This post has <a href="/post?tags=parent%3A224038">a child post</a>. (post #<a href="/post/show/239274">239274</a>)
+  </div>
+
+  <div class="status-notice" id="pool2829">
+  <div style="display: inline;">
+    <p>
+        <a href="/post/show/224002?pool_id=2829">« Previous</a>
+        <a href="/post/show/224016?pool_id=2829">Next »</a>
+      This post is <span id="pool-seq-2829">#29</span> in the <a href="/pool/show/2829">THE iDOLM@STER Visual Collection Vol 2</a> pool.
+
+    </p>
+  </div>
+</div>
+
+
+
+    <div class="sidebar">
+      <div style="margin-bottom: 1em;">
+  <h5>Search</h5>
+  <form action="/post" accept-charset="UTF-8" method="get">
+    <div>
+      <input type="text" name="tags" id="tags" size="20" />
+      <input type="submit" value="Search" style="display: none;" />
+    </div>
+</form></div>
+<script type="text/javascript">
+  new TagCompletionBox($("tags"));
+  if(TagCompletion)
+    TagCompletion.observe_tag_changes_on_submit($("tags").up("form"), $("tags"), null);
+</script>
+
+      <div>
+  <h5>Tags</h5>
+  <ul id="tag-sidebar">
+    
+    <li class="tag-link tag-type-artist" data-name="nishigori_atsushi" data-type="artist"><a href="/artist/show?name=nishigori_atsushi">?</a> <a href="/post?tags=nishigori_atsushi">nishigori atsushi</a> <span class="post-count">78</span> </li><li class="tag-link tag-type-copyright" data-name="the_idolm@ster" data-type="copyright"><a href="/wiki/show?title=the_idolm%40ster">?</a> <a href="/post?tags=the_idolm%40ster">the idolm@ster</a> <span class="post-count">3008</span> </li><li class="tag-link tag-type-character" data-name="kikuchi_makoto" data-type="character"><a href="/wiki/show?title=kikuchi_makoto">?</a> <a href="/post?tags=kikuchi_makoto">kikuchi makoto</a> <span class="post-count">320</span> </li><span style="display: none;">idolmaster idol master idolm@ster idol m@ster the idolmaster the idol m@ster im@s</span>
+    
+  </ul>
+</div>
+
+      <div id="stats" class="vote-container">
+  <h5>Statistics</h5>
+  <ul>
+    <li>Id: 224038</li>
+    <li>Posted: <a title="Fri Sep  7 15:21:06 2012" href="/post?tags=date%3A2012-09-07">over 2 years ago</a> by <a href="/user/show/144722">gogotea28</a></li>
+      <li>Size: 2809x4000</li>
+    <li>Rating: Safe <span class="vote-desc"></span></li>
+
+    <li>
+      Score: <span id="post-score-224038">49</span>
+      <span class="stars standard-vote-widget"></span>
+    </li>
+
+    <li>Favorited by: <span id="favorited-by"><a href="/user/show/195785">Jahebi</a>, <a href="/user/show/205765">primo2538</a>, <a href="/user/show/224583">MIXIIXVI</a>, <a href="/user/show/205096">hujisaki0123</a>, <a href="/user/show/203851">RukaErika</a>, <a href="/user/show/175701">saemonnokami</a><span id="remaining-favs" style="display: none;">, <a href="/user/show/84282">cinoreno</a>, <a href="/user/show/196138">AspenExcel</a>, <a href="/user/show/123295">symm3trik</a>, <a href="/user/show/173812">chlebekk</a>, <a href="/user/show/59219">elwin</a>, <a href="/user/show/47334">ReijiR.Noir</a>, <a href="/user/show/2576">vkun</a>, <a href="/user/show/172980">Wilofus</a>, <a href="/user/show/165055">armchang</a>, <a href="/user/show/86526">SeeThrough</a>, <a href="/user/show/12654">Kalessin</a>, <a href="/user/show/170961">konpaku</a>, <a href="/user/show/171906">Sakura_Shimizu</a>, <a href="/user/show/80474">2015</a>, <a href="/user/show/137034">crazy8olman</a>, <a href="/user/show/55330">Spetsnaz-13</a>, <a href="/user/show/43196">Anorak</a>, <a href="/user/show/18196">yamada25</a>, <a href="/user/show/61634">Gage</a>, <a href="/user/show/157471">BlackF0x</a>, <a href="/user/show/24190">Chemixer</a>, <a href="/user/show/55699">buhunzhuyi</a>, <a href="/user/show/3873">exlodus</a>, <a href="/user/show/44620">JoErUtO</a>, <a href="/user/show/156855">rinmitsuko</a>, <a href="/user/show/65911">HarrisonBrown</a>, <a href="/user/show/158534">Unctuous</a>, <a href="/user/show/10">vita</a>, <a href="/user/show/56268">darkdream</a>, <a href="/user/show/133209">nickxar1</a>, <a href="/user/show/149881">EssAz</a>, <a href="/user/show/103480">Yukimaru32</a>, <a href="/user/show/58386">shred1132</a></span><span id="remaining-favs-link"> (<a href="#" onclick="$(&#39;remaining-favs&#39;).show(); $(&#39;remaining-favs-link&#39;).hide(); return false;">33 more</a>)</span></span> <span id="favorited-by-more"></span></li>
+  </ul>
+</div>
+
+
+
+      <div>
+  <h5>Options</h5>
+  <ul>
+    <li><a class="js-posts-show-edit-tab" href="#">Edit</a></li>
+    <!-- 
+      <li><a href="#" onclick="Post.resize_image(); return false;">Resize image</a></li>
+     -->
+      <li><a class="original-file-changed highres-show" id="highres-show" href="https://files.yande.re/image/7629affddc264b546cbfd58b81b77b14/yande.re%20224038%20kikuchi_makoto%20nishigori_atsushi%20the_idolm%40ster.jpg">View larger version</a>
+      </li>
+      <li><a class="original-file-changed" id="highres" href="https://files.yande.re/image/7629affddc264b546cbfd58b81b77b14/yande.re%20224038%20kikuchi_makoto%20nishigori_atsushi%20the_idolm%40ster.jpg">Download larger version (1.12 MB JPG)</a>
+      </li>
+      <li><a href="#" onclick="User.run_login(false, function() { Post.flag(224038, function() { window.location.reload(); }) }); return false;">Flag for deletion</a></li>
+      <li><a href="#" onclick="User.run_login(false, function() { Note.create(224038) }); return false;">Add translation</a></li>
+    <li id="add-to-favs"><a href="#">Add to favorites</a></li>
+    <li id="remove-from-favs"><a href="#">Remove from favorites</a></li>
+      <li id="add-to-pool" class="advanced-editing"><a data-remote="true" href="/pool/select?post_id=224038">Add to pool</a></li>
+      <li id="set-avatar"><a href="/user/set_avatar/224038">Set avatar</a></li>
+    <li><a href="/history?search=post%3A224038">Post history</a></li>
+  </ul>
+</div>
+
+      <div>
+  <h5>Related Posts</h5>
+  <ul>
+    <li><a href="/post/show/224036">Previous</a></li>
+    <li><a href="/post/show/224039">Next</a></li>
+      <li><a href="/post/show/216796">Parent</a></li>
+    <li><a href="/post/random">Random</a></li>
+  </ul>
+</div>
+
+ <br />
+    <a data-show-count="false" class="twitter-follow-button" href="https://twitter.com/yande_re">Follow @yande_re</a>
+  <script>
+//<![CDATA[
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+//]]>
+</script>
+
+ <br />
+    <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_default_style ">
+      <a class="addthis_button_preferred_1"></a>
+      <a class="addthis_button_preferred_2"></a>
+      <a class="addthis_button_preferred_3"></a>
+      <a class="addthis_button_preferred_4"></a>
+      <a class="addthis_button_compact"></a>
+      <a class="addthis_counter addthis_bubble_style"></a>
+    </div>
+    <script type="text/javascript" src="https://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f84f4451238fdf5"></script>
+    <script type="text/javascript">
+      if (typeof addthis_config !== "undefined") {
+        addthis_config.ui_click = true
+      } else {
+        var addthis_config = {
+        ui_click: true
+        };
+      }
+    </script>
+  <!-- AddThis Button END -->
+
+ <br />
+  
+    </div>
+    <div class="content" id="right-col">
+      
+
+      <br />
+      <br />
+        <div>
+      <div id="note-container">
+      </div>
+      <img alt="kikuchi_makoto nishigori_atsushi the_idolm@ster" id="image" class="image" width="1053" height="1500" large_width="2809" large_height="4000" src="https://files.yande.re/sample/7629affddc264b546cbfd58b81b77b14/yande.re%20224038%20sample%20kikuchi_makoto%20nishigori_atsushi%20the_idolm%40ster.jpg" />
+  </div>
+  <div style="margin-bottom: 1em;">
+    <p id="note-count"></p>
+    <script type="text/javascript">
+      Note.post_id = 224038
+
+
+      Note.updateNoteCount()
+      Note.show()
+
+      //new WindowDragElement($("image"));
+      Moebooru.dragElement(jQuery('.image'));
+
+      $("image").observe("click", function(e) { if(!e.stopped) Note.toggle(); }.bindAsEventListener());
+    </script>
+  </div>
+
+
+      <div>
+  <h4>
+    <a class="js-posts-show-edit-tab" href="#">Edit</a> | <a class="js-posts-show-comments-tab" href="#">Respond</a>
+  </h4>
+</div>
+
+      <div id="edit" style="display: none;">
+  <form id="edit-form" class=" need-signup" action="/post/update/224038" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="Xmo2QU5HO3Tu2AjVfKrlngZqS7vpsdkKYkOM6tXriHY/TdPV4ExTSVKfjXo1uh1HzukOnIPFwrZDpElPG85sWQ==" />
+    <input type="hidden" name="post[old_tags]" id="post_old_tags" value="kikuchi_makoto nishigori_atsushi the_idolm@ster" />
+    <table class="form">
+      <tfoot>
+        <tr>
+          <td colspan="2"><input type="submit" name="commit" value="Save changes" tabindex="11" accesskey="s" /></td>
+        </tr>
+      </tfoot>
+      <tbody>
+        <tr>
+          <th width="15%">
+            <label class="block" for="post_rating_questionable">Rating</label>
+              <p>Explicit tags include sex, pussy, penis, masturbation, blowjob, etc. (<a target="_blank" href="/help/ratings">help</a>)</p>
+          </th>
+          <td width="85%">
+              <input type="radio" name="post[rating]" id="post_rating_explicit" value="Explicit" tabindex="1" />
+              <label for="post_rating_explicit">Explicit</label>
+              <input type="radio" name="post[rating]" id="post_rating_questionable" value="Questionable" tabindex="2" />
+              <label for="post_rating_questionable">Questionable</label>
+              <input type="radio" name="post[rating]" id="post_rating_safe" value="Safe" tabindex="3" checked="checked" />
+              <label for="post_rating_safe">Safe</label>
+          </td>
+        </tr>
+        <tr>
+          <th><label>Parent Post</label></th>
+          <td><input size="10" tabindex="4" type="text" value="216796" name="post[parent_id]" id="post_parent_id" /></td>
+        </tr>
+          <tr>
+            <th><label class="block" for="post_is_shown_in_index">Shown in index</label></th>
+            <td><input name="post[is_shown_in_index]" type="hidden" value="0" /><input tabindex="7" type="checkbox" value="1" checked="checked" name="post[is_shown_in_index]" id="post_is_shown_in_index" /></td>
+          </tr>
+        <tr>
+          <th><label class="block" for="post_source">Source</label></th>
+          <td><input size="40" tabindex="9" type="text" value="" name="post[source]" id="post_source" /></td>
+        </tr>
+          <tr>
+            <th>
+              <label class="block" for="post_tags">Edit Tags</label>
+                <p>Separate tags with spaces (<a target="_blank" href="/help/tags">help</a>)</p>
+            </th>
+            <td>
+              <textarea tabindex="10" name="post[tags]" id="post_tags" cols="50" rows="4">
+kikuchi_makoto nishigori_atsushi the_idolm@ster</textarea>
+              <a data-toggle="related-tags" data-type="all" href="#">Related tags</a> |
+              <a data-toggle="related-tags" data-type="artist" href="#">Related artists</a> |
+              <a data-toggle="related-tags" data-type="char" href="#">Related characters</a> |
+              <a data-toggle="related-tags" data-type="copyright" href="#">Related copyrights</a> |
+              <a data-toggle="related-tags" data-type="circle" href="#">Related circles</a>
+                | <a data-toggle="related-tags" data-type="artist-url" href="#">Find artists</a>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+    <div>
+      <h5>Related Tags</h5>
+      <div style="margin-bottom: 1em;" id="related"><em>None</em></div>
+    </div>
+</form></div>
+
+      <div id="comments" style="margin-top: 1em; max-width: 800px; width: 100%;">
+  <div class="response-list">
+</div>
+
+<div style="clear: both;">
+
+  <div id="reply-224038">
+    <form class=" need-signup" action="/comment/create" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="jQoUoCeS28WUc2Px8cogYjeo0chmMvLSdHys/SbMzQnsLfE0iZmz+Cg05l642ti7/yuU7wxG6W5Vm2lY6OkpJg==" />
+      <input type="hidden" name="comment[post_id]" id="comment_post_id_224038" value="224038" />
+      <textarea rows="7" id="reply-text-224038" style="width: 98%; margin-bottom: 2px;" name="comment[body]">
+</textarea>
+      <input type="submit" name="commit" value="Post" />
+      <!-- <input type="submit" name="commit" value="Post without bumping" /> -->
+</form><!--    <p style="margin-top: 1em; font-style: italic;">[spoiler]Hide spoiler text like this[/spoiler] (<a href="/help/comments">more</a>)</p> -->
+</div></div>
+
+<script type="text/javascript">
+  
+  InlineImage.init();
+</script>
+
+
+</div>
+
+    </div>
+
+</div>
+
+<script type="text/javascript">
+  new TagCompletionBox($("post_tags"));
+  if(TagCompletion)
+    TagCompletion.observe_tag_changes_on_submit($("edit-form"), $("post_tags"), $("post_old_tags"));
+
+</script>
+
+
+      <div class="footer">
+        
+        <ul class="flat-list" id="subnavbar">
+            <li><a href="/post">List</a></li>
+  <li><a href="/post/browse#224038/">Browse</a></li>
+  <li><a href="/post/upload">Upload</a></li>
+  <!-- <li id="my-subscriptions-container"><a id="my-subscriptions" href="/">Subscriptions</a></li> -->
+  <li><a href="/post?tags=order%3Arandom">Random</a></li>
+  <li><a href="/post/popular_recent">Popular</a></li>
+  <li><a href="/post/similar">Image Search</a></li>
+  <li><a href="/history">History</a></li>
+  
+  <li><a href="/help/posts">Help</a></li>
+
+        </ul>
+      </div>
+  </div>
+
+  <script type="text/javascript">
+    InitTextAreas();
+    InitAdvancedEditing();
+    Post.InitBrowserLinks();
+    if(TagCompletion)
+      TagCompletion.init(2064);
+  </script>
+
+  <!--[if lt IE 7]>
+    <script type="text/javascript">
+      if(Cookie.get("hide-ie-nag") != "1")
+        $("old-browser").show();
+    </script>
+  <![endif]-->
+
+  <script type="text/javascript">
+  jQuery(function ($) {
+    var vote = new Vote($('#stats'), 224038);
+    vote.updateWidget(Post.votes.get('224038'), 49);
+    vote.initShortcut();
+  });
+
+  Post.init_add_to_favs(224038, $("add-to-favs"), $("remove-from-favs"));
+</script>
+      <script type="text/javascript">
+
+        if (Cookie.get('resize_image') == '1') {
+          Post.resize_image()
+        }
+
+        OnKey(66, { AlwaysAllowOpera: true }, function(e) { window.location.href = "\/post\/browse#224038\/pool:2829"; });
+      </script>
+  <script type="text/javascript">
+    var text = Cookie.get("notice");
+    if (text) {
+      notice(text, true);
+      Cookie.remove("notice");
+    }
+  </script>
+  <script type="text/javascript">
+    var text = Cookie.get("notice");
+    if (text) {
+      notice(text, true);
+      Cookie.remove("notice");
+    }
+  </script>
+
+  <script type="text/javascript">
+  window.google_analytics_uacct = 'UA-291955-10';
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-291955-10']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </body>
+</html>
+

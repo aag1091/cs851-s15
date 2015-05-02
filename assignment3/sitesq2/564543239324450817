@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title></title>
+								<meta http-equiv="refresh" content="2;url=https://itunes.apple.com/us/album/the-red-balloon-project/id952774130?ls=1&amp;at=11lqkG&amp;ct=ijzigq"/>	
+			<script>
+				var destinationUrl = "https://itunes.apple.com/us/album/the-red-balloon-project/id952774130?ls=1&at=11lqkG&ct=ijzigq";
+		var numRedirects = 0;
+		function LinkDecorator() {};
+		LinkDecorator.prototype.decorate = function(url) {
+						return url;
+		}
+		var linkDecorator = new LinkDecorator();
+				var numAsyncTasks = 1;
+					  function onAsyncTaskComplete() {
+		numAsyncTasks--;
+			    if (numAsyncTasks <= 0) {
+	    	onAllAsyncTasksComplete();
+	    }
+	   }
+		function makePixel(url) {
+						var img = document.createElement("img");
+			img.onload = function() {
+								onAsyncTaskComplete();
+			}
+			img.src = url;
+		}
+	   		function onAllAsyncTasksComplete() {
+			if (numRedirects == 0) {
+								numRedirects++;
+								window.location = linkDecorator.decorate(destinationUrl);
+							}
+		}
+	</script>		
+	</head>
+	<body>
+		<script type="text/javascript">
+						makePixel("https:\/\/www.facebook.com\/tr?id=1380514348868934\x26ev=smartURLClick\x26cd[uuid]=c52f0578\-642d\-4524\-800d\-32da0c5dfc07");
+												window.setTimeout(onAllAsyncTasksComplete, 2000);
+					</script>
+				<noscript>
+					<img height="1" width="1" style="border-style:none;" alt="" src="https://www.facebook.com/tr?id=1380514348868934&amp;ev=smartURLClick&amp;cd[uuid]=c52f0578-642d-4524-800d-32da0c5dfc07"/>
+				</noscript>
+					</body>
+</html>

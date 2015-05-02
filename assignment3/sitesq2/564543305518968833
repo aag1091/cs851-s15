@@ -1,0 +1,861 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+    <head>
+        <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQYEVVNXGwcFVFlaDwY="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(4),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(5),"addEventListener"in window&&t(2),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(3),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:7,3:11,4:3,5:9,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1);t("loader").features.stn=!0,t(2),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=l.info=NREUM.info;if(t&&t.licenseKey&&t.applicationID&&f&&f.body){s(h,function(e,n){e in t||(t[e]=n)}),l.proto="https"===p.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=f.createElement("script");e.src=l.proto+t.agent,f.body.appendChild(e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u="addEventListener",d="attachEvent",p=(""+location).split("?")[0],h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-627.min.js"},l=e.exports={offset:i(),origin:p,features:{}};f[u]?(f[u]("DOMContentLoaded",o,!1),c[u]("load",n,!1)):(f[d]("onreadystatechange",r),c[d]("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>                        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Language" content="en-GB" />
+        <meta name="title" content="NEW PICTURES BAFTAs 2015: All the dresses and glamour from the BAFTA Film Awards red carpet - photos" />
+<meta name="keywords" content="baftas 2015, bafta film awards 2015, baftas, bafta film awards, the baftas, red carpet, pictures, photos, new, stars, awards" />
+<meta name="description" content="NEW PHOTOS See the stars arrive for the glitzy event in London" />
+        <meta property="fb:app_id" content="131581623525169" />
+        <meta property="og:title" content="NEW PICTURES BAFTAs 2015: All the dresses and glamour from the BAFTA Film Awards red carpet - photos" />
+<meta property="og:site_name" content="nowmagazine" />
+<meta property="og:image" content="http://nowmagazine.media.ipcdigital.co.uk/11140/00002b74d/357e_orh100000w360/Sarah-Jane-Crawford.jpg" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="" />
+        <meta name="viewport" content="width=device-width" />
+        <title>NEW PICTURES BAFTAs 2015: All the dresses and glamour from the BAFTA Film Awards red carpet - photos</title>
+        <!--<link rel="shortcut icon" href="/favicon.ico" />-->
+                <script type="text/javascript" charset="utf-8">
+    var protocol =  ("https:" == document.location.protocol) ? "https://" : "http://";
+
+    var url = ("https:" == document.location.protocol) ? "secure.assets.ipcdigital.co.uk/js/e1403883962_f0233d3/min/tealium/utils-min.js" : "assets.ipcdigital.co.uk/js/e1403883962_f0233d3/min/tealium/utils-min.js",
+        f = unescape("%3Cscript src='" + protocol + url + "' type='text/javascript'%3E%3C/script%3E");
+    document.write(f);
+</script><!-- served by IPC Includes 2 -->
+<meta name="verify-v1" content="GfDdOWC9Bm2bF6jJ1iTa34JAsUiw3rYUFRnEI+gbUz0=" />
+<!-- Served by includes v2 -->
+<script type="text/javascript" charset="utf-8">
+  (function loadAdloaderAugmentation() {
+    var protocol =  ("https:" == document.location.protocol) ? "https://" : "http://";
+    url = ("https:" == document.location.protocol) ? "secure.zardoz.ipcdigital.co.uk/74e0157-03/now2/thirdparty_dfp/11140/adloader.js" : "zardoz.ipcdigital.co.uk/74e0157-03/now2/thirdparty_dfp/11140/adloader.js",
+    version = "7224",
+    f = unescape("%3Cscript src='" + protocol + url + "?v=" + version + "' type='text/javascript'%3E%3C/script%3E");
+    document.write(f);
+  })();
+</script>        
+        <script type="text/javascript" charset="utf-8">window.ipcTags = {"section":"pictures","type":"gallery","contentId":"37598","platform":"desktop","site":"nowmagazine","dfp_config":{"required_tags":["section","type","contentId","site"],"slots":{"dfpad-overlay01":{"name":"overlay01","sizes":[1,1]},"dfpad-leaderboard01":{"name":"leaderboard01","sizes":[[728,90],[970,250]]},"dfpad-mpu01":{"name":"mpu01","sizes":[[300,250],[300,600],[300,1050]]},"dfpad-sky01":{"name":"sky01","sizes":[[120,600],[160,600]]}}}};</script>
+                    <link rel="canonical" href="http://www.nowmagazine.co.uk/gallery/red-carpet/37598/1/0/baftas-2015-all-the-dresses-and-glamour-from-the-bafta-film-awards-red-carpet/1" />
+                        
+        <link href="https://plus.google.com/111826383476299781845" rel="publisher" />
+
+        <link rel="stylesheet" type="text/css" media="screen" href="http://fonts.googleapis.com/css?family=Lustria|Open+Sans" />
+<link rel="stylesheet" type="text/css" media="screen" href="/css-min/base64/JTI1MkZjc3MlMjUyRnJlZGVzaWduJTI1MkZzdHlsZS5jc3MrJTI1MkZjc3MlMjUyRnJlZGVzaWduJTI1MkZtYWluLmNzcyslMjUyRmNzcyUyNTJGcmVkZXNpZ24lMjUyRnJpZ2h0cmFpbC5jc3MrJTI1MkZjc3MlMjUyRnJlZGVzaWduJTI1MkZkdXBsaWNhdGUtc3R5bGUuY3NzKyUyNTJGY3NzJTI1MkZjb3JlJTI1MkZ4LXNpdGUtc3R5bGUuY3NzKyUyNTJGY3NzJTI1MkZyZWRlc2lnbiUyNTJGc2hhcmVkLWNvbXBvbmVudHMuY3NzKyUyNTJGY3NzJTI1MkZyZWRlc2lnbiUyNTJGZ2FsbGVyeS5jc3M%3D/v/p1426156859_1aef28e/t/1426157030.css" />
+
+        <!--[if lt IE 9]>
+        <link rel="stylesheet" type="text/css" media="screen" href="/css/redesign/ie-core.css?version=p1426156859_1aef28e" />
+        <![endif]-->
+
+        <script type="text/javascript" src="/js-min/base64/JTI1MkZqcyUyNTJGbGliJTI1MkZodG1sNXNoaXYtMy42LjIubWluLmpzKyUyNTJGanMlMjUyRmxpYiUyNTJGanF1ZXJ5LTEuOC4yLm1pbi5qcyslMjUyRmpzJTI1MkZsaWIlMjUyRmZiRXhlYy5qcw%3D%3D/v/p1426156859_1aef28e/t/1426157030.js"></script>
+
+        <script src="//cdn.optimizely.com/js/130996971.js"></script>
+        <script type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+    </head>
+    <body class="no-jq">
+
+            <script type="text/javascript">
+    window.ipcTags = window.ipcTags || {};
+    window.ipcTags.env = 'prod';
+</script>
+<!-- Loading script asynchronously -->
+<script type="text/javascript">
+    (function(a,b,c,d){
+    a='//tags.tiqcdn.com/utag/ipc/now/prod/utag.js';
+    b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+    })();
+</script>
+
+
+<script type="text/javascript">
+(function () {
+  if(typeof(window.ipcTags.dfp_config.read_cookies) == 'undefined') {
+    window.ipcTags.dfp_config.read_cookies = {};
+  }
+
+    
+  window.ipcTags.dfp_config.read_cookies.evidon_on = {
+    'name'          : 'ev_hidden',
+    'cookie_name'   : '__ric_c1131',
+    'type'          : 'boolean'
+  };
+
+  
+})();
+</script><script type="text/javascript">
+(function() {
+	/* Include required screen size functions right here */
+	var getDisplayWidth=function(){var e=0;if(typeof window.innerWidth!="undefined"){e=window.innerWidth}else if(typeof document.documentElement!="undefined"&&typeof document.documentElement.clientWidth!="undefined"&&document.documentElement.clientWidth!=0){e=document.documentElement.clientWidth}else{e=document.getElementsByTagName("body")[0].clientWidth}return Number(e)};
+	var getDisplayHeight=function(){var e=0;if(typeof window.innerHeight!="undefined"){e=window.innerHeight}else if(typeof document.documentElement!="undefined"&&typeof document.documentElement.clientHeight!="undefined"&&document.documentElement.clientHeight!=0){e=document.documentElement.clientHeight}else{e=document.getElementsByTagName("body")[0].clientHeight}return Number(e)};
+
+	/* Pageskin targeting stuff */
+	if(getDisplayWidth() >= 1280) {
+		window.ipcTags['pageskin'] = 'yes';
+	} else {
+		window.ipcTags['pageskin'] = 'no';
+	}
+	window.ipcTags['dfp_config']['required_tags'].push('pageskin');
+})();
+</script>
+
+<script type="text/javascript">
+  (function() {
+    if ( document.cookie.match(/\bforceweb=/) ) {
+      var script = document.createElement('script'),
+          thisNode = document.getElementsByTagName('script')[0];
+      
+      script.type = 'text/javascript';
+      script.async = 'async';
+      script.src = ( 'https:' === document.location.protocol ? 'https://secure.assets.ipcdigital.co.uk/js/min/mobileweb.v1-min.js' : 'http://assets.ipcdigital.co.uk/js/min/mobileweb.v1-min.js' );
+
+      thisNode.parentNode.insertBefore(script, thisNode);
+    }
+  })();
+</script>
+
+<script type="text/javascript" charset="utf-8">
+/**
+* Initiate the adloader
+*/
+ipc.adloader.setProvider('dfp');
+
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+var adloaderConfig = {};
+(function() {
+if (ipc.adloader.getProvider() === "dfp") {
+  ipc.adloader.setDisplayMode('desktop');
+
+  adloaderConfig = {
+    'accountId':   '18711560',
+    'environment': 'live',
+    'googleTag':   googletag
+  };
+      
+  
+  var gads = document.createElement('script');
+  gads.async = true;
+  gads.type = 'text/javascript';
+  var useSSL = 'https:' == document.location.protocol;
+    if(ipc.adloader.getDisplayMode() == 'mobile') {
+    gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt_mobile.js';
+  } else {
+    gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+  }
+    var node = document.getElementsByTagName('script')[0];
+  node.parentNode.insertBefore(gads, node);
+  ipc.adloader.init(adloaderConfig);
+  
+}
+})();
+</script>
+<script type="text/javascript">var _kiq = _kiq || [];</script>
+<script type="text/javascript">
+  (function(){
+    setTimeout(function(){
+    var d = document, f = d.getElementsByTagName('script')[0], s = d.createElement('script'); s.type = 'text/javascript'; 
+    s.async = true; s.src = '//s3.amazonaws.com/ki.js/30470/aOw.js'; f.parentNode.insertBefore(s, f);
+    }, 1);
+  })();
+</script>
+<noscript><a href="https://qualaroo.com/">Survey by Qualaroo</a></noscript><script type="text/javascript">
+/* Proxy omniture, this catches any references to omniture tracking functions post removal */
+s = ipcomniture = {};
+s.t = function(vo,id) {
+	ipc.utils.trackEvent('Omniture referenced', 's.t called', window.location.href);
+
+	}
+s.tl = function(o,t,n,vo) {
+	ipc.utils.trackEvent('Omniture referenced', 's.tl called', window.location.href);
+        // Pass the event through to GA in case it hasn't been replicated yet.
+	ipc.utils.trackEvent('Omniture Custom Tracking', n, window.location.href);
+
+	}
+</script><!-- Begin comScore Tag -->
+<script>
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "6034835" });
+  ipc.utils.comscoreSetId(6034835);
+  (function() {
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+    el.parentNode.insertBefore(s, el);
+  })();
+</script>
+<noscript>
+  <img src="http://b.scorecardresearch.com/p?c1=2&c2=6034835&cv=2.0&cj=1" />
+</noscript>
+<!-- End comScore Tag -->                <div id="siteWrapper">
+            <div id="layoutDiv">
+
+                <header>
+
+	<div id="brand-subscribe">	
+			
+		<a class="maincover" href="http://www.nowmagazine.co.uk/magazine/latestissue" title="Now Cover 6 April 2015" _target="blank">
+		<img alt="" title="Now Cover 6 April 2015" src="http://nowmagazine.media.ipcdigital.co.uk/11140/00002c530/ddb9_orh125w175/15-Cover-WEB-TILT.jpg" />	</a>
+		
+			
+		<a class="promo1" href="http://www.magazinesdirect.com/Now-magazine-subscription?utm_content=fixed+link+nav+bar" title="" _target="blank">
+		<img alt="" title="" src="http://nowmagazine.media.ipcdigital.co.uk/11140/00001c3c7/bc78_orh34w151/subscribe.png" />	</a>
+		
+			
+		<a class="promo2" href="http://www.nowmagazine.co.uk/digital-edition?utm_source=Now&amp;utm_medium=articlehead&amp;utm_campaign=digitaleditions2014" title="Download issue" _target="blank">
+		<img alt="" title="Download issue" src="http://nowmagazine.media.ipcdigital.co.uk/11140/00002137a/e5e6_orh34w200/Download-issue.gif" />	</a>
+		
+	</div>
+	<a href="http://www.nowmagazine.co.uk" title="Now Magazine">
+		<h1><img alt="Latest celebrity news, gossip and pictures from Now Magazine" height="120" id="header-logo" src="/images/redesign/header-logo.png" width="447" /></h1>
+	</a>
+
+	<div id="nav_search">
+
+		<nav>
+	<ul>
+			<li>
+			<a title="Home" href="/">Home</a>					</li>
+			<li>
+			<a title="News" href="/celebrity-news">Celebrity news</a>									<ul class="multicol">
+								<li class="multicol item0"><a title="News" href="/celebrity-news">Celebrity news</a></li>
+								<li class="multicol item1"><a title="Celebrity A - Z" href="/celebrity/atoz/a">Celebrity A - Z</a></li>
+								<li class="multicol item2"><a title="TV news" href="/tv-news">TV news</a></li>
+								<li class="multicol item3"><a title="Latest issue" href="/magazine/latestissue">Latest issue</a></li>
+								<li class="multicol item4"><a title="Video news" href="/videos">Video news</a></li>
+							</ul>
+					</li>
+			<li class="active">
+			<a title="Pictures" class="active" href="/gallery">Pictures</a>									<ul class="multicol">
+								<li class="multicol item0"><a title="Celebrity spy" href="/gallery/celebrity-spy">Celebrity spy pics</a></li>
+								<li class="multicol item1"><a title="Celebrity news" href="/gallery/celebrity-news">Celebrity news pics</a></li>
+								<li class="multicol item2"><a title="TV news" href="/gallery/tv-news">TV news pics</a></li>
+								<li class="multicol item3"><a title="Funnies" href="/gallery/funnies">Funny pics</a></li>
+								<li class="multicol item4"><a title="Gallery specials" href="/gallery/gallery-specials">Gallery specials pics</a></li>
+							</ul>
+					</li>
+			<li>
+			<a title="Fashion" href="/fashion-news">Fashion</a>									<ul class="multicol">
+								<li class="multicol item0"><a title="Fashion news" href="/fashion-news">Fashion news</a></li>
+								<li class="multicol item1"><a title="Bad celebrity fashion pics" href="/gallery/worst-dressed-celebrities">Bad celebrity fashion pics</a></li>
+								<li class="multicol item2"><a title="New celeb fashion pics" href="/gallery/best-dressed-celebrities">New celeb fashion pics</a></li>
+								<li class="multicol item3"><a title="Fashion news" href="/gallery/fashion-news">Fashion news pics</a></li>
+								<li class="multicol item4"><a title="Shop" href="/shop">Shop</a></li>
+								<li class="multicol item5"><a title="Star style pics" class="active" href="/gallery/star-style">Star style pics</a></li>
+								<li class="multicol item6"><a title="Red carpet pics" href="/gallery/red-carpet">Red carpet pics</a></li>
+							</ul>
+					</li>
+			<li>
+			<a title="GossipCam" href="/news/gossipcam">GossipCam</a>					</li>
+			<li>
+			<a title="Baby news" href="/news/baby">Baby news</a>					</li>
+			<li>
+			<a title="Win" href="http://comps.nowmagazine.co.uk/">Win</a>									<ul>
+								<li><a title="Prize draws" href="/prizedraws">Prize draws</a></li>
+								<li><a title="Instant wins" href="/instantwins">Instant wins</a></li>
+								<li><a title="Feelgood games" href="/feelgoodgames">Feelgood games</a></li>
+								<li><a title="Competition winners" href="/compwinners">Competition winners</a></li>
+							</ul>
+					</li>
+			<li>
+			<a title="Hair" href="/celebrity-hair">Hair</a>									<ul>
+								<li><a title="Hair" href="/celebrity-hair">Celebrity hair</a></li>
+								<li><a title="Celebrity hair" href="/gallery/celebrity-hair">Celebrity hair pics</a></li>
+								<li><a title="New celeb hairstyles - pics" href="/gallery/new-celeb-hairstyles">New celeb hairstyles - pics</a></li>
+							</ul>
+					</li>
+		</ul>
+</nav>
+
+		<div id="searchMenuDiv">
+			<form class="searchForm" method="get" action="/search">
+	<fieldset>
+		<span>
+			<label class="ah" for="headerQuery">Search:</label>
+			<input type="text" class="searchFormTextInput" name="q" placeholder="Search Now" />
+            <input type="hidden" name="categories" value="6648,6655,6670,6692,6713,6718" />
+			<input type="image" src="/images/redesign/icons/search-icon.png" height="34" width="41" border="0" alt="Search Now Magazine for celebrity news, profiles, competitions &amp; horoscopes" />
+		</span>
+	</fieldset>
+</form>
+		</div>
+
+	</div>
+
+</header>
+
+                                    <div id="leaderboard">
+                        <div id="adtech_leaderboard">
+                            
+<div id="adtech_leaderboard01">
+  <div class="ads leaderboard01 InSkinHide" id="dfpad-leaderboard01">
+    <div id="adtech_leaderboard01_call" style="display: none;"></div>
+    <script type="text/javascript"><!--
+        if (window.adgroupid == undefined) {
+            window.adgroupid = Math.round(Math.random() * 1000);
+        }
+        if (ipc.adloader.getProvider() == "adtech") {
+                      ipc.adtech.adurl = 'http://adserver.adtech.de/addyn|3.0|656.1|1526816|0|225|ADTECH;cookie=info;alias=now2_galleries_728x90;loc=100;target=_blank;key=articles_37598+key2+key3+key4;group=[thisgroup];';
+            document.write('<scr' + 'ipt type="text/javascript" src="' + ipc.adtech.getAugmentedUrl(ipc.adtech.adurl) + '"><' + '/scri' + 'pt>');
+                    document.getElementById('adtech_leaderboard01_call').innerHTML = ipc.adtech.adurl;
+        } else if (ipc.adloader.getProvider() == "dfp") {
+          ipc.adloader.registerSlot('dfpad-leaderboard01');
+        }
+    //--></script>
+  </div>
+</div>
+
+                        </div>
+                    </div>
+                
+                                                
+                <div id="content">
+                    
+<div id="gallery-container" data-is-franchise="0" itemscope itemtype="http://schema.org/ImageGallery">
+	<h1 itemprop="specialty">BAFTAs 2015: All the dresses and glamour from the BAFTA Film Awards red carpet</h1>
+
+<div class="portrait gallery clearfix">
+	<div class="image" itemprop="mainContentOfPage">
+	<a itemprop="significantLink" class="next track_a_g_event track_a_g_carousel_click" href="/gallery/red-carpet/37598/1/1/baftas-2015-all-the-dresses-and-glamour-from-the-bafta-film-awards-red-carpet/1">
+		<img itemprop="primaryImageOfPage" alt="Sarah-Jane Crawford at BAFTAs 2015" src="http://nowmagazine.media.ipcdigital.co.uk/11140/00002b74d/357e_orh100000w360/Sarah-Jane-Crawford.jpg" />	</a>
+</div>
+
+	<nav itemprop="breadcrumb" class="pagination ">
+	<span class="position"><b>1</b> of <b>44</b> pictures</span>
+
+			<a class="ir prev track_a_g_event track_a_g_next_button" href="/gallery/gallery-specials/37575/8/0/kim-kardashian-s-changing-body-in-pictures/1">Prev</a>
+	
+	<a class="ir play track_a_g_event track_a_g_play_pause" href="#play">Play</a>
+	<a class="ir next track_a_g_event track_a_g_previous_button" href="/gallery/red-carpet/37598/1/1/baftas-2015-all-the-dresses-and-glamour-from-the-bafta-film-awards-red-carpet/1">Next</a>
+</nav>
+
+
+
+    <div class="social">
+        
+
+<div class="fb-like superFacebook" 
+	 data-href="http://www.nowmagazine.co.uk/gallery/red-carpet/37598/1/0/baftas-2015-all-the-dresses-and-glamour-from-the-bafta-film-awards-red-carpet/1" 
+	 data-send="false" 
+	 data-layout="button_count" 
+     data-width="100" 
+	 data-show-faces="false"></div>
+
+<div class="pw-widget pw-counter-horizontal pw-size-small" pw:title="" pw:url="http://www.nowmagazine.co.uk/gallery/red-carpet/37598/1/0/baftas-2015-all-the-dresses-and-glamour-from-the-bafta-film-awards-red-carpet/1">
+    <a class="pw-button-stumbleupon pw-look-native" pw:url="http://www.nowmagazine.co.uk/gallery/red-carpet/37598/1/0/baftas-2015-all-the-dresses-and-glamour-from-the-bafta-film-awards-red-carpet/1"  pw:title="" pw:counter="show"></a>
+    <a class="pw-button-twitter pw-look-native" pw:url="http://www.nowmagazine.co.uk/gallery/red-carpet/37598/1/0/baftas-2015-all-the-dresses-and-glamour-from-the-bafta-film-awards-red-carpet/1"  pw:title=""></a>    <a class="pw-button-email pw-look-native" pw:url="http://www.nowmagazine.co.uk/gallery/red-carpet/37598/1/0/baftas-2015-all-the-dresses-and-glamour-from-the-bafta-film-awards-red-carpet/1"  pw:title="" pw:counter="show"></a>
+    <a href="" class="pw-button-post-share"></a>
+</div>
+    </div>
+
+	
+	<h3 class="">Sarah-Jane Crawford at BAFTAs 2015</h3>
+<p class="gallery-image-description ">The <strong>BAFTA Film Awards</strong> are back and the stars are out in force looking more glamorous than ever on the red carpet.<br><br>As one of the most highly-anticipated nights of the year in the movie industry, the <strong>BAFTAs </strong>are always an evening to remember.<br><br>The<br />
+ prestigious awards - hosted by the ever-charming Stephen Fry - <br />
+acknowledge the achievements of our favourite actors and actresses on <br />
+the big screen as well as the people behind the scenes and the ceremony <br />
+is often seen as a good indication of who will triumph at the upcoming <br />
+Oscars.<br><br>Our gallery shows the nominees, hosts and gorgeous A-list guests arriving in style for the <strong>BAFTAs 2015</strong> held at London&#039;s stunning Royal Opera House on 8 February 2015.<br><br>We<br />
+ love seeing what the celebs are wearing when they hit the red carpet <br />
+and there are certainly some very chic attendees this year.<br><br>It&#039;s great to see lots of British stars at the do. Several of them are in the running for the top gongs at the <strong>BAFTAs 2015</strong> so it could be a successful night for those on home turf.<br><br>Eddie<br />
+ Redmayne - looking dapper with his pretty wife Hannah Bagshawe - is <br />
+nominated for the Leading Actor accolade alongside Benedict Cumberbatch <br />
+whilst Felicity Jones and Rosamund Pike vie for the Leading Actress <br />
+award.<br><br>Pregnant style icon Keira Knightley could scoop the <br />
+Supporting Actress prize for her role in The Imitation Game. The movie <br />
+is also up for the Film category.<br><br>It&#039;s not just the Hollywood <br />
+elite who know how to work the red carpet. Some of our home-grown <br />
+presenters are also adding glamour to the proceedings.<br><br>Xtra Factor<br />
+ host Sarah-Jane Crawford wows the crowds in a pastel pink dress whilst <br />
+radio DJ Edith Bowman opts for a low-cut purple gown which oozes chic.<br><br>With so many glamorous stars at the show, the <strong>BAFTAs 2015</strong> look set to be a night to remember.</p></div>
+<p class="hidden">Author: <span itemprop="reviewedBy">Anna Francis</span></p>
+<p class="hidden">Updated: <span itemprop="lastReviewed">2015-02-08 19:50:34</span></p>
+
+<div id="comments">
+	<h2>Have your say</h2>
+<fb:comments width="648" href="http://www.nowmagazine.co.uk/gallery/red-carpet/37598/1/0/baftas-2015-all-the-dresses-and-glamour-from-the-bafta-film-awards-red-carpet/1"></fb:comments></div>
+
+<div class="related">
+	</div>
+</div>
+
+<script>
+jQuery(document).ready(function ($) {
+    // don't need to preload anything, only care about next, previous, play / pause, and the ads, and the page views
+    $.AjaxGalleryAds.init({
+        'main_ad': 'leaderboard01',
+        'refresh_ads': true,
+        'alias_route': 'galleries',
+        'keywords': 'articles_37598+key2+key3+key4',
+        'prev': '#gallery-container .prev',
+        'next': '#gallery-container .next',
+        'play': '#gallery-container .play',
+        'carousel': '#aaPage li a',
+        'wrapper': '#gallery-container',
+        'delay': '5500',
+        'auto_start': '',
+        'cache_size': 20,
+        'facebook_wrappers': '.fb',
+        'image_wrapper': '.photoCanvas',
+        'image_container': 'ajaxGalleryPreLoader',
+        'multiple_page_container': 'gallery_preload_pages',
+        'preload_on_init': '1',
+        'google_analytics_accounts': ["UA-11429500-1","UA-11429489-1","UA-11428852-1"],
+        'min_ie_version': '8',
+        'fix_image_path': '1',
+        'only_reload_on_loaded': ["leaderboard01","mpu01"],
+        'change_delay': '1250',
+        'add_ajax_to_path': true,
+                'extra_element': false
+            });
+
+            $.AjaxGalleryAds.preload();
+    });
+</script>
+
+    <script>
+/**
+ * A function to bridge the iframe and the main site
+ */
+function refreshOtherAds(transfer_vars) {
+    jQuery(document).ready(function ($) {
+        $.AjaxGalleryAds.refreshOtherAds(
+        transfer_vars,
+        ["mpu01","sky01","banner01"]);
+    });
+}
+</script>
+            <script>
+/**
+ * A function to bridge the iframe and the main site for flagging as if reloads are needed
+ */
+function reloadOnLoaded(ad_type) {
+    jQuery(document).ready(function ($) {
+        window.setTimeout(function () {
+            $.AjaxGalleryAds.checkReloadAds(ad_type);
+        }, 50);
+    });
+}
+</script>                    </div>
+
+                                                                            <div id="rightRail">
+
+<div id="rightRailSocialButtonsContainer">
+    <div class="twitter-follow">
+    <a href="https://twitter.com/nowmag" 
+	   class="twitter-follow-button" 
+	   data-show-count="false" 
+	   data-show-screen-name="false">Follow @Nowmag</a>
+</div>
+    
+<div class="fb-like">
+	<iframe src="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2F%23%21%2FNowMag&amp;layout=button_count&amp;show_faces=false&amp;width=110&amp;action=like&amp;font&amp;colorscheme=light&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:35px;" allowTransparency="true"></iframe>
+</div></div>
+
+<div id="adplaceholder_mpu01">
+    
+<div id="adtech_mpu01">
+  <div class="ads mpu01 InSkinHide" id="dfpad-mpu01">
+    <div id="adtech_mpu01_call" style="display: none;"></div>
+    <script type="text/javascript"><!--
+        if (window.adgroupid == undefined) {
+            window.adgroupid = Math.round(Math.random() * 1000);
+        }
+        if (ipc.adloader.getProvider() == "adtech") {
+                      ipc.adtech.adurl = 'http://adserver.adtech.de/addyn|3.0|656.1|1526752|0|170|ADTECH;cookie=info;alias=now2_galleries_300x250;loc=100;target=_blank;key=articles_37598+key2+key3+key4;group=[thisgroup];';
+            document.write('<scr' + 'ipt type="text/javascript" src="' + ipc.adtech.getAugmentedUrl(ipc.adtech.adurl) + '"><' + '/scri' + 'pt>');
+                    document.getElementById('adtech_mpu01_call').innerHTML = ipc.adtech.adurl;
+        } else if (ipc.adloader.getProvider() == "dfp") {
+          ipc.adloader.registerSlot('dfpad-mpu01');
+        }
+    //--></script>
+  </div>
+</div>
+
+</div>
+
+<div id="rightRailOBWidget"></div>
+
+
+<div id="newsletterSignup">
+	<img src="/images/redesign/nletter.png" alt="newsletter sign up image" />
+	<h3><span>Free</span> Newsletter</h3>
+	<p>Get your celebrity gossip alert</p>
+	<form method="post" action="https://s1642912926.t.eloqua.com/e/f2" class="ipcSubscribeForm" target="ipcsignup">
+	<input value="nowSubscribeForm" type="hidden" name="elqFormName"  />
+	<input value="1642912926" type="hidden" name="elqSiteId"  />
+	<input name="elqCampaignId" type="hidden"  />
+	<input name="source" type="hidden" value="RRL"  />
+	<label for="signupEmailaddress-551ef3ee166615.64245868">Your email</label>
+	<input class="signupEmailaddress" type="text" value="" placeholder="Your email address" name="emailAddress" id="signupEmailaddress-551ef3ee166615.64245868" />
+	<input class="signupSubmit" type="submit" value="Sign up" name="button" />
+</form>
+	<script type="text/javascript">
+	(function() { if(typeof(LiveValidation) == 'undefined') { var url = ("https:" == document.location.protocol) ? "secure.assets.ipcdigital.co.uk/js" : "assets.ipcdigital.co.uk/js";document.write(unescape("%3Cscript src='//" + url + "/js/vendor/livevalidation_standalone.compressed.js' type='text/javascript'%3E%3C/script%3E")); } } )();
+	</script>
+	<style type="text/css" media="screen" >
+	.ipcSubscribeForm { position: relative; }
+	.LV_validation_message { left:0px; top:70px; z-index:10000; display:none; padding:14px 20px; margin-top:-30px; margin-left:28px; width:200px; line-height:16px; display:inline; position:absolute; color:#111; border:1px solid #DCA; background:#fffAF0; border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -moz-box-shadow: 5px 5px 8px #CCC; -webkit-box-shadow: 5px 5px 8px #CCC; box-shadow: 5px 5px 8px #CCC; }
+	</style>
+	<script type="text/javascript" >
+        (function() { var emailField = new LiveValidation("signupEmailaddress-551ef3ee166615.64245868", { onInvalid: function() { var messageElem = this.createMessageSpan(); this.insertMessage(messageElem); this.addFieldClass(); var messageTimeout = setTimeout(function() { if(messageElem.parentNode){messageElem.parentNode.removeChild(messageElem)}; clearTimeout(messageTimeout); }, 5000); }, onValid : function() { return true }, onlyOnSubmit: true }); emailField .add(Validate.Format, {pattern: /^[ ]*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})[ ]*$/i, failureMessage: "A valid email address is required"}); emailField .add(Validate.Presence, {failureMessage: "This field is required"}); })();
+	</script>
+</div>
+
+	<div id="rightRailBrightcovePlayerContainer">
+
+    <div id="rightRailBrightcovePlayer">
+
+        <h2 class="nowTv">Now TV</h2>
+
+        <!--
+        By use of this code snippet, I agree to the Brightcove Publisher T and C
+        found at https://accounts.brightcove.com/en/terms-and-conditions/. Z
+        -->
+        <object id="rightRailBrightcovePlayerObject" class="BrightcoveExperience">
+          <param name="bgcolor" value="#FFFFFF" />
+          <param name="width" value="300" />
+          <param name="height" value="340" />
+          <param name="playerID" id="brightCoveRRPlayerId" value="26589976001" />
+                      <param name="playerKey" id="brightCoveRRPlayerKey" value="AQ~~,AAAABHavKSE~,RRl7R4IrXxNK_y4N09gaWgSIfMNqMwLN" />
+                    <param name="publisherID" value="19171060001"/>
+          <param name="isVid" value="true" />
+          <param name="isUI" value="true" />
+          <param name="dynamicStreaming" value="true" />
+          <param name="wmode" value="transparent" />
+          <param name="templateLoadHandler" value="onFlashTemplateLoaded" />
+        </object>
+
+        <!-- End of Brightcove Player -->
+    </div>
+
+</div>
+
+
+
+<div id="adtech_sky01">
+  <div class="ads sky01 InSkinHide" id="dfpad-sky01">
+    <div id="adtech_sky01_call" style="display: none;"></div>
+    <script type="text/javascript"><!--
+        if (window.adgroupid == undefined) {
+            window.adgroupid = Math.round(Math.random() * 1000);
+        }
+        if (ipc.adloader.getProvider() == "adtech") {
+                      ipc.adtech.adurl = 'http://adserver.adtech.de/addyn|3.0|656.1|1526946|0|154|ADTECH;cookie=info;alias=now2_galleries_160x600;loc=100;target=_blank;key=articles_37598+key2+key3+key4;group=[thisgroup];';
+            document.write('<scr' + 'ipt type="text/javascript" src="' + ipc.adtech.getAugmentedUrl(ipc.adtech.adurl) + '"><' + '/scri' + 'pt>');
+                    document.getElementById('adtech_sky01_call').innerHTML = ipc.adtech.adurl;
+        } else if (ipc.adloader.getProvider() == "dfp") {
+          ipc.adloader.registerSlot('dfpad-sky01');
+        }
+    //--></script>
+  </div>
+</div>
+
+<div class="latestArticleInCategory rightRailSlim">
+	<a href="http://www.nowmagazine.co.uk/news/harry-styles">
+				<span>Check out Harry Styles&#039; personal celeb file</span>
+		<img class="carousel_image" alt="Check out Harry Styles' personal celeb file" title="Check out Harry Styles' personal celeb file" src="http://nowmagazine.media.ipcdigital.co.uk/11140/00001cdfc/9887_orh167w125/Harry-Styles1.jpg" />		<p>Catch up with all the Harry Styles news</p>
+	</a>
+</div>
+<div id="followUs">
+	
+	<a href="http://twitter.com/NowMag" title="Follow us on Twitter">
+		<img alt="Follow us on Twitter" src="/images/redesign/follow-twitter.png" />
+	</a>
+	
+	<a href="http://www.facebook.com/pages/Now-magazine/267087179034" title="Join us on Facebook">
+		<img alt="Join us on Facebook" src="/images/redesign/follow-facebook.png" />
+	</a>
+	
+</div>
+
+<div id="RIGHTRAIL-POSITION3">
+<!--Image1-->
+<div style="margin-top: 10px">
+<a href="http://ad.doubleclick.net/clk;259696347;83139674;f" target="_blank">
+ <img src="https://default.secure.media.ipcdigital.co.uk/11140|00001e2bd|0d7e_feelgood-dond-generic-300x50.gif" border="0" width="300" height="50">
+</a>
+</div></div>
+<div class="competitions">
+
+	<a href="http://comps.nowmagazine.co.uk">
+		<h3>Competitions</h3>
+	</a>
+
+	<a href="http://comps.nowmagazine.co.uk/competition/Runnymede_on_thames_network.php?referrer=WTVX001">
+		<img src="http://c3.dmri-library.com/shared/images/comps/Runnymede_on_thames_400x250.jpg" />
+		<p><strong>A Weekend Spa Break for Two at the runnymede-on-thames </strong></p>
+		
+This spring, one lucky winner will get the chance to win a relaxing and peaceful riverside retreat for two at the runnymede-on-thames.
+		<div class="more">Enter</div>
+	</a>
+</div>
+
+
+
+<div id="RIGHTRAIL-POSITION4">
+<!--Image1-->
+<div style="margin-top: 10px">
+<a href="http://nowmagazine.shopstyle.co.uk/" target="_blank">
+ <img src="http://www.nowmagazine.co.uk/fileBank/now2/GIF/now_shopstyle_300.gif" border="0" width="300" height="76">
+</a>
+</div></div>
+
+
+</div>
+                
+                <footer>
+
+    <a class="site_logo" href="http://www.nowmagazine.co.uk" title="Now Magazine">
+        <img src="/images/redesign/icons/now-daily-small.png" alt="Now Daily logo" />
+    </a>
+
+    <div id="searchMenuDiv">
+        <form class="searchForm" method="get" action="/search">
+	<fieldset>
+		<span>
+			<label class="ah" for="headerQuery">Search:</label>
+			<input type="text" class="searchFormTextInput" name="q" placeholder="Search Now" />
+            <input type="hidden" name="categories" value="6648,6655,6670,6692,6713,6718" />
+			<input type="image" src="/images/redesign/icons/search-icon.png" height="34" width="41" border="0" alt="Search Now Magazine for celebrity news, profiles, competitions &amp; horoscopes" />
+		</span>
+	</fieldset>
+</form>
+    </div>
+
+    <nav>
+        <ul>
+            <li><h3><a href="http://comps.nowmagazine.co.uk" title="UK competitions online" rel="nofollow">Competitions</a></h3></li>
+            <li><a href="http://comps.nowmagazine.co.uk" title="UK competitions online" rel="nofollow">Enter</a></li>
+            <li><a href="http://comps.nowmagazine.co.uk/winners.php" title="UK competition winners" rel="nofollow">Winners</a></li>
+        </ul>
+                <ul>
+            <li><h3><a href="/contact" title="contact Now magazine">Contact us</a></h3></li>
+            <li><a href="/workexperience" title="magazine work experience on Now Online" >Work experience</a></li>
+            <li><a href="/magazine" title="Whats in the latest issue of Now magazine" >This week's issue of Now</a></li>
+            <li><a href="/magazine/2015" title="Back issues of Now magazine" >Back issues of Now</a></li>
+            <li><a href="http://www.magazinesdirect.com/Now-magazine-subscription?utm_content=Footer+Nav+Text+Link" rel="nofollow" title="Now magazine subscriptions" >Subscribe to Now magazine</a></li>
+            <li><a href="/newsletter" title="Now magazine newsletter" >Newsletter</a></li>
+            <li><a href="/archive" title="Site news archive" >Archive</a></li>
+        </ul>
+
+        <ul>
+            <li><h3>iPad Editions</h3></li>
+            <li><a href=" https://itunes.apple.com/gb/app/now-magazine-uk/id576365000?mt=8" title="Now Magazine iPad Edition" >Now Magazine iPad Edition</a></li>
+            <li><a href=" https://itunes.apple.com/us/app/now-magazine-international/id576760215?mt=8" title="Now Magazine iPad Edition International" >Now Magazine iPad Edition International</a></li>
+            <li><a href=" https://itunes.apple.com/us/app/now-magazine-north-america/id577047825?mt=8" title="Now Magazine iPad Edition North America" >Now Magazine iPad Edition North America</a></li>
+        </ul>
+
+        <ul id="footerRSSLinks">
+            <li><h3><a href="/rss">RSS feeds</a></h3></li>
+            <li><a href="/feeds/headline/celebrity-news.rss" title="News">Celebrity news</a></li>
+            <li><a href="/feeds/headline/blogs.rss" title="News">Blogs</a></li>
+            <li><a href="/feeds/headline/star-style/fashion-news.rss" title="News">Fashion news</a></li>
+            <li><a href="/feeds/headline/star-style/beauty-news.rss" title="News">Beauty news</a></li>
+            <li><a href="/feeds/headline/star-style/celebrity-hair.rss" title="News">Celebrity hair news</a></li>
+        </ul>
+
+        <ul>
+            <li><h3>Our associated sites</h3></li>
+            <li><a rel="nofollow" href="http://www.goodtoknow.co.uk" title="Good To Know">Good To Know</a></li>
+            <li><a rel="nofollow" href="http://www.look.co.uk/" title="Look">Look</a></li>
+            <li><a rel="nofollow" href="http://www.marieclaire.co.uk/" title="Marie Claire">Marie Claire</a></li>
+            <li><a rel="nofollow" href="http://www.instyle.co.uk/" title="Instyle">Instyle</a></li>
+        </ul>
+
+        <ul>
+            <li><h3>Feelgood games</h3></li>
+            <li><a rel="nofollow" href="http://www.feelgoodgames.co.uk/tag/puzzle" title="Puzzles">Puzzles</a></li>
+            <li><a rel="nofollow" href="http://www.feelgoodgames.co.uk/tag/card" title="Card Games">Card Games</a></li>
+            <li><a rel="nofollow" href="http://www.feelgoodgames.co.uk/games/jigsawdeluxe" title="Jigsaws">Jigsaws</a></li>
+            <li><a rel="nofollow" href="http://www.feelgoodgames.co.uk/tag/word" title="Word Games">Word Games</a></li>
+            <li><a rel="nofollow" href="http://www.feelgoodgames.co.uk/games/bejeweled2" title="Bejeweled 2">Bejeweled 2</a></li>
+            <li><a rel="nofollow" href="http://www.feelgoodgames.co.uk/games/mahjongworld" title="Mahjong">Mahjong</a></li>
+            <li><a rel="nofollow" href="http://www.feelgoodgames.co.uk/tag/card" title="Solitaire">Solitaire</a></li>
+        </ul>
+
+        <ul id="disclaimers">
+            <li><h3>Info</h3></li>
+            <li><a rel="nofollow" href="http://www.timeincuk.com/terms-and-conditions/">Terms &amp; conditions</a></li>
+            <li><a rel="nofollow" href="http://www.timeincuk.com/privacy/">Privacy policy</a></li>
+            <li><a rel="nofollow" href="http://www.timeincuk.com/privacy/#cookies">Cookie information</a></li>
+            <li><a rel="nofollow" href="http://www.timeincuk.com/advertise/">Advertise with us</a></li>
+        </ul>
+
+    </nav>
+
+    <section id="footerExtras">
+	<div id="footerSocialLinks">
+		<a rel="nofollow" href="http://twitter.com/NowMag" title="Follow us on Twitter"><img src="/images/redesign/icons/twitter-small.png" title="Follow us on Twitter" /></a>
+		<a rel="nofollow" href="http://www.facebook.com/pages/Now-magazine/267087179034" title="Follow us on Facebook"><img src="/images/redesign/icons/facebook-small.png" title="Follow us on Facebook" /></a>
+	</div>
+
+	<div id="footerCopy">
+		<div id="footerCopyright">&copy; Copyright nowmagazine.co.uk 2015</div>
+		<span>Now Magazine is part of the Time Inc. (UK) Ltd Fashion &amp; Beauty Network</span>
+	</div>
+
+</section>
+</footer>
+            </div>
+        </div>
+
+                <script type="text/javascript">
+    jQuery(document).on('success.success.ipcajaxgallery', function() {
+        post_init();
+    });
+</script>
+        <script type="text/javascript">
+	var skimlinks_pub_id = '635X130704';
+		var skimlinks_exclude = new Array('adserver.adtech.de','goodtoknow.co.uk','whatsontv.co.uk','pickmeupmagazine.co.uk');
+	</script>
+<script type="text/javascript">
+(function() {
+  if ("https:" == document.location.protocol || window.ipc_skim_links_disabled === true) {
+    return true;
+  }
+
+  var skimlinks_script = document.createElement('script');
+  skimlinks_script.type = 'text/javascript';
+  skimlinks_script.async = true;
+  skimlinks_script.src = '//s.skimresources.com/js/ipc.skimlinks.js';
+
+  var skimlinks_script_attach = document.getElementsByTagName('script')[0];
+  skimlinks_script_attach.parentNode.insertBefore(skimlinks_script, skimlinks_script_attach.nextSibling);
+})();
+</script>
+
+<!-- START Nielsen Online SiteCensus V6.0 -->
+<!-- COPYRIGHT 2010 Nielsen Online -->
+<script type="text/javascript">
+  (function () {
+    var d = new Image(1, 1);
+    d.onerror = d.onload = function () {
+      d.onerror = d.onload = null;
+    };
+    d.src = ["//secure-uk.imrworldwide.com/cgi-bin/m?ci=uk-105070h&cg=0&cc=1&si=", escape(window.location.href), "&rp=", escape(document.referrer), "&ts=compact&rnd=", (new Date()).getTime()].join('');
+  })();
+</script>
+<noscript>
+  <div>
+    <img src="//secure-uk.imrworldwide.com/cgi-bin/m?ci=uk-105070h&cg=0&cc=1&ts=noscript"
+    width="1" height="1" alt="" />
+  </div>
+</noscript>
+<!-- END Nielsen Online SiteCensus V6.0 --><script type="text/javascript">
+  (function() {
+    var hn = document.createElement('script'); hn.type = 'text/javascript'; hn.async = true; hn.setAttribute('data-ev-hover-pid',1131); hn.setAttribute('data-ev-hover-ocid', 1996);
+    hn.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'c.betrad.com/geo/h1.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hn, s);
+  })();
+</script>        
+        <!--[if lt IE 7 ]>
+        <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+        <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+        <![endif]-->
+        <script type="text/javascript" src="/js-min/base64/JTI1MkZqcyUyNTJGcmVkZXNpZ24lMjUyRnBsdWdpbnMlMjUyRmpxdWVyeS5lbmFibGVQbGFjZWhvbGRlci5qcyslMjUyRmpzJTI1MkZyZWRlc2lnbiUyNTJGcGx1Z2lucyUyNTJGanF1ZXJ5LmhvdmVySW50ZW50LmpzKyUyNTJGanMlMjUyRnJlZGVzaWduJTI1MkZnbG9iYWwuanMrJTI1MkZqcyUyNTJGcmVkZXNpZ24lMjUyRnRyYWNraW5nLmpzKyUyNTJGanMlMjUyRnJlZGVzaWduJTI1MkZpbnRlcm5hdGlvbmFsLW92ZXJsYXkuanMrJTI1MkZqcyUyNTJGcmVkZXNpZ24lMjUyRmpxdWVyeS5pcGMtYWpheEdhbGxlcnlBZHMuZXh0ZW5kZWQuanM%3D/v/p1426156859_1aef28e/t/1426157030.js"></script>
+
+        <script type="text/javascript">
+    (function($) {
+        var pattern = "'iPad|iPad.*Mobile|^.*Android.*Nexus(((?:(?!Mobile))|(?:(\s(7|10).+))).)*|SAMSUNG.*Tablet|Galaxy.*Tab|Kindle|Silk.*Accelerated|HP Slate 7|HP ElitePad 900|hp-tablet|EliteBook.*Touch|^.*PadFone((?!Mobile).)*$|Transformer|Android.*\b97D\b|Tablet(?!.*PC)|Sony.*Tablet|Xperia Tablet|Sony Tablet S|IdeaTab|Windows NT [0-9.]+; ARM;",
+            tablet  = navigator.userAgent.match(pattern),
+            celebrityPage = (window.location.href.indexOf("celebrity-news") >= 0),
+            isArticleWithBrightcoveVideo = $('#article object.BrightcoveExperience').length === 1;
+
+        if (celebrityPage) {
+            // detect if tablet is being used to serve correct player
+            if (tablet !== null) {
+                $('#brightCoveRRPlayerId').val('3352816986001');
+                if ($('#brightCoveRRPlayerKey').length == 0) {
+                    $('#rightRailBrightcovePlayerObject').append('<param name="playerKey" id="brightCoveRRPlayerKey" value="AQ~~,AAAABHavKSE~,RRl7R4IrXxPOreBkbuCEGQcJ8yLDEVC1" />');
+                } else {
+                    $('#brightCoveRRPlayerKey').val('AQ~~,AAAABHavKSE~,RRl7R4IrXxPOreBkbuCEGQcJ8yLDEVC1');
+                }
+            } else {
+                $('#brightCoveRRPlayerId').val('2686411483001');
+                if ($('#brightCoveRRPlayerKey').length == 0) {
+                    $('#rightRailBrightcovePlayerObject').append('<param name="playerKey" id="brightCoveRRPlayerKey" value="Q~~,AAAABHavKSE~,RRl7R4IrXxNvJRIuFva7vyvrIfLvzR08" />');
+                } else {
+                    $('#brightCoveRRPlayerKey').val('Q~~,AAAABHavKSE~,RRl7R4IrXxNvJRIuFva7vyvrIfLvzR08');
+                }
+            }
+        }
+
+        $.getScript("http://admin.brightcove.com/js/APIModules_all.js", function(data, textStatus, jqxhr) {
+            if (celebrityPage) {
+                // Move the location of the social buttons and player
+                //Triggers autoplay later on.
+                rightRailAuto = (!isArticleWithBrightcoveVideo);
+
+                if(isArticleWithBrightcoveVideo) {
+                    var paramEl = $('<param>');
+
+                    paramEl.attr('name', 'flashVars');
+                    paramEl.attr('value', 'autoStart=false');
+                    $('#rightRail object.BrightcoveExperience').append(paramEl);
+                }
+            }
+            brightcove.createExperiences();
+      });
+
+    })(jQuery);
+
+    function onFlashTemplateLoaded(id) {
+        var player  = brightcove.getExperience(id);
+        var exp     = player.getModule(APIModules.EXPERIENCE);
+        exp.addEventListener(BCExperienceEvent.TEMPLATE_READY,
+            function(){
+                var video = player.getModule(APIModules.VIDEO_PLAYER);
+
+                if (true === rightRailAuto) {
+                    video.play();
+                }
+                setTimeout(function(){
+                    if (true === rightRailAuto ||
+                            true === video.isPlaying()) {
+                        video.setVolume(0.1);
+                    }
+                }, 2000);
+            });
+    }
+</script>
+
+                
+<div id="adtech_overlay01">
+  <div class="ads overlay01 InSkinHide" id="dfpad-overlay01">
+    <div id="adtech_overlay01_call" style="display: none;"></div>
+    <script type="text/javascript"><!--
+        if (window.adgroupid == undefined) {
+            window.adgroupid = Math.round(Math.random() * 1000);
+        }
+        if (ipc.adloader.getProvider() == "adtech") {
+                      ipc.adtech.adurl = 'http://adserver.adtech.de/addyn|3.0|656.1|1526748|0|16|ADTECH;cookie=info;alias=now2_galleries_1x1;loc=100;target=_blank;key=articles_37598+key2+key3+key4;group=[thisgroup];';
+            document.write('<scr' + 'ipt type="text/javascript" src="' + ipc.adtech.getAugmentedUrl(ipc.adtech.adurl) + '"><' + '/scri' + 'pt>');
+                    document.getElementById('adtech_overlay01_call').innerHTML = ipc.adtech.adurl;
+        } else if (ipc.adloader.getProvider() == "dfp") {
+          ipc.adloader.registerSlot('dfpad-overlay01');
+        }
+    //--></script>
+  </div>
+</div>
+
+        
+        <script>
+(function(w, d, s) {
+    function go(){
+        var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.src = url; js.id = id;
+            fjs.parentNode.insertBefore(js, fjs);
+        };
+        load('//connect.facebook.net/en_US/all.js#xfbml=1', 'fbjssdk');
+        load('//platform.twitter.com/widgets.js', 'tweetjs');
+        load('//platform.stumbleupon.com/1/widgets.js', 'stumbleuponjs');
+    }
+
+    if (w.addEventListener) { w.addEventListener('load', go, false); }
+    else if (w.attachEvent) { w.attachEvent('onload', go); }
+}(window, document, 'script'));
+</script>
+        <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"aaccaa7fff","applicationID":"4508887","transactionName":"YgNVYEcAXhJYBUQNXFtJdldBCF8PFgFRCF9QFF5RRk5DBFUDUxBWUQ==","queueTime":0,"applicationTime":449,"atts":"TkRWFg8aTRw=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-627.min.js"}</script>    </body>
+</html>

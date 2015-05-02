@@ -1,0 +1,449 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=cp1256">
+<title>Saba Net :: سبأ نت</title>
+
+<link rel="alternate" type="application/rss+xml" title="آخر أخبار وكالة الأنباء اليمنية (سبأ)" href="rss.php">
+<style type="text/css">
+<!--
+body,td,th {
+	font-size: 14px;
+	color: #333333;
+}
+body {
+	background-color: #CACACA;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.tabon {
+	background-image: url(images/ar/left_end.gif);
+}
+.tabrighton {
+	background-image: url(images/ar/right_end.gif);
+}
+
+.lasttabon {
+	background-image: url(images/ar/last_end.gif);
+}
+.lasttaboff {
+	background-image: url(images/ar/last_right_end.gif);
+}
+.tableHide {
+	visibility:hidden;
+	position:absolute;
+}
+.tableShow {
+	visibility:visible;
+}
+-->
+</style>
+<link href="standard.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="chtab(0);">
+<table width="900" border="0" align="center" cellpadding="0" cellspacing="0" dir="rtl">
+  <tr>
+    <td bgcolor="#FFFFFF">
+<!-- Ads -->
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td valign="top" width="10">
+</td><td width=13><td valign="top" width="10">
+</td></tr></table>
+<!-- End Ads -->
+<!-- Start Logo table -->
+	<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><table width="900" height="100" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="536"><a href="/ar/"><img src="images/ar/sabanews_ar_logo.jpg" width="536" height="100" border="0"></a></td>
+    <td width="364" background="images/ar/saba_Search_bk.jpg"><table width=100% cellpadding="5"><tr><td valign=top><form name="search" method="get" action="search.php" style="display:inline;"><div class=mainTitle>
+      ابحث عن: </div>
+      <input type="text" name="term" style="width:280px;">
+      <input name="imageField" type="image" src="images/ar/go.gif" width="15" height="20" border="0">
+		<div style="font-family:'Arial, Verdana;' font-size:14px; font-weight:bold; text-decoration:none;"><a href=searcha.php style="font-family:'Arial, Verdana;' font-size:14px; font-weight:bold; text-decoration:none;">بحث تفصيلي</a></div>
+    </form></td></tr></table></td>
+  </tr>
+</table></td>
+  </tr>
+</table>
+<!-- End Logo table -->
+<!-- Start Category table -->
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height=2 bgcolor="#D7DEEA"></td>
+  </tr>
+</table>
+
+<script language="javascript">
+function tab(t) {
+//	alert(t);
+	var obj=document.getElementById(t);
+	var obj2=document.getElementById(t + '-end');
+	obj.style.backgroundColor='#FFFFFF';
+	obj2.className = 'tabon';
+	if(t > 0) {
+	var tt = t - 1;
+	var obj3=document.getElementById(tt + '-end');
+	obj3.className= 'tabrighton';
+	}
+}
+function chtab(t) {
+	for(i=0; i<=3; i++) {
+		document.getElementById(i).style.backgroundColor = '#F0F0F0';
+		document.getElementById(i).background = "images/ar/cat_grey_back.gif";
+		document.getElementById(i + '-end').background = "images/ar/cat_grey_back.gif";		
+		document.getElementById(i + '-end').className = '';
+		document.getElementById('table-' + i).className = 'tableHide';
+	}
+		document.getElementById(t).style.backgroundColor = '#FFFFFF';
+		document.getElementById(t).background ='';
+		document.getElementById(t + '-end').className = 'tabon';
+		document.getElementById('table-' + t).className = 'tableShow';		
+	if(t > 0) {
+	var tt = t - 1;
+	var obj3=document.getElementById(tt + '-end');
+	obj3.className= 'tabrighton';
+	}	
+	if(t < 3) {
+		document.getElementById(3 + '-end').className='lasttaboff';
+	}
+	if(t == 3) {
+		document.getElementById(3 + '-end').className='lasttabon';
+	}	
+}
+function resettabs() {
+	for(i=0; i<=3; i++) {
+		document.getElementById(i).style.backgroundColor = '#F0F0F0';
+		document.getElementById(i + '-end').className = '';
+	}
+		document.getElementById(0).style.backgroundColor = '#FFFFFF';
+		document.getElementById('0-end').className = 'tabon';
+		document.getElementById('3-end').className = 'lasttaboff';
+}
+</script>
+<table width="100%"  border="0" cellspacing="0" cellpadding="0" dir="rtl">
+  <tr>
+    <td width=475 background="images/ar/cat_grey_back.gif"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr bgcolor="#F0F0F0" height=23>
+  <td id="0" bgcolor=#F0F0F0><a href=category1.htm onmouseover="javascript:chtab('0');">
+<div align=center class=mainCat>محلي</div></a></td><td id="0-end" width=39></td>
+<td id="1" bgcolor=#F0F0F0><a href=category2.htm onmouseover="javascript:chtab('1');">
+<div align=center class=mainCat>عربي ودولي</div></a></td><td id="1-end" width=39></td>
+<td id="2" bgcolor=#F0F0F0><a href=category36.htm onmouseover="javascript:chtab('2');">
+<div align=center class=mainCat>اقتصاد</div></a></td><td id="2-end" width=39></td>
+<td id="3" bgcolor=#F0F0F0><a href=category35.htm onmouseover="javascript:chtab('3');">
+<div align=center class=mainCat>رياضة</div></a></td><td id="3-end" width=39></td>
+  </tr>
+</table>
+</td>
+    <td background="images/ar/cat_white_back.gif" class="dateText">آخر تحديث: الجمعة، 03 - أبريل - 2015 الساعة 11:46:06م</td>
+  </tr>
+</table>
+<!-- End Category table -->
+
+
+<!-- Start Last News table -->
+<table width="100%"  border="0" cellspacing="0" cellpadding="2">
+  <tr valign="top">
+    <td width=650 valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="8" id="table-0" class="tableHide">
+        <tr valign="top">
+<td>
+<img src="/upload/thumbs/150403234606-976-0.jpg" height=140 border="1"></td>          <td><a href=news393103.htm class="mainTitle">استشهاد تسعة وإصابة آخرين جراء قصف العدوان السعودي على قرية حجر عكاش</a>
+            <div class="mainText">استشهد تسعة مواطنين من أسرة واحدة وأصيب خمسة آخرين ، جراء قصف العدوان السعودي الغاشم على قرية حجر عكاش بمديرية بني مطر محافظة صنعاء.</div></td>
+        </tr>
+      </table>
+<table width="100%"  border="0" cellspacing="0" cellpadding="8" id="table-1" class="tableHide">
+        <tr valign="top">
+<td>
+<img src="/upload/thumbs/150403141335-55153-0.jpg" height=140 border="1"></td>          <td><a href=news393071.htm class="mainTitle">إيران والدول الست الكبرى تتوصلان لاتفاق مبدئي بشأن برنامج طهران النووي</a>
+            <div class="mainText">توصلت إيران والدول الست الكبرى أمس الخميس إلى "اتفاق إطاري" لحل الخلافات بشأن البرنامج النووي الايراني بعد ثمانية أيام من المفاوضات في مدينة لوزان السويسرية. </div></td>
+        </tr>
+      </table>
+<table width="100%"  border="0" cellspacing="0" cellpadding="8" id="table-2" class="tableHide">
+        <tr valign="top">
+<td>
+<img src="/upload/thumbs/150402185229-86769-0.jpg" height=140 border="1"></td>          <td><a href=news393038.htm class="mainTitle">الصناعة تناقش استقرار أوضاع الأسواق وآلية توزيع المواد الغذائية (مكتمل)</a>
+            <div class="mainText">ناقش اجتماع مشترك عقد اليوم بوزارة الصناعة والتجارة برئاسة نائب وزير الصناعة والتجارة محسن النقيب المواضيع المتعلقة باستقصار الأسواق وآلية توزيع المواد الغذائية الأساسية .</div></td>
+        </tr>
+      </table>
+<table width="100%"  border="0" cellspacing="0" cellpadding="8" id="table-3" class="tableHide">
+        <tr valign="top">
+<td>
+<img src="/upload/thumbs/150402185824-49021-0.jpg" height=140 border="1"></td>          <td><a href=news393040.htm class="mainTitle">اتحاد كرة القدم يتوصل لاتفاق مع المدرب سكوب لتجديد عقده</a>
+            <div class="mainText">قال رئيس لجنة المنتخبات بالاتحاد اليمني العام لكرة القدم حسام السنباني إن الاتحاد توصل لاتفاق مع المدرب التشيكي ميروسلاف سكوب لتجديد عقده لقيادة المنتخب الوطني لمدة عام آخر.</div></td>
+        </tr>
+      </table>
+</td>
+    <td width=10 class="dots"></td>	
+    <td class="LastNewsTitle">آخر الأخبار:<table width="100%"  border="0" cellspacing="0" cellpadding="2">
+	  <tr>
+    <td width=8 valign="top"><img src="images/ar/redarrow.gif"></td>
+    <td class="LastNewsText" valign="top"><a href="news393102.htm" class="LastNewsText">الاتحاد الاوروبي يؤكد دعمه لكينيا في مكافحة الارهاب	</a></td>
+  </tr>
+    <tr>
+    <td width=8 valign="top"><img src="images/ar/redarrow.gif"></td>
+    <td class="LastNewsText" valign="top"><a href="news393101.htm" class="LastNewsText">تحذيرات اوروبية واممية من تفاقم الوضع الانساني في اليمن جراء تعرضه للعدوان	</a></td>
+  </tr>
+    <tr>
+    <td width=8 valign="top"><img src="images/ar/redarrow.gif"></td>
+    <td class="LastNewsText" valign="top"><a href="news393100.htm" class="LastNewsText">نقابة الصحفيين بحضرموت وشبوة والمهرة تدين الاعتداء على إذاعة المكلا ومؤسسة باكثير	</a></td>
+  </tr>
+    <tr>
+    <td width=8 valign="top"><img src="images/ar/redarrow.gif"></td>
+    <td class="LastNewsText" valign="top"><a href="news393099.htm" class="LastNewsText">تواصل العدوان السعودي الغاشم على اليمن	</a></td>
+  </tr>
+  </table>
+</td>
+  </tr>
+</table>
+
+<!-- End Last News table -->
+
+<!-- Start Menu table -->
+<table width="100%" height=60 border="0" cellpadding="0" cellspacing="0">
+  <tr style="background-color:#0059ab; background-image:url(images/ar/saba_ar_lnks_bk.gif); background-position:left; background-repeat:no-repeat">
+    <td><table width="100%" height="60"  border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="30"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="780"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+              <tr><td>
+
+<table  border="0" cellspacing="0" cellpadding="0" align=right><tr><td height=30><div align=center><a href="/ar/" class=mainCategory>&nbsp;&nbsp;الصفحة الرئيسية&nbsp;&nbsp;</a></div></td><td width=3><div align=center><img src=images/ar/cat_divider.gif></div></td><td height=30><div align=center><a href=category57.htm class=mainCategory>&nbsp;&nbsp;رئيس الجمهورية&nbsp;&nbsp;</a></div></td><td width=3><div align=center><img src=images/ar/cat_divider.gif></div></td><td height=30><div align=center><a href=category3.htm class=mainCategory>&nbsp;&nbsp;تقارير وحوارات&nbsp;&nbsp;</a></div></td><td width=3><div align=center><img src=images/ar/cat_divider.gif></div></td><td height=30><div align=center><a href=category38.htm class=mainCategory>&nbsp;&nbsp;ثقافة&nbsp;&nbsp;</a></div></td><td width=3><div align=center><img src=images/ar/cat_divider.gif></div></td><td height=30><div align=center><a href=category6.htm class=mainCategory>&nbsp;&nbsp;سياحة&nbsp;&nbsp;</a></div></td><td width=3><div align=center><img src=images/ar/cat_divider.gif></div></td><td height=30><div align=center><a href=category7.htm class=mainCategory>&nbsp;&nbsp;أحزاب ومنظمات&nbsp;&nbsp;</a></div></td><td width=3><div align=center><img src=images/ar/cat_divider.gif></div></td><td height=30><div align=center><a href=category56.htm class=mainCategory>&nbsp;&nbsp;مؤتمر الحوار الوطني&nbsp;&nbsp;</a></div></td><td width=3><div align=center><img src=images/ar/cat_divider.gif></div></td><td height=30><div align=center><a href="http://www.sabanews.net/ar/news333479.htm"  class=mainCategory>&nbsp;&nbsp;للإعلان على الموقع&nbsp;&nbsp;</a></div></td><td width=3><div align=center><img src=images/ar/cat_divider.gif></div></td></tr></table>              </td></tr>
+            </table></td>
+            <td width="65"><div align="center"><a href="/fr"><img src="images/ar/btn_french.gif" width="65" height="30" border="0"></a></div></td>
+            <td width="65"><div align="center"><a href="/en"><img src="images/ar/btn_english.gif" width="65" height="30" border="0"></a></div></td>
+			<td width="65"><div align="center"><a href="rss_show.php"><img src="images/rss_top.gif" width="65" height="30" border="0"></a></div></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr style="background-color:#fbc660; background-image:url(images/ar/saba_ar_lnks_bk2.gif); background-position:left; background-repeat:no-repeat;">
+        <td height="30" class="categoryTableTitle"><form action="chklogin.php" method="post" style="display:inline">اسم المستخدم: 
+          <input name="sabauser" type="text"> كلمة المرور: <input name="sabapass" type="password" id="sabapass"> 
+        <input name="" type="submit" value="Submit"> 
+</form></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+
+<!-- Start white empty table -->
+<table width="100%" height="8"  border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td></td>
+  </tr>
+</table>
+<!-- End white empty table -->
+
+<!-- Start main table -->
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+  	<td valign="top"><script language="javascript">
+function Show(id, action){
+eval("document.getElementById('" + id + "').style.visibility='" + action + "'");
+} </script>
+<!-- Start news table -->
+<table width="100%"  border="0" cellspacing="2" cellpadding="5">
+  <tr valign="top"><td>
+<table width="100%"  border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td><table width="265"  border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td height="21" class="categoryTable"><a href="category14.htm" align="right" class="categoryTableTitle">&nbsp;&nbsp;Local</a></td>
+  </tr>
+</table></td>
+        <td><a href="javascript:Show('form_email', 'visible');"><img src="images/ar/saba_email.gif" width="25" height="24" border="0"></a></td>
+    <td><a href="print387411.htm"><img src="images/ar/saba_print.gif" width="25" height="24" border="0"></a></td>
+    <td><a href="word387411.htm"><img src="images/ar/saba_word.gif" width="25" height="24" border=0></a></td>
+  </tr>
+</table>
+<table width="450"  border="0" cellspacing="0" cellpadding="0" id="form_email" style="position:absolute; visibility:hidden">
+  <tr>
+    <td><form name="formEmail" method="post" action="addemail.php">
+  <table width="450"  border="0" cellpadding="0" cellspacing="0" bgcolor="#666666" dir="rtl">
+    <tr>
+      <td><table width="100%"  border="0" cellspacing="5" cellpadding="2" style="font-family:Arial, 'Times New Roman', 'Traditional Arabic', Tahoma; font-size:14px; font-weight:bold; color:#FFFFFF">
+        <tr valign="top">
+          <td width="100" bgcolor="#000066" style="color:#FFFFFF">اسم المرسل :</td>
+		  <td width="350" bgcolor="#CCCCCC"><input name="sendername" type="text" id="sendername" style="width:100%"></td>
+        </tr>
+        <tr valign="top">
+          <td width="100" bgcolor="#000066" style="color:#FFFFFF">بريد المرسل :</td>
+          <td width="350" bgcolor="#CCCCCC"><input name="senderemail" type="text" id="senderemail" style="width:100%"></td>		  
+        </tr>
+        <tr valign="top">
+          <td width="100" bgcolor="#000066" style="color:#FFFFFF">اسم المستقبل :</td>
+          <td width="350" bgcolor="#CCCCCC"><input name="recname" type="text" id="recname" style="width:100%"></td>
+        </tr>
+        <tr valign="top">
+          <td width="100" bgcolor="#000066" style="color:#FFFFFF">بريد المستقبل </td>
+          <td width="350" bgcolor="#CCCCCC"><input name="recemail" type="text" id="recemail" style="width:100%"></td>		  
+        </tr>
+        <tr>
+          <td colspan="2" bgcolor="#CCCCCC"><table width="100%"  border="0" cellspacing="2" cellpadding="2">
+            <tr>
+              <td><input type="button" name="Submit2" value="أغلق النافذة" onClick="javascript:Show('form_email', 'hidden');"></td>
+              <td>                <div align="left">
+			  <input type="hidden" name="newsID" value="387411">
+                <input type="submit" name="Submit" value="ارسل التعليق">              
+              </div></td>
+            </tr>
+          </table></td>
+          </tr>
+      </table></td>
+    </tr>
+  </table>
+</form>
+</td>
+  </tr>
+</table>
+
+<table width=100% cellpadding="2">
+<tr><td>
+<table align="left" cellspacing="0" cellpadding="2" width="280">
+  <tr>
+    <td>
+<table align="left" cellspacing="0" cellpadding="2" width=250 class="leftTableBorder">
+  <tr>
+    <td><a href=/upload/thumbs/150209004208-83764-0.jpg target=_blank><img src="/upload/thumbs/150209004208-83764-0.jpg" hspace=5 vspace=5 border=1 style="border-color:#cccccc" width=250><div class=tip></div></a></td>
+  </tr>
+</table>
+</td></tr></table>
+
+
+
+<div class="LastNewsText">UN Binomar announces Yemeni political parties agree to resume talks</div><table height=4><tr><td></td></tr></table><div class="mainText">[09/فبراير/2015] <br />
+<br />
+SANA’A, Feb. 09 (Saba) – The UN Secretary General Advisor on Yemen Affairs Jamal Bin Omar announced on Sunday agreement of the Yemeni political parties to resume consultations to reach a political solution for the present Yemeni crisis.<br />
+<br />
+“As you know, the UN is still committed since 2011 to exert its good offices to help Yemenis bridge the gap in order to finalize the transitional peaceful political process and renewed its commitments during the latest developments,” Binomar said in a statement to Saba.<br />
+<br />
+Moreover, he added that “I am glad to announce that following consultations with the political actors and direct contacts with Mr. Abdul-Malik al-Houthi, the parties have agreed to resume talks in order to reach a political solution to take Yemen out of this crisis,” noting that “this comes within the efforts we exert to facilitate dialogue in a bid to finalize the transitional period as outlined by the Gulf Initiative’s implementation mechanism, outcomes of the National Dialogue Conference and the Peace and National Partnership Agreement.”<br />
+<br />
+The session will be resumed Monday 09 February 2015, Binomar said.<br />
+<br />
+He stressed the importance of the political leadership to work in a consensus spirit to overcome the political stalemate to ensure the completion of the democratic transformation which Yemenis started in 2011.<br />
+<br />
+At the conclusion of his statement, Binomar urged all parties to shoulder responsibility and commit to dialogue as the sole way to find out a peaceful and consensual solution.<br />
+<br />
+AM<br />
+<br>Saba</div>
+
+
+
+
+</td></tr>
+</table>
+</td>
+  </tr>
+</table>
+<!-- End news table -->
+
+<table width="265"  border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td height="21" class="categoryTable"><a href="category14.htm" align="right" class="categoryTableTitle">&nbsp;&nbsp;المزيد من (Local)</a></td>
+  </tr>
+</table>
+
+<table width=100% cellpadding="2"><tr><td>
+</td></tr></table></td>
+	<td width="305" valign="top"><style type="text/css">
+<!--
+.leftTable {
+	background-image: url(images/ar/sabanews_random.gif);
+	background-repeat: no-repeat;
+	background-position: center top;
+	font-family: Arial, "Times New Roman", Tahoma;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.leftTableBorder {
+	border: 1pt solid #d0d0d0;
+}
+-->
+</style>
+<div align=center><a href=http://www.sabanews.net/ar/category55.htm target=_blank><img src=/ar/ads/1416676859-thirtyno.jpg border=0></a></div><table width=100% height=8><tr><td></td></tr></table><div align=center><a href=http://www.sabanews.net/ar/category56.htm target=_blank><img src=/ar/ads/1384176704-1420215_10151746869875233_292029005_n.jpg border=0></a></div><table width=100% height=8><tr><td></td></tr></table><div align="center">
+          <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="100%">
+            <param name="movie" value="/ar/ads/1263306540-1211568270-sabanews.swf">
+            <param name="quality" value="high">
+            <embed src="/ar/ads/1263306540-1211568270-sabanews.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="100%"></embed>
+          </object>
+			<a href="http://sabanews.net/ar/news203470.htm" target="_blank">http://sabanews.net/ar/news203470.htm</a>
+        </div><table width=100% height=8><tr><td></td></tr></table><div align=center><a href=http://sabanews.net/ar/category47.htm target=_blank><img src=/ar/ads/1305053940-saba40-120-120.jpg border=0></a></div><table width=100% height=8><tr><td></td></tr></table>	  
+<!-- End main table -->
+<br>
+<table width="95%"  align="center" cellpadding="0" cellspacing="0" bgcolor="#f1f7fa" class="leftTableBorder" class="leftTableBorder">
+  <tr>
+    <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+          <tr height=30>
+            <td></td>
+            <td class="leftTable"><div align="center">مؤتمر الحوار الوطني</div></td>
+            <td></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="6">
+          <tr>
+            <td>
+<table><tr><td><a href="news366430.htm" class=LastNewsText style="color:#0099ff">امانة الحوار الوطني تدشن حملة ''مطلبي'' لتنفيذ مخرجات الحوار بتعز</a><div align=left class=dateText style="font-size:10px;">[01/سبتمبر/2014]</div></td></tr></table>
+<table><tr><td><a href="news363231.htm" class=LastNewsText style="color:#0099ff">الإعلان بصنعاء عن إشهار تحالف ''مراقبون'' لتنفيذ مخرجات مؤتمر الحوار الوطني الشامل</a><div align=left class=dateText style="font-size:10px;">[06/أغسطس/2014]</div></td></tr></table>
+<table><tr><td><a href="news341049.htm" class=LastNewsText style="color:#0099ff">بدء دورة مهارات التواصل لدعم مخرجات الحوار الوطني في الجوف</a><div align=left class=dateText style="font-size:10px;">[09/فبراير/2014]</div></td></tr></table>
+<table><tr><td><a href="news340787.htm" class=LastNewsText style="color:#0099ff">مكتسبات المرأة اليمنية من خلال مؤتمر الحوار في حلقة نقاشية لمؤسسة  جسارة  </a><div align=left class=dateText style="font-size:10px;">[06/فبراير/2014]</div></td></tr></table>
+<table><tr><td><a href="news340761.htm" class=LastNewsText style="color:#0099ff">بدء دورة تدريبية بأبين لدعم مخرجات الحوار الوطني</a><div align=left class=dateText style="font-size:10px;">[06/فبراير/2014]</div></td></tr></table>
+<table><tr><td><a href="news340749.htm" class=LastNewsText style="color:#0099ff">حلقة نقاشية بعمران تؤكد مساندة تنفيذ مخرجات الحوار الوطني ورفض اي صراع مذهبي </a><div align=left class=dateText style="font-size:10px;">[06/فبراير/2014]</div></td></tr></table>
+<table><tr><td><a href="news340745.htm" class=LastNewsText style="color:#0099ff">إشهار التحالف الشعبي الديمقراطي المدني لدعم وثيقة الحوار الوطني بصنعاء</a><div align=left class=dateText style="font-size:10px;">[06/فبراير/2014]</div></td></tr></table>
+<table><tr><td><a href="news340653.htm" class=LastNewsText style="color:#0099ff">القائمة بأعمال السفارة الأمريكية بصنعاء تؤكد ضرورة تضافر الجهود لدعم مخرجات مؤتمر الحوار الوطني الشامل</a><div align=left class=dateText style="font-size:10px;">[05/فبراير/2014]</div></td></tr></table>
+<table><tr><td><a href="news340604.htm" class=LastNewsText style="color:#0099ff">اجتماع موسع لمشائخ محافظة عمران  يؤكد دعم مخرجات الحوار والامن والاستقرار </a><div align=left class=dateText style="font-size:10px;">[05/فبراير/2014]</div></td></tr></table>
+<table><tr><td><a href="news340591.htm" class=LastNewsText style="color:#0099ff">اختتام أنشطة جمعية أبناء برط الخاصة بدعم المجتمعات الريفية لمخرجات الحوار</a><div align=left class=dateText style="font-size:10px;">[05/فبراير/2014]</div></td></tr></table>
+</td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+
+<table height=8 width=100% cellspacing=0 cellpadding=0><tr><td></td></tr></table><!-- End Menu table -->
+</td>
+  </tr>
+</table>
+</td>
+  </tr>
+</table>
+<div align="center"><img src="online.php" width="1" height="1" alt=""></div>
+
+<table align="center" class="footer" width="900" dir="rtl" bgcolor="#FFFFFF">
+<tr>
+<td><span class="footer"><a href="news2.htm" class="footer">عن وكالة الأنباء اليمنية (سبأ)</a></span> | <span class="footer"><a href="news1.htm" class="footer">اتفاقية استخدام الموقع</a></span> | <span class="footer"><a href="mailto:info@sabanews.net" class="footer">الاتصال بنا</a></span></td></tr>
+<tr>
+<td><span class="footer">جميع الحقوق محفوظة © 1999 - 2015، وكالة الأنباء اليمنية (سبأ)</span></td></tr>
+<tr>
+<td><span class="footer" dir="ltr">Powered by <a href="http://www.snono.com" class="footer"><img src=images/ar/snonoAr.gif border=0 align="absmiddle"></a></span></td></tr>
+
+</table><!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=4928644;
+var sc_invisible=1;
+var sc_partition=57;
+var sc_click_stat=1;
+var sc_security="7eaa2771";
+</script>
+
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script><noscript><div
+class="statcounter"><a title="joomla 1.5 stats"
+href="http://www.statcounter.com/joomla/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/4928644/0/7eaa2771/1/"
+alt="joomla 1.5 stats" ></a></div></noscript>
+<!-- End of StatCounter Code -->
+</body>
+</html>

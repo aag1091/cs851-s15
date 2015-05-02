@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<!--
+ip address:             128.82.28.186
+country code:           US
+featured_country_code:  US
+-->
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7 no-js" lang="en" ng-app="pledgePlayer" ng-controller="playerController" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8 no-js" lang="en" ng-app="pledgePlayer" ng-controller="playerController" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9 no-js" lang="en" ng-app="pledgePlayer" ng-controller="playerController" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class='no-js' lang='en' ng-app='pledgePlayer' ng-controller='playerController' xmlns:fb='http://www.facebook.com/2008/fbml' xmlns:og='http://opengraphprotocol.org/schema/'>
+<!--<![endif]-->
+<head>
+<meta charset='utf-8'>
+<meta content='en' data-localizable='true' http-equiv='content-language'>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"b9e020c808","applicationID":"2733026","transactionName":"dVgPFRQKVF4EQhdFRlQYERMJD11RFUMXRltZQA==","queueTime":1,"applicationTime":276,"agent":"js-agent.newrelic.com/nr-632.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UwYBVEVRDwADVFNU"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:20,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(3),window.onerror=e;try{throw new Error}catch(u){"stack"in u&&(t(4),t(5),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:8,3:3,4:7,5:6,6:21,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:21,2:22,ee:"QJf3ax",gos:"7eSDFh"}],6:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:22,2:21,ee:"QJf3ax"}],7:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:22,2:21,ee:"QJf3ax"}],8:[function(t,e){function n(){u.inPlace(this,p,"fn-")}function r(t,e){u.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),u=c(a),f=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),f.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,u.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:5,2:22,ee:"QJf3ax"}],9:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=n(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=n(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var f=0;c>f;f++)e.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:10,3:8,4:5,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],10:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],11:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:20,2:21,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===f.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=u.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),u=c.document,f=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:f,features:{}};u.addEventListener?(u.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(u.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:20,2:11,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],20:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],21:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],22:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:21,ee:"QJf3ax"}]},{},["G9z0Bl",4,9]);</script>
+<meta content='no' http-equiv='imagetoolbar'>
+<title>Dead Sara: New Album on PledgeMusic</title>
+<meta content='Dead Sara: New Album on PledgeMusic' name='title'>
+<meta content='Pre-order our new album "Pleasure To Meet You"! Plus get access to unique bonus content + behind-the-scenes footage. ' name='description'>
+<meta content='Dead Sara, music, pledge' name='keywords'>
+<meta content='app-id=858706587' name='apple-itunes-app'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, target-densityDpi=' name='viewport'>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="nrhMz+RoxNKGo+Rnzi7/0sk15LfCQpl2uqeujBqaf9g=" name="csrf-token" />
+<meta content="project10250" property="pledgemusic:record_id" />
+<meta content="Dead Sara: New Album" property="pledgemusic:full_name" />
+<meta content="80877307761" property="fb:app_id" />
+<meta content="PledgeMusic" property="og:site_name" />
+<meta content="Pre-order our new album &quot;Pleasure To Meet You&quot;! Plus get access to unique bonus content + behind-the-scenes footage. " property="og:description" />
+<meta content="Dead Sara: New Album" property="og:title" />
+<meta content="pledgemusic:project" property="og:type" />
+<meta content="http://www.pledgemusic.com/projects/deadsara" property="og:url" />
+<meta content="Pre-order our new album &quot;Pleasure To Meet You&quot;! Plus get access to unique bonus content + behind-the-scenes footage. " name="twitter:description" />
+<meta content="Dead Sara: New Album" name="twitter:title" />
+<meta content="@pledgemusic" name="twitter:site" />
+<meta content="pledgemusic.com" name="twitter:domain" />
+<meta content="player" name="twitter:card" />
+<meta content="http://www.pledgemusic.com/projects/deadsara" name="twitter:url" />
+<meta content="http://d2tqed3y8k290k.cloudfront.net/projects/000/010/250/splashes/desktop.jpg?1411093267" name="twitter:image:src" />
+<meta content="http://d2tqed3y8k290k.cloudfront.net/projects/000/010/250/splashes/facebook.jpg?1411093267" property="og:image" />
+<meta content="https://d2tqed3y8k290k.cloudfront.net/projects/000/010/250/splashes/facebook.jpg?1411093267" property="og:image:secure_url" />
+<meta content="image/jpeg" property="og:image:type" />
+<meta content="1200" property="og:image:width" />
+<meta content="628" property="og:image:height" />
+<meta content="http://www.pledgemusic.com/artists/deadsara" property="pledgemusic:artist" />
+<meta content="@radioneck" name="twitter:creator" />
+<meta content="https://www.pledgemusic.com/pipeline/player.swf?autostart=true&controlbar=none&file=https%3A%2F%2Fwww.pledgemusic.com%2Fprojects%2Fdeadsara%2Fvideo.mp4%3Futm_campaign%3Dproject10250%26utm_medium%3Dplayer%26utm_source%3Dfacebook&image=http%3A%2F%2Fd2tqed3y8k290k.cloudfront.net%2Fprojects%2F000%2F010%2F250%2Fsplashes%2Fdesktop.jpg%3F1411093267&logo.file=https%3A%2F%2Fd1nvfozp665ptr.cloudfront.net%2Fpipeline%2Fplayer%2Fview_project-3fec4ee1b1fd043da48d813ad649a2d1.png&logo.hide=false&logo.link=https%3A%2F%2Fwww.pledgemusic.com%2Fprojects%2Fdeadsara%3Futm_campaign%3Dproject10250%26utm_medium%3Dplayer%26utm_source%3Dfacebook&logo.position=top-right" property="og:video" />
+<meta content="https://www.pledgemusic.com/pipeline/player.swf?autostart=true&controlbar=none&file=https%3A%2F%2Fwww.pledgemusic.com%2Fprojects%2Fdeadsara%2Fvideo.mp4%3Futm_campaign%3Dproject10250%26utm_medium%3Dplayer%26utm_source%3Dfacebook&image=http%3A%2F%2Fd2tqed3y8k290k.cloudfront.net%2Fprojects%2F000%2F010%2F250%2Fsplashes%2Fdesktop.jpg%3F1411093267&logo.file=https%3A%2F%2Fd1nvfozp665ptr.cloudfront.net%2Fpipeline%2Fplayer%2Fview_project-3fec4ee1b1fd043da48d813ad649a2d1.png&logo.hide=false&logo.link=https%3A%2F%2Fwww.pledgemusic.com%2Fprojects%2Fdeadsara%3Futm_campaign%3Dproject10250%26utm_medium%3Dplayer%26utm_source%3Dfacebook&logo.position=top-right" property="og:video:secure_url" />
+<meta content="640" property="og:video:width" />
+<meta content="480" property="og:video:height" />
+<meta content="application/x-shockwave-flash" property="og:video:type" />
+<meta content="https://www.pledgemusic.com/projects/deadsara/video" name="twitter:player" />
+<meta content="640" name="twitter:player:width" />
+<meta content="360" name="twitter:player:height" />
+<link href='http://www.pledgemusic.com/projects/deadsara' rel='canonical'>
+<link href='http://d1nvfozp665ptr.cloudfront.net/pipeline/favicon-938f880ec365fa5104b1950669f60251.ico' rel='shortcut icon' type='image/x-icon'>
+<link href="http://d1nvfozp665ptr.cloudfront.net/pipeline/frontend-94bfac1bf5063f451001cf5452b9e4ac.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- / Commented out for initial project design -->
+
+
+
+
+<script src="http://www.google.com/jsapi?key=ABQIAAAAsE9Zm16owvR8UyWbKpTWcRTs4R90PMmyFRsYkFdWWTTdYFgoPBQFdjmcjXPgW29lat17-K1hfQzHNw" type="text/javascript"></script>
+<script>
+  google.load("jquery", "1.7");
+</script>
+<script>
+  !window.jQuery && document.write(unescape('%3Cscript src="/pledge_core/javascripts/jquery-1.7.js"%3E%3C/script%3E'))
+</script>
+<script>
+  Pledge = {};
+</script>
+<script src="http://d1nvfozp665ptr.cloudfront.net/pipeline/frontend-397ee81ed2ef137aac7a10d1ffdf1419.js" type="text/javascript"></script>
+<script src="http://d1nvfozp665ptr.cloudfront.net/pipeline/player-95fa68067b40df38fe0028a415f238ee.js" type="text/javascript"></script>
+<!--[if IE]>
+
+<![endif]-->
+<script src="http://d1nvfozp665ptr.cloudfront.net/pledge_core/javascripts/i18n.js" type="text/javascript"></script>
+<script src="http://d1nvfozp665ptr.cloudfront.net/pledge_core/javascripts/i18n_translations.js" type="text/javascript"></script>
+
+<script>
+  I18n.defaultLocale = 'en';
+  I18n.locale = 'en';
+</script>
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+      var rails_env = 'production';
+      var is_responsive = true;
+      var in_cloud = true;
+      var is_staff = false;
+      $.user_id        = null;
+      $.user_has_email = false;
+      $.person_id      = null;
+      $.country_code = 'US';
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+var authenticity_token = 'nrhMz+RoxNKGo+Rnzi7/0sk15LfCQpl2uqeujBqaf9g=';
+//]]>
+</script>
+
+<script src='//www.google-analytics.com/cx/api.js?experiment=hfiy5jnrQaCVrx8kqSQBNQ'></script>
+<script>
+  var google_experiment_variation = cxApi.chooseVariation();
+</script>
+<script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-9778366-1']);
+_gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript';
+    ga.async = true;
+    //ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<script>var _gtm_project_id = 10250;</script>
+<noscript>
+<iframe height='0' src='//www.googletagmanager.com/ns.html?id=GTM-MMWWZB' style='display:none;visibility:hidden' width='0'></iframe>
+</noscript>
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MMWWZB');
+</script>
+
+<script>
+  var _sf_startpt=(new Date()).getTime(); // chartbeat
+  var WRInitTime=(new Date()).getTime();  // clicktale
+</script>
+
+<meta content='Dead Sara: New Album' itemprop='name'>
+<meta content='Pre-order our new album "Pleasure To Meet You"! Plus get access to unique bonus content + behind-the-scenes footage. ' itemprop='description'>
+<meta content='http://d2tqed3y8k290k.cloudfront.net/projects/000/010/250/splashes/desktop.jpg?1411093267' itemprop='image'>
+
+<link href="/feed.atom" rel="alternate" title="ATOM" type="application/atom+xml" />
+</head>
+
+<body class='projects show ' itemscope='' itemtype='http://schema.org/WebPage' ng-controller='pageTrackController'>
+
+<div class='container projects show' data-page-positioning='projects show' id='container'>
+<a class='logo' href='/'>
+<span data-before-content='Secure Checkout'></span>
+</a>
+
+
+<div id='main' role='main'>
+<header class='artists main with_hero with_tabs' itemscope='' itemtype='http://schema.org/MusicGroup'>
+<div data-playlist-name='this_page' data-playlist-title='Dead Sara' data-playlist-url='/player/playlists.json?type=Artist&amp;type_id=7220'></div>
+<img alt="Dead Sara" class="bg" itemprop="image" src="http://d2tqed3y8k290k.cloudfront.net/artists/000/007/220/heros/desktop.jpg?1411092891" title="Dead Sara" />
+<h1 itemprop='name'>Dead Sara</h1>
+<nav class='info'>
+<div class='location'><a href="/artists?country=US">United States</a></div>
+<div class='genres'><a href="/genres/rock">Rock</a>, <a href="/genres/rock/alternative-rock">Alternative rock</a>, <a href="/genres/rock/hard-rock">Hard rock</a></div>
+<div class='profile'><a href="/artists/deadsara">View Profile</a></div>
+<div class='follow'>
+<div class='follow_button'>
+<a href="http://www.pledgemusic.com/sign_in" data-toggle=".follow_button .sign_in_or_up">Follow</a>
+<div class='sign_in_or_up' data-hide-on-event>
+<div class='bubble'><a href="http://www.pledgemusic.com/sign_in">Sign In</a> or <a href="http://www.pledgemusic.com/sign_up">Sign Up</a> to follow.</div>
+</div>
+</div>
+
+</div>
+</nav>
+<nav data-nav-drop-menu id='tabs'>
+<a href="/projects/deadsara" class="current selected">Overview</a>
+<a href="/projects/deadsara/updates">Updates
+<span class='badge'>16</span>
+</a><a href="/artists/deadsara/comments">Discussion
+<span class='badge'>126</span>
+</a><a href="/projects/deadsara/pledgers">Pledgers
+</a><a href="/projects/deadsara/exclusives">Store
+<span class='badge'>28</span>
+</a></nav>
+</header>
+
+<section id='notice'>
+<span>
+This project is closed. Be sure to follow <a href="/artists/deadsara">Dead Sara</a> to be the first to know next time a project is launched!
+</span>
+</section>
+
+<article class='project'>
+<header>
+<h1>New Album</h1>
+<h2>Pre-order our new album &quot;Pleasure To Meet You&quot;! Plus get access to unique bonus content + behind-the-scenes footage. </h2>
+</header>
+<section id='video'>
+<div class="video_player" data-ga-label="Dead Sara: New Album" data-record-id="video92769"><div data-video-placeholder="true" data-video-poster="http://d2tqed3y8k290k.cloudfront.net/projects/000/010/250/splashes/desktop.jpg?1411093267"><span data-src="/assets/92769.mp4" data-type="video/mp4" data-video-quality="sd" /><span data-src="/assets/92769.webm" data-type="video/webm" data-video-quality="sd" /><span data-src="/assets/92769.mp4?quality=hd" data-type="video/mp4" data-video-quality="hd" /><span data-src="/assets/92769.webm?quality=hd" data-type="video/webm" data-video-quality="hd" /></div><img alt="Desktop" class="poster" src="http://d2tqed3y8k290k.cloudfront.net/projects/000/010/250/splashes/desktop.jpg?1411093267" /><img alt="16x9_video_play" class="control" src="http://d1nvfozp665ptr.cloudfront.net/pipeline/player/16x9_video_play.png" /></div>
+</section>
+
+<section class='items_0 project_status released' id='status'>
+<header>
+<h1>Closed</h1>
+</header>
+<div class='items'>
+</div>
+<footer class='released items_0'>
+<div class='message'>Closed</div>
+</footer>
+
+</section>
+
+<section id='featured_exclusives'>
+<h1>Featured Items</h1>
+<footer><a href="#exclusives" class="button cta">View All Items</a></footer>
+</section>
+
+<section data-expandable='article.project &gt; .right_content' id='about'>
+<nav>
+<div class='album category'>Album</div>
+</nav>
+<div class='copy'><p>Hiiii everyone!</p>
+<p>We&#8217;re so excited to announce that our new album &#8220;Pleasure To Meet You&#8221; is now available to pre-order here through PledgeMusic and will be released March 2015 on our own label, Pocket Kid Records!!  We have had a wild, interesting year and we are now back doing it on our own where we are most happy and free to be the band we want to be.  We are beyond stoked to give you this news and for you to finally hear what we&#8217;ve worked so hard on!</p>
+<p>You can pre-order the album from the list below. You can order a selection of items including CDs, vinyl, posters, handwritten lyric sheets of your favorite songs and even a ticket to a private listening party.  Every order will come with a digital copy of the album which will be released in March 2015.</p>
+<p>All orders will also get access to a special area where we will upload a variety of bonus content including footage from the studio, photos from shows and exclusive announcements delivered to you all first!</p>
+<p>In fact, we have already added a track called &#8216;Suicidal&#8217; for you to download immediately!</p>
+<p><a href="http://www.pledgemusic.com/projects/deadsara/updates" rel="nofollow" target="_blank">http://www.pledgemusic.com/projects/deadsara/updates</a></p>
+<p>We want to let you into our world and involve you in this release in a way that we&#8217;ve never done before. We want to this experience to be for you and with you!</p>
+<p>Hope you enjoy this as much as we are excited to do it!</p>
+<p>Love,</p>
+<p>Emily, Siouxsie, Sean and Chris</p></div>
+
+</section>
+<section data-country-code='US' data-crid='USD1' id='exclusives'>
+<header>
+<h1>Store</h1>
+<section class='access_pass_banner'>
+<h2>
+<span class="access_pass">AccessPass<span class="tm">&trade;</span></span>
+included with all exclusive items!
+</h2>
+<ul class='includes'>
+<li class='download'>Digital Download</li>
+<li class='updates'>Access to this artist's updates</li>
+<li class='shipping'>Shipping and handling</li>
+</ul>
+</section>
+
+<nav class='view' data-grid-list-view>
+<div class='icon'><a href="javascript:void(0)" class="list" data-view="list">List</a></div>
+<div class='icon'><a href="javascript:void(0)" class="grid" data-view="grid">Grid</a></div>
+</nav>
+
+<nav class='filter' data-grid-list-filter=''>
+<a href="javascript:void(0)" class="selected">All Exclusives</a>
+<a href="javascript:void(0)" data-filter="[&quot;download&quot;,&quot;cover_song&quot;,&quot;song&quot;]">Downloads</a>
+<a href="javascript:void(0)" data-filter="[&quot;cd&quot;]">CDs</a>
+<a href="javascript:void(0)" data-filter="[&quot;vinyl&quot;]">Vinyl</a>
+<a href="javascript:void(0)" data-filter="[&quot;tshirt&quot;]">T-shirts</a>
+<a href="javascript:void(0)" data-filter="[&quot;tshirt&quot;,&quot;hoody&quot;,&quot;hat&quot;,&quot;tote_bag&quot;,&quot;clothes&quot;]">Clothing</a>
+<a href="javascript:void(0)" data-filter="[&quot;poster&quot;,&quot;postcard&quot;,&quot;artwork&quot;,&quot;lyrics&quot;,&quot;handmade&quot;,&quot;misc&quot;]">Poster or Artwork</a>
+<a href="javascript:void(0)" data-filter="[&quot;tickets&quot;,&quot;gig_access&quot;,&quot;house_concert&quot;,&quot;performance&quot;,&quot;pledgers_only_gig&quot;]">Concert Tickets</a>
+<a href="javascript:void(0)" data-filter="[&quot;lesson&quot;]">Music Lessons</a>
+<a href="javascript:void(0)" data-filter="[&quot;studio_access&quot;,&quot;phone&quot;,&quot;questions&quot;,&quot;experience&quot;,&quot;cover_song&quot;,&quot;song_for_you&quot;]">Artist Experience</a>
+<a href="javascript:void(0)" data-filter="[&quot;guitar&quot;]">Guitars</a>
+<a href="javascript:void(0)" data-filter="[&quot;guitar&quot;,&quot;cymbal&quot;,&quot;drum_head&quot;,&quot;drum_sticks&quot;,&quot;instrument&quot;]">Musical Instruments</a>
+</nav>
+
+</header>
+<div class='tap_hint'>Tap exclusive items to view details</div>
+<article class='access_pass closed exclusive has_access_pass with_image' data-kinds='["core"]' data-lightbox-cta='Order Now' data-record-id='incentive124747' data-view-details-link='View Details' id='incentive124747_article'>
+<h1>
+<span class="access_pass">AccessPass<span class="tm">&trade;</span></span>: 
+New Album
+</h1>
+<div class='image'><img alt="New Album" src="http://d1nvfozp665ptr.cloudfront.net/pipeline/exclusives/access_pass-ebff37ca19583c250a90f396db167393.png" title="New Album" /></div>
+<div class='details'>
+<div class='price'>
+$10
+<div class='fx' data-exchange-from-amount='10.00' data-exchange-from-currency='USD'>10.00</div>
+</div>
+<div class='stock'>Available</div>
+</div>
+<div class='description'></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass with_image' data-kinds='["cd"]' data-lightbox-cta='Order Now' data-record-id='incentive110601' data-view-details-link='View Details' id='incentive110601_article'>
+<h1>
+
+New Album on CD
+</h1>
+<div class='image'><img alt="New Album on CD" src="http://d2tqed3y8k290k.cloudfront.net/incentives/000/110/601/icons/large.jpg?1421011506" title="New Album on CD" /></div>
+<div class='details'>
+<div class='price'>
+$15
+<div class='fx' data-exchange-from-amount='15.00' data-exchange-from-currency='USD'>15.00</div>
+</div>
+<div class='stock'>Available</div>
+</div>
+<div class='description'><p>The new album available on CD. PLUS the album download and access to the exclusive updates.</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass with_image' data-kinds='["poster"]' data-lightbox-cta='Order Now' data-record-id='incentive110624' data-view-details-link='View Details' id='incentive110624_article'>
+<h1>
+
+Poster
+</h1>
+<div class='image'><img alt="Poster" src="http://d2tqed3y8k290k.cloudfront.net/incentives/000/110/624/icons/large.jpg?1420668416" title="Poster" /></div>
+<div class='details'>
+<div class='price'>
+$20
+<div class='fx' data-exchange-from-amount='20.00' data-exchange-from-currency='USD'>20.00</div>
+</div>
+<div class='stock'>Available</div>
+</div>
+<div class='description'><p>New album design poster</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass with_image' data-kinds='["vinyl"]' data-lightbox-cta='Order Now' data-record-id='incentive110629' data-view-details-link='View Details' id='incentive110629_article'>
+<h1>
+
+12&quot; Vinyl
+</h1>
+<div class='image'><img alt="12&quot; Vinyl" src="http://d2tqed3y8k290k.cloudfront.net/incentives/000/110/629/icons/large.jpg?1421012261" title="12&quot; Vinyl" /></div>
+<div class='details'>
+<div class='price'>
+$25
+<div class='fx' data-exchange-from-amount='25.00' data-exchange-from-currency='USD'>25.00</div>
+</div>
+<div class='stock'>Available</div>
+</div>
+<div class='description'><p>The new album on 12&quot; vinyl</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass with_image' data-kinds='["cd"]' data-lightbox-cta='Order Now' data-quantity-available='0' data-record-id='incentive110602' data-view-details-link='View Details' id='incentive110602_article'>
+<h1>
+
+Signed CD
+</h1>
+<div class='image'><img alt="Signed CD" src="http://d2tqed3y8k290k.cloudfront.net/incentives/000/110/602/icons/large.jpg?1421011880" title="Signed CD" /></div>
+<div class='details'>
+<div class='price'>
+$25
+<div class='fx' data-exchange-from-amount='25.00' data-exchange-from-currency='USD'>25.00</div>
+</div>
+<div class='stock'>All gone!</div>
+</div>
+<div class='description'><p>The new CD. Signed.</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass has_options with_image' data-kinds='["tshirt"]' data-lightbox-cta='Order Now' data-record-id='incentive110621' data-view-details-link='View Details' id='incentive110621_article'>
+<h1>
+
+New T-Shirt
+</h1>
+<div class='image'><img alt="New T-Shirt" src="http://d2tqed3y8k290k.cloudfront.net/incentives/000/110/621/icons/large.jpg?1421177846" title="New T-Shirt" /></div>
+<div class='details'>
+<div class='price'>
+$30
+<div class='fx' data-exchange-from-amount='30.00' data-exchange-from-currency='USD'>30.00</div>
+</div>
+<div class='stock'>Available</div>
+</div>
+<div class='description'><p>New album designed T-shirts</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass with_image' data-kinds='["vinyl"]' data-lightbox-cta='Order Now' data-quantity-available='10' data-record-id='incentive110626' data-view-details-link='View Details' id='incentive110626_article'>
+<h1>
+
+Signed 12&quot; Vinyl
+</h1>
+<div class='image'><img alt="Signed 12&quot; Vinyl" src="http://d2tqed3y8k290k.cloudfront.net/incentives/000/110/626/icons/large.jpg?1423771110" title="Signed 12&quot; Vinyl" /></div>
+<div class='details'>
+<div class='price'>
+$35
+<div class='fx' data-exchange-from-amount='35.00' data-exchange-from-currency='USD'>35.00</div>
+</div>
+<div class='stock'>10 left</div>
+</div>
+<div class='description'><p>For the audiophile, the new record on warm-sounding vinyl and signed.</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass' data-kinds='["questions"]' data-lightbox-cta='Order Now' data-quantity-available='25' data-record-id='incentive138983' data-view-details-link='View Details' id='incentive138983_article'>
+<h1>
+
+10 Questions via e-mail
+</h1>
+<div class='details'>
+<div class='price'>
+$40
+<div class='fx' data-exchange-from-amount='40.00' data-exchange-from-currency='USD'>40.00</div>
+</div>
+<div class='stock'>25 left</div>
+</div>
+<div class='description'><p>Submit 10 questions to any band member, you can mix &amp; match who your questions are directed to and you will get answers back via email &#8211; straight from the horse&#8217;s mouth!</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass with_image' data-kinds='["experience"]' data-lightbox-cta='Order Now' data-quantity-available='12' data-record-id='incentive111070' data-view-details-link='View Details' id='incentive111070_article'>
+<h1>
+
+Private Listening Party
+</h1>
+<div class='image'><img alt="Private Listening Party" src="http://d2tqed3y8k290k.cloudfront.net/incentives/000/111/070/icons/large.jpg?1424734599" title="Private Listening Party" /></div>
+<div class='details'>
+<div class='price'>
+$40
+<div class='fx' data-exchange-from-amount='40.00' data-exchange-from-currency='USD'>40.00</div>
+</div>
+<div class='stock'>12 left</div>
+</div>
+<div class='description'><p>You can be one of the first people in the world to hear the album in its entirety by joining us at an album listening party in Los Angeles.</p>
+<p>*21+ only and it&#8217;s on February 26th 2015</p>
+<p>Address:</p>
+<p>BLACK<br />
+6202 Santa Monica Boulevard<br />
+Los Angeles, CA<br />
+7:00pm-9:00pm</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass has_options' data-kinds='["phone"]' data-lightbox-cta='Order Now' data-quantity-available='9' data-record-id='incentive111071' data-view-details-link='View Details' id='incentive111071_article'>
+<h1>
+
+Personal Video Message
+</h1>
+<div class='details'>
+<div class='price'>
+$50
+<div class='fx' data-exchange-from-amount='50.00' data-exchange-from-currency='USD'>50.00</div>
+</div>
+<div class='stock'>9 left</div>
+</div>
+<div class='description'><p>We will record you a personal video message for you or a friend!</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass has_options with_image' data-kinds='["lyrics"]' data-lightbox-cta='Order Now' data-quantity-available='0' data-record-id='incentive110623' data-view-details-link='View Details' id='incentive110623_article'>
+<h1>
+
+Handwritten Lyric Sheet
+</h1>
+<div class='image'><img alt="Handwritten Lyric Sheet" src="http://d2tqed3y8k290k.cloudfront.net/incentives/000/110/623/icons/large.jpg?1421012867" title="Handwritten Lyric Sheet" /></div>
+<div class='details'>
+<div class='price'>
+$75
+<div class='fx' data-exchange-from-amount='75.00' data-exchange-from-currency='USD'>75.00</div>
+</div>
+<div class='stock'>All gone!</div>
+</div>
+<div class='description'><p>The song of your choice written out in hand and signed by the entire band.</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass with_image' data-kinds='["drum_head"]' data-lightbox-cta='Order Now' data-quantity-available='0' data-record-id='incentive110634' data-view-details-link='View Details' id='incentive110634_article'>
+<h1>
+
+Signed Drum Head
+</h1>
+<div class='image'><img alt="Signed Drum Head" src="http://d2tqed3y8k290k.cloudfront.net/incentives/000/110/634/icons/large.jpg?1420668744" title="Signed Drum Head" /></div>
+<div class='details'>
+<div class='price'>
+$75
+<div class='fx' data-exchange-from-amount='75.00' data-exchange-from-currency='USD'>75.00</div>
+</div>
+<div class='stock'>All gone!</div>
+</div>
+<div class='description'><p>Used on new album and signed by everyone.</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass with_image' data-kinds='["phone"]' data-lightbox-cta='Order Now' data-quantity-available='5' data-record-id='incentive111068' data-view-details-link='View Details' id='incentive111068_article'>
+<h1>
+
+Skype Chat w/ Dead Sara
+</h1>
+<div class='image'><img alt="Skype Chat w/ Dead Sara" src="http://d2tqed3y8k290k.cloudfront.net/incentives/000/111/068/icons/large.jpg?1420668787" title="Skype Chat w/ Dead Sara" /></div>
+<div class='details'>
+<div class='price'>
+$80
+<div class='fx' data-exchange-from-amount='80.00' data-exchange-from-currency='USD'>80.00</div>
+</div>
+<div class='stock'>5 left</div>
+</div>
+<div class='description'><p>Jump on to Skype and chat with us (15 minutes)</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass' data-kinds='["studio_access"]' data-lightbox-cta='Order Now' data-quantity-available='3' data-record-id='incentive111069' data-view-details-link='View Details' id='incentive111069_article'>
+<h1>
+
+Come to a Dead Sara Rehearsal
+</h1>
+<div class='details'>
+<div class='price'>
+$150
+<div class='fx' data-exchange-from-amount='150.00' data-exchange-from-currency='USD'>150.00</div>
+</div>
+<div class='stock'>3 left</div>
+</div>
+<div class='description'><p>Come to one of our rehearsals in LA. Or skype in if you cannot make it in person!</p>
+<p>*valid for one person.</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass has_options with_image' data-kinds='["lesson"]' data-lightbox-cta='Order Now' data-quantity-available='9' data-record-id='incentive110630' data-view-details-link='View Details' id='incentive110630_article'>
+<h1>
+
+Skype Lesson
+</h1>
+<div class='image'><img alt="Skype Lesson" src="http://d2tqed3y8k290k.cloudfront.net/incentives/000/110/630/icons/large.jpg?1420669020" title="Skype Lesson" /></div>
+<div class='details'>
+<div class='price'>
+$150
+<div class='fx' data-exchange-from-amount='150.00' data-exchange-from-currency='USD'>150.00</div>
+</div>
+<div class='stock'>9 left</div>
+</div>
+<div class='description'><p>Let&#8217;s get together on Skype and work on some music. You can either get a guitar/bass lesson from Chris or learn a Dead Sara song with Siouxsie!<br />
+(minimum of 30 minutes)</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass with_image' data-kinds='["disposable_camera"]' data-lightbox-cta='Order Now' data-quantity-available='3' data-record-id='incentive138984' data-view-details-link='View Details' id='incentive138984_article'>
+<h1>
+
+Disposable Dead Sara Camera
+</h1>
+<div class='image'><img alt="Disposable Dead Sara Camera" src="http://d2tqed3y8k290k.cloudfront.net/incentives/000/138/984/icons/large.jpg?1427139703" title="Disposable Dead Sara Camera" /></div>
+<div class='details'>
+<div class='price'>
+$200
+<div class='fx' data-exchange-from-amount='200.00' data-exchange-from-currency='USD'>200.00</div>
+</div>
+<div class='stock'>3 left</div>
+</div>
+<div class='description'><p>A surprise unique disposable camera, all pictures taken by the band on the road. Who knows what you&#8217;re gonna get&#8230;</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass with_image' data-kinds='["gig_access"]' data-lightbox-cta='Order Now' data-quantity-available='7' data-record-id='incentive110631' data-view-details-link='View Details' id='incentive110631_article'>
+<h1>
+
+VIP Concert Experience on our next tour !
+</h1>
+<div class='image'><img alt="VIP Concert Experience on our next tour !" src="http://d2tqed3y8k290k.cloudfront.net/incentives/000/110/631/icons/large.jpg?1421012775" title="VIP Concert Experience on our next tour !" /></div>
+<div class='details'>
+<div class='price'>
+$200
+<div class='fx' data-exchange-from-amount='200.00' data-exchange-from-currency='USD'>200.00</div>
+</div>
+<div class='stock'>7 left</div>
+</div>
+<div class='description'><p>You and a friend can come to sound check and see the show VIP style!</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass with_image' data-kinds='["vinyl"]' data-lightbox-cta='Order Now' data-quantity-available='0' data-record-id='incentive136025' data-view-details-link='View Details' id='incentive136025_article'>
+<h1>
+
+Vinyl Test Pressings
+</h1>
+<div class='image'><img alt="Vinyl Test Pressings" src="http://d2tqed3y8k290k.cloudfront.net/incentives/000/136/025/icons/large.jpg?1424978697" title="Vinyl Test Pressings" /></div>
+<div class='details'>
+<div class='price'>
+$250
+<div class='fx' data-exchange-from-amount='250.00' data-exchange-from-currency='USD'>250.00</div>
+</div>
+<div class='stock'>All gone!</div>
+</div>
+<div class='description'><p>Own 1 of 5 copies of the very first Pleasure To Meet You vinyl discs made.</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass with_image' data-kinds='["cymbal"]' data-lightbox-cta='Order Now' data-quantity-available='0' data-record-id='incentive130979' data-view-details-link='View Details' id='incentive130979_article'>
+<h1>
+
+Autographed Cymbal
+</h1>
+<div class='image'><img alt="Autographed Cymbal" src="http://d2tqed3y8k290k.cloudfront.net/incentives/000/130/979/icons/large.jpg?1421173710" title="Autographed Cymbal" /></div>
+<div class='details'>
+<div class='price'>
+$350
+<div class='fx' data-exchange-from-amount='350.00' data-exchange-from-currency='USD'>350.00</div>
+</div>
+<div class='stock'>All gone!</div>
+</div>
+<div class='description'><p>Autographed 24&quot; ride cymbal played in the early years of Dead Sara.</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass with_image' data-kinds='["drum_head"]' data-lightbox-cta='Order Now' data-quantity-available='0' data-record-id='incentive130626' data-view-details-link='View Details' id='incentive130626_article'>
+<h1>
+
+Custom Made Dead Sara Drumhead
+</h1>
+<div class='image'><img alt="Custom Made Dead Sara Drumhead" src="http://d2tqed3y8k290k.cloudfront.net/incentives/000/130/626/icons/large.jpg?1420797208" title="Custom Made Dead Sara Drumhead" /></div>
+<div class='details'>
+<div class='price'>
+$350
+<div class='fx' data-exchange-from-amount='350.00' data-exchange-from-currency='USD'>350.00</div>
+</div>
+<div class='stock'>All gone!</div>
+</div>
+<div class='description'><p>One of a kind custom made Dead Sara drumhead used on the Muse tour 2013.</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass with_image' data-kinds='["gear"]' data-lightbox-cta='Order Now' data-quantity-available='0' data-record-id='incentive130627' data-view-details-link='View Details' id='incentive130627_article'>
+<h1>
+
+Custom Made Dead Sara Scrim
+</h1>
+<div class='image'><img alt="Custom Made Dead Sara Scrim" src="http://d2tqed3y8k290k.cloudfront.net/incentives/000/130/627/icons/large.jpg?1420797277" title="Custom Made Dead Sara Scrim" /></div>
+<div class='details'>
+<div class='price'>
+$350
+<div class='fx' data-exchange-from-amount='350.00' data-exchange-from-currency='USD'>350.00</div>
+</div>
+<div class='stock'>All gone!</div>
+</div>
+<div class='description'><p>Custom made Dead Sara scrim used on Warped Tour 2012.</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass with_image' data-kinds='["experience"]' data-lightbox-cta='Order Now' data-quantity-available='4' data-record-id='incentive111067' data-view-details-link='View Details' id='incentive111067_article'>
+<h1>
+
+Disneyland w/Dead Sara
+</h1>
+<div class='image'><img alt="Disneyland w/Dead Sara" src="http://d2tqed3y8k290k.cloudfront.net/incentives/000/111/067/icons/large.jpg?1421012748" title="Disneyland w/Dead Sara" /></div>
+<div class='details'>
+<div class='price'>
+$350
+<div class='fx' data-exchange-from-amount='350.00' data-exchange-from-currency='USD'>350.00</div>
+</div>
+<div class='stock'>4 left</div>
+</div>
+<div class='description'><p>Spend the day at Disneyland with us !!</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass with_image' data-kinds='["artwork"]' data-lightbox-cta='Order Now' data-quantity-available='1' data-record-id='incentive133098' data-view-details-link='View Details' id='incentive133098_article'>
+<h1>
+
+Original Painting by Siouxsie
+</h1>
+<div class='image'><img alt="Original Painting by Siouxsie" src="http://d2tqed3y8k290k.cloudfront.net/incentives/000/133/098/icons/large.jpg?1423076951" title="Original Painting by Siouxsie" /></div>
+<div class='details'>
+<div class='price'>
+$500
+<div class='fx' data-exchange-from-amount='500.00' data-exchange-from-currency='USD'>500.00</div>
+</div>
+<div class='stock'>1 left</div>
+</div>
+<div class='description'><p>Original one of a kind painting by Siouxsie Medley (aka TheLiker). India ink on 2&#8242;&#215;4&#8242; plywood.</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass' data-kinds='["experience"]' data-lightbox-cta='Order Now' data-quantity-available='5' data-record-id='incentive111072' data-view-details-link='View Details' id='incentive111072_article'>
+<h1>
+
+Dead Sara Party DJs
+</h1>
+<div class='details'>
+<div class='price'>
+$1,000
+<div class='fx' data-exchange-from-amount='1000.00' data-exchange-from-currency='USD'>1000.00</div>
+</div>
+<div class='stock'>5 left</div>
+</div>
+<div class='description'><p>We&#8217;ll come to your party and DJ for you and your friends!<br />
+(2 1/2 &#8211; 3 hrs max; within 100 mile radius of LA)</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass with_image' data-kinds='["guitar"]' data-lightbox-cta='Order Now' data-quantity-available='0' data-record-id='incentive111066' data-view-details-link='View Details' id='incentive111066_article'>
+<h1>
+
+Smashed Guitar From El Rey
+</h1>
+<div class='image'><img alt="Smashed Guitar From El Rey" src="http://d2tqed3y8k290k.cloudfront.net/incentives/000/111/066/icons/large.jpg?1415652543" title="Smashed Guitar From El Rey" /></div>
+<div class='details'>
+<div class='price'>
+$1,500
+<div class='fx' data-exchange-from-amount='1500.00' data-exchange-from-currency='USD'>1500.00</div>
+</div>
+<div class='stock'>All gone!</div>
+</div>
+<div class='description'><p>The actual smashed guitar from that memorable moment at our El Rey show.</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass' data-kinds='["download"]' data-lightbox-cta='Order Now' data-quantity-available='0' data-record-id='incentive129038' data-view-details-link='View Details' id='incentive129038_article'>
+<h1>
+
+New Original Song
+</h1>
+<div class='details'>
+<div class='price'>
+$3,000
+<div class='fx' data-exchange-from-amount='3000.00' data-exchange-from-currency='USD'>3000.00</div>
+</div>
+<div class='stock'>All gone!</div>
+</div>
+<div class='description'><p>We&#8217;ll write a new, acoustic original JUST for you !!</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass has_options' data-kinds='["house_concert"]' data-lightbox-cta='Order Now' data-quantity-available='4' data-record-id='incentive110636' data-view-details-link='View Details' id='incentive110636_article'>
+<h1>
+
+Acoustic House Concert
+</h1>
+<div class='details'>
+<div class='price'>
+$3,500+
+<div class='fx' data-exchange-from-amount='3500.00' data-exchange-from-currency='USD'>3500.00</div>
+</div>
+<div class='stock'>4 left</div>
+</div>
+<div class='description'><p>We&#8217;ll come to your house and play an acoustic set of Dead Sara favorites !</p>
+<p>Due to the expense of traveling we&#8217;ve had to set two prices:</p>
+<p>$3,500 if within a two-hour drive of Los Angeles or is on one of our tour dates (TBC)</p>
+<p>$6,000 for the rest of the US, as we will require flights/hotels etc.</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+<article class='closed exclusive has_access_pass has_options with_image' data-kinds='["house_concert"]' data-lightbox-cta='Order Now' data-quantity-available='5' data-record-id='incentive110635' data-view-details-link='View Details' id='incentive110635_article'>
+<h1>
+
+Full Band House Concert
+</h1>
+<div class='image'><img alt="Full Band House Concert" src="http://d2tqed3y8k290k.cloudfront.net/incentives/000/110/635/icons/large.jpg?1420668963" title="Full Band House Concert" /></div>
+<div class='details'>
+<div class='price'>
+$7,500+
+<div class='fx' data-exchange-from-amount='7500.00' data-exchange-from-currency='USD'>7500.00</div>
+</div>
+<div class='stock'>5 left</div>
+</div>
+<div class='description'><p>We come to your place with our gear to play for you and all your friends.</p>
+<p>Due to the expense of traveling we&#8217;ve had to set two prices:</p>
+<p>$7,500 if within a two-hour drive of Los Angeles or is on one of our tour dates (TBC)</p>
+<p>$10,000 for the rest of the US, as we will require flights/hotels etc.</p></div>
+<div class='reserve'>
+</div>
+</article>
+
+</section>
+
+
+</article>
+</div>
+<nav data-hide-if-keyboard id='site_nav_handset'>
+<a href="http://www.pledgemusic.com/handset/nav?project_id=10250" class="main navlink" data-remote-toggle="section.main" data-remote="section#handset_nav" id="site_nav_hamburger"> </a>
+<section class='bar'>
+<ul>
+<li class='find'>
+<a href="http://www.pledgemusic.com/handset/nav?project_id=10250&amp;section=find" class="find navlink" data-remote-toggle="section.find" data-remote="section#handset_nav"> </a>
+</li>
+<li class='player'>
+
+</li>
+</ul>
+</section>
+<section class='menus' data-menu-active='' id='handset_nav'></section>
+</nav>
+
+<label for='site_nav_hamburger_checkbox' id='site_nav_hamburger'></label>
+<nav data-hide-if-keyboard id='site_nav'>
+<div class='bar'>
+<input id='site_nav_more' type='checkbox'>
+<a href="/" class="home">Home</a>
+<a href="/projects" class="find">Find</a>
+<div class='hider'></div>
+<div class='find'>
+<input id='site_nav_find' type='checkbox'>
+<label for='site_nav_find'>Find</label>
+<nav class='horizontal'>
+<section>
+<h1>Browse</h1>
+<a href="/projects/index/happening">Happening</a>
+<a href="/projects/index/launched">Recently Launched</a>
+<a href="/projects/index/popular">Popular</a>
+<a href="/projects/index/ending_soon">Ending Soon</a>
+<a href="/projects">All Projects</a>
+<a href="/charities">Charities</a>
+</section>
+<section>
+<h1>Genres</h1>
+<a href="/genres/rock">Rock</a>
+<a href="/genres/country">Country</a>
+<a href="/genres/electronic">Electronic</a>
+<a href="/genres/jazz">Jazz</a>
+<a href="/genres/pop">Pop</a>
+<a href="/genres">All Genres</a>
+</section>
+</nav>
+</div>
+<a href="/learn/fans" class="learn">Learn</a>
+<a href="/artists/sign_up" class="launch">Launch</a>
+<a href="javascript:void(0)" class="listen" rel="nofollow">Listen</a>
+<div data-playlist-name='my_music' data-playlist-url='http://www.pledgemusic.com/player/playlists.json' id='site_player'>
+<div class='playerview' playerview=''></div>
+</div>
+<div class='user'>
+<a href="http://www.pledgemusic.com/sign_in" class="sign_in" rel="nofollow">Sign In</a>
+<a href="http://www.pledgemusic.com/sign_up" class="sign_up" rel="nofollow">Join PledgeMusic</a>
+</div>
+<div class='search'>
+<form accept-charset="UTF-8" action="/projects" id="site_nav_search_form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+<input data-tablet-placeholder='Tap to search' id='site_nav_search' name='q' placeholder='Search' type='text'>
+<input type='submit' value=''>
+</form>
+
+</div>
+<div id='music_tray' ng-controller='musicTrayController'>
+<div id='close_playlist'>x</div>
+<div class='musictrayview' musictrayview=''></div>
+</div>
+</div>
+</nav>
+
+<footer class='site' data-hide-if-keyboard role='application'>
+<span class='copyright' role='contentinfo'>PledgeMusic &copy;2015</span>
+<a href="/site/terms">Terms &amp; Privacy</a>
+<a href="/site/feedback" class="feedback" data-lightbox="true">Send Feedback</a>
+<div class='set_locale'>
+<a href="/projects/deadsara?locale=en" data-toggle="#set_locale">English &#x25BE;</a>
+<div data-hide-on-event id='set_locale'>
+<div class='bubble'>
+<a href="/projects/deadsara?locale=de" rel="nofollow">Deutsch</a>
+<a href="/projects/deadsara?locale=en" rel="nofollow">English</a>
+<a href="/projects/deadsara?locale=es" rel="nofollow">Español</a>
+<a href="/projects/deadsara?locale=ja" rel="nofollow">Japanese</a>
+
+</div>
+</div>
+</div>
+</footer>
+
+<div role='application'>
+<div class='templates' style='display:none'></div>
+<div data-ajax-require='//connect.facebook.net/en_US/sdk.js' id='fb-root'></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId  : '80877307761',
+      version : 'v2.2',
+      channelUrl: 'http://www.pledgemusic.com/facebook/channel.html',
+      status : true, // check login status
+      cookie : true, // enable cookies to allow the server to access the session
+      oauth  : true,
+      xfbml  : true, // parse XFBML
+      // music  : true  // add Music
+    });
+    
+  };
+</script>
+
+
+<noscript>
+<p class='warning'>
+JavaScript is required for this site to function properly.
+<a href='http://www.google.com/support/websearch/bin/answer.py?hl=en&amp;answer=23852' target='_blank'>
+Show me how to turn it on.
+</a>
+</p>
+</noscript>
+</div>
+</div>
+<script>
+  var _sf_async_config={uid:24037,domain:"pledgemusic.com"};
+  (function(){
+    function loadChartbeat() {
+      window._sf_endpt=(new Date()).getTime();
+      var e = document.createElement('script');
+      e.setAttribute('language', 'javascript');
+      e.setAttribute('type', 'text/javascript');
+      e.setAttribute('src',
+         (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") +
+         "js/chartbeat.js");
+      document.body.appendChild(e);
+    }
+    var oldonload = window.onload;
+    window.onload = (typeof window.onload != 'function') ?
+       loadChartbeat : function() { oldonload(); loadChartbeat(); };
+  })();
+</script>
+
+</body>
+</html>

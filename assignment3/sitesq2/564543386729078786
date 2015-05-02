@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	
+	
+	<title></title>
+	
+	<meta name="keywords" content="" />
+	<meta name="description" content=" - Player" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/player/assets/includes/css/player6.css?v=778541649">
+	
+	<link href="/player/assets/includes/css/custom-theme-nt/jquery-ui-1.10.2.custom.min.css" rel="stylesheet">
+
+	
+	<!--[if gt IE 7]> <html class="ie8"> <![endif]-->
+	<!--[if !IE]><!--><script>if(/*@cc_on!@*/false){document.documentElement.className+=' ie10';}</script><!--<![endif]-->
+		<meta name="apple-itunes-app" content="app-id=324004522, affiliate-data=myAffiliateData, app-argument=myURL">
+		<script type="text/javascript" src="/player/jwplayer/jwplayer.js?v=1739748111" ></script>
+	<script type="text/javascript" src="/player/assets/includes/js/browserDetection.js"></script>
+	<script type="text/javascript">jwplayer.key="pgk8stOMUsB/hhjjixsETyAttdMKICcYnpGEAw==";</script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	
+	
+	
+	<script class="rs-file" src="/player/assets/royalslider/jquery.royalslider.min.js"></script>
+    <link class="rs-file" href="/player/assets/royalslider/royalslider.css" rel="stylesheet">
+    <link class="rs-file" href="/player/assets/royalslider/skins/default/rs-default.css" rel="stylesheet">
+    
+    	
+	
+
+	<meta property='og:site_name' content='98FM Player' />
+	<meta property='og:url' content='http://www.98fm.com/player/' />
+		<meta property='og:title' content='98FM Player' />
+		<meta property='og:type' content='article' />
+		<meta property='og:image' content='http://www.98fm.com'>
+		<meta property='og:description' content='98FM Player'>
+	
+	
+<script>var isLowIE = false;</script>
+<!--[if lte IE 9]>
+<script>isLowIE = true;</script>
+<![endif]-->
+
+
+			<script type='text/javascript'>
+			var googletag = googletag || {};
+			googletag.cmd = googletag.cmd || [];
+			(function() {
+			var gads = document.createElement('script');
+			gads.async = true;
+			gads.type = 'text/javascript';
+			var useSSL = 'https:' == document.location.protocol;
+			gads.src = (useSSL ? 'https:' : 'http:') + 
+			'//www.googletagservices.com/tag/js/gpt.js';
+			var node = document.getElementsByTagName('script')[0];
+			node.parentNode.insertBefore(gads, node);
+			})();
+			</script>
+			
+					<script type='text/javascript'>
+					googletag.cmd.push(function() {
+					googletag.defineSlot('/27435881/98MediaPlayer', [[1, 1], [300, 250], [1425, 295]], 'div-gpt-ad-1424784586810-98-mpu').addService(googletag.pubads());
+					googletag.pubads().enableSingleRequest();
+					googletag.enableServices();
+					});
+					</script>
+					
+</head>
+<body>
+
+
+	
+	<div id='mainContent' class="wrapper" data-station="98FM" data-hasgrid="1" data-playlistMode="0">
+	
+	
+		
+		<div class="header">
+			<div class="wrap">
+				<a href="http://www.98fm.com/" target="_BLANK"><img class="logo pointer" src="/content/006/images/000021/30730_112_stations_6_120x72.png" alt="98fm Logo" title="98fm"/></a>
+					<div class="on_air">
+						<h4>
+							<span id="cs_times" class="white block">ON AIR: 00:00 - 06:00</span>
+							<span id="cs_title" class="station_color">DUBLIN'S BEST MUSIC MIX</span></h4>
+					</div><!-- /on_air -->
+				<div class="social">
+					<a href="https://twitter.com/98fm" target="_blank"><span class="t_bt"></span></a>
+					<a href="https://www.facebook.com/98fm" target="_blank"><span class="f_bt"></span></a>
+					<!-- <a href="" target="_blank"><span class="g_bt"></span></a> -->
+				</div><!-- /social -->
+				
+				<div class="header_links">
+					<div id="liveA" class="header_bt black_bt shadowBlack pointer">Listen Live</div></div><!-- /header_links -->
+				
+			</div><!-- /wrap -->
+			
+		</div><!-- /header -->	
+		<div class="hero">
+			<div class="wrap">
+			
+				<div class="player_left">
+				
+								
+					<div id="player">
+										</div>
+				</div><!-- /player_left -->
+												
+				<div class="player_right">
+					
+					<div id="mpu1" class="mpu shadowBlack overflowH"></div> <!-- /top_mpu -->
+					
+					<div id="player_title_holder"></div>
+					<!-- <a class="share_bt black_bt shadowBlack" href=""><span>share</span></a>
+					<a class="save_bt black_bt shadowBlack" href=""><span class="nn_img"></span></a> -->
+				</div> <!-- /player_right -->
+				<div id='clearBar' style='clear:both;'></div>
+				
+								
+				<div class="push" style="height:32px;"></div><!-- /push -->
+				<div id="social_sub_player">
+					<a class='shareButton' id='twitterShare' href="#" target="_blank"><span class="t_bt"></span></a>
+					<a class='shareButton' id='faceBookShare' href="#" target="_blank"><span class="f_bt"></span></a>
+					<a id='email' href="mailto:?subject=Player Link&body=Just testing"><span class="m_bt"></span></a>
+					<label for="embedCode" id="shareEmbed" class="bold">Embed Code:</label> 
+					<div id="size_holder">
+						<input type="radio" id="pLg" name="embed_size" class="embed_size bold" value="2" checked /> <label for="pLg">Large</label><br>
+						<input type="radio" id="pSm" name="embed_size" class="embed_size bold" value="1" /> <label for="pSm">Small</label>
+					</div>
+					<textarea class="form_field_m0" id='embedCode' type="text" value="" onclick="this.select()" /></textarea>
+				</div>
+					
+			</div><!-- /wrap -->
+		</div><!-- /hero -->
+		
+		
+		
+		<div class="nav m_gradient">
+			<div class="wrap">
+				<ul id="main_menu">
+					<li class="pointer"><span id="home" data-statID="6" class="home_bt active" data-val="home"></span></li>
+	               	<li class="pointer"><span data-statID="6" id="shows" data-val="shows">shows</span></li>
+	               	<li class="pointer"><span data-statID="6" id="podcasts" data-val="podcasts">podcasts</span></li><li class="pointer"><span data-statID="6" id="listen_back" data-val="listen back">listen back</span></li><li class="pointer"><span data-statID="6" id="videos" data-val="videos">videos</span></li>
+	                	                	
+	                		<li class="end_strip">&nbsp;</li>
+	                		<li class="search">
+	                		<form name="Search" id="SearchForm" action="#">
+	                		<input onFocus="blank(this)" onBlur="unblank(this)" autocomplete="off" id="SearchBox" type="text" name="search_term" value="Search..."/>
+	                        <input alt="search" type="image" id="SearchButton" onmouseover="this.src='/player/assets/graphics/98fm/searchglassactive.png';" onmouseout="this.src='/player/assets/graphics/98fm/searchglass.png';" src="/player/assets/graphics/98fm/searchglass.png" name="submit"/></form>
+					</li>
+				</ul>
+			</div><!-- /wrap -->
+		</div><!-- /nav -->		
+
+		<div id="content">
+			<div class="wrap">
+			
+							
+				<div id="left">
+					<div id="left_gutter"></div><!-- /left gutter -->
+				</div><!-- /left -->
+				
+				
+				<!-- Right col -->
+				<div id="right">
+					<div id="right_gutter">
+													<ul class="profile_top">
+																	<li class="socialTab" data-tab="saved">SAVED</li>
+																
+																    									   <li class="newsTab active" data-tab="news">NEWS</li>
+																		<li class="twitterTab" data-tab="twitter">TWITTER</li>
+	
+														</ul><!-- /profile_top -->
+												
+												
+															<div id="saved_tab" class="tab hidden">
+		<form action="#" method="post" id="login_form" class="form_login left" style="margin-bottom: 10px;">
+			<div class="login_head">Login to save content</div>
+			<div class="error" style="padding: 10px; display: none;"></div>
+			<label for="email">Email</label>
+			<input id="email" type="text" name="email" class="form_field">
+			<label for="password">Password</label>
+			<input id="password" type="password" name="password" class="form_field"><div class="overflowH"><p class="white right" style="margin: 0 25px 0 70px">
+						<input type="checkbox" id="set_cookie" name="set_cookie" value="1" />
+						<label for="set_cookie" style="display: inline;">Remember me</label>
+					</p><input class="button right login_button" type="submit" value="Login"></div><a class="reg_link" href="/player/register">Create Account</a> </form><p class="white" style="margin: 10px 0 6px 10px;">
+			or Login With Facebook: <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+			</p><div style="margin: 20px 20px 20px 10px;"><h3 class="white" style="margin-bottom: 10px;">Having Trouble Loggin In?</h3><p class="white">If you are having difficulties logging in please email us <a class="station_color" href="mailto:info@98fm.com">info@98fm.com</a>  <br />
+<br />
+Many thanks,<br />
+The 98FM Team</p></div></div>
+							
+							
+					        									<div id="news_tab" class="tab news white">
+										<ul class="reader_list left">
+		<li class="h61 hover"><a target="_blank" class="hp_list_link" href="/reader/523.685/11453/0/"><img alt="Garda Appeal Following Fatal Dublin Shooting" class="left" width="80" height="61" src="/content/000/images/000090/thumbs/92945_54_news_hub_88352_656x500.JPG">
+			</a>
+			<p class="nomargin bold"><a class="white hp_list_link" target="_blank" href="/reader/523.685/11453/0/">Garda Appeal Following Fatal Dublin Shooting
+				</a></p>
+			<div style="color: #999; right: 4px; position: absolute; bottom: 8px;">03rd April 2015</div>
+			
+		</li>
+		<li class="h61 hover"><a target="_blank" class="hp_list_link" href="/reader/523.685/11451/0/"><img alt="It&#39;s Flyin&#39; Over At Dublin Airport" class="left" width="80" height="61" src="/content/000/images/000063/thumbs/65488_54_news_hub_58549_656x500.jpg">
+			</a>
+			<p class="nomargin bold"><a class="white hp_list_link" target="_blank" href="/reader/523.685/11451/0/">It's Flyin' Over At Dublin Airport
+				</a></p>
+			<div style="color: #999; right: 4px; position: absolute; bottom: 8px;">03rd April 2015</div>
+			
+		</li>
+		<li class="h61 hover"><a target="_blank" class="hp_list_link" href="/reader/523.685/11450/0/"><img alt="Calls For Dublin Communities To Stand Up To Violence" class="left" width="80" height="61" src="/content/000/images/000069/thumbs/72120_54_news_hub_65608_656x500.jpg">
+			</a>
+			<p class="nomargin bold"><a class="white hp_list_link" target="_blank" href="/reader/523.685/11450/0/">Calls For Dublin Communities To Stand Up To Violence
+				</a></p>
+			<div style="color: #999; right: 4px; position: absolute; bottom: 8px;">03rd April 2015</div>
+			
+		</li>
+		<li class="h61 hover"><a target="_blank" class="hp_list_link" href="/reader/523.685/11449/0/"><img alt="Germanwings Co-Pilot Deliberately Downed Plane" class="left" width="80" height="61" src="/content/000/images/000090/thumbs/92646_54_news_hub_88139_656x500.gif">
+			</a>
+			<p class="nomargin bold"><a class="white hp_list_link" target="_blank" href="/reader/523.685/11449/0/">Germanwings Co-Pilot Deliberately Downed Plane
+				</a></p>
+			<div style="color: #999; right: 4px; position: absolute; bottom: 8px;">03rd April 2015</div>
+			
+		</li>
+		<li class="h61 hover"><a target="_blank" class="hp_list_link" href="/reader/523.685/11447/0/"><img alt="Good Friday Drink Ban Encourages Binging Says Survey " class="left" width="80" height="61" src="/content/000/images/000066/thumbs/68590_54_news_hub_61885_656x500.jpg">
+			</a>
+			<p class="nomargin bold"><a class="white hp_list_link" target="_blank" href="/reader/523.685/11447/0/">Good Friday Drink Ban Encourages Binging Says Survey
+				</a></p>
+			<div style="color: #999; right: 4px; position: absolute; bottom: 8px;">03rd April 2015</div>
+			
+		</li>
+		<li class="h61 hover"><a target="_blank" class="hp_list_link" href="/reader/523.685/11444/0/"><img alt="98fm&#39;s Morning News Fix " class="left" width="80" height="61" src="/content/000/images/000059/thumbs/62023_54_news_hub_54968_656x500.jpg">
+			</a>
+			<p class="nomargin bold"><a class="white hp_list_link" target="_blank" href="/reader/523.685/11444/0/">98fm's Morning News Fix
+				</a></p>
+			<div style="color: #999; right: 4px; position: absolute; bottom: 8px;">03rd April 2015</div>
+			
+		</li>
+		<li class="h61 hover"><a target="_blank" class="hp_list_link" href="/reader/523.685/11441/0/"><img alt="Man Rescued from Atlantic After Two Months " class="left" width="80" height="61" src="/content/000/images/000077/thumbs/79344_54_news_hub_74240_656x500.jpg">
+			</a>
+			<p class="nomargin bold"><a class="white hp_list_link" target="_blank" href="/reader/523.685/11441/0/">Man Rescued from Atlantic After Two Months
+				</a></p>
+			<div style="color: #999; right: 4px; position: absolute; bottom: 8px;">03rd April 2015</div>
+			
+		</li>
+		<li class="h61 hover"><a target="_blank" class="hp_list_link" href="/reader/523.685/11440/0/"><img alt="New Docklands Development Could Change Skyline " class="left" width="80" height="61" src="/content/000/images/000090/thumbs/92842_54_news_hub_88275_656x500.jpg">
+			</a>
+			<p class="nomargin bold"><a class="white hp_list_link" target="_blank" href="/reader/523.685/11440/0/">New Docklands Development Could Change Skyline
+				</a></p>
+			<div style="color: #999; right: 4px; position: absolute; bottom: 8px;">03rd April 2015</div>
+			
+		</li>
+		<li class="h61 hover"><a target="_blank" class="hp_list_link" href="/reader/523.685/11438/0/"><img alt="Nurse Recovers After Carjacking Outside Hospital " class="left" width="80" height="61" src="/content/000/images/000035/thumbs/37667_54_news_hub_32428_656x500.jpg">
+			</a>
+			<p class="nomargin bold"><a class="white hp_list_link" target="_blank" href="/reader/523.685/11438/0/">Nurse Recovers After Carjacking Outside Hospital
+				</a></p>
+			<div style="color: #999; right: 4px; position: absolute; bottom: 8px;">03rd April 2015</div>
+			
+		</li>
+		<li class="h61 hover"><a target="_blank" class="hp_list_link" href="/reader/523.685/11432/0/"><img alt="Drugs Bust On The Northside" class="left" width="80" height="61" src="/content/000/images/000066/thumbs/68485_54_news_hub_61717_656x500.jpg">
+			</a>
+			<p class="nomargin bold"><a class="white hp_list_link" target="_blank" href="/reader/523.685/11432/0/">Drugs Bust On The Northside
+				</a></p>
+			<div style="color: #999; right: 4px; position: absolute; bottom: 8px;">02nd April 2015</div>
+			
+		</li>
+		<li class="h61 hover"><a target="_blank" class="hp_list_link" href="/reader/523.685/11430/0/"><img alt="Three Men And A Baby Remake?" class="left" width="80" height="61" src="/content/000/images/000090/thumbs/92723_54_news_hub_88193_656x500.png">
+			</a>
+			<p class="nomargin bold"><a class="white hp_list_link" target="_blank" href="/reader/523.685/11430/0/">Three Men And A Baby Remake?
+				</a></p>
+			<div style="color: #999; right: 4px; position: absolute; bottom: 8px;">02nd April 2015</div>
+			
+		</li></ul>									</div>
+						        						
+						        <div id="twitter_tab" class="tab tw_feed hidden">
+							    	
+<a class="twitter-timeline" href="https://twitter.com/98FM" data-theme="dark" data-link-color="#e0081e" data-chrome="noheader nofooter noborders transparent noscrollbar" data-widget-id="420934829857705984">Tweets by @98FM</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>						        </div>
+						
+						 							
+					</div><!-- /right gutter -->
+				</div><!-- /right -->
+				
+			</div><!-- /wrap -->
+		</div><!-- /hero -->
+
+
+
+		<div class="push"></div><!-- /push -->
+	
+	</div><!-- /wrapper -->
+	
+	
+	<div class="footer mid_gradient">
+		<div class="wrap">
+			<p><!-- Copyright &copy; 98fm 2015 -->98FM, The Malt House, Grand Canal Quay, Dublin 2 visit <a target="_blank" href="http://www.98fm.com/">98fm.com</a> | <a class="station_color" target='_BLANK' href='http://www.gocaster.net'>Streamed by gocaster</a></p>
+		</div><!-- /wrap -->
+	</div><!-- /footer -->
+	
+	<div id="pre"></div>
+	
+	<script type="text/javascript">
+			
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-2408830-1']);
+			
+			
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+			
+			</script>	
+	
+	
+	<script src="/player/assets/includes/js/jquery.cookie.js"></script>
+	<script src="/player/assets/includes/js/jquery.ticker.js" type="text/javascript"></script>
+	<script type="text/javascript" src="/player/assets/includes/js/element.write.js"></script>
+	<script type="text/javascript" src="/player/assets/includes/js/writeCapture2.js"></script>
+	
+	<script type="text/javascript" src="/player/assets/includes/js/twitter/jquery.tweet.js"></script>
+	<script type="text/javascript" src="/player/assets/includes/js/global.js?v=1846526476"></script>
+	<script type="text/javascript" src="/player/assets/includes/js/user_login_list.js?v=1095087893"></script>
+	
+	
+	
+	<script src="/player/assets/includes/js/jquery-ui-1.10.2.custom.min.js"></script>
+	
+		
+	<script type="text/javascript">
+
+	
+		
+	liveTvClickEvents();
+	//Function also called when browser back button pressed
+	function liveTvClickEvents(){
+	$('div.header_links div').on('click', function(){
+		
+		if($(this).attr('id') === 'liveA'){ //audio
+			
+			document.location.href='/player/';  	
+			
+			// will need something to build the show content in the player area here
+			//addJplayer( "http://pri.gocaster.net/98", "640", "30", "true", "mp3", "live", false, true );
+			
+			
+		}
+		else if($(this).attr('id') === 'bulletin'){ //audio	
+			
+			addJplayer( "", "640", "30", "true", "mp3", "live", false, true );
+			//Log with analytics
+						_gaq.push(["_trackPageview", "/player/HourlyNews"]);
+			
+			
+		}
+		else { // video			
+			
+			   document.location.href='/player/tv';			   
+			   //addJplayer( "http://nodeb.gocaster.net:1935/CGL/mp4:CGA_98FM_LOW/playlist.m3u8", "640", "360", "true", "", "live", false, true );
+			
+		}
+    });
+	}
+
+
+
+	// update show data in header strip + on audio player overlay + TV live feed info every 5 mins
+	setInterval("csData()",300000);
+	//setInterval("csData()",10000);
+    function csData(){
+
+            // call ajax
+            $.ajax({
+                url: '/player/assets/includes/ajax/current_show_data.php',
+    			dataType: 'json'
+            }).then(function( data ) {
+
+                //playlistMode
+                $('body #cs_times').html(data.time);
+                $('body #cs_title').html(data.title.replace(/\\/g,''));
+
+                if ($('body #cs_num').length) {// has phone num in header
+                	$('body #cs_num').html('Text: ' + data.sms);
+				}
+
+
+				if ($('body #audio_player_content').length) {// audio
+                	$('body #streamCaptionFlash').html(data.titlecc.replace(/\\/g,'') + ' ' + data.timeonly);
+				}
+                
+                
+				if ($('body #player_title h1').length) {// tv
+
+					var contactStr = 'Phone: ' + data.phone + ' Text: ' + data.sms + '<div class="fs15 bold"><a class="station_color" href="mailto:'+ data.email +'">'+ data.email +'</a></div>';
+					
+                	$('body #player_title h1').html(data.titlecc.replace(/\\/g,''));
+                	$('body #player_title p').html(data.timeonly);
+                	$('body #player_title div.bold').html(contactStr);
+				}
+            });
+
+    }
+	
+	
+	var listener;
+	
+	// player builder
+	// mediaType is used to get the info for the player title
+	function addJplayer( file, w, h, as, type, mediaType, itemID, noAnalytics, logID, titleUrl, lbPart, norealod, updateCopyOnly){
+
+		
+		
+		//Clear video description
+		$('#videoDesc').empty();
+
+		if(file.indexOf("m3u8") != -1){
+			noAnalytics = true;
+		}
+        
+		//reload the page if not live stream
+		if (mediaType != 'live' && !noAnalytics && !norealod) {
+			window.location.href = titleUrl;
+		}
+		else{
+		
+	    
+        runwjplayer = false;
+
+        
+		if (mediaType === 'listenback') {
+
+			if (!lbPart) {
+				lbPart = document.URL.charAt(document.URL.length - 1);
+			}
+
+	        
+            // Array of month names since JS doesn't have these built in
+
+            var month_names = new Array ( );
+
+            month_names[month_names.length] = "January";
+            month_names[month_names.length] = "February";
+            month_names[month_names.length] = "March";
+            month_names[month_names.length] = "April";
+            month_names[month_names.length] = "May";
+            month_names[month_names.length] = "June";
+            month_names[month_names.length] = "July";
+            month_names[month_names.length] = "August";
+            month_names[month_names.length] = "September";
+            month_names[month_names.length] = "October";
+            month_names[month_names.length] = "November";
+            month_names[month_names.length] = "December";
+
+            // get date from url (url is different for lb on show page and lb page)
+
+            var a1 = document.URL.split('/')
+
+                a2_start = a1.length - 1,
+
+                a2 = a1[a2_start].split('_'),
+
+                date_day=a2[0].substr(0,2),
+
+                date_ord=a2[0].substr(2,2);
+                
+                date_day=date_day.replace(/[^0-9]/g,'');
+
+                lbDate_ms = Date.parse(date_day + ' ' + a2[1] + ' ' + a2[2]);
+
+			if(!isNaN(lbDate_ms)){
+	                
+               	var lbDate_date= new Date(lbDate_ms);
+
+                lbDate=lbDate_date.getDate() + date_ord + ' ' + month_names[lbDate_date.getMonth()] + ' ' + lbDate_date.getFullYear();
+			} 
+			else {
+				lbDate = '';
+			}
+		}
+
+
+		var isBulletin 	= 0,
+			isLive 		= 0,
+			isTV 		= 0;
+	   
+	   
+		// player height animation
+		var pHeight = $('.hero .wrap').css('height');
+		if (type === 'mp3') {
+			
+			// under mpu
+			$('div#player_title').empty();
+
+			
+			
+			$('.hero .wrap').animate({
+				height: '275px'
+			});		
+			
+			
+			$('#social_sub_player').fadeOut();
+			
+		}
+		else if(mediaType === 'live'){
+
+			if(type==='vadio'){
+
+				$('.hero .wrap').animate({
+					height: '550px'
+				});
+
+			}else{
+
+				$('.hero .wrap').animate({
+					height: '381px'
+				});
+
+			}
+			
+
+		}
+		else {
+			$('.hero .wrap').animate({
+				height: '449px'
+			});
+		}
+
+        var skinDate = new Date().getTime();
+		
+	
+		var skin = '/player/jwplayer/skins/98fm_firefox/six.xml?'+skinDate;
+		
+		// Listen Live / Live tv active state handler
+		$('.header_bt').removeClass('station_color_bg');
+		
+		if (mediaType === 'live') {
+			
+            if(file != ''){
+				skin = '/player/jwplayer/skins/98fm_firefox/sixlive.xml?v=1?'+skinDate;
+            }
+            
+			if (type === 'mp3') {
+				
+				if (file == '') {
+					$('#bulletin').addClass('station_color_bg');
+					isBulletin = 1;
+					document.title = 'Hourly News - 98FM Radio Player';
+					window.clearInterval(listener);
+				}
+				else {
+					$('#liveA').addClass('station_color_bg');
+					isLive = 1;
+				}
+			}
+			else {
+				$('#liveV').addClass('station_color_bg');
+				//isLive = 1;
+				document.title = 'TV - 98FM Radio Player';
+				window.clearInterval(listener);
+			}
+		}
+
+
+		
+			
+		if (updateCopyOnly !== 1){
+
+			var primaryType = 'flash';		
+			
+			if(typeof jwplayer("player").getRenderingMode() != 'undefined'){
+				jwplayer("player").remove();
+		    }
+			
+			jwplayer("player").stop();
+			// update jplayer
+			if(file.indexOf("mirror-image") == -1 || file.indexOf("youtube") == -1 ){
+				$("#player").empty();
+			}
+
+			
+			if(type==='vadio'){
+				
+				var streamCode = '<div id="dc-vadio-wrapper" class="dc-video-on"></div> <scr' + 'ipt src="http://www.vadio.com/embed.php?id=dc-vadio-wrapper&stream=&remove_explicit_content=1&" type="text/javascript" charset="utf-8"></scr' + 'ipt>';
+				
+				$('.player_left').html(streamCode);
+			}		
+			else if((isAndroid || iOS) && (file.indexOf("m3u8") == -1) && (file.indexOf("mirror-image") == -1) && (file.indexOf("youtube") == -1) && (file.indexOf("mp4") == -1)){
+				$("#player").html('<audio id="mobilePlayer" autoplay controls><source src="'+file+'"></audio>');
+			}
+			else if ((!isAndroid && !iOS) || (file.indexOf("m3u8") != -1) || (file.indexOf("youtube") != -1) || (file.indexOf("mirror-image") != -1) || (file.indexOf("mp4") != -1)){
+				
+				if (file.indexOf("m3u8") != -1) {// video
+					
+					jwplayer("player").setup({
+					    file: file,
+					    width: w,
+					    height: h,
+					    autostart: as,
+					    type: type,
+					    skin: skin,
+			    		"analytics": {
+					    	enabled: false
+					    },
+					    primary: primaryType,
+					   	//advertising: {
+					    	//"client": "vast",
+					   		//"tag": "http://ad.dc2.adtech.de/?adrawdata/3.0/1090.1/4757827/0/16/noperf=1;cc=2;header=yes;alias=myalias;cookie=yes;adct=204;key=key1+key2;grp=[group];misc=[TIMESTAMP]",
+					   		//"admessage": 'Ad plays for XX seconds.'
+					    //},
+					    events: {
+					    	onReady: function() {
+					    		
+					    		if (mediaType === 'live' && file != ''){
+					    			
+					    			var showName = $('#audio_player_content_text h2').text().replace(/\\/g,'');
+					                var ShowTime = $('#audio_player_content_text p').text();
+	
+						    		if(jwplayer("player").getRenderingMode()=='html5'){
+	
+						    			$('.jwcenter').html('<span id="streamCaption">'+showName+' '+ShowTime+'</span>');
+						    		}
+						    		else{
+	
+						    			$('#player_wrapper').prepend('<span id="streamCaptionFlash">'+showName+' '+ShowTime+'</span>');
+							        }
+						        }
+				        	 }
+					    }
+				    });	
+				}
+				else {// audio
+					
+					jwplayer("player").setup({
+					    file: file,
+					    					    width: w,
+					    height: h,
+					    					    
+					    autostart: as,
+					    type: type,
+					    skin: skin,					    
+			    		"analytics": {
+					    	enabled: false
+					    },
+					    primary: primaryType,
+					    events: {
+					    	onReady: function() {
+
+					    		if(!as){
+					    			 $('#playIcon').show();
+						    	}
+					    		
+					    		if (mediaType === 'live' && file != ''){
+		
+					    			
+					    			var showName = $('#audio_player_content_text h2').text().replace("\\", "");
+					                var ShowTime = $('#audio_player_content_text p').text();
+		
+						    		if(jwplayer("player").getRenderingMode()=='html5'){
+		
+						    			$('.jwcenter').html('<span id="streamCaption">'+showName+' '+ShowTime+'</span>');
+						    		}
+						    		else{
+						    									    			$('#player_wrapper').prepend('<span id="streamCaptionFlash">'+showName+' '+ShowTime+'</span><div class="plm_audio_controls"><span data-volume="0" class="plm_audio_icom plm_volume_control plm_volume_0"></span><span data-volume="20" class="plm_volume_control plm_volume_20"></span><span data-volume="40" class="plm_volume_control plm_volume_40"></span><span data-volume="60" class="plm_volume_control plm_volume_60"></span><span data-volume="80" class="plm_volume_control plm_volume_80"></span><span data-volume="100" class="plm_volume_control plm_volume_100"></span></div>');
+						    											    }
+						        }
+				        	 },onPause: function() {
+				        		$('#pauseIcon').hide();
+							    $('#playIcon').show();  	
+							    							    		
+						     },
+						     onPlay: function() {
+
+							    	$('#playIcon').hide();
+								    $('#pauseIcon').show();	
+
+								    
+								    $('.plm_audio_controls').show();
+
+								    jwplayer("player").setVolume('60');						            
+						            setVolumeGraphics('60', 'click'); 
+								    plm_volume_control("player");
+						     }
+					    }
+				    });	
+				}	
+			}
+
+			if (isLive === 1) {
+
+
+								listener = window.setInterval(function(){ 
+				    //code goes here that will be run every 5 mins
+					addJplayer( file, w, h, as, type, mediaType, itemID, noAnalytics, logID, titleUrl, lbPart, true, 1 );
+				}, 300000);
+							}
+		}
+
+
+		
+		// update player info
+		
+		$.ajax({
+			url: '/player/assets/includes/ajax/player_builder.php',
+			data: { type: type, mediaType: mediaType, itemID: itemID, logID: logID, isBulletin: isBulletin },
+			dataType: 'json'
+		}).then(function( results ) {
+
+			
+			
+			$('#audio_player_content').remove();
+			
+			//Update the embed iframe
+			var stationUrl = 'http://www.98fm.com/';
+
+			//Spin sw exception
+			if(stationUrl=='http://www.spinsouthwest.com/'){
+				stationUrl='http://player.spinsouthwest.com/';
+			}
+
+			//98fm exception
+			if(stationUrl=='http://www.98fm.com/'){
+				stationUrl='http://player.98fm.com/';
+			}			
+			
+			if(mediaType=='podcast'){
+				var ecLarge = '<iframe frameborder="0" height="60" width="630" src="'+stationUrl+'player/embed.php?mediaType='+ mediaType +'&id='+itemID+'&w=630"></iframe>',
+					ecSmall = '<iframe frameborder="0" height="60" width="560" src="'+stationUrl+'player/embed.php?mediaType='+ mediaType +'&id='+itemID+'&w=560"></iframe>';
+				$('#embedCode').val(ecSmall);
+			}
+			else if(mediaType=='video'){
+				var vidID = '',
+					ecLarge = '<iframe frameborder="0" height="60" width="630" src="'+stationUrl+'player/embed.php?mediaType='+ mediaType +'&id='+vidID+'&w=630"></iframe>',
+					ecSmall = '<iframe frameborder="0" height="60" width="560" src="'+stationUrl+'player/embed.php?mediaType='+ mediaType +'&id='+vidID+'&w=560"></iframe>';
+				$('#embedCode').val(ecSmall);
+			}
+			else if(mediaType=='listenback'){	
+				var ecLarge = '<iframe frameborder="0" height="60" width="630" src="'+stationUrl+'player/embed.php?mediaType='+ mediaType +'&id='+logID+'&showID='+itemID+'&w=630"></iframe>',
+					ecSmall = '<iframe frameborder="0" height="60" width="560" src="'+stationUrl+'player/embed.php?mediaType='+ mediaType +'&id='+logID+'&showID='+itemID+'&w=560"></iframe>';			
+				$('#embedCode').val(ecSmall);
+			}
+
+
+			var myURL = $(location).attr('href');
+
+			$('#email').attr('href', 'mailto:?subject=' + slugify(results.title) + ' | from the 98fm player&body=' + myURL);
+
+			$('.embed_size').on('click', function(){
+				
+				var $this = $(this);
+				
+				if ($this.val() == 2) {
+					$('#embedCode').val(ecLarge);
+				}
+				else {
+					$('#embedCode').val(ecSmall);
+				}
+			});
+			
+			
+			var timeString 		= '',
+				my_sub 			= '',
+				my_show_details = '',
+				saveID 			= '',
+				showID 			= '',
+				shareButtons 	= '';
+			
+			if (mediaType === 'listenback'){
+				saveID = logID;
+				showID = itemID;
+			}
+			else {
+				saveID = itemID;
+			}
+			
+			
+			if (results.show_title) {
+				
+				if (mediaType === 'podcast') {
+					my_title 	= results.title.replace(/\\/g,'');
+					my_sub 		= '<div class="bold">Show: ' + results.show_title + '</div>';
+
+					//document.title = 'Podcasts - 98FM Radio Player';
+				}
+				else if (mediaType === 'listenback') {
+					my_title 	= results.title.replace(/\\/g,'');
+					my_sub 		= '<div class="bold">Listen Back: ' + lbDate + ' Part ' + lbPart + '</div>';
+
+					//document.title = 'Listen Back - Archive - 98FM Radio Player';
+				}
+				else {
+					my_title 	= results.show_title.replace(/\\/g,'');
+				}
+			}
+			else {
+				my_title = results.title.replace(/\\/g,'');
+			}
+			
+			if (results.display_time) {
+				timeString = '<div class="fs15">' + results.display_time + '</div>';
+			}
+			
+			
+			
+			if (results.start_time && results.end_time) {
+				if (mediaType=='live' && type === 'mp3') {
+                     var hideText = " style='display:none;' "
+				}
+				else{
+					var hideText = "";
+				}
+				timeString = '<p'+hideText+'>' + results.start_time + ' - ' + results.end_time + '</p>';
+			}
+
+
+			if (results.phone || results.sms) {
+				my_show_details = '<div class="fs15 bold">';
+			}
+			
+			if (results.phone) {
+				my_show_details += 'Phone: ' + results.phone + ' ';
+			}
+			
+			if (results.sms) {
+				my_show_details += 'Text: ' + results.sms;
+			}
+			
+			if (results.email) {
+				my_show_details += '<div class="fs15 bold"><a class="station_color" href="mailto:' + results.email + '">' + results.email + '</a></div>';
+			}
+			
+			
+			if (type === 'mp3') {
+				var subBlock = '';
+				var imgString = '';
+				
+				
+				if (results.image) {
+
+											imgString = '<img src="' + results.image + '" alt="Player Image" title="' + my_title + '" class="imgStd left playerImage" width="263" height="200" data-remitemid="' +saveID+ '" data-remmediatype="' +mediaType+ '" data-remshowid="' +showID+ '" data-remlbpart="' +lbPart+ '"><div id="share_plus" style="right: 0; top: 168px;">';
+																	
+						if (mediaType !== 'live') {
+							imgString += '<span class="share_bt black_bt shadowBlack pointer right"><span></span>share</span>';
+						}
+						
+						imgString += '</div>';
+					
+				}
+				
+				
+				if (my_sub || results.subtitle) {
+					subBlock = '<div>';
+				
+					if (my_sub) {
+						subBlock += my_sub;
+					}
+					if (results.subtitle) {
+						subBlock += results.subtitle.replace(/\\/g,'');
+					}
+					
+					subBlock += '</div>';
+				}
+
+									$('div.player_left').prepend( '<div id="audio_player_content"><img id="playIcon" class="player_button" style="display: none;" src="/player/assets/graphics/playIcon.png"/><img id="pauseIcon" class="player_button" style="display: none;" src="/player/assets/graphics/pauseIcon.png"/>' + imgString + '<div id="audio_player_content_text"><h2>' + my_title + '</h2>' + timeString + subBlock + my_show_details + '</div></div>');
+								// area below mpu
+				// $('h1#player_title').html( my_title + ' ' + my_show_details );
+			}
+			else {// video
+				
+				// area below mpu
+				
+				
+								
+				if (mediaType !== 'live') {
+					shareButtons += '<span class="share_bt black_bt shadowBlack pointer" style="margin: 0 13px 0 0;"><span></span>share</span>';
+					//document.title = 'Video - 98FM Radio Player';
+					
+				}
+				
+
+				if (shareButtons) {
+					shareButtons = '<div id="share_plus">' + shareButtons + '</div>';
+				}
+
+				if (mediaType !== 'live') {
+					$('<div id="videoDesc"><h1>' + my_title  + '</h1><h2>'+results.subtitle+'</h2></div>').insertAfter('#clearBar');
+					$('#player_title_holder').html( '<div id="player_title">'+ shareButtons + "</div>");
+				}
+				else{
+					$('#player_title_holder').html( '<div id="player_title"><h1>' + my_title  + '</h1>'+ ' ' + timeString + ' ' + my_show_details + shareButtons + "</div>");
+				}
+
+				
+			}
+
+			//Update twitter and facebook links
+			var twitterAccount 	= '@98FM';
+			var twitterAccount 	= twitterAccount.replace("@","");
+			var twitterURl 		= 'https://twitter.com/share?url=' + encodeURIComponent(document.URL) + '&via='+twitterAccount+'&text=' + encodeURIComponent(slugify(my_title));
+			$('#twitterShare').attr('href', twitterURl);
+			
+            var facebookUrl 	= 'http://www.facebook.com/sharer.php?u=' + encodeURIComponent(document.URL);
+            $('#faceBookShare').attr('href', facebookUrl);
+
+
+            //Show play icon on mobile browsers
+            
+            if((isAndroid || iOS) && (file.indexOf("m3u8") == -1) && (file.indexOf("mirror-image") == -1) && (file.indexOf("youtube") == -1)){
+            	$('#playIcon').show(); 
+            }
+
+			
+			
+			//Track pageview with google analytics
+			if(!noAnalytics){
+				
+			    if(titleUrl !== false){
+				
+				  var analyticsTitle = titleUrl.substring(titleUrl.indexOf("/player/"));
+					
+				    					_gaq.push(["_trackPageview", analyticsTitle]);
+					
+			    }	
+
+			
+			if(html5Support){
+				if(titleUrl !== false){
+					history.pushState({bodyContent:$('#portfolioWrapper').html(), nav:$('.nav').html()}, document.title, titleUrl);
+				}			
+			}
+
+			// load ads
+
+			$('body #mpu1').empty();
+			$('#pre').empty();
+			writeCapture(document.getElementById('mpu1')).write(results.mpu1).close();
+			//writeCapture(document.getElementById('pre')).write(results.pre).close(); -removed for launch
+			 
+			}			
+			
+		});
+		 
+		}
+	}
+
+
+	
+		(function() {
+			
+			// ad overlay
+			var adCheck = $.cookie('ad_played');
+			//var adCheck;
+			
+							
+				// no video tag, build player normally
+				addJplayer( "http://pri.gocaster.net/98", "640", "30", true, "mp3", "live", "false", true, "");
+						
+			
+	    	// content area builder
+	    	contentBuilder( 'home', false, 'false', 'false', false, '', '', false, '', '', '' );
+			
+	    	
+	    	
+	    	//---------------------------------------------------------
+	    	// player live stream (audio / video) loaders
+	    		    	   	
+			
+	    	// tweet box (this doesn't like being in global.js)
+
+	    	
+	    	
+	    	
+	    		    	
+		})();
+	    
+	</script>
+</body>
+</html>

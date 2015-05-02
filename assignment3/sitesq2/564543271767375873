@@ -1,0 +1,2259 @@
+<!DOCTYPE html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# indiegogo: http://ogp.me/ns/fb/indiegogo#" >
+  <meta charset="utf-8" />
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"52ee8e3327","applicationID":"265213","transactionName":"J1gLEkINVVQDRUkLVwlSSg9eBlxA","queueTime":2,"applicationTime":450,"agent":"js-agent.newrelic.com/nr-632.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UQEDVFdACgUFVlBR"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:9,3:7,4:11,5:3,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:9,3:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indiegogo: Global Crowdfunding Engine to Fundraise Online</title>
+
+
+  <link href="https://g2.iggcdn.com/assets/favicon/favicon-32-ccb09c7cc3cd3f77bc61232de4ad24a0.png" rel="icon" sizes="32x32" type="image/png" />
+  <link href="https://g2.iggcdn.com/assets/favicon/favicon-48-9dfd667b35bfc9ad1ebaa80564c47168.png" rel="icon" sizes="48x48" type="image/png" />
+  <link href="https://g1.iggcdn.com/assets/favicon/favicon-64-38d78e8eecbe98eab58b446fac4075b3.png" rel="icon" sizes="64x64" type="image/png" />
+
+  <!--[if IE]>
+  <link href="https://g3.iggcdn.com/assets/favicon/favicon-faf511dad07c019ad9a0f91b98c5c868.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://g0.iggcdn.com/assets/favicon/apple-touch-icon-144x144-precomposed-7df091b50f2cccdb2d1e372271880cdb.png">
+  <![endif]-->
+
+
+
+<meta name="language" content="en" />
+<meta name="title" content="Indiegogo: Global Crowdfunding Engine to Fundraise Online" />
+<meta name="description" content="As the largest global fundraising site, we help individuals, businesses, and non-profits raise money online—to make any idea a reality through crowdfunding." />
+<meta name="keywords" content="fundraising, crowdfunding ideas, raise money online, crowdfunding, fundraising ideas, crowdfunding sites, Indiegogo, new gadgets, film crowdfunding, hardware crowdfunding" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="v5AUqxHJ5BCbx1rql45SM53NipKBMnmf6y+cficWlI8=" name="csrf-token" />
+<meta property="fb:app_id" content="2392863781"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Indiegogo"/>
+<meta property="og:title" content="Indiegogo: Global Crowdfunding Engine to Fundraise Online"/>
+<meta property="og:description" content="Indiegogo is the world's largest global funding platform. Founded on the principles of opportunity, transparency, and action, anyone with an idea – creative, cause-related, or entrepreneurial – can create a campaign, offer perks, and fund their passion."/>
+<meta property="og:image" content="https://g2.iggcdn.com/assets/site/home/CampaignGrid_600x600-2ac5e10305142a45a094ae3806d6d0d3.png"/>
+<meta property="og:image:width" content="600"/>
+<meta property="og:image:height" content="600"/>
+<meta property="og:image" content="https://g1.iggcdn.com/assets/site/home/CampaignGrid_1200x630-ecbf123cf82e0f73ce9fb38d746c69bf.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image" content="https://g2.iggcdn.com/assets/site/brand/IGG_Logo_Frame_GOgenta_RGB-display-ff372cf387e3b68cb147fb4e4ec92869.png"/>
+<meta property="og:image:width" content="173"/>
+<meta property="og:image:height" content="90"/>
+<meta property="og:url" content="https://www.indiegogo.com/"/>
+<meta property="al:iphone:url" content="indiegogo://" />
+<meta property="al:iphone:app_store_id" content="752234889" />
+<meta property="al:iphone:app_name" content="Indiegogo" />
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@indiegogo">
+<meta name="twitter:domain" content="https://www.indiegogo.com/">
+<meta name="twitter:app:name:iphone" content="Indiegogo" />
+<meta name="twitter:app:id:iphone" content="752234889" />
+<meta name="twitter:app:url:iphone" content="indiegogo://" />
+<meta name="twitter:title" content="Indiegogo: Global Crowdfunding Engine to Fundraise Online">
+<meta name="twitter:description" content="Indiegogo is the world's largest global funding platform. Founded on the principles of opportunity, transparency, and action, anyone with an idea can create a campaign and fund their passion.">
+<meta name="twitter:image:src" content="https://g1.iggcdn.com/assets/site/home/CampaignGrid_700x400-a71957ee920a36e545da21e981b692cb.jpg">
+<meta name="twitter:creator" content="@indiegogo">
+
+<link rel="canonical" href="https://www.indiegogo.com/"/>
+
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss/announcements" />
+
+  <script type="text/javascript">
+    var utag_data = {"site_name":"www.indiegogo.com","site_country":"us","page_type":"home","logged_in_state":"signed_out","session_id":"090ea3319f0466a41427a62705dc1ce07688f8993a130f59381aed233f92199f","page_name":"Indiegogo: Global Crowdfunding Engine to Fundraise Online"};
+  </script>
+  <!-- Loading script asynchronously -->
+  <script type="text/javascript">
+    (function(a,b,c,d){
+    a='//tags.tiqcdn.com/utag/indiegogo/main/prod/utag.js';
+    b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+    })();
+  </script>
+
+  <link href="https://g0.iggcdn.com/assets/select2/select2-01d1ad70f9743bee1f69f028fdd85ce9.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://g0.iggcdn.com/assets/site/fonts-30413bc003860c2328f741e7391994ee.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://g1.iggcdn.com/assets/site/common-167eb99d24d2effe09f85dfefad9fc54.css" media="screen" rel="stylesheet" type="text/css" />
+  
+    <link href="https://g0.iggcdn.com/assets/site/home-c9a82f8e6d91de447b13eb23fb5318b0.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+  <script type="text/javascript">
+//<![CDATA[
+window.gon = {};gon.subdomain=null;
+//]]>
+</script>
+  <script type="text/javascript">
+  try {
+    var _gaq = _gaq || [];
+  } catch(err) {}
+</script>
+
+  <script type='text/javascript'>
+    try {
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    } catch(err) {}
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  </script>
+
+    <script>ga('create', 'UA-2250010-1', 'auto');</script>
+
+<script>ga('require', 'ec', 'ec.js');</script>
+
+
+    <script>ga('set', 'dimension9', 'Anonymous');</script>
+    <script>ga('set', 'dimension13', '8c798a1c4ecb3b5e871712c4d6bda119907a6f6ebad56d22cbda2cf856dee4c9');</script>
+    <script>ga('set', 'dimension18', 'en');</script>
+    <script>ga('set', 'dimension8', 'Not Logged In');</script>
+
+  <script>ga('send', 'pageview');</script>
+<!-- Google Analytics End -->
+
+
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <script src="https://g1.iggcdn.com/assets/igg/ie8/common-49efa31aa72149f618db1dbcab395e47.js" type="text/javascript"></script>
+  <script src="https://code.jquery.com/jquery-1.11.0.js"></script>
+  <link href="https://g3.iggcdn.com/assets/site/ie8-b1df367ed4fbf8df8cb80f89216c3e09.css" media="screen" rel="stylesheet" type="text/css" />
+  
+  <![endif]-->
+  <!--[if IE 9]>
+  <script src="https://g0.iggcdn.com/assets/css3-multi-column.1.02-6f35ddb3f392cace1a85d17febd3c8ba.js" type="text/javascript"></script>
+  <![endif]-->
+
+</head>
+<body ng-app="lite" >
+  <div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '2392863781',
+      version    : 'v2.2',
+      channelUrl: 'http://www.indiegogo.com//channel.html', // Channel File for x-domain communication
+      status: true, // check the login status upon init?
+      cookie: true, // set sessions cookies to allow your server to access the session?
+      xfbml: true
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    var fbLocale = {'en': 'en_US', 'fr': 'fr_FR', 'de': 'de_DE', 'es': 'es_ES'}['en'];
+    js.src = "//connect.facebook.net/" + fbLocale + "/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+
+  
+  
+
+      
+<div header-main>
+  <div class="i-page-header">
+    <div class="visible-xs">
+      <a class="i-search-button" href="" ng-click="toggleSearchMode()" ng-class="{'i-active': inSearchMode}"><span class="i-icon i-glyph-icon-30-search"></span></a>
+
+        <div class="i-header-bar" header-dropdown-link>
+          <span class="i-site-logo">INDIEGOGO</span>
+          <span class="i-icon i-glyph-icon-30-downcarrot"></span>
+        </div>
+        <div class="dropdown-menu i-linklist-dropdown i-capitalize">
+          <a href="/">Home</a>
+          <a href="/explore">Explore</a>
+          <a href="/learn-how-to-raise-money-for-a-campaign">How It Works</a>
+          <a href="/campaigns/new?simple=1">Start your campaign</a>
+            <a href="https://www.indiegogo.com/accounts/sign_up?return_to=https%3A%2F%2Fwww.indiegogo.com%2F">Log in or Sign up</a>
+        </div>
+    </div>
+    <div class="hidden-xs">
+      <div class="container">
+          <div class="i-header-links-area pull-right">
+            <div class="i-header-links i-header-account-links">
+                <a href="https://www.indiegogo.com/accounts/auth/facebook?csrf_token=v5AUqxHJ5BCbx1rql45SM53NipKBMnmf6y%2BcficWlI8%3D" class="i-cta-1 i-cta-1-facebook i-fbconnect-header">connect</a>
+                <a href="#" ng-click="openModal('signupForm')">Sign up</a>
+                <a href="#" ng-click="openModal('loginForm')">Log in</a>
+            </div>
+            <div class="i-header-links i-header-menu-links">
+              <a href="/explore">Explore</a>
+              <a href="/learn-how-to-raise-money-for-a-campaign">How It Works</a>
+              <a href="/campaigns/new">Start your campaign</a>
+              <a href="#" class="i-search-button visible-inline-sm" ng-class="{&#x27;i-active&#x27;: inSearchMode}" ng-click="toggleSearchMode()">
+                <span class="i-icon i-glyph-icon-30-search "></span>
+</a>              <div class="i-inline-search visible-inline-md">
+                <form method="get" action="/explore"
+                      header-search-form template="header_search_form"
+                      term="">
+                </form>
+              </div>
+            </div>
+          </div>
+
+        <a href="/" class="i-site-logo">
+            <img alt="Igg_newlogos_377075_frankmooremendingtheline" src="https://images.indiegogo.com/logos/44/image/original/IGG_newLogos_377075_FrankMooreMendingTheLine.jpg?1415392658" />
+</a>      </div>
+    </div>
+
+    <div class="container i-mobile-fullwidth">
+      <form method="get" action="/explore"
+           header-search-form term=""
+           template="header_search_dropdown"
+           class="i-search-dropdown" ng-class="{'i-open': inSearchMode}"></form>
+    </div>
+  </div>
+</div>
+
+  <div session-modal id="session_modal" class="modal i-modal i-session-modal">
+  <div class="modal-dialog">
+    <div class="modal-content auth-modal">
+      <a class="close i-icon i-glyph-icon-30-close" data-dismiss="modal" aria-hidden="true"></a>
+
+      <div class="center-text fb-auth">
+        <a href="https://www.indiegogo.com/accounts/auth/facebook?csrf_token=v5AUqxHJ5BCbx1rql45SM53NipKBMnmf6y%2BcficWlI8%3D" class="i-cta-1 i-cta-1-facebook">Continue with Facebook</a>
+        <p>No automatic posts, ever.</p>
+      </div>
+
+      <div class="auth-fields">
+        <div id="loginSession" ng-show="currentForm === 'loginForm'">
+          <p class="sign-up-with-email divider"><span class="divider-line">Or log in with email</span></p>
+          <div ng-controller="SessionController">
+            <form accept-charset="UTF-8" action="https://www.indiegogo.com/accounts/sign_in.json" method="post" name="loginForm" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="v5AUqxHJ5BCbx1rql45SM53NipKBMnmf6y+cficWlI8=" /></div>
+  <p class="i-error" ng-if="loginFailed">Invalid email or password</p>
+  <label class="hide i-error signup"></label>
+  <input class="i-text-field" id="account_email" name="account[email]" ng-model="loginAccount.email" placeholder="Email" required="required" size="30" type="email" />
+
+  <label for="account_email'" class="i-input-error-subtext i-error" ng-if="loginForm['account[email]'].$error.email">Please enter a valid email address</label>
+  <label for="account_email'" class="i-input-error-subtext i-error" ng-if="loginForm['account[email]'].$error.required && loginForm['account[email]'].$dirty">This field is required</label>
+
+  <input autocomplete="off" class="i-text-field password-input password" id="account_password" name="account[password]" ng-minlength="6" ng-model="loginAccount.password" placeholder="Password" required="required" size="30" type="password" />
+  <label for="account_password" class="i-input-error-subtext i-error" ng-if="loginForm['account[password]'].$error.minlength">Must be at least 6 characters long</label>
+  <label for="account_password" class="i-input-error-subtext i-error" ng-if="loginForm['account[password]'].$error.required && loginForm['account[password]'].$dirty">This field is required</label>
+
+  <div class="i-field-row">
+    <div class="col-sm-6 i-checkbox-with-label">
+      <input name="account[rememberme]" type="hidden" value="0" /><input checked="checked" id="account_rememberme" name="account[rememberme]" type="checkbox" value="1" />
+      <label for="account_rememberme">Remember Me</label>
+    </div>
+    <div class="col-sm-6 i-forgot">
+      <a href="https://www.indiegogo.com/accounts/password/new" class="i-aqua-link">Forgot Password?</a>
+    </div>
+  </div>
+  <input class="i-cta-1 login" name="commit" ng-click="submitLogin()" type="submit" value="Log in" />
+</form>
+          </div>
+          <div class="topborder">
+            New to Indiegogo?  <a href="#" class="toggler" ng-click="switchForm()">Sign up</a>
+          </div>
+        </div>
+
+        <div id="signUpSession" ng-show="currentForm === 'signupForm'">
+          <p class="sign-up-with-email divider"><span class="divider-line">Or sign up with email</span></p>
+          <form accept-charset="UTF-8" action="https://www.indiegogo.com/accounts.json" method="post" name="signupForm" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="v5AUqxHJ5BCbx1rql45SM53NipKBMnmf6y+cficWlI8=" /></div>
+  <p class="i-error" ng-if="errorMessage">{{errorMessage}}</p>
+  <input id="timestamp" name="timestamp" type="hidden" value="1428103508" /><input id="spinner" name="spinner" type="hidden" value="d4a2d96a115eaeacb03b9c2153aa6941" />
+
+  <input class="i-text-field" id="account_firstname" name="account[firstname]" ng-model="signupAccount.firstname" placeholder="First Name" required="required" size="30" type="text" />
+  <label for="account_firstname" class="i-input-error-subtext i-error" ng-if="signupForm['account[firstname]'].$error.required && signupForm['account[firstname]'].$dirty">This field is required</label>
+
+  <input class="i-text-field" id="account_lastname" name="account[lastname]" ng-model="signupAccount.lastname" placeholder="Last Name" required="required" size="30" type="text" />
+  <label for="account_lastname" class="i-input-error-subtext i-error" ng-if="signupForm['account[lastname]'].$error.required && signupForm['account[lastname]'].$dirty">This field is required</label>
+  
+  <input class="i-text-field" id="68a28f9ee13be2440eb3b6d68c7bb4f9" name="68a28f9ee13be2440eb3b6d68c7bb4f9" ng-model="signupAccount.email" placeholder="Email" required="required" type="text" /><div style="position: absolute; left: -2000px;"><input autocomplete="off" id="email" name="email" tabindex="999" type="text" value="" /></div>
+  <label class="i-input-error-subtext i-error" for="68a28f9ee13be2440eb3b6d68c7bb4f9" ng-if="signupFailed &amp;&amp; !signupAccount.emailValid()">Please enter a valid email address</label>
+  <label class="i-input-error-subtext i-error" for="68a28f9ee13be2440eb3b6d68c7bb4f9" ng-if="signupFailed &amp;&amp; !signupAccount.email">This field is required</label>
+
+  <input autocomplete="off" class="i-text-field" id="take" minlength="6" name="0bff3b913d4db2cf84aebdf17307ff23" ng-model="signupAccount.password" placeholder="Password" required="required" type="password" /><div style="position: absolute; left: -2000px;"><input autocomplete="off" id="password" name="password" tabindex="999" type="password" value="" /></div>
+  <label class="i-input-error-subtext i-error" for="0bff3b913d4db2cf84aebdf17307ff23" ng-if="signupFailed &amp;&amp; !signupAccount.passwordValid()">Must be between 6 and 40 characters</label>
+  <label class="i-input-error-subtext i-error" for="0bff3b913d4db2cf84aebdf17307ff23" ng-if="signupFailed &amp;&amp; !signupAccount.password">This field is required</label>
+
+  <div class="i-field-row i-checkbox-with-label">
+    <input name="account[general_opt_in]" type="hidden" value="0" /><input checked="checked" id="account_general_opt_in" name="account[general_opt_in]" type="checkbox" value="1" />
+    <label for="account_general_opt_in">Sign me up for the weekly newsletter</label>
+  </div>
+
+  <input class="i-cta-1 js-submit-session" name="commit" ng-click="submitSignup()" type="submit" value="Create an Account" />
+
+  <div class="i-fine-print">
+
+
+    By signing up you agree to our <a href="https://www.indiegogo.com/about/terms" target="_blank">Terms of Use</a> and <a href="https://www.indiegogo.com/about/privacy" target="_blank">Privacy Policy</a>.
+  </div>
+
+</form>
+          <div class="topborder">
+            Already have an account? <a href="#" class="toggler" ng-click="switchForm()">Log in</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="container hidden" header-flash-container>
+</div>
+
+      
+
+  <div class="i-carousel i-home-featured-carousel">
+    <ul>
+        <li class="i-home-featured white">
+      <span class="i-background" data-picture data-alt="Indiegogo Life">
+          <span class="i-gradient-left"></span>
+          <span class="i-gradient-right"></span>
+          <span data-src="https://images.indiegogo.com/homepage_slots/18/mobile_image/original/IGG_IndiegogoLife_carousel_mobile_final2.jpg?1418668184"></span>
+          <span data-src="https://images.indiegogo.com/homepage_slots/18/desktop_image/original/IGG_IndiegogoLife_carouselimages-tablet-web_2x_final2.jpg?1418668184" data-media="(min-width: 768px)"></span>
+        <!--[if (lt IE 9) & (!IEMobile)]>
+          <span data-src="https://images.indiegogo.com/homepage_slots/18/desktop_image/original/IGG_IndiegogoLife_carouselimages-tablet-web_2x_final2.jpg?1418668184" data-media="(min-width: 768px)"></span>
+          <![endif]-->
+      </span>
+
+          <div class="i-content">
+            <div>
+              <div>
+                <div class="i-home-header">Indiegogo Life</div>
+                <p>Introducing the easy way to raise money for yourself or someone you love.</p>
+                <a href="https://life.indiegogo.com?utm_source=carousel&amp;utm_medium=homepage&amp;r=igg_www_xx_0050_igg10000_xxxxxxxx_xxx_1050_{keyword}" class="i-cta-1 i-home-button">EXPLORE</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="i-home-featured white">
+      <span class="i-background" data-picture data-alt="Indiegogo &amp; Vimeo">
+          <span class="i-gradient-left"></span>
+          <span class="i-gradient-right"></span>
+          <span data-src="https://images.indiegogo.com/homepage_slots/22/mobile_image/original/IGG_Vimeo_hero_mobile_2x.jpg?1422567975"></span>
+          <span data-src="https://images.indiegogo.com/homepage_slots/22/desktop_image/original/IGG_Vimeo_carouselimages-tablet-web_2x.jpg?1422567975" data-media="(min-width: 768px)"></span>
+        <!--[if (lt IE 9) & (!IEMobile)]>
+          <span data-src="https://images.indiegogo.com/homepage_slots/22/desktop_image/original/IGG_Vimeo_carouselimages-tablet-web_2x.jpg?1422567975" data-media="(min-width: 768px)"></span>
+          <![endif]-->
+      </span>
+
+          <div class="i-content">
+            <div>
+              <div>
+                <div class="i-home-header">Indiegogo &amp; Vimeo</div>
+                <p>Vimeo pledges up to $1MM Creator Fund for Indiegogo film/video campaigners</p>
+                <a href="https://go.indiegogo.com/blog/2015/01/indiegogo-vimeo-partnership.html" class="i-cta-1 i-home-button">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="i-home-featured black">
+      <span class="i-background" data-picture data-alt="Create your world">
+          <span class="i-gradient-left"></span>
+          <span class="i-gradient-right"></span>
+          <span data-src="https://images.indiegogo.com/homepage_slots/12/mobile_image/original/WallTherapy_Carousel_Mobile_2x.jpg?1418927476"></span>
+          <span data-src="https://images.indiegogo.com/homepage_slots/12/desktop_image/original/WallTherapy_Carousel_Desktop_2x_2.jpg?1418927476" data-media="(min-width: 768px)"></span>
+        <!--[if (lt IE 9) & (!IEMobile)]>
+          <span data-src="https://images.indiegogo.com/homepage_slots/12/desktop_image/original/WallTherapy_Carousel_Desktop_2x_2.jpg?1418927476" data-media="(min-width: 768px)"></span>
+          <![endif]-->
+      </span>
+
+          <div class="i-content">
+            <div>
+              <div>
+                <div class="i-home-header">Create your world</div>
+                <p>You were born to inspire. Paint a better picture through crowdfunding, and bring ideas to life.</p>
+                <a href="http://bit.ly/gocarousel1" class="i-cta-1 i-home-button">GET STARTED</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="i-home-featured black">
+      <span class="i-background" data-picture data-alt="Blaze ahead">
+          <span class="i-gradient-left"></span>
+          <span class="i-gradient-right"></span>
+          <span data-src="https://images.indiegogo.com/homepage_slots/14/mobile_image/original/Tens_Carousel_Mobile_2x.jpg?1414193132"></span>
+          <span data-src="https://images.indiegogo.com/homepage_slots/14/desktop_image/original/Tens_Carousel_Desktop_2x.jpg?1414193132" data-media="(min-width: 768px)"></span>
+        <!--[if (lt IE 9) & (!IEMobile)]>
+          <span data-src="https://images.indiegogo.com/homepage_slots/14/desktop_image/original/Tens_Carousel_Desktop_2x.jpg?1414193132" data-media="(min-width: 768px)"></span>
+          <![endif]-->
+      </span>
+
+          <div class="i-content">
+            <div>
+              <div>
+                <div class="i-home-header">Blaze ahead</div>
+                <p>Sunnies maker Tens smashed their campaign goal by 4000%, helping the world see a brighter view.</p>
+                <a href="http://bit.ly/gocarousel5" class="i-cta-1 i-home-button">START YOUR CAMPAIGN</a>
+              </div>
+            </div>
+          </div>
+        </li>
+    </ul>
+  </div>
+
+<div class="i-carousel i-home-trendingNow">
+  <div class="container i-mobile-fullwidth i-trending-container">
+    <div class="i-header">
+      <a href="/explore" class="pull-right hidden-xs">
+        See All <span class="i-icon i-glyphicon-RightArrow"></span>
+</a>      Trending Now
+    </div>
+    <ul>
+
+        <li class="">
+          <div class="project-card-with-friend-list" data-slot="1">
+              
+
+
+
+
+
+<div class="i-project-card ">
+      <a href="/explore/film" class="i-category-header">
+        <span class="i-icon i-category-icon i-glyph-icon-22-film"></span>
+        <span>Film</span>
+</a>
+  <a href="/projects/super-troopers-2/hmtr?sa=0&amp;sp=0" class="i-project">
+    <div class="i-img" data-src="https://res.cloudinary.com/indiegogo-media-prod-cld/image/upload/c_fill,h_220,w_220/v1428086463/ryp1xrtf6mqieruz59ie.jpg">
+    </div>
+    <div class="i-content">
+      <div class="i-title">Super Troopers 2</div>
+      <div class="i-tagline ">Let's do eet! Together we can make SUPER TROOPERS 2 the tasty movie you've been craving right meow.</div>
+    </div>
+
+    <div class="i-stats">
+      <span class="currency currency-medium"><span>$3,284,482</span><em>USD</em></span>
+      <div class="i-progress-bar">
+        <div class="i-complete" style="width: 100%"></div>
+      </div>
+      <div class="i-bottom-row">
+          <div class="i-percent">
+            164%
+          </div>
+          <div class="i-time-left">
+            21 days left
+          </div>
+      </div>
+    </div>
+</a></div>
+
+              <div style="height: 5px;"></div>
+
+          </div>
+        </li>
+
+        <li class="">
+          <div class="project-card-with-friend-list" data-slot="2">
+              
+
+
+
+
+
+<div class="i-project-card ">
+      <a href="/explore/theatre" class="i-category-header">
+        <span class="i-icon i-category-icon i-glyph-icon-22-theatre"></span>
+        <span>Theater</span>
+</a>
+  <a href="/projects/ferguson-the-play/hmtr?sa=0&amp;sp=0" class="i-project">
+    <div class="i-img" data-src="https://res.cloudinary.com/indiegogo-media-prod-cld/image/upload/c_fill,h_220,w_220/v1427571624/vyea1keag0ugdlzracs9.jpg">
+    </div>
+    <div class="i-content">
+      <div class="i-title">FERGUSON - The Play</div>
+      <div class="i-tagline ">Reenactment of the controversial killing of Michael Brown on stage using only Grand Jury testimony.</div>
+    </div>
+
+    <div class="i-stats">
+      <span class="currency currency-medium"><span>$28,240</span><em>USD</em></span>
+      <div class="i-progress-bar">
+        <div class="i-complete" style="width: 30%"></div>
+      </div>
+      <div class="i-bottom-row">
+          <div class="i-percent">
+            30%
+          </div>
+          <div class="i-time-left">
+            29 days left
+          </div>
+      </div>
+    </div>
+</a></div>
+
+              <div style="height: 5px;"></div>
+
+          </div>
+        </li>
+
+        <li class="">
+          <div class="project-card-with-friend-list" data-slot="3">
+              
+
+
+
+
+
+<div class="i-project-card ">
+      <a href="/explore/community" class="i-category-header">
+        <span class="i-icon i-category-icon i-glyph-icon-22-community"></span>
+        <span>Community</span>
+</a>
+  <a href="/projects/institute-on-aging-friendship-line/hmtr?sa=0&amp;sp=0" class="i-project">
+    <div class="i-img" data-src="https://res.cloudinary.com/indiegogo-media-prod-cld/image/upload/c_fill,h_220,w_220/v1427390725/vtotgmzcczou6kvmn1ja.jpg">
+    </div>
+    <div class="i-content">
+      <div class="i-title">Institute on Aging - Friendship Line</div>
+      <div class="i-tagline ">Prevent Suicide Among Seniors: Save the Friendship Line.</div>
+    </div>
+
+    <div class="i-stats">
+      <span class="currency currency-medium"><span>$26,421</span><em>USD</em></span>
+      <div class="i-progress-bar">
+        <div class="i-complete" style="width: 25%"></div>
+      </div>
+      <div class="i-bottom-row">
+          <div class="i-percent">
+            26%
+          </div>
+          <div class="i-time-left">
+            44 days left
+          </div>
+      </div>
+    </div>
+</a></div>
+
+              <div style="height: 5px;"></div>
+
+          </div>
+        </li>
+
+        <li class="">
+          <div class="project-card-with-friend-list" data-slot="4">
+              
+
+
+
+
+
+<div class="i-project-card ">
+      <a href="/explore/theatre" class="i-category-header">
+        <span class="i-icon i-category-icon i-glyph-icon-22-theatre"></span>
+        <span>Theater</span>
+</a>
+  <a href="/projects/cold-fusion/hmtr?sa=0&amp;sp=0" class="i-project">
+    <div class="i-img" data-src="https://res.cloudinary.com/indiegogo-media-prod-cld/image/upload/c_fill,h_220,w_220/v1427566515/pkhlykbndrvt0heyalei.png">
+    </div>
+    <div class="i-content">
+      <div class="i-title">Cold Fusion</div>
+      <div class="i-tagline ">Who knew clean energy could be so dangerous ...</div>
+    </div>
+
+    <div class="i-stats">
+      <span class="currency currency-medium"><span>$1,140</span><em>USD</em></span>
+      <div class="i-progress-bar">
+        <div class="i-complete" style="width: 30%"></div>
+      </div>
+      <div class="i-bottom-row">
+          <div class="i-percent">
+            33%
+          </div>
+          <div class="i-time-left">
+            27 days left
+          </div>
+      </div>
+    </div>
+</a></div>
+
+              <div style="height: 5px;"></div>
+
+          </div>
+        </li>
+
+        <li class="hidden-xs">
+          <div class="project-card-with-friend-list" data-slot="5">
+              
+
+
+
+
+
+<div class="i-project-card ">
+      <a href="/explore/video_web" class="i-category-header">
+        <span class="i-icon i-category-icon i-glyph-icon-22-videoweb"></span>
+        <span>Video / Web</span>
+</a>
+  <a href="/projects/con-man/hmtr?sa=0&amp;sp=0" class="i-project">
+    <div class="i-img" data-src="https://res.cloudinary.com/indiegogo-media-prod-cld/image/upload/c_fill,h_220,w_220/v1425760710/fxniv9n1jtye9da7gyhq.jpg">
+    </div>
+    <div class="i-content">
+      <div class="i-title">Con Man</div>
+      <div class="i-tagline ">A new comedy from Alan Tudyk and Nathan Fillion produced by YOU!</div>
+    </div>
+
+    <div class="i-stats">
+      <span class="currency currency-medium"><span>$2,675,260</span><em>USD</em></span>
+      <div class="i-progress-bar">
+        <div class="i-complete" style="width: 100%"></div>
+      </div>
+      <div class="i-bottom-row">
+          <div class="i-percent">
+            629%
+          </div>
+          <div class="i-time-left">
+            7 days left
+          </div>
+      </div>
+    </div>
+</a></div>
+
+              <div style="height: 5px;"></div>
+
+          </div>
+        </li>
+
+        <li class="hidden-xs">
+          <div class="project-card-with-friend-list" data-slot="6">
+              
+
+
+
+
+
+<div class="i-project-card ">
+      <a href="/explore/technology" class="i-category-header">
+        <span class="i-icon i-category-icon i-glyph-icon-22-technology"></span>
+        <span>Technology</span>
+</a>
+  <a href="/projects/flow-hive-honey-on-tap-directly-from-your-beehive/hmtr?sa=0&amp;sp=0" class="i-project">
+    <div class="i-img" data-src="https://res.cloudinary.com/indiegogo-media-prod-cld/image/upload/c_fill,h_220,w_220/v1424650995/nazhrpc0467ymiyk7zb3.jpg">
+    </div>
+    <div class="i-content">
+      <div class="i-title">Flow Hive: Honey on Tap Directly From Your Beehive</div>
+      <div class="i-tagline ">Harvesting honey is easier on the beekeeper and so much easier on the bees.</div>
+    </div>
+
+    <div class="i-stats">
+      <span class="currency currency-medium"><span>$8,279,354</span><em>USD</em></span>
+      <div class="i-progress-bar">
+        <div class="i-complete" style="width: 100%"></div>
+      </div>
+      <div class="i-bottom-row">
+          <div class="i-percent">
+            11,828%
+          </div>
+          <div class="i-time-left">
+            16 days left
+          </div>
+      </div>
+    </div>
+</a></div>
+
+              <div style="height: 5px;"></div>
+
+          </div>
+        </li>
+
+        <li class="hidden-xs">
+          <div class="project-card-with-friend-list" data-slot="7">
+              
+
+
+
+
+
+<div class="i-project-card ">
+      <a href="/explore/community" class="i-category-header">
+        <span class="i-icon i-category-icon i-glyph-icon-22-community"></span>
+        <span>Community</span>
+</a>
+  <a href="/projects/mumia-abu-jamal-needs-medical-care-now/hmtr?sa=0&amp;sp=0" class="i-project">
+    <div class="i-img" data-src="https://res.cloudinary.com/indiegogo-media-prod-cld/image/upload/c_fill,h_220,w_220/v1427830060/iw23g9vcwwg0thaskhzy.jpg">
+    </div>
+    <div class="i-content">
+      <div class="i-title">Mumia Abu-Jamal Needs Medical Care NOW!</div>
+      <div class="i-tagline ">Mumia needs to be alive and free! He's currently in intensive care & needs urgent medical attention.</div>
+    </div>
+
+    <div class="i-stats">
+      <span class="currency currency-medium"><span>$12,125</span><em>USD</em></span>
+      <div class="i-progress-bar">
+        <div class="i-complete" style="width: 60%"></div>
+      </div>
+      <div class="i-bottom-row">
+          <div class="i-percent">
+            61%
+          </div>
+          <div class="i-time-left">
+            29 days left
+          </div>
+      </div>
+    </div>
+</a></div>
+
+              <div style="height: 5px;"></div>
+
+          </div>
+        </li>
+
+        <li class="hidden-xs">
+          <div class="project-card-with-friend-list" data-slot="8">
+              
+
+
+
+
+
+<div class="i-project-card ">
+      <a href="/explore/technology" class="i-category-header">
+        <span class="i-icon i-category-icon i-glyph-icon-22-technology"></span>
+        <span>Technology</span>
+</a>
+  <a href="/projects/sondors-electric-bike/hmtr?sa=0&amp;sp=0" class="i-project">
+    <div class="i-img" data-src="https://res.cloudinary.com/indiegogo-media-prod-cld/image/upload/c_fill,h_220,w_220/v1427938386/xv9nuplxp893vtuxqhdz.png">
+    </div>
+    <div class="i-content">
+      <div class="i-title">Sondors Electric Bike</div>
+      <div class="i-tagline ">Most affordable eBike EVER! Priced under $650 for a Limited Time. Offer Ends 04/02/15 [EXTENDED]</div>
+    </div>
+
+    <div class="i-stats">
+      <span class="currency currency-medium"><span>$5,188,448</span><em>USD</em></span>
+      <div class="i-progress-bar">
+        <div class="i-complete" style="width: 100%"></div>
+      </div>
+      <div class="i-bottom-row">
+          <div class="i-card-contribute-cta">
+            InDemand
+          </div>
+      </div>
+    </div>
+</a></div>
+
+              <div style="height: 5px;"></div>
+
+          </div>
+        </li>
+
+        <li class="hidden-xs">
+          <div class="project-card-with-friend-list" data-slot="9">
+              
+
+
+
+
+
+<div class="i-project-card ">
+      <a href="/explore/technology" class="i-category-header">
+        <span class="i-icon i-category-icon i-glyph-icon-22-technology"></span>
+        <span>Technology</span>
+</a>
+  <a href="/projects/friday-smart-lock/hmtr?sa=0&amp;sp=0" class="i-project">
+    <div class="i-img" data-src="https://res.cloudinary.com/indiegogo-media-prod-cld/image/upload/c_fill,h_220,w_220/v1427652731/ptyyu2klzyarpqgnhsgn.jpg">
+    </div>
+    <div class="i-content">
+      <div class="i-title">Friday Smart Lock</div>
+      <div class="i-tagline ">The most advanced Smart Lock. Over 50% off retail for limited quantities.  Get yours today.</div>
+    </div>
+
+    <div class="i-stats">
+      <span class="currency currency-medium"><span>$64,091</span><em>USD</em></span>
+      <div class="i-progress-bar">
+        <div class="i-complete" style="width: 85%"></div>
+      </div>
+      <div class="i-bottom-row">
+          <div class="i-percent">
+            85%
+          </div>
+          <div class="i-time-left">
+            25 days left
+          </div>
+      </div>
+    </div>
+</a></div>
+
+              <div style="height: 5px;"></div>
+
+          </div>
+        </li>
+
+        <li class="hidden-xs">
+          <div class="project-card-with-friend-list" data-slot="10">
+              
+
+
+
+
+
+<div class="i-project-card ">
+      <a href="/explore/sports" class="i-category-header">
+        <span class="i-icon i-category-icon i-glyph-icon-22-sports"></span>
+        <span>Sports</span>
+</a>
+  <a href="/projects/pedal-the-planet--4/hmtr?sa=0&amp;sp=0" class="i-project">
+    <div class="i-img" data-src="https://res.cloudinary.com/indiegogo-media-prod-cld/image/upload/c_fill,h_220,w_220/v1428040287/fftojydivdhufn8rh1ya.png">
+    </div>
+    <div class="i-content">
+      <div class="i-title">Pedal The Planet</div>
+      <div class="i-tagline ">Help Breifne complete his 18,000 mile cycle around the entire planet.</div>
+    </div>
+
+    <div class="i-stats">
+      <span class="currency currency-medium"><span>€2,155</span><em>EUR</em></span>
+      <div class="i-progress-bar">
+        <div class="i-complete" style="width: 100%"></div>
+      </div>
+      <div class="i-bottom-row">
+          <div class="i-percent">
+            215%
+          </div>
+          <div class="i-time-left">
+            59 days left
+          </div>
+      </div>
+    </div>
+</a></div>
+
+              <div style="height: 5px;"></div>
+
+          </div>
+        </li>
+    </ul>
+    <div class="i-show-more-section visible-xs">
+      <a href="/explore" class="i-cta-1">Explore</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="i-home-ringfence">
+  <div class="container i-mobile-fullwidth">
+    <div class="i-home-ringfence-header container-xs"><span>Personal fundraiser spotlight</span></div>
+    <div class="pc-card-row i-home-ringfence-projects">
+      <div class="pc-card-area">
+  <a href="https://life.indiegogo.com/explore/medical" class="pc-card-category">
+    <span class="i-icon i-glyph-icon-22-health"></span>
+    <span>Medical</span>
+</a>  <a href="https://life.indiegogo.com/fundraisers/hope-for-katherine-hope-after-her-stroke/rfhm" class="pc-card pc-card-condensed">
+    <span class="">
+      <img alt="Xyoxbklexjzt8xt8pkgg" src="https://res.cloudinary.com/indiegogo-media-prod-cld/image/upload/c_fill,h_200,w_220/v1426997230/xyoxbklexjzt8xt8pkgg.jpg" />
+      <span class="pc-card-title">Hope for Katherine Hope after her Stroke</span>
+    </span>
+    <span class="pc-card-progressBar">
+      <span class="pc-card-progressBar-filled" style="width: 100%"></span>
+    </span>
+    <span class="pc-card-btm">
+      <span class="pc-card-btm-balance"><span class="currency currency-small"><span>$2,800</span><em>USD</em></span></span>
+      <span class="pc-card-btm-timeLeft">26 days left</span>
+    </span>
+</a></div>
+<div class="pc-card-area">
+  <a href="https://life.indiegogo.com/explore/education" class="pc-card-category">
+    <span class="i-icon i-glyph-icon-22-education"></span>
+    <span>Education</span>
+</a>  <a href="https://life.indiegogo.com/fundraisers/lincoln-center-director-s-lab-activate/rfhm" class="pc-card pc-card-condensed">
+    <span class="">
+      <img alt="Kbzkiu90xutbg6unosg8" src="https://res.cloudinary.com/indiegogo-media-prod-cld/image/upload/c_fill,h_200,w_220/v1427665305/kbzkiu90xutbg6unosg8.jpg" />
+      <span class="pc-card-title">Lincoln Center Director&#x27;s Lab, Activate!</span>
+    </span>
+    <span class="pc-card-progressBar">
+      <span class="pc-card-progressBar-filled" style="width: 100%"></span>
+    </span>
+    <span class="pc-card-btm">
+      <span class="pc-card-btm-balance"><span class="currency currency-small"><span>$1,110</span><em>USD</em></span></span>
+      <span class="pc-card-btm-timeLeft">25 days left</span>
+    </span>
+</a></div>
+<div class="pc-card-area">
+  <a href="https://life.indiegogo.com/explore/community" class="pc-card-category">
+    <span class="i-icon i-glyph-icon-22-community"></span>
+    <span>Community</span>
+</a>  <a href="https://life.indiegogo.com/fundraisers/michele-s-4th-year-als-devoted-to-helping-others/rfhm" class="pc-card pc-card-condensed">
+    <span class="">
+      <img alt="Iyxy1pdbxtqntjlbkmwo" src="https://res.cloudinary.com/indiegogo-media-prod-cld/image/upload/c_fill,h_200,w_220/v1424318807/iyxy1pdbxtqntjlbkmwo.jpg" />
+      <span class="pc-card-title">Michele&#x27;s 4th year ALS devoted to helping others</span>
+    </span>
+    <span class="pc-card-progressBar">
+      <span class="pc-card-progressBar-filled" style="width: 100%"></span>
+    </span>
+    <span class="pc-card-btm">
+      <span class="pc-card-btm-balance"><span class="currency currency-small"><span>$10,830</span><em>USD</em></span></span>
+      <span class="pc-card-btm-timeLeft">56 hours left</span>
+    </span>
+</a></div>
+<div class="pc-card-area">
+  <a href="https://life.indiegogo.com/explore/animals" class="pc-card-category">
+    <span class="i-icon i-glyph-icon-22-animals"></span>
+    <span>Animals</span>
+</a>  <a href="https://life.indiegogo.com/fundraisers/black-dog-art-sale-fundraiser-surgery-for-maybe/rfhm" class="pc-card pc-card-condensed">
+    <span class="">
+      <img alt="Meizbltmlmqkxotmf5xm" src="https://res.cloudinary.com/indiegogo-media-prod-cld/image/upload/c_fill,h_200,w_220/v1427401656/meizbltmlmqkxotmf5xm.jpg" />
+      <span class="pc-card-title">Black Dog Art Sale Fundraiser - surgery for Maybe!</span>
+    </span>
+    <span class="pc-card-progressBar">
+      <span class="pc-card-progressBar-filled" style="width: 95%"></span>
+    </span>
+    <span class="pc-card-btm">
+      <span class="pc-card-btm-balance"><span class="currency currency-small"><span>$2,938</span><em>USD</em></span></span>
+      <span class="pc-card-btm-timeLeft">6 days left</span>
+    </span>
+</a></div>
+
+    </div>
+    <div class="i-ringfence-promo container-xs">
+      <div class="i-ringfence-logo"></div>
+      <div class="i-ringfence-text">
+        <div class="i-home-ringfence-mobile-logo visible-xs">Indiegogo Life</div>
+        <span class="i-home-ringfence-promoText">Raise money for yourself or someone you love.</span>
+        <a href="https://life.indiegogo.com/" class="i-home-ringfence-cta">Learn more</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="i-home-promo i-home-promo-pc">
+  <h1 class="i-home-promo-text">The World’s Crowdfunding Engine</h1>
+  <h2 class="i-home-promo-text-h2">As the largest global fundraising site, we help individuals, businesses, and non-profits raise money online.</h2>
+  <span data-picture data-alt="The World’s Crowdfunding Engine" class="i-home-promo-image">
+    <span data-src="https://g1.iggcdn.com/assets/site/home/IGG_PressLogos-2f61efdb48e13aeb958854acbc24f0fc.png" data-media="(min-width: 768px)"></span>
+  </span>
+</div>
+<div class="container i-mobile-fullwidth">
+  <div class="row">
+    <div class="col-sm-6 i-home-tile-column">
+      <a href="/explore/film" class="i-home-tile i-big"><span class="i-background" data-picture><span data-src="https://g1.iggcdn.com/assets/site/home_category_tiles/Mobile_767/Mobile_767_1_Film_Grendel-da3ab9aa34be150cd7d56c3ac78526d5.jpg"></span><span data-src="https://g0.iggcdn.com/assets/site/home_category_tiles/Desktop/UpperLeft_Film_Grendel-3c41b761e7ab6c0a97697f7a73a788d8.jpg" data-media="(min-width: 768px)"></span><!--[if (lt IE 9) & (!IEMobile)]><span data-src="https://g0.iggcdn.com/assets/site/home_category_tiles/Desktop/UpperLeft_Film_Grendel-3c41b761e7ab6c0a97697f7a73a788d8.jpg"></span><![endif]--></span><span class="i-overlay"><span class="i-vertical-centered"><em>Go Filmmaker Go</em><span>Fund a new film today</span></span></span><span class="i-name">Film</span></a>
+    </div>
+    <div class="col-sm-6 i-home-tile-column">
+      <a href="/explore/music" class="i-home-tile i-small"><span class="i-background" data-picture><span data-src="https://g3.iggcdn.com/assets/site/home_category_tiles/Mobile_767/Mobile_767_2_Music_Protest-5ba6dea008656ec35f620951e2899af8.jpg"></span><span data-src="https://g2.iggcdn.com/assets/site/home_category_tiles/Desktop/UpperRight_Music_Protest-ba754545526c4efbe74ab4fd4bea83ce.jpg" data-media="(min-width: 768px)"></span><!--[if (lt IE 9) & (!IEMobile)]><span data-src="https://g2.iggcdn.com/assets/site/home_category_tiles/Desktop/UpperRight_Music_Protest-ba754545526c4efbe74ab4fd4bea83ce.jpg"></span><![endif]--></span><span class="i-overlay"><span class="i-vertical-centered"><em>Go Musician Go</em><span>Explore new music today</span></span></span><span class="i-name">Music</span></a>
+      <a href="/explore/community" class="i-home-tile i-small"><span class="i-background" data-picture><span data-src="https://g3.iggcdn.com/assets/site/home_category_tiles/Mobile_767/Mobile_767_3_Community_RighttoPlay-f8c7050b820d347660010f80ce03d6cd.jpg"></span><span data-src="https://g2.iggcdn.com/assets/site/home_category_tiles/Desktop/MiddleRight_Community_RighttoPlay-79ade024f99a5776fd9ece59510cca9e.jpg" data-media="(min-width: 768px)"></span><!--[if (lt IE 9) & (!IEMobile)]><span data-src="https://g2.iggcdn.com/assets/site/home_category_tiles/Desktop/MiddleRight_Community_RighttoPlay-79ade024f99a5776fd9ece59510cca9e.jpg"></span><![endif]--></span><span class="i-overlay"><span class="i-vertical-centered"><em>Go Changemaker Go</em><span>Change the world one idea at a time</span></span></span><span class="i-name">Community</span></a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 i-home-tile-column">
+      <a href="/explore/small_business" class="i-home-tile i-small"><span class="i-background" data-picture><span data-src="https://g2.iggcdn.com/assets/site/home_category_tiles/Mobile_767/Mobile_767_5_SmallBusiness_SaveAdobe-cc8c57610cf72bfd142e373370b542c1.jpg"></span><span data-src="https://g2.iggcdn.com/assets/site/home_category_tiles/Desktop/MiddleLeft_SmallBusiness_SaveAdobe-67496d93e177f9484be352437e0525fc.jpg" data-media="(min-width: 768px)"></span><!--[if (lt IE 9) & (!IEMobile)]><span data-src="https://g2.iggcdn.com/assets/site/home_category_tiles/Desktop/MiddleLeft_SmallBusiness_SaveAdobe-67496d93e177f9484be352437e0525fc.jpg"></span><![endif]--></span><span class="i-overlay"><span class="i-vertical-centered"><em>Go Entrepreneur Go</em><span>Get inspired by your local community</span></span></span><span class="i-name">Small Business</span></a>
+      <a href="/explore/health" class="i-home-tile i-small"><span class="i-background" data-picture><span data-src="https://g3.iggcdn.com/assets/site/home_category_tiles/Mobile_767/Mobile_767_6_Health_BattleWeDidntChoose-ff0af72e79b2e2e0dff963918098cf26.jpg"></span><span data-src="https://g3.iggcdn.com/assets/site/home_category_tiles/Desktop/LowerLeft_Health_BattleWeDidntChoose-a9567ec26e82662a338a3e0fc19ca268.jpg" data-media="(min-width: 768px)"></span><!--[if (lt IE 9) & (!IEMobile)]><span data-src="https://g3.iggcdn.com/assets/site/home_category_tiles/Desktop/LowerLeft_Health_BattleWeDidntChoose-a9567ec26e82662a338a3e0fc19ca268.jpg"></span><![endif]--></span><span class="i-overlay"><span class="i-vertical-centered"><em>Go Healer Go</em><span>Discover the strength of the human spirit</span></span></span><span class="i-name">Health</span></a>
+    </div>
+    <div class="col-sm-6 i-home-tile-column">
+      <a href="/explore/technology" class="i-home-tile i-big"><span class="i-background" data-picture><span data-src="https://g1.iggcdn.com/assets/site/home_category_tiles/Mobile_767/Mobile_767_4_Tech_Scanadu-2f0548600a9dc8642ba0d73de5ccea2e.jpg"></span><span data-src="https://g1.iggcdn.com/assets/site/home_category_tiles/Desktop/LowerRight_Tech_Scanadu-651aa04625df9c1fdaf129038db6451c.jpg" data-media="(min-width: 768px)"></span><!--[if (lt IE 9) & (!IEMobile)]><span data-src="https://g1.iggcdn.com/assets/site/home_category_tiles/Desktop/LowerRight_Tech_Scanadu-651aa04625df9c1fdaf129038db6451c.jpg"></span><![endif]--></span><span class="i-overlay"><span class="i-vertical-centered"><em>Go Innovator Go</em><span>Find the latest in the maker movement</span></span></span><span class="i-name">Tech</span></a>
+    </div>
+  </div>
+</div>
+
+<div class="visible-xs i-dropdown-mobile">
+  <a class="i-dropdown-btn i-cta-2">All Categories</a>
+
+  <div class="dropdown-menu i-linklist-dropdown">
+      <a href="/explore/animals">Animals</a>
+      <a href="/explore/art">Art</a>
+      <a href="/explore/comic">Comic</a>
+      <a href="/explore/community">Community</a>
+      <a href="/explore/dance">Dance</a>
+      <a href="/explore/design">Design</a>
+      <a href="/explore/education">Education</a>
+      <a href="/explore/environment">Environment</a>
+      <a href="/explore/fashion">Fashion</a>
+      <a href="/explore/film">Film</a>
+      <a href="/explore/food">Food</a>
+      <a href="/explore/gaming">Gaming</a>
+      <a href="/explore/health">Health</a>
+      <a href="/explore/music">Music</a>
+      <a href="/explore/photography">Photography</a>
+      <a href="/explore/politics">Politics</a>
+      <a href="/explore/religion">Religion</a>
+      <a href="/explore/small_business">Small Business</a>
+      <a href="/explore/sports">Sports</a>
+      <a href="/explore/technology">Technology</a>
+      <a href="/explore/theatre">Theater</a>
+      <a href="/explore/transmedia">Transmedia</a>
+      <a href="/explore/video_web">Video / Web</a>
+      <a href="/explore/writing">Writing</a>
+  </div>
+</div>
+
+
+<div class="container hidden-xs i-category-links">
+  <div class="i-section-header">All Categories</div>
+  <div class="i-category-col">
+      <a href="/explore/animals" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-animals"></span>
+        <span class="i-category-name">Animals</span>
+</a>      <a href="/explore/art" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-art"></span>
+        <span class="i-category-name">Art</span>
+</a>      <a href="/explore/comic" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-comic"></span>
+        <span class="i-category-name">Comic</span>
+</a>      <a href="/explore/community" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-community"></span>
+        <span class="i-category-name">Community</span>
+</a>      <a href="/explore/dance" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-dance"></span>
+        <span class="i-category-name">Dance</span>
+</a>      <a href="/explore/design" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-design"></span>
+        <span class="i-category-name">Design</span>
+</a>      <a href="/explore/education" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-education"></span>
+        <span class="i-category-name">Education</span>
+</a>      <a href="/explore/environment" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-environment"></span>
+        <span class="i-category-name">Environment</span>
+</a>      <a href="/explore/fashion" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-fashion"></span>
+        <span class="i-category-name">Fashion</span>
+</a>      <a href="/explore/film" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-film"></span>
+        <span class="i-category-name">Film</span>
+</a>      <a href="/explore/food" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-food"></span>
+        <span class="i-category-name">Food</span>
+</a>      <a href="/explore/gaming" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-gaming"></span>
+        <span class="i-category-name">Gaming</span>
+</a>      <a href="/explore/health" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-health"></span>
+        <span class="i-category-name">Health</span>
+</a>      <a href="/explore/music" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-music"></span>
+        <span class="i-category-name">Music</span>
+</a>      <a href="/explore/photography" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-photography"></span>
+        <span class="i-category-name">Photography</span>
+</a>      <a href="/explore/politics" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-politics"></span>
+        <span class="i-category-name">Politics</span>
+</a>      <a href="/explore/religion" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-religion"></span>
+        <span class="i-category-name">Religion</span>
+</a>      <a href="/explore/small_business" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-smallbusiness"></span>
+        <span class="i-category-name">Small Business</span>
+</a>      <a href="/explore/sports" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-sports"></span>
+        <span class="i-category-name">Sports</span>
+</a>      <a href="/explore/technology" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-technology"></span>
+        <span class="i-category-name">Technology</span>
+</a>      <a href="/explore/theatre" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-theatre"></span>
+        <span class="i-category-name">Theater</span>
+</a>      <a href="/explore/transmedia" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-transmedia"></span>
+        <span class="i-category-name">Transmedia</span>
+</a>      <a href="/explore/video_web" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-videoweb"></span>
+        <span class="i-category-name">Video / Web</span>
+</a>      <a href="/explore/writing" class="i-category-link">
+        <span class="i-icon i-category-icon i-glyph-icon-30-writing"></span>
+        <span class="i-category-name">Writing</span>
+</a>  </div>
+</div>
+
+<div class="container i-why-indiegogo">
+  <div class="i-responsive-header">Why Indiegogo?</div>
+  <div class="i-padded-text body-text">Our model, technology, and team of in-house experts make us the most trusted platform in the crowdfunding industry. We leverage all the tools in our power to amplify campaigns, so you can raise maximum awareness&mdash;and funds.</div>
+  <div><a href="/learn" class="i-cta-2 i-learn-more">Learn more</a></div>
+</div>
+
+
+<div class="container i-learn hidden-xs">
+    <div class="i-static-block col-sm-4">
+    <div class="i-illustration i-illustration-simple_and_easy"></div>
+    <div class="i-static-header">Easy</div>
+    <div class="i-static-body">Free to launch with no application process. Indiegogo fundraising is as easy as 1, 2, 3.</div>
+  </div>
+  <div class="i-static-block col-sm-4">
+    <div class="i-illustration i-illustration-amplifying"></div>
+    <div class="i-static-header">Amplifying</div>
+    <div class="i-static-body">Our crowdfunding practices increase your campaign’s exposure, providing global access to the 15 million who visit Indiegogo each month.</div>
+  </div>
+    <div class="i-static-block col-sm-4">
+    <div class="i-illustration i-illustration-trusted"></div>
+    <div class="i-static-header">Trusted</div>
+    <div class="i-static-body">Our dedicated Trust and Safety team, leading technology, and TRUSTe-certified website keep your campaign and funds safe. <a href="/trust">Learn more</a>.</div>
+  </div>
+
+</div>
+
+<div class="i-has-video js-homepage-video">
+  <div class="i-video-container">
+    <div class="i-fade-layer js-fade-layer">
+    </div>
+    <div class="i-buttons js-button-container">
+      <div class="i-cta-2 i-cta-2-white js-button">Play video</div>
+    </div>
+  </div>
+</div>
+
+<div class="container i-learn visible-xs">
+    <div class="i-static-block col-sm-4">
+    <div class="i-illustration i-illustration-simple_and_easy"></div>
+    <div class="i-static-header">Easy</div>
+    <div class="i-static-body">Free to launch with no application process. Indiegogo fundraising is as easy as 1, 2, 3.</div>
+  </div>
+  <div class="i-static-block col-sm-4">
+    <div class="i-illustration i-illustration-amplifying"></div>
+    <div class="i-static-header">Amplifying</div>
+    <div class="i-static-body">Our crowdfunding practices increase your campaign’s exposure, providing global access to the 15 million who visit Indiegogo each month.</div>
+  </div>
+    <div class="i-static-block col-sm-4">
+    <div class="i-illustration i-illustration-trusted"></div>
+    <div class="i-static-header">Trusted</div>
+    <div class="i-static-body">Our dedicated Trust and Safety team, leading technology, and TRUSTe-certified website keep your campaign and funds safe. <a href="/trust">Learn more</a>.</div>
+  </div>
+
+</div>
+
+
+<div class="hidden-xs clearfix container i-static-links-container">
+  
+<div class="col-md-6 i-static-section clearfix">
+  <div class="i-illustration i-illustration-global_reach"></div>
+  <div class="i-static-text"><div class="i-static-container">
+    <div class="i-static-header">Global</div>
+    <div class="i-static-body">224 countries & territories. 5 currencies. 4 languages. We'll get your crowdfunding campaign in front of millions of eyes.</div>
+  </div></div>
+</div>
+
+  
+<div class="col-md-6 i-static-section clearfix">
+  <div class="i-illustration i-illustration-open"></div>
+  <div class="i-static-text"><div class="i-static-container">
+    <div class="i-static-header">Open</div>
+    <div class="i-static-body">We support more <a href="/explore">fundraising categories</a> than any other platform, so anyone can raise money online to fuel their aspirations.</div>
+  </div></div>
+</div>
+
+  
+<div class="col-md-6 i-static-section clearfix">
+  <div class="i-illustration i-illustration-customer_focused"></div>
+  <div class="i-static-text"><div class="i-static-container">
+    <div class="i-static-header">Customer Focused</div>
+    <div class="i-static-body">From our Customer Happiness Team’s 24-hour response time to our in-depth <a href="http://go.indiegogo.com/playbook/life-cycle-phase/the-basics">fundraising guide</a>, we help grow your crowdfunding campaign every step of the way.</div>
+  </div></div>
+</div>
+
+  
+<div class="col-md-6 i-static-section clearfix">
+  <div class="i-illustration i-illustration-flexible"></div>
+  <div class="i-static-text"><div class="i-static-container">
+    <div class="i-static-header">Flexible</div>
+    <div class="i-static-body">We offer <a href="https://go.indiegogo.com/pricing-fees">multiple funding models</a> as well as both PayPal and credit card payment options, so you can choose what works best.</div>
+  </div></div>
+</div>
+
+
+
+</div>
+<div class="i-home-bottom-cta">
+  <div class="i-home-bottom-cta-frame">
+    <div class="i-home-bottom-cta-modal">
+      <h2>Make something happen.</h2>
+      <div class="i-actions">
+        <a href="/explore" class="i-cta-2">Explore campaigns</a>
+        <a href="/campaigns/new" class="i-cta-1">Start a campaign</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+<div class="i-footer js-footer">
+  <div class="container">
+      <div class="visible-xs visible-sm">
+        <div class="row">
+          <section class="col-sm-8">
+            <div class="i-footer-header">Sign Up for Daily Inspiration</div>
+              <form accept-charset="UTF-8" action="https://www.indiegogo.com/accounts/quick_signup" class="i-flex-fixed-container" data-ajax="false" footer-newsletter-form="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="v5AUqxHJ5BCbx1rql45SM53NipKBMnmf6y+cficWlI8=" /></div>
+    <div class="i-flexible-width-cell">
+      <input id="timestamp" name="timestamp" type="hidden" value="1428103508" /><input id="spinner" name="spinner" type="hidden" value="d4a2d96a115eaeacb03b9c2153aa6941" />
+      <input class="i-footer-text-field" id="68a28f9ee13be2440eb3b6d68c7bb4f9" name="68a28f9ee13be2440eb3b6d68c7bb4f9" placeholder="Your email address" type="text" /><div style="position: absolute; left: -2000px;"><input autocomplete="off" id="email" name="email" tabindex="999" type="text" value="" /></div>
+    </div>
+    <div class="i-fixed-width-cell">
+      <a href="" class="i-cta-1 i-footer-btn" ng-click="submitForm()">Sign Up Now</a>
+    </div>
+</form>  <div class="i-footer-note">Private, secure, spam-free</div>
+
+          </section>
+
+            <section class="col-sm-4 i-top-lined-mobile-only">
+              <div class="i-footer-header">Get the Latest</div>
+              <a href="https://www.facebook.com/Indiegogo" class="i-footer-icon-button"><span class='i-icon i-glyph-icon-30-facebook'></span></a>
+              <a href="https://twitter.com/indiegogo" class="i-footer-icon-button"><span class='i-icon i-glyph-icon-30-twitter'></span></a>
+              <a href="https://plus.google.com/+indiegogo" class="i-footer-icon-button"><span class='i-icon i-glyph-icon-30-gplus'></span></a>
+              <a href="https://www.youtube.com/user/IndiegogoVideo" class="i-footer-icon-button"><span class='i-icon i-glyph-icon-30-youtube'></span></a>
+            </section>
+        </div>
+
+        <div class="row">
+          <section class="col-sm-8 i-top-lined">
+            <div class="i-footer-header">About Indiegogo</div>
+            <div class="row visible-xs">
+              <div class="col-xs-6">
+                <a href="/about/our-story" class="i-footer-about-link">About Us</a>
+                <a href="/careers" class="i-footer-about-link">Careers</a>
+                <a href="/partners" class="i-footer-about-link">Partner Pages</a>
+                <a href="/about/brand" class="i-footer-about-link">Brand Resources</a>
+                <a href="/contact/press" class="i-footer-about-link">Press</a>
+              </div>
+              <div class="col-xs-6">
+                <a href="http://blog.indiegogo.com/" class="i-footer-about-link">Blog</a>
+                <a href="http://go.indiegogo.com/playbook" class="i-footer-about-link">Playbook</a>
+                <a href="/trust" class="i-footer-about-link">Trust &amp; Safety</a>
+                <a href="http://support.indiegogo.com/hc/en-us" class="i-footer-about-link">Help &amp; Support</a>
+                <a href="/contact/questions" class="i-footer-about-link">Contact Us</a>
+              </div>
+            </div>
+            <div class="row hidden-xs">
+              <div class="col-sm-4">
+                <a href="/about/our-story" class="i-footer-about-link">About Us</a>
+                <a href="/careers" class="i-footer-about-link">Careers</a>
+                <a href="/partners" class="i-footer-about-link">Partner Pages</a>
+                <a href="/about/brand" class="i-footer-about-link">Brand Resources</a>
+              </div>
+              <div class="col-sm-4">
+                <a href="/contact/press" class="i-footer-about-link">Press</a>
+                <a href="http://blog.indiegogo.com/" class="i-footer-about-link">Blog</a>
+                <a href="http://go.indiegogo.com/playbook" class="i-footer-about-link">Playbook</a>
+                <a href="/trust" class="i-footer-about-link">Trust &amp; Safety</a>
+              </div>
+              <div class="col-sm-4">
+                <a href="http://support.indiegogo.com/hc/en-us" class="i-footer-about-link">Help &amp; Support</a>
+                <a href="/contact/questions" class="i-footer-about-link">Contact Us</a>
+              </div>
+            </div>
+
+          </section>
+
+          <section class="col-sm-4 i-top-lined">
+            <div class="row">
+              <div class="col-xs-6 col-sm-12">
+                <div class="i-footer-header i-footer-language-header">Language</div>
+              </div>
+              <div class="col-xs-6 col-sm-12">
+                  <div class="dropdown i-footer-dropdown" footer-locale-dropdown locale-options="{&quot;en&quot;:&quot;English&quot;,&quot;de&quot;:&quot;Deutsch&quot;,&quot;fr&quot;:&quot;Fran\u00e7ais&quot;,&quot;es&quot;:&quot;Espa\u00f1ol&quot;}"></div>
+
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="visible-md visible-lg">
+        <section class="row">
+          <div class="col-md-3">
+            <div class="i-footer-header">Campaigning</div>
+            <a href="/campaigns/new" class="i-footer-about-link">Start Your Campaign</a>
+            <a href="http://go.indiegogo.com/pricing-fees" class="i-footer-about-link">Pricing</a>
+            <a href="http://go.indiegogo.com/playbook/life-cycle-phase/the-basics" class="i-footer-about-link">Campaign Playbook</a>
+            <a href="http://support.indiegogo.com/hc/en-us/categories/17706-Creating-a-Campaign" class="i-footer-about-link">Campaign Support</a>
+          </div>
+          <div class="col-md-3">
+            <div class="i-footer-header">Contributing</div>
+            <a href="/explore" class="i-footer-about-link">Explore</a>
+            <a href="/partners" class="i-footer-about-link">Partner Pages</a>
+            <a href="http://go.indiegogo.com/playbook/contributing" class="i-footer-about-link">Contributing Playbook</a>
+            <a href="http://support.indiegogo.com/hc/en-us/categories/17716-Contributing-to-a-Campaign" class="i-footer-about-link">Contributing Support</a>
+          </div>
+          <div class="col-md-6">
+            <div class="i-footer-header">Sign Up for Daily Inspiration</div>
+              <form accept-charset="UTF-8" action="https://www.indiegogo.com/accounts/quick_signup" class="i-flex-fixed-container" data-ajax="false" footer-newsletter-form="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="v5AUqxHJ5BCbx1rql45SM53NipKBMnmf6y+cficWlI8=" /></div>
+    <div class="i-flexible-width-cell">
+      <input id="timestamp" name="timestamp" type="hidden" value="1428103508" /><input id="spinner" name="spinner" type="hidden" value="d4a2d96a115eaeacb03b9c2153aa6941" />
+      <input class="i-footer-text-field" id="68a28f9ee13be2440eb3b6d68c7bb4f9" name="68a28f9ee13be2440eb3b6d68c7bb4f9" placeholder="Your email address" type="text" /><div style="position: absolute; left: -2000px;"><input autocomplete="off" id="email" name="email" tabindex="999" type="text" value="" /></div>
+    </div>
+    <div class="i-fixed-width-cell">
+      <a href="" class="i-cta-1 i-footer-btn" ng-click="submitForm()">Sign Up Now</a>
+    </div>
+</form>  <div class="i-footer-note">Private, secure, spam-free</div>
+
+          </div>
+        </section>
+        <section class="row">
+          <div class="col-md-3">
+            <div class="i-footer-header">About Indiegogo</div>
+            <a href="/learn-how-to-raise-money-for-a-campaign" class="i-footer-about-link">How It Works</a>
+            <a href="/about/our-story" class="i-footer-about-link">About Us</a>
+            <a href="/careers" class="i-footer-about-link">Careers</a>
+            <a href="/about/brand" class="i-footer-about-link">Brand Resources</a>
+            <a href="/contact/press" class="i-footer-about-link">Press</a>
+            <a href="http://blog.indiegogo.com" class="i-footer-about-link">Blog</a>
+          </div>
+          <div class="col-md-3">
+            <div class="i-footer-header">Help</div>
+            <a href="http://go.indiegogo.com/playbook" class="i-footer-about-link">Crowdfunding Playbook</a>
+            <a href="/trust" class="i-footer-about-link">Trust &amp; Safety</a>
+            <a href="http://support.indiegogo.com/hc/en-us" class="i-footer-about-link">Help &amp; Support</a>
+            <a href="/contact/questions" class="i-footer-about-link">Contact Us</a>
+          </div>
+          <div class="col-md-4">
+              <div class="i-footer-header">Get the Latest</div>
+                <div class="i-footer-social-links" footer-share-icons>
+                  <a href="https://twitter.com/indiegogo" class="twitter-follow-button" data-show-count="true" data-show-screen-name="false">Follow
+                    @indiegogo</a><br/>
+                  <a class="i-youtube" href="http://www.youtube.com/subscription_center?add_user=IndiegogoVideo"><img src="//s.ytimg.com/yt/img/creators_corner/Subscribe_to_my_videos/YT_Subscribe_61x23_red.png" alt="Subscribe to me on YouTube"/></a>
+
+                  <div class="g-plusone" data-href="http://www.indiegogo.com" data-annotation="none"></div>
+                  <br/>
+
+                  <div class="fb-like" data-href="https://www.facebook.com/indiegogo" data-layout="standard" data-action="like" data-width="240" data-colorscheme="dark" data-show-faces="true" data-share="false"></div>
+                </div>
+          </div>
+          <div class="col-md-2">
+            <div class="i-footer-header">Language</div>
+              <div class="dropdown i-footer-dropdown" footer-locale-dropdown locale-options="{&quot;en&quot;:&quot;English&quot;,&quot;de&quot;:&quot;Deutsch&quot;,&quot;fr&quot;:&quot;Fran\u00e7ais&quot;,&quot;es&quot;:&quot;Espa\u00f1ol&quot;}"></div>
+
+          </div>
+        </section>
+      </div>
+
+    <section class="i-top-lined">
+      <div class="row">
+        <div class="i-footer-legal-links col-xs-12 col-sm-6">
+          <a href="https://www.indiegogo.com/about/terms">Terms of Use</a>
+          <a href="https://www.indiegogo.com/about/privacy">Privacy Policy</a>
+          <a href="https://www.indiegogo.com/about/cookies">Cookie Policy</a>
+          <a href="https://www.indiegogo.com/partners/terms">Partner Terms</a>
+
+
+
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <div class="i-footer-legal-links i-footer-copyright">
+            © 2015 Indiegogo, Inc. All Rights Reserved
+          </div>
+        </div>
+      </div>
+      <div class="hidden-xs">
+          <div class="i-footer-trust-bbb js-trust-bbb" footer-trust-bbb footer-trust-bbb-image-url="https://g3.iggcdn.com/assets/site/footer/bbbImage-3f39a05e610fb27b5dd5da0e1ad9fbb6.png"></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+
+
+  <!--[if gte IE 9]-->
+  <script src="https://g3.iggcdn.com/assets/jquery/jquery-c8d7df288bf1ae1b202521802c963053.js" type="text/javascript"></script>
+  <script src="https://g2.iggcdn.com/assets/hammerjs/hammer-0db29e689358e083f31fef49dde6e20a.js" type="text/javascript"></script>
+  <!--<![endif]-->
+
+
+    <script src="https://g1.iggcdn.com/assets/i18n_stack-8c06d0b9d7e52b046d90edd6147e6395.js" type="text/javascript"></script>
+    <script src="https://g1.iggcdn.com/assets/igg/site/common-53d66c0ff2e4dc5d6b820166e2d668e2.js" type="text/javascript"></script>
+    <script src="https://g2.iggcdn.com/assets/lite_angular-996659c5b3d382178c69a8a7be258862.js" type="text/javascript"></script>
+    <script src="https://g0.iggcdn.com/assets/ancillary-29346327440d1d10a17d780a23b21889.js" type="text/javascript"></script>
+    
+
+  <script type="text/javascript">
+    I18n.defaultLocale = "en";
+    I18n.locale = "en";
+
+      $(document).ready(function() {
+        igg.site.onDocumentReady();
+      });
+
+    $.cloudinary.config({"api_key":"754759674861391",
+      "cloud_name": "indiegogo-media-prod-cld",
+      "cname": ""
+    });
+
+      igg.externalService(function() {
+    ga('set', 'contentGroup1', 'Home');
+  });
+  igg.site.YouTube.onReady(function() {
+  new igg.site.HomepageVideo({
+  source : 'https://www.youtube.com/embed/u4tZWpYTso4?enablejsapi=1&amp;origin=https://www.indiegogo.com',
+  el     : $('.js-homepage-video'),
+  mobile : false
+  });
+  });
+  new igg.site.CampaignDropdown({el: $('.i-dropdown-mobile')});
+  new igg.site.Carousel({el: $(".i-home-featured-carousel"), addDots: true, stretchItemToCarousel: true, onItemShown: function($li) {
+    $li.find('.i-home-button').on('click', function() {
+      var picture = 'click - ' + $(this).parents('.i-content').siblings('[data-picture]').data('alt');
+      igg.externalService(function() {
+        ga('send', 'event', 'Hero Button', 'click', picture);
+      });
+    });
+    window.picturefill();
+  }}).start();
+
+  new igg.site.CampaignDropdown({el: $('.i-dropdown-mobile')});
+
+  if ($(window).width() >= 768) {
+    new igg.site.Carousel({el: $(".i-home-trendingNow"), itemsPerPage: 5, incrementBy: 4, carouselArrowClass: 'black', onItemShown: function($li) {
+      $li.on('click', function() {
+        var label = $(this).find('.i-title').text();
+        var action = 'Homepage Baseball Card - ' + $(this).find('.project-card-with-friend-list').data('slot');
+        igg.externalService(function() {
+          ga('send', 'event', 'Homepage Baseball Cards (via feed)', action, label);
+        });
+      });
+      igg.site.refreshProjectCard($li.find(".i-project-card"));
+    }}).start();
+  }
+
+  </script>
+
+  
+
+  
+
+  
+  <!-- Google Code for Main List -->
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 1008738018;
+    var google_conversion_label = "pah0CP6GwQQQ4r2A4QM";
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+  </script>
+  <div class="hidden">
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+  </div>
+  <noscript>
+    <div style="display:inline;">
+      <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1008738018/?value=0&amp;label=pah0CP6GwQQQ4r2A4QM&amp;guid=ON&amp;script=0"/>
+    </div>
+  </noscript>
+
+
+  
+
+  
+  <script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+  if (d.getElementById(id)) return;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+
+</body>
+</html>
+>
+
+          <span class="thumb-menu dark-overflow-action-menu video-actions">
+    <button onclick=";return false;" aria-expanded="false" type="button" class="yt-uix-button-reverse flip addto-watch-queue-menu spf-nolink hide-until-delayloaded yt-uix-button yt-uix-button-dark-overflow-action-menu yt-uix-button-size-default yt-uix-button-has-icon no-icon-markup yt-uix-button-empty" aria-haspopup="true" ><span class="yt-uix-button-arrow yt-sprite"></span><ul class="watch-queue-thumb-menu yt-uix-button-menu yt-uix-button-menu-dark-overflow-action-menu hid"><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-next yt-uix-button-menu-item" data-action="play-next" onclick=";return false;"  data-video-ids="UcrbfSZKDiw"><span class="addto-watch-queue-menu-text">Play next</span></li><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-now yt-uix-button-menu-item" data-action="play-now" onclick=";return false;"  data-video-ids="UcrbfSZKDiw"><span class="addto-watch-queue-menu-text">Play now</span></li></ul></button>
+  </span>
+
+    <button class="yt-uix-button yt-uix-button-size-small yt-uix-button-default yt-uix-button-empty yt-uix-button-has-icon no-icon-markup addto-button addto-queue-button video-actions spf-nolink hide-until-delayloaded addto-tv-queue-button yt-uix-tooltip" type="button" onclick=";return false;" title="TV Queue" data-style="tv-queue" data-video-ids="UcrbfSZKDiw"></button>
+
+
+  </div>
+
+</li><li class="video-list-item related-list-item show-video-time">    <div class="content-wrapper">
+    <a href="/watch?v=J9fzCBFLkJc" class=" content-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" title="UFO Encounters throughout History [FULL DOCUMENTARY]" data-sessionlink="feature=related&amp;ved=CAoQzRooBQ&amp;ei=VyEfVdCaDtWTqQWVgYFo" >  <span dir="ltr" class="title" aria-describedby="description-id-163417">
+    UFO Encounters throughout History [FULL DOCUMENTARY]
+  </span>
+    <span class="accessible-description" id="description-id-163417">
+       - Duration: 44:12.
+    </span>
+    <span class="stat attribution">
+      <span class="g-hovercard"
+          data-ytid="UCDJlZpe7lNfz8pwCWrB_g6g"
+          data-name="related"
+        >
+        by <span class=" g-hovercard" data-ytid="UCDJlZpe7lNfz8pwCWrB_g6g" data-name="">NaturalPlanet</span>
+      </span>
+    </span>
+    <span class="stat view-count">93,975 views</span>
+</a>
+  </div>
+  <div class="thumb-wrapper">
+
+    <a href="/watch?v=J9fzCBFLkJc" class=" thumb-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" tabindex="-1" data-sessionlink="feature=related&amp;ved=CAoQzRooBQ&amp;ei=VyEfVdCaDtWTqQWVgYFo" aria-hidden="true"><span class="yt-uix-simple-thumb-wrap yt-uix-simple-thumb-related" tabindex="0" data-vid="J9fzCBFLkJc"><img alt="" data-thumb="//i.ytimg.com/vi/J9fzCBFLkJc/default.jpg" aria-hidden="true" src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" width="120" height="90" ></span></a>
+        <span class="video-time">
+      44:12
+    </span>
+
+          <span class="thumb-menu dark-overflow-action-menu video-actions">
+    <button onclick=";return false;" aria-expanded="false" type="button" class="yt-uix-button-reverse flip addto-watch-queue-menu spf-nolink hide-until-delayloaded yt-uix-button yt-uix-button-dark-overflow-action-menu yt-uix-button-size-default yt-uix-button-has-icon no-icon-markup yt-uix-button-empty" aria-haspopup="true" ><span class="yt-uix-button-arrow yt-sprite"></span><ul class="watch-queue-thumb-menu yt-uix-button-menu yt-uix-button-menu-dark-overflow-action-menu hid"><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-next yt-uix-button-menu-item" data-action="play-next" onclick=";return false;"  data-video-ids="J9fzCBFLkJc"><span class="addto-watch-queue-menu-text">Play next</span></li><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-now yt-uix-button-menu-item" data-action="play-now" onclick=";return false;"  data-video-ids="J9fzCBFLkJc"><span class="addto-watch-queue-menu-text">Play now</span></li></ul></button>
+  </span>
+
+    <button class="yt-uix-button yt-uix-button-size-small yt-uix-button-default yt-uix-button-empty yt-uix-button-has-icon no-icon-markup addto-button addto-queue-button video-actions spf-nolink hide-until-delayloaded addto-tv-queue-button yt-uix-tooltip" type="button" onclick=";return false;" title="TV Queue" data-style="tv-queue" data-video-ids="J9fzCBFLkJc"></button>
+
+
+  </div>
+
+</li><li class="video-list-item related-list-item show-video-time">    <div class="content-wrapper">
+    <a href="/watch?v=g2FXkoEf97s" class=" content-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" title="UFO DOCUMENTARY Aliens Exist On The Moon New Unidentified flying object 2014 Best Ufo Sightings 2015" data-sessionlink="feature=related&amp;ved=CAsQzRooBg&amp;ei=VyEfVdCaDtWTqQWVgYFo" >  <span dir="ltr" class="title" aria-describedby="description-id-889245">
+    UFO DOCUMENTARY Aliens Exist On The Moon New Unidentified flying object 2014 Best Ufo Sightings 2015
+  </span>
+    <span class="accessible-description" id="description-id-889245">
+       - Duration: 1:25:55.
+    </span>
+    <span class="stat attribution">
+      <span class="g-hovercard"
+          data-ytid="UCNWxQMgD5849V1LzLEknobw"
+          data-name="related"
+        >
+        by <span class=" g-hovercard" data-ytid="UCNWxQMgD5849V1LzLEknobw" data-name="">UFO DOCUMENTARY 2015</span>
+      </span>
+    </span>
+    <span class="stat view-count">113,861 views</span>
+</a>
+  </div>
+  <div class="thumb-wrapper">
+
+    <a href="/watch?v=g2FXkoEf97s" class=" thumb-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" tabindex="-1" data-sessionlink="feature=related&amp;ved=CAsQzRooBg&amp;ei=VyEfVdCaDtWTqQWVgYFo" aria-hidden="true"><span class="yt-uix-simple-thumb-wrap yt-uix-simple-thumb-related" tabindex="0" data-vid="g2FXkoEf97s"><img alt="" data-thumb="//i.ytimg.com/vi/g2FXkoEf97s/default.jpg" aria-hidden="true" src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" width="120" height="90" ></span></a>
+        <span class="video-time">
+      1:25:55
+    </span>
+
+          <span class="thumb-menu dark-overflow-action-menu video-actions">
+    <button onclick=";return false;" aria-expanded="false" type="button" class="yt-uix-button-reverse flip addto-watch-queue-menu spf-nolink hide-until-delayloaded yt-uix-button yt-uix-button-dark-overflow-action-menu yt-uix-button-size-default yt-uix-button-has-icon no-icon-markup yt-uix-button-empty" aria-haspopup="true" ><span class="yt-uix-button-arrow yt-sprite"></span><ul class="watch-queue-thumb-menu yt-uix-button-menu yt-uix-button-menu-dark-overflow-action-menu hid"><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-next yt-uix-button-menu-item" data-action="play-next" onclick=";return false;"  data-video-ids="g2FXkoEf97s"><span class="addto-watch-queue-menu-text">Play next</span></li><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-now yt-uix-button-menu-item" data-action="play-now" onclick=";return false;"  data-video-ids="g2FXkoEf97s"><span class="addto-watch-queue-menu-text">Play now</span></li></ul></button>
+  </span>
+
+    <button class="yt-uix-button yt-uix-button-size-small yt-uix-button-default yt-uix-button-empty yt-uix-button-has-icon no-icon-markup addto-button addto-queue-button video-actions spf-nolink hide-until-delayloaded addto-tv-queue-button yt-uix-tooltip" type="button" onclick=";return false;" title="TV Queue" data-style="tv-queue" data-video-ids="g2FXkoEf97s"></button>
+
+
+  </div>
+
+</li><li class="video-list-item related-list-item show-video-time">    <div class="content-wrapper">
+    <a href="/watch?v=dg6QsFcepIg" class=" content-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" title="Conspiracy Theory No Longer - Disclosure has Begun - UFOs &amp; Aliens - Annunaki Reptoids Alien OVNI" data-sessionlink="feature=related&amp;ved=CAwQzRooBw&amp;ei=VyEfVdCaDtWTqQWVgYFo" >  <span dir="ltr" class="title" aria-describedby="description-id-990962">
+    Conspiracy Theory No Longer - Disclosure has Begun - UFOs &amp; Aliens - Annunaki Reptoids Alien OVNI
+  </span>
+    <span class="accessible-description" id="description-id-990962">
+       - Duration: 14:31.
+    </span>
+    <span class="stat attribution">
+      <span class="g-hovercard"
+          data-ytid="UC6heAhH1c8jR3xpcwEnA3PQ"
+          data-name="related"
+        >
+        by <span class=" g-hovercard" data-ytid="UC6heAhH1c8jR3xpcwEnA3PQ" data-name="">StephenvilleTxUFOs</span>
+      </span>
+    </span>
+    <span class="stat view-count">34,100 views</span>
+</a>
+  </div>
+  <div class="thumb-wrapper">
+
+    <a href="/watch?v=dg6QsFcepIg" class=" thumb-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" tabindex="-1" data-sessionlink="feature=related&amp;ved=CAwQzRooBw&amp;ei=VyEfVdCaDtWTqQWVgYFo" aria-hidden="true"><span class="yt-uix-simple-thumb-wrap yt-uix-simple-thumb-related" tabindex="0" data-vid="dg6QsFcepIg"><img alt="" data-thumb="//i.ytimg.com/vi/dg6QsFcepIg/default.jpg" aria-hidden="true" src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" width="120" height="90" ></span></a>
+        <span class="video-time">
+      14:31
+    </span>
+
+          <span class="thumb-menu dark-overflow-action-menu video-actions">
+    <button onclick=";return false;" aria-expanded="false" type="button" class="yt-uix-button-reverse flip addto-watch-queue-menu spf-nolink hide-until-delayloaded yt-uix-button yt-uix-button-dark-overflow-action-menu yt-uix-button-size-default yt-uix-button-has-icon no-icon-markup yt-uix-button-empty" aria-haspopup="true" ><span class="yt-uix-button-arrow yt-sprite"></span><ul class="watch-queue-thumb-menu yt-uix-button-menu yt-uix-button-menu-dark-overflow-action-menu hid"><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-next yt-uix-button-menu-item" data-action="play-next" onclick=";return false;"  data-video-ids="dg6QsFcepIg"><span class="addto-watch-queue-menu-text">Play next</span></li><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-now yt-uix-button-menu-item" data-action="play-now" onclick=";return false;"  data-video-ids="dg6QsFcepIg"><span class="addto-watch-queue-menu-text">Play now</span></li></ul></button>
+  </span>
+
+    <button class="yt-uix-button yt-uix-button-size-small yt-uix-button-default yt-uix-button-empty yt-uix-button-has-icon no-icon-markup addto-button addto-queue-button video-actions spf-nolink hide-until-delayloaded addto-tv-queue-button yt-uix-tooltip" type="button" onclick=";return false;" title="TV Queue" data-style="tv-queue" data-video-ids="dg6QsFcepIg"></button>
+
+
+  </div>
+
+</li><li class="video-list-item related-list-item show-video-time">    <div class="content-wrapper">
+    <a href="/watch?v=GQQ1BiziFGs" class=" content-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" title="Гравитация и НЛО. Секреты." data-sessionlink="feature=relmfu&amp;ved=CA0QzRooCA&amp;ei=VyEfVdCaDtWTqQWVgYFo" >  <span dir="ltr" class="title" aria-describedby="description-id-932405">
+    Гравитация и НЛО. Секреты.
+  </span>
+    <span class="accessible-description" id="description-id-932405">
+       - Duration: 16:47.
+    </span>
+    <span class="stat attribution">
+      <span class="g-hovercard"
+          data-ytid="UCEx6PP0M2ctv8LaEQHfheQg"
+          data-name="relmfu"
+        >
+        by <span class=" g-hovercard" data-ytid="UCEx6PP0M2ctv8LaEQHfheQg" data-name="">Space Freelancers</span>
+      </span>
+    </span>
+    <span class="stat view-count">2,272 views</span>
+</a>
+  </div>
+  <div class="thumb-wrapper">
+
+    <a href="/watch?v=GQQ1BiziFGs" class=" thumb-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" tabindex="-1" data-sessionlink="feature=relmfu&amp;ved=CA0QzRooCA&amp;ei=VyEfVdCaDtWTqQWVgYFo" aria-hidden="true"><span class="yt-uix-simple-thumb-wrap yt-uix-simple-thumb-related" tabindex="0" data-vid="GQQ1BiziFGs"><img alt="" data-thumb="//i.ytimg.com/vi/GQQ1BiziFGs/default.jpg" aria-hidden="true" src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" width="120" height="90" ></span></a>
+        <span class="video-time">
+      16:47
+    </span>
+
+          <span class="thumb-menu dark-overflow-action-menu video-actions">
+    <button onclick=";return false;" aria-expanded="false" type="button" class="yt-uix-button-reverse flip addto-watch-queue-menu spf-nolink hide-until-delayloaded yt-uix-button yt-uix-button-dark-overflow-action-menu yt-uix-button-size-default yt-uix-button-has-icon no-icon-markup yt-uix-button-empty" aria-haspopup="true" ><span class="yt-uix-button-arrow yt-sprite"></span><ul class="watch-queue-thumb-menu yt-uix-button-menu yt-uix-button-menu-dark-overflow-action-menu hid"><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-next yt-uix-button-menu-item" data-action="play-next" onclick=";return false;"  data-video-ids="GQQ1BiziFGs"><span class="addto-watch-queue-menu-text">Play next</span></li><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-now yt-uix-button-menu-item" data-action="play-now" onclick=";return false;"  data-video-ids="GQQ1BiziFGs"><span class="addto-watch-queue-menu-text">Play now</span></li></ul></button>
+  </span>
+
+    <button class="yt-uix-button yt-uix-button-size-small yt-uix-button-default yt-uix-button-empty yt-uix-button-has-icon no-icon-markup addto-button addto-queue-button video-actions spf-nolink hide-until-delayloaded addto-tv-queue-button yt-uix-tooltip" type="button" onclick=";return false;" title="TV Queue" data-style="tv-queue" data-video-ids="GQQ1BiziFGs"></button>
+
+
+  </div>
+
+</li><li class="video-list-item related-list-item show-video-time">    <div class="content-wrapper">
+    <a href="/watch?v=TtDQvxSaAyo" class=" content-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" title="Kick Ass UFO Sightings!! Best UFOs Of November 2014 Over 20 UFOs!~ Watch Now!" data-sessionlink="feature=related&amp;ved=CA4QzRooCQ&amp;ei=VyEfVdCaDtWTqQWVgYFo" >  <span dir="ltr" class="title" aria-describedby="description-id-266178">
+    Kick Ass UFO Sightings!! Best UFOs Of November 2014 Over 20 UFOs!~ Watch Now!
+  </span>
+    <span class="accessible-description" id="description-id-266178">
+       - Duration: 57:34.
+    </span>
+    <span class="stat attribution">
+      <span class="g-hovercard"
+          data-ytid="UCuBPlZTF6TGO0g58QgcgsxA"
+          data-name="related"
+        >
+        by <span class=" g-hovercard" data-ytid="UCuBPlZTF6TGO0g58QgcgsxA" data-name="">thirdphaseofmoon</span>
+      </span>
+    </span>
+    <span class="stat view-count">980,294 views</span>
+</a>
+  </div>
+  <div class="thumb-wrapper">
+
+    <a href="/watch?v=TtDQvxSaAyo" class=" thumb-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" tabindex="-1" data-sessionlink="feature=related&amp;ved=CA4QzRooCQ&amp;ei=VyEfVdCaDtWTqQWVgYFo" aria-hidden="true"><span class="yt-uix-simple-thumb-wrap yt-uix-simple-thumb-related" tabindex="0" data-vid="TtDQvxSaAyo"><img alt="" data-thumb="//i.ytimg.com/vi/TtDQvxSaAyo/default.jpg" aria-hidden="true" src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" width="120" height="90" ></span></a>
+        <span class="video-time">
+      57:34
+    </span>
+
+          <span class="thumb-menu dark-overflow-action-menu video-actions">
+    <button onclick=";return false;" aria-expanded="false" type="button" class="yt-uix-button-reverse flip addto-watch-queue-menu spf-nolink hide-until-delayloaded yt-uix-button yt-uix-button-dark-overflow-action-menu yt-uix-button-size-default yt-uix-button-has-icon no-icon-markup yt-uix-button-empty" aria-haspopup="true" ><span class="yt-uix-button-arrow yt-sprite"></span><ul class="watch-queue-thumb-menu yt-uix-button-menu yt-uix-button-menu-dark-overflow-action-menu hid"><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-next yt-uix-button-menu-item" data-action="play-next" onclick=";return false;"  data-video-ids="TtDQvxSaAyo"><span class="addto-watch-queue-menu-text">Play next</span></li><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-now yt-uix-button-menu-item" data-action="play-now" onclick=";return false;"  data-video-ids="TtDQvxSaAyo"><span class="addto-watch-queue-menu-text">Play now</span></li></ul></button>
+  </span>
+
+    <button class="yt-uix-button yt-uix-button-size-small yt-uix-button-default yt-uix-button-empty yt-uix-button-has-icon no-icon-markup addto-button addto-queue-button video-actions spf-nolink hide-until-delayloaded addto-tv-queue-button yt-uix-tooltip" type="button" onclick=";return false;" title="TV Queue" data-style="tv-queue" data-video-ids="TtDQvxSaAyo"></button>
+
+
+  </div>
+
+</li><li class="video-list-item related-list-item show-video-time">    <div class="content-wrapper">
+    <a href="/watch?v=NzeGpbfi8xs" class=" content-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" title="ГРАВИТАЦИЯ. что это такое на самом деле.(а ларчик просто открывался)" data-sessionlink="feature=related&amp;ved=CA8QzRooCg&amp;ei=VyEfVdCaDtWTqQWVgYFo" >  <span dir="ltr" class="title" aria-describedby="description-id-72537">
+    ГРАВИТАЦИЯ. что это такое на самом деле.(а ларчик просто открывался)
+  </span>
+    <span class="accessible-description" id="description-id-72537">
+       - Duration: 9:38.
+    </span>
+    <span class="stat attribution">
+      <span class="g-hovercard"
+          data-ytid="UC3AQgxIOrWjcsgjvGcZuBLw"
+          data-name="related"
+        >
+        by <span class=" g-hovercard" data-ytid="UC3AQgxIOrWjcsgjvGcZuBLw" data-name="">Alex H</span>
+      </span>
+    </span>
+    <span class="stat view-count">25,948 views</span>
+</a>
+  </div>
+  <div class="thumb-wrapper">
+
+    <a href="/watch?v=NzeGpbfi8xs" class=" thumb-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" tabindex="-1" data-sessionlink="feature=related&amp;ved=CA8QzRooCg&amp;ei=VyEfVdCaDtWTqQWVgYFo" aria-hidden="true"><span class="yt-uix-simple-thumb-wrap yt-uix-simple-thumb-related" tabindex="0" data-vid="NzeGpbfi8xs"><img alt="" data-thumb="//i.ytimg.com/vi/NzeGpbfi8xs/default.jpg" aria-hidden="true" src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" width="120" height="90" ></span></a>
+        <span class="video-time">
+      9:38
+    </span>
+
+          <span class="thumb-menu dark-overflow-action-menu video-actions">
+    <button onclick=";return false;" aria-expanded="false" type="button" class="yt-uix-button-reverse flip addto-watch-queue-menu spf-nolink hide-until-delayloaded yt-uix-button yt-uix-button-dark-overflow-action-menu yt-uix-button-size-default yt-uix-button-has-icon no-icon-markup yt-uix-button-empty" aria-haspopup="true" ><span class="yt-uix-button-arrow yt-sprite"></span><ul class="watch-queue-thumb-menu yt-uix-button-menu yt-uix-button-menu-dark-overflow-action-menu hid"><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-next yt-uix-button-menu-item" data-action="play-next" onclick=";return false;"  data-video-ids="NzeGpbfi8xs"><span class="addto-watch-queue-menu-text">Play next</span></li><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-now yt-uix-button-menu-item" data-action="play-now" onclick=";return false;"  data-video-ids="NzeGpbfi8xs"><span class="addto-watch-queue-menu-text">Play now</span></li></ul></button>
+  </span>
+
+    <button class="yt-uix-button yt-uix-button-size-small yt-uix-button-default yt-uix-button-empty yt-uix-button-has-icon no-icon-markup addto-button addto-queue-button video-actions spf-nolink hide-until-delayloaded addto-tv-queue-button yt-uix-tooltip" type="button" onclick=";return false;" title="TV Queue" data-style="tv-queue" data-video-ids="NzeGpbfi8xs"></button>
+
+
+  </div>
+
+</li><li class="video-list-item related-list-item show-video-time">    <div class="content-wrapper">
+    <a href="/watch?v=VwX_OWkx8Og" class=" content-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" title="UFO+ USO Unbelievable Daylight Footage In The Sea" data-sessionlink="feature=related&amp;ved=CBAQzRooCw&amp;ei=VyEfVdCaDtWTqQWVgYFo" >  <span dir="ltr" class="title" aria-describedby="description-id-205421">
+    UFO+ USO Unbelievable Daylight Footage In The Sea
+  </span>
+    <span class="accessible-description" id="description-id-205421">
+       - Duration: 19:35.
+    </span>
+    <span class="stat attribution">
+      <span class="g-hovercard"
+          data-ytid="UCVyXrZMLZcoGJ-sK3dSqWog"
+          data-name="related"
+        >
+        by <span class=" g-hovercard" data-ytid="UCVyXrZMLZcoGJ-sK3dSqWog" data-name="">Dennis4706</span>
+      </span>
+    </span>
+    <span class="stat view-count">3,916,392 views</span>
+</a>
+  </div>
+  <div class="thumb-wrapper">
+
+    <a href="/watch?v=VwX_OWkx8Og" class=" thumb-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" tabindex="-1" data-sessionlink="feature=related&amp;ved=CBAQzRooCw&amp;ei=VyEfVdCaDtWTqQWVgYFo" aria-hidden="true"><span class="yt-uix-simple-thumb-wrap yt-uix-simple-thumb-related" tabindex="0" data-vid="VwX_OWkx8Og"><img alt="" data-thumb="//i.ytimg.com/vi/VwX_OWkx8Og/default.jpg" aria-hidden="true" src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" width="120" height="90" ></span></a>
+        <span class="video-time">
+      19:35
+    </span>
+
+          <span class="thumb-menu dark-overflow-action-menu video-actions">
+    <button onclick=";return false;" aria-expanded="false" type="button" class="yt-uix-button-reverse flip addto-watch-queue-menu spf-nolink hide-until-delayloaded yt-uix-button yt-uix-button-dark-overflow-action-menu yt-uix-button-size-default yt-uix-button-has-icon no-icon-markup yt-uix-button-empty" aria-haspopup="true" ><span class="yt-uix-button-arrow yt-sprite"></span><ul class="watch-queue-thumb-menu yt-uix-button-menu yt-uix-button-menu-dark-overflow-action-menu hid"><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-next yt-uix-button-menu-item" data-action="play-next" onclick=";return false;"  data-video-ids="VwX_OWkx8Og"><span class="addto-watch-queue-menu-text">Play next</span></li><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-now yt-uix-button-menu-item" data-action="play-now" onclick=";return false;"  data-video-ids="VwX_OWkx8Og"><span class="addto-watch-queue-menu-text">Play now</span></li></ul></button>
+  </span>
+
+    <button class="yt-uix-button yt-uix-button-size-small yt-uix-button-default yt-uix-button-empty yt-uix-button-has-icon no-icon-markup addto-button addto-queue-button video-actions spf-nolink hide-until-delayloaded addto-tv-queue-button yt-uix-tooltip" type="button" onclick=";return false;" title="TV Queue" data-style="tv-queue" data-video-ids="VwX_OWkx8Og"></button>
+
+
+  </div>
+
+</li><li class="video-list-item related-list-item show-video-time">    <div class="content-wrapper">
+    <a href="/watch?v=qQa0VVSI9J0" class=" content-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" title="Espectacular OVNI en Guadalajara México Diciembre del 2012" data-sessionlink="feature=related&amp;ved=CBEQzRooDA&amp;ei=VyEfVdCaDtWTqQWVgYFo" >  <span dir="ltr" class="title" aria-describedby="description-id-421927">
+    Espectacular OVNI en Guadalajara México Diciembre del 2012
+  </span>
+    <span class="accessible-description" id="description-id-421927">
+       - Duration: 1:22.
+    </span>
+    <span class="stat attribution">
+      <span class="g-hovercard"
+          data-ytid="UCnkhfIuUS0TCB0-Cc8cnxkw"
+          data-name="related"
+        >
+        by <span class=" g-hovercard" data-ytid="UCnkhfIuUS0TCB0-Cc8cnxkw" data-name="">caserovera</span>
+      </span>
+    </span>
+    <span class="stat view-count">1,576,704 views</span>
+</a>
+  </div>
+  <div class="thumb-wrapper">
+
+    <a href="/watch?v=qQa0VVSI9J0" class=" thumb-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" tabindex="-1" data-sessionlink="feature=related&amp;ved=CBEQzRooDA&amp;ei=VyEfVdCaDtWTqQWVgYFo" aria-hidden="true"><span class="yt-uix-simple-thumb-wrap yt-uix-simple-thumb-related" tabindex="0" data-vid="qQa0VVSI9J0"><img alt="" data-thumb="//i.ytimg.com/vi/qQa0VVSI9J0/default.jpg" aria-hidden="true" src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" width="120" height="90" ></span></a>
+        <span class="video-time">
+      1:22
+    </span>
+
+          <span class="thumb-menu dark-overflow-action-menu video-actions">
+    <button onclick=";return false;" aria-expanded="false" type="button" class="yt-uix-button-reverse flip addto-watch-queue-menu spf-nolink hide-until-delayloaded yt-uix-button yt-uix-button-dark-overflow-action-menu yt-uix-button-size-default yt-uix-button-has-icon no-icon-markup yt-uix-button-empty" aria-haspopup="true" ><span class="yt-uix-button-arrow yt-sprite"></span><ul class="watch-queue-thumb-menu yt-uix-button-menu yt-uix-button-menu-dark-overflow-action-menu hid"><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-next yt-uix-button-menu-item" data-action="play-next" onclick=";return false;"  data-video-ids="qQa0VVSI9J0"><span class="addto-watch-queue-menu-text">Play next</span></li><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-now yt-uix-button-menu-item" data-action="play-now" onclick=";return false;"  data-video-ids="qQa0VVSI9J0"><span class="addto-watch-queue-menu-text">Play now</span></li></ul></button>
+  </span>
+
+    <button class="yt-uix-button yt-uix-button-size-small yt-uix-button-default yt-uix-button-empty yt-uix-button-has-icon no-icon-markup addto-button addto-queue-button video-actions spf-nolink hide-until-delayloaded addto-tv-queue-button yt-uix-tooltip" type="button" onclick=";return false;" title="TV Queue" data-style="tv-queue" data-video-ids="qQa0VVSI9J0"></button>
+
+
+  </div>
+
+</li><li class="video-list-item related-list-item show-video-time">    <div class="content-wrapper">
+    <a href="/watch?v=apGtc5JTrh4" class=" content-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" title="UFO Secrets Concealed by the Soviet Union : Documentary on Russian UFO Secrets" data-sessionlink="feature=related&amp;ved=CBIQzRooDQ&amp;ei=VyEfVdCaDtWTqQWVgYFo" >  <span dir="ltr" class="title" aria-describedby="description-id-682681">
+    UFO Secrets Concealed by the Soviet Union : Documentary on Russian UFO Secrets
+  </span>
+    <span class="accessible-description" id="description-id-682681">
+       - Duration: 43:46.
+    </span>
+    <span class="stat attribution">
+      <span class="g-hovercard"
+          data-ytid="UCWv2Nk41tcq-mZHCKGvKUtQ"
+          data-name="related"
+        >
+        by <span class=" g-hovercard" data-ytid="UCWv2Nk41tcq-mZHCKGvKUtQ" data-name="">Obama Putin</span>
+      </span>
+    </span>
+    <span class="stat view-count">1,185 views</span>
+</a>
+  </div>
+  <div class="thumb-wrapper">
+
+    <a href="/watch?v=apGtc5JTrh4" class=" thumb-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" tabindex="-1" data-sessionlink="feature=related&amp;ved=CBIQzRooDQ&amp;ei=VyEfVdCaDtWTqQWVgYFo" aria-hidden="true"><span class="yt-uix-simple-thumb-wrap yt-uix-simple-thumb-related" tabindex="0" data-vid="apGtc5JTrh4"><img alt="" data-thumb="//i.ytimg.com/vi/apGtc5JTrh4/default.jpg" aria-hidden="true" src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" width="120" height="90" ></span></a>
+        <span class="video-time">
+      43:46
+    </span>
+
+          <span class="thumb-menu dark-overflow-action-menu video-actions">
+    <button onclick=";return false;" aria-expanded="false" type="button" class="yt-uix-button-reverse flip addto-watch-queue-menu spf-nolink hide-until-delayloaded yt-uix-button yt-uix-button-dark-overflow-action-menu yt-uix-button-size-default yt-uix-button-has-icon no-icon-markup yt-uix-button-empty" aria-haspopup="true" ><span class="yt-uix-button-arrow yt-sprite"></span><ul class="watch-queue-thumb-menu yt-uix-button-menu yt-uix-button-menu-dark-overflow-action-menu hid"><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-next yt-uix-button-menu-item" data-action="play-next" onclick=";return false;"  data-video-ids="apGtc5JTrh4"><span class="addto-watch-queue-menu-text">Play next</span></li><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-now yt-uix-button-menu-item" data-action="play-now" onclick=";return false;"  data-video-ids="apGtc5JTrh4"><span class="addto-watch-queue-menu-text">Play now</span></li></ul></button>
+  </span>
+
+    <button class="yt-uix-button yt-uix-button-size-small yt-uix-button-default yt-uix-button-empty yt-uix-button-has-icon no-icon-markup addto-button addto-queue-button video-actions spf-nolink hide-until-delayloaded addto-tv-queue-button yt-uix-tooltip" type="button" onclick=";return false;" title="TV Queue" data-style="tv-queue" data-video-ids="apGtc5JTrh4"></button>
+
+
+  </div>
+
+</li><li class="video-list-item related-list-item show-video-time">    <div class="content-wrapper">
+    <a href="/watch?v=3QKsQs2aVv8" class=" content-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" title="Дарвин ошибался кое в чём." data-sessionlink="feature=relmfu&amp;ved=CBMQzRooDg&amp;ei=VyEfVdCaDtWTqQWVgYFo" >  <span dir="ltr" class="title" aria-describedby="description-id-552703">
+    Дарвин ошибался кое в чём.
+  </span>
+    <span class="accessible-description" id="description-id-552703">
+       - Duration: 4:45.
+    </span>
+    <span class="stat attribution">
+      <span class="g-hovercard"
+          data-ytid="UCEx6PP0M2ctv8LaEQHfheQg"
+          data-name="relmfu"
+        >
+        by <span class=" g-hovercard" data-ytid="UCEx6PP0M2ctv8LaEQHfheQg" data-name="">Space Freelancers</span>
+      </span>
+    </span>
+    <span class="stat view-count">1,477 views</span>
+</a>
+  </div>
+  <div class="thumb-wrapper">
+
+    <a href="/watch?v=3QKsQs2aVv8" class=" thumb-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" tabindex="-1" data-sessionlink="feature=relmfu&amp;ved=CBMQzRooDg&amp;ei=VyEfVdCaDtWTqQWVgYFo" aria-hidden="true"><span class="yt-uix-simple-thumb-wrap yt-uix-simple-thumb-related" tabindex="0" data-vid="3QKsQs2aVv8"><img alt="" data-thumb="//i.ytimg.com/vi/3QKsQs2aVv8/default.jpg" aria-hidden="true" src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" width="120" height="90" ></span></a>
+        <span class="video-time">
+      4:45
+    </span>
+
+          <span class="thumb-menu dark-overflow-action-menu video-actions">
+    <button onclick=";return false;" aria-expanded="false" type="button" class="yt-uix-button-reverse flip addto-watch-queue-menu spf-nolink hide-until-delayloaded yt-uix-button yt-uix-button-dark-overflow-action-menu yt-uix-button-size-default yt-uix-button-has-icon no-icon-markup yt-uix-button-empty" aria-haspopup="true" ><span class="yt-uix-button-arrow yt-sprite"></span><ul class="watch-queue-thumb-menu yt-uix-button-menu yt-uix-button-menu-dark-overflow-action-menu hid"><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-next yt-uix-button-menu-item" data-action="play-next" onclick=";return false;"  data-video-ids="3QKsQs2aVv8"><span class="addto-watch-queue-menu-text">Play next</span></li><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-now yt-uix-button-menu-item" data-action="play-now" onclick=";return false;"  data-video-ids="3QKsQs2aVv8"><span class="addto-watch-queue-menu-text">Play now</span></li></ul></button>
+  </span>
+
+    <button class="yt-uix-button yt-uix-button-size-small yt-uix-button-default yt-uix-button-empty yt-uix-button-has-icon no-icon-markup addto-button addto-queue-button video-actions spf-nolink hide-until-delayloaded addto-tv-queue-button yt-uix-tooltip" type="button" onclick=";return false;" title="TV Queue" data-style="tv-queue" data-video-ids="3QKsQs2aVv8"></button>
+
+
+  </div>
+
+</li><li class="video-list-item related-list-item show-video-time">    <div class="content-wrapper">
+    <a href="/watch?v=AcpDqJm1oGw" class=" content-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" title="Aliens Attack India, Kill 7 People - &quot;Muhnochwa&quot; UFO caught on film" data-sessionlink="feature=related&amp;ved=CBQQzRooDw&amp;ei=VyEfVdCaDtWTqQWVgYFo" >  <span dir="ltr" class="title" aria-describedby="description-id-33963">
+    Aliens Attack India, Kill 7 People - &quot;Muhnochwa&quot; UFO caught on film
+  </span>
+    <span class="accessible-description" id="description-id-33963">
+       - Duration: 8:13.
+    </span>
+    <span class="stat attribution">
+      <span class="g-hovercard"
+          data-ytid="UCe3OmUXohXrXnNZSRl5Z9kA"
+          data-name="related"
+        >
+        by <span class=" g-hovercard" data-ytid="UCe3OmUXohXrXnNZSRl5Z9kA" data-name="">Phenomenal Travel Videos</span>
+      </span>
+    </span>
+    <span class="stat view-count">236,159 views</span>
+</a>
+  </div>
+  <div class="thumb-wrapper">
+
+    <a href="/watch?v=AcpDqJm1oGw" class=" thumb-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" tabindex="-1" data-sessionlink="feature=related&amp;ved=CBQQzRooDw&amp;ei=VyEfVdCaDtWTqQWVgYFo" aria-hidden="true"><span class="yt-uix-simple-thumb-wrap yt-uix-simple-thumb-related" tabindex="0" data-vid="AcpDqJm1oGw"><img alt="" data-thumb="//i.ytimg.com/vi/AcpDqJm1oGw/default.jpg" aria-hidden="true" src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" width="120" height="90" ></span></a>
+        <span class="video-time">
+      8:13
+    </span>
+
+          <span class="thumb-menu dark-overflow-action-menu video-actions">
+    <button onclick=";return false;" aria-expanded="false" type="button" class="yt-uix-button-reverse flip addto-watch-queue-menu spf-nolink hide-until-delayloaded yt-uix-button yt-uix-button-dark-overflow-action-menu yt-uix-button-size-default yt-uix-button-has-icon no-icon-markup yt-uix-button-empty" aria-haspopup="true" ><span class="yt-uix-button-arrow yt-sprite"></span><ul class="watch-queue-thumb-menu yt-uix-button-menu yt-uix-button-menu-dark-overflow-action-menu hid"><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-next yt-uix-button-menu-item" data-action="play-next" onclick=";return false;"  data-video-ids="AcpDqJm1oGw"><span class="addto-watch-queue-menu-text">Play next</span></li><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-now yt-uix-button-menu-item" data-action="play-now" onclick=";return false;"  data-video-ids="AcpDqJm1oGw"><span class="addto-watch-queue-menu-text">Play now</span></li></ul></button>
+  </span>
+
+    <button class="yt-uix-button yt-uix-button-size-small yt-uix-button-default yt-uix-button-empty yt-uix-button-has-icon no-icon-markup addto-button addto-queue-button video-actions spf-nolink hide-until-delayloaded addto-tv-queue-button yt-uix-tooltip" type="button" onclick=";return false;" title="TV Queue" data-style="tv-queue" data-video-ids="AcpDqJm1oGw"></button>
+
+
+  </div>
+
+</li><li class="video-list-item related-list-item show-video-time">    <div class="content-wrapper">
+    <a href="/watch?v=ExeAf4hvBRU" class=" content-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" title="The Worlds Most Active USO UFO Hotspot [UFO Documentary]" data-sessionlink="feature=related&amp;ved=CBUQzRooEA&amp;ei=VyEfVdCaDtWTqQWVgYFo" >  <span dir="ltr" class="title" aria-describedby="description-id-281001">
+    The Worlds Most Active USO UFO Hotspot [UFO Documentary]
+  </span>
+    <span class="accessible-description" id="description-id-281001">
+       - Duration: 44:25.
+    </span>
+    <span class="stat attribution">
+      <span class="g-hovercard"
+          data-ytid="UC3Q09di9sH61BB3_4ktNvaQ"
+          data-name="related"
+        >
+        by <span class=" g-hovercard" data-ytid="UC3Q09di9sH61BB3_4ktNvaQ" data-name="">Sky Faction</span>
+      </span>
+    </span>
+    <span class="stat view-count">842,123 views</span>
+</a>
+  </div>
+  <div class="thumb-wrapper">
+
+    <a href="/watch?v=ExeAf4hvBRU" class=" thumb-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" tabindex="-1" data-sessionlink="feature=related&amp;ved=CBUQzRooEA&amp;ei=VyEfVdCaDtWTqQWVgYFo" aria-hidden="true"><span class="yt-uix-simple-thumb-wrap yt-uix-simple-thumb-related" tabindex="0" data-vid="ExeAf4hvBRU"><img alt="" data-thumb="//i.ytimg.com/vi/ExeAf4hvBRU/default.jpg" aria-hidden="true" src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" width="120" height="90" ></span></a>
+        <span class="video-time">
+      44:25
+    </span>
+
+          <span class="thumb-menu dark-overflow-action-menu video-actions">
+    <button onclick=";return false;" aria-expanded="false" type="button" class="yt-uix-button-reverse flip addto-watch-queue-menu spf-nolink hide-until-delayloaded yt-uix-button yt-uix-button-dark-overflow-action-menu yt-uix-button-size-default yt-uix-button-has-icon no-icon-markup yt-uix-button-empty" aria-haspopup="true" ><span class="yt-uix-button-arrow yt-sprite"></span><ul class="watch-queue-thumb-menu yt-uix-button-menu yt-uix-button-menu-dark-overflow-action-menu hid"><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-next yt-uix-button-menu-item" data-action="play-next" onclick=";return false;"  data-video-ids="ExeAf4hvBRU"><span class="addto-watch-queue-menu-text">Play next</span></li><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-now yt-uix-button-menu-item" data-action="play-now" onclick=";return false;"  data-video-ids="ExeAf4hvBRU"><span class="addto-watch-queue-menu-text">Play now</span></li></ul></button>
+  </span>
+
+    <button class="yt-uix-button yt-uix-button-size-small yt-uix-button-default yt-uix-button-empty yt-uix-button-has-icon no-icon-markup addto-button addto-queue-button video-actions spf-nolink hide-until-delayloaded addto-tv-queue-button yt-uix-tooltip" type="button" onclick=";return false;" title="TV Queue" data-style="tv-queue" data-video-ids="ExeAf4hvBRU"></button>
+
+
+  </div>
+
+</li><li class="video-list-item related-list-item show-video-time">    <div class="content-wrapper">
+    <a href="/watch?v=-fK5C2IPthk" class=" content-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" title="NASA UFO Sightings" data-sessionlink="feature=related&amp;ved=CBYQzRooEQ&amp;ei=VyEfVdCaDtWTqQWVgYFo" >  <span dir="ltr" class="title" aria-describedby="description-id-51918">
+    NASA UFO Sightings
+  </span>
+    <span class="accessible-description" id="description-id-51918">
+       - Duration: 15:57.
+    </span>
+    <span class="stat attribution">
+      <span class="g-hovercard"
+          data-ytid="UC8QqbXrfvk1qSfcUBmdi8Fg"
+          data-name="related"
+        >
+        by <span class=" g-hovercard" data-ytid="UC8QqbXrfvk1qSfcUBmdi8Fg" data-name="">UniversalTrek</span>
+      </span>
+    </span>
+    <span class="stat view-count">1,123,815 views</span>
+</a>
+  </div>
+  <div class="thumb-wrapper">
+
+    <a href="/watch?v=-fK5C2IPthk" class=" thumb-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" tabindex="-1" data-sessionlink="feature=related&amp;ved=CBYQzRooEQ&amp;ei=VyEfVdCaDtWTqQWVgYFo" aria-hidden="true"><span class="yt-uix-simple-thumb-wrap yt-uix-simple-thumb-related" tabindex="0" data-vid="-fK5C2IPthk"><img alt="" data-thumb="//i.ytimg.com/vi/-fK5C2IPthk/default.jpg" aria-hidden="true" src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" width="120" height="90" ></span></a>
+        <span class="video-time">
+      15:57
+    </span>
+
+          <span class="thumb-menu dark-overflow-action-menu video-actions">
+    <button onclick=";return false;" aria-expanded="false" type="button" class="yt-uix-button-reverse flip addto-watch-queue-menu spf-nolink hide-until-delayloaded yt-uix-button yt-uix-button-dark-overflow-action-menu yt-uix-button-size-default yt-uix-button-has-icon no-icon-markup yt-uix-button-empty" aria-haspopup="true" ><span class="yt-uix-button-arrow yt-sprite"></span><ul class="watch-queue-thumb-menu yt-uix-button-menu yt-uix-button-menu-dark-overflow-action-menu hid"><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-next yt-uix-button-menu-item" data-action="play-next" onclick=";return false;"  data-video-ids="-fK5C2IPthk"><span class="addto-watch-queue-menu-text">Play next</span></li><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-now yt-uix-button-menu-item" data-action="play-now" onclick=";return false;"  data-video-ids="-fK5C2IPthk"><span class="addto-watch-queue-menu-text">Play now</span></li></ul></button>
+  </span>
+
+    <button class="yt-uix-button yt-uix-button-size-small yt-uix-button-default yt-uix-button-empty yt-uix-button-has-icon no-icon-markup addto-button addto-queue-button video-actions spf-nolink hide-until-delayloaded addto-tv-queue-button yt-uix-tooltip" type="button" onclick=";return false;" title="TV Queue" data-style="tv-queue" data-video-ids="-fK5C2IPthk"></button>
+
+
+  </div>
+
+</li><li class="video-list-item related-list-item show-video-time">    <div class="content-wrapper">
+    <a href="/watch?v=QsLq_yf_K0s" class=" content-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" title="&quot;AMAZING UFO FOOTAGE&quot; UFO&#39;s are real and their here!" data-sessionlink="feature=related&amp;ved=CBcQzRooEg&amp;ei=VyEfVdCaDtWTqQWVgYFo" >  <span dir="ltr" class="title" aria-describedby="description-id-307142">
+    &quot;AMAZING UFO FOOTAGE&quot; UFO&#39;s are real and their here!
+  </span>
+    <span class="accessible-description" id="description-id-307142">
+       - Duration: 1:49.
+    </span>
+    <span class="stat attribution">
+      <span class="g-hovercard"
+          data-ytid="UCP724PsV3kc0sjuysknt6_Q"
+          data-name="related"
+        >
+        by <span class=" g-hovercard" data-ytid="UCP724PsV3kc0sjuysknt6_Q" data-name="">UFO TRUE STORIES</span>
+      </span>
+    </span>
+    <span class="stat view-count">261 views</span>
+</a>
+  </div>
+  <div class="thumb-wrapper">
+
+    <a href="/watch?v=QsLq_yf_K0s" class=" thumb-link spf-link  yt-uix-sessionlink" rel="spf-prefetch" tabindex="-1" data-sessionlink="feature=related&amp;ved=CBcQzRooEg&amp;ei=VyEfVdCaDtWTqQWVgYFo" aria-hidden="true"><span class="yt-uix-simple-thumb-wrap yt-uix-simple-thumb-related" tabindex="0" data-vid="QsLq_yf_K0s"><img alt="" data-thumb="//i.ytimg.com/vi/QsLq_yf_K0s/default.jpg" aria-hidden="true" src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" width="120" height="90" ></span></a>
+        <span class="video-time">
+      1:49
+    </span>
+
+          <span class="thumb-menu dark-overflow-action-menu video-actions">
+    <button onclick=";return false;" aria-expanded="false" type="button" class="yt-uix-button-reverse flip addto-watch-queue-menu spf-nolink hide-until-delayloaded yt-uix-button yt-uix-button-dark-overflow-action-menu yt-uix-button-size-default yt-uix-button-has-icon no-icon-markup yt-uix-button-empty" aria-haspopup="true" ><span class="yt-uix-button-arrow yt-sprite"></span><ul class="watch-queue-thumb-menu yt-uix-button-menu yt-uix-button-menu-dark-overflow-action-menu hid"><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-next yt-uix-button-menu-item" data-action="play-next" onclick=";return false;"  data-video-ids="QsLq_yf_K0s"><span class="addto-watch-queue-menu-text">Play next</span></li><li role="menuitem" class="overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-now yt-uix-button-menu-item" data-action="play-now" onclick=";return false;"  data-video-ids="QsLq_yf_K0s"><span class="addto-watch-queue-menu-text">Play now</span></li></ul></button>
+  </span>
+
+    <button class="yt-uix-button yt-uix-button-size-small yt-uix-button-default yt-uix-button-empty yt-uix-button-has-icon no-icon-markup addto-button addto-queue-button video-actions spf-nolink hide-until-delayloaded addto-tv-queue-button yt-uix-tooltip" type="button" onclick=";return false;" title="TV Queue" data-style="tv-queue" data-video-ids="QsLq_yf_K0s"></button>
+
+
+  </div>
+
+</li>
+              <div id="watch-more-related" class="hid">
+    <li id="watch-more-related-loading">
+Loading more suggestions...
+    </li>
+  </div>
+  <button class="yt-uix-button yt-uix-button-size-default yt-uix-button-expander" type="button" onclick=";return false;" id="watch-more-related-button" data-button-action="yt.www.watch.related.loadMore" data-continuation="CBQSDRILbTVQSDhtOUExN3cYAA%3D%3D"><span class="yt-uix-button-content">Show more</span></button>
+
+      </ul>
+    </div>   </div> 
+
+    </div>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div id="watch7-hidden-extras">
+        <div style="visibility: hidden; height: 0px; padding: 0px; overflow: hidden;">
+  </div>
+
+    </div>
+  </div>
+
+</div></div></div></div>  <div id="footer-container" class="yt-base-gutter force-layer"><div id="footer"><div id="footer-main"><div id="footer-logo"><a href="/" title="YouTube home"><span class="footer-logo-icon yt-sprite"></span></a></div>  <ul class="pickers yt-uix-button-group" data-button-toggle-group="optional">
+      <li>
+            <button class="yt-uix-button yt-uix-button-size-default yt-uix-button-default yt-uix-button-has-icon" type="button" onclick=";return false;" id="yt-picker-language-button" data-button-action="yt.www.picker.load" data-picker-key="language" data-picker-position="footer" data-button-menu-id="arrow-display" data-button-toggle="true"><span class="yt-uix-button-icon-wrapper"><span class="yt-uix-button-icon yt-uix-button-icon-footer-language yt-sprite"></span></span><span class="yt-uix-button-content">  <span class="yt-picker-button-label">
+Language:
+  </span>
+  English
+</span><span class="yt-uix-button-arrow yt-sprite"></span></button>
+
+
+      </li>
+      <li>
+            <button class="yt-uix-button yt-uix-button-size-default yt-uix-button-default" type="button" onclick=";return false;" id="yt-picker-country-button" data-button-action="yt.www.picker.load" data-picker-key="country" data-picker-position="footer" data-button-menu-id="arrow-display" data-button-toggle="true"><span class="yt-uix-button-content">  <span class="yt-picker-button-label">
+Country:
+  </span>
+  Worldwide
+</span><span class="yt-uix-button-arrow yt-sprite"></span></button>
+
+
+      </li>
+      <li>
+            <button class="yt-uix-button yt-uix-button-size-default yt-uix-button-default" type="button" onclick=";return false;" id="yt-picker-safetymode-button" data-button-action="yt.www.picker.load" data-picker-key="safetymode" data-picker-position="footer" data-button-menu-id="arrow-display" data-button-toggle="true"><span class="yt-uix-button-content">  <span class="yt-picker-button-label">
+Safety:
+  </span>
+Off
+</span><span class="yt-uix-button-arrow yt-sprite"></span></button>
+
+
+      </li>
+  </ul>
+<a href="/feed/history" class="yt-uix-button  footer-history yt-uix-sessionlink yt-uix-button-default yt-uix-button-size-default yt-uix-button-has-icon" data-sessionlink="ei=VyEfVdCaDtWTqQWVgYFo"><span class="yt-uix-button-icon-wrapper"><span class="yt-uix-button-icon yt-uix-button-icon-footer-history yt-sprite"></span></span><span class="yt-uix-button-content">History</span></a>      <button class="yt-uix-button yt-uix-button-size-default yt-uix-button-default yt-uix-button-has-icon yt-uix-button-reverse yt-google-help-link inq-no-click " type="button" onclick=";return false;" data-ghelp-tracking-param="" data-ghelp-anchor="google-help" id="google-help" data-load-chat-support=""><span class="yt-uix-button-icon-wrapper"><span class="yt-uix-button-icon yt-uix-button-icon-questionmark yt-sprite"></span></span><span class="yt-uix-button-content">Help
+</span></button>
+      <div id="yt-picker-language-footer" class="yt-picker" style="display: none">
+      <p class="yt-spinner ">
+        <span title="Loading icon" class="yt-spinner-img  yt-sprite"></span>
+
+    <span class="yt-spinner-message">
+Loading...
+    </span>
+  </p>
+
+  </div>
+
+      <div id="yt-picker-country-footer" class="yt-picker" style="display: none">
+      <p class="yt-spinner ">
+        <span title="Loading icon" class="yt-spinner-img  yt-sprite"></span>
+
+    <span class="yt-spinner-message">
+Loading...
+    </span>
+  </p>
+
+  </div>
+
+      <div id="yt-picker-safetymode-footer" class="yt-picker" style="display: none">
+      <p class="yt-spinner ">
+        <span title="Loading icon" class="yt-spinner-img  yt-sprite"></span>
+
+    <span class="yt-spinner-message">
+Loading...
+    </span>
+  </p>
+
+  </div>
+
+</div><div id="footer-links"><ul id="footer-links-primary">  <li><a href="//www.youtube.com/yt/about/">About</a></li>
+  <li><a href="//www.youtube.com/yt/press/">
+Press
+  </a></li>
+  <li><a href="//www.youtube.com/yt/copyright/">Copyright</a></li>
+  <li><a href="//www.youtube.com/yt/creators/">
+Creators
+  </a></li>
+  <li><a href="//www.youtube.com/yt/advertise/">
+Advertise
+  </a></li>
+  <li><a href="//www.youtube.com/yt/dev/">Developers</a></li>
+  <li><a href="https://plus.google.com/+youtube" dir="ltr">+YouTube</a></li>
+</ul><ul id="footer-links-secondary">  <li><a href="/t/terms">Terms</a></li>
+  <li><a href="https://www.google.com/intl/en/policies/privacy/">Privacy</a></li>
+  <li><a href="//www.youtube.com/yt/policyandsafety/">
+Policy &amp; Safety
+  </a></li>
+  <li><a href="//support.google.com/youtube/?hl=en" onclick="return yt.www.feedback.start(59);" class="reportbug">Send feedback</a></li>
+  <li><a href="/testtube">Try something new!</a></li>
+  <li></li>
+</ul></div></div></div>
+
+
+      <div class="yt-dialog hid " id="feed-privacy-lb">
+    <div class="yt-dialog-base">
+      <span class="yt-dialog-align"></span>
+      <div class="yt-dialog-fg" role="dialog">
+        <div class="yt-dialog-fg-content">
+          <div class="yt-dialog-loading">
+              <div class="yt-dialog-waiting-content">
+      <p class="yt-spinner ">
+        <span title="Loading icon" class="yt-spinner-img  yt-sprite"></span>
+
+    <span class="yt-spinner-message">
+Loading...
+    </span>
+  </p>
+
+  </div>
+
+          </div>
+          <div class="yt-dialog-content">
+              <div id="feed-privacy-dialog">
+  </div>
+
+          </div>
+          <div class="yt-dialog-working">
+              <div class="yt-dialog-working-overlay"></div>
+  <div class="yt-dialog-working-bubble">
+    <div class="yt-dialog-waiting-content">
+        <p class="yt-spinner ">
+        <span title="Loading icon" class="yt-spinner-img  yt-sprite"></span>
+
+    <span class="yt-spinner-message">
+        Working...
+    </span>
+  </p>
+
+      </div>
+  </div>
+
+          </div>
+        </div>
+        <div class="yt-dialog-focus-trap" tabindex="0"></div>
+      </div>
+    </div>
+  </div>
+
+
+<div id="hidden-component-template-wrapper" class="hid">    <div id="shared-addto-watch-later-login" class="hid">
+      <a href="https://accounts.google.com/ServiceLogin?hl=en&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Fhl%3Den%26app%3Ddesktop%26feature%3Dplaylist%26action_handle_signin%3Dtrue%26next%3D%252Fwatch%253Fv%253Dm5PH8m9A17w&passive=true&service=youtube&uilel=3" class="sign-in-link">Sign in</a> to add this to Watch Later
+
+    </div>
+  <div id="yt-uix-videoactionmenu-menu" class="yt-ui-menu-content">
+      <div class="hide-on-create-pl-panel">
+    <h3>
+Add to
+    </h3>
+  </div>
+  <div class="add-to-widget">
+  </div>
+
+  </div>
+</div>    <script>var ytspf = ytspf || {};ytspf.enabled = true;ytspf.config = {'reload-identifier': 'spfreload'};ytspf.config['cache-max'] = 50;ytspf.config['navigate-limit'] = 20;ytspf.config['navigate-lifetime'] = 64800000;ytspf.config['experimental-scroll-position'] = true;</script>
+  <script src="//s.ytimg.com/yts/jsbin/spf-vflQul50b/spf.js" type="text/javascript" name="spf/spf"></script>
+  <script src="//s.ytimg.com/yts/jsbin/www-en_US-vflTLkWXB/base.js" name="www/base"></script>
+<script>spf.script.path({'www/': '//s.ytimg.com/yts/jsbin/www-en_US-vflTLkWXB/'});var ytdepmap = {"www/base": null, "www/common": "www/base", "www/ytstyles": "www/common", "www/ypc_core": "www/common", "www/ypc_bootstrap": "www/common", "www/watch": "www/common", "www/videomanager": "www/common", "www/subscriptionmanager": "www/common", "www/results_starwars": "www/common", "www/results_star_trek": "www/common", "www/results": "www/common", "www/results_harlemshake": "www/common", "www/promo_join_network": "www/common", "www/live_dashboard": "www/common", "www/live_chat_moderation": "www/common", "www/live_chat": "www/common", "www/legomap": "www/common", "www/instant": "www/common", "www/innertube": "www/common", "www/feed": "www/common", "www/experiments": "www/common", "www/downloadreports": "www/common", "www/dashboard": "www/common", "www/channels": "www/common", "www/channels_accountupload": "www/common", "www/watch_videoshelf": "www/watch", "www/watch_transcript": "www/watch", "www/watch_speedyg": "www/watch", "www/watch_promos": "www/watch", "www/watch_live": "www/watch", "www/watch_editor": "www/watch", "www/watch_edit": "www/watch", "www/watch_autoplayrenderer": "www/watch", "www/vm_coverrevshare": "www/videomanager", "www/my_videos": "www/videomanager", "www/innertube_watchnext": "www/innertube", "www/ct_advancedsearch": "www/videomanager", "www/channels_edit": "www/channels"};spf.script.declare(ytdepmap);</script><script>if (window.ytcsi) {window.ytcsi.tick("je", null, '');}</script>      <script>
+    yt.setConfig({
+      'VIDEO_ID': "m5PH8m9A17w",
+      'THUMB_LOADER_PAUSE_MS': 0,
+      'THUMB_LOADER_GROUP_PX': 400,
+      'THUMB_LOADER_IGNORE_FOLD': false,
+      'WAIT_TO_DELAYLOAD_FRAME_CSS': true,
+      'IS_UNAVAILABLE_PAGE': false,
+      'DROPDOWN_ARROW_URL': "https:\/\/s.ytimg.com\/yts\/img\/pixel-vfl3z5WfW.gif",
+      'AUTONAV_EXTRA_CHECK': false,
+
+      'JS_PAGE_MODULES': [
+        'www/watch',
+        'www/ypc_bootstrap',
+          'www/watch_speedyg',
+          'www/watch_autoplayrenderer',
+        ''       ],
+
+
+      'REPORTVIDEO_JS': "\/\/s.ytimg.com\/yts\/jsbin\/www-reportvideo-vfl37aU72\/www-reportvideo.js",
+      'REPORTVIDEO_CSS': "\/\/s.ytimg.com\/yts\/cssbin\/www-watch-reportvideo-vflAxYHkh.css",
+
+
+      'TIMING_AFT_KEYS': ['pbr', 'pbs'],
+      'YPC_CAN_RATE_VIDEO': true,
+
+
+
+        'RELATED_PLAYER_ARGS': {"rvs":"title=Rap+Discovery+Science+TRFS+Ufo+Files+Documentary\u0026session_data=feature%3Dendscreen\u0026author=Stuard+Josh+Documentary\u0026length_seconds=2814\u0026endscreen_autoplay_session_data=autonav%3D1%26feature%3Drelated-auto%26playnext%3D1\u0026id=MHO36KnpzoE,title=Russian-Roswell\u0026author=tracy\u0026session_data=feature%3Dendscreen\u0026length_seconds=2715\u0026id=0Sr3TuoZU0U,title=Stephenville+Texas+UFOs+Alien+Threat+Agenda+Strange+UFO+Encounters+Coast+to+Coast\u0026author=StephenvilleTxUFOs\u0026session_data=feature%3Dendscreen\u0026length_seconds=337\u0026id=UoToTBhOqaA,title=Paul+Stonehill+Presents+Mysterious+Sky+-+Soviet+Union+Phenomenon\u0026author=Mothership-Productions\u0026session_data=feature%3Dendscreen\u0026length_seconds=4041\u0026id=o5r9qVLUwMM,title=Top+Secret+Kapustin+Yar+Russia+Area+51+%E2%94%82Documentary+Full+Movie\u0026author=History+Channel+Five\u0026session_data=feature%3Dendscreen\u0026length_seconds=2674\u0026id=cdkFkSjItYg,title=Dr.+Fred+Bell+on+Veritas+Radio+%7C+The+Inside+Track...From+Beyond+%5BEncore%5D+%7C+Part+1+of+2\u0026author=MANTICORE.COM\u0026session_data=feature%3Dendscreen\u0026length_seconds=4351\u0026id=UcrbfSZKDiw,title=UFO+Encounters+throughout+History+%5BFULL+DOCUMENTARY%5D\u0026author=NaturalPlanet\u0026session_data=feature%3Dendscreen\u0026length_seconds=2652\u0026id=J9fzCBFLkJc,title=UFO+DOCUMENTARY+Aliens+Exist+On+The+Moon+New+Unidentified+flying+object+2014+Best+Ufo+Sightings+2015\u0026author=UFO+DOCUMENTARY+2015\u0026session_data=feature%3Dendscreen\u0026length_seconds=5155\u0026id=g2FXkoEf97s,title=Conspiracy+Theory+No+Longer+-+Disclosure+has+Begun+-+UFOs+%26+Aliens+-+Annunaki+Reptoids+Alien+OVNI\u0026author=StephenvilleTxUFOs\u0026session_data=feature%3Dendscreen\u0026length_seconds=871\u0026id=dg6QsFcepIg,title=%D0%93%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B0%D1%86%D0%B8%D1%8F+%D0%B8+%D0%9D%D0%9B%D0%9E.+%D0%A1%D0%B5%D0%BA%D1%80%D0%B5%D1%82%D1%8B.\u0026author=Space+Freelancers\u0026session_data=feature%3Dendscreen\u0026length_seconds=1007\u0026id=GQQ1BiziFGs,title=Kick+Ass+UFO+Sightings%21%21+Best+UFOs+Of+November+2014+Over+20+UFOs%21%7E+Watch+Now%21\u0026author=thirdphaseofmoon\u0026session_data=feature%3Dendscreen\u0026length_seconds=3454\u0026id=TtDQvxSaAyo,title=%D0%93%D0%A0%D0%90%D0%92%D0%98%D0%A2%D0%90%D0%A6%D0%98%D0%AF.+%D1%87%D1%82%D0%BE+%D1%8D%D1%82%D0%BE+%D1%82%D0%B0%D0%BA%D0%BE%D0%B5+%D0%BD%D0%B0+%D1%81%D0%B0%D0%BC%D0%BE%D0%BC+%D0%B4%D0%B5%D0%BB%D0%B5.%28%D0%B0+%D0%BB%D0%B0%D1%80%D1%87%D0%B8%D0%BA+%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%BE+%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D0%B2%D0%B0%D0%BB%D1%81%D1%8F%29\u0026author=Alex+H\u0026session_data=feature%3Dendscreen\u0026length_seconds=578\u0026id=NzeGpbfi8xs"},
+
+
+
+          'BG_P': "md0YAtI+4IY+\/krfVZTj17UaYcEAlMbw4hYt4NqycjA2ee\/slIB+5U3vmMa02F7U8unyuIxIqSXk9TzC1FBiyl5O7frMZ+NsR34XHl0N0GrQahEyPmZwXDHSnp4X0Lai2rdJmnKDDh\/C5E\/x0I2A4r\/YsVu46tHx\/GQo4VPfmo\/zVg\/rN2k8m52GIFmpGGEcDaCzTwREJgLCYlvcTymrOiDbBEkNjyfiCTNlgUtdUUTllhyIlAkkf1UR97mQar5bksdhq4Fi37IUVaebclPxZKU2A1L5PiweUZkEU05yS7y22n32b+78fulQo+QxHbKN2Nd4aSAFAiB9L5qE\/oCOUpPzRLwrWTsy+S6rX5JaLyY5NRlmM5JuT2eO2ar77Ub63PtF7WHMCAyv7YgqKyDCo2dMpcqPXRJIADutQa5SIx9z1L\/F310+DIab3JgnZnFGfCE8aKcJPouZUy2uH4BpvPkdTZcIWAdxjyw8qi24k2oSEvyuygjFlMqupb0OvDZXL6pbf0FS6XzsLjRTTGJsFzpzXU7FmP25akh5LhDOUp+Jcn1X\/Sfq1HvRZnN04ylMZnbT9CQ2puCw5ikMf78r6HF7GuWdozMyeN1nuCk7JePZGgkZ+opFYOLk4+61kQRd\/YuEjbn634drSZN27g1qARkAMrhNGNOKiTiEqV0Szbg7\/8kYOp1XKL2s1wUnhOKpN5F8xI3H8il+Gsv2Sti1qjEAm+2S1HR1+\/XJpPXLVvGoRQjzX\/ZrL1BGl8VaX9NRqt2WqZCbd+r+A57x2ocn6Cf2zyOkU7Ij\/c7FZlBKHsuu8gC1o1cJ4o8OLJs7cdmZxj8w3vMlKpMmAr4eokljuZAQoWIgI+hIy+LJ6x6gE8fAxrgTc4F6F3fyyOdaHojx6f2svY0FT4jmpUTa+fSnJ4f\/y+A+Fz2HTPkdTv7uVk\/BHYrowSZIvLYdfjWTYBXq+MSjUD\/EHdJ6dgzzVtjqbX8hpG9DgRI+KJ\/MVE4exLN+8VySIn7R2NmljZz23HMwzAl\/Oacp4yqHPyjnZvKf5KWR4+Gif33G082bMB\/QdzJrbNRsWdKYpb905QOhI5h8URm7ESXfUyXkgsL+v3hwJiWS1EmbuNtq+0255iMiqb0r8LTI\/yvp6hewhpQL7ZWF\/LJeIpRLAp5bJCO8zvTVTWnkJyLwA1CnpsOGRgT5CFtoY85td3W\/jC0BXNjsf+CnsX\/oHXDtU7Yq2oaL+TOXIfCjTUFyMC7aTl3oxCyrkGv2ZRPwGaiLkI5\/AfM3v5lrINxQvReFE4jXoGfZdQ\/Wxli5Ib4y\/\/w3l+eBy00OGC0YR34hpLmnk7uGn54pOe6hVeYWVbthUjbd1S09wsQaPfQKfdwhXNVCJEuihPwptZ7qvkXEP1HAMRRvlmmipc+NmpyHt9kIwDbjsd2egMh1K1WR3dZ0ggXAADkG5ByXGnpsjP3HpCOdyjt33GyYeWDtBzSDLFWK6pNYpwYhXmZj2yyZITbGL0w935qwutffwrRzeor3K9GkCH9lxUtVsNQO1Y1pfiyP8JwoP53tBhsSTQejNlY4PJLvL1h2Z5Whs3NC6bnso18jrwhFmc7GzJSO7svyZHuQz\/74BMk+d3sXuC0bwrqcv2CGwkJNXpKKCMyVtL0lFRcieJiqglSzmoUuSYnh8BJ+hS9G+rnI0K0ZPa7gG2UaXmR7s8cMeooi7p9iO9Dc\/+hAvayEoXUKLpKaMk4tUAYF+lgWZ2ggzeBQifEd88+fIpJCEBj3utwkeYw+xhIVHzDiQFGVZmiiGkByxIvuZUXwO5gWNSlVn9O6gRUhYK7v2jEI5dZT323kkYi3SQgwUcrqeo1abvV06oQ6cgy1lly8cp3wDeOpsJ1J3AM1EBmB7zMkaNYH1mXox\/Y8699N5+owYnvvHK5N8EPhGjlAZr+vAa7VhB3FQwZXNfQf7JuNbLFULXtQSAOXjqcRCWJGEa56EKBKMHIHGWBHDzTins8\/eb3ucrkQIAb8t1B+PEYev\/s2ZWATqR8Nb67ssq53Sf5fpjxCBaYCFxS96ly9uOSigdM0NZJp9LJnb401SPSSGOj0qhAuD0tdUTV\/pKQH\/j4Eh5UWpP0xH9sMLxQG4\/sjGkaUSpeWiG8nNvqp25D\/rHHMmX2cSdWmFjDmaWAAA+zulbR0cHSmYjGEoRrv12rJn\/1d88AATtEKIAKVXeAnFFpu5vu5zbeeEoGJnOmES9AOTqksVwu4FOOEhA\/8xYKI1SAMENA39ILcROj8H7oZbAqaqa4+gLewTrINB1dnZoSAbAb66lsS2+\/J1h8kGoGlWSSx6CwToNXPMs+wauecxTZAk5OMkrjX7z\/W14SiyYBwVxZPrLT2k9mC7OXsfLkbDlsDeDjZHWkNChzK5sQ1kGS5Uz4Jg3oDhJ3Uxc7TM4M3Cxp6Su3iPVm4ZTpmaEnH9lYvnxbDTC0AMyylk8814fHSsmVBxj7Ai1byVLoQLSPldRIoD40YOvhdkbeMYjOIf26HDL8GeI3Aqeo+KuDtNzjfZSGxpPOAJQQXyBsbGoA0Mm0ugEqoO\/36yvi2BFSZe8Uha5A+Fy2v\/4KbZ9xowHGo9OLyUN8\/YHkby2mO9snGAfDUVPsOFvD2tgdlQmo0KsJPLC\/MszEJq\/2vwCtT2gQYIbH5StaPFHr0HOI0vLmd6xgf3Lao5P80RNBXw4xlzdguVW66dDL1RU29imsk0B5Il\/w248qi9cZ0sKK7Q7R8tPHR9OhTHfbn0BIK5ONfbAR23DHokJH64q4EA+C8ABGi3s17yA4qA1Dyr7yvQlDJzHFBTi9Iez774S\/8yNak8N4lNoLVPZAYABN3SRUC6dhPrl8rrWFGDEVrskNJ5V+yBdtpe73XHtQbWNAj9OXatP\/YpRwU3KsWQ2oKcEHnCtQw4WBY8axi4zGy34tqJEoO\/JgGJF\/u6SsjPi6P40QXriwWH69jRFtab4mgJgXRH8SvN2Ph\/9aVUZi2HYKpzx6Pve\/zwvPFDG1uWxZOvRWXHMilzWZiUqFDUl72JDOsJqWd29OWgk6tEAUQU9BGhVK+ytMYqJbBeWFBY62HtzhNNR\/1FcLz0Kv9z+zoi2IpfMvu\/91RVavHpsXiqjk4WnzJDjKJLEVT3LTab\/MuBwJWtYlrdT1DxYl5K1G4ZQiZPICTniqQLF8GD\/G3I6Swf1IhDKDTriiWVMS17uGFOnxcW6w3F8rdFEwOUKi\/bMmvmQU1HNStxTpUPOYjETDl3rrsFmVIOo0yEbCc+SjmXBDb9poy9ipL7dpywz+D7+MIJAbUmD3dWO\/WHzB5riFsk+b9abrIaAx8WRW6wXTiDVugtpaqqEBG08eWTg1tWO3ozFP9\/nKjQ9uokW\/qE9Qld3jr8JOibsH4wj\/dIMQnTzIiYqGkMOCfTnYyfdhceQg5qX0h85Ap1WdMi+pnkEsoSv4zY5wVJBlif+wsa710e5xCAPQd3YHXKKS1L7tcQjq7\/FYWVBEauGgopPP7+0Mtqq2n+Am+Yf1tMMcPuuDEmycAt+XfnywsjepmhuUHxipmZOmGNCBxHQSUkeUoBsc0wGsFj9AzSPs6c7Ltm1Pw5R1CT1zyua3JZzyOnXbkGQVeuQpOzs+odVCZmSfKdX4tyk7YDNgspmF9kbndxHyPLU45h\/isivGM0gt+SkadMkty\/EIU86O6jMDVA8JU91CCRpI+TjpFtFADA22GQF38srW1Ll7yLNm6wAzm4ETRzjOXlhI2u6Dy3ciagSqziRcPwmWP6l1VHlRw\/78FSCWY+wjCJzuJc8E3Qlz\/uRqPfD378b0KBkkFynH0ngcHUtpmlQuBvokOXASzknbSh5ROwo50vHaqBV8\/j3+eghAOCyZtSbO4XI5Ndi1Ggi2V3AEULudkR0MgGoAcqNOF4d2RQmvwcaKh+7d5eoxS1CUp0XzDn3LSk5Aj1LaJiytVBRefME+6vsTy8Zzic01DoijAUf3G1en2zSkz2eCfk22ntAoyT54lEQWDDTBgjq8kn0mmBS6knQX+UDSQSgiNppC2B127E06YotlJMWvPgIvTZjUwWQUW\/W8bKR30hiMeFGQDkxO5M8mIswbjHjHwc+DhfW1GoMReD6+eXyyzDaFs\/R7RV1zi3YWDysbBXwHDTER8ADZvhhS1HScCHMs44n7Yv\/VpX83kOLZZKdil9X3osn+s+bN3wmdPH1B8ZhcSO8cJcXX\/bT72mTwEMGKzXq1R6YXMHcngzG3JzxYijZw\/rTWIfFtpcDqv7FiS9Ealc6up4vdlzIvedRCwO6hA8mXbkCuKJZgM3p+22PA60ofR+bAnpDEr4eO9mg75O+4I+rThdhvZKazwB5nJpTlI57kJSPUj\/q0OV9ksi2H9WSjl0LOQATz3A179q1ZldeuzvwvKTWofCz0YGXWI8Bu4PEG6kH1oU3LjQvBwS9cEcrqM9zCL0B2IcHxREpDnh+Bf2C3q9YtssUfxxOZgl4Udi6u8KwzAinyJb3pebLe0UR4XB7p4RSUQuUUyap7evmtxH0XZbnI1yKVuSmBgn67Okc\/L7ONXtfXPYSTXeU5R8qw\/0EaEYqDppsNeZTriy6xGfYS\/w53Avn\/aW8ix9rYaN2zwhav\/MCcTXMRO1JiwmmuY2PGlaSIvMvuJga1qTpgKLRpI0lIiooG7chXrVA4NqcBrQN7MmgkIFWRvAmGyvqObIPzTfUoubAptJsuSCl+hAtReTndsX+GcmFLZLP1a08Je1qX27HIwE6g6ST4m\/JugQqXQf4oTdpCIWEtlLjaALicos3nJoZk802Ine5nAlKo7l0HEsSd1yqAQ7Z3b76aPWxnlWkVAsXPxC8Fntk9oj3K2Pe2yPlXH5loTxT3BoHsnfg1Ed1ulUEiOcOhqHTEdrXTF\/F6vkh0Gd17f\/Io0DWsSbJCplcYZVRzX61yLpqsKiatmh\/7k81iV6edFrtmWEr0TlZjlLtXdJyllfZmbQPr565YcLEi55JiQ9HAEXzGPR30A794CXdXVhvPKUkGlntDHoLZ4dTUVf\/09M33wqqXi03BXiNPr37hHZsOjZKBlzQe21oxR6S15sJwyCkGXQbz4ZuCdd\/O4madjP4HRJKe4KZtDoeJML4Z08ywGU8VpwtZ\/FKh6DxuMzNyLuN9SnT6KJkXVNe3VL8PLO5PH9jzrJ4npb60Lfw15GIItB8s1ycx63PSuJVI7zNeuHGfAXPctlXtFspEFeknbewoWgCZvr3jzUogOUUGJY63V7uTq5xAjDbSapHr2RLDgRp5pH4BlpCuoLYpZAOcL9tLLR1\/QZRq3h8lbwc9iIoSd\/UEAz1N66CNblA30qaZLzcCCF3gGiOp+KfQrYW8oxksESkydd0sb+sqG29KeHs8EIHqLwCKmglXmJmT4uvTIiIutWgdckh4Mqn3AWXbD0Q4MWe5ceDOrgZgCKmBeyaO539JmT9yP135j7lKBhQvWu37qCGGQ+UOvVzoGN7Y\/foOFi7jWkUBtohF52kaL0mgJqbu7TVbbpMxQzdvBZH4nnjlu4SdnVQ7MffHX6K1m1OUQ42TNUEu3v\/Zw0fukDKytF2WtULFnL9kOgll6w+8Cu1kCNgSrjwD\/UPFalPSoaNN5juJal4Alz4kC\/95FMoS3v4WwAljd3mIjS0rsig+a2eoGXt8GRmv8RgmRXYtwIa\/mmq0BHlO8nvn8Z2Awy1HirHLsMB\/GKRzA5QeUjTd6PqRX22ibm5BjlR4aaney0wr95m8Fvb9NoCv8wMBQhXJ9kGX4IpH3qbvi2NddZ3T3PGcyNrInBbqmmadgkv0YO+awF2AFbdqhK5kwiL8ie0PsRpWs\/MRtYQCV3eX2vTqnIY65oVDFU7f2wIz3NeOnfHy3xQ+ZSD6N5gpC1r8OpgKIiCoQT8EoYmpzNLvoWs+TX0nRgWG836anh2RHUKmyKbi11r+N\/wn+SobmH5lY\/651aAuMewamWFnClgtHXHgKORvfGEiI9tppLfMF2dL3y3cObOH2oLcYSTiR+FpHZ3NrWBSxzZwRi4WRB4WKXMJ5Bo7g9AZsH+7vL+CjMKKgO\/XDVOo5NBTbPxua3li+A0YOrPj9\/ZIJD9FgJ45wyLMtfQpiQo7MkZVUQ3TJcm38XUTb6XnbuRyxMECceZZUQXimPLvng9xxMPieQM\/DvEv7SdxlAK4w5qIwraxEQCNoGBlOGZ5ekDdvYUpVMMijgvSgh7PB65W4i5svkNmuUmgCiOUxlcU+aNOwjebHNOGaVqeOszeDdLZ4qD\/ZMrzw1tAjL8QX6zV5ypVwaVwyeCR5VdXU8W\/qVMMSDGElyGPv8ZYm7hKovfIZmTOpoCX1FLONz8xOjK1ASKwKDqtViPguzZdVI5DWSmLRP7yXGXX\/DFoaeZb\/TziDLvWYfqxfjAMDc5Wg1vxKkMtdGSNJaAKivOjQ+dLzoLeHd\/+LkGw7A29I3XMds8tTwJ4CNqr8EmkClJWhS8roQNOtrUwz6c6oaqrPgl8F36rUMnyUH8Zv+2A72d+J+We2EabcHhF71rTuspP\/z7y122z55JZgUiMIdHG\/zeHY+5BWhERNaWzy9BCgcRtdV7q33fWs1PGF5GdvSd6dnfNR\/ZB0Ioff6Bzaz3ucpOLfANf419zS1lZf0j9mTJnkbZvsGOBAooMeOhpq1VWCXi15Ammne0AerH5ARbzMNLGMamKV+aeVvucwK6mcD6le4gjtY6quEoyUkelcefXZnt09Xr8q8K7LpuWGDDKutxSzbfNu8pxSfsoroi8aKMJrYH1krw8L9Ar6cNBFmywkJMMK6buzEpNb3iegB9FSuXCHQXptbwiLLvzeWvLC1VNFtM\/BL1mhP81AftCeq3njDtyLAngkDsBBRAwYzE2dSzKWJvzSVRGOwmP0BLSY5iDrXPhqnEHo\/pxGpKUV2V25nBaAPcrp+gyBG9rD1V\/3Ys1y44fgjRhAuR4rtE9Bin0U0MWU+c7lyfhXVgLpEiiA7ceniDl\/fHlR05Lx5dBS0Xn2N62NFDTBqvFqbx+t1o7r\/GX8ZBd2pyMjfrQ+hAZFy\/\/jkaGCGpZ5VBfjdqHS9YNNDw+XoOEV3mm2b3NwYap19SfMHREoyDXnZ2zT8EKTM+\/NmMXy8SovrWodiruKiPPeFST230O3l\/eqsFyU4kAqkUdgmAnsVOcLhZmKxPCy7OvfeRiQYrU9mpuR0gCPC7KbJ2mb98IYQb5ohS2CLFqZOMKAjzjWGdm2wILU2LyUdXKX78onDIyf7VlFgo13l6wpay46iqZG2RdtxqOn9M\/3nwIiIiZjmn1VDywgZmxaMc02jxy8r5PTxejLFX00\/c0EwWMuOg\/sBFjv7diVs\/QBYq9cLNzvSoJz8ykNxO4utgATFynmbotAOXoSMAG3Pwwqhlk1dRDUswh\/ekwHaA+NBmFzULwN6SG3kHqDTqzAyLtsMmPIraEd\/dz5AmLTux\/jWmI9xkVwkR5\/7zSyh44cvOj8XEnHS6S3VXfmZuzWiY3fw8rLanrZFZN+fQ5J8ruDxbZ+LQVZreDxcpgd+3qeKBwq++btleo+8CnspZcgqO5PVuUQwwdHeeTjk9nrLvZ6gJKVHhn52r9xLKUCBAbyplTG0QmD2zUX+9MicVAoNWtc3mDQgteZIUIKOwtewdQcC6QQyT8eiFcSGTn+plP3b3aKqtbEE6AhCKjUbVB9\/LDOaIow5H4AESErek9YFJQvM8vA23Et\/0+JNxt89shidL79MDvmNDBPMb3aq7ihviH1p6bXPJt1b\/AmZtU4q4k+zAK3NoQ2myqq1ftd\/iSTOkXcP4yCU4PC851HhdMhgAmSzKEs\/WPPp6uwW+U3qEXNN5swy+5T0lJ7099HWzbIvrKvmB6mn915TKF6jH\/oVQgkMuSBmYZbPV+1Md4UumTBzs0R9Yxa01JFtA4+INCkV7PSkX9THKBgG11diAED1T287J5tngph9QwDffvKgPZSh+9Eej0b2OFX9K8DYg6YV\/hJavT9Sp4N3mj\/tMO5lO0mrkACnjceuXVaWe4b8japa+1kojka1Ba5BsKgEtwp9uAUSYA22oTdxRjoN2ci6760l1uix1h9lqPRq6o3Mcl8zGhiG4EcuH1z40nokThLq03r+8A8Gz+eEk+XN9Kv7voQ93iKSVZ0ZveFo4t7QJByvGkD+lEMqWfzeuDiy+b1xPbRhfPcxpYQX0dpFwhCeEmEUhEVKZg1nFmqliF6zgW1O8aRW0QxOA0bfJs9tQ35l1RYdGWxBEr0YawwGdHptSE1mQNjOhyCiYy72enSYr4m1Oat3N8+rVL0KW68uoagiLVmi0UcAAp2p9\/9jycL+fkXWrdztZJSQimHzA1roQU8iZD7+Yz1QElUDm8zm5g2moe3KGsuwWl5lUB8kwIuoNZV33vzY9jESs\/RZ9jvO1rtoZhNkx\/gHI8TRij7ZHWJZzpB8NWUxnls08rkbrHI8DAQlCWzEgaKq5OaX8AB5\/HCC+3Ng0vSTTJ2TtvZI2m1xkvTPTyk3iwrid6OJAS\/SlIDz\/MIJmEFrSAtkOSEUVgvPtyAsg==",
+          'BG_IU': "\/\/www.google.com\/js\/bg\/PCb6tERU88CHX0nzKGusuyQApP2Rzb_4IwCcPQH29Wg.js",
+
+
+
+      'HL_LOCALE': "en_US",
+      'TTS_URL': "",
+      'JS_DELAY_LOAD': 0,
+      'LIST_AUTO_PLAY_VALUE': 1,
+      'SHUFFLE_VALUE': 0,
+      'SKIP_RELATED_ADS': false,
+      'SKIP_TO_NEXT_VIDEO': false,
+      'RESUME_COOKIE_NAME': null,
+      'CONVERSION_CONFIG_DICT': {},
+      'RESOLUTION_TRACKING_ENABLED': false,
+      'MEMORY_TRACKING_ENABLED': false,
+      'NAVIGATION_TRACKING_ENABLED': false,
+      'WATCH_LEGAL_TEXT_ENABLE_AUTOSCROLL': false,
+      'SHARE_ON_VIDEO_END': true,
+      'SHARE_ON_VIDEO_START': false,
+      'ADS_DATA': {"show_instream":false,"check_status":false,"show_afc":false,"afc_vars":{"video_doc_id":"","language":"","ad_channel":"","ad_type":"","core_dbp":"","ad_client":"","ad_host":"","ad_host_tier_id":"","tag_for_child_directed_treatment":"","ad_block":"","format":"","alternate_ad_url":"http:\/\/www.youtube.com\/ad_frame?id=watch-channel-brand-div","lact":""},"afv_vars":{"google_cust_age":"","google_ad_host":"","google_ad_height":"","google_cust_gender":"","google_eids":[],"google_lact":"","google_ad_block":"","google_ad_client":"","google_ad_channel":"","google_loeid":"","google_video_doc_id":"","google_ad_format":"","google_ad_type":"","google_alternate_ad_url":"http:\/\/www.youtube.com\/ad_frame?id=watch-channel-brand-div","google_scs":"","google_page_url":"","google_tag_for_child_directed_treatment":"","google_language":"","google_yt_pt":"","google_ad_host_tier_id":"","google_targeting":"","google_core_dbp":""},"show_pyv":true,"use_gut":false,"gut_vars":{"tag":""},"pyv_vars":{"iframe_json":"{\"google_lact\":\"-1\",\"google_ad_channel\":\"PyvWatchInRelated+PyvYTWatch+PyvWatchNoAdX+lpw+YtLoPri+afv_ugc+yt_no_cp+afv_user_id_Ex6PP0M2ctv8LaEQHfheQg+yt_mpvid_AAUS2kJ-O0tmKR4K+yt_no_ap+ytdevice_1+Vertical_33+Vertical_36+Vertical_59+Vertical_174+Vertical_211+Vertical_449+Vertical_613\",\"google_cust_age\":\"\",\"google_ad_client\":\"ca-pub-6219811747049371\",\"google_tag_for_child_directed_treatment\":\"\",\"google_ad_host\":\"\",\"google_ad_output\":\"js\",\"google_loeid\":\"\",\"google_core_dbp\":\"\",\"google_cust_gender\":\"\",\"google_eids\":\"\",\"google_only_pyv_ads\":true,\"google_ad_block\":\"3\",\"google_page_url\":\"http:\\\/\\\/www.youtube.com\\\/video\\\/m5PH8m9A17w\",\"google_language\":\"en\",\"google_yt_pt\":\"\",\"google_ad_host_tier_id\":\"\",\"google_video_doc_id\":\"yt_m5PH8m9A17w\",\"google_max_num_ads\":1,\"google_ad_type\":\"text\"}"},"show_afv":false},
+      'PLAYBACK_ID': "AAUS2kJ_W6mFW9U-",
+      'SHARE_CAPTION': null,
+      'SHARE_REFERER': "",
+      'PLAYLIST_INDEX': null
+    });
+
+    yt.setMsg({
+      'EDITOR_AJAX_REQUEST_FAILED': "Something went wrong trying to get data from the server. Try again, or reload the page.",
+      'EDITOR_AJAX_REQUEST_503': "This functionality is not available right now. Please try again later.",
+      'LOADING': "Loading..."    });
+
+      yt.setMsg('SPEEDYG_INFO', "Experiencing interruptions?");
+
+      yt.setMsg({
+    'UNBLOCK_USER': "Are you sure you want to unblock this user?",
+    'BLOCK_USER': "Are you sure you want to block this user?"
+  });
+  yt.setConfig('BLOCK_USER_AJAX_XSRF', 'QUFFLUhqbHZvVnF4dGVOeHdZRldhZW9pZ3NTbXpoTi1CZ3xBQ3Jtc0tua3Q5XzV5bjQ3YnZxOF9TVjJoLXB1eEFTamgtMEdnZWY3RTBlTTJTSWhZZjEweWt0Q24zNTdNTkNlY1lmYlJkQVNlQTZNdW03ZjljcjVDZ2o1a18wdHMwcG9tM3Ryd21FVWgtLXhNcjViSUtaVVJnVmh4M2lycWVPdUFsNU9Lb2NpNDlJWkpKcnBjNVRfcDNhZVZYbHItRmtCX1E=');
+
+
+    
+
+
+
+
+
+
+
+    
+
+      yt.setConfig({
+    'GUIDED_HELP_LOCALE': "en_US",
+    'GUIDED_HELP_ENVIRONMENT': "prod"
+  });
+
+
+      
+      yt.setConfig('DISTILLER_CONFIG', {"privacy_setting":"PUBLIC","video_id":"m5PH8m9A17w","page_size":null,"channel_id":"UCEx6PP0M2ctv8LaEQHfheQg","reauth":false,"owner_id":"Ex6PP0M2ctv8LaEQHfheQg","signin_url":"https:\/\/accounts.google.com\/ServiceLogin?hl=en\u0026continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Fhl%3Den%26app%3Ddesktop%26feature%3Dcomments%26action_handle_signin%3Dtrue%26next%3D%252Fwatch%253Fv%253Dm5PH8m9A17w\u0026passive=true\u0026service=youtube\u0026uilel=3","host_override":"https:\/\/plus.googleapis.com","query":"http:\/\/www.youtube.com\/watch?v=m5PH8m9A17w"});
+
+
+  </script>
+
+
+<script>yt.setConfig({'EVENT_ID': "VyEfVdCaDtWTqQWVgYFo",'PAGE_NAME': "watch",'LOGGED_IN': false,'SESSION_INDEX': null,'PARENT_TRACKING_PARAMS': "",'FORMATS_FILE_SIZE_JS': ["%s B","%s KB","%s MB","%s GB","%s TB"],'DELEGATED_SESSION_ID': null,'GAPI_HOST': "https:\/\/apis.google.com",'GAPI_HINT_PARAMS': "m;\/_\/scs\/abc-static\/_\/js\/k=gapi.gapi.en.9Bct3OJ96gA.O\/m=__features__\/am=AAQ\/rt=j\/d=1\/rs=AItRSTPvFtsJdNTnw7r6dlELT3cG-Jn5Ow",'GAPI_LOCALE': "en_US",'ONE_PICK_URL': "",'UNIVERSAL_HOVERCARDS': true,'VISITOR_DATA': "CgtCcDJDdjloUmIxSQ%3D%3D",'APIARY_HOST': "",'APIARY_HOST_FIRSTPARTY': "",'INNERTUBE_CONTEXT_HL': "en",'INNERTUBE_CONTEXT_GL': "US",'INNERTUBE_CONTEXT_CLIENT_VERSION': "20150402",'INNERTUBE_API_KEY': "AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8",'INNERTUBE_API_VERSION': "v1",'GOOGLEPLUS_HOST': "https:\/\/plus.google.com",'PAGEFRAME_JS': "\/\/s.ytimg.com\/yts\/jsbin\/www-pageframe-vflA-OHvZ\/www-pageframe.js",'JS_COMMON_MODULE': "\/\/s.ytimg.com\/yts\/jsbin\/www-en_US-vflTLkWXB\/common.js",'PAGE_FRAME_DELAYLOADED_CSS': "\/\/s.ytimg.com\/yts\/cssbin\/www-pageframedelayloaded-vflVLITRj.css",'GUIDE_DELAY_LOAD': true,'GUIDE_DELAYLOADED_CSS': "\/\/s.ytimg.com\/yts\/cssbin\/www-guide-vfljxI46J.css",'PREFETCH_CSS_RESOURCES' : ["\/\/s.ytimg.com\/yts\/cssbin\/www-player-vfl8doMZs.css",''         ],'PREFETCH_JS_RESOURCES': [''         ],'PREFETCH_LINKS': false,'PREFETCH_LINKS_MAX': 1,'PREFETCH_AUTOPLAY': false,'PREFETCH_AUTOPLAY_TIME': 0,'PREFETCH_AUTONAV': false,'PREBUFFER_MAX': 1,'PREBUFFER_LINKS': false,'PREBUFFER_AUTOPLAY': false,'PREBUFFER_AUTONAV': false,'USE_SPF_SCROLL_POSITION': true,'WATCH_LATER_BUTTON': "\n\n  \u003cbutton class=\"yt-uix-button yt-uix-button-size-small yt-uix-button-default yt-uix-button-empty yt-uix-button-has-icon no-icon-markup addto-button video-actions spf-nolink hide-until-delayloaded addto-watch-later-button-sign-in yt-uix-tooltip\" type=\"button\" onclick=\";return false;\" title=\"Watch Later\" role=\"button\" data-video-ids=\"__VIDEO_ID__\" data-button-menu-id=\"shared-addto-watch-later-login\"\u003e\u003cspan class=\"yt-uix-button-arrow yt-sprite\"\u003e\u003c\/span\u003e\u003c\/button\u003e\n",'SAFETY_MODE_PENDING': false,'LOCAL_DATE_TIME_CONFIG': {"shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"formatShortTime":"h:mm a","firstDayOfWeek":0,"weekendRange":[6,5],"amPms":["AM","PM"],"dateFormats":["MMMM d, yyyy h:mm a","MMMM d, yyyy","MMM d, yyyy","MMM d, yyyy"],"firstWeekCutoffDay":3,"formatLongDateOnly":"MMMM d, yyyy","shortWeekdays":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"formatWeekdayShortTime":"EE h:mm a","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"formatLongDate":"MMMM d, yyyy h:mm a","formatShortDate":"MMM d, yyyy","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},'PAGE_CL': 90169723,'PAGE_BUILD_TIMESTAMP': "Thu Apr  2 10:00:23 2015 (1427994023)",'VARIANTS_CHECKSUM': "174fadcebb4bbb2ec4c790ab10e05974",'CLIENT_PROTOCOL': "HTTP\/1.1",'CLIENT_TRANSPORT': "tcp",'MDX_ENABLE_CASTV2': true,'MDX_ENABLE_QUEUE': true,'FEEDBACK_BUCKET_ID': "Watch",'FEEDBACK_LOCALE_LANGUAGE': "en",'FEEDBACK_LOCALE_EXTRAS': {"accept_language":null,"logged_in":false,"guide_subs":"NA","is_branded":"","is_partner":"","experiments":"900720,901217,901641,907263,909724,911442,911507,912526,912719,912725,912734,912811,912813,912817,918119,918121,921422,921603,922327,922804,922809,922812,922815,922817,922818,923024,923381,923462,923703,927006,927204,927205,927626,929820,932021,933234,934954,935207,936211,937518,937817,937818,937831,938302,940112,940114,940121,9405086,9405138,9405143,9405788,9405827,9406069,9406547,9406560,9407582,9407589,9408102,9408323,9408391,9408617,940918,940936,940938,941009,941443,941444,941473,941708,941709,942302,942606,942814,942823,943301,944464,947243,947903,948124,948703,948809,948810,949601,949603,949906,951301,951501,951601,951703,952612,952633,953003,954404,955100,955801,956001,956002,957201,958103,960401,960501,960614,960615,960616,960617,960618,960619,960620,960624,961404,961406,961603,961802,962705,962706,963401,964502,964503,964604,964755,965201,965203,965301,966201"}}); window.ytplayer = window.ytplayer || {};ytplayer.REFACTOR = true;  yt.setConfig({
+    'GUIDED_HELP_LOCALE': "en_US",
+    'GUIDED_HELP_ENVIRONMENT': "prod"
+  });
+yt.setConfig('SPF_SEARCH_BOX', true);yt.setMsg({'ADDTO_CREATE_NEW_PLAYLIST': "Create new playlist\n",'ADDTO_CREATE_PLAYLIST_DYNAMIC_TITLE': "  $dynamic_title_placeholder (create new)\n",'ADDTO_WATCH_LATER': "Watch Later",'ADDTO_WATCH_LATER_ADDED': "Added",'ADDTO_WATCH_LATER_ERROR': "Error",'ADDTO_WATCH_QUEUE': "Watch Queue",'ADDTO_WATCH_QUEUE_ADDED': "Added",'ADDTO_WATCH_QUEUE_ERROR': "Error",'ADDTO_TV_QUEUE': "TV Queue",'ADS_INSTREAM_FIRST_PLAY': "A video ad is playing.",'ADS_INSTREAM_SKIPPABLE': "Video ad can be skipped.",'ADS_OVERLAY_IMPRESSION': "Ad displayed.",'MASTHEAD_NOTIFICATIONS_LABEL': {"case1": "1 unread notification.", "case0": "0 unread notifications.", "other": "# unread notifications."},'MASTHEAD_NOTIFICATIONS_COUNT_99PLUS': "99+"});    yt.setConfig({
+    'XSRF_TOKEN': "QUFFLUhqbHZvVnF4dGVOeHdZRldhZW9pZ3NTbXpoTi1CZ3xBQ3Jtc0tua3Q5XzV5bjQ3YnZxOF9TVjJoLXB1eEFTamgtMEdnZWY3RTBlTTJTSWhZZjEweWt0Q24zNTdNTkNlY1lmYlJkQVNlQTZNdW03ZjljcjVDZ2o1a18wdHMwcG9tM3Ryd21FVWgtLXhNcjViSUtaVVJnVmh4M2lycWVPdUFsNU9Lb2NpNDlJWkpKcnBjNVRfcDNhZVZYbHItRmtCX1E=",
+    'XSRF_REDIRECT_TOKEN': "dOlfsbWZ_WjENxx1DaYWikgViNV8MTQyODE4OTkxMUAxNDI4MTAzNTEx",
+    'XSRF_FIELD_NAME': "session_token"
+  });
+
+  yt.setConfig('FEED_PRIVACY_CSS_URL', "\/\/s.ytimg.com\/yts\/cssbin\/www-feedprivacydialog-vflB0n3gQ.css");
+
+  yt.setConfig('FEED_PRIVACY_LIGHTBOX_ENABLED', true);
+yt.setConfig({'SBOX_JS_URL': "\/\/s.ytimg.com\/yts\/jsbin\/www-searchbox-vflux5pXK\/www-searchbox.js",'SBOX_SETTINGS': {"REQUEST_DOMAIN":"us","PQ":"","PSUGGEST_TOKEN":null,"SESSION_INDEX":null,"REQUEST_LANGUAGE":"en","EXPERIMENT_ID":-1,"EXPERIMENT_STR":"","HAS_ON_SCREEN_KEYBOARD":false},'SBOX_LABELS': {"SUGGESTION_DISMISS_LABEL":"Dismiss","SUGGESTION_DISMISSED_LABEL":"Suggestion dismissed"}});  yt.setConfig({
+    'YPC_LOADER_JS': "\/\/s.ytimg.com\/yts\/jsbin\/www-ypc-vflElUf-3\/www-ypc.js",
+    'YPC_LOADER_CSS': "\/\/s.ytimg.com\/yts\/cssbin\/www-ypc-vflAM9cb5.css",
+    'YPC_SIGNIN_URL': "https:\/\/accounts.google.com\/ServiceLogin?hl=en\u0026continue=http%3A%2F%2Fwww.youtube.com%2Fsignin%3Fhl%3Den%26app%3Ddesktop%26action_handle_signin%3Dtrue%26next%3D%252F\u0026passive=true\u0026service=youtube\u0026uilel=3",
+    'DBLCLK_ADVERTISER_ID': "2542116",
+    'DBLCLK_YPC_ACTIVITY_GROUP': "youtu444",
+    'SUBSCRIPTION_URL': "\/subscription_ajax",
+    'YPC_SWITCH_URL': "\/signin?next=%2F\u0026feature=purchases\u0026skip_identity_prompt=True\u0026action_handle_signin=true",
+    'YPC_GB_LANGUAGE': "en_US",
+    'YPC_GB_URL': "https:\/\/checkout.google.com\/inapp\/lib\/buy.js",
+    'YPC_TRANSACTION_URL': "\/transaction_handler",
+    'YPC_SUBSCRIPTION_URL': "\/ypc_subscription_ajax",
+    'YPC_POST_PURCHASE_URL': "\/ypc_post_purchase_ajax"
+  });
+  yt.setMsg({
+    'YPC_OFFER_OVERLAY': "    \u003cdiv id=\"ypc-offer-overlay\" class=\"yt-uix-overlay\"\u003e\n    \u003cspan class=\"yt-uix-overlay-target\"\u003e\u003c\/span\u003e\n        \u003cdiv class=\"yt-dialog hid \"\u003e\n    \u003cdiv class=\"yt-dialog-base\"\u003e\n      \u003cspan class=\"yt-dialog-align\"\u003e\u003c\/span\u003e\n      \u003cdiv class=\"yt-dialog-fg\" role=\"dialog\"\u003e\n        \u003cdiv class=\"yt-dialog-fg-content\"\u003e\n          \u003cdiv class=\"yt-dialog-loading\"\u003e\n              \u003cdiv class=\"yt-dialog-waiting-content\"\u003e\n      \u003cp class=\"yt-spinner \"\u003e\n        \u003cspan title=\"Loading icon\" class=\"yt-spinner-img  yt-sprite\"\u003e\u003c\/span\u003e\n\n    \u003cspan class=\"yt-spinner-message\"\u003e\nLoading...\n    \u003c\/span\u003e\n  \u003c\/p\u003e\n\n  \u003c\/div\u003e\n\n          \u003c\/div\u003e\n          \u003cdiv class=\"yt-dialog-content\"\u003e\n            \u003cdiv class= \"ypc-offer-overlay-container\"\u003e\u003ca href=\"#\" class=\"ypc-offer-overlay-close\"\u003e\u003c\/a\u003e\u003cdiv class=\"ypc-offer-overlay-content-wrapper clearfix\"\u003e\u003c\/div\u003e\u003cdiv class=\"ypc-offer-overlay-loading\"\u003e  \u003cspan title=\"Loading icon\" class=\"yt-large-spinner-img yt-sprite\"\u003e\u003c\/span\u003e\n\u003c\/div\u003e\u003cdiv class=\"ypc-offer-overlay-error\"\u003e\u003ch3\u003eError\u003c\/h3\u003e\u003cp class=\"ypc-offer-overlay-error-generic-content\"\u003eAn error occurred. Please try again later.\u003c\/p\u003e\u003cp class=\"ypc-offer-overlay-error-custom-content\"\u003e\u003c\/p\u003e\u003c\/div\u003e\u003cdiv class=\"ypc-offer-overlay-not-available-error\"\u003e\u003ch3 class=\"ypc-offer-overlay-not-available-title\"\u003ePurchases are not available\u003c\/h3\u003e\u003cp class=\"ypc-offer-overlay-not-available-content\"\u003e\u003c\/p\u003e  \u003cdiv class=\"ypc-offer-overlay-not-available-action yt-uix-overlay-actions\"\u003e\n    \u003cbutton class=\"yt-uix-button yt-uix-button-size-default yt-uix-button-default yt-uix-overlay-close\" type=\"button\" onclick=\";return false;\"\u003e\u003cspan class=\"yt-uix-button-content\"\u003eCancel\u003c\/span\u003e\u003c\/button\u003e\n    \u003ca href=\"\" class=\"yt-uix-button  ypc-offer-overlay-switch-accounts-button yt-uix-sessionlink yt-uix-button-primary yt-uix-button-size-default\" data-sessionlink=\"ei=VyEfVdCaDtWTqQWVgYFo\"\u003e\u003cspan class=\"yt-uix-button-content\"\u003eSwitch accounts\u003c\/span\u003e\u003c\/a\u003e\n  \u003c\/div\u003e\n\u003c\/div\u003e\u003cdiv class=\"ypc-offer-overlay-tip-not-available-error\"\u003e\u003ch3 class=\"ypc-offer-overlay-not-available-title\"\u003eTipping is not available\u003c\/h3\u003e\u003cp class=\"ypc-offer-overlay-tip-not-available-content\"\u003e\u003c\/p\u003e  \u003cdiv class=\"ypc-offer-overlay-not-available-action yt-uix-overlay-actions\"\u003e\n    \u003cbutton class=\"yt-uix-button yt-uix-button-size-default yt-uix-button-default yt-uix-overlay-close\" type=\"button\" onclick=\";return false;\"\u003e\u003cspan class=\"yt-uix-button-content\"\u003eCancel\u003c\/span\u003e\u003c\/button\u003e\n    \u003ca href=\"\" class=\"yt-uix-button  ypc-offer-overlay-switch-accounts-button yt-uix-sessionlink yt-uix-button-primary yt-uix-button-size-default\" data-sessionlink=\"ei=VyEfVdCaDtWTqQWVgYFo\"\u003e\u003cspan class=\"yt-uix-button-content\"\u003eSwitch accounts\u003c\/span\u003e\u003c\/a\u003e\n  \u003c\/div\u003e\n\u003c\/div\u003e\u003cdiv class=\"ypc-offer-plus-page-not-available-error\"\u003e\u003ch3 class=\"ypc-offer-overlay-not-available-title\"\u003ePurchases are not available\u003c\/h3\u003e\u003cp class=\"ypc-offer-plus-page-not-available-content\"\u003e\u003c\/p\u003e\u003cdiv class=\"ypc-offer-overlay-not-available-action yt-uix-overlay-actions\"\u003e\u003cbutton class=\"yt-uix-button yt-uix-button-size-default yt-uix-button-primary yt-uix-overlay-close\" type=\"button\" onclick=\";return false;\"\u003e\u003cspan class=\"yt-uix-button-content\"\u003eClose\u003c\/span\u003e\u003c\/button\u003e\u003c\/div\u003e\u003c\/div\u003e\u003c\/div\u003e\n          \u003c\/div\u003e\n          \u003cdiv class=\"yt-dialog-working\"\u003e\n              \u003cdiv class=\"yt-dialog-working-overlay\"\u003e\u003c\/div\u003e\n  \u003cdiv class=\"yt-dialog-working-bubble\"\u003e\n    \u003cdiv class=\"yt-dialog-waiting-content\"\u003e\n        \u003cp class=\"yt-spinner \"\u003e\n        \u003cspan title=\"Loading icon\" class=\"yt-spinner-img  yt-sprite\"\u003e\u003c\/span\u003e\n\n    \u003cspan class=\"yt-spinner-message\"\u003e\n        Working...\n    \u003c\/span\u003e\n  \u003c\/p\u003e\n\n      \u003c\/div\u003e\n  \u003c\/div\u003e\n\n          \u003c\/div\u003e\n        \u003c\/div\u003e\n        \u003cdiv class=\"yt-dialog-focus-trap\" tabindex=\"0\"\u003e\u003c\/div\u003e\n      \u003c\/div\u003e\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n\n\n  \u003c\/div\u003e\n\n",
+    'YPC_UNSUBSCRIBE_OVERLAY': "    \u003cdiv id=\"ypc-unsubscribe-overlay\" class=\"yt-uix-overlay\" data-disable-shortcuts=\"true\"\u003e\n    \u003cspan class=\"yt-uix-overlay-target\"\u003e\u003c\/span\u003e\n        \u003cdiv class=\"yt-dialog hid \"\u003e\n    \u003cdiv class=\"yt-dialog-base\"\u003e\n      \u003cspan class=\"yt-dialog-align\"\u003e\u003c\/span\u003e\n      \u003cdiv class=\"yt-dialog-fg\" role=\"dialog\"\u003e\n        \u003cdiv class=\"yt-dialog-fg-content\"\u003e\n          \u003cdiv class=\"yt-dialog-loading\"\u003e\n              \u003cdiv class=\"yt-dialog-waiting-content\"\u003e\n      \u003cp class=\"yt-spinner \"\u003e\n        \u003cspan title=\"Loading icon\" class=\"yt-spinner-img  yt-sprite\"\u003e\u003c\/span\u003e\n\n    \u003cspan class=\"yt-spinner-message\"\u003e\nLoading...\n    \u003c\/span\u003e\n  \u003c\/p\u003e\n\n  \u003c\/div\u003e\n\n          \u003c\/div\u003e\n          \u003cdiv class=\"yt-dialog-content\"\u003e\n              \u003cdiv class=\"ypc-unsubscribe-overlay\"\u003e\n      \u003cdiv class=\"ypc-unsubscribe-overlay-title unsubscribe-confirm\"\u003e\nAre you sure you want to unsubscribe?\n  \u003c\/div\u003e\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-title unsubscribe-xauth\"\u003e\nUnable to unsubscribe\n  \u003c\/div\u003e\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-title unsubscribe-plus-page-error\"\u003e\nUnable to unsubscribe\n  \u003c\/div\u003e\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-title unsubscribe-loading\"\u003e\nLoading...\n  \u003c\/div\u003e\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-title unsubscribe-success unsubscribe-delayed\"\u003e\nSubscription canceled\n  \u003c\/div\u003e\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-title unsubscribe-error\"\u003e\nError canceling subscription.\n  \u003c\/div\u003e\n\n    \u003cdiv class=\"ypc-unsubscribe-overlay-data\"\u003e\n        \u003cdiv class=\"ypc-unsubscribe-overlay-content unsubscribe-confirm ypc-unsubscribe-overlay-confirm-content\"\u003e\n    \u003cdiv class=\"ypc-unsubscribe-overlay-content-message\"\u003e\n      Your subscription will be canceled when you unsubscribe. Your credit card will no longer be charged. You will still be able to access content until the billing cycle ends.\n\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-content unsubscribe-xauth\"\u003e\n    \u003cp\u003e\nYouTube Music Key is included free with Google Play Music All Access. To cancel, please visit the \u003ca href=\"https:\/\/play.google.com\/music\/listen#\/settings\" target=\"_blank\"\u003eSettings\u003c\/a\u003e page in All Access.\n    \u003c\/p\u003e\n  \u003c\/div\u003e\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-content unsubscribe-plus-page-error\"\u003e\n    \u003cp\u003e\nYou are currently logged in as a manager of , but you must be the owner to cancel the channel's subscriptions on YouTube.\n    \u003c\/p\u003e\n  \u003c\/div\u003e\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-content unsubscribe-loading\"\u003e\n      \u003cp class=\"yt-spinner \"\u003e\n        \u003cspan title=\"Loading icon\" class=\"yt-spinner-img  yt-sprite\"\u003e\u003c\/span\u003e\n\n    \u003cspan class=\"yt-spinner-message\"\u003e\n        Processing cancellation request...\n    \u003c\/span\u003e\n  \u003c\/p\u003e\n\n  \u003c\/div\u003e\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-content unsubscribe-success\"\u003e\n    \u003cp\u003e\nYou have successfully canceled future payments for this subscription.\n    \u003c\/p\u003e\n  \u003c\/div\u003e\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-content unsubscribe-delayed\"\u003e\n    \u003cp\u003e\nYour subscription was canceled. The status displayed in your account will update soon.\n    \u003c\/p\u003e\n  \u003c\/div\u003e\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-content unsubscribe-error\"\u003e\n    \u003cp\u003eSorry, there was an error trying to cancel your subscription; please try again later.\u003c\/p\u003e\n  \u003c\/div\u003e\n\n          \u003cdiv class=\"ypc-unsubscribe-overlay-controls unsubscribe-confirm clearfix\"\u003e\n    \u003ca href=\"\/\/support.google.com\/youtube\/?p=unsubscribe_help\u0026amp;hl=en\" class=\"yt-uix-button  ypc-unsubscribe-help yt-uix-sessionlink yt-uix-button-default yt-uix-button-size-default\" data-sessionlink=\"ei=VyEfVdCaDtWTqQWVgYFo\" target=\"_blank\"\u003e\u003cspan class=\"yt-uix-button-content\"\u003eHelp\u003c\/span\u003e\u003c\/a\u003e\n\n    \u003cbutton class=\"yt-uix-button yt-uix-button-size-default yt-uix-button-default yt-uix-overlay-close\" type=\"button\" onclick=\";return false;\"\u003e\u003cspan class=\"yt-uix-button-content\"\u003eKeep subscription\u003c\/span\u003e\u003c\/button\u003e\n\n    \u003cbutton class=\"yt-uix-button yt-uix-button-size-default yt-uix-button-primary ypc-unsubscribe-confirm\" type=\"button\" onclick=\";return false;\" data-url=\"\/transaction_handler\"\u003e\u003cspan class=\"yt-uix-button-content\"\u003eUnsubscribe\u003c\/span\u003e\u003c\/button\u003e\n  \u003c\/div\u003e\n\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-controls unsubscribe-success unsubscribe-xauth unsubscribe-plus-page-error unsubscribe-delayed unsubscribe-error\"\u003e\n    \u003cbutton class=\"yt-uix-button yt-uix-button-size-default yt-uix-button-primary yt-uix-overlay-close\" type=\"button\" onclick=\";return false;\"\u003e\u003cspan class=\"yt-uix-button-content\"\u003eClose\u003c\/span\u003e\u003c\/button\u003e\n  \u003c\/div\u003e\n\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n\n          \u003c\/div\u003e\n          \u003cdiv class=\"yt-dialog-working\"\u003e\n              \u003cdiv class=\"yt-dialog-working-overlay\"\u003e\u003c\/div\u003e\n  \u003cdiv class=\"yt-dialog-working-bubble\"\u003e\n    \u003cdiv class=\"yt-dialog-waiting-content\"\u003e\n        \u003cp class=\"yt-spinner \"\u003e\n        \u003cspan title=\"Loading icon\" class=\"yt-spinner-img  yt-sprite\"\u003e\u003c\/span\u003e\n\n    \u003cspan class=\"yt-spinner-message\"\u003e\n        Working...\n    \u003c\/span\u003e\n  \u003c\/p\u003e\n\n      \u003c\/div\u003e\n  \u003c\/div\u003e\n\n          \u003c\/div\u003e\n        \u003c\/div\u003e\n        \u003cdiv class=\"yt-dialog-focus-trap\" tabindex=\"0\"\u003e\u003c\/div\u003e\n      \u003c\/div\u003e\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n\n\n  \u003c\/div\u003e\n\n"
+  });
+  yt.setConfig('GOOGLE_HELP_CONTEXT', "watch");
+ytcsi.setSpan('st', 196);yt.setConfig({'CSI_SERVICE_NAME': "youtube",'TIMING_ACTION': "watch,watch7",'TIMING_INFO': {"yt_ad":0,"yt_spf":0,"ei":"VyEfVdCaDtWTqQWVgYFo","e":"900720,907263,934954,9407589,9408102,9408617,947243,948124,948703,951501,951703,952612,955100,956001,956002,957201,961404,961406,964755,966201","yt_li":0,"yt_pl":0,"yt_lt":"cold"}});  yt.setConfig({
+    'XSRF_TOKEN': "QUFFLUhqbHZvVnF4dGVOeHdZRldhZW9pZ3NTbXpoTi1CZ3xBQ3Jtc0tua3Q5XzV5bjQ3YnZxOF9TVjJoLXB1eEFTamgtMEdnZWY3RTBlTTJTSWhZZjEweWt0Q24zNTdNTkNlY1lmYlJkQVNlQTZNdW03ZjljcjVDZ2o1a18wdHMwcG9tM3Ryd21FVWgtLXhNcjViSUtaVVJnVmh4M2lycWVPdUFsNU9Lb2NpNDlJWkpKcnBjNVRfcDNhZVZYbHItRmtCX1E=",
+    'XSRF_REDIRECT_TOKEN': "dOlfsbWZ_WjENxx1DaYWikgViNV8MTQyODE4OTkxMUAxNDI4MTAzNTEx",
+    'XSRF_FIELD_NAME': "session_token"
+  });
+  yt.setConfig('THUMB_DELAY_LOAD_BUFFER', 0);
+if (window.ytcsi) {window.ytcsi.tick("jl", null, '');}</script>
+</body></html>

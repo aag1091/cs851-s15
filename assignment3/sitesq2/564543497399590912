@@ -1,0 +1,769 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" xmlns="http://www.w3.org/1999/xhtml"> <!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="google-site-verification" content="cC-8xOerZ3opiLx9VloUCzc6SgMfOZHYihJzWA19-KI" />
+<meta name="msvalidate.01" content="79C78EB33B8812273BEAA273668E9D92" />
+<meta name="google-site-verification" content="Eop53kJXYXIdUhc1vbeX38nKr7jH7EhgctjAmPCei0w" />
+<meta name="bitly-verification" content="f0df8a8e402f"/>
+<title>SANS Digital Forensics and Incident Response Blog | 2015 DFIR Monterey Network Forensic Challenge Results | SANS Institute</title>
+
+
+<meta name="description" content="SANS Digital Forensics and Incident Response Blog blog pertaining to 2015 DFIR Monterey Network Forensic Challenge Results" />
+
+<link rel="stylesheet" href="/css2/common/styles.css" type="text/css" />
+<link rel="stylesheet" href="/css2/common/site_selector.css" type="text/css" />
+<link rel="stylesheet" href="/css2/common/slider_hack.css" type="text/css" />    
+<link rel="stylesheet" href="/css2/common/slider/styles_hack.css" type="text/css" />  
+<link rel="stylesheet" href="/css2/common/sites/forensics.css" type="text/css" />  
+
+
+
+
+<script src="/scripts/libs/jquery.min.js"></script>
+<script src="/scripts/libs/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+var _gas = _gas || [];
+_gas.push(['_setAccount', 'UA-25324117-2']);
+_gas.push(['_setAllowLinker', true]);
+_gas.push(['_setAllowAnchor', true]);
+_gas.push(['_setDomainName', 'cyber-defense.sans.org']);
+_gas.push(['_setDomainName', 'ics.sans.org']);
+_gas.push(['_setDomainName', 'sic.sans.org']);
+_gas.push(['_setDomainName', 'isc.sans.edu']);
+_gas.push(['_setDomainName', 'digital-forensics.sans.org']);
+_gas.push(['_setDomainName', 'it-audit.sans.org']);
+_gas.push(['_setDomainName', 'pen-testing.sans.org']);
+_gas.push(['_setDomainName', 'software-security.sans.org']);
+_gas.push(['_setDomainName', 'exams.giac.org']);
+_gas.push(['_setDomainName', 'www.giac.org']);
+//_gas.push(['_setDomainName', 'giac.org']);
+_gas.push(['_setDomainName', 'www.sans.edu']);
+//_gas.push(['_setDomainName', 'sans.edu']);
+_gas.push(['_setDomainName', 'www.securingthehuman.org']);
+//_gas.push(['_setDomainName', 'securingthehuman.org']);
+_gas.push(['_setDomainName', 'ondemand.sans.org']);
+_gas.push(['_setDomainName', 'portal.sans.org']);
+_gas.push(['_setDomainName', 'www.sans.org']);
+//_gas.push(['_setDomainName', 'sans.org']);
+_gas.push(['_gasMultiDomain', 'mousedown']);
+_gas.push(['_trackPageview']); 
+_gas.push(['_gasTrackOutboundLinks']);
+_gas.push(['_gasTrackMaxScroll']);
+_gas.push(['_gasTrackDownloads']);
+_gas.push(['_gasTrackMailto']);
+
+(function() {
+var ga = document.createElement('script');
+ga.id = 'gas-script';
+ga.setAttribute('data-use-dcjs', 'true');
+ga.type = 'text/javascript';
+ga.async = true;
+ga.src = '/scripts/libs/GAS/gas.min.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+})();
+
+/**
+ * Cleans utm tracking from the hashtag so anchor tags still function
+ * Call on load of desired pages
+ */
+function cleanUtm() {
+    var l = window.location;
+    if( l.hash.indexOf( "utm" ) != -1 ){
+        var anchor = l.hash.match(/#(?!utm)[^&]+/);
+        anchor	=	anchor? anchor[0]: '';
+        if(!anchor && window.history.replaceState){
+            history.replaceState({},'', l.pathname + l.search);
+        } else {
+            l.hash = anchor;
+        }
+    };
+}
+</script>
+
+<script src="//platform.twitter.com/oct.js" type="text/javascript"></script>
+<script type="text/javascript">
+twttr.conversion.trackPid('l4qzc');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=l4qzc&p_id=Twitter" />
+<img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=l4qzc&p_id=Twitter" />
+</noscript>
+
+<script>(function() {var _fbq = window._fbq || (window._fbq = []); if (!_fbq.loaded) {var fbds = document.createElement('script'); fbds.async = true; fbds.src = '//connect.facebook.net/en_US/fbds.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fbds, s); _fbq.loaded = true; } _fbq.push(['addPixelId', '734595653274851']); })(); window._fbq = window._fbq || []; window._fbq.push(['track', 'PixelInitialized', {}]); </script> <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=734595653274851&amp;ev=PixelInitialized" /></noscript>
+
+</head>
+
+<body class="forensics">
+    
+<div class="bodywrap ">
+<div class="container default-navigation-all">
+
+
+<!-- header -->
+<div class="header">
+
+<a href="/"><img src="/images/design-site/logo.png" alt="SANS Digital Forensics and Incident Response Blog | 2015 DFIR Monterey Network Forensic Challenge Results | SANS Institute" class="logo" /></a>
+
+<ul class="site-selector">
+    <li class="site-switcher"><a href="#"><span class="hidden">SANS Site Network</span></a>
+        <ul class="sites">
+            <li class="current-site">Current Site</li><li class="forensics"><a href="http://digital-forensics.sans.org"><img src="/images/design/custom/site-selector/site-icons/forensics.png" alt="forensics" />Forensics & Incident Response</a></li>
+<li class="selector-help">Choose a different site <a href="/help/site-network"><span class="hidden">Help</span></a></li><li class="sans"><a href="http://www.sans.org"><img src="/images/design/custom/site-selector/site-icons/sans.png" alt="sans" />Security Training</a></li>
+<li class="giac"><a href="http://www.giac.org"><img src="/images/design/custom/site-selector/site-icons/giac.png" alt="giac" />Security Certification</a></li>
+<li class="isc"><a href="http://isc.sans.edu"><img src="/images/design/custom/site-selector/site-icons/isc.png" alt="isc" />Internet Storm Center</a></li>
+<li class="sti"><a href="http://www.sans.edu"><img src="/images/design/custom/site-selector/site-icons/sti.png" alt="sti" />Graduate Degree Programs</a></li>
+<li class="awareness"><a href="http://www.securingthehuman.org"><img src="/images/design/custom/site-selector/site-icons/awareness.png" alt="awareness" />Security Awareness Training</a></li>
+<li class="cyber-defense"><a href="http://cyber-defense.sans.org"><img src="/images/design/custom/site-selector/site-icons/cyber-defense.png" alt="cyber-defense" />Cyber Defense</a></li>
+<li class="pentest"><a href="http://pen-testing.sans.org"><img src="/images/design/custom/site-selector/site-icons/pentest.png" alt="pentest" />Penetration Testing</a></li>
+<li class="ics"><a href="http://ics.sans.org"><img src="/images/design/custom/site-selector/site-icons/ics.png" alt="ics" />Industrial Control Systems</a></li>
+<li class="ssi"><a href="http://software-security.sans.org"><img src="/images/design/custom/site-selector/site-icons/ssi.png" alt="ssi" />Software Security</a></li>
+<li class="sic"><a href="http://sic.sans.org"><img src="/images/design/custom/site-selector/site-icons/sic.png" alt="sic" />Government Private Training</a></li>
+        </ul>
+    </li>
+</ul>
+
+<div class="top-menu">
+<!-- Begin Google Site Search -->
+<div class="search-form">
+<form action="https://digital-forensics.sans.org/search/results" method="post" id="cse-search-box">
+<input type="hidden" name="_xsrf_token" value="fd22cc7238357c8a625acab31c91ada191292fcb"  />
+<input type="text" id="q" name="q" value="" class="search-input" /><input id="search-button" type="image" title="Search" name="sa" value="Search" class="search-submit" src="/images/icons/custom/search.png" /><input type="text" id="_website" name="_website" value="" size="1" onchange="this.value=null" /></form>
+</div><!-- / .search-form -->
+
+<div class="clear"></div>
+<div id="main_navigation">
+    <ul class="dropdown">
+     <!-- <li class="root-item active"><a href="#">Active</a> -->
+     <li class="root-item "><a href="/community">Community</a>
+     <ul>
+        <li class="first"><a href="/blog">Blog</a></li>
+        <li><a href="/community/challenges">Challenges</a></li>
+        <li><a href="/community/links">Links</a></li>
+        <li><a href="/community/downloads">SIFT Workstation</a></li>
+        <li><a href="/community/summits">Summit Archives</a></li>
+        <li><a href="/community/webcasts">Webcasts</a></li>
+        <li><a href="/community/whitepapers">Whitepapers</a></li>
+        <li><a href="/community/cheat-sheets">Cheat Sheets</a></li>
+    	<li ><a href="/community/lethal_forensicator">SANS Lethal Forensicator Coin</a></li>
+    	<li class="last"><a href='http://dfir.to/DFIRPOLO'>SANS STORE</a></li>
+     </ul>
+     </li>
+     <li class="root-item "><a href="/training">Training</a>
+      <ul>
+        <li class="first"><a href="/training">Events</a></li>
+
+         <li><a href="/training/courses">Courses &raquo;</a>
+        <ul>
+                            <li class="first"><a href="/training/course/windows-forensic-analysis">Windows Forensic Analysis FOR408</a></li>
+                            <li><a href="/training/course/hacker-techniques-exploits-incident-handling">Hacker Tools, Techniques, Exploits and Incident Ha SEC504</a></li>
+                            <li><a href="/training/course/advanced-computer-forensic-analysis-incident-response">Advanced Incident Response FOR508</a></li>
+                            <li><a href="/training/course/mac-forensic-analysis">Mac Forensics FOR518</a></li>
+                            <li><a href="/training/course/memory-forensics-in-depth">Memory Forensics FOR526</a></li>
+                            <li><a href="/training/course/incident-response-team-management">Incident Response Mgt MGT535</a></li>
+                            <li><a href="/training/course/advanced-network-forensics-analysis">Advanced Network Forensics FOR572</a></li>
+                            <li><a href="/training/course/cyber-threat-intelligence">Cyber Threat Intel FOR578</a></li>
+                            <li><a href="/training/course/advanced-smartphone-mobile-device-forensics">Adv. Smartphone Forensics FOR585</a></li>
+                            <li class="last"><a href="/training/course/reverse-engineering-malware-malware-analysis-tools-techniques">Reverse-Engineering Malware FOR610</a></li>
+                      </ul>
+        </li>
+        <li><a href="/events/summits/">Summits</a></li>
+        <li><a href="/training/netwars/">NetWars</a></li>
+        <li><a href="/media/courses/forensics_curriculum.pdf">Forensics Brochure</a>
+        <li class="last"><a href="/training/assessment">Free Assessment</a></li>
+      </ul>
+     </li> 
+
+
+     <li class="root-item "><a href="/certification">Certification</a>
+      <ul>
+      <li class="first"><a href="/certification/gcfe">GCFE - Forensic Examiner</a></li>
+      <li><a href="/certification/gcfa">GCFA - Forensic Analyst</a></li>
+      <li><a href="/certification/grem">GREM - Malware Analyst</a></li>
+      <li><a href="/certification/analysts">Certified Analysts</a></li>
+      <li><a href="/certification/ethics">GIAC Code of Ethics</a></li> 
+      <li class="last"><a href="http://www.giac.org">GIAC Homepage</a></li>
+      </ul>
+     </li>
+     <li class="root-item "><a href="/instructors">Instructors</a>
+     <ul>
+        <li class="first"><a href="/instructors">SANS Instructors</a></li>
+        <li class="last"><a href="/instructors/author">Author Statement</a></li>
+     </ul>
+     </li>
+     <li class="root-item "><a href="/about">About</a>
+     <ul class="last-menu">
+      <li class="first"><a href="/about">About</a></li>
+      <li class="last"><a href="/about/press">Press Room</a></li>
+     </ul>
+     </li>
+    </ul><!-- end .dropdown -->
+</div><!-- end .top-menu -->
+</div><!-- end #main_navigation -->
+<div class="clear"></div><!-- end .clear -->
+</div><!-- end .header-->
+</div><!--  end .container -->
+    <!-- Header -->
+    <div id="ribbon" class="container">
+        <div>
+                            <h1>SANS Digital Forensics and Incident Response Blog</h1>                    
+                    </div><!-- end .top-text -->
+                    <div  id="ribbon_icon" class="blog-page-icon">
+                <span><span>SANS Digital Forensics and Incident Response Blog</span></span>            </div>            
+                </div><!-- END RIBBON -->
+    
+<!-- container -->
+<div class="container">
+    <!-- middle -->
+    <div class="middle">
+        <!-- wrapper -->
+        <div class="wrapper">
+            <!-- content -->
+            <div class="content">
+                <!-- post entry -->
+                <div class="post-title">
+                    <div class="post-date">
+                        <strong>08</strong>
+                        <span>Feb <b>2015</b></span>
+                    </div>
+                    <h2><a href="/blog/2015/02/08/2015-network-challenge-results#" title="2015 DFIR Monterey Network Forensic Challenge Results" >2015 DFIR Monterey Network Forensic Challenge Results</a></h2>
+                </div>
+                                <div class="post-meta post-meta-height-incrase">
+                    <span class="post-comments">
+                        <a title="" href="/blog/2015/02/08/2015-network-challenge-results#comments"><span  class="ico-comments">10</span>&nbsp;comments</a>
+                    </span>
+                    <span>Posted by</span>
+                        <a href="/blog/author/phagen" title="View all posts by Phil Hagen">Phil Hagen</a><br />
+                    <span>Filed under</span>  <a href="/blog/category/challenge" title="View all posts in Challenge">Challenge</a>, <a href="/blog/category/network-forensics-computer-forensics" title="View all posts in Network Forensics">Network Forensics</a>, <a href="/blog/category/training" title="View all posts in Training">Training</a>                    <!-- <span class="ico-tags">taged</span> <a href="#">awsome</a>, <a href="#">design</a>  -->
+                </div>
+                <div class="post-entry">
+                    <p>2015-03-04 UPDATE: I've added some thought process/methodology to the answers inline below.</p>
+<p><hr /></p>
+<p>Thanks to everyone that submitted or just played along with the SANS DFIR Network Forensic Challenge! We had over 3,000 evidencedownloads, and more than 500 submissions! Per the rules, the winner must have answered four of the six questions correctly. Then, by random selectionamong those submissions, the winner was selected.</p>
+<p>We're excited to announce that<strong>Henry van Jaarsveld</strong> is the winner for this challenge! Congratulations, and we hope you enjoy your SANS OnDemand Course. Great work, Henry!</p>
+<p>Thanks for all the submissions and interest in this challenge. If you enjoyed the questions- no matter how many questions you answered - you should check out FOR572: Advanced Network Forensics and Analysis. The class is available via OnDemand, as well as the following live and virtual SANS events:<ul><li><a href="http://for572.com/sans2015-for572">SANS 2015</a>: April 13 &#8212; 18, 2015; Orlando, FL</li><li><a href="http://for572.com/2015vlive1-for572">SANS vLive</a>: April 21 &#8212; May 28, 2015; Online</li><li><a href="http://for572.com/dfirsummit2015-for572">Digital Forensics and Incident Response Summit</a>: July 9 &#8212; 14, 2015; Austin, TX</li><li><a href="http://for572.com/londonsum2015-for572">SANS London in the Summer</a><a>: July 13&#8212;18, 2015; London, England</a></li><li><a href="http://for572.com/sanjose15-for572">SANS San Jose 2015</a><a>: July 20&#8212;25, 2015; San Jose, CA</a></li><li><a href="http://for572.com/2015vlive2-for572">SANS vLive</a><a>: Oct 20 &#8212; Nov 25, 2015; Online</a></li></ul>More live and virtual/remote events are being added all the time, so keep<a href="http://for572.com/course">checking the course page</a> for additional offerings.</p>
+<p>The challenge answers are listed below:<br /><ol start="1"><br /><li>At what time (UTC, including year) did the portscanning activity from IP address 123.150.207.231 start?</li></ol><p style="padding-left: 60px"><b>Answer: Aug 29 2013 13:58:55 UTC</b></p><br /><p style="padding-left: 60px"><b>Portscanning activity is typically characterized by connection attempts to a range of ports. This is often repaid and originates from the same IP address. Some scanning utilities may or may not use the same source port or a small cluster of source ports. In this case, the following command get you started:</b></p><br /><p style="padding-left: 60px"><b>$ grep SRC=123.150.207.231 messages</b></p><br /><p style="padding-left: 60px"><b>The first result is below:</b></p><br /><p style="padding-left: 60px"><b>Aug 29 09:58:55 gw kernel: FW reject_input: IN=eth0 OUT= MAC=08:00:27:53:38:ee:08:00:27:1c:21:2b:08:00 SRC=123.150.207.231 DST=98.252.16.36 LEN=44 TOS=0x00 PREC=0x00 TTL=41 ID=35517 PROTO=TCP SPT=38553 DPT=3306 WINDOW=1024 RES=0x00 SYN URGP=0</b></p><br /><p style="padding-left: 60px"><b>However, we've asked for the time in UTC, which is the only recommended time zone to use for forensic reporting. To find the offset, examine the same "messages" file further. This isn't often an explicitly logged value, so context is necessary. The following line shows the syslog time (system local time) and a corresponding UTC value. Therefore, it is reasonable to state that the system's time zone is UTC-4 during the time the file was created.</b></p><br /><p style="padding-left: 60px"><b>Aug 29 07:07:40 gw kernel: rtc_cmos rtc_cmos: setting system clock to 2013-08-29 11:07:08 UTC (1377774428)</b></p></p>
+<p><br /><hr /></p>
+<p><ol start="2"><br /><li>What IP addresses were used by the system claiming the MAC Address 00:1f:f3:5a:77:9b?</li></ol><p style="padding-left: 60px"><b>Answer: 169.254.20.167, 169.254.90.183, 192.168.1.64</b></p><br /><p style="padding-left: 60px"><b>This is an exercise in using Wireshark/tshark display filters. The following tshark command will answer the question quickly:</b></p><br /><p style="padding-left: 60px"><b>$ tshark -n -r nitroba.pcap -T fields -e 'ip.src' -Y 'eth.src == 00:1f:f3:5a:77:9b and ip' | sort | uniq</b></p><br /><p style="padding-left: 100px"><b>-n: suppress DNS lookups<br />-r nitroba.pcap: file to read<br />-T fields: use "fields" output format<br />-e ip.src: output just the "ip.src" field, as defined by the Wireshark/tshark parsers<br />-Y 'eth.src == 00:1f:f3:5a:77:9b and ip': display filter to limit results to the MAC address of interest and IP traffic, which would be the only traffic to include IP addresses<br />| sort | uniq: bash shell utilities to narrow results to only unique values</b></p></p>
+<p><br /><hr /></p>
+<p><ol start="3"><br /><li>What IP (source and destination) and TCP ports (source and destination) are used to transfer the "scenery-backgrounds-6.0.0-1.el6.noarch.rpm" file?</li></ol><p style="padding-left: 60px"><b>Answer: 149.20.20.135 and 192.168.75.29, 30472 and 51851</b></p><br /><p style="padding-left: 60px"><b>Again, the tshark utility is your friend. This is as a multiple-stage process. First, get the frame number containingthe desired request. This command returns frame number 5846</b><b>.</b></p><br /><p style="padding-left: 60px"><b>$ tshark -n -r ftp-example.pcap -Y 'ftp.request.arg == "scenery-backgrounds-6.0.0-1.el6.noarch.rpm"' -T fields -e frame.number</b></p><br /><p style="padding-left: 100px"><b>-n: suppress DNS lookups<br />-r ftp-example.pcap: file to read<br />-Y 'ftp.request.arg == "scenery-backgrounds-6.0.0-1.el6.noarch.rpm"': display filter to limit results to just FTP commands that included the argument of interest<br />-T fields: use "fields" output format<br />-e frame.number:Get the frame number containing the desired request</b></p><br /><p style="padding-left: 60px"><b>Next, find the immediately preceding "Passive Mode" response</b><b>.</b></p><br /><p style="padding-left: 60px"><b>$ tshark -n -r ftp-example.pcap -Y 'ftp.response.code == 227 &amp;&amp; frame.number &lt; 5846' -T fields -e frame.number -e ftp.passive.ip -e ftp.passive.port | tail -n 1</b></p><br /><p style="padding-left: 100px"><b><b>-n: suppress DNS lookups<br />-r ftp-example.pcap: file to read<br /></b>-Y 'ftp.response.code == 227 &amp;&amp; frame.number &lt; 5846': Display filter to limit results to just FTPresponse codes of "227" (Entering Passive Mode) and prior to the framenumber containing the request of interest<br />-T fields: use "fields" output format<br />-e frame.number -e ftp.passive.ip -e ftp.passive.port: Get the values from the fieldsof interest<br /></b><b>| tail -n 1:Just return the last result from the list</b></p><br /><p style="padding-left: 60px"><b>Finally, get IPs and ports from both ends of the data transfer</b><b>.</b></p><br /><p style="padding-left: 60px"><b>$ tshark -n -r ftp-example.pcap -Y 'ip.addr == 149.20.20.135 &amp;&amp; tcp.port == 30472' -T fields -e ip.src -e tcp.srcport -e ip.dst -e tcp.dstport | sort | uniq</b></p><br /><p style="padding-left: 100px"><b><b>-n: suppress DNS lookups<br />-r ftp-example.pcap: file to read<br /></b>-Y '<b>ip.addr == 149.20.20.135 &amp;&amp; tcp.port == 30472</b>': Display filter to isolate TCP connection according to IP and port determined above<br />-T fields: use "fields" output format<br /></b><b>-e ip.src -e tcp.srcport -e ip.dst -e tcp.dstport</b>: Get the values from the fieldsof interest<br /><b>| sort | uniq:Only displayunique lines</b></p></p>
+<p><br /><hr /></p>
+<p><ol start="4"><br /><li>How many IP addresses attempted to connect to destination IP address 63.141.241.10 on the default SSH port?</li></ol><p style="padding-left: 60px"><b>Answer: 49</b></p><br /><p style="padding-left: 60px"><b>A connection attempt may or may not be successful, so we can simply limit our search to the high-level filtering provided by nfdump. You could use grep against the text file as well.<br />There are 55 total connections:</b></p><br /><p style="padding-left: 60px"><b>$ nfdump -q -O tstart -r nfcapd.201405230000 -o 'fmt:%sa' 'dst ip 63.141.241.10 and dst port 22' | wc -l</b></p><br /><p style="padding-left: 100px"><b>-q: "quiet" output, which suppresses summary header/footer information<br />-O tstart: order output by "start time" of each record<br />-r nfcapd.201405230000: input file to read<br />-o 'fmt:%sa': only display the source IP address for each record<br />'dst ip 63.141.241.10 and dst port 22': limit flows to those from the IP address of interest, to the default SSH port. You might also limit by TCP protocol by adding "and proto tcp"<br />| wc -l: count the results</b></p><br /><p style="padding-left: 60px"><b>There were 49 unique IPs in this data set:</b></p><br /><p style="padding-left: 60px"><b>$ nfdump -q -O tstart -r nfcapd.201405230000 -o 'fmt:%sa' 'dst ip 63.141.241.10 and dst port 22' | sort | uniq | wc -l</b></p><br /><p style="padding-left: 100px"><b>This is the identical command to that above, but uses the following shell command chain</b></p><br /><p style="padding-left: 100px"><b>| sort | uniq | wc -l: Count only unique lines from the nfdump command's output</b></p></p>
+<p><br /><hr /></p>
+<p><ol start="5"><br /><li>What is the byte size for the file named "Researched Sub-Atomic Particles.xlsx"?</li></ol><p style="padding-left: 60px"><b>Answer: 13,625 bytes</b></p><br /><p style="padding-left: 60px"><b>To find the portion(s) of the input pcap that involve the filename of interest, use the "smb.file" field to find the TCP streams of interest.</b><b></b></p><br /><p style="padding-left: 60px"><b>$ tshark -n -r stark-20120403-full-smb_smb2.pcap -Y 'smb.file == "Researched Sub-Atomic Particles.xlsx"' -T fields -e tcp.stream<br />2104<br />2207</b></p><br /><p style="padding-left: 60px"><b>This is a large input pcap, so loading it directly to Wireshark is not advisable. Instead, isolate the TCP streams identified above to a new file:</b></p><br /><p style="padding-left: 60px"><b>$ tshark -n -r stark-20120403-full-smb_smb2.pcap -Y 'tcp.stream == 2104 or tcp.stream == 2207' -w tcpstreams_2104_2207.pcap<br />$ md5sum tcpstreams_2104_2207.pcap<br />fe9c5a388d0d70f74bb96913f120fc7a tcpstreams_2104_2207.pcap</b></p><br /><p style="padding-left: 60px"><b>This file is very feasible to open in Wireshark, as it's a mere 18MB.</b></p><br /><p style="padding-left: 60px"><b>After opening the file, you must explore the SMB session - which is not at all a simple process. In the input file generated above, the message we're interested in is the Trans2 Response message containing Standard File Info for the file of interest. This occurs in frame 749 (frame.time = Apr 5, 2012 14:21:50.574112000). By spelunking the available fields, you'll find the "End of File" value, which is 13,625. This represents the number of bytes in the file. Note that the Wireshark status bar tells us that Wireshark knows this field by the name "smb.end_of_file", which could be used to scale this process out via the tshark utility.</b><b></b></p></p>
+<p><br /><hr /></p>
+<p><ol start="6"><br /><li>The traffic in this Snort IDS pcap log contains traffic that is suspected to be a malware beaconing. Identify the substring and offset for a common substring that would support a unique Indicator Of Compromise for this activity.</li></ol><p style="padding-left: 60px"><b>Answer: ULQENP2 at offset 4 (bytes 5-11 of the TCP data segment, zero-based)</b></p><br /><p style="padding-left: 60px"><b>There are a number of ways to approach this. The goal is to identify commonalities among the individual sessions, even though we are not (yet) sure what the bytes mean.<br />This evidence file is small enough to load into Wireshark, then visually explore the content - despite Wireshark not knowing the content is anything other than generic "Data".<br />After visually inspecting these fields in the traffic the IDS logged, you should see that bytes 4-10 (zero-based, of course) seem consistent. This can be confirmed with the following display filter:</b></p><br /><p style="padding-left: 60px"><b>data.data[4-10] == 55:4c:51:45:4e:50:32</b></p><br /><p style="padding-left: 60px"><b>After applying this filter, you can quickly see that 100% of the packets in the IDS log file match. Expanding the filter one byte before or after this substring range results in a &lt;100% match. Barring any additional knowledge of the custom protocol used for these communications, this substring and offset would be a good indicator of compromise.</b></p></p>
+<p><br /><hr /></p>
+<p><ol start="7"><br /><li>BONUS!Identify the meaning of the bytes that precede the substring above.</li></ol><p style="padding-left: 60px"><b>Answer: UNIX Timestamp</b></p><br /><p style="padding-left: 60px"><b>There is a no magic solution here - just trial and error combined with experience. The UNIX timestamp (number of seconds after Jan 1, 1970 at 00:00:00 UTC) fits into four bytes. Those with a keen eye for timestamps will see that after converting any given four byte sequence to a big-endian integer, then converting that to a timestamp, the Wireshark/tshark "frame.time" field value corresponds almost perfectly in every case. For example:</b></p><br /><p style="padding-left: 60px"><b>0x4fe6c278 == 1340523128<br />$ date -u -d @1340523128<br />Sun Jun 24 07:32:08 UTC 2012<br />Corresponding frame.time: Jun 24, 2012 07:32:08.273277000</b></p></p>                    <div class="clear"></div>
+                </div><!--/ post-entry -->
+                <div class="post-footer">
+                    <div class="share-this">
+<script type="text/javascript">
+    <!--
+    var addthis_config = {services_exclude: 'print',
+                          services_compact: 'facebook, twitter, email, stumbleupon, delicious, more',
+                          };
+
+    document.write(unescape('%3Cdiv id="addthis_button"%3E'
+                          + '%3Ca href="http://www.addthis.com/bookmark.php%3Fv=250&username=sans" class="addthis_button"%3E'
+                          + '%3Cimg src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Share this" style="border:0" /%3E'
+                          + '%3C/a%3E'
+                          + '%3Cscript type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js%23username=sans"%3E%3C/script%3E'
+                          + '%3C/div%3E'));
+    -->
+</script>
+
+
+</div>
+                        <div class="post-links"><a href="/blog/2015/02/08/2015-network-challenge-results">Permalink</a> | <a href="/blog/2015/02/08/2015-network-challenge-results/feed">Comments RSS Feed</a> - <a href="#respond">Post a comment</a> | <a href="/blog/2015/02/08/2015-network-challenge-results">Trackback URL</a></div>
+                </div><!--/ post-footer -->
+                <div class="clear"></div>
+    <div class="post-comment" ><h3><a name="comments"></a>10 Comments</h3><div class="comment-entry comment-level-one">
+    <div class="comment-meta">
+        <span class="comment-links"><p>Posted February 13, 2015 at 10:18 PM  |  <a href="blog/2015/02/08/2015-network-challenge-results#comment-23747">Permalink</a> | <a href="?reply-to-comment=23747#respond">Reply</a></p></span>
+        <a name="comment-23747"></a><h5 class="ico-comments">Ronnie</h5>
+    </div>
+    <p class="comment-content">First many thanks for the challenge :)<br /><br />This question is not well formulated i in my opinion wrong or wrong answer:<br /><br />How many IP addresses attempted to connect to destination IP address 63.141.241.10 on the default SSH port?<br /><br />45 IP addresses, because some of them are the same ones trying to connect again.<br /><br />The right question for the answer you guys wanted is:<br /><br />How many times was there connection attempts to connect to destination IP address 63.141.241.10 on the default SSH port?<br /><br />49 Thats with duplicates of IP addresses.<br /><br /><br />Can you see my point ?</p>
+    
+            <div class="comment-entry comment-level-two">
+<div class="comment-meta">
+        <span class="comment-links"><p>Posted March 05, 2015 at 3:16 AM  |  <a href="blog/2015/02/08/2015-network-challenge-results#comment-23812">Permalink</a> | <a href="?reply-to-comment=23812#respond">Reply</a></p></span>
+        <a name="comment-23812"></a><h5 class="ico-comments">Phil Hagen</h5>
+    </div>
+    <p class="comment-content">Hi, Ron - this comment just popped up on the blog side.  I believe I got the breakdown of the answer to you via twitter, but just in case:<br /><br />There were 55 total connection attempts from 49 unique IPs.  Commands for this question are here: http://pastebin.com/pMdA785W and I've added background to the cross-post, here: http://lewestech.com/2015/02/2015-network-challenge-results/<br />(Working to get these posted on this blog in parallel.)</p>
+    
+                    
+</div>        
+</div>
+<div class="comment-entry comment-level-one">
+    <div class="comment-meta">
+        <span class="comment-links"><p>Posted February 16, 2015 at 11:26 AM  |  <a href="blog/2015/02/08/2015-network-challenge-results#comment-23752">Permalink</a> | <a href="?reply-to-comment=23752#respond">Reply</a></p></span>
+        <a name="comment-23752"></a><h5 class="ico-comments">Mary</h5>
+    </div>
+    <p class="comment-content">I wanted to win.. but congratulations to the winner!!!</p>
+    
+                    
+</div>
+<div class="comment-entry comment-level-one">
+    <div class="comment-meta">
+        <span class="comment-links"><p>Posted February 20, 2015 at 12:28 PM  |  <a href="blog/2015/02/08/2015-network-challenge-results#comment-23762">Permalink</a> | <a href="?reply-to-comment=23762#respond">Reply</a></p></span>
+        <a name="comment-23762"></a><h5 class="ico-comments">Niall</h5>
+    </div>
+    <p class="comment-content">Hi Phil,<br /><br />Thanks for taking the time to do this, painful to see how difficult I was making things for myself on one or two of the questions!<br /><br />Hope to see more Network Forensics stuff from you soon.<br /><br />Niall</p>
+    
+                    
+</div>
+<div class="comment-entry comment-level-one">
+    <div class="comment-meta">
+        <span class="comment-links"><p>Posted February 26, 2015 at 5:21 PM  |  <a href="blog/2015/02/08/2015-network-challenge-results#comment-23782">Permalink</a> | <a href="?reply-to-comment=23782#respond">Reply</a></p></span>
+        <a name="comment-23782"></a><h5 class="ico-comments">Jeremy</h5>
+    </div>
+    <p class="comment-content">Are you going to leave the pcap/data files around to be available to we can use it as a training tool?</p>
+    
+            <div class="comment-entry comment-level-two">
+<div class="comment-meta">
+        <span class="comment-links"><p>Posted March 05, 2015 at 3:16 AM  |  <a href="blog/2015/02/08/2015-network-challenge-results#comment-23807">Permalink</a> | <a href="?reply-to-comment=23807#respond">Reply</a></p></span>
+        <a name="comment-23807"></a><h5 class="ico-comments">Phil Hagen</h5>
+    </div>
+    <p class="comment-content">Yes, the evidence files are back online.</p>
+    
+                    
+</div>        
+</div>
+<div class="comment-entry comment-level-one">
+    <div class="comment-meta">
+        <span class="comment-links"><p>Posted March 19, 2015 at 11:14 AM  |  <a href="blog/2015/02/08/2015-network-challenge-results#comment-23832">Permalink</a> | <a href="?reply-to-comment=23832#respond">Reply</a></p></span>
+        <a name="comment-23832"></a><h5 class="ico-comments">Josh Lemon</h5>
+    </div>
+    <p class="comment-content">The example command given in answer 3 doesn't produce the correct answer.<br /><br />The Tshark command you've given shows the initial request for the file (over TCP 21), but not the ports used for the actual data transfer (192.168.75.29:51851 -</p>
+    
+            <div class="comment-entry comment-level-two">
+<div class="comment-meta">
+        <span class="comment-links"><p>Posted March 20, 2015 at 2:37 AM  |  <a href="blog/2015/02/08/2015-network-challenge-results#comment-23842">Permalink</a> | <a href="?reply-to-comment=23842#respond">Reply</a></p></span>
+        <a name="comment-23842"></a><h5 class="ico-comments">Phil Hagen</h5>
+    </div>
+    <p class="comment-content">Good catch, Josh - thanks for the heads up.  An old version of this writeup made it to publication.  I've updated the answer to reflect the complete process.  Thanks and sorry about that!</p>
+    
+                    
+</div>        
+</div>
+<div class="comment-entry comment-level-one">
+    <div class="comment-meta">
+        <span class="comment-links"><p>Posted March 27, 2015 at 1:50 AM  |  <a href="blog/2015/02/08/2015-network-challenge-results#comment-23882">Permalink</a> | <a href="?reply-to-comment=23882#respond">Reply</a></p></span>
+        <a name="comment-23882"></a><h5 class="ico-comments">Josh</h5>
+    </div>
+    <p class="comment-content">Great challenge! A couple of questions though: <br /><br />Question 1's answer references a tshark command within the first couple of sentences, however it's not present. <br /><br />Question 3's final tshark command displays the following error: &quot;** process:PID#: WARNING **: 'tcp.dstaddr' isn't a valid field!&quot; Reviewing via Wireshark's Filter Expression, it seems there's no tcp.dstaddr nor tcp.srcaddr.</p>
+    
+            <div class="comment-entry comment-level-two">
+<div class="comment-meta">
+        <span class="comment-links"><p>Posted March 31, 2015 at 8:25 PM  |  <a href="blog/2015/02/08/2015-network-challenge-results#comment-23892">Permalink</a> | <a href="?reply-to-comment=23892#respond">Reply</a></p></span>
+        <a name="comment-23892"></a><h5 class="ico-comments">Phil Hagen</h5>
+    </div>
+    <p class="comment-content">Hi, Josh - good catch on the erroneous sentence on #1.  That was an editing artifact and I've removed it.<br />For #3, the &quot;dstaddr&quot; was also an error - it should have been &quot;dstport&quot;.  Earlier versions of tshark (we used 1.10.7 at the time) did not error out when using a nonexistent field.  Sounds like you've got a newer version that does the job better!  I've updated the command to reflect the change, though - thanks again!</p>
+    
+                    
+</div>        
+</div>
+</div>                    <div class="post-comment form" id="comment-form">
+                    <h3><a name="respond"></a>Post a Comment</h3>
+    <div class=""></div><form action="https://digital-forensics.sans.org/blog/2015/02/08/2015-network-challenge-results#respond" method="post" autocomplete="off">
+<input type="hidden" name="_xsrf_token" value="fd22cc7238357c8a625acab31c91ada191292fcb"  />
+<input type="hidden" name="comment_post_ID" value="69772"  />
+<div class="form-section">
+                    <label class=""><span class="required-field">*</span>Name</label><br /><input type="text" id="author" name="author" value="" class="input-text" /></div><div class="form-section">
+                     <label class=""><span class="required-field">*</span>Email</label><br /><input type="text" id="email" name="email" value="" class="input-text" /></div><div class="form-section">
+                     <label>Website</label><br /><input type="text" id="url" name="url" value="" class="input-text" /></div><div class="form-section">
+                    <label class=""><span class="required-field">*</span>Comment</label><br /><textarea id="comment" name="comment" rows="8" cols="70" class="input-text" ></textarea></div><div class="form-section"><label>Captcha</label><br /><img alt="Captcha" src="https://digital-forensics.sans.org/captcha/default" width="250" height="80" /></div><div class="form-section"><label>*Response</label><br /><input type="text" id="captcha_response" name="captcha_response" value="" class="input-text" /></div><input type="submit" id="submit" name="submit" value="Post Comment"  /><input type="text" id="_website" name="_website" value="" size="1" onchange="this.value=null" /></form>
+          <div>
+                        <p><span class="required-field">*</span> Indicates a required field.</p>
+                    </div>
+                </div><!--/ post-comment -->
+                                <div class="clear"></div>
+            </div><!--/ content -->
+        </div><!--/ wrapper -->
+        
+        <!-- sidebar -->
+        <div class="navigation"><!-- navidation -->
+    <div class="widget widget_rss"><!-- widget: rss -->
+                    <a href="/blog/feed/">
+                <img src="/images/design/custom/rss.png" title="RSS Feed" alt="RSS">
+        </a>
+        
+    </div><!-- /widget: rss -->
+    
+    
+    <div class="widget widget_search" style="margin-top:20px"><!-- widget: search -->
+        <form action="http://digital-forensics.sans.org/blog/" method="post" role="search">
+<input type="hidden" name="_xsrf_token" value="fd22cc7238357c8a625acab31c91ada191292fcb"  />
+<input type="text" id="search" name="search" value="" class="input-text" size="12" />&nbsp;<input type="submit" id="submit" name="submit" value="Search" style="padding:7px;" /><input type="text" id="_website" name="_website" value="" size="1" onchange="this.value=null" /></form>
+    </div><!-- /widget: search -->
+
+        <div class="widget widget_categories"><!-- widget: categories --> 
+        <h5>Categories</h5>
+        <ul>
+                            <li><a href="/blog/category/advanced-persistent-threat">Advanced Persistent Threat</a> (26)</li>
+                            <li><a href="/blog/category/apt-advanced-persistent-threat">apt</a> (20)</li>
+                            <li><a href="/blog/category/artifact-analysis">artifact analysis</a> (77)</li>
+                            <li><a href="/blog/category/book-reviews">Book Reviews</a> (5)</li>
+                            <li><a href="/blog/category/browser-forensics">Browser Forensics</a> (31)</li>
+                            <li><a href="/blog/category/career">Career</a> (1)</li>
+                            <li><a href="/blog/category/case-leads">Case Leads</a> (118)</li>
+                            <li><a href="/blog/category/certification-and-license">Certification and License</a> (9)</li>
+                            <li><a href="/blog/category/challenge">Challenge</a> (9)</li>
+                            <li><a href="/blog/category/cloud-forensics-computer-forensics">Cloud Forensics</a> (2)</li>
+                            <li><a href="/blog/category/community-sans-events">Community SANS Events</a> (3)</li>
+                            <li><a href="/blog/category/computer-forensic-hero">Computer Forensic Hero</a> (2)</li>
+                            <li><a href="/blog/category/computer-forensics">Computer Forensics</a> (599)</li>
+                            <li><a href="/blog/category/computer-forensics-and-ir-summit">Computer Forensics and IR Summit</a> (22)</li>
+                            <li><a href="/blog/category/cyber-kill-chain">Cyber Kill Chain</a> (3)</li>
+                            <li><a href="/blog/category/cyber-threat-intelligence-2">Cyber Threat Intelligence</a> (7)</li>
+                            <li><a href="/blog/category/dfir-summit">DFIR Summit</a> (6)</li>
+                            <li><a href="/blog/category/digital-forensic-law">Digital Forensic Law</a> (49)</li>
+                            <li><a href="/blog/category/drive-encryption">Drive Encryption</a> (18)</li>
+                            <li><a href="/blog/category/ediscovery">eDiscovery</a> (50)</li>
+                            <li><a href="/blog/category/email-investigations">Email Investigations</a> (18)</li>
+                            <li><a href="/blog/category/ethics">Ethics</a> (8)</li>
+                            <li><a href="/blog/category/evidence-acquisition">Evidence Acquisition</a> (114)</li>
+                            <li><a href="/blog/category/evidence-analysis">Evidence Analysis</a> (190)</li>
+                            <li><a href="/blog/category/getting-started">Getting Started</a> (24)</li>
+                            <li><a href="/blog/category/heartbleed">HeartBleed</a> (1)</li>
+                            <li><a href="/blog/category/incident-response">Incident Response</a> (169)</li>
+                            <li><a href="/blog/category/linux-ir">Linux IR</a> (27)</li>
+                            <li><a href="/blog/category/malware-analysis">Malware Analysis</a> (97)</li>
+                            <li><a href="/blog/category/memory-analysis">Memory Analysis</a> (58)</li>
+                            <li><a href="/blog/category/mobile-device-forensics">Mobile Device Forensics</a> (55)</li>
+                            <li><a href="/blog/category/network-forensics">Network Forensics</a> (49)</li>
+                            <li><a href="/blog/category/network-forensics-computer-forensics">Network Forensics</a> (3)</li>
+                            <li><a href="/blog/category/registry-analysis">Registry Analysis</a> (24)</li>
+                            <li><a href="/blog/category/reporting-computer-forensics">Reporting</a> (20)</li>
+                            <li><a href="/blog/category/reverse-engineering">Reverse Engineering</a> (48)</li>
+                            <li><a href="/blog/category/sans-institute">SANS Institute</a> (48)</li>
+                            <li><a href="/blog/category/sans-survey">SANS Survey</a> (1)</li>
+                            <li><a href="/blog/category/sift-workstation">SIFT Workstation</a> (14)</li>
+                            <li><a href="/blog/category/smartphone">smartphone</a> (1)</li>
+                            <li><a href="/blog/category/specials">Specials</a> (22)</li>
+                            <li><a href="/blog/category/timeline-analysis-computer-forensics">Timeline Analysis</a> (20)</li>
+                            <li><a href="/blog/category/training">Training</a> (36)</li>
+                            <li><a href="/blog/category/uncategorized">Uncategorized</a> (4)</li>
+                            <li><a href="/blog/category/usb-device-analysis">USB Device Analysis</a> (13)</li>
+                            <li><a href="/blog/category/volatility">Volatility</a> (2)</li>
+                            <li><a href="/blog/category/windows-ir">Windows IR</a> (78)</li>
+                            <li><a href="/blog/category/windows-memory-forensics">Windows Memory Forensics</a> (6)</li>
+                            <li><a href="/blog/category/write-blockers">Write Blockers</a> (13)</li>
+                    </ul>
+    </div><!-- / widget: categories -->
+    
+        <div class="widget widget_recent_posts"><!-- widget: recent posts -->
+        <h5>Recent Posts</h5>
+        <ul>
+                            <li><a href="/blog/2015/04/03/identifying-and-disrupting-crypto-ransomware-and-destructive-malware">Identifying and Disrupting Crypto-Ransomware (and Destructive Malware)
+</a></li>
+                            <li><a href="/blog/2015/03/30/monitoring-for-delegation-token-theft">Monitoring for Delegation Token Theft
+</a></li>
+                            <li><a href="/blog/2015/03/25/detecting-dll-hijacking-on-windows">Detecting DLL Hijacking on Windows
+</a></li>
+                            <li><a href="/blog/2015/03/24/hide-from-browser-forensics">How Miscreants Hide From Browser Forensics
+</a></li>
+                            <li><a href="/blog/2015/03/19/just-in-time-virustotal-hash-checking">Just-In-Time VirusTotal Hash Checking
+</a></li>
+                    </ul>
+    </div><!-- / widget: recent posts -->
+    
+        
+            <div class="widget widget_recent_comments"><!-- widget: recent comments --> 
+        <h5>Recent Comments</h5>
+        <ul>
+                    </ul>
+        </div><!-- / widget: recent comments -->
+    
+        <div class="widget widget_popular_posts"><!-- widget: popular posts -->
+        <h5>Popular Posts</h5>
+        <ul>
+                    </ul>
+    </div><!-- / widget: popular posts -->
+    
+        <div class="widget widget_archives"><!-- widget: archive -->
+        <h5>Archives</h5>
+                <select name="archive-dropdown\" onchange="document.location.href=this.options[this.selectedIndex].value;">
+            <option value="\">Select Month</option>
+                            <option value="/blog/2015/04"> April 2015 (1)
+</option>
+                            <option value="/blog/2015/03"> March 2015 (4)
+</option>
+                            <option value="/blog/2015/02"> February 2015 (2)
+</option>
+                            <option value="/blog/2015/01"> January 2015 (2)
+</option>
+                            <option value="/blog/2014/12"> December 2014 (6)
+</option>
+                            <option value="/blog/2014/11"> November 2014 (2)
+</option>
+                            <option value="/blog/2014/10"> October 2014 (4)
+</option>
+                            <option value="/blog/2014/09"> September 2014 (3)
+</option>
+                            <option value="/blog/2014/08"> August 2014 (2)
+</option>
+                            <option value="/blog/2014/07"> July 2014 (3)
+</option>
+                            <option value="/blog/2014/06"> June 2014 (3)
+</option>
+                            <option value="/blog/2014/04"> April 2014 (3)
+</option>
+                            <option value="/blog/2014/03"> March 2014 (10)
+</option>
+                            <option value="/blog/2014/02"> February 2014 (5)
+</option>
+                            <option value="/blog/2014/01"> January 2014 (6)
+</option>
+                            <option value="/blog/2013/12"> December 2013 (1)
+</option>
+                            <option value="/blog/2013/09"> September 2013 (1)
+</option>
+                            <option value="/blog/2013/08"> August 2013 (2)
+</option>
+                            <option value="/blog/2013/07"> July 2013 (5)
+</option>
+                            <option value="/blog/2013/06"> June 2013 (7)
+</option>
+                            <option value="/blog/2013/05"> May 2013 (5)
+</option>
+                            <option value="/blog/2013/04"> April 2013 (6)
+</option>
+                            <option value="/blog/2013/03"> March 2013 (6)
+</option>
+                            <option value="/blog/2013/02"> February 2013 (11)
+</option>
+                            <option value="/blog/2013/01"> January 2013 (9)
+</option>
+                            <option value="/blog/2012/12"> December 2012 (2)
+</option>
+                            <option value="/blog/2012/11"> November 2012 (5)
+</option>
+                            <option value="/blog/2012/10"> October 2012 (7)
+</option>
+                            <option value="/blog/2012/09"> September 2012 (6)
+</option>
+                            <option value="/blog/2012/08"> August 2012 (5)
+</option>
+                            <option value="/blog/2012/07"> July 2012 (7)
+</option>
+                            <option value="/blog/2012/06"> June 2012 (8)
+</option>
+                            <option value="/blog/2012/05"> May 2012 (7)
+</option>
+                            <option value="/blog/2012/04"> April 2012 (12)
+</option>
+                            <option value="/blog/2012/03"> March 2012 (10)
+</option>
+                            <option value="/blog/2012/02"> February 2012 (6)
+</option>
+                            <option value="/blog/2012/01"> January 2012 (10)
+</option>
+                            <option value="/blog/2011/12"> December 2011 (15)
+</option>
+                            <option value="/blog/2011/11"> November 2011 (7)
+</option>
+                            <option value="/blog/2011/10"> October 2011 (7)
+</option>
+                            <option value="/blog/2011/09"> September 2011 (8)
+</option>
+                            <option value="/blog/2011/08"> August 2011 (10)
+</option>
+                            <option value="/blog/2011/07"> July 2011 (7)
+</option>
+                            <option value="/blog/2011/06"> June 2011 (11)
+</option>
+                            <option value="/blog/2011/05"> May 2011 (6)
+</option>
+                            <option value="/blog/2011/04"> April 2011 (9)
+</option>
+                            <option value="/blog/2011/03"> March 2011 (7)
+</option>
+                            <option value="/blog/2011/02"> February 2011 (7)
+</option>
+                            <option value="/blog/2011/01"> January 2011 (14)
+</option>
+                            <option value="/blog/2010/12"> December 2010 (6)
+</option>
+                            <option value="/blog/2010/11"> November 2010 (11)
+</option>
+                            <option value="/blog/2010/10"> October 2010 (18)
+</option>
+                            <option value="/blog/2010/09"> September 2010 (15)
+</option>
+                            <option value="/blog/2010/08"> August 2010 (22)
+</option>
+                            <option value="/blog/2010/07"> July 2010 (15)
+</option>
+                            <option value="/blog/2010/06"> June 2010 (17)
+</option>
+                            <option value="/blog/2010/05"> May 2010 (8)
+</option>
+                            <option value="/blog/2010/04"> April 2010 (11)
+</option>
+                            <option value="/blog/2010/03"> March 2010 (22)
+</option>
+                            <option value="/blog/2010/02"> February 2010 (23)
+</option>
+                            <option value="/blog/2010/01"> January 2010 (8)
+</option>
+                            <option value="/blog/2009/12"> December 2009 (6)
+</option>
+                            <option value="/blog/2009/11"> November 2009 (8)
+</option>
+                            <option value="/blog/2009/10"> October 2009 (7)
+</option>
+                            <option value="/blog/2009/09"> September 2009 (11)
+</option>
+                            <option value="/blog/2009/08"> August 2009 (19)
+</option>
+                            <option value="/blog/2009/07"> July 2009 (16)
+</option>
+                            <option value="/blog/2009/06"> June 2009 (12)
+</option>
+                            <option value="/blog/2009/05"> May 2009 (13)
+</option>
+                            <option value="/blog/2009/04"> April 2009 (20)
+</option>
+                            <option value="/blog/2009/03"> March 2009 (20)
+</option>
+                            <option value="/blog/2009/02"> February 2009 (19)
+</option>
+                            <option value="/blog/2009/01"> January 2009 (18)
+</option>
+                            <option value="/blog/2008/12"> December 2008 (22)
+</option>
+                            <option value="/blog/2008/11"> November 2008 (9)
+</option>
+                            <option value="/blog/2008/10"> October 2008 (13)
+</option>
+                            <option value="/blog/2008/09"> September 2008 (11)
+</option>
+                            <option value="/blog/2008/08"> August 2008 (3)
+</option>
+                    </select>
+    </div>
+    
+    <!-- widget: tags -->
+        <!-- / widget: tags -->
+    
+          <!-- widget: ad -->
+                    <div class="widget widget_ad">
+                      </div>
+                    <!-- /widget: ad -->
+    
+    <!-- widget: meta -->
+        <div class="widget widget_meta">
+        <h5>Links</h5>
+        <ul>
+                        <li><a target="_blank" href="https://blogs.sans.org/computer-forensics/login.php">Log in</a></li>
+            <li><a class="feed" href="/blog/feed/" title="Post Feed">Entries RSS</a></li>
+            <li><a class="feed" href="/blog/feed/comments/" title="Comment Feed">Comments RSS</a></li>
+                                                </ul>
+    </div><!-- /widget: meta -->
+    
+    </div><!--/ navigation -->
+        <!--/ sidebar -->
+        
+    </div><!--/ middle -->
+</div><!--/ container -->
+<!-- Bottom Content -->
+</div> <!-- end .body -->
+<div id="pre_footer" class="bottom-content">
+    <div class="container">
+        <div class="col">
+            <div class="col3">
+                <h5>Latest Blog Posts</h5>
+                                        <p><a href="/blog/2015/04/03/identifying-and-disrupting-crypto-ransomware-and-destructive-malware">Identifying and Disrupting Crypto-Ransomware (and Destructive Malware)</a><br />
+                        April 03, 2015 - 3:30 PM
+</p>
+                                            <p><a href="/blog/2015/03/30/monitoring-for-delegation-token-theft">Monitoring for Delegation Token Theft</a><br />
+                        March 30, 2015 - 10:22 PM
+</p>
+                                            <p><a href="/blog/2015/03/25/detecting-dll-hijacking-on-windows">Detecting DLL Hijacking on Windows</a><br />
+                        March 25, 2015 - 10:47 PM
+</p>
+                            
+            </div>
+            <div class="col3">
+                <h5>Latest Tweets @sansforensics</h5>
+                <p><a href="https://twitter.com/sansforensics/statuses/584118099642871808">State of the Cyber Threat Intelligence Address - SANS CTI Su [...]</a><br>April 3, 2015 - 10:19 PM</p><p><a href="https://twitter.com/sansforensics/statuses/584093960999567361">#DFIRSummit Forensicators we're coming to Austin! July 7-14  [...]</a><br>April 3, 2015 - 8:43 PM</p><p><a href="https://twitter.com/sansforensics/statuses/584085345484013569">The Most Dangerous Game Hunting Adversaries Across the Inter [...]</a><br>April 3, 2015 - 8:09 PM</p>        
+            </div>
+            <div class="col3">
+                <h5>Latest Papers</h5>
+                                    <p><a href="/community/papers/gcfa/sysmon-enrich-security-onions-host-level-capabilities_10612">Using Sysmon to Enrich Security Onion's Host-Level Capabilities</a><br />
+                    By Joshua Brower</p>
+                                    <p><a href="/community/papers/gcfa/analyzing-man-in-the-browser-mitb-attacks_10363">Analyzing Man-in-the-Browser (MITB) Attacks</a><br />
+                    By Chris Cain</p>
+                                    <p><a href="/community/papers/gcfa/intelligence-driven-incident-response-yara_10315">Intelligence-Driven Incident Response with YARA</a><br />
+                    By Ricardo Dias</p>
+                            </div>
+        </div>
+        <div class="clear"></div>
+        <hr />
+        <div class="col">
+                            <div class="col3">
+                <p><small>"This course is filling in the blanks in my knowledge of how some things work. It is nice to know what the tools are doing."<br />- Douglas Couch, Purdue University</small></p>
+            </div>
+                    <div class="col3">
+                <p><small>"I had taken several other forensic courses prior to this one, but none of them or their instructors made understanding forensic methodologies and techniques as clear and understandable as Rob Lee and this course has."<br />- Nathon Heck, Purdue</small></p>
+            </div>
+                    <div class="col3">
+                <p><small>"A great course on timeline, registry, and restore point forensics. SANS is continuing to be the leader on teaching new techniques happening with forensics."<br />- Brad Garnett, Gibson County Sherrif's Dept.</small></p>
+            </div>
+                
+        </div>
+        <div class="clear"></div>
+    </div>
+</div><!-- end .bottom-content -->
+<!-- Footer -->
+<div id="footer">
+<div class="container">
+<img src="/images/design-site/logo-footer.png" alt="SANS Digital Forensics and Incident Response Blog | 2015 DFIR Monterey Network Forensic Challenge Results | SANS Institute" class="logo-footer" />
+
+<ul class="site-selector">
+    <li class="site-switcher"><a href="#"><span class="hidden">SANS Site Network</span></a>
+        <ul class="sites">
+            <li class="current-site">Current Site</li><li class="forensics"><a href="http://digital-forensics.sans.org"><img src="/images/design/custom/site-selector/site-icons/forensics.png" alt="forensics" />Forensics & Incident Response</a></li>
+<li class="selector-help">Choose a different site <a href="/help/site-network"><span class="hidden">Help</span></a></li><li class="sans"><a href="http://www.sans.org"><img src="/images/design/custom/site-selector/site-icons/sans.png" alt="sans" />Security Training</a></li>
+<li class="giac"><a href="http://www.giac.org"><img src="/images/design/custom/site-selector/site-icons/giac.png" alt="giac" />Security Certification</a></li>
+<li class="isc"><a href="http://isc.sans.edu"><img src="/images/design/custom/site-selector/site-icons/isc.png" alt="isc" />Internet Storm Center</a></li>
+<li class="sti"><a href="http://www.sans.edu"><img src="/images/design/custom/site-selector/site-icons/sti.png" alt="sti" />Graduate Degree Programs</a></li>
+<li class="awareness"><a href="http://www.securingthehuman.org"><img src="/images/design/custom/site-selector/site-icons/awareness.png" alt="awareness" />Security Awareness Training</a></li>
+<li class="cyber-defense"><a href="http://cyber-defense.sans.org"><img src="/images/design/custom/site-selector/site-icons/cyber-defense.png" alt="cyber-defense" />Cyber Defense</a></li>
+<li class="pentest"><a href="http://pen-testing.sans.org"><img src="/images/design/custom/site-selector/site-icons/pentest.png" alt="pentest" />Penetration Testing</a></li>
+<li class="ics"><a href="http://ics.sans.org"><img src="/images/design/custom/site-selector/site-icons/ics.png" alt="ics" />Industrial Control Systems</a></li>
+<li class="ssi"><a href="http://software-security.sans.org"><img src="/images/design/custom/site-selector/site-icons/ssi.png" alt="ssi" />Software Security</a></li>
+<li class="sic"><a href="http://sic.sans.org"><img src="/images/design/custom/site-selector/site-icons/sic.png" alt="sic" />Government Private Training</a></li>
+        </ul>
+    </li>
+</ul>
+
+<div class="latest-icons">
+<a href="http://twitter.com/sansforensics"><img src="/images/design/custom/icons/twitter-icon.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/pages/SANS-Institute/173623382673767"><img src="/images/design/custom/icons/facebook-icon.png" alt="Facebook" /></a>
+<a href="http://digital-forensics.sans.org/blog/feed/"><img src="/images/design/custom/icons/rss-icon.png" alt="RSS" /></a>
+</div><!-- end .latest-icons -->
+
+<div class="bottom-nav align-right">
+<ul>
+ <li><a href="/community/">Community</a></li>
+ <li><a href="/training">Training</a></li>
+ <li><a href="/certification/">Certification</a></li>
+ <li><a href="/instructors">Instructors</a></li>
+ <li class="last"><a href="/about">About</a></li>
+</ul>
+<p class="copyright align-right">&copy; 2008 - 2015 SANS&trade; Institute</p>
+</div><!-- end .bottom-nav align-right-->
+</div><!-- end .container-->
+</div><!-- end .footer-->
+</body>
+</html>

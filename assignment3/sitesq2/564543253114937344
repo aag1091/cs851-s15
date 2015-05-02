@@ -1,0 +1,2186 @@
+<!DOCTYPE html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
+  <head>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"514c464673","applicationID":"2764083","transactionName":"cFwNFUIKDQhTQx8VWEBHEE5DDQ4T","queueTime":10,"applicationTime":230,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-632.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VwQHUF9SGwEHUlVSDwI="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:20,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(3),window.onerror=e;try{throw new Error}catch(u){"stack"in u&&(t(4),t(5),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:8,3:3,4:7,5:6,6:21,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:21,2:22,ee:"QJf3ax",gos:"7eSDFh"}],6:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:22,2:21,ee:"QJf3ax"}],7:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:22,2:21,ee:"QJf3ax"}],8:[function(t,e){function n(){u.inPlace(this,p,"fn-")}function r(t,e){u.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),u=c(a),f=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),f.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,u.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:5,2:22,ee:"QJf3ax"}],9:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=n(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=n(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var f=0;c>f;f++)e.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:10,3:8,4:5,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],10:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],11:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:20,2:21,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===f.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=u.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),u=c.document,f=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:f,features:{}};u.addEventListener?(u.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(u.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:20,2:11,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],20:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],21:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],22:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:21,ee:"QJf3ax"}]},{},["G9z0Bl",4,9]);</script>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="http://assets.splicetoday.com/fluidicon.png" rel="fluid-icon" title="Splice Today">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed">
+    <link href="/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72">
+    <link href="/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114">
+    <link href="/apple-touch-icon-120x120-precomposed.png" rel="apple-touch-icon-precomposed" sizes="120x120">
+    <link href="/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144">
+    <link href="http://assets.splicetoday.com/splicetoday-logo.svg" rel="logo" type="image/svg">
+    <link href="http://assets.splicetoday.com" rel="dns-prefetch"><link href="/rss/feed.atom" rel="alternate" title="ATOM" type="application/atom+xml" /><link href="/rss/feed.rss" rel="alternate" title="RSS" type="application/rss+xml" /><title>Bill Clinton Wants Final Cut | SPLICETODAY.com</title>
+    <meta content=" Because he&#x27;s special! " name="description" />
+    <meta content="music, pop culture, sports, moving pictures, politics, media, writing, consume, campus, sex, digital" name="keywords" />
+    <meta content="http://splicetoday.com/politics-and-media/bill-clinton-wants-final-cut" property="og:url" />
+    <meta content="Bill Clinton Wants Final Cut" property="og:title" />
+    <meta content=" Because he&#x27;s special! " property="og:description" />
+    <meta content="article" property="og:type" />
+    <meta content="http://assets.splicetoday.com/uploads/posts/photos/17154/medium_rsz_clinton.jpg" property="og:image" />
+    <meta content="SPLICETODAY.com" property="og:site_name" />
+    <meta content="http://splicetoday.com/politics-and-media/bill-clinton-wants-final-cut" property="twitter:url" />
+    <meta content="Bill Clinton Wants Final Cut" property="twitter:title" />
+    <meta content=" Because he&#x27;s special! " property="twitter:card" />
+    <meta content="http://assets.splicetoday.com/uploads/posts/photos/17154/medium_rsz_clinton.jpg" property="twitter:image" />
+    <link href="http://splicetoday.com/politics-and-media/bill-clinton-wants-final-cut" rel="canonical" /><link href="http://assets.splicetoday.com/assets/application-93f9fbd45d42383f31059838251b3f30.css" media="all" rel="stylesheet" type="text/css" /><link href="http://assets.splicetoday.com/assets/print-8c80d4ca823a4616e8f29177b720af21.css" media="print" rel="stylesheet" type="text/css" /><meta content="authenticity_token" name="csrf-param" />
+    <meta content="7TPHu7uDQ7jmhdx45cquPFGMlob7dLg1w8tSvRamaNo=" name="csrf-token" />
+    
+  </head>
+  <body class="posts-layout posts-show-view politics-and-media ">
+    <div class="fb-root"></div>
+    <div class="page">
+      <div class="row cf"><header>
+  <div class="container-15">
+    <div class="span-3 alpha">
+      <aside class="logo-by">
+        LOGO BY <strong><a href="/profiles/s_frantz">s_frantz</a></strong>
+        <div class="arrow-right"></div>
+      </aside><aside class="recent-comments cf">
+  <div class="recent-comments-header">
+    <div class="mini-label">
+      <span class="mini-icon mini-icon-bubble"></span><a href="/comments">Recent Comments</a>
+    </div>
+  </div>
+  <ul><li class="comment" data-creator-id="10045" id="comment_20052"><a class="comment-link-overlay" href="/writing/human-host-presents-a-beginner-s-guide-to-music-theory#comment_20052">Go to comment.</a>
+<div class="user cf">
+  <div class="user-info">
+    <a href="/profiles/subbeck">Subbeck</a>
+  </div>
+  <div class="comment-created-at">
+    Apr 03, 2015, 04:37PM
+  </div>
+</div>
+<span class="icon icon-plus-thin pull-left writing-color"></span>
+<div class="comment-excerpt">
+  <a class="comment-link" href="/writing/human-host-presents-a-beginner-s-guide-to-music-theory#comment_20052">Twas brillig, and the slithy toves
+    Did gyre an...</a>
+</div>
+<div class="comment-body">
+  Twas brillig, and the slithy toves
+  Did gyre and gimble in the wabe
+</div>
+<div class="comment-responses">
+</div>
+<div class="current-user-actions" data-hidden-from="creator" data-visible-to="signed-in-user">
+  <div class="comment-actions cf">
+    <div class="respond-to-comment left">
+      <a href="#" rel="nofollow">
+            <div class="mini-label">
+              <div class="mini-icon mini-icon-double-bubble"></div>
+              Respond to comment
+            </div></a>
+    </div>
+    <div class="flag-comment right">
+      <a href="/comments/20052/flag" data-confirm="Are you sure you want to flag this comment?" data-method="put" data-remote="true" rel="nofollow">
+            <div class="mini-label">
+              <div class="mini-icon mini-icon-flag"></div>
+              Flag
+            </div></a>
+    </div>
+  </div>
+  <div class="new-comment-response hide cf"><form accept-charset="UTF-8" action="/comments" class="simple_form new_comment" data-remote="true" id="comment_20052_new_comment" method="post" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="3njCgKqUrnBD9N7ZDRbZ83nb2iK7ewm+EnPkjb0Xhxk=" /></div>
+    <input id="comment_20052_comment_parent_id" name="comment[parent_id]" type="hidden" value="20052" /><input id="comment_20052_comment_post_id" name="comment[post_id]" type="hidden" value="17485" /><div class="control-group text optional comment_body comment-body-input"><div class="controls"><textarea class="text optional" cols="40" id="comment_20052_comment_body" name="comment[body]" rows="20">
+</textarea></div></div><input class="mini-button dark-grey pill" data-disable-with="Posting..." name="commit" type="submit" value="Post It" /></form>
+  </div>
+</div></li><li class="comment" data-creator-id="6794" id="comment_20051"><a class="comment-link-overlay" href="/writing/oops-i-m-fat-again#comment_20051">Go to comment.</a>
+<div class="user cf">
+  <div class="user-avatar"><a href="/profiles/jmurray">
+        <img alt="Small_jdmfbsq" src="http://assets.splicetoday.com/uploads/users/avatar/6794/small_JDMFBsq.jpg" /></a>
+  </div>
+  <div class="user-info">
+    <a href="/profiles/jmurray">JMurray</a>
+  </div>
+  <div class="comment-created-at">
+    Apr 03, 2015, 04:35PM
+  </div>
+</div>
+<span class="icon icon-plus-thin pull-left writing-color"></span>
+<div class="comment-excerpt">
+  <a class="comment-link" href="/writing/oops-i-m-fat-again#comment_20051">Been up and down myself, mostly up so long I em...</a>
+</div>
+<div class="comment-body">
+  Been up and down myself, mostly up so long I empathize Mary.  Periodically break through the wall of crippling self-forgiveness to a new level of loathing.
+</div>
+<div class="comment-responses">
+</div>
+<div class="current-user-actions" data-hidden-from="creator" data-visible-to="signed-in-user">
+  <div class="comment-actions cf">
+    <div class="respond-to-comment left">
+      <a href="#" rel="nofollow">
+            <div class="mini-label">
+              <div class="mini-icon mini-icon-double-bubble"></div>
+              Respond to comment
+            </div></a>
+    </div>
+    <div class="flag-comment right">
+      <a href="/comments/20051/flag" data-confirm="Are you sure you want to flag this comment?" data-method="put" data-remote="true" rel="nofollow">
+            <div class="mini-label">
+              <div class="mini-icon mini-icon-flag"></div>
+              Flag
+            </div></a>
+    </div>
+  </div>
+  <div class="new-comment-response hide cf"><form accept-charset="UTF-8" action="/comments" class="simple_form new_comment" data-remote="true" id="comment_20051_new_comment" method="post" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="+Y0hARvcHWOJVZlt9O1SYAI85FC186qVf++Cvy2yL0o=" /></div>
+    <input id="comment_20051_comment_parent_id" name="comment[parent_id]" type="hidden" value="20051" /><input id="comment_20051_comment_post_id" name="comment[post_id]" type="hidden" value="17466" /><div class="control-group text optional comment_body comment-body-input"><div class="controls"><textarea class="text optional" cols="40" id="comment_20051_comment_body" name="comment[body]" rows="20">
+</textarea></div></div><input class="mini-button dark-grey pill" data-disable-with="Posting..." name="commit" type="submit" value="Post It" /></form>
+  </div>
+</div></li><li class="comment" data-creator-id="6794" id="comment_20050"><a class="comment-link-overlay" href="/pop-culture/what-year-is-it-158#comment_20050">Go to comment.</a>
+<div class="user cf">
+  <div class="user-avatar"><a href="/profiles/jmurray">
+        <img alt="Small_jdmfbsq" src="http://assets.splicetoday.com/uploads/users/avatar/6794/small_JDMFBsq.jpg" /></a>
+  </div>
+  <div class="user-info">
+    <a href="/profiles/jmurray">JMurray</a>
+  </div>
+  <div class="comment-created-at">
+    Apr 03, 2015, 03:31PM
+  </div>
+</div>
+<span class="icon icon-plus-thin pull-left pop-culture-color"></span>
+<div class="comment-excerpt">
+  <a class="comment-link" href="/pop-culture/what-year-is-it-158#comment_20050">Let&#39;s see.  &quot;The Thief &amp;amp; The Dog&quot;? Collie N...</a>
+</div>
+<div class="comment-body">
+  Let's see.  "The Thief &amp; The Dog"? Collie North?  I knew Kriswell and I'm no Kriswell. Have to guess '88.
+</div>
+<div class="comment-responses">
+</div>
+<div class="current-user-actions" data-hidden-from="creator" data-visible-to="signed-in-user">
+  <div class="comment-actions cf">
+    <div class="respond-to-comment left">
+      <a href="#" rel="nofollow">
+            <div class="mini-label">
+              <div class="mini-icon mini-icon-double-bubble"></div>
+              Respond to comment
+            </div></a>
+    </div>
+    <div class="flag-comment right">
+      <a href="/comments/20050/flag" data-confirm="Are you sure you want to flag this comment?" data-method="put" data-remote="true" rel="nofollow">
+            <div class="mini-label">
+              <div class="mini-icon mini-icon-flag"></div>
+              Flag
+            </div></a>
+    </div>
+  </div>
+  <div class="new-comment-response hide cf"><form accept-charset="UTF-8" action="/comments" class="simple_form new_comment" data-remote="true" id="comment_20050_new_comment" method="post" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="+Y0hARvcHWOJVZlt9O1SYAI85FC186qVf++Cvy2yL0o=" /></div>
+    <input id="comment_20050_comment_parent_id" name="comment[parent_id]" type="hidden" value="20050" /><input id="comment_20050_comment_post_id" name="comment[post_id]" type="hidden" value="17495" /><div class="control-group text optional comment_body comment-body-input"><div class="controls"><textarea class="text optional" cols="40" id="comment_20050_comment_body" name="comment[body]" rows="20">
+</textarea></div></div><input class="mini-button dark-grey pill" data-disable-with="Posting..." name="commit" type="submit" value="Post It" /></form>
+  </div>
+</div></li>
+  </ul>
+  <div class="recent-comments-pagination">
+    <span class="controls"><i class="mini-icon mini-icon-arrow-left muted"></i><a href="/comments?page=2" class="next" data-remote="true" rel="next"><i class="mini-icon mini-icon-arrow-right"></i></a></span><span class="mini-label"><a href="/comments" class="more-comments-link">More Comments</a></span>
+  </div>
+</aside>
+      <div class="splice-archive">
+        <div class="mini-label">
+          <span class="icon icon-plus-thin general"></span><a href="/archive">Splice Archive</a>
+        </div>
+      </div>
+      <div class="search-splice-form">
+        <form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+          <div class="query-input">
+            <input class="search-query" data-autocomplete-source="/search" id="q" name="q" placeholder="Search Splice" type="text" />
+          </div>
+          <div class="submit">
+            <button type="submit">Search</button>
+          </div></form>
+      </div>
+    </div>
+    <div class="span-8">
+      <div class="logo invisible"><a href="/">
+          <img alt="Splice Today Logo" height="200" src="http://assets.splicetoday.com/uploads/logos/7/large_road_cones.png" width="530" /><img alt="Splicetoday-print" class="print" height="65" src="http://assets.splicetoday.com/assets/logos/splicetoday-print-3a30b4a78bfdcce2946c618a7e8a68e8.gif" width="233" /></a>
+      </div><div class="featured-posts ui-tabs" id="featured-posts">
+        <ul>
+          <li>
+            <a href="#featured-post-17468">Splice Presents: Height Zone World Ep. 35 - Paulie Think (Get That God in Silence)</a>
+          </li><li>
+            <a href="#featured-post-17465">Clinton’s Presidential Campaign is a Long Vagina Monologue</a>
+          </li><li>
+            <a href="#featured-post-17452">Questions, Statements and Proclamations for the 2015 MLB Season</a>
+          </li>
+        </ul>
+        <div class="featured-post ui-tabs-hide" id="featured-post-17468">
+          <span class="icon icon-plus-thin pull-left music-color"></span>
+          <div class="featured-title">
+            <a href="/music/splice-presents-height-zone-world-ep-35-paulie-think-get-that-god-in-silence">Splice Presents: Height Zone World Ep. 35 - Paulie Think (Get That God in Silence)</a>...
+          </div>
+        </div><div class="featured-post ui-tabs-hide" id="featured-post-17465">
+          <span class="icon icon-plus-thin pull-left politics-and-media-color"></span>
+          <div class="featured-title">
+            <a href="/politics-and-media/clinton-s-presidential-campaign-is-a-long-vagina-monologue">Clinton’s Presidential Campaign is a Long Vagina Monologue</a> Here’s a pop quiz: Mart...
+          </div>
+        </div><div class="featured-post ui-tabs-hide" id="featured-post-17452">
+          <span class="icon icon-plus-thin pull-left sports-color"></span>
+          <div class="featured-title">
+            <a href="/sports/questions-statements-and-proclamations-for-the-2015-mlb-season">Questions, Statements and Proclamations for the 2015 MLB Season</a> Baseball is not en...
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="span-4 omega">
+      <div class="sign-in-user-form cf"><form accept-charset="UTF-8" action="/profile/login" class="simple_form new_user" id="mini_sign_in_form" method="post" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="7TPHu7uDQ7jmhdx45cquPFGMlob7dLg1w8tSvRamaNo=" /></div>
+          <div class="control-group string optional user_login login-input"><label class="string optional control-label" for="user_login">Login</label><div class="controls"><input class="string optional" id="user_login" name="user[login]" size="15" tabindex="1" type="text" /></div></div><div class="control-group password optional user_password password-input"><label class="password optional control-label" for="user_password">PASS <a href='/profile/password/new' class='forgot'>FORGOT?</a></label><div class="controls"><input class="password optional" id="user_password" name="user[password]" size="15" tabindex="2" type="password" /></div></div><a href="/profile/sign_up" class="new-user">NEW USER?</a><input class="submit-button mini-button dark-grey pill" data-disable-with="Logging In..." name="commit" tabindex="3" type="submit" value="Login" /></form>
+      </div><div class="subnav">
+        <ul>
+          <li class="about-splice">
+            <div class="mini-label">
+              <span class="icon icon-plus-thin pull-left general-color"></span><a href="/about">About Splice</a>
+            </div>
+          </li>
+          <li class="follow-splice">
+            <div class="mini-label">
+              <span class="icon icon-plus-thin pull-left general-color"></span><span class="label">Follow Splice<a href="https://www.facebook.com/SpliceToday" class="facebook-icon" target="_blank">Splicetoday on Facebook</a><a href="https://twitter.com/splicetoday" class="twitter-icon" target="_blank">Splicetoday on Twitter</a></span>
+            </div>
+          </li>
+        </ul>
+        <div class="ad ad-zone-01">
+          <script async="async" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/javascript"></script><ins class="adsbygoogle" data-ad-client="ca-pub-3043784346183942" data-ad-slot="9161167644" style="display:inline-block;width:180px;height:150px"></ins>
+          <script type="text/javascript">
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+      </div>
+      <div class="row">
+        <div class="container-15">
+          <div class="span-3 alpha navigation-column">
+            <div class="nav">
+              <div class="department-label">
+                <div class="mini-label topper">
+                  DEPARTMENTS
+                </div>
+              </div>
+              <ul>
+                <li class="department music" id="department_1"><div class="mini-label">
+                  <span class="icon icon-plus-thick music-color"></span><a href="/music">Music</a>
+                </div>
+                <div class="most-recent-post"><a href="/music/blur-lonesome-street-official-video">
+                    Blur - "Lonesome Street" Of...</a>
+                </div></li><li class="department pop-culture" id="department_2"><div class="mini-label">
+                  <span class="icon icon-plus-thick pop-culture-color"></span><a href="/pop-culture">Pop Culture</a>
+                </div>
+                <div class="most-recent-post"><a href="/pop-culture/what-year-is-it-158">
+                    What Year Is It (#158)?</a>
+                </div></li><li class="department sports" id="department_3"><div class="mini-label">
+                  <span class="icon icon-plus-thick sports-color"></span><a href="/sports">Sports</a>
+                </div>
+                <div class="most-recent-post"><a href="/sports/american-league-east-thumbs-up-thumbs-down">
+                    American League East: Thumb...</a>
+                </div></li><li class="department moving-pictures" id="department_4"><div class="mini-label">
+                  <span class="icon icon-plus-thick moving-pictures-color"></span><a href="/moving-pictures">Moving Pictures</a>
+                </div>
+                <div class="most-recent-post"><a href="/moving-pictures/gliding-the-friendly-skies">
+                    Gliding the Friendly Skies</a>
+                </div></li><li class="department politics-and-media" id="department_5"><div class="mini-label">
+                  <span class="icon icon-plus-thick politics-and-media-color"></span><a href="/politics-and-media">Politics &amp; Media</a>
+                </div>
+                <div class="most-recent-post"><a href="/politics-and-media/i-weep-upon-the-corpse-of-meritocracy">
+                    I Weep Upon the Corpse of M...</a>
+                </div></li><li class="department writing" id="department_7"><div class="mini-label">
+                  <span class="icon icon-plus-thick writing-color"></span><a href="/writing">Writing</a>
+                </div>
+                <div class="most-recent-post"><a href="/writing/april-madness">
+                    April Madness</a>
+                </div></li><li class="department consume" id="department_11"><div class="mini-label">
+                  <span class="icon icon-plus-thick consume-color"></span><a href="/consume">Consume</a>
+                </div>
+                <div class="most-recent-post"><a href="/consume/beergotten">
+                    Beergotten</a>
+                </div></li><li class="department on-campus" id="department_9"><div class="mini-label">
+                  <span class="icon icon-plus-thick on-campus-color"></span><a href="/on-campus">On Campus</a>
+                </div>
+                <div class="most-recent-post"><a href="/on-campus/those-dumb-kids-and-their-mattress">
+                    Those Dumb Kids and Their M...</a>
+                </div></li><li class="department sex" id="department_10"><div class="mini-label">
+                  <span class="icon icon-plus-thick sex-color"></span><a href="/sex">Sex</a>
+                </div>
+                <div class="most-recent-post"><a href="/sex/michael-sam-and-the-hot-gay-kiss-that-won-t-quit">
+                    Michael Sam and the Hot Gay...</a>
+                </div></li><li class="department digital" id="department_6"><div class="mini-label">
+                  <span class="icon icon-plus-thick digital-color"></span><a href="/digital">Digital</a>
+                </div>
+                <div class="most-recent-post"><a href="/digital/fourteen-things-the-internet-told-me">
+                    Fourteen Things the Interne...</a>
+                </div></li><li class="department baltimore" id="department_8"><div class="mini-label">
+                  <span class="icon icon-plus-thick baltimore-color"></span><a href="/baltimore">Baltimore</a>
+                </div>
+                <div class="most-recent-post"><a href="/baltimore/comcast-s-monopolistic-hold-on-baltimore-city">
+                    Comcast’s Monopolistic Hold...</a>
+                </div></li><li class="department mixtape" id="department_13"><div class="mini-label">
+                  <span class="icon icon-plus-thick mixtape-color"></span><a href="/mixtape">Mixtape</a>
+                </div>
+                <div class="most-recent-post"><a href="/mixtape/splice-premiere-height-with-friends-swiss-chard-vol-1">
+                    Splice Premiere: Height Wit...</a>
+                </div></li>
+              </ul>
+            </div><div class="articles-with-the-most ui-tabs">
+              <div class="mini-label title">
+                Articles with the most
+              </div>
+              <ul>
+                <li class="views">
+                  <div class="mini-label">
+                    <a href="#articles-with-the-most-views" rel="nofollow">Views</a>
+                  </div>
+                </li>
+                <li class="comments">
+                  <div class="mini-label">
+                    <a href="#articles-with-the-most-comments" rel="nofollow">Comments</a>
+                  </div>
+                </li>
+              </ul>
+              <div id="articles-with-the-most-views">
+                <ul class="articles">
+                  <li>
+                    <span class="icon icon-plus-thin pull-left writing-color"></span><a href="/writing/oops-i-m-fat-again">Oops, I’m Fat Again</a>
+                  </li><li>
+                    <span class="icon icon-plus-thin pull-left pop-culture-color"></span><a href="/pop-culture/death-of-the-daily-show">Death of The Daily Show</a>
+                  </li><li>
+                    <span class="icon icon-plus-thin pull-left politics-and-media-color"></span><a href="/politics-and-media/the-washington-post-gets-it-wrong-on-uva">The Washington Post Gets It Wrong on UVA</a>
+                  </li><li>
+                    <span class="icon icon-plus-thin pull-left on-campus-color"></span><a href="/on-campus/those-dumb-kids-and-their-mattress">Those Dumb Kids and Their Mattress</a>
+                  </li><li>
+                    <span class="icon icon-plus-thin pull-left music-color"></span><a href="/music/splice-presents-height-zone-world-ep-35-paulie-think-get-that-god-in-silence">Splice Presents: Height Zone World Ep. 35 - Paulie Think (Get That God in Silence)</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="ui-tabs-hide" id="articles-with-the-most-comments">
+                <ul class="articles">
+                  <li>
+                    <span class="icon icon-plus-thin pull-left politics-and-media-color"></span><a href="/politics-and-media/scott-walker-liar-or-warmonger">Scott Walker, Liar or Warmonger?</a>
+                  </li><li>
+                    <span class="icon icon-plus-thin pull-left politics-and-media-color"></span><a href="/politics-and-media/the-left-should-spend-less-time-on-strategy-more-on-truth">The Left Should Spend Less Time on Strategy, More on Truth</a>
+                  </li><li>
+                    <span class="icon icon-plus-thin pull-left pop-culture-color"></span><a href="/pop-culture/the-dancing-man-is-winning">The Dancing Man is Winning</a>
+                  </li><li>
+                    <span class="icon icon-plus-thin pull-left politics-and-media-color"></span><a href="/politics-and-media/a-troubling-president-hillary-clinton">A Troubling President Hillary Clinton</a>
+                  </li><li>
+                    <span class="icon icon-plus-thin pull-left writing-color"></span><a href="/writing/oops-i-m-fat-again">Oops, I’m Fat Again</a>
+                  </li>
+                </ul>
+              </div>
+            </div><div class="ad ad-zone-02">
+              <script async="async" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/javascript"></script><ins class="adsbygoogle" data-ad-client="ca-pub-3043784346183942" data-ad-slot="4991252811" style="display:inline-block;width:160px;height:600px"></ins>
+              <script type="text/javascript">
+                (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            </div>
+          </div>
+          <div class="span-12 content-column">
+            
+            <div class="main" role="main"><div class="post post-container" id="post_17154">
+  <div class="span-8 main-content alpha">
+    <div class="mini-label topper noborder cf politics-and-media-bg-color">
+      <span class="left department-title politics-and-media-dark-color" itemprop="articleSection">Politics &amp; Media</span><span class="right publish-date politics-and-media-dark-color" content="2015-01-27T08:02:21Z" itemprop="datePublished">Jan 27, 2015, 03:02AM</span>
+    </div>
+    <article itemscope="itemscope" itemtype="http://schema.org/Article">
+      <h1 class="post-title" itemprop="name">
+        Bill Clinton Wants Final Cut
+      </h1>
+      <div class="byline"><a href="/authors/C.T.%20May">
+                <span itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"><span itemprop="name">C.T. May</span></span></a>
+      </div>
+      <div class="deck">
+        <p>Because he&#39;s special!</p>
+        
+      </div>
+      <div class="header-image">
+        <img alt="Large_rsz_clinton" itemprop="image" src="http://assets.splicetoday.com/uploads/posts/photos/17154/large_rsz_clinton.jpg" />
+      </div>
+      <div class="share-post">
+        <div class="addthis_toolbox addthis_default_style">
+          <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a><a class="addthis_button_facebook_send"></a><a class="addthis_button_tweet" tw:count="none"></a><a class="addthis_button_google_plusone" g:plusone:count="false" g:plusone:size="medium"></a><a class="addthis_button_pinterest_pinit"></a><a class="addthis_counter addthis_pill_style"></a>
+        </div>
+      </div>
+      <div class="rule politics-and-media-bg-color"></div>
+      <div class="post-body">
+        <span itemprop="articleBody"><p>Bill Clinton tried pushing around Martin Scorsese<em>.</em> The director was going to make a documentary about Clinton for HBO, but &ldquo;people close to Mr. Clinton sought to approve questions he would be asked in the film, and went so far as to demand final cut, a privilege generally reserved for directors of <a href="http://www.nytimes.com/2015/01/23/business/media/a-scorsese-documentary-on-bill-clinton-is-stalled.html?_r=0">Mr. Scorsese&rsquo;s stature</a>.&rdquo;</p>
+          
+          <p>That&#39;s from <em>The New York Times,</em> which says it got word from unnamed people &ldquo;briefed on the project.&rdquo; The documentary was well along, including its centerpiece footage of Bill Clinton emitting benevolence rays during a visit to Africa. But now Scorsese has stopped work on the project, and HBO says wanly, &ldquo;It&rsquo;s not happening soon but that doesn&rsquo;t mean it&rsquo;s not going to happen.&rdquo;</p>
+          
+          <p>Of the above, only the HBO statement is known to be true; yes, HBO did say that. For their part, Scorsese and the movie&#39;s producer gave the reporter no comment, and a Clinton aide said by email that the claims were &ldquo;inaccurate.&rdquo; But find somebody who believes that aide. Two years ago HBO and Scorsese announced the documentary they would make about this &ldquo;transcendent figure,&rdquo; as Scorsese described our ex-president. Now HBO has nothing to put on the air and doesn&#39;t really expect to. What happened in between? We don&#39;t know of anything that would have made Scorsese change his project from puffball to threat, or anything that would have made Clinton especially jumpy about his reputation.</p>
+          
+          <p>Maybe Clinton has suffered a medical setback and doesn&#39;t want evidence on film; if so, good luck campaigning for his wife. Maybe his wife&#39;s people won a behind-the-scenes trench war, and now their candidate wins this extra safeguard. Or maybe Bill Clinton has become used to the great people of the world dropping plums and apples into his hand. He noticed 2016 coming closer and he thought, what the hey, better seal any gaps in Hillary&#39;s p.r. protection. Sure, the project was safe or he wouldn&#39;t have said yes. But safe isn&#39;t as good as safer, and why not get the best? It shouldn&#39;t be a big deal. The documentary&#39;s producer is a Clinton buddy, a multimillionaire who gets named in paternity suits and has been spotted with Bill and what <em>Vanity Fair</em> termed a &ldquo;ravishing entourage.&rdquo; He and Bill are in the same wolf pack, and the movie&#39;s director thinks Clinton is transcendent and towering. So let them know that, for peace of mind, Clinton would like some due precautions to be taken. Turns out to be a problem.</p>
+          
+          <p>Clinton can&#39;t believe it. Look at the HBO-Scorsese-Clinton project. Out of those names, which is key? You can have movies that aren&#39;t made by HBO or directed by Martin Scorsese. You cannot have a Bill Clinton documentary without Bill Clinton. The project exists because he exists, because he matters so much that the world wants to be near him. What&#39;s this about a &ldquo;privilege generally reserved for directors of Mr. Scorsese&rsquo;s stature&rdquo;? Clinton loves movie folk and all, but he knows they love him more and he figures they should. Yes, Clinton had to work with Congress, and he had to become a lot more careful about grabbing females, but these limits were impressed on him by the U.S. Constitution and a series of lawsuits. Behind this first cut business is just the notion that one being in the scale of wonderfulness, Martin Scorsese, deserves deference from a being who ranks several clouds higher. Bill Clinton can&#39;t take it seriously.</p>
+          </span>
+      </div>
+    </article>
+    <div class="post-footer">
+      <div class="share politics-and-media-bg-color">
+        <ul>
+          <li class="discuss">
+            <a href="#" data-scroll-offset="-58" data-scroll-target="ul.comment-list" data-smooth-scroll="true" rel="nofollow">
+                        <div class="mini-label aliased small reverse">
+                          <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                          Discuss
+                        </div></a>
+          </li>
+          <li class="favorite">
+            <a href="/politics-and-media/bill-clinton-wants-final-cut/favorite" data-favorite="true" data-post-id="17154" rel="nofollow">
+                        <div class="mini-label aliased small reverse">
+                          <div class="mini-icon mini-icon-circle reverse"></div>
+                          <span class="label-text">Fav</span>
+                        </div></a>
+            <div class="panel">
+              <div class="tab"></div>
+              <span class="message"></span>
+            </div>
+          </li>
+          <li class="email">
+            <a href="#" data-email="true" data-url="/politics-and-media/bill-clinton-wants-final-cut/send_to_friend" rel="nofollow">
+                        <div class="mini-label aliased small reverse">
+                          <div class="mini-icon mini-icon-letter reverse"></div>
+                          Email
+                        </div></a>
+          </li>
+          <li class="social addthis_toolbox addthis_default_style">
+            <a href="#" class="addthis_pill_style" data-social="true" rel="nofollow">
+                        <div class="mini-label aliased small reverse">
+                          <div class="mini-icon mini-icon-plus-multi reverse"></div>
+                          Digg, Facebook etc
+                        </div></a>
+            <div class="panel">
+              <div class="tab"></div>
+              <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+                <a class="addthis_button_facebook"></a><a class="addthis_button_twitter"></a><a class="addthis_button_google_plusone_share"></a><a class="addthis_button_pinterest_share"></a><a class="addthis_button_reddit"></a><a class="addthis_button_digg"></a><a class="addthis_button_stumbleupon"></a><a class="addthis_button_compact"></a>
+              </div>
+              <span class="message"></span>
+            </div>
+          </li>
+          <li class="print">
+            <a href="#" data-print="true" rel="nofollow">
+                        <div class="mini-label aliased small reverse">
+                          <div class="mini-icon mini-icon-printer-reverse"></div>
+                          Print
+                        </div></a>
+          </li>
+        </ul>
+      </div>
+      <div class="related-posts cf">
+        <div class="column left">
+          <strong class="politics-and-media-dark-color">Older Politics &amp; Media</strong>
+          <ul>
+            <li>
+              <a href="/politics-and-media/drones-can-be-fun-too">Drones Can Be Fun, Too</a>
+            </li>
+            <li>
+              <a href="/politics-and-media/does-mike-huckabee-have-a-willie-horton-problem">Does Mike Huckabee Have a W...</a>
+            </li>
+            <li>
+              <a href="/politics-and-media/i-was-swiftboated-on-twitter">I Was Swiftboated on Twitter</a>
+            </li>
+          </ul>
+        </div>
+        <div class="column right">
+          <strong class="politics-and-media-dark-color">Newer Politics &amp; Media</strong>
+          <ul>
+            <li>
+              <a href="/politics-and-media/should-liberals-cheer-palin-on-in-2016">Should Liberals Cheer Palin...</a>
+            </li>
+            <li>
+              <a href="/politics-and-media/people-are-really-landing-on-jonathan-chait">People Are Really Landing o...</a>
+            </li>
+            <li>
+              <a href="/politics-and-media/millennials-are-not-today-s-new-victorians">Millennials Are Not Today’s...</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="span-4 secondary-content omega">
+    <div class="mini-label topper noborder cf politics-and-media-bg-color">
+      <span class="discussion-topper">DISCUSSION</span>
+    </div>
+    <div class="comments">
+      <ul class="comment-list">
+      </ul>
+      <div class="new-comment" data-visible-to="signed-in-user">
+        <div class="add-a-comment row cf">
+          <div class="mini-label">
+            <div class="mini-icon mini-icon-double-bubble"></div>
+            Add a comment
+          </div>
+        </div><form accept-charset="UTF-8" action="/comments" class="simple_form new_comment" data-remote="true" id="new_comment" method="post" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="7TPHu7uDQ7jmhdx45cquPFGMlob7dLg1w8tSvRamaNo=" /></div>
+        <input id="comment_post_id" name="comment[post_id]" type="hidden" value="17154" /><div class="control-group text optional comment_body comment-body-input"><div class="controls"><textarea class="text optional" cols="40" id="comment_body" name="comment[body]" rows="20">
+</textarea></div></div><input class="mini-button dark-grey pill" data-disable-with="Posting..." name="commit" type="submit" value="Post It" /></form>
+      </div>
+      <div class="register" data-unregistered-user="">
+        <a href="/profile/sign_up">Register</a> to leave a comment
+      </div>
+    </div>
+  </div>
+</div>
+<div class="email-this-article panel hide">
+  <div class="tab"></div>
+  <div class="form-container">
+    <strong>Send this article</strong>
+    <p>
+      You must be <a href="/profile/login">signed in</a> to send an article via email.
+    </p>
+  </div>
+  <div class="message"></div>
+</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="container-15">
+          <div class="span-15">
+            <div class="ad ad-zone-03">
+              <script async="async" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/javascript"></script><ins class="adsbygoogle" data-ad-client="ca-pub-3043784346183942" data-ad-slot="1440355646" style="display:inline-block;width:728px;height:90px"></ins>
+              <script type="text/javascript">
+                (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            </div>
+          </div>
+          <div class="span-15 alpha">
+            <div class="footer">
+              <ul>
+                <li>
+                  <a href="/contact">
+                          <span class="icon icon-plus-thin pull-left general-color"></span>
+                          <div class="mini-label">
+                            Contact Us
+                          </div></a>
+                </li>
+                <li>
+                  <a href="/advertise">
+                          <span class="icon icon-plus-thin pull-left general-color"></span>
+                          <div class="mini-label">
+                            Advertise with Splice
+                          </div></a>
+                </li>
+                <li>
+                  <a href="/jobs">
+                          <span class="icon icon-plus-thin pull-left general-color"></span>
+                          <div class="mini-label">
+                            Jobs
+                          </div></a>
+                </li>
+                <li>
+                  <a href="/faqs">
+                          <span class="icon icon-plus-thin pull-left general-color"></span>
+                          <div class="mini-label">
+                            FAQ
+                          </div></a>
+                </li>
+                <li>
+                  <a href="/privacy">
+                          <span class="icon icon-plus-thin pull-left general-color"></span>
+                          <div class="mini-label">
+                            Privacy Policy
+                          </div></a>
+                </li>
+                <li>
+                  <a href="/terms">
+                          <span class="icon icon-plus-thin pull-left general-color"></span>
+                          <div class="mini-label">
+                            Terms &amp; Conditions
+                          </div></a>
+                </li>
+                <li>
+                  <a href="#">
+                          <span class="icon icon-plus-thin pull-left general-color"></span>
+                          <div class="mini-label">
+                            &copy; Splice Today LLC All Rights Reserved
+                          </div></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    //<![CDATA[
+    window.jQuery || document.write(unescape('%3Cscript src="http://assets.splicetoday.com/assets/jquery-4c9447fc802ac49793b844ae67cf5b26.js" type="text/javascript">%3C/script>'))
+    //]]>
+    </script><script src="http://assets.splicetoday.com/assets/application-9d4517476b41e661e2112c57d3d2f740.js" type="text/javascript"></script><script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-3694645-1']);
+      _gaq.push(['_setDomainName', 'splicetoday.com']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_setSiteSpeedSampleRate', 100]);
+      _gaq.push(['_trackPageview']);
+      
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <script type="text/javascript">
+      var addthis_config = {data_ga_property:"UA-3694645-1", data_ga_social:true, ui_use_css:true};
+    </script>
+    <script src="//s7.addthis.com/js/250/addthis_widget.js#pubid=ra-51733bd60fa8f15c&amp;domready=1&amp;async=1" type="text/javascript"></script>
+  </body>
+</html>/div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/writing/words-spoken-by-my-mongolian-students/favorite" data-favorite="true" data-post-id="17479" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17479" data-url="/writing/words-spoken-by-my-mongolian-students/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                  <li class="post writing-bg-color" id="post_17485"><div class="cf">
+                    <div class="department-name pull-left writing-dark-color">
+                      Writing
+                    </div>
+                    <div class="publish-date pull-right writing-dark-color">
+                      Apr 02, 2015, 08:51AM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/writing/human-host-presents-a-beginner-s-guide-to-music-theory">
+                      Human Host Presents: A Beginner's Guide to Music Theory</a>
+                  </h3>
+                  <div class="byline">
+                    <a href="/authors/Human%20Host%20">Human Host </a>
+                  </div>
+                  <div class="deck">
+                    <p>"Oh yeah, and about that crystalline boondock..."</p>
+                  </div>
+                  <div class="image"><a href="/writing/human-host-presents-a-beginner-s-guide-to-music-theory">
+                      <img alt="Medium_music" src="http://assets.splicetoday.com/uploads/posts/photos/17485/medium_music.jpg" /></a>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/writing/human-host-presents-a-beginner-s-guide-to-music-theory">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/writing/human-host-presents-a-beginner-s-guide-to-music-theory">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/writing/human-host-presents-a-beginner-s-guide-to-music-theory/favorite" data-favorite="true" data-post-id="17485" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17485" data-url="/writing/human-host-presents-a-beginner-s-guide-to-music-theory/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                  <li class="post pop-culture-bg-color" id="post_17482"><div class="cf">
+                    <div class="department-name pull-left pop-culture-dark-color">
+                      Pop Culture
+                    </div>
+                    <div class="publish-date pull-right pop-culture-dark-color">
+                      Apr 01, 2015, 09:50AM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/pop-culture/what-if-the-new-daily-show-guy-isn-t-so-funny">
+                      What if the New <i>Daily Show</i> Guy Isn't So Funny?</a>
+                  </h3>
+                  <div class="byline">
+                    <a href="/authors/C.T.%20May">C.T. May</a>
+                  </div>
+                  <div class="deck">
+                    <p>Judging by his tweets, Trevor Noah ain't much of a find.</p>
+                  </div>
+                  <div class="image"><a href="/pop-culture/what-if-the-new-daily-show-guy-isn-t-so-funny">
+                      <img alt="Medium_screen_shot_2015-04-01_at_9.49.18_am" src="http://assets.splicetoday.com/uploads/posts/photos/17482/medium_Screen_Shot_2015-04-01_at_9.49.18_AM.png" /></a>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/pop-culture/what-if-the-new-daily-show-guy-isn-t-so-funny">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/pop-culture/what-if-the-new-daily-show-guy-isn-t-so-funny">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/pop-culture/what-if-the-new-daily-show-guy-isn-t-so-funny/favorite" data-favorite="true" data-post-id="17482" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17482" data-url="/pop-culture/what-if-the-new-daily-show-guy-isn-t-so-funny/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                  <li class="post pop-culture-bg-color" id="post_17481"><div class="cf">
+                    <div class="department-name pull-left pop-culture-dark-color">
+                      Pop Culture
+                    </div>
+                    <div class="publish-date pull-right pop-culture-dark-color">
+                      Apr 01, 2015, 09:42AM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/pop-culture/death-of-the-daily-show">
+                      Death of <i>The Daily Show</i></a>
+                  </h3>
+                  <div class="byline">
+                    <a href="/authors/Nicky%20Smith">Nicky Smith</a>
+                  </div>
+                  <div class="deck">
+                    <p>Trevor Noah’s rock-fuck idiocy.</p>
+                  </div>
+                  <div class="image"><a href="/pop-culture/death-of-the-daily-show">
+                      <img alt="Medium_ttp12trevor18-17-07-2013-18-07-04-183-" src="http://assets.splicetoday.com/uploads/posts/photos/17481/medium_TTP12TREVOR18-17-07-2013-18-07-04-183-.jpg" /></a>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/pop-culture/death-of-the-daily-show">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/pop-culture/death-of-the-daily-show">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/pop-culture/death-of-the-daily-show/favorite" data-favorite="true" data-post-id="17481" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17481" data-url="/pop-culture/death-of-the-daily-show/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                  <li class="post sports-bg-color" id="post_17480"><div class="cf">
+                    <div class="department-name pull-left sports-dark-color">
+                      Sports
+                    </div>
+                    <div class="publish-date pull-right sports-dark-color">
+                      Apr 01, 2015, 09:31AM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/sports/appreciating-don-buford">
+                      Appreciating Don Buford</a>
+                  </h3>
+                  <div class="byline">
+                    <a href="/authors/Dan%20Soderberg">Dan Soderberg</a>
+                  </div>
+                  <div class="deck">
+                    <p>The former Oriole was a superb lead-off batter.</p>
+                  </div>
+                  <div class="image"><a href="/sports/appreciating-don-buford">
+                      <img alt="Medium_69buford.0" src="http://assets.splicetoday.com/uploads/posts/photos/17480/medium_69buford.0.jpg" /></a>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/sports/appreciating-don-buford">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/sports/appreciating-don-buford">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/sports/appreciating-don-buford/favorite" data-favorite="true" data-post-id="17480" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17480" data-url="/sports/appreciating-don-buford/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                  <li class="post writing-bg-color" id="post_17475"><div class="cf">
+                    <div class="department-name pull-left writing-dark-color">
+                      Writing
+                    </div>
+                    <div class="publish-date pull-right writing-dark-color">
+                      Mar 31, 2015, 09:02AM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/writing/cash-rewards">
+                      Cash Rewards</a>
+                  </h3>
+                  <div class="byline">
+                    <a href="/authors/Rooster%20Cribbits">Rooster Cribbits</a>
+                  </div>
+                  <div class="deck">
+                    <p>There’s a rose blooming somewhere in Indiana.</p>
+                  </div>
+                  <div class="image"><a href="/writing/cash-rewards">
+                      <img alt="Medium_double_lomo" src="http://assets.splicetoday.com/uploads/posts/photos/17475/medium_double_lomo.jpg" /></a>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/writing/cash-rewards">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/writing/cash-rewards">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/writing/cash-rewards/favorite" data-favorite="true" data-post-id="17475" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17475" data-url="/writing/cash-rewards/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                  <li class="post writing-bg-color" id="post_17472"><div class="cf">
+                    <div class="department-name pull-left writing-dark-color">
+                      Writing
+                    </div>
+                    <div class="publish-date pull-right writing-dark-color">
+                      Mar 31, 2015, 08:52AM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/writing/rescuing-pip">
+                      Rescuing Pip</a>
+                  </h3>
+                  <div class="byline">
+                    <a href="/authors/Sarah%20Grace%20McCarthy">Sarah Grace McCarthy</a>
+                  </div>
+                  <div class="deck">
+                    <p>I once saved a baby squirrel.</p>
+                  </div>
+                  <div class="image"><a href="/writing/rescuing-pip">
+                      <img alt="Medium_img_7077" src="http://assets.splicetoday.com/uploads/posts/photos/17472/medium_IMG_7077.jpeg" /></a>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/writing/rescuing-pip">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/writing/rescuing-pip">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/writing/rescuing-pip/favorite" data-favorite="true" data-post-id="17472" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17472" data-url="/writing/rescuing-pip/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                  <li class="post pop-culture-bg-color" id="post_17473"><div class="cf">
+                    <div class="department-name pull-left pop-culture-dark-color">
+                      Pop Culture
+                    </div>
+                    <div class="publish-date pull-right pop-culture-dark-color">
+                      Mar 31, 2015, 08:52AM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/pop-culture/you-just-can-t-look-away-from-that">
+                      You Just Can’t Look Away From That</a>
+                  </h3>
+                  <div class="byline">
+                    <a href="/authors/Raymond%20Cummings">Raymond Cummings</a>
+                  </div>
+                  <div class="deck">
+                    <p>A 2009 <em>Border Crossings</em> <a href="http://bordercrossingsmag.com/article/dan-graham-mirror-complexities" rel="nofollow">interview</a> with conceptual artist Dan Graham vs. a 2015 <em>Vice</em> <a href="https://sports.vice.com/article/wrestling-as-a-way-to-survive-a-conversation-with-john-darnielle" rel="nofollow">interview</a> with Mountain Goats singer/songwriter John Darnielle.</p>
+                  </div>
+                  <div class="image"><a href="/pop-culture/you-just-can-t-look-away-from-that">
+                      <img alt="Medium_5674137772_15ca033ec2" src="http://assets.splicetoday.com/uploads/posts/photos/17473/medium_5674137772_15ca033ec2.jpg" /></a>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/pop-culture/you-just-can-t-look-away-from-that">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/pop-culture/you-just-can-t-look-away-from-that">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/pop-culture/you-just-can-t-look-away-from-that/favorite" data-favorite="true" data-post-id="17473" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17473" data-url="/pop-culture/you-just-can-t-look-away-from-that/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                </ul>
+                <div class="mini-label topper no-top-border">
+                  <a href="/archive?category=the_feed">The Feed Archive</a>
+                </div>
+              </div>
+              <div class="span-4">
+                <div class="column-topper writing-bg-color">
+                  <div class="mini-label topper">
+                    Splice Original<a href="/rss/splice-original" class="rss">RSS</a>
+                  </div>
+                </div>
+                <ul class="posts">
+                  <li class="post writing-bg-color" id="post_17491"><div class="cf">
+                    <div class="department-name pull-left writing-dark-color">
+                      Writing
+                    </div>
+                    <div class="publish-date pull-right writing-dark-color">
+                      Apr 03, 2015, 04:15AM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/writing/noisome-truncated-jargon-i-loathe">
+                      Noisome, Truncated Jargon I Loathe</a>
+                  </h3>
+                  <div class="byline">
+                    <a href="/authors/Raymond%20Cummings">Raymond Cummings</a>
+                  </div>
+                  <div class="deck">
+                    <p>Just say what you’re saying.</p>
+                  </div>
+                  <div class="image"><a href="/writing/noisome-truncated-jargon-i-loathe">
+                      <img alt="Medium_rsz_man-laptop" src="http://assets.splicetoday.com/uploads/posts/photos/17491/medium_rsz_man-laptop.jpg" /></a>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/writing/noisome-truncated-jargon-i-loathe">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/writing/noisome-truncated-jargon-i-loathe">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/writing/noisome-truncated-jargon-i-loathe/favorite" data-favorite="true" data-post-id="17491" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17491" data-url="/writing/noisome-truncated-jargon-i-loathe/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                  <li class="post politics-and-media-bg-color" id="post_17490"><div class="cf">
+                    <div class="department-name pull-left politics-and-media-dark-color">
+                      Politics &amp; Media
+                    </div>
+                    <div class="publish-date pull-right politics-and-media-dark-color">
+                      Apr 03, 2015, 04:15AM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/politics-and-media/tucker-carlson-and-the-adults">
+                      Tucker Carlson and the Adults</a>
+                  </h3>
+                  <div class="byline">
+                    <a href="/authors/C.T.%20May">C.T. May</a>
+                  </div>
+                  <div class="deck">
+                    <p>Not a lounge act, a controversy.</p>
+                  </div>
+                  <div class="image"><a href="/politics-and-media/tucker-carlson-and-the-adults">
+                      <img alt="Medium_rsz_o-tucker-carlson-fox-friends-facebook" src="http://assets.splicetoday.com/uploads/posts/photos/17490/medium_rsz_o-tucker-carlson-fox-friends-facebook.jpg" /></a>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/politics-and-media/tucker-carlson-and-the-adults">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/politics-and-media/tucker-carlson-and-the-adults">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/politics-and-media/tucker-carlson-and-the-adults/favorite" data-favorite="true" data-post-id="17490" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17490" data-url="/politics-and-media/tucker-carlson-and-the-adults/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                  <li class="post writing-bg-color" id="post_17487"><div class="cf">
+                    <div class="department-name pull-left writing-dark-color">
+                      Writing
+                    </div>
+                    <div class="publish-date pull-right writing-dark-color">
+                      Apr 02, 2015, 05:40AM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/writing/indications-of-character">
+                      Indications of Character</a>
+                  </h3>
+                  <div class="byline">
+                    <a href="/authors/Alan%20Cabal">Alan Cabal</a>
+                  </div>
+                  <div class="deck">
+                    <p>Daisy isn’t stupid, but she is a mother, which is nearly as bad.</p>
+                  </div>
+                  <div class="image"><a href="/writing/indications-of-character">
+                      <img alt="Medium_rsz_junkie_roy_detail2" src="http://assets.splicetoday.com/uploads/posts/photos/17487/medium_rsz_junkie_roy_detail2.jpg" /></a>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/writing/indications-of-character">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/writing/indications-of-character">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/writing/indications-of-character/favorite" data-favorite="true" data-post-id="17487" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17487" data-url="/writing/indications-of-character/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                  <li class="post politics-and-media-bg-color" id="post_17488"><div class="cf">
+                    <div class="department-name pull-left politics-and-media-dark-color">
+                      Politics &amp; Media
+                    </div>
+                    <div class="publish-date pull-right politics-and-media-dark-color">
+                      Apr 02, 2015, 05:40AM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/politics-and-media/scott-walker-liar-or-warmonger">
+                      Scott Walker, Liar or Warmonger?</a>
+                  </h3>
+                  <div class="byline">
+                    <a href="/authors/Noah%20Berlatsky">Noah Berlatsky</a>
+                  </div>
+                  <div class="deck">
+                    <p>Better the first than the second.</p>
+                  </div>
+                  <div class="image"><a href="/politics-and-media/scott-walker-liar-or-warmonger">
+                      <img alt="Medium_rsz_o-governor-scott-walker-facebook" src="http://assets.splicetoday.com/uploads/posts/photos/17488/medium_rsz_o-governor-scott-walker-facebook.jpg" /></a>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/politics-and-media/scott-walker-liar-or-warmonger">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/politics-and-media/scott-walker-liar-or-warmonger">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/politics-and-media/scott-walker-liar-or-warmonger/favorite" data-favorite="true" data-post-id="17488" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17488" data-url="/politics-and-media/scott-walker-liar-or-warmonger/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                  <li class="post politics-and-media-bg-color" id="post_17477"><div class="cf">
+                    <div class="department-name pull-left politics-and-media-dark-color">
+                      Politics &amp; Media
+                    </div>
+                    <div class="publish-date pull-right politics-and-media-dark-color">
+                      Apr 01, 2015, 07:04AM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/politics-and-media/when-presidential-candidates-ignore-science">
+                      When Presidential Candidates Ignore Science</a>
+                  </h3>
+                  <div class="byline">
+                    <a href="/authors/Mary%20McCarthy">Mary McCarthy</a>
+                  </div>
+                  <div class="deck">
+                    <p>Ted Cruz reports the earth is not flat.</p>
+                  </div>
+                  <div class="image"><a href="/politics-and-media/when-presidential-candidates-ignore-science">
+                      <img alt="Medium_rsz_abc_ted_cruz_this_week_jt_130720_16x9_608" src="http://assets.splicetoday.com/uploads/posts/photos/17477/medium_rsz_abc_ted_cruz_this_week_jt_130720_16x9_608.jpg" /></a>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/politics-and-media/when-presidential-candidates-ignore-science">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/politics-and-media/when-presidential-candidates-ignore-science">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/politics-and-media/when-presidential-candidates-ignore-science/favorite" data-favorite="true" data-post-id="17477" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17477" data-url="/politics-and-media/when-presidential-candidates-ignore-science/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                  <li class="post writing-bg-color" id="post_17478"><div class="cf">
+                    <div class="department-name pull-left writing-dark-color">
+                      Writing
+                    </div>
+                    <div class="publish-date pull-right writing-dark-color">
+                      Apr 01, 2015, 07:04AM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/writing/journey-up-the-slippery-rocks">
+                      Journey Up the Slippery Rocks</a>
+                  </h3>
+                  <div class="byline">
+                    <a href="/authors/Jonah%20Hall">Jonah Hall</a>
+                  </div>
+                  <div class="deck">
+                    <p>Immersed in nature.</p>
+                  </div>
+                  <div class="image"><a href="/writing/journey-up-the-slippery-rocks">
+                      <img alt="Medium_rsz_puerto-rico-_-el-yunque-tropical-rainforest" src="http://assets.splicetoday.com/uploads/posts/photos/17478/medium_rsz_puerto-rico-_-el-yunque-tropical-rainforest.jpg" /></a>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/writing/journey-up-the-slippery-rocks">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/writing/journey-up-the-slippery-rocks">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/writing/journey-up-the-slippery-rocks/favorite" data-favorite="true" data-post-id="17478" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17478" data-url="/writing/journey-up-the-slippery-rocks/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                  <li class="post music-bg-color" id="post_17474"><div class="cf">
+                    <div class="department-name pull-left music-dark-color">
+                      Music
+                    </div>
+                    <div class="publish-date pull-right music-dark-color">
+                      Mar 31, 2015, 06:24AM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/music/whipping-it-fast-and-loud">
+                      Whipping It Fast and Loud</a>
+                  </h3>
+                  <div class="byline">
+                    <a href="/authors/Russ%20Smith">Russ Smith</a>
+                  </div>
+                  <div class="deck">
+                    <p>Baltimore’s Sherman Whips go up, up and away!</p>
+                  </div>
+                  <div class="image"><a href="/music/whipping-it-fast-and-loud">
+                      <img alt="Medium_rsz_img_0616" src="http://assets.splicetoday.com/uploads/posts/photos/17474/medium_rsz_img_0616.jpg" /></a>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/music/whipping-it-fast-and-loud">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/music/whipping-it-fast-and-loud">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/music/whipping-it-fast-and-loud/favorite" data-favorite="true" data-post-id="17474" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17474" data-url="/music/whipping-it-fast-and-loud/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                  <li class="post on-campus-bg-color" id="post_17471"><div class="cf">
+                    <div class="department-name pull-left on-campus-dark-color">
+                      On Campus
+                    </div>
+                    <div class="publish-date pull-right on-campus-dark-color">
+                      Mar 31, 2015, 06:24AM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/on-campus/those-dumb-kids-and-their-mattress">
+                      Those Dumb Kids and Their Mattress</a>
+                  </h3>
+                  <div class="byline">
+                    <a href="/authors/C.T.%20May">C.T. May</a>
+                  </div>
+                  <div class="deck">
+                    <p>Students protest scary article.</p>
+                  </div>
+                  <div class="image"><a href="/on-campus/those-dumb-kids-and-their-mattress">
+                      <img alt="Medium_rsz_03_carrythatweight_furuya" src="http://assets.splicetoday.com/uploads/posts/photos/17471/medium_rsz_03_carrythatweight_furuya.jpg" /></a>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/on-campus/those-dumb-kids-and-their-mattress">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/on-campus/those-dumb-kids-and-their-mattress">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/on-campus/those-dumb-kids-and-their-mattress/favorite" data-favorite="true" data-post-id="17471" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17471" data-url="/on-campus/those-dumb-kids-and-their-mattress/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                  <li class="post writing-bg-color" id="post_17466"><div class="cf">
+                    <div class="department-name pull-left writing-dark-color">
+                      Writing
+                    </div>
+                    <div class="publish-date pull-right writing-dark-color">
+                      Mar 30, 2015, 07:18AM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/writing/oops-i-m-fat-again">
+                      Oops, I’m Fat Again</a>
+                  </h3>
+                  <div class="byline">
+                    <a href="/authors/Mary%20McCarthy">Mary McCarthy</a>
+                  </div>
+                  <div class="deck">
+                    <p>The real question is: how much does it matter?</p>
+                  </div>
+                  <div class="image"><a href="/writing/oops-i-m-fat-again">
+                      <img alt="Medium_rsz_woman-choosing-between-a-hamburger-plate-and-a-salad-plate" src="http://assets.splicetoday.com/uploads/posts/photos/17466/medium_rsz_woman-choosing-between-a-hamburger-plate-and-a-salad-plate.jpg" /></a>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/writing/oops-i-m-fat-again">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/writing/oops-i-m-fat-again">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/writing/oops-i-m-fat-again/favorite" data-favorite="true" data-post-id="17466" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17466" data-url="/writing/oops-i-m-fat-again/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                </ul>
+                <div class="mini-label topper no-top-border">
+                  <a href="/archive?category=splice_original">Splice Original Archive</a>
+                </div>
+              </div>
+              <div class="span-4 omega">
+                <div class="column-topper pop-culture-bg-color">
+                  <div class="mini-label topper">
+                    Multimedia<a href="/rss/multimedia" class="rss">RSS</a>
+                  </div>
+                </div>
+                <ul class="posts">
+                  <li class="post pop-culture-bg-color" id="post_17495"><div class="cf">
+                    <div class="department-name pull-left pop-culture-dark-color">
+                      Pop Culture
+                    </div>
+                    <div class="publish-date pull-right pop-culture-dark-color">
+                      Apr 03, 2015, 12:14PM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/pop-culture/what-year-is-it-158">
+                      What Year Is It (#158)?</a>
+                  </h3>
+                  <div class="byline">
+                  </div>
+                  <div class="deck">
+                    <p>Clues after the jump.</p>
+                  </div>
+                  <div class="image"><a href="/pop-culture/what-year-is-it-158">
+                      <img alt="Medium_img536" src="http://assets.splicetoday.com/uploads/posts/photos/17495/medium_img536.jpg" /></a>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/pop-culture/what-year-is-it-158">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/pop-culture/what-year-is-it-158">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/pop-culture/what-year-is-it-158/favorite" data-favorite="true" data-post-id="17495" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17495" data-url="/pop-culture/what-year-is-it-158/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                  <li class="post music-bg-color" id="post_17489"><div class="cf">
+                    <div class="department-name pull-left music-dark-color">
+                      Music
+                    </div>
+                    <div class="publish-date pull-right music-dark-color">
+                      Apr 02, 2015, 10:14AM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/music/blur-lonesome-street-official-video">
+                      Blur - "Lonesome Street" Official Video </a>
+                  </h3>
+                  <div class="byline">
+                  </div>
+                  <div class="deck">
+                    <p>Directed by Ben Reed, with dancers from the <a href="http://www.sfcld.org/" rel="nofollow">Phoenix Fly Line Dancing Group of San Francisco</a>. <em>The Magic Whip</em>, the band's first full-length since 2003's<em> Think Tank</em>, is out April 28. <a href="http://www.uncut.co.uk/blog/the-view-from-here/blur-the-making-of-the-magic-whip-we-didnt-want-to-tempt-fate-67399" rel="nofollow"><em>Uncut</em></a> has a recent interview. More at the band's <a href="http://www.blur.co.uk" rel="nofollow">official website</a>. Via <a href="http://www.stereogum.com/1791537/blur-lonesome-street-video/video/" rel="nofollow">Stereogum</a>.</p>
+                  </div>
+                  <div class="image">
+                    <div class="video-player">
+                      <iframe frameborder="0" height="150" id="youtube-player-17489" src="http://www.youtube.com/embed/oo55vzpL85w?enablejsapi=1&amp;origin=http://www.splicetoday.com" type="text/html" width="225"></iframe>
+                    </div>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/music/blur-lonesome-street-official-video">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/music/blur-lonesome-street-official-video">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/music/blur-lonesome-street-official-video/favorite" data-favorite="true" data-post-id="17489" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17489" data-url="/music/blur-lonesome-street-official-video/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                  <li class="post pop-culture-bg-color" id="post_17486"><div class="cf">
+                    <div class="department-name pull-left pop-culture-dark-color">
+                      Pop Culture
+                    </div>
+                    <div class="publish-date pull-right pop-culture-dark-color">
+                      Apr 01, 2015, 03:07PM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/pop-culture/forgotten-iowa">
+                      Forgotten Iowa</a>
+                  </h3>
+                  <div class="byline">
+                  </div>
+                  <div class="deck">
+                    <p>A <a href="http://forgotteniowa.tumblr.com/" rel="nofollow">photoblog</a> of the near-abandoned towns of Iowa. Via <a href="http://www.metafilter.com/148501/Forgotten-Iowa" rel="nofollow">Metafilter</a>.</p>
+                  </div>
+                  <div class="image"><a href="/pop-culture/forgotten-iowa">
+                      <img alt="Medium_tumblr_nlheu8prrx1uqeco8o2_1280" src="http://assets.splicetoday.com/uploads/posts/photos/17486/medium_tumblr_nlheu8pRRx1uqeco8o2_1280.jpg" /></a>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/pop-culture/forgotten-iowa">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/pop-culture/forgotten-iowa">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/pop-culture/forgotten-iowa/favorite" data-favorite="true" data-post-id="17486" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17486" data-url="/pop-culture/forgotten-iowa/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                  <li class="post pop-culture-bg-color" id="post_17483"><div class="cf">
+                    <div class="department-name pull-left pop-culture-dark-color">
+                      Pop Culture
+                    </div>
+                    <div class="publish-date pull-right pop-culture-dark-color">
+                      Apr 01, 2015, 11:47AM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/pop-culture/the-muppets-do-the-humpty-dance">
+                      The Muppets Do "The Humpty Dance"</a>
+                  </h3>
+                  <div class="byline">
+                  </div>
+                  <div class="deck">
+                    <p>A mashup from <a href="https://www.youtube.com/user/isthishowyougoviral" rel="nofollow">Mylo the Cat</a>, with Gonzo as Shock G. Via <a href="http://boingboing.net/2015/03/31/the-muppets-do-digital-undergr.html" rel="nofollow">Boing Boing</a>.</p>
+                  </div>
+                  <div class="image">
+                    <div class="video-player">
+                      <iframe frameborder="0" height="150" id="youtube-player-17483" src="http://www.youtube.com/embed/whFc4xtSD3w?enablejsapi=1&amp;origin=http://www.splicetoday.com" type="text/html" width="225"></iframe>
+                    </div>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/pop-culture/the-muppets-do-the-humpty-dance">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/pop-culture/the-muppets-do-the-humpty-dance">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/pop-culture/the-muppets-do-the-humpty-dance/favorite" data-favorite="true" data-post-id="17483" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17483" data-url="/pop-culture/the-muppets-do-the-humpty-dance/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                  <li class="post consume-bg-color" id="post_17476"><div class="cf">
+                    <div class="department-name pull-left consume-dark-color">
+                      Consume
+                    </div>
+                    <div class="publish-date pull-right consume-dark-color">
+                      Mar 31, 2015, 09:05AM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/consume/beergotten">
+                      <i>Beergotten</i></a>
+                  </h3>
+                  <div class="byline">
+                  </div>
+                  <div class="deck">
+                    <p>A truly bizarre ad for <a href="http://shop.mikkeller.dk/shop/books/mikkellers-book-of-beer/" rel="nofollow"><em>Mikkeller's Book of Beer</em></a>. Directed by <a href="http://twoc.tumblr.com/" rel="nofollow">Castor</a>, with music by <a href="http://www.mastodonrocks.com/" rel="nofollow">Mastodon</a>.</p>
+                  </div>
+                  <div class="image">
+                    <div class="video-player">
+                      <iframe frameborder="0" height="150" id="youtube-player-17476" src="http://www.youtube.com/embed/PO5CuavLZNA?enablejsapi=1&amp;origin=http://www.splicetoday.com" type="text/html" width="225"></iframe>
+                    </div>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/consume/beergotten">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/consume/beergotten">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/consume/beergotten/favorite" data-favorite="true" data-post-id="17476" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17476" data-url="/consume/beergotten/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                  <li class="post music-bg-color" id="post_17468"><div class="cf">
+                    <div class="department-name pull-left music-dark-color">
+                      Music
+                    </div>
+                    <div class="publish-date pull-right music-dark-color">
+                      Mar 30, 2015, 08:16AM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/music/splice-presents-height-zone-world-ep-35-paulie-think-get-that-god-in-silence">
+                      Splice Presents: Height Zone World Ep. 35 - Paulie Think (Get That God in Silence)</a>
+                  </h3>
+                  <div class="byline">
+                  </div>
+                  <div class="deck">
+                    <p>A joint podcast from Splice Today and <a href="http://heightwithfriends.com" rel="nofollow">Height</a>.</p>
+                  </div>
+                  <div class="image"><a href="/music/splice-presents-height-zone-world-ep-35-paulie-think-get-that-god-in-silence">
+                      <img alt="Medium_35" src="http://assets.splicetoday.com/uploads/posts/photos/17468/medium_35.jpg" /></a>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/music/splice-presents-height-zone-world-ep-35-paulie-think-get-that-god-in-silence">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/music/splice-presents-height-zone-world-ep-35-paulie-think-get-that-god-in-silence">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/music/splice-presents-height-zone-world-ep-35-paulie-think-get-that-god-in-silence/favorite" data-favorite="true" data-post-id="17468" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17468" data-url="/music/splice-presents-height-zone-world-ep-35-paulie-think-get-that-god-in-silence/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                  <li class="post pop-culture-bg-color" id="post_17463"><div class="cf">
+                    <div class="department-name pull-left pop-culture-dark-color">
+                      Pop Culture
+                    </div>
+                    <div class="publish-date pull-right pop-culture-dark-color">
+                      Mar 27, 2015, 10:49AM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/pop-culture/what-year-is-it-157">
+                      What Year Is It (#157)?</a>
+                  </h3>
+                  <div class="byline">
+                  </div>
+                  <div class="deck">
+                    <p>Clues after the jump.</p>
+                  </div>
+                  <div class="image"><a href="/pop-culture/what-year-is-it-157">
+                      <img alt="Medium_nwsp2rqy5cygyseue2anlwskjptnhazqw9euddesluc" src="http://assets.splicetoday.com/uploads/posts/photos/17463/medium_nwsP2RQY5CYGYSEuE2anLWskJPtnHaZqW9EuDDeSLuc.jpeg" /></a>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/pop-culture/what-year-is-it-157">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/pop-culture/what-year-is-it-157">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/pop-culture/what-year-is-it-157/favorite" data-favorite="true" data-post-id="17463" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17463" data-url="/pop-culture/what-year-is-it-157/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                  <li class="post pop-culture-bg-color" id="post_17459"><div class="cf">
+                    <div class="department-name pull-left pop-culture-dark-color">
+                      Pop Culture
+                    </div>
+                    <div class="publish-date pull-right pop-culture-dark-color">
+                      Mar 26, 2015, 02:41PM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/pop-culture/roaming-farm-animals-in-upstate-ny">
+                      Roaming Farm Animals in Upstate NY</a>
+                  </h3>
+                  <div class="byline">
+                  </div>
+                  <div class="deck">
+                    <p><a href="https://www.youtube.com/channel/UCDZU3MpSIbQZLE9fGvrbPkQ" rel="nofollow">Stephen Peterson</a> has a run-in with a friendly goat and llama. Via <a href="http://www.metafilter.com/148333/Are-you-a-nice-goat" rel="nofollow">Metafilter</a>.</p>
+                  </div>
+                  <div class="image">
+                    <div class="video-player">
+                      <iframe frameborder="0" height="150" id="youtube-player-17459" src="http://www.youtube.com/embed/BaLB63cEYOk?enablejsapi=1&amp;origin=http://www.splicetoday.com" type="text/html" width="225"></iframe>
+                    </div>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/pop-culture/roaming-farm-animals-in-upstate-ny">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/pop-culture/roaming-farm-animals-in-upstate-ny">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/pop-culture/roaming-farm-animals-in-upstate-ny/favorite" data-favorite="true" data-post-id="17459" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17459" data-url="/pop-culture/roaming-farm-animals-in-upstate-ny/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                  <li class="post music-bg-color" id="post_17457"><div class="cf">
+                    <div class="department-name pull-left music-dark-color">
+                      Music
+                    </div>
+                    <div class="publish-date pull-right music-dark-color">
+                      Mar 26, 2015, 10:42AM
+                    </div>
+                  </div>
+                  <h3 class="post-item-title"><a href="/music/king-tuff-madness-official-video">
+                      King Tuff - "Madness" Official Video </a>
+                  </h3>
+                  <div class="byline">
+                  </div>
+                  <div class="deck">
+                    <p>Directed by Mike Wartella. <em>Black Moon Spell </em>is out now on Sub Pop. <a href="http://www.rollingstone.com/music/videos/becoming-king-tuff-see-kyle-thomas-trace-his-path-to-indie-rock-glory-20150123" rel="nofollow"><em>Rolling Stone</em></a> has a mini-doc. Tour dates and more at King Tuff's <a href="http://www.kingtuffworld.com" rel="nofollow">official website</a>. Via <a href="http://www.stereogum.com/1789893/king-tuff-madness-video/video/" rel="nofollow">Stereogum</a>.</p>
+                  </div>
+                  <div class="image">
+                    <div class="video-player">
+                      <iframe frameborder="0" height="150" id="youtube-player-17457" src="http://www.youtube.com/embed/WTXzhbaE8qw?enablejsapi=1&amp;origin=http://www.splicetoday.com" type="text/html" width="225"></iframe>
+                    </div>
+                  </div>
+                  <div class="share cf">
+                    <ul>
+                      <li class="view">
+                        <a href="/music/king-tuff-madness-official-video">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-view-reverse"></div>
+                                View
+                              </div></a>
+                      </li>
+                      <li class="discuss">
+                        <a href="/music/king-tuff-madness-official-video">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-open-bubble-reverse"></div>
+                                Discuss
+                              </div></a>
+                      </li>
+                      <li class="favorite">
+                        <a href="/music/king-tuff-madness-official-video/favorite" data-favorite="true" data-post-id="17457" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-circle reverse"></div>
+                                <span class="label-text">Fav</span>
+                              </div></a>
+                        <div class="panel favorite-this-post">
+                          <div class="tab"></div>
+                          <span class="message"></span>
+                        </div>
+                      </li>
+                      <li class="email">
+                        <a href="#" data-email="true" data-post-id="17457" data-url="/music/king-tuff-madness-official-video/send_to_friend" rel="nofollow">
+                              <div class="mini-label aliased small reverse">
+                                <div class="mini-icon mini-icon-letter reverse"></div>
+                                Email
+                              </div></a>
+                      </li>
+                    </ul>
+                  </div></li>
+                </ul>
+                <div class="mini-label topper no-top-border">
+                  <a href="/archive?category=multimedia">Multimedia Archive</a>
+                </div>
+              </div>
+              <div class="email-this-article panel hide">
+                <div class="tab"></div>
+                <div class="form-container">
+                  <strong>Send this article</strong>
+                  <p>
+                    You must be <a href="/profile/login">signed in</a> to send an article via email.
+                  </p>
+                </div>
+                <div class="message"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="container-15">
+          <div class="span-15">
+            <div class="ad ad-zone-03">
+              <script async="async" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/javascript"></script><ins class="adsbygoogle" data-ad-client="ca-pub-3043784346183942" data-ad-slot="1440355646" style="display:inline-block;width:728px;height:90px"></ins>
+              <script type="text/javascript">
+                (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            </div>
+          </div>
+          <div class="span-15 alpha">
+            <div class="footer">
+              <ul>
+                <li>
+                  <a href="/contact">
+                          <span class="icon icon-plus-thin pull-left general-color"></span>
+                          <div class="mini-label">
+                            Contact Us
+                          </div></a>
+                </li>
+                <li>
+                  <a href="/advertise">
+                          <span class="icon icon-plus-thin pull-left general-color"></span>
+                          <div class="mini-label">
+                            Advertise with Splice
+                          </div></a>
+                </li>
+                <li>
+                  <a href="/jobs">
+                          <span class="icon icon-plus-thin pull-left general-color"></span>
+                          <div class="mini-label">
+                            Jobs
+                          </div></a>
+                </li>
+                <li>
+                  <a href="/faqs">
+                          <span class="icon icon-plus-thin pull-left general-color"></span>
+                          <div class="mini-label">
+                            FAQ
+                          </div></a>
+                </li>
+                <li>
+                  <a href="/privacy">
+                          <span class="icon icon-plus-thin pull-left general-color"></span>
+                          <div class="mini-label">
+                            Privacy Policy
+                          </div></a>
+                </li>
+                <li>
+                  <a href="/terms">
+                          <span class="icon icon-plus-thin pull-left general-color"></span>
+                          <div class="mini-label">
+                            Terms &amp; Conditions
+                          </div></a>
+                </li>
+                <li>
+                  <a href="#">
+                          <span class="icon icon-plus-thin pull-left general-color"></span>
+                          <div class="mini-label">
+                            &copy; Splice Today LLC All Rights Reserved
+                          </div></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    //<![CDATA[
+    window.jQuery || document.write(unescape('%3Cscript src="http://assets.splicetoday.com/assets/jquery-4c9447fc802ac49793b844ae67cf5b26.js" type="text/javascript">%3C/script>'))
+    //]]>
+    </script><script src="http://assets.splicetoday.com/assets/application-9d4517476b41e661e2112c57d3d2f740.js" type="text/javascript"></script><script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-3694645-1']);
+      _gaq.push(['_setDomainName', 'splicetoday.com']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_setSiteSpeedSampleRate', 100]);
+      _gaq.push(['_trackPageview']);
+      
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <script type="text/javascript">
+      var addthis_config = {data_ga_property:"UA-3694645-1", data_ga_social:true, ui_use_css:true};
+    </script>
+    <script src="//s7.addthis.com/js/250/addthis_widget.js#pubid=ra-51733bd60fa8f15c&amp;domready=1&amp;async=1" type="text/javascript"></script>
+  </body>
+</html>

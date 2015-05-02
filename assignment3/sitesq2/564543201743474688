@@ -1,0 +1,513 @@
+<!DOCTYPE html >
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta name="google-site-verification" content="DpX4JSr4ow6pkGkI4dSOqldzvfYRIH0uDcPOg7IaWCo" />
+		<title>Call it a Data River, Not a Data Lake - Stefan&#039;s Blog</title>
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="http://www.datameer.com/ceoblog/wp-content/themes/ceo_blog_theme/style.css" />
+
+		<!--[if lt IE 9]>
+			<script src="http://www.datameer.com/ceoblog/wp-content/themes/ceo_blog_theme/js/html5shiv.js"></script>
+			<script src="http://www.datameer.com/ceoblog/wp-content/themes/ceo_blog_theme/pie/PIE.js"></script>
+		<![endif]-->
+		<!--[if lt IE 8]>
+			<link rel="stylesheet" type="text/css" href="http://www.datameer.com/ceoblog/wp-content/themes/ceo_blog_theme/css/ie.css"/>
+		<![endif]-->
+		<style type='text/css'>
+					.no-break br {
+						display: none !important;
+					}
+			</style>
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.7.4 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Datameer CEO, Stefan Groschupf, discusses why the term data lake should be replaced with the term data river to accurately reflect the dynamic dimensions of data."/>
+<link rel="canonical" href="http://www.datameer.com/ceoblog/call-data-river-data-lake/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Call it a Data River, Not a Data Lake - Stefan&#039;s Blog" />
+<meta property="og:description" content="Datameer CEO, Stefan Groschupf, discusses why the term data lake should be replaced with the term data river to accurately reflect the dynamic dimensions of data." />
+<meta property="og:url" content="http://www.datameer.com/ceoblog/call-data-river-data-lake/" />
+<meta property="og:site_name" content="Stefan&#039;s Blog" />
+<meta property="article:tag" content="Big Data &amp; Brews,data dam,Data Lake,data river,Milind Bhandarkar,Pivotal" />
+<meta property="article:section" content="Perspective" />
+<meta property="article:published_time" content="2014-07-02T14:49:59+00:00" />
+<meta property="article:modified_time" content="2014-07-08T18:39:39+00:00" />
+<meta property="og:updated_time" content="2014-07-08T18:39:39+00:00" />
+<meta property="og:image" content="http://www.datameer.com/ceoblog/wp-content/uploads/2014/07/300px-Tributary2.jpg" />
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel='stylesheet' id='nivo-slider-css'  href='http://www.datameer.com/ceoblog/wp-content/themes/ceo_blog_theme/functions/shortcodes-ultimate/css/nivoslider.css' type='text/css' media='all' />
+<link rel='stylesheet' id='jcarousel-css'  href='http://www.datameer.com/ceoblog/wp-content/themes/ceo_blog_theme/functions/shortcodes-ultimate/css/jcarousel.css' type='text/css' media='all' />
+<link rel='stylesheet' id='shortcodes-ultimate-css'  href='http://www.datameer.com/ceoblog/wp-content/themes/ceo_blog_theme/functions/shortcodes-ultimate/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tp_twitter_plugin_css-css'  href='http://www.datameer.com/ceoblog/wp-content/plugins/recent-tweets-widget/tp_twitter_plugin.css?ver=1.0' type='text/css' media='screen' />
+<link rel='stylesheet' id='thickbox.css-css'  href='http://www.datameer.com/ceoblog/wp-includes/js/thickbox/thickbox.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='http://www.datameer.com/ceoblog/wp-includes/css/dashicons.min.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='thickbox-css'  href='http://www.datameer.com/ceoblog/wp-includes/js/thickbox/thickbox.css?ver=4.1.1' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.datameer.com/ceoblog/wp-includes/js/jquery/jquery.js?ver=1.11.1'></script>
+<script type='text/javascript' src='http://www.datameer.com/ceoblog/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://www.datameer.com/ceoblog/wp-content/themes/ceo_blog_theme/functions/shortcodes-ultimate/js/flowplayer-3.2.6.min.js'></script>
+<script type='text/javascript' src='http://www.datameer.com/ceoblog/wp-content/themes/ceo_blog_theme/functions/shortcodes-ultimate/js/nivoslider.js'></script>
+<script type='text/javascript' src='http://www.datameer.com/ceoblog/wp-content/themes/ceo_blog_theme/functions/shortcodes-ultimate/js/jcarousel.js'></script>
+<script type='text/javascript' src='http://www.datameer.com/ceoblog/wp-content/themes/ceo_blog_theme/functions/shortcodes-ultimate/js/init.js'></script>
+<script type='text/javascript' src='http://www.datameer.com/ceoblog/wp-content/plugins/spider-event-calendar/elements/calendar.js?ver=4.1.1'></script>
+<script type='text/javascript' src='http://www.datameer.com/ceoblog/wp-content/plugins/spider-event-calendar/elements/calendar-setup.js?ver=4.1.1'></script>
+<script type='text/javascript' src='http://www.datameer.com/ceoblog/wp-content/plugins/spider-event-calendar/elements/calendar_function.js?ver=4.1.1'></script>
+<script type='text/javascript' src='http://www.datameer.com/ceoblog/wp-content/plugins/spider-event-calendar/jscolor/jscolor.js?ver=4.1.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.datameer.com/ceoblog/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.datameer.com/ceoblog/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.1.1" />
+<link rel='shortlink' href='http://www.datameer.com/ceoblog/?p=551' />
+<script charset="utf-8" type="text/javascript">var switchTo5x=true;</script><script charset="utf-8" type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script charset="utf-8" type="text/javascript">stLight.options({publisher:"a442c180-1cc8-4ce9-b5bf-494789d81f45" , doNotCopy: false, hashAddressBar: true, doNotHash: false});var st_type='wordpress3.8';</script>  <script>
+    var xx_cal_xx = '&';
+  </script>
+  
+<!--//GOOGLE TRACKING CODE //-->
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ ga('create', 'UA-47038583-1', 'datameer.com');
+ ga('send', 'pageview');
+
+</script>
+
+<!--//GOOGLE TRACKING CODE - OLD //-->
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ ga('create', 'UA-44857424-1', 'datameer.com');
+ ga('send', 'pageview');
+
+</script>
+
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "b1bbbd68-d330-4ccb-b29e-8f633af3181b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+<style type="text/css">
+.gallery {
+	font-family: Helvetica, sans-serif;
+	font-size: 11px; color:#666;
+}
+
+.gallery .gallery-caption {
+	margin-top: 15px;
+	text-align: left;
+	line-height:1.4em;
+	width: 180px;	
+}
+</style>
+
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<a href="http://www.datameer.com/ceoblog">
+					<img id="stefan" src="http://www.datameer.com/ceoblog/wp-content/themes/ceo_blog_theme/images/stefan.png" height="136" />
+					<h2>Stefan&#039;s Blog</h2>
+					<h4>Big Data Musings From Datameer's CEO</h4>
+				</a>
+				<div class="clear"></div>
+				<ul id="blog-switcher">
+					<li class="active">
+						<span class="left-img"></span>
+						<a href="http://www.datameer.com/ceoblog">Stefan's Blog</a>
+						<span class="right-img"></span>
+					</li>
+											<li >
+							<span class="left-img"></span>
+							<a href="http://www.datameer.com/ceoblog/big-data-brews/">Videos</a>
+							<span class="right-img"></span>
+						</li>
+									</ul>
+									<div id="social">
+						<ul>
+							<li><p>Connect with Stefan</p></li>
+															<li><a href="https://twitter.com/stefangroschupf"><img src="http://www.datameer.com/ceoblog/wp-content/themes/ceo_blog_theme/images/twitter.png" /></a></li>
+							
+							<li><a href="http://www.linkedin.com/in/stefangroschupf" target="_blank"><img src="http://www.datameer.com/ceoblog/wp-content/uploads/2013/10/btn_linkedin.png"></a></li>
+
+							<li><script src="https://apis.google.com/js/plusone.js"></script>
+<div class="g-ytsubscribe" data-channelid="UCB4TQJyhwYxZZ6m4rI9-LyQ" data-layout="default"></div>
+</li>
+							<!--//<li><p><a href="http://www.datameer.com/ceoblog/feed/" target="_blank">Subscribe RSS <img="http://www.datameer.com/ceoblog/wp-content/uploads/2013/09/rss-icon.png" /></a></p></li>//-->
+							<li style="margin-left: 20px;"><p>Go to <a href="http://www.datameer.com/" target="_blank"><strong style="color: #0091d0;">Datameer.com</strong></a></p></li>
+						</ul>
+					</div>
+							</div>	
+		</header>
+		<div class="container">
+<div class="content">
+
+	<div class="pagination">
+		<a href="http://www.datameer.com/ceoblog/let-flow-unleash-hidden-streams-productivity/" rel="next">Previous</a>		<a href="http://www.datameer.com/ceoblog/big-data-brews/" rel="prev">Next</a>		<div class="clear" style="margin-bottom:40px;"></div>
+	</div>
+	<div class="post">
+		<h1>Call it a Data River, Not a Data Lake</h1>
+		<p class="author">By <a href="http://www.datameer.com/ceoblog/author/sgroschupf/" title="Posts by Stefan Groschupf" rel="author">Stefan Groschupf</a> on July 2, 2014</p>
+		<!--// <p class="meta">July 2, 2014</p> //-->
+		<p class="meta right" style="font-size: 12px;">
+			Tags: <a href="http://www.datameer.com/ceoblog/tag/big-data-brews/" rel="tag">Big Data &amp; Brews</a>, <a href="http://www.datameer.com/ceoblog/tag/data-dam/" rel="tag">data dam</a>, <a href="http://www.datameer.com/ceoblog/tag/data-lake/" rel="tag">Data Lake</a>, <a href="http://www.datameer.com/ceoblog/tag/data-river/" rel="tag">data river</a>, <a href="http://www.datameer.com/ceoblog/tag/milind-bhandarkar/" rel="tag">Milind Bhandarkar</a>, <a href="http://www.datameer.com/ceoblog/tag/pivotal/" rel="tag">Pivotal</a>			<a href="http://www.datameer.com/ceoblog/call-data-river-data-lake/#comments">No comments</a>
+		</p>
+		<div class="clear"></div>
+		<p><em>**This article originally <a href="http://www.business2community.com/big-data/call-data-river-data-lake-0931133?tru=7hVMr#bCesdMYMZC3j3V61.99" rel="nofollow" >appeared on Business 2 Community</a>**</em></p>
+<p style="color: #000000;">We’re drowning in an overflow of data. The exponential growth of data from the Internet of Things, social media, consumer interactions and more is leaving businesses scrambling to understand how to integrate, analyze and visualize it all to find the insights that matter to them.</p>
+<p style="color: #000000;">Given this landscape, it’s no surprise that the big data community is embracing the concept du jour to describe the new storage reality enabled by Hadoop – the “Data Lake”. In 2011 CITO Research’s chief technology officer and editor Dan Wood <a class="external" style="font-style: inherit;" href="http://www.citoresearch.com/data-science/databases-data-lake" target="_blank" rel="nofollow" >outlined the concept of a data lake</a> describing it as “a vision for a much wider, less organized form of storing and managing data for business intelligence purposes.” Edd Dumbill, a principal analyst for O’Reilly Radar, recently outlined the four levels of Hadoop maturity that will “<a class="external" style="font-style: inherit;" href="http://www.forbes.com/sites/edddumbill/2014/01/14/the-data-lake-dream/" target="_blank" rel="nofollow" >lead us to the dream of the data lake</a>.”</p>
+<p style="color: #000000;">But while the term “data lake” may be all the rage, is it actually indicative of what’s happening? The problem with a data lake is that it’s stagnant and still. In today’s world where real-time and unstructured data are constantly flowing, I believe the term “data river” is more accurate.</p>
+<p style="color: #000000;">Much like streams feed into each other to form a fast-moving river, data sources are coming from multiple locations including social and mobile data, purchase history, network logs and more. All of these streams flow together to create the Nile of data rivers, and when you’re ready to extract the insights that will fuel business success, you build a dam.</p>
+<p style="color: #000000;">What’s more is the term data river properly reflects the dynamic dimensions of data including location and time. As more data is generated it becomes a matter of the velocity of the current and the effectiveness of the dam– how fast can the data make it from one point to the other and how quickly can its value be extracted and applied?</p>
+<p style="color: #000000;">As unstructured and structured data continue to grow, big data vendors and thought leaders should not only shift the conversation from data lakes to data rivers, but most importantly, focus on the concept of the dam. Businesses must learn how to harness the power of the data river and implement tools and strategies that tame the data river and allow you to harness out the insights that matter. After all who, wants to be up a river without a paddle?</p>
+<p>**************</p>
+<p>I initially had this discussion with Pivotal&#8217;s chief scientist, Milind Bhandarkar, during his visit for <a href="https://www.youtube.com/channel/UCB4TQJyhwYxZZ6m4rI9-LyQ" rel="nofollow" >Big Data &amp; Brews</a>. See the clip below.</p>
+<p><iframe src="//www.youtube.com/embed/FwT3R6juDYI?rel=0" width="720" height="540" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<p class="no-break"><span st_via='StefanGroschupf' st_username='stefangroschupf' class='st_twitter_hcount' st_title='Call it a Data River, Not a Data Lake' st_url='http://www.datameer.com/ceoblog/call-data-river-data-lake/'></span><span class='st_facebook_hcount' st_title='Call it a Data River, Not a Data Lake' st_url='http://www.datameer.com/ceoblog/call-data-river-data-lake/'></span><span class='st_linkedin_hcount' st_title='Call it a Data River, Not a Data Lake' st_url='http://www.datameer.com/ceoblog/call-data-river-data-lake/'></span><span class='st_email_hcount' st_title='Call it a Data River, Not a Data Lake' st_url='http://www.datameer.com/ceoblog/call-data-river-data-lake/'></span></p>
+		<div class="clear"></div>
+	</div>
+
+	<div class="pagination">
+		<a href="http://www.datameer.com/ceoblog/let-flow-unleash-hidden-streams-productivity/" rel="next">Previous</a>		<a href="http://www.datameer.com/ceoblog/big-data-brews/" rel="prev">Next</a>		<div class="clear" style="margin-bottom:40px;"></div>
+	</div>
+	
+	
+<!-- You can start editing here. -->
+
+
+			<!-- If comments are closed. -->
+		<p class="nocomments">Comments are closed.</p>
+
+	
+	<div class="clear"></div>
+</div>
+<div class="sidebar">
+
+	<a href="http://blog.datameer.com/"><img src="http://www.datameer.com/ceoblog/wp-content/uploads/2013/09/dm-blog-icon.png" style="margin: -25px 0 -30px;" /></a>
+
+	<!--//		<a class="button" href="">Talk to me! </a>
+	 //-->
+	<div id="text-7" class="widget widget_text"><h3 class="widget-title">Subscribe</h3>			<div class="textwidget"><div style="background-color:#ebebeb; width:260px; padding:15px 0 15px 20px; border-radius:10px; -moz-border-radius:10px; -webkit-border-radius:10px; margin-bottom:-25px;">
+<form method="post"><input type="hidden" name="ip" value="212.122.43.69" /><span style="display:none !important"><label for="name">Leave Blank:</label><input type="text" id="name" name="name" /><label for="uri">Do Not Change:</label><input type="text" id="uri" name="uri" value="http://" /></span>
+<p><label for="s2email">Your email:</label><br /><input type="text" name="email" id="s2email" value="Enter email address..." size="20" onfocus="if (this.value == 'Enter email address...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email address...';}" /></p>
+<p><input type="submit" name="subscribe" value="Subscribe" /></p>
+</form>
+</div>
+</div>
+		</div><div id="spider_calendar-3" class="widget spider_calendar"><h3 class="widget-title">Upcoming Big Data & Brews Guests</h3>  <input type="hidden" id="cal_width1" value="200" /> 
+  <div id='bigcalendar1'></div>
+  <script> 
+    var tb_pathToImage = "http://www.datameer.com/ceoblog/wp-content/plugins/spider-event-calendar/images/loadingAnimation.gif";
+    var tb_closeImage = "http://www.datameer.com/ceoblog/wp-content/plugins/spider-event-calendar/images/tb-close.png"
+	var randi;
+    if (typeof showbigcalendar != 'function') {
+      function showbigcalendar(id, calendarlink, randi,widget) {
+        var xmlHttp;
+        try {
+          xmlHttp = new XMLHttpRequest();// Firefox, Opera 8.0+, Safari
+        }
+        catch (e) {
+          try {
+            xmlHttp = new ActiveXObject("Msxml2.XMLHTTP"); // Internet Explorer
+          }
+          catch (e) {
+            try {
+              xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            catch (e) {
+              alert("No AJAX!?");
+              return false;
+            }
+          }
+        }
+        xmlHttp.onreadystatechange = function () {
+          if (xmlHttp.readyState == 4) {
+            jQuery('#' + id).html(xmlHttp.responseText);
+          }
+        }
+        xmlHttp.open("GET", calendarlink, false);
+        xmlHttp.send();
+	 jQuery(document).ready(function (){
+     jQuery('#views_select').toggle(function () {	
+    jQuery('#drop_down_views').stop(true, true).delay(200).slideDown(500);
+  }, function () { 
+    jQuery('#drop_down_views').stop(true, true).slideUp(500);	
+  });
+	});
+if(widget!=1)
+{
+  if(jQuery(window).width() > 640)
+  {
+	jQuery('drop_down_views').hide();
+		var parent_width = document.getElementById('bigcalendar'+randi).parentNode.clientWidth;
+		var calwidth=  document.getElementById('cal_width'+randi).value;
+		var responsive_width = (calwidth)/parent_width*100;
+		document.getElementById('afterbig'+randi).setAttribute('style','width:'+responsive_width+'%;');
+		jQuery('pop_table').css('height','100%');
+  }
+ else if(jQuery(jQuery('#bigcalendar'+randi).parent()).width() > 640)
+  {
+	jQuery('drop_down_views').hide();
+		var parent_width = document.getElementById('bigcalendar'+randi).parentNode.clientWidth;
+		var calwidth=  document.getElementById('cal_width'+randi).value;
+		var responsive_width = (calwidth)/parent_width*100;
+		document.getElementById('afterbig'+randi).setAttribute('style','width:'+responsive_width+'%;');
+		jQuery('pop_table').css('height','100%');
+  } 
+	else
+	{
+			document.getElementById('afterbig'+randi).setAttribute('style','width:100%;');	
+	}
+}
+        var thickDims, tbWidth, tbHeight;
+        jQuery(document).ready(function ($) {
+          thickDims = function () {
+			jQuery('#TB_window iframe').css('margin-left','0%');
+			jQuery('#TB_window iframe').css('margin-top','0%');
+			jQuery('#TB_window iframe').css('margin-left','0%');
+			jQuery('#TB_window iframe').css('margin-top','0%');			
+			jQuery('#TB_window iframe').css('padding-left','0%');
+			jQuery('#TB_window iframe').css('padding-top','0%');		
+             var tbWindow = $('#TB_window'), H = $(window).height(), W = $(window).width(), w, h;
+            if (tbWidth) {
+              if (tbWidth < (W - 90)) w = tbWidth; else  w = W - 200;
+            } else w = W - 200;
+            if (tbHeight) {
+              if (tbHeight < (H - 90)) h = tbHeight; else  h = H - 200;
+            } else h = H - 200;			
+            if (tbWindow.size()) {
+              tbWindow.width(w).height(h);
+              $('#TB_iframeContent').width(w).height(h - 27);
+              tbWindow.css({'margin-left':'-' + parseInt((w / 2), 10) + 'px'});
+              if (typeof document.body.style.maxWidth != 'undefined')
+                tbWindow.css({'top':(H - h) / 2, 'margin-top':'0'});
+            }
+			 if(jQuery(window).width() < 640 ){
+			  var tb_left = parseInt((w / 2), 10) + 20;
+				jQuery('#TB_window').css('left', tb_left + 'px')
+				jQuery('#TB_window').css('width','90%');
+				jQuery('#TB_window').css('margin-top','-13%');
+				jQuery('#TB_window iframe').css('height','100%');
+				jQuery('#TB_window iframe').css('width','100%');
+			}
+			   if(jQuery(window).width() > 640 )
+			   {
+					jQuery('#TB_window').css('left','50%');
+				}
+		if (typeof popup_width_from_src != "undefined") {
+				popup_width_from_src=jQuery('.thickbox-previewbigcalendar'+randi).attr('href').indexOf('tbWidth=');
+				str=jQuery('.thickbox-previewbigcalendar'+randi).attr('href').substr(popup_width_from_src+8,150)
+				find_amp=str.indexOf('&');
+				width_orig=str.substr(0,find_amp);				
+				find_eq=str.indexOf('=');
+				height_orig=str.substr(find_eq+1,5);
+			jQuery('#TB_window').css('max-width',width_orig+'px');
+			jQuery('#TB_window iframe').css('max-width',width_orig+'px');
+			jQuery('#TB_window').css('max-height',height_orig+'px');
+			}			
+			jQuery('#TB_window').css('background','none');
+			jQuery('#TB_window').css('background-color','none');
+			jQuery('#TB_window iframe').css('background-color','none');			
+          };
+          thickDims();
+          $(window).resize(function () {
+            thickDims();
+			if(jQuery(window).width() < 640 ){
+				jQuery('#TB_window').css('width','90%');
+				jQuery('#TB_window').css('margin-top','-13%');
+				jQuery('#TB_window iframe').css('height','100%');
+				jQuery('#TB_window').css('height','100%');
+			}		
+if(jQuery(window).width() > 900 )
+			   {
+					jQuery('#TB_window').css('left','50%');						
+				}
+		  });		  
+          $('a.thickbox-preview' + id).click(function () {
+            tb_click.call(this);
+            var alink = jQuery(this).parents('.available-theme').find('.activatelink'), link = '', href = jQuery(this).attr('href'), url, text;
+            var reg_with = new RegExp(xx_cal_xx + "tbWidth=[0-9]+");	
+            if (tbWidth = href.match(reg_with))
+              tbWidth = parseInt(tbWidth[0].replace(/[^0-9]+/g, ''), 10);
+            else
+              tbWidth = jQuery(window).width() - 90;
+            var reg_heght = new RegExp(xx_cal_xx + "tbHeight=[0-9]+");
+            if (tbHeight = href.match(reg_heght))
+              tbHeight = parseInt(tbHeight[0].replace(/[^0-9]+/g, ''), 10);
+            else
+              tbHeight = jQuery(window).height() - 60;
+            jQuery('#TB_title').css({'background-color':'#222', 'color':'#dfdfdf'});
+            jQuery('#TB_closeAjaxWindow').css({'float':'left'});
+            jQuery('#TB_ajaxWindowTitle').css({'float':'right'}).html(link);			
+            jQuery('#TB_iframeContent').width('100%');
+            thickDims();			
+            return false;			
+          });		  	
+        });
+      }
+    }	
+    document.onkeydown = function (evt) {
+      evt = evt || window.event;
+      if (evt.keyCode == 27) {
+        document.getElementById('sbox-window').close();
+      }
+    };
+     showbigcalendar('bigcalendar1', 'http://www.datameer.com/ceoblog/wp-admin/admin-ajax.php?action=spiderbigcalendar_month_widget&theme_id=1&calendar=1&select=month,&date=2014-04&months&many_sp_calendar=1&cur_page_url=http%3A%2F%2Fwww.datameer.com%2Fceoblog%2Fcall-data-river-data-lake%2F&widget=1&rand=1','1','1');	  
+  </script>
+<style>
+#TB_iframeContent{
+	height: 100% !important;
+}
+#TB_window{
+	z-index: 1000000;
+}
+</style>
+  </div><div id="text-8" class="widget widget_text">			<div class="textwidget"><p><img src="http://www.datameer.com/ceoblog/wp-content/uploads/2014/01/sidebar-socialmedia2.png" alt="socialmedia" usemap="#Map" style="margin: 0 0 -15px;"></p>
+<map name="Map">
+<area shape="rect" coords="124,15,170,60" href="http://www.slideshare.net/Datameer" target="_blank" alt="Datameer SlideShare">
+<area shape="rect" coords="175,14,220,60" href="http://www.youtube.com/user/Datameer/videos" target="_blank" alt="Datameer YouTube">
+<area shape="rect" coords="226,14,269,61" href="https://www.twitter.com/datameer" target="_blank" alt="Datameer Twitter">
+<area shape="rect" coords="124,65,170,111" href="http://www.datameer.com/blog" target="_blank" alt="Datameer Blog">
+<area shape="rect" coords="175,65,220,111" href="https://plus.google.com/116962480690693314126/posts" target="_blank" alt="Datameer Google+">
+<area shape="rect" coords="226,66,269,111" href="http://ceoblog.datameer.com" target="_blank" alt="Datameer CEO Blog">
+</map>
+</div>
+		</div><div id="text-3" class="widget widget_text">			<div class="textwidget"><p><a href="http://info.datameer.com/Five_Top_Use_Case_Web.html" target="_blank"><img src="http://www.datameer.com/ceoblog/wp-content/uploads/2014/11/sidebar-top5-usecase.png" alt="Top 5 High-Impact Use Cases" width="280" style="margin: 25px 0 -15px;" /></a></p>
+</div>
+		</div><div id="tp_widget_recent_tweets-2" class="widget widget_tp_widget_recent_tweets"><h3 class="widget-title">Recent Tweets</h3>
+						<div class="tp_recent_tweets">
+							<ul><li><span>How Microsoft's using big data to predict traffic jams up to an hour in advance <a href="http://t.co/CxWoutgAdF" target="_blank">http://t.co/CxWoutgAdF</a></span><br /><a class="twitter_time" target="_blank" href="http://twitter.com/StefanGroschupf/statuses/583996475450896384">10 hours ago</a></li><li><span>RT <a href="http://twitter.com/acoliver" title="Follow acoliver"  target="_blank"  >@acoliver</a>: <a href="http://twitter.com/StefanGroschupf" title="Follow StefanGroschupf"  target="_blank"  >@StefanGroschupf</a> actually using this stuff gives me a different perspective...</span><br /><a class="twitter_time" target="_blank" href="http://twitter.com/StefanGroschupf/statuses/583860608422010880">19 hours ago</a></li><li><span><a href="http://twitter.com/StephenPiment" title="Follow StephenPiment"  target="_blank"  >@StephenPiment</a> We all love the latest and greatest tech but that is actually not true. <a href="https://twitter.com/search?q=Hadoop" title="Search #Hadoop"  target="_blank"  >#Hadoop</a> not fully but way more enterprise ready.</span><br /><a class="twitter_time" target="_blank" href="http://twitter.com/StefanGroschupf/statuses/583859355969314817">19 hours ago</a></li>
+							</ul>
+						</div></div>		<div id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title">Recent Blog Posts</h3>		<ul>
+					<li>
+				<a href="http://www.datameer.com/ceoblog/thanks-for-everything-joe/">Thanks For Everything, Joe</a>
+						</li>
+					<li>
+				<a href="http://www.datameer.com/ceoblog/measuring-better-health/">How We&#8217;re Measuring Ourselves to Better Health</a>
+						</li>
+					<li>
+				<a href="http://www.datameer.com/ceoblog/will-happen-big-data-2015-data-driven-predictions/">What Will Happen in Big Data in 2015? My Data-Driven Predictions.</a>
+						</li>
+					<li>
+				<a href="http://www.datameer.com/ceoblog/hadoop-community-success-elephant-orphanage-project-development-update/">A Hadoop Community Success: Elephant Orphanage Update</a>
+						</li>
+					<li>
+				<a href="http://www.datameer.com/ceoblog/big-data-potential-transform-health-care/">Big Data Has the Potential to Transform Health Care</a>
+						</li>
+				</ul>
+		</div>	<div class="widget">
+		<h3 class="widget-title">Watch Stefan's Videos</h3>
+		<a href="http://www.datameer.com/ceoblog/big-data-brews/">
+			<img src="http://www.datameer.com/ceoblog/wp-content/themes/ceo_blog_theme/images/big-data.png" />
+		</a>
+	</div>
+</div><div class="clear"></div>
+
+<style>
+ul.blocks li address {
+	color:#999;
+	font-family: Helvetica;
+	font-weight:normal;
+	font-size:12px;
+	line-height:19px;
+	font-style:normal;
+}
+
+ul.blocks li { float: left; }
+ul.blocks li address{ font-family: Helvetica; line-height: 24px; }
+ul.blocks li address strong { font-family: Helvetica; font-weight: 600; }
+ul.blocks li p.smalltext { line-height:24px; font-size:12px; }
+ul.blocks li p.smalltext strong { font-size:14px; color: #666666; font-weight:normal; }
+ul.blocks li p.smalltext a { color:#999; }
+</style>
+
+<div style="clear: both;"></div>
+<hr style="border: none; height: 1px; color:#dfdfdf; background-color: #dfdfdf; margin:30px 0;"></hr>
+        
+        <ul class="blocks">
+        	<li style="width: 180px;">
+            	<p class="smalltext"><strong>Products</strong><br />
+                <a href="http://www.datameer.com/product/data-integration.html">Data Integration</a><br />
+                <a href="http://www.datameer.com">Big Data Analytics</a><br />
+                <a href="http://www.datameer.com/product/smart-analytics.html">Smart Analytics</a><br />
+                <a href="http://www.datameer.com/product/data-visualization.html">Big Data Visualization</a><br />
+                <a href="http://www.datameer.com/product/app-market.html">App Market</a><br />
+                <a href="http://www.datameer.com/product/data-analytics.html">Data Transformation</a><br />
+                <a href="http://www.datameer.com/product/big-data.html">Big Data</a><br /p>
+                <a href="http://www.datameer.com/product/big-data-analytics-in-the-cloud.html">Big Data Analytics<br />&nbsp;&nbsp;&nbsp;in the Cloud</a><br />
+              	<a href="http://www.datameer.com/product/big-data.html">Hadoop Analytics</a></p>
+            </li>
+            <li style="width: 200px;">
+            	<p class="smalltext"><strong>Solutions</strong><br />
+                <a href="http://www.datameer.com/solutions/financial-services.html">Big Data in Financial Sector</a><br />
+                <a href="http://www.datameer.com/solutions/hightech.html">Big Data in Technology</a><br />
+                <a href="http://www.datameer.com/solutions/gaming.html">Customer Behavior Analysis</a><br />
+                <a href="http://www.datameer.com/solutions/usecases/fraud-detection.html">Fraud and Compliance</a><br />
+                <a href="http://www.datameer.com/solutions/usecases/edw-optimization.html">Enterprise Data Warehouse<br />&nbsp;&nbsp;&nbsp;Optimization</a><br />
+                <a href="http://www.datameer.com/solutions/usecases/big-data-processing.html">Big Data Processing</a><br />
+                
+              </p>
+            </li>
+            <li style="width: 180px;">
+            	<p class="smalltext"><strong>Resources</strong><br />
+                <a href="http://www.datameer.com/learn/videos-smart-analytics.html">Tutorials</a><br />
+                <a href="http://www.datameer.com/community">Community</a><br />
+                <a href="http://datameer.com/documentation/current/Home" target="_blank">Documentation</a><br />
+                <a href="http://www.datameer.com/support/certification/certification_program.html">Certification Program</a><br />
+                <a href="http://www.datameer.com/support/download-faq.html">FAQs</a><br />
+                </p>
+            </li>
+            <li style="width: 150px;">
+            	<p class="smalltext"><strong>News & Events</strong><br />
+                <a href="http://www.datameer.com/company/news/index.html">News</a><br />
+                <a href="http://www.datameer.com/company/news/press-releases/index.html">Press Releases</a><br />
+                <a href="http://www.datameer.com/learn/webinar/index.html">Webinars</a><br />
+                <a href="http://www.datameer.com/learn/videos/index.html">Videos</a><br />
+                </p>
+            </li>
+            
+            <li style="width: 180px;">
+            	<p class="smalltext"><strong>Company</strong><br />
+                <a href="http://www.datameer.com/company/team/index.html">Management Team</a><br />
+                <a href="http://www.datameer.com/company/board.html">Board</a><br />
+                <a href="http://www.datameer.com/blog">Blog</a><br />
+                <a href="http://www.datameer.com/partners/index.html">Partners</a><br />
+                <a href="http://www.datameer.com/company/events.html">Events</a><br />
+                <a href="http://www.datameer.com/company/careers.html">Careers</a><br />
+                <a href="http://www.datameer.com/company/contact.html">Contact Us</a>
+                </p>
+            </li>
+            
+            <li class="widauto">
+            	<img src="http://www.datameer.com/images/datameer_logo_grey.png" alt="Datameer" />
+                <address style="padding-left:23px;"><strong>Datameer, Inc.</strong><br />
+                1550 Bryant St., Suite 490<br />
+                San Francisco, CA 94103<br />
+                Tel: +1 415 817 9558<br />
+                Fax: +1 415 814 1243<br />
+                <strong>www.datameer.com</strong>
+                </address>
+            </li>
+        </ul>
+		</div>
+<div style="clear:both;"></div>
+		<footer class="container">
+			<p>&copy; 2015 Datameer, Inc. All rights reserved. Datameer is a trademark of Datameer, Inc. Hadoop and the Hadoop elephant logo are trademarks<br />
+			of the Apache Software Foundation. Other names may be trademarks of their respective owners.</p>
+		</footer>
+		<link rel='stylesheet' id='Css-css'  href='http://www.datameer.com/ceoblog/wp-content/plugins/spider-event-calendar/elements/calendar-jos.css?ver=4.1.1' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var thickboxL10n = {"next":"Next >","prev":"< Prev","image":"Image","of":"of","close":"Close","noiframes":"This feature requires inline frames. You have iframes disabled or your browser does not support them.","loadingAnimation":"http:\/\/www.datameer.com\/ceoblog\/wp-includes\/js\/thickbox\/loadingAnimation.gif"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.datameer.com/ceoblog/wp-includes/js/thickbox/thickbox.js?ver=3.1-20121105'></script>
+
+<!-- marketo -->
+<script src="http://munchkin.marketo.net/munchkin.js" type="text/javascript"></script> <script type="text/javascript">mktoMunchkin("061-BGC-590");</script>
+<!-- /marketo -->
+
+	</body>
+</html>

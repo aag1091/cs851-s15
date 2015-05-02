@@ -1,0 +1,1274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Trinity Apparel</title>		
+
+<link rel="stylesheet" type="text/css" href="main/css/style.css"/>
+<script type="text/javascript" src="main/scripts/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="jquery-ui-1.8.17/js/jquery-ui-1.8.17.custom.min.js"></script>
+        
+<script type="text/javascript" src="main/scripts/general2.js"></script>
+<script type="text/javascript" src="main/scripts/render.js"></script>
+<script type="text/javascript" src="main/scripts/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="main/scripts/slider/slides.min.jquery.js"></script>		
+	
+<script type="text/javascript" src="main/scripts/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<link rel="stylesheet" type="text/css" href="main/scripts/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css"/>		
+		
+<script type="text/javascript" src="main/scripts/tutorial.js"></script>
+<script type="text/javascript" src="main/scripts/qtip/jquery.qtip.min.js"></script>
+<link rel="stylesheet" type="text/css" href="main/scripts/qtip/jquery.qtip.min.css"/>
+		
+		
+<script type="text/javascript" src="main/scripts/prettyPhoto_3.1.3 2/js/jquery.prettyPhoto.js"></script>		
+<link rel="stylesheet" type="text/css" href="main/scripts/prettyPhoto_3.1.3 2/css/prettyPhoto.css"/>
+
+	
+<link rel="stylesheet" type="text/css" href="main/scripts/slider/global.css"/>
+<script type="text/javascript" src="main/fonts/cufon-yui.js"></script>
+<script type="text/javascript" src="main/fonts/LHF_Basher_REG_400.font.js"></script>		
+		
+<style type="text/css">
+ .pp_social{visibility: hidden!important;}
+</style>
+<script type="text/javascript">
+	var page = 'none';</script>
+		
+<script type="text/javascript">	
+	$.fn.hasAttr = function(name) {	
+		return this.attr(name) !== undefined;
+	};	
+
+	$(document).ready(function (){									
+		//accordion
+		Cufon.replace('.basher',{hover: true}); 			
+		config_controls();	
+		
+		if(page!="none"){
+			goTo(page);
+		}
+		get_news();
+		
+	});
+	
+	$(function(){			
+		$('#slides_construction').slides({
+			preload: true,
+			preloadImage: '/main/images/slider_products/loading.gif',
+			play: 0,
+			pause: 2500,
+			hoverPause: true,
+			navigation :true,
+			pagination : false
+		});		
+	});
+</script>		
+		
+<script type="text/javascript">		
+	 var _gaq = _gaq || [];
+	 _gaq.push(['_setAccount', 'UA-32112619-1']);
+	 _gaq.push(['_trackPageview']);
+	
+	 (function() {
+	   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	 })();
+</script>
+</head>
+
+<body>
+	
+	<div id="dialog_general" style="position:fixed;background-color:#FFF; width:320px; padding:4px; display:none; z-index:1100">
+		<table align="center" cellpadding="0" cellspacing="0" border="0">
+			<tbody>
+				<tr>
+					<td><div id="dg_title" style="text-align:center; font-size:22px; margin:15px" class="basher">Success</div></td>
+				</tr>
+				<tr>
+					<td><div id="dg_btn_cancel" style="margin:15px auto 15px auto; width:78px"><img src="main/images/btn-close.png" width="74" height="35" /></div></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>		
+		
+	<div style="position:relative; width:980px; margin:40px auto 0 auto">
+		<div style="position:absolute; top: -7px; left:912px">
+			<a style="text-decoration:none; color:#000" href="login.php">
+				<img style="border:0" src="main/images/login-trin.jpg" width="59" height="21" />
+			</a>
+		</div>
+		<div style="position:absolute; top: -11px; left:828px;font-size:26px; color:#000; cursor:pointer" class="basher home">
+			<span>Home</span></a>&nbsp;&nbsp;/
+		</div>
+							
+		<table align="center" width="980px" cellpadding="0" cellspacing="0" border="0">									
+			<tr>
+				<td>
+					<table cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td>
+								<div class="home" style="width:125px; text-align:center">
+									<img style="border:0" src="main/images/Trinity-Logo.png" width="122" height="87" />
+								</div>																					
+							</td>
+							<td valign="middle" style="height:72px">
+								<div class="gradient" style="position:absolute; top:31px; z-index:1080">
+									<img src="main/images/trans-trin.png" width="111" height="32" />
+								</div>
+																								
+								<ul id="menu" style="margin:6px 0 0 0">
+									<li class="top_m" style="background-image:url(main/images/menu1.jpg); background-position:0 0; width:209px"><div style="height:30px">&nbsp;</div>
+										<ul style="margin-left:50px">
+											<li page="about_history" class="page"><a href="#" title="HISTORY">HISTORY</a></li>
+											<li page="about_news" class="page"><a href="#" title="NEWS">NEWS</a></li>											
+										</ul>		
+									</li>
+									<li page="customers" class="m_menu top_m page" style="background-image:url(main/images/menu1.jpg);background-position:-209px 0; width:161px">
+										<a href="#" title="CUSTOMERS">&nbsp;</a>										
+									</li>
+									</li>												
+									<li class="top_m" style="background-image:url(main/images/menu1.jpg);background-position:-370px 0;	width:158px"><div style="height:30px">&nbsp;</div>																				
+										<ul>
+											<li page="products" class="page page_slider slides_products"><a href="#" title="CONSTRUCTION">CONSTRUCTION</a></li>
+											<li><a href="#" title="COLLECTIONS">COLLECTIONS</a>
+												<ul class="m_left">
+														<li class="page" page="fabric_collections_proprietary"><a href="#" title="PROPRIETARY">PROPRIETARY</a></li>
+														<li page="fabric_collections_pedigreed" class="last page"><a href="#" title="BRANDED">BRANDED</a></li>
+												</ul>
+											</li>
+											<li><a href="#" title="CLOTHING">CLOTHING</a>
+												<ul class="m_left">
+													<li page="p_garments" class="page page_slider slides jackets"><a href="#" title="JACKETS">JACKETS</a></li>
+													<li page="p_garments" class="page page_slider slides jackets"><a href="#" title="TROUSERS">TROUSERS</a></li>
+													<li page="p_garments" class="page page_slider slides jackets"><a href="#" title="VESTS">VESTS</a></li>
+													<li page="p_garments" class="page page_slider slides jackets"><a href="#" title="OUTERWEAR">OUTERWEAR</a></li>
+													<li page="p_garments" class="page page_slider slides jackets"><a href="#" title="SHORTS">SHORTS</a></li>
+													<li page="p_garments" class="last page page_slider slides jackets"><a href="#" title="BREEKS">BREEKS</a></li>
+												</ul>												
+											</li>
+											<li><a href="#" title="SHIRTS">SHIRTS</a>
+												<ul class="m_left">
+													<li page="products_shirts" class="page page_slider slides_shirts"><a href="#" title="DRESS / SPORT">DRESS&nbsp;/&nbsp;SPORT</a></li>
+													<li page="products_shirts" class="page page_slider slides_shirts"><a href="#" title="POLOS">POLOS</a></li>
+													<li page="products_shirts" class="page page_slider slides_shirts"><a href="#" title="KNITS">KNITS</a></li>
+												</ul>
+											<li class="last"><a href="#" title="ACCOUTREMENTS">ACCOUTREMENTS</a>
+												<ul class="m_left">
+													<li page="accoutrements_pocket_squares" class="page_slider slides_accoutrements page">
+														<a href="#" title="POCKET SQUARES">POCKET&nbsp;SQUARES</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li page="technology" class="top_m m_menu page" style="background-image:url(main/images/menu1.jpg);background-position:-528px 0; width:172px"><a href="#" title="TECHNOLOGY">&nbsp;</a></li>
+									<li page="contact" class="top_m m_menu page" style="background-image:url(main/images/menu1.jpg);background-position:-700px 0; width:164px"><a href="#" title="CONTACT ">&nbsp;</a></li>
+								</ul>							
+														
+								<div class="gradient" style="position:absolute; top:61px; left:70px; z-index:1001; width:111px; display:none">
+									<img src="main/images/trans-trin.png" width="111" height="30"/>
+								</div>																		
+														
+								<div class="gradient" style="position:absolute; top:91px; left:50px; z-index:1001; width:172px; display:none">
+									<img src="main/images/trans-trin.png" width="111" height="30"/>
+								</div>										
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top" style="padding-top:20px">								
+					<div class="div_content" id="mini_designer">
+						<div id="mini_designer_img" style="width:980px; height:329px;	position:relative; overflow:hidden">
+							<img width="980px" height="329px" src="http://s7d4.scene7.com/ir/render/trinityapparelrender/CSC_C202_Front_crop?obj=CT/Fabric&src=EE-2311416&res=300&obj=CSHT/Fabric&src=N-2210522S&res=300&obj=CSC/Fabric&src=EE-2311416&res=300&obj=CSC/Thread/Holes&color=0,155,218&obj=CSC/Thread/Thread&show&color=0,155,218&obj=CSC/Buttons&decal&src=KYKW022_Black_front&res=72&show&obj=CSC/Buttons/Sleeve&decal&src=KYKW022_Black_fntslv&res=72&show&obj=TIE&color=0,155,218&wid=980" />
+							<div style="position:absolute; bottom:0; width:980px; height:85px; opacity:0.5;filter: alpha(opacity = 50); background-color:#000; z-index:1001 "></div>
+							<div id="mini_caption" class="basher" style="position:absolute; color:#FFF; bottom:10px; left:50px; z-index:1002; font-size:40px">
+								Seeing Is Believing – No Need To Imagine
+							</div>
+						</div>
+						<ul id="slider" style="font-family: 'Helvetica Neue', Arial, sans-serif; font-weight:lighter;font-size:16px;">
+							<li class="first_level" style="overflow:hidden; position:relative">
+								<a	style="background-image:url(main/images/slide/tab2.png)">
+									<div class="mini_content" style="display:none; position:relative">																										
+										<div style="position:absolute; left:80px; top:12px; width:648px; ">
+											<table cellpadding="0" cellspacing="0" border="0">
+												<tr>
+													<td style="color:#FFF">
+															Select a fabric for the jacket
+													</td>																																
+													<td valign="top">
+															<ul	id="mini_swatches_jacket" style="margin-left:40px"></ul>																																		
+													</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="first_level" style="overflow:hidden; position:relative">
+									<a style="background-image:url(main/images/slide/tab3.png)">
+										<div class="mini_content" style=" display:none; position:relative">
+											<div style="position:absolute; left:80px; top:12px; width:648px;">
+												<table cellpadding="0" cellspacing="0" border="0">
+													<tr>
+														<td style="color:#FFF">
+															Pick your favorite shirt swatch
+														</td>																																
+														<td valign="top">
+															<ul	id="mini_swatches_shirt" style="margin-left:40px"></ul>																																		
+														</td>
+													</tr>
+												</table>
+											</div>
+										</div>																	
+									</a>
+							</li>
+							<li class="first_level" style="overflow:hidden; position:relative">
+									<a style="background-image:url(main/images/slide/tab4.png)">																							
+										<div class="mini_content" style=" display:none; position:relative">
+											<div style="position:absolute; left:80px; top:12px; width:648px;">
+												<table cellpadding="0" cellspacing="0" border="0">
+													<tr>
+														<td style="color:#FFF">
+															Choose a tie color
+														</td>																																
+														<td valign="top" style="width:140px">
+															<ul	id="mini_swatches_tie" style="margin-left:40px"></ul>
+														</td>
+													</tr>
+												</table>
+											</div>
+										</div>																							
+									</a>
+							</li>	
+							<li class="first_level" style="overflow:hidden; position:relative">
+								<a style="background-image:url(main/images/slide/tab1.png); overflow:hidden">																							
+										<div class="mini_content" style=" display:none; position:relative">
+											<div style="position:absolute; left:90px; top:12px; width:648px;">
+												<table cellpadding="0" cellspacing="0" border="0">
+													<tr>
+														<td style="color:#FFF">
+															Choose your thread color
+														</td>																																
+														<td valign="top" style="width:140px">
+															<ul	id="mini_swatches_thread" style="margin-left:40px"></ul>
+														</td>
+													</tr>
+												</table>
+											</div>
+										</div>																							
+								</a>
+							</li>																																									
+						</ul>
+						<div style="margin-top:23px; height:500px;">
+							<ul id="ms_home" class="main_sections">
+								<li style="width:327px">
+									<div class="sh" style="background-image:url(main/images/icon-main.jpg); background-position:0 0; width:98px; height:97px; margin:auto	auto 14px auto"></div>
+									<div class="section_header basher" style="height:56px">
+										THE SARTORIAL SOLUTION
+									</div>
+									<div class="section_content">
+										Everything you need to be a successful Clothier under one roof.																					   
+										<ul style="margin: 20px 0 0 40px">
+												<li style="float:none">CMT</li>
+												<li style=" float:none">Sourced Fabrics</li>
+												<li style=" float:none">Linings/Trims/Buttons</li>
+										</ul><br />
+										Our unparalleled array of styling options enables our customers to design garments with unique, distinctive character that their clients cannot find off-the-rack, or even from other custom clothiers.
+									</div>
+								</li>
+								<li style="width:326px">
+									<div class="sh" style="background-image:url(main/images/icon-main.jpg); background-position:-97px 0;width:98px; height:97px; margin:auto	auto 14px auto"></div>
+									<div class="section_header basher" style="height:56px" >
+										GLOBAL PLATFORM
+									</div>
+									<div class="section_content">
+										Trinity&rsquo;s business platform represents the world-wide convergence of supply chain activities focused on customized apparel by organizing:																							
+										<ul style="margin: 20px 0 0 40px">
+											<li style="float:none">Technology</li>
+											<li style=" float:none">Design</li>
+											<li style=" float:none">Materials</li>
+											<li style=" float:none">Manufacturing</li>
+											<li style=" float:none">Logistics</li>
+											<li style=" float:none">Support</li>
+										</ul>
+									</div>
+								</li>
+								<li style="width:327px">
+									<div class="sh" style="background-image:url(main/images/icon-main.jpg); background-position:-194px 0;width:98px; height:97px; margin:auto	auto 14px auto"></div>
+									<div class="section_header basher" style="height:56px">
+										PRIVATE BRANDING
+									</div>
+									<div class="section_content">
+										<p>
+										Private Branding means every garment is represented with our customer&rsquo;s label, building the strength of their brand and the relationships with their clients.
+										</p>
+										<p>
+										Our customers know who they are and what they stand for.	We are proud to be chosen as the supplier whose products they want to put their brand name in.
+										</p>
+									</div>
+								</li>										
+							</ul>
+						</div>
+						<div id="news">
+							 <div class="basher" style="border-top: 4px solid black;border-bottom: 1px solid;width: 100%;margin: auto auto;text-align: center;padding: 4px 0;font-size:36px;">
+								NEWS
+							 </div>								 
+							 <div id="slides_news">
+								<div class="slides_container" style="margin:auto auto;">	
+
+									 <div class="slide">
+										 <div style="width:960px">										
+											<div class="news_item news_item_left">
+												<div class="news_title">Trinity Apparel Group Launch 3D</div>
+												<div class="news_date">May 2,2012</div>
+												<div>
+													Trinity Apparel Group has created a software system that models
+													fabric swatches in three dimensional renderings of finished
+													garments
+													<div class="news_more"><a href="">read more...</a></div>
+												</div>
+											</div>
+											<div class="news_item news_item_right">
+												<div class="news_title">Trinity Apparel Group Launch 3D</div>
+												<div class="news_date">May 2,2012</div>
+												<div>
+													Trinity Apparel Group has created a software system that models
+													fabric swatches in three dimensional renderings of finished
+													garments
+												</div>
+												<div class="news_more"><a href="">read more...</a></div>
+											</div>										
+										</div>
+									 </div>
+									 <div class="slide">
+										 <div>										
+											<div class="news_item news_item_left">
+												<div class="news_title">Trinity Apparel Group Launch 3D</div>
+												<div class="news_date">May 2,2012</div>
+												<div>
+													Trinity Apparel Group has created a software system that models
+													fabric swatches in three dimensional renderings of finished
+													garments
+													<div class="news_more"><a href="">read more...</a></div>
+												</div>
+											</div>
+											<div class="news_item news_item_right">
+												<div class="news_title">Trinity Apparel Group Launch 3D</div>
+												<div class="news_date">May 2,2012</div>
+												<div>
+													Trinity Apparel Group has created a software system that models
+													fabric swatches in three dimensional renderings of finished
+													garments
+												</div>
+												<div class="news_more"><a href="">read more...</a></div>
+											</div>										
+										</div>
+									</div>	
+								</div>
+									<a href="#" class="prev" style="position:absolute; left:10px; top:1100px; z-index:1080">
+										<img src="main/images/slider_products/arrow-prev.png" width="24" height="43" alt="arrow prev" />
+									</a>
+									<a href="#" class="next" style="position:absolute; left:955px; top:1100px; z-index:1080">
+										<img src="main/images/slider_products/arrow-next.png" width="24" height="43" alt="arrow next" />
+									</a>
+								</div>
+						</div>
+					</div> <!--  end mini designer -->
+																		
+					<div class="div_content" id="about" style="display:none">
+															
+						<div style="margin-top:23px; height:430px;">
+							<ul id="ms_home" class="main_sections">
+								<li style="width:327px">
+									<div class="sh" style="background-image: url(main/images/icon-main2.jpg); width: 98px; height: 97px; margin-top: auto; margin-right: auto; margin-bottom: 14px; margin-left: auto; background-position: 0% 0px; "></div>
+									<div class="section_header basher">
+											MISSION
+									</div>
+									<div class="section_content">
+											Trinity Apparel Group is &ldquo;The Clothier's Company&rdquo; <br><br>
+											Private Label clothing means our customers can put their own branding into every garment, building the strength of their brand and the relationships with their customers																							
+									</div>
+								</li>
+								<li style="width:326px">
+									<div class="sh" style="background-image: url(main/images/icon-main2.jpg); width: 98px; height: 97px; margin-top: auto; margin-right: auto; margin-bottom: 14px; margin-left: auto; background-position: -97px 0px; "></div>
+									<div class="section_header basher">
+											HISTORY
+									</div>
+									<div class="section_content">
+													Everything you need to be a successful Clothier under one roof. <br>
+													&nbsp; &nbsp; -CMT <br>
+													&nbsp; &nbsp; -Sourced fabrics <br>
+													&nbsp; &nbsp; -Linings/Trims/Buttons <br><br>																										
+													Our unparalleled array of styling options, enables our customers to design garments with unique, distinctive character that their clients cannot find off-the-rack, or even from other custom clothiers
+									</div>
+								</li>
+								<li style="width:327px">
+									<div class="sh" style="background-image:url(main/images/icon-main2.jpg); background-position:-194px 0;width:98px; height:97px; margin:auto	auto 14px auto"></div>
+									<div class="section_header basher">
+											STAFF
+									</div>
+									<div class="section_content">
+											State of the art online ordering platform and &ldquo;Dynamic Image Merchandising&rdquo; (DIM) system enables our customers to conduct business efficiently, and provide their clients with images of their custom clothing purchases BEFORE the order is placed to ensure the customer will be satisfied with the end result.
+									</div>
+								</li>										
+							</ul>
+						</div>
+					</div> 
+											
+					<div class="div_content" id="about_mission" style="display:none; margin-top:30px">	
+						<div class="sh" style="background-image: url(main/images/icon-main2.jpg); width: 98px; height: 97px; margin-top: auto; margin-right: auto; margin-bottom: 14px; margin-left: auto; background-position: 0% 0px; "></div>
+						<div class="basher" style="border-top: 4px solid black;border-bottom: 1px solid;width: 100%;margin: auto auto;text-align: left;padding: 4px 0 14px 0;font-size:36px;">
+								MISSION
+						</div>
+						<div class="section_content" style="width:785px; margin: auto auto">
+							<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam egestas sem quis neque sodales dignissim. Aliquam laoreet pellentesque velit non euismod. Praesent hendrerit pretium nulla, sed vehicula libero facilisis vel. Curabitur vulputate, tellus eget sodales feugiat, libero mauris tincidunt libero, vel facilisis urna nibh nec arcu. Aliquam non tellus at elit mollis egestas in et tortor. Suspendisse hendrerit, est ut hendrerit fringilla, justo tellus porta diam, a luctus nulla sapien quis leo. Pellentesque lobortis, odio non viverra malesuada, diam lacus volutpat lacus, at sagittis sapien ante et est. Aliquam erat volutpat. Etiam volutpat metus id lectus pharetra tincidunt. Praesent semper arcu at felis varius id luctus metus ultrices.
+							</p>
+							<p>
+									Aliquam sed enim vitae massa dignissim iaculis. Quisque placerat faucibus magna nec varius. Praesent rutrum orci id ligula tempus accumsan. Aenean mattis fringilla enim, vitae tincidunt magna lacinia sit amet. Duis ultrices lobortis consectetur. Phasellus sed lectus id dolor volutpat egestas id sit amet leo. Aliquam dui nibh, gravida in tincidunt sed, laoreet a ligula. Donec sem sapien, cursus vel laoreet nec, varius non lorem. Mauris ac ipsum eget est posuere placerat. Aliquam ultrices pharetra fermentum. Vivamus et orci ac metus porttitor varius. Mauris imperdiet, ligula a commodo placerat, nibh diam ornare orci, sed lacinia lorem libero non diam. Etiam laoreet, velit vel iaculis rutrum, sem neque facilisis tortor, quis auctor lectus diam tempus augue. Integer mollis purus pulvinar sem sodales aliquam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+							</p>
+							<p>
+									Phasellus ac dui ac augue tempus pretium. Aenean non sapien condimentum mauris egestas sollicitudin et a justo. Duis vitae nunc ligula. Proin consectetur velit non lectus interdum ut tristique sapien aliquam. Aliquam vel erat et dolor scelerisque malesuada. Quisque laoreet, libero eu rhoncus venenatis, tellus felis commodo velit, id egestas mauris lacus ut leo. Pellentesque quis consectetur nibh. Integer dictum fringilla tellus, ac tristique turpis euismod nec. Praesent molestie pretium tortor, non placerat sem condimentum sit amet. Aliquam fermentum tempus augue a suscipit. Nunc vestibulum sem in justo blandit elementum. Maecenas tristique feugiat interdum. Duis ac nisi justo. Pellentesque id ornare metus.															
+							</p>
+						</div>
+					</div>
+					
+					<div class="div_content" id="about_history" style="display:none; margin-top:30px">	
+						<div class="sh" style="background-image: url(main/images/icon-main2.jpg); width: 98px; height: 97px; margin-top: auto; margin-right: auto; margin-bottom: 14px; margin-left: auto; background-position: -97px 0px; "></div>
+						<div class="basher" style="border-top: 4px solid black;border-bottom: 1px solid;width: 100%;margin: auto auto;text-align: left;padding: 4px 0 14px 0;font-size:36px;">
+							HISTORY
+						</div>
+						<div class="section_content" style="width:785px; margin: auto auto">
+							<p>In 2002, Wen Nance, the founder of Trinity Apparel Group was disappointed in the usual suppliers of made-to-measure production.	It seemed to Wen, and several of his clothier colleagues, that the goal of these suppliers was to provide the lowest common denominator of quality and style but to charge a premium for uninspiring clothing. Why was there no better solution?</p>
+							<p>In a moment of entrepreneurial inspiration, while admiring a beautiful sport shirt and noticing the country of origin on the label, Wen asked himself a question: &ldquo;Why has no one developed a made-to-measure solution using offshore production?&rdquo; With this question burning in his mind, Wen set out to prove that a business platform could be developed around the idea of mass customization using offshore manufacturing.	From the beginning, Wen knew three critical questions had to be successfully answered regarding:</p>
+							<ul style="list-style-type:circle; margin-left:40px">
+										<li>QUALITY</li>
+										<li>DELIVERY&nbsp;SPEED</li>
+										<li>PRICE</li>
+							</ul>
+							<p>Yes, the ability of offshore manufacturing could meet Wen&rsquo;s quality specifications and exceed what was available domestically.	Yes, these quality garments could be manufactured and delivered to the customer equal to or faster than domestic manufacturers.	Finally, yes, these quality garments could be offered at lower prices creating unequaled value.	The successful answers to these three questions contributed to the company name, Trinity Apparel Group.</p>
+							<p>In 2003, Wen combined his retail custom clothing business with two partners after organizing Trinity Apparel Group.	The retail division was named Latham Thomas after Wen&rsquo;s two young sons.	The business strategy was to be profitable enough in the retail business to support the development of Trinity&rsquo;s production platform and wholesale business.	The partners, retailers themselves, proved to be a significant asset in developing the supply chain.	By intimately understanding the challenges for retailers and having made literally thousands of consumer transactions, Trinity reverse engineered the production platform beginning with the transaction and working backwards to the factory floor.</p>
+							<p>In March 2004, the company was ready to supply the leading independent clothiers in America.	Trinity Apparel officially launched beyond select development accounts.	Latham Thomas grew to five markets and proved to be the ideal laboratory for perfecting the Trinity production platform.</p>
+							<p>Bill Kneisel joined Trinity as an equity partner in 2006, replacing an original partner who left the industry.	Bill&rsquo;s contribution to the company accelerated its growth velocity and allowed Wen to concentrate fully on the continual improvement of the products, platform, and systems.</p>
+
+							<p>Trinity&rsquo;s early success led to a decision to spin Latham Thomas off from Trinity Apparel Group in 2008.	Wen and Bill acquired the wholesale equity and sold their retail equity to their third partner in an amicable business separation.	By exiting the retail business, Wen, Bill, and the Trinity staff were able to fully devote themselves to the rapidly growing wholesale company.</p>
+							<p>Since then, Trinity has continued to be the leader in mass customized apparel manufacturing.	With a passion for continual improvement, product innovation, and technology, Trinity has become a global force in the apparel industry.	Trinity entered the Canadian and United Kingdom markets in 2011 and has seen impressive growth rates domestically and abroad even during challenging economic times.</p>
+							<p>In 2012, with offices in the United States, Canada, United Kingdom, and China, in addition to growing global distribution, Trinity is continuing to invest in its future and in the future of its clothiers, tailors and retailers.	The launch of iDesign STUDIO has caused many to rethink custom apparel retailing.	This type of industry leading innovation has become expected from Trinity.	With an already impressive list of accomplishments and a passion for continual improvement, the future is an exciting frontier for everyone associated with Trinity Apparel Group.</p>
+						</div>
+					</div>	
+					
+					<div class="div_content" id="about_news" style="display:none; margin-top:30px">	
+						<div class="sh" style="background-image: url(main/images/news_icon.jpg); width: 87px; height: 87px; margin-top: auto; margin-right: auto; margin-bottom: 4px; margin-left: auto; background-position: 0 0 "></div>
+						<div class="basher" style="border-top: 4px solid black;border-bottom: 1px solid;width: 100%;margin: auto auto;text-align: center;padding: 4px 0;font-size:36px;">
+							NEWS
+						</div>
+						<div class="section_content" style="width:785px; margin: auto auto"></div>
+					</div>															
+										
+					<div class="div_content" id="about_staff" style="display:none; margin-top:30px">
+						<div class="sh" style="background-image: url(main/images/icon-main2.jpg); width: 98px; height: 97px; margin-top: auto; margin-right: auto; margin-bottom: 14px; margin-left: auto; background-position: -194px 0px; "></div>
+						<div style="border-top: 4px solid black;border-bottom: 1px solid;width: 100%;margin: auto auto;text-align: left;padding: 4px 0 14px 0;">
+							<span class="basher" style="font-size:36px">STAFF</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:18px; font-style:italic;">Trinity&rsquo;s Executive Committee</span>
+						</div>
+						
+						<div style="width:785px; margin:auto auto" class="section_content">
+							<span class="basher" style="font-size:36px">Wen Nance</span><br />
+								<span	style="font-size:18px; font-style:italic">CEO and Head Honcho</span><br />
+								<p>
+								Paul Rego manages Trinity&rsquo;s intellectual property and technology development.  Working with the executive committee and our IT / web development personnel, Paul leads the company&rsquo;s technology development initiatives focused on providing our customers with the best tools available in the apparel industry for order entry and sales management.
+								</p><p>
+								Paul lead the development and launch of Trinity&rsquo;s revolutionary Dynamic Image Merchandising system <span style="font-weight:bold; font-style:italic">iDesign STUDIO</span>.  In addition to the continual development of STUDIO, Paul is responsible for leading the ongoing improvement of the company&rsquo;s industry-leading order entry system <span style="font-weight:bold; font-style:italic">iDesign WORKFLO</span>.
+								</p>
+								<p>
+								Paul&rsquo;s experience in men&rsquo;s apparel began in 1988 in Toronto, Canada where we worked for <span style="font-weight:bold; font-style:italic">Harry Rosen</span>, Canada&rsquo;s luxury men&rsquo;s wear chain.  In 1991 he joined the family&rsquo;s upscale custom clothing boutique <span style="font-weight:bold; font-style:italic">REGO Bespoke Clothiers</span> located next to the Toronto Stock Exchange.  In 2002, Paul and his father formed <span style="font-weight:bold; font-style:italic">Sartorial Instruments &amp; Technology</span> to launch their invention <span style="font-weight:bold; font-style:italic">The Fitter</span>; a measuring device and online software application designed to help retailers obtain professional results selling custom apparel.
+								</p><p>
+								In 2005, Paul realized the family was better at retailing than attempting to help other retailers, and departed the family business to work at <span style="font-weight:bold; font-style:italic">Coppley Apparel Group</span>.  Paul&rsquo;s role was to train the company&rsquo;s sales force and retail customers on fitting and measuring best practices.  In 2009 Paul decided to move to the United States to launch a custom shirt line <span style="font-weight:bold; font-style:italic">TOUCH</span>, which was recently sold to <span style="font-weight:bold; font-style:italic">Ballin</span>.  Paul joined Trinity Apparel Group in 2011.  
+								He now resides in Jacksonville, FL with his wife Nathalie and their 4 cats.  When he&rsquo;s not trying to figure out how Trinity can continue to revolutionize the custom apparel sales experience, he enjoys the sunshine while playing at Florida&rsquo;s numerous golf courses.
+								</p>
+						</div>
+						<div style="height: 20px;border-top: 4px solid black;border-bottom: 1px solid;width: 785px;margin: auto auto;"></div>
+							
+							
+						<div style="width:785px; margin:auto auto" class="section_content">
+							<span class="basher" style="font-size:36px">Bill Kneisel</span><br />
+								<span	style="font-size:18px; font-style:italic">CFO and Partner</span><br />
+								<p>
+								Paul Rego manages Trinity&rsquo;s intellectual property and technology development.  Working with the executive committee and our IT / web development personnel, Paul leads the company&rsquo;s technology development initiatives focused on providing our customers with the best tools available in the apparel industry for order entry and sales management.
+								</p><p>
+								Paul lead the development and launch of Trinity&rsquo;s revolutionary Dynamic Image Merchandising system iDesign STUDIO.  In addition to the continual development of STUDIO, Paul is responsible for leading the ongoing improvement of the company&rsquo;s industry-leading order entry system iDesign WORKFLO.
+								Paul’s experience in men’s apparel began in 1988 in Toronto, Canada where we worked for Harry Rosen, Canada&rsquo;s luxury men&rsquo;s wear chain.  In 1991 he joined the family&rsquo;s upscale custom clothing boutique REGO Bespoke Clothiers located next to the Toronto Stock Exchange.  In 2002, Paul and his father formed Sartorial Instruments &amp; Technology to launch their invention The Fitter; a measuring device and online software application designed to help retailers obtain professional results selling custom apparel.
+								</p><p>
+								In 2005, Paul realized the family was better at retailing than attempting to help other retailers, and departed the family business to work at Coppley Apparel Group.  Paul&rsquo;s role was to train the company&rsquo;s sales force and retail customers on fitting and measuring best practices.  In 2009 Paul decided to move to the United States to launch a custom shirt line TOUCH, which was recently sold to Ballin.  Paul joined Trinity Apparel Group in 2011.  
+								</p><p>
+								He now resides in Jacksonville, FL with his wife Nathalie and their 4 cats.  When he&rsquo;s not trying to figure out how Trinity can continue to revolutionize the custom apparel sales experience, he enjoys the sunshine while playing at Florida&rsquo;s numerous golf courses.
+								</p>
+						</div>
+						<div style="height: 20px;border-top: 4px solid black;border-bottom: 1px solid;width: 785px;margin: auto auto;"></div>														
+						
+						<div style="width:785px; margin:auto auto" class="section_content">
+							<span class="basher" style="font-size:36px">Paul Rego</span><br />
+								<span	style="font-size:18px; font-style:italic">Director, IP and Technology</span><br />
+								<p>
+								Paul Rego manages Trinity&rsquo;s intellectual property and technology development.  Working with the executive committee and our IT / web development personnel, Paul leads the company&rsquo;s technology development initiatives focused on providing our customers with the best tools available in the apparel industry for order entry and sales management.
+								</p><p>
+								Paul lead the development and launch of Trinity&rsquo;s revolutionary Dynamic Image Merchandising system <span style="font-weight:bold; font-style:italic">iDesign STUDIO</span>.  In addition to the continual development of STUDIO, Paul is responsible for leading the ongoing improvement of the company&rsquo;s industry-leading order entry system <span style="font-weight:bold; font-style:italic">iDesign WORKFLO</span>.
+								</p>
+								<p>
+								Paul&rsquo;s experience in men&rsquo;s apparel began in 1988 in Toronto, Canada where we worked for <span style="font-weight:bold; font-style:italic">Harry Rosen</span>, Canada&rsquo;s luxury men&rsquo;s wear chain.  In 1991 he joined the family&rsquo;s upscale custom clothing boutique <span style="font-weight:bold; font-style:italic">REGO Bespoke Clothiers</span> located next to the Toronto Stock Exchange.  In 2002, Paul and his father formed <span style="font-weight:bold; font-style:italic">Sartorial Instruments &amp; Technology</span> to launch their invention <span style="font-weight:bold; font-style:italic">The Fitter</span>; a measuring device and online software application designed to help retailers obtain professional results selling custom apparel.
+								</p><p>
+								In 2005, Paul realized the family was better at retailing than attempting to help other retailers, and departed the family business to work at <span style="font-weight:bold; font-style:italic">Coppley Apparel Group</span>.  Paul&rsquo;s role was to train the company&rsquo;s sales force and retail customers on fitting and measuring best practices.  In 2009 Paul decided to move to the United States to launch a custom shirt line <span style="font-weight:bold; font-style:italic">TOUCH</span>, which was recently sold to <span style="font-weight:bold; font-style:italic">Ballin</span>.  Paul joined Trinity Apparel Group in 2011.  
+								He now resides in Jacksonville, FL with his wife Nathalie and their 4 cats.  When he&rsquo;s not trying to figure out how Trinity can continue to revolutionize the custom apparel sales experience, he enjoys the sunshine while playing at Florida&rsquo;s numerous golf courses.
+								</p>
+						</div>
+						<div style="height: 20px;border-top: 4px solid black;border-bottom: 1px solid;width: 785px;margin: auto auto;"></div> 
+						
+						
+						<div style="width:785px; margin:auto auto" class="section_content">
+							<span class="basher" style="font-size:36px">Craig Zahner</span><br />
+							<span	style="font-size:18px; font-style:italic">Director, Dealer Support</span><br />
+							<p>
+							Craig Zahner is responsible for leading Trinity&rsquo;s customer support team, overseeing order fulfillment from order entry to delivery of the completed garments.  Craig&rsquo;s daily contact with the support team and order fulfillment staff at the factory ensures all dealer concerns and questions are answered in the timeliest fashion. 
+							</p>
+							<p> 
+							Craig is also actively involved in business development initiatives; managing the addition of new customers, and assisting with the implementation of new products and technology. Working as a liaison between the IT department, our ccustomers, and the executive committee, he brings all parties together to ensure the successful launch of new products and feature upgrades to Trinity&rsquo;s iDesign WORKFLO order system and our revolutionary new Dynamic Image Merchandising system, iDesign STUDIO.
+							</p>
+							<p>
+							Craig has a lifetime of experience in the apparel industry.  In the 1960&rsquo;s and 70&rsquo;s he was co-owner of <span style="font-weight:bold; font-style:italic">Zahner&rsquo;s</span>, a family-owned men&rsquo;s and ladies apparel store.  In the mid 1980&rsquo;s he sold his share of the business and started his own upscale men&rsquo;s clothing store, <span style="font-weight:bold; font-style:italic">Craig&rsquo;s Limited</span>.  After 10 years of running his own business, he decided to join the <span style="font-weight:bold; font-style:italic">Tom James</span> direct sales organization in 1994.  While there, Craig built his sales team, and after a very successful 2001, he earned <span style="font-weight:bold">President&rsquo;s Club</span> status, and was awarded a trip to Italy. 
+							</p>
+							<p>
+							In 2004 he left Tom James to become general manager of the 5th largest <span style="font-weight:bold; font-style:italic">Polo Ralph Lauren</span> outlet store in the country, in Wrentham MA.  In 2005 Craig was invited to join the team at Trinity Apparel.  In addition to his responsibilities as Director of Dealer Support, Craig continues to sell clothing to his loyal clients who have stayed with him through the years.  This allows him to experience the same order entry and fulfillment services as Trinity&rsquo;s customers, enabling Craig to make valuable suggestions to improve the entire order fulfillment process.
+							</p>
+							<p>
+							Craig was born and raised in Ellington, CT.  He graduated from the University of Harford in Hartford CT and earned a degree in accounting.  He now resides in Rocky Hill CT with his fiancée Michele.  He has two sons in their 30&rsquo;s, a grandson and a granddaughter.																
+							</p> 
+						</div>
+						<div style="height: 20px;border-top: 4px solid black;border-bottom: 1px solid;width: 785px;margin: auto auto;"></div> 
+
+
+						<div style="width:785px; margin:auto auto" class="section_content">
+							<span class="basher" style="font-size:36px">Paul Gottschalk</span><br />
+							<span	style="font-size:18px; font-style:italic">Director, Dealer Support</span><br />
+							<p>
+							Paul Rego manages Trinity&rsquo;s intellectual property and technology development.  Working with the executive committee and our IT / web development personnel, Paul leads the company&rsquo;s technology development initiatives focused on providing our customers with the best tools available in the apparel industry for order entry and sales management.
+							</p><p>
+							Paul lead the development and launch of Trinity&rsquo;s revolutionary Dynamic Image Merchandising system iDesign STUDIO.  In addition to the continual development of STUDIO, Paul is responsible for leading the ongoing improvement of the company&rsquo;s industry-leading order entry system iDesign WORKFLO.
+							Paul&rsquo;s experience in men’s apparel began in 1988 in Toronto, Canada where we worked for Harry Rosen, Canada&rsquo;s luxury men&rsquo;s wear chain.  In 1991 he joined the family&rsquo;s upscale custom clothing boutique REGO Bespoke Clothiers located next to the Toronto Stock Exchange.  In 2002, Paul and his father formed Sartorial Instruments &amp; Technology to launch their invention The Fitter; a measuring device and online software application designed to help retailers obtain professional results selling custom apparel.
+							</p><p>
+							In 2005, Paul realized the family was better at retailing than attempting to help other retailers, and departed the family business to work at Coppley Apparel Group.  Paul&rsquo;s role was to train the company&rsquo;s sales force and retail customers on fitting and measuring best practices.  In 2009 Paul decided to move to the United States to launch a custom shirt line TOUCH, which was recently sold to Ballin.  Paul joined Trinity Apparel Group in 2011.  
+							He now resides in Jacksonville, FL with his wife Nathalie and their 4 cats.  When he&rsquo;s not trying to figure out how Trinity can continue to revolutionize the custom apparel sales experience, he enjoys the sunshine while playing at Florida&rsquo;s numerous golf courses.
+							</p> 
+						</div>
+						<div style="height: 20px;border-top: 4px solid black;border-bottom: 1px solid;width: 785px;margin: auto auto;"></div>
+					</div>																								
+
+					<div class="div_content" id="customers" style="display:none; height:630px">
+						<div style="margin-top:23px">
+							<ul id="ms_customers" class="main_sections">
+								<li style="width:25%">																		
+									<div class="sh"	style="background-image:url(main/images/icons-customer.jpg); background-position:0 0; width:79px; height:79px; margin:auto	auto 14px auto"></div>
+									<div class="section_header_25 basher header_text">
+											CLOTHIERS
+									</div>
+									<div class="section_content_25">
+										<p>Trinity serves a global network of direct clothiers who possess a wealth of knowledge in the custom apparel arena.	They provide personalized tailoring services, most often, by appointment in their client&rsquo;s home or office.	These clothiers appreciate Trinity&rsquo;s technology, speed, and unequaled garment options.</p>
+<p>Their services include design, merchandising, and wardrobe planning.	They understand fabrics and fit.	Many perform color analysis and overall image consulting. Their clients maintain a professional image by being impeccably dressed and offering tremendous personalization and convenience.<br /><a href="javascript:goTo('contact');" style="color:#009bda">Request Clothier Account</a></p>
+									</div>
+								</li>
+								<li style="width:25%">
+									<div class="sh" style="background-image:url(main/images/icons-customer.jpg); background-position:-78px 0;width:79px; height:79px; margin:auto	auto 14px auto"></div>
+									<div class="section_header_25 basher header_text">
+											TAILORS
+									</div>
+									<div class="section_content_25">
+<p>Among Trinity&rsquo;s dealer network are esteemed tailors with the ability to produce their own clothing, yet they choose Trinity as a supplier because of the sophisticated but easy order system, fabric offering, quality, and value. </p>
+<p>In today&rsquo;s fast-paced world, it can be difficult for a tailor to keep up with production while servicing customers. Trinity offers an alternative they can be proud of enabling them to achieve sales growth while maintaining satisfied customers.<br /><a style="color:#0098DA" href="javascript:goTo('contact');">Request Tailor Account</a></p>
+									</div>
+								</li>
+								<li style="width:25%">
+									<div class="sh"	style="background-image:url(main/images/icons-customer.jpg); background-position:-157px 0;width:78px; height:79px; margin:auto	auto 14px auto"></div>
+									<div class="section_header_25 basher header_text">
+											RETAILERS
+									</div>
+									<div class="section_content_25">
+<p>Trinity is the choice of select upscale retail merchants who are market leaders.	They require quality of the highest level, luxurious fabrics, and the ability to privately brand their garments.	Trinity provides these progressive merchants the capacity to associate their private brand with storied fabrics such as Dormeuil, Loro Piana, Vitale Barberis Canonico, and others.</p>
+											<p>In economic times when inventory management is paramount, &ldquo;at once&rdquo; stock production, rapid stock replenishment, to order, and made-to-measure clothing provide retailers with the ability to reduce inventory and improve cash flow with faster turnaround.<br /><a style="color:#0098DA" href="javascript:goTo('contact');">Request Retailer Account</a></p>
+
+
+									</div>
+								</li>
+								<li style="width:25%">
+									<div	class="sh" style="background-image:url(main/images/icons-customer.jpg); background-position:-314px 0;width:78px; height:79px; margin:auto	auto 14px auto"></div>
+									<div class="section_header_25 basher header_text">
+											INTERNATIONAL
+									</div>
+									<div class="section_content_25">
+<p>Trinity currently ships to the United States, Canada, the United Kingdom, and United Arab Emirates.	The Trinity platform is a profitable opportunity for agents any place that the Internet is accessible in markets not currently served.</p>
+											<p>If you have extensive experience in the apparel or textile industries and would like to learn more about becoming a distributor for Trinity Apparel Group, request an agent opportunity package.<br /><a style="color:#0098DA" href="javascript:goTo('contact');">Request Agent Account</a></p>
+									</div>
+								</li>																																						
+							</ul>
+						</div>
+						<div style="font-size:18px;position:absolute;top:640px;width:100px;font-style:oblique; left:800px">
+							<div style="float:right; width:75px; height:75px">
+									<a style=" text-decoration:none;" href="javascript:goTo('customers_testimonials')"><img	style="border:0" src="main/images/testimonial.jpg" width="75" height="75" /></a>
+								</div>
+							<div style="float:right; margin-top:10px;margin-right:-60px">
+									<span class="basher" style="color:#009bda; font-size:36px; font-style:normal">Testimonials</span>
+								</div>										
+						</div>
+					</div>
+										
+					<div class="div_content" id="customers_testimonials" style="display:none">
+						<div style="margin-top:23px">
+							<div class="basher" style="border-top: 4px solid black;border-bottom: 1px solid;width: 100%;margin: auto auto;text-align: left;padding: 4px 0 14px 0;font-size:24px;">
+							TESTIMONIALS
+							</div>
+							<div style="width:785px; margin:auto auto" class="section_content">
+								<p>
+									I am probably iDesign Studio&rsquo;s biggest fan.  I&rsquo;ve already sold two Sportcoats by sending pics from my iPad.  
+											I also had a new young customer last week who told me that once we get his first garment fitted, he will 
+											buy a ton of clothing and all I will have to do is send him pics by email!  It is perfect for showing guys the 
+											&ldquo;tricked out&rdquo; shirts.  I am using it every day, and keep in mind my wife calls me Fred Flintstone when it 
+											comes to technology. 
+									</p>
+									<p>Thanks again,</p>
+									<p><span class="sign">Jeff Murphy</span></p>
+									<p>J Murphy Clothing</p>
+							</div>
+							<div style="height: 20px;border-top: 4px solid black;border-bottom: 1px solid;width: 785px;margin: auto auto;">
+							</div>
+								
+							<div style="width:785px; margin:auto auto" class="section_content">
+																<p>
+																	I want to thank you for the amazing work you&rsquo;ve done to give us iDesign Studio.  This is a game changer.  
+The first time I had one of my best customers say "make up those three jackets and email them to me" I realized I had a powerful tool in my hand.  He was asking me to (virtually) make up three or four jackets from the Dorsilk folder so he could see which ones he wanted to buy.  He loved it, and so did I.  This customer buys lots of plain suits, but didn't have a comfort level looking at patterned Sportcoat fabrics.  With Studio, he decided on two he liked when he saw what they would look like...and he wanted the shirts I used in the images as well.   
+																</p>															
+																<p>
+As you know I'm a big fan of what Trinity does for my business.  Trinity allows me to run my production, 
+planning, marketing, and customer service all in the cloud, and makes it look like I have a group of MIT software 
+engineers working for me behind the scenes making sure I have the coolest and most effective tools in the 
+industry, and eliminates all the &ldquo;paperwork&rdquo; too.  
+																<p>Keep up the good work. 
+																</p>
+																<p>Sincerely,</p>
+																<p><span class="sign">Alan Vinson</span></p>																		
+																<p>JT Vinson Co.</p>
+																</div>
+										<div style="height: 20px;border-top: 4px solid black;border-bottom: 1px solid;width: 785px;margin: auto auto;"></div>
+								
+								<div style="width:785px; margin:auto auto" class="section_content">
+									<p>
+											I wanted to share my 1st experience using iDesign Studio during an appointment!
+									</p>
+									<p>
+										Client called &amp; said I need couple of sport coats. I did some &ldquo;homework&rdquo; for him - put together 5 complete outfit images on my tablet. I shared the photos with him and he picked three!  I asked if he needed a black blazer and created a blazer outfit with the Nickel Griffin buttons right in front of him &amp; his wife - &ldquo;I&lsquo;ll take it too. And can you make a blazer for my new associate?&rdquo; 
+									</p>
+<p>Needless to say, one can increase their average transaction quickly! Pictures are worth a thousand words....I&lsquo;d say they're worth a few thousand dollar$!!!!</p>
+									<p>Thanks for changing the way men visually buy their clothes....It DEFINITELY works!</p>
+									<p>Blessings!</p>	
+									<p><span class="sign">Jonathan Ehrhardt</span></p>
+									<p>J Ehrhardt Clothing</p>
+								</div>
+								<div style="height: 20px;border-top: 4px solid black;border-bottom: 1px solid;width: 785px;margin: auto auto;"></div>
+								
+								
+								<div style="width:785px; margin:auto auto" class="section_content">																	
+									<p>I wanted to pass along my testimonial regarding iDesign Studio; it has been profusely productive for me and has resulted in 12k in sales within the first two weeks and is laying the groundwork for more revenue. The ability to distance me from my competitors and provide an extremely professional image to my clientele has completely changed the landscape of my business and value proposition. I have received rave reviews from some of my most successful clients.This is one business tool that provides immediate monetary return on time invested. I highly recommend this technology to any dealer who wants to work smarter and not harder. Thank you for your continued efforts to be the leader in the garment supplier marketplace.
+									</p>
+									<p>Enthusiastically,</p>
+									<p><span class="sign">Mark B. Fonseca</span></p>
+									<p>Fonseca Clothiers</p>
+								</div>
+								<div style="height: 20px;border-top: 4px solid black;border-bottom: 1px solid;width: 785px;margin: auto auto;"></div>
+								
+								
+								<div style="height: 20px;border-top: 4px solid black;border-bottom: 1px solid;width: 785px;margin: auto auto;"></div>
+								
+								
+								<div style="width:785px; margin:auto auto" class="section_content">																	
+									<p>I am delighted to be working with Trinity Apparel Group. Trinity has been very supportive in helping me run my business the way I want. They provide a quality product with impeccable customer service and continually give their dealers access to more tools to be powerful, successful entrepreneurs. I&rsquo;ve just started using the iDesign STUDIO system and I know this software will revolutionize the way I do business. I feel very grateful to be working with such a forward thinking, supportive manufacturing company.
+									</p>
+									<p>Sincerely,</p>
+									<p><span class="sign">Mary Beth Manchin.</span></p>
+									<p>Manchin Inc.</p>
+								</div>
+								<div style="height: 20px;border-top: 4px solid black;border-bottom: 1px solid;width: 785px;margin: auto auto;"></div>
+						</div>
+					</div>
+										
+					<div class="div_content" id="technology" style="display:none; height:763px">
+					<div style="margin-top:23px; position:relative">
+						<div style=" position:absolute; top:-8px; z-index:1001;background-image: url(main/images/icon-t.png); background-repeat:no-repeat; width: 74px; height: 74px;	background-position: 0 0; "></div>
+								
+							<div style="position:absolute; left:44px; width:906px; border-top:4px solid #0098DA; border-bottom:1px solid #0098DA; padding:4px 0 14px 40px"><span class="basher header_text" style="color:#0098DA">TECHNOLOGY</span></div>
+							
+							<div onclick="javascript:goTo('technology_idesign')" class="cl_blue tech_idesign_small" style="position:absolute; left:653px; top:33px;width:39px; height:39px; cursor:pointer">&nbsp;</div>
+							<div onclick="javascript:goTo('technology_workflo')"class="cl_blue tech_workflo_small" style="position:absolute; left:875px; top:33px;width:39px; height:39px; cursor:pointer">&nbsp;</div>
+							
+					
+							<div style="position:absolute; top:75px;" class="normal_text">
+										<table cellpadding="0" cellspacing="0" border="0">
+											<tr valign="top">
+												<td colspan="2" valign="top" class="normal_text">
+													<div class="basher header_text">iDesign Online</div>
+													<p>
+															iDesign is Trinity&rsquo;s brand dedicated to online software development designed to assist our customers in the pursuit of their business goals.
+															Online technology provides our customers access to their important information on any computer or device, whether it is their own or a customer&rsquo;s device, offering the convenience of being able to work virtually anywhere.
+													</p>
+													<p>
+Today&rsquo;s clothing professional knows the value of time and utilizes technology effectively to sell efficiently, maximizing the customer&rsquo;s time as well.	Trinity is committed to developing solutions to help our customers improve their efficiency.	We aim to give our customers what nobody else can… more time to conduct business!
+													</p>
+												</td>
+											</tr>																						
+											<tr valign="top"><td colspan="2" valign="top">Currently, the iDesign family consists of two products:</td></tr>
+											<tr><td colspan="2" style="height:40px"></td></tr>
+									<tr valign="top">
+										<td	style="width:50%" valign="top">
+											<div class="cl_blue"	style="position:relative; height:140px">
+												<div class="cl_blue_icon" style="position:absolute;cursor:pointer;" onclick="javascript:goTo('technology_idesign')"><img height="118" width="246" src="main/images/id-studio.png" /></div>
+													<div style="position:absolute; top:125px">
+														<div class="basher header_text cl_blue_text">iDesign Studio</div>
+															<p>
+																iDesign STUDIO – our revolutionary &ldquo;Dynamic Image Merchandising&rdquo; (DIM) system enablec Clothiers to create images of garments on demand, before a single stitch has been sewn.
+																<div style="float:right; margin-right:50px"><a class="cl_blue_text" style="text-decoration:none; color:#000; font-weight:bold" href="javascript:goTo('technology_idesign')">Read more</a></div>
+															</p>
+													</div>
+												</div>
+										</td>					
+										<td	valign="top" style="width:50%">
+											<div class="cl_blue" style="position:relative; height:140px">
+												<div class="cl_blue_icon"	style="position:absolute; cursor:pointer" onclick="javascript:goTo('technology_workflo')">
+													<img width="246" height="118" src="main/images/id-work.png" />
+												</div>
+												<div style="position:absolute; top:125px">
+													<div class="basher header_text cl_blue_text">iDesign Workflo</div>
+													<p>
+														iDesign WORFKLO is the most robust and flexible ordering system in the custom apparel industry. <br /><br />
+														It allows our customers to define and save their favorite model presets for recall with any customer.
+													<div style="float:right; margin-right:50px"><a class="cl_blue_text" style="text-decoration:none; color:#000; font-weight:bold" href="javascript:goTo('technology_workflo')">Read more</a></div>
+													</p>
+												</div>
+											 </div>
+										</td>
+									</tr>																						
+								</table>
+							</div>
+						</div>
+					</div>
+										
+					<div class="div_content" id="technology_idesign" style="display:none; height:763px">
+						<div style="margin-top:23px; position:relative">
+							<div style=" position:absolute; top:-8px; z-index:1001;background-image: url(main/images/icon-t.png); width: 74px; height: 74px;	background-position: 0 -74px; "></div>
+								
+								<div style="position:absolute; left:44px; width:906px; border-top:4px solid #000; border-bottom:1px solid #000; padding:4px 0 14px 40px">&nbsp;<span class="basher header_text" style="color:#000">IDESIGN STUDIO</span></span></div>
+								
+								
+								<div onclick="javascript:goTo('technology_workflo')"class="cl_blue tech_workflo_small" style="position:absolute; left:875px; top:33px;width:39px; height:39px; cursor:pointer">&nbsp;</div>																		
+								
+								<div style="position:absolute; top:110px;">
+									<table cellpadding="0" cellspacing="0" border="0">
+										<tr valign="top">
+											<td valign="top" class="normal_text">
+													<p>
+														iDesign STUDIO is our revolutionary &ldquo;Dynamic Image Merchandising&rdquo; (DIM) system that enables clothiers to create images of garments on demand, before a single stitch has been sewn.
+													</p>
+													<p>
+															Imagine the expense associated with conducting a photo shoot for only 12 outfits: ordering the clothes, hiring a model, hiring a stylist to either style the model or mannequin, photographer, equipment, etc. DIM means you have the power of doing a &ldquo;Photo-Shoot-on-Demand&rdquo; anytime you want, with any of our fabrics.
+													</p>
+													<p>
+															You can email images of your outfit creations to your clients directly from STUDIO or save them to your computer or iPad for offline display when an Internet connection is not available.																																																												
+													</p>
+													<p>
+															<a href="javascript:goTo('studio')" style="color:#0098DA">Click here to see a demo of STUDIO in action</a>
+													</p>
+											</td>
+											<td valign="top">
+												<div id="slides_technology_idesign">
+														<div class="slides_container" style="width:453px; margin:auto auto"></div>
+														<a href="#" class="prev" style="position:absolute; left:510px; top:290px; z-index:100"><img src="main/images/slider_products/arrow-prev.png" width="24" height="43" alt="arrow prev" /></a>
+														<a href="#" class="next" style="position:absolute; left:995px; top:290px; z-index:100"><img src="main/images/slider_products/arrow-next.png" width="24" height="43" alt="arrow next" /></a>																			
+												</div>																						
+											</td>
+										</tr>																																		
+									</table>
+								</div>
+							</div>
+						</div> 
+				
+					<div class="div_content" id="products_shirts" style="display:none; height:359px">
+						<div style="margin-top:23px; position:relative">
+							<div id="slides_shirts">
+									<div class="slides_container" style="width:815px; margin:auto auto"></div>
+									<a href="#" class="prev" style="position:absolute; left:0px; top:290px; z-index:100"><img src="main/images/slider_products/arrow-prev.png" width="24" height="43" alt="arrow prev" /></a>
+									<a href="#" class="next" style="position:absolute; left:960px; top:290px; z-index:100"><img src="main/images/slider_products/arrow-next.png" width="24" height="43" alt="arrow next" /></a>																	<div class="paginate basher" style="width:130px; margin: auto auto; color:#333; font-size:18px"></div>
+							</div>
+						</div>
+					</div>
+			
+					<div class="div_content" id="technology_workflo" style="display:none; height:964px">
+						<div style="margin-top:23px; position:relative">
+							<div style=" position:absolute; top:-8px; z-index:1001;background-image: url(main/images/icon-t.png); width: 74px; height: 74px;	background-position: 0 -74px; "></div>
+									
+							<div style="position:absolute; left:44px; width:906px; border-top:4px solid #000; border-bottom:1px solid #000; padding:4px 0 14px 40px">
+							&nbsp;<span class="basher header_text" style="color:#000">IDESIGN WORKFLO</span>
+							</div>
+							<div onclick="javascript:goTo('technology_idesign')" class="cl_blue tech_idesign_small" style="position:absolute; left:653px; top:33px;width:39px; height:39px; cursor:pointer">&nbsp;</div>
+															
+							<div style="position:absolute; top:90px;">
+								<table cellpadding="0" cellspacing="0" border="0">
+									<tr valign="top">
+										<td valign="top" class="normal_text">
+											<p>
+													iDesign WORFKLO is the most robust, and flexible ordering system in the custom apparel industry.
+											</p>
+											<p>
+													It allows our customers to define and save their favorite model presets for recall with any customer.
+											</p>
+											<p>								
+													Choose from hundreds of styling options to design unique garments with character, or organize your on screen work flow to display only the core styling details that are important to you.
+											</p>
+											<p>
+											iDesign WORKFLO gives you the ability to save a customer measurement profile, track orders, review previous orders, and copy previous orders to start a new one that only requires minor adjustments to complete the order.
+											</p>																																						
+										</td>
+									</tr>
+									<tr>																						
+										<td>																								
+											<div id="slides_workflo">
+												<div class="slides_container" style="width:900px; margin:auto auto"></div>
+												<a href="#" class="prev" style="position:absolute; left:0px; top:410px; z-index:100"><img src="main/images/slider_products/arrow-prev.png" width="24" height="43" alt="arrow prev" /></a>
+												<a href="#" class="next" style="position:absolute; left:966px; top:410px; z-index:100"><img src="main/images/slider_products/arrow-next.png" width="24" height="43" alt="arrow next" /></a>																			
+											</div>																										
+										</td>																								
+									</tr>																																		
+								</table>
+							</div>
+						</div>
+					</div>																																		
+																	
+					<div class="div_content" id="dealer" style="color:#999; position:relative; display:none; height:700px">
+						<div style=" position:absolute; width:383px; left:0; top:20px; font-size:18px">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas tempus lorem id posuere. Etiam eleifend posuere commodo. 
+								Integer vestibulum dapibus nisl, malesuada tincidunt justo lobortis eu. Nullam vitae elit sem, in imperdiet massa. Aenean eu mi orci, vel sollicitudin ligula.
+								Mauris justo ante, lobortis dapibus semper ut, vehicula sit amet lectus. Vivamus ac ligula eget ipsum aliquet pulvinar nec viverra erat. Nam tortor erat, tincidunt 
+								sed suscipit eu, blandit ac leo. Praesent placerat pulvinar vehicula. Ut nisl neque, auctor non euismod at, tincidunt sit amet quam. 
+								Ut nulla urna, vehicula in lacinia a, hendrerit nec mauris. Donec nec arcu nisl.
+						</div>
+						<div style=" position:absolute; left:400px; top:20px">										
+						</div>
+					</div>
+					
+					<div class="div_content" id="products" style="color:#999; position:relative; display:none; height:650px; width:995px; margin: 30px auto 0 auto">
+						<table width="100%" cellpadding="0" cellspacing="0" border="0">
+							<tr>
+								<td>
+										<img src="main/images/cons-icon.jpg" width="78" height="78" />
+								</td>
+								<td>
+									<div class="section_header_25 header_text basher" style="width:600px; color:#000">CONSTRUCTION</div>
+									<div style="width:600px; margin: 10px auto 0 auto; text-align:center; color:#000">
+										Trinity offers 6 different tailoring grades or &ldquo;garment makes&rdquo;.<br />
+										View the images below to see the features of each make. <br />
+										Click 
+										<a rel="prettyPhoto" href="main/images/construction-chart.jpg" title="Construction Chart"	style="color:#009bda">HERE</a> to see a full comparison chart.
+									</div>
+								</td>
+							</tr>
+							<tr><td style="height:40px">&nbsp;</td></tr>
+							<tr>
+								<td colspan="2">													
+									<div id="slides_products">
+										<div class="slides_container" style="width:900px; margin:auto auto"></div>
+										<a href="#" class="prev" style="position:absolute; left:0px; top:290px; z-index:100">
+											<img src="main/images/slider_products/arrow-prev.png" width="24" height="43" alt="arrow prev" />
+										</a>
+										<a href="#" class="next" style="position:absolute; left:995px; top:290px; z-index:100">
+											<img src="main/images/slider_products/arrow-next.png" width="24" height="43" alt="arrow next" />
+										</a>																		
+									</div>
+								</td>
+							</tr>
+						</table>														
+					</div>
+									
+					<div class="div_content" id="accoutrements_pocket_squares" style="color:#999; position:relative; display:none; height:400px; margin-top:30px">
+						<div id="slides_accoutrements">
+								<div class="slides_container" style="width:850px; margin: auto auto"></div>
+								<a href="#" class="prev" style="position:absolute; z-index:100"><img src="main/images/slider_products/arrow-prev.png" width="24" height="43" alt="arrow prev" /></a>
+								<a href="#" class="next" style="position:absolute; z-index:100"><img src="main/images/slider_products/arrow-next.png" width="24" height="43" alt="arrow next" /></a>
+								<div class="paginate basher" style="width:130px; margin: auto auto; color:#333; font-size:18px"></div>
+						</div>
+					</div>
+
+					<div class="div_content" id="construction" style="color:#000; position:relative; display:none">
+						<div id="slides_construction">
+							<div class="slides_container">																				
+								<div class="slide"><img src="main/images/slider_products/im01.jpg" width="900" height="341" /></div>
+								<div class="slide"><img src="main/images/slider_products/im01.jpg" width="900" height="341" /></div>
+								<div class="slide"><img src="main/images/slider_products/im01.jpg" width="900" height="341" /></div>																					
+							</div>
+							<a href="#" class="prev"><img src="main/images/slider_products/arrow-prev.png" width="24" height="43" alt="arrow prev" /></a>
+							<a href="#" class="next"><img src="main/images/slider_products/arrow-next.png" width="24" height="43" alt="arrow next" /></a>																	
+						</div>									
+					</div>
+										
+					<div class="div_content" id="fabric_collections_proprietary" style="color:#000; position:relative; display:none; margin-top:30px">
+						<div><span style="font-family:Helvetica, Arial, sans-serif; font-style:italic">(*) Click on collection logos below to see an image gallery</span></div>												
+						<div class="basher" style=" border-top: 4px solid black;border-bottom: 1px solid;width: 100%;margin: 5px auto 0 auto;text-align: left;padding: 4px 0 14px 0;font-size:36px;">
+								CLOTHING
+						</div>
+						<ul style=" list-style:none">															
+								<li style="float:left; margin-right:75px"><a href="javascript:fabric_galleries_open('proprietary_clothing_de')"><img src="main/images/fabrics/Proprietary/Clothing/Derby.jpg" width="280" height="268" /></a></li>
+								<li style="float:left; margin-right:75px"><a href="javascript:fabric_galleries_open('proprietary_clothing_es')"><img src="main/images/fabrics/Proprietary/Clothing/Esquire.jpg" width="280" height="268" /></a></li>
+								<li style="float:left"><a href="javascript:fabric_galleries_open('proprietary_clothing_ze')"><img src="main/images/fabrics/Proprietary/Clothing/Zenith.jpg" width="280" height="268" /></a></li>
+						</ul>												
+						<div style="clear:both; height:30px"></div>
+						<div class="basher" style="border-top: 4px solid black;border-bottom: 1px solid;width: 100%;margin: auto auto;text-align: left;padding: 4px 0 14px 0;font-size:36px;">
+								SHIRTS
+						</div>
+						<ul style=" list-style:none">
+							<li style="float:left; margin-right:75px"><a href="javascript:fabric_galleries_open('proprietary_shirts_de')"><img src="main/images/fabrics/Proprietary/Shirts/Derby-shirts.jpg" width="280" height="268" /></a></li>
+							<li style="float:left; margin-right:75px"><a href="javascript:fabric_galleries_open('proprietary_shirts_no')"><img src="main/images/fabrics/Proprietary/Shirts/Norwich.jpg" width="280" height="268" /></a></li>
+							<li style="float:left;"><a href="javascript:fabric_galleries_open('proprietary_shirts_sto')"><img src="main/images/fabrics/Proprietary/Shirts/Stoffa.jpg" width="280" height="268" /></a></li>
+							<li style="float:left"><a href="javascript:fabric_galleries_open('proprietary_shirts_sum')"><img src="main/images/fabrics/Proprietary/Shirts/Summer-Nights.jpg" width="280" height="268" /></a></li>
+						</ul>														
+					</div>
+					
+					<div class="div_content" id="fabric_collections_pedigreed" style="color:#000; position:relative; display:none; margin-top:30px">
+						<div><span style="font-family:Helvetica, Arial, sans-serif; font-style:italic">(*) Click on collection logos below to see an image gallery</span></div>												
+						<div class="basher" style=" border-top: 4px solid black;border-bottom: 1px solid;width: 100%;margin: auto auto;text-align: left;padding: 4px 0 14px 0;font-size:36px;">
+							CLOTHING
+						</div>
+						<ul style=" list-style:none">
+							<li style="float:left; margin-right:75px"><a href="javascript:fabric_galleries_open('pedigreed_clothing_ke')"><img src="main/images/fabrics/Pedigreed/Clothing/Kerry-Knoll.jpg" width="280" height="268" /></a></li>
+								<li style="float:left; margin-right:75px"><a href="javascript:fabric_galleries_open('pedigreed_clothing_do')"><img src="main/images/fabrics/Pedigreed/Clothing/Dormeuil.jpg" width="280" height="268" /></a></li>
+								<li style="float:left"><a href="javascript:fabric_galleries_open('pedigreed_clothing_ba')"><img src="main/images/fabrics/Pedigreed/Clothing/Barberis.jpg" width="280" height="268" /></a></li>
+						</ul>
+						<div style="clear:both; height:30px"></div>										
+						<div class="basher" style="border-top: 4px solid black;border-bottom: 1px solid;width: 100%;margin:	auto auto;text-align: left;padding: 4px 0 14px 0;font-size:36px;">
+							SHIRTS
+						</div>
+						<ul style=" list-style:none">
+							<li style="float:left; margin-right:75px"><a href="javascript:fabric_galleries_open('pedigreed_shirts_mo')"><img src="main/images/fabrics/Pedigreed/Shirts/Monti.jpg" width="280" height="268" /></a></li>
+							<li style="float:left"><a href="javascript:fabric_galleries_open('pedigreed_shirts_th')"><img src="main/images/fabrics/Pedigreed/Shirts/Thomas_Mason.jpg" width="280" height="268" /></a></li>
+						</ul>
+					</div>
+					
+					<div class="div_content" id="p_garments" style="color:#000; position:relative; display:none">
+						<div id="slides">
+								<div class="slides_container"></div>
+								<a href="#" class="prev"><img src="main/images/slider_products/arrow-prev.png" width="24" height="43" alt="arrow prev" /></a>
+								<a href="#" class="next"><img src="main/images/slider_products/arrow-next.png" width="24" height="43" alt="arrow next" /></a>
+								<div class="paginate basher" style="width:130px; margin: auto auto; color:#333; font-size:18px"></div>
+						</div>
+					</div>
+										
+										
+					<div class="div_content" id="studio" style="color:#999; position:relative; margin:auto auto; display:none;font-family: 'Helvetica Neue',Helvetica,Arial; font-weight:lighter">															
+						<div style=" margin-top:5px; height:35px; cursor:pointer; width:49px" onclick="goTo('technology')"><img src="main/images/back-btn-01.png" width="49" height="34" /></div>
+						<div style="position:absolute; z-index:1001; left:608px; top:-10px;">
+								<ul class="render_view_buttons">
+										<li>
+													<div class="btn_img_render_view" id="btn_design_swatch_back" style="background-image:url(main/images/view-back-1.png); background-repeat:no-repeat;height:34px; width:62px; cursor:pointer"></div>
+										</li>
+										<li>
+												<div class="btn_img_render_view" id="btn_design_swatch_front" style="background-image:url(main/images/view-front-1.png); background-repeat:no-repeat;background-position:0 -34px;height:34px;width:62px; cursor:pointer"></div>																				
+										</li>
+										<li>
+												<div class="btn_img_render_view tt_step2" id="btn_design_swatch_preview_34" style="width:62px;background-image:url(main/images/view-34-1.png); background-repeat:no-repeat;height:34px; cursor:pointer"></div>
+										</li>																				
+								</ul>
+						</div>
+						<div style="position:absolute; left:320px; width:20px; height:20px" class="tt_step1">&nbsp;</div>
+						
+						<table width="100%" cellpadding="0" cellspacing="0" border="0">
+							<tr><td colspan="2"><div><span>Select a tab to start designing</span></div></td></tr>
+							<tr>
+								<td valign="top" style="width:50%">																								
+									<div id="accordion_content" style="width:332px; ">
+										<h3 class="tt_step0" style=" background-image:url(main/images/demo-jacket.jpg)"><a href="#"></a></h3>
+									<div>						
+										<div><span>Click a swatch below to see it placed on the mannequin</span></div>
+										<ul class="ul_collections_details" style="width: 513px; margin: auto auto;"></ul>
+									</div>
+									
+									<h3 style=" background-image:url(main/images/demo-shirt.jpg)"><a href="#"></a></h3>
+									<div>
+													<div><span>Click a swatch below to see it placed on the mannequin</span></div>																		
+													<ul class="ul_collections_details" style="width: 513px; margin: auto auto;"></ul>																			
+									</div>
+
+									<h3 style=" background-image:url(main/images/demo-trouser.jpg)"><a href="#"></a></h3>
+									<div>
+													<div><span>Click a swatch below to see it placed on the mannequin</span></div>																		
+													<ul class="ul_collections_details" style="width: 513px; margin: auto auto;"></ul>
+									</div>
+									
+									<h3 style=" background-image:url(main/images/demo-tie.jpg)"><a href="#"></a></h3>
+									<div>
+													<div><span>Click a tie color below to see it placed on the mannequin</span></div>																		
+													<ul id="ul_ties" style="width: 306px; margin: auto auto;"></ul>
+									</div>
+									<h3 style=" background-image:url(main/images/demo-buttons.jpg)"><a href="#"></a></h3>
+									<div>
+													<div><span>Click a button style below to see it placed on the mannequin</span></div>																		
+													<ul id="ul_buttons" style="width: 306px; margin: auto auto; height:215px"></ul>
+									</div>
+									<h3 style=" background-image:url(main/images/demo-thread.jpg)"><a href="#"></a></h3>
+									<div>
+													<div><span>Click a thread color below to see it placed on the mannequin</span></div>																		
+													<ul id="ul_threads" style="width: 306px; margin: auto auto;"></ul>
+									</div>																										
+									</div>																		
+								</td>
+								<td valign="top" style="width:50%">
+									<div id="design" style="width:100%; margin-top:-89px	">
+										<table width="385px" align="center" cellpadding="0" cellspacing="0" border="0">																		
+											<tr valign="top">
+												<td style="height:600px" valign="top">
+													<div class="ir_view_content" style="position:relative;	text-align:center;">
+														<a id="zoom_viewer" rel="zoom-position:left" href="main/images/loading-trinity.png" class="MagicZoomPlus">
+															<img class="ir_view_img"	src="main/images/loading-trinity.png" />
+														</a>
+													</div>
+												</td>
+												</tr>																										
+											</table>																		
+									</div>
+								</td>
+							</tr>
+						</table>														
+					</div>
+										
+					<div class="div_content" id="contact" style="color:#999; position:relative; display:none; color:#000; font-family: 'Helvetica Neue',Helvetica,Arial; font-weight:lighter">
+						<table width="100%" cellpadding="0" cellspacing="0" border="0">
+							<tr valign="top">
+								<td valign="top">
+									<div style="position:relative; height:280px">
+										<div style="position:absolute; left:100px; background-image:url(main/images/map.jpg); background-repeat:no-repeat; width:459px; height:235px "></div>																																															
+											<div class="map_bubble" style="position:absolute; top:85px; left:188px; height:28px; width:28px;background-image:url(main/images/map-bubble.png); background-repeat:no-repeat; background-position:0 -28px"></div>																								
+											<div class="map_bubble" style="position:absolute; top:55px; left:218px; height:28px; width:28px;background-image:url(main/images/map-bubble.png); background-repeat:no-repeat; background-position:0 0"></div>																								
+											<div class="map_bubble" style="position:absolute; top:42px; left:302px; height:28px; width:28px;background-image:url(main/images/map-bubble.png); background-repeat:no-repeat; background-position:0 0"></div>												
+											<div class="map_info" style="position:absolute; left:709px; top:50px;">
+											<div class="section_header_25" style="padding:0 0 6px 0; height:36px"><span class="basher" style="font-size:36px">USA</span></div>
+												<p>
+													Trinity Apparel Group<br>
+													193-B Business Park Drive<br>
+													Ridgeland, MS 39157
+												</p>
+												<p>
+													Phone: 601-713-2628<br>
+													Email: <a href="mailto:info@trinity-apparel.com" style="text-decoration: none; color: #000; ">info@trinity-apparel.com</a>
+												</p>
+											</div>
+											<div class="map_info" style="position:absolute; left:709px; display:none;top:50px;">
+												<div class="section_header_25" style="padding:0 0 6px 0; height:36px"><span class="basher" style="font-size:36px">CANADA</span></div>
+													<p>
+														34 Hendricks Road<br>
+														Thornhill, Ontario<br>
+														L3T 5M3
+													</p>
+													<p>
+														Phone: 601-713-2628<br>
+														Email: <a href="mailto:info@trinity-apparel.com" style="text-decoration: none; color: #000; ">info@trinity-apparel.com</a>
+													</p>
+											</div>
+											<div class="map_info" style="position:absolute; left:709px; display:none;top:50px;">
+												<div class="section_header_25" style="padding:0 0 6px 0; height:36px"><span class="basher" style="font-size:36px">United Kingdom</span></div>
+													<p>
+														3 Millbrook Business Park<br />
+														Hoe Lane<br />
+														Nazeing, Essex<br />
+														EN9 2RJ
+													</p>
+													<p>
+														Phone: +44 7976 921125<br />
+														Email: <a href="mailto:info@trinity-apparel.com" style="text-decoration: none; color: #000; ">info@trinity-apparel.com</a>
+													</p>																									
+											</div>																																																
+										</div>
+								</td>
+							</tr>
+							<tr valign="top">
+								<td	style="border-bottom:4px solid #000" valign="top">
+									<div style="position:relative; height:60px">
+										<div style="position:absolute;	left:154px; width:406px;font-size:36px">																							
+											<ul id="map_countries" style="list-style-type:none; width:406px">
+												<li class="blue mp_item basher" style="width:100px; text-align:center; font-size:18px; border-right:1px solid #000">USA</li>
+													<li>&nbsp;</li>
+													<li class="mp_item basher" style="width:100px; text-align:center; font-size:18px; border-right:1px solid #000">Canada</li>
+													<li style="width:25px">&nbsp;</li>
+													<li class="mp_item basher" style="width:100px; text-align:center; font-size:18px">United&nbsp;Kingdom</li>
+											</ul>
+										</div>																							
+									</div>
+								</td>
+							</tr>
+							<tr valign="top">
+								<td	style="border-bottom:1px solid #000; height:55px" valign="middle">
+										<div style="margin:0 0 6px 0"><span class="basher" style="font-size:36px">CONTACT FORM</span></div>
+									</td>
+							</tr>
+							<tr valign="top">
+								<td valign="top" style="padding-top:30px">
+									<form id="frm_info" name="frm_info">
+										<table cellpadding="0" cellspacing="0" border="0">
+											<tr valign="top">
+												<td valign="top" style="width:320px">
+													<ul class="form">
+														<li>
+															<div style="position:relative; width:290px; height:70px">
+																<div style="position:absolute">*First Name:</div>
+																<div style=" position:absolute; top:20px"><input class="required" style="width:140px" id="first_name" name="first_name" /></div>
+																<div style="position:absolute; left:150px">*Last Name:</div>
+																<div style=" position:absolute; left:150px; top:20px"><input class="required" style="width:140px" id="last_name" name="last_name" /></div>
+															</div>
+														</li>
+														<li>
+																<div>Company</div>
+																<div><input style="width:290px" id="company" name="company" /></div>
+														</li>
+														<li>
+																<div>*Address</div>
+																<div><input style="width:290px" id="address1" name="address1" /></div>
+																<div><input style="width:290px" id="address2" name="address2" /></div>
+														</li>
+														<li>
+																<div>*City</div>
+																<div><input class="required" style="width:290px" id="city" name="city" /></div>
+														</li>
+														<li>
+																<div>*State/Province</div>
+																<div><input class="required" style="width:290px" id="state" name="state" /></div>
+														</li>
+														<li>	
+															<div>*Zip/Postal Code</div>
+																<div><input class="required" style="width:290px" id="zip" name="zip" /></div>																																
+														</li>
+														<li>
+															<div>*Country</div>
+															<div><input class="required" style="width:290px" id="country" name="country" /></div>										
+														</li>
+													</ul>																								
+												</td>
+												<td valign="top" style="width:320px">
+													<ul class="form">
+														<li>
+															<div>*Email:</div>
+															<div><input class="required" style="width:290px"	id="email" name="email" /></div>																								
+														</li>
+														<li>
+															<div>*Phone</div>
+															<div><input class="required"	style="width:290px"	id="phone" name="phone" /></div>
+														</li>
+														<li>
+															<div>Fax</div>
+															<div><input style="width:290px"	id="fax" name="fax" /></div>
+														</li>
+														<li>
+															<div style="width:290px; height:41px; border-top:2px solid #000; border-bottom:1px solid #666; margin-top:57px">&nbsp;</div>
+															<div style="width:220px; position:relative; margin-top:35px">
+																<div style=" position:absolute; left:30px; width:110px; height:124px;	margin: 0 10px 0 0; text-align:center; cursor:pointer" onclick="clear_info()">
+																	<img src="main/images/contact/btn-clear.png" width="66" height="66" />
+																	<div class="basher" style="font-size:36px">clear</div>
+																</div>
+																<div style=" position:absolute; left:140px; width:110px; height:124px; text-align:center; cursor:pointer" onclick="send_info()">
+																		<img src="main/images/contact/btn-send.png" width="66" height="66" />
+																		<div class="basher" style="font-size:36px">send</div>
+																</div>																										
+															</div>
+														</li>																																								
+													</ul>																								
+												</td>
+												<td valign="top">
+													<ul class="form">
+														<li>
+															<span>Subject</span><br />
+															<select id="subject"	name="subject" style="width:334px">
+																	<option value="General Inquiry">General Inquiry</option>
+																	<option value="Account Setup Request">Account Setup Request</option>
+																	<option value="Customer Service">Customer Service</option>
+																	<option value="Request Clothier follow-u">Request Clothier follow-up</option>
+																	<option value="Cannot access my account">Cannot access my account</option>
+															</select>																												
+														</li>
+														<li style="padding-top:15px">
+																* Additional Comments
+														</li>
+														<li>
+															<textarea class="required" id="comments" name="comments" style="width:334px; height:439px"></textarea>
+															<div>We do not share any of your information</div>
+														</li>
+													</ul>																									
+												</td>
+											</tr>
+											<tr>
+												<td colspan="3">
+													<div style="position:relative; width:980px">
+														<div style="position:absolute; height:80px">
+														</div>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</form>
+								</td>
+							</tr>
+						</table>
+					</div> <!-- contact us -->		
+				</td>
+			</tr>
+			<tr><td style="height:40px"></td></tr>
+			<tr>
+				<td valign="top" style="text-align:right; border-top:1px solid #000; padding-bottom:20px">
+					<div style="position:relative; clear:both;width:100%">
+						
+						<div style="float:right"><span style="font-size:12px">&copy; 2012_, Copyright. Trinity Apparel Group. All Rights Reserved.</span></div>										
+					</div>
+				</td>
+			</tr>
+		</table>				
+	</div>
+	<script type="text/javascript">
+		(function($){
+			//console.log("md");
+			//cache nav
+			var nav = $("#menu");
+			
+			nav.find("li").each(function() {
+				if ($(this).find("ul").length > 0) {					
+					//show subnav on hover
+					$(this).mouseenter(function() {
+											
+						$(".m_left").find("ul").css("display","none");
+						
+						var ele = $(this).find("ul:first");
+						if(ele.hasClass("m_left")){
+							//ele.stop(true, true).show("slide",{easing:"easeOutCubic"});
+							ele.stop(true, true).show();
+						}else{
+							ele.stop(true, true).slideDown();
+						}
+					});					
+
+					$(this).mouseleave(function() {
+						
+						$(".m_left").find("ul").css("display","none");
+						var ele = $(this).find("ul");
+						
+						if(ele.hasClass("m_left")){
+							ele.stop(true, true).hide();								
+						}else{
+							ele.stop(true, true).slideUp();
+						}							
+					});
+				}
+			});
+		})(jQuery);	
+	</script>
+</body>
+</html>

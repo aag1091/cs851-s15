@@ -1,0 +1,3307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+
+  <base href="http://www.playerpress.com/" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="google-site-verification" content="LmNe8lGnDEDOTdAU3Om3xzKMBs3NZ2KaF6mAgpElJFY" />
+  <link rel="shortcut icon" href="files/favicon.ico" /> 
+  <link type="text/css" rel="stylesheet" media="all" href="css/styles.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="css/sections.css" />
+  <!--[if IE]>
+  <link type="text/css" rel="stylesheet" media="all" href="css/styles_ie.css" />
+  <![endif]-->
+
+    
+  <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <!-- ajax to perform articles reactions feature -->
+  <script type="text/javascript" src="js/ajax.js"></script>
+  
+    <!-- Top header marquee -->
+  <script type="text/javascript" src="js/jquery.marquee.js"></script>    
+  <script type="text/javascript">
+    $(document).ready(function (){
+      $("#marquee_top_stories").marquee();
+    });
+  </script>
+
+  <!-- Popup login/signup/tip -->
+  <script type="text/javascript">
+  function showlayer(layer){
+    var myLayer=document.getElementById(layer);
+    if(myLayer.style.display=="none" || myLayer.style.display==""){
+      document.getElementById('popup_login').style.display = 'none';
+      document.getElementById('popup_signup').style.display = 'none';
+      document.getElementById('popup_sendtip').style.display = 'none';
+      // document.getElementById('popup_signup_reactions').style.display = 'none'; // for article reactions
+      myLayer.style.display="block";
+    } else { 
+      myLayer.style.display="none";
+    }
+  }
+  </script>
+
+  <!-- Form labels -->
+  <script type="text/javascript" charset="utf-8" src="js/jquery.infieldlabel.min.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    $(function(){ $("label").inFieldLabels(); });
+  </script>
+
+  <!-- Windows most read/comments -->
+  <script type="text/javascript">
+  function showlayerwin(layer){
+    var myLayer=document.getElementById(layer);
+    if(myLayer.style.display=="none" || myLayer.style.display==""){
+      document.getElementById('win_most_read').style.display = 'none';
+      document.getElementById('win_comments').style.display = 'none';
+      myLayer.style.display="block";
+    } else { 
+      myLayer.style.display="none";
+    }
+  }
+
+  function showlayerwin_1(layer){
+    var myLayer1=document.getElementById(layer);
+    if(myLayer1.style.display=="none" || myLayer1.style.display==""){
+      document.getElementById('win_reactions').style.display = 'none';
+      document.getElementById('win_trending').style.display = 'none';
+      myLayer1.style.display="block";
+    } else { 
+      myLayer1.style.display="none";
+    }
+  }
+  </script>
+
+  <!-- Photo slide -->
+  <link rel="stylesheet" href="css/slider.css">
+  <script src="js/slides.min.jquery.js"></script>
+  <script>
+    $(function(){
+      $('#slides').slides({
+        preload: false,
+        play: 5000,
+        pause: 5000,
+        hoverPause: false
+      });
+    });
+  </script>
+
+  <!-- Top stories carousel -->
+  <script type="text/javascript" src="js/jquery.tinycarousel.js"></script>
+  <script type="text/javascript">         
+      $(document).ready(function(){               
+          $('#slider_carousel').tinycarousel({ display: 1 });
+      });
+  </script> 
+
+  <!-- Photo description -->
+  <script type="text/javascript" src="js/photo_desc.js"></script>
+
+  <!-- Popup user -->
+  <script type="text/javascript" language="javascript" src="js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" language="javascript" src="js/drop_down.js"></script>
+
+  <!-- SideBar Video Slider -->
+  <script src="js/swfobject.js"></script>
+  <link rel="stylesheet" href="css/anythingslider.css">
+  <script src="js/jquery.anythingslider.js"></script>
+  <script src="js/jquery.anythingslider.video.js"></script>
+  <script>
+  // DOM Ready
+  $(function(){
+    $('#slider_videos').anythingSlider({
+      resizeContents      : true,
+      addWmodeToObject    : 'transparent',
+      buildNavigation     : false,
+      buildStartStop      : false
+    });
+  });
+  </script>
+
+<!-- </head> -->     <!-- display seo fields -->
+  <meta name="keywords" content="Player Press, PlayerPress.com, Sports, Sports Bloggers, NFL, MLB, NBA, UFC, NHL, MMA, NASCAR, PGA, Soccer, Football, Basketball, Baseball, Hockey, Tennis, Sports Business, Sports Rumors, Pro Athletes, Fantasy Football, Athlete Twitter, Lebron James " />
+  <meta name="description" content="Sports bloggers covering the NFL, MLB, NBA, NHL, MMA, NASCAR, PGA, college football and basketball, fantasy sports and more on Player Press" />
+  <title>Player Press l Entertaining sports news, articles, photos, videos, social media, rumors, fantasy and commentary</title>
+    <!-- end display seo fields -->
+  
+</head>
+
+<body>
+<div class="container">
+
+<!-- recaptcha code -->
+<script type="text/javascript">
+function validateCaptcha()
+{
+    challengeField = $("input#recaptcha_challenge_field").val();
+    responseField = $("input#recaptcha_response_field").val();
+    // alert(challengeField);
+    // alert(responseField);
+    //return false;
+    var html = $.ajax({
+    type: "POST",
+    url: "_ajax.recaptcha.php",
+    data: "recaptcha_challenge_field=" + challengeField + "&recaptcha_response_field=" + responseField,
+    async: false
+    }).responseText;
+    // alert(html);
+    if (html == "success") {
+      $("#captchaStatus").html(" ");
+      return true;
+    } else {
+      $("#captchaStatus").html("Your captcha is incorrect. Please try again");
+      Recaptcha.reload();
+      return false;
+    }
+}
+</script>
+
+<script type="text/javascript">  
+  $(document).ready(function(){
+     
+      $('.popup_signin_form').submit(function(e){
+          $.ajax({
+            type:'POST',
+            url: 'find_email_users.php', 
+            data: $('.popup_signin_form').serialize(), 
+            success: function(salida) {
+              var result = $('#user_password').html(salida);              
+              // alert(result);
+            }
+          })
+        });
+
+      // this jquery function changes dynamically the form's action attibute value.
+      $("#top_search_form").submit(function(e) {
+          var initial_action_setting = $("#top_search_form").attr("action"); //will retrieve action="search/"
+          var search_string = $("#search_field").val(); // search field value after "search/" string
+          search_string = search_string.replace(/\s/g, '-').toLowerCase(); // replace spaces with dashes
+          var action_path = initial_action_setting + search_string;
+          if (action_path != "") {
+            $("#top_search_form").attr("action", action_path); //will set it                      
+          } else { // no value search value
+            e.preventDefault();
+          }
+      });
+    
+     $(".popup_signup_form").submit(function() {
+        var error_validation = true;  
+          // email duplication validation 
+        if ($("#error_email").text() == "1") {
+          $("#error_ema").text("User already exists in our database.").show().fadeOut(5000);
+          error_validation = false;
+        }         
+        return error_validation;
+     });     
+  }); // end Jquery  
+</script>  
+
+<!-- Top header -->
+  <div id="top_header">
+    <div class="top_stories">
+      <!-- <div class="title">
+        <img class="title" src="" />Top Stories
+      </div>
+      <div class="box">
+        <ul id="marquee_top_stories" class="marquee">
+                <li>
+              <a href="article_analyzer.php?art_id=&slider=">
+                               </a>
+            </li>
+            
+        </ul>
+      </div>
+      <div class="marquee_shadow"></div> -->
+      
+      <div class="menu_tools">
+        <ul>
+              <!-- Search Form -->
+          <li>Search<form action="search/" method="post" id="top_search_form">
+                      <input type="text" name="search_field"  id="search_field" />
+                      <input type="submit" name="submit" value="" id="search_submit_button" />
+                    </form>
+          </li>
+                <li><a href="javascript:void(0)" onclick="showlayer('popup_login')">Log in</a></li>   
+            <li><a href="javascript:void(0)" onclick="showlayer('popup_signup')">Sign up</a></li>
+            <li class="bt_fb">
+              <!-- <a href="facebook-connect.html"> -->
+              <a href="javascript:;" onClick="window.open('facebook-connect.html','FaceBookLogin','scrollbars=yes,width=600,height=600');">
+              <!-- <img src="" width="95" height="22" /></a> -->
+              <img src="images/bt_fb_connect_mini.jpg" width="20" height="19" /></a>
+            </li>
+            </ul>
+      </div> <!-- menu_tools -->
+    </div> <!-- top_stories -->
+  </div> <!-- top_header -->
+
+  <!-- Popup log in -->
+  <div id="popup_login" style="display:none;">
+    <div class="popup">
+      <div class="title">Log in to Playerpress</div>
+        <form action="signin.html" method="post" id="popup_form" class="popup_signin_form" >
+          <input type="hidden" name="error_user_pass" id="error_user_pass" value="" /> 
+          <div id="user_password" class="error"> </div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required="required" onBlur="checkUserPass();" /><br />
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" required="required"  onkeydown="if (event.keyCode == 13) checkUserPass();"
+          onfocus="checkUserPass();" onBlur="checkUserPass();" /><br />
+          <span><a href="password-forgot.html">Forgot your Password?</a></span><br />
+          <input type="submit" name="signin" value="" id="signin_button" />
+        </form> 
+      <div class="clear"></div>
+      <div class="or"><span>or</span></div>
+      <div class="bt_fb"><p>Log in with Facebook</p>
+        <!-- <a href="facebook-connect.html"> -->
+        <a href="javascript:;" onClick="window.open('facebook-connect.html','FaceBookLogin','scrollbars=yes,width=600,height=600');">
+        <img src="files/bt_fb_connect.png" width="95" height="22" /></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup sign up -->
+  <div id="popup_signup" style="display:none;">
+    <div class="popup">
+      <div class="title">Sign up to Playerpress</div>
+        <form action="signup.html" method="post" id="popup_form" class="popup_signup_form">
+          <input type="hidden" name="error_email" id="error_email" /> 
+          <label for="firstname">First Name</label>
+          <input type="text" name="first_name" id="firstname" required="required" /><br />
+          <label for="lastname">Last Name</label>
+          <input type="text" name="last_name" id="lastname" required="required" /><br />
+          <div id="error_ema" class="error"> </div>
+          <label for="email_signup">Email</label>
+          <input type="email" name="email" id="email_signup" required="required" onBlur="checkEmail();" /><br />
+          <label for="password2">Password</label>
+          <input type="password" name="password" id="password2" required="required" /><br />
+          <input type="submit" name="signup" value="" />
+        </form> 
+      <div class="clear"></div>
+      <div class="or"><span>or</span></div>
+      <div class="bt_fb"><p>Sign up with Facebook</p>
+        <!-- <a href="facebook-connect.html"> -->
+        <a href="javascript:;" onClick="window.open('facebook-connect.html','FaceBookSignUp','scrollbars=yes,width=600,height=600');">
+        <img src="files/bt_fb_connect.png" width="95" height="22" /></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup send tip -->
+  <div id="popup_sendtip" style="display:none;">
+    <div class="popup">
+      <div class="height_10"></div>
+        <form action="save-tips.html" method="post" id="popup_form" onsubmit="return validateCaptcha();" >
+          <label for="yourname">Your Name</label>
+          <input type="text" name="Name" id="yourname" required="required" /><br />
+          <label for="youremail">Your Email</label>
+          <input type="email" name="Email" id="youremail" required="required" /><br />
+          <label for="subject">Subject</label>
+          <input type="text" name="Subject" id="subject" required="required" /><br />
+          <label for="yourtip">Your Tip</label>
+          <textarea name="Tip" id="yourtip" rows="5" required="required" ></textarea><br />
+          <div id="captchaDisplay"> <script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6LeK3ecSAAAAAKuX99ehO6v-HQk8rp53iRnyJ3rq"></script>
+
+	<noscript>
+  		<iframe src="http://www.google.com/recaptcha/api/noscript?k=6LeK3ecSAAAAAKuX99ehO6v-HQk8rp53iRnyJ3rq" height="300" width="500" frameborder="0"></iframe><br/>
+  		<textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+  		<input type="hidden" name="recaptcha_response_field" value="manual_challenge"/>
+	</noscript> </div> 
+          <div id="captchaStatus"> </div>
+          <input type="submit" name="" value="" />
+        </form> 
+    </div>
+  </div>
+
+    <!-- Items My Profile, and Log out that appear when the user has logged in -->
+  <div id="popup_user">
+  </div>
+
+   <!-- Header: logo image and spot image-->
+  <div id="header">
+    <div class="logo"><a href="javascript:;"><img src="files/logo.png" /></a></div>
+    <div class="spot_460">
+      <script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</script>
+
+<script type='text/javascript'>
+googletag.cmd.push(function() {
+googletag.defineSlot('/1052137/PP.com_HOME_Leaderboard', [728, 90], 'div-gpt-ad-1380323360876-0').addService(googletag.pubads());
+googletag.defineSlot('/1052137/PP.com_HOME_Med_Rectangle_1', [300, 250], 'div-gpt-ad-1380323360876-1').addService(googletag.pubads());
+googletag.defineSlot('/1052137/PP.com_HOME_Med_Rectangle_10', [300, 250], 'div-gpt-ad-1380323360876-2').addService(googletag.pubads());
+googletag.defineSlot('/1052137/PP.com_HOME_Med_Rectangle_2', [300, 250], 'div-gpt-ad-1380323360876-3').addService(googletag.pubads());
+googletag.defineSlot('/1052137/PP.com_HOME_Med_Rectangle_3', [300, 250], 'div-gpt-ad-1380323360876-4').addService(googletag.pubads());
+googletag.defineSlot('/1052137/PP.com_HOME_Med_Rectangle_4', [300, 250], 'div-gpt-ad-1380323360876-5').addService(googletag.pubads());
+googletag.defineSlot('/1052137/PP.com_HOME_Med_Rectangle_4A', [300, 250], 'div-gpt-ad-1380323360876-6').addService(googletag.pubads());
+googletag.defineSlot('/1052137/PP.com_HOME_Med_Rectangle_5', [300, 250], 'div-gpt-ad-1380323360876-7').addService(googletag.pubads());
+googletag.defineSlot('/1052137/PP.com_HOME_Med_Rectangle_6', [300, 250], 'div-gpt-ad-1380323360876-8').addService(googletag.pubads());
+googletag.defineSlot('/1052137/PP.com_HOME_Med_Rectangle_7', [300, 250], 'div-gpt-ad-1380323360876-9').addService(googletag.pubads());
+googletag.defineSlot('/1052137/PP.com_HOME_Med_Rectangle_8', [300, 250], 'div-gpt-ad-1380323360876-10').addService(googletag.pubads());
+googletag.defineSlot('/1052137/PP.com_HOME_Med_Rectangle_9', [300, 250], 'div-gpt-ad-1380323360876-11').addService(googletag.pubads());
+googletag.pubads().enableSingleRequest();
+googletag.enableServices();
+});
+</script><!-- PP.com_HOME_Leaderboard -->
+<div id='div-gpt-ad-1380323360876-0' style='width:728px; height:90px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1380323360876-0'); });
+</script>
+</div>  
+     <!-- <a href="javascript:;"><img src="" /></a> -->
+    </div>
+  </div>
+
+<!-- Nav menu/submenu -->
+<div id="nav">
+    <!-- Menu -->
+    <ul id="menu">
+      <li><a href="index.html" class="home on">HOME</a></li>
+      <!-- These definitions consider the sports/ url format 
+      <li><a href="sports/nfl" class="">NFL</a></li>
+      <li><a href="sports/nba" class="">NBA</a></li>
+      <li><a href="sports/mlb" class="">MLB</a></li>
+      <li><a href="sports/ncaa" class="">NCAA</a></li> 
+      -->
+      <li><a href="nfl" class="nfl">NFL</a></li>
+      <li><a href="nba" class="nba">NBA</a></li>
+      <li><a href="mlb" class="mlb">MLB</a></li>
+      <li><a href="ncaa" class="ncaa">NCAA</a></li>
+
+      <li><a href="javascript:;" class="more">MORE</a>
+        <ul id="sub_more">
+         <!-- here query to get new sport pages and create its html code -->
+                      <li style="background-color: #C7C7C7;">
+				 <a href="action-sports" class="action sports">
+                 ACTION SPORTS</a>
+              </li>
+                      <li style="background-color: #473D3D;">
+				 <a href="boxing" class="boxing">
+                 BOXING</a>
+              </li>
+                      <li style="background-color: #FF4E21;">
+				 <a href="contributors" class="contributors">
+                 CONTRIBUTORS</a>
+              </li>
+                      <li style="background-color: #0D1C7A;">
+				 <a href="fantasy" class="fantasy">
+                 FANTASY</a>
+              </li>
+                      <li style="background-color: ;">
+				 <a href="golf" class="golf">
+                 GOLF</a>
+              </li>
+                      <li style="background-color: ;">
+				 <a href="mma" class="mma">
+                 MMA</a>
+              </li>
+                      <li style="background-color: ;">
+				 <a href="nascar" class="nascar">
+                 NASCAR</a>
+              </li>
+                      <li style="background-color: ;">
+				 <a href="nhl" class="nhl">
+                 NHL</a>
+              </li>
+                      <li style="background-color: ;">
+				 <a href="soccer" class="soccer">
+                 SOCCER</a>
+              </li>
+                      <li style="background-color: ;">
+				 <a href="sports-business" class="sports business">
+                 SPORTS BUSINESS</a>
+              </li>
+                      <li style="background-color: #48FF3B;">
+				 <a href="tennis" class="tennis">
+                 TENNIS</a>
+              </li>
+                </ul>
+      </li>
+        
+        <!-- Hover More -->
+      <script type="text/javascript" language="javascript">
+       var backcolor_over = $("#more-item-backcolor").val(); // select item backcolor from hidden field
+       var backcolor_out = $("#more-item-backcolor").val(); // select item backcolor from hidden field
+       if (backcolor_over == "") {
+         backcolor_over = "#662C91";
+         backcolor_out = "transparent";
+       }
+       $("#sub_more").mouseover(function(){
+          $("#sub_more .more").css("background-color", backcolor_over);
+          // $(".more").css("background-color", "#662C91");          
+          $("#sub_more .more").css("box-shadow","1px 1px 6px 1px #333 inset");
+       }).mouseout(function(){
+          $("#sub_more .more").css("background-color", backcolor_out);
+          $("#sub_more .more").css("box-shadow","none");
+       });
+
+       $("#menu .more").mouseover(function(){
+          $("#menu .more").css("background-color", backcolor_over);
+          // $(".more").css("background-color","#662C91");
+       }).mouseout(function(){
+          $("#menu .more").css("background-color", backcolor_out);
+       });
+      </script>
+        <!-- end Hover More -->
+
+      <!--  These definitions consider the categories/ url format    
+      <li><a href="categories/rumors" class="">RUMORS</a></li>
+      <li><a href="categories/grandstand" class="">GRANDSTAND</a></li>
+      <li><a href="categories/thedesk" class="">THE DESK</a></li> 
+      -->
+      <li><a href="rumors" class="rumors">RUMORS</a></li>
+      <li><a href="grandstand" class="grandstand">GRANDSTAND</a></li>
+      <li><a href="the-desk" class="thedesk">THE DESK</a></li> 
+    </ul>
+
+</div> <!-- end div id="nav" -->
+
+<div class="clear"></div>
+    
+      <!-- <ul id="submenu"> -->
+           <!-- <li> <a href="tags//"></a> </li> -->
+      <!-- </ul> -->
+ 
+<!-- </div> --> <!-- end div id="nav" -->
+
+<!-- <div class="clear"></div> -->          <!-- Page -->
+<div id="page">
+    <!-- <div class="page_title_sport">SPORTS HEADLINES</div> -->
+
+            <!-- main-article -->
+        <div class="big_news"> 
+          <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+          <a href="articles/2015/04/03/electronic-arts-faces-lawsuit-against-former-nfl-players_1118" >Electronic Arts faces lawsuit against former NFL players <img src="files/articles/201504031050070.madden-nfl.jpg" /> </a>
+        </div>
+          <!-- line_break -->
+    <div class="line_page"></div> 
+
+          <!-- featured articles -->
+    <div class="news"> 
+      <ul>
+          <li> 
+            <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+            <a href="articles/2015/04/02/tom-brady-rocks-awesome-prank-pic-on-facebook-for-april-foolrsquos-day_1117">
+              <img src="thumbs_croped.php?img=files/articles/201504020027520.proxy.jpg&w=194&h=186" />Tom Brady Rocks Awesome Prank Pic on Facebook for April Fool&rsquo;s Day              
+            </a> 
+          </li>
+          <li> 
+            <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+            <a href="articles/2015/03/30/indianapolis-colts-owner-jim-irsay-tweets-thoughts-on-controversial-religious-freedom-law_1114">
+              <img src="thumbs_croped.php?img=files/articles/201503302228350.irsay-fighting-for-life.jpg&w=194&h=186" />Indianapolis Colts Owner Jim Irsay Tweets Thoughts on Controversial Religious Freedom Law              
+            </a> 
+          </li>
+          <li class="end"> 
+            <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+            <a href="articles/2015/03/25/pete-carroll-presents-idea-for-to-change-extra-point-to-competition-committee_1113">
+              <img src="thumbs_croped.php?img=files/articles/201503251923070.PC.jpg&w=194&h=186" />Pete Carroll Presents Idea for to Change Extra Point to Competition Committee            </a> 
+          </li>
+  
+      </ul>
+    </div>
+
+
+<script type="text/javascript">
+// jquery used to paginate the published articles
+$(document).ready(function() {
+    $("a.bt_picks_prev").click(function() {
+        var offset = $("#prev-offset").val();
+        var limit = $("#limit").val();
+        var total = $("#total").val();
+        var dataString = 'offset='+ offset + '&limit=' + limit + '&total=' + total;
+        $.ajax
+        ({
+            type: "POST",
+            url: "get_published_articles.php",
+            data: dataString,
+            cache: false,
+            beforeSend: function() { $('#published_content').html("<img src='images/loading1.gif' />"); },
+            success: function(html) { 
+              $("#published_content").html(html); 
+              $(document).scrollTop( $("#published_content").offset().top ); // scroll up to the articles beginning
+            }
+        });
+    });
+    $("a.bt_picks_next").click(function() {
+        // alert("clicked en next");
+        var offset = $("#next-offset").val();
+        var limit = $("#limit").val();
+        var total = $("#total").val();
+        var dataString = 'offset='+ offset + '&limit=' + limit + '&total=' + total;
+        $.ajax
+        ({
+            type: "POST",
+            url: "get_published_articles.php",
+            data: dataString,
+            cache: false,
+            beforeSend: function() { $('#published_content').html("<img src='images/loading1.gif' />"); },
+            success: function(html) { 
+              // alert("success");
+              $("#published_content").html(html); 
+              // $(document).scrollTo("#published_content"); // Scroll Screen to Target Element
+              $(document).scrollTop( $("#published_content").offset().top ); // scroll up to the articles beginning
+
+            }
+        });
+    });
+});
+</script>
+
+    <!-- what is happening bar with rss feeds -->
+    <!-- <div class="page_title">  -->          
+      <div class="page_title top_picks"> 
+        <!-- <span>What’s happening?</span> -->
+        <span>Top Picks</span>
+        <a href="rss.html" target="_blank" ><img src="images/bt_rss.png" width="24" height="24" /></a>
+        <!-- prev and next buttons shows 25 next/previous top picks articles   -->
+        <!-- <div class="box_bt_picks"> 
+          <a href="javascript:;" class="bt_picks_prev" id="prev"> </a>
+          <a href="javascript:;" class="bt_picks_next" id="next"> </a>
+        </div>   -->
+        <!-- prev and next buttons shows 25 next/previous top picks articles  -->
+      </div>
+      
+  <div id="published_content"> <!--  ajax filled content -->
+    <input type="hidden" id="next-offset" value="30">
+    <input type="hidden" id="prev-offset" value="-30">
+    <input type="hidden" id="limit" value="30">
+    <input type="hidden" id="total" value="537">
+    
+              <style>  #next { display:block; } </style>
+          <style> #prev { display:none; } </style>
+           
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/03/23/houston-texans-a-candidate-for-hard-knocks-this-season_1112">
+                                            <img src="thumbs_croped.php?img=files/articles/201503232228470.Texans4.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/03/23/houston-texans-a-candidate-for-hard-knocks-this-season_1112">
+                      Houston Texans a Candidate for Hard Knocks This Season                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/8/travis-pulver">
+                      Travis Pulver 
+                    </a>  | 03/23/15 | 10:25 PM EDT 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1077"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                                  <p>No way they get it over Johnny Manziel and the Browns.</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/03/18/bernard-pierce-released-by-ravens-after-dui-arrest_1111">
+                                            <img src="thumbs_croped.php?img=files/articles/201503182304580.BP.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/03/18/bernard-pierce-released-by-ravens-after-dui-arrest_1111">
+                      Bernard Pierce Released By Ravens After DUI Arrest                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/8/travis-pulver">
+                      Travis Pulver 
+                    </a>  | 03/18/15 | 11:02 PM EDT 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1076"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                                  <p>Ravens aren&#39;t messing around!</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/03/16/tim-tebow-doesnrsquot-need-the-veteran-combine_1110">
+                                            <img src="thumbs_croped.php?img=files/articles/201503162207420.Tebow.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/03/16/tim-tebow-doesnrsquot-need-the-veteran-combine_1110">
+                      Tim Tebow Doesn&rsquo;t Need the Veteran Combine!                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/8/travis-pulver">
+                      Travis Pulver 
+                    </a>  | 03/16/15 | 10:03 PM EDT 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1075"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                  <span class="barra win"><p></p></span>
+      <div class="box_perc">
+        <span class="perc win" style="width:100%">100%</span>
+      </div>            
+                      <p>Tebow to Philly?</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/03/11/demarco-murray-not-scared-off-by-chip-kelly-rumors_1109">
+                                            <img src="thumbs_croped.php?img=files/articles/201503112249590.Sam+Bradford+Demarco+Murray+St+Louis+Rams+JwFsF_NhBRhl.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/03/11/demarco-murray-not-scared-off-by-chip-kelly-rumors_1109">
+                      DeMarco Murray Not Scared Off By Chip Kelly Rumors                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/8/travis-pulver">
+                      Travis Pulver 
+                    </a>  | 03/11/15 | 10:42 PM EDT 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1074"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                  <span class="barra fail"><p></p></span>
+      <div class="box_perc">
+        <span class="perc fail" style="width:50%">50%</span>
+      </div>            
+                      <p>Frank Gore might be scared but DeMarco isn&#39;t.</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                         <div class="spot_news">
+                  <!-- PP.com_HOME_Med_Rectangle_4 -->
+<div id='div-gpt-ad-1380323360876-5' style='width:300px; height:250px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1380323360876-5'); });
+</script>
+</div>              </div>
+              <div class="line_page"></div>          
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/03/10/tennessee-titans-qb-jake-locker-retires-from-the-game-at-26_1108">
+                                            <img src="thumbs_croped.php?img=files/articles/201503102302010.jake-locker.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/03/10/tennessee-titans-qb-jake-locker-retires-from-the-game-at-26_1108">
+                      Tennessee Titans QB Jake Locker Retires From the Game at 26                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/8/travis-pulver">
+                      Travis Pulver 
+                    </a>  | 03/10/15 | 10:59 PM EDT 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1073"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                                  <p>If he isn&#39;t feeling it, he isn&#39;t feeling it.</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/03/10/hey-chip-kelly-what-the-duck_1106">
+                                            <img src="thumbs_croped.php?img=files/articles/201503101148420.USATSI_8272386_168380420_lowres.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/03/10/hey-chip-kelly-what-the-duck_1106">
+                      Hey Chip Kelly, What the Duck?                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/7/bob-whalon">
+                      Bob Whalon 
+                    </a>  | 03/10/15 | 11:44 AM EDT 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1071"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                  <span class="barra master"><p></p></span>
+      <div class="box_perc">
+        <span class="perc master" style="width:67%">67%</span>
+      </div>            
+                      <p><br />
+The running joke during Andy Reid&#39;s tenure as head coach of the Philadelphia Eagles was that he was always picking up players from his alma mater, BYU.&nbsp; &quot;Best available Mormon.&quot;<br />
+<br />
+Well now that Chip Kelly is the head coach of the Eagles, that refrain has turned into &quot;Best Available Duck&quot;, for his former Oregon players.&nbsp; (For those of you paying attention, that acronym spells B.A.D.&nbsp; Just sayin&#39;)</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/03/04/peyton-manning-taking-a-4-million-pay-cut_1107">
+                                            <img src="thumbs_croped.php?img=files/articles/201503042219150.manning.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/03/04/peyton-manning-taking-a-4-million-pay-cut_1107">
+                      Peyton Manning Taking a $4 Million Pay Cut                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/8/travis-pulver">
+                      Travis Pulver 
+                    </a>  | 03/04/15 | 10:17 PM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1072"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                  <span class="barra master"><p></p></span>
+      <div class="box_perc">
+        <span class="perc master" style="width:100%">100%</span>
+      </div>            
+                      <p>Poor Peyton.</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/03/03/randall-cobb-is-going-to-be-expensive-for-green-bay-to-keep_1105">
+                                            <img src="thumbs_croped.php?img=files/articles/201503030032440.randall-cobb2.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/03/03/randall-cobb-is-going-to-be-expensive-for-green-bay-to-keep_1105">
+                      Randall Cobb is Going to be Expensive for Green Bay to Keep                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/8/travis-pulver">
+                      Travis Pulver 
+                    </a>  | 03/03/15 | 12:30 AM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1070"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                  <span class="barra fail"><p></p></span>
+      <div class="box_perc">
+        <span class="perc fail" style="width:100%">100%</span>
+      </div>            
+                      <p>Time for Randall Cobb to get paid!</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                         <div class="spot_news">
+                  <!-- PP.com_HOME_Med_Rectangle_5 -->
+<div id='div-gpt-ad-1380323360876-7' style='width:300px; height:250px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1380323360876-7'); });
+</script>
+</div>              </div>
+              <div class="line_page"></div>          
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/02/27/a-chip-kelly---marcus-mariota-reunion_1104">
+                                            <img src="thumbs_croped.php?img=files/articles/201502271116030.ChipKelly-Marcus.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/02/27/a-chip-kelly---marcus-mariota-reunion_1104">
+                      A Chip Kelly - Marcus Mariota Reunion?                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/7/bob-whalon">
+                      Bob Whalon 
+                    </a>  | 02/27/15 | 11:13 AM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1069"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                  <span class="barra fail"><p></p></span>
+      <div class="box_perc">
+        <span class="perc fail" style="width:60%">60%</span>
+      </div>            
+                      <p><br />
+I can&#39;t stand it any longer.</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/02/23/michael-sam-to-be-on-dancing-with-the-stars_1103">
+                                            <img src="thumbs_croped.php?img=files/articles/201502240110550.ms.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/02/23/michael-sam-to-be-on-dancing-with-the-stars_1103">
+                      Michael Sam to Be On Dancing With the Stars                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/8/travis-pulver">
+                      Travis Pulver 
+                    </a>  | 02/23/15 | 3:05 PM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1068"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                  <span class="barra master"><p></p></span>
+      <div class="box_perc">
+        <span class="perc master" style="width:100%">100%</span>
+      </div>            
+                      <p>From cleats to dancing shoes.</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/02/18/rams-letting-sam-bradford-test-the-market_1102">
+                                            <img src="thumbs_croped.php?img=files/articles/201502182226100.bradford.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/02/18/rams-letting-sam-bradford-test-the-market_1102">
+                      Rams Letting Sam Bradford Test the Market                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/8/travis-pulver">
+                      Travis Pulver 
+                    </a>  | 02/18/15 | 10:23 PM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1067"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                                  <p>Sam, you&#39;re cool, but if you want to go--go.</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/02/16/buffalo-bills-looking-for-next-one-season-qb-in-josh-mccown_1101">
+                                            <img src="thumbs_croped.php?img=files/articles/201502162148150.mccown-story.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/02/16/buffalo-bills-looking-for-next-one-season-qb-in-josh-mccown_1101">
+                      Buffalo Bills Looking For Next One Season QB in Josh McCown                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/8/travis-pulver">
+                      Travis Pulver 
+                    </a>  | 02/16/15 | 9:42 PM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1066"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                  <span class="barra master"><p></p></span>
+      <div class="box_perc">
+        <span class="perc master" style="width:50%">50%</span>
+      </div>            
+                      <p>Rex Ryan Signing a Placeholder in Josh McCown?</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                         <div class="spot_news">
+                  <!-- PP.com_HOME_Med_Rectangle_6 -->
+<div id='div-gpt-ad-1380323360876-8' style='width:300px; height:250px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1380323360876-8'); });
+</script>
+</div>              </div>
+              <div class="line_page"></div>          
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/02/11/cleveland-browns-gm-admits-fault-in-text-gate_1100">
+                                            <img src="thumbs_croped.php?img=files/articles/201502112129060.Browns.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/02/11/cleveland-browns-gm-admits-fault-in-text-gate_1100">
+                      Cleveland Browns GM Admits Fault in Text-Gate                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/8/travis-pulver">
+                      Travis Pulver 
+                    </a>  | 02/11/15 | 9:25 PM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1065"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                                  <p>Cleveland Rocks?</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/02/09/maybe-tampa-bay-should-not-draft-a-quarterback_1099">
+                                            <img src="thumbs_croped.php?img=files/articles/201502092144360.jm.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/02/09/maybe-tampa-bay-should-not-draft-a-quarterback_1099">
+                      Maybe Tampa Bay Should Not Draft a Quarterback                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/8/travis-pulver">
+                      Travis Pulver 
+                    </a>  | 02/09/15 | 9:41 PM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1064"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                  <span class="barra master"><p></p></span>
+      <div class="box_perc">
+        <span class="perc master" style="width:50%">50%</span>
+      </div>            
+                      <p>Beware the draft Tampa Bay QBs!</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/02/04/whoever-plays-qb-for-cleveland-next-season-may-lose-a-big-weapon-to-free-agency_1098">
+                                            <img src="thumbs_croped.php?img=files/articles/201502042248080.JC.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/02/04/whoever-plays-qb-for-cleveland-next-season-may-lose-a-big-weapon-to-free-agency_1098">
+                      Whoever Plays QB For Cleveland Next Season May Lose a Big Weapon to Free Agency                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/8/travis-pulver">
+                      Travis Pulver 
+                    </a>  | 02/04/15 | 10:43 PM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1063"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                  <span class="barra buzz"><p></p></span>
+      <div class="box_perc">
+        <span class="perc buzz" style="width:22%">22%</span>
+      </div>            
+                      <p>So Cleveland doesn&#39;t rock?</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/02/02/warren-sapp-arrested-on-prostitution-charges-nbsp_1097">
+                                            <img src="thumbs_croped.php?img=files/articles/201502022235580.nfl-warren-sapp.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/02/02/warren-sapp-arrested-on-prostitution-charges-nbsp_1097">
+                      Warren Sapp Arrested on Prostitution Charges
+&nbsp;                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/8/travis-pulver">
+                      Travis Pulver 
+                    </a>  | 02/02/15 | 10:31 PM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1062"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                  <span class="barra master"><p></p></span>
+      <div class="box_perc">
+        <span class="perc master" style="width:100%">100%</span>
+      </div>            
+                      <p>Talk about an expensive date!</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                         <div class="spot_news">
+                  <!-- PP.com_HOME_Med_Rectangle_7 -->
+<div id='div-gpt-ad-1380323360876-9' style='width:300px; height:250px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1380323360876-9'); });
+</script>
+</div>              </div>
+              <div class="line_page"></div>          
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/02/02/seahawks-make-worst-call-ever_1096">
+                                            <img src="thumbs_croped.php?img=files/articles/201502030832420.USATSI_8360708_168380420_lowres.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/02/02/seahawks-make-worst-call-ever_1096">
+                      Seahawks Make Worst Call Ever!                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/7/bob-whalon">
+                      Bob Whalon 
+                    </a>  | 02/02/15 | 8:29 PM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1061"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                  <span class="barra master"><p></p></span>
+      <div class="box_perc">
+        <span class="perc master" style="width:100%">100%</span>
+      </div>            
+                      <p><br />
+Super Bowl XLIX was the most watch television show in history.&nbsp; The numbers at the end of the game were close to 121 million viewers.&nbsp; That&#39;s a whole lot of people watching and all of them...ALL of them think that the Seattle Seahawks decision to throw the ball on second and goal from the goal line was the worst call in the history of sports.<br />
+<br />
+By now you all know how that turned out.<br />
+<br />
+&nbsp;</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/28/marshawn-lynch-may-still-get-fined-after-super-bowl-media-day_1095">
+                                            <img src="thumbs_croped.php?img=files/articles/201501281934560.B8Y9QbnCcAMZTIS.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/28/marshawn-lynch-may-still-get-fined-after-super-bowl-media-day_1095">
+                      Marshawn Lynch May Still Get Fined After Super Bowl Media Day                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/8/travis-pulver">
+                      Travis Pulver 
+                    </a>  | 01/28/15 | 7:32 PM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1060"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                                  <p>Beast Mode may get fined anyway.</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/28/quotdeflate-gatequot-isn39t-the-patriot39s-fault_1094">
+                                            <img src="thumbs_croped.php?img=files/articles/201501280126490.Deflated-NFL-Football.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/28/quotdeflate-gatequot-isn39t-the-patriot39s-fault_1094">
+                      &quot;Deflate-Gate&quot; Isn&#39;t the Patriot&#39;s Fault                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/7/bob-whalon">
+                      Bob Whalon 
+                    </a>  | 01/28/15 | 1:22 AM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1059"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                  <span class="barra master"><p></p></span>
+      <div class="box_perc">
+        <span class="perc master" style="width:67%">67%</span>
+      </div>            
+                      <p><br />
+<br />
+The New England Patriots aren&#39;t to blame for &quot;Deflate-Gate&quot;.&nbsp; Head coach Bill Belichick isn&#39;t to blame either.&nbsp; Don&#39;t look at Tom Brady.&nbsp; And that New England locker room attendant the NFL has identified as a &quot;person of interest&quot;?&nbsp; Forget about him.</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/26/odell-beckham-jr-played-incredible-rookie-season-injured_1093">
+                                            <img src="thumbs_croped.php?img=files/articles/201501262212300.B8PbxM9CMAAFQAY.png&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/26/odell-beckham-jr-played-incredible-rookie-season-injured_1093">
+                      Odell Beckham Jr. Played Incredible Rookie Season Injured                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/8/travis-pulver">
+                      Travis Pulver 
+                    </a>  | 01/26/15 | 10:07 PM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1058"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                                  <p>That Odell Beckham Jr.ain&#39;t half bad!</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                         <div class="spot_news">
+                  <!-- PP.com_HOME_Med_Rectangle_8 -->
+<div id='div-gpt-ad-1380323360876-10' style='width:300px; height:250px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1380323360876-10'); });
+</script>
+</div>              </div>
+              <div class="line_page"></div>          
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/21/star-lord-and-captain-america-make-bet-on-super-bowl-over-twitter_1092">
+                                            <img src="thumbs_croped.php?img=files/articles/201501212300510.Chris.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/21/star-lord-and-captain-america-make-bet-on-super-bowl-over-twitter_1092">
+                      Star-Lord and Captain America Make Bet on Super Bowl Over Twitter                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/8/travis-pulver">
+                      Travis Pulver 
+                    </a>  | 01/21/15 | 10:55 PM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1057"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                                  <p>Captain America or Star-Lord?</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/20/joepa-is-no-1-again_1088">
+                                            <img src="thumbs_croped.php?img=files/articles/201501200849500.Paterno.jpeg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/20/joepa-is-no-1-again_1088">
+                      JoePa is No. 1 Again                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/7/bob-whalon">
+                      Bob Whalon 
+                    </a>  | 01/20/15 | 8:42 AM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1053"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                  <span class="barra master"><p></p></span>
+      <div class="box_perc">
+        <span class="perc master" style="width:60%">60%</span>
+      </div>            
+                      <p><br />
+Joe Paterno was always the winningest coach in the history of major college football with 409 wins.&nbsp; Now, it&#39;s official once again.&nbsp;</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/19/detroit-lions-not-bringing-back-dirty-dom_1087">
+                                            <img src="thumbs_croped.php?img=files/articles/201501191915210.Dominic-Raiola.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/19/detroit-lions-not-bringing-back-dirty-dom_1087">
+                      Detroit Lions Not Bringing Back Dirty Dom                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/8/travis-pulver">
+                      Travis Pulver 
+                    </a>  | 01/19/15 | 9:06 PM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1052"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                  <span class="barra buzz"><p></p></span>
+      <div class="box_perc">
+        <span class="perc buzz" style="width:100%">100%</span>
+      </div>            
+                      <p>See you later Dom!</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                   
+              <div class="news_col"> 
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/19/nfl-coaching-carousel-some-let-off-others-let-onnbsp_1086">
+                      NFL Coaching Carousel: Some Let Off, Others Let On&nbsp;                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/6/sonny-black">
+                      Sonny Black 
+                    </a>  | 01/19/15 | 1:07 PM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1051"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                                  <p></p>
+                            </div> <!-- end div class="txt" -->
+               
+                  <div>
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/19/nfl-coaching-carousel-some-let-off-others-let-onnbsp_1086">
+                       <img src="files/articles/201501191316540.picresized_1421691304_gary_kubiak.jpg" width="600" height="352" />
+                    </a>                                                  
+                  </div>             
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                         <div class="spot_news">
+                  <!-- PP.com_HOME_Med_Rectangle_9 -->
+<div id='div-gpt-ad-1380323360876-11' style='width:300px; height:250px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1380323360876-11'); });
+</script>
+</div>              </div>
+              <div class="line_page"></div>          
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/19/the-houston-texans-helped-john-fox-get-fired_1085">
+                                            <img src="thumbs_croped.php?img=files/articles/201501191306200.HOUSTON-TEXANS.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/19/the-houston-texans-helped-john-fox-get-fired_1085">
+                      The Houston Texans Helped John Fox Get Fired                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/8/travis-pulver">
+                      Travis Pulver 
+                    </a>  | 01/19/15 | 1:04 PM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1050"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                                  <p>It&#39;s all your fault J.J.</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/12/espn-sees-nothing-wrong-with-skip-bayless-calling-johnny-manziel-and-alcoholic_1083">
+                                            <img src="thumbs_croped.php?img=files/articles/201501122212320.picresized_1418495893_JohnnyManziel-3.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/12/espn-sees-nothing-wrong-with-skip-bayless-calling-johnny-manziel-and-alcoholic_1083">
+                      ESPN Sees Nothing Wrong With Skip Bayless Calling Johnny Manziel and Alcoholic                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/8/travis-pulver">
+                      Travis Pulver 
+                    </a>  | 01/12/15 | 10:11 PM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1048"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                  <span class="barra fail"><p></p></span>
+      <div class="box_perc">
+        <span class="perc fail" style="width:100%">100%</span>
+      </div>            
+                      <p>Sue &#39;em Johnny. Sue &#39;em for all he&#39;s worth.</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/12/denver-broncos-clear-house-fire-entire-coaching-staff_1084">
+                                            <img src="thumbs_croped.php?img=files/articles/201501122211180.picresized_1421118608_John Fox.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/12/denver-broncos-clear-house-fire-entire-coaching-staff_1084">
+                      Denver Broncos Clear House; Fire Entire Coaching Staff                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/8/travis-pulver">
+                      Travis Pulver 
+                    </a>  | 01/12/15 | 10:06 PM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1049"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                                  <p>Good just wasn&#39;t good enough.</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/02/chip-kelly-is-headed-back-to-college_1082">
+                                            <img src="thumbs_croped.php?img=files/articles/201501021909080.USATSI_8276744_168380420_lowres.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/02/chip-kelly-is-headed-back-to-college_1082">
+                      Chip Kelly is Headed Back to College                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/7/bob-whalon">
+                      Bob Whalon 
+                    </a>  | 01/02/15 | 7:07 PM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1047"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                  <span class="barra fail"><p></p></span>
+      <div class="box_perc">
+        <span class="perc fail" style="width:50%">50%</span>
+      </div>            
+                      <p><br />
+There seems to be a battle brewing between Philadelphia Eagles head coach Chip Kelly and GM Howie Roseman and I think it will lead Kelly straight back to college.</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                         <div class="spot_news">
+                  <!-- PP.com_HOME_Med_Rectangle_10 -->
+<div id='div-gpt-ad-1380323360876-2' style='width:300px; height:250px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1380323360876-2'); });
+</script>
+</div>              </div>
+              <div class="line_page"></div>          
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/01/dallas-cowboys-will-have-to-face-ndamukong-suh-after-all_1081">
+                                            <img src="thumbs_croped.php?img=files/articles/201501021906550.USATSI_8291415_168380420_lowres.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2015/01/01/dallas-cowboys-will-have-to-face-ndamukong-suh-after-all_1081">
+                      Dallas Cowboys Will Have to Face Ndamukong Suh After All                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/8/travis-pulver">
+                      Travis Pulver 
+                    </a>  | 01/01/15 | 7:05 PM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1046"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                  <span class="barra master"><p></p></span>
+      <div class="box_perc">
+        <span class="perc master" style="width:100%">100%</span>
+      </div>            
+                      <p><br />
+Numb feet? And that worked?</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+                   
+              <div class="news_col"> 
+                            <div class="img"> 
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2014/12/29/bears-clean-housewhat-now_1080">
+                                            <img src="thumbs_croped.php?img=files/articles/201412291457330.USATSI_8295369_168380420_lowres.jpg&w=248&h=236" width="248" height="236" />
+                    </a>                
+                  </div>
+                          <div class="txt">
+                  <p class="title">
+                    <!--  <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2014/12/29/bears-clean-housewhat-now_1080">
+                      Bears Clean House..What Now?                    </a>
+                  </p>
+                  <span>
+                    <a href="writers/5/nolan-thomas">
+                      Nolan Thomas 
+                    </a>  | 12/29/14 | 2:40 PM EST 
+                   </span><br />
+                  <!-- <span class="globe"></span><span class="comm">Comments | </span> -->
+                  <a class="globe" href="#disqus_thread" data-disqus-identifier="1045"> 0 </a>            
+                  <span class="comm">Comments</span>
+
+                  <!-- partial with reaction bar for the article -->
+                  <span class="barra master"><p></p></span>
+      <div class="box_perc">
+        <span class="perc master" style="width:100%">100%</span>
+      </div>            
+                      <p><p><br />
+So what should the Bears do now?</p>
+</p>
+                            </div> <!-- end div class="txt" -->
+            
+              </div> <!-- end div class="news_col" -->
+    
+          <div class="line_page"></div>
+            </div> <!-- end id="published_content" -->
+
+  <div class="box_bt_picks"> <!-- prev and next buttons shows 25 next/previous top picks articles   -->
+    <a href="javascript:;" class="bt_picks_prev" id="prev"> </a>
+    <a href="javascript:;" class="bt_picks_next" id="next"> </a>
+  </div>  <!-- prev and next buttons shows 25 next/previous top picks articles  -->
+
+  <div class="line_page"></div>          
+  <br/>
+
+
+    
+  
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    // var disqus_shortname = 'testplayersite'; // required: local
+    var disqus_shortname = 'playerpresscom'; // required: server
+    // var disqus_shortname = 'playerpress'; // required: server
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>           
+</div> <!-- end id="page" -->
+
+
+<!-- Sidebar -->
+<div id="sidebar">
+
+    <div class="line_sidebar"></div>
+
+    <div class="tips_box">
+      <a href="javascript:void(0)" onclick="showlayer('popup_sendtip')">
+        <img src="files/sidebar/tip.jpg" /><span>Send us a tip!</span>
+      </a>
+    </div>
+
+    <div class="line_sidebar"></div>
+
+    <div class="alerts_box">
+      Get Player Press Alerts<br />
+      <form action="player-alerts.html" method="post" id="alerts_form">
+        <label for="email_alerts">Enter your Email</label>
+        <input type="email" name="email" id="email_alerts" required="required" />
+        <input type="submit" name="submit" value="" />
+      </form>
+    </div>
+
+    <div class="social">
+      <ul>
+        <li><a href="http://www.facebook.com/playerpress" target="_blank">
+          <img src="files/sidebar/soc_face.png" /></a></li>         
+        <li><a href="http://www.twitter.com/playerpress" target="_blank">
+          <img src="files/sidebar/soc_twit.png" /></a></li>          
+        <li><a href="http://www.youtube.com/playerpress" target="_blank">
+          <img src="files/sidebar/soc_yout.png" /></a></li>          
+        <li><a href="http://playerpress1.tumblr.com" target="_blank">
+          <img src="files/sidebar/soc_linked.png" /></a></li>          
+      </ul>
+    </div>
+
+
+    <div class="spot_sidebar">
+      <!-- PP.com_HOME_Med_Rectangle_1 -->
+<div id='div-gpt-ad-1380323360876-1' style='width:300px; height:250px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1380323360876-1'); });
+</script>
+</div>      <!-- <a href="#"><img src="" /></a> -->
+    </div>
+
+    <!-- TOP ARTICLES FOR A SPORT OR FOR ANY OTHER PAGE -->
+      <div class="box">  
+        <div class="top">TOP STORIES</div>
+        <div class="content">
+          <ul>
+                 <li>
+                <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                <a href="articles/2015/04/03/electronic-arts-faces-lawsuit-against-former-nfl-players_1118">
+                Electronic Arts faces lawsuit against former NFL players</a>            
+             </li>  
+                 <li>
+                <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                <a href="articles/2015/04/02/tom-brady-rocks-awesome-prank-pic-on-facebook-for-april-foolrsquos-day_1117">
+                Tom Brady Rocks Awesome Prank Pic on Facebook for April Fool&rsquo;s Day</a>            
+             </li>  
+                 <li>
+                <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                <a href="articles/2015/03/30/indianapolis-colts-owner-jim-irsay-tweets-thoughts-on-controversial-religious-freedom-law_1114">
+                Indianapolis Colts Owner Jim Irsay Tweets Thoughts on Controversial Religious Freedom Law</a>            
+             </li>  
+                 <li>
+                <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                <a href="articles/2015/03/25/pete-carroll-presents-idea-for-to-change-extra-point-to-competition-committee_1113">
+                Pete Carroll Presents Idea for to Change Extra Point to Competition Committee</a>            
+             </li>  
+                 <li>
+                <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                <a href="articles/2015/03/23/houston-texans-a-candidate-for-hard-knocks-this-season_1112">
+                Houston Texans a Candidate for Hard Knocks This Season</a>            
+             </li>  
+                 <li>
+                <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                <a href="articles/2015/03/18/bernard-pierce-released-by-ravens-after-dui-arrest_1111">
+                Bernard Pierce Released By Ravens After DUI Arrest</a>            
+             </li>  
+                 <li>
+                <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                <a href="articles/2015/03/16/tim-tebow-doesnrsquot-need-the-veteran-combine_1110">
+                Tim Tebow Doesn&rsquo;t Need the Veteran Combine!</a>            
+             </li>  
+                 <li>
+                <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                <a href="articles/2015/03/11/demarco-murray-not-scared-off-by-chip-kelly-rumors_1109">
+                DeMarco Murray Not Scared Off By Chip Kelly Rumors</a>            
+             </li>  
+                 <li>
+                <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                <a href="articles/2015/03/10/tennessee-titans-qb-jake-locker-retires-from-the-game-at-26_1108">
+                Tennessee Titans QB Jake Locker Retires From the Game at 26</a>            
+             </li>  
+                 <li>
+                <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                <a href="articles/2015/03/10/hey-chip-kelly-what-the-duck_1106">
+                Hey Chip Kelly, What the Duck?</a>            
+             </li>  
+              
+          </ul>
+        </div>
+      </div> <!-- end div class="box" -->  
+    <div id="win_reactions" class="box pink">
+       <div class="top">REACTIONS
+         <span class="comments"><a href="javascript:void(0)" onclick="showlayerwin_1('win_trending')">TRENDING</a></span>          
+       </div>
+       <div class="content">
+                  <div class="react">
+
+                 <!-- <a href="reactions/"> -->
+                 <!-- <span class="barra "><p></p></span> -->
+                 <div class="barraNew master"><p></p></div>
+                 <!-- <div class="box_perc"> -->
+                 <div class="box_percNew">
+                   <div class="perc master" style="width: calc(35% - 31px);">
+                     35%
+                   </div>
+                    <!-- <span class="patch" style="width:px"></span> -->
+                    <!-- </a> -->
+                    <!-- GET THE MOST RECENT TAG OF THE MOST REPEATED ARTICLE IN A REACTION -->
+                                            <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                          <a href="articles/2014/08/13/tony-stewart-is-a-killer_1026">
+                            <div class="player">
+                              <img src="images/default_tag.jpg" width="26" height="26" />  
+                            </div>                            
+                          </a>
+                                    
+                  </div> <!-- end class="box_percNew"   -->
+                </div>  <!-- end class="react"      -->
+                  <div class="react">
+
+                 <!-- <a href="reactions/"> -->
+                 <!-- <span class="barra "><p></p></span> -->
+                 <div class="barraNew fail"><p></p></div>
+                 <!-- <div class="box_perc"> -->
+                 <div class="box_percNew">
+                   <div class="perc fail" style="width: calc(23% - 31px);">
+                     23%
+                   </div>
+                    <!-- <span class="patch" style="width:px"></span> -->
+                    <!-- </a> -->
+                    <!-- GET THE MOST RECENT TAG OF THE MOST REPEATED ARTICLE IN A REACTION -->
+                                            <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                          <a href="articles/2013/10/29/adrien-broner-stars-in-a-threesome-sextape-leaked-by-himself-video_490">
+                            <div class="player">
+                              <img src="files/tags/201309061731160.Screen Shot 2013-09-06 at 6.33.12 PM.jpg" width="26" height="26" />  
+                            </div>                            
+                          </a>
+                                    
+                  </div> <!-- end class="box_percNew"   -->
+                </div>  <!-- end class="react"      -->
+                  <div class="react">
+
+                 <!-- <a href="reactions/"> -->
+                 <!-- <span class="barra "><p></p></span> -->
+                 <div class="barraNew win"><p></p></div>
+                 <!-- <div class="box_perc"> -->
+                 <div class="box_percNew">
+                   <div class="perc win" style="width: calc(15% - 31px);">
+                     15%
+                   </div>
+                    <!-- <span class="patch" style="width:px"></span> -->
+                    <!-- </a> -->
+                    <!-- GET THE MOST RECENT TAG OF THE MOST REPEATED ARTICLE IN A REACTION -->
+                                            <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                          <a href="articles/2014/06/03/the-ultimate-fantasy-basketball-game-has-launched-and-it39s-free-to-play-video_950">
+                            <div class="player">
+                              <img src="files/tags/default_tag.jpg" width="26" height="26" />  
+                            </div>                            
+                          </a>
+                                    
+                  </div> <!-- end class="box_percNew"   -->
+                </div>  <!-- end class="react"      -->
+                  <div class="react">
+
+                 <!-- <a href="reactions/"> -->
+                 <!-- <span class="barra "><p></p></span> -->
+                 <div class="barraNew rumors"><p></p></div>
+                 <!-- <div class="box_perc"> -->
+                 <div class="box_percNew">
+                   <div class="perc rumors" style="width: calc(8% - 31px);">
+                     8%
+                   </div>
+                    <!-- <span class="patch" style="width:px"></span> -->
+                    <!-- </a> -->
+                    <!-- GET THE MOST RECENT TAG OF THE MOST REPEATED ARTICLE IN A REACTION -->
+                                            <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                          <a href="articles/2014/06/03/the-ultimate-fantasy-basketball-game-has-launched-and-it39s-free-to-play-video_950">
+                            <div class="player">
+                              <img src="files/tags/default_tag.jpg" width="26" height="26" />  
+                            </div>                            
+                          </a>
+                                    
+                  </div> <!-- end class="box_percNew"   -->
+                </div>  <!-- end class="react"      -->
+                  <div class="react">
+
+                 <!-- <a href="reactions/"> -->
+                 <!-- <span class="barra "><p></p></span> -->
+                 <div class="barraNew fade"><p></p></div>
+                 <!-- <div class="box_perc"> -->
+                 <div class="box_percNew">
+                   <div class="perc fade" style="width: calc(7% - 31px);">
+                     7%
+                   </div>
+                    <!-- <span class="patch" style="width:px"></span> -->
+                    <!-- </a> -->
+                    <!-- GET THE MOST RECENT TAG OF THE MOST REPEATED ARTICLE IN A REACTION -->
+                                            <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                          <a href="articles/2014/06/03/the-ultimate-fantasy-basketball-game-has-launched-and-it39s-free-to-play-video_950">
+                            <div class="player">
+                              <img src="files/tags/default_tag.jpg" width="26" height="26" />  
+                            </div>                            
+                          </a>
+                                    
+                  </div> <!-- end class="box_percNew"   -->
+                </div>  <!-- end class="react"      -->
+                  <div class="react">
+
+                 <!-- <a href="reactions/"> -->
+                 <!-- <span class="barra "><p></p></span> -->
+                 <div class="barraNew buzz"><p></p></div>
+                 <!-- <div class="box_perc"> -->
+                 <div class="box_percNew">
+                   <div class="perc buzz" style="width: calc(7% - 31px);">
+                     7%
+                   </div>
+                    <!-- <span class="patch" style="width:px"></span> -->
+                    <!-- </a> -->
+                    <!-- GET THE MOST RECENT TAG OF THE MOST REPEATED ARTICLE IN A REACTION -->
+                                            <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                          <a href="articles/2014/06/03/the-ultimate-fantasy-basketball-game-has-launched-and-it39s-free-to-play-video_950">
+                            <div class="player">
+                              <img src="files/tags/default_tag.jpg" width="26" height="26" />  
+                            </div>                            
+                          </a>
+                                    
+                  </div> <!-- end class="box_percNew"   -->
+                </div>  <!-- end class="react"      -->
+                  <div class="react">
+
+                 <!-- <a href="reactions/"> -->
+                 <!-- <span class="barra "><p></p></span> -->
+                 <div class="barraNew battle"><p></p></div>
+                 <!-- <div class="box_perc"> -->
+                 <div class="box_percNew">
+                   <div class="perc battle" style="width: calc(6% - 31px);">
+                     6%
+                   </div>
+                    <!-- <span class="patch" style="width:px"></span> -->
+                    <!-- </a> -->
+                    <!-- GET THE MOST RECENT TAG OF THE MOST REPEATED ARTICLE IN A REACTION -->
+                                            <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                          <a href="articles/2013/10/29/adrien-broner-stars-in-a-threesome-sextape-leaked-by-himself-video_490">
+                            <div class="player">
+                              <img src="files/tags/201309061731160.Screen Shot 2013-09-06 at 6.33.12 PM.jpg" width="26" height="26" />  
+                            </div>                            
+                          </a>
+                                    
+                  </div> <!-- end class="box_percNew"   -->
+                </div>  <!-- end class="react"      -->
+         </div> <!-- end class="content" -->
+    </div> <!-- end id="win_reactions" class="box pink"" -->
+    <div id="win_trending" class="box" style="display:none;">
+      <div class="top">
+        <a href="javascript:void(0)" onclick="showlayerwin_1('win_reactions')">REACTIONS</a>
+        <span class="comments">TRENDING</span>
+      </div>
+        <div class="content">
+               <div class="trending">
+               <span class="player">
+                 <img src="files/tags/default_tag.jpg" width="26" height="26" /> 
+                 <a href="tags/1739/madden"> Madden  </a>              
+               </span>
+             </div>
+               <div class="trending">
+               <span class="player">
+                 <img src="files/tags/default_tag.jpg" width="26" height="26" /> 
+                 <a href="tags/1740/ea-sports"> Ea Sports  </a>              
+               </span>
+             </div>
+               <div class="trending">
+               <span class="player">
+                 <img src="images/default_tag.jpg" width="26" height="26" /> 
+                 <a href="tags/1733/bryce-harper"> Bryce Harper  </a>              
+               </span>
+             </div>
+               <div class="trending">
+               <span class="player">
+                 <img src="images/default_tag.jpg" width="26" height="26" /> 
+                 <a href="tags/1734/steven-strasburg"> Steven Strasburg  </a>              
+               </span>
+             </div>
+               <div class="trending">
+               <span class="player">
+                 <img src="images/default_tag.jpg" width="26" height="26" /> 
+                 <a href="tags/1735/cole-hamles"> Cole Hamles  </a>              
+               </span>
+             </div>
+               <div class="trending">
+               <span class="player">
+                 <img src="images/default_tag.jpg" width="26" height="26" /> 
+                 <a href="tags/1736/noah-synderdaard"> Noah Synderdaard  </a>              
+               </span>
+             </div>
+               <div class="trending">
+               <span class="player">
+                 <img src="images/default_tag.jpg" width="26" height="26" /> 
+                 <a href="tags/1737/freddie-freeman"> Freddie Freeman  </a>              
+               </span>
+             </div>
+        
+        </div>
+    </div> <!-- end div id="win_trending"... -->
+
+    <div id="win_most_read" class="box pink">
+      <div class="top">MOST READ
+        <span class="comments"><a href="javascript:void(0)" onclick="showlayerwin('win_comments')">COMMENTS</a></span>
+      </div>
+      <div class="content">
+        <ul>
+              <li>
+            <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+            <a href="articles/2013/10/29/adrien-broner-stars-in-a-threesome-sextape-leaked-by-himself-video_490">
+               Adrien Broner Stars in a Threesome Sextape Leaked by Himself [VIDEO]</a>
+          </li>     
+              <li>
+            <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+            <a href="articles/2013/11/22/no-rape-charges-to-be-filed-against-fsus-jameis-winston_568">
+               No Rape Charges to be Filed Against FSU’s Jameis Winston</a>
+          </li>     
+              <li>
+            <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+            <a href="articles/2013/09/15/nut-job-on-bears-board-believes-nfl-is-fake-like-wwe-_295">
+               Nut Job On Bears Board Believes NFL is Fake Like WWE</a>
+          </li>     
+              <li>
+            <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+            <a href="articles/2013/11/05/husband-tasers-wife-after-bears-win-_508">
+               Husband Tasers Wife After Bears Win</a>
+          </li>     
+              <li>
+            <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+            <a href="articles/2013/11/05/is-there-a-colin-kaepernick-sextape-being-shopped-plus-some-baby-daddy-news-photo_507">
+               Is there a Colin Kaepernick Sextape being Shopped? Plus Some Baby Daddy News? [PHOTO]</a>
+          </li>     
+        
+        </ul>
+      </div>
+    </div>
+
+
+      <!-- MOST READ / COMMENTS -->
+    <div id="win_comments" class="box" style="display:none;">
+      <div class="top">
+        <a href="javascript:void(0)" onclick="showlayerwin('win_most_read')">MOST READ</a>
+        <span class="comments">COMMENTS</span>
+      </div>
+
+      <div class="content">
+        <ul>
+            <li>
+          <!-- <div class="globe"></div>  -->
+                          <div class="photo"> 
+                  <img src="thumbs_croped.php?img=images/default_user.jpg&w=40&h=40" />
+                </div>
+                <div class="comm">
+                   <a noref>Bob Whalon</a> on <br/>
+                   <span>
+                      <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                      <a href="articles/2015/01/28/quotdeflate-gatequot-isn39t-the-patriot39s-fault_1094">
+                      &quot;Deflate-Gate&quot; Isn&#39;t the Patriot&#39;s Fault</a>
+                   </span>
+                </div>
+                           
+          </li>
+            <li>
+          <!-- <div class="globe"></div>  -->
+                          <div class="photo"> 
+                  <img src="thumbs_croped.php?img=images/default_user.jpg&w=40&h=40" />
+                </div>
+                <div class="comm">
+                   <a noref>Bob Whalon</a> on <br/>
+                   <span>
+                      <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                      <a href="articles/2015/02/09/maybe-tampa-bay-should-not-draft-a-quarterback_1099">
+                      Maybe Tampa Bay Should Not Draft a Quarterback</a>
+                   </span>
+                </div>
+                           
+          </li>
+            <li>
+          <!-- <div class="globe"></div>  -->
+                          <div class="photo"> 
+                  <img src="thumbs_croped.php?img=images/default_user.jpg&w=40&h=40" />
+                </div>
+                <div class="comm">
+                   <a noref>Bob Whalon</a> on <br/>
+                   <span>
+                      <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                      <a href="articles/2015/02/16/buffalo-bills-looking-for-next-one-season-qb-in-josh-mccown_1101">
+                      Buffalo Bills Looking For Next One Season QB in Josh McCown</a>
+                   </span>
+                </div>
+                           
+          </li>
+            <li>
+          <!-- <div class="globe"></div>  -->
+                          <div class="photo"> 
+                  <img src="thumbs_croped.php?img=images/default_user.jpg&w=40&h=40" />
+                </div>
+                <div class="comm">
+                   <a noref>Bob Whalon</a> on <br/>
+                   <span>
+                      <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                      <a href="articles/2015/02/02/warren-sapp-arrested-on-prostitution-charges-nbsp_1097">
+                      Warren Sapp Arrested on Prostitution Charges
+&nbsp;</a>
+                   </span>
+                </div>
+                           
+          </li>
+            <li>
+          <!-- <div class="globe"></div>  -->
+                          <div class="photo"> 
+                  <img src="thumbs_croped.php?img=images/default_user.jpg&w=40&h=40" />
+                </div>
+                <div class="comm">
+                   <a noref>Bob Whalon</a> on <br/>
+                   <span>
+                      <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                      <a href="articles/2015/02/23/michael-sam-to-be-on-dancing-with-the-stars_1103">
+                      Michael Sam to Be On Dancing With the Stars</a>
+                   </span>
+                </div>
+                           
+          </li>
+            <li>
+          <!-- <div class="globe"></div>  -->
+                          <div class="photo"> 
+                  <img src="thumbs_croped.php?img=images/default_user.jpg&w=40&h=40" />
+                </div>
+                <div class="comm">
+                   <a noref>Bob Whalon</a> on <br/>
+                   <span>
+                      <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                      <a href="articles/2015/01/01/dallas-cowboys-will-have-to-face-ndamukong-suh-after-all_1081">
+                      Dallas Cowboys Will Have to Face Ndamukong Suh After All</a>
+                   </span>
+                </div>
+                           
+          </li>
+            <li>
+          <!-- <div class="globe"></div>  -->
+                          <div class="photo"> 
+                  <img src="thumbs_croped.php?img=images/default_user.jpg&w=40&h=40" />
+                </div>
+                <div class="comm">
+                   <a noref>Bob Whalon</a> on <br/>
+                   <span>
+                      <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                      <a href="articles/2014/12/22/johnny-manzielrsquos-season-mercifully-comes-to-an-end_1078">
+                      Johnny Manziel&rsquo;s Season Mercifully Comes to an End</a>
+                   </span>
+                </div>
+                           
+          </li>
+          </ul>  
+      </div>  <!-- end class="content" -->   
+    </div> <!-- end id="win_comments" class="box" style="display:none;" -->
+
+
+      <!-- RUMORS -->
+    <div class="box">
+      <div class="top">RUMORS</div>
+      <div class="content">
+        <ul>
+             <li>
+              <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+              <a href="articles/2013/12/31/aaron-rodgers-denies-gay-rumors_677">
+              Aaron Rodgers Denies Gay Rumors</a>            
+           </li>  
+             <li>
+              <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+              <a href="articles/2013/12/06/saban-going-to-texas_604">
+              Saban Going to Texas</a>            
+           </li>  
+             <li>
+              <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+              <a href="articles/2013/11/05/is-there-a-colin-kaepernick-sextape-being-shopped-plus-some-baby-daddy-news-photo_507">
+              Is there a Colin Kaepernick Sextape being Shopped? Plus Some Baby Daddy News? [PHOTO]</a>            
+           </li>  
+             <li>
+              <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+              <a href="articles/2013/10/10/cowboys-fan-claims-conspiracy-after-loss-to-broncos-video-_426">
+              Cowboys Fan Claims Conspiracy After Loss To Broncos [VIDEO]</a>            
+           </li>  
+             <li>
+              <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+              <a href="articles/2013/10/08/clowney-waiting-to-play-for-pay-tweet-_415">
+              Clowney Waiting To Play for Pay [TWEET]</a>            
+           </li>  
+            
+        </ul>
+      </div>
+    </div> <!-- end div class="box" -->
+
+
+    <div class="spot_sidebar">
+      <!-- PP.com_HOME_Med_Rectangle_2 -->
+<div id='div-gpt-ad-1380323360876-3' style='width:300px; height:250px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1380323360876-3'); });
+</script>
+</div>      <!-- <a href="#"><img src="" /></a> -->
+    </div> <!-- end div class="spot_sidebar" -->
+
+    <div class="box pink">
+      <div class="top">GRANDSTAND</div>
+      <div class="content">
+        <ul>
+                           <li>
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2014/07/25/the-fantasy-football-girl-hits-the-orange-carpet-video_1010">
+                    The Fantasy Football Girl Hits The Orange Carpet [VIDEO]</a>            
+                 </li>  
+                           <li>
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2014/07/21/the-fantasy-football-girl-covers-the-2014-espys-kickoff-party-video_1002">
+                    The Fantasy Football Girl Covers The 2014 ESPYs Kickoff Party [VIDEO]</a>            
+                 </li>  
+                           <li>
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2014/07/16/fastbreakplaycom-disrupts-the-online-sports-gaming-market-with-a-next-generation-fantasy-basketball-game-video_993">
+                    FastBreakPlay.com Disrupts The Online Sports Gaming Market With A Next-Generation Fantasy Basketball Game [VIDEO]</a>            
+                 </li>  
+                           <li>
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2014/06/03/the-ultimate-fantasy-basketball-game-has-launched-and-it39s-free-to-play-video_950">
+                    The Ultimate Fantasy Basketball Game Has Launched And It&#39;s Free To Play [VIDEO]</a>            
+                 </li>  
+                           <li>
+                    <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                    <a href="articles/2014/02/05/-giants-fan-wins-big-on-safety-bet-for-second-time-_782">
+                    Giants Fan Wins Big on Safety Bet for Second Time</a>            
+                 </li>  
+                    
+        </ul>
+      </div>
+    </div> <!-- end div class="box pink" -->
+
+    <div id="columnists" class="box">
+      <div class="top">FEATURED COLUMNISTS</div>
+      <div class="content">
+        <ul>
+          <li>
+            <div class="photo">
+              <img src="thumbs_croped.php?img=files/writers/201311061330370.picresized_th_1383762539_sw_IMG_0490_CC (1).jpg&w=40&h=40" />
+            </div>
+            <div class="comm">
+              <a href="writers/12/liz-loza">
+                Liz Loza              </a> <br />
+        
+              <span>Latest Article: 
+                <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                <a href="articles/2014/07/25/the-fantasy-football-girl-hits-the-orange-carpet-video_1010">
+                The Fantasy Football Girl Hits The Orange Carpet [VIDEO]</a>
+              </span>
+                </div>
+          </li>       
+          <li>
+            <div class="photo">
+              <img src="thumbs_croped.php?img=files/writers/201311201448210.B-Dub.jpg&w=40&h=40" />
+            </div>
+            <div class="comm">
+              <a href="writers/7/bob-whalon">
+                Bob Whalon              </a> <br />
+        
+              <span>Latest Article: 
+                <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                <a href="articles/2015/03/10/hey-chip-kelly-what-the-duck_1106">
+                Hey Chip Kelly, What the Duck?</a>
+              </span>
+                </div>
+          </li>       
+          <li>
+            <div class="photo">
+              <img src="thumbs_croped.php?img=files/writers/201311201458200.Travis.jpg&w=40&h=40" />
+            </div>
+            <div class="comm">
+              <a href="writers/8/travis-pulver">
+                Travis Pulver              </a> <br />
+        
+              <span>Latest Article: 
+                <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                <a href="articles/2015/04/02/tom-brady-rocks-awesome-prank-pic-on-facebook-for-april-foolrsquos-day_1117">
+                Tom Brady Rocks Awesome Prank Pic on Facebook for April...</a>
+              </span>
+                </div>
+          </li>       
+          <li>
+            <div class="photo">
+              <img src="thumbs_croped.php?img=files/writers/201312071741510.Me Nov 2013 PP Head shot.JPG&w=40&h=40" />
+            </div>
+            <div class="comm">
+              <a href="writers/5/nolan-thomas">
+                Nolan Thomas              </a> <br />
+        
+              <span>Latest Article: 
+                <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                <a href="articles/2014/12/29/bears-clean-housewhat-now_1080">
+                Bears Clean House..What Now?</a>
+              </span>
+                </div>
+          </li>       
+          <li>
+            <div class="photo">
+              <img src="thumbs_croped.php?img=files/writers/201311202213220.Sonny Black - Movie Pic_Resized.jpg&w=40&h=40" />
+            </div>
+            <div class="comm">
+              <a href="writers/6/sonny-black">
+                Sonny Black              </a> <br />
+        
+              <span>Latest Article: 
+                <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                <a href="articles/2015/04/03/electronic-arts-faces-lawsuit-against-former-nfl-players_1118">
+                Electronic Arts faces lawsuit against former NFL players</a>
+              </span>
+                </div>
+          </li>       
+   
+        </ul>
+      </div>
+    </div> <!-- div id="columnists"... -->
+
+    <!-- TWITTER WIDGET -->
+    <div class="twitter_widget">
+      <a class="twitter-timeline" href="https://twitter.com/playerpress" data-widget-id="364087967272280064">Tweets by @playerpress</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>      
+    </div>
+
+       <!-- FACEBOOK BOX -->
+    <div class="box_facebook">
+      <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fplayerpress&amp;width=300&amp;height=390&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;border_color&amp;header=true&amp;appId=132568373495530 " scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:390px;" allowTransparency="true"></iframe>
+    </div>
+    
+    <!-- PHOTOS BOX -->
+    <div class="box pink">
+      <div class="top"><img src="files/sidebar/ico_photos.png" />PHOTOS</div>
+      <div class="content photos">
+          <div id="slides">
+             <div class="slides_container">
+                     <img src="files/sidebar/slides/slider_01.jpg" alt="slide_sidebar_1" >
+                     <img src="files/sidebar/slides/slider_02.jpg" alt="slide_sidebar_2" >
+                     <img src="files/sidebar/slides/slider_03.jpg" alt="slide_sidebar_3" >
+                     <img src="files/sidebar/slides/slider_04.jpg" alt="slide_sidebar_4" >
+                     <img src="files/sidebar/slides/201308041518310.picresized_1343508999_Aspen.jpg" alt="Snowboarding" >
+                   </div>
+             <div class="bt"> 
+                <a href="javascript:;" class="prev"><img src="images/arrow-prev.png" alt="Prev"></a> 
+                <a href="javascript:;" class="next"><img src="images/arrow-next.png" alt="Next"></a> 
+             </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- VIDEOS BOX -->
+    <div class="box">
+      <div class="top"><img src="files/sidebar/ico_videos.png" />VIDEOS</div>
+      <div class="content_slider_videos">
+        <ul id="slider_videos">
+                        <li class="panel1">
+                  <iframe width="320" height="220" src="http://www.youtube.com/embed/d7H2AfleoTE" frameborder="0" allowfullscreen></iframe>
+                </li>          
+                        <li class="panel2">
+                  <iframe width="320" height="220" src="http://www.youtube.com/embed/9-FW4NWiRmY" frameborder="0" allowfullscreen></iframe>
+                </li>          
+                        <li class="panel3">
+                  <iframe width="320" height="220" src="http://www.youtube.com/embed/Joz8OFlrvSk" frameborder="0" allowfullscreen></iframe>
+                </li>          
+                        <li class="panel4">
+                  <iframe width="320" height="220" src="http://www.youtube.com/embed/-xSlBX32jx0" frameborder="0" allowfullscreen></iframe>
+                </li>          
+                        <li class="panel5">
+                  <iframe width="320" height="220" src="http://www.youtube.com/embed/NEk1s1vrF3I" frameborder="0" allowfullscreen></iframe>
+                </li>          
+                        <li class="panel6">
+                  <iframe width="320" height="220" src="http://www.youtube.com/embed/Uswv1i06PJs" frameborder="0" allowfullscreen></iframe>
+                </li>          
+                        <li class="panel7">
+                  <iframe width="320" height="220" src="http://www.youtube.com/embed/GaTSZrBZrMw" frameborder="0" allowfullscreen></iframe>
+                </li>          
+                        <li class="panel8">
+                  <iframe width="320" height="220" src="http://www.youtube.com/embed/quNyBYOB_4Q" frameborder="0" allowfullscreen></iframe>
+                </li>          
+                        <li class="panel9">
+                  <iframe width="320" height="220" src="http://www.youtube.com/embed/iDYJ4SBxbiQ" frameborder="0" allowfullscreen></iframe>
+                </li>          
+                        <li class="panel10">
+                  <iframe width="320" height="220" src="http://www.youtube.com/embed/1Che4cz5Pq0" frameborder="0" allowfullscreen></iframe>
+                </li>          
+                  
+        </ul>
+      </div>      
+    </div> <!-- end class="box" -->
+
+
+    <!-- SPOT SIDEBAR   -->
+    <div class="spot_sidebar">
+      <!-- PP.com_HOME_Med_Rectangle_3 -->
+<div id='div-gpt-ad-1380323360876-4' style='width:300px; height:250px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1380323360876-4'); });
+</script>
+</div>      <!-- <a href="#"><img src="" /></a> -->
+    </div>
+
+                  <!-- OTHER NEWS SOURCES -->
+    <div class="box pink">
+      <div class="top">NEWS SOURCES</div>
+      <div class="content">
+        <ul>
+             <li><a href="http://www.azcentral.com" target="_blank">
+                  Arizona Republic 
+                </a>
+           </li>
+             <li><a href="http://www.ap.org" target="_blank">
+                  Associated Press 
+                </a>
+           </li>
+             <li><a href="http://www.ajc.com" target="_blank">
+                  Atlanta Journal-Constitution 
+                </a>
+           </li>
+             <li><a href="http://www.baltimoresun.com" target="_blank">
+                  Baltimore Sun 
+                </a>
+           </li>
+             <li><a href="http://www.barstoolsports.com" target="_blank">
+                  Barstool Sports 
+                </a>
+           </li>
+             <li><a href="http://www.thebiglead.com" target="_blank">
+                  Big Lead Sports 
+                </a>
+           </li>
+             <li><a href="http://www.bleacherreport.com" target="_blank">
+                  Bleacher Report 
+                </a>
+           </li>
+             <li><a href="http://www.bossip.com" target="_blank">
+                  Bossip 
+                </a>
+           </li>
+             <li><a href="http://www.boston.com" target="_blank">
+                  Boston Globe 
+                </a>
+           </li>
+             <li><a href="http://www.bostonherald.com" target="_blank">
+                  Boston Herald 
+                </a>
+           </li>
+             <li><a href="http://www.buffalonews.com" target="_blank">
+                  Buffalo News 
+                </a>
+           </li>
+             <li><a href="http://www.businessinsider.com" target="_blank">
+                  Business Insider 
+                </a>
+           </li>
+             <li><a href="http://www.bustedcoverage.com" target="_blank">
+                  Busted Coverage 
+                </a>
+           </li>
+             <li><a href="http://www.buzzfeed.com/sports" target="_blank">
+                  BuzzFeed Sports 
+                </a>
+           </li>
+             <li><a href="http://www.cbssports.com" target="_blank">
+                  CBS Sports 
+                </a>
+           </li>
+             <li><a href="http://www.charlotteobserver.com" target="_blank">
+                  Charlotte Observer 
+                </a>
+           </li>
+             <li><a href="http://www.suntimes.com" target="_blank">
+                  Chicago Sun-Times 
+                </a>
+           </li>
+             <li><a href="http://www.chicagotribune.com" target="_blank">
+                  Chicago Tribune 
+                </a>
+           </li>
+             <li><a href="http://www.cincinnati.com" target="_blank">
+                  Cincinnati Enquirer 
+                </a>
+           </li>
+             <li><a href="http://www.cleveland.com" target="_blank">
+                  Cleveland Plain Dealer 
+                </a>
+           </li>
+             <li><a href="http://www.cnbc.com" target="_blank">
+                  CNBC 
+                </a>
+           </li>
+             <li><a href="http://www.college2pro.com" target="_blank">
+                  College2Pro 
+                </a>
+           </li>
+             <li><a href="http://www.mirror.co.uk" target="_blank">
+                  Daily Mirror (U.K.)  
+                </a>
+           </li>
+             <li><a href="http://www.dallasnews.com" target="_blank">
+                  Dallas Morning News 
+                </a>
+           </li>
+             <li><a href="http://www.deadspin.com" target="_blank">
+                  Deadspin 
+                </a>
+           </li>
+             <li><a href="http://www.denverpost.com" target="_blank">
+                  Denver Post 
+                </a>
+           </li>
+             <li><a href="http://www.detroitnews.com" target="_blank">
+                  Detroit News 
+                </a>
+           </li>
+             <li><a href="http://www.espn.com" target="_blank">
+                  ESPN 
+                </a>
+           </li>
+             <li><a href="http://www.fansided.com" target="_blank">
+                  Fan Sided 
+                </a>
+           </li>
+             <li><a href="http://www.jacksonville.com" target="_blank">
+                  Florida Times-Union 
+                </a>
+           </li>
+             <li><a href="http://www.foxsports.com" target="_blank">
+                  Fox Sports 
+                </a>
+           </li>
+             <li><a href="http://www.chron.com" target="_blank">
+                  Houston Chronicle 
+                </a>
+           </li>
+             <li><a href="http://www.insidetheleague.com" target="_blank">
+                  Inside The League 
+                </a>
+           </li>
+             <li><a href="http://www.joefavorito.com" target="_blank">
+                  Joe Favorito 
+                </a>
+           </li>
+             <li><a href="http://www.justjared.com" target="_blank">
+                  Just Jared 
+                </a>
+           </li>
+             <li><a href="http://www.kansascity.com" target="_blank">
+                  Kansas City Star 
+                </a>
+           </li>
+             <li><a href="http://www.reviewjournal.com" target="_blank">
+                  Las Vegas Review-Journal 
+                </a>
+           </li>
+             <li><a href="http://www.latimes.com" target="_blank">
+                  Los Angeles Times 
+                </a>
+           </li>
+             <li><a href="http://www.mashable.com" target="_blank">
+                  Mashable 
+                </a>
+           </li>
+             <li><a href="http://www.mediatakeout.com" target="_blank">
+                  Media Takeout 
+                </a>
+           </li>
+             <li><a href="http://www.miamiherald.com" target="_blank">
+                  Miami Herald 
+                </a>
+           </li>
+             <li><a href="http://www.jsonline.com" target="_blank">
+                  Milwaukee Journal Sentinel 
+                </a>
+           </li>
+             <li><a href="http://www.mlb.com" target="_blank">
+                  MLB.com 
+                </a>
+           </li>
+             <li><a href="http://www.mlssoccer.com" target="_blank">
+                  MLS Soccer 
+                </a>
+           </li>
+             <li><a href="http://www.mmajunkie.com" target="_blank">
+                  MMA Junkie 
+                </a>
+           </li>
+             <li><a href="http://www.nascar.com" target="_blank">
+                  NASCAR.com 
+                </a>
+           </li>
+             <li><a href="http://www.nashvillecitypaper.com" target="_blank">
+                  Nashville City Paper 
+                </a>
+           </li>
+             <li><a href="http://www.nationalenquirer.com" target="_blank">
+                  National Enquirer 
+                </a>
+           </li>
+             <li><a href="http://www.nationalfootballpost.com" target="_blank">
+                  National Football Post 
+                </a>
+           </li>
+             <li><a href="http://www.nba.com" target="_blank">
+                  NBA.com 
+                </a>
+           </li>
+             <li><a href="http://www.nbcsports.msnbc.com" target="_blank">
+                  NBC Sports 
+                </a>
+           </li>
+             <li><a href="http://www.nesn.com" target="_blank">
+                  NESN 
+                </a>
+           </li>
+             <li><a href="http://www.nola.com" target="_blank">
+                  New Orleans Times-Picayune 
+                </a>
+           </li>
+             <li><a href="http://www.nfl.com" target="_blank">
+                  NFL.com 
+                </a>
+           </li>
+             <li><a href="http://www.nydailynews.com" target="_blank">
+                  NY Daily News 
+                </a>
+           </li>
+             <li><a href="http://www.nypost.com" target="_blank">
+                  NY Post 
+                </a>
+           </li>
+             <li><a href="http://www.nytimes.com" target="_blank">
+                  NY Times 
+                </a>
+           </li>
+             <li><a href="http://www.insidebayarea.com" target="_blank">
+                  Oakland Tribune 
+                </a>
+           </li>
+             <li><a href="http://www.orlandosentinel.com" target="_blank">
+                  Orlando Sentinel 
+                </a>
+           </li>
+             <li><a href="http://www.philly.com" target="_blank">
+                  Philly Inquirer 
+                </a>
+           </li>
+             <li><a href="http://www.twincities.com" target="_blank">
+                  Pioneer Press 
+                </a>
+           </li>
+             <li><a href="http://www.post-gazette.com" target="_blank">
+                  Pittsburgh Post-Gazette 
+                </a>
+           </li>
+             <li><a href="http://www.profootballtalk.com" target="_blank">
+                  Pro Football Talk 
+                </a>
+           </li>
+             <li><a href="http://www.radaronline.com" target="_blank">
+                  Radar Online 
+                </a>
+           </li>
+             <li><a href="http://www.mysanantonio.com" target="_blank">
+                  San Antonio Express-News 
+                </a>
+           </li>
+             <li><a href="http://www.utsandiego.com" target="_blank">
+                  San Diego Union-Tribune 
+                </a>
+           </li>
+             <li><a href="http://www.sfgate.com" target="_blank">
+                  San Francisco Chronicle 
+                </a>
+           </li>
+             <li><a href="http://www.saturdaydownsouth.com" target="_blank">
+                  Saturday Down South 
+                </a>
+           </li>
+             <li><a href="http://www.sbnation.com" target="_blank">
+                  SB Nation 
+                </a>
+           </li>
+             <li><a href="http://www.scout.com" target="_blank">
+                  Scout.com 
+                </a>
+           </li>
+             <li><a href="http://www.seattletimes.com" target="_blank">
+                  Seattle Times 
+                </a>
+           </li>
+             <li><a href="http://www.thesmokinggun.com" target="_blank">
+                  Smoking Gun 
+                </a>
+           </li>
+             <li><a href="http://www.sportingnews.com" target="_blank">
+                  Sporting News 
+                </a>
+           </li>
+             <li><a href="http://www.sportsagentblog.com" target="_blank">
+                  Sports Agent Blog 
+                </a>
+           </li>
+             <li><a href="http://sportsillustrated.cnn.com" target="_blank">
+                  Sports Illustrated 
+                </a>
+           </li>
+             <li><a href="http://www.stltoday.com" target="_blank">
+                  St. Louis Post-Dispatch 
+                </a>
+           </li>
+             <li><a href="http://www.nj.com" target="_blank">
+                  Star Ledger 
+                </a>
+           </li>
+             <li><a href="http://www.startribune.com" target="_blank">
+                  Star Tribune 
+                </a>
+           </li>
+             <li><a href="http://www.tbo.com" target="_blank">
+                  Tampa Tribune 
+                </a>
+           </li>
+             <li><a href="http://www.telegraph.co.uk" target="_blank">
+                  Telegraph (U.K.) 
+                </a>
+           </li>
+             <li><a href="http://www.tennessean.com" target="_blank">
+                  Tennessean 
+                </a>
+           </li>
+             <li><a href="http://www.terezowens.com" target="_blank">
+                  Terez Owens 
+                </a>
+           </li>
+             <li><a href="http://www.tmz.com" target="_blank">
+                  TMZ 
+                </a>
+           </li>
+             <li><a href="http://www.torontosun.com" target="_blank">
+                  Toronto Sun 
+                </a>
+           </li>
+             <li><a href="http://www.ufc.com" target="_blank">
+                  UFC.com 
+                </a>
+           </li>
+             <li><a href="http://www.ultimatetop10s.com" target="_blank">
+                  Ultimate Top 10s 
+                </a>
+           </li>
+             <li><a href="http://www.usatoday.com" target="_blank">
+                  USA Today 
+                </a>
+           </li>
+             <li><a href="http://www.variety.com" target="_blank">
+                  Variety 
+                </a>
+           </li>
+             <li><a href="http://www.wsj.com" target="_blank">
+                  Wall Street Journal 
+                </a>
+           </li>
+             <li><a href="http://www.walterfootball.com" target="_blank">
+                  Walter Football 
+                </a>
+           </li>
+             <li><a href="http://www.washingtonpost.com" target="_blank">
+                  Washington Post 
+                </a>
+           </li>
+             <li><a href="http://www.x17online.com" target="_blank">
+                  X17 
+                </a>
+           </li>
+             <li><a href="http://sports.yahoo.com" target="_blank">
+                  Yahoo Sports 
+                </a>
+           </li>
+             <li><a href="http://www.yardbarker.com" target="_blank">
+                  Yardbarker 
+                </a>
+           </li>
+          </ul>
+      </div>
+    </div>
+
+    <!-- fourth sidebar ad spot -->  
+    <div class="spot_sidebar">
+      <script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</script>
+
+<script type='text/javascript'>
+googletag.cmd.push(function() {
+googletag.defineSlot('/1052137/PP.com_HOME_Leaderboard', [728, 90], 'div-gpt-ad-1380323360876-0').addService(googletag.pubads());
+googletag.defineSlot('/1052137/PP.com_HOME_Med_Rectangle_1', [300, 250], 'div-gpt-ad-1380323360876-1').addService(googletag.pubads());
+googletag.defineSlot('/1052137/PP.com_HOME_Med_Rectangle_10', [300, 250], 'div-gpt-ad-1380323360876-2').addService(googletag.pubads());
+googletag.defineSlot('/1052137/PP.com_HOME_Med_Rectangle_2', [300, 250], 'div-gpt-ad-1380323360876-3').addService(googletag.pubads());
+googletag.defineSlot('/1052137/PP.com_HOME_Med_Rectangle_3', [300, 250], 'div-gpt-ad-1380323360876-4').addService(googletag.pubads());
+googletag.defineSlot('/1052137/PP.com_HOME_Med_Rectangle_4', [300, 250], 'div-gpt-ad-1380323360876-5').addService(googletag.pubads());
+googletag.defineSlot('/1052137/PP.com_HOME_Med_Rectangle_4A', [300, 250], 'div-gpt-ad-1380323360876-6').addService(googletag.pubads());
+googletag.defineSlot('/1052137/PP.com_HOME_Med_Rectangle_5', [300, 250], 'div-gpt-ad-1380323360876-7').addService(googletag.pubads());
+googletag.defineSlot('/1052137/PP.com_HOME_Med_Rectangle_6', [300, 250], 'div-gpt-ad-1380323360876-8').addService(googletag.pubads());
+googletag.defineSlot('/1052137/PP.com_HOME_Med_Rectangle_7', [300, 250], 'div-gpt-ad-1380323360876-9').addService(googletag.pubads());
+googletag.defineSlot('/1052137/PP.com_HOME_Med_Rectangle_8', [300, 250], 'div-gpt-ad-1380323360876-10').addService(googletag.pubads());
+googletag.defineSlot('/1052137/PP.com_HOME_Med_Rectangle_9', [300, 250], 'div-gpt-ad-1380323360876-11').addService(googletag.pubads());
+googletag.pubads().enableSingleRequest();
+googletag.enableServices();
+});
+</script><!-- PP.com_HOME_Med_Rectangle_4A -->
+<div id='div-gpt-ad-1380323360876-6' style='width:300px; height:250px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1380323360876-6'); });
+</script>
+</div>    </div>
+    
+</div> <!-- div id="sidebar" -->
+
+<div class="clear"></div>
+<div class="clear"></div>
+
+<!-- Follow us -->
+<div id="follow">
+  <div class="title">FOLLOW US</div>
+  <div class="link f_f">
+    <a href="http://www.facebook.com/playerpress" target="_blank"><img src="files/followus/follow_facebook.png" /></a>
+  </div>
+  <div class="link f_t">
+    <a href="http://www.twitter.com/playerpress" target="_blank"><img src="files/followus/follow_twitter.png" /></a>
+  </div>
+  <div class="link f_y">
+    <a href="http://www.youtube.com/playerpress" target="_blank"><img src="files/followus/follow_youtube.png" /></a>
+  </div>
+  <div class="link f_l">
+    <a href="http://playerpress1.tumblr.com" target="_blank"><img src="files/followus/201311151605250.follow_tumblr_Logo.png" /></a>
+  </div>
+  <div class="link f_r">
+    <a href="rss.html" target="_blank"><img src="files/followus/follow_rss.png" /></a>
+  </div>
+  <div class="link f_p">
+    <a href="javascript:;">
+    <!-- <a href="" target="_blank"> -->
+    <img src="files/followus/follow_playernews.png" /></a>
+  </div>  
+</div>
+<div class="page_title_big new">Top Stories</div><div class="clear"></div>
+
+    <!-- Top stories carousel -->
+    <div id="carousel">
+      <div id="slider_carousel">
+        <div class="bt_prev"><a class="buttons prev" href="javascript:;"></a></div>
+        <div class="viewport">
+          <ul class="overview">
+                <li>
+              <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+              <a href="articles/2015/04/03/electronic-arts-faces-lawsuit-against-former-nfl-players_1118">
+                 <!-- <img src="" /> -->
+                 <img src="thumbs_croped.php?img=files/articles/201504031050070.madden-nfl.jpg&w=170&h=140" width="170" height="140" />
+                 <div class="desc">Electronic Arts faces lawsuit against former NFL players</div>
+              </a>
+            </li>      
+                <li>
+              <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+              <a href="articles/2015/04/02/tom-brady-rocks-awesome-prank-pic-on-facebook-for-april-foolrsquos-day_1117">
+                 <!-- <img src="" /> -->
+                 <img src="thumbs_croped.php?img=files/articles/201504020027520.proxy.jpg&w=170&h=140" width="170" height="140" />
+                 <div class="desc">Tom Brady Rocks Awesome Prank Pic on Facebook for April Fool&rsquo;s Day</div>
+              </a>
+            </li>      
+                <li>
+              <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+              <a href="articles/2015/03/30/indianapolis-colts-owner-jim-irsay-tweets-thoughts-on-controversial-religious-freedom-law_1114">
+                 <!-- <img src="" /> -->
+                 <img src="thumbs_croped.php?img=files/articles/201503302228350.irsay-fighting-for-life.jpg&w=170&h=140" width="170" height="140" />
+                 <div class="desc">Indianapolis Colts Owner Jim Irsay Tweets Thoughts on Controversial Religious Freedom Law</div>
+              </a>
+            </li>      
+                <li>
+              <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+              <a href="articles/2015/03/25/pete-carroll-presents-idea-for-to-change-extra-point-to-competition-committee_1113">
+                 <!-- <img src="" /> -->
+                 <img src="thumbs_croped.php?img=files/articles/201503251923070.PC.jpg&w=170&h=140" width="170" height="140" />
+                 <div class="desc">Pete Carroll Presents Idea for to Change Extra Point to Competition Committee</div>
+              </a>
+            </li>      
+                <li>
+              <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+              <a href="articles/2015/03/23/houston-texans-a-candidate-for-hard-knocks-this-season_1112">
+                 <!-- <img src="" /> -->
+                 <img src="thumbs_croped.php?img=files/articles/201503232228470.Texans4.jpg&w=170&h=140" width="170" height="140" />
+                 <div class="desc">Houston Texans a Candidate for Hard Knocks This Season</div>
+              </a>
+            </li>      
+                <li>
+              <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+              <a href="articles/2015/03/18/bernard-pierce-released-by-ravens-after-dui-arrest_1111">
+                 <!-- <img src="" /> -->
+                 <img src="thumbs_croped.php?img=files/articles/201503182304580.BP.jpg&w=170&h=140" width="170" height="140" />
+                 <div class="desc">Bernard Pierce Released By Ravens After DUI Arrest</div>
+              </a>
+            </li>      
+                <li>
+              <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+              <a href="articles/2015/03/16/tim-tebow-doesnrsquot-need-the-veteran-combine_1110">
+                 <!-- <img src="" /> -->
+                 <img src="thumbs_croped.php?img=files/articles/201503162207420.Tebow.jpg&w=170&h=140" width="170" height="140" />
+                 <div class="desc">Tim Tebow Doesn&rsquo;t Need the Veteran Combine!</div>
+              </a>
+            </li>      
+                <li>
+              <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+              <a href="articles/2015/03/11/demarco-murray-not-scared-off-by-chip-kelly-rumors_1109">
+                 <!-- <img src="" /> -->
+                 <img src="thumbs_croped.php?img=files/articles/201503112249590.Sam+Bradford+Demarco+Murray+St+Louis+Rams+JwFsF_NhBRhl.jpg&w=170&h=140" width="170" height="140" />
+                 <div class="desc">DeMarco Murray Not Scared Off By Chip Kelly Rumors</div>
+              </a>
+            </li>      
+                <li>
+              <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+              <a href="articles/2015/03/10/tennessee-titans-qb-jake-locker-retires-from-the-game-at-26_1108">
+                 <!-- <img src="" /> -->
+                 <img src="thumbs_croped.php?img=files/articles/201503102302010.jake-locker.jpg&w=170&h=140" width="170" height="140" />
+                 <div class="desc">Tennessee Titans QB Jake Locker Retires From the Game at 26</div>
+              </a>
+            </li>      
+                <li>
+              <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+              <a href="articles/2015/03/10/hey-chip-kelly-what-the-duck_1106">
+                 <!-- <img src="" /> -->
+                 <img src="thumbs_croped.php?img=files/articles/201503101148420.USATSI_8272386_168380420_lowres.jpg&w=170&h=140" width="170" height="140" />
+                 <div class="desc">Hey Chip Kelly, What the Duck?</div>
+              </a>
+            </li>      
+              </ul>
+        </div>
+      <div class="bt_next"><a class="buttons next" href="javascript:;"></a></div>
+      </div>
+    </div>
+
+<div class="page_title_big new">Headlines</div> <div class="clear"></div>
+
+<!-- Headlines -->
+<div id="headlines">
+
+<!--  show the first four sport articles outside,before the MORE option  -->
+            <div class="box nfl">
+               <div class="title">
+                  NFL               </div>
+                           <div class="txt">
+                    <ul>
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2015/04/02/tom-brady-rocks-awesome-prank-pic-on-facebook-for-april-foolrsquos-day_1117">
+                            Tom Brady Rocks Awesome Prank Pic on Facebook for April Fool&rsquo;s Day 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2015/03/30/indianapolis-colts-owner-jim-irsay-tweets-thoughts-on-controversial-religious-freedom-law_1114">
+                            Indianapolis Colts Owner Jim Irsay Tweets Thoughts on Controversial Religious Freedom Law 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2015/03/25/pete-carroll-presents-idea-for-to-change-extra-point-to-competition-committee_1113">
+                            Pete Carroll Presents Idea for to Change Extra Point to Competition Committee 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2015/03/23/houston-texans-a-candidate-for-hard-knocks-this-season_1112">
+                            Houston Texans a Candidate for Hard Knocks This Season 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2015/03/18/bernard-pierce-released-by-ravens-after-dui-arrest_1111">
+                            Bernard Pierce Released By Ravens After DUI Arrest 
+                         </a>     
+                      </li> 
+                                  </ul>
+                  </div>
+                      </div>
+               <div class="box nba">
+               <div class="title">
+                  NBA               </div>
+                           <div class="txt">
+                    <ul>
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2014/06/16/spurs-prove-lebron-no-michael_964">
+                            Spurs Prove LeBron No Michael 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2014/04/29/nba-does-it-right-with-lifetime-ban-on-sterling_908">
+                            NBA Does It Right With Lifetime Ban on Sterling 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2014/04/28/naacp-is-dumber-than-donald-sterling_905">
+                            NAACP is Dumber Than Donald Sterling 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2014/01/07/-bulls-trade-luol-deng-to-cavaliers-tweet-_698">
+                            
+	Bulls Trade Luol Deng to Cavaliers [TWEET]
+ 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2013/11/23/chicago-bulls-pg-derrick-rose-to-undergo-knee-surgery_573">
+                            Chicago Bulls PG Derrick Rose To Undergo Knee Surgery 
+                         </a>     
+                      </li> 
+                                  </ul>
+                  </div>
+                      </div>
+               <div class="box mlb">
+               <div class="title">
+                  MLB               </div>
+                           <div class="txt">
+                    <ul>
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2014/08/06/cubs-javier-baez-first-major-league-hit-a-game-winning-homer-video_1021">
+                            Cubs Javier Baez First Major League Hit a Game Winning Homer [VIDEO] 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2014/07/29/want-to-trade-places-with-a-major-leaguer_1013">
+                            Want to Trade Places With a Major Leaguer? 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2014/07/02/ernie-banks-graces-sports-illustrated-cover-video_983">
+                            Ernie Banks Graces Sports Illustrated Cover [VIDEO] 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2014/05/21/jeff-samardzija-best-winless-pitcher-in-baseball-video_936">
+                            Jeff Samardzija Best Winless Pitcher in Baseball [VIDEO] 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2014/05/20/cubs-hand-yankees-tanaka-first-loss_934">
+                            Cubs Hand Yankees Tanaka First Loss 
+                         </a>     
+                      </li> 
+                                  </ul>
+                  </div>
+                      </div>
+               <div class="box ncaa">
+               <div class="title">
+                  NCAA               </div>
+                           <div class="txt">
+                    <ul>
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2015/01/20/joepa-is-no-1-again_1088">
+                            JoePa is No. 1 Again 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2014/03/23/kentucky-shocks-no1-wichita-state_841">
+                            Kentucky Shocks No.1 Wichita State 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2014/01/28/-northwestern-football-players-want-union-_761">
+                            
+	Northwestern Football Players Want Union
+ 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2014/01/10/-kiffin-lands-kush-job-at-alabama-_709">
+                            
+	Kiffin Lands Kush Job at Alabama
+ 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2014/01/07/rest-in-peace-bcs-video_697">
+                            Rest in Peace BCS [VIDEO] 
+                         </a>     
+                      </li> 
+                                  </ul>
+                  </div>
+                      </div>
+       
+<!--  show the sports articles inside the MORE option  -->
+         <div class="box more">
+           <div class="title">
+              MORE           </div>
+                   <div class="txt">
+                <ul>
+                            <li>
+                     <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                     <a href="articles/2015/04/03/electronic-arts-faces-lawsuit-against-former-nfl-players_1118">
+                        Electronic Arts faces lawsuit against former NFL players 
+                     </a>     
+                  </li> 
+                            <li>
+                     <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                     <a href="articles/2014/12/09/take-your-fitness-to-another-level-with-indoor-bouldering_1072">
+                        Take your fitness to another level with indoor bouldering 
+                     </a>     
+                  </li> 
+                            <li>
+                     <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                     <a href="articles/2014/11/01/martino39s-mmbf-might-end-up-having-political-interest_1061">
+                        Martino&#39;s MMBF Might End Up Having Political Interest 
+                     </a>     
+                  </li> 
+                            <li>
+                     <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                     <a href="articles/2014/08/13/tony-stewart-is-a-killer_1026">
+                        Tony Stewart is a Killer 
+                     </a>     
+                  </li> 
+                            <li>
+                     <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                     <a href="articles/2014/08/04/soccer-will-never-become-relevant-in-america_1020">
+                        Soccer Will Never Become Relevant in America 
+                     </a>     
+                  </li> 
+                          </ul>
+              </div>
+              </div>   
+
+  <div class="clear"></div>
+
+<!--  show the articles for all categories  -->
+            <div class="box rum">
+               <div class="title">
+                  RUMORS               </div>
+                           <div class="txt">
+                    <ul>
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2013/12/31/aaron-rodgers-denies-gay-rumors_677">
+                            Aaron Rodgers Denies Gay Rumors 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2013/12/06/saban-going-to-texas_604">
+                            Saban Going to Texas 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2013/11/05/is-there-a-colin-kaepernick-sextape-being-shopped-plus-some-baby-daddy-news-photo_507">
+                            Is there a Colin Kaepernick Sextape being Shopped? Plus Some Baby Daddy News? [PHOTO] 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2013/10/10/cowboys-fan-claims-conspiracy-after-loss-to-broncos-video-_426">
+                            Cowboys Fan Claims Conspiracy After Loss To Broncos [VIDEO]
+ 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2013/10/08/clowney-waiting-to-play-for-pay-tweet-_415">
+                            Clowney Waiting To Play for Pay [TWEET]
+ 
+                         </a>     
+                      </li> 
+                                  </ul>
+                  </div>
+                      </div>
+               <div class="box grand">
+               <div class="title">
+                  GRANDSTAND               </div>
+                           <div class="txt">
+                    <ul>
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2014/07/25/the-fantasy-football-girl-hits-the-orange-carpet-video_1010">
+                            The Fantasy Football Girl Hits The Orange Carpet [VIDEO] 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2014/07/21/the-fantasy-football-girl-covers-the-2014-espys-kickoff-party-video_1002">
+                            The Fantasy Football Girl Covers The 2014 ESPYs Kickoff Party [VIDEO] 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2014/07/16/fastbreakplaycom-disrupts-the-online-sports-gaming-market-with-a-next-generation-fantasy-basketball-game-video_993">
+                            FastBreakPlay.com Disrupts The Online Sports Gaming Market With A Next-Generation Fantasy Basketball Game [VIDEO] 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2014/06/03/the-ultimate-fantasy-basketball-game-has-launched-and-it39s-free-to-play-video_950">
+                            The Ultimate Fantasy Basketball Game Has Launched And It&#39;s Free To Play [VIDEO] 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2014/02/05/-giants-fan-wins-big-on-safety-bet-for-second-time-_782">
+                            
+	Giants Fan Wins Big on Safety Bet for Second Time
+ 
+                         </a>     
+                      </li> 
+                                  </ul>
+                  </div>
+                      </div>
+               <div class="box desk">
+               <div class="title">
+                  THE DESK               </div>
+                           <div class="txt">
+                    <ul>
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2013/07/18/player-press-seeking-sports-business-reporter_222">
+                            Player Press Seeking Sports Business Reporter 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2013/07/17/player-press-seeking-mma-reporter_225">
+                            Player Press Seeking MMA Reporter 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2013/07/17/player-press-seeking-mlb-reporter_224">
+                            Player Press Seeking MLB Reporter 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2013/07/15/player-press-seeking-sports-social-media-reporter_221">
+                            Player Press Seeking Sports Social Media Reporter 
+                         </a>     
+                      </li> 
+                                    <li>
+                         <!-- <a href="article_analyzer.php?art_id=&slider="> -->
+                         <a href="articles/2013/07/12/player-press-seeking-nfl-reporter_223">
+                            Player Press Seeking NFL Reporter 
+                         </a>     
+                      </li> 
+                                  </ul>
+                  </div>
+                      </div>
+   
+    <div class="box company">
+      <div class="title">COMPANY INFO</div>
+      <div class="txt">
+        <ul>
+                 <li><a href="more-pages/1">About Us</a></li>
+                 <li><a href="more-pages/2">Masthead</a></li>
+                 <li><a href="more-pages/4">Advertising</a></li>
+                 <li><a href="more-pages/9">Write For Us</a></li>
+                 <li><a href="more-pages/3">Press</a></li>
+                 <li><a href="more-pages/5">FAQs</a></li>
+                 <li><a href="more-pages/7">Privacy Policy</a></li>
+              <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="box what">
+      <div class="title">WHAT IS PLAYERPRESS</div>
+      <div class="txt">
+        Player Press is a sports media company dedicated to delivering high-quality sports and lifestyle content across the web.&nbsp;<br />
+<br />
+PlayerPress.com publishes daily sports news, articles, photos, videos, social media, rumors and commentary.<br />
+<br />
+Based in New York City.      </div>
+    </div>
+
+</div> <!-- div id="headlines" -->
+
+<div class="clear"></div>
+  <!-- Footer -->
+  <div id="footer">
+    <div class="copyright"><p>
+	&copy; 2013 Player Press, LLC - All Rights Reserved</p>
+</div>
+    <div class="logo"><img src="files/logo_footer.png" /></div>
+  </div>
+
+</div> <!-- class=container -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43863911-1', 'playerpress.com');
+  ga('send', 'pageview');
+
+</script> <!-- google analytics -->
+</body>
+</html>

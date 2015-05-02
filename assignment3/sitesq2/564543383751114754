@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQYEVVNXGwcHVVFaBQ=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(4),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(5),"addEventListener"in window&&t(2),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(3),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:7,3:11,4:3,5:9,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1);t("loader").features.stn=!0,t(2),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=l.info=NREUM.info;if(t&&t.licenseKey&&t.applicationID&&f&&f.body){s(h,function(e,n){e in t||(t[e]=n)}),l.proto="https"===p.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=f.createElement("script");e.src=l.proto+t.agent,f.body.appendChild(e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u="addEventListener",d="attachEvent",p=(""+location).split("?")[0],h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-627.min.js"},l=e.exports={offset:i(),origin:p,features:{}};f[u]?(f[u]("DOMContentLoaded",o,!1),c[u]("load",n,!1)):(f[d]("onreadystatechange",r),c[d]("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>  <title>How Would You Like To Win The Official BAFTA Nominee Gift Bag? | InStyle UK</title>
+  <link rel="shortcut icon" href="http://www.instyle.co.uk/sites/all/themes/instyle_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta property="og:image" content="http://assets.instyle.co.uk/instyle/live/15/02/Gift-Bag-shot_final.jpg" />
+<meta property="fb:app_id" content="1584863131734886" />
+<meta name="p:domain_verify" content="e769562fbb79387a989d4d035b99261d"><meta charset="UTF-8" />
+<meta name="description" content="Packed full of exclusive goodies, it&#039;s the gift that keeps on giving" />
+<meta name="robots" content="follow, index" />
+<link rel="canonical" href="http://www.instyle.co.uk/beauty/news/how-would-you-like-to-win-the-official-bafta-nominee-gift-bag" />
+<meta property="og:site_name" content="InStyle UK" />
+<meta property="og:url" content="http://www.instyle.co.uk/beauty/news/how-would-you-like-to-win-the-official-bafta-nominee-gift-bag" />
+<meta property="og:title" content="How Would You Like To Win The Official BAFTA Nominee Gift Bag?" />
+<meta property="og:description" content="Packed full of exclusive goodies, it&#039;s the gift that keeps on giving" />
+  <script type="text/javascript">
+    /*<![CDATA[*/
+    (function supportHTML5() {
+      'use strict';
+      var i, e = ['header', 'main', 'nav', 'section', 'article', 'aside', 'footer'], c = e.length;
+      document.documentElement.className += ' ' + 'js';
+      for (i = 0; i < c; i = i + 1) {
+        document.createElement(e[i]);
+      }
+    }());
+    /*]]>*/
+  </script>
+  <style type="text/css" media="all">
+@import url("http://www.instyle.co.uk/sites/all/themes/instyle_theme/css/page-article.css?nlnxwr");
+</style>
+  <script type="text/javascript" src="http://www.instyle.co.uk/sites/all/themes/instyle_theme/js/jquery.js?nlnxwr"></script>
+<script type="text/javascript" src="http://www.instyle.co.uk/misc/drupal.js?nlnxwr"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"instyle_theme","theme_token":"sNDXWl5yI85GflUupFdl6-GozoxgMhLfoYH7IL0UO-I","js":{"sites\/all\/themes\/instyle_theme\/js\/instyle-common.js":1,"sites\/all\/themes\/instyle_theme\/js\/instyle-masthead.js":1,"sites\/all\/themes\/instyle_theme\/js\/instyle-social.js":1,"sites\/all\/modules\/custom\/google_cse\/js\/cse-search.js":1,"sites\/all\/themes\/instyle_theme\/js\/instyle-tabs.js":1,"http:\/\/pagead2.googlesyndication.com\/pagead\/js\/adsbygoogle.js":1,"misc\/jquery.js":1,"misc\/drupal.js":1},"css":{"sites\/all\/themes\/instyle_theme\/css\/page-article.css":1}}});
+//--><!]]>
+</script>
+  
+  <script type="text/javascript" charset="utf-8">
+  window.ipcTags = {"type":"article","section":"beauty","site":"instyle","platform":"desktop","subsection":"news","author":"hcamis","fashion":{"contentPillar":{"slot":30,"name":"Content Pillar","value":"News"}},"contentId":"18612","dfp_config":{"slots":{"leaderboard":{"sizes":[[728,90],[970,250]],"name":"leaderboard"},"mpu":{"sizes":[[300,250],[300,600],[300,1050]],"name":"mpu"},"styleitlight":{"sizes":[300,260],"name":"styleitlight"},"skyscraper":{"sizes":[[120,600],[160,600]],"name":"skyscraper"},"overlay":{"sizes":[1,1],"name":"overlay"}},"required_tags":["type","section","site","platform","subsection","author","fashion","contentId"]},"analytics_config":{"omniture":{"channel":"beauty","pageName":"IS:beauty:news:How Would You Like To Win The Official BAFTA Nominee Gift Bag?","linkInternalFilters":"javascript:,pagead2.googlesyndication.com,http:\/\/www.instyle.co.uk"}}};
+  </script>  <script type="text/javascript">
+(function () {
+  if(typeof(window.ipcTags.dfp_config.read_cookies) == 'undefined') {
+    window.ipcTags.dfp_config.read_cookies = {};
+  }
+
+    
+  window.ipcTags.dfp_config.read_cookies.evidon_on = {
+    'name'          : 'ev_hidden',
+    'cookie_name'   : '__ric_c1130',
+    'type'          : 'boolean'
+  };
+
+  
+})();
+</script><script type="text/javascript">
+(function() {
+	/* Include required screen size functions right here */
+	var getDisplayWidth=function(){var e=0;if(typeof window.innerWidth!="undefined"){e=window.innerWidth}else if(typeof document.documentElement!="undefined"&&typeof document.documentElement.clientWidth!="undefined"&&document.documentElement.clientWidth!=0){e=document.documentElement.clientWidth}else{e=document.getElementsByTagName("body")[0].clientWidth}return Number(e)};
+	var getDisplayHeight=function(){var e=0;if(typeof window.innerHeight!="undefined"){e=window.innerHeight}else if(typeof document.documentElement!="undefined"&&typeof document.documentElement.clientHeight!="undefined"&&document.documentElement.clientHeight!=0){e=document.documentElement.clientHeight}else{e=document.getElementsByTagName("body")[0].clientHeight}return Number(e)};
+
+	/* Pageskin targeting stuff */
+	if(getDisplayWidth() >= 1280) {
+		window.ipcTags['pageskin'] = 'yes';
+	} else {
+		window.ipcTags['pageskin'] = 'no';
+	}
+	window.ipcTags['dfp_config']['required_tags'].push('pageskin');
+})();
+</script><script type="text/javascript" charset="utf-8">
+    var protocol =  ("https:" == document.location.protocol) ? "https://" : "http://";
+
+    var url = ("https:" == document.location.protocol) ? "secure.assets.ipcdigital.co.uk/js/e1403883962_f0233d3/min/tealium/utils-min.js" : "assets.ipcdigital.co.uk/js/e1403883962_f0233d3/min/tealium/utils-min.js",
+        f = unescape("%3Cscript src='" + protocol + url + "' type='text/javascript'%3E%3C/script%3E");
+    document.write(f);
+</script><!-- served by IPC Includes 2 -->
+<meta name="google-site-verification" content="azHPZzakXgz89D6IkuAYXDwYU7fsWVc_b93Acu-7Pyo" /><!-- Served by includes v2 -->
+<script type="text/javascript" charset="utf-8">
+  (function loadAdloaderAugmentation() {
+    var protocol =  ("https:" == document.location.protocol) ? "https://" : "http://";
+    url = ("https:" == document.location.protocol) ? "secure.zardoz.ipcdigital.co.uk/74e0157-03/instyle/thirdparty/2001/adloader.js" : "zardoz.ipcdigital.co.uk/74e0157-03/instyle/thirdparty/2001/adloader.js",
+    version = "7224",
+    f = unescape("%3Cscript src='" + protocol + url + "?v=" + version + "' type='text/javascript'%3E%3C/script%3E");
+    document.write(f);
+  })();
+</script></head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-18612 node-type-article" itemscope itemtype="http://schema.org/WebPage" >
+  
+<script type="text/javascript" charset="utf-8">
+/**
+* Initiate the adloader
+*/
+ipc.adloader.setProvider('dfp');
+
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+var adloaderConfig = {};
+(function() {
+if (ipc.adloader.getProvider() === "dfp") {
+  ipc.adloader.setDisplayMode('desktop');
+
+  adloaderConfig = {
+    'accountId':   '18711560',
+    'environment': 'live',
+    'googleTag':   googletag
+  };
+      
+  
+  var gads = document.createElement('script');
+  gads.async = true;
+  gads.type = 'text/javascript';
+  var useSSL = 'https:' == document.location.protocol;
+    if(ipc.adloader.getDisplayMode() == 'mobile') {
+    gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt_mobile.js';
+  } else {
+    gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+  }
+    var node = document.getElementsByTagName('script')[0];
+  node.parentNode.insertBefore(gads, node);
+  ipc.adloader.init(adloaderConfig);
+  
+}
+})();
+</script>
+<script type="text/javascript">
+    window.ipcTags = window.ipcTags || {};
+    window.ipcTags.env = 'prod';
+</script>
+<!-- Loading script asynchronously -->
+<script type="text/javascript">
+    (function(a,b,c,d){
+    a='//tags.tiqcdn.com/utag/ipc/instyle/prod/utag.js';
+    b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+    })();
+</script>
+
+
+
+<!-- Tag for Activity Group: Retargetting, Activity Name: Instyle retargeting brand site, Activity ID: 765892 -->
+<!-- Expected URL: http://www.instyle.co.uk -->
+<!--//
+Activity ID: 765892 
+Activity Name: Instyle retargeting brand site 
+Activity Group Name: Retargetting
+//-->
+<!--
+Start of DoubleClick Floodlight Tag: Please do not remove
+Activity name of this tag:Instyle retargeting brand site
+URL of the webpage where the tag is expected to be placed: http://www.instyle.co.uk 
+Creation Date: 11/17/2010
+-->
+<script type="text/javascript"> 
+var axel = Math.random() + "";
+var a = axel * 10000000000000;
+document.write('<iframe style="display:none" src="//fls.doubleclick.net/activityi;src=2478638;type=rtg;cat=insty834;ord=' + a + '?" width="1" height="1" frameborder="0"></iframe>'); 
+</script>
+<noscript>
+<iframe style="display:none" src="//fls.doubleclick.net/activityi;src=2478638;type=rtg;cat=insty834;ord=1?" width="1" height="1" frameborder="0"></iframe>
+</noscript>
+<!-- End of DoubleClick Floodlight Tag: Please do not remove -->
+
+<script type="text/javascript">
+/* Proxy omniture, this catches any references to omniture tracking functions post removal */
+s = ipcomniture = {};
+s.t = function(vo,id) {
+	ipc.utils.trackEvent('Omniture referenced', 's.t called', window.location.href);
+
+	}
+s.tl = function(o,t,n,vo) {
+	ipc.utils.trackEvent('Omniture referenced', 's.tl called', window.location.href);
+        // Pass the event through to GA in case it hasn't been replicated yet.
+	ipc.utils.trackEvent('Omniture Custom Tracking', n, window.location.href);
+
+	}
+</script><!-- Begin comScore Tag -->
+<script>
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "6034835" });
+  ipc.utils.comscoreSetId(6034835);
+  (function() {
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+    el.parentNode.insertBefore(s, el);
+  })();
+</script>
+<noscript>
+  <img src="http://b.scorecardresearch.com/p?c1=2&c2=6034835&cv=2.0&cj=1" />
+</noscript>
+<!-- End comScore Tag -->    <div id="container">
+    <div id="masthead-wrapper">
+  <div id="masthead" class="masthead">
+    <div class="masthead-wrapper">
+          <p class="logo"><a href="/" title="InStyle" rel="home"><strong>InStyle</strong> - home of fashion, beauty, hair and celebrity style</a></p>
+        <nav class="site-nav">
+      <div class="main-menu-wrapper"><ul id="masthead-menu"><li id="megamenu-fashion" class="49950-fashion-964"><a href="/fashion">Fashion</a></li><li id="megamenu-celebrity" class="49951-celebrity-959"><a href="/celebrity">Celebrity</a></li><li id="megamenu-hair" class="49952-hair-965"><a href="/hairstyles">Hair</a></li><li id="megamenu-beauty" class="49953-beauty-960 active"><a href="/beauty">Beauty</a></li></ul></div>    </nav>
+    <div class="header-tools"><ul><li class="search"><div id="header-search-trigger" class="search"><a href="#"><img src="/sites/all/themes/instyle_theme/images/search-icon.png"></a></div></li><li class="mag-subscribe"><a href="http://www.magazinesdirect.com/InStyle-magazine-subscription?utm_content=Page+Header+Image+Link" title="Subscribe to InStyle Magazine" rel="nofollow"><h3>Subscribe</h3><img src="http://assets.instyle.co.uk/instyle/live/styles/magazine_cover_header/s3/digital_edition/cover-1427961002.jpg?itok=7ULlgzSI" alt="InStyle Magazine" width="116px" height="110"/></a></li></ul></div>          <div id="header-search-panel" class="header-search-panel">
+        <form class="site-search" action="/search" method="get">
+    <input type="text" name="query" placeholder="Search" class="form-text">
+    <input type="submit" value="Search" class="form-submit">
+</form>
+      </div>
+        </div>
+    <nav class="site-nav-bottom">
+	    <div id="masthead-menu-wrapper" class="clear">
+	      <ul id="menu-masthead-submenu"><li class="nav-look-of-the-day first"><a href="/fashion/look-of-the-day"><span>Look of the Day</span></a></li><li class="nav-editors-picks"><a href="/fashion/editors-picks"><span>Editor's Picks</span></a></li><li class="nav-fitness--wellbeing"><a href="/fitness-wellbeing"><span>Fitness & Wellbeing</span></a></li><li class="nav-subscribe last"><a href="http://www.magazinesdirect.com/InStyle-magazine-subscription?utm_content=Top+Nav+Text+Link"><span>Subscribe</span></a></li></ul>		  <div id="masthead-follow-us">
+  <h3><span>Connect With Us!</span></h3>
+  <ul>
+    <li><a href="https://facebook.com/InStyleUK" rel="nofollow" title="Facebook" class="follow-icon mh-facebook">Follow InStyle UK on Facebook</a></li>
+    <li><a href="https://twitter.com/instyle_UK" rel="nofollow" title="Twitter" class="follow-icon mh-twitter">Follow InStyle UK on Twitter</a></li>
+        <li><a href="http://www.pinterest.com/instyleuk/" rel="nofollow" title="Pinterest" class="follow-icon mh-pinterest">Follow InStyle UK on Pinterest</a></li>
+    <li><a href="https://instagram.com/instyleuk" rel="nofollow" title="Instagram" class="follow-icon mh-instagram">Follow InStyle UK on Instagram</a></li>
+  </ul>
+</div>
+	    </div>
+    </nav>
+          <nav class="site-nav">
+        <div class="site-nav-wrapper">
+          <div class="megamenu megamenu-celebrity" data-megamenu="megamenu-celebrity" data-name="Celebrity">
+    <div class="mega-wrapper">
+    	<section class="megamenu-links">
+	        <h2>Quick Links</h2>
+            <ul><li class="header-link"><a href="/celebrity/news">Celebrity News</a></li><li class="header-link"><a href="/celebrity/pictures">Celebrity Pictures</a></li><li class="header-link"><a href="/celebrity/videos">Celebrity Videos</a></li><li class="header-link"><a href="/celebrity/a-z">Celebrity A-Z</a></li></ul>        </section>
+        <section class="megamenu-promoted">
+            <h2>Featured Celebrity Content</h2>
+                                                <article class="megamenu-promo">
+  <div class="megamenu-teaser">
+    <div class="teaser-image">
+        <a href="/celebrity/news/6-disney-princesses-who-are-also-badass-feminists">
+            <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/megamenu_teaser/s3/15/01/Crop-Belle.jpg?itok=BIFOuOSs" alt="" data-alt="6 Disney Princesses Who Are Also Badass Feminists "/>
+        </a>
+    </div>
+    <div class="teaser-text">
+        <h3 class="header-link"><a href="/celebrity/news/6-disney-princesses-who-are-also-badass-feminists" title="6 Disney Princesses Who Are Also Badass Feminists ">6 Disney Princesses Who Are Also Badass Feminists </a></h3>
+    </div>
+  </div>
+</article>
+                                    <article class="megamenu-promo">
+  <div class="megamenu-teaser">
+    <div class="teaser-image">
+        <a href="/celebrity/news/downton-abbey-the-movie-heres-how-wed-give-the-show-a-hollywood-makeover">
+            <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/megamenu_teaser/s3/15/03/_lady_mary.jpg?itok=Uo9_zR-H" alt="" data-alt="Downton Abbey The Movie? Here's How We'd Give The Show A Hollywood Makeover"/>
+        </a>
+    </div>
+    <div class="teaser-text">
+        <h3 class="header-link"><a href="/celebrity/news/downton-abbey-the-movie-heres-how-wed-give-the-show-a-hollywood-makeover" title="Downton Abbey The Movie? Here's How We'd Give The Show A Hollywood Makeover">Downton Abbey The Movie? Here's How We'd Give The Show A Hollywood Makeover</a></h3>
+    </div>
+  </div>
+</article>
+                                    <article class="megamenu-promo">
+  <div class="megamenu-teaser">
+    <div class="teaser-image">
+        <a href="/celebrity/news/happn-everything-you-need-to-know-about-the-new-tinder">
+            <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/megamenu_teaser/s3/15/03/h1_1.jpg?itok=eHwpvf0S" alt="" data-alt="Happn: Everything You Need To Know About The New Tinder"/>
+        </a>
+    </div>
+    <div class="teaser-text">
+        <h3 class="header-link"><a href="/celebrity/news/happn-everything-you-need-to-know-about-the-new-tinder" title="Happn: Everything You Need To Know About The New Tinder">Happn: Everything You Need To Know About The New Tinder</a></h3>
+    </div>
+  </div>
+</article>
+                                    </section>
+        <div class="clear"><!-- clear --></div>
+    </div>
+</div>
+<div class="megamenu megamenu-fashion" data-megamenu="megamenu-fashion" data-name="Fashion">
+    <div class="mega-wrapper">
+    	<section class="megamenu-links">
+	        <h2>Quick Links</h2>
+            <ul class="col1"><li class="header-link"><a href="/fashion/news">Fashion News</a></li><li class="header-link"><a href="/fashion/trends">Fashion Trends</a></li><li class="header-link"><a href="/fashion/look-of-the-day">Look of the Day</a></li><li class="header-link"><a href="/fashion/videos">Fashion Videos</a></li><li class="header-link"><a href="/fashion/get-the-look">Get The Look</a></li><li class="header-link"><a href="/fashion/editors-picks">Editor's Picks</a></li><li class="header-link"><a href="/fashion/shows">Fashion Shows</a></li></ul><ul class="col2"><li class="header-link"><a href="http://shop.instyle.co.uk/newin.php">Shop</a></li><li class="header-link"><a href="http://comps.instyle.co.uk">Competitions</a></li><li class="header-link"><a href="/travel">Travel</a></li><li class="header-link"><a href="/fitness-wellbeing">Fitness & Wellbeing</a></li></ul>	    </section>
+        <section class="megamenu-promoted">
+            <h2>Featured Fashion Content</h2>
+                                                <article class="megamenu-promo">
+  <div class="megamenu-teaser">
+    <div class="teaser-image">
+        <a href="/fashion/editors-picks/wedding-guest-dresses-the-instyle-round-up">
+            <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/megamenu_teaser/s3/15/03/wedding-guest-dress.jpg?itok=b8IdwsRs" alt="" data-alt="Wedding Guest Dresses: 60 You'll Want To Wear Again And Again"/>
+        </a>
+    </div>
+    <div class="teaser-text">
+        <h3 class="header-link"><a href="/fashion/editors-picks/wedding-guest-dresses-the-instyle-round-up" title="Wedding Guest Dresses: 60 You'll Want To Wear Again And Again">Wedding Guest Dresses: 60 You'll Want To Wear Again And Again</a></h3>
+    </div>
+  </div>
+</article>
+                                    <article class="megamenu-promo">
+  <div class="megamenu-teaser">
+    <div class="teaser-image">
+        <a href="/fashion/news/alternative-wedding-dress-designers-who-wont-make-you-look-like-a-meringue">
+            <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/megamenu_teaser/s3/15/03/screen_shot_2015-03-31_at_10.23.56.png?itok=UEf6YhD8" alt="" data-alt="Alternative Wedding Dress Designers Who Won't Make You Look Like A Meringue"/>
+        </a>
+    </div>
+    <div class="teaser-text">
+        <h3 class="header-link"><a href="/fashion/news/alternative-wedding-dress-designers-who-wont-make-you-look-like-a-meringue" title="Alternative Wedding Dress Designers Who Won't Make You Look Like A Meringue">Alternative Wedding Dress Designers Who Won't Make You Look Like A Meringue</a></h3>
+    </div>
+  </div>
+</article>
+                                    <article class="megamenu-promo">
+  <div class="megamenu-teaser">
+    <div class="teaser-image">
+        <a href="/fashion/trends/alternative-wedding-shoes-for-the-fashion-forward-bride">
+            <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/megamenu_teaser/s3/15/03/_sjp_0.jpg?itok=29JWrdBZ" alt="" data-alt="Alternative Wedding Shoes For The Fashion-Forward Bride"/>
+        </a>
+    </div>
+    <div class="teaser-text">
+        <h3 class="header-link"><a href="/fashion/trends/alternative-wedding-shoes-for-the-fashion-forward-bride" title="Alternative Wedding Shoes For The Fashion-Forward Bride">Alternative Wedding Shoes For The Fashion-Forward Bride</a></h3>
+    </div>
+  </div>
+</article>
+                                    </section>
+        <div class="clear"><!-- clear --></div>
+    </div>
+</div>
+<div class="megamenu megamenu-beauty" data-megamenu="megamenu-beauty" data-name="Beauty">
+    <div class="mega-wrapper">
+    	<section class="megamenu-links">
+	        <h2>Quick Links</h2>
+            <ul><li class="header-link"><a href="/beauty/news">Beauty News</a></li><li class="header-link"><a href="/beauty/trends">Beauty Trends</a></li><li class="header-link"><a href="/beauty/videos">Beauty Videos</a></li><li class="header-link"><a href="/videos">Best Beauty Advice</a></li><li class="header-link"><a href="/beauty/tips">Beauty Tips</a></li><li class="header-link"><a href="/beauty/best-beauty-buys">Best Beauty Buys 2015</a></li><li class="header-link"><a href="http://comps.instyle.co.uk">Competitions</a></li><li class="header-link"><a href="/fitness-wellbeing">Fitness & Wellbeing</a></li></ul>  
+    	</section>
+        <section class="megamenu-promoted">
+            <h2>Featured Beauty Content</h2>
+                                                <article class="megamenu-promo">
+  <div class="megamenu-teaser">
+    <div class="teaser-image">
+        <a href="/beauty/trends/best-tinted-moisturisers">
+            <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/megamenu_teaser/s3/14/09/portrait_2.jpg?itok=OrxgXe6P" alt="" data-alt="Best Tinted Moisturisers"/>
+        </a>
+    </div>
+    <div class="teaser-text">
+        <h3 class="header-link"><a href="/beauty/trends/best-tinted-moisturisers" title="Best Tinted Moisturisers">Best Tinted Moisturisers</a></h3>
+    </div>
+  </div>
+</article>
+                                    <article class="megamenu-promo">
+  <div class="megamenu-teaser">
+    <div class="teaser-image">
+        <a href="/beauty/news/3-ways-to-clean-up-a-fake-tan-disaster">
+            <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/megamenu_teaser/s3/15/03/fake tan.jpg?itok=RILXGXx8" alt="" data-alt="3 Ways To Clean Up A Fake Tan Disaster"/>
+        </a>
+    </div>
+    <div class="teaser-text">
+        <h3 class="header-link"><a href="/beauty/news/3-ways-to-clean-up-a-fake-tan-disaster" title="3 Ways To Clean Up A Fake Tan Disaster">3 Ways To Clean Up A Fake Tan Disaster</a></h3>
+    </div>
+  </div>
+</article>
+                                    <article class="megamenu-promo">
+  <div class="megamenu-teaser">
+    <div class="teaser-image">
+        <a href="/beauty/trends/best-primers">
+            <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/megamenu_teaser/s3/14/08/pic.jpg?itok=yZBUkH20" alt="" data-alt="Best Primers"/>
+        </a>
+    </div>
+    <div class="teaser-text">
+        <h3 class="header-link"><a href="/beauty/trends/best-primers" title="Best Primers">Best Primers</a></h3>
+    </div>
+  </div>
+</article>
+                                    </section>
+        <div class="clear"><!-- clear --></div>
+    </div>
+</div>
+<div class="megamenu megamenu-hair" data-megamenu="megamenu-hair" data-name="Hair">
+    <div class="mega-wrapper">
+    	<section class="megamenu-links">
+	        <h2>Quick Links</h2>
+            <ul><li class="header-link"><a href="/hairstyles/hair-ideas">Hair Ideas</a></li><li class="header-link"><a href="/hairstyles/hair-trends">Hair Trends</a></li><li class="header-link"><a href="/hairstyles/videos">Hairstyle Videos</a></li><li class="header-link"><a href="/hairstyles/hair-trends/the-hair-100-top-celeb-hairstyles">100 Celebrity Hairstyles</a></li><li class="header-link"><a href="http://comps.instyle.co.uk">Competitions</a></li></ul>        </section>
+        <section class="megamenu-promoted">
+            <h2>Featured Hair Content</h2>
+                                                <article class="megamenu-promo">
+  <div class="megamenu-teaser">
+    <div class="teaser-image">
+        <a href="/hairstyles/hair-trends/short-hairstyles">
+            <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/megamenu_teaser/s3/galleries/lily-collins_0.jpg?itok=_N7qWhnC" alt="" data-alt="Short Hairstyles"/>
+        </a>
+    </div>
+    <div class="teaser-text">
+        <h3 class="header-link"><a href="/hairstyles/hair-trends/short-hairstyles" title="Short Hairstyles">Short Hairstyles</a></h3>
+    </div>
+  </div>
+</article>
+                                    <article class="megamenu-promo">
+  <div class="megamenu-teaser">
+    <div class="teaser-image">
+        <a href="/hairstyles/hair-trends/cheryl-coles-hair-history">
+            <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/megamenu_teaser/s3/galleries/Jimmy-P-Psychotherapy-of-Plains-Indian-film-premiere-May13.jpg?itok=e8pFMXaS" alt="" data-alt="Cheryl Cole's Hair History"/>
+        </a>
+    </div>
+    <div class="teaser-text">
+        <h3 class="header-link"><a href="/hairstyles/hair-trends/cheryl-coles-hair-history" title="Cheryl Cole's Hair History">Cheryl Cole's Hair History</a></h3>
+    </div>
+  </div>
+</article>
+                                    <article class="megamenu-promo">
+  <div class="megamenu-teaser">
+    <div class="teaser-image">
+        <a href="/hairstyles/hair-trends/bob-hairstyles">
+            <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/megamenu_teaser/s3/15/03/SiennaMiller-GoldenGlobes15.jpg?itok=V1VO5cKk" alt="" data-alt="Bob Hairstyles: This Season's Hottest Celeb Cut"/>
+        </a>
+    </div>
+    <div class="teaser-text">
+        <h3 class="header-link"><a href="/hairstyles/hair-trends/bob-hairstyles" title="Bob Hairstyles: This Season's Hottest Celeb Cut">Bob Hairstyles: This Season's Hottest Celeb Cut</a></h3>
+    </div>
+  </div>
+</article>
+                                    </section>
+        <div class="clear"><!-- clear --></div>
+    </div>
+</div>
+        </div>
+      </nav>
+        </div>
+</div>
+<div class="page-container">
+  <div id="leaderboard" class="ipc-adblock"></div>
+     	  <div id="tabs-wrapper" class="clearfix"></div>
+		<main id="content" class="clear">
+	    <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+  <article id="article" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/NewsArticle">
+  <meta itemprop="copyrightYear" content="2015" />
+  <meta itemprop="datePublished" content="2015-02-06" />
+  <meta itemprop="dateModified" content="2015-02-06" />
+  <meta itemprop="genre articleSection" content="Beauty News" />
+  <meta itemprop="thumbnailUrl" content="http://assets.instyle.co.uk/instyle/live/styles/teaser_large_thumbnail/s3/15/02/BAFTA_1.jpg?itok=EoPvW_4j" />
+  <header class="content-header article-header">
+    <h1 class="main-header" itemprop="name headline">How Would You Like To Win The Official BAFTA Nominee Gift Bag?</h1>
+                            <div class="author-info">
+            
+                              <p class="article-owner">by Hayley Camis</p>
+                                <p class="date"><time datetime="2015-02-06" content="2015-02-06">Friday 6 February, 2015</time></p>
+                                <!--Show social media on top if user image exists -->
+                            </div>
+      <p class="intro" itemprop="description">Packed full of exclusive goodies, it&#039;s the gift that keeps on giving</p>
+
+    <div class="social-bar">
+        <div class="fb-like" data-href="http://www.instyle.co.uk/beauty/news/how-would-you-like-to-win-the-official-bafta-nominee-gift-bag" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-font="arial"></div>
+    <div class="radium-one" data-href="http://www.instyle.co.uk/beauty/news/how-would-you-like-to-win-the-official-bafta-nominee-gift-bag" data-title="How Would You Like To Win The Official BAFTA Nominee Gift Bag?"></div>
+    </div>
+<div class="fb-recommendations-bar" data-href="http://www.instyle.co.uk/beauty/news/how-would-you-like-to-win-the-official-bafta-nominee-gift-bag" data-read-time="10" data-max-age="180" data-side="left"></div>
+  </header>
+          <div class="article-body article-landscape" itemprop="articleBody">
+              <div id="article-images" class="images-horizontal" itemscope itemprop="image associatedMedia" itemtype="http://schema.org/ImageObject">
+          <img src="http://assets.instyle.co.uk/instyle/live/styles/article_landscape_600_wide/s3/15/02/Gift-Bag-shot_final.jpg?itok=G8VPVVhA" alt="" title="" itemprop="contentURL" />
+                            </div>
+            <p>To celebrate the <a href="https://twitter.com/BAFTA">BAFTA</a> awards this Sunday we&#39;re giving away one of the official nominee gift bags and we&#39;re very, very jealous of the lucky reader who will get their hands on it. The team couldn&#39;t resist having a little peak inside and here are a few of things that are included, the Lancôme La Vie est Belle Eau De Parfum and the Lancôme Advanced Génifique, an evian&reg; 50ml brumisateur facial spray, Fortnum and Mason Tea, Noble Isle Bath &amp; Body set, Charles Worthington Body Boosting Mouse and much, much more...</p><p><em>The EE BAFTA Films Awards will be on the 8th February on BBC 1 at 9.00pm.</em></p><p>To enter, all you have to do is follow <a href="http://www.twitter.com/instyle_UK">@instyle_uk</a> on Twitter and retweet the #InStyleBAFTA tweet. The competition ends at midnight on Sunday 8th February and the winner will be picked at random. UK addresses only. Prize may differ from image shown. Mask not included. Vouchers and gifts are non-transferrable. Each voucher is subject to individual terms and conditions detailed separately</p><p>Got a tablet? You can now download InStyle magazine straight to your <a href="https://itunes.apple.com/gb/app/instyle-magazine/id595325643?mt=8">iPad &amp; iPhone</a>, Kindle (just search the store for &#39;InStyle Magazine&#39;), <a href="http://www.nook.com/gb/newsstand/instyle-uk-edition-by-ipc-media/2940051269804">Nook</a> or <a href="https://play.google.com/store/newsstand/details/InStyle_UK?id=CAow-8efBw">Google Nexus</a> for &pound;3.99.</p><p>&nbsp;</p><p>&nbsp;</p>    </div>
+            <div id="articleObInt" class="articleObInt"></div>
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, "script", "facebook-jssdk"));</script>
+<div class="fb-comments" data-href="http://www.instyle.co.uk/beauty/news/how-would-you-like-to-win-the-official-bafta-nominee-gift-bag" data-num-posts="15" data-width="630" data-colorscheme="light"></div></article>
+</div>
+  </div>
+	  <div id="related-content" class="clear">
+	      <div class="region region-related-content">
+    <div id="block-views-2bd4251dc1bece401677bbb2cf220e0c" class="block block-views">
+  <section id="extra-content" class="clear">
+  <h2 class="section-header header-link"><a href="/beauty/news">Beauty News</a></h2>
+        
+<div class="clear">
+    <article class="teaser stacked-teaser first">
+	  <div class="teaser-image">
+  <a href="/beauty/news/lara-stones-5-beauty-trick" >
+    <img src="http://assets.instyle.co.uk/instyle/live/styles/teaser_large_thumbnail/s3/15/04/larat.jpg?itok=CuiYQyy0" alt="Lara Stone&#039;s £5 Beauty Trick" width="155" height="288" />
+      </a>
+</div>
+<div class="teaser-text">
+    <h3 class="header-link"><a href="/beauty/news/lara-stones-5-beauty-trick" >Lara Stone&#039;s £5 Beauty Trick</a></h3>
+  <p class="date"><time datetime="2015-04-02">Thursday 2 April, 2015</time></p>
+</div>
+  </article>
+    <article class="teaser stacked-teaser">
+	      <div class="teaser-image">
+      <a href="/beauty/news/travel-minis-15-beauty-essentials-your-suitcase-will-love">
+        <img src="http://assets.instyle.co.uk/instyle/live/styles/teaser_large_thumbnail/s3/15/04/iris-hand-cream-.jpg?itok=0hmxufAi" alt="Travel Minis: 15 Beauty Essentials Your Suitcase Will Love" width="155" height="288" />
+      </a>
+    </div>
+    <div class="teaser-text">
+      <h3 class="header-link"><a href="/beauty/news/travel-minis-15-beauty-essentials-your-suitcase-will-love">Travel Minis: 15 Beauty Essentials Your Suitcase Will Love</a></h3>
+      <p class="date"><time datetime="2015-04-02">Thursday 2 April, 2015</time></p>
+    </div>
+  </article>
+    <article class="teaser stacked-teaser">
+	  <div class="teaser-image">
+  <a href="/beauty/news/find-out-how-you-could-win-1-of-4-eyeko-hampers-worth-over-225" >
+    <img src="http://assets.instyle.co.uk/instyle/live/styles/teaser_large_thumbnail/s3/15/03/alexa_image_portrait.jpg?itok=S6V9kgPC" alt="Find Out How You Could Win 1 of 4 Eyeko Hampers Worth Over £225" width="155" height="288" />
+      </a>
+</div>
+<div class="teaser-text">
+    <h3 class="header-link"><a href="/beauty/news/find-out-how-you-could-win-1-of-4-eyeko-hampers-worth-over-225" >Find Out How You Could Win 1 of 4 Eyeko Hampers Worth Over £225</a></h3>
+  <p class="date"><time datetime="2015-04-01">Wednesday 1 April, 2015</time></p>
+</div>
+  </article>
+    <article class="teaser stacked-teaser">
+	  <div class="teaser-image">
+  <a href="/beauty/news/free-with-our-may-issue-four-must-have-eyeko-products-your-peepers-will-thank-you-for" >
+    <img src="http://assets.instyle.co.uk/instyle/live/styles/teaser_large_thumbnail/s3/15/03/eyeko-thumbnail.jpg?itok=bpHiAVpf" alt="Free With Our May Issue: Four Must-Have Eyeko Products Your Peepers Will Thank You For" width="155" height="288" />
+      </a>
+</div>
+<div class="teaser-text">
+    <h3 class="header-link"><a href="/beauty/news/free-with-our-may-issue-four-must-have-eyeko-products-your-peepers-will-thank-you-for" >Free With Our May Issue: Four Must-Have Eyeko Products Your Peepers Will Thank You For</a></h3>
+  <p class="date"><time datetime="2015-04-01">Wednesday 1 April, 2015</time></p>
+</div>
+  </article>
+    </div><div class="teaser-row clear">
+    <article class="teaser stacked-teaser first">
+	  <div class="teaser-image">
+  <a href="/beauty/news/find-out-how-you-can-get-20-off-your-next-eyeko-purchase" >
+    <img src="http://assets.instyle.co.uk/instyle/live/styles/teaser_large_thumbnail/s3/15/03/eyeko_alexa1_0.png?itok=TcalXyMJ" alt="Find Out How You Can Get 20% Off Your Next Eyeko Purchase" width="155" height="288" />
+      </a>
+</div>
+<div class="teaser-text">
+  <p class="offer"><span>offer</span></p>  <h3 class="header-link"><a href="/beauty/news/find-out-how-you-can-get-20-off-your-next-eyeko-purchase" >Find Out How You Can Get 20% Off Your Next Eyeko Purchase</a></h3>
+  <p class="date"><time datetime="2015-04-01">Wednesday 1 April, 2015</time></p>
+</div>
+  </article>
+    <article class="teaser stacked-teaser">
+	  <div class="teaser-image">
+  <a href="/beauty/news/get-emma-stones-899-secret-to-a-flawless-complexion" >
+    <img src="http://assets.instyle.co.uk/instyle/live/styles/teaser_large_thumbnail/s3/15/03/emma-stone.jpg?itok=NVNQ6JFa" alt="Get Emma Stone&#039;s £8.99 Secret To A Flawless Complexion" width="155" height="288" />
+    <span class="video-icon">video</span>  </a>
+</div>
+<div class="teaser-text">
+    <h3 class="header-link"><a href="/beauty/news/get-emma-stones-899-secret-to-a-flawless-complexion" >Get Emma Stone&#039;s £8.99 Secret To A Flawless Complexion</a></h3>
+  <p class="date"><time datetime="2015-04-01">Wednesday 1 April, 2015</time></p>
+</div>
+  </article>
+    <article class="teaser stacked-teaser">
+	  <div class="teaser-image">
+  <a href="/beauty/news/win-over-70-worth-of-salon-science-products-with-instylevip" >
+    <img src="http://assets.instyle.co.uk/instyle/live/styles/teaser_large_thumbnail/s3/15/03/salon-science-thumbnail.jpg?itok=pgFF0Db3" alt="Win Over £70 Worth Of Salon Science Products With #InStyleVIP" width="155" height="288" />
+      </a>
+</div>
+<div class="teaser-text">
+    <h3 class="header-link"><a href="/beauty/news/win-over-70-worth-of-salon-science-products-with-instylevip" >Win Over £70 Worth Of Salon Science Products With #InStyleVIP</a></h3>
+  <p class="date"><time datetime="2015-03-27">Friday 27 March, 2015</time></p>
+</div>
+  </article>
+    <article class="teaser stacked-teaser">
+	  <div class="teaser-image">
+  <a href="/beauty/news/the-5-fashion-week-beauty-heroes-were-keeping-on-our-bathroom-shelves" >
+    <img src="http://assets.instyle.co.uk/instyle/live/styles/teaser_large_thumbnail/s3/15/03/miranda-priestly-portrait.jpg?itok=V5NLUSgg" alt="The 5 Fashion Week Beauty Heroes We&#039;re Keeping On Our Bathroom Shelves" width="155" height="288" />
+      </a>
+</div>
+<div class="teaser-text">
+    <h3 class="header-link"><a href="/beauty/news/the-5-fashion-week-beauty-heroes-were-keeping-on-our-bathroom-shelves" >The 5 Fashion Week Beauty Heroes We&#039;re Keeping On Our Bathroom Shelves</a></h3>
+  <p class="date"><time datetime="2015-03-26">Thursday 26 March, 2015</time></p>
+</div>
+  </article>
+</div>    <p class="more"><a href="/beauty/news">Beauty News</a></p>
+</section>
+</div>
+<div id="block-content-sharing-fashion-content-sharing" class="block block-content-sharing">
+  <div id="ipc-content">
+  <p class="title">You might also be interested in&hellip;</p>
+          <div class="content-list column-left site-marie-claire">
+      <h4><a href="http://www.marieclaire.co.uk/blogs/1.html">More: Marie Claire Features</a></h4>
+                  <div class="teaser cross-site-teaser">
+            <div class="teaser-image">
+              <a href="http://www.marieclaire.co.uk/blogs/548992/6-things-you-need-to-know-about-swimming-breaststroke.html"><img src="http://marieclaire.media.ipcdigital.co.uk/11116/000087421/56ca_orh100000w45/Swimming-t.jpg" alt="6 Things You Need To Know About Swimming Breaststroke " /></a>
+            </div>
+            <div class="teaser-text">
+                              <p class="section">Features</p>
+                            <h5><a href="http://www.marieclaire.co.uk/blogs/548992/6-things-you-need-to-know-about-swimming-breaststroke.html">6 Things You Need To Know About Swimming Breaststroke </a></h5>
+              <p class="date">02 April 2015</p>
+            </div>
+          </div>
+                  <div class="teaser cross-site-teaser">
+            <div class="teaser-image">
+              <a href="http://www.marieclaire.co.uk/blogs/548980/amelia-freer-s-book-eat-nourish-glow-broken-down-into-10-simple-healthy-life-lessons.html"><img src="http://marieclaire.media.ipcdigital.co.uk/11116/0000873a9/9748_orh100000w45/Amelia-Freer-thumb.jpg" alt="10 Things We Learned From Amelia Freer's Book, Eat Nourish Glow " /></a>
+            </div>
+            <div class="teaser-text">
+                              <p class="section">Features</p>
+                            <h5><a href="http://www.marieclaire.co.uk/blogs/548980/amelia-freer-s-book-eat-nourish-glow-broken-down-into-10-simple-healthy-life-lessons.html">10 Things We Learned From Amelia Freer's Book, Eat Nourish Glow </a></h5>
+              <p class="date">02 April 2015</p>
+            </div>
+          </div>
+                  <div class="teaser cross-site-teaser">
+            <div class="teaser-image">
+              <a href="http://www.marieclaire.co.uk/blogs/546842/is-this-woman-your-new-career-mentor.html"><img src="http://marieclaire.media.ipcdigital.co.uk/11116/000086507/d6ad_orh100000w45/Mary-Rozzi-t.jpg" alt="Is This Woman Your New Career Mentor? " /></a>
+            </div>
+            <div class="teaser-text">
+                              <p class="section">Features</p>
+                            <h5><a href="http://www.marieclaire.co.uk/blogs/546842/is-this-woman-your-new-career-mentor.html">Is This Woman Your New Career Mentor? </a></h5>
+              <p class="date">02 April 2015</p>
+            </div>
+          </div>
+              <p class="more"><a href="http://www.marieclaire.co.uk/blogs/1.html">More: Marie Claire Features</a></p>
+    </div>
+          <div class="content-list column-right site-look">
+      <h4><a href="http://www.look.co.uk/look-what-im-wearing-street-style-fashion/">More: Look What I'm Wearing</a></h4>
+                  <div class="teaser cross-site-teaser">
+            <div class="teaser-image">
+              <a href="http://www.look.co.uk/look-what-im-wearing-street-style-fashion/hollie-sp/2015-03-25-1226/giveaway-my-blog"><img src="http://southbank-ipcmedia-com.s3-eu-west-1.amazonaws.com/lookwhatimwearing/live/styles/fashion_content_sharing/s3/images/2015/03/DSC_0217_1_0.jpg?itok=sz98Vhg2" alt="Giveaway on my blog!!" /></a>
+            </div>
+            <div class="teaser-text">
+                              <p class="section">LATEST FASHION</p>
+                            <h5><a href="http://www.look.co.uk/look-what-im-wearing-street-style-fashion/hollie-sp/2015-03-25-1226/giveaway-my-blog">Giveaway on my blog!!</a></h5>
+              <p class="date">25 March 2015</p>
+            </div>
+          </div>
+                  <div class="teaser cross-site-teaser">
+            <div class="teaser-image">
+              <a href="http://www.look.co.uk/look-what-im-wearing-street-style-fashion/vic-glowstars-pires/2015-02-12-1030/patterns-patterns-spider-webs-pinwheels"><img src="http://southbank-ipcmedia-com.s3-eu-west-1.amazonaws.com/lookwhatimwearing/live/styles/fashion_content_sharing/s3/images/2015/02/digit-al-dozen-patterns-spider-webs-pinwheels-6_1.JPG?itok=JC-zcOAn" alt="Patterns on Patterns: Spider Webs on Pinwheels" /></a>
+            </div>
+            <div class="teaser-text">
+                              <p class="section">LATEST NAILS</p>
+                            <h5><a href="http://www.look.co.uk/look-what-im-wearing-street-style-fashion/vic-glowstars-pires/2015-02-12-1030/patterns-patterns-spider-webs-pinwheels">Patterns on Patterns: Spider Webs on Pinwheels</a></h5>
+              <p class="date">12 February 2015</p>
+            </div>
+          </div>
+                  <div class="teaser cross-site-teaser">
+            <div class="teaser-image">
+              <a href="http://www.look.co.uk/look-what-im-wearing-street-style-fashion/urta-lia/2015-02-10-1058/mchs-wavy-hair"><img src="http://southbank-ipcmedia-com.s3-eu-west-1.amazonaws.com/lookwhatimwearing/live/styles/fashion_content_sharing/s3/images/2015/02/wavy%20hair_1.jpg?itok=Ek_-Ebve" alt="MCH's WAVY HAIR" /></a>
+            </div>
+            <div class="teaser-text">
+                              <p class="section">LATEST HAIR</p>
+                            <h5><a href="http://www.look.co.uk/look-what-im-wearing-street-style-fashion/urta-lia/2015-02-10-1058/mchs-wavy-hair">MCH's WAVY HAIR</a></h5>
+              <p class="date">10 February 2015</p>
+            </div>
+          </div>
+              <p class="more"><a href="http://www.look.co.uk/look-what-im-wearing-street-style-fashion/">More: Look What I'm Wearing</a></p>
+    </div>
+  </div></div>
+  </div>
+	  </div>
+	</main>
+	<div id="sidebar">
+  <div id="mpu-wrapper">
+    <div id="mpu" class="ipc-adblock">
+    </div>
+  </div>
+  <div id="styleitlight" class="ipc-adblock">
+  </div>
+    <div class="region region-sidebar">
+    <div id="follow-us">
+  <p class="sub-header">Follow Us</p>
+  <ul id="follow-buttons">
+    <li><a href="https://twitter.com/instyle_UK" rel="nofollow" title="Follow InStyle UK on Twitter" class="social-button twitter">Follow InStyle UK on Twitter</a></li>
+    <li><a href="https://facebook.com/InStyleUK" rel="nofollow" title="Connect with InStyle UK on Facebook" class="social-button facebook">Connect with InStyle UK on Facebook</a></li>
+    <li><a href="https://plus.google.com/114799988817649719926" rel="publisher" title="Follow InStyle UK on Google+" class="social-button google">Follow InStyle UK on Google+</a></li>
+    <li><a href="http://app.lk/AER" rel="nofollow" title="Get the InStyle fashion app for Apple" class="social-button mobile apple">Get the InStyle fashion app for Apple</a></li>
+    <li><a href="http://app.lk/AER" rel="nofollow" title="Get the InStyle fashion app for Android" class="social-button mobile android">Get the InStyle fashion app for Android</a></li>
+    <li><a href="#newsletter-signup" rel="nofollow" title="Get the InStyle newsletter" class="social-button newsletter">Get the InStyle newsletter</a></li>
+  </ul>
+  <p class="follow-subscribe"><a href="http://www.magazinesdirect.com/InStyle-magazine-subscription?utm_content=Social+Box+Text+Link" rel="no-follow">Subscribe to InStyle magazine</a></p>
+</div>
+<div id="tabbed-articles-widget">
+  <ul id="tabbed-articles-navigation">
+    <li><a href="#celebrity" rel="nofollow" >Celebrity</a></li>
+    <li><a href="#fashion" rel="nofollow" >Fashion</a></li>
+    <li><a href="#beauty" rel="nofollow" class="selected">Beauty</a></li>
+    <li><a href="#hairstyles" rel="nofollow" >Hairstyles</a></li>
+  </ul>
+  <div id="tabbed-articles-content" class="clear">
+    <section id="celebrity" class="content-tab">
+  <h2 class="sub-header header-link"><a href="/celebrity">Most Read Celebrity</a></h2>
+                <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/celebrity/pictures/beyonce-and-jay-zs-family-album">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/galleries/oscars.jpg?itok=ZHiAYuzr" alt="" data-alt="Beyonce And Jay-Z&#039;s Family Album" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/celebrity/pictures/beyonce-and-jay-zs-family-album">Beyonce And Jay-Z&#039;s Family Album</a></h3>
+    <p class="date"><time datetime="2015-04-02">Thursday 2 April, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/celebrity/pictures/celebrity-dogs">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/galleries/14/07/dl.jpg?itok=QiZ8wiop" alt="" data-alt="Celebrity Dogs " width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/celebrity/pictures/celebrity-dogs">Celebrity Dogs </a></h3>
+    <p class="date"><time datetime="2015-03-31">Tuesday 31 March, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/celebrity/pictures/pregnant-celebrities">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/galleries/keira-knightley_0.jpg?itok=b0ltUYay" alt="" data-alt="Pregnant Celebrities: A-List Maternity Style Inspo " width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/celebrity/pictures/pregnant-celebrities">Pregnant Celebrities: A-List Maternity Style Inspo </a></h3>
+    <p class="date"><time datetime="2015-03-25">Wednesday 25 March, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/celebrity/pictures/oscars-2015-the-best-of-the-after-party-pics">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/galleries/15/02/rexfeatures_4448650ag.jpg?itok=n05e3hML" alt="" data-alt="Oscars 2015: The Best Of The After Party Pics" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/celebrity/pictures/oscars-2015-the-best-of-the-after-party-pics">Oscars 2015: The Best Of The After Party Pics</a></h3>
+    <p class="date"><time datetime="2015-02-23">Monday 23 February, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/celebrity/pictures/oscars-2015-the-best-dresses-cutest-couples-and-most-memorable-moments">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/galleries/15/02/rexfeatures_4443780at.jpg?itok=7qlILe3N" alt="" data-alt="Oscars 2015: The Best Dresses, Cutest Couples And Most Memorable Moments..." width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/celebrity/pictures/oscars-2015-the-best-dresses-cutest-couples-and-most-memorable-moments">Oscars 2015: The Best Dresses, Cutest Couples And Most Memorable Moments...</a></h3>
+    <p class="date"><time datetime="2015-02-23">Monday 23 February, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/celebrity/pictures/rihanna-celebrity-transformations">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/galleries/15/02/RihannaAtThe2005-MERCEDES-BENZ-POLO-CHALLENGE2005.jpg?itok=PtT5-Ay6" alt="" data-alt="Rihanna: Celebrity Transformations" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/celebrity/pictures/rihanna-celebrity-transformations">Rihanna: Celebrity Transformations</a></h3>
+    <p class="date"><time datetime="2015-02-20">Friday 20 February, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/celebrity/pictures/kate-middleton-fashion-moments">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/14/08/KateMiddletonInSarahBurtonForAlexanderMcQueenWithPrince-WilliamAtTheRoyalWedding-June2011.jpg?itok=TDmzkbjV" alt="" data-alt="Kate Middleton Fashion Moments" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/celebrity/pictures/kate-middleton-fashion-moments">Kate Middleton Fashion Moments</a></h3>
+    <p class="date"><time datetime="2015-02-18">Wednesday 18 February, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/celebrity/pictures/amfar-gala-the-10-stand-out-looks">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/galleries/14/09/KendallJenner.jpg?itok=_B-5acD_" alt="" data-alt="amfAR Gala: The 10 Stand-Out Looks..." width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/celebrity/pictures/amfar-gala-the-10-stand-out-looks">amfAR Gala: The 10 Stand-Out Looks...</a></h3>
+    <p class="date"><time datetime="2015-02-12">Thursday 12 February, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/celebrity/pictures/best-bafta-dresses-of-all-time">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/galleries/14/02/LupitaNyongo-BAFTAS-Dior.jpg?itok=b5LzAsXG" alt="" data-alt="Best BAFTA Dresses Of All Time" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/celebrity/pictures/best-bafta-dresses-of-all-time">Best BAFTA Dresses Of All Time</a></h3>
+    <p class="date"><time datetime="2015-02-06">Friday 6 February, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/celebrity/news/meet-the-rising-stars-of-instyles-2015-bafta-portfolio-instylebafta" >
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/15/01/BAFTA-Sophie-Turner-thumb.jpg?itok=zUZKUgr6" alt="" data-alt="Meet The Rising Stars Of InStyle&#039;s 2015 BAFTA Portfolio #InStyleBafta" width="62" height="104" />
+          </a>
+  </div>
+  <div class="teaser-text">
+        <h3 class="header-link"><a href="/celebrity/news/meet-the-rising-stars-of-instyles-2015-bafta-portfolio-instylebafta" >Meet The Rising Stars Of InStyle&#039;s 2015 BAFTA Portfolio #InStyleBafta</a></h3>
+    <p class="date"><time datetime="2015-02-02">Monday 2 February, 2015</time></p>
+  </div>
+</article>
+          <p class="more "><a href="/celebrity">Most Read Celebrity</a></p>
+</section>
+
+<section id="fashion" class="content-tab">
+  <h2 class="sub-header header-link"><a href="/fashion">Most Read Fashion</a></h2>
+                <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/fashion/editors-picks/primark-the-new-collection">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/15/01/coat-shot.jpg?itok=YGgB4_H4" alt="" data-alt="Primark: The New Collection" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/fashion/editors-picks/primark-the-new-collection">Primark: The New Collection</a></h3>
+    <p class="date"><time datetime="2015-04-02">Thursday 2 April, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/fashion/editors-picks/wedding-guest-dresses-the-instyle-round-up">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/15/03/wedding-guest-dress.jpg?itok=OzZwgYw8" alt="" data-alt="Wedding Guest Dresses: 60 You&#039;ll Want To Wear Again And Again" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/fashion/editors-picks/wedding-guest-dresses-the-instyle-round-up">Wedding Guest Dresses: 60 You&#039;ll Want To Wear Again And Again</a></h3>
+    <p class="date"><time datetime="2015-04-02">Thursday 2 April, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/fashion/editors-picks/denim-the-instyle-round-up">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/15/04/denim-gucci_0.jpg?itok=zYBeCvVO" alt="" data-alt="Denim: The SS15 Edit" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/fashion/editors-picks/denim-the-instyle-round-up">Denim: The SS15 Edit</a></h3>
+    <p class="date"><time datetime="2015-04-02">Thursday 2 April, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/fashion/editors-picks/festival-fashion-what-to-wear">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/15/03/alexa-festival-portrait.jpg?itok=j6bv4tKl" alt="" data-alt="Festival Fashion: What To Wear" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/fashion/editors-picks/festival-fashion-what-to-wear">Festival Fashion: What To Wear</a></h3>
+    <p class="date"><time datetime="2015-04-01">Wednesday 1 April, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/fashion/news/trench-coats-the-cover-up-thatll-never-go-out-of-style">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/15/03/trench-coat-portrait.jpg?itok=Tzer2b23" alt="" data-alt="Trench Coats: 20 To Bring You Into Spring" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/fashion/news/trench-coats-the-cover-up-thatll-never-go-out-of-style">Trench Coats: 20 To Bring You Into Spring</a></h3>
+    <p class="date"><time datetime="2015-04-01">Wednesday 1 April, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/fashion/editors-picks/best-bikinis-for-pear-shapes">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/15/04/bikinis-pear-shapes.jpg?itok=IxZDbp63" alt="" data-alt="Best Bikinis For Pear Shapes" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/fashion/editors-picks/best-bikinis-for-pear-shapes">Best Bikinis For Pear Shapes</a></h3>
+    <p class="date"><time datetime="2015-04-02">Thursday 2 April, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/fashion/editors-picks/the-high-street-100">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/14/09/HS100_0.jpg?itok=ZlKa0tIM" alt="" data-alt="The High Street 100" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/fashion/editors-picks/the-high-street-100">The High Street 100</a></h3>
+    <p class="date"><time datetime="2015-03-27">Friday 27 March, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/fashion/trends/sportswear-just-got-chic-how-to-work-your-gym-kit-into-your-everyday-wardrobe" >
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/15/03/93ins15feb248.jpg?itok=1D4WLJpZ" alt="" data-alt="Sportswear Just Got Chic: How To Work Your Gym Kit Into Your Everyday Wardrobe" width="62" height="104" />
+          </a>
+  </div>
+  <div class="teaser-text">
+        <h3 class="header-link"><a href="/fashion/trends/sportswear-just-got-chic-how-to-work-your-gym-kit-into-your-everyday-wardrobe" >Sportswear Just Got Chic: How To Work Your Gym Kit Into Your Everyday Wardrobe</a></h3>
+    <p class="date"><time datetime="2015-03-24">Tuesday 24 March, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/fashion/editors-picks/mini-skirts-the-length-du-jour">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/15/03/mini-skirt-alexa.jpg?itok=2iJ7fTLZ" alt="" data-alt="Mini Skirts: The Length Du Jour" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/fashion/editors-picks/mini-skirts-the-length-du-jour">Mini Skirts: The Length Du Jour</a></h3>
+    <p class="date"><time datetime="2015-04-01">Wednesday 1 April, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/fashion/editors-picks/dungarees-this-seasons-most-wearable-denim-trend">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/15/03/dungarees-alexa-portrait.jpg?itok=AlqvF6uH" alt="" data-alt="Dungarees: This Season&#039;s Most Wearable Denim Trend" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/fashion/editors-picks/dungarees-this-seasons-most-wearable-denim-trend">Dungarees: This Season&#039;s Most Wearable Denim Trend</a></h3>
+    <p class="date"><time datetime="2015-03-20">Friday 20 March, 2015</time></p>
+  </div>
+</article>
+          <p class="more "><a href="/fashion">Most Read Fashion</a></p>
+</section>
+
+<section id="beauty" class="content-tab selected" data-rendered="true">
+  <h2 class="sub-header header-link"><a href="/beauty">Most Read Beauty</a></h2>
+                <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/beauty/trends/best-hair-supplements">
+      <img src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/galleries/15/04/hairfinity.jpg?itok=N8gnXajS" alt="Best Hair Supplements" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/beauty/trends/best-hair-supplements">Best Hair Supplements</a></h3>
+    <p class="date"><time datetime="2015-04-02">Thursday 2 April, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/beauty/trends/best-tinted-moisturisers">
+      <img src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/14/09/portrait_2.jpg?itok=ejpnrAcM" alt="Best Tinted Moisturisers" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/beauty/trends/best-tinted-moisturisers">Best Tinted Moisturisers</a></h3>
+    <p class="date"><time datetime="2015-03-26">Thursday 26 March, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/beauty/trends/best-foundation-for-oily-skin">
+      <img src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/galleries/15/03/Nars-sheermatte_foundation_09.jpg?itok=Rp_-Q0jy" alt="Best Foundation For Oily Skin" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/beauty/trends/best-foundation-for-oily-skin">Best Foundation For Oily Skin</a></h3>
+    <p class="date"><time datetime="2015-03-30">Monday 30 March, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/beauty/trends/nail-art-and-designs">
+      <img src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/galleries/LilyAllenCHanel.jpg?itok=No5WsB_V" alt="Nail Art And Designs" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/beauty/trends/nail-art-and-designs">Nail Art And Designs</a></h3>
+    <p class="date"><time datetime="2015-03-19">Thursday 19 March, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/beauty/trends/best-primers">
+      <img src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/14/08/pic.jpg?itok=BafEBrTz" alt="Best Primers" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/beauty/trends/best-primers">Best Primers</a></h3>
+    <p class="date"><time datetime="2015-03-18">Wednesday 18 March, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/beauty/trends/nude-lipsticks-10-for-perfect-polished-pouts">
+      <img src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/15/02/nude-tomford.jpg?itok=LFh269AX" alt="Nude Lipsticks: 10 For Perfect Polished Pouts" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/beauty/trends/nude-lipsticks-10-for-perfect-polished-pouts">Nude Lipsticks: 10 For Perfect Polished Pouts</a></h3>
+    <p class="date"><time datetime="2015-03-16">Monday 16 March, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/beauty/trends/best-hand-creams">
+      <img src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/14/12/handcream.jpg?itok=3Tu_P4kA" alt="Best Hand Creams" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/beauty/trends/best-hand-creams">Best Hand Creams</a></h3>
+    <p class="date"><time datetime="2015-02-16">Monday 16 February, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/beauty/trends/best-cleansers">
+      <img src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/14/09/cleanser.jpg?itok=e7K4T2e8" alt="Best Cleansers" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/beauty/trends/best-cleansers">Best Cleansers</a></h3>
+    <p class="date"><time datetime="2015-02-05">Thursday 5 February, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/beauty/trends/best-fake-tans">
+      <img src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/14/07/fake-tan-pic.jpg?itok=hVh8T1fy" alt="Best Fake Tans" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/beauty/trends/best-fake-tans">Best Fake Tans</a></h3>
+    <p class="date"><time datetime="2015-01-29">Thursday 29 January, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/beauty/trends/best-red-lipsticks">
+      <img src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/14/07/red-lip.jpg?itok=1A-OH9iv" alt="Best Red Lipsticks: 10 Shades That&#039;ll Never Go Out Of Style" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/beauty/trends/best-red-lipsticks">Best Red Lipsticks: 10 Shades That&#039;ll Never Go Out Of Style</a></h3>
+    <p class="date"><time datetime="2015-01-21">Wednesday 21 January, 2015</time></p>
+  </div>
+</article>
+          <p class="more "><a href="/beauty">Most Read Beauty</a></p>
+</section>
+
+<section id="hairstyles" class="content-tab">
+  <h2 class="sub-header header-link"><a href="/hairstyles">Most Read Hairstyles</a></h2>
+                <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/hairstyles/hair-ideas/festival-hair">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/15/04/siennamiller2.jpg?itok=GQfsKVt9" alt="" data-alt="Festival Hair: A-List Style Inspo For Every Hair Type" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/hairstyles/hair-ideas/festival-hair">Festival Hair: A-List Style Inspo For Every Hair Type</a></h3>
+    <p class="date"><time datetime="2015-04-02">Thursday 2 April, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/hairstyles/hair-trends/short-hairstyles">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/galleries/lily-collins_0.jpg?itok=7ThtHSwq" alt="" data-alt="Short Hairstyles" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/hairstyles/hair-trends/short-hairstyles">Short Hairstyles</a></h3>
+    <p class="date"><time datetime="2015-04-01">Wednesday 1 April, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/hairstyles/hair-trends/medium-length-hairstyles">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/galleries/13/04/MollieKing-Oasis-Spring-Summer-2015-collection-launch-at-Balthazar.jpg?itok=d5zlbj0F" alt="" data-alt="Medium Length Hairstyles" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/hairstyles/hair-trends/medium-length-hairstyles">Medium Length Hairstyles</a></h3>
+    <p class="date"><time datetime="2015-03-19">Thursday 19 March, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/hairstyles/hair-trends/hair-updos">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/galleries/EmmaStone-Oscars.jpg?itok=T0sC4IAv" alt="" data-alt="Hair Updos" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/hairstyles/hair-trends/hair-updos">Hair Updos</a></h3>
+    <p class="date"><time datetime="2015-03-18">Wednesday 18 March, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/hairstyles/hair-trends/bob-hairstyles">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/15/03/SiennaMiller-GoldenGlobes15.jpg?itok=XJ_U75TB" alt="" data-alt="Bob Hairstyles: This Season&#039;s Hottest Celeb Cut" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/hairstyles/hair-trends/bob-hairstyles">Bob Hairstyles: This Season&#039;s Hottest Celeb Cut</a></h3>
+    <p class="date"><time datetime="2015-03-26">Thursday 26 March, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/hairstyles/hair-trends/hair-colours">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/14/09/haircolours-portrait_0.jpg?itok=WEEZEkf8" alt="" data-alt="Hair Colours: Inspiration From The Best A-List Hues" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/hairstyles/hair-trends/hair-colours">Hair Colours: Inspiration From The Best A-List Hues</a></h3>
+    <p class="date"><time datetime="2015-03-24">Tuesday 24 March, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/hairstyles/hair-trends/hair-straighteners">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/14/08/straighthair.jpg?itok=B5zm3OJi" alt="" data-alt="Hair Straighteners" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/hairstyles/hair-trends/hair-straighteners">Hair Straighteners</a></h3>
+    <p class="date"><time datetime="2015-02-20">Friday 20 February, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/hairstyles/hair-trends/plaits-0">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/galleries/amanda-seyfried-braids.jpg?itok=DfQbIqB9" alt="" data-alt="Plaits" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/hairstyles/hair-trends/plaits-0">Plaits</a></h3>
+    <p class="date"><time datetime="2015-03-24">Tuesday 24 March, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/hairstyles/hair-trends/fringes">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/galleries/DakotaJohnson-Saturday-Night-Live-40th-Anniversary-Special--onia-Rykiel-dress,-Gianvito-Rossi-shoes.jpg?itok=uzQE1zfS" alt="" data-alt="Fringes" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/hairstyles/hair-trends/fringes">Fringes</a></h3>
+    <p class="date"><time datetime="2015-02-16">Monday 16 February, 2015</time></p>
+  </div>
+</article>
+                    <article class="teaser sidebar-teaser">
+  <div class="teaser-image">
+    <a href="/hairstyles/hair-trends/blonde-hair">
+      <img src="/sites/all/themes/instyle_theme/images/image-placeholder.png" data-src="http://assets.instyle.co.uk/instyle/live/styles/teaser_sidebar_thumbnail/s3/galleries/13/04/reece-witherspoon-blonde.jpg?itok=ua-hBEGF" alt="" data-alt="Blonde Hair" width="62" height="104" />
+    </a>
+  </div>
+  <div class="teaser-text">
+    <h3 class="header-link"><a href="/hairstyles/hair-trends/blonde-hair">Blonde Hair</a></h3>
+    <p class="date"><time datetime="2015-03-26">Thursday 26 March, 2015</time></p>
+  </div>
+</article>
+          <p class="more "><a href="/hairstyles">Most Read Hairstyles</a></p>
+</section>
+
+  </div>
+</div>
+<div id="block-instyle-custom-newsletter-signup" class="block block-instyle-custom">
+  <div id="newsletter-signup-wrapper" class="clear">
+    <div id="newsletter-signup">
+                <p class="sub-header">InStyle Newsletter</p>
+                <p class="newsletter-intro">Get your free daily fix of fashion, celebrity and beauty, right here.</p>
+        <form method="post" action="https://s1642912926.t.eloqua.com/e/f2" class="ipcSubscribeForm" target="ipcsignup">
+	<input value="instyleSubscribeForm" type="hidden" name="elqFormName"  />
+	<input value="1642912926" type="hidden" name="elqSiteId"  />
+	<input name="elqCampaignId" type="hidden"  />
+	<input name="source" type="hidden" value="RRL"  />
+	<label for="signupEmailaddress-551d96a98da9d3.79636089">Your email</label>
+	<input class="signupEmailaddress" type="text" value="" placeholder="Your email address" name="emailAddress" id="signupEmailaddress-551d96a98da9d3.79636089" />
+	<input class="signupSubmit" type="submit" value="Sign up" name="button" />
+</form>
+	<script type="text/javascript">
+	(function() { if(typeof(LiveValidation) == 'undefined') { var url = ("https:" == document.location.protocol) ? "secure.assets.ipcdigital.co.uk/js" : "assets.ipcdigital.co.uk/js";document.write(unescape("%3Cscript src='//" + url + "/js/vendor/livevalidation_standalone.compressed.js' type='text/javascript'%3E%3C/script%3E")); } } )();
+	</script>
+	<script type="text/javascript" >
+        (function() { var emailField = new LiveValidation("signupEmailaddress-551d96a98da9d3.79636089", { onInvalid: function() { var messageElem = this.createMessageSpan(); this.insertMessage(messageElem); this.addFieldClass(); var messageTimeout = setTimeout(function() { if(messageElem.parentNode){messageElem.parentNode.removeChild(messageElem)}; clearTimeout(messageTimeout); }, 5000); }, onValid : function() { return true }, onlyOnSubmit: true }); emailField .add(Validate.Format, {pattern: /^[ ]*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})[ ]*$/i, failureMessage: "A valid email address is required"}); emailField .add(Validate.Presence, {failureMessage: "This field is required"}); })();
+	</script>
+        <p class="newsletter-intro">Plus great deals and exclusive offers from Time Inc. (UK) Ltd and its partners.</p>
+        <p class="newsletter-legal">By providing your email address above you agree to the Time Inc. (UK) Ltd <a href="http://www.timeincuk.com/terms-and-conditions/" rel="nofollow">Terms and Conditions</a> and the <a href="http://www.timeincuk.com/privacy/" rel="nofollow">Privacy Policy</a></p>
+    </div>
+</div></div>
+<div id="block-promo-boxes-promo-box-slot-1" class="block block-promo-boxes">
+  <a href="https://twitter.com/instyle_uk" title="#InStyleVIP"><img typeof="foaf:Image" src="http://assets.instyle.co.uk/instyle/live/styles/sidebar_promo/s3/InStyle_Win-VIP_Banner.jpg?itok=sgJdo6t3" alt="#InStyleVIP" /></a></div>
+  </div>
+</div>
+	  <div id="footer-subs-promo">
+    <article class="clearfix content-subs-promo">
+  <div class="header_container">
+    <span>&nbsp;</span>
+    <h2 class="subscriptions">Subscriptions</h2>
+  </div>
+  <div class="col-1">
+      <a href="http://www.magazinesdirect.com/InStyle-magazine-subscription?utm_content=Article+Footer+Print+Link" class="content-subs-promo-image" rel="nofollow">
+           <img src="http://assets.instyle.co.uk/instyle/live/styles/subs_promo_print/s3/digital_edition/cover-1427961002.jpg?itok=dTscWBjY" width="221" height="298" alt="InStyle Magazine" class="subs-cover-print" />
+      </a>
+      <div class="subs-layer-left">
+        <a href="http://www.magazinesdirect.com/InStyle-magazine-subscription?utm_content=Article+Footer+Print+Link" rel="nofollow">
+          <span class="subscribe">SUBSCRIBE</span>
+          <span>PRINT ONLY</span>
+        </a>
+      </div>
+  </div>
+  <div class="col-2">
+      <p class="promo-headline">Subscribe now from just £13.99!</p>
+      <p class="promo-description">Choose how you want to receive InStyle – available in print or on your iPad</p>
+  </div>
+  <div class="col-3">
+      <a href="http://www.magazinesdirect.com/InStyle-magazine-subscription?utm_content=Article+Footer+Digital+Link" class="content-subs-promo-image" rel="nofollow">
+          <img src="http://assets.instyle.co.uk/instyle/live/styles/subs_promo_ipad/s3/digital_edition/cover-1427961002.jpg?itok=-aih2161" width="175" height="239" alt="InStyle Digital Magazine for iPad" class="subs-cover-ipad" />
+      </a>
+      <div class="subs-layer-right">
+        <a href="http://www.magazinesdirect.com/InStyle-magazine-subscription?utm_content=Article+Footer+Digital+Link" rel="nofollow">
+          <span class="subscribe">SUBSCRIBE</span>
+          <span>iPAD ONLY</span>
+        </a>
+      </div>
+  </div>
+</article>
+  </div>
+<footer id="footer" class="clear">
+
+  <div class="footer-message" itemprop="provider publisher sourceOrganization" itemscope itemtype="http://schema.org/Organization">
+    <a href="/" itemprop="url">&nbsp;</a>
+    <p itemprop="description">The ultimate style guide for women who love fashion, beauty and celebrity</span></p>
+  </div>
+
+    <div class="column_container clearfix">
+        <div class="column">
+            <h4>Help &amp; Information</h4>
+            <ul class="links"><li class="menu-991 first"><a href="http://www.magazinesdirect.com/InStyle-magazine-subscription?utm_content=Article+Footer+Text+Link" rel="nofollow">SUBSCRIBE</a></li>
+<li class="menu-986"><a href="http://www.timeincuk.com/privacy/" rel="nofollow">PRIVACY POLICY</a></li>
+<li class="menu-983"><a href="http://www.timeincuk.com/privacy/#cookies" rel="nofollow">COOKIE INFORMATION</a></li>
+<li class="menu-984"><a href="http://www.timeincuk.com/terms-and-conditions/" rel="nofollow">TERMS &amp; CONDITIONS</a></li>
+<li class="menu-990"><a href="http://www.timeincuk.com/advertise/" rel="nofollow">ADVERTISING</a></li>
+<li class="menu-987 last"><a href="http://www.timeincuk.com/brands/instyle-uk/" rel="nofollow">CONTACT US</a></li>
+</ul>        </div>
+
+        <div class="column">
+            <h4>Follow InStyle</h4>
+            <ul class="links"><li class="menu-989 first"><a href="https://facebook.com/InStyleUK" rel="nofollow">FACEBOOK</a></li>
+<li class="menu-992"><a href="https://twitter.com/instyle_UK" rel="nofollow">TWITTER</a></li>
+<li class="menu-993"><a href="https://plus.google.com/114799988817649719926" rel="nofollow">GOOGLE+</a></li>
+<li class="menu-988"><a href="http://instagram.com/instyleuk" rel="nofollow">INSTAGRAM</a></li>
+<li class="menu-1024 last"><a href="http://www.pinterest.com/instyleuk/">PINTEREST</a></li>
+</ul>        </div>
+
+        <div class="column">
+            <h4>InStyle Digital</h4>
+            <ul class="links"><li class="menu-985 first"><a href="/feeds" rel="nofollow">RSS FEEDS</a></li>
+<li class="menu-980"><a href="/digital-edition" rel="nofollow">DIGITAL EDITION</a></li>
+<li class="menu-982 last"><a href="/archive" rel="nofollow">INSTYLE ARCHIVE</a></li>
+</ul>        </div>
+
+        <div class="column">
+            <h4>Newsletter</h4>
+            <div id="newsletter-signup-wrapper" class="clear">
+    <div id="newsletter-signup">
+                <p class="newsletter-intro">Get your free daily fix of fashion, celebrity and beauty, right here.</p>
+        <form method="post" action="https://s1642912926.t.eloqua.com/e/f2" class="ipcSubscribeForm" target="ipcsignup">
+	<input value="instyleSubscribeForm" type="hidden" name="elqFormName"  />
+	<input value="1642912926" type="hidden" name="elqSiteId"  />
+	<input name="elqCampaignId" type="hidden"  />
+	<input name="source" type="hidden" value="RRL"  />
+	<label for="signupEmailaddress-551f1f8a25ced4.82752593">Your email</label>
+	<input class="signupEmailaddress" type="text" value="" placeholder="Your email address" name="emailAddress" id="signupEmailaddress-551f1f8a25ced4.82752593" />
+	<input class="signupSubmit" type="submit" value="Sign up" name="button" />
+</form>
+	<script type="text/javascript">
+	(function() { if(typeof(LiveValidation) == 'undefined') { var url = ("https:" == document.location.protocol) ? "secure.assets.ipcdigital.co.uk/js" : "assets.ipcdigital.co.uk/js";document.write(unescape("%3Cscript src='//" + url + "/js/vendor/livevalidation_standalone.compressed.js' type='text/javascript'%3E%3C/script%3E")); } } )();
+	</script>
+	<script type="text/javascript" >
+        (function() { var emailField = new LiveValidation("signupEmailaddress-551f1f8a25ced4.82752593", { onInvalid: function() { var messageElem = this.createMessageSpan(); this.insertMessage(messageElem); this.addFieldClass(); var messageTimeout = setTimeout(function() { if(messageElem.parentNode){messageElem.parentNode.removeChild(messageElem)}; clearTimeout(messageTimeout); }, 5000); }, onValid : function() { return true }, onlyOnSubmit: true }); emailField .add(Validate.Format, {pattern: /^[ ]*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})[ ]*$/i, failureMessage: "A valid email address is required"}); emailField .add(Validate.Presence, {failureMessage: "This field is required"}); })();
+	</script>
+        <p class="newsletter-intro">Plus great deals and exclusive offers from Time Inc. (UK) Ltd and its partners.</p>
+        <p class="newsletter-legal">By providing your email address above you agree to the Time Inc. (UK) Ltd <a href="http://www.timeincuk.com/terms-and-conditions/" rel="nofollow">Terms and Conditions</a> and the <a href="http://www.timeincuk.com/privacy/" rel="nofollow">Privacy Policy</a></p>
+    </div>
+</div>        </div>
+    </div>
+
+    <p class="copyright">Copyright &copy; 2014 Time Inc. (UK) Ltd - All rights reserved<span><a href="http://www.marieclaire.co.uk/" target="_blank" rel="nofollow">Marie Claire</a><a href="http://www.look.co.uk/" target="_blank" rel="nofollow">Look</a><a href="http://www.wallpaper.com/" target="_blank" rel="nofollow">Wallpaper*</a></span></p>
+
+</footer>
+</div>
+  </div>
+  <div id="overlay" class="ipc-adblock">
+  </div>
+  <div id="fb-root"></div>
+  <script type="text/javascript">
+  (function() {
+    var hn = document.createElement('script'); hn.type = 'text/javascript'; hn.async = true; hn.setAttribute('data-ev-hover-pid',1130); hn.setAttribute('data-ev-hover-ocid', 1996);
+    hn.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'c.betrad.com/geo/h1.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hn, s);
+  })();
+</script><script type="text/javascript">
+	var skimlinks_pub_id = '635X491764';
+		var skimlinks_exclude = new Array('adserver.adtech.de','zinio.com','livingetc.com','homesandgardens.com','idealhomemagazine.co.uk','housetohome.co.uk','decanter.com','trustedreviews.com','weddingmagazine.co.uk');
+	</script>
+<script type="text/javascript">
+(function() {
+  if ("https:" == document.location.protocol || window.ipc_skim_links_disabled === true) {
+    return true;
+  }
+
+  var skimlinks_script = document.createElement('script');
+  skimlinks_script.type = 'text/javascript';
+  skimlinks_script.async = true;
+  skimlinks_script.src = '//s.skimresources.com/js/ipc.skimlinks.js';
+
+  var skimlinks_script_attach = document.getElementsByTagName('script')[0];
+  skimlinks_script_attach.parentNode.insertBefore(skimlinks_script, skimlinks_script_attach.nextSibling);
+})();
+</script>
+
+<!-- START Nielsen Online SiteCensus V6.0 -->
+<!-- COPYRIGHT 2010 Nielsen Online -->
+<script type="text/javascript">
+  (function () {
+    var d = new Image(1, 1);
+    d.onerror = d.onload = function () {
+      d.onerror = d.onload = null;
+    };
+    d.src = ["//secure-uk.imrworldwide.com/cgi-bin/m?ci=uk-105070h&cg=0&cc=1&si=", escape(window.location.href), "&rp=", escape(document.referrer), "&ts=compact&rnd=", (new Date()).getTime()].join('');
+  })();
+</script>
+<noscript>
+  <div>
+    <img src="//secure-uk.imrworldwide.com/cgi-bin/m?ci=uk-105070h&cg=0&cc=1&ts=noscript"
+    width="1" height="1" alt="" />
+  </div>
+</noscript>
+<!-- END Nielsen Online SiteCensus V6.0 -->
+<script type="text/javascript" charset="utf-8">
+(function() {
+  if ("https:" == document.location.protocol) {
+    return true;
+  }
+
+  window.ipcTags = window.ipcTags || {};
+  window.ipcTags.overlay = window.ipcTags.overlay || {};
+
+  window.ipcTags.overlay.clickHref = 'http://www.magazinesdirect.com/XIS/IISSC?utm_medium=Banner&utm_source=BRAND+WEBSITE&utm_campaign=XIS+March+2015+Brandsite+Overlay';
+  window.ipcTags.overlay.imgSrc    = 'http://assets.ipcdigital.co.uk/ipc-overlay/imgs/subs-march-2015/instyle.jpg';  
+  window.ipcTags.overlay.cssLink   = 'http://assets.ipcdigital.co.uk/ipc-overlay/e1386764652_fc1ce9f/ipc_overlay.css';
+
+  var ipcoverlay = document.createElement('script');
+  ipcoverlay.type = 'text/javascript';
+  ipcoverlay.async = true;
+  ipcoverlay.src = 'http://assets.ipcdigital.co.uk/ipc-overlay/e1386764652_fc1ce9f/ipc_overlay.js';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(ipcoverlay, s);
+})();
+</script>  <script type="text/javascript" src="http://www.instyle.co.uk/sites/all/themes/instyle_theme/js/instyle-common.js?nlnxwr"></script>
+<script type="text/javascript" src="http://www.instyle.co.uk/sites/all/themes/instyle_theme/js/instyle-masthead.js?nlnxwr"></script>
+<script type="text/javascript" src="http://www.instyle.co.uk/sites/all/themes/instyle_theme/js/instyle-social.js?nlnxwr"></script>
+<script type="text/javascript" src="http://www.instyle.co.uk/sites/all/modules/custom/google_cse/js/cse-search.js?nlnxwr"></script>
+<script type="text/javascript" src="http://www.instyle.co.uk/sites/all/themes/instyle_theme/js/instyle-tabs.js?nlnxwr"></script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script async type="text/javascript">
+      /*<![CDATA[*/
+      if (typeof jQuery === 'function' && typeof jQuery.instyleCommon === 'object') {
+        jQuery.instyleCommon.loadAds();
+      }
+      /*]]>*/
+    </script>
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"aaccaa7fff","applicationID":"471082","transactionName":"YgNVYEcAXhJYBUQNXFtJdldBCF8PFghfAFZqFlZTUD5GCFwR","queueTime":0,"applicationTime":288,"atts":"TkRWFg8aTRw=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-627.min.js"}</script>  
+</body>
+</html>

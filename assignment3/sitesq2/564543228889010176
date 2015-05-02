@@ -1,0 +1,300 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang=en>
+<head>
+<title>UTC with Smoothed Leap Seconds (UTC-SLS)</title>
+<meta name="keywords" content="UTC, leap seconds, POSIX, protocols">
+<meta name="description" content="A standard convention for handling UTC in communication protocols and operating-system APIs.">
+<link rel="stylesheet" href="/~mgk25/default.css" type="text/css">
+</head>
+<body>
+<h1>UTC with Smoothed Leap Seconds (UTC-SLS)</h1>
+
+<p><a href="/~mgk25/">Markus Kuhn</a>
+
+<p><b>UTC-SLS is a proposed standard for handling UTC leap seconds in
+computer protocols, operating-system APIs, and standard libraries. It
+aims to free the vast majority of software developers from even having
+to know about leap seconds and to minimize the risk of leap-second
+triggered system malfunction.</b>
+
+<h2>Overview</h2>
+
+<p>The international standard timescale <em>Coordinated Universal Time
+(UTC)</em> is defined by a network of atomic clocks. It is kept
+synchronized with Earth's rotation through the occasional insertion
+and deletion of <em>leap seconds</em>. UTC is widely referenced in
+computer-related specifications, in particular communication protocols
+and application-program interfaces of operating systems. An increasing
+number of computer system is closely synchronized with UTC today.
+However, the specifications of these systems usually do not dictate an
+exact behavior of the system when a leap second is inserted or deleted
+from UTC, that is when UTC skips the last second (23:59:59) of a day
+or inserts an additional second (23:59:60). Some currently widely
+implemented methods for handling leap seconds are potentially
+disruptive.
+
+<p>The <em>Coordinated Universal Time with Smoothed Leap Seconds
+(UTC-SLS)</em> aims to solve this problem. It is a minor
+variation of the UTC time scale with the following properties:
+
+<ul>
+
+<li>UTC and UTC-SLS are identical most of the time, except during the
+last 1000 seconds of a UTC day that ends with a leap second.
+
+<li>During the last 1000 seconds of a UTC day with inserted leap
+second, a UTC-SLS clock slows down to by 0.1% to 0.999 times its
+normal rate, such that the last 1000 UTC seconds (including the
+inserted leap second) span exactly the same time as the corresponding
+999 "slow seconds" on the UTC-SLS clock.
+
+<li>During the last 1000 seconds of a day with deleted leap second, a
+UTC-SLS clock accelerates by 0.1% to 1.001 times its normal rate,
+such that the last 1000 UTC seconds (excluding the deleted leap
+second) span exactly the same time as the corresponding 1001 “fast
+seconds” on the UTC-SLS clock.
+
+<li>At each full hour (and half hour), UTC and UTC-SLS are identical,
+even right after a leap second.
+
+</ul>
+
+<p>The UTC-SLS specification provides a detailed explanation of the
+advantages of this particular choice among all the alternatives
+considered.
+
+<h2>Specification</h2>
+
+<p>The specification of UTC-SLS is the file <a
+href="draft-kuhn-leapsecond-00.txt">draft-kuhn-leapsecond-00.txt</a>.
+
+<p class=note>This proposal has now been <a
+href="http://www.ietf.org/internet-drafts/draft-kuhn-leapsecond-00.txt">published</a>
+by the <a href="http://www.ietf.org/">IETF</a> as an Internet-Draft
+standard for wide discussion.
+
+<h2><a name="faq"></a>Frequently asked questions</h2>
+
+<h4><a name="faqdisc"></a>How widely was this proposal already discussed?</h4>
+
+<p>The UTC-SLS proposal was initially called UTS and was repeatedly
+discussed in various expert forums since 2000, including the USNO <a
+href="http://rom.usno.navy.mil/archives/leapsecs.html">leapsecs</a>
+mailing list, the USENET group comp.protocols.time.ntp, and the ITU-R
+SRG 7A Colloquium on the UTC timescale in May 2003 in Torino. Two
+earlier publications that described this proposal (then still called
+UTS) are:
+
+<ul>
+
+<li><a href="../leap/utc-torino-slides.pdf">Leap-second considerations
+in distributed computer systems</a> – a presentation that I gave in
+May 2003 at the “ITU-R SRG 7A Colloquium on the UTC timescale” in
+Torino, Italy
+
+<li><a href="/~mgk25/uts.txt">uts.txt</a> – the initial October 2000
+proposal (written in the style of an ITU recommendation)
+
+</ul>
+
+<h4><a name="faqcrit"></a>What criticism has been voiced against this
+proposal?</h4>
+
+<p>The only specific criticism or suggestion for improvement that I
+ever heard in relation to this proposal concerned its original name,
+UTS, which has since changed (see below).
+
+<p>All other objections to UTC-SLS that I heard were not directed
+against its specific design choices, but against the (very well
+established) practice of using UTC at all in the applications that this
+proposal targets:
+
+<ul>
+
+<li>Some people argue that operating system interfaces, such as the
+POSIX “seconds since the epoch” scale used in time_t APIs, should be
+changed from being an encoding of UTC to being an encoding of the
+leap-second free TAI timescale.
+
+<li>Some people want to go even further and abandon UTC and leap
+seconds entirely, detach all civilian time zones from the rotation of
+Earth, and redefine them purely based on atomic time.
+
+</ul>
+
+<p>While these people are usually happy to agree that UTC-SLS is a
+sensible engineering solution <em>as long as UTC remains the main time
+basis of distributed computing</em>, they argue that this is just a
+workaround that will be obsolete once their grand vision of giving up
+UTC entirely has become true, and that it is therefore just an
+unwelcome distraction from their ultimate goal.
+
+<p>I do not believe that UTC in its present form is going to disappear
+any time soon. Therefore, it makes perfect sense to me to agree on a
+well-chosen guideline for how to use UTC in a practical and safe way
+in selected applications.
+
+<h4><a name="faqname"></a>Why is UTS now called UTC-SLS?</h4>
+
+<p>The original October 2000 proposal was to call this specification
+UTS, for “Smoothed Coordinated Universal Time”. Daniel Gambis noted at
+the May 2003 Torino meeting that the IERS uses already internally a
+“Smoothed Universal Time (UTS)”, although he admitted that this term
+is not widely known. Nevertheless, his comment, combined with the
+idea that having the designation start with “UTC-” makes it perhaps
+slightly clearer to readers that UTC-SLS is just a minor modification
+of UTC, as opposed to yet another definition of Universal Time,
+changed my mind about the proposed name.
+
+<h4><a name="faqietf"></a>Why make UTC-SLS an IETF standard, rather
+than an ITU-R recommendation?</h4>
+
+<p>The definition of time scales has traditionally been the domain of
+astronomers and metrologists, and their respective international
+organizations (IAU, IERS, BIH, BIPM). The ITU-R got involved only with
+regard to time-signal radio stations, for which it defined UTC. The
+whole notion of a leap-second was born out of practical considerations
+to do with standard-frequency transmitters and their carrier-phase
+locked pulse-per-second time codes.
+
+<p>UTC has been adopted far more
+widely than just in radio time signals and radio clocks. It has become
+a standard reference in computer networking protocols,
+programming-language standards and operating-system interfaces. The
+question of how to deal with UTC leap seconds on computer networks
+arose primarily with the wide-spread implementation of NTP, a standard
+maintained today by the IETF. Since UTC-SLS is foremost an
+implementation and interoperability guideline for NTP users, the IETF
+seems the most appropriate forum.
+
+<p>In addition, the ITU-R working group in charge of UTC is at present
+busy discussing a <a href="../leap/">proposal to abandon Universal
+Time entirely as the basis of civilian time keeping</a>, in favor of
+a purely atomic-time based timescale that has no leap seconds. This
+proposal faces substantial opposition and it seems at present unlikely
+to go through. However, before that discussion is off the table, the
+working group is unlikely able to ponder more pragmatic
+recommendations on how to implement the existing UTC definition
+smoothly in systems other than radio clocks.
+
+<h4><a name="google"></a>Is Google already using UTC-SLS?</h4>
+
+<p>In a sense, but not quite. In a September
+2011 <a href="http://googleblog.blogspot.com/2011/09/time-technology-and-leaping-seconds.html">blog
+post</a>, Google engineer Christopher Pascoe describes how Google
+internally distributes via NTP a "smeared" version of UTC that does
+not contain any leap seconds. This way, they avoid the headache of
+having to audit millions of lines of application code for how it deals
+with the potentially hazardous implementation of leap seconds in the
+existing Linux/etc. NTP kernel code. That simply jumps back by one
+second at the start of an inserted leap second 23:59:60, in other
+words it replays the 1000 ms worth of timestamps of the preceding
+second 23:59:59, and thereby makes time non-monotonic, which may cause
+malfunctions in application programs that depend on clock
+monotonicity.
+
+<p>Google's "leap smear" looks from an application writer's point of
+view very similar to UTC-SLS. However, their implementation differs in
+two important aspects:
+
+<h5>Difference 1: Location of implementation</h5>
+
+<ul>
+
+<li>Google's smeared leap seconds are implemented in their core NTP
+server(s). They distribute over the NTP protocol a smoothed form of
+UTC, and drop in the protocol any indication that a leap seconds is
+about to happen. Therefore, the PLLs in the tracking NTP clients or
+connected operating-system kernels remain unaware of the leap second,
+and merely experience what looks to them like a temporary frequency
+deviation of their local oscillator.
+
+<li>UTC-SLS is instead intended not to affect NTP servers or the NTP
+protocol in any way. The UTC-SLS proposal envisions implementation of
+the smoothed leap seconds instead in NTP clients, or even better in
+the kernel-clock implementations that they interface with.
+
+</ul>
+
+<p>The UTC-SLS approach has the big advantage that NTP clients remain
+aware of the scheduled time of a leap second. This means that NTP
+clients can
+
+<ul>
+
+<li>accurately implement the smoothing steps based on pre-announced
+data, even when they temporarily loose connectivity with NTP servers
+near the leap second;
+
+<li>continue to accurately monitor the frequency stability of their
+local oscillators (which may be OCXOs expected to be far more accurate
+than a second per month), because they are not being lied to by the
+NTP servers;
+
+<li>still leave to an operating-system kernel the option to accurately
+provide alternative leap-free timescales (e.g., TAI), to specialist
+applications that ask for these (e.g., astronomic or geo-physical
+experiments, navigation systems).
+
+</ul>
+
+<p>With UTC-SLS, only application programs that do not worry about
+utmost levels of frequency stability are briefly lied to about UTC and
+thereby kept unaware of the leap seconds.
+
+<p>The Google approach mainly has the short-term practical advantage
+that no changes are needed to existing OS kernels. It is therefore
+easier and quicker to roll out locally with existing code. However, it
+violates the NTP protocol specification and therefore should really
+only be implemented in in-house networks that are isolated from the
+world-wide public network of low-stratum NTP servers.
+
+<h5>Difference 2: Shape of smoothing</h5>
+
+<ul>
+
+<li>Google appears to use half of a raised-cosine shape to bridge the
+pre-leap and post-leap timelines, however the above blog post does not
+reveal the length of the time window over which the correction
+extends.
+
+<li>UTC-SLS uses a linear ramp function that starts exactly 1000
+seconds before the end of the leap second (midnight UTC).
+
+</ul>
+
+<p>The choice of the much simpler linear correction function in
+UTC-SLS was motivated by the fact that it will be evaluated in the
+same code that applies already today time and frequency offset
+corrections when an application called gettimeofday(), and this is
+usually a linear function. Therefore, UTC-SLS can be implemented very
+efficiently, and very similar to existing kernel-clock PLL code, by
+just temporarily tweaking some of the kernel clock's internal
+parameters.
+
+<p>The semi-raised-cosine correction has the advantage of a smooth
+first derivative, and may therefore be easier to follow by some types
+of PLL. This makes sense if the correction is applied before any
+tracking kernel PLLs, as Google does in NTP servers. But it brings no
+advantage if the correction is applied <em>after</em> any PLLs. (A
+spline function formed by joining segments from two second or third
+order polynomials would have similar properties but is more efficient
+to evaluate in kernel-clock code, especially where floating-point
+registers are not easily available. So if there there really were a
+need for a smooth first derivative of the correction ramp, I'd
+advocate using a spline over a cosine.)
+
+<p>Overall, the Google experience suggests that there is a justifiable
+need for a smoothed version of UTC for use in computer APIs, if only
+for due diligence reasons. Their current solution makes sense because
+of its quick deployability in a highly heterogeneous environment. On
+the other hand, UTC-SLS has many additional advantages and remains a
+desirable and more robust candidate for a standardized, long-term
+solution for the same problem.
+
+<p><a href="http://www.cl.cam.ac.uk/~mgk25/">Markus Kuhn</a>
+<p class=footdate>created 2005-12-14 – last modified 2011-09-16 –
+http://www.cl.cam.ac.uk/~mgk25/time/utc-sls/
+
+</body>
+</html>

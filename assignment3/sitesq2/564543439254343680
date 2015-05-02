@@ -1,0 +1,1798 @@
+<!DOCTYPE html>
+<html id="marieclaire-co-uk" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="en" lang="en">
+	<head>
+		<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQYEVVNXGwUEVldQAgQ="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(4),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(5),"addEventListener"in window&&t(2),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(3),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:7,3:11,4:3,5:9,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1);t("loader").features.stn=!0,t(2),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=l.info=NREUM.info;if(t&&t.licenseKey&&t.applicationID&&f&&f.body){s(h,function(e,n){e in t||(t[e]=n)}),l.proto="https"===p.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=f.createElement("script");e.src=l.proto+t.agent,f.body.appendChild(e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u="addEventListener",d="attachEvent",p=(""+location).split("?")[0],h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-627.min.js"},l=e.exports={offset:i(),origin:p,features:{}};f[u]?(f[u]("DOMContentLoaded",o,!1),c[u]("load",n,!1)):(f[d]("onreadystatechange",r),c[d]("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>		<script type="text/javascript" charset="utf-8">window.ipcTags = {"type":"article","section":"news_stories","subsection":"celebrity_gossip","contentId":548401,"loggedInStatus":"Logged Out","platform":"desktop","site":"marieclaire","dfp_config":{"required_tags":["type","section","subsection","contentId","site"],"slots":{"dfpad-mpu":{"name":"mpu","sizes":[[300,250],[300,600],[300,1050]]},"dfpad-leaderboard_header":{"name":"leaderboard_header","sizes":[[728,90],[970,250]]},"dfpad-hidden_footer":{"name":"hidden_footer","sizes":[1,1]},"dfpad-style_it_light":{"name":"style_it_light","sizes":[300,260]},"dfpad-div-gpt-ad-1380097983963-0":{"name":"div-gpt-ad-1380097983963-0","sizes":[20,20]}}},"pageName":"News_stories: Celebrity_gossip: BAFTA Awards 2015 The Full Winners List ","subSection1":"news_stories","subSection2":"news_stories: Celebrity_gossip","subSection3":"News_stories: Celebrity_gossip: BAFTA Awards 2015 The Full Winners List ","contentType":"news_stories","contentTitle":"BAFTA Awards 2015: The Full Winners List ","author":"Suzannah Ramsdale","datePublished":"08\/02\/2015","dateUpdated":"08\/02\/2015","fashion":{"contentPillar":{"slot":30,"name":"Content Pillar","value":"News","tracker":"localPageTracker0"}},"subType":"gallery"};</script>
+		<script type="text/javascript" charset="utf-8">
+
+		function loadSocialButtonsCallback() {
+			post_init();
+			post_widget(".ra1_share_button");
+		}
+		// Add 'js-enabled' class to the HTML tag
+	    document.documentElement.className += " " + 'jsEnabled';
+		</script>
+
+		<meta http-equiv="Cache-Control" content="public" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="ipc_articleid" content="548401" />
+<meta name="ipc_tags" content="" />
+<meta name="ipc_datatype" content="article" />
+<meta name="title" content="BAFTA Awards 2015: The Full Winners List  | Marie Claire" />
+<meta name="robots" content="index, follow" />
+<meta name="keywords" content="Bafta awards 2015 winners" />
+<meta name="description" content="Find out who won what at the 2015 BAFTA Awards. " />
+<meta name="news_keywords" content="Bafta awards 2015, baftas 2015, winners, eddie redmayne, the theory of everything, boyhood" />
+<meta name="language" content="en" />
+<!-- served by IPC Includes 2 -->
+<meta name="google-site-verification" content="LjN6fO9-FIa2AI3i6yw7PXbFp1-bAzm4LLwstKCxEYc" /><!-- served by IPC Includes 2 -->
+<meta name="p:domain_verify" content="7738d37115308924078d4b930cf5e851" /><script type="text/javascript">
+(function () {
+  if(typeof(window.ipcTags.dfp_config.read_cookies) == 'undefined') {
+    window.ipcTags.dfp_config.read_cookies = {};
+  }
+
+    
+  window.ipcTags.dfp_config.read_cookies.evidon_on = {
+    'name'          : 'ev_hidden',
+    'cookie_name'   : '__ric_c1123',
+    'type'          : 'boolean'
+  };
+
+  
+})();
+</script><!-- Served by includes v2 -->
+<script type="text/javascript" charset="utf-8">
+  (function loadAdloaderAugmentation() {
+    var protocol =  ("https:" == document.location.protocol) ? "https://" : "http://";
+    url = ("https:" == document.location.protocol) ? "secure.zardoz.ipcdigital.co.uk/74e0157-03/marieclaire/thirdparty_dfp/11116/adloader.js" : "zardoz.ipcdigital.co.uk/74e0157-03/marieclaire/thirdparty_dfp/11116/adloader.js",
+    version = "7224",
+    f = unescape("%3Cscript src='" + protocol + url + "?v=" + version + "' type='text/javascript'%3E%3C/script%3E");
+    document.write(f);
+  })();
+</script><script type="text/javascript" charset="utf-8">
+    var protocol =  ("https:" == document.location.protocol) ? "https://" : "http://";
+    
+    var url = ("https:" == document.location.protocol) ? "secure.assets.ipcdigital.co.uk/js/e1393244042-7242a23/min/utils-min.js" : "assets.ipcdigital.co.uk/js/e1393244042-7242a23/min/utils-min.js",
+        f = unescape("%3Cscript src='" + protocol + url + "' type='text/javascript'%3E%3C/script%3E");
+    document.write(f);
+</script><!--Visual Revenue Reader Response Tracking Script (v6) -->
+<script type="text/javascript">
+
+var _vrq = _vrq || [];
+(function() {
+  "use strict";
+  var ipc_vr_regex = new RegExp("^\/?$"),
+      ipc_vr_automate = ipc_vr_regex.test(window.location.pathname);
+  
+  if ("https:" === document.location.protocol) {
+    return true;
+  }
+  _vrq.push(['id', 450]);
+  _vrq.push(['automate', ipc_vr_automate]);
+  _vrq.push(['track', function(){}]);
+  (function(d, a){
+    var s = d.createElement(a),
+        x = d.getElementsByTagName(a)[0];
+        s.async = true;
+        s.src = 'http://a.visualrevenue.com/vrs.js';
+        x.parentNode.insertBefore(s, x);
+  }(document, 'script'));
+}());
+
+</script>
+<!-- End of VR RR Tracking Script - All rights reserved --><script type="text/javascript" language="JavaScript">
+var ipc_host = ("https:" == document.location.protocol) ? "analytics.ssl.assets.ipccdn.co.uk" : "analytics.assets.ipccdn.co.uk",
+	ipc_protocol =  ("https:" == document.location.protocol) ? "https://" : "http://";
+window.ipcTags = window.ipcTags || {};
+window.ipcTags.env = 'live';
+window.ipcTags.analytics_config = window.ipcTags.analytics_config || {};
+window.ipcTags.analytics_config.trackPageImpression = (typeof(window.ipcTags.analytics_config.trackPageImpression) === 'boolean') ? window.ipcTags.analytics_config.trackPageImpression : true;
+var ipc_analytics_url = ipc_protocol + ipc_host + '/js/tealium/1.0/analytics.js',
+	f = unescape("%3Cscript src='" + ipc_analytics_url + "' type='text/javascript'%3E%3C/script%3E");
+document.write(f);
+</script><!-- Served by includes v2 -->
+<!-- Deprecated snippet (adprobe) -->
+<title>BAFTA Awards 2015: The Full Winners List  | Marie Claire</title>
+<link rel="alternate" type="application/rss+xml" title="Marie Claire News" href="/feeds/news.rss" />
+<link rel="alternate" type="application/rss+xml" title="Marie Claire News" href="/feeds/newswithimg.rss" />
+<link rel="alternate" type="application/rss+xml" title="Marie Claire Beauty News" href="/feeds/beauty.rss" />
+<link rel="alternate" type="application/rss+xml" title="Marie Claire Celebrity News" href="/feeds/celebrity.rss" />
+<link rel="alternate" type="application/rss+xml" title="Marie Claire Fashion News" href="/feeds/fashion.rss" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" /><meta name="y_key" content="1b1dc76036ff8ac6" />
+<link rel="canonical" href="http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html" />
+  <meta property="fb:app_id" content="127253490633582"/>
+  <meta property="og:title" content="BAFTA Awards 2015: The Full Winners List "/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html"/>
+  <meta property="og:image" content="http://marieclaire.media.ipcdigital.co.uk/11116/000085687/d57d/BAFTA-Awards-2015-thumb.jpg"/>
+  <meta property="og:site_name" content="Marie Claire"/>
+  <meta property="og:description" content="Find out who won what at the 2015 BAFTA Awards. "/>
+    
+		<!--[if lt IE 8]>
+		<link href="/css/screen/oldie.css" type="text/css" rel="stylesheet" />
+		<![endif]-->
+
+	<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="http://yui.ipcdigital.co.uk/yui/3.3.0/build/yui/yui-min.js"></script>
+<script type="text/javascript" src="/js/packed/1427972550/html5-support.js,jquery/jquery.js,jquery/plugins/jquery.cookie.js,pluginSlideshow/launchSlideshow.js,jquery/global.js,jquery/social.js,jquery/megaMenu.js,jquery/stickyNav.js,jquery/mostRead.js,yui/loader.js"></script>
+<link rel="stylesheet" type="text/css" media="print" href="/css/print/print.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="/css/packed/1427972551/screen/v2/layout.css,screen/v2/article.css,screen/v2/gallery.css,pluginArticles/themes/base/article.css,pluginArticles/themes/shiney/article.css,local.css" />
+</head>
+	<body class="article location-articles-selected" style="">
+
+		<script type="text/javascript">
+    window.ipcTags = window.ipcTags || {};
+    window.ipcTags.env = 'prod';
+</script>
+<!-- Loading script asynchronously -->
+<script type="text/javascript">
+    (function(a,b,c,d){
+    a='//tags.tiqcdn.com/utag/ipc/marieclaire/prod/utag.js';
+    b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+    })();
+</script>
+
+
+<script type="text/javascript">
+(function() {
+	/* Include required screen size functions right here */
+	var getDisplayWidth=function(){var e=0;if(typeof window.innerWidth!="undefined"){e=window.innerWidth}else if(typeof document.documentElement!="undefined"&&typeof document.documentElement.clientWidth!="undefined"&&document.documentElement.clientWidth!=0){e=document.documentElement.clientWidth}else{e=document.getElementsByTagName("body")[0].clientWidth}return Number(e)};
+	var getDisplayHeight=function(){var e=0;if(typeof window.innerHeight!="undefined"){e=window.innerHeight}else if(typeof document.documentElement!="undefined"&&typeof document.documentElement.clientHeight!="undefined"&&document.documentElement.clientHeight!=0){e=document.documentElement.clientHeight}else{e=document.getElementsByTagName("body")[0].clientHeight}return Number(e)};
+
+	/* Pageskin targeting stuff */
+	if(getDisplayWidth() >= 1280) {
+		window.ipcTags['pageskin'] = 'yes';
+	} else {
+		window.ipcTags['pageskin'] = 'no';
+	}
+	window.ipcTags['dfp_config']['required_tags'].push('pageskin');
+})();
+</script>
+<script type="text/javascript" charset="utf-8">
+/**
+* Initiate the adloader
+*/
+ipc.adloader.setProvider('dfp');
+
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+var adloaderConfig = {};
+(function() {
+if (ipc.adloader.getProvider() === "dfp") {
+  ipc.adloader.setDisplayMode('desktop');
+
+  adloaderConfig = {
+    'accountId':   '18711560',
+    'environment': 'live',
+    'googleTag':   googletag
+  };
+      
+  
+  var gads = document.createElement('script');
+  gads.async = true;
+  gads.type = 'text/javascript';
+  var useSSL = 'https:' == document.location.protocol;
+    if(ipc.adloader.getDisplayMode() == 'mobile') {
+    gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt_mobile.js';
+  } else {
+    gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+  }
+    var node = document.getElementsByTagName('script')[0];
+  node.parentNode.insertBefore(gads, node);
+  ipc.adloader.init(adloaderConfig);
+  
+}
+})();
+</script>
+<script type="text/javascript" language="JavaScript">
+ipc.analytics.register({
+	'service' : 'comscore',
+	'accountId' : 6034835});
+</script><noscript><img src="http://b.scorecardresearch.com/p?c1=2&c2=6034835&cv=2.0&cj=1" /></noscript>
+<script type="text/javascript" language="JavaScript">
+
+$(document).ready(function(){
+	/*
+	 * Binds the click events of any elements with the class 'trackEvent'.
+	 * Extracts any HTML5 data attributes and then ends them to trackEvent().
+	 */
+	$('.trackEvent').click(function () {
+		var dataAttributes = $(this).data();
+		if ($.isEmptyObject(dataAttributes) === false) {
+			ipc.analytics.trackEvent(dataAttributes);
+		}
+		return true;
+	});
+});
+</script><!-- Deprecated snippet (grapeshot_contextual_tag_augmented_adtech) -->
+<!-- Deprecated snippet (audience_science_augmented_adtech) -->
+<!-- Served by includes v2 -->
+<!-- Deprecated snippet (adprobe_adtech) -->
+
+<!-- Tag for Activity Group: Retargetting, Activity Name: Marie Claire retargeting brand site, Activity ID: 765865 -->
+<!-- Expected URL: http://marieclaire.co.uk -->
+<!--//
+Activity ID: 765865 
+Activity Name: Marie Claire retargeting brand site 
+Activity Group Name: Retargetting
+//-->
+<!--
+Start of DoubleClick Floodlight Tag: Please do not remove
+Activity name of this tag:Marie Claire retargeting brand site
+URL of the webpage where the tag is expected to be placed: http://marieclaire.co.uk 
+Creation Date: 11/17/2010
+-->
+<script type="text/javascript"> 
+var axel = Math.random() + "";
+var a = axel * 10000000000000;
+document.write('<iframe style="display:none" src="//fls.doubleclick.net/activityi;src=2478638;type=rtg;cat=marie383;ord=' + a + '?" width="1" height="1" frameborder="0"></iframe>'); 
+</script>
+<noscript>
+<iframe style="display:none" src="//fls.doubleclick.net/activityi;src=2478638;type=rtg;cat=marie383;ord=1?" width="1" height="1" frameborder="0"></iframe>
+</noscript>
+<!-- End of DoubleClick Floodlight Tag: Please do not remove -->
+
+
+
+<script type="text/javascript">
+  (function() {
+    if ( document.cookie.match(/\bforceweb=/) ) {
+      var script = document.createElement('script'),
+          thisNode = document.getElementsByTagName('script')[0];
+      
+      script.type = 'text/javascript';
+      script.async = 'async';
+      script.src = ( 'https:' === document.location.protocol ? 'https://secure.assets.ipcdigital.co.uk/js/min/mobileweb.v1-min.js' : 'http://assets.ipcdigital.co.uk/js/min/mobileweb.v1-min.js' );
+
+      thisNode.parentNode.insertBefore(script, thisNode);
+    }
+  })();
+</script>
+<script>
+// Facebook like tracking for Google analytics 
+var go = function( ) {
+    if (window.FB !== undefined && typeof(ipc) == 'object' && typeof(ipc.analytics) == 'object' && typeof(ipc.analytics.trackSocial) == 'function') {
+        FB.Event.subscribe('edge.create', function(response, widget) {
+              if (typeof(callback_FBedgeCreate) != "undefined") { 
+                    callback_FBedgeCreate (response, widget);
+              } else {
+                     ipc.analytics.trackSocial({
+                           'action' : 'Like',
+                           'network' : 'Facebook',
+                           'url' : response
+                     });
+              }
+        });
+
+        FB.Event.subscribe('edge.remove', function(response) {
+           ipc.analytics.trackSocial({
+              'action' : 'Unlike',
+              'network' : 'Facebook',
+              'url' : response
+           });
+       });
+
+       FB.Event.subscribe('message.send', function(response) {
+           ipc.analytics.trackSocial({
+              'action' : 'Send',
+              'network' : 'Facebook',
+              'url' : response
+           });
+       });
+
+	FB.Event.subscribe('comment.create', function(response) {
+           ipc.analytics.trackSocial({
+              'action' : 'Comment',
+              'network' : 'Facebook',
+              'url' : response
+           });
+	});
+    } else {
+        setTimeout(go, 100);
+    }
+};
+
+go();
+</script><script> 
+//Social Tracking for re-tweets 
+
+//  Ensure global _gaq Google Analytics queue has been initialized.
+var _ga = _ga || {};
+
+function trackTwitter(intent_event) {
+    if (intent_event) {
+      var opt_pagePath;
+      if (intent_event.target && intent_event.target.nodeName == 'IFRAME') {
+            opt_pagePath = _ga.extractParamFromUri_(intent_event.target.src, 'url');
+      }
+
+       if (typeof(ipc) == 'object' && typeof(ipc.utils) == 'object' && typeof(ipc.utils.trackSocial) == 'function') {
+          ipc.utils.trackSocial('Twitter', 'tweet', opt_pagePath);
+       } else {
+          _gaq.push(['_trackSocial', 'twitter', 'tweet', opt_pagePath]);
+       }
+    }
+  }
+
+  //Wrap event bindings - Wait for async js to load
+  if(window.twttr !== undefined) {  
+    twttr.ready(function (twttr) {
+      //event bindings
+      twttr.events.bind('tweet', trackTwitter);
+    });
+  }
+//Extracts a query parameter value from a URI
+_ga.extractParamFromUri_ = function(uri, paramName) {
+  if (!uri) {
+    return;
+  }
+  var regex = new RegExp('[\\?&#]' + paramName + '=([^&#]*)');
+  var params = regex.exec(uri);
+  if (params != null) {
+    return unescape(params[1]);
+  }
+  return;
+};
+</script>
+		<div class="wrapper">
+
+	
+<div id="brandingHeader">
+	<div id="logo">
+		<a href="http://www.marieclaire.co.uk/"><img alt="Logo_main" class="first-child-home" src="http://www.marieclaire.co.uk/images/logo_main.png" /></a>	</div>
+	<div id="headerSubscriptions">
+		<ul>
+			<li><a href="http://www.magazinesdirect.com/Marie-Claire-magazine-subscription?utm_content=Page+Header+Image+Link2" title="Subscribe to Marie Claire magazine">Subscribe</a></li>
+<li><a href="/digital-edition/uk.html">Get Digital Edition</a></li>		</ul>
+		<a href="http://www.magazinesdirect.com/Marie-Claire-magazine-subscription?utm_content=Page+Header+Image+Link1"><img src="http://default.media.ipcdigital.co.uk/300/0000017f5/d644_orh90w68/MCLAIRE-0515-WEB.jpg" /></a>	</div>
+	<form method="get" id="headerSearch" class="site-search" name="site-search" action="/search.html">	<fieldset>
+		<legend>Site Search</legend>
+		<input class="text search-query" name="q" type="text" value="" placeholder="Search" />
+				<input type="image" src="/images/icons/search-icon.png" name="image" width="12" height="12" class="search-submit" title="Search" alt="Search" />
+	</fieldset>
+</form>	<div class="nav_and_ad_enclosure">
+		<div id="mcNav_cont">
+	<nav id="mcNav" class="clearfix">
+		<ul class="clearfix">
+							<li class="">
+					<a class="nav_link" title="Home" href="http://www.marieclaire.co.uk/">Home</a>									</li>
+							<li class="current submenu-present">
+					<a class="nav_link" title="News" href="http://www.marieclaire.co.uk/news/1.html">News</a>											<div class="subnav_container" id="subnav_news">
+							<div class="clearfix subnav_container_inner">
+								<div class="col-1 nobrake">
+	<ul class="subnav_sections">
+		<li class="first-child"><a href="http://www.marieclaire.co.uk/news/celebrity/1.html">Celebrity News</a></li>
+		<li><a href="http://www.marieclaire.co.uk/news/fashion/1.html">Fashion News</a></li>
+		<li><a href="http://www.marieclaire.co.uk/news/health/1.html">Health News</a></li>
+		<li><a href="http://www.marieclaire.co.uk/news/beauty/1.html">Beauty News</a></li>
+		<li><a href="http://www.marieclaire.co.uk/news/world/1.html">World News</a></li>
+		<li><a href="http://www.marieclaire.co.uk/news/travel/1.html">Travel News</a></li>
+		<li><a href="http://www.marieclaire.co.uk/news/lifestyle/1.html">Issues and Campaigns</a></li>
+		<li class="nounderline"><a href="http://www.marieclaire.co.uk/news/thebigdebate/1.html">The Big Debate</a></li>
+	</ul>
+</div>
+
+<div class="col-2 nobrake">
+	<h5>Today&#039;s Top News Stories</h5>
+	<ul class="subnav_articles">
+							<li class="clearfix">
+							<div class="img nobrake">
+															</div>
+							<div class="body nobrake">
+								<a href="http://www.marieclaire.co.uk/news/548981/c-est-tres-chic-the-ultimate-parisian-style-guide.html">C&#039;est Tr&egrave;s Chic! 5 Ways To Dress Like A Parisian And Nail it</a>							</div>
+						</li>
+					<li><a href="http://www.marieclaire.co.uk/news/548994/video-interview-with-moschino-creative-director-jeremy-scott-about-the-aw15-moschino-collection.html">Exclusive Video: Interview With Jeremy Scott - Inside The AW15 Moschino Collection</a></li>
+<li><a href="http://www.marieclaire.co.uk/news/548984/let-your-movie-heroine-s-pick-your-new-favourite-scent.html">Let Your Movie Heroine Pick Your New Favourite Scent</a></li>
+<li><a href="http://www.marieclaire.co.uk/news/celebrity/548991/kim-kardashian-and-kanye-west-reveal-fertility-problems.html">Kim Kardashian Reveals That She And Kanye West Face Fertility Struggles</a></li>
+<li class="nounderline"><a href="http://www.marieclaire.co.uk/news/548990/video-our-latest-work-mentor-karen-millen-creative-director-gemma-metheringham-shares-her-top-5-career-tips.html">Video: Our Latest @Work Mentor, Karen Millen Chief Creative Officer Gemma Metheringham, Shares Her Top 5 Career Tips</a></li>
+	</ul></div>
+
+<div class="col-3 nobrake">
+		<h5><a href="/news/fashion/548997/western-trend-accessories.html">Accessorise With This Season’s Hottest Trend: The Wild West</a></h5>
+	<div class="clearfix">
+		<div class="nobrake teaser">
+			Find the perfect shoes and bags to carry you through the season in style		</div>
+		<div class="nobrake img">
+					</div>
+	</div>
+	</div>							</div>
+						</div>
+									</li>
+							<li class=" submenu-present">
+					<a class="nav_link" title="Fashion" href="http://www.marieclaire.co.uk/fashion.html">Fashion</a>											<div class="subnav_container" id="subnav_fashion">
+							<div class="clearfix subnav_container_inner">
+								<div class="col-1 nobrake">
+	<ul class="subnav_sections">
+		<li class="first-child"><a href="http://www.marieclaire.co.uk/news/fashion/1.html">Fashion News</a></li>
+		<li><a target="_blank" href="http://shop.marieclaire.co.uk/">Shop</a></li>
+		<li><a href="http://www.marieclaire.co.uk/fashion/ideas/1.html">Fashion Pictures</a></li>
+		<li><a href="http://www.marieclaire.co.uk/video/fashion.html">Fashion Videos</a></li>
+		<li class="nounderline"><a href="http://www.marieclaire.co.uk/lifestyle/offers/1.html">Offers</a></li>
+	</ul>
+</div>
+
+<div class="col-2 nobrake">
+	<h5>Latest Fashion news</h5>
+	<ul class="subnav_articles">
+							<li class="clearfix">
+							<div class="img nobrake">
+								<a href="http://www.marieclaire.co.uk/news/fashion/548997/western-trend-accessories.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000087447/d32b_orh100000w81/resizedSee-by-Chloe-flapover-tassel-Detail-Cross-body-bag-E504P-SP702-58-63TXM.jpg" data-alt="See by Chloé Flapover Tassel Detail Cross-Body Bag " src="/images/spacer.gif" alt="" /></a>							</div>
+							<div class="body nobrake">
+								<a href="http://www.marieclaire.co.uk/news/fashion/548997/western-trend-accessories.html">Accessorise With This Season&rsquo;s Hottest Trend: The Wild West</a>							</div>
+						</li>
+					<li><a href="http://www.marieclaire.co.uk/news/548981/c-est-tres-chic-the-ultimate-parisian-style-guide.html">C&#039;est Tr&egrave;s Chic! 5 Ways To Dress Like A Parisian And Nail it</a></li>
+<li><a href="http://www.marieclaire.co.uk/news/548994/video-interview-with-moschino-creative-director-jeremy-scott-about-the-aw15-moschino-collection.html">Exclusive Video: Interview With Jeremy Scott - Inside The AW15 Moschino Collection</a></li>
+<li><a href="http://www.marieclaire.co.uk/news/548990/video-our-latest-work-mentor-karen-millen-creative-director-gemma-metheringham-shares-her-top-5-career-tips.html">Video: Our Latest @Work Mentor, Karen Millen Chief Creative Officer Gemma Metheringham, Shares Her Top 5 Career Tips</a></li>
+<li><a href="http://www.marieclaire.co.uk/news/fashion/548987/marie-claire-interview-with-fashion-model-chanel-iman.html">Chanel Iman Spills Her Beauty Rules, Tells Us What It Takes To Be A Successful Model And Why She Loves Acting</a></li>
+<li class="nounderline"><a href="http://www.marieclaire.co.uk/news/fashion/548975/the-suede-boden-boots-you-need-in-your-spring-wardrobe.html">The Suede Boden Boots You NEED In Your Spring Wardrobe</a></li>
+	</ul></div>
+
+<div class="col-3 nobrake">
+	<div class="clearfix">
+		<div class="nobrake runway_cover_nav">
+			<a id="mag" href="https://itunes.apple.com/gb/app/marie-claire-magazine/id553189500?mt=8" target="_blank">
+<img src="https://southbank.secure.media.ipcdigital.co.uk/11116/00008531d/f6e0/Runway-cover.jpg">
+</a>
+		</div>
+		<div class="nobrake img">
+			<h5><a href="https://itunes.apple.com/gb/app/marie-claire-magazine/id553189500?mt=8" title="Buy iPad edition" target="_blank">Buy Marie Claire Runway On Your iPad</a></h5>
+			<div class="body">
+				Download the enhanced digital edition now and get loads of exclusive features and gorgeous galleries. Enjoy.
+			</div>
+		</div>
+	</div>
+</div>
+							</div>
+						</div>
+									</li>
+							<li class=" submenu-present">
+					<a class="nav_link" title="Hair &amp; Beauty" href="http://www.marieclaire.co.uk/beauty.html">Hair &amp; Beauty</a>											<div class="subnav_container" id="subnav_beauty">
+							<div class="clearfix subnav_container_inner">
+								<div class="col-1 nobrake">
+	<ul class="subnav_sections">
+		<li class="first-child"><a href="http://www.marieclaire.co.uk/news/beauty/1.html">Beauty News</a></li>
+		<li><a href="http://www.marieclaire.co.uk/hairstyles.html">Hairstyles</a></li>
+		<li><a target="_blank" href="http://pubads.g.doubleclick.net/gampad/clk?id=89228800&amp;iu=/18711560/ipcclicktags">The Road to Beauty</a></li>
+		<li><a target="_blank" href="http://aveda.marieclaire.co.uk">Aveda Expert Hair Advice</a></li>
+		<li><a href="http://www.marieclaire.co.uk/beauty/best/1.html">10 Best</a></li>
+		<li><a href="http://www.marieclaire.co.uk/beauty/galleries/1.html">Hair &amp; Beauty Pictures</a></li>
+		<li><a href="http://www.marieclaire.co.uk/video/beauty.html">Beauty Videos</a></li>
+		<li><a href="http://www.marieclaire.co.uk/video/hair.html">Hair Videos</a></li>
+		<li class="nounderline"><a href="http://www.marieclaire.co.uk/lifestyle/offers/1.html">Offers</a></li>
+	</ul>
+</div>
+
+<div class="col-2 nobrake">
+	<h5>Today&#039;s Hair &amp; Beauty Stories</h5>
+	<ul class="subnav_articles">
+							<li class="clearfix">
+							<div class="img nobrake">
+								<a href="http://www.marieclaire.co.uk/news/celebrity/548991/kim-kardashian-and-kanye-west-reveal-fertility-problems.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000086713/cbe6_orh100000w81/Jared-Leto-6.jpg" data-alt="Kim Kardashian and Jared Leto hair" src="/images/spacer.gif" alt="" /></a>							</div>
+							<div class="body nobrake">
+								<a href="http://www.marieclaire.co.uk/news/celebrity/548991/kim-kardashian-and-kanye-west-reveal-fertility-problems.html">Kim Kardashian Reveals That She And Kanye West Face Fertility Struggles</a>							</div>
+						</li>
+					<li><a href="http://www.marieclaire.co.uk/news/beauty/548972/jack-howard-the-man-behind-the-hair-colour-you-want.html">Jack Howard: The Man Behind the Hair Colour You Want</a></li>
+<li><a href="http://www.marieclaire.co.uk/news/beauty/548988/road-to-beauty-april-2nd-last-week-s-best-moments-from-the-pantanal-wilderness-to-the-amazon.html">Road To Beauty: L&rsquo;&eacute;quip&eacute;e Girls Best Moments From Last Week</a></li>
+<li><a href="http://www.marieclaire.co.uk/news/beauty/548986/7-reasons-why-fka-twigs-is-our-new-beauty-inspiration.html">7 Reasons Why FKA Twigs is Our New Beauty Inspiration</a></li>
+<li class="nounderline"><a href="http://www.marieclaire.co.uk/news/beauty/548880/be-iconic-with-25-off-hair-beauty-at-saks.html">Be Iconic With 25% Off Hair &amp; Beauty At Saks</a></li>
+	</ul></div>
+
+<div class="col-3 nobrake">
+		<h5><a href="/news/548984/let-your-movie-heroine-s-pick-your-new-favourite-scent.html">Let Your Movie Heroine Pick Your New Favourite Scent</a></h5>
+	<div class="clearfix">
+		<div class="nobrake teaser">
+			Because sometimes all you want in life is to smell like your favourite movie star...		</div>
+		<div class="nobrake img">
+			<a href="http://www.marieclaire.co.uk/news/548984/let-your-movie-heroine-s-pick-your-new-favourite-scent.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000077b06/0cdb_orh100000w156/clueless-thumbnail.jpg" data-alt="Alicia Silverstone in Clueless" src="/images/spacer.gif" alt="" /></a>		</div>
+	</div>
+	</div>							</div>
+						</div>
+									</li>
+							<li class=" submenu-present">
+					<a class="nav_link" title="Celebrity" href="http://www.marieclaire.co.uk/celebrity/1.html">Celebrity</a>											<div class="subnav_container" id="subnav_celebrity">
+							<div class="clearfix subnav_container_inner">
+								<div class="col-1 nobrake">
+	<ul class="subnav_sections">
+		<li class="first-child"><a href="http://www.marieclaire.co.uk/news/celebrity/1.html">Celebrity News</a></li>
+		<li><a href="http://www.marieclaire.co.uk/celebrity/a-z.html">Celebrity A-Z</a></li>
+		<li><a href="http://www.marieclaire.co.uk/celebrity/pictures/1.html">Celebrity Pictures</a></li>
+		<li class="nounderline"><a href="http://www.marieclaire.co.uk/video/celebrity.html">Celebrity Videos</a></li>
+	</ul>
+</div>
+
+<div class="col-2 nobrake">
+	<h5>Today&#039;s Top Celebrity Stories</h5>
+	<ul class="subnav_articles">
+							<li class="clearfix">
+							<div class="img nobrake">
+								<a href="http://www.marieclaire.co.uk/news/celebrity/548989/is-robert-pattinson-engaged-to-fka-twigs.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000087410/81e7_orh100000w81/Robert-Pattinson-LL.jpg" data-alt="Robert Pattinson and FKA Twigs" src="/images/spacer.gif" alt="" /></a>							</div>
+							<div class="body nobrake">
+								<a href="http://www.marieclaire.co.uk/news/celebrity/548989/is-robert-pattinson-engaged-to-fka-twigs.html">An Open Letter To Robert Pattinson On His Engagement</a>							</div>
+						</li>
+					<li><a href="http://www.marieclaire.co.uk/news/fashion/548987/marie-claire-interview-with-fashion-model-chanel-iman.html">Chanel Iman Spills Her Beauty Rules, Tells Us What It Takes To Be A Successful Model And Why She Loves Acting</a></li>
+<li><a href="http://www.marieclaire.co.uk/news/celebrity/548974/david-and-victoria-beckham-s-32m-house-is-more-incredible-than-we-first-thought.html">So The Beckhams&#039; House Is Even More Incredible Than We Imagined&hellip; </a></li>
+<li><a href="http://www.marieclaire.co.uk/news/celebrity/548971/kate-middleton-baby-name-bookmakers-slash-odds-on-alice.html">Odds Have Been Slashed On This Particular Kate Middleton Baby Name...</a></li>
+<li class="nounderline"><a href="http://www.marieclaire.co.uk/news/celebrity/548970/jamie-dornan-stalked-women-to-research-for-the-fall.html">Jamie Dornan Stalked Women &lsquo;For Research&rsquo; When Filming The Fall </a></li>
+	</ul></div>
+
+<div class="col-3 nobrake">
+		<h5><a href="http://www.marieclaire.co.uk/news/celebrity/548991/kim-kardashian-and-kanye-west-reveal-fertility-problems.html">Kim Kardashian Reveals That She And Kanye West Face Fertility Struggles</a></h5>
+	<div class="clearfix">
+		<div class="nobrake teaser">
+			'There is nothing on earth that I want more than to be pregnant again.’		</div>
+		<div class="nobrake img">
+			<a href="http://www.marieclaire.co.uk/news/celebrity/548991/kim-kardashian-and-kanye-west-reveal-fertility-problems.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000086713/7347_orh100000w156/Jared-Leto-6.jpg" data-alt="Kim Kardashian and Jared Leto hair" src="/images/spacer.gif" alt="" /></a>		</div>
+	</div>
+	</div>
+							</div>
+						</div>
+									</li>
+							<li class=" submenu-present">
+					<a class="nav_link" title="Lifestyle" href="http://www.marieclaire.co.uk/lifestyle/1.html">Lifestyle</a>											<div class="subnav_container" id="subnav_lifestyle">
+							<div class="clearfix subnav_container_inner">
+								<div class="clearfix col-1-long nobrake">
+	<div class="nobrake">
+		<ul class="subnav_sections">
+			<li class="first-child"><a href="http://www.marieclaire.co.uk/news/lifestyle/1.html">Issues and Campaigns</a></li>
+			<li><a href="http://www.marieclaire.co.uk/lifestyle/recipes/1.html">Recipes</a></li>
+			<li><a href="http://www.marieclaire.co.uk/lifestyle/restaurant/1.html">Restaurant Reviews</a></li>
+			<li><a href="http://www.marieclaire.co.uk/lifestyle/lifestyle-galleries/1.html">Lifestyle Pictures</a></li>
+			<li><a href="http://www.marieclaire.co.uk/horoscopes.html">Horoscopes</a></li>
+			<li><a href="http://www.marieclaire.co.uk/travel/1.html">Travel</a></li>
+			<li class="nounderline"><a href="http://www.marieclaire.co.uk/video/lifestyle.html">Lifestyle Videos</a></li>
+		</ul>
+	</div>
+	<div class="nobrake">
+		<ul class="subnav_sections">
+			<li><a href="http://www.marieclaire.co.uk/health/1.html">Health</a></li>
+			<li><a href="http://www.marieclaire.co.uk/health/diet/1.html">Diet Plans</a></li>
+			<li><a target="_blank" href="http://www.marieclairedietclub.co.uk/">Diet Club</a></li>
+			<li><a href="http://www.marieclaire.co.uk/video/healthandfitness.html">Health &amp; Fitness videos</a></li>
+			<li><a target="_blank" href="http://comps.marieclaire.co.uk/">Competitions</a></li>
+			<li class="nounderline"><a href="http://www.marieclaire.co.uk/lifestyle/offers/1.html">Offers</a></li>
+		</ul>
+	</div>
+
+</div>
+
+<div class="col-3 nobrake">
+		<h5><a href="http://www.marieclaire.co.uk/horoscopes.html">This month: Aries</a></h5>
+	<div class="clearfix">
+		<div class="nobrake teaser">
+			Victoria Beckham was born on April 17 1974, in Harlow, Essex, bringing Girl Power to the world after joining the Spice Girls, and earning herself the nickname Posh. She married David Beckham in 1999, and the couple have four children,...		</div>
+		<div class="nobrake img">
+						<a href="http://www.marieclaire.co.uk/horoscopes.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/0000631aa/1ed9_orh100000w156/Victoria-B-LP.jpg" data-alt="Victoria Beckham's sexy summer sideplait" src="/images/spacer.gif" alt="" /></a>
+					</div>
+	</div>
+	</div>
+							</div>
+						</div>
+									</li>
+							<li class=" submenu-present">
+					<a class="nav_link" title="Features" href="http://www.marieclaire.co.uk/blogs/1.html">Features</a>											<div class="subnav_container" id="subnav_blogs">
+							<div class="clearfix subnav_container_inner">
+								<div class="col-1-long nobrake">
+	<h5>Latest Features</h5>
+	<ul class="subnav_articles">
+						<li class="clearfix">
+							<div class="img nobrake">
+																	<a href="http://www.marieclaire.co.uk/blogs/548980/amelia-freer-s-book-eat-nourish-glow-broken-down-into-10-simple-healthy-life-lessons.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/0000873a9/9ccb_orh100000w81/Amelia-Freer-thumb.jpg" data-alt="Amelia Freer" src="/images/spacer.gif" alt="" /></a>
+															</div>
+							<div class="body nobrake">
+								<div class="lucida line15 blog_title">
+									<a href="http://www.marieclaire.co.uk/blogs/548980/amelia-freer-s-book-eat-nourish-glow-broken-down-into-10-simple-healthy-life-lessons.html">10 Things We Learned From Amelia Freer's Book, Eat Nourish Glow </a>
+								</div>
+								<div class="teaser">We present Amelia Freer's recipes, diets and healthy eating philosophy in one bite-sized, low-calorie, nutshell.</div>
+							</div>
+						</li>
+											<li class="clearfix">
+							<div class="img nobrake">
+																	<a href="http://www.marieclaire.co.uk/blogs/546842/is-this-woman-your-new-career-mentor.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000086507/0b66_orh100000w81/Mary-Rozzi-t.jpg" data-alt="Mary Rozzi" src="/images/spacer.gif" alt="" /></a>
+															</div>
+							<div class="body nobrake">
+								<div class="lucida line15 blog_title">
+									<a href="http://www.marieclaire.co.uk/blogs/546842/is-this-woman-your-new-career-mentor.html">Is This Woman Your New Career Mentor? </a>
+								</div>
+								<div class="teaser">Fancy a fairy jobmother? Every month, we're introducing you to a successful and inspirational woman who could be your new career mentor...</div>
+							</div>
+						</li>
+											<li class="clearfix nounderline">
+							<div class="img nobrake">
+																	<a href="http://www.marieclaire.co.uk/blogs/548954/1970s-fashion-moments-that-defined-seventies-style.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/00008725a/110f_orh100000w81/1970s-fashion-Diana-Ross-Elton-John-Cher-THUMB.jpg" data-alt="1970s fashion" src="/images/spacer.gif" alt="" /></a>
+															</div>
+							<div class="body nobrake">
+								<div class="lucida line15 blog_title">
+									<a href="http://www.marieclaire.co.uk/blogs/548954/1970s-fashion-moments-that-defined-seventies-style.html">1970s Fashion: 23 Style Moments That Defined The Decade</a>
+								</div>
+								<div class="teaser">From Joni Mitchell to Cher, we highlight the greatest icons of 1970s fashion...</div>
+							</div>
+						</li>
+					</ul>
+</div>
+
+<div class="col-3 nobrake">
+		<h5><a href="http://www.marieclaire.co.uk/blogs/548992/6-things-you-need-to-know-about-swimming-breaststroke.html">6 Things You Need To Know About Swimming Breaststroke </a></h5>
+	<div class="clearfix">
+		<div class="nobrake teaser">
+			Whether you're training for the Swimathon 2015 (17-19 April) or just fancy a change from the gym, brush up on your stroke with these practical tips from the ASA (Amateur Swimming Association).		</div>
+		<div class="nobrake img">
+			<a href="http://www.marieclaire.co.uk/blogs/548992/6-things-you-need-to-know-about-swimming-breaststroke.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000087420/ea13_orh100000w156/Swimming-l.jpg" data-alt="Swimming" src="/images/spacer.gif" alt="" /></a>		</div>
+	</div>
+	</div>							</div>
+						</div>
+									</li>
+							<li class=" submenu-present">
+					<a class="nav_link" title="MC@Work" href="http://www.marieclaire.co.uk/mcatwork/1.html">MC@Work</a>											<div class="subnav_container" id="subnav_mcatwork">
+							<div class="clearfix subnav_container_inner">
+								<div class="col-1-long nobrake">
+	<h5>Today&#039;s Top MC@Work Stories</h5>
+	<ul class="subnav_articles">
+						<li class="clearfix">
+							<div class="img nobrake">
+								<a href="http://www.marieclaire.co.uk/news/548990/video-our-latest-work-mentor-karen-millen-creative-director-gemma-metheringham-shares-her-top-5-career-tips.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000087414/bc95_orh100000w81/Gemma-Metheringham-thumb.jpg" data-alt="Gemma Metheringham" src="/images/spacer.gif" alt="" /></a>							</div>
+							<div class="body nobrake">
+								<div class="lucida line15 blog_title"><a href="http://www.marieclaire.co.uk/news/548990/video-our-latest-work-mentor-karen-millen-creative-director-gemma-metheringham-shares-her-top-5-career-tips.html">Video: Our Latest @Work Mentor, Karen Millen Chief Creative Officer Gemma Metheringham, Shares Her Top 5 Career Tips</a></div>
+								<div class="teaser">Fancy a virtual mentoring session with our latest @Work Mentor, Karen Millen Chief Creative Officer Gemma Metheringham? We asked Gemma to share her top 5 career tips with us, and you can watch the video here.</div>
+							</div>
+						</li>
+											<li class="clearfix">
+							<div class="img nobrake">
+								<a href="http://www.marieclaire.co.uk/blogs/548957/which-career-is-right-for-me.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/0000873f2/422a_orh100000w81/workwear-Landscape.jpg" data-alt="New work tribes" src="/images/spacer.gif" alt="" /></a>							</div>
+							<div class="body nobrake">
+								<div class="lucida line15 blog_title"><a href="http://www.marieclaire.co.uk/blogs/548957/which-career-is-right-for-me.html">Which Career Is Right For Me? Meet The New Ways Of Working, Then Find Your Best Fit</a></div>
+								<div class="teaser">If you've found yourself asking, Which career is right for me? Try thinking outside the box when it comes to the way you work.</div>
+							</div>
+						</li>
+											<li class="clearfix nounderline">
+							<div class="img nobrake">
+								<a href="http://www.marieclaire.co.uk/blogs/548876/questions-to-ask-at-an-interview-that-will-help-you-nail-the-job.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/00008700e/2b12_orh100000w81/Job-interview-questions-L.jpg" data-alt="questions to ask at an interview" src="/images/spacer.gif" alt="" /></a>							</div>
+							<div class="body nobrake">
+								<div class="lucida line15 blog_title"><a href="http://www.marieclaire.co.uk/blogs/548876/questions-to-ask-at-an-interview-that-will-help-you-nail-the-job.html">9 Questions To Ask At An Interview That Will Help You Nail The Job</a></div>
+								<div class="teaser">The questions YOU ask during a job interview are just as important as the answers you give.</div>
+							</div>
+						</li>
+					</ul>
+</div>
+
+<div class="col-3 nobrake">
+		<a href="http://www.marieclaire.co.uk/mcatwork/1.html" class="sectionlogo"><img alt="MC@Work" src="http://www.marieclaire.co.uk/images/nav/mc_atwork_nav.png" /></a>
+	<h5><a href="http://www.marieclaire.co.uk/blogs/546842/is-this-woman-your-new-career-mentor.html">Is This Woman Your New Career Mentor? </a></h5>
+	<div class="clearfix">
+		<div class="nobrake teaser">
+			Fancy a fairy jobmother? Every month, we're introducing you to a successful and inspirational woman who could be your new career mentor...		</div>
+		<div class="nobrake img">
+			<a href="http://www.marieclaire.co.uk/blogs/546842/is-this-woman-your-new-career-mentor.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000086506/dd0e_orh100000w156/Mary-Rozzi-l.jpg" data-alt="Mary Rozzi" src="/images/spacer.gif" alt="" /></a>		</div>
+	</div>
+	</div>							</div>
+						</div>
+									</li>
+							<li class=" submenu-present">
+					<a class="nav_link" title="Subscribe" href="http://www.magazinesdirect.com/Marie-Claire-magazine-subscription?utm_content=Main+Menu+Text+Link">Subscribe</a>											<div class="subnav_container" id="subnav_subscribe">
+							<div class="clearfix subnav_container_inner">
+								<div class="clear">&nbsp;</div>
+<div class="clearfix large-subs-promo">
+	<h3>Subscribe to Marie Claire magazine from only £13.99!</h3>
+	<div class="large-subs-promo-text">
+		<p>Choose how you want to receive Marie Claire – available in print or on your iPad</p>
+		<span class="subs-promo-icon"></span>
+	</div>
+	<ul>
+		<li class="large-subs-promo-print">
+			<p>Print Only</p>
+			<a href="http://www.magazinesdirect.com/Marie-Claire-magazine-subscription?utm_content=Main+Menu+Print+Drop+Down" target="_blank" class="large-subs-promo-image" rel="nofollow"><img src="http://default.media.ipcdigital.co.uk/300/0000017f5/8a4f_orh194w152/MCLAIRE-0515-WEB.jpg" width="152" height="194" class="large-subs-image-print" alt="" /></a>
+			<a href="http://www.magazinesdirect.com/Marie-Claire-magazine-subscription?utm_content=Main+Menu+Print+Drop+Down" target="_blank" class="large-subs-promo-button" rel="nofollow">Subscribe</a>
+		</li>
+		<li class="large-subs-promo-digital">
+			<p>iPad Only</p>
+			<a href="http://www.magazinesdirect.com/Marie-Claire-magazine-subscription?utm_content=Main+Menu+Digital+Drop+Down&p=dp" target="_blank" class="large-subs-promo-image" rel="nofollow"><img src="http://default.media.ipcdigital.co.uk/300/0000017f5/8a4f_orh194w152/MCLAIRE-0515-WEB.jpg" width="110" height="142" class="large-subs-image-ipad" alt="" /></a>
+			<a href="http://www.magazinesdirect.com/Marie-Claire-magazine-subscription?utm_content=Main+Menu+Digital+Drop+Down&p=dp" target="_blank" class="large-subs-promo-button" rel="nofollow">Subscribe</a>
+		</li>
+	</ul>
+</div>							</div>
+						</div>
+									</li>
+					</ul>
+	</nav>
+</div>				<div id="leaderboard_container">
+			<div id="leaderboard_inner">
+				<div id="leaderboard">
+					  <div class="ads leaderboard_header InSkinHide" id="dfpad-leaderboard_header">
+		<script type="text/javascript">// <![CDATA[
+			if (('undefined' !== typeof(ipc)) && ('undefined' !== typeof(ipc.adloader))) {
+				ipc.adloader.registerSlot('dfpad-leaderboard_header');
+			}
+		// ]]></script>
+</div>
+
+				</div>
+			</div>
+		</div>
+			</div>
+	<div id="headerFollow">
+		<ul class="clearfix social_icons">
+			<li><a target="_blank" class="facebook" href="http://www.facebook.com/MarieClaireUK">&nbsp;</a></li>
+			<li><a target="_blank" class="twitter" href="http://twitter.com/marieclaireuk">&nbsp;</a></li>
+			<li><a target="_blank" class="pinterest" href="http://www.pinterest.com/marieclaireuk/">&nbsp;</a></li>
+			<li><a target="_blank" class="instagram" href="http://instagram.com/marieclaireuk">&nbsp;</a></li>
+			<li><a target="_blank" class="linkedin" href="http://www.linkedin.com/groups/Marie-Claire-Work-3887692?gid=3887692&amp;trk=hb_side_g">&nbsp;</a></li>
+	</ul>	</div>
+</div>
+
+	
+<div id="content">
+    <div id="main-redesign" class="article">
+		<div class="clearfix trailContainer">
+	<div class="trailContainerLeft">
+		<ul id="breadcrumb">
+			<li class="first-child">You are here: <a href="/">Home</a></li>
+						<li>&gt; <a href="/news/1.html">News</a></li>
+						<li>&gt; <a href="/news/celebrity/1.html">Celebrity News</a></li>
+					</ul>
+			</div>
+</div><div id="mcArticleHeader">
+	<h1 class='a-headline'>BAFTA Awards 2015: The Full Winners List </h1><div class="clearfix author_profile_header">
+		<div class="profile_thumb">
+		<img src='http://marieclaire.media.ipcdigital.co.uk/11116/00007312e/5dbc_orh53w53/Suzannah-Ramsdale.jpg' alt="Suzannah Ramsdale" />	</div>
+		<div class="name_date">
+					by Suzannah Ramsdale				<br />
+		<time datetime="2015-02-08 20:22">20:22 | 08 Feb 2015</time>
+	</div>
+	
+	
+<div class="clearfix social-buttons-v2">
+	<div class="nobrake fblike">
+		<div class="pw-widget" pw:title="BAFTA Awards 2015: The Full Winners List " pw:url="http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html">
+			<a class="pw-button-facebook pw-look-native pw-counter"></a>
+		</div>
+	</div>
+	<div class="nobrake ra1_twitter">
+		<div class="pw-widget" pw:title="BAFTA Awards 2015: The Full Winners List " pw:url="http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html">
+			<a class="pw-button-twitter pw-look-native pw-counter"></a>
+		</div>
+	</div>
+	<div class="nobrake ra1_google">
+		<div class="pw-widget" pw:title="BAFTA Awards 2015: The Full Winners List " pw:url="http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html">
+			<a class="pw-button-google-plus pw-counter"></a>
+		</div>
+	</div>
+	<div class="nobrake ra1_email">
+		<div class="pw-widget" pw:counter="none" pw:title="BAFTA Awards 2015: The Full Winners List " pw:url="http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html">
+			<a class="pw-button-email pw-look-native"></a>
+		</div>
+	</div>
+		<div class="nobrake ra1_share">
+		<a href="#" class="ra1_share_button" pw:url="http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html"><img src="/images/custom-share.png" alt="" height="20" width="60" /></a>
+	</div>
+	</div></div></div>
+  <div id="mcArticleGallery">
+      <div class="mcArticlGalleryImage">
+        <a class="mcGarticleNextControl" href="/news/celebrity/548401/bafta-awards-2015-the-full-winners-list/2.html" id="mcGarticleImg1">
+          <img id="mcGarticleImg" alt="Bafta awards 2015 winners" src="http://marieclaire.media.ipcdigital.co.uk/11116/000085686/218e_orh100000w440/BAFTA-Awards-2015-p.jpg" />        </a>
+		<div class="caption">
+		Rex		</div>
+
+		<div class="mcArticleGalleryControls">
+			<p class="l"><a href="/news/celebrity/548401/bafta-awards-2015-the-full-winners-list/10.html" class="mcGarticlePrev">Previous picture</a></p>
+			<p class="c" id="mcGarticleCountA">1 of 10</p>
+			<p class="r"><a href="/news/celebrity/548401/bafta-awards-2015-the-full-winners-list/2.html" class="mcGarticleNext mcGarticleNextControl" >Next picture</a></p>
+		</div>
+
+      </div>
+		<div class="image_note hidden">
+			</div>
+	  </div>
+      <script type="text/javascript">
+  var galleryAds = false;
+
+  YUI(config).use('node', 'ipc-galleryAds', 'ipc-hash-title', function(Y) {
+    var hashTitle = new Y.IPC.Object.HashTitle({
+      'documentTitle': 'BAFTA Awards 2015: The Full Winners List  | Marie Claire'
+    });
+
+    galleryAds = new Y.IPC.Widget.GalleryAds({
+      'currentId': '548401',
+      'currentRoute' : 'newsCelebritySelected',
+      'documentTitle': 'BAFTA Awards 2015: The Full Winners List  | Marie Claire',
+      'totalImages': 10,
+      'currentIndex': 1,
+      'countContainers': [Y.one('#mcGarticleCountA')],
+      'countTemplate': '[CURRENT] of [TOTAL]',
+      'prevControls': Y.all('a.mcGarticlePrev'),
+      'nextControls': Y.all('a.mcGarticleNextControl'),
+      'captionContainer': Y.one('div.caption'),
+	        'descriptionContainer': Y.one('div.image_note'),
+	        'imageContainer': Y.one('.mcArticlGalleryImage'),
+      'image': Y.one('#mcGarticleImg'),
+      'mainAdSlot': '#dfpad-mpu',
+      'gaAccounts': ['UA-11429130-1', 'UA-11429028-1', 'UA-11428852-1'],
+      'galleryType': 'Garticle'
+    });
+
+          galleryAds.addImage({'src' : 'http://marieclaire.media.ipcdigital.co.uk/11116/000085686/218e_orh100000w440/BAFTA-Awards-2015-p.jpg', 'alt' : 'Bafta awards 2015 winners', 'caption': 'Rex', 'description': '', 'pageUrl': 'http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html'});
+            galleryAds.addImage({'src' : 'http://marieclaire.media.ipcdigital.co.uk/11116/00008568f/689c_orh100000w440/Julianne-Moore-2.jpg', 'alt' : 'BAFTA winners', 'caption': 'Rex', 'description': '', 'pageUrl': 'http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html'});
+            galleryAds.addImage({'src' : 'http://marieclaire.media.ipcdigital.co.uk/11116/00008568b/41a5_orh100000w440/BAFTA-winners--1.jpg', 'alt' : 'BAFTA winners', 'caption': 'Rex', 'description': '', 'pageUrl': 'http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html'});
+            galleryAds.addImage({'src' : 'http://marieclaire.media.ipcdigital.co.uk/11116/00008568c/d2c7_orh100000w440/BAFTA-winners--2.jpg', 'alt' : 'BAFTA winners', 'caption': 'Rex', 'description': '', 'pageUrl': 'http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html'});
+            galleryAds.addImage({'src' : 'http://marieclaire.media.ipcdigital.co.uk/11116/00008568e/15de_orh100000w440/JK-Simmons.jpg', 'alt' : 'BAFTA winners', 'caption': 'Rex', 'description': '', 'pageUrl': 'http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html'});
+            galleryAds.addImage({'src' : 'http://marieclaire.media.ipcdigital.co.uk/11116/00008568d/c611_orh100000w440/BAFTA-winners--3.jpg', 'alt' : 'BAFTA winners', 'caption': 'Rex', 'description': '', 'pageUrl': 'http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html'});
+            galleryAds.addImage({'src' : 'http://marieclaire.media.ipcdigital.co.uk/11116/000085690/e966_orh100000w440/Julianne-Moore.jpg', 'alt' : 'BAFTA winners', 'caption': 'Rex', 'description': '', 'pageUrl': 'http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html'});
+            galleryAds.addImage({'src' : 'http://marieclaire.media.ipcdigital.co.uk/11116/000085691/78e6_orh100000w440/Reese.jpg', 'alt' : 'BAFTA winners', 'caption': 'Rex', 'description': '', 'pageUrl': 'http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html'});
+            galleryAds.addImage({'src' : 'http://marieclaire.media.ipcdigital.co.uk/11116/000085692/7e84_orh100000w440/Supporting-actress.jpg', 'alt' : 'BAFTA winners', 'caption': 'Rex', 'description': '', 'pageUrl': 'http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html'});
+            galleryAds.addImage({'src' : 'http://marieclaire.media.ipcdigital.co.uk/11116/000085693/cda1_orh100000w440/Tom-Hiddleston.jpg', 'alt' : 'BAFTA winners', 'caption': 'Rex', 'description': '', 'pageUrl': 'http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html'});
+          galleryAds.render();
+  });
+  </script>
+<!-- Article Start -->
+<div id="articleBody">
+	<p>
+	And the winners of the BAFTA Awards 2015 are in. As we predicted (read: hoped) it was a big night for Eddie Redmayne who won the gong for Best Actor for his turn in <em>The Theory of Everything</em> - which also won Outstanding British Film as well as Best Adapted Screenplay. Other winners on the night included Julianne Moore (<em>Still Alice</em>), Patricia Arquette (<em>Boyhood</em>), J.K. Simmons (<em>Whiplash</em>) and Jack O'Connell (EE Rising Star). <br><br>See below for the full winners list:<br><strong><br>BEST FILM</strong><br>Birdman<br><em><strong>Boyhood - WINNER</strong></em><br>The Grand Budapest Hotel<br>The Imitation Game<br>The Theory of Everything<p><strong>OUTSTANDING BRITISH FILM</strong><br>’71<br>The Imitation Game<br>Paddington<br>Pride<br><em><strong>The Theory of Everything - WINNER </strong></em><br>Under the Skin</p><p><img src="http://marieclaire.media.ipcdigital.co.uk/11116/000085694/5492_orh1000w646/BAFTA-2.jpg" alt="" title=""></p><p><strong>LEADING ACTOR</strong><br>Benedict Cumberbatch – The Imitation Game<br><em><strong>Eddie Redmayne – The Theory of Everything - WINNER</strong></em><br>Jake Gyllenhaal – Nightcrawler<br>Michael Keaton – Birdman<br>Ralph Fiennes – The Grand Budapest Hotel</p><p><strong>LEADING ACTRESS</strong><br>Amy Adams – Big Eyes<br>Felicity Jones – The Theory of Everything<br><em><strong>Julianne Moore – Still Alice - WINNER</strong></em><br>Reese Witherspoon – Wild<br>Rosamund Pike – Gone Girl<br><br><img src="http://marieclaire.media.ipcdigital.co.uk/11116/000085695/ded4_orh1000w646/BAFTA-Awards-2015-winners-2.jpg" alt="" title=""><br></p><p><strong>SUPPORTING ACTOR</strong><br>Edward Norton – Birdman<br>Ethan Hawke – Boyhood<br><em><strong>J.K. Simmons - Whiplash - WINNER</strong></em><br>Mark Ruffalo – Foxcatcher<br>Steve Carell – Foxcatcher</p><p><strong>SUPPORTING ACTRESS</strong><br>Emma Stone – Birdman<br>Imelda Staunton – Pride<br>Keira Knightley – The Imitation Game<br><em><strong>Patricia Arquette – Boyhood - WINNER </strong></em><br>Rene Russo – Nightcrawler</p><p><strong>DIRECTOR</strong><br>Alejandro G. Iñárritu -Birdman<br><em><strong>Richard Linklater – Boyhood - WINNER</strong></em><br>Wes Anderson – The Grand Budapest Hotel<br>James Marsh – The Theory of Everything<br>Damien Chazelle – Whiplash<br><br><strong>THE EE RISING STAR AWARD (voted for by the public)</strong><br>Gugu Mbatha-Raw<br><em><strong>Jack O’Connell - WINNER</strong></em><br>Margot Robbie<br>Miles Teller<br>Shailene Woodley</p><p><img src="http://marieclaire.media.ipcdigital.co.uk/11116/000085698/cfb8_orh1000w646/BAFTA-Awards-2015-winners-3.jpg" alt="" title=""></p><p><strong>ADAPTED SCREENPLAY</strong><br>American Sniper<br>Gone Girl<br>The Imitation Game<br>Paddington<br><em><strong>The Theory of Everything - WINNER</strong></em><br></p><p><strong>OUTSTANDING DEBUT BY A BRITISH WRITER, DIRECTOR OR PRODUCER</strong><br>Elaine Constantine (Writer/Director) – Northern Soul<br>Gregory Burke (Writer), Yann Demange (Director) – ’71<br>Hong Khaou (Writer/Director) – Lilting<br>Paul Katis (Director/Producer), Andrew de Lotbinieere (Producer) – Kajaki: The True Story<br><em><strong>Stephen Beresford, David Livingstone - Pride - WINNER <br></strong></em></p><p><em><strong><img src="http://marieclaire.media.ipcdigital.co.uk/11116/000085697/79d7_orh1000w646/BAFTA-Awards-2015-winners-2.jpg" alt="" title=""></strong></em></p><p><strong>FILM NOT IN THE ENGLISH LANGUAGE</strong><br><em><strong>Ida - WINNER</strong></em><br>Leviathan<br>The Lunchbox<br>Trash<br>Two Days, One Night</p><p><strong>DOCUMENTARY</strong><br>20 Feet from Stardom<br>20,000 Days on Earth<br><em><strong>Citizenfour - WINNER</strong></em><br>Finding Vivian Maier<br>Virunga</p><p><strong>ANIMATED FILM</strong><br>Big Hero 6<br>The Boxtrolls<br><em><strong>The Lego Movie - WINNER</strong></em></p><p><img src="http://marieclaire.media.ipcdigital.co.uk/11116/00008569a/f3f8_orh1000w646/BAFTA-Awards-winners-5.jpg" alt="" title=""></p><p><strong>ORIGINAL MUSIC</strong><br>Birdman<br><em><strong>The Grand Budapest Hotel - WINNER</strong></em><br>Interstellar<br>The Theory of Everything<br>Under the Skin</p><p><strong>CINEMATOGRAPHY</strong><br><em><strong>Birdman - WINNER</strong></em><br>The Grand Budapest Hotel<br>Ida<br>Interstellar<br>Mr. Turner</p><p><strong>EDITING</strong><br>Birdman<br>The Grand Budapest Hotel<br>The Imitation Game<br>Nightcrawler<br>The Theory of Everything<br><em><strong>Whiplash - WINNER</strong></em></p><p><img src="http://marieclaire.media.ipcdigital.co.uk/11116/00008569b/bd9e_orh1000w646/BAFTA-Awards-winners-6.jpg" alt="" title=""></p><p><strong>PRODUCTION DESIGN</strong><br>Big Eyes<br><em><strong>The Grand Budapest Hotel - THE WINNER </strong></em><br>The Imitation Game<br>Interstellar<br>Mr. Turner</p><p><strong>MAKE UP &amp; HAIR</strong><br><em><strong>The Grand Budapest Hotel - WINNER</strong></em><br>Guardians of the Galaxy<br>Into the Woods<br>Mr. Turner<br>The Theory of Everything</p><p><strong>SOUND</strong><br>American Sniper<br>Birdman<br>The Grand Budapest Hotel<br>The Imitation Game<br><em><strong>Whiplash - WINNER </strong></em><br></p><p><strong>SPECIAL VISUAL EFFECTS</strong><br>Dawn of the Planet of the Apes<br>Guardians of the Galaxy<br>The Hobbit: The Battle of the Five Armies<br><em><strong>Interstellar - WINNER</strong></em><br>X-Men: Days of Future Past</p><p><img src="http://marieclaire.media.ipcdigital.co.uk/11116/000085696/69df_orh1000w646/BAFTA-Awards-2015-winners.jpg" alt="" title=""></p><p><strong>BRITISH SHORT ANIMATION</strong><br><em><strong>The Bigger Picture - WINNER</strong></em><br>Monkey Love Experiments<br>My Dad</p><p><strong>BRITISH SHORT FILM</strong><br><em><strong>Boogaloo and Graham - WINNER</strong></em><br>Emotional Fusebox<br>The Karman Line<br>Slap<br>Three Brothers<br><br>See every single look from the <a href="http://www.marieclaire.co.uk/fashion/ideas/37154/54/bafta-awards-2015.html" target="_blank">BAFTA Awards 2015</a> right here.<a href="http://www.marieclaire.co.uk/fashion/ideas/37154/54/bafta-awards-2015.html" target="_blank"><br></a></p><a href="//uk.pinterest.com/pin/create/extension/" style="height: 20px; width: 40px; position: absolute; opacity: 0.85; z-index: 8675309; display: none; cursor: pointer; border: medium none; background-color: transparent; background-image: url("></a><a href="//uk.pinterest.com/pin/create/extension/" style="height: 20px; width: 40px; position: absolute; opacity: 0.85; z-index: 8675309; display: none; cursor: pointer; border: medium none; background-color: transparent; background-image: url("></a><a href="//uk.pinterest.com/pin/create/extension/" style="height: 20px; width: 40px; position: absolute; opacity: 0.85; z-index: 8675309; display: none; cursor: pointer; border: medium none; background-color: transparent; background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAUCAYAAAD/Rn+7AAADU0lEQVR42s2WXUhTYRjHz0VEVPRFUGmtVEaFUZFhHxBhsotCU5JwBWEf1EWEEVHQx4UfFWYkFa2biPJiXbUta33OXFtuUXMzJ4bK3Nqay7m5NeZq6h/tPQ+xU20zugjOxR/+7/O8539+5znnwMtNTExwJtMb3L/fiLv3botCSmUjeCaejTOb39AiFothfHxcFIrHY8RksZjBsckJcOIRMfFsHD/SsbExUYpnI8DR0dGUGjSb0byhEJp5Uqg5CTSzc2CQleJbMEj9/ywBcGRkJEk9DQqouEVQT1sK444yWI9UonmTjGqauVLEIlHa9x8lAMbj8SSpp0rwKGMVvg8P46vbg0C7na8z8JsMcgHe7jlEa+edRhiLy8n/TUMfu6EvLElk+U0WtGwrTrdfAGQf5J8iiK4LVzDU28t8JtMSocf8E+l68myaNFXm/6rXslLK7ay5TOunuRvZWpJuvwAYjUaTpOIWoquuAZ219RTaxKYp9BbjycoN5FvL9qH9TBX5rvoGdJythvXYSTxdtRnWylO/ZdqrLsGwszzhWQ593z2KlAwCYCQSSZJ6ehZ0W7bD9VBLgN0NCqr3qR7R2rBrL3pu3Sb/7nDlz2uy6cG0OXk0GTbZXzNp8trsPAQdTj6frlWzN2DcXZGKQQAMh8NJ6rpyHe+PnkCr/CAFdZyvpfpjuvkifLF9wIt1Wwlo0OHie1RvWrKa93RjzfzliTzPKz3ltB0/Tevmwp14wGUgHAzSOoUEwFAolFaaBSuhnslPRkJexUJtZ6v5HtUeLswl33n1BgEY5fvhs9sJ3FAiT+QYyyvoAQJuD0KBAFRTJNAuz5/s3gJgMBhMJwrVFRThM5tY5zUF/A4X1f2fvQTRLCuBreoim0YmAbqNJryvPEXeeq46kaNdkQ/1HCncbJKPs9ZSv2VHGfWsZ2hfkhKAfr8/pdxWKx4wwD69PmVfNSOL+lr2w+gYqHpWDtXt1xQ8AMlWU0e1lqLd/APRHoP8AJqWrQG9gYxcPMsvSJUvAA4MDKTUJ7MZLaVy8v+qT21tcDx/OemePr0RTkNrur4A6PP5xCgBsL+/X4wiQDpuuVxOeL1eMYmYeDY6sOp0z+B0OuHxeEQhxkJMFosJiSO/UinOI/8Pc+l7KKArAT8AAAAASUVORK5CYII=");"></a>	</p>
+</div>
+
+
+<div class="clearfix social-buttons-v2">
+	<div class="nobrake fblike">
+		<div class="pw-widget" pw:title="BAFTA Awards 2015: The Full Winners List " pw:url="http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html">
+			<a class="pw-button-facebook pw-look-native pw-counter"></a>
+		</div>
+	</div>
+	<div class="nobrake ra1_twitter">
+		<div class="pw-widget" pw:title="BAFTA Awards 2015: The Full Winners List " pw:url="http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html">
+			<a class="pw-button-twitter pw-look-native pw-counter"></a>
+		</div>
+	</div>
+	<div class="nobrake ra1_google">
+		<div class="pw-widget" pw:title="BAFTA Awards 2015: The Full Winners List " pw:url="http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html">
+			<a class="pw-button-google-plus pw-counter"></a>
+		</div>
+	</div>
+	<div class="nobrake ra1_email">
+		<div class="pw-widget" pw:counter="none" pw:title="BAFTA Awards 2015: The Full Winners List " pw:url="http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html">
+			<a class="pw-button-email pw-look-native"></a>
+		</div>
+	</div>
+		<div class="nobrake ra1_share">
+		<a href="#" class="ra1_share_button" pw:url="http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html"><img src="/images/custom-share.png" alt="" height="20" width="60" /></a>
+	</div>
+	</div>
+<script type="text/JavaScript">
+  var OB_permalink= 'http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html';
+  var OB_Template="marieclaireuk";
+  var OB_widgetId= 'AR_1';
+</script>
+		
+				
+		
+				<div id="articlePagination" class="clearfix">
+						<h3>More News:</h3>
+			<ul class="paging">
+		<li class="teaser teaserSmall teaserNext">
+		<div class="teaserImage">
+	        <a href="/news/celebrity/548402/beyonce-kanye-west-rihanna-sam-smith-and-kim-kardashian-attend-the-grammys-2015.html"><img alt="Grammys 2015" src="http://marieclaire.media.ipcdigital.co.uk/11116/0000856a7/159b_orh100000w165/Beyonce-T.jpg" /></a>        <span class="chip"></span>
+</div>
+<div class="teaserText">
+	<h4><a href="/news/celebrity/548402/beyonce-kanye-west-rihanna-sam-smith-and-kim-kardashian-attend-the-grammys-2015.html">The 9 Must-See Moments From The Grammys 2015</a></h4>
+</div>	</li>
+			<li class="teaser teaserSmall teaserPrevious">
+		<div class="teaserImage">
+	        <a href="/news/celebrity/548399/bafta-awards-2015-4-exceptionally-well-dressed-a-list-couples.html"><img alt="Bafta awards 2015" src="http://marieclaire.media.ipcdigital.co.uk/11116/000085650/1df9_orh100000w165/BAFTAs-couples-thumb.jpg" /></a>        <span class="chip"></span>
+</div>
+<div class="teaserText">
+	<h4><a href="/news/celebrity/548399/bafta-awards-2015-4-exceptionally-well-dressed-a-list-couples.html">4 Couples That Definitely Brought Their Fashion A-Game To The BAFTAs 2015</a></h4>
+</div>	</li>
+	</ul>
+		</div>
+		
+					<div id="comments">
+				<h3>Comments:</h3>
+				
+
+  
+ 
+
+ 
+  
+  
+
+  <div class="facebookComments ">
+    <fb:comments href="http://www.marieclaire.co.uk/news/celebrity/548401/bafta-awards-2015-the-full-winners-list.html" num_posts="5" width="646"></fb:comments>  </div>    
+
+  
+
+			</div>
+			
+		<a class="google_profile_link" href="https://plus.google.com/117423068463116090374?rel=author">Google</a>
+<div id="ipc-content" class="clearfix">
+
+  <p class="title">You might also be interested in&hellip;</p>
+
+  <div class="content-list column-left site-look">
+  	  	<h4><a href="http://www.look.co.uk/look-what-im-wearing-street-style-fashion/" target="_blank">Look What I'm Wearing</a></h4>
+    <ul>
+        <li class="clearfix teaser cross-site-teaser" data-destination="http://www.look.co.uk/look-what-im-wearing-street-style-fashion/hollie-sp/2015-03-25-1226/giveaway-my-blog">
+      <div class="teaser-image">
+			<a href="http://www.look.co.uk/look-what-im-wearing-street-style-fashion/hollie-sp/2015-03-25-1226/giveaway-my-blog" target="_blank"><img src="http://southbank-ipcmedia-com.s3-eu-west-1.amazonaws.com/lookwhatimwearing/live/styles/fashion_content_sharing/s3/images/2015/03/DSC_0217_1_0.jpg?itok=sz98Vhg2" width="42" /></a>
+      </div>
+      <div class="teaser-text">
+        <div class="section">LATEST FASHION</div>
+        <h5><a href="http://www.look.co.uk/look-what-im-wearing-street-style-fashion/hollie-sp/2015-03-25-1226/giveaway-my-blog" target="_blank">Giveaway on my blog!!</a></h5>
+        <p class="date">25 March 2015</p>
+      </div>
+    </li>
+        <li class="clearfix teaser cross-site-teaser" data-destination="http://www.look.co.uk/look-what-im-wearing-street-style-fashion/vic-glowstars-pires/2015-02-12-1030/patterns-patterns-spider-webs-pinwheels">
+      <div class="teaser-image">
+			<a href="http://www.look.co.uk/look-what-im-wearing-street-style-fashion/vic-glowstars-pires/2015-02-12-1030/patterns-patterns-spider-webs-pinwheels" target="_blank"><img src="http://southbank-ipcmedia-com.s3-eu-west-1.amazonaws.com/lookwhatimwearing/live/styles/fashion_content_sharing/s3/images/2015/02/digit-al-dozen-patterns-spider-webs-pinwheels-6_1.JPG?itok=JC-zcOAn" width="42" /></a>
+      </div>
+      <div class="teaser-text">
+        <div class="section">LATEST NAILS</div>
+        <h5><a href="http://www.look.co.uk/look-what-im-wearing-street-style-fashion/vic-glowstars-pires/2015-02-12-1030/patterns-patterns-spider-webs-pinwheels" target="_blank">Patterns on Patterns: Spider Webs on Pinwheels</a></h5>
+        <p class="date">12 February 2015</p>
+      </div>
+    </li>
+        <li class="clearfix teaser cross-site-teaser" data-destination="http://www.look.co.uk/look-what-im-wearing-street-style-fashion/urta-lia/2015-02-10-1058/mchs-wavy-hair">
+      <div class="teaser-image">
+			<a href="http://www.look.co.uk/look-what-im-wearing-street-style-fashion/urta-lia/2015-02-10-1058/mchs-wavy-hair" target="_blank"><img src="http://southbank-ipcmedia-com.s3-eu-west-1.amazonaws.com/lookwhatimwearing/live/styles/fashion_content_sharing/s3/images/2015/02/wavy%20hair_1.jpg?itok=Ek_-Ebve" width="42" /></a>
+      </div>
+      <div class="teaser-text">
+        <div class="section">LATEST HAIR</div>
+        <h5><a href="http://www.look.co.uk/look-what-im-wearing-street-style-fashion/urta-lia/2015-02-10-1058/mchs-wavy-hair" target="_blank">MCH's WAVY HAIR</a></h5>
+        <p class="date">10 February 2015</p>
+      </div>
+    </li>
+        </ul>
+    <p class="more"><a href="http://www.look.co.uk/look-what-im-wearing-street-style-fashion/" target="_blank">More: Look What I'm Wearing</a></p>
+      </div>
+
+  <div class="content-list column-right site-instyle">
+  	    <h4><a href="http://www.instyle.co.uk/fashion/look-of-the-day" target="_blank">InStyle: Look Of The Day</a></h4>
+    <ul>
+        <li class="clearfix teaser cross-site-teaser" data-destination="http://www.instyle.co.uk/fashion/look-of-the-day/thursday-2nd-april">
+      <div class="teaser-image">
+        <a href="http://www.instyle.co.uk/fashion/look-of-the-day/thursday-2nd-april" target="_blank"><img src="http://assets.instyle.co.uk/instyle/live/styles/fashion_content_sharing/s3/galleries/15/04/livtyler-art-production-funds-gangs-of-new-york-gala.jpg?itok=oCdLCe0i" width="42" /></a>
+      </div>
+      <div class="teaser-text">
+      	<div class="section">LOOK OF THE DAY</div>
+        <h5>Liv Tyler</h5>
+        <p class="date"><a href="http://www.instyle.co.uk/fashion/look-of-the-day/thursday-2nd-april" target="_blank">Thursday 2nd April</a></p>
+      </div>
+    </li>
+        <li class="clearfix teaser cross-site-teaser" data-destination="http://www.instyle.co.uk/fashion/look-of-the-day/wednesday-1st-april">
+      <div class="teaser-image">
+        <a href="http://www.instyle.co.uk/fashion/look-of-the-day/wednesday-1st-april" target="_blank"><img src="http://assets.instyle.co.uk/instyle/live/styles/fashion_content_sharing/s3/galleries/15/04/sarahjessicaparker-ny.jpg?itok=3fDhHlH_" width="42" /></a>
+      </div>
+      <div class="teaser-text">
+      	<div class="section">LOOK OF THE DAY</div>
+        <h5>Sarah Jessica Parker</h5>
+        <p class="date"><a href="http://www.instyle.co.uk/fashion/look-of-the-day/wednesday-1st-april" target="_blank">Wednesday 1st April</a></p>
+      </div>
+    </li>
+        <li class="clearfix teaser cross-site-teaser" data-destination="http://www.instyle.co.uk/fashion/look-of-the-day/tuesday-31st-march">
+      <div class="teaser-image">
+        <a href="http://www.instyle.co.uk/fashion/look-of-the-day/tuesday-31st-march" target="_blank"><img src="http://assets.instyle.co.uk/instyle/live/styles/fashion_content_sharing/s3/galleries/15/03/katieholmes-woman-in-gold-film-premiere.jpg?itok=KYdJdv1c" width="42" /></a>
+      </div>
+      <div class="teaser-text">
+      	<div class="section">LOOK OF THE DAY</div>
+        <h5>Katie Holmes</h5>
+        <p class="date"><a href="http://www.instyle.co.uk/fashion/look-of-the-day/tuesday-31st-march" target="_blank">Tuesday 31st March</a></p>
+      </div>
+    </li>
+        </ul>
+    <p class="more"><a href="http://www.instyle.co.uk/fashion/look-of-the-day" target="_blank">More: Look Of The Day</a></p>
+      </div>
+</div>
+
+<script type="text/javascript">
+	$('li.cross-site-teaser').bind('click', function () {
+		var url = $(this).data('destination');
+		if (url.length > 0) { window.open(url);	}
+	});
+	
+	$('li.cross-site-teaser a').bind('click', function (e) {
+		e.preventDefault();
+	});
+</script>
+	
+	<div class="clear">&nbsp;</div>
+<div class="clearfix large-subs-promo">
+	<h3>Subscribe to Marie Claire magazine from only £13.99!</h3>
+	<div class="large-subs-promo-text">
+		<p>Choose how you want to receive Marie Claire – available in print or on your iPad</p>
+		<span class="subs-promo-icon"></span>
+	</div>
+	<ul>
+		<li class="large-subs-promo-print">
+			<p>Print Only</p>
+			<a href="http://www.magazinesdirect.com/Marie-Claire-magazine-subscription?utm_content=Footer+Print+Nav+Text+Link" target="_blank" class="large-subs-promo-image" rel="nofollow"><img src="http://default.media.ipcdigital.co.uk/300/0000017f5/8a4f_orh194w152/MCLAIRE-0515-WEB.jpg" width="152" height="194" class="large-subs-image-print" alt="" /></a>
+			<a href="http://www.magazinesdirect.com/Marie-Claire-magazine-subscription?utm_content=Footer+Print+Nav+Text+Link" target="_blank" class="large-subs-promo-button" rel="nofollow">Subscribe</a>
+		</li>
+		<li class="large-subs-promo-digital">
+			<p>iPad Only</p>
+			<a href="http://www.magazinesdirect.com/Marie-Claire-magazine-subscription?utm_content=Footer+Digital+Nav+Text+Link&p=dp" target="_blank" class="large-subs-promo-image" rel="nofollow"><img src="http://default.media.ipcdigital.co.uk/300/0000017f5/8a4f_orh194w152/MCLAIRE-0515-WEB.jpg" width="110" height="142" class="large-subs-image-ipad" alt="" /></a>
+			<a href="http://www.magazinesdirect.com/Marie-Claire-magazine-subscription?utm_content=Footer+Digital+Nav+Text+Link&p=dp" target="_blank" class="large-subs-promo-button" rel="nofollow">Subscribe</a>
+		</li>
+	</ul>
+</div>	
+	</div>
+
+	<div id="side">
+		<div id="landingRightRail">
+	  <div id="primary_mpu_placeholder">
+      <div id="mpu_main">
+            <div class="ads mpu InSkinHide" id="dfpad-mpu">
+		<script type="text/javascript">// <![CDATA[
+			if (('undefined' !== typeof(ipc)) && ('undefined' !== typeof(ipc.adloader))) {
+				ipc.adloader.registerSlot('dfpad-mpu');
+			}
+		// ]]></script>
+</div>
+
+      </div>
+  </div><div id="top5Articles">
+	<div class="top5Articles" data-vr-zone="Most read - right hand side">
+		<ul class="clearfix" id="most_read_tabs_right">
+			<li class="active"><a href="#news" rel="nofollow" style="width: 62px;">Latest</a></li>
+<li><a href="#most_read_fashion" rel="nofollow" style="width: 65px;">Fashion</a></li>
+<li><a href="#most_read_hair_beauty" rel="nofollow" style="width: 95px;">Hair &amp; Beauty</a></li>
+<li><a href="#most_read_features" rel="nofollow" style="width: 75px;">Features</a></li>
+		</ul>
+
+					<div id="news" class="most_read_content" data-section="news">
+
+				<div class="clearfix head_container">
+											<h3 class="nobrake">Latest:</h3>
+												<div class="displayDate nobrake">Saturday 04 April</div>
+															</div>
+
+				<ul>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/news/fashion/548997/western-trend-accessories.html">Accessorise With This Season’s Hottest Trend: The Wild West</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/news/fashion/548997/western-trend-accessories.html"><img alt="Diesel Black Gold?s Nicole High Heel Sandals " src="http://marieclaire.media.ipcdigital.co.uk/11116/00008744d/82ae_orh100000w110/thumb-1.jpg" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/fashion/ideas/37192/51/70s-trend-clothing.html">70s Revival: 50 Ways To Wear The Trend</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/fashion/ideas/37192/51/70s-trend-clothing.html"><img alt="Models rock the 70s fashion trend backstage at the Gucci SS15 fashion show" src="http://marieclaire.media.ipcdigital.co.uk/11116/00008742e/35f7_orh100000w110/70s-revival-Gucci-fsh-S15-036.jpg" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/fashion/ideas/26864/61/maxi-dresses.html">The Maxi Dress Edit: Not Wearing One Yet? Start Shopping Now...</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/fashion/ideas/26864/61/maxi-dresses.html"><img alt="Models Wearing Maxi Dresses Backstage At The Chloe SS15 Fashion Show" src="http://marieclaire.media.ipcdigital.co.uk/11116/00008742a/b2ce_orh100000w110/maxi-dresses-Chloe-bks-S15-010.jpg" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/news/548981/c-est-tres-chic-the-ultimate-parisian-style-guide.html">C'est Très Chic! 5 Ways To Dress Like A Parisian And Nail it</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/news/548981/c-est-tres-chic-the-ultimate-parisian-style-guide.html"><img alt="parisnewthumb.jpg" src="http://marieclaire.media.ipcdigital.co.uk/11116/00008742d/2e0b_orh100000w110/parisnewthumb.jpg" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/fashion/ideas/37194/21/20-best-beach-bags.html">20 Brilliant Beach Bags To Get You Holiday Ready</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/fashion/ideas/37194/21/20-best-beach-bags.html"><img alt="Kate Moss on holiday" src="http://marieclaire.media.ipcdigital.co.uk/11116/00008742c/c6f4_orh100000w110/Kate-Moss-Beach-Bag-Updated.jpg" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/fashion/ideas/37196/11/10-best-espadrilles.html">10 Best Espadrilles</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/fashion/ideas/37196/11/10-best-espadrilles.html"><img alt="rexfeatures.jpg" src="http://marieclaire.media.ipcdigital.co.uk/11116/000087428/a083_orh100000w110/rexfeatures.jpg" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/news/548994/video-interview-with-moschino-creative-director-jeremy-scott-about-the-aw15-moschino-collection.html">Exclusive Video: Interview With Jeremy Scott - Inside The AW15 Moschino Collection</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/news/548994/video-interview-with-moschino-creative-director-jeremy-scott-about-the-aw15-moschino-collection.html"><img alt="Moschino AW15 Collection" src="http://marieclaire.media.ipcdigital.co.uk/11116/000086345/06e3_orh100000w110/THUMB.jpg" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/blogs/548992/6-things-you-need-to-know-about-swimming-breaststroke.html">6 Things You Need To Know About Swimming Breaststroke </a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/blogs/548992/6-things-you-need-to-know-about-swimming-breaststroke.html"><img alt="Swimming" src="http://marieclaire.media.ipcdigital.co.uk/11116/000087421/ed6b_orh100000w110/Swimming-t.jpg" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/blogs/548980/amelia-freer-s-book-eat-nourish-glow-broken-down-into-10-simple-healthy-life-lessons.html">10 Things We Learned From Amelia Freer's Book, Eat Nourish Glow </a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/blogs/548980/amelia-freer-s-book-eat-nourish-glow-broken-down-into-10-simple-healthy-life-lessons.html"><img alt="Amelia Freer" src="http://marieclaire.media.ipcdigital.co.uk/11116/0000873a9/5b8f_orh100000w110/Amelia-Freer-thumb.jpg" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/blogs/546842/is-this-woman-your-new-career-mentor.html">Is This Woman Your New Career Mentor? </a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/blogs/546842/is-this-woman-your-new-career-mentor.html"><img alt="Mary Rozzi" src="http://marieclaire.media.ipcdigital.co.uk/11116/000086507/91b7_orh100000w110/Mary-Rozzi-t.jpg" /></a>						</div>
+					</li>
+									</ul>
+			</div>
+						<div id="most_read_fashion" class="most_read_content" data-section="most_read_fashion">
+
+				<div class="clearfix head_container">
+											<h3 class="nobrake">More Fashion</h3>
+															</div>
+
+				<ul>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/fashion/ideas/37192/51/70s-trend-clothing.html">70s Revival: 50 Ways To Wear The Trend</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/fashion/ideas/37192/51/70s-trend-clothing.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/00008742e/35f7_orh100000w110/70s-revival-Gucci-fsh-S15-036.jpg" data-alt="Models rock the 70s fashion trend backstage at the Gucci SS15 fashion show" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/fashion/ideas/26864/61/maxi-dresses.html">The Maxi Dress Edit: Not Wearing One Yet? Start Shopping Now...</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/fashion/ideas/26864/61/maxi-dresses.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/00008742a/b2ce_orh100000w110/maxi-dresses-Chloe-bks-S15-010.jpg" data-alt="Models Wearing Maxi Dresses Backstage At The Chloe SS15 Fashion Show" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/fashion/ideas/37194/21/20-best-beach-bags.html">20 Brilliant Beach Bags To Get You Holiday Ready</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/fashion/ideas/37194/21/20-best-beach-bags.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/00008742c/c6f4_orh100000w110/Kate-Moss-Beach-Bag-Updated.jpg" data-alt="Kate Moss on holiday" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/fashion/ideas/37196/11/10-best-espadrilles.html">10 Best Espadrilles</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/fashion/ideas/37196/11/10-best-espadrilles.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000087428/a083_orh100000w110/rexfeatures.jpg" data-alt="rexfeatures.jpg" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/fashion/ideas/37190/31/30-best-bikinis-for-pear-shaped-figures.html">30 Stylish Bikinis For Pear Shaped Figures</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/fashion/ideas/37190/31/30-best-bikinis-for-pear-shaped-figures.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/0000872ad/816b_orh100000w110/thumb.jpg" data-alt="Bikini" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/fashion/ideas/33898/51/summer-dresses.html">Summer Dresses: Shop 50 Sunshine-Ready Buys</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/fashion/ideas/33898/51/summer-dresses.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000087081/edec_orh100000w110/summdressthubnew.jpg" data-alt="summer dress" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/news/fashion/548975/the-suede-boden-boots-you-need-in-your-spring-wardrobe.html">The Suede Boden Boots You NEED In Your Spring Wardrobe</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/news/fashion/548975/the-suede-boden-boots-you-need-in-your-spring-wardrobe.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000087368/b5cf_orh100000w110/bodenbootthumb.jpg" data-alt="Boden" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/fashion/ideas/36992/134/online-shopping-fashion-buys-you-need-this-week.html">New In: What's Hot In Stores This Week</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/fashion/ideas/36992/134/online-shopping-fashion-buys-you-need-this-week.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000087245/189d_orh100000w110/newinthumb.jpg" data-alt="NewInStore" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/fashion/ideas/37191/11/designer-wedding-shoes.html">Wedding Insider: Designer Wedding Shoes</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/fashion/ideas/37191/11/designer-wedding-shoes.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000087271/7aec_orh100000w110/rexfeatures-1217543a.jpg" data-alt="Wedding shoes" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/fashion/ideas/37186/31/leather-jackets-shop-spring-s-coolest-cover-up.html">Leather Jackets: Shop Spring's Coolest Cover-Up</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/fashion/ideas/37186/31/leather-jackets-shop-spring-s-coolest-cover-up.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/0000870cf/8143_orh100000w110/leatherthumb1.jpg" data-alt="leather jacket" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+									</ul>
+			</div>
+						<div id="most_read_hair_beauty" class="most_read_content" data-section="most_read_hair_beauty">
+
+				<div class="clearfix head_container">
+											<h3 class="nobrake">More Hair &amp; Beauty</h3>
+															</div>
+
+				<ul>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/beauty/galleries/37019/39/festival-hair-2015-tips-accessories-and-celebrity-styles.html">Festival Hair: Celebrity-Inspired Styles To Try This Summer</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/beauty/galleries/37019/39/festival-hair-2015-tips-accessories-and-celebrity-styles.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/00007f4b9/18f5_orh100000w110/rexfeatures-3694808ts.jpg" data-alt="Festival hair" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/blogs/547571/acne-scars-top-treatments-plus-everything-you-need-to-know.html">How To Get Rid Of Acne Scars</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/blogs/547571/acne-scars-top-treatments-plus-everything-you-need-to-know.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000087136/88bf_orh100000w110/acne-scars-thumbnail.jpg" data-alt="A woman looking in the mirror" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/beauty/galleries/32847/plait-hairstyles.html">Plaits Are Back, People. Get Inspired...</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/beauty/galleries/32847/plait-hairstyles.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000078c74/df2b_orh100000w110/Hair-Plaits-rexfeatures-3004466at.jpg" data-alt="Hair Plaits - two models wearing plaits" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/beauty/galleries/28404/12/best-hand-cream.html">11 Hand Creams That Will Change The Way You Care For Your Digits</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/beauty/galleries/28404/12/best-hand-cream.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000083e42/1c0d_orh100000w110/hands-Costume-Nat-bks-F14-002-2.jpg" data-alt="Hands" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/beauty/galleries/36698/79/hair-colour-ideas-a-list-inspiration.html">Hair Colour Ideas: Beautiful Shades To Inspire Your Next 'Do</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/beauty/galleries/36698/79/hair-colour-ideas-a-list-inspiration.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000086ab2/a068_orh100000w110/Lily-James-thumb.jpg" data-alt="Hair colours" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/news/beauty/548629/jo-malone-launches-rock-of-ages-an-homage-to-all-things-british.html">Jo Malone Launches Rock Of Ages, An Homage to All Things British</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/news/beauty/548629/jo-malone-launches-rock-of-ages-an-homage-to-all-things-british.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000086457/aed0_orh100000w110/JML-Rock-The-Ages-Collection-1MB.jpg" data-alt="Jo Malone" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/beauty/galleries/11823/133/long-hairstyles.html">Long Hairstyles To Give Your Lengthy Tresses A Glam Update</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/beauty/galleries/11823/133/long-hairstyles.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000086c0f/95a3_orh100000w110/Victoria-Beckham-THUMB.jpg" data-alt="Victoria Beckham " src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/beauty/galleries/11838/144/short-hairstyles.html">Short Hairstyles Are Having A Bit Of A Moment...</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/beauty/galleries/11838/144/short-hairstyles.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000086516/3a31_orh100000w110/lastthumb.jpg" data-alt="Cheryl Fernandez-Versini" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/news/beauty/548561/find-out-why-we-re-wishing-for-the-new-cheek-palette-from-bobbi-brown.html">Why We're Wishing For Bobbi Brown's Hot Collection Cheek Palettes</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/news/beauty/548561/find-out-why-we-re-wishing-for-the-new-cheek-palette-from-bobbi-brown.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/0000860cc/4a41_orh100000w110/bobbibrown.jpg" data-alt="Bobbi Brown" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/beauty/best/37149/11/best-primer.html">Primers: The One Buy That Gives Everyone Flawless Skin</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/beauty/best/37149/11/best-primer.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/0000853ea/af0c_orh100000w110/Primers-thumbnail.jpg" data-alt="Photo of models wearing primer" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+									</ul>
+			</div>
+						<div id="most_read_features" class="most_read_content" data-section="most_read_features">
+
+				<div class="clearfix head_container">
+											<h3 class="nobrake">More Features</h3>
+															</div>
+
+				<ul>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/blogs/547516/six-new-reasons-to-try-yoga-right-now.html">Six New Types Of Yoga To Try Right Now</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/blogs/547516/six-new-reasons-to-try-yoga-right-now.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000082988/085a_orh100000w110/Gisele-Yoga-thumb-.jpg" data-alt="Gisele Yoga" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/blogs/548411/actors-on-what-it-s-really-like-to-do-a-sex-scene.html">What It's REALLY Like To Do A Sex Scene...</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/blogs/548411/actors-on-what-it-s-really-like-to-do-a-sex-scene.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/0000857a9/851f_orh100000w110/Sex-scenes-thumb.jpg" data-alt="Sex Scenes" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/blogs/544720/20-first-dance-songs-for-your-wedding-that-won-t-make-you-cringe-promise.html">First Dance Songs For Your Wedding That Won't Make You Cringe. Promise.</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/blogs/544720/20-first-dance-songs-for-your-wedding-that-won-t-make-you-cringe-promise.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000082b72/ba0f_orh100000w110/First-dance-wedding-songs--thumb.jpg" data-alt="First dance wedding songs" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/blogs/545691/grey-hair-why-it-really-is-nothing-to-be-afraid-of.html">Grey Hair: Why It REALLY Is Nothing To Be Afraid Of...</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/blogs/545691/grey-hair-why-it-really-is-nothing-to-be-afraid-of.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/0000841a7/cb6a_orh100000w110/Grey-hair-thumb.jpg" data-alt="Grey hair" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/blogs/546200/oil-pulling-does-it-really-work.html">What Is Oil Pulling And Does It Actually Work? We Try Out The Latest Health And Beauty Craze </a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/blogs/546200/oil-pulling-does-it-really-work.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/00007e5ca/f580_orh100000w110/gwyneth-paltrow-oil-pulling-t.jpg" data-alt="Gwyneth Paltrow oil pulling" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/blogs/541693/online-dating-the-11-best-sites.html">Online Dating: The 11 Best Sites</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/blogs/541693/online-dating-the-11-best-sites.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/00007671e/8cb7_orh100000w110/thumb-best-online-dating-sites.jpg" data-alt="A heart" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/news/world/548910/venezuelan-hospitals-giving-unnecessary-mastectomies-to-women-with-breast-cancer.html">"We're Practising Medicine From The 1940s": Women Suffer Unnecessary Mastectomies In Venezuela</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/news/world/548910/venezuelan-hospitals-giving-unnecessary-mastectomies-to-women-with-breast-cancer.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/00008709e/72e3_orh100000w110/venezuela-hospital-thumbnail.jpg" data-alt="A female patient in a Venezuelan hospital, 2014" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/blogs/546305/swimsuits-11-body-sculpting-one-pieces-that-really-flatter-your-curves.html">The 11 Body-Sculpting One-Piece Swimsuits That REALLY Flatter Your Curves</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/blogs/546305/swimsuits-11-body-sculpting-one-pieces-that-really-flatter-your-curves.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/00008706d/3bf3_orh100000w110/BEACH-CAFE-THUMBNAIL.jpg" data-alt="BEACH CAFE THUMBNAIL.jpg" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/blogs/548894/how-to-survive-in-women-s-prison.html">How To Get By In Women's Prison, By The Writer Of Orange Is The New Black</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/blogs/548894/how-to-survive-in-women-s-prison.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000086ff2/cfe7_orh100000w110/orange-is-the-new-black-thumbnail.jpg" data-alt="Piper Chapman in Orange Is The New Black" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/blogs/548892/angelina-jolie-and-the-bravest-women-in-hollywood.html">Let's Celebrate The Bravest Women In Hollywood</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/blogs/548892/angelina-jolie-and-the-bravest-women-in-hollywood.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000086ff3/d9b6_orh100000w110/angelina-jolie-thumbnail-2.jpg" data-alt="Angelina Jolie" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+									</ul>
+			</div>
+			
+			<div class="top5Article">
+				    <div id="styleItLightAd">
+          <div class="ads style_it_light InSkinHide" id="dfpad-style_it_light">
+		<script type="text/javascript">// <![CDATA[
+			if (('undefined' !== typeof(ipc)) && ('undefined' !== typeof(ipc.adloader))) {
+				ipc.adloader.registerSlot('dfpad-style_it_light');
+			}
+		// ]]></script>
+</div>
+
+    </div>
+				<div class="newsletter_signup">
+					<h4>Get Our FREE Daily Newsletter</h4>
+					<form method="post" action="https://s1642912926.t.eloqua.com/e/f2" class="ipcSubscribeForm" target="ipcsignup">
+	<input value="mcSubscribeForm" type="hidden" name="elqFormName"  />
+	<input value="1642912926" type="hidden" name="elqSiteId"  />
+	<input name="elqCampaignId" type="hidden"  />
+	<input name="source" type="hidden" value="RRL"  />
+	<label for="signupEmailaddress-551f1f71bba529.65971969">Your email</label>
+	<input class="signupEmailaddress" type="text" value="" placeholder="Your email address" name="emailAddress" id="signupEmailaddress-551f1f71bba529.65971969" />
+	<input class="signupSubmit" type="submit" value="Sign up" name="button" />
+</form>
+	<script type="text/javascript">
+	(function() { if(typeof(LiveValidation) == 'undefined') { var url = ("https:" == document.location.protocol) ? "secure.assets.ipcdigital.co.uk/js" : "assets.ipcdigital.co.uk/js";document.write(unescape("%3Cscript src='//" + url + "/js/vendor/livevalidation_standalone.compressed.js' type='text/javascript'%3E%3C/script%3E")); } } )();
+	</script>
+	<style type="text/css" media="screen" >
+	.ipcSubscribeForm { position: relative; }
+	.LV_validation_message { left:0px; top:70px; z-index:10000; display:none; padding:14px 20px; margin-top:-30px; margin-left:28px; width:200px; line-height:16px; display:inline; position:absolute; color:#111; border:1px solid #DCA; background:#fffAF0; border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -moz-box-shadow: 5px 5px 8px #CCC; -webkit-box-shadow: 5px 5px 8px #CCC; box-shadow: 5px 5px 8px #CCC; }
+	</style>
+	<script type="text/javascript" >
+        (function() { var emailField = new LiveValidation("signupEmailaddress-551f1f71bba529.65971969", { onInvalid: function() { var messageElem = this.createMessageSpan(); this.insertMessage(messageElem); this.addFieldClass(); var messageTimeout = setTimeout(function() { if(messageElem.parentNode){messageElem.parentNode.removeChild(messageElem)}; clearTimeout(messageTimeout); }, 5000); }, onValid : function() { return true }, onlyOnSubmit: true }); emailField .add(Validate.Format, {pattern: /^[ ]*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})[ ]*$/i, failureMessage: "A valid email address is required"}); emailField .add(Validate.Presence, {failureMessage: "This field is required"}); })();
+	</script>
+					<p>Plus get great deals and exclusive offers from Time Inc. (UK) Ltd and its partners</p>
+					<p class="legal">By providing your email address above you agree to the <a href="http://www.timeincuk.com/terms-and-conditions/" rel="nofollow" target="_blank">Time Inc. (UK) Ltd Terms and Conditions</a> and the <a href="http://www.timeincuk.com/privacy" rel="nofollow" target="_blank">Privacy Policy</a></p>
+					<div class="impose-border">&nbsp;</div>
+				</div>
+			</div>
+
+			
+			<div id="news_bottom" class="most_read_content" data-section="news">
+				<ul>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/news/548984/let-your-movie-heroine-s-pick-your-new-favourite-scent.html">Let Your Movie Heroine Pick Your New Favourite Scent</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/news/548984/let-your-movie-heroine-s-pick-your-new-favourite-scent.html"><img alt="Alicia Silverstone in Clueless" src="http://marieclaire.media.ipcdigital.co.uk/11116/000077b06/6aed_orh100000w110/clueless-thumbnail.jpg" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/news/celebrity/548991/kim-kardashian-and-kanye-west-reveal-fertility-problems.html">Kim Kardashian Reveals That She And Kanye West Face Fertility Struggles</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/news/celebrity/548991/kim-kardashian-and-kanye-west-reveal-fertility-problems.html"><img alt="Kim Kardashian" src="http://marieclaire.media.ipcdigital.co.uk/11116/000085a06/bffa_orh100000w110/Kim-Kardashian-T.jpg" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/news/548990/video-our-latest-work-mentor-karen-millen-creative-director-gemma-metheringham-shares-her-top-5-career-tips.html">Video: Our Latest @Work Mentor, Karen Millen Chief Creative Officer Gemma Metheringham, Shares Her Top 5 Career Tips</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/news/548990/video-our-latest-work-mentor-karen-millen-creative-director-gemma-metheringham-shares-her-top-5-career-tips.html"><img alt="Gemma Metheringham" src="http://marieclaire.media.ipcdigital.co.uk/11116/000087414/a178_orh100000w110/Gemma-Metheringham-thumb.jpg" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/news/celebrity/548989/is-robert-pattinson-engaged-to-fka-twigs.html">An Open Letter To Robert Pattinson On His Engagement</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/news/celebrity/548989/is-robert-pattinson-engaged-to-fka-twigs.html"><img alt="Robert Pattinson and FKA Twigs" src="http://marieclaire.media.ipcdigital.co.uk/11116/000087411/0f48_orh100000w110/Robert-Pattinson-thumb.jpg" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/news/beauty/548972/jack-howard-the-man-behind-the-hair-colour-you-want.html">Jack Howard: The Man Behind the Hair Colour You Want</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/news/beauty/548972/jack-howard-the-man-behind-the-hair-colour-you-want.html"><img alt="Paul Edmonds Hair" src="http://marieclaire.media.ipcdigital.co.uk/11116/000087384/337b_orh100000w110/Paul-Edmonds-Hair.jpg" /></a>						</div>
+					</li>
+									</ul>
+			</div>
+					
+			<div id="most_read_fashion_bottom" class="most_read_content" data-section="most_read_fashion">
+				<ul>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/news/fashion/548928/kendall-jenner-is-the-face-of-calvin-klein-jeans.html">Kendall Jenner Is The New Face Of Calvin Klein Jeans</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/news/fashion/548928/kendall-jenner-is-the-face-of-calvin-klein-jeans.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000087188/b0ac_orh100000w110/kendall-jenner-calvin-klein-jeans-thumbnail.jpg" data-alt="Kendall Jenner for Calvin Klein jeans" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/fashion/ideas/5060/64/wedding-dresses.html">High Street Wedding Dresses: 64 Styles That Won't Blow The Budget</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/fashion/ideas/5060/64/wedding-dresses.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000076874/715c_orh100000w110/wedding-dresses-thumb-rexfeatures-1299619a.jpg" data-alt="High Street Wedding Dresses" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/news/fashion/548921/mcdonalds-launches-burger-print-clothing-line.html">McDonalds Wants To Dress You Up In Burgers</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/news/fashion/548921/mcdonalds-launches-burger-print-clothing-line.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/00008711e/8a96_orh100000w110/mcdonalds-coat-thumbnail.jpg" data-alt="McDonalds clothing" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/fashion/ideas/35889/51/workwear.html">Spring Workwear: The Marie Claire Edit</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/fashion/ideas/35889/51/workwear.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000083038/a2f3_orh100000w110/workwearthumb.jpg" data-alt="Workwear" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/fashion/ideas/36886/33/the-marie-claire-edit-kid-s-clothing-special.html">Kids Clothing: The Marie Claire Edit</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/fashion/ideas/36886/33/the-marie-claire-edit-kid-s-clothing-special.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/00007bda1/824b_orh100000w110/thumb.jpg" data-alt="children clothing thumb" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+									</ul>
+			</div>
+					
+			<div id="most_read_hair_beauty_bottom" class="most_read_content" data-section="most_read_hair_beauty">
+				<ul>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/beauty/best/12198/11/fake-tan.html">The 10 Best Fake Tans To Give You A Golden Glow</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/beauty/best/12198/11/fake-tan.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000085821/a098_orh100000w110/tan-thumbnail.jpg" data-alt="Photo of a model wearing fake tan" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/beauty/best/5581/11/best-eye-cream.html">Eye Cream: Marie Claire Edits The Best</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/beauty/best/5581/11/best-eye-cream.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000085787/b8b0_orh100000w110/Eye-Creams-thumbnail.jpg" data-alt="Photo of models using eye creams" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/blogs/548397/beauty-bulletin.html">The Beauty Bulletin: 8 Things You Need To Know About This Week</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/blogs/548397/beauty-bulletin.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000085624/1102_orh100000w110/Nars-Thumbnail.jpg" data-alt="Nars Dual Intensity BlushThumbnail" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/beauty/galleries/36617/30/wedding-hairstyles.html">Wedding Hairstyles</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/beauty/galleries/36617/30/wedding-hairstyles.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/0000834a1/c43a_orh100000w110/weddinghairstylesthumb.jpg" data-alt="wedding hairstyles" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/beauty/galleries/36755/15/hairstyles-for-oval-faces.html">Hairstyles For Oval Faces</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/beauty/galleries/36755/15/hairstyles-for-oval-faces.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/0000855f1/eaf0_orh100000w110/Mila-Kunis-Thumbnail.jpg" data-alt="Photo of Mila Kunis" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+									</ul>
+			</div>
+					
+			<div id="most_read_features_bottom" class="most_read_content" data-section="most_read_features">
+				<ul>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/blogs/548783/best-sex-toys-for-couples.html">9 Best Sex Toys For Couples</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/blogs/548783/best-sex-toys-for-couples.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000086c4c/cdb1_orh100000w110/Sex-toys-for-couples-thumb.jpg" data-alt="Sex toys for couples" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/blogs/542291/5-2-diet-recipes-what-can-you-eat-on-the-fasting-days.html">5:2 Diet Recipes: What Can You Eat On The Fasting Days?</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/blogs/542291/5-2-diet-recipes-what-can-you-eat-on-the-fasting-days.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/000076770/17c6_orh100000w110/thumb-5-2-diet-rexfeatures-951745a.jpg" data-alt="5 2 diet" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/blogs/546882/netball-is-back.html">Grab Your PE Kit, Netball Is Back On-Trend</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/blogs/546882/netball-is-back.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/00008073b/ee34_orh100000w110/Adidas-StellaT.jpg" data-alt="Net-A-Sporter Adidas Stella McCartney" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/blogs/547086/gwyneth-paltrow-s-goop-and-the-4-other-best-celebrity-lifestyle-blogs-decoded.html">Gwyneth Paltrow's Goop and The 4 Other Best Celebrity Lifestyle Blogs Decoded </a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/blogs/547086/gwyneth-paltrow-s-goop-and-the-4-other-best-celebrity-lifestyle-blogs-decoded.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/0000847cd/b9f2_orh100000w110/Gwyneth-Paltrow.jpg" data-alt="Photo of Gwyneth Paltrow" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+										<li class="top5Article clearfix" data-vr-contentbox="">
+						<div class="top5ArticleTeaser">
+							<h4><a href="/blogs/546075/epic-gloria-steinem-quotes-to-celebrate-the-mother-of-all-feminists.html">13 Epic Gloria Steinem Quotes That Make Us Want To Be Better Women</a></h4>
+						</div>
+						<div class="top5ArticleImage">
+								<a href="/blogs/546075/epic-gloria-steinem-quotes-to-celebrate-the-mother-of-all-feminists.html"><img data-src="http://marieclaire.media.ipcdigital.co.uk/11116/00007df9a/4ea4_orh100000w110/Gloria-Steinem-thumb.jpg" data-alt="Gloria Steinem" src="/images/spacer.gif" alt="" /></a>						</div>
+					</li>
+									</ul>
+			</div>
+						</div>
+</div></div>
+<br class="shim" />	</div>
+	
+</div>
+
+<div id="dfpad-div-gpt-ad-1380097983963-0">
+	<script type="text/javascript">
+		// <![CDATA[
+		if (('undefined' !== typeof(ipc)) && ('undefined' !== typeof(ipc.adloader))) {
+			ipc.adloader.registerSlot('div-gpt-ad-1380097983963-0');
+		}
+		// ]]>
+	</script>
+</div>
+
+
+	<footer class="clearfix">
+	<div class="clearfix col-container">
+		<div class="col-1">
+			<ul>
+								<li><a title="HOME" href="/">HOME</a></li>
+								<li><a title="CONTACT US" href="http://www.marieclaire.co.uk/contact.html">CONTACT US</a></li>
+								<li><a title="TERMS &amp; CONDITIONS" target="_blank" href="http://www.timeincuk.com/terms-and-conditions/">TERMS &amp; CONDITIONS</a></li>
+								<li><a title="PRIVACY POLICY" target="_blank" href="http://www.timeincuk.com/privacy/">PRIVACY POLICY</a></li>
+								<li><a title="COOKIE INFORMATION" target="_blank" href="http://www.timeincuk.com/privacy/#cookies">COOKIE INFORMATION</a></li>
+								<li><a title="SUBSCRIPTIONS" target="_blank" href="http://www.magazinesdirect.com/Marie-Claire-magazine-subscription?utm_content=Footer+Nav+Text+Link2">SUBSCRIPTIONS</a></li>
+								<li><a title="SITEMAP" href="/sitemap.html">SITEMAP</a></li>
+								<li><a title="ARCHIVE" href="/archive.html">ARCHIVE</a></li>
+							</ul>
+		</div>
+		<div class="col-2">
+			<div class="follow_us_cont">
+				<p>FOLLOW US</p>
+				<ul class="clearfix social_icons">
+			<li><a target="_blank" class="facebook" href="http://www.facebook.com/MarieClaireUK">&nbsp;</a></li>
+			<li><a target="_blank" class="twitter" href="http://twitter.com/marieclaireuk">&nbsp;</a></li>
+			<li><a target="_blank" class="pinterest" href="http://www.pinterest.com/marieclaireuk/">&nbsp;</a></li>
+			<li><a target="_blank" class="instagram" href="http://instagram.com/marieclaireuk">&nbsp;</a></li>
+			<li><a target="_blank" class="linkedin" href="http://www.linkedin.com/groups/Marie-Claire-Work-3887692?gid=3887692&amp;trk=hb_side_g">&nbsp;</a></li>
+	</ul>			</div>
+
+			<div class="newsletter_signup">
+				<p>Don&#39;t miss our Free newsletter!</p>
+				<form method="post" action="https://s1642912926.t.eloqua.com/e/f2" class="ipcSubscribeForm" target="ipcsignup">
+	<input value="mcSubscribeForm" type="hidden" name="elqFormName"  />
+	<input value="1642912926" type="hidden" name="elqSiteId"  />
+	<input name="elqCampaignId" type="hidden"  />
+	<input name="source" type="hidden" value="RRL"  />
+	<label for="signupEmailaddress-551f1d2d2e8117.14674014">Your email</label>
+	<input class="signupEmailaddress" type="text" value="" placeholder="Your email address" name="emailAddress" id="signupEmailaddress-551f1d2d2e8117.14674014" />
+	<input class="signupSubmit" type="submit" value="Sign up" name="button" />
+</form>
+	<script type="text/javascript">
+	(function() { if(typeof(LiveValidation) == 'undefined') { var url = ("https:" == document.location.protocol) ? "secure.assets.ipcdigital.co.uk/js" : "assets.ipcdigital.co.uk/js";document.write(unescape("%3Cscript src='//" + url + "/js/vendor/livevalidation_standalone.compressed.js' type='text/javascript'%3E%3C/script%3E")); } } )();
+	</script>
+	<style type="text/css" media="screen" >
+	.ipcSubscribeForm { position: relative; }
+	.LV_validation_message { left:0px; top:70px; z-index:10000; display:none; padding:14px 20px; margin-top:-30px; margin-left:28px; width:200px; line-height:16px; display:inline; position:absolute; color:#111; border:1px solid #DCA; background:#fffAF0; border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -moz-box-shadow: 5px 5px 8px #CCC; -webkit-box-shadow: 5px 5px 8px #CCC; box-shadow: 5px 5px 8px #CCC; }
+	</style>
+	<script type="text/javascript" >
+        (function() { var emailField = new LiveValidation("signupEmailaddress-551f1d2d2e8117.14674014", { onInvalid: function() { var messageElem = this.createMessageSpan(); this.insertMessage(messageElem); this.addFieldClass(); var messageTimeout = setTimeout(function() { if(messageElem.parentNode){messageElem.parentNode.removeChild(messageElem)}; clearTimeout(messageTimeout); }, 5000); }, onValid : function() { return true }, onlyOnSubmit: true }); emailField .add(Validate.Format, {pattern: /^[ ]*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})[ ]*$/i, failureMessage: "A valid email address is required"}); emailField .add(Validate.Presence, {failureMessage: "This field is required"}); })();
+	</script>
+				<p class="legal">Plus get great deals and exclusive offers from Time Inc. (UK) Ltd and its partners</p>
+				<p class="legal">By providing your email address above you agree to the <a href="http://www.timeincuk.com/terms-and-conditions/" rel="nofollow" target="_blank">Time Inc. (UK) Ltd Terms and Conditions</a> and the <a href="http://www.timeincuk.com/privacy" rel="nofollow" target="_blank">Privacy Policy</a></p>
+			</div>
+		</div>
+		<div class="col-3">
+			<ul id="subscribe_links">
+				<li><a href="http://www.magazinesdirect.com/Marie-Claire-magazine-subscription?utm_content=Page+Header+Image+Link2" title="Subscribe to Marie Claire magazine">Subscribe</a></li>
+				<li><a href="/digital-edition/uk.html">Get Digital Edition</a></li>
+			</ul>
+
+			<div id="tablet-magazine-footer" style="background-image: url('http://default.media.ipcdigital.co.uk/300/0000017f5/9464_orh160w117/MCLAIRE-0515-WEB.jpg')">
+				<img src="http://default.media.ipcdigital.co.uk/300/0000017f5/9464_orh160w117/MCLAIRE-0515-WEB.jpg" class="ipad_cover_footer" alt="Marie Claire Digital Edition" />
+				<img src="/images/footer-ipad.png" class="ipad_frame_footer" alt="Marie Claire Digital Edition" />
+ 			</div>
+		</div>
+	</div>
+	<div class="clearfix bottom">
+		<div class="left">
+			&copy; Marie Claire 2015, Part of the Time Inc. (UK) Ltd Fashion &amp; Beauty Network
+		</div>
+		<div class="right">
+			<ul class="clearfix sister_sites">
+								<li><a target="_blank" href="http://www.look.co.uk">Look</a></li>
+								<li><a target="_blank" href="http://www.instyle.co.uk">InStyle</a></li>
+								<li><a target="_blank" href="http://www.womanandhome.co.uk">Woman &amp; Home</a></li>
+								<li><a target="_blank" href="http://www.housetohome.co.uk">housetohome</a></li>
+								<li><a target="_blank" href="http://www.wallpaper.com">Wallpaper</a></li>
+							</ul>
+		</div>
+	</div>
+</footer>
+
+	</div>
+
+    <div id="fb-root"></div>
+
+    <script type="text/javascript" src="/js/facebook-og.js"></script>
+	  <div class="ads hidden_footer InSkinHide" id="dfpad-hidden_footer">
+		<script type="text/javascript">// <![CDATA[
+			if (('undefined' !== typeof(ipc)) && ('undefined' !== typeof(ipc.adloader))) {
+				ipc.adloader.registerSlot('dfpad-hidden_footer');
+			}
+		// ]]></script>
+</div>
+
+	<script type="text/javascript">
+	var skimlinks_pub_id = '635X130706';
+		var skimlinks_exclude = new Array('adserver.adtech.de','zinio.com','marieclaire.com.au','revistamarieclaire.globo.com','marieclairechina.fr','marieclaire.com.hk','marieclaire.it','marieclaire.co.jp','marieclaire.com.my','marie-claire.es','marieclaire.com.tw','mcdergi.com','instyle.co.uk','housetohome.co.uk','homesandgardens.com','idealhomemagazine.co.uk','livingetc.co.uk','weddingmagazine.co.uk','womanandhome.co.uk','wallpaper.com','nowmagazine.co.uk','webuser.co.uk','horseandhound.co.uk','alamo.co.uk','secure.baa.com','flybmi.com','brusselsairlines.co.uk','brusselsairlines.de','brusselsairlines.no','brusselsairlines.de','brusselsairlines.es','brusselsairlines.fr','brusselsairlines.it','brusselsairlines.nl','cornhilldirect.co.uk','channel4.com','coca-cola.com','creditexpert.co.uk','freecreditreport.com','firstchoice.co.uk','carinsurance.halifax-online.co.uk','halifax-international.com','halifax.co.uk','halifax.co.uk','musicane.com','halifax.co.uk','lavera.com','halifax.co.uk','kiddicare.com','lipsy.co.uk','holidays.monarch.co.uk','morethan.com','nectar.es','neilson.co.uk','nspcc.tprconnect.org','sainsburysbank.co.uk','statravel.co.uk','tui.it','pourtoutvousdire.com','virginholidays.co.uk','zurich-connect.it','current.com','ea.com','eagames.co.uk','emap.com','jpmorganassetmanagement.co.uk','jpmorgan.com','mcfc.co.uk','porsche.com','toyota.co.uk','turner.com','visitlondon.com','btbroadbandoffice.com','business.bt.com','shop.bt.com','productsandservices.bt.com','bttradespace.com','prodbttradespace.bt.com','bt.com','btopenzone.com','businessdirect.bt.com');
+	</script>
+<script type="text/javascript">
+(function() {
+  if ("https:" == document.location.protocol || window.ipc_skim_links_disabled === true) {
+    return true;
+  }
+
+  var skimlinks_script = document.createElement('script');
+  skimlinks_script.type = 'text/javascript';
+  skimlinks_script.async = true;
+  skimlinks_script.src = '//s.skimresources.com/js/ipc.skimlinks.js';
+
+  var skimlinks_script_attach = document.getElementsByTagName('script')[0];
+  skimlinks_script_attach.parentNode.insertBefore(skimlinks_script, skimlinks_script_attach.nextSibling);
+})();
+</script>
+
+<!-- Deprecated snippet (audience_science_phase_1) --><!-- START Nielsen Online SiteCensus V6.0 -->
+<!-- COPYRIGHT 2010 Nielsen Online -->
+<script type="text/javascript">
+  (function () {
+    var d = new Image(1, 1);
+    d.onerror = d.onload = function () {
+      d.onerror = d.onload = null;
+    };
+    d.src = ["//secure-uk.imrworldwide.com/cgi-bin/m?ci=uk-105070h&cg=0&cc=1&si=", escape(window.location.href), "&rp=", escape(document.referrer), "&ts=compact&rnd=", (new Date()).getTime()].join('');
+  })();
+</script>
+<noscript>
+  <div>
+    <img src="//secure-uk.imrworldwide.com/cgi-bin/m?ci=uk-105070h&cg=0&cc=1&ts=noscript"
+    width="1" height="1" alt="" />
+  </div>
+</noscript>
+<!-- END Nielsen Online SiteCensus V6.0 --><script type="text/javascript">
+  (function() {
+    var hn = document.createElement('script'); hn.type = 'text/javascript'; hn.async = true; hn.setAttribute('data-ev-hover-pid',1123); hn.setAttribute('data-ev-hover-ocid', 1996);
+    hn.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'c.betrad.com/geo/h1.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hn, s);
+  })();
+</script><script type="text/javascript">
+var ipcSetupKissinsights = function () {
+
+  var loadKissinsightsJsFile = function () {
+    var el = document.createElement("script");
+    el.type = "text/javascript";
+    el.src = "//s3.amazonaws.com/ki.js/30470/6wI.js";
+    el.async = true;
+    document.body.appendChild(el);
+  },
+  
+  getRand = function () {
+    var surveyMaxRand = 1;
+    return Math.floor(Math.random()*surveyMaxRand);
+  };
+  
+  if (typeof(ipc) == 'object' && typeof(ipc.utils) == 'object' && typeof(ipc.utils.ipcReadCookie) == 'function') {
+    configCookie = parseInt(ipc.utils.ipcReadCookie("ipcKissinsightsConfig"), 10);
+  } else {
+    configCookie = parseInt(ipcReadCookie("ipcKissinsightsConfig"), 10);
+  }
+  
+  surveyRand = isNaN(configCookie) ? getRand() : configCookie;
+  
+  if(isNaN(configCookie)){
+    if (typeof(ipc) == 'object' && typeof(ipc.utils) == 'object' && typeof(ipc.utils.ipcCreateCookie) == 'function') {
+      ipc.utils.ipcCreateCookie("ipcKissinsightsConfig", surveyRand, 30);
+    } else {
+      ipcCreateCookie("ipcKissinsightsConfig", surveyRand, 30);
+    }
+  }
+  
+  if(surveyRand === 0){
+    loadKissinsightsJsFile();
+  }
+  
+},
+
+_kiq = _kiq || [];
+
+ipcSetupKissinsights();
+
+</script>
+<script type="text/javascript" charset="utf-8">
+(function() {
+  if ("https:" == document.location.protocol) {
+    return true;
+  }
+
+  window.ipcTags = window.ipcTags || {};
+  window.ipcTags.overlay = window.ipcTags.overlay || {};
+
+  window.ipcTags.overlay.clickHref = 'http://www.magazinesdirect.com/XMC/IMCUA?utm_medium=Banner&utm_source=BRAND+WEBSITE&utm_campaign=XMC+MC+March+15+Brandsite+Overlay';
+  window.ipcTags.overlay.imgSrc    = 'http://assets.ipcdigital.co.uk/ipc-overlay/imgs/subs-march-2015/marieclaire.jpg';  
+  window.ipcTags.overlay.cssLink   = 'http://assets.ipcdigital.co.uk/ipc-overlay/e1386764652_fc1ce9f/ipc_overlay.css';
+
+  var ipcoverlay = document.createElement('script');
+  ipcoverlay.type = 'text/javascript';
+  ipcoverlay.async = true;
+  ipcoverlay.src = 'http://assets.ipcdigital.co.uk/ipc-overlay/e1386764652_fc1ce9f/ipc_overlay.js';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(ipcoverlay, s);
+})();
+</script>
+    <script type="text/javascript">
+		var socialCookie,
+			socialNetwork,
+			referringSite = document.referrer;
+		if (referringSite) {
+			if (referringSite.match(/^https?:\/\/([^\/]+\.)?t\.co(\/|$)/i)) {
+				socialNetwork = 'Twitter';
+			}
+			if (referringSite.match(/^https?:\/\/([^\/]+\.)?facebook\.com(\/|$)/i)) {
+				socialNetwork = 'Facebook';
+			}
+			if (socialNetwork) {
+				socialCookie = parseInt(ipc.utils.ipcReadCookie('mc' + socialNetwork + 'Promo'));
+				if (isNaN(socialCookie)) {
+					createPromoPushBar(socialNetwork);
+					ipc.adtech.pushNvp({'social_follow': 'visible' });
+				} else {
+					ipc.adtech.pushNvp({'social_follow': 'hidden' });
+				}
+			}
+		}
+
+		if (typeof(trackTwitterFollow) != 'undefined') {
+			twttr.events.bind('follow', trackTwitterFollow);
+		}
+
+    </script>
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"aaccaa7fff","applicationID":"6426255","transactionName":"YgNVYEcAXhJYBUQNXFtJdldBCF8PFgdCEFpWClJHGhJVDVwFRAFX","queueTime":0,"applicationTime":963,"atts":"TkRWFg8aTRw=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-627.min.js"}</script>	</body>
+</html>

@@ -1,0 +1,1937 @@
+<!doctype html>
+
+<!--[if lt IE 7]><html lang="en-US" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html lang="en-US" class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html lang="en-US" class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-US" class="no-js"><!--<![endif]-->
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<meta charset="utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UwEAUl9VGwcJVVhSDwk="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(4),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(u){"stack"in u&&(t(5),t(3),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:4,2:7,3:5,4:18,5:6,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],4:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:18,2:19,ee:"QJf3ax",gos:"7eSDFh"}],5:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:19,2:18,ee:"QJf3ax"}],6:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:19,2:18,ee:"QJf3ax"}],7:[function(t,e){function n(){c.inPlace(this,d,"fn-")}function r(t,e){c.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}var i=t("ee").create(),a=t(1),s=t(2),c=s(i),u=s(a),f=window.XMLHttpRequest,d=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=i,window.XMLHttpRequest=function(t){var e=new f(t);try{i.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{i.emit("internal-error",[r])}catch(o){}}return e},window.XMLHttpRequest.prototype=f.prototype,c.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),i.on("send-xhr-start",r),i.on("open-xhr-start",r)},{1:4,2:19,ee:"QJf3ax"}],8:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=e(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var f=0;c>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:9,3:7,4:4,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],9:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&c&&c.body){p.proto="https"===d.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=c.createElement("script");e.src=p.proto+t.agent,c.body.appendChild(e)}}function r(){"complete"===c.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,c=s.document,u="addEventListener",f="attachEvent",d=(""+location).split("?")[0],p=e.exports={offset:i(),origin:d,features:{}};c[u]?(c[u]("DOMContentLoaded",o,!1),s[u]("load",n,!1)):(c[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],18:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],19:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:18,ee:"QJf3ax"}]},{},["G9z0Bl",3,8]);</script>
+
+		<!-- Google Chrome Frame for IE -->
+		<meta property="fb:app_id" content="164157850314499" />
+		<meta name="alexaVerifyID" content="dGrz2XCLZB6RpbZbl1FUqzgCMG4" />
+		<meta name="bitly-verification" content="1787d16a90b6"/>
+		<meta name="y_key" content="f282393706a5fd85">
+
+		<title>Bobbi Kristina Brown Reportedly Accused Everyone Around Her Of Gold Digging</title>
+
+		<!-- mobile meta (hooray!) -->
+		<meta name="HandheldFriendly" content="True">
+		<meta content="width=1024px, minimum-scale=1.0, maximum-scale=1.0" />
+
+
+		<link rel="apple-touch-icon" href="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/logos/inq-apple.png">
+		<link rel="icon" href="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/logos/favicon.ico">
+
+		<meta name="msapplication-TileColor" content="#c10000">
+		<meta name="msapplication-TileImage" content="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/logos/inq-win.png">
+
+		<link rel="pingback" href="http://www.inquisitr.com/wp/xmlrpc.php">
+
+		<!-- wordpress head functions -->
+		
+			<script>
+			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			  ga('create', 'UA-51256-5', 'auto');
+			  ga('send', 'pageview', {
+  					'dimension6':  'news','dimension1':  'meaghan-ellis','dimension2':  'meaghan-ellis','dimension5':  'meaghan-ellis','dimension8':  'meaghan-ellis-news','dimension4':  'news','dimension9':  '1824481'				});
+			  ga('send', 'event', 'view', 'author', 'meaghan-ellis', 0, {nonInteraction:true});
+			</script>
+
+		
+<!-- All in One SEO Pack 2.2.6.1 by Michael Torbert of Semper Fi Web Design[721,841] -->
+<link rel="author" href="https://plus.google.com/u/0/109364874940355285513/" />
+<meta name="description" itemprop="description" content="Daphne Barak recently shared details about her relationship with Bobbi Kristina over the past 15 months. She revealed secrets, struggles, drug and alcohol" />
+
+<meta name="keywords" itemprop="keywords" content="bobbi kristina brown,gold digging family,confidant daphne barak,nick gordon,pat houston," />
+
+<link rel="canonical" href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/" />
+<!-- /all in one seo pack -->
+<link rel="alternate" type="application/rss+xml" title="The Inquisitr News &raquo; Feed" href="http://www.inquisitr.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="The Inquisitr News &raquo; Comments Feed" href="http://www.inquisitr.com/comments/feed/" />
+
+			<script type="application/ld+json">
+				{"@context":"http://schema.org","@type":"NewsArticle","headline":"Bobbi Kristina Brown 'Confidant' Daphne Barak Insists She Accused Her Entire Family Of Gold Digging","url":"http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/","thumbnailUrl":"http://cdn.inquisitr.com/wp-content/uploads/2015/02/Bobbi-Kristina-Daphne-Barak.jpg","dateCreated":"2015-04-03T23:00:31+0000","articleSection":"news","creator":"meaghan-ellis","keywords":["bobbi-kristina-brown","confidant-daphne-barak","gold-digging-family","nick-gordon","pat-houston"]}			</script>
+
+		<link rel="alternate" type="application/rss+xml" title="The Inquisitr News &raquo; Bobbi Kristina Brown &#8216;Confidant&#8217; Daphne Barak Insists She Accused Her Entire Family Of Gold Digging Comments Feed" href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/feed/" />
+<link rel='stylesheet' id='abase-stylesheet-css'  href='http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/css/style.css?v=e63ff3&#038;av=eccbc8' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='abase-ie-only-css'  href='http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/css/ie.css?v=e63ff3&#038;av=eccbc8' type='text/css' media='all' />
+<![endif]-->
+<script type='text/javascript' src='http://cdn.inquisitr.com/wp/wp-includes/js/jquery/jquery.js?v=e63ff3&#038;av=eccbc8'></script>
+	<script>
+		// Declare the aBase namespace
+		aBase = jQuery.extend({},{
+			authenticated: 0,
+			template_uril: "http://cdn.inquisitr.com/wp-content/themes/inquisitr", // A path to the theme template from root
+			home_url: "http://www.inquisitr.com",
+			ajax_url: "http://www.inquisitr.com/wp/wp-admin/admin-ajax.php"
+		})
+	</script>
+	<link rel='shortlink' href='http://www.inquisitr.com/?p=1824481' />
+<link rel="author" href="https://plus.google.com/u/0/109364874940355285513/" />
+			<!-- Start of Facebook Meta Tags -->
+			<meta property="og:type" content="article" />
+			<meta property="og:title" content="Bobbi Kristina Brown &#8216;Confidant&#8217; Daphne Barak Insists She Accused Her Entire Family Of Gold Digging" />
+			<meta property="og:url" content="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/" />
+			<meta property="og:image" content="http://cdn.inquisitr.com/wp-content/uploads/2015/02/Bobbi-Kristina-Daphne-Barak-665x385.jpg" />
+			<meta property="og:site_name" content="The Inquisitr News"/>
+			<meta property="og:description" content="Daphne Barak recently shared details about her relationship with Bobbi Kristina over the past 15 months. She revealed secrets, struggles, drug and alcohol abuse." />
+			<!-- End of Facebook Meta Tags -->
+
+			<!-- Start of Twitter Meta Tags -->
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:site" content="@theinquisitr"/>
+			<meta name="twitter:image:src" content="http://cdn.inquisitr.com/wp-content/uploads/2015/02/Bobbi-Kristina-Daphne-Barak.jpg" />
+			<meta name="twitter:image:width" content="665">
+			<meta name="twitter:image:height" content="385">
+			<meta name="twitter:description" content="Daphne Barak recently shared details about her relationship with Bobbi Kristina over the past 15 months. She revealed secrets, struggles, drug and alcohol abuse." />
+			<!-- End of Twitter Meta Tags -->
+
+		<!--[if lt IE 9]><script src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/js/scripts.ie.e63ff3.js"></script><![endif]--><!--[if lt IE 10]><script src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/js/scripts.ie9.e63ff3.js"></script><![endif]--><!--[if lt IE 9]><script src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/js/scripts.ie8.e63ff3.js"></script><![endif]-->		<!-- end of wordpress head -->
+		<script>
+			var siteurl = 'http://www.inquisitr.com';
+			var singleID = '1824481';
+			var socialPopupAccount = 'theinquisitr';
+			var google_adnum = 0;
+		</script>
+
+		<!-- Start Visual Website Optimizer Asynchronous Code -->
+<script type='text/javascript'>
+var _vwo_code=(function(){
+var account_id=7443,
+settings_tolerance=2000,
+library_tolerance=2500,
+use_existing_jquery=false,
+// DO NOT EDIT BELOW THIS LINE
+f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+</script>
+<!-- End Visual Website Optimizer Asynchronous Code -->
+<script type='text/javascript'>
+(function() {
+var useSSL = 'https:' == document.location.protocol;
+var src = (useSSL ? 'https:' : 'http:') +
+'//www.googletagservices.com/tag/js/gpt.js';
+document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+})();
+</script>
+<script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+googletag.cmd.push(function() {
+
+googletag.pubads().enableAsyncRendering();
+googletag.defineSlot('/3945829/IQ_1x1', [1, 1], 'div-gpt-ad-1423654572997-0').addService(googletag.pubads());
+googletag.defineSlot('/3945829/IQ_C_ATF_728x90', [728, 90], 'div-gpt-ad-1394023803607-0').addService(googletag.pubads());
+googletag.defineSlot('/3945829/IQ_C_ATF_Side_300x250', [300, 250], 'div-gpt-ad-1394023803607-1').addService(googletag.pubads());
+googletag.defineSlot('/3945829/IQ_C_BTF_160x600', [160, 600], 'div-gpt-ad-1394023803607-2').addService(googletag.pubads());
+googletag.defineSlot('/3945829/IQ_C_BTF_300x250', [300, 250], 'div-gpt-ad-1394023803607-3').addService(googletag.pubads());
+googletag.defineSlot('/3945829/IQ_C_BTF_728x90', [728, 90], 'div-gpt-ad-1394023803607-4').addService(googletag.pubads());
+googletag.defineSlot('/3945829/IQ_ContentAd_300x600', [300, 600], 'div-gpt-ad-1394023803607-5').addService(googletag.pubads());
+googletag.defineSlot('/3945829/IQ_MediaForce_260x410', [260, 410], 'div-gpt-ad-1394023803607-6').addService(googletag.pubads());
+googletag.defineSlot('/3945829/IQ_MediaForce_670x250', [670, 250], 'div-gpt-ad-1394023803607-7').addService(googletag.pubads());
+googletag.defineSlot('/3945829/IQ_Spec1_300x250', [300, 250], 'div-gpt-ad-1394023803607-8').addService(googletag.pubads());
+googletag.defineSlot('/3945829/IQ_Under_Content', [300, 250], 'div-gpt-ad-1411394610486-0').addService(googletag.pubads());
+googletag.defineSlot('/3945829/IQ_Spec2_300x250', [300, 250], 'div-gpt-ad-1394023803607-9').addService(googletag.pubads());
+inqMediaAd = googletag.defineSlot('/3945829/IQ_Spec_Video_300x250', [300, 250], 'div-gpt-ad-1394023803607-10').addService(googletag.pubads());
+inqMediaAdId = 'div-gpt-ad-1394023803607-10';
+googletag.pubads().enableAsyncRendering();
+googletag.enableServices();
+
+});
+</script>
+
+<script type="text/javascript">(function (){var sct = document.createElement("script"),sctHl = document.getElementsByTagName("script")[0];sct.type = "text/javascript";sct.src = 'http://contextual.media.net/inslmedianet.js?cid=8CUH7MPU5&crid=527115768&size=641x481';sct.async = "async";sctHl.parentNode.insertBefore(sct, sctHl);})();</script>
+		<link rel="alternate" type="application/rss+xml" title="Full RSS Feed" href="http://feeds.inquisitr.com/google/yDYq" />
+		<link rel="alternate" type="application/rss+xml" title="Twitter" href="http://twitter.com/theinquisitr" />
+		<link rel="alternate" type="application/rss+xml" title="Tech RSS Feed" href="http://feeds.inquisitr.com/TheInquisitrTechnology" />
+		<link rel="alternate" type="application/rss+xml" title="Gaming RSS Feed" href="http://feeds.inquisitr.com/TheInquisitrGaming" />
+		<link rel="alternate" type="application/rss+xml" title="News RSS Feed" href="http://feeds.inquisitr.com/TheInquisitrNews" />
+		<link rel="alternate" type="application/rss+xml" title="Sports RSS Feed" href="http://feeds.inquisitr.com/TheInquisitrSport" />
+		<link rel="alternate" type="application/rss+xml" title="Entertainment RSS Feed" href="http://feeds.inquisitr.com/TheInquisitrEntertainment" />
+		<link rel="alternate" type="application/rss+xml" title="Funny &amp; Strange RSS Feed" href="http://feeds.inquisitr.com/TheInquisitrFunnyStrange" />
+		<link rel="alternate" type="application/rss+xml" title="World RSS Feed" href="http://feeds.inquisitr.com/TheInquisitrWorld" />
+		<link rel="alternate" type="application/rss+xml" title="Health Feed" href="http://feeds.inquisitr.com/TheInquisitrHealth" />
+		<link rel="alternate" type="application/rss+xml" title="Lifestyle Feed" href="http://feeds.inquisitr.com/TheInquisitrLifestyle" />
+		<link rel="pingback" href="http://www.inquisitr.com/xmlrpc.php" />
+
+	</head>
+
+	<body class="single single-post postid-1824481 single-format-standard segment segment-news">
+
+		<noscript>
+			<style>
+				[data-lazy-src]{
+					display:none;
+				}
+			</style>
+			<!-- <meta http-equiv="refresh" content="0; ./?javascript=false"> -->
+		</noscript>
+		<div id="container">
+
+			<header class="header" role="banner">
+				<div id="inner-header" class="wrap clearfix">
+
+					
+					<p id="logo" class="h1">
+
+						<a href="http://www.inquisitr.com"><img src="http://cdn.inquisitr.com/wp-content/themes/inquisitr//dist/images/logos/inquisitr-312x75.png" alt="The Inquisitr" title="The Inquisitr" width="312" height="75"></a>
+
+					</p>
+
+					<div id="header-search">
+		<ul>
+			<li class="search"><form role="search" method="get" id="searchform" action="http://www.inquisitr.com/" >
+	<input type="text" value="" name="s" id="s" placeholder="Search..." /></form><a href="" class="icon icon-search"></a></li>
+			<li class="twitter"><a href="http://twitter.com/theinquisitr" class="icon icon-twitter" title="Twitter"></a></li>
+			<li class="fb"><a href="http://www.facebook.com/theinquisitr" class="icon icon-facebook" title="Facebook"></a></li>
+			<li class="rss"><a href="http://feeds.inquisitr.com/google/yDYq" class="icon icon-rss" title="RSS Feed"></a></li>
+		</ul>
+</div>
+
+					<nav role="navigation">
+						<ul id="menu-header" class="nav top-nav clearfix"><li id="menu-item-959371" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-depth-0 menu-depth-0 menu-item-959371"><a href="http://www.inquisitr.com">Home</a></li>
+<li id="menu-item-979594" class="menu-item menu-item-type-post_type menu-item-object-segment menu-item-has-children menu-depth-0 has-child menu-depth-0 menu-item-979594"><a href="http://www.inquisitr.com/entertainment/">Entertainment<i class="icon icon-menu-arrow-down"></i></a>
+		<div class="massive-menu">
+
+<ul class="sub-menu">
+	<li id="menu-item-959373" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959373"><a href="http://www.inquisitr.com/category/entertainment/pop/">Celebrity News</a>	</li>
+	<li id="menu-item-959374" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959374"><a href="http://www.inquisitr.com/category/entertainment/famous-relationships/">Famous Relationships</a>	</li>
+	<li id="menu-item-959414" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959414"><a href="http://www.inquisitr.com/category/entertainment/music/">Music</a>	</li>
+	<li id="menu-item-959375" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959375"><a href="http://www.inquisitr.com/category/entertainment/movies/">Movies</a>	</li>
+	<li id="menu-item-959415" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959415"><a href="http://www.inquisitr.com/category/entertainment/online-videos/">Online Videos</a>	</li>
+	<li id="menu-item-979601" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-979601"><a href="http://www.inquisitr.com/category/entertainment/tv-entertainment/">TV</a>	</li>
+	<li id="menu-item-979605" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-979605"><a href="http://www.inquisitr.com/category/entertainment/celebrity-rumors-news/">Rumors</a>	</li>
+</ul>
+<div class='massive-menu-right eightcol'>
+	<section class="massive-menu-items">
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1978768/doctor-tells-off-patients-boss-in-sick-note-goes-viral-thanks-to-reddit-video/"  data-format="video">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Sick-Note-Goes-Viral-100x100.png" data-attID="1978834" class="attachment-thumbnail wp-post-image" alt="Doctor Tells Off Boss In Sick Note" />				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1978768/doctor-tells-off-patients-boss-in-sick-note-goes-viral-thanks-to-reddit-video/">Doctor Tells Off Patient&#8217;s Boss In Sick Note, Goes Viral Thanks To Reddit [Video]</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1977517/kiss-me-nyc-girl-tries-to-kiss-random-strangers-at-grand-central-station-the-results-are-hilarious-video/"  data-format="video">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Farah-Brook-Kiss-Me-NYC-100x100.png" data-attID="1977598" class="attachment-thumbnail wp-post-image" alt="Kiss Me NYC" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Farah-Brook-Kiss-Me-NYC-100x100.png" data-attID="1977598" class="attachment-thumbnail wp-post-image" alt="Kiss Me NYC" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1977517/kiss-me-nyc-girl-tries-to-kiss-random-strangers-at-grand-central-station-the-results-are-hilarious-video/">Kiss Me NYC: Girl Tries To Kiss Random Strangers At Grand Central Station, The Results Are Hilarious [Video]</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1976647/cosmopolitans-racist-twitter-backlash-brews/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Cosmopolitans-Racists-Editorial-Has-Twitter-In-A-Frenzy-100x100.jpg" data-attID="1976923" class="attachment-thumbnail wp-post-image" alt="Cosmopolitan&#039;s Racists Editorial Has Twitter In A Frenzy" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Cosmopolitans-Racists-Editorial-Has-Twitter-In-A-Frenzy-100x100.jpg" data-attID="1976923" class="attachment-thumbnail wp-post-image" alt="Cosmopolitan&#039;s Racists Editorial Has Twitter In A Frenzy" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1976647/cosmopolitans-racist-twitter-backlash-brews/">&#8216;Cosmopolitan&#8217;s Racist Twitter Backlash Brews</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1975904/jack-nicholson-secret-underground-tunnels-to-playboy-mansion-shared-with-warren-beatty-james-caan-video/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Jack-Nicholson-Secret-Tunnels-Playboy-100x100.jpg" data-attID="1976139" class="attachment-thumbnail wp-post-image" alt="Did Jack Nicholson have a secret underground tunnel to the Playboy Mansion?" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Jack-Nicholson-Secret-Tunnels-Playboy-100x100.jpg" data-attID="1976139" class="attachment-thumbnail wp-post-image" alt="Did Jack Nicholson have a secret underground tunnel to the Playboy Mansion?" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1975904/jack-nicholson-secret-underground-tunnels-to-playboy-mansion-shared-with-warren-beatty-james-caan-video/">Jack Nicholson Secret Underground Tunnels To Playboy Mansion Shared With Warren Beatty, Kirk Douglas [Video]</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1975757/father-teaches-abusive-teen-son-an-epic-lesson-after-learning-he-hits-females-footage-goes-viral-viral/"  data-format="video">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/father-son-lesson-100x100.jpg" data-attID="1975850" class="attachment-thumbnail wp-post-image" alt="father son lesson" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/father-son-lesson-100x100.jpg" data-attID="1975850" class="attachment-thumbnail wp-post-image" alt="father son lesson" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1975757/father-teaches-abusive-teen-son-an-epic-lesson-after-learning-he-hits-females-footage-goes-viral-viral/">Father Teaches Abusive Teen Son An Epic Lesson After Learning He Hits Females, Footage Goes Viral [Video]</a></span>
+			</article>
+		
+		<a href="" class="hp-readmore">See More</a>
+	</section>
+</div>
+</div ></li>
+<li id="menu-item-979593" class="menu-item menu-item-type-post_type menu-item-object-segment menu-item-has-children menu-depth-0 has-child menu-depth-0 menu-item-979593"><a href="http://www.inquisitr.com/news/">News and Politics<i class="icon icon-menu-arrow-down"></i></a>
+		<div class="massive-menu">
+
+<ul class="sub-menu">
+	<li id="menu-item-959387" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959387"><a href="http://www.inquisitr.com/category/opinion/">Opinion</a>	</li>
+	<li id="menu-item-959383" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959383"><a href="http://www.inquisitr.com/category/news/business/">Business</a>	</li>
+	<li id="menu-item-959384" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959384"><a href="http://www.inquisitr.com/category/news/education-news/">Education</a>	</li>
+	<li id="menu-item-979600" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-979600"><a href="http://www.inquisitr.com/category/news/politics/">Politics</a>	</li>
+	<li id="menu-item-979603" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-979603"><a href="http://www.inquisitr.com/category/world/">World</a>	</li>
+</ul>
+<div class='massive-menu-right eightcol'>
+	<section class="massive-menu-items">
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1980532/man-dies-while-having-sex-with-scarecrow-he-dressed-up-as-a-woman/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/sex-with-scarecrow-100x100.jpg" data-attID="1980588" class="attachment-thumbnail wp-post-image" alt="Man dies having sex with scarecrow" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/sex-with-scarecrow-100x100.jpg" data-attID="1980588" class="attachment-thumbnail wp-post-image" alt="Man dies having sex with scarecrow" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1980532/man-dies-while-having-sex-with-scarecrow-he-dressed-up-as-a-woman/">Man Dies While Having Intercourse With Scarecrow He Dressed Up As A Woman</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1980113/huge-30-man-brawl-captured-in-car-park-next-to-kids-playground-video/"  data-format="video">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/varwwwclientsclient1web2tmpphpMxXzfv-100x100.jpg" data-attID="1980185" class="attachment-thumbnail wp-post-image" alt="30-man mass car park brawl" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/varwwwclientsclient1web2tmpphpMxXzfv-100x100.jpg" data-attID="1980185" class="attachment-thumbnail wp-post-image" alt="30-man mass car park brawl" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1980113/huge-30-man-brawl-captured-in-car-park-next-to-kids-playground-video/">Huge 30-Man Brawl Captured In Car Park Next To Kid&#8217;s Playground [Video]</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1980373/bronx-teen-fights-for-his-life-after-falling-six-stories-from-roof-top-during-cop-foot-chase/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/building-100x100.jpg" data-attID="1980424" class="attachment-thumbnail wp-post-image" alt="Hakeem Kuta falls from roof top" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/building-100x100.jpg" data-attID="1980424" class="attachment-thumbnail wp-post-image" alt="Hakeem Kuta falls from roof top" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1980373/bronx-teen-fights-for-his-life-after-falling-six-stories-from-roof-top-during-cop-foot-chase/">Bronx Teen Fights For His Life After Falling Six Stories From Rooftop During Cop Foot Chase</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1979721/anne-coulter-calls-on-christians-to-go-out-and-fight-for-their-religious-freedom-to-deny-service-to-lgbt-customers/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/coulter-100x100.jpg" data-attID="1980208" class="attachment-thumbnail wp-post-image" alt="Coulter" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/coulter-100x100.jpg" data-attID="1980208" class="attachment-thumbnail wp-post-image" alt="Coulter" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1979721/anne-coulter-calls-on-christians-to-go-out-and-fight-for-their-religious-freedom-to-deny-service-to-lgbt-customers/">Anne Coulter Calls On Christians To &#8216;Go Out And Fight&#8217; For Their Religious Freedom To Deny Service To LGBT Customers</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1980103/cliven-bundy-takes-on-the-government-again-pushing-for-states-rights-and-less-blm-power/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Cliven-Bundy-100x100.jpg" data-attID="1980120" class="attachment-thumbnail wp-post-image" alt="Nevada rancher cliven bundy" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Cliven-Bundy-100x100.jpg" data-attID="1980120" class="attachment-thumbnail wp-post-image" alt="Nevada rancher cliven bundy" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1980103/cliven-bundy-takes-on-the-government-again-pushing-for-states-rights-and-less-blm-power/">Cliven Bundy Takes On The Government Again, Pushing For States&#8217; Rights And Less BLM Power</a></span>
+			</article>
+		
+		<a href="" class="hp-readmore">See More</a>
+	</section>
+</div>
+</div ></li>
+<li id="menu-item-959370" class="menu-item menu-item-type-post_type menu-item-object-segment menu-item-has-children menu-depth-0 has-child menu-depth-0 menu-item-959370"><a href="http://www.inquisitr.com/sports/">Sports<i class="icon icon-menu-arrow-down"></i></a>
+		<div class="massive-menu">
+
+<ul class="sub-menu">
+	<li id="menu-item-959388" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959388"><a href="http://www.inquisitr.com/category/sports/baseball/">Baseball</a>	</li>
+	<li id="menu-item-959389" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959389"><a href="http://www.inquisitr.com/category/sports/basketball/">Basketball</a>	</li>
+	<li id="menu-item-959390" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959390"><a href="http://www.inquisitr.com/category/sports/boxing-news/">Boxing</a>	</li>
+	<li id="menu-item-959391" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959391"><a href="http://www.inquisitr.com/category/sports/football/">Football</a>	</li>
+	<li id="menu-item-959392" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959392"><a href="http://www.inquisitr.com/category/sports/golf-news/">Golf</a>	</li>
+	<li id="menu-item-959393" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959393"><a href="http://www.inquisitr.com/category/sports/hockey-sport/">Hockey</a>	</li>
+	<li id="menu-item-959395" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959395"><a href="http://www.inquisitr.com/category/sports/nascar-sport/">NASCAR</a>	</li>
+</ul>
+<div class='massive-menu-right eightcol'>
+	<section class="massive-menu-items">
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1980513/breaking-wwe-news-aj-lee-retires-from-in-ring-competition-with-wwe/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/RAW_1137_Photo_164-2623757269-100x100.jpg" data-attID="1980629" class="attachment-thumbnail wp-post-image" alt="Breaking WWE News: AJ Lee Retires From WWE" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/RAW_1137_Photo_164-2623757269-100x100.jpg" data-attID="1980629" class="attachment-thumbnail wp-post-image" alt="Breaking WWE News: AJ Lee Retires From WWE" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1980513/breaking-wwe-news-aj-lee-retires-from-in-ring-competition-with-wwe/">Breaking WWE News: AJ Lee Retires From In-Ring Competition With WWE</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1980582/wwe-divas-aj-lee-leaving-like-cm-punk-april-mendez-retires-but-is-ufc-in-her-future/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2014/10/AJLeePaigeWWE-100x100.jpg" data-attID="1576540" class="attachment-thumbnail wp-post-image" alt="AJ Lee Paige Hell In A Cell" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2014/10/AJLeePaigeWWE-100x100.jpg" data-attID="1576540" class="attachment-thumbnail wp-post-image" alt="AJ Lee Paige Hell In A Cell" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1980582/wwe-divas-aj-lee-leaving-like-cm-punk-april-mendez-retires-but-is-ufc-in-her-future/">WWE Divas: AJ Lee Leaving Like CM Punk, April Mendez Retires But Is UFC In Her Future?</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1980223/chris-jans/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Chris-Jans-100x100.jpg" data-attID="1980463" class="attachment-thumbnail wp-post-image" alt="BGSU" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Chris-Jans-100x100.jpg" data-attID="1980463" class="attachment-thumbnail wp-post-image" alt="BGSU" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1980223/chris-jans/">Chris Jans Fired: College Coach Reportedly Groped Women In Bar [Video]</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1979986/floyd-mayweather-jr-vs-manny-pacquiao-betting-odds/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Manny-Pacquiao-betting-odds-Floyd-Mayweather-Jr-100x100.jpg" data-attID="1980080" class="attachment-thumbnail wp-post-image" alt="Manny Pacquiao betting odds Floyd Mayweather Jr." /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Manny-Pacquiao-betting-odds-Floyd-Mayweather-Jr-100x100.jpg" data-attID="1980080" class="attachment-thumbnail wp-post-image" alt="Manny Pacquiao betting odds Floyd Mayweather Jr." /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1979986/floyd-mayweather-jr-vs-manny-pacquiao-betting-odds/">Manny Pacquiao Betting Odds On The Rise, Vegas Cools On Floyd Mayweather As Favorite On May 2</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1979691/raheem-sterling-trolled-by-jonathan-walters/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/raheEm-100x100.jpg" data-attID="1980152" class="attachment-thumbnail wp-post-image" alt="raheem sterling  and jon walters" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/raheEm-100x100.jpg" data-attID="1980152" class="attachment-thumbnail wp-post-image" alt="raheem sterling  and jon walters" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1979691/raheem-sterling-trolled-by-jonathan-walters/">Raheem Sterling Trolled By Jonathan Walters</a></span>
+			</article>
+		
+		<a href="" class="hp-readmore">See More</a>
+	</section>
+</div>
+</div ></li>
+<li id="menu-item-979591" class="menu-item menu-item-type-post_type menu-item-object-segment menu-item-has-children menu-depth-0 has-child menu-depth-0 menu-item-979591"><a href="http://www.inquisitr.com/life/">Lifestyle<i class="icon icon-menu-arrow-down"></i></a>
+		<div class="massive-menu">
+
+<ul class="sub-menu">
+	<li id="menu-item-959378" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959378"><a href="http://www.inquisitr.com/category/lifestyle/">Lifestyle</a>	</li>
+	<li id="menu-item-959419" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959419"><a href="http://www.inquisitr.com/category/health/nutrition-news/">Nutrition</a>	</li>
+	<li id="menu-item-959379" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959379"><a href="http://www.inquisitr.com/category/lifestyle/fashion/">Fashion</a>	</li>
+	<li id="menu-item-959402" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959402"><a href="http://www.inquisitr.com/category/lifestyle/shopping/">Shopping</a>	</li>
+	<li id="menu-item-979604" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-979604"><a href="http://www.inquisitr.com/category/lifestyle/travel-lifestyle/">Travel</a>	</li>
+</ul>
+<div class='massive-menu-right eightcol'>
+	<section class="massive-menu-items">
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1980612/bill-oreilly-outdoes-sean-hannity-in-serving-as-crusader-for-christians/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/billreillylate-100x100.jpg" data-attID="1980678" class="attachment-thumbnail wp-post-image" alt="Bill O&#039;Reilly" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/billreillylate-100x100.jpg" data-attID="1980678" class="attachment-thumbnail wp-post-image" alt="Bill O&#039;Reilly" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1980612/bill-oreilly-outdoes-sean-hannity-in-serving-as-crusader-for-christians/">Bill O&#8217;Reilly Outdoes Sean Hannity In Serving As Crusader For Christians</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1980201/rosie-odonnell-slams-memories-pizza-gov-mike-pence-how-does-one-get-away-with-saying-i-am-for-persecution/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/rosieodonnellmemoriespizza-100x100.jpg" data-attID="1980498" class="attachment-thumbnail wp-post-image" alt="Rosie O&#039;Donnell Memories Pizza Gov. Mike Pence" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/rosieodonnellmemoriespizza-100x100.jpg" data-attID="1980498" class="attachment-thumbnail wp-post-image" alt="Rosie O&#039;Donnell Memories Pizza Gov. Mike Pence" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1980201/rosie-odonnell-slams-memories-pizza-gov-mike-pence-how-does-one-get-away-with-saying-i-am-for-persecution/">Rosie O&#8217;Donnell Slams Memories Pizza, Gov. Mike Pence: &#8216;How Does One Get Away With Saying &#8216;I Am For Persecution?&#8221;</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1978556/caffeine-becomes-a-phenomenal-art-medium-as-maria-a-aristidou-paints-masterpieces-with-coffee-gallery/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Maria-A.-Aristidou-Gallery-100x100.jpg" data-attID="1978620" class="attachment-thumbnail wp-post-image" alt="Maria A. Aristidou Gallery" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Maria-A.-Aristidou-Gallery-100x100.jpg" data-attID="1978620" class="attachment-thumbnail wp-post-image" alt="Maria A. Aristidou Gallery" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1978556/caffeine-becomes-a-phenomenal-art-medium-as-maria-a-aristidou-paints-masterpieces-with-coffee-gallery/">Caffeine Becomes A Phenomenal Art Medium As Maria A. Aristidou Paints Masterpieces With Coffee [Gallery]</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1978287/disney-world-vegan-and-gluten-free-erin-mckenna-bakery-nyc/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Erin-McKennas-Bakery-NYC-100x100.jpg" data-attID="1978343" class="attachment-thumbnail wp-post-image" alt="Erin McKennas Bakery NYC" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Erin-McKennas-Bakery-NYC-100x100.jpg" data-attID="1978343" class="attachment-thumbnail wp-post-image" alt="Erin McKennas Bakery NYC" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1978287/disney-world-vegan-and-gluten-free-erin-mckenna-bakery-nyc/">Disney World Shows Love To Vegan And Gluten-Free Visitors &#8212; Erin McKenna&#8217;s Bakery NYC Caters To Both</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1975321/best-deviled-egg-recipes-for-easter-if-you-can-boil-water-you-can-make-deviled-eggs/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/easter-deviled-eggs-recipes-e1427950936533-100x100.jpg" data-attID="1975424" class="attachment-thumbnail wp-post-image" alt="easter deviled eggs recipes" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/easter-deviled-eggs-recipes-e1427950936533-100x100.jpg" data-attID="1975424" class="attachment-thumbnail wp-post-image" alt="easter deviled eggs recipes" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1975321/best-deviled-egg-recipes-for-easter-if-you-can-boil-water-you-can-make-deviled-eggs/">Best Deviled Egg Recipes For Easter: If You Can Boil Water, You Can Make Deviled Eggs</a></span>
+			</article>
+		
+		<a href="" class="hp-readmore">See More</a>
+	</section>
+</div>
+</div ></li>
+<li id="menu-item-1689151" class="menu-item menu-item-type-post_type menu-item-object-segment menu-item-has-children menu-depth-0 has-child menu-depth-0 menu-item-1689151"><a href="http://www.inquisitr.com/health/">Health<i class="icon icon-menu-arrow-down"></i></a>
+		<div class="massive-menu">
+
+<ul class="sub-menu">
+	<li id="menu-item-1689152" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1689152"><a href="http://www.inquisitr.com/category/health/">Health</a>	</li>
+	<li id="menu-item-1689153" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1689153"><a href="http://www.inquisitr.com/category/health/health-studies-news/">Health Studies</a>	</li>
+	<li id="menu-item-1689154" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1689154"><a href="http://www.inquisitr.com/category/health/medicine-news/">Medicine</a>	</li>
+	<li id="menu-item-1689155" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1689155"><a href="http://www.inquisitr.com/category/health/nutrition-news/">Nutrition</a>	</li>
+</ul>
+<div class='massive-menu-right eightcol'>
+	<section class="massive-menu-items">
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1979870/domestic-violence-causes-specific-female-mental-health-risks/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Domestic-Violence-100x100.jpg" data-attID="1980426" class="attachment-thumbnail wp-post-image" alt="Domestic Violence Women Victims" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Domestic-Violence-100x100.jpg" data-attID="1980426" class="attachment-thumbnail wp-post-image" alt="Domestic Violence Women Victims" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1979870/domestic-violence-causes-specific-female-mental-health-risks/">Domestic Violence Causes Specific Female Mental Health Risks</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1979082/france-thin-models/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/France-Thin-Models-100x100.jpg" data-attID="1979427" class="attachment-thumbnail wp-post-image" alt="Anorexia" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/France-Thin-Models-100x100.jpg" data-attID="1979427" class="attachment-thumbnail wp-post-image" alt="Anorexia" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1979082/france-thin-models/">France: Thin Models Banned In An Effort To Prevent Eating Disorders</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1978831/shigella-outbreak-hits-the-united-states/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/shigella-100x100.jpg" data-attID="1978851" class="attachment-thumbnail wp-post-image" alt="shigellos" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/shigella-100x100.jpg" data-attID="1978851" class="attachment-thumbnail wp-post-image" alt="shigellos" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1978831/shigella-outbreak-hits-the-united-states/">Shigella Outbreak Hits The United States</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1977952/this-40-second-video-has-been-credited-for-saving-36-babies-lives-since-its-release-in-january/"  data-format="video">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/varwwwclientsclient1web2tmpphpyDnZpN-100x100.jpg" data-attID="1978055" class="attachment-thumbnail wp-post-image" alt="St John Ambulance The Chokeables advert: save a choking baby" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/varwwwclientsclient1web2tmpphpyDnZpN-100x100.jpg" data-attID="1978055" class="attachment-thumbnail wp-post-image" alt="St John Ambulance The Chokeables advert: save a choking baby" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1977952/this-40-second-video-has-been-credited-for-saving-36-babies-lives-since-its-release-in-january/">This 40-Second Video Has Been Credited For Saving 36 Babies’ Lives Since Its Release In January</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1978267/dr-umbar-ghaffar-iced-tea-caused-kidney-failure-due-to-oxalate-consumption-are-you-in-danger/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Dr.-Umbar-Ghaffar-Iced-Tea-Caused-Kidney-Failure-Due-To-Oxalate-Consumption-Are-You-In-Danger-100x100.jpg" data-attID="1978334" class="attachment-thumbnail wp-post-image" alt="Dr. Umbar Ghaffar: Iced Tea Caused Kidney Failure Due To Oxalate Consumption, Are You In Danger?" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Dr.-Umbar-Ghaffar-Iced-Tea-Caused-Kidney-Failure-Due-To-Oxalate-Consumption-Are-You-In-Danger-100x100.jpg" data-attID="1978334" class="attachment-thumbnail wp-post-image" alt="Dr. Umbar Ghaffar: Iced Tea Caused Kidney Failure Due To Oxalate Consumption, Are You In Danger?" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1978267/dr-umbar-ghaffar-iced-tea-caused-kidney-failure-due-to-oxalate-consumption-are-you-in-danger/">Dr. Umbar Ghaffar: Iced Tea Caused Kidney Failure Due To Oxalate Consumption, Are You In Danger?</a></span>
+			</article>
+		
+		<a href="" class="hp-readmore">See More</a>
+	</section>
+</div>
+</div ></li>
+<li id="menu-item-979592" class="menu-item menu-item-type-post_type menu-item-object-segment menu-item-has-children menu-depth-0 has-child menu-depth-0 menu-item-979592"><a href="http://www.inquisitr.com/tech/">Science and Tech<i class="icon icon-menu-arrow-down"></i></a>
+		<div class="massive-menu">
+
+<ul class="sub-menu">
+	<li id="menu-item-959396" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959396"><a href="http://www.inquisitr.com/category/science-news/">Science</a>	</li>
+	<li id="menu-item-959399" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959399"><a href="http://www.inquisitr.com/category/tech/">Technology</a>	</li>
+	<li id="menu-item-959381" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959381"><a href="http://www.inquisitr.com/category/lifestyle/geek-culture/">Geek Culture</a>	</li>
+	<li id="menu-item-959376" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959376"><a href="http://www.inquisitr.com/category/gaming/">Gaming</a>	</li>
+	<li id="menu-item-959397" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959397"><a href="http://www.inquisitr.com/category/science-news/space-news-science-news/">Space</a>	</li>
+	<li id="menu-item-959398" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959398"><a href="http://www.inquisitr.com/category/science-news/theories/">Theories</a>	</li>
+</ul>
+<div class='massive-menu-right eightcol'>
+	<section class="massive-menu-items">
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1978012/world-of-warcraft-upcoming-events-outlined-april-to-be-filled-with-in-game-activities/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Event03-100x100.jpg" data-attID="1978041" class="attachment-thumbnail wp-post-image" alt="World of Warcraft - Activision/Blizzard" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Event03-100x100.jpg" data-attID="1978041" class="attachment-thumbnail wp-post-image" alt="World of Warcraft - Activision/Blizzard" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1978012/world-of-warcraft-upcoming-events-outlined-april-to-be-filled-with-in-game-activities/">&#8216;World Of Warcraft&#8217; Upcoming Events Outlined, April To Be Filled With In-Game Activities</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1977378/house-of-wolves-expansion-gear-revealed/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Destiny-House-of-Wolves-Gear-Leaked-100x100.jpg" data-attID="1977652" class="attachment-thumbnail wp-post-image" alt="Destiny House of Wolves Gear Leaked" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Destiny-House-of-Wolves-Gear-Leaked-100x100.jpg" data-attID="1977652" class="attachment-thumbnail wp-post-image" alt="Destiny House of Wolves Gear Leaked" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1977378/house-of-wolves-expansion-gear-revealed/">&#8216;House Of Wolves&#8217; Expansion Gear Revealed</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1976673/gta-v-pc-trailer-los-santos-in-60fps-looks-stellar/"  data-format="video">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/1_gtavpc_03272015-e1427997608703-100x100.jpg" data-attID="1976943" class="attachment-thumbnail wp-post-image" alt="GTA V PC Screenshot PC" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/1_gtavpc_03272015-e1427997608703-100x100.jpg" data-attID="1976943" class="attachment-thumbnail wp-post-image" alt="GTA V PC Screenshot PC" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1976673/gta-v-pc-trailer-los-santos-in-60fps-looks-stellar/">&#8216;GTA V&#8217; PC Trailer: Los Santos in 60FPS Looks Stellar</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1975965/quantum-break-release-pushed-to-2016-xbox-one-fall-line-up-confirmed/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/03/Quantum-Break-100x100.jpg" data-attID="1910528" class="attachment-thumbnail wp-post-image" alt="Quantum Break (Xbox One)" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/03/Quantum-Break-100x100.jpg" data-attID="1910528" class="attachment-thumbnail wp-post-image" alt="Quantum Break (Xbox One)" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1975965/quantum-break-release-pushed-to-2016-xbox-one-fall-line-up-confirmed/">&#8216;Quantum Break&#8217; Release Pushed To 2016, Xbox One Fall Line Up Confirmed</a></span>
+			</article>
+					<article class="massive-menu-item  first">
+				<a href="http://www.inquisitr.com/1974561/highlights-from-nintendo-direct-for-april-1-2015-brings-amiibos-crossovers-and-200cc-mario-kart-8/"  data-format="">
+					<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Nintendo-Direct-Amiibo-RPG-Mario-kart-100x100.jpg" data-attID="1975112" class="attachment-thumbnail wp-post-image" alt="Nintendo Direct Amiibo RPG Mario kart" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Nintendo-Direct-Amiibo-RPG-Mario-kart-100x100.jpg" data-attID="1975112" class="attachment-thumbnail wp-post-image" alt="Nintendo Direct Amiibo RPG Mario kart" /></noscript>				</a>
+				<span class="h4"><a href="http://www.inquisitr.com/1974561/highlights-from-nintendo-direct-for-april-1-2015-brings-amiibos-crossovers-and-200cc-mario-kart-8/">Highlights From Nintendo Direct For April 1, 2015 Brings Amiibos, Crossovers, And 200cc &#8216;Mario Kart 8&#8217;</a></span>
+			</article>
+		
+		<a href="" class="hp-readmore">See More</a>
+	</section>
+</div>
+</div ></li>
+<li id="menu-item-979608" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-depth-0 menu-depth-0 menu-item-979608"><a href="http://www.inquisitr.com/category/buzzworthy/">BuzzWorthy</a></li>
+<li id="menu-item-959403" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-depth-0 has-child menu-depth-0 menu-item-959403"><a href="http://feeds.inquisitr.com/google/yDYq">SUBSCRIBE<i class="icon icon-menu-arrow-down"></i></a>
+		<div class="massive-menu">
+
+<ul class="sub-menu">
+	<li id="menu-item-959404" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-959404"><a href="http://feeds.inquisitr.com/google/yDYq">Full RSS Feed</a>	</li>
+	<li id="menu-item-959405" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-959405"><a href="http://feeds.inquisitr.com/TheInquisitrNews">Latest News Feed</a>	</li>
+	<li id="menu-item-959406" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-959406"><a href="http://feeds.inquisitr.com/TheInquisitrEntertainment">Entertainment News Feed</a>	</li>
+	<li id="menu-item-959407" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-959407"><a href="http://feeds.inquisitr.com/TheInquisitrWorld">World News</a>	</li>
+	<li id="menu-item-959408" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-959408"><a href="http://feeds.inquisitr.com/TheInquisitrTechnology">Tech Feed</a>	</li>
+	<li id="menu-item-959409" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-959409"><a href="http://feeds.inquisitr.com/TheInquisitrGaming">Gaming Feed</a>	</li>
+	<li id="menu-item-959410" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-959410"><a href="http://feeds.inquisitr.com/TheInquisitrSport">Sports Feed</a>	</li>
+	<li id="menu-item-959411" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-959411"><a href="http://feeds.inquisitr.com/TheInquisitrFunnyStrange">Funny &#038; Strange Feed</a>	</li>
+	<li id="menu-item-959412" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-959412"><a href="http://feeds.inquisitr.com/TheInquisitrHealth">Health Feed</a>	</li>
+	<li id="menu-item-959413" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-959413"><a href="http://feeds.inquisitr.com/TheInquisitrLifestyle">Lifestyle Feed</a>	</li>
+	<li id="menu-item-1060125" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1060125"><a href="http://feeds.inquisitr.com/TheInquisitrNewsBuzzworthy">BuzzWorthy Feed</a>	</li>
+</ul>
+<div class='massive-menu-right eightcol'>
+	<section class="mailchimp_form">
+		<header><h3>Delivered To Your <span>INBOX</span></h3></header>
+<div id="mc_signup">
+	<form method="post" action="#mc_signup" id="mc_signup_form">
+		<input type="hidden" id="mc_submit_type" name="mc_submit_type" value="html" />
+		<input type="hidden" name="mcsf_action" value="mc_submit_signup_form" />
+		<input type="hidden" id="_mc_submit_signup_form_nonce" name="_mc_submit_signup_form_nonce" value="17bdf6dd25" />
+			<div id="mc_subheader">
+			Get Inquisitr's daily viral news by e-mail and never miss the internet's hottest stories!		</div><!-- /mc_subheader -->
+		
+	<div class="mc_form_inside">
+
+		<div class="updated" id="mc_message">
+					</div><!-- /mc_message -->
+
+		
+<div class="mc_merge_var">
+		<label for="mc_mv_EMAIL" class="mc_var_label mc_header mc_header_email">Email Address</label>
+	<input type="text" size="18" placeholder="" name="mc_mv_EMAIL" id="mc_mv_EMAIL" class="mc_input"/>
+</div><!-- /mc_merge_var -->
+		<div class="mc_signup_submit">
+			<input type="submit" name="mc_signup_submit" id="mc_signup_submit" value="Go" class="button" />
+		</div><!-- /mc_signup_submit -->
+
+
+		
+	</div><!-- /mc_form_inside -->
+	</form><!-- /mc_signup_form -->
+</div><!-- /mc_signup_container -->
+		</section>
+</div>
+</div ></li>
+</ul>					</nav>
+
+				</div> <!-- end #inner-header -->
+
+				<div class="holder">
+					<!-- IQ_C_ATF_728x90 -->
+<div id='div-gpt-ad-1394023803607-0' style='width:728px; height:90px;margin: 0 auto;'>
+<script type='text/javascript'>
+if (!jQuery('body').hasClass("page")) {
+     googletag.cmd.push(function() { googletag.display('div-gpt-ad-1394023803607-0'); });
+}else{
+jQuery('#div-gpt-ad-1394023803607-0').hide()
+}
+</script>
+</div>				</div>
+
+			</header> <!-- end header -->
+
+			<div id="content">
+
+				<div id="inner-content" class="wrap clearfix">
+
+					<div id="main" class="eightcol first clearfix" role="main">
+
+													<div class="socialShare">
+								<div class="fb-like"  data-ref="singleSocial"  data-href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/"  data-send="false" data-width="60" data-show-faces="false" data-action="like" data-layout="box_count"></div>
+								<a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="theinquisitr" data-related="theinquisitr, @itz_meg"></a>
+								<div class="g-plusone" data-size="tall"></div>
+								<div style="transform:scale(1,.9);-webkit-transform:scale(1,.9);">
+									<a href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"  data-pin-height="28" ><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_28.png" /></a>
+								</div>
+							</div>
+							<article id="post-1824481" class="post-1824481 post type-post status-publish format-standard has-post-thumbnail hentry category-news tag-bobbi-kristina-brown tag-confidant-daphne-barak tag-gold-digging-family tag-nick-gordon tag-pat-houston clearfix is-featured" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+
+								<header class="article-header">
+									<div class="meta">
+										Posted in: <a href="http://www.inquisitr.com/category/news/" rel="category tag">News</a>
+										<time datetime="2015-02-08" pubdate>
+											Posted: <span>February 8, 2015</span>
+										</time>
+									</div>
+									<h1 class="entry-title single-title" itemprop="headline">Bobbi Kristina Brown &#8216;Confidant&#8217; Daphne Barak Insists She Accused Her Entire Family Of Gold Digging																		</h1>
+								</header> <!-- end article header -->
+
+
+								<img width="665" height="385" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/02/Bobbi-Kristina-Daphne-Barak-665x385.jpg" data-attID="1825276" class="single-leader wp-post-image" alt="Bobbi Kristina - Daphne Barak" /><noscript><img width="665" height="385" src="http://cdn.inquisitr.com/wp-content/uploads/2015/02/Bobbi-Kristina-Daphne-Barak-665x385.jpg" data-attID="1825276" class="single-leader wp-post-image" alt="Bobbi Kristina - Daphne Barak" /></noscript>
+								<section class="entry-content clearfix" itemprop="articleBody">
+																	<p>Bobbi Kristina Brown was reportedly plagued with a number daunting issues in her life. Although several reports have insisted the majority of her problems were the result of domestic violence and the negative influence of her fiancé, Nick Gordon, the 21-year-old&#8217;s confidant has revealed she had many more concerns.</p><div id="ym_667311138333727814" class="ym"></div>
+<p>According to the <em>Daily Mail</em>, <a href="http://www.dailymail.co.uk/news/article-2944117/Bobbi-Kristina-confidante-reveals-Whitney-s-tormented-daughter-told-family-say-m-crazy-hold-money.html">Daphne Barak</a> recently shared details about her relationship with Bobbi Kristina over the past 15 months. Although she&#8217;s still quite young, Barak insists an &#8220;emotionally shattered&#8221; Bobbi Kristina had been burdened with quite a heavy load since her mother Whitney Houston&#8217;s death on February 11, 2012.</p>
+<p>Barak, an international interviewer and producer, described Bobbi Kristina as a &#8220;lost&#8221; girl who was in desperate need of family structure since her turbulent lifestyle often left her alienated from her family. Last March, Bobbi Kristina received the first disbursement from the late singer&#8217;s estate. However, she and Nick weren&#8217;t exactly pleased with the amount of money she received. Although Barak&#8217;s account has not been confirmed or denied, Bobbi Kristina&#8217;s aunt, Pat Houston, also stated that there was an alleged disagreement in reference to the $1.2 million she received.</p>
+<blockquote class="twitter-tweet" width="500"><p>Praying 4  <a href="https://twitter.com/REALbkBrown">@REALbkBrown</a> (wih me in pix) our chats re how much she has to give, wants to give,  getting stronger .. <a href="http://t.co/dPuYoynhCP">pic.twitter.com/dPuYoynhCP</a></p>
+<p>&mdash; Daphne Barak (@daphnebarak) <a href="https://twitter.com/daphnebarak/status/561941649497288704">February 1, 2015</a></p></blockquote>
+<p><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p><a href="http://pagesix.com/2015/02/08/inside-bobbi-kristinas-secret-life-her-brother-her-lover-her-killer/"><em>Page Six</em></a> reports Pat blamed Nick for the backlash over the disbursement. However, Bobbi Kristina saw things from a different perspective. Barak insists her issue was with the family. She allegedly accused her family of trying to remain in control of her mother&#8217;s estate based on claims that she was &#8220;unstable.&#8221;</p>
+<p>&#8220;My family say I&#8217;m crazy so they can get hold of my money,&#8221; Bobbi Kristina allegedly said.</p>
+<p>The strained family dynamic reportedly contributed to Bobbi Kristina&#8217;s dreams and aspirations of creating her own family. Although it&#8217;s no secret that her relationship with Nick wasn&#8217;t the best, Barak insists she often felt he was her only hope of building the family structure she so desired. However, an insider insists Nick used her weakness to his advantage in an effort to &#8220;turn her against&#8221; her family.</p>
+<p>&#8220;Krissy [Bobbi] and [Marion &#8220;Pat&#8221; Houston, who is married to Whitney&#8217;s brother, [Gary] were close at one point, and Pat always looked out for Krissy,&#8221; the insider said.</p>
+<p>Barak agreed Nick wasn&#8217;t the best influence. She openly discussed how Bobbi Kristina used drugs and alcohol to cope with the devastating loss of her mother. Based on Barak&#8217;s account, Nick was often an enabler who contributed to Bobbi Kristina&#8217;s prescription drug usage. Barak recalled a number of times Bobbi Kristina and Nick Gordon came to visit her and explained they were &#8220;sick&#8221; from the flu as an excuse for the prescription drugs they&#8217;d been taking.</p>
+<p>Here&#8217;s an excerpt from the report of Barak&#8217;s account.</p>
+<blockquote><p>&#8220;Bobbi Kristina herself took prescription drugs. It was all too clear when she and Nick came to visit. She complained they had &#8216;flu&#8217;, Nick in particular. &#8216;We are very sick. We need a doctor,&#8217; Bobbi Kristina insisted. When I said my partner would drive them, she replied: &#8216;No, Nick will go. I am too famous to go.&#8217; After visiting the doctor, Nick tried chemist after chemist. Bobbi Kristina stayed with us, chatting happily. She looked healthy.</p>
+<p>&#8220;When he surfaced with the pills he gave her some &#8211; and they ran off to their hotel. We phoned and phoned, but they didn&#8217;t pick up. Then they called us – three days later. My partner later found a prescription made out to Nick in our Jeep. It was for Oxycodone, a highly addictive and powerful drug used to relieve severe cancer pain.&#8221;</p></blockquote>
+<p>Bobbi Kristina and Nick Gordon&#8217;s marital status was questioned earlier this week because many feared he would inherit Whitney Houston&#8217;s estate in the event her only daughter does not recover. The looming question has reportedly led to a big feud amongst family members since it is still relatively unclear who would inherit the estate, which is estimated to be as high as $100 million.</p>
+<p>Do you think Bobbi Kristina Brown is surrounded by gold diggers? Share your thoughts.</p>
+<p>[Image via <a href="https://twitter.com/erbilgunasti/status/561944256785678336">Twitter, Erbil Gunasti</a>]</p>
+</p>								</section> <!-- end article section -->
+
+								
+
+																	<div id='ultimedia_wrapper'></div>
+								
+								<div style="width:100%; text-align:center;">  </div>
+								<div style="width:100%; text-align:center;"> <div id="ym_667311461026700359" class="ym"></div>
+<script id="mNCC" language="javascript">  medianet_width='670';  medianet_height= '175';  medianet_crid='967774781';  medianet_fd='inquisitr.com'  </script>  <script id="mNSC" src="http://contextual.media.net/nmedianet.js?cid=8CUH7MPU5" language="javascript"></script>
+ </div>
+
+																<footer class="article-footer clearfix">
+																		<div id="by-author" class="fourcol first">
+										<a href="http://www.inquisitr.com/author/meaghan-ellis/" title="Posts by Meaghan Ellis" rel="author"><img id="authorbox-photo" title="Meaghan Ellis" alt='Meaghan Ellis' src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://1.gravatar.com/avatar/11086dd23ecea734f9b116b25aee6f2c?s=90&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D90&amp;r=G" class='avatar avatar-90 photo' height='90' width='90' /><noscript><img id="authorbox-photo" title="Meaghan Ellis" alt='Meaghan Ellis' src="http://1.gravatar.com/avatar/11086dd23ecea734f9b116b25aee6f2c?s=90&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D90&amp;r=G" class='avatar avatar-90 photo' height='90' width='90' /></noscript></a>										<h3 class="author"><a href="http://www.inquisitr.com/author/meaghan-ellis/" title="Posts by Meaghan Ellis" rel="author">Meaghan Ellis</a></h3>
+										<ul><li><a href="http://twitter.com/itz_meg" class="icon icon-twitter" title="Follow Meaghan Ellis on Twitter."></a></li><li><a href="https://plus.google.com/u/0/109364874940355285513/" class="icon icon-googleplus" title="Follow Meaghan Ellis on Google Plus."></a></li><li><a href="www,facebook.com/meaghan.ellis1" class="icon icon-facebook" title="Follow Meaghan Ellis on Facebook."></a></li><li><a href="http://www.inquisitr.com/author/meaghan-ellis/feed/" class="icon icon-rss" title="Subscribe to Meaghan Ellis's RSS Feed ."></a></li></ul>									</div>
+									<ul id="article-footer-meta" class="eightcol last">
+										<li>Category: <a href="http://www.inquisitr.com/category/news/" rel="category tag">News</a></li>
+
+										<li>Tags: <a href="http://www.inquisitr.com/tag/bobbi-kristina-brown/" rel="tag">Bobbi Kristina Brown</a>, <a href="http://www.inquisitr.com/tag/confidant-daphne-barak/" rel="tag">confidant Daphne Barak</a>, <a href="http://www.inquisitr.com/tag/gold-digging-family/" rel="tag">gold digging family</a>, <a href="http://www.inquisitr.com/tag/nick-gordon/" rel="tag">nick gordon</a>, <a href="http://www.inquisitr.com/tag/pat-houston/" rel="tag">Pat Houston</a></li>
+										 <!-- <li>Posted: February 8, 2015</li> -->
+										 <li><strong>Love it? Share it!</strong>
+
+											<div class="pw-widget pw-copypaste-tru e pw-size-large pw-counter-show pw-share-popups" pw:twitter-via="TheInquisitr" pw:image="http://cdn.inquisitr.com/wp-content/uploads/2015/02/Bobbi-Kristina-Daphne-Barak.jpg">
+
+												<a class="pw-button-facebook" href=""></a>
+												<a class="pw-button-twitter" href=""></a>
+												<a class="pw-button-digg" href=""></a>
+												<a class="pw-button-reddit" href=""></a>
+												<a class="pw-button-stumbleupon" href=""></a>
+												<a class="pw-button-pinterest" href=""></a>
+												<a class="pw-button-googleplus" href=""></a>
+												<a class="pw-button-post" href=""></a>
+
+											</div>
+
+
+										</li>
+									 </ul>
+								</footer> <!-- end article footer -->
+
+								<div id="taboola-ab-2r"></div>
+								<div id="taboola-ab-2-columns"></div>
+
+								
+								
+									<div style="width:100%; text-align:center;"> <!-- Inquisitr_670x250 -->
+
+<section>
+<header style="text-align:left;"><h2 class="icon-medal" style="background-color:#c10000;">Articles And Offers From The Web</h2></header>
+<div id='div-gpt-ad-1394023803607-7' style='width:670px; height:250px;position: relative;top: -6px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1394023803607-7'); });
+</script>
+</div>
+</section> </div>
+
+									<script>
+										var ten_percent = Math.floor(Math.random() * (10)) + 1;
+										window._taboola = window._taboola || [];
+
+										if(ten_percent == 10){
+											window._taboola.push({mode:"autosized-generated-2r",container:"taboola-ab-2r", placement:"higher-below-article-thumbs", target_type:"text"});
+											window._taboola.push({mode:"text-links-2-columns",container:"taboola-ab-2-columns", placement:"higher-below-article-text-links", target_type:"text"});
+										}else{
+											document.MAX_ct0 ='';
+
+											var m3_u = (location.protocol=='https:'?'https://cas.criteo.com/delivery/ajs.php?':'http://cas.criteo.com/delivery/ajs.php?');
+
+											var m3_r = Math.floor(Math.random()*99999999999);
+
+											m3_u += "zoneid=182258" + "&nodis=1" + '&cb=' + m3_r;
+
+											if (document.MAX_used != ',') m3_u += "&exclude=" + document.MAX_used;
+
+											m3_u += (document.charset ? '&charset='+document.charset : (document.characterSet ? '&charset='+document.characterSet : ''));
+
+											m3_u += "&loc=" + escape(window.location);
+
+											if (document.referrer)
+												m3_u += "&referer=" + escape(document.referrer);
+
+											if (document.context)
+												m3_u += "&context=" + escape(document.context);
+
+											if ((typeof(document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0,4) == 'http'))
+												m3_u += "&ct0=" + escape(document.MAX_ct0);
+
+											if (document.mmm_fo) m3_u += "&mmm_fo=1";
+
+											document.write('<script type="text/javascript" src="'+m3_u+'"></'+'script>');
+
+											window._taboola.push({mode:"autosized-generated-2r",container:"taboola-autosized-generated-2r", placement:"lower-below-article-thumbs", target_type:"text"});
+
+											window._taboola.push({mode:"text-links-2-columns",container:"taboola-text-links-2-columns", placement:"lower-below-article-text-links", target_type:"text"});
+										}
+									</script>
+
+									<div id="taboola-autosized-generated-2r"></div>
+									<div id="taboola-text-links-2-columns"></div>
+
+								
+								
+
+<section>
+	<header><h2 class="icon-comments">Comments</h2></header>
+<div data-lazy-class="like" dta-ref="singleBottom" data-lazy-href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/"  data-send="true" data-width="450" data-show-faces="true" data-action="recommend"></div>
+
+<div data-lazy-class="comments" data-lazy-href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/" data-num-posts="12" data-width="665" ></div>
+
+<!-- You can start editing here. -->
+<div style="display:none;">
+
+	<h3 id="comments" class="h2"><span>54</span> Responses to &#8220;Bobbi Kristina Brown &#8216;Confidant&#8217; Daphne Barak Insists She Accused Her Entire Family Of Gold Digging&#8221;</h3>
+
+	<nav id="comment-nav">
+		<ul class="clearfix">
+				<li></li>
+				<li></li>
+		</ul>
+	</nav>
+
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1">
+		<article id="comment-976836" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn"><a href='https://www.facebook.com/pages/Patricia-Highsmith/406131436084029' rel='external nofollow' class='url'>Patricia Highsmith</a></cite>				<time datetime="2015-02-8"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976836">February 8th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Sadly, this little girl is going to die.  I don&#039;t think she was that crazy to set herself up in a tub of water to drown face down in it.  But I do believe others could be as crazy as to think staging such a scene would support a suicide defense.  I pray the truth comes out and justice is served.  And now the Brown/Houston families both know for real and for sure how money doesn&#039;t buy everything&#8230;</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-976843" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Jan Oye</cite>				<time datetime="2015-02-8"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976843">February 8th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Preying upon a very vulnerable young girl, so very sad, I believe it was all staged, she did not have the true love and support that she truly needed, such a sad situation&#8230;&#8230;.I pray for you to have so much love and peace in your eternal life Bobbi Kristina&#8230;&#8230;God loves you deeply</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-976853" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Terri McColley Schmitz</cite>				<time datetime="2015-02-8"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976853">February 8th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>of course she&#039;s surrounded by gold-diggers. Why else would they have a fist fight at a family gathering? Show some class, people. My guess is she was tired of all of it and ready to cut her bf/husband or whatever he was, loose.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-976859" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn"><a href='https://www.facebook.com/leslie.bell.545' rel='external nofollow' class='url'>Leslie Bell</a></cite>				<time datetime="2015-02-8"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976859">February 8th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>If there is no hope they should let her go. They could donate her viable organs. That way  part of her would live on and her life would have true meaning. She would be remembered in a good light instead of this sordid, tarnished image we are being left with.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-976866" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Vanessa Graham</cite>				<time datetime="2015-02-8"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976866">February 8th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Of course she is surrounded by gold diggers.  It is clear that Bobbi did not have a support system after her mother died.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-976874" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn"><a href='https://www.facebook.com/catherine.croft.35' rel='external nofollow' class='url'>Catherine Croft</a></cite>				<time datetime="2015-02-8"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976874">February 8th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>share our thoughts? what I think is that this is an article FULL of superficial information just begging for attention. The detail are wrong, the journalism is dreadful as is the spelling and editing&#8230; just sharing thoughts</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-976882" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Ingrid Lawson</cite>				<time datetime="2015-02-8"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976882">February 8th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>obviously nick is not her husband or he would make a claim and have a right to be at the hospital. I am certain there are enough speculators within the Houston fam and the typical greed in families when there is a wealthy member dying. well, in absence of a will, the money will go cissy Houston, next person in line after bobbi. the browns should not have any claim at all! after all whitney and bobby were divorced. but then there may be technicalities which give bobby brown rights as bobbi&#039;s father? sad how family ignore the needs of their children as happened here after whitney&#039;s tragic death and now come running like vultures! the money ought to be given to a charity for children maybe or addiction not to a rat pack!</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-976883" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Ingrid Lawson</cite>				<time datetime="2015-02-8"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976883">February 8th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>obviously nick is not her husband or he would make a claim and have a right to be at the hospital. I am certain there are enough speculators within the Houston fam and the typical greed in families when there is a wealthy member dying. well, in absence of a will, the money will go cissy Houston, next person in line after bobbi. the browns should not have any claim at all! after all whitney and bobby were divorced. but then there may be technicalities which give bobby brown rights as bobbi&#039;s father? sad how family ignore the needs of their children as happened here after whitney&#039;s tragic death and now come running like vultures! the money ought to be given to a charity for children maybe or addiction not to a greedy rat pack!</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-976892" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Sherry L Howard</cite>				<time datetime="2015-02-8"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976892">February 8th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Damn Bobbi Kristina hasn&#039;t officially died yet and here comes all the maggots crawling out with all these stories!</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-976897" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn"><a href='https://www.facebook.com/wanda.cobb.710' rel='external nofollow' class='url'>Wanda Cobb</a></cite>				<time datetime="2015-02-8"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976897">February 8th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>I wonder why Daphne Barack waited to tell this story when the child is on her death bed. In my opinion, Bobbi name has already been tarnished enough. I believe her family should have loving words from our community. I have joy and warmth in my heart for the family..Just remember what goes around must come back around. It could be your child or love one in this situation. No matter what our children does in their life no one want their child ridiculed. Bobbi Kristina is just like any other child. She just made bad decisions. My heart is saddened, because of the way social media is talking about her like she is not human. She is still a child of God and deserves respect.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-976898" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn"><a href='https://www.facebook.com/wanda.cobb.710' rel='external nofollow' class='url'>Wanda Cobb</a></cite>				<time datetime="2015-02-8"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976898">February 8th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>I wonder why Daphne Barack waited to tell this story when the child is on her death bed. In my opinion, Bobbi name has already been tarnished enough. I believe her family should have loving words from our community. I have joy and warmth in my heart for the family..Just remember what goes around must come back around. It could be your child or love one in this situation. No matter what our children does in their life no one want their child ridiculed. Bobbi Kristina is just like any other child. She just made bad decisions. My heart is saddened, because of the way social media is talking about her like she is not human. She is still a child of God and deserves respect.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-976899" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn"><a href='https://www.facebook.com/wanda.cobb.710' rel='external nofollow' class='url'>Wanda Cobb</a></cite>				<time datetime="2015-02-8"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976899">February 8th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>I hope the family remain strong. I am sending prayers up to heaven.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-976906" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Bobbie Smith</cite>				<time datetime="2015-02-8"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976906">February 8th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>She was a drug addict there are no viable organs worth donating. Sadly</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-976909" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Bobbie Smith</cite>				<time datetime="2015-02-8"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976909">February 8th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Cissy wanted complete control of BK&#039;s money so she could dole some out to her and keep the rest and as long as bK was on drugs the court saw her as unable to control her own money which played right into Cissy&#039;s hand. The more drugged out she was the better for Cissy. Now she will have complete control and no reason to have Bobby Brown in the Houston&#039;s lives ever again! They no longer have a connection.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-976912" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">David Montae Miller</cite>				<time datetime="2015-02-8"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976912">February 8th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>At least wait until all this is verified. We have heard so many rumors about what is going on, and to be honest, at this point I feel too sorry for Krissy to take it anymore.Please dont feed us false information. Some of us are so devastated that its hard for us to think about anything else but Bobbi herself. I really do care for her. I want the truth. If there is any decency left to report please let us in. Your site has always been about truth and honesty above anyone else. Will she be OK from what youve heard? I have to know!!!!</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-976913" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Rita Boykins</cite>				<time datetime="2015-02-8"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976913">February 8th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Continue PRAYING for Bobbi Kristina&#8230; Pray for The Brown and Houston&#039;s Family Strength&#8230; WHO Cares about anything else.. That&#039;s the PROMBLEM, Always some Negative Stories going around.. Money aint everything OBVISIOULY&#8230;.Prayers for Bobbi Kristina World Wide, Lets Go&#8230;..</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-976919" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn"><a href='https://www.facebook.com/diana.lovenelson' rel='external nofollow' class='url'>Diana Love-Nelson</a></cite>				<time datetime="2015-02-8"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976919">February 8th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Well the true is the true. I think her aunt Pat is a gold digger. She had Whitney taking care of her, and when Whitney died she rush to Bobbie Kristina side, sometime neglecting her own child.  If the money was Bobbi Kristina, it would then go to Bobbie&#039;s next of kin, which is her father, Bobby Brown.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-976920" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Victor Brown</cite>				<time datetime="2015-02-8"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976920">February 8th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Her maternale grandmother, state law.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-976921" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn"><a href='https://www.facebook.com/diana.lovenelson' rel='external nofollow' class='url'>Diana Love-Nelson</a></cite>				<time datetime="2015-02-8"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976921">February 8th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Money is the root of all evil!!!!!!!!!!!!!!</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-976923" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Victor Brown</cite>				<time datetime="2015-02-8"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976923">February 8th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Cissy Houston.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-976947" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn"><a href='https://www.facebook.com/pages/Patricia-Highsmith/406131436084029' rel='external nofollow' class='url'>Patricia Highsmith</a></cite>				<time datetime="2015-02-8"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976947">February 8th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Just as an aside, all the signs and signals point to Bobbi Kristina now being brain dead and alive only because her machinery is on at the hospital.  I know it is very hard for people to accept what is obviously going to happen to this poor child (death!)&#8230;but to focus on this issue rather than the much more important issue (&quot;Is this a homicide investigation or not?&quot;) is ludicrous.  Regarding Cissy, I don&#039;t care if she&#039;s 81 or 71 or 91&#8230;it took her nearly a full week to get over to her granddaughter&#039;s bedside.  What&#039;s up with that?!?!?  No matter what this child did or didn&#039;t do in the past, waiting nearly a full 7 days to show up at the hospital is shameful!</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-976959" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Ralph Noyes</cite>				<time datetime="2015-02-8"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976959">February 8th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>He could not be barred from the hospital if he were her next of kin. He is blocked now on a court order from BK&#039;s aunt. It would not be effective if he were BK&#039;s next of kin.</p>
+<p>No papers, no Powerball lottery win.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-976963" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Linda Baggs</cite>				<time datetime="2015-02-9"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976963">February 9th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>100% percent always a family of leeches. Girl had no chance and no one that truly cared for her best interest. Money is the root of all evil.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-976964" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Linda Baggs</cite>				<time datetime="2015-02-9"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976964">February 9th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>That&#039;s why the family allowed BK to be filmed on their reality show messed up on alcohol,so they could tell the courts she could not be in control of her money. They wanted it documented.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-976972" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Melissa Johnson</cite>				<time datetime="2015-02-9"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976972">February 9th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Whitney Houston could of had a charity set up to receive her royalties of said to be millions of dollars if Bobbi Kristina happened to die so nobody could even have chance of fighting over Whitney&#039;s money! As for Bobbi Kristina, her parents made stupid choices in the beginning of her life by not being good role models and now Bobbi has been going down the wrong path and using drugs just like her Mom and Dad did.  Instead, of doing drugs that could of been good parents too her and he wouldn&#039;t be at this situation today!  Rest in Peace Bobbi Kristina alongside your Mom!</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-976973" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn"><a href='https://www.facebook.com/wanda.cobb.710' rel='external nofollow' class='url'>Wanda Cobb</a></cite>				<time datetime="2015-02-9"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976973">February 9th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>I do care if she is eighty-one, seventy-one, or ninety-one. She made it to see her loving grandchild. She is the closest thing to Bobbi besides Jesus Christ. In my opinion, shameful is when one who does not have respect for an eighty-one year old adult. I hope I be able to travel when I turn eighty. Heartless people some are. To God be the Glory.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-976992" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Terry Zigs</cite>				<time datetime="2015-02-9"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-976992">February 9th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>You are WRONG, and should know what you are talking about before saying anything</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-977015" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn"><a href='https://www.facebook.com/marquise.price.73' rel='external nofollow' class='url'>Marquise Price</a></cite>				<time datetime="2015-02-9"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-977015">February 9th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Im hoping it will not be another James Brown, where she will be sitting out for weeks before place to rest. I dont think she would deserve that. I m hoping that god will spare this child and heal her and help her to get away from certain people thts not in her corner. I dont know who deserve this but goes down to her siblings and mother. Her mother is up in age so therefore, whose next.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-977066" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn"><a href='https://www.facebook.com/barbara.saunders.98' rel='external nofollow' class='url'>Barbara Saunders</a></cite>				<time datetime="2015-02-9"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-977066">February 9th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Who is this woman??  Miss who ever you are you look like one of the gold diggers too.  To blame Nick Gordon for Bobbi Kris&#039; drug problems is crazy.  I&#039;m gonna think Bobbi was using drugs while her mother was alive.  She grew up in that environment and if Whitney raised Nick, he grew up that way too.  If Bobbi Kris and Nick aren&#039;t married and if she does die, hopefully the money will go to Bobby Brown.  It&#039;s something about that Aunt Pat that I don&#039;t like&#8230;&#8230;&#8230;&#8230;..</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-977073" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn"><a href='https://www.facebook.com/barbara.saunders.98' rel='external nofollow' class='url'>Barbara Saunders</a></cite>				<time datetime="2015-02-9"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-977073">February 9th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Yeah, I wonder would the next of kin&#8230;..if not Nick&#8230;&#8230;.be her father Bobby Brown.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-977075" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn"><a href='https://www.facebook.com/barbara.saunders.98' rel='external nofollow' class='url'>Barbara Saunders</a></cite>				<time datetime="2015-02-9"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-977075">February 9th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Yes, the love of money is the root of all evil.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-977076" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn"><a href='https://www.facebook.com/barbara.saunders.98' rel='external nofollow' class='url'>Barbara Saunders</a></cite>				<time datetime="2015-02-9"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-977076">February 9th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Rest in Peace here on earth&#8230;&#8230;&#8230;&#8230;&#8230;she hasn&#039;t passed away.  Where there&#039;s life there&#039;s hope.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-977097" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Laura Payne</cite>				<time datetime="2015-02-9"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-977097">February 9th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>My heart goes out to Bobby Brown and especially Ms. Cissy Houston,  they both have gone through so much heartache and pain since Whitney&#039;s passing.   Cissy is a wonderful lady,  singing all her life,  proclaiming The Gospel of Jesus Christ, all over this country.<br />
+I am sure she loves her grand-daughter, Krissy very much,  and is not angry with her but rather sympathises with her as a child who she has tried her best to save from this fate.  The truth is that Cissy&#039;s  health has deteriorated over the past 3 yrs  since she lost her only daughter, Whitney.   She was not well enough to travel from New Jersey to Atlanta to be at Krissy&#039;s bedside before she got there o<br />
+n Friday and it&#039;s by the grace of God this 81 yr old lady did not have a heart attack or stroke when she got this devastating news.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-977121" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Melissa Johnson</cite>				<time datetime="2015-02-9"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-977121">February 9th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Barbara Saunders Yes Bobbi Kristina dad would be her next of kin.  Although, Whitney&#039;s family would pretty sure fight for Whitney&#039;s royalties of million! That&#039;s why if Whitney wrote in her will in writing in the event that her daughter passes she would&#039;ve gave it to charities. Instead of them fight over it!</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-977160" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn"><a href='https://www.facebook.com/Cupcakekutie' rel='external nofollow' class='url'>Lovemee Forme</a></cite>				<time datetime="2015-02-9"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-977160">February 9th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>I swear someone try to kill her this whole story does not add up!</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-977188" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Anna Maria Dunkerson</cite>				<time datetime="2015-02-9"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-977188">February 9th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>you need to shut up lady, i dont believe a word you&#039;re saying!!!</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-977231" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn"><a href='https://www.facebook.com/barbara.saunders.98' rel='external nofollow' class='url'>Barbara Saunders</a></cite>				<time datetime="2015-02-9"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-977231">February 9th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Diana Love-Nelson and if she does die. and she&#039;s not married&#8230;&#8230;..I hope that&#039;s exactly where the money will go, to her father, Bobby Brown.  And hopefully he will do right and make sure Cissy is taking care of.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-977232" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn"><a href='https://www.facebook.com/barbara.saunders.98' rel='external nofollow' class='url'>Barbara Saunders</a></cite>				<time datetime="2015-02-9"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-977232">February 9th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Melissa Johnson I sure hope she put something in her will that said that.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-977364" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Sherry L Howard</cite>				<time datetime="2015-02-9"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-977364">February 9th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Bobby Brown is there sole heir to Bobbi KS&#039;S money if she dies he is their next of kin period because she was not married. Pat Houston is there executor of whitney&#039;s will so she not coast is collecting a fee as long as bobbi kristina is deemed irresponsible to claim her full inheritance so cosy is just being a grandmother nothing more smh people kill me with lies</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-977435" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Sheila Joyce Reid</cite>				<time datetime="2015-02-9"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-977435">February 9th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>PRAY, PRAY AND MORE PRAYERS THAT SHE LIVES TO RISE ABOVE THE LIFE SHE HAD AND PRAISE GOD FOR HOW MUCH SHE IS LOVED!</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-977462" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Jessie Lindsey</cite>				<time datetime="2015-02-9"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-977462">February 9th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Your not looking at the point you got to realize she lost her daughter almost the same way and to see her grandaughter like that</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-977463" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Jessie Lindsey</cite>				<time datetime="2015-02-9"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-977463">February 9th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>No it should not it should remain to the houston family the way whitney wonted it.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-977738" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn"><a href='https://www.facebook.com/tina.r.dodd' rel='external nofollow' class='url'>Tina Ricks Dodd</a></cite>				<time datetime="2015-02-10"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-977738">February 10th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>to all the people commenting if you look around your own life there is a Bobbi Kristina somewhere we need to reach out and help the young people God bless</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-977800" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn"><a href='https://www.facebook.com/pages/Patricia-Highsmith/406131436084029' rel='external nofollow' class='url'>Patricia Highsmith</a></cite>				<time datetime="2015-02-10"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-977800">February 10th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Now we read that the &quot;family&quot; is going to take Bobbi Kristina off life support on Wednesday;  the same day Whitney Houston her mother died three years ago.  Talk about a fuster cluck!  Making the death of Bobbi Kristina still about Whitney Houston in this GHOULISH way makes my short stories and novels PALE in comparison!  Now we really know what that Houston/Brown family was all about for all these years&#8230;the money honey!</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-978072" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">KhaLi KhaLico</cite>				<time datetime="2015-02-11"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-978072">February 11th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Daphne Barak Is older than Whitney&#8230;.how is that even Krissy&#039;s friend&#8230;.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-978692" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Brooklyn Brown</cite>				<time datetime="2015-02-12"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-978692">February 12th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>I think Nick is the biggest gold digger and Ms. Barak is the second biggest. What kind of woman would sell the deepest, strictest confidences of an emotionally fragile, grieving young woman to the media while the young woman is in a coma? A greedy, scum of the earth, gold-digging, depraved, documentary producer named Daphne Barak.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-980119" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Charlotte Scott</cite>				<time datetime="2015-02-14"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-980119">February 14th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>My heart and prayers goes out to this young girl who has never had a decent role model in all her young life. Now that she is on her death bed, fighting for her life suddenly all her so called, loving family are coming out of the wood work. Sorry to say but she has never had anyone to guide her in a positive, loving family. The only life she has ever known has been drugs(the one thing that has put her where she is today. All any of the ones by her bedside now, does not see what everyone else sees( a young girl dying because both her parents let her believe drugs was the way to live.) When they look at her now everyone of them sees dollar signs. I hope and pray her Mother did make every dime she had if anything happens to Bobbi, it ALL goes to charity or better yet to drug rehab. Praying for Bobbi.♥</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-980204" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">Theresa Majich Goodell</cite>				<time datetime="2015-02-14"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-980204">February 14th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>I would not advise anyone to believe one single word out of Daphne Barak&#039;s mouth. She is a FRAUD and CON ARTIST who has refused to pay honest people who have done work for her. She is a crappy tabloid &quot;interviewer&quot; who has been working on getting the &quot;dirt&quot; out of Bobbi Kristina for over a year now just so she can make money off of the &quot;story.&quot; This is Barak&#039;s usual M.O. I pray for Bobbi Kristina to recover. I also pray for her to wake up and realize this vulture, Daphne Barak, is NOT her friend.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-980223" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">TJ Traci Smith</cite>				<time datetime="2015-02-15"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-980223">February 15th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Oxycontin is not only used for cancer pain. People with Ehlers Danlos like me use it as well.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-980224" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">TJ Traci Smith</cite>				<time datetime="2015-02-15"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-980224">February 15th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Can we think positive please?? What if this was your child??? Just keep praying for this precious girl. Still praying for BK!</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-980225" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn">TJ Traci Smith</cite>				<time datetime="2015-02-15"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-980225">February 15th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>I agree. Until we know if and when she is gone, we will continue to pray for this precious child.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-981068" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn"><a href='https://www.facebook.com/brp305' rel='external nofollow' class='url'>Brenda Palmer</a></cite>				<time datetime="2015-02-16"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-981068">February 16th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>I&#039;m still praying for Bobbi Kristina and I&#039;m also praying a special prayer for Bobby Brown. I know having to look at his little girl hooked up to a machine, must be ripping his heart out, day by day. &quot;Please Lord! Wrap your loving arms around Bobby Brown and allow the angels Of &quot;Grace and Mercy&quot; to act as a hedge of protection all around him; as he take a stand and declare that &quot;his little girl will recover,  and Lord!&quot;<br />
+because Bobby Brown so strongly believe in miracles, I also stand in agreement, holding his hand and asking God for a Lazarus miracle. God is not dead, but alive and He lives in every believer. I believe in God and I also believe in &quot;Miracles!&quot;</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-982561" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn"><a href='https://www.facebook.com/brenda.capps.319' rel='external nofollow' class='url'>Brenda Capps</a></cite>				<time datetime="2015-02-17"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-982561">February 17th, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>The entire family see money first,  Bobbi Kristina as the way to the money.  If the love of her life is  Nick Gordon (every couple fights) he should be allowed to see her.  Maybe his voice would trigger her to respond. The people seeing her now she has not seen or heard in a long time&#8230;not a huge part of her life.  Worth a try.  God Bless her!</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-991821" class="clearfix">
+			<header class="comment-author vcard">
+				<cite class="fn"><a href='https://www.facebook.com/michael.pokross' rel='external nofollow' class='url'>Michael Pokross</a></cite>				<time datetime="2015-03-2"><a href="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/#comment-991821">March 2nd, 2015 </a></time>
+			</header>
+			<section class="comment_content clearfix">
+				<p>Lovemee Forme   Yeah maybe, but would you choose to drown her in a bathtub?   I think it was like her Mom, not murder or a suicide but drugs.</p>
+			</section>
+		</article>
+</li><!-- #comment-## -->
+	</ol>
+
+	<nav id="comment-nav">
+		<ul class="clearfix">
+				<li></li>
+				<li></li>
+		</ul>
+	</nav>
+
+	</div>
+
+</section>
+
+								<style type="text/css">
+									#zergnet-widget-28837 .zergentity {margin-bottom:15px !important;}
+									#zergnet-widget-28837 .zergheadline {text-align:left !important; margin-top:5px !important;}
+									#zergnet-widget-28837 .zergentity:nth-of-type(1) {margin-left:0px !important; margin-right:5.5px !important;}
+									#zergnet-widget-28837 .zergentity:nth-of-type(2) {margin-left:5.5px !important; margin-right:5.5px !important;}
+									#zergnet-widget-28837 .zergentity:nth-of-type(3) {margin-left:5.5px !important; margin-right:5.5px !important;}
+									#zergnet-widget-28837 .zergentity:nth-of-type(4) {margin-left:5.5px !important; margin-right:0px !important;}
+								</style>
+
+								<section>
+									<header><h2 class="icon-world">Around The Web</h2></header>
+
+									<div id="zergnet-widget-28837"></div>
+
+									<script language="javascript" type="text/javascript">
+										(function() {
+											var zergnet = document.createElement('script');
+											zergnet.type = 'text/javascript'; zergnet.async = true;
+											zergnet.src = 'http://www.zergnet.com/zerg.js?id=28837';
+											var znscr = document.getElementsByTagName('script')[0];
+											znscr.parentNode.insertBefore(zergnet, znscr);
+										})();
+									</script>
+								</section>
+
+
+								<div style="width:100%; text-align:center;"> <!-- IQ Under Content -->
+<div id='div-gpt-ad-1411394610486-0' style='width:300px; height:250px;margin: 0 auto;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1411394610486-0'); });
+</script>
+</div> </div>
+
+								<div id="taboola-below-article-thumbnails"></div>
+								<script type="text/javascript">
+								  _taboola.push({
+								    mode: 'alternating-thumbnails-a',
+								    container: 'taboola-below-article-thumbnails',
+								    placement: 'Below Article Thumbnails',
+								    target_type: 'mix'
+								  });
+								</script>
+							</article> <!-- end article -->
+
+
+
+							<!-- <div class="OUTBRAIN" data-src="http://www.inquisitr.com/1824481/bobbi-kristina-brown-confidant-daphne-barak-insists-she-accused-her-entire-family-of-gold-digging/" data-widget-id="FT_1" data-ob-template="inquisitr" ></div><!-- //Slide in. -->
+
+
+
+
+						
+						
+					</div> <!-- end #main -->
+
+									<div id="sidebar" class="sidebar last clearfix" role="complementary">
+
+					
+							<section id="getSocial">
+		<header>
+			
+				<h4 class="widgettitle icon-medal">Get Social</h2>
+					</header>
+		<ul>
+			<li class="twitter"><a href="http://twitter.com/theinquisitr" class="icon icon-twitter"></a></li>
+			<li class="fb"><a href="http://www.facebook.com/theinquisitr" class="icon icon-facebook"></a></li>
+			<li class="gplus"><a href="http://plus.google.com/+Inquisitr" rel="publisher" class="icon icon-googleplus"></a></li>
+			<li class="rss"><a href="http://feeds.inquisitr.com/google/yDYq" class="icon icon-rss"></a></li>
+		</ul>
+	</section>
+<section id="wp_widget_ad_manager-24" class="widget WP_Widget_Ad_manager"><!-- IQ_C_ATF_Side_300x250 -->
+<div id='div-gpt-ad-1394023803607-1' style='width:300px; height:250px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() {googletag.display('div-gpt-ad-1394023803607-1');});
+</script>
+</div></section><section id="with_friends-3" class="widget widget_with_friends"><header><h4 class="icon-social-friends widgettitle">Join Us!</h4></header>			<div id="FBSocialReader"><i class="icon icon-spin"></i></div>
+		</section><section id="wmp_widget-5" class="widget widget_gmp_widget"><header><h4 class="widgettitle icon-popular">Latest Stories</h4></header>
+	<div id="GMP-inner">
+
+		<article>
+
+			<a href="http://www.inquisitr.com/1980574/wwe-news-aj-lee-retires-from-wwe/" data-format="">
+
+				<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/rsz_aj-lee-rumor-100x100.jpg" data-attID="1980635" class="attachment-thumbnail wp-post-image" alt="AJ Lee" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/rsz_aj-lee-rumor-100x100.jpg" data-attID="1980635" class="attachment-thumbnail wp-post-image" alt="AJ Lee" /></noscript>
+			</a>
+
+			<a href="http://www.inquisitr.com/1980574/wwe-news-aj-lee-retires-from-wwe/">WWE News: AJ Lee Retires From WWE</a>
+			<div data-lazy-class="like" data-lazy-href="http://www.inquisitr.com/1980574/wwe-news-aj-lee-retires-from-wwe/" data-send="false" data-width="165" data-ref="sidebarPopular" data-layout="button_count" data-action="recommend"></div>
+		</article>
+
+
+		<article>
+
+			<a href="http://www.inquisitr.com/1980532/man-dies-while-having-sex-with-scarecrow-he-dressed-up-as-a-woman/" data-format="">
+
+				<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/sex-with-scarecrow-100x100.jpg" data-attID="1980588" class="attachment-thumbnail wp-post-image" alt="Man dies having sex with scarecrow" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/sex-with-scarecrow-100x100.jpg" data-attID="1980588" class="attachment-thumbnail wp-post-image" alt="Man dies having sex with scarecrow" /></noscript>
+			</a>
+
+			<a href="http://www.inquisitr.com/1980532/man-dies-while-having-sex-with-scarecrow-he-dressed-up-as-a-woman/">Man Dies While Having Intercourse With Scarecrow He Dressed Up As A Woman</a>
+			<div data-lazy-class="like" data-lazy-href="http://www.inquisitr.com/1980532/man-dies-while-having-sex-with-scarecrow-he-dressed-up-as-a-woman/" data-send="false" data-width="165" data-ref="sidebarPopular" data-layout="button_count" data-action="recommend"></div>
+		</article>
+
+
+		<article>
+
+			<a href="http://www.inquisitr.com/1980513/breaking-wwe-news-aj-lee-retires-from-in-ring-competition-with-wwe/" data-format="">
+
+				<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/RAW_1137_Photo_164-2623757269-100x100.jpg" data-attID="1980629" class="attachment-thumbnail wp-post-image" alt="Breaking WWE News: AJ Lee Retires From WWE" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/RAW_1137_Photo_164-2623757269-100x100.jpg" data-attID="1980629" class="attachment-thumbnail wp-post-image" alt="Breaking WWE News: AJ Lee Retires From WWE" /></noscript>
+			</a>
+
+			<a href="http://www.inquisitr.com/1980513/breaking-wwe-news-aj-lee-retires-from-in-ring-competition-with-wwe/">Breaking WWE News: AJ Lee Retires From In-Ring Competition With WWE</a>
+			<div data-lazy-class="like" data-lazy-href="http://www.inquisitr.com/1980513/breaking-wwe-news-aj-lee-retires-from-in-ring-competition-with-wwe/" data-send="false" data-width="165" data-ref="sidebarPopular" data-layout="button_count" data-action="recommend"></div>
+		</article>
+
+
+		<article>
+
+			<a href="http://www.inquisitr.com/1980582/wwe-divas-aj-lee-leaving-like-cm-punk-april-mendez-retires-but-is-ufc-in-her-future/" data-format="">
+
+				<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2014/10/AJLeePaigeWWE-100x100.jpg" data-attID="1576540" class="attachment-thumbnail wp-post-image" alt="AJ Lee Paige Hell In A Cell" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2014/10/AJLeePaigeWWE-100x100.jpg" data-attID="1576540" class="attachment-thumbnail wp-post-image" alt="AJ Lee Paige Hell In A Cell" /></noscript>
+			</a>
+
+			<a href="http://www.inquisitr.com/1980582/wwe-divas-aj-lee-leaving-like-cm-punk-april-mendez-retires-but-is-ufc-in-her-future/">WWE Divas: AJ Lee Leaving Like CM Punk, April Mendez Retires But Is UFC In Her Future?</a>
+			<div data-lazy-class="like" data-lazy-href="http://www.inquisitr.com/1980582/wwe-divas-aj-lee-leaving-like-cm-punk-april-mendez-retires-but-is-ufc-in-her-future/" data-send="false" data-width="165" data-ref="sidebarPopular" data-layout="button_count" data-action="recommend"></div>
+		</article>
+
+
+		<article>
+
+			<a href="http://www.inquisitr.com/1980404/rhobh-reunion-heats-up-as-kim-richards-calls-out-lisa-rinna-youve-been-an-egg-beater-all-season/" data-format="">
+
+				<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/RHOBH-reunion-100x100.gif" data-attID="1980593" class="attachment-thumbnail wp-post-image" alt="&#039;RHOBH&#039; Reunion Heats Up As Kim Richards Calls Out Lisa Rinna, &#039;You&#039;ve Been An Egg Beater All Season&#039;" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/RHOBH-reunion-100x100.gif" data-attID="1980593" class="attachment-thumbnail wp-post-image" alt="&#039;RHOBH&#039; Reunion Heats Up As Kim Richards Calls Out Lisa Rinna, &#039;You&#039;ve Been An Egg Beater All Season&#039;" /></noscript>
+			</a>
+
+			<a href="http://www.inquisitr.com/1980404/rhobh-reunion-heats-up-as-kim-richards-calls-out-lisa-rinna-youve-been-an-egg-beater-all-season/">&#8216;RHOBH&#8217; Reunion Heats Up As Kim Richards Calls Out Lisa Rinna, &#8216;You&#8217;ve Been An Egg Beater All Season&#8217;</a>
+			<div data-lazy-class="like" data-lazy-href="http://www.inquisitr.com/1980404/rhobh-reunion-heats-up-as-kim-richards-calls-out-lisa-rinna-youve-been-an-egg-beater-all-season/" data-send="false" data-width="165" data-ref="sidebarPopular" data-layout="button_count" data-action="recommend"></div>
+		</article>
+
+
+		<article>
+
+			<a href="http://www.inquisitr.com/1980188/paris-supermarket-hostages-sue-media-for-what-they-say-was-a-dangerous-live-broadcast/" data-format="">
+
+				<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/hostages-sue-media-BFM-100x100.jpg" data-attID="1980516" class="attachment-thumbnail wp-post-image" alt="As the hostages sue the media outlet, they allege that their hiding spot was disclosed." /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/hostages-sue-media-BFM-100x100.jpg" data-attID="1980516" class="attachment-thumbnail wp-post-image" alt="As the hostages sue the media outlet, they allege that their hiding spot was disclosed." /></noscript>
+			</a>
+
+			<a href="http://www.inquisitr.com/1980188/paris-supermarket-hostages-sue-media-for-what-they-say-was-a-dangerous-live-broadcast/">Paris Supermarket Hostages Sue Media For What They Say Was A Dangerous Live Broadcast</a>
+			<div data-lazy-class="like" data-lazy-href="http://www.inquisitr.com/1980188/paris-supermarket-hostages-sue-media-for-what-they-say-was-a-dangerous-live-broadcast/" data-send="false" data-width="165" data-ref="sidebarPopular" data-layout="button_count" data-action="recommend"></div>
+		</article>
+
+
+		<article>
+
+			<a href="http://www.inquisitr.com/1980487/wwe-news-sheamus-responds-to-being-called-reckless-in-the-ring/" data-format="">
+
+				<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/rsz_sheamus-100x100.jpg" data-attID="1980547" class="attachment-thumbnail wp-post-image" alt="Sheamus WWE" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/rsz_sheamus-100x100.jpg" data-attID="1980547" class="attachment-thumbnail wp-post-image" alt="Sheamus WWE" /></noscript>
+			</a>
+
+			<a href="http://www.inquisitr.com/1980487/wwe-news-sheamus-responds-to-being-called-reckless-in-the-ring/">WWE News: Sheamus Responds To Being Called Reckless In The Ring</a>
+			<div data-lazy-class="like" data-lazy-href="http://www.inquisitr.com/1980487/wwe-news-sheamus-responds-to-being-called-reckless-in-the-ring/" data-send="false" data-width="165" data-ref="sidebarPopular" data-layout="button_count" data-action="recommend"></div>
+		</article>
+
+
+		<article>
+
+			<a href="http://www.inquisitr.com/1979870/domestic-violence-causes-specific-female-mental-health-risks/" data-format="">
+
+				<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Domestic-Violence-100x100.jpg" data-attID="1980426" class="attachment-thumbnail wp-post-image" alt="Domestic Violence Women Victims" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Domestic-Violence-100x100.jpg" data-attID="1980426" class="attachment-thumbnail wp-post-image" alt="Domestic Violence Women Victims" /></noscript>
+			</a>
+
+			<a href="http://www.inquisitr.com/1979870/domestic-violence-causes-specific-female-mental-health-risks/">Domestic Violence Causes Specific Female Mental Health Risks</a>
+			<div data-lazy-class="like" data-lazy-href="http://www.inquisitr.com/1979870/domestic-violence-causes-specific-female-mental-health-risks/" data-send="false" data-width="165" data-ref="sidebarPopular" data-layout="button_count" data-action="recommend"></div>
+		</article>
+
+
+		<article>
+
+			<a href="http://www.inquisitr.com/1980223/chris-jans/" data-format="">
+
+				<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Chris-Jans-100x100.jpg" data-attID="1980463" class="attachment-thumbnail wp-post-image" alt="BGSU" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Chris-Jans-100x100.jpg" data-attID="1980463" class="attachment-thumbnail wp-post-image" alt="BGSU" /></noscript>
+			</a>
+
+			<a href="http://www.inquisitr.com/1980223/chris-jans/">Chris Jans Fired: College Coach Reportedly Groped Women In Bar [Video]</a>
+			<div data-lazy-class="like" data-lazy-href="http://www.inquisitr.com/1980223/chris-jans/" data-send="false" data-width="165" data-ref="sidebarPopular" data-layout="button_count" data-action="recommend"></div>
+		</article>
+
+
+		<article>
+
+			<a href="http://www.inquisitr.com/1980201/rosie-odonnell-slams-memories-pizza-gov-mike-pence-how-does-one-get-away-with-saying-i-am-for-persecution/" data-format="">
+
+				<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/rosieodonnellmemoriespizza-100x100.jpg" data-attID="1980498" class="attachment-thumbnail wp-post-image" alt="Rosie O&#039;Donnell Memories Pizza Gov. Mike Pence" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/rosieodonnellmemoriespizza-100x100.jpg" data-attID="1980498" class="attachment-thumbnail wp-post-image" alt="Rosie O&#039;Donnell Memories Pizza Gov. Mike Pence" /></noscript>
+			</a>
+
+			<a href="http://www.inquisitr.com/1980201/rosie-odonnell-slams-memories-pizza-gov-mike-pence-how-does-one-get-away-with-saying-i-am-for-persecution/">Rosie O&#8217;Donnell Slams Memories Pizza, Gov. Mike Pence: &#8216;How Does One Get Away With Saying &#8216;I Am For Persecution?&#8221;</a>
+			<div data-lazy-class="like" data-lazy-href="http://www.inquisitr.com/1980201/rosie-odonnell-slams-memories-pizza-gov-mike-pence-how-does-one-get-away-with-saying-i-am-for-persecution/" data-send="false" data-width="165" data-ref="sidebarPopular" data-layout="button_count" data-action="recommend"></div>
+		</article>
+
+</div>
+<script>
+jQuery(function ($){
+	if(jQuery.fn.paginate)
+		$('#GMP-inner').paginate({
+			itemsperpage:5,
+			classname:'paginator',
+			element : 'article',
+			pagingtop: false
+		});
+});
+</script>
+</section><section id="wp_widget_ad_manager-25" class="widget WP_Widget_Ad_manager"><!-- IQ_C_BTF_300x250 -->
+<div id='div-gpt-ad-1394023803607-3' style='width:300px; height:250px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() {googletag.display('div-gpt-ad-1394023803607-3');});
+</script>
+</div></section><section id="facebook_box-6" class="widget widget_facebook_box"><header><h4 class="icon-facebook widgettitle">Facebook</h4></header>
+		<div data-lazy-class="like-box" data-lazy-href="http://www.facebook.com/theinquisitr" data-width="298" data-ref="sidebarLikeBox" data-show-faces="true" data-border-color="white" data-stream="false" data-header="true"></div>
+</section><section id="wp_widget_ad_manager-26" class="widget WP_Widget_Ad_manager"><!-- IQ_ContentAd_300x600 -->
+<div id='div-gpt-ad-1394023803607-5' style='width:300px; height:600px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() {googletag.display('div-gpt-ad-1394023803607-5');});
+</script>
+</div></section><section id="wp_widget_ad_manager-27" class="widget WP_Widget_Ad_manager"><header><h4 class="icon-medal widgettitle">Around The Web</h4></header>
+<div id="zergnet-widget-29061"></div>
+<script language="javascript" type="text/javascript">
+(function() {
+var zergnet = document.createElement('script');
+zergnet.type = 'text/javascript'; zergnet.async = true;
+zergnet.src = 'http://www.zergnet.com/zerg.js?id=29061';
+var znscr = document.getElementsByTagName('script')[0];
+znscr.parentNode.insertBefore(zergnet, znscr);
+})();
+</script>
+<br><script src="http://ib.3lift.com/ttj?inv_code=theinquisitr_right_rail"></script>
+<br><header><h4 class="icon-medal widgettitle">NEWSMAX</h4></header><div id="NmWg454" ></div><script type="text/javascript" src="https://cdn.nmcdn.us/js/connectV3.js"></script><script type="text/javascript">  NM.init({WidgetID: 454})</script></section><section id="featured_posts-8" class="widget widget_featured_posts"><header><h4 class="widgettitle icon-featured">Featured Articles</h4></header><div class="featured_wrap">				<article>
+					<a href="http://www.inquisitr.com/1979615/salems-lucy-lawless-says-she-seems-to-be-good-at-being-bad/" data-format="" >
+						<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Lucy-Lawless-To-Take-On-Part-In-Salem-Show-As-Countess-Marburg-100x100.jpg" data-attID="1979964" class="attachment-thumbnail wp-post-image" alt="Lucy Lawless To Take On Part In &#039;Salem&#039; Show As Countess Marburg" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Lucy-Lawless-To-Take-On-Part-In-Salem-Show-As-Countess-Marburg-100x100.jpg" data-attID="1979964" class="attachment-thumbnail wp-post-image" alt="Lucy Lawless To Take On Part In &#039;Salem&#039; Show As Countess Marburg" /></noscript>
+					</a>
+
+					<a href="http://www.inquisitr.com/1979615/salems-lucy-lawless-says-she-seems-to-be-good-at-being-bad/">&#8216;Salem&#8217;s&#8217; Lucy Lawless Says She &#8216;Seems To Be Good At Being Bad&#8217;</a>
+					<div data-lazy-class="like" data-lazy-href="http://www.inquisitr.com/1979615/salems-lucy-lawless-says-she-seems-to-be-good-at-being-bad/" data-send="false" data-width="165" data-ref="sidebarPopular" data-layout="button_count" data-action="recommend"></div>
+				</article>
+								<article>
+					<a href="http://www.inquisitr.com/1979192/kelly-clarkson-addresses-weight-criticism-we-are-who-we-are/" data-format="" >
+						<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/kellyclarkson-100x100.jpg" data-attID="1979505" class="attachment-thumbnail wp-post-image" alt="Kelly Clarkson Addresses Weight Criticism: &quot;We Are Who We Are&quot;" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/kellyclarkson-100x100.jpg" data-attID="1979505" class="attachment-thumbnail wp-post-image" alt="Kelly Clarkson Addresses Weight Criticism: &quot;We Are Who We Are&quot;" /></noscript>
+					</a>
+
+					<a href="http://www.inquisitr.com/1979192/kelly-clarkson-addresses-weight-criticism-we-are-who-we-are/">Kelly Clarkson Addresses Weight Criticism: &#8216;We Are Who We Are&#8217;</a>
+					<div data-lazy-class="like" data-lazy-href="http://www.inquisitr.com/1979192/kelly-clarkson-addresses-weight-criticism-we-are-who-we-are/" data-send="false" data-width="165" data-ref="sidebarPopular" data-layout="button_count" data-action="recommend"></div>
+				</article>
+								<article>
+					<a href="http://www.inquisitr.com/1978788/will-zayn-malik-be-replaced-a-look-at-one-directions-many-sixth-members/" data-format="" >
+						<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Zayn-Malik-One-Direction-Replacement-100x100.jpg" data-attID="1979417" class="attachment-thumbnail wp-post-image" alt="Zayn Malik Could Be Replaced By One Of One Direction&#039;s &quot;Sixth Members&quot;" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Zayn-Malik-One-Direction-Replacement-100x100.jpg" data-attID="1979417" class="attachment-thumbnail wp-post-image" alt="Zayn Malik Could Be Replaced By One Of One Direction&#039;s &quot;Sixth Members&quot;" /></noscript>
+					</a>
+
+					<a href="http://www.inquisitr.com/1978788/will-zayn-malik-be-replaced-a-look-at-one-directions-many-sixth-members/">Will Zayn Malik Be Replaced? A Look At One Direction&#8217;s Many &#8216;Sixth Members&#8217;</a>
+					<div data-lazy-class="like" data-lazy-href="http://www.inquisitr.com/1978788/will-zayn-malik-be-replaced-a-look-at-one-directions-many-sixth-members/" data-send="false" data-width="165" data-ref="sidebarPopular" data-layout="button_count" data-action="recommend"></div>
+				</article>
+								<article>
+					<a href="http://www.inquisitr.com/1979144/mad-max-news-tom-hardy-signed-for-three-movies-after-fury-road/" data-format="" >
+						<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Mad-Max-Fury-Road-news-Tom-Hardy-four-more-100x100.jpg" data-attID="1979343" class="attachment-thumbnail wp-post-image" alt="&#039;Mad Max: Fury Road&#039; news has Tom Hardy signed for four more movies" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/Mad-Max-Fury-Road-news-Tom-Hardy-four-more-100x100.jpg" data-attID="1979343" class="attachment-thumbnail wp-post-image" alt="&#039;Mad Max: Fury Road&#039; news has Tom Hardy signed for four more movies" /></noscript>
+					</a>
+
+					<a href="http://www.inquisitr.com/1979144/mad-max-news-tom-hardy-signed-for-three-movies-after-fury-road/">&#8216;Mad Max&#8217; News: Tom Hardy Signed For Three Movies After &#8216;Fury Road&#8217;?</a>
+					<div data-lazy-class="like" data-lazy-href="http://www.inquisitr.com/1979144/mad-max-news-tom-hardy-signed-for-three-movies-after-fury-road/" data-send="false" data-width="165" data-ref="sidebarPopular" data-layout="button_count" data-action="recommend"></div>
+				</article>
+								<article>
+					<a href="http://www.inquisitr.com/1978852/george-r-r-martin-unveils-chapter-from-next-book-while-the-roots-rap-about-westeros/" data-format="" >
+						<img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/images/1x1.trans.png" data-lazy-src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/George-RR-Martin-100x100.jpg" data-attID="1978914" class="attachment-thumbnail wp-post-image" alt="Game of Thrones book six teased with chapter" /><noscript><img width="100" height="100" src="http://cdn.inquisitr.com/wp-content/uploads/2015/04/George-RR-Martin-100x100.jpg" data-attID="1978914" class="attachment-thumbnail wp-post-image" alt="Game of Thrones book six teased with chapter" /></noscript>
+					</a>
+
+					<a href="http://www.inquisitr.com/1978852/george-r-r-martin-unveils-chapter-from-next-book-while-the-roots-rap-about-westeros/">George R.R. Martin Unveils Chapter From Next Book, While The Roots Rap About Westeros</a>
+					<div data-lazy-class="like" data-lazy-href="http://www.inquisitr.com/1978852/george-r-r-martin-unveils-chapter-from-next-book-while-the-roots-rap-about-westeros/" data-send="false" data-width="165" data-ref="sidebarPopular" data-layout="button_count" data-action="recommend"></div>
+				</article>
+				</div></section><section id="wp_widget_ad_manager-28" class="widget WP_Widget_Ad_manager"><!-- IQ_C_BTF_160x600 -->
+<div id='div-gpt-ad-1394023803607-2' style='width:160px; height:600px;margin:0 auto;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() {googletag.display('div-gpt-ad-1394023803607-2');});
+</script>
+</div></section><section id="text-4" class="widget widget_text">			<div class="textwidget"><div id='taboola-right-rail'></div>
+
+<script type="text/javascript">
+
+    window._taboola = window._taboola || [];
+
+    _taboola.push({mode:'thumbs-3r', container:'taboola-right-rail', placement:'right-rail'});
+
+</script></div>
+		</section>
+					
+				</div>
+									</div> <!-- end #inner-content -->
+
+			</div> <!-- end #content -->
+
+			<div class="holder"><!-- IQ_C_BTF_728x90 -->
+<div id='div-gpt-ad-1394023803607-4' style='width:728px; height:90px;margin: 0 auto;'>
+<script type='text/javascript'>
+if (!jQuery('body').hasClass("page")) {
+     googletag.cmd.push(function() {googletag.display('div-gpt-ad-1394023803607-4'); });
+}else{
+jQuery('#div-gpt-ad-1394023803607-4').hide()
+}
+</script>
+</div></div>
+			<footer class="footer" role="contentinfo">
+
+				<div id="inner-footer" class="wrap clearfix">
+
+					<div id="top-footer">
+						<ul id="menu-massive-footer" class="clearfix"><li id="menu-item-953796" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-depth-0 has-child menu-depth-0 menu-item-953796"><a href="http://www.inquisitr.com/category/entertainment/">Entertainment</a>
+<ul class="sub-menu">
+	<li id="menu-item-953797" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953797"><a href="http://www.inquisitr.com/category/entertainment/pop/">Celebrity News</a></li>
+	<li id="menu-item-953858" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953858"><a href="http://www.inquisitr.com/category/entertainment/tv-entertainment/">TV</a></li>
+	<li id="menu-item-953798" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953798"><a href="http://www.inquisitr.com/category/entertainment/famous-relationships/">Famous Relationships</a></li>
+	<li id="menu-item-953799" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953799"><a href="http://www.inquisitr.com/category/entertainment/movie-trailers-entertainment/">Movie Trailers</a></li>
+	<li id="menu-item-953800" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953800"><a href="http://www.inquisitr.com/category/entertainment/movies/">Movies</a></li>
+	<li id="menu-item-953801" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953801"><a href="http://www.inquisitr.com/category/entertainment/music/">Music</a></li>
+	<li id="menu-item-953802" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953802"><a href="http://www.inquisitr.com/category/entertainment/online-videos/">Online Videos</a></li>
+	<li id="menu-item-953857" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953857"><a href="http://www.inquisitr.com/category/entertainment/celebrity-rumors-news/">Rumors</a></li>
+</ul>
+</li>
+<li id="menu-item-953808" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-depth-0 has-child menu-depth-0 menu-item-953808"><a href="http://www.inquisitr.com/category/lifestyle/">Lifestyle</a>
+<ul class="sub-menu">
+	<li id="menu-item-953859" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953859"><a href="http://www.inquisitr.com/category/lifestyle/shopping/">Shopping</a></li>
+	<li id="menu-item-953860" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953860"><a href="http://www.inquisitr.com/category/lifestyle/travel-lifestyle/">Travel</a></li>
+	<li id="menu-item-953809" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953809"><a href="http://www.inquisitr.com/category/lifestyle/fashion/">Fashion</a></li>
+	<li id="menu-item-953810" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953810"><a href="http://www.inquisitr.com/category/lifestyle/food-dining-news/">Food &#038; Dining</a></li>
+	<li id="menu-item-953811" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953811"><a href="http://www.inquisitr.com/category/lifestyle/geek-culture/">Geek Culture</a></li>
+	<li id="menu-item-953812" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953812"><a href="http://www.inquisitr.com/category/lifestyle/parenting-news/">Parenting</a></li>
+	<li id="menu-item-953813" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953813"><a href="http://www.inquisitr.com/category/lifestyle/religion/">Religion</a></li>
+</ul>
+</li>
+<li id="menu-item-953814" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-depth-0 menu-depth-0 menu-item-953814"><a href="http://www.inquisitr.com/category/news/">News</a>
+<ul class="sub-menu">
+	<li id="menu-item-953815" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953815"><a href="http://www.inquisitr.com/category/news/animal-news/">Animal News</a></li>
+	<li id="menu-item-953817" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953817"><a href="http://www.inquisitr.com/category/news/crime/">Crime</a></li>
+	<li id="menu-item-953818" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953818"><a href="http://www.inquisitr.com/category/news/education-news/">Education</a></li>
+	<li id="menu-item-953819" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953819"><a href="http://www.inquisitr.com/category/news/green-news/">Green News</a></li>
+	<li id="menu-item-953820" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953820"><a href="http://www.inquisitr.com/category/news/media/">Media Industry</a></li>
+	<li id="menu-item-953821" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953821"><a href="http://www.inquisitr.com/category/news/odd-news/">Odd News</a></li>
+	<li id="menu-item-953822" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953822"><a href="http://www.inquisitr.com/category/news/politics/">Politics</a></li>
+</ul>
+</li>
+<li id="menu-item-953804" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-depth-0 has-child menu-depth-0 menu-item-953804"><a href="http://www.inquisitr.com/category/health/">Health</a>
+<ul class="sub-menu">
+	<li id="menu-item-953805" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953805"><a href="http://www.inquisitr.com/category/health/health-studies-news/">Health Studies</a></li>
+	<li id="menu-item-953806" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953806"><a href="http://www.inquisitr.com/category/health/medicine-news/">Medicine</a></li>
+	<li id="menu-item-953807" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953807"><a href="http://www.inquisitr.com/category/health/nutrition-news/">Nutrition</a></li>
+</ul>
+</li>
+<li id="menu-item-953855" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-depth-0 has-child menu-depth-0 menu-item-953855"><a href="http://www.inquisitr.com/category/world/">World</a>
+<ul class="sub-menu">
+	<li id="menu-item-953856" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953856"><a href="http://www.inquisitr.com/category/world/south-america-news/">South America</a></li>
+	<li id="menu-item-953826" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953826"><a href="http://www.inquisitr.com/category/world/africa-news/">Africa</a></li>
+	<li id="menu-item-953827" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953827"><a href="http://www.inquisitr.com/category/world/asia-news/">Asia</a></li>
+	<li id="menu-item-953828" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953828"><a href="http://www.inquisitr.com/category/world/australia-news/">Australia News</a></li>
+	<li id="menu-item-953829" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953829"><a href="http://www.inquisitr.com/category/world/canada-news/">Canada</a></li>
+	<li id="menu-item-953830" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953830"><a href="http://www.inquisitr.com/category/world/europe-news/">Europe</a></li>
+	<li id="menu-item-953831" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953831"><a href="http://www.inquisitr.com/category/world/middle-east-news/">Middle East</a></li>
+</ul>
+</li>
+<li id="menu-item-953823" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-depth-0 has-child menu-depth-0 menu-item-953823"><a href="http://www.inquisitr.com/category/odd/">Odd + Funny</a>
+<ul class="sub-menu">
+	<li id="menu-item-953824" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953824"><a href="http://www.inquisitr.com/category/odd/pics/">Pics</a></li>
+</ul>
+</li>
+<li id="menu-item-953825" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-depth-0 menu-depth-0 menu-item-953825"><a href="http://www.inquisitr.com/category/opinion/">Opinion</a></li>
+<li id="menu-item-953848" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-depth-0 has-child menu-depth-0 menu-item-953848"><a href="http://www.inquisitr.com/category/sports/">Sports</a>
+<ul class="sub-menu">
+	<li id="menu-item-953836" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953836"><a href="http://www.inquisitr.com/category/sports/baseball/">Baseball</a></li>
+	<li id="menu-item-953837" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953837"><a href="http://www.inquisitr.com/category/sports/basketball/">Basketball</a></li>
+	<li id="menu-item-953838" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953838"><a href="http://www.inquisitr.com/category/sports/boxing-news/">Boxing</a></li>
+	<li id="menu-item-953839" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953839"><a href="http://www.inquisitr.com/category/sports/football/">Football</a></li>
+	<li id="menu-item-953840" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953840"><a href="http://www.inquisitr.com/category/sports/golf-news/">Golf</a></li>
+	<li id="menu-item-953841" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953841"><a href="http://www.inquisitr.com/category/sports/hockey-sport/">Hockey</a></li>
+	<li id="menu-item-953842" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953842"><a href="http://www.inquisitr.com/category/sports/mma-news/">MMA</a></li>
+	<li id="menu-item-953843" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953843"><a href="http://www.inquisitr.com/category/sports/nascar-sport/">NASCAR</a></li>
+	<li id="menu-item-953849" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953849"><a href="http://www.inquisitr.com/category/sports/soccer-sport/">Soccer</a></li>
+	<li id="menu-item-953850" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953850"><a href="http://www.inquisitr.com/category/sports/tennis-news/">Tennis</a></li>
+</ul>
+</li>
+<li id="menu-item-953845" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-depth-0 has-child menu-depth-0 menu-item-953845"><a href="http://www.inquisitr.com/category/science-news/">Science</a>
+<ul class="sub-menu">
+	<li id="menu-item-953844" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953844"><a href="http://www.inquisitr.com/category/science-news/discoveries/">Discoveries</a></li>
+	<li id="menu-item-953846" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953846"><a href="http://www.inquisitr.com/category/science-news/space-news-science-news/">Space</a></li>
+	<li id="menu-item-953847" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953847"><a href="http://www.inquisitr.com/category/science-news/theories/">Theories</a></li>
+</ul>
+</li>
+<li id="menu-item-953851" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-depth-0 has-child menu-depth-0 menu-item-953851"><a href="http://www.inquisitr.com/category/tech/">Technology</a>
+<ul class="sub-menu">
+	<li id="menu-item-953832" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953832"><a href="http://www.inquisitr.com/category/tech/automotive/">Automotive</a></li>
+	<li id="menu-item-953834" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953834"><a href="http://www.inquisitr.com/category/tech/greentech/">Green Tech</a></li>
+	<li id="menu-item-953833" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953833"><a href="http://www.inquisitr.com/category/tech/gadgets/">Gadgets</a></li>
+	<li id="menu-item-953835" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953835"><a href="http://www.inquisitr.com/category/tech/mobile-tech/">Mobile</a></li>
+</ul>
+</li>
+<li id="menu-item-953803" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-depth-0 menu-depth-0 menu-item-953803"><a href="http://www.inquisitr.com/category/gaming/">Gaming</a></li>
+<li id="menu-item-953816" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-depth-0 has-child menu-depth-0 menu-item-953816"><a href="http://www.inquisitr.com/category/news/business/">Business</a>
+<ul class="sub-menu">
+	<li id="menu-item-953852" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953852"><a href="http://www.inquisitr.com/category/tech/social-media/">Social Media</a></li>
+	<li id="menu-item-953853" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953853"><a href="http://www.inquisitr.com/category/tech/start-up/">Start-up</a></li>
+	<li id="menu-item-953854" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-953854"><a href="http://www.inquisitr.com/category/wire/">Wire</a></li>
+</ul>
+</li>
+<li id="menu-item-953795" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-depth-0 menu-depth-0 menu-item-953795"><a href="http://www.inquisitr.com/category/buzzworthy/">BuzzWorthy</a></li>
+</ul>					</div>
+
+					<script>
+						jQuery(document).ready(function(){
+							if(!jQuery('html').hasClass('lt-ie8')){
+								jQuery('.no-csscolumns #menu-massive-footer').masonry({
+									// options
+									itemSelector: '.menu-depth-0',
+									columnWidth: 101,
+									gutter:  42
+								});
+							}
+						});
+					</script>
+
+					<div id="middle-footer">
+
+						<nav role="navigation">
+							<ul id="menu-footer-friend-links" class="footer-friends clearfix"><li id="menu-item-751326" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-depth-0 has-child menu-depth-0 menu-item-751326"><a >Info</a>
+<ul class="sub-menu">
+	<li id="menu-item-751329" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-751329"><a href="http://www.inquisitr.com/about/">About</a></li>
+	<li id="menu-item-751330" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-751330"><a href="http://www.inquisitr.com/advertise/">Advertising</a></li>
+	<li id="menu-item-1091010" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1091010"><a href="http://www.inquisitr.com/write-for-inquisitr/">Write for Inquisitr</a></li>
+	<li id="menu-item-1152603" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1152603"><a href="http://www.inquisitr.com/privacy-policy/">Privacy Policy</a></li>
+	<li id="menu-item-751331" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-751331"><a href="http://www.inquisitr.com/contact/">Contact</a></li>
+</ul>
+</li>
+<li id="menu-item-751327" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-depth-0 has-child menu-depth-0 menu-item-751327"><a >News Partners</a>
+<ul class="sub-menu">
+	<li id="menu-item-751335" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-751335"><a href="http://www.opposingviews.com/">Opposing Views</a></li>
+	<li id="menu-item-751336" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-751336"><a href="http://www.huffingtonpost.com/">Huffington Post</a></li>
+	<li id="menu-item-751337" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-751337"><a href="http://www.fark.com/">Fark</a></li>
+	<li id="menu-item-751338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-751338"><a href="http://www.buzzfeed.com/">Buzz Feed</a></li>
+</ul>
+</li>
+<li id="menu-item-751328" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-depth-0 has-child menu-depth-0 menu-item-751328"><a >Supported By</a>
+<ul class="sub-menu">
+	<li id="menu-item-751332" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-751332"><a title="Ads Served" href="http://doubleclick.com">DoubleClick</a></li>
+	<li id="menu-item-751333" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-751333"><a title="Advertising" href="http://adsense.com">Google Adsense</a></li>
+	<li id="menu-item-751334" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-751334"><a title="Hosting" href="http://softlayer.com">Softlayer</a></li>
+</ul>
+</li>
+<li id="menu-item-751339" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-depth-0 has-child menu-depth-0 menu-item-751339"><a >Connect</a>
+<ul class="sub-menu">
+	<li id="menu-item-751340" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-751340"><a href="http://www.facebook.com/theinquisitr">Facebook</a></li>
+	<li id="menu-item-751342" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-751342"><a href="http://twitter.com/theinquisitr">Twitter</a></li>
+</ul>
+</li>
+</ul>						</nav>
+
+						<section class="mailchimp_form">
+							<header><h3>Delivered To Your <span>INBOX</span></h3></header>
+<div id="mc_signup">
+	<form method="post" action="#mc_signup" id="mc_signup_form">
+		<input type="hidden" id="mc_submit_type" name="mc_submit_type" value="html" />
+		<input type="hidden" name="mcsf_action" value="mc_submit_signup_form" />
+		<input type="hidden" id="_mc_submit_signup_form_nonce" name="_mc_submit_signup_form_nonce" value="17bdf6dd25" />
+			<div id="mc_subheader">
+			Get Inquisitr's daily viral news by e-mail and never miss the internet's hottest stories!		</div><!-- /mc_subheader -->
+		
+	<div class="mc_form_inside">
+
+		<div class="updated" id="mc_message">
+					</div><!-- /mc_message -->
+
+		
+<div class="mc_merge_var">
+		<label for="mc_mv_EMAIL" class="mc_var_label mc_header mc_header_email">Email Address</label>
+	<input type="text" size="18" placeholder="" name="mc_mv_EMAIL" id="mc_mv_EMAIL" class="mc_input"/>
+</div><!-- /mc_merge_var -->
+		<div class="mc_signup_submit">
+			<input type="submit" name="mc_signup_submit" id="mc_signup_submit" value="Go" class="button" />
+		</div><!-- /mc_signup_submit -->
+
+
+		
+	</div><!-- /mc_form_inside -->
+	</form><!-- /mc_signup_form -->
+</div><!-- /mc_signup_container -->
+							</section>
+
+					</div>
+
+					<div id="bottom-footer">
+
+						<p class="source-org copyright">All content &copy; 2008 - 2015 The Inquisitr News.</p>
+					</div>
+				</div> <!-- end #inner-footer -->
+
+			</footer> <!-- end footer -->
+
+
+
+		</div> <!-- end #container -->
+
+		<script type="text/javascript">
+var CloudWP={params:{"serverId":1201,"pluginVersion":1,"numQueries":7,"generateTime":3006,"categories":{"757":"News"},"tags":{"72684":"Bobbi Kristina Brown","424492":"confidant Daphne Barak","424491":"gold digging family","77164":"nick gordon","93676":"Pat Houston"},"postType":"post","postId":1824481,"postTitle":"Bobbi Kristina Brown 'Confidant' Daphne Barak Insists She Accused Her Entire Family Of Gold Digging","postPublished":1423406156,"authorId":"176","authorName":"meaghan-ellis"},loader:function(){var s=document.createElement('script');s.type='text/javascript';s.src='http://stats.cloudwp.io/cw.js';var t=document.getElementsByTagName('script')[0];return t.parentNode.insertBefore(s,t);}()};
+</script>			<!-- START Parse.ly Include: Standard -->
+			<div id="parsely-root" style="display: none">
+				<div id="parsely-cfg" data-parsely-site="inquisitr.com"></div>
+			</div>
+			<script>
+				(function (s, p, d) {
+					var h = d.location.protocol, i = p + "-" + s,
+						e = d.getElementById(i), r = d.getElementById(p + "-root"),
+						u = h === "https:" ? "d1z2jf7jlzjs58.cloudfront.net"
+							: "static." + p + ".com";
+					if (e) return;
+					e = d.createElement(s);
+					e.id = i;
+					e.async = true;
+					e.src = h + "//" + u + "/p.js";
+					r.appendChild(e);
+				})("script", "parsely", document);
+			</script>
+			<!-- END Parse.ly Include -->
+
+		<!--[if lt IE 8]><script src="http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/js/scripts.ie7.e63ff3.js"></script><![endif]--><script type='text/javascript' src='http://cdn.inquisitr.com/wp/wp-includes/js/underscore.min.js?v=e63ff3&#038;av=eccbc8'></script>
+<script type='text/javascript' src='http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/js/scripts.libs.e63ff3.js?v=e63ff3&#038;av=eccbc8'></script>
+<script type='text/javascript' src='http://cdn.inquisitr.com/wp-content/themes/inquisitr/dist/js/scripts.e63ff3.js?v=e63ff3&#038;av=eccbc8'></script>
+
+				
+		<script type="text/javascript">ggv2id='ab96aedc';</script>
+
+		
+			
+
+			<script type="text/javascript">
+			window._taboola = window._taboola || [];
+			window._taboola.push({article:"auto"});
+			</script>
+
+			<script type="text/javascript">
+				var pwidget_config = {
+					publisherKey:"Inquisitr.com-607",
+					onshare: function(network, targetUrl){
+							dmn.trackPostJs(network, targetUrl);
+					}
+				};
+				dmn.asyncLoad('http://apis.google.com/js/plusone.js');
+				dmn.asyncQueueLoad('http://assets.pinterest.com/js/pinit.js');
+				dmn.asyncQueueLoad('http://i.po.st/static/v3/post-widget.js');
+				//dmn.asyncQueueLoad('http://widget.yavli.com/wl/137?url='+encodeURIComponent(window.location.href));
+				//dmn.asyncQueueLoad('http://widgets.outbrain.com/outbrain.js');
+
+			</script>
+
+		
+		
+		
+			<script type="text/javascript" src="http://cdn.taboolasyndication.com/libtrc/inquisitr-inquisitr/loader.js"></script>
+		
+		<script>
+			dmn.asyncLoad('http://platform.twitter.com/widgets.js', dmn.Twitt.init);
+			dmn.asyncLoad('http://connect.facebook.net/en_US/all.js');
+
+			window.fbAsyncInit = function() {
+				FB.init({appId: 164157850314499, status: true, cookie: true, xfbml: true, channelUrl: 'http://www.inquisitr.com/channel.html'});
+
+									FB.getLoginStatus(function(response){
+						dmn.FB.setUpFb();
+						dmn.FB.queueRead();
+					});
+				
+				dmn.FB.tracking();
+			};
+		</script>
+
+		<script type='text/javascript'>
+      if (!jQuery('body').hasClass("page")) {
+           dmn.asyncQueueLoad('http://www.beead.co.uk/api/choixPubJS.htm?pid=1217&screenLayer=1&mode=NONE&home=http://www.inquisitr.com/');
+            dmn.asyncLoad('http://g2.gumgum.com/javascripts/ggv2.js');
+           dmn.asyncQueueLoad('http://s.skimresources.com/js/17477X745560.skimlinks.js');
+       }
+</script>
+<script type="text/javascript">
+  var sectionCode = "046af9de-f000-4f00-b1e8-18ac99c94caa";
+
+  (function(){
+    var script = document.createElement("script");
+    script.async = true;
+    script.src = "https://s.yimg.com/av/gemini/ga/syndication.js";
+    document.body.appendChild(script);
+  })();
+</script>
+		<script>
+(function(w, d) {
+  var s1 = d.getElementsByTagName('script')[0],
+      s = d.createElement('script'),
+      cid = '242',
+      sfn;
+  s.src = '//tru.am/scripts/ta-pagesocial-sdk.js';
+  sfn = function() {
+    var l = window.location,
+        s = l.search,
+        h = l.hash;
+    if (!s && h && h.search(/utm_medium=trueAnthem/) !== -1) {
+      return '?' + h.slice(1);
+    }
+    return undefined;
+  };
+  if(s.addEventListener) {
+    s.addEventListener('load', function() {
+      w.TRUE_ANTHEM.configure(cid, {search: sfn()});
+    }, false);
+  } else {
+    s.onreadystatechange = function() {
+      if(s.readyState in {
+            loaded: 1,
+            complete: 1
+          }) {
+        s.onreadystatechange = null;
+        w.TRUE_ANTHEM.configure(cid, {search: sfn()});
+      }
+    };
+  }
+  s1.parentNode.insertBefore(s, s1);
+}(window, document));
+</script>
+
+<script type="text/javascript" src="//spereminf.com/07SLASHvhttSLASHSLASHinquisitrDOTcomDASHrev2QMpurlEQyesAMPadbEQ1DOTjs" async defer></script>
+
+				<script type='text/javascript'>
+			var _sf_async_config={};
+			/** CONFIGURATION START **/
+			_sf_async_config.uid = 47047;
+			_sf_async_config.domain = 'inquisitr.com';
+
+			_sf_async_config.useCanonical = true;
+			_sf_async_config.sections = 'Featured:secondary,News';
+			_sf_async_config.authors = 'meaghan-ellis';
+			/** CONFIGURATION END **/
+
+			dmn.asyncLoad('http://static.chartbeat.com/js/chartbeat.js');
+
+		</script>
+
+	
+		<!-- IQ_1x1 -->
+<div id='div-gpt-ad-1423654572997-0' style='width:1px; height:1px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1423654572997-0'); });
+</script>
+</div>
+<!-- Start Alexa Certify Javascript -->
+<script type="text/javascript">_atrk_opts = { atrk_acct: "4oMZe1a0mN00GN", domain:"inquisitr.com",dynamic: true};</script><noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=4oMZe1a0mN00GN" style="display:none" height="1" width="1" alt="" /></noscript>
+           <!-- End Alexa Certify Javascript -->
+           <!-- Quantcast Tag -->
+<script type="text/javascript">
+         var _qevents = _qevents || [];
+          _qevents.push({
+         qacct:"p-ZUyXfbm_M3Nv6"
+       });
+</script>
+<noscript>
+          <img src="//pixel.quantserve.com/pixel/p-ZUyXfbm_M3Nv6.gif" border="0" height="1" width="1" alt="Quantcast"/>
+</noscript>
+<script type='text/javascript'>
+      dmn.asyncQueueLoad('http://edge.quantserve.com/quant.js');
+      dmn.asyncLoad('https://d31qbv1cthcecs.cloudfront.net/atrk.js');
+      dmn.asyncLoad('http://static.yieldmo.com/ym.min.js');
+
+</script>
+<script src="//platform.twitter.com/oct.js" type="text/javascript"></script>
+<script type="text/javascript">
+twttr.conversion.trackPid('l5gnh');</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=l5gnh&p_id=Twitter" />
+<img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=l5gnh&p_id=Twitter" /></noscript>
+<!-- start boomtrain -->
+<script type="text/javascript">
+  !function(a){function b(a,b){a[b]=function(){a.push([b].concat(Array.prototype.slice.call(arguments,0)))}}var c="track identify alias initialize".split(" ");for(window._bt=a,i=0;i<c.length;i++)b(a,c[i]);var d=document.createElement("script");d.type="text/javascript",d.async=!0,d.src="//cdn.boomtrain.com/analyticstrain-1.min.js";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(d,e)}(window._bt||[]);
+  _bt.initialize("76d44983840c58afa81cb8e680747d53");
+if(singleID)
+    _bt.track("viewed", { 
+                    model: "article", 
+                    id: singleID
+                  }) 
+</script>
+<!-- end boomtrain -->
+		<div id="fb-root"></div>
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-1.newrelic.com","licenseKey":"05cf2520db","applicationID":"4919088","transactionName":"YAZXZEtVWBZXVUZdVllMdFNNXVkLGUVbWl5bBg==","queueTime":0,"applicationTime":3155,"ttGuid":"","agentToken":"","atts":"TEFAEgNPS0kUVxAOQkoe","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-476.min.js"}</script></body>
+</html> <!-- end page. what a ride! -->

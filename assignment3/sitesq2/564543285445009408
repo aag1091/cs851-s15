@@ -1,0 +1,507 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>MBTA.com > Current Service Alerts, Advisories, Delays, and Outages</title>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+<meta http-equiv="expires" content="-1" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="author" content="RDVO, Inc." />
+<meta name="robots" content="all" />
+<meta name="MSSmartTagsPreventParsing" content="true" />
+<meta name="description" content="MBTA.com provides information on current commuter rail, subway, bus, and boat service alerts, advisories, delays, and outages." />
+<meta name="keywords" content="mbta service alerts, mbta delays, mbta outages, mbta advisories, line problems, delayed trains, system rerouting" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/lib/css/global.css" media="screen" />
+
+
+<link rel="stylesheet" type="text/css" href="/lib/css/calendar.css" />
+
+        <link rel="stylesheet" type="text/css" href="/lib/css/print.css" media="print" />
+		<script type="text/javascript" src="/lib/javascript/prototype-1.4.0.js"></script>
+		<script type="text/javascript" src="/lib/javascript/common.js"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+    var path = '/rider_tools/transit_updates';
+    var definedMode = '';
+
+    // Used for setting zoom and center on GMap
+    var routeCookie = definedMode;
+
+    function loadGoogleMaps() {
+        checkloadjscssfile("/lib/css/station_popup.css", "css");
+        //dynamically load and add this .js file
+        checkloadjscssfile("https://maps.googleapis.com/maps/api/js?v=3&client=gme-massachusettsbay&sensor=false&callback=loadGoogleLibs", "js");
+    }
+    function loadGoogleLibs() {
+        checkloadjscssfile("http://google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.9/src/infobox_packed.js", "js");
+        var loadMbtaScriptsCheckInterval = 60; //tries for 30 seconds
+        var loadMbtaScriptsCheck = setInterval(function(){
+            if (typeof InfoBox === 'function'){
+                clearInterval(loadMbtaScriptsCheck);
+                loadMbtaScripts();
+            }
+            //Interval termination conditions
+            if (loadMbtaScriptsCheckInterval < 1 || loadMbtaScriptsCheckInterval > 60){
+                clearInterval(loadMbtaScriptsCheck);
+                console.log('Map loading failed: Stopped after ' + (60 - loadMbtaScriptsCheckInterval) +  ' attempts (2/second).');
+            } else {
+                loadMbtaScriptsCheckInterval--;
+            }
+        }, 500);
+    }
+    function loadMbtaScripts () {
+    //Load scripts required for the page
+    
+    }
+    
+    //http://www.javascriptkit.com/javatutors/loadjavascriptcss.shtml
+    var filesadded=""; //list of files already added
+
+    function checkloadjscssfile(filename, filetype, callback){
+        if (filesadded.indexOf("["+filename+"]")==-1){
+            loadjscssfile(filename, filetype, callback);
+            filesadded+="["+filename+"]"; //List of files added in the form "[filename1],[filename2],etc"
+        }
+    }
+    function loadjscssfile(filename, filetype, callback){
+        if(filetype=="js"){ //if filename is a external JavaScript file
+            var fileref=document.createElement('script');
+            fileref.setAttribute("type","text/javascript");
+            fileref.setAttribute("src", filename);
+        }
+        else if (filetype=="css"){ //if filename is an external CSS file
+            var fileref=document.createElement("link");
+            fileref.setAttribute("rel", "stylesheet");
+            fileref.setAttribute("type", "text/css");
+            fileref.setAttribute("href", filename);
+        }
+        if (typeof fileref!="undefined"){
+            document.getElementsByTagName("head")[0].appendChild(fileref);
+        }
+        if (typeof callback !== "undefined"){
+            callback();
+        }
+    }
+    function initMbtaMaps (){
+        var countdown = 60; //tries for 30 seconds
+        var scripts_loaded = setInterval( function (){
+            var pre_countdown = countdown;
+            if (false){
+
+                mbta.routes.getRoutesByMode(definedMode);
+                setTimeout(function (){if(typeof mbta.maps.showMap === 'function'){mbta.maps.showMap(definedMode);}}, 300);
+
+                clearInterval(scripts_loaded);
+            }
+            if (countdown < 1 || countdown > 60){
+                clearInterval(scripts_loaded);
+                console.log('Map loading failed: Stopped after ' + pre_countdown +  ' attempts (2/second).');
+            } else {
+                countdown--;
+            }
+        }, 500);
+    }
+//]]>
+</script><!-- START Google Analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-25827878-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+<!-- END Google Analytics -->
+</head>
+<body class="rider_tools">
+<a name="top"></a>
+<div id="container">
+	<div id="main">
+		
+<div id="ad"></div>
+		<div id="header">
+			<h1><a href="/index.asp" title="MBTA Home"><span>Massachusetts Bay Transportation Authority</span><img src="/images/logo-mbta.gif" alt="MBTA Logo" /></a></h1>
+			<input type="hidden" name="num" value="P4" />
+			<div id="calendar">
+			<script type="text/javascript">
+				//<![CDATA[
+				document.write(getCalendarDate());
+				//]]>
+			</script>
+			</div>
+            <div id="search-main">
+				<form method="get" action="/search/" onsubmit="var search_q_val = document.getElementById('q'); if(search_q_val.value == 'Search MBTA.com') search_q_val.value = '';">
+					<fieldset>
+						<input type="text" id="q" name="q" class="text" value="Search MBTA.com" onfocus="if ((this.value)=='Search MBTA.com') this.value='';" onblur="if ((this.value)=='') this.value='Search MBTA.com';" tabindex="16" />
+						<input type="submit" value="" class="btn" style="background-image:url(/images/btn-go.gif);border:none;cursor:pointer" alt="Search MBTA" tabindex="17" />
+					</fieldset>
+				</form>
+			</div>
+            <ul id="main-navigation" role="menubar">
+				<li id="nav-schedules_and_maps" class="navTab" role="presentation"><a href="/schedules_and_maps/" tabindex="9" title="Schedules &amp; Maps" role="menuitem" aria-haspopup="true">Schedules &amp; Maps</a><img src="/images/nav-bg-dot.png" class="dot" alt="" />
+					<ul id="nav-schedules_and_maps-subnav" aria-label="Schedules and Maps" role="menu" tabindex="0" aria-hidden="true" aria-expanded="false">
+						<li role="presentation"><img src="/images/nav-bg-dot.png" alt="" /><a href="/schedules_and_maps/subway/" title="Subway Schedules and Maps" tabindex="-1" role="menuitem">Subway</a></li>
+						<li role="presentation"><a href="/schedules_and_maps/bus/" title="Bus Schedules and Maps" tabindex="-1" role="menuitem">Bus</a></li>
+						<li role="presentation"><a href="/schedules_and_maps/rail/" title="Commuter Rail Schedules and Maps" tabindex="-1" role="menuitem">Commuter Rail</a></li>
+						<li role="presentation"><a href="/schedules_and_maps/boats/" title="Boats Schedules and Maps" tabindex="-1" role="menuitem">Boat</a></li>
+						<li role="presentation"><a href="/schedules_and_maps/system_map/" title="System Map" tabindex="-1" role="menuitem">System Map</a></li>
+					</ul>
+				</li>
+				<li id="nav-fares_and_passes" class="navTab" role="presentation"><a href="/fares_and_passes/" tabindex="10" title="Fares &amp; Gifts" role="menuitem" aria-haspopup="true">Fares &amp; Gifts</a><img src="/images/nav-bg-dot.png" class="dot" alt="" />
+					<ul id="nav-fares_and_passes-subnav"  aria-label="Fares and Passes" role="menu" tabindex="0" aria-hidden="true" aria-expanded="false">
+                            				<li role="presentation"><a href="/fares_and_passes/mTicketing/" title="MBTA mTicket" tabindex="-1" role="menuitem">MBTA mTicket</a></li>
+							<li role="presentation"><a href="http://www.mbtagifts.com/" title="Gifts" tabindex="-1" role="menuitem">Gifts</a></li>
+							<li role="presentation"><a href="/fares_and_passes/subway/" title="Subway Fares and Passes" tabindex="-1" role="menuitem">Subway</a></li>
+							<li role="presentation"><a href="/fares_and_passes/bus/" title="Bus Fares and Passes" tabindex="-1" role="menuitem">Bus</a></li>
+							<li role="presentation"><a href="/fares_and_passes/rail/" title="Commuter Rail Fares and Passes" tabindex="-1" role="menuitem">Commuter Rail</a></li>
+							<li role="presentation"><a href="/fares_and_passes/boats/" title="Boats Fares and Passes" tabindex="-1" role="menuitem">Boats</a></li>
+    					    		<li role="presentation"><a href="/fares_and_passes/ride/" title="THE RIDE" tabindex="-1" role="menuitem">THE RIDE</a></li>
+							<li role="presentation"><a href="/fares_and_passes/charlie/" title="Charlie: Card &amp; Ticket Info" tabindex="-1" role="menuitem">Charlie: Card &amp; Ticket Info</a></li>
+							 
+							<li role="presentation"><a href="https://commerce.mbta.com/" title="Charlie: Buy it Online" tabindex="-1" role="menuitem">Charlie: Buy it Online</a></li>
+							 
+    					    		<li role="presentation"><a href="https://charliecard.mbta.com/CharlieCardWebProgram/pages/index.jsp" title="Reload Your CharlieCard" tabindex="-1" role="menuitem">Reload Your CharlieCard</a></li>
+							<li role="presentation"><a href="https://charliecard.mbta.com/CharlieCardWebProgram/pages/charlieCardCenter.jsf"  title="MyCharlie Account Center" tabindex="-1" role="menuitem">MyCharlie Account Center</a></li>
+							 
+						    <li role="presentation"><a href="/fares_and_passes/sales_locations/" title="Sales Locations" tabindex="-1" role="menuitem">Sales Locations</a></li>
+							<li role="presentation"><a href="/fares_and_passes/passes/" title="Passes" tabindex="-1" role="menuitem">Passes</a></li>
+							<li role="presentation"><a href="/fares_and_passes/reduced_fare_programs/" title="Reduced Fare Programs" tabindex="-1" role="menuitem">Reduced Fare Programs</a></li>
+							<li role="presentation"><a href="/fares_and_passes/purchase_programs/" title="Purchase Programs" tabindex="-1" role="menuitem">Purchase Programs</a></li>
+					</ul>
+				</li>
+			
+				<li id="nav-rider_tools" class="navTab on" role="presentation"><a href="/rider_tools/" tabindex="12" title="Rider Tools" role="menuitem" aria-haspopup="true">Rider Tools</a><span class="accessible-hidden">- Current section</span><img src="/images/nav-bg-dot.png" class="dot" alt="" />
+					<ul id="nav-rider_tools-subnav"  aria-label="Rider Tools" role="menu" tabindex="0" aria-hidden="true" aria-expanded="false">
+						<li role="presentation"><img src="/images/nav-bg-dot.png" alt="" /><a href="/rider_tools/trip_planner/" title="Trip Planner" tabindex="-1" role="menuitem">Trip Planner</a></li>
+						<li role="presentation"><a href="/rider_tools/servicenearby/" title="Service Nearby" tabindex="-1" role="menuitem">Service Nearby</a></li>
+						<li role="presentation"><a href="/rider_tools/transit_updates/" title="Service Updates" tabindex="-1" role="menuitem">Service Updates</a></li>
+					    <li role="presentation"><a href="/rider_tools/t_alerts/" title="T-Alerts" tabindex="-1" role="menuitem">T-Alerts</a></li>
+					    <li role="presentation"><a href="/rider_tools/t_alerts/?id=14025" title="T-Alerts FAQ" tabindex="-1" role="menuitem">T-Alerts FAQ</a></li>
+					    <li role="presentation"><a href="/rider_tools/apps/" title="App Showcase" tabindex="-1" role="menuitem">App Showcase</a></li>
+					    <li role="presentation"><a href="/rider_tools/developers/" title="Developers" tabindex="-1" role="menuitem">Developers</a></li>
+						<li role="presentation"><a href="/rider_tools/realtime_subway/" title="Realtime Bus" tabindex="-1" role="menuitem">Realtime Info</a></li>
+				    </ul>
+				</li>
+				<li id="nav-riding_the_t" class="navTab" role="presentation"><a href="/riding_the_t/" tabindex="13" title="Riding the T" role="menuitem" aria-haspopup="true">Riding the T</a><img src="/images/nav-bg-dot.png" class="dot" alt="" />
+					<ul id="nav-riding_the_t-subnav"  aria-label="Riding the T" role="menu" tabindex="0" aria-hidden="true" aria-expanded="false">
+						<li role="presentation"><img src="/images/nav-bg-dot.png" alt="" /><a href="/riding_the_t/default.asp?id=26153" title="Hours of Operation" tabindex="-1" role="menuitem">Hours of Operation</a></li>
+						<li role="presentation"><a href="/riding_the_t/accessible_services/" title="Accessibility at the T" tabindex="-1" role="menuitem">Accessibility at the T</a></li>
+						<li role="presentation"><a href="/riding_the_t/bps/" title="Boston Public Schools" tabindex="-1" role="menuitem">Boston Public Schools</a></li>
+						<li role="presentation"><a href="/riding_the_t/CharlieCard_Discount_Book/" title="Charlie Card Discount Book" tabindex="-1" role="menuitem">Charlie Card Discount Book</a></li>
+						<li role="presentation"><a href="/riding_the_t/bikes/" title="Bikes on the T" tabindex="-1" role="menuitem">Bikes on the T</a></li>
+						<li role="presentation"><a href="/riding_the_t/pets/" title="Pets on the T" tabindex="-1" role="menuitem">Pets on the T</a></li>
+						<li role="presentation"><a href="/riding_the_t/parking/" title="Parking" tabindex="-1" role="menuitem">Parking</a></li>
+						<li role="presentation"><a href="/riding_the_t/logan/" title="Getting to Logan" tabindex="-1" role="menuitem">Getting to Logan</a></li>
+						<li role="presentation"><a href="/events/" title="Events & Holidays" tabindex="-1" role="menuitem">Events & Holidays</a></li>
+						<li role="presentation"><a href="/riding_the_t/default.asp?id=26899" title="Government Center Project" tabindex="-1" role="menuitem">Government Center Project</a></li>
+						<li role="presentation"><a href="/riding_the_t/redsox/" title="Red Sox" tabindex="-1" role="menuitem">Red Sox</a></li>
+						<li role="presentation"><a href="/riding_the_t/patriots/" title="Patriots" tabindex="-1" role="menuitem">Patriots</a></li>
+						<li role="presentation"><a href="/riding_the_t/marathon/" title="Boston Marathon" tabindex="-1" role="menuitem">Boston Marathon</a></li>
+				    		<li role="presentation"><a href="/riding_the_t/wifi/" title="Wi-Fi Commuter Rail Connect" tabindex="-1" role="menuitem">Wi-Fi Commuter Rail </a></li>
+					</ul>
+				</li>
+				<li id="nav-about_the_mbta" class="navTab" role="presentation"><a href="/about_the_mbta/" tabindex="14" title="About the MBTA" role="menuitem" aria-haspopup="true">About the MBTA</a><img src="/images/nav-bg-dot.png" class="dot" alt="" />
+					<ul id="nav-about_the_mbta-subnav" aria-label="About the MBTA" role="menu" tabindex="0" aria-hidden="true" aria-expanded="false">
+						<li role="presentation"><img src="/images/nav-bg-dot.png" alt="" /><a href="/about_the_mbta/leadership/" title="Leadership" tabindex="-1" role="menuitem">Leadership</a></li>
+						<li role="presentation"><a href="/about_the_mbta/t_projects/" title="T Projects" tabindex="-1" role="menuitem">T Projects</a></li>
+						<li role="presentation"><a href="/about_the_mbta/history/" title="History" tabindex="-1" role="menuitem">History</a></li>
+						<li role="presentation"><a href="/about_the_mbta/news_events/" title="News &amp; Events" tabindex="-1" role="menuitem">News &amp; Events</a></li>
+						<li role="presentation"><a href="/about_the_mbta/career_opps/" title="Career Opportunities" tabindex="-1" role="menuitem">Career Opportunities</a></li>
+						<li role="presentation"><a href="/about_the_mbta/scorecard/" title="ScoreCard" tabindex="-1" role="menuitem">ScoreCard</a></li>
+						<li role="presentation"><a href="/about_the_mbta/public_meetings/" title="Public Meetings" tabindex="-1" role="menuitem">Public Meetings</a></li>
+						<li role="presentation"><a href="/about_the_mbta/document_library/" title="Document Library" tabindex="-1" role="menuitem">Document Library</a></li>
+						<li role="presentation"><a href="/about_the_mbta/art_collection/" title="Art Collection" tabindex="-1" role="menuitem">Art Collection</a></li>
+						<li role="presentation"><a href="/about_the_mbta/financials/" title="Financials" tabindex="-1" role="menuitem">Financials</a></li>
+						<li role="presentation"><a href="/about_the_mbta/environment/" title="Sustainability" tabindex="-1" role="menuitem">Sustainability</a></li>
+						<li role="presentation"><a href="/business_center/" title="Business Center" tabindex="-1" role="menuitem">Business Center</a></li>
+					</ul>
+				</li>
+				<li id="nav-customer_support" class="navTab" role="presentation"><a href="/customer_support/" tabindex="15" title="Customer Support" role="menuitem" aria-haspopup="true">Customer Support</a><img src="/images/nav-bg-dot.png" class="dot" alt="" />
+					<ul id="nav-customer_support-subnav" aria-label="Customer Support" role="menu" tabindex="0" aria-hidden="true" aria-expanded="false">
+						<li role="presentation"><img src="/images/nav-bg-dot.png" alt="" /><a href="/customer_support/contact/" title="Contact Us" tabindex="-1" role="menuitem">Contact Us</a></li>
+                        			<li role="presentation"><a href="/customer_support/feedback/" title="Customer Comment" tabindex="-1" role="menuitem">Customer Comment</a></li>
+                        			<li role="presentation"><a href="/customer_support/cleanliness_complaint/" title="Cleanliness Complaint" tabindex="-1" role="menuitem">Cleanliness Complaint</a></li>
+						<li role="presentation"><a href="/customer_support/customer_bill_of_rights/" title="Customer Bill of Rights" tabindex="-1" role="menuitem">Customer Bill of Rights</a></li>
+						<li role="presentation"><a href="/customer_support/default.asp?id=26875" title="Forms" tabindex="-1" role="menuitem">Forms</a></li>
+						<li role="presentation"><a href="/customer_support/protecting_your_rights/" title="Protecting Your Rights" tabindex="-1" role="menuitem">Protecting Your Rights</a></li>
+						<li role="presentation"><a href="/customer_support/privacy_policy/" title="Privacy Policy" tabindex="-1" role="menuitem">Privacy Policy</a></li>
+						<li role="presentation"><a href="/customer_support/terms_of_use/" title="Terms of Use" tabindex="-1" role="menuitem">Terms of Use</a></li>
+					</ul>
+				</li>
+
+                		<li id="nav-safety" class="navTab" role="presentation"><a href="/safety/" tabindex="15" title="Safety" role="menuitem" aria-haspopup="true">Safety</a><img src="/images/nav-bg-dot.png" class="dot" alt="" />
+					<ul id="nav-safety-subnav" aria-label="Safety" role="menu" tabindex="0" aria-hidden="true" aria-expanded="false">
+						<li role="presentation"><a href="/safety/emergency_instructions/" title="Emergency Instructions" tabindex="-1" role="menuitem">Emergency Instructions</a></li>
+                        			<li role="presentation"><a href="/safety/default.asp?id=6442453002" title="Security" tabindex="-1" role="menuitem">Security</a></li>
+						<li role="presentation"><a href="/safety/safety_tips/" title="Transit Safety Tips" tabindex="-1" role="menuitem">Transit Safety Tips</a></li>
+						<li role="presentation"><a href="/safety/operation_lifesaver/" title="Operation Lifesaver" tabindex="-1" role="menuitem">Operation Lifesaver</a></li>
+					</ul>
+				</li>
+
+				<li id="nav-transitpolice" class="navTab" role="presentation"><a href="/transitpolice/" tabindex="15" title="Transit Police" role="menuitem" aria-haspopup="true">Transit Police</a><img src="/images/nav-bg-dot.png" class="dot" alt="" />
+					<ul id="nav-transitpolice-subnav" aria-label="Transit Police" role="menu" tabindex="0" aria-hidden="true" aria-expanded="false">
+						<li role="presentation"><img src="/images/nav-bg-dot.png" alt="" /><a href="/transitpolice/the_department/" title="The Department" tabindex="-1" role="menuitem">The Department</a></li>
+ 	                   			 <li role="presentation"><a href="/transitpolice/divisions/" title="Divisions" tabindex="-1" role="menuitem">Divisions</a></li>
+						<li role="presentation"><a href="/transitpolice/service_areas/" title="Transit Police Service Areas" tabindex="-1" role="menuitem">Transit Police Service Areas</a></li>
+						<li role="presentation"><a href="/transitpolice/crimestats/" title="Crime Statistics" tabindex="-1" role="menuitem">Crime Statistics</a></li>
+					    	<li role="presentation"><a href="/transitpolice/see_something_say_something/" title="See Something? Say Something" tabindex="-1" role="menuitem">See Something? Say Something</a></li>
+                      				<li role="presentation"><a href="/transitpolice/default.asp?id=19050" title="MBTA Security Inspections" tabindex="-1" role="menuitem">MBTA Security Inspections</a></li>
+						<li role="presentation"><a href="http://tpdnews411.com" title="Transit Police Blog" tabindex="-1" role="menuitem">Transit Police Blog</a></li>
+						<li role="presentation"><a href="/transitpolice/faq/" title="FAQ" tabindex="-1" role="menuitem">FAQ</a></li>
+						<li role="presentation"><a href="/transitpolice/contact_us/" title="Contact Us" tabindex="-1" role="menuitem">Contact Us</a></li>
+					</ul>
+				</li>
+
+			</ul>
+
+		</div>
+
+    		<img id="graphicheader" src="/images/h1-rider_tools.jpg" alt="Transit Updates" />
+        
+		<div id="breadcrumb">
+		<a href="/rider_tools/">Rider Tools</a> <img src="/images/icons/breadcrumb_arrow.gif" alt="breadcrumb arrow" /> Transit Updates
+		</div>
+		
+
+<ul id="secondarynav">
+	<li><a title="Trip Planner" href="/rider_tools/trip_planner/">Trip Planner</a></li>
+	<li><a title="Service Nearby" href="/rider_tools/servicenearby/">Service Nearby</a></li>
+	<li class="on"><a title="Service Updates" href="/rider_tools/transit_updates/">Service Updates</a><span class="accessible-hidden">- Current section</span></li>	
+    <li><a  title="T-Alerts" href="/rider_tools/t_alerts/">T-Alerts</a></li>
+    <li><a  title="T-Alerts FAQ" href="/rider_tools/t_alerts/?id=14025">T-Alerts FAQ</a></li>
+    <li><a title="App Showcase" href="/rider_tools/apps/">App Showcase</a></li>
+    <li><a title="Developers" href="/rider_tools/developers/">Developers</a></li>
+    <li><a title="Realtime Info" href="/rider_tools/realtime_subway/">Realtime Info</a></li>
+</ul> 
+		<div id="innercontent">
+			<div class="cms_container">
+			<a id="startofcontent" name="startofcontent"></a>
+			
+
+<script type="text/javascript" src="/lib/jQuery/jquery-1.4.4.min.js"></script>
+
+
+
+<script type="text/javascript" src="/lib/javascript/ajax.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/lib/css/alerts.css" media="screen" />
+
+
+<h1>Service Alerts</h1>
+<p align="justify">MBTA Services are constantly updated through our operations center. Please check here regularly for up-to-the-minute updates on every transit service as well as elevators and escalators.</p>
+<script>
+function toggleAlertsTab(thelink,thecontent,id)
+{
+var tabbedcontenttabs=(id)?document.getElementById("tabbedcontenttabs-"+id):document.getElementById("tabbedcontenttabs");
+var tabbedcontent=(id)?document.getElementById("tabbedcontent-"+id):document.getElementById("tabbedcontent");
+thetablinks=tabbedcontenttabs.getElementsByTagName("li");
+thetabcontents=getElementsByClass("tabbedcontentholder",tabbedcontent,"div");
+for(i=0;i<thetablinks.length;i++){thetablinks[i].className="";thetablinks[i].blur();
+thetabcontents[i].style.display="none";}
+thelink.parentNode.className="on";
+document.getElementById("tabbedcontent-"+thecontent).style.display="block";
+}
+
+</script>
+
+<!-- START : Content not under CMS stylesheet -->
+<p style="position:absolute;margin-left:430px;font-size:11px;padding-bottom:10px;"><a href="/rider_tools/transit_updates/?ttype=subway">Back to Service Updates</a></p>
+<div id="alerts" class="tabbedcontent">
+	<ul id="alertstabs" class="tabbedcontenttabs">
+		<li class="on"><a href="javascript:void(0);" onclick="toggleAlertsTab(this,'subway'); document.cookie='serviceUpdates=off;';">
+		Subway
+
+		</a></li>
+	</ul>
+</div>
+<div class="serviceAlerts"><h3><span>Blue LineAlerts</span></h3><span class='linename Blue' style='display:none;'>Blue Line Alerts</span><div id="tabbedcontent-subway" class="tabbedcontentholder on"><h4><img src='/images/icons/alert_triangle_grey.png' alt='Subway Service Alerts' />Subway Service Alerts</h4><a href="#top">back to top</a></div></div>
+
+<br class="clearit" />
+<!-- END : Content not under CMS stylesheet -->
+
+<!--<p>
+Attention Paratransit Customers: During inclement weather, THE RIDE strongly recommends that you check with your contractor directly as services may be curtailed, expect delays. The numbers are as follows:
+<ul>
+    <li>North area: GLSS-Greater Lynn Senior Services, 888-319-7433, TTY 800-621-0420</li>
+    <li>South area: JV-Joint Venture, 888-920-7433, TTY 888-607-7787</li>
+    <li>Northwest area: VTS-Veterans Transportation, 877-765-7433, TTY 888-553-8294</li>
+</ul>
+</p>
+<p>
+    Not sure which contractor serves your area?  <a href="/riding_the_t/accessible_services/default.asp?id=7108">Check here</a>
+</p>-->
+
+<script language="javascript">
+
+// Check to see if user was viewing interactive map on last visit
+var x, y, iMapcookies = document.cookie.split(";");
+for (i = 0; i < iMapcookies.length; i++) {
+    // after the 1st cookie, the name has a space as the 1st character
+    if (i == 0) {
+        x = iMapcookies[i].substr(0, iMapcookies[i].indexOf("="));
+    }
+    else {
+        x = iMapcookies[i].substr(1, iMapcookies[i].indexOf("=") - 1);
+    }
+    y = iMapcookies[i].substr(iMapcookies[i].indexOf("=") + 1);
+    if (x == 'serviceUpdates' && y != 'off') {
+	//	alert(y);
+        toggleAlertsTab(document.getElementById(y), y);
+    }
+}
+</script>
+
+
+			</div>
+		</div>
+		
+		<div id="sidecolumn">
+			
+
+<style>
+
+.key
+{display:block;background-color:#E3E3E3;width:175px; height: 20px;padding-left:20px;
+padding-top:6px;border-bottom:1px solid #c80900;font-weight:bold;font-size:12px;color:#838383;margin-top:10px;}
+
+#icon.key 
+{background-color:#f4f4f4; border-bottom:1px solid #FFFFFF;height:30px;margin-top:0px;}
+
+#icon.key  img 
+{ float:left; margin-right:10px;}
+
+#icon.key  p 
+{ float:left; font-size:11px;padding-top:3px;}
+</style>
+
+
+<div class="key">
+KEY
+</div>
+
+<div  class="key" id="icon">
+<img src="/images/icons/ic_key_delay.png" alt="Delay" /> <p>Delay</p>
+</div>
+
+<div  class="key" id="icon">
+<img src="/images/icons/ic_key_canceltrip.png" alt="Cancellation" /> <p>Cancellation</p>
+</div>
+
+<div  class="key" id="icon">
+<img src="/images/icons/ic_key_detour.png" alt="Detour" /> <p>Detour</p>
+</div>
+
+<div  class="key" id="icon">
+<img src="/images/icons/ic_key_snowroute.png" alt="Snow Route" /> <p>Snow Route</p>
+</div>
+<div  class="key" id="icon">
+<img src="/images/icons/ic_key_shuttlebus.png" alt="Shuttle Bus" /> <p>Shuttle Bus</p>
+</div>
+<div  class="key" id="icon">
+<img src="/images/icons/ic_key_closure.png" alt="Station/Stop Closure" /> <p>Station/Stop Closure </p>
+</div>
+<div  class="key" id="icon">
+<img src="/images/icons/ic_key_noservice.png" alt="No Service" /> <p>No Service</p>
+</div>
+<div  class="key" id="icon">
+<img src="/images/icons/ic_key_extraservice.png" alt="Extra Service" /> <p>Extra Service</p>
+</div>
+<div  class="key" id="icon">
+<img src="/images/icons/ic_key_schedchange.png" alt="Schedule Change" /> <p>Schedule Change</p>
+</div>
+<div  class="key" id="icon">
+<img src="/images/icons/ic_key_accessibility.png" alt="Access Issue" /> <p>Access Issue</p>
+</div>
+<div  class="key" id="icon">
+<img src="/images/icons/ic_key_other.png" alt="Other" /> <p>Other</p>
+</div>
+
+		</div>
+		
+	</div>
+	<div id="footer" role="contentinfo">
+    <div id="footermain">
+        <ul class="languages">
+            <li class="first">Languages:</li>
+             <li><a href="javascript:document.location.href = 'http://www.mbta.com/';">English</a></li>
+	     <li><div class="container"><div class="divider"></div><a href="/includes/process_change_language.asp?language=en_es">Espa&ntilde;ol</a></div></li>
+	     <li><div class="container"><div class="divider"></div><a href="/includes/process_change_language.asp?language=en_zt">Chinese</a></div></li>
+	      <li><div class="container"><div class="divider"></div><a href="/includes/process_change_language.asp?language=en_pt">Portugu&ecirc;s</a></div></li>
+              <li><div class="container"><div class="divider"></div><a href="/includes/process_change_language.asp?language=en_it">Italia</a></div></li>
+              <li><div class="container"><div class="divider"></div><a href="/includes/process_change_language.asp?language=en_fr">Fran&ccedil;ais</a></div></li>
+	     <li><div class="container"><div class="divider"></div><span style="text-decoration: underline;"><a title="More languages" href="/accessibility/languages/">more...</a></span></div></li>
+        </ul>
+        <ul style="width:60%">
+            <li><img src="/images/icons/nav_accessible2.gif" title="Accessibility" alt="Accessibility" /><a href="/riding_the_t/accessible_services/" title="Accessibility at the T">Accessibility at the T</a></li>
+            <li><div class="container"><div class="divider"></div><a href="/business_center/" title="Business Center">Business Center</a></div></li>
+            <li><div class="container"><div class="divider"></div><a href="/fares_and_passes/" title="Fares & Gifts">Fares & Gifts</a></div></li>
+           <li><div class="container"><div class="divider"></div><a href="/customer_support/privacy_policy/">Privacy Policy</a></div></li>
+           <li><div class="container"><div class="divider"></div><a href="/customer_support/terms_of_use/" title="Terms of Use">Terms of Use</a></div></li>
+                <br/>
+             <li>   <span style="color: #7F7F7F;">&copy;&nbsp;2015, Massachusetts Bay Transportation Authority, all rights reserved.</span></li>
+        </ul>
+        <div id="massdot">
+            <a href="http://www.massdot.state.ma.us/" title="MassDot"><img src="/images/MassDotLogo.gif"></a>
+            <a href="https://twitter.com/mbta"><img src="/images/twitter.jpg" alt="MBTA Twitter"></a>
+            <a href="http://realtime.mbta.com/alertsrss/rssfeed4"><img src="/images/rss.jpg" alt="MBTA RSS Feed"></a>
+            <a href="http://instagram.com/MBTApics"><img src="/images/instagram.png" alt="MBTA Instagram"></a>
+            <a href="http://www.youtube.com/user/mbtagm"><img src="/images/youtube.jpg" alt="MBTA YouTube"></a>
+        </div>
+        <br style="clear: both;" />
+    </div>
+</div>	 
+
+<div id="ad_main" style="margin-left:auto;margin-right:auto; top:0px; position:absolute;background-color:#FFFFFF; height:9.2em;padding-top:4px;"> 
+    
+        <script type="text/javascript" language="JavaScript">
+            aj_server = 'http://rotator.adjuggler.com/servlet/ajrotator/'; aj_tagver = '1.0';
+            aj_zone = 'hsm'; aj_adspot = '1080667'; aj_page = '0'; aj_dim = '394726'; aj_ch = ''; aj_ct = ''; aj_kw = '';
+            aj_pv = true; aj_click = '';
+        </script><script type="text/javascript" language="JavaScript" src="http://img1.cdn.adjuggler.com/banners/ajtg.js"></script>
+    
+</div>
+
+
+<div id="ad" style="padding-top:10px;padding-bottom:4px;padding-left:10px;background:white url(/images/main-bg-right.gif) top right repeat-y;width:100%;">
+    <div id="ad_footer" style="background-color:#FFFFFF; height:9.2em;display:inline;">
+        <script type="text/javascript" language="JavaScript">
+            aj_server = 'http://rotator.adjuggler.com/servlet/ajrotator/'; aj_tagver = '1.0';
+            aj_zone = 'hsm'; aj_adspot = '1253206'; aj_page = '0'; aj_dim = '394726'; aj_ch = ''; aj_ct = ''; aj_kw = '';
+            aj_pv = true; aj_click = '';
+        </script><script type="text/javascript" language="JavaScript" src="http://img1.cdn.adjuggler.com/banners/ajtg.js"></script>
+    </div>
+</div>
+
+<div id="pagebottom"><div id="pagebottommain"></div></div>
+<!-- Begin comScore Tag -->
+<script>
+    var _comscore = _comscore || [];
+    _comscore.push({ c1: "2", c2: "9894740" });
+    (function() {
+        var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+        s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+        el.parentNode.insertBefore(s, el);
+    })();
+</script>
+<noscript>
+<img src="http://b.scorecardresearch.com/p?c1=2&c2=9894740&cv=2.0&cj=1" />
+</noscript>
+        
+
+ 
+
+ 
+ 
+
+
+</div>
+</body>
+</html>

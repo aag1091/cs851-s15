@@ -1,0 +1,279 @@
+<title>Fundraising Signup | Mountain Mike's Pizza</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css"/>
+<link rel="stylesheet" type="text/css" href="/css/forms.css"/>
+<script type='text/javascript' src='/js/jquery.min.js'></script>
+<script src="/js/jquery.validate.js" type="text/javascript"></script>
+<script src="/js/jquery.validate.addons.js" type="text/javascript"></script>
+<script>
+  $(document).ready(function(){
+    $("#MMfundraising").validate();
+  });
+  </script>
+<style>
+#orgreq {
+list-style: upper-alpha outside;
+margin: 0 10px 0 20px
+}
+#orgreq li { margin-bottom: 8px; }
+#guts { padding: 10px 20px 20px 20px }
+.radios { float:left }
+.radios td { font-size: 11px }
+label.error {
+width: auto;
+clear:both;
+margin: 0
+}
+#recaptcha_area {
+text-align:center;
+margin: 0 auto;
+max-width: 400px;
+}
+</style>
+<!--[if IE]>
+	<link rel="stylesheet" type="text/css" href="/css/all-ie-only.css" />
+<![endif]-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-24125591-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<link rel="shortcut icon" href="http://mountainmikespizza.com/favicon.ico" />
+</head>
+
+<body id="bgtexture">
+
+<div id="wrap">
+  <div Id="wood">
+	<div id="header">
+    	<div id="logo">
+    	<a href="http://www.mountainmikes.com"><img src="/images/content/logo.png" alt="Mountain Mikes Pizza" /></a>
+        </div>
+        <div id="socmed1">
+    	<a href="http://www.facebook.com/MountainMikes" target="_blank"><img src="/img/1px_transp.gif" alt="Find Us On Facebook" width="100" height="35" /></a>
+        </div>
+        <div id="socmed2">
+    	<a href="http://www.twitter.com/MountainMikes" target="_blank"><img src="/img/1px_transp.gif" alt="Twitter" width="36" height="35" /></a>
+        </div>
+        <div id="socmed3">
+    	<a href="https://foursquare.com/mountainmikes" target="_blank"><img src="/img/1px_transp.gif" alt="Foursquare" width="36" height="35" /></a>
+        </div>
+        <div id="nav">
+        	<ul id="navmenu">
+                <li id="home"><a href="http://www.mountainmikes.com"><img src="/images/framework/menu/menu_spacer_00.gif" alt="HOME" /></a></li>
+                <li id="menu"><a href="/menu.php"><img src="/images/framework/menu/menu_spacer_01.gif" alt="MENU" /></a></li>
+                <li id="coupons"><a href="/coupons.php"><img src="/images/framework/menu/menu_spacer_02.gif" alt="COUPONS" /></a></li>
+                <li id="locations"><a href="/locations.php"><img src="/images/framework/menu/menu_spacer_03.gif" alt="LOCATIONS" /></a></li>
+                <li id="orderonline"><a href="/locations.php"><img src="/images/framework/menu/menu_spacer_04.gif" alt="ORDER ONLINE" /></a></li>
+            </ul>
+        </div>
+	</div>
+
+	<div class="content">
+      <div id="page-wrap">
+        <div class="sidebar"><a href="signup.php"><img src="../img/banners/fundraising-lg.jpg" alt="We Make It Easy! - Fundraisers &amp; More" width="285" height="390" border="0" /></a><a href="/contact.php"></a></div>
+        <div class="container">
+          <div class="tabs">
+            <div class="button"><a href="index.php" class="orderonlinearrow">Overview</a></div>
+            <div class="button current"><a href="signup.php" class="orderonlinearrow">Sign Up</a></div>
+          </div>
+          <div id="main-content">
+            <div id="guts">
+                            <h1>Sign Up</h1>
+              <form id="MMfundraising" name="MMfundraising" class="secure" method="post" action="/fundraising/signup.php">
+                <fieldset>
+                  <div class="formsection">
+                    <label for="org_name" class="required">Organization/Entity Name: </label>
+                    <div class="horizit">
+                      <input type="text" id="org_name" name="org_name" class="required" tabindex="1" accesskey="a" />
+                    </div>
+                    <br />
+                    <label for="taxid">Non-Profit/Tax ID No. (if applicable): </label>
+                    <input type="text" id="taxid" name="taxid" tabindex="2" accesskey="b" />
+                    <br />
+                    <label for="org_rep" class="required">Organization Representative: </label>
+                    <div class="horizit">
+                      <input type="text" id="org_rep" name="org_rep" class="required" tabindex="3" accesskey="c" />
+                    </div>
+                    <br />
+                    <label for="rep_phone" class="required"><strong>Phone:</strong> </label>
+                    <div class="horizit">
+                      <input name="rep_phone" type="text" id="rep_phone" tabindex="4" class="required phoneUS" size="8" accesskey="d" />
+                    </div>
+                    <label for="rep_email" style="width:50px"><strong>Email:</strong> </label>
+                    <div class="horizit">
+                      <input name="rep_email" type="text" id="rep_email" class="required email" tabindex="5" size="15" accesskey="e" />
+                    </div>
+                    <br />
+                  </div>
+                  <div class="formsection">
+                    <label for="mailing_addr" class="required">Mailing Address for Donation: </label>
+                    <div class="horizit">
+                      <input name="mailing_addr" type="text" id="mailing_addr" tabindex="6" class="required" size="30" accesskey="f" />
+                    </div>
+                    <br />
+                    <label for="mailing_city" class="required">City: </label>
+                    <div class="horizit">
+                      <input name="mailing_city" type="text" id="mailing_city" tabindex="7" class="required" size="8" accesskey="g" />
+                    </div>
+                    <label for="mailing_state" class="required" style="width:35px">State: </label>
+                    <div class="horizit">
+                      <input name="mailing_state" type="text" id="mailing_state" tabindex="8" class="required" maxlength="12" size="3" accesskey="h" />
+                    </div>
+                    <label for="mailing_zip" class="required" style="width:25px">Zip: </label>
+                    <div class="horizit">
+                      <input name="mailing_zip" type="text" id="mailing_zip" tabindex="9" class="required digits" maxlength="5" size="4" accesskey="i" />
+                    </div>
+                    <br />
+                    <label for="pay_to" class="required">Make Check Payable To: </label>
+                    <div class="horizit">
+                      <input type="text" id="pay_to" name="pay_to" class="required" tabindex="10" accesskey="j" />
+                      <br />
+                      <em>Donation checks and event results will be MAILED <br />
+                      20-30 days after your event.</em></div>
+                    <br />
+                  </div>
+                  <div class="formsection">
+                    <label for="org_type" class="required">Type of Organization: </label>
+                    <div class="horizit">
+                      <input type="text" id="org_type" name="org_type" class="required" tabindex="11" accesskey="k" />
+                    </div>
+                    <br />
+                    <label for="mem_nums" class="required">Number Of Members:<br />
+                      <em>(students/team members/families/etc.)</em> </label>
+                    <div class="horizit">
+                      <input name="mem_nums" type="text" id="mem_nums" tabindex="12" class="required number" size="10" accesskey="l" />
+                    </div>
+                    <br />
+                    <label for="org_wsite">Organization Website: </label>
+                    <div class="horizit">
+                      <input name="org_wsite" type="text" id="org_wsite" tabindex="13" accesskey="g" />
+                    </div>
+                    <br />
+                    <label for="webmstr_email">Webmaster's Email: </label>
+                    <div class="horizit">
+                      <input name="webmstr_email" type="text" id="webmstr_email" tabindex="14" class="email" accesskey="g" />
+                    </div>
+                    <br />
+                    <label for="email_comm" class="required">Can You email your community? </label>
+                    <table border="0" cellspacing="2" cellpadding="0" class="radios">
+                      <tr>
+                        <td>Yes:</td>
+                        <td><input type="radio" name="email_comm" id="email_comm1" class="required" value="yes" tabindex="15" accesskey="m" /></td>
+                        <td>No:</td>
+                        <td><input type="radio" name="email_comm" id="email_comm2" class="required" value="no" /></td>
+                      </tr>
+                    </table>
+                    <br />
+                    <label for="email_comm" class="required">Do you have a newsletter? </label>
+                    <table border="0" cellspacing="2" cellpadding="0" class="radios">
+                      <tr>
+                        <td valign="middle">Yes:</td>
+                        <td valign="middle"><input type="radio" name="newsletter" id="newsletter1" class="required" value="yes"tabindex="16" accesskey="n"  /></td>
+                        <td valign="middle">No:</td>
+                        <td valign="middle"><input type="radio" name="newsletter" id="newsletter2" class="required" value="no" /></td>
+                      </tr>
+                    </table>
+                    <br />
+                  </div>
+                  <div class="formsection">
+                    <label for="location"><strong>Select Location: </strong></label>
+                    <div class="horizit" style="margin:0">
+                      <select id="location" tabindex="17" name="location" title="Please select a location" class="required" accesskey="o">
+                        <option selected="selected" value="">Choose a location</option>
+                        <option value='116'>CA - Alameda - 714 Central Ave</option><option value='101'>CA - Antelope - 4207 Elverta Rd</option><option value='145'>CA - Antioch - 2509 Somersville Rd</option><option value='36'>CA - Antioch - 3612 Lone Tree Way </option><option value='108'>CA - Antioch - 5005 Lone Tree Way</option><option value='86'>CA - Atwater - 2751 Shaffer Rd</option><option value='72'>CA - Auburn - 2520 Bell Rd</option><option value='137'>CA - Bakersfield - 11000 Brimhall Rd</option><option value='127'>CA - Bakersfield - 5632 Stockdale Hwy</option><option value='172'>CA - Bakersfield - 5700 Stine Road</option><option value='68'>CA - Belmont - 390 El Camino Real</option><option value='117'>CA - Benicia - 2130 Columbus Pkwy</option><option value='179'>CA - Berkeley - (Opening Soon)'</option><option value='33'>CA - Brentwood - 1185 2nd St</option><option value='132'>CA - Cameron Park - 2650 Cameron Park Dr</option><option value='85'>CA - Campbell - 301 E Hamilton Ave</option><option value='81'>CA - Carmel - 26541 Carmel Rancho Blvd</option><option value='138'>CA - Carmichael - 4141 Manzanita Ave</option><option value='45'>CA - Carmichael - 5019 El Camino Ave</option><option value='114'>CA - Castro Valley - 20261 Patio Dr</option><option value='89'>CA - Chico - 1105 W 5th St</option><option value='13'>CA - Chico - 1722 Mangrove Ave</option><option value='147'>CA - Chino - 7011 Schaefer Ave</option><option value='49'>CA - Citrus Heights - 7777 Sunrise Blvd</option><option value='51'>CA - Concord - 3501 Clayton Rd</option><option value='40'>CA - Concord - 5358 Clayton Rd</option><option value='148'>CA - Corona - 140 W Ontario Ave</option><option value='96'>CA - Danville - 130 Hartz Ave</option><option value='53'>CA - Dublin - 8951 San Ramon Rd</option><option value='175'>CA - El Cerrito - (Opening Soon)'</option><option value='110'>CA - El Dorado Hills - 2201 Francisco Dr</option><option value='159'>CA - Elk Grove - 7440 Laguna Blvd</option><option value='73'>CA - Elk Grove - 8441 Elk Grove-Florin Rd</option><option value='46'>CA - Elk Grove - 8690 Elk Grove Blvd</option><option value='163'>CA - Escalon - 1255 Lillian Ave</option><option value='27'>CA - Fair Oaks - 5267 Sunrise Blvd</option><option value='115'>CA - Fairfield - 1819 N Texas St</option><option value='57'>CA - Folsom - 717 E. Bidwell St</option><option value='100'>CA - Fremont - 35760 Fremont Blvd</option><option value='6'>CA - Fremont - 3952 Washington Blvd</option><option value='142'>CA - Fresno - 1055 E Herndon Ave</option><option value='157'>CA - Fresno - 5150 E Kings Canyon Rd</option><option value='165'>CA - Fresno - 8965 North Cedar Ave</option><option value='126'>CA - Galt - 10400 Twin Cities Rd</option><option value='93'>CA - Gilroy - 747 First St</option><option value='160'>CA - Granite Bay - 6811 Douglas Blvd</option><option value='2'>CA - Grass Valley - 151-D McKnight Way</option><option value='180'>CA - Hanford - (Opening Soon)'</option><option value='71'>CA - Hayward - 31083 Mission Blvd</option><option value='67'>CA - Hayward - 410 W Harder Rd</option><option value='122'>CA - Healdsburg - 1051 Vine St</option><option value='149'>CA - Hercules - 848 Willow Ave</option><option value='84'>CA - Hollister - 261 McCray St</option><option value='102'>CA - Jackson - 11974 Hwy 88</option><option value='167'>CA - La Habra - 1240 W Imperial Hwy</option><option value='150'>CA - Laguna Hills - 25292-A McIntyre St</option><option value='143'>CA - Lake Forest - 22942 Ridge Route Dr</option><option value='97'>CA - Lathrop - 229 Louise Ave</option><option value='88'>CA - Lincoln - 820 Sterling Parkway</option><option value='78'>CA - Livermore - 1304 First St</option><option value='95'>CA - Livermore - 1472 N. Vasco Rd</option><option value='24'>CA - Livingston - 1471 B St</option><option value='29'>CA - Lodi - 550-E South Cherokee Ln</option><option value='83'>CA - Los Banos - 509 Pacheco Blvd</option><option value='151'>CA - Madera - 2180 W Cleveland Ave</option><option value='8'>CA - Manteca - 1120 N Main St</option><option value='11'>CA - Marina - 266 Reservation Rd</option><option value='55'>CA - Martinez - 1160 E Arnold Dr</option><option value='94'>CA - Marysville - 606 J St</option><option value='7'>CA - Meadow Vista - 16810 Placer Hills Rd</option><option value='62'>CA - Merced - 1348 W Olive Ave</option><option value='168'>CA - Merced - 1950 Yosemite Pkwy</option><option value='99'>CA - Milpitas - 85 N Milpitas Blvd</option><option value='59'>CA - Modesto - 1221 E Orangeburg Ave</option><option value='60'>CA - Modesto - 1633 E Hatch Rd</option><option value='25'>CA - Modesto - 2101 Standiford Ave</option><option value='14'>CA - Modesto - 2720 McHenry Ave</option><option value='112'>CA - Modesto - 3020 Floyd Ave</option><option value='41'>CA - Modesto - 3801 Yosemite Blvd</option><option value='109'>CA - Modesto - 901 N Carpenter Ave</option><option value='80'>CA - Moraga - 504 Center St</option><option value='177'>CA - Moreno Valley - (Opening Soon)'</option><option value='3'>CA - Morgan Hill - 201 Tennant Station Rd</option><option value='139'>CA - Mountain View - 1724 Miramonte Ave</option><option value='75'>CA - Newark - 5333 Thornton Ave</option><option value='16'>CA - North Highlands - 6745 Watt Ave</option><option value='23'>CA - Oakdale - 111 S Maag Ave</option><option value='174'>CA - Oakland - (Opening Soon)'</option><option value='17'>CA - Oakley - 2091 Main St</option><option value='76'>CA - Orangevale - 8801-A Greenback Ln</option><option value='106'>CA - Oroville - 1901 Oro Dam Blvd E</option><option value='140'>CA - Pacific Grove - 1116 B Forest Ave</option><option value='118'>CA - Palo Alto - 3918 B Middlefield Rd</option><option value='5'>CA - Paradise - 6626-K Clarke Rd</option><option value='69'>CA - Patterson - 1015 Sperry Ave</option><option value='129'>CA - Petaluma - 919 Lakeville St</option><option value='164'>CA - Pinole - 1516 Fitzgerald Dr</option><option value='170'>CA - Pleasant Hill - 1962 Contra Costa Blvd</option><option value='178'>CA - Pleasant Hill - (Opening Soon)'</option><option value='74'>CA - Pleasanton - 3120-H Santa Rita Rd</option><option value='15'>CA - Pleasanton - 5424 Sunol Blvd</option><option value='171'>CA - Prunedale - 17597 Vierra Canyon Road</option><option value='30'>CA - Rancho Cordova - 10419 Folsom Blvd</option><option value='154'>CA - Rancho Cucamonga - 7319 Milliken Ave</option><option value='26'>CA - Redwood City - 120 El Camino Real</option><option value='65'>CA - Ripon - 1201 W Main St</option><option value='44'>CA - Riverbank - 6333 Oakdale Rd</option><option value='66'>CA - Rocklin - 5505 Whitney Blvd</option><option value='90'>CA - Rohnert Park - 1451 Southwest Blvd</option><option value='153'>CA - Roseville - 1850 Douglas Blvd </option><option value='105'>CA - Roseville - 3989 Foothills Blvd</option><option value='61'>CA - Sacramento - 1319 Fulton Ave</option><option value='103'>CA - Sacramento - 2069 Arena Blvd</option><option value='31'>CA - Sacramento - 3609 Bradshaw Rd</option><option value='37'>CA - Sacramento - 4623 Mack Rd</option><option value='28'>CA - Sacramento - 5640 Auburn Blvd</option><option value='12'>CA - Sacramento - 7660 La Riviera Dr</option><option value='19'>CA - Sacramento - 7808 Gerber Rd</option><option value='18'>CA - Salinas - 1020 N Davis Rd</option><option value='43'>CA - Salinas - 1670 N Main St</option><option value='9'>CA - Salinas - 315 E Alisal St</option><option value='10'>CA - Salinas - 931 W Alisal St</option><option value='38'>CA - San Diego - 3089 Clairemont Dr</option><option value='125'>CA - San Diego - 7377 Jackson Dr</option><option value='63'>CA - San Jose - 1532 Branham Ln</option><option value='32'>CA - San Jose - 2011 Naglee Ave</option><option value='120'>CA - San Jose - 2306 Almaden Rd</option><option value='104'>CA - San Jose - 2908 Alum Rock Rd</option><option value='173'>CA - San Jose - 2938 Aborn Square Road</option><option value='20'>CA - San Jose - 418 W Capitol Expy</option><option value='22'>CA - San Jose - 431 Blossom Hill Rd</option><option value='21'>CA - San Jose - 6191 Santa Teresa Blvd</option><option value='1'>CA - San Leandro - 2150 Marina Blvd</option><option value='155'>CA - San Leandro - 302 Davis St</option><option value='87'>CA - San Leandro - 699 Lewelling Blvd</option><option value='70'>CA - San Pablo - 3340-L San Pablo Dam Rd</option><option value='152'>CA - San Rafael - 2100 4th St</option><option value='131'>CA - Sanger - 2637 Jensen Ave</option><option value='128'>CA - Santa Cruz - 3715 Portola Dr</option><option value='121'>CA - Santa Rosa - 2280 Santa Rosa Ave</option><option value='162'>CA - Santa Rosa - 3781 Cleveland Ave</option><option value='64'>CA - Saratoga - 12850 Saratoga-Sunnyvale Rd</option><option value='158'>CA - Scotts Valley - 6006 La Madrona Dr</option><option value='135'>CA - Sonora - 1049 Mono Way</option><option value='47'>CA - Stockton - 1000 W Robinhood Dr</option><option value='77'>CA - Stockton - 3526 Manthey Rd</option><option value='107'>CA - Stockton - 4339 E Morada Ln</option><option value='176'>CA - Temecula - (Opening Soon)'</option><option value='98'>CA - Tracy - 2260 W Grant Line Rd</option><option value='58'>CA - Tracy - 870 W Schulte Rd</option><option value='169'>CA - Tulare - 721 E Prosperity Ave</option><option value='42'>CA - Turlock - 2410 Geer Rd</option><option value='123'>CA - Union City - 32170 Dyer St</option><option value='124'>CA - Vacaville - 1971 Alamo Dr</option><option value='39'>CA - Vacaville - 645 Elmira Rd</option><option value='156'>CA - Vallejo - 972 Admiral Callaghan Ln</option><option value='119'>CA - Visalia - 3000 N Dinuba Blvd</option><option value='130'>CA - Visalia - 5103 W Walnut Ave</option><option value='56'>CA - Walnut Creek - 1817 Ygnacio Valley Rd</option><option value='50'>CA - Waterford - 12178 Yosemite Blvd</option><option value='4'>CA - Watsonville - 1417 Freedom Blvd</option><option value='54'>CA - West Sacramento - 2919 West Capitol Ave</option><option value='91'>CA - Yuba City - 1540 Butte House Rd</option><option value='82'>NV - Reno - 1601 Vassar St</option><option value='141'>NV - Reno - 3380 S McCarran</option><option value='34'>OR - Medford - 2640-E Barnett Rd</option><option value='111'>UT - South Jordan - 3785 W 10400 S</option>                      </select>
+                    </div>
+                    <br />
+                    <label for="event_dates" class="required">Desired Fundraiser Event Dates: <em>Desired date may not be available.
+                      Availability varies by location.</em> </label>
+                    <div class="horizit">
+                      <input type="text" id="event_dates" name="event_dates" class="required" tabindex="18" accesskey="p" />
+                    </div>
+                    <br />
+                    <label for="signup_comments">Comments:</label>
+                    <textarea name="signup_comments" rows="1" id="signup_comments" tabindex="19" accesskey="q"></textarea>
+                    <br />
+                  </div>
+                  <div class="formsection">
+                    <p> <strong>ORGANIZATION REQUIREMENTS &amp; LIMITATIONS</strong></p>
+                    <div style="font-size:.8em">
+                      <div class="clearit"></div>
+                      <ol id="orgreq">
+                        <li>Participating organizations must, to their full ability, promote the fundraising event via mail and/or email by sending official invitations to their entire community.</li>
+                        <li>No other discounts, specials, or coupons will be honored in conjunction with fundraising transactions.</li>
+                        <li>Fundraising invitations cannot be distributed on-site prior to or during the fundraising event.</li>
+                        <li>Per California Law, the sale of alcoholic beverages cannot count towards your sales. </li>
+                      </ol>
+                      <br />
+                    </div>
+                    <br />
+                    <p> <strong>TERMS &amp; CONDITIONS</strong></p>
+                    <div style="font-size:.8em; margin-right: 10px">I certify that the facts contained in this agreement/application are true and complete to the best of my knowledge.  I understand that, if our fundraising date is confirmed, any falsified statements or failure to comply or complete our requirements as cited in the Requirements & Limitations section of this application shall be grounds for cancellation. </div>
+                    <br />
+                    <label for="initials" class="required">Initials: </label>
+                    <div class="horizit">
+                      <input name="initials" type="text" id="initials" tabindex="20" maxlength="6" class="required lettersonly" size="10" accesskey="r" />
+                    </div>
+                    <br />
+                    <br />
+                    
+<script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6LfMIfgSAAAAAAwD195d9bx6vjuwqrQf4dHVd63A"></script>
+
+	<noscript>
+  		<iframe src="http://www.google.com/recaptcha/api/noscript?k=6LfMIfgSAAAAAAwD195d9bx6vjuwqrQf4dHVd63A" height="300" width="500" frameborder="0"></iframe><br/>
+  		<textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+  		<input type="hidden" name="recaptcha_response_field" value="manual_challenge"/>
+	</noscript>                    <br />
+                    <br />
+                    <label for="thesubmit"></label>
+                    <input type="image" src="/images/content/btns/submit.png" value="Submit" name="thesubmit" class="submit-btn" width="99px" height="30px" id="thesubmit" border="0" tabindex="21">
+                    <br />
+                  </div>
+                  <input name="isSubmitted" type="hidden" class="hidfld" value="isSubmitted" />
+                </fieldset>
+              </form>
+                          </div>
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript">
+$(document).ready(function(){
+$('.warning').remove();
+$.get("../inc/token.php",function(txt){
+  $(".secure").append('<input type="hidden" name="ts" value="'+txt+'" />');
+});
+});	  
+
+</script>
+      <!-- end content -->
+</div>
+
+<div class="clearfloat"></div>
+<div id="separator"></div>
+<div id="footer">
+  <ul id="footermenu">
+    <li id="franchise" target="_new"><a href="/franchising/"></a></li>
+    <li id="contact"><a href="/contact.php"></a></li>
+    <li id="fundraising"><a href="/fundraising/"></a></li>
+  </ul>
+  <div id="footertext">
+    <div id="tinymenu"><a href="/index.php">Home</a> | <a href="/menu.php">Menu</a> | <a href="/coupons.php">Coupons</a> | <a href="/locations.php">Locations</a> | <a href="/locator/BullseyePro/search.asp">Order Online</a> | <a href="/franchising/" target="_blank">Franchise Opportunities</a> | <a href="/contact.php">Contact Us</a> | <a href="/fundraising/">Fundraising</a> | <a href="/privacy.php">Privacy Policy</a><br />
+      <a href="/about.php">About Us</a> | <a href="/employment.php">Employment</a> | <a href="/terms.php">Terms of Use</a> | <a href="/sitemap.php">Site Map</a></div>
+    <div id="legal">
+      <p>&copy;2015 Mountain Mike's Pizza.  All rights reserved.  The Mountain Mike's Pizza name, logos, and related marks are trademarks of Concept Acquisitions, LLC. <br />
+        All other trademarks are the property of their respective owners.</p>
+    </div>
+  </div>
+</div>
+<!-- end wood -->
+</div>
+<!-- end wrap -->
+</div>
+</body></html>

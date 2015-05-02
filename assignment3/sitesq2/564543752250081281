@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta content='text/html;charset=utf-8' http-equiv='Content-Type'>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"1f585c495d","applicationID":"2869985","transactionName":"dg5cEhZYXVRRS01AWkATXAcJUl9MRxYRXFpC","queueTime":0,"applicationTime":210,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-632.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UQYFV15ACgsGXVhaAg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:20,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(3),window.onerror=e;try{throw new Error}catch(u){"stack"in u&&(t(4),t(5),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:8,3:3,4:7,5:6,6:21,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:21,2:22,ee:"QJf3ax",gos:"7eSDFh"}],6:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:22,2:21,ee:"QJf3ax"}],7:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:22,2:21,ee:"QJf3ax"}],8:[function(t,e){function n(){u.inPlace(this,p,"fn-")}function r(t,e){u.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),u=c(a),f=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),f.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,u.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:5,2:22,ee:"QJf3ax"}],9:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=n(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=n(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var f=0;c>f;f++)e.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:10,3:8,4:5,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],10:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],11:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:20,2:21,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===f.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=u.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),u=c.document,f=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:f,features:{}};u.addEventListener?(u.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(u.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:20,2:11,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],20:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],21:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],22:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:21,ee:"QJf3ax"}]},{},["G9z0Bl",4,9]);</script>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="hc1eaSezGRmSfpwePQSdkmniEcRmNrSxGtOJviMpTG4=" name="csrf-token" />
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
+<meta content='{"resource_id":1452742,"private":false,"url":"http://challonge.com/dzvcl5k2","name":"4v4 MLG Variant BO3 ","host_name":"TyphoonTournies","host_url":"http://challonge.com/users/typhoontournies"}' name='marcobot-page'>
+
+<title>
+4v4 MLG Variant BO3  - 
+Challonge
+</title>
+<link class="challonge_stylesheet" href="//challonge.com/assets/application-bbbd5a74d5341ef6297729f96cc1afbe.css" media="all" rel="stylesheet" />
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-2701080-3', 'auto');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+</script>
+<!--[if lte IE 8]> <div id="ie8inthehizzouse" style="display:none"></div> <![endif]-->
+
+</head>
+<body class='tournaments tournaments-show'>
+<div id='wrap'>
+<div class='inner-wrap'>
+<div class='menu'>
+<div class='logo-wrapper'>
+<a class="logo" href="http://challonge.com/">Challonge</a>
+</div>
+<h1 class='visible-phone'><div id='title'>
+4v4 MLG Variant BO3 
+</div>
+</h1>
+<ul class='nav nav-list'>
+<li class="active"><a href="#">Bracket</a></li>
+<li class=""><a href="http://challonge.com/dzvcl5k2/standings">Standings</a></li>
+<li class=""><a href="http://challonge.com/dzvcl5k2/comments">Discussion (0)</a></li>
+<li class=""><a href="http://challonge.com/dzvcl5k2/log">Log (69)</a></li>
+</ul>
+<div class='clearfix'></div>
+
+<div class='conditional-clear'></div>
+</div>
+<div class='corner-ax'>
+<div class='premier-ax close-ax' id='premier-corner-ax'>
+<div class="premier-badge-container"><img alt="Premier badge" src="//challonge.com/assets/premier-badge-a07c4b0176ee1a91b32c9ab441e4aacc.png" title="Challonge Premier Subscriber" /></div>
+Challonge Premier
+<div class='support-us'>Hide ads + Support us</div>
+</div>
+<div class='ax-slot'></div>
+<div class='close-ax' id='ad1'>
+<i class='icon-remove icon-white'></i>
+Close this ad
+</div>
+<div class='ax-slot-2 hide'></div>
+</div>
+<div class='content'>
+<h1 class='hidden-phone'><div id='title'>
+4v4 MLG Variant BO3 
+</div>
+</h1>
+<br class='visible-phone'>
+
+<div class='next-steps hide'>
+<div class='hide' id='admin-steps'></div>
+<div class='hide' id='registration'></div>
+<div class='hide' id='predictions-info'></div>
+<div class='clear-steps'></div>
+</div>
+<div class='tournament-meta limited_width'>
+<div class='host'>
+<img alt="" class="portrait" height="52" src="http://www.gravatar.com/avatar/99f8b1e29c2df9708c2067bc3b1849a0?r=r&amp;s=52&amp;d=http://challonge.com/assets/gravatar.png" width="52" />
+<div class='text'>
+Hosted by
+<br>
+<a href="http://challonge.com/users/typhoontournies">TyphoonTournies</a>
+</div>
+</div>
+<div class='list'>
+<div class='left-col'>
+<ul>
+<li>
+<i class='icon-info-sign icon-white'></i>
+15
+player
+Single Elimination
+</li>
+<li>
+<img alt="Games icon" class="games-icon" src="//challonge.com/assets/games-icon-26e97473e2880e577766843fa1a9786c.png" />
+<a href="http://challonge.com/games/call-of-duty-advanced-warfare/tournaments">Call of Duty: Advanced Warfare</a>
+</li>
+</ul>
+</div>
+<div class='right-col'>
+<ul>
+<li>
+<i class='icon-calendar icon-white'></i>
+<span id='start-time'>
+February  8, 2015 at  3:00 PM CST
+</span>
+</li>
+</ul>
+</div>
+<div class='clearfix'></div>
+<div class='conditional-spacer'></div>
+</div>
+<div class='clearfix'></div>
+</div>
+
+<div class='tournament-description limited_width'>
+<div class='redactor_editor'>
+<p>MLG Variant Rules </p><p>Stim and Cloak Banned </p><p>Seed closets to 0 hosts map 2 and 3 </p><p>Proof is needed to advance </p>
+</div>
+<div class='modal-toggle hide' data-compressed='Show Full Description' data-expanded='Hide Full Description'>
+Show Full Description
+</div>
+</div>
+
+<div class='tournament-bracket'>
+<div class='live_stamp hide'>
+<img alt="Live" class="tip" data-container="body" data-placement="left" src="//challonge.com/assets/live-3b2c7c038096416039c6ddd1a0ba3c1c.png" title="This bracket updates in real-time." />
+</div>
+<div class='bracket_controls'>
+<div class='hidden-phone'>
+<a class="full-screen-toggle tip" data-container="body" data-placement="left" href="http://challonge.com/dzvcl5k2/fullscreen" target="_blank" title="Full Screen"><img alt="Fullscreen icon" src="//challonge.com/assets/fullscreen-icon-dae23d6d2b93a8d4f61ff36399e3964a.png" /></a>
+</div>
+<div class='social-sharing'>
+<a class="facebook tip" data-container="body" data-placement="left" href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fchallonge.com%2Fdzvcl5k2" target="_blank" title="Share on Facebook"></a>
+</div>
+<div class='social-sharing'>
+<a class="twitter tip" data-container="body" data-placement="left" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fchallonge.com%2Fdzvcl5k2&amp;via=challonge&amp;text=4v4%20MLG%20Variant%20BO3%20" target="_blank" title="Share on Twitter"></a>
+</div>
+<div class='social-sharing'>
+<a class="googleplus tip" data-container="body" data-placement="left" href="https://plus.google.com/share?url=http%3A%2F%2Fchallonge.com%2Fdzvcl5k2" target="_blank" title="Share on Google+"></a>
+</div>
+<div>
+<a class="tip" data-container="body" data-placement="left" href="http://images.challonge.com/dzvcl5k2.png" target="_blank" title="Printer-friendly Live Bracket Image (updates may be delayed a few seconds)"><img alt="Printer icon" src="//challonge.com/assets/printer-icon-e0b6d3fd4af06ac243e6a8d23cf30208.png" /></a>
+</div>
+<div>
+<a class="embed-code-toggle tip" data-container="body" data-placement="left" href="#" title="Embed Code"><img alt="Embed icon" src="//challonge.com/assets/embed-icon-003f2280356e8502d0f0133dd0dd1ee1.png" /></a>
+<div class='embed_code hide'>
+<h3>Bracket Embed Code</h3>
+<p class='hide-if-premier'>Upgrade to <a href="http://challonge.com/stripe_subscriptions/new" target="_blank"><img alt="Premier badge" src="//challonge.com/assets/premier-badge-a07c4b0176ee1a91b32c9ab441e4aacc.png" /> Challonge Premier</a> to remove advertisements from the embed and unlock the Challonge Madness Layout.</p>
+<textarea id="module_code" name="module_code">
+&lt;iframe src=&quot;http://challonge.com/dzvcl5k2/module&quot; width=&quot;100%&quot; height=&quot;500&quot; frameborder=&quot;0&quot; scrolling=&quot;auto&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;</textarea>
+<small>
+<span class="new_feature">NEW!</span>
+Challonge Madness Layout for 64-player single elimination brackets
+</small>
+<textarea class="madness-embed-code" disabled="disabled" id="module_code" name="module_code">
+&lt;iframe src=&quot;http://challonge.com/dzvcl5k2/madness&quot; width=&quot;100%&quot; height=&quot;600&quot; frameborder=&quot;0&quot; scrolling=&quot;auto&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;</textarea>
+<small>
+Need help? View the <a href="http://challonge.com/module/instructions">Bracket Module Instructions</a>.
+<br>
+Developers: This bracket can also be embedded using the <a href="http://api.challonge.com/v1/documents/jquery?options%5Bsubdomain%5D=&amp;options%5Btournament_url%5D=dzvcl5k2">Challonge jQuery plugin</a>.
+</small>
+</div>
+</div>
+<img alt="Ajax loader" class="bracket_refresh_loader hide" src="//challonge.com/assets/ajax-loader-55aa713b6dd8ceb6d4695ef1ce2a2580.gif" />
+</div>
+<div class='full-screen-target'>
+<div class='challonge_tournaments'>
+<div class='challonge_bracket'>
+<div class='overthrow_bracket overthrow'>
+<div>
+<div class='rounds scroll-tagalong' id='rounds-XvLniKsqqS'>
+<table>
+<tr>
+<td class='round'>
+<a class='group-index- round-label round1' data-href='/tournaments/1452742/rounds/new_or_edit?number=1&amp;title=Round+1%0D%0ARetreat+Hardpoint+%0D%0ASolar+SND%0D%0AComeback+Uplink+'>
+Round 1<br>Retreat Hardpoint <br>Solar SND<br>Comeback Uplink 
+</a>
+</td>
+<td class='round'>
+<a class='group-index- round-label round2' data-href='/tournaments/1452742/rounds/new_or_edit?number=2&amp;title=Round+2%0D%0ADetroit+Hardpoint+%0D%0ARiot+SND%0D%0ARetreat+CTF'>
+Round 2<br>Detroit Hardpoint <br>Riot SND<br>Retreat CTF
+</a>
+</td>
+<td class='round'>
+<a class='group-index- round-label round3' data-href='/tournaments/1452742/rounds/new_or_edit?number=3&amp;title=Semifinals%0D%0ABio+Lab+Hardpoint+%0D%0ARecovery+SND%0D%0ABio+Lab+Uplink+'>
+Semifinals<br>Bio Lab Hardpoint <br>Recovery SND<br>Bio Lab Uplink 
+</a>
+</td>
+<td class='round'>
+<a class='group-index- round-label round4' data-href='/tournaments/1452742/rounds/new_or_edit?number=4&amp;title=Finals%0D%0ARetreat+Hardpoint+%0D%0ASolar+SND+%0D%0ABio+Lab+CTF%0D%0ADetroit+Uplink%0D%0ARecovery+SND+'>
+Finals<br>Retreat Hardpoint <br>Solar SND <br>Bio Lab CTF<br>Detroit Uplink<br>Recovery SND 
+</a>
+</td>
+</tr>
+<tr class='best-of-row'>
+<td class='best-of group-index- gt1 round1'>
+Best of 3
+</td>
+<td class='best-of group-index- gt1 round2'>
+Best of 3
+</td>
+<td class='best-of group-index- gt1 round3'>
+Best of 3
+</td>
+<td class='best-of group-index- gt1 round4'>
+Best of 5
+</td>
+</tr>
+</table>
+</div>
+
+<table border='0' cellpadding='0' cellspacing='0' id='dragTable1'>
+<tr>
+<td style='padding:0; vertical-align:top'>
+<div class='match_half_spacer' style='width: 50px;'>&nbsp;</div>
+<table border='0' cellpadding='0' cellspacing='0' class='match_table match_qtip match-tipsy admin_editable pid22238421 pid22238448' id='match_qtip_32327896'>
+<tr>
+<td style='padding:0; vertical-align:middle'>
+<div class='btn-group'>
+<a class='btn btn-link match_identifier dropdown-toggle'>
+A
+<span class='caret'></span>
+</a>
+<ul class='dropdown-menu enabled'>
+<li class='hide'>
+<a data-href="/matches/32327896/edit" data-toggle="modal" href="#">Edit</a>
+</li>
+<li class='hide'>
+<a data-confirm="Are you sure you want to reopen this match?" data-method="put" data-remote="true" href="/matches/32327896/reopen" rel="nofollow">Reopen</a>
+</li>
+<li class='hide divider'></li>
+<li>
+<a data-href="/matches/32327896" data-toggle="modal" href="#">Match Details</a>
+</li>
+<li class='divider underway-divider'></li>
+<li class='mark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327896/mark_as_underway" rel="nofollow">Mark as In Progress</a>
+</li>
+<li class='unmark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327896/unmark_as_underway" rel="nofollow">Unmark as In Progress</a>
+</li>
+</ul>
+</div>
+</td>
+<td class='core' id='match_qtip_32327896_' style='padding:0'>
+<div class='match_top_half'>
+<div class='top_seed'>8</div>
+<div class='top_score winner'>✓</div>
+<div class='inner_content no_user p22238421 participant-present' data-participant_id='22238421' data-round='1'><span style='' title='Exploit Gaming'>Exploit Gaming</span></div>
+</div>
+<div class='match_bottom_half'>
+<div class='bottom_seed'>9</div>
+<div class='bottom_score'></div>
+<div class='inner_content no_user p22238448 participant-present' data-participant_id='22238448' data-round='1'><span style='' title='Elysium eSports'>Elysium eSports</span></div>
+</div>
+<div class='shadow'></div>
+</td>
+<td style='padding:0;'>
+<div class='match-location-container'>
+<div class='hide match-location' title=''>
+
+</div>
+</div>
+<div class='bracket_lines ' style='float:none;'><table class='bracket_lines_table' style='border-collapse:collapse;' cellspacing='0' cellpadding='0' border='0'><tr><td class="left_col top_row border_bottom border_right lfix">&nbsp;</td><td class="right_col top_row border_top">&nbsp;</td></tr><tr><td class="left_col rfix"></td></tr></table></div>
+</td>
+</tr>
+</table>
+<div class='hide' id='match_qtip_32327896_content'>
+<table class='qtip_score'>
+<tr>
+<td class='qtip_top_score winner' style='width:15px'>&nbsp;&nbsp;1&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td class='qtip_bottom_score'>&nbsp;&nbsp;0&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+</div>
+
+<table border='0' cellpadding='0' cellspacing='0' class='match_table match_qtip match-tipsy admin_editable pid22238381 pid22239192' id='match_qtip_32327898'>
+<tr>
+<td style='padding:0; vertical-align:middle'>
+<div class='btn-group'>
+<a class='btn btn-link match_identifier dropdown-toggle'>
+B
+<span class='caret'></span>
+</a>
+<ul class='dropdown-menu enabled'>
+<li class='hide'>
+<a data-href="/matches/32327898/edit" data-toggle="modal" href="#">Edit</a>
+</li>
+<li class='hide'>
+<a data-confirm="Are you sure you want to reopen this match?" data-method="put" data-remote="true" href="/matches/32327898/reopen" rel="nofollow">Reopen</a>
+</li>
+<li class='hide divider'></li>
+<li>
+<a data-href="/matches/32327898" data-toggle="modal" href="#">Match Details</a>
+</li>
+<li class='divider underway-divider'></li>
+<li class='mark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327898/mark_as_underway" rel="nofollow">Mark as In Progress</a>
+</li>
+<li class='unmark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327898/unmark_as_underway" rel="nofollow">Unmark as In Progress</a>
+</li>
+</ul>
+</div>
+</td>
+<td class='core' id='match_qtip_32327898_' style='padding:0'>
+<div class='match_top_half'>
+<div class='top_seed'>4</div>
+<div class='top_score winner'>✓</div>
+<div class='inner_content no_user p22238381 participant-present' data-participant_id='22238381' data-round='1'><span style='' title='Losing in First Round'>Losing in First Round</span></div>
+</div>
+<div class='match_bottom_half'>
+<div class='bottom_seed'>13</div>
+<div class='bottom_score'></div>
+<div class='inner_content no_user p22239192 participant-present' data-participant_id='22239192' data-round='1'><span style='' title='Scrotums'>Scrotums</span></div>
+</div>
+<div class='shadow'></div>
+</td>
+<td style='padding:0;'>
+<div class='match-location-container'>
+<div class='hide match-location' title=''>
+
+</div>
+</div>
+<div class='bracket_lines ' style='float:none;'><table class='bracket_lines_table' style='border-collapse:collapse;' cellspacing='0' cellpadding='0' border='0'><tr><td class="left_col top_row border_bottom rfix">&nbsp;</td></tr><tr><td class="left_col bottom_row border_right">&nbsp;</td></tr></table></div>
+</td>
+</tr>
+</table>
+<div class='hide' id='match_qtip_32327898_content'>
+<table class='qtip_score'>
+<tr>
+<td class='qtip_top_score winner' style='width:15px'>&nbsp;&nbsp;1&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td class='qtip_bottom_score'>&nbsp;&nbsp;0&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+</div>
+
+<table border='0' cellpadding='0' cellspacing='0' class='match_table match_qtip match-tipsy admin_editable pid22238361 pid22239186' id='match_qtip_32327900'>
+<tr>
+<td style='padding:0; vertical-align:middle'>
+<div class='btn-group'>
+<a class='btn btn-link match_identifier dropdown-toggle'>
+C
+<span class='caret'></span>
+</a>
+<ul class='dropdown-menu enabled'>
+<li class='hide'>
+<a data-href="/matches/32327900/edit" data-toggle="modal" href="#">Edit</a>
+</li>
+<li class='hide'>
+<a data-confirm="Are you sure you want to reopen this match?" data-method="put" data-remote="true" href="/matches/32327900/reopen" rel="nofollow">Reopen</a>
+</li>
+<li class='hide divider'></li>
+<li>
+<a data-href="/matches/32327900" data-toggle="modal" href="#">Match Details</a>
+</li>
+<li class='divider underway-divider'></li>
+<li class='mark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327900/mark_as_underway" rel="nofollow">Mark as In Progress</a>
+</li>
+<li class='unmark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327900/unmark_as_underway" rel="nofollow">Unmark as In Progress</a>
+</li>
+</ul>
+</div>
+</td>
+<td class='core' id='match_qtip_32327900_' style='padding:0'>
+<div class='match_top_half'>
+<div class='top_seed'>5</div>
+<div class='top_score'></div>
+<div class='inner_content no_user p22238361 participant-present' data-participant_id='22238361' data-round='1'><span style='' title='XGN Gaming'>XGN Gaming</span></div>
+</div>
+<div class='match_bottom_half'>
+<div class='bottom_seed'>12</div>
+<div class='bottom_score winner'>✓</div>
+<div class='inner_content no_user p22239186 participant-present' data-participant_id='22239186' data-round='1'><span style='' title='XoN Gaming'>XoN Gaming</span></div>
+</div>
+<div class='shadow'></div>
+</td>
+<td style='padding:0;'>
+<div class='match-location-container'>
+<div class='hide match-location' title=''>
+
+</div>
+</div>
+<div class='bracket_lines ' style='float:none;'><table class='bracket_lines_table' style='border-collapse:collapse;' cellspacing='0' cellpadding='0' border='0'><tr><td class="left_col top_row border_bottom border_right lfix">&nbsp;</td><td class="right_col top_row border_top">&nbsp;</td></tr><tr><td class="left_col rfix"></td></tr></table></div>
+</td>
+</tr>
+</table>
+<div class='hide' id='match_qtip_32327900_content'>
+<table class='qtip_score'>
+<tr>
+<td class='qtip_top_score' style='width:15px'>&nbsp;&nbsp;0&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td class='qtip_bottom_score winner'>&nbsp;&nbsp;1&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+</div>
+
+<table border='0' cellpadding='0' cellspacing='0' class='match_table match_qtip match-tipsy admin_editable pid22238368 pid22239632' id='match_qtip_32327902'>
+<tr>
+<td style='padding:0; vertical-align:middle'>
+<div class='btn-group'>
+<a class='btn btn-link match_identifier dropdown-toggle'>
+D
+<span class='caret'></span>
+</a>
+<ul class='dropdown-menu enabled'>
+<li class='hide'>
+<a data-href="/matches/32327902/edit" data-toggle="modal" href="#">Edit</a>
+</li>
+<li class='hide'>
+<a data-confirm="Are you sure you want to reopen this match?" data-method="put" data-remote="true" href="/matches/32327902/reopen" rel="nofollow">Reopen</a>
+</li>
+<li class='hide divider'></li>
+<li>
+<a data-href="/matches/32327902" data-toggle="modal" href="#">Match Details</a>
+</li>
+<li class='divider underway-divider'></li>
+<li class='mark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327902/mark_as_underway" rel="nofollow">Mark as In Progress</a>
+</li>
+<li class='unmark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327902/unmark_as_underway" rel="nofollow">Unmark as In Progress</a>
+</li>
+</ul>
+</div>
+</td>
+<td class='core' id='match_qtip_32327902_' style='padding:0'>
+<div class='match_top_half'>
+<div class='top_seed'>2</div>
+<div class='top_score winner'>✓</div>
+<div class='inner_content no_user p22238368 participant-present' data-participant_id='22238368' data-round='1'><span style='' title='Dynamic Alliance'>Dynamic Alliance</span></div>
+</div>
+<div class='match_bottom_half'>
+<div class='bottom_seed'>15</div>
+<div class='bottom_score'></div>
+<div class='inner_content no_user p22239632 participant-present' data-participant_id='22239632' data-round='1'><span style='' title='TurtlesAreCool'>TurtlesAreCool</span></div>
+</div>
+<div class='shadow'></div>
+</td>
+<td style='padding:0;'>
+<div class='match-location-container'>
+<div class='hide match-location' title=''>
+
+</div>
+</div>
+<div class='bracket_lines ' style='float:none;'><table class='bracket_lines_table' style='border-collapse:collapse;' cellspacing='0' cellpadding='0' border='0'><tr><td class="left_col top_row border_bottom rfix">&nbsp;</td></tr><tr><td class="left_col bottom_row border_right">&nbsp;</td></tr></table></div>
+</td>
+</tr>
+</table>
+<div class='hide' id='match_qtip_32327902_content'>
+<table class='qtip_score'>
+<tr>
+<td class='qtip_top_score winner' style='width:15px'>&nbsp;&nbsp;1&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td class='qtip_bottom_score'>&nbsp;&nbsp;0&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+</div>
+
+<table border='0' cellpadding='0' cellspacing='0' class='match_table match_qtip match-tipsy admin_editable pid22238403 pid22238720' id='match_qtip_32327905'>
+<tr>
+<td style='padding:0; vertical-align:middle'>
+<div class='btn-group'>
+<a class='btn btn-link match_identifier dropdown-toggle'>
+E
+<span class='caret'></span>
+</a>
+<ul class='dropdown-menu enabled'>
+<li class='hide'>
+<a data-href="/matches/32327905/edit" data-toggle="modal" href="#">Edit</a>
+</li>
+<li class='hide'>
+<a data-confirm="Are you sure you want to reopen this match?" data-method="put" data-remote="true" href="/matches/32327905/reopen" rel="nofollow">Reopen</a>
+</li>
+<li class='hide divider'></li>
+<li>
+<a data-href="/matches/32327905" data-toggle="modal" href="#">Match Details</a>
+</li>
+<li class='divider underway-divider'></li>
+<li class='mark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327905/mark_as_underway" rel="nofollow">Mark as In Progress</a>
+</li>
+<li class='unmark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327905/unmark_as_underway" rel="nofollow">Unmark as In Progress</a>
+</li>
+</ul>
+</div>
+</td>
+<td class='core' id='match_qtip_32327905_' style='padding:0'>
+<div class='match_top_half'>
+<div class='top_seed'>7</div>
+<div class='top_score'></div>
+<div class='inner_content no_user p22238403 participant-present' data-participant_id='22238403' data-round='1'><span style='' title='Team Abscond'>Team Abscond</span></div>
+</div>
+<div class='match_bottom_half'>
+<div class='bottom_seed'>10</div>
+<div class='bottom_score winner'>✓</div>
+<div class='inner_content no_user p22238720 participant-present' data-participant_id='22238720' data-round='1'><span style='' title='Straight Reflexes'>Straight Reflexes</span></div>
+</div>
+<div class='shadow'></div>
+</td>
+<td style='padding:0;'>
+<div class='match-location-container'>
+<div class='hide match-location' title=''>
+
+</div>
+</div>
+<div class='bracket_lines ' style='float:none;'><table class='bracket_lines_table' style='border-collapse:collapse;' cellspacing='0' cellpadding='0' border='0'><tr><td class="left_col top_row border_bottom border_right lfix">&nbsp;</td><td class="right_col top_row border_top">&nbsp;</td></tr><tr><td class="left_col rfix"></td></tr></table></div>
+</td>
+</tr>
+</table>
+<div class='hide' id='match_qtip_32327905_content'>
+<table class='qtip_score'>
+<tr>
+<td class='qtip_top_score' style='width:15px'>&nbsp;&nbsp;0&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td class='qtip_bottom_score winner'>&nbsp;&nbsp;1&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+</div>
+
+<table border='0' cellpadding='0' cellspacing='0' class='match_table match_qtip match-tipsy admin_editable pid22238375 pid22239221' id='match_qtip_32327907'>
+<tr>
+<td style='padding:0; vertical-align:middle'>
+<div class='btn-group'>
+<a class='btn btn-link match_identifier dropdown-toggle'>
+F
+<span class='caret'></span>
+</a>
+<ul class='dropdown-menu enabled'>
+<li class='hide'>
+<a data-href="/matches/32327907/edit" data-toggle="modal" href="#">Edit</a>
+</li>
+<li class='hide'>
+<a data-confirm="Are you sure you want to reopen this match?" data-method="put" data-remote="true" href="/matches/32327907/reopen" rel="nofollow">Reopen</a>
+</li>
+<li class='hide divider'></li>
+<li>
+<a data-href="/matches/32327907" data-toggle="modal" href="#">Match Details</a>
+</li>
+<li class='divider underway-divider'></li>
+<li class='mark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327907/mark_as_underway" rel="nofollow">Mark as In Progress</a>
+</li>
+<li class='unmark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327907/unmark_as_underway" rel="nofollow">Unmark as In Progress</a>
+</li>
+</ul>
+</div>
+</td>
+<td class='core' id='match_qtip_32327907_' style='padding:0'>
+<div class='match_top_half'>
+<div class='top_seed'>3</div>
+<div class='top_score winner'>✓</div>
+<div class='inner_content no_user p22238375 participant-present' data-participant_id='22238375' data-round='1'><span style='' title='TdAW'>TdAW</span></div>
+</div>
+<div class='match_bottom_half'>
+<div class='bottom_seed'>14</div>
+<div class='bottom_score'></div>
+<div class='inner_content no_user p22239221 participant-present' data-participant_id='22239221' data-round='1'><span style='' title='Teams Randies'>Teams Randies</span></div>
+</div>
+<div class='shadow'></div>
+</td>
+<td style='padding:0;'>
+<div class='match-location-container'>
+<div class='hide match-location' title=''>
+
+</div>
+</div>
+<div class='bracket_lines ' style='float:none;'><table class='bracket_lines_table' style='border-collapse:collapse;' cellspacing='0' cellpadding='0' border='0'><tr><td class="left_col top_row border_bottom rfix">&nbsp;</td></tr><tr><td class="left_col bottom_row border_right">&nbsp;</td></tr></table></div>
+</td>
+</tr>
+</table>
+<div class='hide' id='match_qtip_32327907_content'>
+<table class='qtip_score'>
+<tr>
+<td class='qtip_top_score winner' style='width:15px'>&nbsp;&nbsp;1&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td class='qtip_bottom_score'>&nbsp;&nbsp;0&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+</div>
+
+<table border='0' cellpadding='0' cellspacing='0' class='match_table match_qtip match-tipsy admin_editable pid22238398 pid22238737' id='match_qtip_32327909'>
+<tr>
+<td style='padding:0; vertical-align:middle'>
+<div class='btn-group'>
+<a class='btn btn-link match_identifier dropdown-toggle'>
+G
+<span class='caret'></span>
+</a>
+<ul class='dropdown-menu enabled'>
+<li class='hide'>
+<a data-href="/matches/32327909/edit" data-toggle="modal" href="#">Edit</a>
+</li>
+<li class='hide'>
+<a data-confirm="Are you sure you want to reopen this match?" data-method="put" data-remote="true" href="/matches/32327909/reopen" rel="nofollow">Reopen</a>
+</li>
+<li class='hide divider'></li>
+<li>
+<a data-href="/matches/32327909" data-toggle="modal" href="#">Match Details</a>
+</li>
+<li class='divider underway-divider'></li>
+<li class='mark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327909/mark_as_underway" rel="nofollow">Mark as In Progress</a>
+</li>
+<li class='unmark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327909/unmark_as_underway" rel="nofollow">Unmark as In Progress</a>
+</li>
+</ul>
+</div>
+</td>
+<td class='core' id='match_qtip_32327909_' style='padding:0'>
+<div class='match_top_half'>
+<div class='top_seed'>6</div>
+<div class='top_score'></div>
+<div class='inner_content no_user p22238398 participant-present' data-participant_id='22238398' data-round='1'><span style='' title='MiRaGe Purple'>MiRaGe Purple</span></div>
+</div>
+<div class='match_bottom_half'>
+<div class='bottom_seed'>11</div>
+<div class='bottom_score winner'>✓</div>
+<div class='inner_content no_user p22238737 participant-present' data-participant_id='22238737' data-round='1'><span style='' title='We Win Sometimes'>We Win Sometimes</span></div>
+</div>
+<div class='shadow'></div>
+</td>
+<td style='padding:0;'>
+<div class='match-location-container'>
+<div class='hide match-location' title=''>
+
+</div>
+</div>
+<div class='bracket_lines ' style='float:none;'><table class='bracket_lines_table' style='border-collapse:collapse;' cellspacing='0' cellpadding='0' border='0'><tr><td class="left_col top_row border_bottom border_right lfix">&nbsp;</td><td class="right_col top_row border_top">&nbsp;</td></tr><tr><td class="left_col rfix"></td></tr></table></div>
+</td>
+</tr>
+</table>
+<div class='hide' id='match_qtip_32327909_content'>
+<table class='qtip_score'>
+<tr>
+<td class='qtip_top_score' style='width:15px'>&nbsp;&nbsp;0&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td class='qtip_bottom_score winner'>&nbsp;&nbsp;1&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+</div>
+
+</td>
+<td style='padding:0; vertical-align:top'>
+<table border='0' cellpadding='0' cellspacing='0' class='match_table match_qtip match-tipsy admin_editable pid22238355 pid22238421' id='match_qtip_32327911'>
+<tr>
+<td style='padding:0; vertical-align:middle'>
+<div class='btn-group'>
+<a class='btn btn-link match_identifier dropdown-toggle'>
+H
+<span class='caret'></span>
+</a>
+<ul class='dropdown-menu enabled'>
+<li class='hide'>
+<a data-href="/matches/32327911/edit" data-toggle="modal" href="#">Edit</a>
+</li>
+<li class='hide'>
+<a data-confirm="Are you sure you want to reopen this match?" data-method="put" data-remote="true" href="/matches/32327911/reopen" rel="nofollow">Reopen</a>
+</li>
+<li class='hide divider'></li>
+<li>
+<a data-href="/matches/32327911" data-toggle="modal" href="#">Match Details</a>
+</li>
+<li class='divider underway-divider'></li>
+<li class='mark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327911/mark_as_underway" rel="nofollow">Mark as In Progress</a>
+</li>
+<li class='unmark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327911/unmark_as_underway" rel="nofollow">Unmark as In Progress</a>
+</li>
+</ul>
+</div>
+</td>
+<td class='core' id='match_qtip_32327911_' style='padding:0'>
+<div class='match_top_half'>
+<div class='top_seed'>1</div>
+<div class='top_score winner'>✓</div>
+<div class='inner_content no_user p22238355 participant-present' data-participant_id='22238355' data-round='2'><span style='' title='Team name'>Team name</span></div>
+</div>
+<div class='match_bottom_half'>
+<div class='bottom_seed'>8</div>
+<div class='bottom_score'></div>
+<div class='inner_content no_user p22238421 participant-present' data-participant_id='22238421' data-round='2'><span style='' title='Exploit Gaming'>Exploit Gaming</span></div>
+</div>
+<div class='shadow'></div>
+</td>
+<td style='padding:0;'>
+<div class='match-location-container'>
+<div class='hide match-location' title=''>
+
+</div>
+</div>
+<div class='bracket_lines ' style='float:none;'><table class='bracket_lines_table' style='border-collapse:collapse;' cellspacing='0' cellpadding='0' border='0'><tr><td class="left_col top_row border_bottom">&nbsp;</td><td class="right_col lfix"></td></tr><tr><td class="left_col bottom_row border_right">&nbsp;</td></tr></table></div>
+</td>
+</tr>
+</table>
+<div class='hide' id='match_qtip_32327911_content'>
+<table class='qtip_score'>
+<tr>
+<td class='qtip_top_score winner' style='width:15px'>&nbsp;&nbsp;1&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td class='qtip_bottom_score'>&nbsp;&nbsp;0&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+</div>
+
+<table border='0' cellpadding='0' cellspacing='0' class='match_table  ' id=''>
+<tr>
+<td class='blank_id'>
+<div>&nbsp;</div>
+</td>
+<td class='core' id='' style='padding:0'>
+<div class='spacer full_width_spacer'>&nbsp;</div>
+</td>
+<td style='padding:0;'>
+<div class='bracket_lines ' style='float:none;'><table class='bracket_lines_table' style='border-collapse:collapse;' cellspacing='0' cellpadding='0' border='0'><tr><td rowspan="2" class="left_col one_row border_right">&nbsp;</td><td class="right_col top_row border_bottom">&nbsp;</td></tr><tr><td class="bottom_row">&nbsp;</td></tr></table></div>
+</td>
+</tr>
+</table>
+
+<table border='0' cellpadding='0' cellspacing='0' class='match_table match_qtip match-tipsy admin_editable pid22238381 pid22239186' id='match_qtip_32327913'>
+<tr>
+<td style='padding:0; vertical-align:middle'>
+<div class='btn-group'>
+<a class='btn btn-link match_identifier dropdown-toggle'>
+I
+<span class='caret'></span>
+</a>
+<ul class='dropdown-menu enabled'>
+<li class='hide'>
+<a data-href="/matches/32327913/edit" data-toggle="modal" href="#">Edit</a>
+</li>
+<li class='hide'>
+<a data-confirm="Are you sure you want to reopen this match?" data-method="put" data-remote="true" href="/matches/32327913/reopen" rel="nofollow">Reopen</a>
+</li>
+<li class='hide divider'></li>
+<li>
+<a data-href="/matches/32327913" data-toggle="modal" href="#">Match Details</a>
+</li>
+<li class='divider underway-divider'></li>
+<li class='mark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327913/mark_as_underway" rel="nofollow">Mark as In Progress</a>
+</li>
+<li class='unmark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327913/unmark_as_underway" rel="nofollow">Unmark as In Progress</a>
+</li>
+</ul>
+</div>
+</td>
+<td class='core' id='match_qtip_32327913_' style='padding:0'>
+<div class='match_top_half'>
+<div class='top_seed'>4</div>
+<div class='top_score'></div>
+<div class='inner_content no_user p22238381 participant-present' data-participant_id='22238381' data-round='2'><span style='' title='Losing in First Round'>Losing in First Round</span></div>
+</div>
+<div class='match_bottom_half'>
+<div class='bottom_seed'>12</div>
+<div class='bottom_score winner'>✓</div>
+<div class='inner_content no_user p22239186 participant-present' data-participant_id='22239186' data-round='2'><span style='' title='XoN Gaming'>XoN Gaming</span></div>
+</div>
+<div class='shadow'></div>
+</td>
+<td style='padding:0;'>
+<div class='match-location-container'>
+<div class='hide match-location' title=''>
+
+</div>
+</div>
+<div class='bracket_lines ' style='float:none;'><table class='bracket_lines_table' style='border-collapse:collapse;' cellspacing='0' cellpadding='0' border='0'><tr><td class="left_col top_row border_right border_bottom">&nbsp;</td></tr><tr><td class="right_col rfix"></td></tr></table></div>
+</td>
+</tr>
+</table>
+<div class='hide' id='match_qtip_32327913_content'>
+<table class='qtip_score'>
+<tr>
+<td class='qtip_top_score' style='width:15px'>&nbsp;&nbsp;0&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td class='qtip_bottom_score winner'>&nbsp;&nbsp;1&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+</div>
+
+<div class='match_spacer' style='width: 50px;'>&nbsp;</div>
+<table border='0' cellpadding='0' cellspacing='0' class='match_table match_qtip match-tipsy admin_editable pid22238368 pid22238720' id='match_qtip_32327915'>
+<tr>
+<td style='padding:0; vertical-align:middle'>
+<div class='btn-group'>
+<a class='btn btn-link match_identifier dropdown-toggle'>
+J
+<span class='caret'></span>
+</a>
+<ul class='dropdown-menu enabled'>
+<li class='hide'>
+<a data-href="/matches/32327915/edit" data-toggle="modal" href="#">Edit</a>
+</li>
+<li class='hide'>
+<a data-confirm="Are you sure you want to reopen this match?" data-method="put" data-remote="true" href="/matches/32327915/reopen" rel="nofollow">Reopen</a>
+</li>
+<li class='hide divider'></li>
+<li>
+<a data-href="/matches/32327915" data-toggle="modal" href="#">Match Details</a>
+</li>
+<li class='divider underway-divider'></li>
+<li class='mark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327915/mark_as_underway" rel="nofollow">Mark as In Progress</a>
+</li>
+<li class='unmark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327915/unmark_as_underway" rel="nofollow">Unmark as In Progress</a>
+</li>
+</ul>
+</div>
+</td>
+<td class='core' id='match_qtip_32327915_' style='padding:0'>
+<div class='match_top_half'>
+<div class='top_seed'>2</div>
+<div class='top_score winner'>✓</div>
+<div class='inner_content no_user p22238368 participant-present' data-participant_id='22238368' data-round='2'><span style='' title='Dynamic Alliance'>Dynamic Alliance</span></div>
+</div>
+<div class='match_bottom_half'>
+<div class='bottom_seed'>10</div>
+<div class='bottom_score'></div>
+<div class='inner_content no_user p22238720 participant-present' data-participant_id='22238720' data-round='2'><span style='' title='Straight Reflexes'>Straight Reflexes</span></div>
+</div>
+<div class='shadow'></div>
+</td>
+<td style='padding:0;'>
+<div class='match-location-container'>
+<div class='hide match-location' title=''>
+
+</div>
+</div>
+<div class='bracket_lines ' style='float:none;'><table class='bracket_lines_table' style='border-collapse:collapse;' cellspacing='0' cellpadding='0' border='0'><tr><td class="left_col top_row border_bottom">&nbsp;</td><td class="right_col lfix"></td></tr><tr><td class="left_col bottom_row border_right">&nbsp;</td></tr></table></div>
+</td>
+</tr>
+</table>
+<div class='hide' id='match_qtip_32327915_content'>
+<table class='qtip_score'>
+<tr>
+<td class='qtip_top_score winner' style='width:15px'>&nbsp;&nbsp;1&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td class='qtip_bottom_score'>&nbsp;&nbsp;0&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+</div>
+
+<table border='0' cellpadding='0' cellspacing='0' class='match_table  ' id=''>
+<tr>
+<td class='blank_id'>
+<div>&nbsp;</div>
+</td>
+<td class='core' id='' style='padding:0'>
+<div class='spacer full_width_spacer'>&nbsp;</div>
+</td>
+<td style='padding:0;'>
+<div class='bracket_lines ' style='float:none;'><table class='bracket_lines_table' style='border-collapse:collapse;' cellspacing='0' cellpadding='0' border='0'><tr><td rowspan="2" class="left_col one_row border_right">&nbsp;</td><td class="right_col top_row border_bottom">&nbsp;</td></tr><tr><td class="bottom_row">&nbsp;</td></tr></table></div>
+</td>
+</tr>
+</table>
+
+<table border='0' cellpadding='0' cellspacing='0' class='match_table match_qtip match-tipsy admin_editable pid22238375 pid22238737' id='match_qtip_32327916'>
+<tr>
+<td style='padding:0; vertical-align:middle'>
+<div class='btn-group'>
+<a class='btn btn-link match_identifier dropdown-toggle'>
+K
+<span class='caret'></span>
+</a>
+<ul class='dropdown-menu enabled'>
+<li class='hide'>
+<a data-href="/matches/32327916/edit" data-toggle="modal" href="#">Edit</a>
+</li>
+<li class='hide'>
+<a data-confirm="Are you sure you want to reopen this match?" data-method="put" data-remote="true" href="/matches/32327916/reopen" rel="nofollow">Reopen</a>
+</li>
+<li class='hide divider'></li>
+<li>
+<a data-href="/matches/32327916" data-toggle="modal" href="#">Match Details</a>
+</li>
+<li class='divider underway-divider'></li>
+<li class='mark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327916/mark_as_underway" rel="nofollow">Mark as In Progress</a>
+</li>
+<li class='unmark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327916/unmark_as_underway" rel="nofollow">Unmark as In Progress</a>
+</li>
+</ul>
+</div>
+</td>
+<td class='core' id='match_qtip_32327916_' style='padding:0'>
+<div class='match_top_half'>
+<div class='top_seed'>3</div>
+<div class='top_score'></div>
+<div class='inner_content no_user p22238375 participant-present' data-participant_id='22238375' data-round='2'><span style='' title='TdAW'>TdAW</span></div>
+</div>
+<div class='match_bottom_half'>
+<div class='bottom_seed'>11</div>
+<div class='bottom_score winner'>✓</div>
+<div class='inner_content no_user p22238737 participant-present' data-participant_id='22238737' data-round='2'><span style='' title='We Win Sometimes'>We Win Sometimes</span></div>
+</div>
+<div class='shadow'></div>
+</td>
+<td style='padding:0;'>
+<div class='match-location-container'>
+<div class='hide match-location' title=''>
+
+</div>
+</div>
+<div class='bracket_lines ' style='float:none;'><table class='bracket_lines_table' style='border-collapse:collapse;' cellspacing='0' cellpadding='0' border='0'><tr><td class="left_col top_row border_right border_bottom">&nbsp;</td></tr><tr><td class="right_col rfix"></td></tr></table></div>
+</td>
+</tr>
+</table>
+<div class='hide' id='match_qtip_32327916_content'>
+<table class='qtip_score'>
+<tr>
+<td class='qtip_top_score' style='width:15px'>&nbsp;&nbsp;0&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td class='qtip_bottom_score winner'>&nbsp;&nbsp;1&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+</div>
+
+</td>
+<td style='padding:0; vertical-align:top'>
+<div class='match_spacer' style='width: 50px;'>&nbsp;</div>
+<table border='0' cellpadding='0' cellspacing='0' class='match_table match_qtip match-tipsy admin_editable pid22238355 pid22239186' id='match_qtip_32327917'>
+<tr>
+<td style='padding:0; vertical-align:middle'>
+<div class='btn-group'>
+<a class='btn btn-link match_identifier dropdown-toggle'>
+L
+<span class='caret'></span>
+</a>
+<ul class='dropdown-menu enabled'>
+<li class='hide'>
+<a data-href="/matches/32327917/edit" data-toggle="modal" href="#">Edit</a>
+</li>
+<li class='hide'>
+<a data-confirm="Are you sure you want to reopen this match?" data-method="put" data-remote="true" href="/matches/32327917/reopen" rel="nofollow">Reopen</a>
+</li>
+<li class='hide divider'></li>
+<li>
+<a data-href="/matches/32327917" data-toggle="modal" href="#">Match Details</a>
+</li>
+<li class='divider underway-divider'></li>
+<li class='mark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327917/mark_as_underway" rel="nofollow">Mark as In Progress</a>
+</li>
+<li class='unmark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327917/unmark_as_underway" rel="nofollow">Unmark as In Progress</a>
+</li>
+</ul>
+</div>
+</td>
+<td class='core' id='match_qtip_32327917_' style='padding:0'>
+<div class='match_top_half'>
+<div class='top_seed'>1</div>
+<div class='top_score winner'>✓</div>
+<div class='inner_content no_user p22238355 participant-present' data-participant_id='22238355' data-round='3'><span style='' title='Team name'>Team name</span></div>
+</div>
+<div class='match_bottom_half'>
+<div class='bottom_seed'>12</div>
+<div class='bottom_score'></div>
+<div class='inner_content no_user p22239186 participant-present' data-participant_id='22239186' data-round='3'><span style='' title='XoN Gaming'>XoN Gaming</span></div>
+</div>
+<div class='shadow'></div>
+</td>
+<td style='padding:0;'>
+<div class='match-location-container'>
+<div class='hide match-location' title=''>
+
+</div>
+</div>
+<div class='bracket_lines ' style='float:none;'><table class='bracket_lines_table' style='border-collapse:collapse;' cellspacing='0' cellpadding='0' border='0'><tr><td class="left_col top_row border_bottom">&nbsp;</td><td class="right_col lfix"></td></tr><tr><td class="left_col bottom_row border_right">&nbsp;</td></tr></table></div>
+</td>
+</tr>
+</table>
+<div class='hide' id='match_qtip_32327917_content'>
+<table class='qtip_score'>
+<tr>
+<td class='qtip_top_score winner' style='width:15px'>&nbsp;&nbsp;1&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td class='qtip_bottom_score'>&nbsp;&nbsp;0&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+</div>
+
+<table border='0' cellpadding='0' cellspacing='0' class='match_table  ' id=''>
+<tr>
+<td class='blank_id'>
+<div>&nbsp;</div>
+</td>
+<td class='core' id='' style='padding:0'>
+<div class='spacer full_width_spacer'>&nbsp;</div>
+</td>
+<td style='padding:0;'>
+<div class='bracket_lines ' style='float:none;'><table class='bracket_lines_table' style='border-collapse:collapse;' cellspacing='0' cellpadding='0' border='0'><tr><td class="left_col one_row border_right">&nbsp;</td></tr></table></div>
+</td>
+</tr>
+</table>
+
+<table border='0' cellpadding='0' cellspacing='0' class='match_table  ' id=''>
+<tr>
+<td class='blank_id'>
+<div>&nbsp;</div>
+</td>
+<td class='core' id='' style='padding:0'>
+<div class='spacer full_width_spacer'>&nbsp;</div>
+</td>
+<td style='padding:0;'>
+<div class='bracket_lines ' style='float:none;'><table class='bracket_lines_table' style='border-collapse:collapse;' cellspacing='0' cellpadding='0' border='0'><tr><td rowspan="2" class="left_col one_row border_right">&nbsp;</td><td class="right_col top_row border_bottom">&nbsp;</td></tr><tr><td class="bottom_row">&nbsp;</td></tr></table></div>
+</td>
+</tr>
+</table>
+
+<table border='0' cellpadding='0' cellspacing='0' class='match_table  ' id=''>
+<tr>
+<td class='blank_id'>
+<div>&nbsp;</div>
+</td>
+<td class='core' id='' style='padding:0'>
+<div class='spacer full_width_spacer'>&nbsp;</div>
+</td>
+<td style='padding:0;'>
+<div class='bracket_lines ' style='float:none;'><table class='bracket_lines_table' style='border-collapse:collapse;' cellspacing='0' cellpadding='0' border='0'><tr><td class="left_col one_row border_right">&nbsp;</td></tr></table></div>
+</td>
+</tr>
+</table>
+
+<table border='0' cellpadding='0' cellspacing='0' class='match_table match_qtip match-tipsy admin_editable pid22238368 pid22238737' id='match_qtip_32327918'>
+<tr>
+<td style='padding:0; vertical-align:middle'>
+<div class='btn-group'>
+<a class='btn btn-link match_identifier dropdown-toggle'>
+M
+<span class='caret'></span>
+</a>
+<ul class='dropdown-menu enabled'>
+<li class='hide'>
+<a data-href="/matches/32327918/edit" data-toggle="modal" href="#">Edit</a>
+</li>
+<li class='hide'>
+<a data-confirm="Are you sure you want to reopen this match?" data-method="put" data-remote="true" href="/matches/32327918/reopen" rel="nofollow">Reopen</a>
+</li>
+<li class='hide divider'></li>
+<li>
+<a data-href="/matches/32327918" data-toggle="modal" href="#">Match Details</a>
+</li>
+<li class='divider underway-divider'></li>
+<li class='mark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327918/mark_as_underway" rel="nofollow">Mark as In Progress</a>
+</li>
+<li class='unmark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327918/unmark_as_underway" rel="nofollow">Unmark as In Progress</a>
+</li>
+</ul>
+</div>
+</td>
+<td class='core' id='match_qtip_32327918_' style='padding:0'>
+<div class='match_top_half'>
+<div class='top_seed'>2</div>
+<div class='top_score winner'>✓</div>
+<div class='inner_content no_user p22238368 participant-present' data-participant_id='22238368' data-round='3'><span style='' title='Dynamic Alliance'>Dynamic Alliance</span></div>
+</div>
+<div class='match_bottom_half'>
+<div class='bottom_seed'>11</div>
+<div class='bottom_score'></div>
+<div class='inner_content no_user p22238737 participant-present' data-participant_id='22238737' data-round='3'><span style='' title='We Win Sometimes'>We Win Sometimes</span></div>
+</div>
+<div class='shadow'></div>
+</td>
+<td style='padding:0;'>
+<div class='match-location-container'>
+<div class='hide match-location' title=''>
+
+</div>
+</div>
+<div class='bracket_lines ' style='float:none;'><table class='bracket_lines_table' style='border-collapse:collapse;' cellspacing='0' cellpadding='0' border='0'><tr><td class="left_col top_row border_right border_bottom">&nbsp;</td></tr><tr><td class="right_col rfix"></td></tr></table></div>
+</td>
+</tr>
+</table>
+<div class='hide' id='match_qtip_32327918_content'>
+<table class='qtip_score'>
+<tr>
+<td class='qtip_top_score winner' style='width:15px'>&nbsp;&nbsp;1&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td class='qtip_bottom_score'>&nbsp;&nbsp;0&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+</div>
+
+</td>
+<td style='padding:0; vertical-align:top'>
+<div class='match_spacer' style='width: 50px;'>&nbsp;</div>
+<div class='match_spacer' style='width: 50px;'>&nbsp;</div>
+<div class='match_spacer' style='width: 50px;'>&nbsp;</div>
+<table border='0' cellpadding='0' cellspacing='0' class='match_table match_qtip match-tipsy admin_editable pid22238355 pid22238368' id='match_qtip_32327919'>
+<tr>
+<td style='padding:0; vertical-align:middle'>
+<div class='btn-group'>
+<a class='btn btn-link match_identifier dropdown-toggle'>
+N
+<span class='caret'></span>
+</a>
+<ul class='dropdown-menu enabled'>
+<li class='hide'>
+<a data-href="/matches/32327919/edit" data-toggle="modal" href="#">Edit</a>
+</li>
+<li class='hide'>
+<a data-confirm="Are you sure you want to reopen this match?" data-method="put" data-remote="true" href="/matches/32327919/reopen" rel="nofollow">Reopen</a>
+</li>
+<li class='hide divider'></li>
+<li>
+<a data-href="/matches/32327919" data-toggle="modal" href="#">Match Details</a>
+</li>
+<li class='divider underway-divider'></li>
+<li class='mark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327919/mark_as_underway" rel="nofollow">Mark as In Progress</a>
+</li>
+<li class='unmark-underway'>
+<a data-method="put" data-remote="true" href="/matches/32327919/unmark_as_underway" rel="nofollow">Unmark as In Progress</a>
+</li>
+</ul>
+</div>
+</td>
+<td class='core' id='match_qtip_32327919_' style='padding:0'>
+<div class='match_top_half'>
+<div class='top_seed'>1</div>
+<div class='top_score'></div>
+<div class='inner_content no_user p22238355 participant-present' data-participant_id='22238355' data-round='4'><span style='' title='Team name'>Team name</span></div>
+</div>
+<div class='match_bottom_half'>
+<div class='bottom_seed'>2</div>
+<div class='bottom_score winner'>✓</div>
+<div class='inner_content no_user p22238368 participant-present' data-participant_id='22238368' data-round='4'><span style='' title='Dynamic Alliance'>Dynamic Alliance</span></div>
+</div>
+<div class='shadow'></div>
+</td>
+<td style='padding:0;'>
+<div class='match-location-container'>
+<div class='hide match-location' title=''>
+
+</div>
+</div>
+<div class='bracket_lines ' style='float:none;'><table class='bracket_lines_table' style='border-collapse:collapse;' cellspacing='0' cellpadding='0' border='0'><tr><td>&nbsp;</td></tr></table></div>
+</td>
+</tr>
+</table>
+<div class='hide' id='match_qtip_32327919_content'>
+<table class='qtip_score'>
+<tr>
+<td class='qtip_top_score' style='width:15px'>&nbsp;&nbsp;0&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td class='qtip_bottom_score winner'>&nbsp;&nbsp;1&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+</div>
+
+</td>
+</tr>
+</table>
+<div class='padding-for-drop-down'></div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='tournament-bracket-modal modal'>
+<a class='close' data-dismiss='modal' href='#' style='clear:none;'>&times;</a>
+<div></div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+<div class='header'>
+<div class='container'>
+<a class="logo" href="http://challonge.com/">Challonge</a>
+<div class='usernav'>
+<div class='visible-phone phone-menu-toggle'>
+<a href='#' onclick="$('#account_nav').toggleClass('phone-toggled'); return false;">
+<img alt="" class="portrait" height="40" src="//challonge.com/assets/gravatar-e8cf3e0380d7c62d31e370d3f7684f3c.png" width="40" />
+MENU
+</a>
+</div>
+<ul class='hide nav nav-pills' id='account_nav'>
+<li><a href="http://challonge.com/user_session/new?continue=%2Fdzvcl5k2" rel="nofollow">Log in</a></li>
+<li><a href="http://challonge.com/users/new">Sign up</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+
+<div class='ax-bar'></div>
+<div id='push'></div>
+</div>
+<div id='footer'>
+<div class='footer footer-ax'>
+<div class='bonus-ax'></div>
+<div class='premier-ax close-ax' id='premier-footer-ax'>
+<div class="premier-badge-container"><img alt="Premier badge" src="//challonge.com/assets/premier-badge-a07c4b0176ee1a91b32c9ab441e4aacc.png" title="Challonge Premier Subscriber" /></div>
+Challonge Premier
+<div class='support-us'>Hide ads + Support us</div>
+</div>
+</div>
+<div class='footer clearfix'>
+<hr>
+<div class='column1'>
+<div class='title'>
+© 2015 CHALLONGE! LLC
+</div>
+<div class='social-sharing'>
+<a class="facebook" href="http://www.facebook.com/challonge">Facebook</a>
+<a class="twitter" href="http://twitter.com/challonge">Twitter</a>
+<a class="googleplus" href="https://plus.google.com/u/0/b/113798738691097610743/113798738691097610743">Google+</a>
+</div>
+<div class='clearfix'></div>
+</div>
+<div class='column2'>
+<a href="http://challonge.com/tournaments">Browse Tournaments</a>
+<br>
+<a href="http://challonge.com/tournament/bracket_generator">Bracket Generator</a>
+<br>
+<a href="http://challonge.com/partners">Partners</a>
+</div>
+<div class='column3'>
+<a href="http://challonge.com/about">About Us</a>
+<br>
+<a href="http://challonge.com/contact">Contact Us</a>
+<br>
+<a href="http://challonge.blogspot.com" target="_blank">Blog</a>
+</div>
+<div class='column4'>
+<a href="http://api.challonge.com/v1">API</a>
+<br>
+<a href="http://challonge.com/terms_of_service">Terms of Service</a>
+<br>
+<a href="http://challonge.com/privacy_policy">Privacy Policy</a>
+</div>
+<div class='clearfix'></div>
+<input id="last_update" name="last_update" type="hidden" value="2015-04-03 23:17:25 UTC" />
+</div>
+
+<div class='hide' id='challonge-premier-content'>
+<ol class='ad-free-benefits'>
+<li>
+<div class='head'>Remove ads from your Challonge experience</div>
+<div class='body'>Ads will not be visible while signed in to your account. Please note, people who view your brackets on Challonge.com will still see advertisements.</div>
+</li>
+<li>
+<div class='head'>Embed your Challonge brackets without ads</div>
+<div class='body'>
+Put ad-free, customizable Challonge brackets on your website. Themes and other options help make our brackets look like your own!
+<br>
+<a href="http://challonge.com/module/instructions">Read more about bracket embeds and themes.</a>
+</div>
+</li>
+<li>
+<div class='head'>
+<span class="new_feature">NEW!</span>
+Challonge Madness Layout
+</div>
+<div class='body'>
+Embed your 64-player single elimination bracket prediction contest with the Challonge Madness Layout. Collect user email addresses for everyone who participates!
+<br>
+<a href="http://challonge.com/madness">Read more about the Challonge Madness Layout.</a>
+</div>
+</li>
+<li>
+<div class='head'>Support Challonge development</div>
+<div class='body'>A Challonge Premier Badge will be displayed next to your name as a public sign of your support! Your subscription will help us improve Challonge and expedite development of new features.</div>
+</li>
+</ol>
+
+</div>
+</div>
+
+<script>window.gon = {};gon.targetingKeyValues={"game_category":"Video Game - Shooter","game":"Call of Duty: Advanced Warfare"};gon.forceDeferredCallback=false;gon.participantUserIdMap={};gon.adminIds=[1085606];</script>
+<script src="//challonge.com/assets/application-a4a471b368d2c1a20b9cf72cbe9eb328.js"></script>
+<script>
+  //<![CDATA[
+    $(function() {
+      var $description = $('.tournament-description .redactor_editor');
+      if($description.prop('scrollHeight') > $description.height()) {
+        var $modalToggle = $('.tournament-description .modal-toggle');
+        $modalToggle.show();
+        $modalToggle.click(function() {
+          if ($description.hasClass('expanded')) {
+            $description.removeClass('expanded');
+            $modalToggle.text($modalToggle.data('compressed'));
+          }
+          else {
+            $description.addClass('expanded');
+            $modalToggle.text($modalToggle.data('expanded'));
+          }
+    
+          return false;
+        });
+      }
+    });
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    $('.embed-code-toggle').click(function() {
+      var $modal = $('.tournament-bracket-modal');
+      $('div', $modal).html($('.embed_code').html());
+      $modal.modal();
+      $('textarea:first', $modal).select();
+      return false;
+    });
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    $('.overthrow_bracket').dragscrollable({dragSelector:'div:first'});
+    $('.full-screen-toggle').click(function() {
+      if(BigScreen.enabled) {
+        BigScreen.request($('.full-screen-target')[0]);
+        $('.overthrow_bracket').append($('.tournament-bracket-modal'));
+        return false;
+      }
+      else {
+        return true;
+      }
+    });
+    $('table.match-tipsy td.core').tipsy({
+      live: true, html: true, gravity: 'w', offset: -5, opacity: 1, hideTip: true, allowTipHover: true, delayOut: 20,
+      title: function() {
+        var content = $('#' + this.getAttribute('id') + 'content');
+        if(content.hasClass('enabled')) {
+          return content.html();
+        }
+        else {
+          return '';
+        }
+      }
+    });
+    
+    $('.tournament-bracket').on('ajax:success', '.mark-underway a', function(xhr, data) {
+      $(this).closest('.match_table').removeClass('open-not-underway');
+      $(this).closest('.match_table').addClass('open-underway');
+    });
+    
+    $('.tournament-bracket').on('ajax:success', '.unmark-underway a', function(xhr, data) {
+      $(this).closest('.match_table').removeClass('open-underway');
+      $(this).closest('.match_table').addClass('open-not-underway');
+    });
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    root.ScoreReportingPermissions.getInstance().definePermissions(gon.participantUserIdMap, gon.adminIds);
+    
+    var _cookie_u = $.cookie('_current_user_id');
+    if (_cookie_u === undefined) {
+      var credentialsVal = $.cookie('user_credentials'); // for caching, not permissions
+      _cookie_u = (credentialsVal === undefined ? '' : credentialsVal.split('::')[1]);
+    }
+    
+    function applyBracketPermissions() {
+      root.ScoreReportingPermissions.getInstance().showElementsForUserId(_cookie_u);
+    }
+    
+    function refreshBracket() {
+      $.ajax({
+        url: '/tournaments/1452742/matches/refresh?num_rounds=0&last_update=' + $('#last_update').val() + '&u=',
+        beforeSend: function() { $('#bracket_refresh_loader').show(); },
+        complete: function() {
+          _.defer(function() {
+            $('#bracket_refresh_loader').hide();
+            applyBracketPermissions();
+          });
+        }
+      });
+    }
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    $(function() {
+      $('#module_code_toggle').click(function() {
+        $('#module_code').toggle();
+        return false;
+      });
+    });
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    $.getScript("http://challonge.marcobot.com/polo.js")
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    if(gon.forceDeferredCallback || $.cookie('user_credentials') !== undefined || $.cookie('_current_user_id') !== undefined) {
+      $(function() {
+        $.ajax('/dzvcl5k2/show_deferred');
+      });
+    }
+    else {
+      $('#account_nav').removeClass('hide');
+    }
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    (function() {
+      var notLoggedIn = ($.cookie('user_credentials') === undefined && $.cookie('_current_user_id') === undefined);
+      var dfpId = '10846520';
+      var isDevMode = false;
+      var targetingKeyValues = gon.targetingKeyValues || {};
+    
+      if(notLoggedIn){
+        root.ChallongeAds.show(dfpId, isDevMode, targetingKeyValues);
+      } else {
+        $.ajax({
+          url: "/users/show_ad",
+          method: "GET",
+          dataType: 'JSON',
+          accepts: 'application/json'
+        }).done(function(showAd, textStatus, jqXHR){
+          if(showAd){
+            root.ChallongeAds.show(dfpId, isDevMode, targetingKeyValues);
+          }
+        }).fail(function(jqXHR, textStatus, errorThrown){
+          root.ChallongeAds.show(dfpId, isDevMode, targetingKeyValues);
+        });
+      }
+    }).call(this);
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    $(document).ready(function(){
+      $('.premier-ax').click(function(){
+        window.location = "http://challonge.com/premier";
+        return false;
+      });
+    
+      $('#premier-corner-ax').popover({
+        html      : true,
+        trigger   : 'hover',
+        title     : '<div class="premier-badge-container"><img alt="Premier badge" src="//challonge.com/assets/premier-badge-a07c4b0176ee1a91b32c9ab441e4aacc.png" title="Challonge Premier Subscriber" /></div> Challonge Premier',
+        content   : $('#challonge-premier-content').html(),
+        placement : 'left',
+        placement: function (tooltip, trigger) {
+          _.defer(function(){
+            $(tooltip).css({
+              top  : $(trigger).offset().top,
+              left : ($(trigger).offset().left - $(tooltip).width() - 15)
+            });
+          });
+        },
+        container : 'body',
+        delay     : { show: 100, hide: 250 }
+      });
+    
+      $('#premier-footer-ax').popover({
+        html      : true,
+        trigger   : 'hover',
+        title     : '<div class="premier-badge-container"><img alt="Premier badge" src="//challonge.com/assets/premier-badge-a07c4b0176ee1a91b32c9ab441e4aacc.png" title="Challonge Premier Subscriber" /></div> Challonge Premier',
+        content   : $('#challonge-premier-content').html(),
+        placement : 'top',
+        placement: function (tooltip, trigger) {
+          _.defer(function(){
+            $(tooltip).css({
+              top  : ($(trigger).offset().top - $(tooltip).height() - 5),
+              left : ($(trigger).offset().left)
+            });
+          });
+        },
+        container : 'body',
+        delay     : { show: 100, hide: 250 }
+      });
+    
+    
+    });
+  //]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+var _analytics_scr = document.createElement('script');
+_analytics_scr.type = 'text/javascript'; _analytics_scr.async = true; _analytics_scr.src = '/_Incapsula_Resource?SWJIYLWA=2977d8d74f63d7f8fedbea018b7a1d05&ns=1';
+var _analytics_elem = document.getElementsByTagName('script')[0]; _analytics_elem.parentNode.insertBefore(_analytics_scr, _analytics_elem);
+})();
+// ]]>
+</script></body>
+</html>

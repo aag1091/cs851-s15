@@ -1,0 +1,594 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if lt IE 7 ]> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="no-js ie lt-ie10 lt-ie9 lt-ie8 lt-ie7 ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="no-js ie lt-ie10 lt-ie9 lt-ie8 ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="no-js ie lt-ie10 lt-ie9 ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="no-js ie lt-ie10 ie9"> <![endif]-->
+<!--[if gt IE 9]>  <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="no-js ie not-ie-legacy"> <![endif]-->
+<!--[if !IE]><!--> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="no-js not-ie"> <!--<![endif]-->
+    <head><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQAHU1ZTGwsEXFFQAg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(4),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(u){"stack"in u&&(t(5),t(3),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:4,2:7,3:5,4:18,5:6,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],4:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:18,2:19,ee:"QJf3ax",gos:"7eSDFh"}],5:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:19,2:18,ee:"QJf3ax"}],6:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:19,2:18,ee:"QJf3ax"}],7:[function(t,e){function n(){c.inPlace(this,d,"fn-")}function r(t,e){c.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}var i=t("ee").create(),a=t(1),s=t(2),c=s(i),u=s(a),f=window.XMLHttpRequest,d=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=i,window.XMLHttpRequest=function(t){var e=new f(t);try{i.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{i.emit("internal-error",[r])}catch(o){}}return e},window.XMLHttpRequest.prototype=f.prototype,c.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),i.on("send-xhr-start",r),i.on("open-xhr-start",r)},{1:4,2:19,ee:"QJf3ax"}],8:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=e(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var f=0;c>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:9,3:7,4:4,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],9:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&c&&c.body){p.proto="https"===d.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=c.createElement("script");e.src=p.proto+t.agent,c.body.appendChild(e)}}function r(){"complete"===c.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,c=s.document,u="addEventListener",f="attachEvent",d=(""+location).split("?")[0],p=e.exports={offset:i(),origin:d,features:{}};c[u]?(c[u]("DOMContentLoaded",o,!1),s[u]("load",n,!1)):(c[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],18:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],19:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:18,ee:"QJf3ax"}]},{},["G9z0Bl",3,8]);</script>
+        <title>Newsletter|Special Offers|Lollipops & Lipstick</title>
+
+<meta name="keywords" content=""/>
+<meta name="description" content="Join our VIP list and be the first to hear about our special offers, news and future events."/>
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+
+<script src="/include/js/loader.js"></script><style>@font-face {font-family: "Entypo";font-style: normal;font-weight: normal;src: url("https://create-cdn.net/_assets/fonts/template-fonts/icons/entypo/entypo.eot?20141125");src: url("https://create-cdn.net/_assets/fonts/template-fonts/icons/entypo/entypo.eot?iefix&20141125") format("embedded-opentype"), url("https://create-cdn.net/_assets/fonts/template-fonts/icons/entypo/entypo.woff?20141125") format("woff"), url("https://create-cdn.net/_assets/fonts/template-fonts/icons/entypo/entypo.ttf?20141125") format("truetype"), url("https://create-cdn.net/_assets/fonts/template-fonts/icons/entypo/entypo.svg#entypo?20141125") format("svg"),url("https://create-cdn.net/_assets/fonts/template-fonts/icons/entypo/entypo.ttf?20141125") format("truetype")}</style><!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54bd04d746ad6919" async="async"></script>
+<style>
+
+/* CAPSULE BUTTON BASE STYLES */
+
+	.wdk_live-button,
+	.wdk_live-button:link,
+	.wdk_live-button:visited {
+		outline: none;
+		overflow: visible;
+		display: inline-block;
+		vertical-align: middle;
+		cursor: pointer;
+		height: auto !important;
+		width: auto;
+		padding-top: 3px;
+		padding-right: 13px;
+		padding-bottom: 4px;
+		padding-left: 13px;
+		margin: 3px 6px 5px 0px !important;
+	}
+	.wdk_live-button, .wdk_live-button:hover,
+	.wdk_live-button:link,
+	.wdk_live-button:link:hover,
+	.wdk_live-button:visited,
+	.wdk_live-button:visited:hover {
+	 	text-decoration: none !important;
+	}
+	.wdk_live-button:active,
+	.wdk_live-button:link:active,
+	.wdk_live-button:visited:active {
+	 	outline: none;
+	}
+	.wdk_live-button:focus,
+	.wdk_live-button:link:focus,
+	.wdk_live-button:visited:focus {
+	 	outline: none;
+	}
+	.wdk_live-button > span,
+	.wdk_live-button:link > span,
+	.wdk_live-button:visited > span {
+	 	font-size: 12px;
+	 	font-family: 
+            arial; 
+	}
+
+
+/* BUTTON COLOURS*/
+
+
+	.wdk_live-button {
+	  	
+	  	color: #ead5d5 !important;
+		
+		background-color: #fe3190;
+		background-image: -webkit-linear-gradient(top, #ff4fae, #fe3190);
+		background-image: -o-linear-gradient(top, #ff4fae, #fe3190);
+		background-image: linear-gradient(top, #ff4fae, #fe3190);
+
+		box-shadow: inset 0px 1px 2px #fe3190;
+		text-shadow: #ff4fae;
+
+		border: 1px solid #ff4fae;
+		border-radius: 200px;	
+	}
+
+	.wdk_live-button:hover {
+		color: #f6e1e1 !important;
+	}
+
+	.wdk_live-button:hover, .wdk_live-button:focus {
+		
+		background-color: #ff4fae;
+		background-image: -webkit-linear-gradient(top, #fe3190, #ff4fae);
+		background-image: -o-linear-gradient(top, #fe3190, #ff4fae);
+		background-image: linear-gradient(top, #fe3190, #ff4fae);
+		  
+	}
+	.wdk_live-button:active {
+	
+		background-image: -webkit-linear-gradient(top, #ff4fae, #fe3190);
+		background-image: -o-linear-gradient(top, #ff4fae, #fe3190);
+		background-image: linear-gradient(top, #ff4fae, #fe3190);
+	
+		box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.3);		
+		text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4);
+	}
+
+
+</style><script src="/shop/ajax/basket.php" type="text/javascript"></script>        
+<link rel="stylesheet" href="/_assets/css/legacy-support/site-templates/not-rwd/global-legacy-templates-not-rwd.min.css?20150116">
+        <script src="/include/js/loader.js?v="></script>        <script type='text/javascript' src='/include/js/dropdown-menu_top.js'></script>
+<link rel='stylesheet' href='/include/css/dropdown-menu_top.css' type='text/css' media='screen' />
+        <link rel="stylesheet" href="/_assets/sitetemplates/126/wdk_stylesheet.css" type="text/css" media="screen" />
+        <!--[if IE 6]><style type='text/css'>.wdk_menu-item {width:100px;}</style><![endif]-->
+        <!--[if lte IE 9]>
+        <style type='text/css'>
+            .wdk_menu-container { position: relative; z-index: 800; }
+            #wdk_template-search { display: block; }
+            #wdk_template-headercontainer { z-index: 900; }
+        </style>
+        <![endif]-->
+        <script type="text/javascript">
+            $(function(){
+                $('ul.wdk_menu-ul.wdk_tier_1 li.wdk_menu-item.wdk_level_1:has(ul)').hover(function(){
+                    $(this).addClass('wdk_hover');
+                },
+                function(){
+                     $(this).removeClass('wdk_hover');
+                });
+            });
+        </script>
+         <!--[if !IE]><!-->
+        <style type="text/css">
+        body {
+                    
+        ;
+        }
+        </style>
+        <!--<![endif]-->
+        <style type='text/css'>
+            <!--
+            body {
+                background-repeat: repeat;
+                                    background-attachment: fixed;
+                                    background-position: 0 0; background-image:url("https://create-cdn.net/siteimages/_templates/bg/spots-white.png"); ;
+                background-color: #F09EC4;
+                color: #602E60;
+                font-family:
+            arial;
+            }
+            a {
+                color: #fe3191;
+            }
+            hr {
+                background: #f3cfe0 !important;
+                height: 1px !important;
+                color: #f3cfe0  !important;
+                border: none !important;
+            }
+            img.bg {
+              /* Set rules to fill background */
+              min-height: 100%;
+              min-width: 1024px;
+                
+              /* Set up proportionate scaling */
+              width: 100%;
+              height: auto;
+                
+              /* Set up positioning */
+              position: fixed;
+              top: 0;
+              left: 0;
+              z-index: -1;
+            }
+
+            @media screen and (max-width: 1024px) { /* Specific to this particular image */
+              img.bg {
+                left: 50%;
+                margin-left: -512px;   /* 50% */
+              }
+            }
+            #wdk_template-sitecontainer {
+                 width: 1000px; 
+            }
+            #wdk_template-sitecontent {
+                background-color: #FFFFFF;
+            }
+            #wdk_template-headercontainer {
+                background-color: #FFFFFF;
+            }
+            #wdk_template-footercontainer-outter {
+                background-color: #fcf3f7;
+                border-top: 6px solid #f3cfe0;
+            }
+            #wdk_template-footercontainer {
+                border-top: 1px solid #FFFFFF;
+            }
+            #wdk_template-logoscontainer {
+                                                        max-height:200px;
+                width:1000px;
+                            }
+            #wdk_template-search-field {color:#c492c4;}
+            #wdk_template-search-field:focus {color:#602E60;}
+            
+            /* -- Top Menu -- */
+            .wdk_menu-container {
+                background: #f3cfe0;
+            }
+            .wdk_menu-item a {
+                color: #602E60;
+            }
+            .wdk_menu-item a:hover {
+                background: #D9689D;
+                color: #FFFFFF !important;
+            }
+            .wdk_menu-currentitem {
+                background: #D9689D;
+                color: #FFFFFF !important;
+            }
+            /* Sub Menus */
+            ul.wdk_menu-ul.wdk_tier_1 li.wdk_menu-item.wdk_level_1.wdk_hover a {
+                background: #D9689D; color: #FFFFFF;
+            }
+            ul.wdk_menu-ul.wdk_tier_1 li.wdk_menu-item.wdk_level_1.wdk_hover ul.wdk_sub_menu li a {
+                color: #602E60;
+            }
+            ul.wdk_menu-ul ul.wdk_sub_menu {}
+            ul.wdk_sub_menu.wdk_tier_2 {
+                background: #D9689D;
+            }
+            ul.wdk_menu-ul.wdk_tier_1 ul.wdk_sub_menu.wdk_tier_2 ul.wdk_sub_menu.wdk_tier_3 {
+
+            }
+            ul.wdk_menu-ul ul.wdk_sub_menu.wdk_tier_2 li.wdk_menu-item.wdk_level_2 a:hover {
+                background: #cf5e93;
+            }
+            ul.wdk_menu-ul ul.wdk_sub_menu.wdk_tier_3 li.wdk_menu-item.wdk_level_3 a:hover {
+                background: #bb4a7f !important;
+            }
+
+
+            /* -- Side Col -- */
+            .wdk_sidecolumn-item-outter {
+                background-color:#f3cfe0;
+            }
+            .wdk_sidecolumn-item {
+                border-top:1px solid #FFFFFF;
+                border-bottom:1px solid #FFFFFF;
+                background-color:#fcf3f7;
+            }
+            /*shop cat list sc*/
+            .shopcatlist a {
+                border-bottom:1px solid #FFFFFF;
+                background-color:#fcf3f7;
+            }
+            .shopcatlist a:hover {
+                background:#f3cfe0;
+                color:#602E60;
+            }
+
+            /***SYSTEM***/
+            .headingProductTxt {
+                color:#602E60 !important;
+            }
+            .headingCategoryCell strong {
+                color:#602E60 !important;
+            }
+            -->
+            
+            
+/*
+//
+// Create.css |start|
+//
+*/
+/* ====== //
+// FOOTER //
+// ====== */
+.social-profile__icon {
+    color: #5b295b!important;
+}
+.newsletter button:hover,
+.social-profile__icon:hover {
+    color: #7e4c7e!important;
+}
+.site-footer .form--newsletter .text-input {
+    border-color: #602E60;
+}
+/* ===== //
+// FORMS //
+// ===== */
+.faux-link {
+	color: #fe3191;
+}
+.form .text-input {
+    color: #5b295b;
+    border-color: #c3c3c3;
+    background-color: #FFFFFF;
+}
+.event__summary-root__heading,
+.event__summary-child__item,
+.event__title {
+    border-color:#ffcbf1 !important;
+}
+.event__summary-child__intro {
+    color: #602E60  !important;
+}
+/* ============================== //
+// Fix for grids in table layouts //
+// ============================== */
+/*.content--main.wdk_columnCount_0 {
+    width: 959px!important;
+    max-width: 959px!important;
+
+}
+.content--main.wdk_columnCount_1 {
+    width: 792px!important;
+    max-width: 792px!important;
+}
+.content--main.wdk_columnCount_2 {
+    width: 615px!important;
+    max-width: 615px!important;
+}*/
+/*
+//
+// Create.css |end|
+//
+*/
+        </style>
+         <!--[if IE]>
+        <script type="text/javascript">var curvyCornersVerbose = false;</script> 
+        <script type="text/javascript" src="/include/js/curvycorners.min.js"></script>
+        <![endif IE]-->
+        
+    </head>
+    <body>
+          <!--[if IE]>
+    
+    <![endif IE]-->
+        <table cellpadding="0" cellspacing="0" border="0" id="wdk_template-sitecontainer"><tr><td>
+
+                    <div id="wdk_template-headercontainer">
+
+                        <div id="wdk_template-logoscontainer">
+
+                                                                                    <a title="Home" style="border: none;" href="/"><img src="/siteimages/26/3/4/263423/logos/8817740.png?" style="width:1000px;height:200px;"  class="dyos_headerimage3 pngfix" alt=""/></a>
+                            <style type="text/css">
+                                <!--
+                                #wdk_template-basketcontainer {
+                                    background:#fcf3f7;
+                                    padding-bottom:3px;
+                                    padding-left:8px;
+                                    padding-right:16px;
+                                    padding-top:6px;
+                                    border-top:6px solid #f3cfe0;
+                                    right:0px !important;
+                                    bottom:10px;
+                                }
+                                #wdk_template-logoscontainer {
+                                    padding: 0px !important;
+                                    text-align: center;
+                                    margin: 0 auto !important;
+                                }
+                                -->
+                            </style>
+                                                        
+                        </div>
+                        
+
+                        <table cellpadding="0" cellspacing="0" border="0" class="wdk_menu-container">
+                            <tr>
+                                <td>
+                                                                    <ul class="wdk_menu-ul wdk_tier_1">
+<li class='wdk_home-page wdk_menu-item wdk_menu-firstitem wdk_level_1'><a href="/" ><span>Home</span></a>
+</li>
+<li class='wdk_menu-item wdk_level_1'><a href="/pamperparties.html" ><span>Pamper Parties</span></a>
+<ul class="wdk_sub_menu wdk_tier_2">
+<li class='wdk_menu-item wdk_level_2'><a href="/partyextras.html" ><span>Party Extras</span></a></li>
+<li class='wdk_menu-item wdk_level_2'><a href="/bookingform.html" ><span>Book your party</span></a></li>
+</ul>
+</li>
+<li class='wdk_menu-item wdk_level_1'><a href="/guestbook/" ><span>Customer Feedback</span></a>
+</li>
+<li class='wdk_menu-item wdk_level_1'><a href="/about.html" ><span>About</span></a>
+<ul class="wdk_sub_menu wdk_tier_2">
+<li class='wdk_menu-item wdk_level_2'><a href="/newsletter.html" ><span>Newsletter</span></a></li>
+<li class='wdk_menu-item wdk_level_2'><a href="/location.html" ><span>Location</span></a></li>
+<li class='wdk_menu-item wdk_level_2'><a href="/termsandconditions.html" ><span>Questions & Answers</span></a></li>
+<li class='wdk_menu-item wdk_level_2'><a href="/gallery.html" ><span>Gallery</span></a></li>
+</ul>
+</li>
+<li class='wdk_menu-item wdk_menu-lastitem wdk_level_1'><a href="/contactus.html" ><span>Contact Us</span></a>
+</li>
+</ul>
+                                                                </td>
+
+                                                            </tr>
+
+                        </table>
+
+                    </div>
+
+
+                    <div id="wdk_template-sitecontent">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+
+                                
+                                <td valign="top" width="100%" id="wdk_content-container">
+                                    <div id="wdk_content-maincontentcontainer">
+                                        <h1 class="wdk_content-pagetitle">Newsletter</h1>
+                                        <div id="wdk_content-maincontent">
+
+                                            <div  class="content--main wdk_content-container wdk_columnCount_1">
+<table style="background-color: #602e60; width: 500px;" border="0" align="center">
+<tbody>
+<tr>
+<td id="" style="padding: 35px;" lang="" dir="" scope="" align="" valign="">
+<p style="line-height: 30px;"><span style="color: #ffffff; font-size: 12pt;">Join our VIP list and be the first to hear about our special offers, news and future events! </span></p>
+<p style="line-height: 30px;"><span style="color: #ffffff; font-size: 12pt;">We look forward to keeping in touch with you.</span></p>
+<p style="line-height: 30px;"><span style="color: #ffffff; font-size: 12pt;">Sarah &amp; Karen</span></p>
+</td>
+</tr>
+<tr>
+<td id="" style="padding: 0px 35px;" lang="" dir="" scope="" align="" valign=""><!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="//lollipopsandlipstick.us10.list-manage.com/subscribe/post?u=a5a6e464327a36a0bf126c960&amp;id=26c887086b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<h2></h2>
+<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+<div class="mc-field-group">
+	<label for="mce-FNAME">First Name  <span class="asterisk">*</span>
+</label>
+	<input type="text" value="" name="FNAME" class="required" id="mce-FNAME">
+</div>
+<div class="mc-field-group">
+	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_a5a6e464327a36a0bf126c960_26c887086b" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[1]='FNAME';ftypes[1]='text';fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup--> </td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+
+                                        </div>
+                                    </div>
+                                </td>
+
+                                                                
+                                <td valign="top" id="wdk_sidecolumn-containerright" class="wdk_sidecolumn-container">
+
+                                    <div class="complementary-block-wrapper wdk_sidecolumn_container wdk_sidecolumn_container--basic">
+                                    <div class="wdk_sidecolumn-container-inner">
+                                        <div class="wdk_sidecolumn-itemtitle">Contact Us</div>
+                                        <div class="wdk_sidecolumn-item-outter">
+                                            <div class="wdk_sidecolumn-item">
+
+                                                <div class="wdk_sidecolumn-itemcontent wdk_sidecolumn-type-basic">
+                                                    <div class="wdk_sidecolumn-type-basic complementary-block" style="width:140px;">
+<p><a href="/contactus.html"><img style="border: 0px; border-style: none;" title="Contact Us" src="/siteimages/26/3/4/263423/9538337.jpg" alt="Contact Us" /></a></p>
+</div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div><div class="complementary-block-wrapper wdk_sidecolumn_container wdk_sidecolumn_container--basic">
+                                    <div class="wdk_sidecolumn-container-inner">
+                                        <div class="wdk_sidecolumn-itemtitle">Newsletter</div>
+                                        <div class="wdk_sidecolumn-item-outter">
+                                            <div class="wdk_sidecolumn-item">
+
+                                                <div class="wdk_sidecolumn-itemcontent wdk_sidecolumn-type-basic">
+                                                    <div class="wdk_sidecolumn-type-basic complementary-block" style="width:140px;">
+<p><a href="/newsletter.html"><img style="border: 0px; border-style: none;" title="jwi_chatterbirds_bird1(green)" src="/siteimages/26/3/4/263423/9538350.jpg" alt="jwi_chatterbirds_bird1(green)" width="150" /></a></p>
+</div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div><div class="complementary-block-wrapper wdk_sidecolumn_container wdk_sidecolumn_container--basic">
+                                    <div class="wdk_sidecolumn-container-inner">
+                                        <div class="wdk_sidecolumn-itemtitle">Book your party </div>
+                                        <div class="wdk_sidecolumn-item-outter">
+                                            <div class="wdk_sidecolumn-item">
+
+                                                <div class="wdk_sidecolumn-itemcontent wdk_sidecolumn-type-basic">
+                                                    <div class="wdk_sidecolumn-type-basic complementary-block" style="width:140px;">
+<p><a href="/bookingform.html"><img style="border: 0px; border-style: none;" title="Book your Lollipop &amp;amp; Lipstick party" src="/siteimages/26/3/4/263423/8877307.png" alt="Book your Lollipop &amp;amp; Lipstick party" /></a></p>
+</div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+
+                                </td>
+                                                            </tr>
+                        </table>
+
+                        <div id="wdk_template-footercontainer-outter">
+                            <div id="wdk_template-footercontainer">
+                                <div class="wdk_template-footercontent">
+                                    <div role="contentinfo" id="site-footer" class="site-footer">
+                                    <footer>
+                                         
+                                        <div class="site-footer__standard">
+                                            <br style="clear:both;"/>
+
+<p>&nbsp;</p>
+<table border="0" align="center">
+<tbody>
+<tr>
+<td><a href="/contactus.html"><img style="border: 0px; border-style: none;" title="Lollipops &amp; Lipstick Contact" src="/siteimages/26/3/4/263423/8821313.png" alt="Lollipops &amp; Lipstick Contact" width="80" height="80" /></a></td>
+<td style="padding: 0px 10px;" lang="" dir="" scope="" align="" valign=""><a href="https://www.facebook.com/LollipopsAndLipstick" target="_blank"><img style="border: 0px; border-style: none;" title="Lollipops &amp; Lipstick Facebook" src="/siteimages/26/3/4/263423/8821312.png" alt="Lollipops &amp; Lipstick Facebook" width="80" height="80" /></a></td>
+<td><a href="https://twitter.com/Lollipopsandlip" target="_blank"><img style="border: 0px; border-style: none;" title="Lollipops &amp; Lipstick Twitter" src="/siteimages/26/3/4/263423/8821316.png" alt="Lollipops &amp; Lipstick Twitter" width="80" height="80" /></a></td>
+</tr>
+</tbody>
+</table>
+                                        </div>
+
+                                  
+                                        <div class="grid grid--no-markupfix grid--centered">
+
+                                                                                               
+                                            
+                                            
+                                        </div>
+                                        
+                                        <div class="site-footer__copyright">
+                                                                                        <br style="clear:both;"/>
+<p style="text-align: center; font-size: 12px; display: block; z-index: 1000;">Powered by <a href="http://www.create.net/?source=footer" target="_blank">Create</a></p>    <script type="text/javascript">
+     if(typeof _gaq === 'undefined'){
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36693622-1']);
+        _gaq.push(['_trackPageview']);
+    }
+  </script>
+    <script type="text/javascript">  (function() {
+    var ga = document.createElement('script');     ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:'   == document.location.protocol ? 'https://ssl'   : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+   </script>
+                                            </div>
+                                        
+                                    </footer>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </td></tr></table>
+        <style type="text/css">
+            #wdk_template-footercontainer, .wdk_template-footercontent { display: block !important; }
+        </style>
+        
+        
+        <script src="/_assets/js/helpers/modernizr.js"></script>
+        <!--[if lt IE 9]>
+        <script type="text/javascript" src="/include/js/corner/jquery.corner.js"></script>
+        <script type="text/javascript">
+            $('#wdk_template-search').corner("3px");
+        </script>
+        <![endif]-->
+
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","licenseKey":"6126a1bc31","applicationID":"848025,828321","transactionName":"M1ZVNUQEWUZRUkdRWAocYhNfSl5bVFRLFkcMR1oN","queueTime":0,"applicationTime":16,"ttGuid":"","agentToken":"","userAttributes":"HxFECEIAXlESCxEKAVcHBVIUGA==","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-476.min.js"}</script></body>
+</html>

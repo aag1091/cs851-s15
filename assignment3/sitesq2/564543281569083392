@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VwcDUFJWGwAJVVdWAQU="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:9,3:7,4:11,5:3,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:9,3:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>
+<title>Tony Abbott says 'good Government starts today' after narrowly surviving a motion to spill the leadership | Business Insider</title>
+<meta name="description" content="A potentially mortal blow. " />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="publisher" content="Business Insider Australia" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="application-name" content="Business Insider Australia" />
+<meta name="msapplication-TileColor" content="#1d617e" />
+<meta name="msapplication-TileImage" content="http://edge.alluremedia.com.au/assets/img/businessinsider/ms_144.png">
+<meta name="msapplication-square70x70logo" content="http://edge.alluremedia.com.au/assets/img/businessinsider/ms_70.png" />
+<meta name="msapplication-square150x150logo" content="http://edge.alluremedia.com.au/assets/img/businessinsider/ms_150.png" />
+<meta name="msapplication-wide310x150logo" content="http://edge.alluremedia.com.au/assets/img/businessinsider/ms_310_wide.png" />
+<meta name="msapplication-square310x310logo" content="http://edge.alluremedia.com.au/assets/img/businessinsider/ms_310.png" />
+<meta name="msapplication-notification" content="frequency=30;polling-uri=http://notifications.buildmypinnedsite.com/?feed=http://www.businessinsider.com.au/feed&amp;id=1;polling-uri2=http://notifications.buildmypinnedsite.com/?feed=http://www.businessinsider.com.au/feed&amp;id=2;polling-uri3=http://notifications.buildmypinnedsite.com/?feed=http://www.businessinsider.com.au/feed&amp;id=3;polling-uri4=http://notifications.buildmypinnedsite.com/?feed=http://www.businessinsider.com.au/feed&amp;id=4;polling-uri5=http://notifications.buildmypinnedsite.com/?feed=http://www.businessinsider.com.au/feed&amp;id=5; cycle=1"/>
+<meta name="robots" content="noarchive" />
+<meta name="author" content="Paul Colgan, Peter Terlato" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@BusInsiderAU" />
+<meta name="twitter:title" content="Tony Abbott says 'good Government starts today' after narrowly surviving a motion to spill the leadership" />
+<meta name="twitter:image" content="http://edge.alluremedia.com.au/uploads/businessinsider/2015/02/463017524.jpg" />
+<meta name="twitter:description" content="A potentially mortal blow. " />
+<meta name="twitter:url" content="http://www.businessinsider.com.au/liberal-leadership-spill-abbott-turnbull-2015-2" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Tony Abbott says 'good Government starts today' after narrowly surviving a motion to spill the leadership" />
+<meta property="og:site_name" content="Business Insider Australia" />
+<meta property="og:image" content="http://edge.alluremedia.com.au/uploads/businessinsider/2015/02/463017524.jpg" />
+<meta property="og:description" content="A potentially mortal blow. " />
+<meta property="og:url" content="http://www.businessinsider.com.au/liberal-leadership-spill-abbott-turnbull-2015-2" />
+<meta property="article:published_time" content="2015-02-09T13:00:48+11:00" />
+<meta itemprop="name" content="Tony Abbott says 'good Government starts today' after narrowly surviving a motion to spill the leadership">
+<meta itemprop="image" content="http://edge.alluremedia.com.au/uploads/businessinsider/2015/02/463017524.jpg">
+<meta itemprop="description" content="A potentially mortal blow. ">
+<link rel="shortcut icon" type="image/x-icon" href="http://edge.alluremedia.com.au/assets/img/businessinsider/favicon.ico" />
+<link rel="apple-touch-icon-precomposed" type="image/png" href="http://edge.alluremedia.com.au/assets/img/businessinsider/favicon_57.png" />
+<link rel="apple-touch-icon-precomposed" type="image/png" href="http://edge.alluremedia.com.au/assets/img/businessinsider/favicon_72.png" sizes="72x72" />
+<link rel="apple-touch-icon-precomposed" type="image/png" href="http://edge.alluremedia.com.au/assets/img/businessinsider/favicon_114.png" sizes="114x114" />
+<link rel="sitemap" type="application/xml" href="//www.businessinsider.com.au/sitemap.xml" title="Sitemap" />
+<link rel="alternate" type="application/rss+xml" href="//feeds.businessinsider.com.au/businessinsideraustralia" title="Business Insider RSS" />
+<link rel="alternate" type="application/rss+xml" href="//feeds.businessinsider.com.au/businessinsideraustraliaau" title="Business Insider RSS (Australian stories only)" />
+<link rel="publisher" href="https://plus.google.com/114031594208912302092" />
+<!-- Start wp_head() -->
+<script type='text/javascript' src='http://www.businessinsider.com.au/wp-includes/js/jquery/jquery.js?ver=1.11.1'></script>
+<script type='text/javascript' src='http://www.businessinsider.com.au/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<link rel='prev' title='The vast majority of Greeks are backing Prime Minister Alexis Tsipras in his showdown with Europe' href='http://www.businessinsider.com.au/greece-europe-showdown-alexis-tsipras-support-poll-2015-2' />
+<link rel='next' title='A Chinese farmer found this enormous gold nugget, but the government might take it from him' href='http://www.businessinsider.com.au/china-farmer-giant-nugget-2015-2' />
+<link rel='canonical' href='http://www.businessinsider.com.au/liberal-leadership-spill-abbott-turnbull-2015-2' />
+<!-- End wp_head() -->
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700' type='text/css'>
+<link rel="stylesheet" type="text/css" href="http://edge.alluremedia.com.au/assets/build/css/network.min.css?v=1.3" media="all" />
+<link rel="stylesheet" type="text/css" href="http://edge.alluremedia.com.au/assets/build/css/bi.min.css?v=1.3" media="all" />
+<script>var network_vars={"name":"businessinsider", "analytics_google":"UA-1772706-20", "author":"Paul Colgan, Peter Terlato"}</script>
+<!--[if lt IE 9]>
+<script src="http://edge.alluremedia.com.au/assets/build/js/respond.min.js"></script>
+<link href="http://edge.alluremedia.com.au/proxy/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+<link href="//www.businessinsider.com.au/proxy/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+<script src="//www.businessinsider.com.au/proxy/respond.proxy.js"></script>
+<![endif]-->
+<script src="http://edge.alluremedia.com.au/assets/build/js/head.min.js"></script>
+<script>var _sf_startpt=(new Date()).getTime()</script>
+<script>var titanEnabled = true; var digitalData = {"page":{"pageInfo":{"pageID":"960627","pageName":"tony abbott says 'good government starts today' after narrowly surviving a motion to spill the leadership | business insider","brand":"businessinsider","generator":"WP","author":"paul colgan, peter terlato","sysEnv":"desktop"},"category":{"primaryCategory":"briefing","subCategory1":""}},"titan":{"adSite":"businessinsider","adZone":"briefing","adExclusions":[],"adKeyValues":{"cat":"briefing","cat1":"","ctype":"article","aggregate":["au","auspol","liberal-leadership","libspill","malcolm-turnbull","tony-abbott"]},"adSlots":["adspot-970x250_970x90_728x90-pos1","adspot-728x90-pos2","adspot-300x250-pos1","adspot-300x600-pos2"]},"version":"1.0","events":[]}, titan = titan || {}; titan.requestAd = titan.requestAd || []; titan.requestConditionalAd = titan.requestConditionalAd || [];</script><script src="//assets.adobedtm.com/7d5ea80d054b96730162d0905d59678c4d2bf30c/satelliteLib-550b8e02c6cb1ea6a6d6ce1151645c6cd5592ed8.js"></script>
+
+<script>head.js("http://edge.alluremedia.com.au/assets/build/js/bootstrap.min.js", "http://edge.alluremedia.com.au/assets/build/js/plugins.min.js", "http://edge.alluremedia.com.au/assets/build/js/allure.min.js", "http://edge.alluremedia.com.au/assets/build/js/analytics.min.js", function() {  });</script>
+</head>
+<body class="single single-post postid-960627 single-format-standard production desktop-layout">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PKZH6B"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PKZH6B');</script>
+<!-- End Google Tag Manager -->
+<div id="snap-wrapper">
+    <div id="snap-drawers" class="hidden-print">
+        <div class="right-drawer">
+    <div class="nano">
+        <div class="content">
+            <div id="col-wrapper-min" class="login-drawer draw-content">
+    <div class="col-lg-12">
+        <h1>Log In</h1>
+        <button type="button" class="close">&times;</button>
+    </div>
+    <form id="login_form" action="https://www.businessinsider.com.au/login/" method="POST">
+        <div id="drawer-messages"></div>
+        <div class="col-lg-12">
+            <h4 class="first">Enter Details</h4>
+            <div class="form-group">
+                <label for="form-username" class="label-hide">Username or Email</label>
+                <input type="text" name="user_identity" class="form-control" id="form-username" placeholder="Username or Email">
+            </div>
+            <div class="form-group">
+                <label for="form-password" class="label-hide">Password</label>
+                <input type="password" name="user_pass" class="form-control" id="form-password" placeholder="Password">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="checkbox pull-left">
+                <label>
+                    <input type="checkbox" name="remember_me" value="true" checked="checked"/> 
+                    Remember Me
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-6 forgot-password-container">
+            <a href="/pass/request/" id="forgot-password-link" class="drawer-toggle">Forgotten password?</a>
+        </div>
+        <div class="col-lg-12 clear">
+            <input type="submit" class="btn btn-primary btn-block" value="Log In" />
+        </div>
+        <input type="hidden" id="login_user_wpnonce" name="login_user_wpnonce" value="5061e6785a" /><input type="hidden" name="_wp_http_referer" value="/liberal-leadership-spill-abbott-turnbull-2015-2" />    </form>
+
+</div>            <div id="col-wrapper-min" class="register-drawer draw-content">
+    <div class="col-lg-12">
+        <h1>Join</h1>
+        <button type="button" class="close">&times;</button>
+    </div>
+        <form id="register" role="form" action="https://www.businessinsider.com.au/join/" method="POST">
+        <div class="col-sm-6">
+            <h4 class="first">Enter Details</h4>
+            <p>Comment on stories, receive email newsletters &amp; alerts.</p>
+            <div class="form-group">
+                <div id="drawer-messages"></div>
+                <label for="form-username" class="label-hide">Username</label>
+                <div class="input-group">
+                    <span class="input-group-addon">@</span>
+                    <input type="text" name="reg_user_login" class="form-control" id="form-username" placeholder="Username" maxlength="30">
+                </div>
+                                <span id="help-username" class="help-block help-hide">This is your permanent identity for Business Insider Australia</span>
+            </div>
+            <div class="form-group">
+                <label for="form-email" class="label-hide">Email address</label>
+                <input type="email" name="reg_user_email" class="form-control" id="form-email" placeholder="Email" novalidate="novalidate">
+                                <span id="help-email" class="help-block help-hide">Your email must be valid for account activation</span>
+            </div>
+            <div class="form-group">
+                <label for="form-password" class="label-hide">Password</label>
+                <input type="password" name="reg_user_password" class="form-control" id="form-password" placeholder="Password">
+                                <span id="help-password" class="help-block help-hide">Minimum of 8 standard keyboard characters</span>
+            </div>
+            <hr />
+        </div>
+        <div class="col-sm-6">
+            <h4>Subscribe</h4>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="reg_newsletter[businessinsider]" value="businessinsider" checked="checked"/>
+                    Business Insider Newsletter
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="reg_newsletter[gizmodo]" value="gizmodo"/>
+                    Gizmodo Newsletter
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="reg_newsletter[kotaku]" value="kotaku"/>
+                    Kotaku Newsletter
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="reg_newsletter[lifehacker]" value="lifehacker"/>
+                    Lifehacker Newsletter
+                </label>
+            </div>
+            <div class="checkbox spacer">
+                <label class="show-tooltip" data-original-title="Great discounts, competitions and special offers from our partners.">
+                    <input type="checkbox" name="reg_newsletter[partners]" value="partners">
+                    Special Offers Newsletter
+                </label>
+            </div>
+            <span class="help-block">Email newsletters but will contain a brief summary of our top stories and news alerts.</span>
+            <hr />
+        </div>
+        <div class="col-lg-12 clear">
+            <input type="submit" class="btn btn-primary btn-block" value="Send Activation Email" />
+        </div>
+        <input type="hidden" id="register_user_wpnonce" name="register_user_wpnonce" value="cb4225b805" /><input type="hidden" name="_wp_http_referer" value="/liberal-leadership-spill-abbott-turnbull-2015-2" />    </form>
+    <div id="contact-support" class="col-lg-12">
+        <hr />
+        <a href="#" class="show-popover" data-toggle="popover" data-placement="top" data-content="<h5 class='pull-left'>Why are you asking me for personal information?</h5><button type='button' class='close-popover pull-right btn btn-xs btn-default'><i class='icon-remove'></i></button><hr class='clear'>We collect personal information including your contact and demographic information for the purposes of identification, account administration and display of personalised content and advertising.<br><br>
+            For full details please refer to our <a href='http://www.alluremedia.com.au/terms/' target='_blank'>Privacy Policy</a>.">
+            Why are you asking me for personal information?
+        </a>
+        <hr />
+        Having issues creating your account?
+        <a href="/report/" class="btn btn-default-dark btn-block">Contact Support</a>
+    </div>
+</div>            <div id="col-wrapper-min" class="request-password-drawer draw-content">
+    <div class="col-lg-12">
+        <h1>Forgotten Password</h1>
+        <button type="button" class="close">&times;</button>
+        <form id="request_reset_password_form" action="http://www.businessinsider.com.au" method="POST" novalidate="novalidate">
+            <div id="drawer-messages"></div>
+            <h4 class="first">Enter Details</h4>
+            <div class="form-group">
+                <label for="reset_password_identity" class="label-hide">Email</label>
+                <input type="text" name="reset_password_identity" class="form-control" id="reset_password_identity" placeholder="Email">
+            </div>
+            <input type="submit" class="btn btn-primary btn-large btn-block" value="Reset Password"/>
+            <input type="hidden" id="request_forgotten_password_key_wpnonce" name="request_forgotten_password_key_wpnonce" value="5d4ef90011" /><input type="hidden" name="_wp_http_referer" value="/liberal-leadership-spill-abbott-turnbull-2015-2" />            <hr />
+            <a href="/login/" class="btn btn-default-dark btn-block drawer-toggle">Back to log in</a>
+        </form>
+    </div>
+</div>        </div>
+    </div>
+</div>    </div>
+    <div id="snap-content">
+                <div class="skip-link"></div>
+
+       	<div id="network" class="hidden-print">
+    <div class="container">
+        <a class="network-toggle" data-toggle="collapse" data-parent="#network" href="#network-sites">
+            <img src="http://edge.alluremedia.com.au/assets/img/businessinsider/placeholder.png" class="logo" alt="Allure Media" /> <i class="icon-caret-down"></i>
+        </a>
+        <div id="network-sites" class="collapse">
+            <div class="col-md-6">
+                <ul id="technology" class="pull-right">
+                    <li class="heading">Business &amp; Technology</li>
+                    <li><a href="http://www.businessinsider.com.au/"><i class="icon icon-business-insider"></i> Business Insider</a></li>
+                    <li><a href="http://www.gizmodo.com.au/"><i class="icon icon-gizmodo"></i> Gizmodo</a></li>
+                    <li><a href="http://www.kotaku.com.au/"><i class="icon icon-kotaku"></i> Kotaku</a></li>
+                    <li><a href="http://www.lifehacker.com.au/"><i class="icon icon-lifehacker"></i> Lifehacker</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul id="lifestyle">
+                    <li class="heading">Lifestyle &amp; Shopping</li>
+                    <li><a href="http://www.popsugar.com.au/celebrity/"><i class="icon icon-popsugar"></i> POPSUGAR Celebrity</a></li>
+                    <li><a href="http://www.popsugar.com.au/fashion/"><i class="icon icon-popsugar"></i> POPSUGAR Fashion</a></li>
+                    <li><a href="http://www.popsugar.com.au/beauty/"><i class="icon icon-popsugar"></i> POPSUGAR Beauty</a></li>
+                    <li><a href="http://fitness.popsugar.com.au/"><i class="icon icon-popsugar"></i> POPSUGAR Health &amp; Fitness</a></li>
+                    <li><a href="http://www.shopstyle.com.au/"><i class="icon icon-shopstyle"></i> ShopStyle</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>        		<div id="status-message" class="status-success" data-action="" style="position:relative; z-index:1000; display:block;">
+	    <div class="container">
+	    	     
+
+	    </div>
+	</div>
+                <div id="masthead" class="navbar navbar-inverse navbar-fixed-top hidden-print">
+    <div id="masthead-bottom-gradient"></div>
+    <div class="container">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="brand">
+            <div class="logo logo-gradient"></div>
+            <div class="logo logo-sm"></div>
+            <div class="logo logo-lg"></div>
+            <a class="logo logo-link" href="/" title="Business Insider">
+                <img src="http://edge.alluremedia.com.au/assets/img/businessinsider/placeholder.png" alt="Business Insider" />
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <div id="user-btn-group">
+    <a href="/join/" id="btn-join" class="btn btn-default-dark btn-sm drawer-toggle">Join</a>
+    <a href="/login/" id="btn-sign-in" class="btn btn-primary btn-sm drawer-toggle">Log In</a>
+</div>
+                        <div class="navbar-search">
+                <form method="get" action="/" class="search-field">
+                    <input name="s" type="text" class="form-control" value="" placeholder="Search">
+                    <button type="submit" title="Search"><i class="icon icon-search icon-light"></i></button>
+                </form>
+            </div>
+            <ul class="nav navbar-main navbar-nav">
+                <li id="menu-item-457744" class="nav-tech menu-item menu-item-type-taxonomy menu-item-object-category menu-item-457744"><a href="http://www.businessinsider.com.au/tech">Tech</a></li>
+<li id="menu-item-457743" class="nav-money-markets menu-item menu-item-type-taxonomy menu-item-object-category menu-item-457743"><a href="http://www.businessinsider.com.au/money-markets">Money &#038; Markets</a></li>
+<li id="menu-item-457740" class="nav-briefing menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-457740"><a href="http://www.businessinsider.com.au/briefing">Briefing</a></li>
+<li id="menu-item-457742" class="nav-ideas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-457742"><a href="http://www.businessinsider.com.au/ideas">Ideas</a></li>
+<li id="menu-item-457741" class="nav-executive-life menu-item menu-item-type-taxonomy menu-item-object-category menu-item-457741"><a href="http://www.businessinsider.com.au/executive-life">Executive Life</a></li>
+<li id="menu-item-845267" class="nav-videos menu-item menu-item-type-custom menu-item-object-custom menu-item-845267"><a href="http://www.businessinsider.com.au/video">Video</a></li>
+            </ul>
+        </div>
+    </div>
+</div>        <div id="content"> 
+            <div class="container">
+                <div class="row">
+        <div id="adspot-970x250_970x90_728x90-pos1" class="ad-container main top hidden-print visible-md visible-lg">
+        <script>titan.requestAd.push("adspot-970x250_970x90_728x90-pos1");</script>
+    </div>
+
+<div id="col-wrapper">
+    <div id="river" class="pull-left">
+        <div class="col superwide title">
+    <div id="title" class="single colour-briefing">
+        <a href="http://www.businessinsider.com.au/briefing">Briefing</a>
+    </div>
+</div>
+        <div id="post-960627" class="col superwide">
+                                                <h1 class="first">Tony Abbott says 'good Government starts today' after narrowly surviving a motion to spill the leadership</h1>
+            <div class="byline">
+    <span class="author">
+        <a href="http://www.businessinsider.com.au/author/paul-colgan">Paul Colgan</a>, <a href="http://www.businessinsider.com.au/author/peter-terlato">Peter Terlato</a>    </span>
+    <time datetime="2015-02-09 13:00:48">Feb 9, 2015, 1:00 PM</time>
+    <span class="comments">
+        <a href="http://www.businessinsider.com.au/liberal-leadership-spill-abbott-turnbull-2015-2#comments" title="Comments">
+            <i class="icon-comment"></i>
+            <span class="comment-social-count"></span>
+        </a>
+    </span>
+    <span class="share">
+        <i class="icon-thumbs-up"></i> 
+        <span class="share-social-count"></span>
+    </span>
+    <span class="later">
+        <a class="bookmark" title="Bookmark this post" data-post-id="960627" data-tracking-name="Bookmark">
+            <i class="icon-bookmark"></i>
+        </a>
+    </span>
+</div>            <div class="row">
+    <div id="byline-share" class="col-md-12 col-lg-12">
+	    <ul class="share-buttons">
+	        <li class="byline-facebook">
+	            <a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.businessinsider.com.au%2Fliberal-leadership-spill-abbott-turnbull-2015-2&amp;t=Tony+Abbott+says+%27good+Government+starts+today%27+after+narrowly+surviving+a+motion+to+spill+the+leadership" rel="nofollow" title="share on facebook" onclick="window.open(this.href,&#39;sharefb&#39;,&#39;toolbar=0,status=0,width=640,height=440&#39;);return false;" target="_blank">
+	                <i class="icon icon-facebook"></i>
+	                <span class="hidden-xs hidden-sm">
+	                	<span class="text">facebook</span><span class="badge facebook-social-count"></span>
+	                </span>
+	            </a>
+	        </li>
+	        <li class="byline-twitter">
+	            <a href="http://twitter.com/share?url=http%3A%2F%2Fwww.businessinsider.com.au%2Fliberal-leadership-spill-abbott-turnbull-2015-2&amp;text=Tony+Abbott+says+%27good+Government+starts+today%27+after+narrowly+surviving+a+motion+to+spill+the+leadership%20(via%20@BusInsiderAU)" rel="nofollow" title="share on twitter" onClick="window.open(this.href,&#39;sharetwitter&#39;,&#39;toolbar=0,status=0,width=480,height=360&#39;);return false;" target="_blank">
+	                <i class="icon icon-twitter"></i>
+	                <span class="hidden-xs hidden-sm">
+	                	<span class="text">twitter</span><span class="badge twitter-social-count"></span>
+	                </span>	
+	            </a>
+	        </li>
+	        <li class="byline-reddit">
+	            <a href="http://www.reddit.com/submit?url=http%3A%2F%2Fwww.businessinsider.com.au%2Fliberal-leadership-spill-abbott-turnbull-2015-2" title="share on reddit" rel="nofollow" onclick="window.open(this.href,&#39;sharereddit&#39;,&#39;toolbar=0,status=0,width=860,height=440&#39;);return false;" target="_blank">
+	                <i class="icon icon-arrow-up"></i>
+	                <span class="hidden-xs hidden-sm">
+	                	<span class="text">reddit</span><span class="badge reddit-social-count"></span>
+	                </span>	
+	            </a>
+	        </li>
+	        <li class="byline-linkedin">
+	            <a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fwww.businessinsider.com.au%2Fliberal-leadership-spill-abbott-turnbull-2015-2&title=Tony+Abbott+says+%27good+Government+starts+today%27+after+narrowly+surviving+a+motion+to+spill+the+leadership&summary=Tony+Abbott+has+survived+a+motion+to+spill+the+leadership+of+the+Liberal+party.+However%2C+the+vote+of+61+against+the+motion+to+39+in+favour+reveals+a+divided+partyroom+which+has+the+potential+to+cause+ongoing+leadership+questions+for+the+prime+minister.+More+below." title="share on linkedin" rel="nofollow" onclick="window.open(this.href,&#39;sharelinkedin&#39;,&#39;toolbar=0,status=0,width=640,height=440&#39;);return false;" target="_blank">
+	                <i class="icon icon-linkedin"></i>
+	                <span class="hidden-xs hidden-sm">
+	                	<span class="text">linkedin</span><span class="badge linkedin-social-count"></span>
+	                </span>
+	            </a>
+	        </li>		        
+	        <li class="byline-googleplus">
+	            <a href="http://plus.google.com/share?url=http%3A%2F%2Fwww.businessinsider.com.au%2Fliberal-leadership-spill-abbott-turnbull-2015-2" title="share on google+" rel="nofollow" onclick="popUp=window.open(this.href, 'popupwindow', 'scrollbars=no,toolbar=no,location=no,status=no,width=480,height=350');popUp.focus();return false">
+	                <i class="icon icon-google-plus"></i>
+	                <span class="hidden-xs hidden-sm">
+	                	<span class="text">google+</span><span class="badge google-social-count"></span>
+	                </span>
+	            </a>
+	        </li>
+	    </ul>
+    </div>
+</div>
+            <div id="story">
+                <p><strong>Tony Abbott has survived a motion to spill the leadership of the Liberal party. </strong>However, the vote of 61 against the motion to 39 in favour reveals a divided partyroom which has the potential to cause ongoing leadership questions for the prime minister. More below.</p>
+<div class="display-media image primary center"><a href="http://edge.alluremedia.com.au/uploads/businessinsider/2015/02/abbott_leadership_spill.jpg" rel="modal"><img src="http://edge.alluremedia.com.au/uploads/businessinsider/2015/02/abbott_leadership_spill.jpg" class="size_primary alt=""/></a><small>Abbott with members of his front bench today. Photo: Getty </small></div>
+<p><strong>3:30pm</strong>: Question Time has concluded.</p>
+<p><strong>2:50pm</strong>: In the first question to the PM in the House of Representatives this year, Opposition leader Bill Shorten <a href="http://www.businessinsider.com.au/labor-just-just-threw-an-old-tony-abbott-line-on-party-leadership-back-in-the-pms-face-2015-2" target="_blank">asked Tony Abbott the very same question</a> he posed to former PM Julia Gillard when she faced a leadership challenge three years ago.</p>
+<p><strong>2:30pm</strong>: During Question Time, Opposition leader Bill Shorten asked Tony Abbott whether he&#8217;ll abandon any budget measures, &#8220;or is he just planning to abandon his Treasurer as he did at the press conference today?&#8221;</p>
+<p>The PM responded by saying, &#8220;I stand by my Treasurer. I stand by my team. I stand by my Treasurer and I stand by my team.&#8221;</p>
+<p><strong>2:00pm</strong>: Tony Abbott failed to answer in the positive when asked point-blank if he still had confidence in his Treasurer, Joe Hockey.</p>
+<p>&#8220;&#8230;All of us are determined to lift our game and the fundamental point I make is that the solution to all of these things is good Government, and good Government starts today,” Abbott said. </p>
+<p>More on that <a href="http://www.businessinsider.com.au/tony-abbott-joe-hockey-confidence-2015-2" target="_blank">here</a>.</p>
+<p><strong>1:37pm</strong>: Abbott is addressing the media in Canberra, after surviving the leadership spill motion.</p>
+<blockquote><p><strong>On changes to Medicare</strong>: &#8220;Obviously we have some proposals which are out there already. There will be no new proposals coming forward without the broad backing of the medical profession.&#8221;</p>
+<p><strong>On securing Budget support in the Senate</strong>: &#8220;It was a bold and ambitious budget last year, with the wisdom of hindsight, perhaps too bold and too ambitious.&#8221;</p>
+<p>&#8220;We will not buy fights with the senate that we can&#8217;t win unless we determine that they are fights we must win.&#8221;</p>
+<p><strong>On his leadership and government&#8217;s action going forward</strong>: &#8220;I am determined to do better in these tests in the next few months than I have in the last few months.&#8221; </p>
+<p>&#8220;We are a government that has good answers for the people of Australia. </p>
+<p>&#8220;The party room believes no less than I do&#8230; in the broad direction. We need to take a more consultative and colleagial approach.&#8221;</p>
+<p><strong>On his new approach to dealing with MPs</strong>: &#8220;My door is open. I am available to people.&#8221;</p>
+<p>&#8220;I accept that prime ministers don&#8217;t always get their way.</p>
+<p>&#8220;This is going to be a government that socialises decisions before they are finalised&#8230; I will be talking to backbench committee chairs.</p>
+<p>&#8220;I want to harness all of the creativity and insights that this party has to offer.</p>
+<p>&#8220;All of us have had to have a good long hard look at ourselves.&#8221;</p></blockquote>
+<p>Abbott repeated his message that the entire spill experience has been <a href="http://www.businessinsider.com.au/pm-tony-abbott-made-a-last-minute-plea-to-keep-his-job-on-national-tv-on-sunday-2015-2" target="_blank">“very chastening”</a> and re-iterated his pledge to be “different and better”.</p>
+<p><strong>1:10pm</strong>: The PM will make a formal address at 1:30pm. Business Insider will have live coverage.</p>
+<p><strong>12:15am</strong>: News Corp boss Rupert Murdoch just tweeted about Abbott&#8217;s political survival.</p>
+<blockquote class="twitter-tweet" lang="en"><p>Abbott survives 61-39. Now needs to say he understands complaints and will govern more inclusively, both with public and his party.</p>
+<p>&mdash; Rupert Murdoch (@rupertmurdoch) <a href="https://twitter.com/rupertmurdoch/status/564592546182365186">February 9, 2015</a></p></blockquote>
+<p><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p>Murdoch has been outspoken about Australian politics lately, last month calling for the PM&#8217;s chief-of-staff Peta Credlin to step down. More on that <a href="http://www.businessinsider.com.au/rupert-murdoch-has-set-up-a-stand-off-with-tony-abbott-over-his-top-adviser-2015-1" target="_blank">here</a>.</p>
+<p><strong>11:40am</strong>: <strong>Always the optimist</strong>. Senate leader Eric Abetz said the 61-39 vote was “a strong result for the Prime Minister”.</p>
+<p>“Five years ago Tony Abbott won the leadership by one vote; five years later that margin has increased by a long way,” he told Sky News.</p>
+<p><strong>11:20am</strong>: Phil Coorey at the <a href="http://www.afr.com/p/national/tony_abbott_says_he_can_win_election_IBltg2fsfJQMZOn3TeSz3M" target="_blank">AFR is reporting</a> that, during his address to the party room, Abbott signalled he can win at the next election but he needs the support his party to do so.</p>
+<p>Abbott told MPs he “can fight the Labor Party but I’m not very good at fighting the Liberal Party,&#8221; he said.</p>
+<p>&#8220;I can beat [Labor leader] Shorten.&#8221;</p>
+<p><strong>11:10am</strong>: Abbott reportedly likened the result of the leadership spill motion to a <strong>&#8220;near death experience&#8221;</strong>, a variety of sources <a href="http://www.smh.com.au/federal-politics/political-news/prime-minister-tony-abbott-avoids-leadership-spill-20150208-139c1m.html" target="_blank">told Fairfax Media</a>, with the PM promising to consult more widely with government MPs in the future.</p>
+<p><strong>10:45am</strong>: MP Luke Simpkins said nonconformist backbenchers should now give Abbott “the opportunity to implement the changes” he has promised.</p>
+<p>&#8220;I think that 39 votes for a spill motion is a powerful message. It was clear from what the Prime Minister said afterwards that he has listened to that and he is going to change,” he said.</p>
+<p>“I think <strong>the backbench is going give the Prime Minister a lot of latitude</strong>, particularly when he spoke so positively about the changes that need to take place.”</p>
+<p><strong>10:40am</strong>: Opposition leader Bill Shorten released a statement saying the potential leadership spill has been an unstable showing for the government, declaring the Liberal Party to be &#8220;in paralysis&#8221;. </p>
+<p>“Tony Abbott promised he would run a stable and united government,&#8221; Shorten said. </p>
+<p>&#8220;This is his biggest broken promise yet.&#8221;</p>
+<p><strong>10:35am</strong>: Abbott addressed the party room following the vote and Western Australia MP Luke Simpkins, <a href="http://www.businessinsider.com.au/the-liberal-spill-really-is-on-2015-2" target="_blank">the backbencher who called for the spill late last week</a>, said there was a good chance of reform to the government’s controversial GP payment.</p>
+<p>“Greater consultation with the medical profession, so I imagine we’ll see changes later on,” he said.</p>
+<p><strong>10:15am</strong>: Abbott, in a statement from his office following the vote, said he wants to <a href="http://www.businessinsider.com.au/tony-abbott-has-survived-the-leadership-spill-2015-2" target="_blank">&#8220;end the disunity&#8221;</a>.</p>
+<p>&#8220;We think that when you elect a government, when you elect a Prime Minister you should get to keep that government, that Prime Minister until you change your mind,&#8221; Abbott said.</p>
+<p>&#8220;We face many challenges at heart, we are a highly successful country&#8230; The challenge for government is to work with you not against you.&#8221;</p>
+<p>Abbott said the &#8220;focus now is once more on jobs, families, a strong economy and safer nation.&#8221;</p>
+<p>Here&#8217;s the full statement:</p>
+<blockquote><p>The Liberal Party has dealt with the spill motion and now this matter is behind us.</p>
+<p>We are absolutely determined to work for you the people who elected us. We want to end the disunity and the uncertainty which destroyed two Labor governments and give you the good government that you deserve.</p>
+<p>We think that when you elect a government, when you elect a Prime Minister, you deserve to keep that government and that Prime Minister until you have a chance to change your mind. So the focus now is once more on jobs, families, a stronger economy and a secure nation.</p>
+<p>We do face many challenges. At heart, we are a highly successful country, justifiably proud of what we’ve achieved. In essence, we are a strong economy with so much creativity and dynamism the challenge for government is to work with you, not against you.</p>
+<p>I love this country. I will do my best to help our country to succeed.</p></blockquote>
+<p><strong>9.34am</strong>: Abbott addressed the partyroom after the vote. Peter Reith just said on Sky News that Abbott probably lost another handful of votes from his front bench based on the 39 votes against the PM on the spill motion. </p>
+<p>So once things settle down Abbott will come to the realisation that his support in the partyroom is now dangerously precarious.</p>
+<p>The other issue to consider here is some backbenchers, even if unhappy with Abbott, loathe Malcolm Turnbull even more. They might have been convinced to vote against the spill motion to stop Turnbull getting a chance to run for leader. </p>
+<p><strong>9.16am</strong>: <strong>The spill motion has been defeated 61-39. </strong></p>
+<p><strong>The key number here is 39</strong>. Abbott survives, but he is leading a clearly divided partyroom with four out of 10 members of the partyroom voting to blow Abbott out of his position and force a leadership ballot. </p>
+<p>Remember, 40 or 41 votes from the cabinet and whips were guaranteed to the PM &#8211; if all his executive voted with him. (It&#8217;s possible that in the secret ballot, some didn&#8217;t.)</p>
+<p>But the apparent result is that around two-thirds of the free vote was against the party leader. </p>
+<p>There was one informal vote. </p>
+<p><strong>9.12am</strong>: <strong>The vote is done</strong>, Sky News reports. Counting underway. Should take a few minutes. </p>
+<p><strong>9.09am</strong>: REMINDER:  </p>
+<blockquote class="twitter-tweet" lang="en"><p>Oz business confidence before today <a href="http://t.co/uEs6jzsd2O">pic.twitter.com/uEs6jzsd2O</a></p>
+<p>&mdash; Justin Fabo (@justinfabo) <a href="https://twitter.com/justinfabo/status/564546341624233985">February 8, 2015</a></p></blockquote>
+<p><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p>More on the confidence problem <a href="http://www.businessinsider.com.au/australias-top-economic-officials-have-warned-the-abbott-government-that-low-confidence-is-holding-the-country-back-2015-2">here </a>and <a href="http://www.businessinsider.com.au/whoever-leads-the-liberal-party-needs-to-undo-the-damage-to-economic-confidence-from-abbotts-style-2015-2">here</a>. </p>
+<p><strong>9.03am</strong>: The meeting&#8217;s underway. <a href="http://www.businessinsider.com.au/how-the-liberal-partyroom-vote-on-tony-abbotts-leadership-works-and-whats-expected-to-happen-2015-2">Abbott will be taking the chair</a>. </p>
+<p><strong>8.59am</strong>: Tony Abbott walks into the partyroom with Julie Bishop by his side and a throng of perhaps two dozen ministers in a huge show of strength. Malcolm Turnbull had previously walked into the room on his own, mobile in hand. </p>
+<p>BuzzFeed&#8217;s Mark Di Stefano tweeted this comparison: </p>
+<blockquote class="twitter-tweet" lang="en"><p>I’m no body language expert but something is going on here: <a href="https://twitter.com/hashtag/libspill?src=hash">#libspill</a> <a href="http://t.co/mbH9UlrMiz">pic.twitter.com/mbH9UlrMiz</a></p>
+<p>&mdash; Mark Di Stefano (@MarkDiStef) <a href="https://twitter.com/MarkDiStef/status/564545508169887744">February 8, 2015</a></p></blockquote>
+<p><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p><strong>8.53am</strong>: MPs are filing into the partyroom. Scott Morrison walked into the meeting with known spill motion supporter Arthur Sinodinos. </p>
+<p>What&#8217;s happening: </p>
+<div class="display-media image secondary pull-right"><a href="http://edge.alluremedia.com.au/uploads/businessinsider/2015/02/4599078381.jpg" rel="modal"><img src="http://edge.alluremedia.com.au/uploads/businessinsider/2015/02/4599078381.jpg" class="size_secondary alt=""/></a><small>PM Tony Abbott and Malcolm Turnbull. Photo: Stefan Postles/Getty</small></div>
+<li>Liberal MPs and Senators gather in Canberra this morning to vote on the motion to spill the party leadership. There&#8217;s 101 MPs in the partyroom (one can&#8217;t make it for personal reasons) so 51 votes are required to force a leadership ballot.
+</li>
+<p><li>A Newspoll <a href="http://www.theaustralian.com.au/national-affairs/abbott-leadership-crisis-judgment-day-as-newspoll-shows-pm-losing-voters/story-fn59niix-1227212412293">in today&#8217;s Australian</a> showed support for the coalition at six-year lows. The poll gives the plotters against the PM some momentum going into the meeting.
+</li>
+<p><li>If the spill motion is successful, Malcolm Turnbull is expected to stand for the leadership. Sky News reported this morning that there is an agreement that Julie Bishop would not stand, avoiding any potential split in the vote.
+</li>
+<p><li>We know Andrew Laming, Teresa Gambaro, Arthur Sinodinos, Dennis Jensen, Luke Simpkins, Wyatt Roy and Don Randall have publicly declared they&#8217;ll be voting to spill the leadership. <a href="http://www.businessinsider.com.au/how-the-liberal-partyroom-vote-on-tony-abbotts-leadership-works-and-whats-expected-to-happen-2015-2">Here&#8217;s a closer look at how this morning&#8217;s meeting runs</a> and what different results in the vote might mean. In short, a vote above 30 is hugely destabilising for Abbott.
+</li>
+<li>The story is far from over if the spill motion doesn&#8217;t get up. As Greg McKenna writes this morning, whoever is in office needs to rebuild economic confidence. And given Malcolm Turnbull has signalled he&#8217;s willing challenge the PM in the event of a spill, there&#8217;s the question of what Abbott does with his partyroom enemies. How will he keep them at bay? </li>
+</p>
+<p>We&#8217;ll have live updates here as it all unfolds. <a href="http://www.businessinsider.com.au/liberal-leadership-spill-abbott-turnbull-2015-2">Refresh this page</a> for the latest. </p>
+                <p><strong>Follow Business Insider Australia on <a href="https://www.facebook.com/BusinessInsiderAustralia">Facebook</a>, <a href="https://twitter.com/businsiderau">Twitter</a>, and <a href="http://www.linkedin.com/company/business-insider-au">LinkedIn</a></strong></p>
+            </div>
+            <hr />
+            <div class="row">
+                 <div id="tags" class="col-md-12 col-lg-12">
+                    <h3 class="underlined">Tagged In</h3>
+                    <a href="http://www.businessinsider.com.au/category/au" class="btn btn-default btn-sm">australian stories</a>
+<a href="http://www.businessinsider.com.au/category/auspol" class="btn btn-default btn-sm">auspol</a>
+<a href="http://www.businessinsider.com.au/category/liberal-leadership" class="btn btn-default btn-sm">liberal leadership</a>
+<a href="http://www.businessinsider.com.au/category/libspill" class="btn btn-default btn-sm">libspill</a>
+<a href="http://www.businessinsider.com.au/category/malcolm-turnbull" class="btn btn-default btn-sm">malcolm turnbull</a>
+<a href="http://www.businessinsider.com.au/category/tony-abbott" class="btn btn-default btn-sm">tony abbott</a>
+                </div>
+            </div>
+
+            
+            <hr />
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <iframe class="dianomi-unit" valign="top" width="100%" height="300" marginheight=0 marginwidth=0 frameborder=0 vspace=0 hspace=0 scrolling=NO  src="http://www.smartlinks.dianomi.com/recirculation.epl?id=5"></iframe>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <iframe class="dianomi-unit" valign="top" width="100%" height="300" marginheight=0 marginwidth=0 frameborder=0 vspace=0 hspace=0 scrolling=NO  src="http://www.smartlinks.dianomi.com/smartads.epl?id=1752"></iframe>
+                    </div>
+                </div>
+            <hr />
+            		<div id="comments" class="post-meta">
+				<h3 class="underlined">Discuss</h3>
+				
+			
+					
+			<div id="respond" class="well">
+				
+						<div class="row">
+					<div class="col-md-6">
+						<h3 id="reply-title">Be the first to comment on this story!</h3>
+					</div>
+					<div class="col-md-6">
+						<a href="http://www.businessinsider.com.au/liberal-leadership-spill-abbott-turnbull-2015-2#respond" id="cancel-comment-reply-link" class="btn btn-default btn-mini track_action" style="display:none;" rel="nofollow">Cancel Reply</a>
+						<a href="#respond" id="close_comment_login_panel" class="btn btn-default track_action">Member Log In</a>					
+					</div>
+				</div>
+
+				<div id="comment_login_panel" class="row">
+					<div class="col-md-4">
+						<a href="/login/" class="btn btn-primary btn-block track_action drawer-toggle">
+							<i class="icon-user icon-white"></i> Log In
+						</a>
+					</div>
+					<div class="col-md-4">
+						<a href="/join/" class="btn btn-default btn-block track_action drawer-toggle">
+							<i class="icon-plus"></i> Join
+						</a>
+					</div>
+					<div class="col-md-4">
+						<a id="show_comment_guest_panel" class="btn btn-default btn-block track_action">
+							<i class="icon-chevron-down"></i> Guest Comment
+						</a>
+					</div>
+				</div>
+
+			
+				<form id="comment_form" action="http://www.businessinsider.com.au/liberal-leadership-spill-abbott-turnbull-2015-2" method="post" novalidate="novalidate" style="display: none;">
+					
+					<div id="comment_guest_panel" class="comment_text_container clearfix row" >
+						<div class="col-lg-6">
+							<label for="guest_name" class="placeholder">Name</label>
+							<input type="text" id="guest_name" name="guest_name" value="" />
+						</div>
+						<div class="col-lg-6">
+							<label for="guest_email" class="placeholder">Email</label>
+							<input type="text" id="guest_email" name="guest_email" value="" />
+						</div>
+					</div>
+
+					<div class="comment_textarea_container html_editor">
+						<div class="btn-toolbar html_editor_bar" data-target="#comment_content">
+							<div class="btn-group">
+								<a class="btn btn-default btn-xs bold" title="Bold"><i class="icon-bold"></i></a>
+								<a class="btn btn-default btn-xs italic" title="Italic"><i class="icon-italic"></i></a>
+								<a class="btn btn-default btn-xs underline" title="Underline"><i class="icon-underline"></i></a>
+								<a class="btn btn-default btn-xs quote" title="Quote"><i class="icon-comment-alt"></i></a>
+								<a class="btn btn-default btn-xs mention" title="@ Mention User"><i class="icon-bullhorn"></i></a>
+								<a class="btn btn-default btn-xs spoiler" title="Toggle Spoiler Content"><i class="icon-eye-open"></i></a>
+							</div>
+						</div>
+						<label for="comment_content" class="placeholder">Be the first to comment on this story!</label>
+						<textarea id="comment_content" name="comment_content" class="comment_textarea input-xlarge"></textarea>
+					</div>
+					<div id="reply-status" class="pull-left">
+						<div class="alert alert-success no-close">You are starting a new discussion</div>
+					</div>
+					<div class="form-submit pull-right">
+						<input type="submit" id="comment_submit" name="submit_comment" value="Submit" class="btn btn-primary track_action"/>
+						<input type="hidden" id="comment_post_ID" name="comment_post_ID" value="960627">
+						<input type="hidden" id="comment_parent" name="comment_parent" value="0">						<input type="hidden" id="post_comment_wpnonce" name="post_comment_wpnonce" value="ddde9d0692" /><input type="hidden" name="_wp_http_referer" value="/liberal-leadership-spill-abbott-turnbull-2015-2" />						
+												<input type="text" id="author" name="author" value="" tabindex="101" style="display:none;"/>
+						<input type="text" id="email" name="email" value="" tabindex="102" style="display:none;"/>
+						<input type="text" id="url" name="url" value="" tabindex="103" style="display:none;">
+						<textarea name="comment" tabindex="104" style="display:none;"></textarea>
+						<input type="hidden" name="datetime" value="1428095034">
+						<input type="hidden" name="js_data" value="">
+					</div>
+				</form>
+			</div>
+		</div>
+
+	        </div>
+    </div><div id="sidebar" class="col hidden-print">
+        <div id="adspot-300x250-pos1" class="ad-container sidebar top visible-sm visible-md visible-lg">
+        <script>titan.requestAd.push("adspot-300x250-pos1");</script>
+    </div>
+
+    <div id="editorial-aside-2" class="module module editorial-aside"><h3 class="underlined"><a href="http://www.businessinsider.com.au/category/partner-content/">Partner Content</a></h3>                <div class="row primary">
+                    
+                    <div class="col post-image">
+                        <a href="http://www.businessinsider.com.au/be-a-better-director-how-company-leaders-can-drive-growth-v2-2015-3" title="Read more"><span class="crop crop-thumb-primary"><img src="http://edge.alluremedia.com.au/uploads/businessinsider/2013/05/shutterstock_idea_sketch-200x150.jpg" class="size_thumb-primary filetype-jpg" data-size="thumb-primary" onError="this.onerror=null;this.src='http://edge.alluremedia.com.au/uploads/businessinsider/2013/05/shutterstock_idea_sketch.jpg';" /></span></a>
+                    </div>
+                    <div class="col post-description">
+                        <a href="http://www.businessinsider.com.au/be-a-better-director-how-company-leaders-can-drive-growth-v2-2015-3" title="Read more">BE A BETTER DIRECTOR: How company leaders can drive growth</a>
+                    </div>
+                </div>
+                <hr />
+
+                            <div class="row secondary">
+                    
+                    <div class="col post-image">
+                        <a href="http://www.businessinsider.com.au/the-traders-handbook-introducing-the-wide-world-of-markets-2015-3" title="Read more"><span class="crop crop-thumb-secondary"><img src="http://edge.alluremedia.com.au/uploads/businessinsider/2014/05/485903255-120x90.jpg" class="size_thumb-secondary filetype-jpg" data-size="thumb-secondary" onError="this.onerror=null;this.src='http://edge.alluremedia.com.au/uploads/businessinsider/2014/05/485903255.jpg';" /></span></a>
+                    </div>
+                    <div class="col post-description">
+                        <a href="http://www.businessinsider.com.au/the-traders-handbook-introducing-the-wide-world-of-markets-2015-3" title="Read more">THE TRADER'S HANDBOOK: Introducing the wide world of markets</a>
+                    </div>
+                </div>
+                <hr />
+
+                            <div class="row secondary">
+                    
+                    <div class="col post-image">
+                        <a href="http://www.businessinsider.com.au/be-a-better-director-the-legal-obligations-that-can-surprise-business-owners-v2-2015-3" title="Read more"><span class="crop crop-thumb-secondary"><img src="http://edge.alluremedia.com.au/uploads/businessinsider/2015/03/boardroom_-120x90.jpg" class="size_thumb-secondary filetype-jpg" data-size="thumb-secondary" onError="this.onerror=null;this.src='http://edge.alluremedia.com.au/uploads/businessinsider/2015/03/boardroom_.jpg';" /></span></a>
+                    </div>
+                    <div class="col post-description">
+                        <a href="http://www.businessinsider.com.au/be-a-better-director-the-legal-obligations-that-can-surprise-business-owners-v2-2015-3" title="Read more">BE A BETTER DIRECTOR: The legal obligations that can surprise business owners</a>
+                    </div>
+                </div>
+                <hr />
+
+                            <div class="row secondary">
+                    
+                    <div class="col post-image">
+                        <a href="http://www.businessinsider.com.au/the-traders-handbook-2015-3" title="Read more"><span class="crop crop-thumb-secondary"><img src="http://edge.alluremedia.com.au/uploads/businessinsider/2015/03/traders_handbook2-120x90.jpg" class="size_thumb-secondary filetype-jpg" data-size="thumb-secondary" onError="this.onerror=null;this.src='http://edge.alluremedia.com.au/uploads/businessinsider/2015/03/traders_handbook2.jpg';" /></span></a>
+                    </div>
+                    <div class="col post-description">
+                        <a href="http://www.businessinsider.com.au/the-traders-handbook-2015-3" title="Read more">THE TRADER'S HANDBOOK: Your guide to understanding modern markets [Free Download]</a>
+                    </div>
+                </div>
+                <hr />
+
+            </div>
+    <div id="partner-offers" class="module module editorial-aside">
+    <h3 class="underlined">
+        <a href="http://www.winepeople.com.au/1585001" target="_blank">Partner Offers</a>
+    </h3>                
+    <div class="row primary">                 
+        <div class="col post-image">
+            <a href="http://www.winepeople.com.au/1585001" target="_blank" title="Read more">
+                <img src="http://files.alluremedia.com.au/a/campaigns/bi_wine_people.gif" />
+            </a>
+        </div>
+        <div class="col post-description">
+            <a href="http://www.winepeople.com.au/1585001" target="_blank" title="Read more">
+                <strong>WINE CLUB LAUNCH OFFER</strong><br/>Save $107 on 12 rich reds, plus receive 3 FREE double-Gold medal Barossa Shiraz, worth $120, delivered to your door!
+            </a>
+        </div>
+    </div>
+</div>    
+        <div class="connect module">
+        <h3 class="underlined">Business Insider Australia</h3>
+        <div class="contact">
+            <a href="/contact/" class="btn"><i class="icon-envelope"></i>Contact Editor</a>
+            <a href="/tips/" class="btn"><i class="icon-exclamation-sign"></i>Got A Story Tip?</a>
+            <a href="/report/" class="btn"><i class="icon-flag"></i>Report Issue</a>
+        </div>
+        <div class="social">
+            <a href="https://www.facebook.com/BusinessInsiderAustralia" data-analytics-label="Facebook" title="Like Business Insider Australia" rel="nofollow" target="_blank" class="btn social-facebook"><i class="icon-facebook"></i></a>
+            <a href="http://www.twitter.com/BusInsiderAU" data-analytics-label="Twitter" title="Follow Business Insider Australia" rel="nofollow" target="_blank" class="btn social-twitter"><i class="icon-twitter"></i></a>
+            <a href="http://www.linkedin.com/company/business-insider-au" data-analytics-label="Linkedin" title="Follow Business Insider Australia" rel="nofollow" target="_blank" class="btn social-linkedin"><i class="icon-linkedin"></i></a>
+            <a href="http://feeds.businessinsider.com.au/businessinsideraustralia" data-analytics-label="RSS All" title="All stories" rel="nofollow" target="_blank" class="btn social-rss"><i class="icon-rss-sign"></i></a>
+            <a href="http://feeds.businessinsider.com.au/businessinsideraustraliaau" data-analytics-label="RSS Australia" title="Australian stories" rel="nofollow" target="_blank" class="btn social-rss-au"><i class="icon-rss"></i></a>
+        </div>
+    </div>
+                <div class="popular facebook module">
+        <h3 class="underlined">Popular on Facebook</h3>
+                        <div class="row">
+            <div class="col post-image">
+                <a href="http://www.businessinsider.com.au/shave-your-beard-right-now-2015-4" data-analytics-label="Facebook 1" title="Read more"><span class="crop crop-thumb-secondary"><img src="http://static.businessinsider.com/image/551d75556bb3f7ff29c2b3a1-120/image.jpg" class="size_thumb-secondary filetype-jpg" data-size="thumb-secondary" onError="this.onerror=null;this.src='http://static.businessinsider.com/image/551d75556bb3f7ff29c2b3a1/image.jpg';" /></span></a>
+            </div>
+            <div class="col post-description">
+                <a href="http://www.businessinsider.com.au/shave-your-beard-right-now-2015-4" data-analytics-label="Facebook 1" title="Read more">The beard trend is over. It's time to shave.</a>
+            </div>
+        </div>
+        <hr />
+                        <div class="row">
+            <div class="col post-image">
+                <a href="http://www.businessinsider.com.au/rick-rosner-workout-routine-2015-1" data-analytics-label="Facebook 2" title="Read more"><span class="crop crop-thumb-secondary"><img src="http://static.businessinsider.com/image/54bf705bdd0895bc0f8b45cd-120/image.jpg" class="size_thumb-secondary filetype-jpg" data-size="thumb-secondary" onError="this.onerror=null;this.src='http://static.businessinsider.com/image/54bf705bdd0895bc0f8b45cd/image.jpg';" /></span></a>
+            </div>
+            <div class="col post-description">
+                <a href="http://www.businessinsider.com.au/rick-rosner-workout-routine-2015-1" data-analytics-label="Facebook 2" title="Read more">The World's Second-Smartest Man Shares Tips For Tricking Yourself Into Exercising</a>
+            </div>
+        </div>
+        <hr />
+                        <div class="row">
+            <div class="col post-image">
+                <a href="http://www.businessinsider.com.au/fast-and-furious-franchise-almost-went-straight-to-home-video-2015-4" data-analytics-label="Facebook 3" title="Read more"><span class="crop crop-thumb-secondary"><img src="http://static.businessinsider.com/image/551ce1c66da811a760631b98-120/image.jpg" class="size_thumb-secondary filetype-jpg" data-size="thumb-secondary" onError="this.onerror=null;this.src='http://static.businessinsider.com/image/551ce1c66da811a760631b98/image.jpg';" /></span></a>
+            </div>
+            <div class="col post-description">
+                <a href="http://www.businessinsider.com.au/fast-and-furious-franchise-almost-went-straight-to-home-video-2015-4" data-analytics-label="Facebook 3" title="Read more">How Vin Diesel helped save the 'Fast and Furious' franchise from going straight to video</a>
+            </div>
+        </div>
+        <hr />
+                        <div class="row">
+            <div class="col post-image">
+                <a href="http://www.businessinsider.com.au/a-germanwings-pilot-did-something-powerful-to-comfort-anxious-passengers-on-his-flight-2015-4" data-analytics-label="Facebook 4" title="Read more"><span class="crop crop-thumb-secondary"><img src="http://static.businessinsider.com/image/551da43769beddfb0ec2b3a3-120/image.jpg" class="size_thumb-secondary filetype-jpg" data-size="thumb-secondary" onError="this.onerror=null;this.src='http://static.businessinsider.com/image/551da43769beddfb0ec2b3a3/image.jpg';" /></span></a>
+            </div>
+            <div class="col post-description">
+                <a href="http://www.businessinsider.com.au/a-germanwings-pilot-did-something-powerful-to-comfort-anxious-passengers-on-his-flight-2015-4" data-analytics-label="Facebook 4" title="Read more">A Germanwings pilot did something powerful to comfort anxious passengers on his flight</a>
+            </div>
+        </div>
+        <hr />
+            </div>
+    
+            <div class="popular linkedin module">
+        <h3 class="underlined">Popular on LinkedIn</h3>
+                        <div class="row">
+            <div class="col post-image">
+                <a href="http://www.businessinsider.com.au/chris-christie-defends-mike-pence-2015-4" data-analytics-label="LinkedIn 1" title="Read more"><span class="crop crop-thumb-secondary"><img src="http://static.businessinsider.com/image/54fb8ddeeab8ead13fbc098b-120/image.jpg" class="size_thumb-secondary filetype-jpg" data-size="thumb-secondary" onError="this.onerror=null;this.src='http://static.businessinsider.com/image/54fb8ddeeab8ead13fbc098b/image.jpg';" /></span></a>
+            </div>
+            <div class="col post-description">
+                <a href="http://www.businessinsider.com.au/chris-christie-defends-mike-pence-2015-4" data-analytics-label="LinkedIn 1" title="Read more">Chris Christie defends Indiana governor after 'religious freedom' controversy</a>
+            </div>
+        </div>
+        <hr />
+                        <div class="row">
+            <div class="col post-image">
+                <a href="http://www.businessinsider.com.au/how-apple-and-alibaba-could-destroy-the-banks-2015-3" data-analytics-label="LinkedIn 2" title="Read more"><span class="crop crop-thumb-secondary"><img src="http://static.businessinsider.com/image/54e4bd57dd089525268b45d1-120/image.jpg" class="size_thumb-secondary filetype-jpg" data-size="thumb-secondary" onError="this.onerror=null;this.src='http://static.businessinsider.com/image/54e4bd57dd089525268b45d1/image.jpg';" /></span></a>
+            </div>
+            <div class="col post-description">
+                <a href="http://www.businessinsider.com.au/how-apple-and-alibaba-could-destroy-the-banks-2015-3" data-analytics-label="LinkedIn 2" title="Read more">How Apple and Alibaba could destroy the banks</a>
+            </div>
+        </div>
+        <hr />
+                        <div class="row">
+            <div class="col post-image">
+                <a href="http://www.businessinsider.com.au/this-startup-hopes-to-disrupt-australias-750-million-self-storage-market-and-its-already-had-some-crazy-requests-2015-2" data-analytics-label="LinkedIn 3" title="Read more"><span class="crop crop-thumb-secondary"><img src="http://edge.alluremedia.com.au/uploads/businessinsider/2015/02/fotodimatti-0284-120x90.jpg" class="size_thumb-secondary filetype-jpg" data-size="thumb-secondary" onError="this.onerror=null;this.src='http://edge.alluremedia.com.au/uploads/businessinsider/2015/02/fotodimatti-0284.jpg';" /></span></a>
+            </div>
+            <div class="col post-description">
+                <a href="http://www.businessinsider.com.au/this-startup-hopes-to-disrupt-australias-750-million-self-storage-market-and-its-already-had-some-crazy-requests-2015-2" data-analytics-label="LinkedIn 3" title="Read more">This startup hopes to disrupt Australia's $750 million self-storage market and it's already had some crazy requests</a>
+            </div>
+        </div>
+        <hr />
+                        <div class="row">
+            <div class="col post-image">
+                <a href="http://www.businessinsider.com.au/elon-musk-living-off-a-dollar-a-day-startalk-2015-3" data-analytics-label="LinkedIn 4" title="Read more"><span class="crop crop-thumb-secondary"><img src="http://static.businessinsider.com/image/551705a769bedda110343a79-120/image.jpg" class="size_thumb-secondary filetype-jpg" data-size="thumb-secondary" onError="this.onerror=null;this.src='http://static.businessinsider.com/image/551705a769bedda110343a79/image.jpg';" /></span></a>
+            </div>
+            <div class="col post-description">
+                <a href="http://www.businessinsider.com.au/elon-musk-living-off-a-dollar-a-day-startalk-2015-3" data-analytics-label="LinkedIn 4" title="Read more">Elon Musk explains why living off a dollar a day as a teenager convinced him he could do anything he wanted with his life</a>
+            </div>
+        </div>
+        <hr />
+            </div>
+        
+    
+                <div id="video_module" class="module">
+                    <h3 class="underlined">Watch &amp; Learn</h3>
+                    <div class="row">
+                        <div class="col post-image">
+                            <a href="http://www.businessinsider.com.au/game-of-thrones-westeros-economics-2015-4/" data-analytics-label="Video 1" title="Watch more">
+                                <span class="crop crop-thumb-secondary"><img src="http://static.businessinsider.com/image/551ef62d6da8117a305968dd-120/image.jpg" class="size_thumb-secondary filetype-jpg" data-size="thumb-secondary" onError="this.onerror=null;this.src='http://static.businessinsider.com/image/551ef62d6da8117a305968dd/image.jpg';" /></span>
+                            </a>
+                        </div>
+                        <div class="col post-description">
+                            <a href="http://www.businessinsider.com.au/game-of-thrones-westeros-economics-2015-4/" data-analytics-label="Video 1" title="Watch more">
+                                Game of Thrones: Economics of Westeros
+                            </a>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col post-image">
+                            <a href="http://www.businessinsider.com.au/watch-coral-reefs-in-fast-motion-2015-4/" data-analytics-label="Video 2" title="Watch more">
+                                <span class="crop crop-thumb-secondary"><img src="http://static.businessinsider.com/image/551edde5eab8ea8c39a43758-120/image.jpg" class="size_thumb-secondary filetype-jpg" data-size="thumb-secondary" onError="this.onerror=null;this.src='http://static.businessinsider.com/image/551edde5eab8ea8c39a43758/image.jpg';" /></span>
+                            </a>
+                        </div>
+                        <div class="col post-description">
+                            <a href="http://www.businessinsider.com.au/watch-coral-reefs-in-fast-motion-2015-4/" data-analytics-label="Video 2" title="Watch more">
+                                Award-winning video speeds up time to show you coral like never before
+                            </a>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col post-image">
+                            <a href="http://www.businessinsider.com.au/chocolate-kinder-surprise-eggs-toys-2015-4/" data-analytics-label="Video 3" title="Watch more">
+                                <span class="crop crop-thumb-secondary"><img src="http://static.businessinsider.com/image/551ebd106bb3f7ac4ad01305-120/image.jpg" class="size_thumb-secondary filetype-jpg" data-size="thumb-secondary" onError="this.onerror=null;this.src='http://static.businessinsider.com/image/551ebd106bb3f7ac4ad01305/image.jpg';" /></span>
+                            </a>
+                        </div>
+                        <div class="col post-description">
+                            <a href="http://www.businessinsider.com.au/chocolate-kinder-surprise-eggs-toys-2015-4/" data-analytics-label="Video 3" title="Watch more">
+                                We got our hands on 'Kinder Surprise Eggs'  --  the global cult favourite that's still illegal in the US
+                            </a>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col post-image">
+                            <a href="http://www.businessinsider.com.au/man-lost-at-sea-66-days-rescued-us-coast-guard-2015-4/" data-analytics-label="Video 4" title="Watch more">
+                                <span class="crop crop-thumb-secondary"><img src="http://static.businessinsider.com/image/551ebe046da8114d105968d9-120/image.jpg" class="size_thumb-secondary filetype-jpg" data-size="thumb-secondary" onError="this.onerror=null;this.src='http://static.businessinsider.com/image/551ebe046da8114d105968d9/image.jpg';" /></span>
+                            </a>
+                        </div>
+                        <div class="col post-description">
+                            <a href="http://www.businessinsider.com.au/man-lost-at-sea-66-days-rescued-us-coast-guard-2015-4/" data-analytics-label="Video 4" title="Watch more">
+                                Watch the incredible rescue at sea of a man who was missing for 66 days
+                            </a>
+                        </div>
+                    </div>
+                    <hr />
+                </div>
+    <div id="money" class="money module">
+    <h3 class="underlined">Your Money</h3>
+    <table class="table">
+        <tbody>
+                    <tr>
+                <td>S&amp;P 500</td>
+                <td>2,067</td>
+                <td class="change-positive">+7.27</td>
+                <td class="change-positive">(+0.353%)</td>
+            </tr>
+                    <tr>
+                <td>Nikkei 225</td>
+                <td>19,435</td>
+                <td class="change-positive">+122.29</td>
+                <td class="change-positive">(+0.633%)</td>
+            </tr>
+                    <tr>
+                <td>S&amp;P/ASX 200</td>
+                <td>5,899</td>
+                <td class="change-positive">+37.80</td>
+                <td class="change-positive">(+0.645%)</td>
+            </tr>
+                </tbody>
+    </table>
+</div>
+
+     
+    <div id="follow_wrap" class="visible-sm visible-md visible-lg">
+    <div id="follow">
+        <div id="adspot-300x600-pos2" class="ad-container sidebar bottom">
+            <script>titan.requestAd.push("adspot-300x600-pos2");</script>
+        </div>
+    </div>
+</div></div>
+</div>                </div>
+                	<div class="row visible-sm visible-md visible-lg">
+	    <div id="adspot-728x90-pos2" class="ad-container main bottom hidden-print">
+	        <script>titan.requestAd.push("adspot-728x90-pos2");</script>
+	    </div>
+    </div>
+                <div id="adspot-interstitial" class="ad-container">
+    <script>titan.requestAd.push("adspot-interstitial");</script>
+</div>            </div>        </div>
+        <div id="footer" class="hidden-print">
+                        <div id="footer-network" class="hidden-xs">
+                <div class="container">
+                    <h4>Popular</h4>
+                    <div class="row">
+                        <div class="col-md-3 col-custom">
+<a href="http://www.businessinsider.com.au" class="logo logo-businessinsider""><img src="http://edge.alluremedia.com.au/assets/img/shared/logo_businessinsider.png"></a>
+
+                                        <a href="http://www.businessinsider.com.au/what-will-the-lhc-finds-when-it-turns-back-on-2015-4/" class="primary-story">
+                                            <span class="footer-row footer-image col-xs-3 col-md-12"><img src="http://static.businessinsider.com/image/551edcaf6da8116d315968d9-400/image.jpg" /></span>
+                                            <span class="footer-row footer-title col-xs-9 col-md-12" title="The LHC is being resurrected this weekend  --  here's how it could change physics forever" itemprop="headline"><p>The LHC is being resurrected this weekend  --  here's how it could change physics forever</p></span>
+                                        </a>
+                                        <a href="http://www.businessinsider.com.au/game-of-thrones-westeros-economics-2015-4/" class="secondary-story">
+                                            <span class="footer-row footer-image col-xs-3 col-md-3 hidden-sm hidden-xs"><img src="http://static.businessinsider.com/image/551ef62d6da8117a305968dd-200/image.jpg" /></span>
+                                            <span class="footer-row footer-title col-xs-9 col-md-9 hidden-sm hidden-xs" title="Game of Thrones: Economics of Westeros" itemprop="headline"><p>Game of Thrones: Economics of Westeros</p></span>
+                                        </a>
+                                        <a href="http://www.businessinsider.com.au/why-a-chef-loves-mcdonalds-2015-4/" class="secondary-story">
+                                            <span class="footer-row footer-image col-xs-3 col-md-3 hidden-sm hidden-xs"><img src="http://static.businessinsider.com/image/551ed2226bb3f7791ed0130a-200/image.jpg" /></span>
+                                            <span class="footer-row footer-title col-xs-9 col-md-9 hidden-sm hidden-xs" title="Professional chef reveals 4 reasons she loves eating at McDonald's" itemprop="headline"><p>Professional chef reveals 4 reasons she loves eating at McDonald's</p></span>
+                                        </a>
+                                        <a href="http://www.businessinsider.com.au/bill-gates-microsoft-40th-anniversary-letter-2015-4/" class="secondary-story">
+                                            <span class="footer-row footer-image col-xs-3 col-md-3 hidden-sm hidden-xs"><img src="http://static.businessinsider.com/image/4c3667577f8b9a8d39f00500-200/image.jpg" /></span>
+                                            <span class="footer-row footer-title col-xs-9 col-md-9 hidden-sm hidden-xs" title="Here's the letter Bill Gates sent Microsoft employees for its 40th anniversary" itemprop="headline"><p>Here's the letter Bill Gates sent Microsoft employees for its 40th anniversary</p></span>
+                                        </a>
+                        </div><div class="col-md-3 col-custom">
+<a href="http://www.gizmodo.com.au" class="logo logo-gizmodo""><img src="http://edge.alluremedia.com.au/assets/img/shared/logo_gizmodo.png"></a>
+
+                                        <a href="http://www.gizmodo.com.au/2015/04/what-its-like-to-work-for-putins-internet-troll-army/" class="primary-story">
+                                            <span class="footer-row footer-image col-xs-3 col-md-12"><img src="http://i.kinja-img.com/gawker-media/image/upload/t_ku-large/wd5vtkajceja92zcddsy.jpg" /></span>
+                                            <span class="footer-row footer-title col-xs-9 col-md-12" title="What It's Like To Work For Putin's Internet Troll Army " itemprop="headline"><p>What It's Like To Work For Putin's Internet Troll Army </p></span>
+                                        </a>
+                                        <a href="http://www.gizmodo.com.au/2015/04/fitmodo-these-are-the-most-time-efficient-fat-burning-exercises/" class="secondary-story">
+                                            <span class="footer-row footer-image col-xs-3 col-md-3 hidden-sm hidden-xs"><img src="http://edge.alluremedia.com.au/m/g/2015/03/Fitness-running-208x116.jpg" /></span>
+                                            <span class="footer-row footer-title col-xs-9 col-md-9 hidden-sm hidden-xs" title="Fitmodo: These Are The Most Time-Efficient Fat-Burning Exercises" itemprop="headline"><p>Fitmodo: These Are The Most Time-Efficient Fat-Burning Exercises</p></span>
+                                        </a>
+                                        <a href="http://www.gizmodo.com.au/2015/04/the-real-science-behind-the-crazy-night-vision-eyedrops/" class="secondary-story">
+                                            <span class="footer-row footer-image col-xs-3 col-md-3 hidden-sm hidden-xs"><img src="http://i.kinja-img.com/gawker-media/image/upload/t_k-small/rj8rbr8o93ejkzoksdta.jpg" /></span>
+                                            <span class="footer-row footer-title col-xs-9 col-md-9 hidden-sm hidden-xs" title="The Real Science Behind The Crazy Night Vision Eyedrops  " itemprop="headline"><p>The Real Science Behind The Crazy Night Vision Eyedrops  </p></span>
+                                        </a>
+                                        <a href="http://www.gizmodo.com.au/2015/04/hands-on-remote-control-a-paper-plane-with-powerup-3-0/" class="secondary-story">
+                                            <span class="footer-row footer-image col-xs-3 col-md-3 hidden-sm hidden-xs"><img src="http://edge.alluremedia.com.au/m/g/2015/03/PowerUp-3.0-7201-208x116.jpg" /></span>
+                                            <span class="footer-row footer-title col-xs-9 col-md-9 hidden-sm hidden-xs" title="Hands On: Remote Control A Paper Plane With PowerUp 3.0" itemprop="headline"><p>Hands On: Remote Control A Paper Plane With PowerUp 3.0</p></span>
+                                        </a>
+                        </div><div class="col-md-3 col-custom">
+<a href="http://www.kotaku.com.au" class="logo logo-kotaku""><img src="http://edge.alluremedia.com.au/assets/img/shared/logo_kotaku.png"></a>
+
+                                        <a href="http://www.kotaku.com.au/2015/04/onlive-the-first-big-streaming-games-service-is-dead/" class="primary-story">
+                                            <span class="footer-row footer-image col-xs-3 col-md-12"><img src="http://i.kinja-img.com/gawker-media/image/upload/t_ku-large/yc8uee5xpofhddbrn7qp.jpg" /></span>
+                                            <span class="footer-row footer-title col-xs-9 col-md-12" title="OnLive, The First Big Streaming Games Service, Is Dead" itemprop="headline"><p>OnLive, The First Big Streaming Games Service, Is Dead</p></span>
+                                        </a>
+                                        <a href="http://www.kotaku.com.au/2015/04/new-pillars-of-eternity-patch-fixes-game-breaking-bugs/" class="secondary-story">
+                                            <span class="footer-row footer-image col-xs-3 col-md-3 hidden-sm hidden-xs"><img src="http://i.kinja-img.com/gawker-media/image/upload/t_k-small/hitxf5xbh7kp972i1ccm.jpg" /></span>
+                                            <span class="footer-row footer-title col-xs-9 col-md-9 hidden-sm hidden-xs" title="New Pillars Of Eternity Patch Fixes Game-Breaking Bugs" itemprop="headline"><p>New Pillars Of Eternity Patch Fixes Game-Breaking Bugs</p></span>
+                                        </a>
+                                        <a href="http://www.kotaku.com.au/2015/04/japanese-game-exec-has-disappeared-nobody-can-find-him/" class="secondary-story">
+                                            <span class="footer-row footer-image col-xs-3 col-md-3 hidden-sm hidden-xs"><img src="http://i.kinja-img.com/gawker-media/image/upload/t_k-small/srw9wt5jn3zixrotnzn1.jpg" /></span>
+                                            <span class="footer-row footer-title col-xs-9 col-md-9 hidden-sm hidden-xs" title="Japanese Game Exec Has Disappeared, Nobody Can Find Him" itemprop="headline"><p>Japanese Game Exec Has Disappeared, Nobody Can Find Him</p></span>
+                                        </a>
+                                        <a href="http://www.kotaku.com.au/2015/04/here-is-a-thing-that-happens-inbloodborne/" class="secondary-story">
+                                            <span class="footer-row footer-image col-xs-3 col-md-3 hidden-sm hidden-xs"><img src="http://i.kinja-img.com/gawker-media/image/upload/t_k-small/jxtu3ui18lru8imnlbcx.png" /></span>
+                                            <span class="footer-row footer-title col-xs-9 col-md-9 hidden-sm hidden-xs" title="Here Is A Thing That Happens In Bloodborne" itemprop="headline"><p>Here Is A Thing That Happens In Bloodborne</p></span>
+                                        </a>
+                        </div><div class="col-md-3 col-custom">
+<a href="http://www.lifehacker.com.au" class="logo logo-lifehacker""><img src="http://edge.alluremedia.com.au/assets/img/shared/logo_lifehacker.png"></a>
+
+                                        <a href="http://www.lifehacker.com.au/2015/04/the-simplest-way-to-orgasm-if-penetration-isnt-enough-for-you/" class="primary-story">
+                                            <span class="footer-row footer-image col-xs-3 col-md-12"><img src="http://i.kinja-img.com/gawker-media/image/upload/t_ku-large/dhtpmisgjqiml6zzzjw3.jpg" /></span>
+                                            <span class="footer-row footer-title col-xs-9 col-md-12" title="The Simplest Way To Orgasm If Penetration Isn't Enough For You" itemprop="headline"><p>The Simplest Way To Orgasm If Penetration Isn't Enough For You</p></span>
+                                        </a>
+                                        <a href="http://www.lifehacker.com.au/2015/04/why-bias-lighting-increases-your-tvs-contrast-and-saves-your-eyes/" class="secondary-story">
+                                            <span class="footer-row footer-image col-xs-3 col-md-3 hidden-sm hidden-xs"><img src="http://i.kinja-img.com/gawker-media/image/upload/t_k-small/bwund4guyegwnnnbbmyu.jpg" /></span>
+                                            <span class="footer-row footer-title col-xs-9 col-md-9 hidden-sm hidden-xs" title="Why Bias Lighting Increases Your TV's Contrast And Saves Your Eyes" itemprop="headline"><p>Why Bias Lighting Increases Your TV's Contrast And Saves Your Eyes</p></span>
+                                        </a>
+                                        <a href="http://www.lifehacker.com.au/2015/04/why-paracetamol-for-back-pain-can-be-bad-for-you/" class="secondary-story">
+                                            <span class="footer-row footer-image col-xs-3 col-md-3 hidden-sm hidden-xs"><img src="http://edge.alluremedia.com.au/m/l/2015/04/BackPain-208x116.jpg" /></span>
+                                            <span class="footer-row footer-title col-xs-9 col-md-9 hidden-sm hidden-xs" title="Why Paracetamol For Back Pain Can Be Bad For You" itemprop="headline"><p>Why Paracetamol For Back Pain Can Be Bad For You</p></span>
+                                        </a>
+                                        <a href="http://www.lifehacker.com.au/2015/04/create-a-simple-door-stop-with-a-tennis-ball/" class="secondary-story">
+                                            <span class="footer-row footer-image col-xs-3 col-md-3 hidden-sm hidden-xs"><img src="http://img.youtube.com/vi/Cgj-gtEj8fU/0.jpg" /></span>
+                                            <span class="footer-row footer-title col-xs-9 col-md-9 hidden-sm hidden-xs" title="Create A Simple Door Stop With A Tennis Ball" itemprop="headline"><p>Create A Simple Door Stop With A Tennis Ball</p></span>
+                                        </a>
+                        </div><div class="col-md-3 col-custom">
+<a href="http://www.popsugar.com.au" class="logo logo-popsugar""><img src="http://edge.alluremedia.com.au/assets/img/shared/logo_popsugar.png"></a>
+
+                                        <a href="http://www.popsugar.com/celebrity/Why-Blake-Lively-Ryan-Reynolds-Great-Parents-35880722" class="primary-story">
+                                            <span class="footer-row footer-image col-xs-3 col-md-12"><img src="http://media.onsugar.com/files/2014/10/06/863/n/1922398/99c4b741fdb1314c_thumb_temp_front_page_image_file20701441412620633.xxlarge.jpg" /></span>
+                                            <span class="footer-row footer-title col-xs-9 col-md-12" title="14 Reasons Blake Lively and Ryan Reynolds Are Probably the Best Parents" itemprop="headline"><p>14 Reasons Blake Lively and Ryan Reynolds Are Probably the Best Parents</p></span>
+                                        </a>
+                                        <a href="http://www.popsugar.com/fitness/Uptown-Funk-Treadmill-Guy-Ellen-37206409" class="secondary-story">
+                                            <span class="footer-row footer-image col-xs-3 col-md-3 hidden-sm hidden-xs"><img src="http://media.onsugar.com/files/2015/04/02/054/n/1922398/07f26212_edit_img_front_page_image_file_16119370_1428019189_treGkzNPY.larger.jpg" /></span>
+                                            <span class="footer-row footer-title col-xs-9 col-md-9 hidden-sm hidden-xs" title="Watch the "Uptown Funk" Treadmill Guy Perform Live on Ellen" itemprop="headline"><p>Watch the "Uptown Funk" Treadmill Guy Perform Live on Ellen</p></span>
+                                        </a>
+                                        <a href="http://www.popsugar.com/fitness/Bikini-Workout-From-Kayla-Itsines-37168432" class="secondary-story">
+                                            <span class="footer-row footer-image col-xs-3 col-md-3 hidden-sm hidden-xs"><img src="http://media.onsugar.com/files/2015/03/27/883/n/1922398/ea5dcfbb_edit_img_front_page_image_file_1090627_1427486231_THUMN8L9vI.larger.jpg" /></span>
+                                            <span class="footer-row footer-title col-xs-9 col-md-9 hidden-sm hidden-xs" title="Kayla Itsines Is Here to Help You Shape Up For Summer" itemprop="headline"><p>Kayla Itsines Is Here to Help You Shape Up For Summer</p></span>
+                                        </a>
+                                        <a href="http://www.popsugar.com/celebrity/Calvin-Harris-Through-Years-Pictures-37210918" class="secondary-story">
+                                            <span class="footer-row footer-image col-xs-3 col-md-3 hidden-sm hidden-xs"><img src="http://media.onsugar.com/files/2015/04/03/872/n/1922398/58ffff4c_edit_img_front_page_image_file_2070144_1428089556_CalvW00EBI.larger.jpg" /></span>
+                                            <span class="footer-row footer-title col-xs-9 col-md-9 hidden-sm hidden-xs" title="Calvin Harris Has Made Quite a Staggering Transformation Over the Years" itemprop="headline"><p>Calvin Harris Has Made Quite a Staggering Transformation Over the Years</p></span>
+                                        </a>
+                        </div>                    </div>
+                </div>
+            </div>
+                        <div id="footer-links">
+                <div class="container">
+                    <ul class="pull-left">
+                        <li class="copyright visible-md visible-lg">&copy; 2007-2015 <a href="http://www.alluremedia.com.au" target="_blank">Allure Media</a></li>
+                        <li class="hidden-xs"><a class="btn btn-default-dark btn-sm" href="https://intelligence.businessinsider.com/welcome?utm_source=BIIAU&amp;utm_medium=partner&amp;utm_term=AU1&amp;utm_content=link&amp;utm_campaign=BIIAU">BI Intelligence</a></li>
+                    </ul>
+                    <ul class="pull-right">
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="http://www.alluremedia.com.au/#site-businessinsider" target="_blank">Advertise</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="http://www.alluremedia.com.au/terms/"><span class="visible-xs">Terms</span><span class="hidden-xs">Terms of Use</span></a></li>
+                        <li><a href="#" data-toggle="modal" data-modal-id="display_international"><span class="visible-xs">International</span><span class="hidden-xs">Business Insider International</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div></div><!-- Start wp_footer() -->
+<!-- End wp_footer() -->
+<script src="//secure-au.imrworldwide.com/v60.js?ver=3.4.2"></script>
+<noscript><img src="//secure-au.imrworldwide.com/cgi-bin/m?ci=alluremedia&amp;cg=0&amp;cc=1&amp;ts=noscript" width="1" height="1" alt="" /></noscript>
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+<!-- Begin comScore Tag -->
+<script>
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "13194393" });
+  (function() {
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+    el.parentNode.insertBefore(s, el);
+  })();
+</script>
+<noscript>
+  <img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=13194393&amp;cv=2.0&amp;cj=1" />
+</noscript>
+<!-- End comScore Tag -->
+
+<!-- True Anthem -->
+<script>
+    (function (w, d) {
+        var s1 = d.getElementsByTagName('script')[0],
+            s = d.createElement('script'),
+            cid = '336';
+        s.src = '//tru.am/scripts/ta-pagesocial-sdk.js';
+        if (s.addEventListener) {
+            s.addEventListener('load', function () {
+                w.TRUE_ANTHEM.configure(cid);
+            }, false);
+        } else {
+            s.onreadystatechange = function () {
+                if (s.readyState in {loaded: 1, complete: 1}) {
+                    s.onreadystatechange = null;
+                    w.TRUE_ANTHEM.configure(cid);
+                }
+            };
+        }
+        s1.parentNode.insertBefore(s, s1);
+    }(window, document));
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"e4551af029","applicationID":"3916464","transactionName":"ZFEGYhRZWRBVW0EKV10bJVUSUVgNG0tcDV9fUQ==","queueTime":0,"applicationTime":517,"atts":"SBYFFFxDSh4=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-632.min.js"}</script></body>
+</html>

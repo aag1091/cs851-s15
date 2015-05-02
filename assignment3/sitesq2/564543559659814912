@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="google-site-verification" content="-1mIzMWaXu8atZAmI-HVKLuEKwRIpKMrhoICmuDFZcE" />
+
+<meta name="Content-Type" content="UTF-8">
+<meta name="Content-Language" content="en-us">
+<meta name="Description" content="Encrypt words to MD5 hashes, decrypt MD5 hashes to words, API to decrypt">
+<meta name="Keywords" content="MD5 database hash word words hashes message digest 5 encrypt decrypt sum md5sum reverse md5 api hack md5 hash checksum generator cracker md5sum windows checker encryption md5summer file decryption crack online free API api md5-api md5 reverse API api">
+<meta name="Author" content="Thibaud FRICHET">
+<meta name="Identifier-Url" content="http://md5db.net">
+<meta name="Revisit-After" content="5 days">
+<meta name="Robots" content="all">
+<meta name="Rating" content="general">
+<meta name="Distribution" content="global">
+<meta name="Category" content="internet">
+<meta name="DC.Title" content="MD5DB | The MD5 Database">
+<meta name="DC.Content-Type" content="UTF-8">
+<meta name="DC.Content-Language" content="en-us">
+<meta name="DC.Description" content="Encrypt words to MD5 hashes, decrypt MD5 hashes to words, API to decrypt">
+<meta name="DC.Keywords" content="MD5 database hash word words hashes message digest 5 encrypt decrypt sum md5sum reverse md5 api hack md5 hash checksum generator cracker md5sum windows checker encryption md5summer file decryption crack online free API api md5-api md5 reverse API api">
+<meta name="DC.Author" content="Thibaud FRICHET">
+<meta name="DC.Identifier-Url" content="http://md5db.net">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MD5DB | The MD5 Database</title>
+<link href="http://md5db.net/scripts/bootstrap.min.css" rel="stylesheet">
+<link href="http://md5db.net/scripts/design.css" rel="stylesheet">
+<link href="http://md5db.net/scripts/datepicker.css" rel="stylesheet">
+<link href="http://md5db.net/scripts/datepicker3.css" rel="stylesheet">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="icon" href="favicon.ico" />
+<script src="http://md5db.net/scripts/jquery-2.1.0.min.js"></script>
+<script src="http://md5db.net/scripts/bootstrap.min.js"></script>
+<script src="http://md5db.net/scripts/javascript.js"></script>
+<script src="http://md5db.net/scripts/jquery.dataTables.min.js"></script>
+<script src="http://md5db.net/scripts/jquery-DT-pagination.js"></script>
+<script src="http://md5db.net/scripts/bootstrap-datepicker.js"></script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-48321575-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>	<script type="text/javascript">
+    $(document).ready(init);
+
+    function init()
+    {
+		$('#words').focus();
+		
+		setTimeout(function(){ $("#donate_modal").modal(); }, 5000);
+    }
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse navbar_elem nav-justified" role="navigation">
+<div class="container navbar_elem">
+	<div class="navbar-header navbar_elem">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		<a class="navbar-brand navbar_elem" href="http://md5db.net" title='MD5DB | The MD5 Database'><img src='http://md5db.net/logo.png' style='width:25px;margin-right:5px;' />MD5DB<span class='mobile_hide'> | The MD5 Database</span></a>
+	</div>
+	<div class="collapse navbar-collapse navbar_elem" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-nav">
+
+			
+
+			
+			
+			<li class="navbar_elem ">
+				<a href="http://md5db.net/decrypt" title="Decrypt hashes">
+					<img src="http://md5db.net/decrypt.png" />
+					Decrypt hashes
+				</a>
+			</li>
+			
+			<li class="navbar_elem ">
+				<a href="http://md5db.net/encrypt" title="Encrypt words">
+					<img src="http://md5db.net/encrypt.png" />
+					Encrypt words
+				</a>
+			</li>
+			
+			<li class="navbar_elem ">
+				<a href="http://md5db.net/explore" title="Hashes explorer">
+					<img src="http://md5db.net/explore.png" />
+					Hashes explorer
+				</a>
+			</li>
+			
+			<li class="navbar_elem ">
+				<a href="http://md5db.net/top" title="Top 1000">
+					<img src="http://md5db.net/top.png" />
+					Top 1000
+				</a>
+			</li>
+			
+			<li class="navbar_elem ">
+				<a href="http://md5db.net/stats" title="API">
+				<img src="http://md5db.net/stats.png" />
+					Statistics
+				</a>
+			</li>
+			
+			<li class="navbar_elem ">
+				<a href="http://md5db.net/api" title="API">
+				<img src="http://md5db.net/api.png" />
+					API
+				</a>
+			</li>
+			
+		</ul>
+		
+		<p class="navbar-text navbar-right navbar_elem" style='margin-top:10px;margin-bottom:10px;'>
+			<a href='https://twitter.com/MD5DBNET' title='MD5DB | MD5 DATABASE (@MD5DBNET) | Twitter' class='navbar_elem'><img src='http://md5db.net/twitter.png' alt="MD5DB | MD5 DATABASE (@MD5DBNET) | Twitter" /></a>
+		</p>
+	</div>
+</div>
+</nav>
+
+<div id='contenant_corps'>
+	<div id='pub_left'>
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- md5db_left -->
+		<ins class="adsbygoogle"
+			 style="display:inline-block;width:160px;height:600px"
+			 data-ad-client="ca-pub-7350300485893487"
+			 data-ad-slot="8280108450"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
+	
+	<div id='pub_right'>
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- md5db_right -->
+		<ins class="adsbygoogle"
+			 style="display:inline-block;width:160px;height:600px"
+			 data-ad-client="ca-pub-7350300485893487"
+			 data-ad-slot="2233574850"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
+	
+	<center><div id='pub_mobile_haut'>
+		<script type="text/javascript">
+			google_ad_client = "ca-pub-7350300485893487";
+			google_ad_slot = "1051630059";
+			google_ad_width = 300;
+			google_ad_height = 250;
+		</script>
+		<!-- md5db_mobile_haut -->
+		<script type="text/javascript"
+		src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
+	</div></center>
+<div class='well well-small' id='corps'>
+
+	<center><div id='pub_view'>
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- md5db_view -->
+	<ins class="adsbygoogle"
+		 style="display:inline-block;width:728px;height:90px"
+		 data-ad-client="ca-pub-7350300485893487"
+		 data-ad-slot="3931044456"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	</div></center>
+
+	<h1>View a hash</h1>
+	
+	<table class='table table-striped table-condensed table-hover table-responsive'>
+	<thead>
+	<tr>
+	<th style='width:50%;'>Hash</th>
+	<th>Word</th>
+	</tr>
+	</thead>
+	
+	<tr>
+		<td>12ce5c05e842b30fb699b9d514cd990c</td>
+		<td>
+		Pponrd-		</td>
+	</tr>
+	</table>
+	
+	<b>You can use our <a href='http://md5db.net/api' title='MD5 API'>API</a> :</b> <a href='http://md5db.net/api/12ce5c05e842b30fb699b9d514cd990c' title='MD5DB API'>http://md5db.net/api/12ce5c05e842b30fb699b9d514cd990c</a>
+	
+	
+</div>
+</div>
+
+
+
+
+
+
+<center><div id='pub_mobile_bas'>
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- md5db_mobile_bas -->
+			<ins class="adsbygoogle"
+				 style="display:inline-block;width:320px;height:100px"
+				 data-ad-client="ca-pub-7350300485893487"
+				 data-ad-slot="2947165657"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+	</div></center>
+
+
+<div id='footer'>
+<a href='http://picsdb.net' title='picsDB.net | Free Image Hosting'>picsDB.net | Free Image Hosting</a> - 
+<a href='http://md5db.net' title='MD5DB.net | The MD5 Database'>MD5DB | The MD5 Database with <b>633,291,363</b> unique hashes</a> - 
+By <a href="http://www.tfrichet.fr" title="Thibaud FRICHET">Thibaud FRICHET</a>
+</div><div class="modal fade" id='donate_modal'>
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">This website helps you !?</h4>
+      </div>
+      <div class="modal-body">
+        <p>So, You can help me with a donation !</p>
+		<br />
+		<center>
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+		<input type="hidden" name="cmd" value="_s-xclick">
+		<input type="hidden" name="hosted_button_id" value="HVAJWV3FSLQ9S">
+		<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+		<img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+		</form>
+		</center>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">No, I don't want to donate !</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

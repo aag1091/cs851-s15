@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="icon" href="/favicon.ico" />
+		<title>GamesLiveTV - Reason Squad- KayzR</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="/js/jquery.mousewheel.js"></script>
+		<script src="/js/mwheelIntent.js"></script>
+		<script src="/js/jquery.jscrollpane.min.js"></script>
+		<script src="/js/qtip/jquery.qtip.min.js"></script>
+		<meta property="og:image" content="http://gamerslivetv.shark-config.net/logo.png" />
+		<meta property="og:description" content="GamesLiveTV est une organisation qui fut crée en octobre 2013, dans le but de fournir une plateforme de Stream ouverte à tous, afin que vous puissiez vous épanouir en tant que streamer." />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="GamesLiveTV" />
+		<meta property="og:site_name" content="GamesLiveTV" />
+		<link href="/css/reset.css" media="screen" rel="stylesheet" type="text/css" >
+<link href="/css/style.css" media="screen" rel="stylesheet" type="text/css" >
+<link href="/css/jquery.jscrollpane.css" media="screen" rel="stylesheet" type="text/css" >
+<link href="/js/qtip/jquery.qtip.min.css" media="screen" rel="stylesheet" type="text/css" >	</head>
+		<body>
+			<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<script type="text/javascript">
+			window.___gcfg = {lang: 'fr'};
+			(function() {
+			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			po.src = 'https://apis.google.com/js/platform.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+			})();
+		</script>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		<script type="text/javascript">
+		$(function(){
+			$('[data-tooltip!=""]').qtip({
+				content: {
+					attr: 'data-tooltip'
+				},
+				position: {
+					my: 'top center',
+					at: 'bottom center',
+					target: false,
+					adjust: {
+						y: 5
+					}
+				},
+				style: { 
+					classes: 'qtip-dark'
+				}
+			});
+		});
+		</script>
+        <div id="top_wrapper">
+        	<div class="top_wrapper_content">
+            	<div style="float:left">
+                    <p class="top_wrapper_content_p"><img class="top_wrapper_content_img" src="/img/wrapper/mail.png">
+                    <a href="mailto:GLTV@live.fr" target="_blank">GLTV@live.fr</a></p>
+                    <p class="top_wrapper_content_p"><img class="top_wrapper_content_img" src="/img/wrapper/twitter.png">
+                    <a href="https://www.twitter.com/GamesLiveTV" target="_blank">@GamesLiveTV</a></p>
+                    <p class="top_wrapper_content_p"><img class="top_wrapper_content_img" src="/img/wrapper/daily.png">
+                    <a href="http://www.dailymotion.com/aerox31" target="_blank">GamesLiveTV</a></p>
+                    <p class="top_wrapper_content_p"><img class="top_wrapper_content_img" src="/img/wrapper/help.png">
+                    <a href="http://gameslivetv.com/faq.html" target="_blank">AIDE</a></p>
+                </div>
+                
+                	<div style="float:right;margin-top:5px;">
+						<a href="/auth/login.html">SE CONNECTER</a> |
+						<div class="signin">
+							<div class="tri"><div class="triangle"></div></div>
+							<form method="post" action="/auth/login.html">
+								<label>Pseudo</label><input type="text" name="pseudo" />
+								<label>Mot de passe</label><input type="password" name="password" />
+								<input type="submit" class="submit" value="OK"> <a class="pass" href="/auth/password.html">MOT DE PASSE OUBLIÉ ?</a>
+							</form>
+						</div>
+						<a href="/auth/register.html">S'INSCRIRE</a></div>                </div>
+			</div>
+		</div>
+		<div id="wrapper">
+			                <div class="navigation" style="border-bottom: 1px solid #e0e0e0;border-left: 1px solid #e0e0e0;border-radius: 0 0 5px 5px;border-right: 1px solid #e0e0e0;">
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/">Accueil</a>
+                            </li>
+                            <li><a href="/lives-1.html">PC</a></li>
+                            <li><a href="/lives-2.html">XBox</a></li>
+                            <li><a href="/lives-3.html">Playstation</a></li>
+                            <li><a href="/games.html">Jeux</a></li>
+                        </ul>
+                    </nav>
+                    <div class="search">
+                        <form method="GET" action="/search.html">
+                            <img src="/img/wrapper/search2.png" alt="search" />
+                            <input type="text" name="q" id="q" value="" placeholder="Recherche ..." />
+                            <img src="/img/wrapper/search.png" style="top:5px;" alt="search" />
+                        </form>
+                    </div>
+                </div>
+				            
+            
+			<div class="clear"></div>
+			<section>
+				<script type="text/javascript" src="/js/advertisement.js"></script>
+
+<div id="contentTournoisBarre" style="margin-top:-20px;">
+	<div class="style2"><img style="width:1100px;height:235px;" src="/img/banners/597.png" /></div>	<div class="style2 live_details live_cadre">
+		<div style="float:right;margin-top:0;margin-right:10px">
+			 <a target="_blank" href="https://twitter.com/KayzR__"><img style="width:35px;" src="/img/bar/twttr.png" alt="Twitter" /></a>		</div>
+		<div style="color:#000;font-weight:bold;font-size:16px;margin-left:15px;width:700px;float:left;">
+			<span class="l_pseudo">Reason Squad- KayzR</span>
+			<p>En live sur <span class="l_platform">XBOX</span></p>
+			<p>Joue à <span class="l_game">Call of Duty</span></p>
+					</div>
+	</div>
+</div>
+<div class="clear"></div>
+<div id="liveODC">
+	<div id="left">
+		
+		<style>
+		#tester {
+			display:none;
+		}
+		
+		#ABPlus{
+			display:none;   
+		}
+		
+		#left #ABPlus {
+			position: absolute;
+			display: none;
+			height: 447px;
+			width: 714px;
+		}
+		
+		#ABPlus div { position: absolute; z-index: 420; padding-left: 10px; padding-right: 10px; margin-top: -227px; text-align: center;}
+		#ABPlus p { display:inherit; font-weight: bold; font-size: 24px; }
+		#ABPlus img {
+			z-index: 419;
+		}
+		</style>
+		
+		<div id="ABPlus">
+			<img style="display:block !important;" src="http://gameslivetv.com/img/adblock.png" width="714" height="447" />
+			<div style="display:block !important;" >
+				<p>Nous avons détecté un bloqueur de publicitées</p><br />
+				<p>Pour contribuer a l'épanouissement de GamesLiveTV veuillez le désactiver</p><br />
+				<p>Nous vous en remercions</p><br />
+				<br />
+				<p>Cliquez sur le <a href="#" class="btn btn-default" data-toggle="modal" data-target="#mAdblock">Bouton</a> pour savoir comment faire</p>
+			</div>
+		</div>
+		
+					<iframe style="display:block !important;" frameborder="0" width="714" height="447" src="http://www.dailymotion.com/embed/video/x29jdw7?autoplay=1&syndication=173537" allowfullscreen></iframe>
+				
+				
+		
+		
+	</div>
+	<div id="right">
+			<div class="tchat">
+			<div class="menu">
+				<a href="#" class="m_description">Description</a>
+				<a href="#" class="m_chat active">Live Chat</a>
+					<a href="#" class="m_users">Utilisateurs</a>			</div>
+						<div class="clear"></div>
+			<div class="allchat c_chat">
+				<div id="chatContainer">
+						<div id="chatLineHolder" class="chat"></div>
+						<div id="chatBottomBar">
+							<div class="tip"></div><form>
+										<input type="text" value="Vous devez être connecté" id="chatText" disabled>
+										<input type="reset" data-tooltip="Se connecter" onclick="self.location.href='/auth/login.html'" value="OK">
+									</form></div>
+					</div>				<script type="text/javascript">
+					$(function(){
+						
+						chat.init(0, '597');
+						chat.manualLogin('597', '0', '');
+											});
+				</script>
+			</div>
+			<div class="chat description c_description"><p>Reason Squad évoluant sur X1
+
+
+- Reason Rizk
+- Reason Yosh1
+- Reason Reziaal
+- Reason DKayzR9
+
+Compte structure => @Roster_Reason allez follow.
+
+
+Next événement ; FcoA 20-21 février.
+
+
+Mon twitter : https://twitter.com/KayzR__
+
+Merci de suivre ce LIVE, si vous voulez nous faire évolué n'hésitez pas à nous aider en fessant un minime dons ! 
+
+Nous vous serrons reconnaissant.  </p></div>
+			<div class="chat description c_users" id="chatUsers"><p>USERS</p></div>
+			<div class="chat description c_admin" style="text-align:center">
+				<button class="ajoutpub" onClick="ajoutpub();"  style="border-radius: 3px; background: none; border: 1px solid #0083b9; font-weight:12px; font-weight:bold; color: #0083b9;cursor:pointer;">Lancer une publicité</button>
+				<script type="text/javascript">
+					function tvpub(){
+						var tv = "4397";
+						var div_tv = jQuery('#left');
+						jQuery.ajax({
+							type:"POST",
+							url:gameslivetvref,
+							data:'tv='+tv,
+							cache: false,
+							success:function (msg){
+								if (msg=='refresh') {
+									div_tv.html(div_tv.html());
+								} 
+							}
+						});
+						setTimeout(tvpub, 29600);
+						return false;
+					}
+		
+					setTimeout(tvpub, 5000);
+					setTimeout(refpub, 1000);
+					
+					function refpub(){
+						var tv = "4397";
+						jQuery.ajax({
+							type:"POST",
+							url:gameslivetvbtn,
+							data:'tv='+tv,
+							cache: false,
+							success:function (msg){
+								if (msg=='ok') {
+									//afficher
+									$('.ajoutpub').show();
+									$('.ajoutpub').attr("onClick","ajoutpub();");
+									$('.ajoutpub').removeAttr("disabled");
+									$('.ajoutpub').text("Lancer une publicité");
+								} else {
+									$('.ajoutpub').removeAttr("onClick");
+									$('.ajoutpub').text("Vous pouvez lancer une publicité toutes les 10 minutes");
+									$('.ajoutpub').attr('disabled', 'disabled');
+								}
+							}
+						});
+						setTimeout(refpub, 300000);
+						return false;
+					}
+					
+					function hidebtn(){
+						$('.ajoutpub').removeAttr("onClick");
+						$('.ajoutpub').text("Vous pouvez lancer une publicité toutes les 10 minutes");
+						$('.ajoutpub').attr('disabled', 'disabled');
+					}
+					
+					function ajoutpub(){
+						$.ajax({
+							type:"POST",
+							url:gameslivetvadd,
+							data:'user=4397',
+							success:function (msg) {
+								console.log(msg);
+							}
+						});
+						hidebtn();}
+				</script>
+
+							   </p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="clear"></div>
+<div class="usercount_share" style="width:715px;">
+<div style="float:right;font-size:24px;color:#08b;margin-right:10px;margin-top:-15px;display:none;" id="user_count">1 Viewer</div>
+<div style="float:right;font-size:20px;color:#08b;margin-right:35px;margin-top:-15px;" id="user_count_total"><span style="font-size:24px;">2461</span> Vues</div><div class="share" style="position:relative;">
+<script type="text/javascript" language="javascript">$(document).ready(function() {$(".sabonner_title").click(function () {$(".sabonner_content").toggle("slow")});});</script>
+	<a data-tooltip="Vous devez être connecté" target="_blank" href="http://gameslivetv.com/auth/login.html" style="margin-left:15px;"><img src="http://gameslivetv.com/img/sabonner.png" style="margin:0;padding:0;width:130px;margin-top:-20px;"><p style="color:#000;margin-left:115px;text-align:center;width:30px;margin-top:-22px;position:absolute;">0</p></a>	<div style="margin-left:260px;margin-top:-25px;position:absolute;" class="sabonner">
+		<script>function fbShare(url, title, descr, image, winWidth, winHeight) {var winTop = (screen.height / 2) - (winHeight / 2);var winLeft = (screen.width / 2) - (winWidth / 2);window.open('http://www.facebook.com/sharer.php?s=100&p[title]=' + title + '&p[summary]=' + descr + '&p[url]=' + url + '&p[images][0]=' + image, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);}</script>
+		
+		<a style="background:#3b5998;padding:5px 10px;text-decoration:none;border-radius:5px;color:#fff;" href="javascript:fbShare('http://www.gameslivetv.com/l597-Reason Squad- KayzR.html', 'GamesLiveTV - Reason Squad- KayzR', 'GamesLiveTV - Reason Squad- KayzR Joue à Call of Duty', 'http://www.gameslivetv.com/l597-Reason Squad- KayzR.html', 500, 350)"><img src="http://www.gameslivetv.com/img/facebook.png" style="margin-right:10px;">Partager</a>
+		<a target="_blank" data-url="@GamesLiveTV" style="background:#1E71FB;padding:5px 10px;text-decoration:none;border-radius:5px;color:#fff;" href="https://twitter.com/intent/tweet?original_referer=http://www.gameslivetv.com/l597-Reason Squad- KayzR.html&text=Reason Squad- KayzR - En live sur XBOX - Joue à Call of Duty http://www.gameslivetv.com/l597-Reason Squad- KayzR.html @GamesLiveTV &tw_p=tweetbutton"><img src="http://www.gameslivetv.com/img/twitter.png" style="margin-right:10px;">Tweeter</a>
+	</div>
+	<div class="clear"></div>
+</div>
+</div>
+<style>#qtip-147{background-color:#fff !important;color:#000 !important;}</style>
+<div style="color: #0088BB;float: right;font-size: 24px;margin-right: 0;margin-top: -65px;height:65px;width:380px;overflow:hidden;" id="donation">
+<a href="#" data-tooltip="Faite un DON pour nous aider Ã  partir en LAN.. " data-hasqtip="147" aria-describedby="qtip-147" onClick="window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3KSGGKAX9MGEJ','Donation','toolbar=0, location=0, directories=0, status=0, scrollbars=0, resizable=0, copyhistory=0, menuBar=0, width=500, height=500');return(false)"><img src="http://gameslivetv.com/publicitaire/media/GT_KayzR-15805600000054d386a726acc.png"></a></div>
+<div class="clear"></div>
+<div id="twitter_pub" style="float:right;">
+<div style="margin-bottom:10px;margin-top:-10px;font-size:34px;color:#08b" id="user_count"></div>
+
+<div class="intro_gltv">
+	<div class="titre">Intro GLTV</div>
+	<div class="ads"><iframe frameborder="0" width="320" height="180" src="http://www.dailymotion.com/embed/video/x242piq?autoPlay=1&related=0&automute=1" allowfullscreen></iframe></div>
+</div>
+
+</div>
+
+<style>
+dd, ul{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 14px; 
+	font-family:Segoe,Arial,Verdana,sans-serif;
+	background: none transparent;
+}
+#agenda{
+	width:715px;    
+	border: 2px solid #0088BB;
+	background:#fff;
+	margin-bottom:20px;
+}
+#article{
+	height:100px;   
+	margin-bottom:25px;
+}
+#clear{
+	height:10px;    
+}
+.tabs-content{
+	margin-left:10px;   
+}
+dl.tabs {
+	display: block;
+	margin: 0 0 20px 0; 
+	padding: 0;
+	height: 30px;
+	border-bottom: 1px solid #000;
+	padding-bottom:3px;
+	background-color:#fff;
+}
+dl.tabs dd {
+	display: block; 
+	width: auto;
+	height: 30px;
+	padding: 0;
+	float: left;
+}
+dl.tabs dd a.active {
+	background: #FCFCFC;
+	border:3px solid #33BCEF;
+	height: 30px;
+}
+dl.tabs dd a {
+	display: block;
+	width: auto;
+	height: 29px; 
+	padding: 0 9px;
+	line-height: 30px;
+	margin: 0px -1px 0 0;
+	color: #555;
+}
+dl.active {
+	display: block;
+}
+dl{
+	display: none;
+}
+.info{
+	float: right;
+	height: 100px;
+	width: 715px;
+}
+.nom_prog{
+	margin:0 0 0 150px;
+	color: #0072FF;
+	font-size: 18px;
+	text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+	text-transform: uppercase;
+	font-weight:bold;
+	line-height:20px;
+}
+.desc_prog{
+	margin:10px 0 0 150px;
+	color: #0072FF;
+	text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+	white-space: pre-wrap;
+}
+.heure{
+	margin:10px 0 0 150px;
+	color:#000;
+}
+.img{
+	float: left;
+	margin: -110px 0 0;
+	padding-top: 10px;
+	width: 100px;
+}
+.option_btn{
+	background-color: #0072FF;
+	color: #FFFFFF;
+	border-radius: 3px;
+	line-height: 20px;
+	margin-bottom: 0;
+	padding: 4px 12px;
+	text-align: center;
+	border:none;
+	cursor:pointer;
+	font-weight:bold;
+	width:150px;
+	margin-left:600px;
+}
+
+/** AdBlock **/
+
+.adblock {
+	font-family: "Arial", sans-serif;
+	font-weight:bold;
+	height: 40px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #0072FF;
+}
+
+.btn {
+	background-color: #0072ff;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	padding: 5px 5px;
+	color: #fff;
+	text-decoration: none;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: auto;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+.modal.fade .modal-dialog {
+  -webkit-transition: -webkit-transform .3s ease-out;
+	 -moz-transition:    -moz-transform .3s ease-out;
+	   -o-transition:      -o-transform .3s ease-out;
+		  transition:         transform .3s ease-out;
+  -webkit-transform: translate(0, -25%);
+	  -ms-transform: translate(0, -25%);
+		  transform: translate(0, -25%);
+}
+.modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
+	  -ms-transform: translate(0, 0);
+		  transform: translate(0, 0);
+}
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 6px;
+  outline: none;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+		  box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
+}
+.modal-backdrop.fade {
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+.modal-backdrop.in {
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+.modal-header {
+  min-height: 16.42857143px;
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.modal-header .close {
+  margin-top: -2px;
+}
+.modal-title {
+  margin: 0;
+  line-height: 1.42857143;
+}
+.modal-body {
+  position: relative;
+  padding: 20px;
+}
+.modal-footer {
+  padding: 19px 20px 20px;
+  margin-top: 15px;
+  text-align: right;
+  border-top: 1px solid #e5e5e5;
+}
+.modal-footer .btn + .btn {
+  margin-bottom: 0;
+  margin-left: 5px;
+}
+.modal-footer .btn-group .btn + .btn {
+  margin-left: -1px;
+}
+.modal-footer .btn-block + .btn-block {
+  margin-left: 0;
+}
+@media (min-width: 768px) {
+  .modal-dialog {
+	width: 768px;
+	margin: 30px auto;
+  }
+  .modal-content {
+	-webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+			box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+  }
+  .modal-sm {
+	width: 300px;
+  }
+}
+@media (min-width: 992px) {
+  .modal-lg {
+	width: 900px;
+  }
+}
+
+#adblock{}
+
+.smiley{
+	width:100%;
+}
+.smiley table{
+	margin:0 auto;
+	width:100%;
+}
+.smiley td{
+	width:12.5%;
+	text-align:center;
+	height: 20px;
+}
+.smiley .td1{
+	border-top:2px solid #DCDCDC;
+	border-left:2px solid #DCDCDC;
+	border-bottom:2px solid #DCDCDC;
+}
+.smiley .td2{
+	border-top:2px solid #DCDCDC;
+	border-right:2px solid #DCDCDC;
+	border-bottom:2px solid #DCDCDC;
+}
+</style>
+<div class="adblock" style="display:none;">
+	Pour soutenir GamesLiveTV veuillez désactiver AdBlock <a href="#" class="btn btn-default" data-toggle="modal" data-target="#mAdblock">Tutoriel d'aide</a>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="mAdblock" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h2 class="modal-title" id="myModalLabel">Comment désactiver AdBlock</h2>
+	  </div>
+	  <div class="modal-body">
+		<div style="float:left; margin-right: 40px;">
+			<h1 style="color:#2b2b2b;">Sous Mozilla Firefox</h1>
+			<br/>
+			<p style="color:#ff0000;">1. Cliquez sur l'icône AdBlock de votre navigateur<br><br>
+			2. Cliquez sur "Désactiver pour gameslivetv.com"</p><br>
+			<img src="http://nsa31.casimages.com/img/2014/03/04/140304041851683118.jpg" />
+		</div>
+
+		<div>
+			<h1 style="color:#2b2b2b;">Sous Google Chrome</h1>
+			<br />
+			<p style="color: #ff0000;">1. Cliquez sur l'icône AdBlock de votre navigateur<br><br>
+			2. Cliquez sur "Ne rien bloquer sur les pages de ce domaine"</p><br>
+			<img src="http://nsa20.casimages.com/img/2014/03/04//140304041327212538.jpg" />
+		</div>
+	  </div>
+	  <div class="modal-footer">
+		<button type="button" class="btn" data-dismiss="modal">GamesLiveTV Vous Remercie</button>
+	  </div>
+	</div>
+  </div>
+</div>
+<div class="modal fade" id="smiley" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="margin:15px auto;">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h2 class="modal-title" id="myModalLabel">Utilisation de smiley dans la tchat box</h2>
+		<h2 class="modal-title" id="myModalLabel">Cliquez sur un smiley, et il sera automatiquement ajouter au tchat</h2>
+	  </div>
+	  <div class="modal-body">
+		<div class="smiley">
+			<script type="text/javascript">function insertSmiley(txt){ajtTexte(txt, "chatText");document.close_f.click();}function ajtTexte(txt,id){var obj = document.getElementById(id), sel;obj.focus();if(document.selection && document.selection.createRange){    sel = document.selection.createRange();     if (sel.parentElement()==obj)sel.text = sel.text+txt;}else if(String(typeof obj.selectionStart)!="undefined"){  sel = obj.selectionStart;   obj.value = (obj.value).substring(0,sel) +  txt +   (obj.value).substring(sel,obj.value.length);}else obj.value+=txt;obj.focus();}</script>
+			<table>
+			  <tr>
+				<td class="td1"><a href="javascript:insertSmiley(':)');"><img src="img/smiley/1.gif"></a></td>
+				<td class="td2">:)</td>
+				<td class="td1"><a href="javascript:insertSmiley(':p');"><img src="img/smiley/2.gif"></a></td>
+				<td class="td2">:p</td>
+				<td class="td1"><a href="javascript:insertSmiley(':(');"><img src="img/smiley/3.gif"></a></td>
+				<td class="td2">:(</td>
+				<td class="td1"><a href="javascript:insertSmiley(':/');"><img src="img/smiley/4.gif"></a></td>
+				<td class="td2">:/</td>
+			</tr>
+			<tr>
+				<td class="td1"><a href="javascript:insertSmiley(':\')');"><img src="img/smiley/5.gif"></a></td>
+				<td class="td2">:')</td>
+				<td class="td1"><a href="javascript:insertSmiley('Zzz');"><img src="img/smiley/6.gif"></a></td>
+				<td class="td2">Zzz</td>
+				<td class="td1"><a href="javascript:insertSmiley('GG');"><img src="img/smiley/7.gif"></a></td>
+				<td class="td2">GG</td>
+				<td class="td1"><a href="javascript:insertSmiley(':D');"><img src="img/smiley/8.gif"></a></td>
+				<td class="td2">:D</td>                
+			</tr>
+			<tr>
+				<td class="td1"><a href="javascript:insertSmiley(':3');"><img src="img/smiley/9.gif"></a></td>
+				<td class="td2">:3</td>
+				<td class="td1"><a href="javascript:insertSmiley('Oo');"><img src="img/smiley/10.gif"></a></td>
+				<td class="td2">Oo</td>
+				<td class="td1"><a href="javascript:insertSmiley('MOUAH');"><img src="img/smiley/11.gif"></a></td>
+				<td class="td2">MOUAH</td>
+				<td class="td1"><a href="javascript:insertSmiley(':bave:');"><img src="img/smiley/12.gif"></a></td>
+				<td class="td2">:bave:</td>
+			</tr>
+			<tr>
+				<td class="td1"><a href="javascript:insertSmiley(':cute:');"><img src="img/smiley/13.gif"></a></td>
+				<td class="td2">:cute:</td>
+			</tr>
+			</table>
+		</div>
+	  </div>
+	</div>
+  </div>
+</div>
+
+<script>
+jQuery(document).ready(function ($) {
+	function activateTab($tab) {
+		var $activeTab = $tab.closest('dl').find('a.active'),
+				contentLocation = $tab.attr("href") + 'Tab';
+		// Strip off the current url that IE adds
+		contentLocation = contentLocation.replace(/^.+#/, '#');
+		//Make Tab Active
+		$activeTab.removeClass('active');
+		$tab.addClass('active');
+		//Show Tab Content
+		$(contentLocation).closest('.tabs-content').children('dl').hide();
+		$(contentLocation).css('display', 'block');
+	}
+	$('dl.tabs').each(function () {
+		//Get all tabs
+		var tabs = $(this).children('dd').children('a');
+		tabs.click(function (e) {
+			activateTab($(this));
+		});
+	});
+});
+</script>
+
+<script type="text/javascript">
+	/*if (document.getElementById("tester") != undefined)
+	{
+		document.getElementById("ABPlus").style.display="none";
+		//document.write('<p class="yes">Gentil-homme, tu n\'utilise pas de bloqueur.</p>');
+	}
+	else
+	{
+		document.getElementById("ABPlus").style.display="block";
+	   // document.write('<p class="no">C\'est dommage d\'utiliser <b>AdBlock ou AdBlock Plus</b>, non ? :)</p>');
+	}*/
+	var isAdBlockActive=true;
+</script>
+<script src="http://gameslivetv.com/js/ads.js"></script>
+<script>
+if (isAdBlockActive) {
+  document.getElementById("ABPlus").style.display="block";
+}
+</script>
+
+<div style="height:20px;"></div>
+
+<div class="clear"></div>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/chat.js"></script>				<div class="clear"></div>
+			</section>
+        </div>
+        <footer>
+				<div id="footer">
+					<ul>
+						<li class="column">
+							<ul class="nav2">
+								<li><a href="/staff.html">Staff</a></li>
+								<li><a href="/about.html">Qui sommes nous ?</a></li>
+								<li><a href="/faq.html">FAQ</a></li>
+							</ul>
+						</li>
+						<li class="propos">
+							<img src="/img/wrapper/logo_f.png" alt="soloLogo">
+							<div><p></p><h1>Retrouvez-nous sur :</h1>
+
+<a target="_blank" title="@GamesLiveTV" href="https://twitter.com/GamesLiveTV"><img style="padding: 0; margin: 15px 0 0 50px;" src="/img/wrapper/twitter_f.png" title="" alt=""></a><p></p></div>
+						</li>
+						<li class="copy">
+							<a href="/partners.html">Partenaires</a><br><br><br><br>
+							<a href="/contact.html">Contact</a><br><br><br><br>
+							<p style="font-size:14px !important">COPYRIGHT 2013-2014-2015 © GAMESLIVETV<br>
+                            ASSOCIATION SOUS LOI 1901  RNA : W311003300</p>
+						</li>
+					</ul>
+					<div class="clear"></div>
+				</div>
+			</footer>
+		<script type="text/javascript" src="/js/jquery.easing.1.3.js"></script>
+		<!--<script type="text/javascript" src="/js/jquery.cycle2.min.js"></script>
+		<script type="text/javascript" src="http://malsup.github.com/jquery.cycle.all.js"></script>
+		<script type="text/javascript" src="/js/sly.min.js"></script>-->
+		<script src="http://malsup.github.io/jquery.cycle2.js"></script>
+		<script src="http://malsup.github.io/jquery.cycle2.carousel.js"></script>
+		<script src="http://malsup.github.io/jquery.cycle2.tile.js"></script>
+		<script type="text/javascript" src="/js/script.js"></script>
+		<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48529585-1', 'gameslivetv.com');
+  ga('send', 'pageview');
+
+</script>
+	</body>
+</html>

@@ -1,0 +1,2488 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+<script>window._t={start:(new Date).getTime()};</script>
+
+<base href="//www.zumbadazum.com" />
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="google" value="notranslate">
+
+<meta http-equiv="Content-Language" content="en" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<meta property="og:url" content="http://zumbadazum.com/geek-jewelry" />
+
+
+
+<meta property="og:title" content="Super geeky jewelry " />
+
+<meta name="twitter:title" content="Super geeky jewelry " />
+
+
+<meta property="og:description" content="Fabulous geek jewelry finds | From zumbadazum" />
+
+<meta name="twitter:description" content="Fabulous geek jewelry finds | From zumbadazum" />
+
+
+<meta property="og:site_name" content="zumbadazum.com" />
+
+
+
+<meta property="og:type" content="website" />
+
+
+
+<meta property="og:image" content="http://zumbadazum.img.mlv-cdn.com/img/5cfc39f738a330b533e6e24019ab73a8" />
+
+<meta name="twitter:image:src" content="http://zumbadazum.img.mlv-cdn.com/img/5cfc39f738a330b533e6e24019ab73a8" />
+
+
+<meta property="og:image:width" content="1024" />
+
+
+
+<meta property="og:image:height" content="768" />
+
+
+
+<title>
+ Super geeky jewelry 
+</title>
+<link type="text/css" rel="stylesheet" href="//c.likes-media.com/s/066db720f15e64f265b71041d7b4ec38/balloon__gallery_image_ads_8.css" />
+
+
+<link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-4983970-4']);
+var _gaq_var_index = 1;
+</script>
+
+<script id="bounce_tracking" type="text/javascript">
+    function supports_localstorage() {
+        try {
+            return 'localStorage' in window && window['localStorage'] !== null;
+        } catch (e) {
+            return false;
+        }
+    }
+
+    function setup_bounce_tracking(ad_doc) {
+        ad_doc = ad_doc || document;
+        var bounce_ad_slots = ad_doc.querySelectorAll('a[slot_id]');
+        if (bounce_ad_slots.length) {
+            for (var i = 0; i < bounce_ad_slots.length; i++) {
+                bounce_ad_slots[i].addEventListener("click", function(e) {
+                    if (supports_localstorage()) {
+                        localStorage.setItem('back_info_time', "" + Math.round((new Date()).getTime() / 1000));
+                        localStorage.setItem('back_info_pid', "" + this.getAttribute('prid'));
+                        localStorage.setItem('back_info_slot', "" + this.getAttribute('slot_id'));
+                    }
+                });
+            }
+        }
+    }
+
+</script>
+
+<script type="text/javascript">
+var likes_tracking_create = function() {
+    var obj = {};
+    obj.pv_params = {"visitor_id": "16019800693155305343", "invalid_channel": 8, "ncvid": null, "page_num": 1, "domain_type": "custom_ads", "gallery_id": 2300, "ml_pid": 1198561, "click_id": null, "experiment_name": "ml_net_ads_only", "page_type": "gallery", "cvid": "16019800693155305343", "location": "reggie"};
+    obj.current_track_id = 41865;
+    obj.track_network_ads = 0;
+    obj.track_house_ads = 1;
+    obj.track_redis_imps = 1;
+    obj.skip_house_ad = 1;
+    obj.redis_ads_slots = ["top_backfill", "bottom_backfill", "multi_backfill", "multi_related", "multi_small_grid"];
+
+    obj.pvid = null;
+    obj.load_dt = new Date();
+    obj.load_ts = obj.load_dt.getTime();
+    obj.event_log = [];
+    obj.imp_event_index = -1;
+    obj.sent_index = 0;
+    obj.network_ads_by_position = new Array();
+    obj.pending_timeouts = [];
+    obj.tracking_in_progress = false;
+    obj.tracking_hbs = [];
+    obj.tracking_hbs.push(800);
+    obj.imp_events_timeout = 100;
+    obj.bad_ad_detect_ms = 4000;
+    obj.bad_ad_detect_throttle = 100;
+    obj.detect_bad_ads = (Math.random()*100 <= obj.bad_ad_detect_throttle);
+    obj.report_pubm_throttle = 1;
+    obj.report_pubm_ads = function() {return (Math.random()*100 <= obj.report_pubm_throttle);}
+
+
+    obj.is_final_network_ad = function(event) {
+        var final = false;
+        return final;
+    };
+
+    obj.get_potential_bad_ads = function(pagehide_event) {
+        var potentials = [];
+        var i, event;
+        for (i = 0; i < obj.event_log.length; i++) {
+            event = obj.event_log[i];
+            if (event.type == "begin_pubmatic_render" && pagehide_event.latency_ms - event.latency_ms < obj.bad_ad_detect_ms) {
+                potentials.push(event);
+            }
+        }
+        return potentials;
+    };
+
+    obj.report_bad_ads = function() {
+        if (!obj.detect_bad_ads) {
+            return;
+        }
+        var i, j, event, ad;
+        var report = [];
+        var reported_events = [];
+        for (i = 0; i < window.likes_tracking.event_log.length; i++) {
+            event = window.likes_tracking.event_log[i];
+            if (event.type == 'pagehide' && event.potential_bad_ads.length > 0 && !event.reported) {
+                for (j = 0; j < event.potential_bad_ads.length; j++) {
+                    ad = event.potential_bad_ads[j];
+                    report.push({'url': ad.api_response.PubMatic_Bid.landing_page,
+                                'tag': ad.api_response.PubMatic_Bid.creative_tag,
+                                'cpm': ad.api_response.PubMatic_Bid.ecpm,
+                                'pos': ad.position,
+                                'loc': 'US',
+                                'suspect': 1});
+                }
+                reported_events.push(event);
+            }
+        }
+        if (report.length > 0) {
+            $.ajax({
+                url: '//' + window.location.host + '/api/record_pubmatic_ads',
+                type: 'POST',
+                   dataType: 'json',
+                   data: {'report': JSON.stringify(report)},
+                   context: {'reported_events': reported_events},
+                   success: function() {
+                       var events = this.reported_events;
+                       for (var j = 0; j < events.length; j++) {
+                           events[j].reported = 1;
+                       }
+                   },
+            });
+        }
+    };
+
+    obj.track_event = function(event) {
+        event.latency_ms = (new Date).getTime() - obj.load_ts;
+        obj.event_log.push(event);
+        if (obj.is_final_network_ad(event)) {
+            var orig_imp_event_index = obj.imp_event_index;
+            obj.imp_event_index = obj.event_log.length - 1;
+            if (orig_imp_event_index <= obj.sent_index && window.$) {
+                obj.pending_timeouts.push(window.setTimeout(obj.send_events, obj.imp_events_timeout));
+            }
+        }
+    };
+
+    obj.track_house_ad = function(ad_slot) {
+        var h_event = {'network': 'mylikes',
+                       'slot_name': ad_slot.slot_name,
+                       'promo_id': ad_slot.promo_id,
+                       'promo_hash': ad_slot.promo_hash,
+
+                       'type': 'ad_slot_rendered'};
+        if (ad_slot.csrc) {
+            h_event.csrc = ad_slot.csrc;
+        }
+        obj.track_event(h_event);
+    };
+
+    obj.get_new_track_id = function() {
+        var random = Math.floor(Math.random()*90000) + 10000;
+        return +((obj.pv_params.click_id + '') + (random + ''))
+    };
+
+    obj.update_ads_data = function(send_params, event_log) {
+        var house_ads = '';
+        var network_ads = '';
+        var redis_ads = '';
+        obj.network_ads_by_position = new Array();
+        var i = 0;
+
+        for (; i < event_log.length; i++) {
+            if (event_log[i]['network'] == 'mylikes' && event_log[i]['type'] == 'ad_slot_rendered') {
+                delimiter = '';
+                var event = event_log[i];
+                if (event.rotate_list && event.rotate_list.length){
+                    event = event.rotate_list[event.active_promo];
+                }
+                var process_redis_imp = false;
+                var process_house_ad = true;
+                if (event['tracking_infos']) {
+                    tracking_infos = event['tracking_infos'];
+                    house_ads += ',{';
+                    if (tracking_infos[0] && tracking_infos[0]['base_slot_name']){
+                        if (obj.redis_ads_slots.indexOf(tracking_infos[0]['base_slot_name']) >= 0) {
+                            process_redis_imp = obj.track_redis_imps;
+                            process_house_ad = !obj.skip_house_ad;
+                        }
+                        if (process_house_ad) {
+                            house_ads += '"base_slot_name":"' + tracking_infos[0]['base_slot_name'] + '"';
+                        }
+                        delimiter = ',';
+                    }
+                    if (process_house_ad) {
+                        house_ads += delimiter + '"pairs":' + '[';
+                    }
+                    if (process_redis_imp) {
+                        redis_ads += '::' + event['slot_id'];
+                    }
+                    var pair_iterator = (event.refresh_count) ? event.promo_list : event.tracking_infos;
+                    for (var j = 0; j < pair_iterator.length; j++) {
+                        if (process_house_ad) {
+                            if (j != 0) {
+                                house_ads += ',';
+                            }
+                            house_ads += '[';
+                        }
+                        if (pair_iterator[j]['promo_id']){
+                            if (process_house_ad) {
+                                house_ads += '"' + pair_iterator[j]['promo_id'] + '"';
+                            }
+                            if (process_redis_imp) {
+                                redis_ads += ',' + pair_iterator[j]['promo_id'];
+                            }
+                        }
+                        if (pair_iterator[j]['promo_hash']){
+                            if (process_house_ad) {
+                                house_ads += ',"' + pair_iterator[j]['promo_hash'] + '"';
+                            }
+                            if (process_redis_imp) {
+                                redis_ads += ':' + pair_iterator[j]['promo_hash'];
+                            }
+                        }
+                        if (process_house_ad) {
+                            house_ads += ']';
+                        }
+                    }
+                    if (process_house_ad) {
+                        house_ads += ']';
+                    }
+                    house_ads += '}';
+                } else {
+                    if (obj.redis_ads_slots.indexOf(event['slot_name']) >= 0) {
+                        process_redis_imp = obj.track_redis_imps;
+                        process_house_ad = !obj.skip_house_ad;
+                    }
+                    if (process_house_ad) {
+                        house_ads += ',{';
+                        }
+                    if (event['position'] && process_house_ad){
+                        house_ads += '"position":"' + event['position'] + '"';
+                        delimiter = ',';
+                    }
+                    if (process_redis_imp) {
+                        redis_ads += '::' + event['slot_id'];
+                    }
+                    if (event['promo_id']){
+                        if (process_house_ad) {
+                            house_ads += delimiter + '"promo_id":"' + event['promo_id'] + '"';
+                        }
+                        delimiter = ',';
+                        if (process_redis_imp) {
+                            redis_ads += ',' + event['promo_id'];
+                        }
+                    }
+                    if (event['slot_name'] && process_house_ad){
+                        house_ads += delimiter + '"slot_name":"' + event['slot_name'] + '"';
+                        if (event['slot_name'].indexOf('ad_page_') == 0) {
+                            if (event.csrc) {
+                                house_ads += ',"csrc":"' + event.csrc + '"';
+                            }
+                        }
+                        delimiter = ',';
+                    }
+                    if (event['promo_hash']){
+                        if (process_house_ad) {
+                            house_ads += delimiter + '"promo_hash":"' + event['promo_hash'] + '"';
+                        }
+                        delimiter = ',';
+                        if (process_redis_imp) {
+                            redis_ads += ':' + event['promo_hash'];
+                        }
+                    }
+                    if (event['slot_id'] && process_house_ad){
+                        house_ads += delimiter + '"slot_id":"' + event['slot_id'] + '"';
+                    }
+                    if (process_house_ad) {
+                        house_ads += '}';
+                    }
+                }
+            } else if (obj.track_network_ads) {
+                if (!event_log[i]['type']
+                    || (event_log[i]['type'] != 'attempted_passback' && event_log[i]['type'] != 'ad_slot_rendered' && event_log[i]['type'] != 'pubmatic_api_response' && event_log[i]['type'] != 'amazon_response')
+                    || !event_log[i]['network']
+                    || !event_log[i]['position']) {
+                    continue;
+                }
+                var position = event_log[i]['position'];
+                var network = event_log[i]['network'];
+                if (!network.match(/^c_/)) {
+                    network = 'c_' + network;
+                }
+                js_bundle = window.pass_to_js || window.PageData;
+                if (network in js_bundle.net_names && js_bundle.experiment_config.shorten_net_names) {
+                    network = js_bundle.net_names[network];
+                }
+                var cpm = event_log[i]['cpm'];
+                var state = '';
+                if (position in obj.network_ads_by_position) {
+                    state = obj.network_ads_by_position[position];
+                }
+                state += ',{';
+                state += '"' + network + '":';
+                if (cpm != null){
+                    cpm = Math.round(cpm*1000)/1000;
+                    state += '[';
+                    state += event_log[i]['latency_ms'];
+                    state += ',' + cpm;
+                    state += ']';
+                } else {
+                    state += event_log[i]['latency_ms'];
+                }
+                state += '}';
+                obj.network_ads_by_position[position] = state;
+            }
+        }
+
+        for (var position in obj.network_ads_by_position) {
+            if (obj.network_ads_by_position.hasOwnProperty(position)) {
+                state = obj.network_ads_by_position[position];
+                network_ads += ',"' + position + '":[' + state.substr(1) + ']';
+            }
+        }
+
+        obj.sent_index += i;
+        if (house_ads.length > 0){
+            house_ads = house_ads.substr(1);
+        }
+        if (network_ads.length > 0){
+            network_ads = network_ads.substr(1);
+        }
+        send_params['house_ads'] = '[' + house_ads + ']';
+        send_params['network_ads'] ='[{' + network_ads + '}]';
+        if (redis_ads.length > 0) {
+            send_params['redis_ads'] = redis_ads.substr(2);
+        }
+    };
+
+    obj.send_events = function(cancel_pending) {
+        if (obj.tracking_in_progress || obj.pvid < 0) {
+            return;
+        }
+
+        if (cancel_pending) {
+            obj.cancel_pending();
+        }
+
+        var send_params = {};
+        for (var k in obj.pv_params) {
+            if (obj.pv_params.hasOwnProperty(k) && obj.pv_params[k]) {
+               send_params[k] = obj.pv_params[k];
+            }
+        }
+
+        /*
+        // We only need to send data if we have pending events in the event log
+        // or if we have not yet recorded a pageview (pvid == null)
+        */
+        if (obj.sent_index < obj.event_log.length) {
+            obj.update_ads_data(send_params, obj.event_log.slice(obj.sent_index));
+        } else {
+            if (obj.pvid) {
+                return;
+            }
+        }
+
+        if (!obj.pvid || obj.pvid < 0) {
+            send_params['track_id'] = obj.current_track_id;
+        } else {
+            send_params['pvid'] = obj.pvid;
+        }
+        var method = obj.pvid ? 'update_pv' : 'track_pv';
+        if (method == 'update_pv') {
+            if (!obj.track_network_ads && obj.track_house_ads ) {
+                if (send_params.house_ads == "[]" && !send_params.redis_ads) {
+                    return;
+                } else {
+                    send_params.network_ads = "[{}]";
+                }
+            } else if (obj.track_network_ads && !obj.track_house_ads) {
+                if (send_params.network_ads == "[{}]") {
+                    return;
+                } else {
+                    send_params.house_ads = "[]";
+                }
+            } else if (!obj.track_network_ads && !obj.track_house_ads) {
+                return;
+            }
+        }
+        $.ajax({
+            url: '//' + window.location.host + '/api/' + method,
+            type: 'POST',
+            dataType: 'json',
+            beforeSend: function() {
+               obj.tracking_in_progress = true;
+            },
+            data: send_params,
+            success: function(result) {
+               if (result && !obj.pvid && result.pvid) {
+                    obj.pvid = result.pvid;
+                    obj.ncvid = result.ncvid;
+               }
+            },
+            complete: function() {
+                obj.tracking_in_progress = false;
+                if (!obj.pvid) obj.pvid = -1;
+                if (obj.sent_index < obj.imp_event_index) {
+                    obj.send_events();
+                }
+            }
+        });
+    };
+
+    obj.cancel_pending = function() {
+        if (obj.pending_timeouts) {
+            while ((t = obj.pending_timeouts.pop()) != null) {
+                window.clearTimeout(t);
+            }
+        }
+    };
+
+
+
+
+
+    obj.start_tracking = function(track_id, page_type, page_num, gallery_id) {
+        if (track_id) {
+            obj.current_track_id = track_id;
+        }
+        if (page_type) {
+            obj.pv_params.page_type = page_type;
+        }
+        if (page_num) {
+            obj.pv_params.page_num = page_num;
+        }
+        if (gallery_id) {
+            obj.pv_params.gallery_id = gallery_id;
+        }
+        for (var i = 0; i < obj.tracking_hbs.length; i++) {
+            obj.pending_timeouts.push(window.setTimeout(obj.send_events, obj.tracking_hbs[i]));
+        }
+    };
+
+    if (window.top.likes_tracking) {
+        window.top.likes_tracking.cancel_pending();
+    }
+
+    window.likes_tracking = obj;
+    window.top.likes_tracking = window.likes_tracking;
+};
+
+likes_tracking_create();
+
+window.onbeforeunload = function() {
+    if (window.top.likes_tracking) {
+        window.top.likes_tracking.send_events(true);
+    }
+    return;
+};
+
+</script>
+<script type="text/javascript">
+window.addEventListener("pagehide", function(e) {
+    if (window.likes_tracking) {
+        var event = {'type': 'pagehide'};
+        window.likes_tracking.track_event(event);
+        event.potential_bad_ads = window.likes_tracking.get_potential_bad_ads(event);
+    }
+}, false);
+window.addEventListener("pageshow", function(e) {
+    if (window.likes_tracking) {
+        window.likes_tracking.report_bad_ads();
+    }
+}, false);
+</script>
+
+<script type="text/javascript">
+try {
+(function() {
+    var obj = {};
+    obj.p_list = [];
+    obj.completed = {};
+    obj.loops = {};
+    obj.load_ts = (new Date).getTime();
+
+    obj.p_list.push({'network': 'openx',
+                     'position': 'righttop',
+                     'div_id': 'ad_slot_righttop_rect',
+                     'height': '250',
+                     'width': '300',
+                     'passback_slot_script': '',
+                     'passback_iframe_src': '//www.zumbadazum.com/ad/15/dummy/dummy_righttop/300/250/all/righttop',
+                     'to_network': 'dummy',
+                     'cpm': 0    });
+    obj.p_list.push({'network': 'criteo',
+                     'position': 'centerbottom',
+                     'div_id': 'ad_slot_centerbottom_grid',
+                     'height': '500',
+                     'width': '630',
+                     'passback_slot_script': '',
+                     'passback_iframe_src': '//www.zumbadazum.com/ad/15/dummy/dummy_centerbottom/630/500/all/centerbottom',
+                     'to_network': 'dummy',
+                     'cpm': 0,'defer_size_ms': 500    });
+    obj.p_list.push({'network': 'openx',
+                     'position': 'top',
+                     'div_id': 'top_ad_banner',
+                     'height': '90',
+                     'width': '728',
+                     'passback_slot_script': '',
+                     'passback_iframe_src': '//www.zumbadazum.com/ad/15/dummy/dummy_top/728/90/all/top',
+                     'to_network': 'dummy',
+                     'cpm': 0    });
+    obj.p_list.push({'network': 'openx',
+                     'position': 'rightbottom',
+                     'div_id': 'ad_slot_rightbottom_rect',
+                     'height': '250',
+                     'width': '300',
+                     'passback_slot_script': '',
+                     'passback_iframe_src': '//www.zumbadazum.com/ad/15/dummy/dummy_rightbottom/300/250/all/rightbottom',
+                     'to_network': 'dummy',
+                     'cpm': 0    });
+
+    obj.create_iframe = function (width, height, defer_size_ms) {
+        var ifrm = document.createElement('iframe');
+        ifrm.setAttribute('margin', '0 auto');
+        ifrm.setAttribute('padding', '0');
+        ifrm.setAttribute('frameBorder', '0');
+        if (!defer_size_ms) {
+            ifrm.setAttribute('width', width + '');
+            ifrm.setAttribute('height', height + '');
+        } else {
+            ifrm.setAttribute('width', '0');
+            ifrm.setAttribute('height', '0');
+        }
+        ifrm.setAttribute('scrolling','no');
+        try {
+            if (width == 1 && height == 1) {
+                ifrm.style.float = "left";
+            }
+            ifrm.style.margin = "0px auto";
+            ifrm.style.padding = "0px";
+            ifrm.style.border = '0px none';
+            if (!defer_size_ms) {
+                ifrm.style.width = width + "px";
+                ifrm.style.height = height + "px";
+            }
+            ifrm.style.overflow = 'hidden';
+        } catch (e) {
+        }
+        return ifrm;
+    };
+    obj.hide_all_in_div = function(ad_div_id) {
+        var ad_div = document.getElementById(ad_div_id);
+        if (ad_div) {
+            for (var i = 0; i < ad_div.childNodes.length; i++) {
+                if (ad_div.childNodes[i].style) {
+                    ad_div.childNodes[i].style.display = 'none';
+                }
+            }
+            if (document.getElementById("bottom_mobile_ad"))
+                document.getElementById("bottom_mobile_ad").parentNode.classList.remove("dummy_ad_wrapper");
+        }
+        return ad_div;
+    };
+    obj.render_ad = function(ad_div_id, width, height, ad_script, ad_src, defer_size_ms) {
+        var ad_div = window.likes_ad_passbacks.hide_all_in_div(ad_div_id);
+        if (ad_div) {
+            var dummy_ad;
+            if (ad_src.indexOf("dummy_mob_bottomtall") > -1) {
+                width = 0;
+                height = 0;
+                dummy_ad = 1;
+            }
+            var ifrm = window.likes_ad_passbacks.create_iframe(width, height, defer_size_ms);
+            ad_div.appendChild(ifrm);
+            if (!defer_size_ms) {
+                ad_div.width = width;
+                ad_div.height = height;
+            } else {
+                ifrm.onload = function() {
+                    window._defered_size_timeout = setTimeout(function() {
+                        ifrm.width = width;
+                        ifrm.height = height;
+                    }, defer_size_ms);
+                };
+            }
+            if (dummy_ad && ad_div_id == "bottom_mobile_ad") {
+                ad_div.parentNode.classList.add("dummy_ad_wrapper");
+            }
+            if (ad_src) {
+                ifrm.src = ad_src;
+            } else {
+                ifrm.src = 'javascript:document.write(unescape("' + escape(ad_script) + '"));document.close();';
+            }
+
+            return true;
+        }
+        return false;
+    };
+
+    obj.render_passback = function(network, position, div_id) {
+        if (window.top.likes_tracking) {
+            window.top.likes_tracking.track_event({'type': 'attempted_passback', 'network': network, 'position': position});
+        }
+        if (network == "criteo" && position == "top"){
+            window.likes_ad_passbacks.criteo_top_reload = true;
+        }
+        if (((network == "openx_lowval") || (network == "fedmedia_passback")) && position == "right") {
+            clearTimeout(window._defered_size_timeout);
+            obj.hide_all_in_div("ad_slot_right");
+            //document.getElementById("ad_slot_right").innerHTML = '';
+            var spacing_div = document.createElement('div');
+            spacing_div.setAttribute('style', 'height:6px');
+            document.getElementById("ad_slot_right").appendChild(spacing_div);
+        }
+        var key = network + '_' + position;
+        if (key in window.likes_ad_passbacks.completed) {
+            likes_ad_passbacks.loops[key] = 1;
+            return false;
+        }
+        for (var i = 0; i < window.likes_ad_passbacks.p_list.length; i++) {
+            var p = window.likes_ad_passbacks.p_list[i];
+            if ((p.network == network) && (p.position == position)) {
+                if (window.likes_ad_server.render_better_ad(position, p.cpm, div_id || p.div_id)) {
+                    return true;
+                }
+                if (p.to_network == "mylikes") {
+                    window.likes_ad_server.render_any_ad_when_available(position);
+                    return true;
+                }
+                if (window.likes_ad_passbacks.render_ad(div_id || p.div_id, p.width, p.height, p.passback_slot_script, p.passback_iframe_src, p.defer_size_ms)) {
+                    window.likes_ad_passbacks.completed[key] = 1;
+                    return true;
+                }
+            }
+        }
+        if (window.likes_ad_server && (network == "openx_lowval" || network == "criteo") && position == "right") {
+            if (!window.likes_ad_server.render_better_ad("right", 0, "ad_slot_right") && !window.likes_ad_server.networks.amazon.ready) {
+                window.likes_ad_server.add_rtb_ready_listener("right", function(){
+                    window.likes_ad_server.clear_rtb_ready_listener("right");
+                    window.likes_ad_server.render_better_ad("right", 0, "ad_slot_right");
+                });
+            }
+        } else {
+            window.likes_ad_server.render_any_ad_when_available(position);
+        }
+    };
+
+    window.likes_ad_passbacks = obj;
+    window.top.likes_ad_passbacks = obj;
+})();
+} catch (e) {
+    window.likes_ad_passbacks = {
+        'render_passback': function(a, b) {}
+    };
+}
+</script>
+
+<script type="text/javascript">
+try {
+    (function() {
+        var ad_server = {};
+        window.likes_ad_server = ad_server;
+        window.top.likes_ad_server = ad_server;
+        ad_server.report_event = function(path, label, value) {
+            if (window.XMLHttpRequest) {
+                var xmlhttp = new XMLHttpRequest;
+                var url = "/api/track_event?path=" + path;
+                if (label) {
+                    url = url + "&label=" + label;
+                }
+                if (value) {
+                    url = url + "&value=" + value;
+                }
+                xmlhttp.open("GET", url, true);
+                xmlhttp.send();
+            }
+        };
+        ad_server.js_rtb_slots = [{"api_endpoint": "http://showads.pubmatic.com/AdServer/AdServerServlet?", "network": "pubm_api", "width": 728, "ad_safe_domain_enabled": 1, "pubId": "41579", "ad_div_id": "top_ad_banner", "operId": 102, "height": 90, "siteId": "44147", "platform": "desktop", "adId": "72487", "location": "us", "position": "top", "base_rid": 1, "cpm_seq": [0.8, 0.6, 0.3, 0.1], "custom_domain_enabled": 1}, {"api_endpoint": "http://showads.pubmatic.com/AdServer/AdServerServlet?", "network": "pubm_api", "width": 300, "ad_safe_domain_enabled": 1, "pubId": "41579", "ad_div_id": "ad_slot_righttop_rect", "operId": 102, "height": 250, "siteId": "44147", "platform": "desktop", "adId": "72489", "location": "us", "position": "righttop", "base_rid": 2, "cpm_seq": [0.8, 0.6, 0.3, 0.1], "custom_domain_enabled": 1}, {"api_endpoint": "http://showads.pubmatic.com/AdServer/AdServerServlet?", "network": "pubm_api", "width": 300, "ad_safe_domain_enabled": 1, "pubId": "41579", "ad_div_id": "ad_slot_rightbottom_rect", "operId": 102, "height": 250, "siteId": "44147", "platform": "desktop", "adId": "72488", "location": "us", "position": "rightbottom", "base_rid": 3, "cpm_seq": [0.8, 0.6, 0.3, 0.1], "custom_domain_enabled": 1}, {"network": "mylikes", "ad_div_id": "ad_slot_centerbottom_grid", "ml_slot": "multi_small_grid_0_desktop", "platform": "desktop", "location": "all", "position": "centerbottom"}, {"network": "mylikes", "ad_div_id": "last_page_desk_ad_wrapper", "ml_slot": "ad_page_desktop", "platform": "desktop", "location": "all", "position": "last_page_desk"}];
+        ad_server.retain_ads_across_pages = true;
+        ad_server.js_rtb_advantage = 1.2;
+        ad_server.init_slots = function() {
+            window.amznads = undefined;
+            window.amzn_ads = undefined;
+            window.amzn_console = undefined;
+            if (!ad_server.ads_by_slot || !ad_server.retain_ads_across_pages) {
+                ad_server.ads_by_slot = {};
+            }
+            ad_server.position_div_map = {};
+            for (var i=0;i< ad_server.js_rtb_slots.length;i++) {
+                var position = ad_server.js_rtb_slots[i].position;
+                ad_server.position_div_map[position] = ad_server.js_rtb_slots[i].ad_div_id;
+                if (! ad_server.ads_by_slot.hasOwnProperty(position) ) {
+                    ad_server.ads_by_slot[position] = [];
+                } else {
+                    for (var j=0;j < ad_server.ads_by_slot[position].length; j++) {
+                        var ad = ad_server.ads_by_slot[position][j];
+                        if (ad.network == 'amazon') {
+                            ad.obsolete = 1;
+                        }
+                    }
+                }
+            }
+        };
+        ad_server.init_slots();
+
+        ad_server.get_registered_networks = function() {
+            var network_list = [];
+            for (var i=0; i < ad_server.js_rtb_slots.length; i++) {
+                if (network_list.indexOf(ad_server.js_rtb_slots[i].network) < 0) {
+                    network_list.push(ad_server.js_rtb_slots[i].network);
+                }
+            }
+            return network_list.sort();
+        };
+        ad_server.rtb_ready_listeners = {};
+        ad_server.networks = {};
+        ad_server.network_calls = {
+            initiate: function(network, position) {
+                if (!ad_server.network_calls[position]) {
+                    ad_server.network_calls[position] = {};
+                }
+                ad_server.network_calls[position][network] = {'complete': 0};
+            },
+            complete: function(network, position) {
+                ad_server.network_calls[position][network].complete = 1;
+                var all_complete = true;
+                for (network in ad_server.network_calls[position]) {
+                    if (ad_server.network_calls[position][network].complete != 1) {
+                        all_complete = false;
+                    }
+                }
+                if (all_complete) {
+                    ad_server.notify_rtb_ready_listeners([position]);
+                }
+            },
+            notify_if_ready: function(position) {
+                if (!ad_server.network_calls.all_networks_registered) {
+                    return;
+                }
+                var positions = [];
+                if (!position) {
+                    positions = Object.keys(ad_server.rtb_ready_listeners);
+                } else {
+                    positions = [position];
+                }
+                for (var i=0;i<positions.length;i++) {
+                    var pos = positions[i];
+                    if (!ad_server.network_calls[pos]) {
+                        ad_server.notify_rtb_ready_listeners([pos]);
+                    } else {
+                        var all_complete = true;
+                        for (network in ad_server.network_calls[pos]) {
+                            if (ad_server.network_calls[pos][network].complete != 1) {
+                                all_complete = false;
+                            }
+                        }
+                        if (all_complete) {
+                            ad_server.notify_rtb_ready_listeners([pos]);
+                        }
+                    }
+                }
+            }
+        };
+
+        ad_server.networks.mylikes = {};
+	ad_server.networks.mylikes.house_tracking_map = {'bottomtall':'bottom_backfill',
+							 'bottom_mobile':'multi_backfill_0_mobile',
+							 'top': 'top_backfill',
+                             'toptall': 'toptall_backfill',
+	'last_page_desk':'ad_page_desktop'};
+
+	ad_server.networks.mylikes.refresh_house_ad_funcs = {};
+	ad_server.networks.mylikes.get_render_func = function(ml_ad_info) {
+	    var house_ad_parent = ml_ad_info.platform + "_" + ml_ad_info.position + "_backfill";
+	    ad_server.networks.mylikes.refresh_house_ad_funcs[house_ad_parent] = function(first_time) {
+		var needs_draw = first_time || false;
+		var ad_container = document.getElementById(house_ad_parent);
+		var ad = document.getElementById(house_ad_parent + "_temp").firstElementChild.cloneNode(true);
+		var ad_infos = [ml_ad_info];
+		var ad_units = [ad];
+
+		if (ml_ad_info.promo_list && ml_ad_info.promo_list.length){
+		    ad_infos = ml_ad_info.promo_list;
+		    ad_units = ad.querySelectorAll(".multi_ad") || [];
+		    function shuffle(array) {
+			var currentIndex = array.length, temporaryValue, randomIndex ;
+			// While there remain elements to shuffle...
+			while (0 !== currentIndex) {
+			    // Pick a remaining element...
+			    randomIndex = Math.floor(Math.random() * currentIndex);
+			    currentIndex -= 1;
+
+			    // And swap it with the current element.
+			    temporaryValue = array[currentIndex];
+			    array[currentIndex] = array[randomIndex];
+			    array[randomIndex] = temporaryValue;
+			}
+			return array;
+		    }
+		    if (ml_ad_info.platform == "mobile") { //shuffle
+			ml_ad_info.refresh_count = ml_ad_info.refresh_count || 0;
+			if (ml_ad_info.refresh_count) {
+			    ad_infos = shuffle(ad_infos);
+			    needs_draw = true;
+			}
+			ml_ad_info.refresh_count++;
+		    }
+		} else if (ml_ad_info.rotate_list && ml_ad_info.rotate_list.length) {
+		    var rotate_list = ml_ad_info.rotate_list;
+		    for (var i in rotate_list) {
+			if (rotate_list[i].views_remaining){
+			    ad_infos = [rotate_list[i]];
+                            if (ml_ad_info.active_promo.promo_id != i.promo_id) {
+                                needs_draw = true;
+			        ml_ad_info.active_promo = i;
+                            }
+			    rotate_list[i].views_remaining -= 1;
+			    break;
+			}
+		    }
+		}
+
+		if (needs_draw) {
+		    var extension = (ml_ad_info.position == "bottomtall" && ml_ad_info.slot_name == "bottom_backfill") ? ".600x" : ".180x180.crop";
+     		    ad_container.innerHTML = "";
+
+		    for (var i in ad_infos) {
+			var ad_info = ad_infos[i];
+			var ad_unit = ad_units[i];
+			if (!ad_unit) continue;
+			if (ml_ad_info.refresh_count) { //shuffle
+			    if (ad_info.url.indexOf("&sp=") == ad_info.url.length - 5) {
+				ad_info.url.replace(/&sp=[0-9]/i, "&sp=" + i);
+			    } else {
+				ad_info.url = ad_info.url + "&sp=" + i;
+			    }
+			}
+			ad_unit.setAttribute("data-href", ad_info.url);
+			ad_unit.setAttribute("href", ad_info.url);
+			ad_unit.setAttribute("prid", ad_info.promo_id);
+			ad_unit.setAttribute("slot_id", ml_ad_info.slot_id);
+			var img = ad_unit.querySelectorAll(".image_container")[0];
+			img.style.backgroundImage = "url('" + ad_info.thumb_url + extension + "')";
+			img.setAttribute("src", ad_info.thumb_url + extension);
+			ad_unit.querySelectorAll(".promo_name")[0].innerHTML = ad_info.name;
+		    }
+
+			ad_container.appendChild(ad);
+			setup_bounce_tracking();
+		}
+
+		ad_container.style.display = "block";
+
+		var base_slot_name;
+		var promo_ids = [];
+		if (ml_ad_info.tracking_infos) {
+		    if (ml_ad_info.rotate_list && ml_ad_info.rotate_list.length){
+			promo_ids.push(ml_ad_info.rotate_list[ml_ad_info.active_promo].promo_id);
+			base_slot_name = ml_ad_info.rotate_list[0].slot_name;
+		    } else {
+			for (var i = 0; i <  ml_ad_info.tracking_infos.length; i++) {
+			    promo_ids.push(ml_ad_info.tracking_infos[i].promo_id);
+			}
+			base_slot_name = ml_ad_info.tracking_infos[0].base_slot_name;
+		    }
+		} else {
+		    promo_ids.push(ml_ad_info.promo_id);
+		    base_slot_name = ml_ad_info.slot_name;
+		}
+
+		if (window.top.likes_tracking && window.top.likes_tracking.track_redis_imps == 0) {
+		    var backfill_imp;
+		    var imp_src = 'http://' + window.top.location.host + '/house_ad_iframe?ml_id=' + 3755560 + '&gid=' + 2300;
+
+		    if (window.top.likes_tracking) {
+			imp_src += '&track_id=' + window.top.likes_tracking.current_track_id;
+		    } else {
+			imp_src += '&track_id=' + 41865;
+		    }
+		    imp_src += "&slot_name=" + base_slot_name + "&promo_ids=" + promo_ids.join(",");
+		    var parent_url_args = window.location.href.split('?')[1];
+		    if (parent_url_args) {
+			imp_src += "&" + parent_url_args;
+		    }
+		    backfill_imp = document.createElement('iframe');
+		    backfill_imp.className = 'backfill_imp';
+		    backfill_imp.frameBorder = 0;
+		    backfill_imp.src = imp_src + "&no_markup=1";
+		    backfill_imp.style.width = "0px";
+		    backfill_imp.style.height = "0px";
+		    backfill_imp.style.display = "none";
+		    var ad_div = document.getElementById(ml_ad_info.ad_div_id);
+		    ad_div.appendChild(backfill_imp);
+		}
+
+		if (window.top.likes_tracking) {
+		    if (ml_ad_info) {
+			window.top.likes_tracking.track_event(ml_ad_info);
+		    } else {
+			throw("missing house ad backfill info");
+		    }
+		} else {
+		    throw("missing likes tracking");
+		}
+
+		if (base_slot_name == "multi_backfill" && document.getElementById("related_list_container")) {
+                    document.getElementById("related_list_container").style.display = "none";
+		}
+	    }
+
+	    var func = function(ad_div_id, position, cpm) {
+		try {
+		    var ad_div = document.getElementById(ad_div_id);
+		    var master_ad = document.getElementById(house_ad_parent);
+		    if (!master_ad) {
+			master_ad = document.createElement('div');
+			master_ad.id = house_ad_parent;
+			master_ad.className = 'backfill_container';
+
+			if (!ad_div){
+			    setTimeout(function(){
+				    ad_div = document.getElementById(ad_div_id);
+				    ad_div.appendChild(master_ad);
+				    window.top.likes_ad_server.networks.mylikes.refresh_house_ad_funcs[house_ad_parent](true);
+				    master_ad.style.display = 'block';
+				},10);
+			} else {
+			    ad_div.appendChild(master_ad);
+			    window.top.likes_ad_server.networks.mylikes.refresh_house_ad_funcs[house_ad_parent](true);
+			    master_ad.style.display = 'block';
+			}
+		    } else {
+			window.top.likes_ad_server.networks.mylikes.refresh_house_ad_funcs[house_ad_parent](false);
+		    }
+		} catch(e) {/*ignore*/ }
+	    };
+	    return func
+	}
+
+        ad_server.networks.mylikes.get_candidate_ads = function(ad_server) {
+            try {
+                var chosen_slot, rtb_slot;
+                for (var i=0; i < ad_server.js_rtb_slots.length; i++) {
+		    rtb_slot = ad_server.js_rtb_slots[i];
+                    if (rtb_slot && rtb_slot.network == 'mylikes' && rtb_slot.hasOwnProperty('cpm')) {
+			if (rtb_slot.hasOwnProperty('ml_slot') && ad_server.networks.mylikes.house_tracking_map[rtb_slot.position] != rtb_slot.ml_slot) {
+			    continue;
+			}
+
+			chosen_slot = ad_server.ads_by_slot[rtb_slot.position];
+			chosen_slot.push({'network': 'mylikes',
+				    'cpm': rtb_slot.cpm,
+				    'render': ad_server.networks.mylikes.get_render_func(rtb_slot),
+				    });
+                    }
+                }
+            } catch(e) {/*ignore*/ }
+        };
+
+        ad_server.networks.amazon = {};
+        ad_server.networks.amazon.get_cpm = function(key_num) {
+            if (key_num == 13) {
+                return 0.3;
+            } else  {
+                return 6 - (key_num -1) * 0.5;
+            }
+        };
+        ad_server.networks.amazon.get_render_func = function(key, key_width, key_height) {
+            var func = function(ad_div_id, position, cpm) {
+                try {
+                    var ifrm = likes_ad_passbacks.create_iframe(key_width, key_height);
+                    var ad_div = document.getElementById(ad_div_id);
+                    ad_div.appendChild(ifrm);
+                    try {
+                        ifrm.onload = function() {
+                            ifrm.contentDocument.body.style.margin = "0px";
+                            ifrm.contentDocument.body.style.padding = "0px";
+                        };
+                    } catch(e) {/* ignore */ }
+                    window.amznads.renderAd(ifrm.contentDocument, key);
+                    if (window.top.likes_tracking) {
+                        window.top.likes_tracking.track_event({'type': 'ad_slot_rendered', 'network': 'az_' + key, 'position':position, 'cpm':cpm});
+                    }
+                } catch(e) {/*ignore*/
+                }
+            };
+            return func;
+        };
+
+        ad_server.networks.amazon.process_candidate_ads = function (ad_server) {
+            if (window.amznads && window.amznads.hasAds()) {
+                var amzn_key_re = /a([0-9]*)x([0-9]*)p([0-9]*)/;
+                var available_keys = window.amznads.getKeys();
+                var key, matches, key_width, key_height, key_val, chosen_slot, pos;
+                for (var i = 0; i < available_keys.length; i = i + 1) {
+                    chosen_slot = undefined;
+                    pos = undefined;
+                    key = available_keys[i];
+                    matches = key.match(amzn_key_re);
+                    key_width = parseInt(matches[1]);
+                    key_height = parseInt(matches[2]);
+                    key_val = parseInt(matches[3]);
+                    if (key_val == 13) {
+                        continue;
+                    }
+                    if (key_width == 728 && key_height == 90 && !ad_server.ads_by_slot.hasOwnProperty('bottomtall')) {
+                        chosen_slot = ad_server.ads_by_slot.top;
+                        pos = 'top';
+                    }
+                    if (key_width == 300 && key_height == 250) {
+                        if (ad_server.ads_by_slot.hasOwnProperty('bottomtall')) {
+                            chosen_slot = ad_server.ads_by_slot.bottomtall;
+                            pos = 'bottomtall';
+                        } else {
+                            chosen_slot = ad_server.ads_by_slot.right;
+                            pos = 'right';
+                        }
+                    }
+                    if (key_width == 320 && key_height == 50) {
+                        if (ad_server.ads_by_slot.hasOwnProperty('top') && ad_server.ads_by_slot.hasOwnProperty('bottomtall')) {
+                            chosen_slot = ad_server.ads_by_slot.top;
+                            pos = 'top';
+                        }
+                    }
+                    if (chosen_slot) {
+                        chosen_slot.push({
+                            'network': 'amazon',
+                            'cpm': ad_server.networks.amazon.get_cpm(key_val),
+                            'render': ad_server.networks.amazon.get_render_func(key, key_width, key_height)
+                        });
+                    }
+                }
+            }
+        };
+        ad_server.networks.amazon.get_candidate_ads = function(ad_server) {
+            ad_server.network_calls.initiate('amazon', 'top');
+            ad_server.network_calls.initiate('amazon', 'right');
+            ad_server.network_calls.initiate('amazon', 'bottomtall');
+            setTimeout(function() {
+                try {
+                    ad_server.networks.amazon.ready_task = function() {
+                        window.likes_ad_server.networks.amazon.process_candidate_ads(window.likes_ad_server);
+                        if (window.top.likes_tracking) {
+                            window.top.likes_tracking.track_event({'type': 'amazon_ready', 'keys': amznads.getKeys()});
+                        }
+                        if (!(window.likes_ad_server.networks.amazon.ready)) {
+                            window.likes_ad_server.networks.amazon.ready = true;
+                            window.likes_ad_server.network_calls.complete('amazon', 'top');
+                            window.likes_ad_server.network_calls.complete('amazon', 'right');
+                            window.likes_ad_server.network_calls.complete('amazon', 'bottomtall');
+                        }
+                    };
+                    var scr = document.createElement("script");
+                    scr.type = "text/javascript";
+                    scr.src = 'http://c.amazon-adsystem.com/aax2/amzn_ads.js';
+                    var f = document.getElementsByTagName("script")[0];
+                    var call_amzn_api = function() {
+                        try {
+                            window.amznads.tasks.push(ad_server.networks.amazon.ready_task);
+                            window.amznads.getAds('3039', undefined, undefined, 1);
+                        }catch(e){
+                        }
+                    };
+                    scr.onload = function() {
+                        if (window.amznads) {
+                            call_amzn_api();
+                        } else {
+                            setTimeout(call_amzn_api, 200);
+                        }
+                    };
+                    f.parentNode.insertBefore(scr, f);
+                    setTimeout(function() {
+                        if (!(window.likes_ad_server.networks.amazon.ready)) {
+                            window.likes_ad_server.networks.amazon.ready = true;
+                            window.likes_ad_server.network_calls.complete('amazon', 'top');
+                        }
+                    }, 600);
+                } catch (e) { /*ignore*/  }
+            }, 0);
+        };
+        ad_server.networks.pubmatic = {};
+        ad_server.networks.pubmatic.ad_blacklist = [{"value": "itunes.apple.com"}, {"value": "glugames.com"}, {"value": "king.com"}, {"value": "lp.metanetwork.com"}, {"value": "seanmlese.com"}, {"value": "basebanner.com"}, {"value": "kongyunbao.com"}, {"value": "merchanta.com"}, {"value": "lowestprices.us"}, {"value": "lowerprices.us"}, {"value": "yoox.com"}, {"value": "carid.com"}, {"value": "groupon.com"}, {"value": "taggify.net"}, {"value": "comcast.com"}, {"value": "hotels.com"}, {"value": "ozonemedia.com"}, {"value": "http://memorablec.com/"}, {"value": "rosettastone.com"}, {"value": "emerse.com"}, {"value": "jnadoso"}, {"value": "lovoo.com"}, {"value": "tiptonhonda.com"}, {"value": "gossipolls.com"}, {"value": "asbank.pw"}, {"value": "wechat"}, {"value": "yatra.base"}, {"value": "wildtangent.it"}, {"value": "mobogenie.com"}, {"value": "kargo.com"}, {"value": "www.moneymakeslifebetter.com"}, {"value": "advanceamerica"}, {"value": "quickrete.com"}, {"value": "newsearchtrack.com"}, {"value": "lyft.com"}, {"value": "autopartswarehouse"}, {"value": "somoaudience.com"}, {"value": "9c5y.com"}, {"value": "adform.com"}, {"value": "iams.com"}, {"value": "mars.com"}, {"value": "zipcar.com"}, {"value": "goodrx.com"}, {"value": "intenzetattooink.com"}, {"value": "ultrasabers.com"}, {"value": "cvs.com"}, {"value": "abercrombie.com"}, {"value": "excedrin.com"}, {"value": "calottery.com"}, {"value": "callwith.me"}];
+        ad_server.networks.pubmatic.is_url_blacklisted = function(url, creative, position, call_num, cpm) {
+            var blacklisted = false;
+            for (var i = 0; i < ad_server.networks.pubmatic.ad_blacklist.length; i++) {
+                if (url.match(RegExp(".*" + ad_server.networks.pubmatic.ad_blacklist[i]['value'] + ".*"))) {
+                    blacklisted = true;
+                        if (window.top.likes_tracking) {
+                            window.top.likes_tracking.track_event({'type': 'ad_slot_rendered', 'network': 'pm' + call_num + '_' + ad_server.networks.pubmatic.ad_blacklist[i]['value'], 'position': position, 'cpm': cpm});
+                        }
+                }
+            }
+            return blacklisted;
+        };
+        ad_server.networks.pubmatic.ad_whitelist = [{"value": "att.com"}, {"value": "abdata.com"}, {"value": "www.nazar.se"}, {"value": "www.fidelity.com"}, {"value": "www.safeway.com"}, {"value": "www.homedepot.com"}, {"value": "nexgardfordogs.com"}, {"value": "alot.com"}, {"value": "www.michelin.co.uk"}, {"value": "atvhayward.com"}, {"value": "freshguardclean.com"}, {"value": "www.mcdonalds.com"}, {"value": "walmart.com"}, {"value": "target.com"}, {"value": "bestbuy.com"}, {"value": "betfair.com"}, {"value": "botoxcosmetic.com"}, {"value": "zillow.com"}, {"value": "bausch.com"}, {"value": "stopdenguenow.com"}, {"value": "samsclub.com"}, {"value": "chevrolet.com"}, {"value": "nazar"}, {"value": "newbalance"}, {"value": "dreamfieldssettlement.com"}, {"value": "mediaforce.com"}, {"value": "connectionsfromhallmark.com"}, {"value": "www.coupons.com"}, {"value": "playphone.com"}, {"value": "alot"}, {"value": "att.net"}, {"value": "sears.com"}, {"value": "discovercard.com"}, {"value": "daimlerchrysler.com"}, {"value": "nimaxtheatres"}, {"value": "frontline"}, {"value": "dollargeneral.com"}, {"value": "lowes.com"}, {"value": "nordstromrack"}, {"value": "softcoin.com"}];
+        ad_server.networks.pubmatic.is_ad_whitelisted = function(url) {
+            var whitelisted = false;
+            for (var i = 0; i < ad_server.networks.pubmatic.ad_whitelist.length; i++) {
+                if (url.match(RegExp(".*" + ad_server.networks.pubmatic.ad_whitelist[i]['value'] + ".*"))) {
+                    whitelisted = true;
+                }
+            }
+            return whitelisted;
+        };
+        ad_server.networks.pubmatic.rendered_ads = [];
+        ad_server.networks.pubmatic.get_candidate_ads = function(ad_server) {
+            var helpers = {};
+            helpers.get_time = function(d) {
+                var t = d ? d : new Date();
+                var y = t.getFullYear();
+                var m = t.getMonth() + 1;
+                var d = t.getDate();
+                var h = t.getHours();
+                var min = t.getMinutes();
+                var s = t.getSeconds();
+                var pad = function(i) {
+                    return i <= 9 ? '0' + i : '' + i;
+                }
+                return escape(y + '-' + pad(m) + '-' + pad(d) + ' ' + pad(h) + ':' + pad(min) + ':' + pad(s) );
+            };
+            helpers.get_timezone_offset = function() {
+                var t = new Date();
+                return -1 * t.getTimezoneOffset()/60;
+            };
+
+            helpers.get_ad_position = function(ad_div_id) {
+                try {
+                    ad_div = document.getElementById(ad_div_id);
+                    if (!ad_div) {
+                        return "-1x-1";
+                    }
+                    var curleft = curtop = 0;
+                    var elem = ad_div;
+                    if (elem && elem.offsetParent) {
+                        do {
+                            curleft += elem.offsetLeft;
+                            curtop += elem.offsetTop;
+                        } while ( elem = elem.offsetParent);
+                    }
+                    return curtop + 'x' + curleft;
+                } catch (e) {
+                    return "-1x-1";
+                }
+            };
+            ad_server.networks.pubmatic.helpers = helpers;
+
+            var call_mgr = {};
+            call_mgr.construct_position_map = function() {
+                call_mgr.position_map = {};
+                var slot_info;
+                for (var i=0; i < ad_server.js_rtb_slots.length; i++) {
+                    slot_info = ad_server.js_rtb_slots[i];
+                    if (slot_info.network == "pubm_api") {
+                        call_mgr.position_map[slot_info.position] = slot_info;
+                    }
+                }
+            };
+            call_mgr.construct_position_map();
+            call_mgr.construct_base_rid_map = function() {
+                call_mgr.base_rid_map = {};
+                var slot_info;
+                for (var i=0; i < ad_server.js_rtb_slots.length; i++) {
+                    slot_info = ad_server.js_rtb_slots[i];
+                    if (slot_info.network == "pubm_api") {
+                        call_mgr.base_rid_map[slot_info.base_rid] = { 'position': slot_info.position, 'width': slot_info.width, 'height': slot_info.height, 'cpm_seq': slot_info.cpm_seq };
+                    }
+                }
+            };
+            call_mgr.construct_base_rid_map();
+            call_mgr.get_call_info = function (rid) {
+                var call_info = {};
+                call_info.base_rid = Math.floor(rid/10);
+                call_info.pos_info = call_mgr.base_rid_map[call_info.base_rid];
+                call_info.call_num = rid % 10;
+                return call_info;
+            };
+            call_mgr.get_rid = function ( position, call_num) {
+                return call_mgr.position_map[position].base_rid*10 + call_num;
+            };
+            call_mgr.get_next_call_cpm_2 = function(call_num, base_rid) {
+                var cpm_seq = call_mgr.base_rid_map[base_rid].cpm_seq;
+                if (call_num < cpm_seq.length) {
+                    return cpm_seq[call_num];
+                }
+            };
+            call_mgr.call_status = {};
+            call_mgr.initiate_call = function(rid) {
+                call_mgr.call_status[rid] = {'complete': 0};
+            }
+            call_mgr.complete_call = function(rid) {
+                call_mgr.call_status[rid].complete = 1;
+            }
+            call_mgr.is_position_ready = function(rid) {
+                var call_info = call_mgr.get_call_info(rid);
+                var base_rid = call_info.base_rid;
+                var num_calls = call_mgr.base_rid_map[base_rid].cpm_seq.length;
+                var wait_for = 1;
+                wait_for = 4;
+                var complete = true;
+                for (var i=0;i<wait_for;i++) {
+                    var call_num = i + 1;
+                    var call_rid = call_mgr.get_rid(call_info.pos_info.position, call_num);
+                    if (call_mgr.call_status[call_rid] && !(call_mgr.call_status[call_rid].complete == 1)) {
+                        complete = false;
+                    }
+                }
+                if (complete && window.top.likes_tracking) {
+                    window.top.likes_tracking.track_event({'type': 'declaring_position_ready', 'position': call_info.pos_info.position});
+                }
+                return complete;
+            };
+            ad_server.networks.pubmatic.call_mgr = call_mgr;
+
+            if (!ad_server.networks.pubmatic.synced_up_pixels) {
+                var ifrm = likes_ad_passbacks.create_iframe(1,1);
+                ifrm.src = "http://ads.pubmatic.com/AdServer/js/syncuppixels.html";
+                if (ifrm.style) {
+                    ifrm.style.float = "left";
+                }
+                if (document.body) {
+                    document.body.appendChild(ifrm);
+                } else {
+                    setTimeout(function() {
+                        try {
+                            document.body.appendChild(ifrm);
+                        } catch(e) {
+                        }
+                    }, 350);
+                }
+                ad_server.networks.pubmatic.synced_up_pixels = 1;
+            }
+
+            window.processPubMaticBid = function(response) {
+                var rid_map = call_mgr.base_rid_map;
+                var rid = response.meta_data.rid;
+                var call_info = call_mgr.get_call_info(rid);
+                var position = call_info.pos_info.position;
+                var cpm = 0;
+                if (response.PubMatic_Bid) {
+                    cpm = response.PubMatic_Bid.ecpm;
+                }
+                if (window.top.likes_tracking) {
+                    window.top.likes_tracking.track_event({'type': 'pubmatic_api_response', 'response': response, 'position': position, 'call_num': call_info.call_num, 'network': 'c_pm' + call_info.call_num, 'cpm': (cpm || 0.0) * 0.85});
+                }
+                var chosen_slot = ad_server.ads_by_slot[position];
+                var ad_width  = call_info.pos_info.width;
+                var ad_height = call_info.pos_info.height;
+                if (response.PubMatic_Bid.error_code || response.PubMatic_Bid.creative_tag.match(/.*likes_ad_passbacks.render_passback.*/) || response.PubMatic_Bid.ecpm == 0 || (response.PubMatic_Bid.landing_page && ad_server.networks.pubmatic.is_url_blacklisted(response.PubMatic_Bid.landing_page, response.PubMatic_Bid.creative_tag, position, call_info.call_num, cpm))) {
+                    call_mgr.complete_call(rid);
+                    if (call_mgr.is_position_ready(rid)) {
+                        ad_server.network_calls.complete('pubmatic', position);
+                    }
+                    return;
+                }
+                chosen_slot.push({
+                    'network': 'pubmatic',
+                    'cpm': response.PubMatic_Bid.ecpm * 0.85,
+                    'render': function(ad_div_id, position, cpm) {
+                        try {
+                            if (window.top.likes_tracking) {
+                                window.top.likes_tracking.track_event({'type': 'begin_pubmatic_render', 'position': position, 'api_response': response});
+                                ad_server.networks.pubmatic.rendered_ads.push({'url': response.PubMatic_Bid.landing_page,
+                                                                              'tag': response.PubMatic_Bid.creative_tag,
+                                                                              'cpm': response.PubMatic_Bid.ecpm,
+                                                                              'pos': position,
+                                                                              'loc': 'US' });
+                                if (!ad_server.networks.pubmatic.is_ad_whitelisted(response.PubMatic_Bid.landing_page)) {
+                                    if (window.top.likes_tracking && window.top.likes_tracking.report_pubm_ads()) {
+                                        ad_server.networks.pubmatic.report_rendered_ads();
+                                    }
+                                }
+                            }
+                            ad_div = document.getElementById(ad_div_id);
+                            var ad_ifrm = window.likes_ad_passbacks.create_iframe(ad_width, ad_height);
+                            ad_ifrm.onload = function() {
+                                ad_ifrm.contentWindow.document.write(unescape("%3Chtml%3E%3Chead%3E%3Cbase%20target%3D%22_top%22%3E%3C/head%3E%3Cbody%20style%3D%22padding%3A0px%3B%20margin%3A0px%22%3E") + response.PubMatic_Bid.creative_tag + unescape("%3C/body%3E%3C/html%3E"));
+                            };
+                            ad_div.appendChild(ad_ifrm);
+                            var tracking_ifrm = window.likes_ad_passbacks.create_iframe(0,0);
+                            tracking_ifrm.onload = function() {
+                                if (window.top.likes_tracking) {
+                                    window.top.likes_tracking.track_event({'type': 'ad_slot_rendered', 'network':'c_pubm_api_' + call_info.call_num, 'position':position, 'cpm':cpm});
+                                }
+                            };
+                            tracking_ifrm.src = response.PubMatic_Bid.tracking_url;
+                            ad_div.appendChild(tracking_ifrm);
+                        } catch(e) {/*ignore*/ }
+                    }
+                });
+                call_mgr.complete_call(rid);
+                if (call_mgr.is_position_ready(rid)) {
+                    ad_server.network_calls.complete('pubmatic', position);
+                }
+            };
+
+            var request_ad = function(position, cpm, call_num) {
+                window.likes_ad_server.network_calls.initiate('pubmatic', position);
+                var position_map = call_mgr.position_map;
+                var script_tag = document.createElement('script');
+                script_tag.setAttribute('type', 'text/javascript');
+                var rid = call_mgr.get_rid(position, call_num);
+                call_mgr.initiate_call(rid);
+                var slot_info = position_map[position];
+                script_tag.src = slot_info['api_endpoint']
+                + 'operId=' + slot_info['operId'] + '&'
+                + 'rs=2&'
+                + 'pubId=41579&'
+                + 'siteId=' + slot_info.siteId + '&'
+                + 'adId='+ slot_info.adId + '&'
+                + 'kadwidth=' + slot_info.width + '&'
+                + 'kadheight='+ slot_info.height + '&'
+                + 'kadfloor=' + cpm + '&'
+                + 'SAVersion=2&'
+                + 'js=1&'
+                + 'kdntuid=1&'
+                + 'pageURL=' + encodeURIComponent(window.top.location.href) + '&'
+                + 'refurl=' + encodeURIComponent(window.top.location.href) + '&'
+                + 'inIframe=1&'
+                + 'kadpageurl=' + encodeURIComponent(window.top.location.href) + '&'
+                + 'kltstamp=' + helpers.get_time() + '&'
+                + 'timezone=' + helpers.get_timezone_offset() + '&'
+                + 'loc=' + window.__likes_latitude + ',' + window.__likes_longitude + '&'
+                + 'loc_source=2&'
+                + 'screenResolution=' + screen.width + 'x' + screen.height + '&'
+                + 'ranreq=' + Math.random() + '&'
+                + 'pmUniAdId=0&'
+                + 'kbgColor=ffffff&'
+                + 'ktextColor=000000&'
+                + 'klinkColor=0000EE&'
+                + 'adVisibility=1&'
+                + 'adPosition=' + helpers.get_ad_position(slot_info.ad_div_id) + '&'
+                + 'rid=' + rid;
+                if (window.top.likes_tracking) {
+                    window.top.likes_tracking.track_event({'type': 'pubmatic_api_call', 'url': script_tag.src, 'position': position, 'call_num': call_num});
+                }
+                if (document.body) {
+                    document.body.appendChild(script_tag);
+                } else {
+                    setTimeout(function() {
+                        try {
+                            document.body.appendChild(script_tag);
+                        } catch(e) {
+                        }
+                    }, 350);
+                }
+            };
+            ad_server.networks.pubmatic.request_ad = request_ad;
+            ad_server.networks.pubmatic.report_rendered_ads = function() {
+                try {
+                    if (ad_server.networks.pubmatic.rendered_ads.length > 0) {
+                        var report = [];
+                        var i;
+                        for (i = 0; i < ad_server.networks.pubmatic.rendered_ads.length; i++) {
+                            report.push(ad_server.networks.pubmatic.rendered_ads.pop());
+                        }
+                        if ($) {
+                            $.ajax({
+                                url: '//' + window.location.host + '/api/record_pubmatic_ads',
+                                   type: 'POST',
+                                   dataType: 'json',
+                                   data: {'report': JSON.stringify(report)}
+                            });
+                        } else {
+                            if (window.XMLHttpRequest) {
+                                var xmlhttp = new XMLHttpRequest;
+                                var url = "/api/record_pubmatic_ads";
+                                xmlhttp.open("POST", url, true);
+                                var data = "report=" + escape(JSON.stringify(report));
+                                xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                                xmlhttp.send(data);
+                            }
+                        }
+                    }
+                } catch (e) {
+                }
+            };
+            var cpm_seq_id = 0;
+            var max_cpm_seq_length = 0;
+            for (var i = 0; i < ad_server.js_rtb_slots.length; i++) {
+                if (ad_server.js_rtb_slots[i].network == 'pubm_api' && ad_server.js_rtb_slots[i].cpm_seq.length > max_cpm_seq_length) {
+                    max_cpm_seq_length = ad_server.js_rtb_slots[i].cpm_seq.length;
+                }
+            }
+            for (cpm_seq_id=0; cpm_seq_id < max_cpm_seq_length; cpm_seq_id++) {
+            for (var i=0; i < ad_server.js_rtb_slots.length; i++) {
+
+                if (ad_server.js_rtb_slots[i].network == 'pubm_api' && ad_server.js_rtb_slots[i].cpm_seq[cpm_seq_id]) {
+                    request_ad(ad_server.js_rtb_slots[i].position, ad_server.js_rtb_slots[i].cpm_seq[cpm_seq_id], cpm_seq_id + 1);
+                }
+            }
+            }
+        };
+        ad_server.render_better_ad = function(position, cpm, ad_div_id) {
+            try {
+                var candidate_ads = window.likes_ad_server.ads_by_slot[position] || [];
+                if (position == 'bottom' && ad_div_id == 'bottom_mobile_ad' && ad_server.ads_by_slot['bottomtall']) {
+                    for (var i=0;i<ad_server.ads_by_slot['bottomtall'].length;i++) {
+                        candidate_ads.push(ad_server.ads_by_slot['bottomtall'][i]);
+                    }
+                }
+                if (candidate_ads && candidate_ads.length > 0) {
+                    var max_cpm = cpm/ad_server.js_rtb_advantage;
+                    var chosen_ad;
+                    for (var i=0;i<candidate_ads.length;i++){
+                        if (candidate_ads[i].cpm >= max_cpm && !candidate_ads[i].rendered && !candidate_ads[i].obsolete) {
+                            chosen_ad = candidate_ads[i];
+                            max_cpm = candidate_ads[i].cpm;
+                        }
+                    }
+                    if (chosen_ad) {
+                        window.likes_ad_passbacks.hide_all_in_div(ad_div_id);
+
+			            chosen_ad.rendered = 1;
+                        chosen_ad.render(ad_div_id, position, chosen_ad.cpm);
+
+                        if (window.top.likes_tracking) {
+                            window.top.likes_tracking.track_event({'type': 'js_rtb_ad_rendered', 'position': position, 'cpm': chosen_ad.cpm, 'network':chosen_ad['network']});
+                        }
+                        return true;
+                    }
+                }
+                return false;
+            } catch(e) { return false; }
+        };
+        ad_server.render_any_ad_when_available = function(position) {
+
+            var counter = 0;
+            var check_and_render = function() {
+
+                counter = counter + 1;
+
+                if (!ad_server.render_better_ad(position, 0, ad_server.position_div_map[position]) && counter < 30) {
+                    setTimeout(check_and_render, 200);
+                }
+
+            }
+            check_and_render();
+        };
+        ad_server.add_rtb_ready_listener = function(position, listener) {
+            window.likes_ad_server.rtb_ready_listeners[position] = listener;
+            window.likes_ad_server.network_calls.notify_if_ready(position);
+        };
+        ad_server.clear_rtb_ready_listener = function(position) {
+            if (ad_server.rtb_ready_listeners[position]) {
+                for (var i = 0; i < ad_server.rtb_ready_listeners[position].length; i++) {
+                    var listener = ad_server.rtb_ready_listeners[position][i];
+                    if (listener.rtb_timeout) {
+                        clearTimeout(listener.rtb_timeout);
+                    }
+                }
+                delete window.likes_ad_server.rtb_ready_listeners[position];
+            }
+        };
+        ad_server.notify_rtb_ready_listeners = function(positions) {
+            if (!positions) {
+                positions = Object.keys(window.likes_ad_server.rtb_ready_listeners);
+            }
+            for (var i=0; i<positions.length; i++) {
+                if (window.likes_ad_server.rtb_ready_listeners.hasOwnProperty(positions[i])) {
+                    window.likes_ad_server.rtb_ready_listeners[positions[i]]();
+                }
+            }
+        };
+        ad_server.conduct_rtb = function() {
+            ad_server.init_slots();
+            var networks = ad_server.get_registered_networks();
+            for (var i=0;i< networks.length; i++) {
+                var network;
+                if (networks[i] == 'pubm_api') {
+                    network = 'pubmatic';
+                } else {
+                    network = networks[i];
+                }
+                if (ad_server.networks[network] && ad_server.networks[network].get_candidate_ads) {
+                    ad_server.networks[network].get_candidate_ads(ad_server);
+                }
+            }
+            window.likes_ad_server.network_calls.all_networks_registered = true;
+            window.likes_ad_server.network_calls.notify_if_ready();
+        };
+        setTimeout(ad_server.conduct_rtb, 10);
+
+    })();
+} catch(e) {/*ignore*/ }
+</script>
+<script type="text/javascript">
+window.likes_reload_ads = function(track_id) {
+    window.likes_ad_passbacks.completed = {};
+    var pending_track_events = [];
+    try {
+        window.top.likes_ad_server.conduct_rtb();
+    } catch (e) {/* ignore */}
+    try {
+        (function () {
+            var cpm = 0.35;
+            var rtb_timeout;
+            var rtb_check = function() {
+                if (window.top.likes_tracking) {
+                    window.top.likes_tracking.track_event({'type': 'rtb_check_executing', 'position': 'rightbottom'});
+                }
+                clearTimeout(rtb_timeout);
+                window.likes_ad_server.clear_rtb_ready_listener('rightbottom');
+                if (!window.likes_ad_server.render_better_ad('rightbottom', cpm, 'ad_slot_rightbottom_rect')) {
+                    window.likes_ad_passbacks.render_ad('ad_slot_rightbottom_rect', 300, 250, undefined, "//www.zumbadazum.com/ad/15/openx/529989/300/250/all/rightbottom");
+                }
+            };
+            rtb_timeout = setTimeout(rtb_check, 400);
+            rtb_check.rtb_timeout = rtb_timeout;
+            window.likes_ad_server.add_rtb_ready_listener('rightbottom', rtb_check);
+        })();
+    } catch (e) {/* ignore */}
+    try {
+        (function () {
+            var cpm = 0.35;
+            var rtb_timeout;
+            var rtb_check = function() {
+                if (window.top.likes_tracking) {
+                    window.top.likes_tracking.track_event({'type': 'rtb_check_executing', 'position': 'righttop'});
+                }
+                clearTimeout(rtb_timeout);
+                window.likes_ad_server.clear_rtb_ready_listener('righttop');
+                if (!window.likes_ad_server.render_better_ad('righttop', cpm, 'ad_slot_righttop_rect')) {
+                    window.likes_ad_passbacks.render_ad('ad_slot_righttop_rect', 300, 250, undefined, "//www.zumbadazum.com/ad/15/openx/529986/300/250/all/righttop");
+                }
+            };
+            rtb_timeout = setTimeout(rtb_check, 400);
+            rtb_check.rtb_timeout = rtb_timeout;
+            window.likes_ad_server.add_rtb_ready_listener('righttop', rtb_check);
+        })();
+    } catch (e) {/* ignore */}
+    try {
+        (function () {
+            var cpm = 0.3;
+            var rtb_timeout;
+            var rtb_check = function() {
+                if (window.top.likes_tracking) {
+                    window.top.likes_tracking.track_event({'type': 'rtb_check_executing', 'position': 'centerbottom'});
+                }
+                clearTimeout(rtb_timeout);
+                window.likes_ad_server.clear_rtb_ready_listener('centerbottom');
+                if (!window.likes_ad_server.render_better_ad('centerbottom', cpm, 'ad_slot_centerbottom_grid')) {
+                    window.likes_ad_passbacks.render_ad('ad_slot_centerbottom_grid', 630, 500, undefined, "//www.zumbadazum.com/ad/15/dummy/dummy_centerbottom/630/500/all/centerbottom", 500);
+                }
+            };
+            rtb_timeout = setTimeout(rtb_check, 300);
+            rtb_check.rtb_timeout = rtb_timeout;
+            window.likes_ad_server.add_rtb_ready_listener('centerbottom', rtb_check);
+        })();
+    } catch (e) {/* ignore */}
+    try {
+        (function () {
+            var cpm = 0.3;
+            var rtb_timeout;
+            var rtb_check = function() {
+                if (window.top.likes_tracking) {
+                    window.top.likes_tracking.track_event({'type': 'rtb_check_executing', 'position': 'top'});
+                }
+                clearTimeout(rtb_timeout);
+                window.likes_ad_server.clear_rtb_ready_listener('top');
+                if (!window.likes_ad_server.render_better_ad('top', cpm, 'top_ad_banner')) {
+                    window.likes_ad_passbacks.render_ad('top_ad_banner', 728, 90, undefined, "//www.zumbadazum.com/ad/15/openx/529988/728/90/all/top");
+                }
+            };
+            rtb_timeout = setTimeout(rtb_check, 400);
+            rtb_check.rtb_timeout = rtb_timeout;
+            window.likes_ad_server.add_rtb_ready_listener('top', rtb_check);
+        })();
+    } catch (e) {/* ignore */}
+    try {
+        (function () {
+            var cpm = 0.55;
+            var rtb_timeout;
+            var rtb_check = function() {
+                if (window.top.likes_tracking) {
+                    window.top.likes_tracking.track_event({'type': 'rtb_check_executing', 'position': 'right'});
+                }
+                clearTimeout(rtb_timeout);
+                window.likes_ad_server.clear_rtb_ready_listener('right');
+                if (!window.likes_ad_server.render_better_ad('right', cpm, 'ad_slot_right')) {
+                }
+            };
+            rtb_timeout = setTimeout(rtb_check, 1);
+            rtb_check.rtb_timeout = rtb_timeout;
+            window.likes_ad_server.add_rtb_ready_listener('right', rtb_check);
+        })();
+    } catch (e) {/* ignore */}
+    return pending_track_events;
+};
+</script>
+<script type="text/javascript">
+window.__likes_latitude = window.top.__likes_latitude = 36.9312;
+window.__likes_longitude = window.top.__likes_longitude = -76.2397;
+</script>
+
+
+
+
+
+</head>
+<!--[if lte IE 9 ]> <body class="ie8  "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <body class="not_ie  "> <!--<![endif]-->
+
+
+<div id="social_site_header" style="position:static">
+<div id="social_site_header_inner">
+<a href="http://zumbadazum.com" id="stylized_title">zumbadazum</a>
+
+<a class="tab " href="http://zumbadazum.com/tagged/funny">funny</a>
+<a class="tab " href="http://zumbadazum.com/tagged/comedy">comedy</a>
+<a class="tab " href="http://zumbadazum.com/tagged/celebrity">celebrity</a>
+<a class="tab " href="http://zumbadazum.com/tagged/weird">weird</a>
+<a class="tab " href="http://zumbadazum.com/tagged/memes">memes</a>
+<a class="tab " href="http://zumbadazum.com/tagged/humor">humor</a>
+
+<div class="clear"></div>
+</div>
+</div>
+
+
+
+
+<script type="text/javascript">
+(function() {
+    var tag_ids = ["next_arrow", "start_button", "prev_arrow", "top_next_button", "next_arrow_middle", "bottom_next_button"];
+    function fix_href() {
+        for (var i = 0; i < tag_ids.length; i++) {
+            var el = document.getElementById(tag_ids[i]);
+            if (el) {
+		var href = el.href || el.getAttribute('href');
+		if (el.href) el.href = href.replace(/([&?])z=[^&#]*/g, '$1').replace(/[&?]$/, '');
+		else if (href) el.setAttribute('href', href.replace(/([&?])z=[^&#]*/g, '$1').replace(/[&?]$/, ''));
+	    }
+        }
+    }
+    function md_handler(e) {
+        e = e || event;
+        if (e && e.clientX && e.clientX > 0) {
+            fix_href(); //and the others
+        }
+    }
+    window.md_handler = md_handler;
+
+        window.gallery_handler = function (ev) {};
+})();
+</script>
+
+<!-- html -->
+<!-- body -->
+<!-- thepage -->
+<div id="page_contents">
+<Div class='main_image_inner'>
+<div class='wide_ad_wrapper top'>
+<div id="top_ad_banner" class='ad_banner'>
+<!--sse-->
+
+
+<iframe height="90" width="728" frameborder="0" scrolling="no"></iframe>
+
+<script type="text/javascript">
+try {
+(function () {
+var cpm = 0.3;
+var rtb_timeout;
+var rtb_check = function() {
+if (window.top.likes_tracking) {
+window.top.likes_tracking.track_event({'type': 'rtb_check_executing', 'position': 'top'});
+}
+clearTimeout(rtb_timeout);
+window.likes_ad_server.clear_rtb_ready_listener('top');
+if (!window.likes_ad_server.render_better_ad('top', cpm, 'top_ad_banner')) {
+window.likes_ad_passbacks.render_ad('top_ad_banner', 728, 90, undefined, "//www.zumbadazum.com/ad/15/openx/529988/728/90/all/top");
+}
+};
+rtb_timeout = setTimeout(rtb_check, 400);
+rtb_check.rtb_timeout = rtb_timeout;
+window.likes_ad_server.add_rtb_ready_listener('top', rtb_check);
+
+})();
+} catch (e) {/* ignore */}
+</script>
+
+
+
+
+
+
+
+<script type="text/javascript">
+if (window.top.likes_tracking) {
+window.top.likes_tracking.track_event({'network': 'openx',
+'position': 'top',
+
+
+'type': 'iframe_rendered',
+'slot_id': '529988'
+});
+}
+</script>
+<!--/sse-->
+
+</div>
+
+
+</div>
+<div class='left_side'>
+<div id="image_1234615" class="main_image_content">
+<h1 id="gallery_title_wrapper" class="gallery_title">
+<a id="top_next_button" href='http://www.zumbadazum.com/geek-jewelry?page=2&amp;z=top' onmousedown="md_handler(event)" class="nextbutton button green_button long_button " >Next <span>&#9654;</span></a>
+
+
+
+<div class="title">Super geeky jewelry </div>
+<div id="gallery_title_share_buttons">
+
+        <iframe id="title_fb_like" src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fzumbadazum.com%2Fgeek-jewelry&amp;width&amp;layout=button&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35&locale=en_US" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:20px; width: 48px;" allowTransparency="true"></iframe>
+
+    <script type="text/javascript">
+        window.fb_upsell_tracking_path = "desktop_gallery_upsell";
+    </script>
+    <a class='custom_share_button custom_fb_button title_fb_share  with_like   fb_share_track' data-fbtrackid='gallery' onclick="window.open($(this).attr('href'),'fb_popup','width=600,height=310');return false;" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fzumbadazum.com%2Fgeek-jewelry">
+        <span class='button_body invert'>
+            <span class='icon fb_icon'></span>
+            <span class='text'>Share </span>
+           <div class='clear'></div>
+       </span>
+    </a>
+
+    <a id="title_twitter_button" onclick="window.open($(this).attr('link'),'twitter_popup','width=600,height=460');" link="https://twitter.com/share?url=http%3A%2F%2Fzumbadazum.com%2Fgeek-jewelry&text=Super+geeky+jewelry+&count=none" class="twitter-share-button">Tweet</a>
+</div>
+
+
+<div class="clear"></div>
+</h1>
+<div class="gallery_item_wrapper item_" >
+<div id="gallery_side_share_buttons">
+    <a class="button flat_button share_button share_fb fb_share_track" data-fbtrackid="gallery" onclick="window.open($(this).attr('href'),'fb_popup','width=600,height=310');return false;" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fzumbadazum.com%2Fgeek-jewelry"><span class="fb_icon"></span></a>
+    <span class="button flat_button share_button share_twitter" onclick="window.open($(this).attr('link'),'twitter_popup','width=600,height=460');" link="https://twitter.com/share?url=http%3A%2F%2Fzumbadazum.com%2Fgeek-jewelry&text=Super+geeky+jewelry+&count=none"><span class="twitter_icon"></span></span>
+</div>
+
+
+<div class="after_title">
+<h2 class="item_name">
+&#35;<span>1</span>
+
+Apple earbud earrings
+
+</h2>
+<div class='share_bar desktop wide'>
+<!-- NOTE: on dev the gallery share url breaks the fb buttons because its sharing the link to our private client -->
+<div class='social_media_container  custom_domain_template  desktop'>
+
+    <a class='custom_share_button custom_fb_button  with_like  fb_share_track' data-fbtrackid='gallery' onclick="window.open($(this).attr('href'),'fb_popup','width=600,height=310');return false;" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fzumbadazum.com%2Fgeek-jewelry" target="_blank">
+           <span class='button_body invert'>
+               <span class='icon fb_icon'></span>
+               <span class='text'>Share on Facebook</span>
+               <div class='clear'></div>
+           </span>
+
+        </a>
+
+    <div class="clear"></div>
+</div>
+
+<div class="clear"></div>
+</div>
+<div class="clear"></div>
+
+
+<p>
+People will think you're wearing two pairs of apple earphones when they see you rocking these earrings while listening to your favorite tracks on your iPod.
+</p>
+
+</div>
+
+
+<div class='image_and_arrows'>
+<div class='image_wrapper'>
+
+<img id="browser_image"
+src="http://s.likes-media.com/img/5cfc39f738a330b533e6e24019ab73a8.600x.jpg"
+/>
+
+
+
+<div class='clear'></div>
+<a class='attribution_url' href="http://img3.etsystatic.com/004/0/5634260/il_fullxfull.374521655_j8qu.jpg" target="_blank" image_id="1234615">
+<span>via</span>
+http://img3.etsystatic.com/
+</a>
+
+</div>
+</div>
+
+</div>
+
+
+
+<a id="bottom_next_button" href='http://www.zumbadazum.com/geek-jewelry?page=2&amp;z=bot' onmousedown="md_handler(event)" class="nextbutton button green_button long_button">Next <span>&#9654;</span></a>
+
+
+
+<div class='share_bar desktop wide'>
+<!-- NOTE: on dev the gallery share url breaks the fb buttons because its sharing the link to our private client -->
+<div class='social_media_container  custom_domain_template  desktop'>
+
+    <a class='custom_share_button custom_fb_button  with_like  fb_share_track' data-fbtrackid='gallery' onclick="window.open($(this).attr('href'),'fb_popup','width=600,height=310');return false;" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fzumbadazum.com%2Fgeek-jewelry" target="_blank">
+           <span class='button_body invert'>
+               <span class='icon fb_icon'></span>
+               <span class='text'>Share on Facebook</span>
+               <div class='clear'></div>
+           </span>
+
+        </a>
+
+    <div class="clear"></div>
+</div>
+
+<div class="clear"></div>
+</div>
+<div class="clear"></div>
+
+
+
+
+
+
+</div>
+<div id='related_topics' class="list">
+<h4>You may want to check out:</h4>
+<div id='related_topics_inner'>
+<a class="flat_grid_item " href="//www.zumbadazum.com/these-celebs-ruined-their-bodies-with-plastic-surgeries">
+    <div class="gallery_image" style="background-image: url(http://s.likes-media.com/img/e9815e155da788aafd671b7a4ba5dfc5.600x)"><div class="spacer"></div></div>
+    <div class="gallery_content">
+        <div class="content_inner">
+            <div class="gallery_title">These Celebs Ruined Their Bodies With Plastic Surgeries </div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+<a class="flat_grid_item " href="//www.zumbadazum.com/there-is-no-way-you-ll-be-able-to-find-the-camflouged-snipers-in-these-photos">
+    <div class="gallery_image" style="background-image: url(http://s.likes-media.com/img/4c4d153366c7ae06dabf857273471cf8.600x)"><div class="spacer"></div></div>
+    <div class="gallery_content">
+        <div class="content_inner">
+            <div class="gallery_title">There Is No Way You&#39;ll Be Able to Find The Camflouged Snipers In These P...</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+<a class="flat_grid_item " href="//www.zumbadazum.com/do-you-have-trypophobia-1">
+    <div class="gallery_image" style="background-image: url(http://s.likes-media.com/img/55f63f1e3f84727dac4b340003bc85ad.600x)"><div class="spacer"></div></div>
+    <div class="gallery_content">
+        <div class="content_inner">
+            <div class="gallery_title">Do You Have Trypophobia?</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+<a class="flat_grid_item " href="//www.zumbadazum.com/girls-who-ruined-their-faces-with-tattoos">
+    <div class="gallery_image" style="background-image: url(http://s.likes-media.com/img/02100ae009d66144df6a99d4a5159093.600x)"><div class="spacer"></div></div>
+    <div class="gallery_content">
+        <div class="content_inner">
+            <div class="gallery_title">Girls Who Ruined Their Faces With Tattoos</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+<a class="flat_grid_item " href="//www.zumbadazum.com/dads-who-totally-nailed-it">
+    <div class="gallery_image" style="background-image: url(http://s.likes-media.com/img/efb8f8205cd91aeff67025852b752bcb.600x)"><div class="spacer"></div></div>
+    <div class="gallery_content">
+        <div class="content_inner">
+            <div class="gallery_title">Dads Who Totally Nailed It</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+<a class="flat_grid_item " href="//www.zumbadazum.com/best-new-preg-announcements">
+    <div class="gallery_image" style="background-image: url(http://s.likes-media.com/img/47768a2cb6f4e5f2247d5bf06f753825.600x)"><div class="spacer"></div></div>
+    <div class="gallery_content">
+        <div class="content_inner">
+            <div class="gallery_title">Best NEW Pregnancy Announcements </div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+<a class="flat_grid_item " href="//www.zumbadazum.com/7-drinks-you-should-avoid-at-all-costs">
+    <div class="gallery_image" style="background-image: url(http://s.likes-media.com/img/7fad70bbb3de987c6ad4c84c3635e82b.600x)"><div class="spacer"></div></div>
+    <div class="gallery_content">
+        <div class="content_inner">
+            <div class="gallery_title">7 Drinks You Should Avoid at All Costs </div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+<a class="flat_grid_item " href="//www.zumbadazum.com/would-a-girl-deliberately-do-this">
+    <div class="gallery_image" style="background-image: url(http://s.likes-media.com/img/9b2e1894a139e5fcd4b851f13bfad4d1.600x)"><div class="spacer"></div></div>
+    <div class="gallery_content">
+        <div class="content_inner">
+            <div class="gallery_title">Would A Girl Deliberately Do This?</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+<a class="flat_grid_item " href="//www.zumbadazum.com/these-girls-got-told">
+    <div class="gallery_image" style="background-image: url(http://s.likes-media.com/img/e3380004fd7d26388e608c9d7b8b0bc5.600x)"><div class="spacer"></div></div>
+    <div class="gallery_content">
+        <div class="content_inner">
+            <div class="gallery_title">These Girls Got Told!</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+<a class="flat_grid_item " href="//www.zumbadazum.com/these-10-parents-absolutely-owned-their-kids-but-7-is-just-evil">
+    <div class="gallery_image" style="background-image: url(http://s.likes-media.com/img/b3f1897ed41cc62fbd42267075e88c1b.600x)"><div class="spacer"></div></div>
+    <div class="gallery_content">
+        <div class="content_inner">
+            <div class="gallery_title"> These 10 Parents Absolutely Owned Their kids. But #7 is Just Evil </div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+<a class="flat_grid_item " href="//www.zumbadazum.com/awful-tattoo-mistakes-fixed">
+    <div class="gallery_image" style="background-image: url(http://s.likes-media.com/img/68055ead6ee97b31ef128169d8f6e6ca.600x)"><div class="spacer"></div></div>
+    <div class="gallery_content">
+        <div class="content_inner">
+            <div class="gallery_title">Awful Tattoo Mistakes FIXED</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+<a class="flat_grid_item " href="//www.zumbadazum.com/close-enough-13">
+    <div class="gallery_image" style="background-image: url(http://s.likes-media.com/img/6b5f07655c2c0f6082722ae3edec94ed.600x)"><div class="spacer"></div></div>
+    <div class="gallery_content">
+        <div class="content_inner">
+            <div class="gallery_title">Close Enough</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+<a class="flat_grid_item " href="//www.zumbadazum.com/how-to-win-at-life">
+    <div class="gallery_image" style="background-image: url(http://s.likes-media.com/img/9483fb7c54710fa62c0988de522256b0.600x)"><div class="spacer"></div></div>
+    <div class="gallery_content">
+        <div class="content_inner">
+            <div class="gallery_title">How To Win at Life</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+<a class="flat_grid_item " href="//www.zumbadazum.com/this-woman-was-raped-300-times-in-her-sleep-by-her-husband">
+    <div class="gallery_image" style="background-image: url(http://s.likes-media.com/img/f5c65031100f5bf300afaef4a42e21e4.600x)"><div class="spacer"></div></div>
+    <div class="gallery_content">
+        <div class="content_inner">
+            <div class="gallery_title">This Woman Was Raped 300 Times In Her Sleep By Her Husband</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+<a class="flat_grid_item " href="//www.zumbadazum.com/she-tattooed-half-her-face-and-you-d-never-know-it-her-skills-are-just-that-good">
+    <div class="gallery_image" style="background-image: url(http://s.likes-media.com/img/65f1659ff3bd9b84e77dd57fa2671b99.600x)"><div class="spacer"></div></div>
+    <div class="gallery_content">
+        <div class="content_inner">
+            <div class="gallery_title">She Tattooed Half Her Face And You&#39;d Never Know It. Her Skills Are Just ...</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+<a class="flat_grid_item " href="//www.zumbadazum.com/these-twins-came-out-to-their-dad-his-response-was-perfect">
+    <div class="gallery_image" style="background-image: url(http://s.likes-media.com/img/3c004785dffddabfc2fa37e07d34f3da.600x)"><div class="spacer"></div></div>
+    <div class="gallery_content">
+        <div class="content_inner">
+            <div class="gallery_title">These Twins Came Out to Their Dad. His Response was Perfect.</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+<a class="flat_grid_item " href="//www.zumbadazum.com/man-asks-his-wife-about-her-biggest-secret-this-is-priceless">
+    <div class="gallery_image" style="background-image: url(http://s.likes-media.com/img/ae4b07a60b20daad9be217cfe97a5f11.600x)"><div class="spacer"></div></div>
+    <div class="gallery_content">
+        <div class="content_inner">
+            <div class="gallery_title">Man Asks His Wife About Her Biggest Secret. This Is Priceless.</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+<a class="flat_grid_item " href="//www.zumbadazum.com/the-shocking-results-of-dog-breeding-before-after">
+    <div class="gallery_image" style="background-image: url(http://s.likes-media.com/img/789836c17832cdd7f12438326f7a703f.600x)"><div class="spacer"></div></div>
+    <div class="gallery_content">
+        <div class="content_inner">
+            <div class="gallery_title">The Shocking Results Of Dog Breeding: Before &amp; After </div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+<a class="flat_grid_item " href="//www.zumbadazum.com/missouri-mom-30-accused-of-performing-oral-on-her-son-s-12-year-old-friend">
+    <div class="gallery_image" style="background-image: url(http://s.likes-media.com/img/de49a198f8ae5398a62587c079d37b6e.600x)"><div class="spacer"></div></div>
+    <div class="gallery_content">
+        <div class="content_inner">
+            <div class="gallery_title">Missouri Mom, 30, Accused of Performing Oral on Her Son&#39;s 12-Year-Old Fr...</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+<a class="flat_grid_item " href="//www.zumbadazum.com/famous-people-you-didn-t-know-were-gay">
+    <div class="gallery_image" style="background-image: url(http://s.likes-media.com/img/25291889204ed1119e2e60976bec2a45.600x)"><div class="spacer"></div></div>
+    <div class="gallery_content">
+        <div class="content_inner">
+            <div class="gallery_title">Famous People You Didn&#39;t Know Were Gay </div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+
+</div>
+</div>
+</div>
+<div id="gallery_image_right_sidebar" class='right_side gallery_grid'>
+
+
+<div id='ad_slot_right' class='ad_slot_right'>
+<!--sse-->
+
+
+
+
+
+
+
+
+
+
+<script type='text/javascript'>
+<!--//<![CDATA[
+if (!window.likes_ad_server.render_better_ad('right', 0.55, 'ad_slot_right')) {
+
+document.MAX_ct0 ='';
+var m3_u = (location.protocol=='https:'?'https://cas.criteo.com/delivery/ajs.php?':'http://cas.criteo.com/delivery/ajs.php?');
+var m3_r = Math.floor(Math.random()*99999999999);
+document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+document.write ("zoneid=106875");document.write("&amp;nodis=1");
+document.write ('&amp;cb=' + m3_r);
+if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+document.write ("&amp;loc=" + escape(window.location));
+if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+if (document.context) document.write ("&context=" + escape(document.context));
+if ((typeof(document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0,4) == 'http')) {
+document.write ("&amp;ct0=" + escape(document.MAX_ct0));
+}
+if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+document.write ("'></scr"+"ipt>");
+}
+
+//]]>--></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+if (window.top.likes_tracking) {
+window.top.likes_tracking.track_event({'network': 'criteo',
+'position': 'right',
+
+
+'type': 'ad_slot_rendered',
+'slot_id': '106875'
+});
+}
+</script>
+<!--/sse-->
+
+</div>
+
+
+<div id='ad_slot_righttop_rect' class='ad_slot_right top'>
+<!--sse-->
+
+
+<iframe height="250" width="300" frameborder="0" scrolling="no"></iframe>
+
+<script type="text/javascript">
+try {
+(function () {
+var cpm = 0.35;
+var rtb_timeout;
+var rtb_check = function() {
+if (window.top.likes_tracking) {
+window.top.likes_tracking.track_event({'type': 'rtb_check_executing', 'position': 'righttop'});
+}
+clearTimeout(rtb_timeout);
+window.likes_ad_server.clear_rtb_ready_listener('righttop');
+if (!window.likes_ad_server.render_better_ad('righttop', cpm, 'ad_slot_righttop_rect')) {
+window.likes_ad_passbacks.render_ad('ad_slot_righttop_rect', 300, 250, undefined, "//www.zumbadazum.com/ad/15/openx/529986/300/250/all/righttop");
+}
+};
+rtb_timeout = setTimeout(rtb_check, 400);
+rtb_check.rtb_timeout = rtb_timeout;
+window.likes_ad_server.add_rtb_ready_listener('righttop', rtb_check);
+
+})();
+} catch (e) {/* ignore */}
+</script>
+
+
+
+
+
+
+
+<script type="text/javascript">
+if (window.top.likes_tracking) {
+window.top.likes_tracking.track_event({'network': 'openx',
+'position': 'righttop',
+
+
+'type': 'iframe_rendered',
+'slot_id': '529986'
+});
+}
+</script>
+<!--/sse-->
+
+
+</div>
+
+<a class="gallery-big" href="//www.zumbadazum.com/facebook-instagram-and-tinder-all-go-down-and-people-freak-out">
+    <div class="gallery-image" style="background-image: url(http://s.likes-media.com/img/9e58139aebc09baa5198c3338dee6d5a.600x)"><div class="spacer"></div></div>
+    <div class="gallery-content">
+        <div class="content-inner">
+            <div class="gallery-title">Facebook, Instagram, and Tinder all Go Down and Peop...</div>
+            <div class="gallery-description">People have become so dependent on their social media, they have no idea...</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+
+
+
+<div id='ad_slot_rightbottom_rect' class='ad_slot_right bottom'>
+<!--sse-->
+
+
+<iframe height="250" width="300" frameborder="0" scrolling="no"></iframe>
+
+<script type="text/javascript">
+try {
+(function () {
+var cpm = 0.35;
+var rtb_timeout;
+var rtb_check = function() {
+if (window.top.likes_tracking) {
+window.top.likes_tracking.track_event({'type': 'rtb_check_executing', 'position': 'rightbottom'});
+}
+clearTimeout(rtb_timeout);
+window.likes_ad_server.clear_rtb_ready_listener('rightbottom');
+if (!window.likes_ad_server.render_better_ad('rightbottom', cpm, 'ad_slot_rightbottom_rect')) {
+window.likes_ad_passbacks.render_ad('ad_slot_rightbottom_rect', 300, 250, undefined, "//www.zumbadazum.com/ad/15/openx/529989/300/250/all/rightbottom");
+}
+};
+rtb_timeout = setTimeout(rtb_check, 400);
+rtb_check.rtb_timeout = rtb_timeout;
+window.likes_ad_server.add_rtb_ready_listener('rightbottom', rtb_check);
+
+})();
+} catch (e) {/* ignore */}
+</script>
+
+
+
+
+
+
+
+<script type="text/javascript">
+if (window.top.likes_tracking) {
+window.top.likes_tracking.track_event({'network': 'openx',
+'position': 'rightbottom',
+
+
+'type': 'iframe_rendered',
+'slot_id': '529989'
+});
+}
+</script>
+<!--/sse-->
+
+</div>
+
+
+<a class="gallery-big" href="//www.zumbadazum.com/after-you-see-this-gross-experiment-you-ll-never-drink-a-coke-again">
+    <div class="gallery-image" style="background-image: url(http://s.likes-media.com/img/bb5387057f2793aee16c474980cf4263.600x)"><div class="spacer"></div></div>
+    <div class="gallery-content">
+        <div class="content-inner">
+            <div class="gallery-title">After You See This Gross Experiment, You&#39;ll Never Dr...</div>
+            <div class="gallery-description">You&#39;ve heard that drinking coke is bad for you, but once you see this yo...</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+
+
+<a class="gallery-big" href="//www.zumbadazum.com/7-ways-to-get-revenge-on-your-cheating-ex">
+    <div class="gallery-image" style="background-image: url(http://s.likes-media.com/img/50b6699d33652a682ec0b9c0732ecbb7.600x)"><div class="spacer"></div></div>
+    <div class="gallery-content">
+        <div class="content-inner">
+            <div class="gallery-title">7 Ways To Get Revenge On Your Cheating Ex</div>
+            <div class="gallery-description">Got an ex who cheated on you ... here are some ways people got revenge o...</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+
+
+<a class="gallery-big" href="//www.zumbadazum.com/diagrams-that-will-help-you-eat-healthier">
+    <div class="gallery-image" style="background-image: url(http://s.likes-media.com/img/c2fabc7608d82997983c79c51f937dd7.600x)"><div class="spacer"></div></div>
+    <div class="gallery-content">
+        <div class="content-inner">
+            <div class="gallery-title">Diagrams That Will Help You Eat Healthier</div>
+            <div class="gallery-description">Visualization is the key to everything. These diagrams will help you to ...</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+
+
+<a class="gallery-big" href="//www.zumbadazum.com/wow-he-did-not-expect-to-find-this-in-his-new-backyard">
+    <div class="gallery-image" style="background-image: url(http://s.likes-media.com/img/4ee49aa9402276b5d6a7464c92fc2c01.600x)"><div class="spacer"></div></div>
+    <div class="gallery-content">
+        <div class="content-inner">
+            <div class="gallery-title">Wow He did Not expect to Find this in his New Backya...</div>
+            <div class="gallery-description">This homeowner found a mysterious door leading down dark stairs to an un...</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+
+
+<a class="gallery-big" href="//www.zumbadazum.com/shocking-photos-reveal-how-bad-pollution-in-china-has-gotten">
+    <div class="gallery-image" style="background-image: url(http://s.likes-media.com/img/32e953277c71c86db65765db488d3d57.600x)"><div class="spacer"></div></div>
+    <div class="gallery-content">
+        <div class="content-inner">
+            <div class="gallery-title">Shocking Photos Reveal How Bad Pollution in China Ha...</div>
+            <div class="gallery-description">Someone has to do something about this mess . . .</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+
+
+<a class="gallery-big" href="//www.zumbadazum.com/a-reminder-to-always-check-the-background-before-taking-a-picture">
+    <div class="gallery-image" style="background-image: url(http://s.likes-media.com/img/046d8866d42372ce5ab2d603a53295d6.600x)"><div class="spacer"></div></div>
+    <div class="gallery-content">
+        <div class="content-inner">
+            <div class="gallery-title">A Reminder to Always Check The Background Before Tak...</div>
+            <div class="gallery-description">Weird stuff is happening all around us... constantly. Check out your pho...</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+
+
+<a class="gallery-big" href="//www.zumbadazum.com/weird-selfies-that-will-make-you-cringe">
+    <div class="gallery-image" style="background-image: url(http://s.likes-media.com/img/7ff247854d40c49f726e2ffcef455ed0.600x)"><div class="spacer"></div></div>
+    <div class="gallery-content">
+        <div class="content-inner">
+            <div class="gallery-title">WEIRD Selfies That Will Make You CRINGE!</div>
+            <div class="gallery-description">Selfies that will make you CRINGE! </div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+
+
+<a class="gallery-big" href="//www.zumbadazum.com/holocaust-survivor-meets-the-soldier-who-liberated-him-from-nazi-concentration-camp-70-years-ago">
+    <div class="gallery-image" style="background-image: url(http://s.likes-media.com/img/d253273b0d8515ca5fd737b429ebfd77.600x)"><div class="spacer"></div></div>
+    <div class="gallery-content">
+        <div class="content-inner">
+            <div class="gallery-title">Holocaust Survivor Meets the Soldier Who Liberated H...</div>
+            <div class="gallery-description">70 Years later he salutes his savior.</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+
+
+<a class="gallery-big" href="//www.zumbadazum.com/this-gum-wrapper-survival-technique-is-something-everyone-needs-to-know">
+    <div class="gallery-image" style="background-image: url(http://s.likes-media.com/img/3ea52443aa8e690c2125bf29f695e0a9.600x)"><div class="spacer"></div></div>
+    <div class="gallery-content">
+        <div class="content-inner">
+            <div class="gallery-title">This Gum Wrapper Survival Technique is Something Eve...</div>
+            <div class="gallery-description">Start carrying gum and learn this technique ... it could save your life.</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+
+
+<a class="gallery-big" href="//www.zumbadazum.com/he-shakes-a-bottle-of-coke-what-happens-next-will-blow-your-mind">
+    <div class="gallery-image" style="background-image: url(http://s.likes-media.com/img/aa3c159086685238a1d362501e96f4fb.600x)"><div class="spacer"></div></div>
+    <div class="gallery-content">
+        <div class="content-inner">
+            <div class="gallery-title">He Shakes A Bottle of Coke, What Happens Next Will B...</div>
+            <div class="gallery-description">An amazing easy hack to make a slurpee at home!</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+
+
+<a class="gallery-big" href="//www.zumbadazum.com/he-was-just-digging-in-his-back-yard-when-he-made-a-mammoth-discovery">
+    <div class="gallery-image" style="background-image: url(http://s.likes-media.com/img/bfcee77cbda59ee6598e7cd922d5d61a.600x)"><div class="spacer"></div></div>
+    <div class="gallery-content">
+        <div class="content-inner">
+            <div class="gallery-title">He Was Just Digging in His Back Yard When He Made a ...</div>
+            <div class="gallery-description">You are not going to believe what this guy pulled up from his backyard a...</div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</a>
+
+
+
+
+
+
+</div>
+<div class='clear'></div>
+</div>
+</div>
+</div> <!-- close the page, ghetto unclosed tag -->
+
+<div id="bottom_fb_page_upsell">
+<iframe id="bottom_fb_page_upsell_iframe" src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fzumbadazum.com%2Fgeek-jewelry&amp;layout=button&amp;show_faces=false&amp;width=&amp;height=80&amp;action=like&amp;share=true&amp;colorscheme=light&locale=en_US" allowtransparency="true" frameborder="0" scrolling="no"></iframe> this gallery with friends.
+</div>
+
+
+
+<div class='gallery_footer_container'>
+<div class='inner'>
+<div id='gallery_footer'>
+
+<div class='links'>
+<a href='http://zumbadazum.com/terms'>Terms of Use</a>
+&nbsp;|&nbsp;
+<a href='http://zumbadazum.com/privacy'>Privacy Policy</a>
+
+&nbsp;|&nbsp;<a href='http://zumbadazum.com/contact'>Contact</a>
+
+</div>
+<div id='copyright_notice'>Copyright © 2015 zumbadazum, All rights reserved.</div>
+<div class="clear"></div>
+</div>
+
+</div>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="//c.likes-media.com/s/5e4cb62cc163a0fe8c4b5e6927b5b7f8/balloon__gallery_image_ads_8.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    _gaq.push(['_setDomainName', 'www.zumbadazum.com']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+   (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = '//stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+     })();
+</script>
+<script type="text/javascript">
+  window.likes_tracking.start_tracking();
+</script>
+
+
+
+<script>
+window.global_ich_data = window.global_ich_data || {};
+global_ich_data.base_domain = "www.zumbadazum.com";
+global_ich_data.external_host = "likes.com";
+global_ich_data.product_name = "Likes.com";
+global_ich_data.SHARE_APPID = "189071204508886";;
+window.enable_user_subdomains = 0;
+if (window.Mustache) {
+    Mustache.FILTERS.profile = function(user_name, path) {
+            return '/' + user_name + (path || '');
+    };
+    if (window.Jasinja) Jasinja.filters.profile = Mustache.FILTERS.profile;
+}
+</script>
+
+
+<div href="http://www.zumbadazum.com/geek-jewelry?page=2&amp;z=key" onmousedown="md_handler(event)" id='next_arrow' style="position: absolute; top: -10000px; left: -10000px" class="nextbutton" />
+
+
+
+
+</body>
+<script type="text/javascript"><!--
+var pass_to_js = {"feed": {"gallery_id": 7301108, "palette": "balloon", "user_id": 3755560, "format": "masonry", "custom_profile": true, "image_ids": [1234615]}, "partner_website": true, "domain_url": "zumbadazum.com", "js_url": "//c.likes-media.com/s/5e4cb62cc163a0fe8c4b5e6927b5b7f8/balloon__gallery_image_ads_8.js", "MOBILE": false, "galleries": {"7301108": {"original_gallery_id": 2300, "total_pages": 7, "next_related_page": 1}}, "net_names": {"c_pubmatic": "c_pb", "c_cpxi": "c_ci", "c_dummy": "c_d", "c_valueclick": "c_vc", "c_pm1": "c_p1", "c_pm2": "c_p2", "c_pm3": "c_p3", "dfp": "dp", "aolm": "am", "rubicon": "r", "c_mylikes": "c_ml", "openx": "ox", "c_amazon": "c_az", "adcom": "ac", "amazon": "az", "amz": "amz", "c_openx": "c_ox", "c_rubicon": "c_r", "pubm_api_1": "pb1", "pubm_api_2": "pb2", "pubm_api_3": "pb3", "pubm_api_4": "pb4", "valueclick": "vc", "pulsepoint": "pp", "c_openx_lowval": "c_oxlv", "c_criteo": "c_c", "c_aolm": "c_am", "c_pubm_api_4": "c_pb4", "criteo": "c", "pubmatic_highval": "pbmh", "pm1": "p1", "pm2": "p2", "pm3": "p3", "c_amz": "c_amz", "c_pubmatic_highval": "c_pbmh", "c_pulsepoint": "c_pp", "dummy": "d", "c_adcom": "c_ac", "openx_lowval": "oxlv", "mylikes": "ml", "c_dfp": "c_dp", "c_pubm_api_1": "c_pb1", "c_pubm_api_2": "c_pb2", "c_pubm_api_3": "c_pb3", "cpxi": "ci", "pubmatic": "pb"}, "css_url": "//c.likes-media.com/s/066db720f15e64f265b71041d7b4ec38/balloon__gallery_image_ads_8.css", "product_name": "Likes.com", "page_path": "denizkirman", "video_server": "rtmp://stream.likes.com:1935/LikesLiveShows", "final_next_url": "http://www.zumbadazum.com/geek-jewelry?upsell=1", "subdomain": "denizkirman", "internal_only": false, "experiment_config": {"backfill_ads_mobile": 1, "use_crc_front_page_desktop": 0, "show_next_arrow_ad_page": 0, "full_width_ads": 1, "desktop_fb_permissions": "public_profile,user_friends,email,user_birthday", "show_fb": 0, "ads_head_min": 0, "track_big_share_button": 1, "big_next_gallery": 0, "photo_verify": 1, "show_search": 1, "reshare_preserve_original": 1, "pubmatic_api_loc": 1, "track_pubm": 1, "friend_points": 0, "bottom_backfill_ads_mobile": 0, "related_right_dark": 1, "photo_verify_signup": 0, "use_page_link_for_fb_share": 1, "ad_page_top_share": 0, "keywords_mid_onboarding": 0, "related_right_flat": 0, "tag_autocomplete": 1, "clickable_image": 1, "enable_ugc_video": 1, "multi_no_header": 1, "track_image_impressions": 0, "show_social_page": 1, "big_share_button": 0, "report_pubm_throttle": 1, "related_grid": 1, "hide_like_button": 0, "start_page_og": 0, "start_page_spinny": 1, "use_crc_front_page": 1, "report_ad_blacklist": 1, "bad_ad_detect_throttle": 100, "redis_ads_slots": ["top_backfill", "bottom_backfill", "multi_backfill", "multi_related", "multi_small_grid"], "ad_page_title": 0, "big_start_page_height": 0, "js_rtb_report_error": 0, "big_next_ad_page": 0, "aggressive_multi_backfill": 1, "big_start_page": 0, "detect_bad_ads": 1, "render_js_rtb_ads_for_mylikes": 1, "related_small_mixed": 0, "audience_gender": 1, "stop_double_ads": 0, "insert_in_place": 1, "page_caption_on_fb_share": 1, "disable_final_ad_tracking": 1, "multi_backfill_ad_page": 1, "big_next_ad_page_settings": {"top": "5px 15px", "bot": "5px 52px"}, "backfill_iframe": 0, "bottom_desk_rtb": 0, "feed_ads_bottom_crop_factor": 0.7, "bad_ad_detect_ms": 4000, "caption_below_post": 0, "report_pubm_api_error": 0, "js_error_event": 0, "shorten_net_names": 1, "retain_ads": 1, "hide_upsell_signup": 0, "feed_ads_top_crop_factor": 0.8, "related_bottom_dark": 0, "show_feed_ads_modulus": 0, "enable_picture_messaging": 1, "multi_list": 0, "choose_cover_image": 1, "house_imp_iframe": 1, "use_new_video_page": 1, "enable_livestream": 1}, "per_page": 1, "banners": null, "galleries_info": [{"gallery_id": 7301108, "title": "Super geeky jewelry ", "gallery_size": 7, "base_url": "http://likes.com/fashion/geek-jewelry", "num_fb_shares": 3832, "original_gallery_id": 2300}], "next_direct_ad": null, "common_domain": "buzzylikes.me"};
+//--></script>
+
+
+</html>

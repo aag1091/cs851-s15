@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset='utf-8' />
+    
+    <title>50 Book Pledge | @Laurenbdavis's Bookshelf</title>
+	
+	<meta name="twitter:card" content="photo">
+	<meta name="twitter:site" content="@savvyreader">
+	<meta name="twitter:url" content="http://www.50bookpledge.ca/user/">
+	<meta name="twitter:title" content="50 Book Pledge">
+	<meta name="twitter:description" content="Keep track of the books you read, see what your friends are reading, earn fun badges, win prizes, and more with the 50 Book Pledge website brought to you by TheSavvyReader.ca">
+	<meta name="twitter:image" content="http://www.50bookpledge.ca/imageretriever.php?type=book&amp;id=B002NGMAG6&amp;target=twitter">
+	<meta name="twitter:image:width" content="280">
+	<meta name="twitter:image:height" content="269">
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+    <!-- todo: figure out if this script is needed anymore -->
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>	
+	
+    <link rel="stylesheet" href="http://static.50bookpledge.ca/jquery.fancybox.css?v=2.1.0" type="text/css" media="screen" />
+	<script type="text/javascript" src="http://static.50bookpledge.ca/jquery.fancybox.pack.js?v=2.1.0"></script>
+
+    <link rel="stylesheet" href="http://static.50bookpledge.ca/style2014.css" type="text/css" media="screen" />
+
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="http://static.50bookpledge.ca/slick/slick.css"/>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="http://static.50bookpledge.ca/slick/slick.min.js"></script>
+
+    
+    <style>
+    
+	
+
+
+    			.bookcase.wood
+    			{
+    				background: url("http://static.50bookpledge.ca/images/woodbg.jpg");
+    			}
+    			
+    			.bookshelves.wood
+    			{
+    				background: url("http://static.50bookpledge.ca/images/woodshelf.png");
+    			}
+		.badge
+		{
+			height: 50px;
+			margin-left: 10px;
+			cursor: pointer;
+		}
+
+        .slick-slide img {
+            display: inline-block;
+        }.fa {font-weight: bold;}
+	.red {
+		color: rgb(222, 62, 52);
+	}
+
+	.slick-next::before, .slick-prev::before {
+        color: black;
+    }
+
+    .slick-slide {
+    	display: inline-block;
+    }
+    
+    </style>
+    
+
+</head>
+<body style='background-color: rgb(252, 253, 255); margin: 0;' class='extrabodystyle'>
+<!--[if !IE 7]>
+	<style type="text/css">
+		#wrap {display:table;height:100%}
+	</style>
+<![endif]-->
+<div id='wrap'>
+    
+    <script>
+    
+    var blnDisableFancybox = false;
+    
+    </script>
+    
+    <!--[if lt IE 8 ]>
+    <script>
+    	blnDisableFancybox = true;
+    </script>
+    <![endif]-->
+    <div style='background-color: rgb(0, 95, 150); height: 95px; margin: 0;'>
+        <div class='page' style='padding-top: 38px;'>
+            <a href='http://www.50bookpledge.ca/' style='text-decoration: none;'><img src='http://static.50bookpledge.ca/images/logo2014.png' alt='50BookPledge' /></a>
+        </div>
+    </div>
+    
+    
+    <div style='width: 100%; height: 40px; background-color: rgb(93, 177, 226);'>
+        <div class='page'>
+            
+            <a class='navbutton_first' href='http://www.50bookpledge.ca/'>
+                Home
+            </a>    
+    <!--            <a class='navbutton' href='http://www.50bookpledge.ca/register'>
+                Register
+            </a>
+-->
+                <a class='navbutton' href='http://www.50bookpledge.ca/savvytop10s'>
+                Featured&nbsp;Reads
+            </a>
+            <a class='navbutton' href='http://www.50bookpledge.ca/topreads/2015'>
+                Top Reads
+            </a>
+            <a class='navbutton' href='http://www.50bookpledge.ca/badges'>
+                Badges
+            </a>
+            <a class='navbutton' href='http://www.50bookpledge.ca/contest'>
+                Contests
+            </a>
+            <a class='navbutton' href='http://thesavvyreader.com/50-book-pledge-frequently-asked-questions/' target="_blank">
+                FAQ
+            </a>
+            <div class='navbutton_last'>
+                <form id='frmSearchBar' method='get' action='http://www.50bookpledge.ca/search'>
+                    <input id='search' name='keywords' style='height: 25px; font-size: 16px; width: 320px; float: right;' placeholder="&nbsp;Search"/>
+                    <input name='type' value='books' type='hidden' />
+                </form>
+                
+                <script>
+                	$(document).ready(function(){
+                		$('#search').bind('keyup', function(e)
+                		{
+                			if(e.keyCode == 13 && $('#search').is(":focus"))
+                			{
+                				document.forms["frmSearchBar"].submit();
+                			}
+                		});
+                	});
+                </script>
+            </div>
+        </div>
+    </div>
+    
+    <div id='main' class='page' style='margin-top: 20px;'>	
+<!--[if lt IE 7]> <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'> <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div> <![endif]--> 
+        <br />
+    	
+    	
+    	
+
+    
+
+
+<div style='float: left; width: 620px; margin-left: 10px;'>
+    
+    <div id='bookshelf_label' class='title' style='float: left;'>2015 To Be Read Books</div>
+    
+    
+
+    <br clear='both' />
+    
+    <div id='bookcase_wrapper' style='margin-top: 5px;'>
+        <div id='bookcase' class='bookcase wood'>
+        	<div id='shelves' class='bookshelves wood'>
+        		
+        	</div>
+        	&nbsp;
+        </div>
+    </div>
+
+</div>
+
+<div style='float: left; width: 220px; border-left: 2px solid rgb(176, 217, 231); padding-left: 20px;'>
+
+    
+    <a style='text-decoration: none;' href='http://www.50bookpledge.ca/user/116906169r'><img src="https://pbs.twimg.com/profile_images/378800000833332800/702757f59cf792147ede2e10c69f8430_bigger.jpeg" alt='user' style='float: left; margin-right: 15px; border: 0px;' /></a>
+
+    <span style='font-weight: bold; font-size: 20px;'>@Laurenbdavis</span>
+    <br /><br />
+    <div style='float: left;'>
+        Books Read: <span id='numbooksread'>0</span><br />
+        On Pace For: <span id='numbooksonpace'>0</span>
+    </div>
+
+    <br clear='both' />
+    
+    <div id='currentlyreadingsection' style='margin-top: 20px; display: none;'>
+        <div class='title' style='margin-bottom: 10px;'>Currently Reading</div>
+        
+        <div style='width: 75%; margin: 0 auto;'><!-- container for spacing -->
+
+            <div id='carousel_currentlyreading' style='text-align: center;'>
+            </div>
+
+            <script>
+
+                $(document).ready(function() {
+
+                    $.ajax({
+                    type: 'POST',
+                    url: strBaseURL + "service.php",
+                    dataType: 'json',
+                    data: { method: "getusersbooks", bookshelf: "c", user: strUser },
+                    success: function(response)
+                    {
+                        if (response.status == "success")
+                        {
+                            oBooks = response.data;
+
+                            var i = 0;
+
+                            if (oBooks.length > 0)
+                            {
+                                $("#currentlyreadingsection").show();
+                            }
+
+                            oBooks.forEach(function(pBook, pintIndex, pArray) {
+
+                                i++;
+
+                                if (i > 10) return;
+                                
+                                
+                                var oBook = pBook;
+                                
+                                //console.log(oBook);
+
+                                var jBook = $("<div />").css({"padding": "10px"}).append($("<img />").attr("src", oBook.cover).addClass("bookonshelf")).css({"cursor": "pointer"}).bind("click", function() {
+                                    
+                                    bookinfo_click(oBook.bookid, oBook.bookonshelfid, 'c');
+
+                                });
+
+                                $("#carousel_currentlyreading").append(jBook);
+
+
+                            });
+
+
+                            $("#carousel_currentlyreading").slick({
+                                xcenterMode: true,
+                                slidesToShow: 1,
+                                autoplay: true,
+                                autoplaySpeed: 5000,
+                                dots: true
+                            });
+                            
+                            
+                        }
+                        else
+                        {
+                            console.log("Get Carousel Error: " + response.message);
+                        }
+                        
+        
+                    },
+                    error: function(x, y, z)
+                    {
+                        console.log("Get Carousel Error: " + x + "-" + y + "-" + z + "-" + x.responseText);
+                    }
+                });
+
+            });
+
+            </script>
+        </div>
+        
+    </div>
+
+    <br clear='both' />
+
+    <div style='margin-top: 10px;'>
+        <span class='title'>Shelves</span>
+        <select id='ddYear' style='margin-left: 20px; vertical-align: top;' onchange='yearChanged();'>
+            <option value='2015' selected="selected">2015</option>
+            <option value='2014' >2014</option>
+            <option value='2013' >2013</option>
+        </select>
+        
+    </div>
+    <div id='shelflinkcontainer'>
+        <a href='http://www.50bookpledge.ca/user/116906169r/r/2015' class='textlink fa fa-check fa-fw'>&nbsp;Read</a><br />
+        <a href='http://www.50bookpledge.ca/user/116906169r/c/2015' class='textlink fa fa-bookmark fa-fw'>&nbsp;Currently Reading</a><br />
+        <a href='http://www.50bookpledge.ca/user/116906169r/q/2015' class='textlink fa fa-list-ol fa-fw'>&nbsp;To Be Read</a><br />
+        <a href='http://www.50bookpledge.ca/user/116906169r/f/2015' class='textlink fa fa-heart fa-fw'>&nbsp;Favourite</a><br />
+        
+                
+    </div>
+    
+    <div class='title' style='margin-top: 20px'>Badges</div>
+    
+    <div id='badgecontainer' style='text-align: left; margin-top: 5px;'></div>	
+</div>
+
+<script>
+    //Ensures there will be no 'console is undefined' errors
+    window.console = window.console || (function(){
+        var c = {}; c.log = c.warn = c.debug = c.info = c.error = c.time = c.dir = c.profile = c.clear = c.exception = c.trace = c.assert = function(){};
+        return c;
+    })();
+    
+    console.log('js ok');
+
+
+	var strUser = '116906169r';
+	var strUserName = '@Laurenbdavis';
+	var strAccessToken = '';
+    var strCurrentYear = '2015';
+
+	var strActiveBookcase = 'q';
+    var strActiveYear = '2015';
+    // 2015
+
+	var strBaseURL = "http://www.50bookpledge.ca/";
+	
+
+	$(document).ready(function(){
+		
+		console.log('page ready');
+		
+		
+
+
+    	    $.ajax({
+    			type: 'POST',
+    			url: strBaseURL + "service.php",
+    			dataType: 'json',
+    			data: { method: "getuserstats", user: strUser, year: strActiveYear },
+    			success: function(response)
+    			{
+    				if (response.status == "success")
+    				{
+    					oStats = response.data;
+    					
+    					$("#numbooksread").text(oStats.numbooksread);
+    					$("#numbooksonpace").text(oStats.numonpace);
+    					
+    				}
+    				else
+    				{
+    					console.log("Get User Stats Error: " + response.message);
+    				}
+    				
+    
+    			},
+    			error: function(x, y, z)
+    			{
+    				console.log("Get User Stats Error: " + x + "-" + y + "-" + z + "-" + x.responseText);
+    			}
+    		});
+
+		// get user's read books
+		
+		// Get Read books
+		$.ajax({
+			type: 'POST',
+			url: strBaseURL + "service.php",
+			dataType: 'json',
+			data: { method: "getusersbooks", user: strUser, bookshelf: strActiveBookcase, year: strActiveYear},
+			success: function(response)
+			{
+			    
+				if (response.status == "success")
+				{
+					for(var i in response.data)
+					{
+						var book = response.data[i];
+
+						buildBookOnShelf(book.bookid, book.cover, book.url, strActiveBookcase, book.bookonshelfid, strActiveYear);
+						 
+						
+					}	
+				}
+				else
+				{
+					alert(response.message);
+				}
+				
+
+			},
+			error: function(x, y, z)
+			{
+				alert(x + "-" + y + "-" + z + "-" + x.responseText);
+			}
+		});
+		
+		
+
+		$.ajax({
+			type: 'POST',
+			url: strBaseURL + "service.php",
+			dataType: 'json',
+			data: { method: "getusersbadges", user: strUser, year: strActiveYear},
+			success: function(response)
+			{
+				if (response.status == "success")
+				{
+				    
+					for(var i in response.data)
+					{
+						var badge = response.data[i];
+						
+						addBadge(badge);
+						
+					}	
+				}
+				else
+				{
+					console.log("Get Badges Error: " + response.message);
+				}
+				
+
+			},
+			error: function(x, y, z)
+			{
+				console.log("Get Badges Error: " + x + "-" + y + "-" + z + "-" + x.responseText);
+			}
+		});
+
+
+
+						
+		    var strBookshelfType = "";
+		    
+		    if (strActiveBookcase == 'r')
+		    {
+    		    // no change
+		    }
+		    else if (strActiveBookcase == 'q')
+		    {
+    		    strBookshelfType = " 'To Be Read'";
+		    }
+		    else if (strActiveBookcase == 'c')
+            {
+                strBookshelfType = " 'Currently Reading'";
+            }
+            else if (strActiveBookcase == 'f')
+            {
+                strBookshelfType = " 'Favourite Books'";
+            }
+            else
+		    {
+    		    strBookshelfType = " '" + $("#bookshelf_label").text() + "'";
+    		    
+		    }
+		
+    		// update btntweet url
+    		strURL = "https://twitter.com/intent/tweet?text=" + encodeURIComponent("Check out my #50BookPledge" + strBookshelfType + " Bookshelf http://www.50bookpledge.ca/user/" + strUser + "/" + encodeURIComponent(strActiveBookcase) + "/" + strActiveYear) + "&via=savvyreader";
+    		$("#btntweet").attr("href", strURL);
+    		twttr.widgets.load();
+		
+		});
+		
+    function buildBookString(pstrASIN, pstrCover, pstrURL, pstrBookshelf, pstrBookOnShelfId, pstrYear)
+	{
+		var strDeleteString = "";
+		var strBuyString = "";
+		
+						strBuyString = "<div onclick='buybook_click(\"" + pstrURL + "\");' class='btnbuy'>BUY</div>"; <!--http://static.50bookpledge.ca/  <img src='images/buyamazon.png' /> -->
+				strBuyString = "<div class='btnnobuy'>&nbsp;</div>"; <!--http://static.50bookpledge.ca/  <img src='images/buyamazon.png' /> -->
+						
+		
+		
+	
+		return "<div class='bookonshelf_wrapper' id='" + pstrBookOnShelfId + "'>" + strDeleteString + strBuyString + "<img src='" + pstrCover + "' class='bookonshelf'  onclick='bookinfo_click(\"" + pstrASIN + "\", \"" + pstrBookOnShelfId + "\");' alt='cover' /><br /></div>";
+	}
+	
+	var mintNumBooks = 0;
+	var CINT_BOOKS_PER_SHELF = 5;
+	var CINT_SHELF_HEIGHT = 160;
+	var CINT_BOOKCASE_BOTTOM_HEIGHT = 13;
+
+	function buildBookOnShelf(pstrASIN, pstrCover, pstrURL, pstrBookshelf, pstrBookOnShelfId, pstrYear)
+	{
+	    var strShelfId = "#shelves";
+	    var strBookshelfId = "#bookcase";
+	    
+	    /*
+	    // old code to support 2014 to be read shelf during 2013 campaign
+	    if (pstrYear != strCurrentYear)
+	    {
+    	    strShelfId += pstrYear;
+    	    strBookshelfId += pstrYear;
+	    }
+	    */
+	
+		$(strShelfId).prepend(buildBookString(pstrASIN, pstrCover, pstrURL, pstrBookshelf, pstrBookOnShelfId, pstrYear));
+		
+
+		if (pstrBookshelf == "r")
+		{
+			mintNumBooks++;
+			
+			
+			// on pace for algorithm
+
+			updateReadStats();
+			
+		}
+		else
+		{
+			mintNumBooks++;
+		}		
+		
+		// TODO: Better algorithm for determining when to do the next shelf... wide books mean fewer than 5 fit on a shelf
+		
+		// calculate ((number of books  / books per shelf) + 1) * height of shelf = height of bookcase
+		var intOldBookcaseHeight = $("#shelves").height();
+		var intBookcaseHeight = (Math.floor(mintNumBooks / CINT_BOOKS_PER_SHELF) + 2) * CINT_SHELF_HEIGHT;
+		$(strShelfId).css("height", intBookcaseHeight + "px");
+		$(strBookshelfId).css("height", (intBookcaseHeight + CINT_BOOKCASE_BOTTOM_HEIGHT) + "px");
+		
+
+	}
+	
+	// function exists on bookshelf, profile and index. todo: consolidate
+    function addBadge(badge)
+	{
+		$("#badgecontainer").append("<img class='badge' src='http://static.50bookpledge.ca/images/badges/" + badge.imagename + "' title='" + badge.name + "' onclick='showBadgeInfo(\"" + badge.badgeid + "\");' />");
+	}
+
+
+    function updateReadStats()
+	{
+		
+		// todo: call stats webservice and update field values
+		
+	}
+	
+	
+	
+	
+	
+	function awardBadges(pstrUserId, pstrAccessToken, pcallback)
+	{
+		// award new badges
+		$.ajax({
+			type: 'POST',
+			url: strBaseURL + "service.php",
+			dataType: 'json',
+			data: { method: "awardbadges", user: pstrUserId, accesstoken: pstrAccessToken, year: strActiveYear },
+			success: function(response)
+			{
+
+
+				if (response.status == "success")
+				{
+					// add badges and share buttons to #badgebox
+					
+					if (pcallback)
+					{
+						pcallback(response.data);
+					}
+					
+					
+					for(var badgeid in response.data)
+					{
+						var badge = response.data[badgeid];
+						
+						// add badge to bookshelf list also
+						addBadge(badge);
+					}
+					
+					
+				}
+				else
+				{
+					alert(response.message);
+				}
+				
+			},
+			error: function(x, y, z)
+			{
+				//alert(x + "-" + y + "-" + z + "-" + x.responseText);
+			}
+		});
+
+	}
+
+	function showBadgeInfo(pstrBadgeId)
+	{
+		if (!blnDisableFancybox)
+		{
+			$.fancybox.open(strBaseURL + "badge.php?badgeid=" + pstrBadgeId + "&user=" + strUser + "&year=" + strActiveYear,
+			{
+				type: 'iframe',
+				autoSize : false,
+				width: "650px",
+				height: "350px",
+				padding: 10
+				
+			});
+		}
+		else
+		{
+			// window.open for IE 6 since it doesn't seem to work well with fancybox
+			window.open(strURL);
+		}
+
+	}
+	
+	function addbook_click()
+	{
+	
+		var strBookcaseColour = "wood";
+		
+		
+
+	
+		var strURL = strBaseURL + "search.php?activebookcase=" + strActiveBookcase + "&colour=" + strBookcaseColour + "&year=" + strActiveYear;
+
+		if (!blnDisableFancybox)
+		{
+			$.fancybox.open(strURL,
+			{
+				type: 'iframe',
+				autoSize : false,
+				width: "600px",
+				height: "500px",
+				padding: 10
+				
+			});
+		}
+		else
+		{
+			// window.open for IE 6 since it doesn't seem to work well with fancybox
+			window.open(strURL);
+		}
+
+	
+	
+		/*
+		var intSearchBoxHeight = 350;
+	
+		if (strActiveBookcase == "q")
+		{
+			intSearchBoxHeight = 550;
+			$("#staffrecommended").css("display", "block");
+		}
+		
+		
+		$("#searchpane").css("display", "block");
+		$("#searchpane").animate({'height': intSearchBoxHeight + 'px'}, 600);
+		*/
+		
+					
+		
+	}
+
+
+	
+	function addbooktoshelf_click(pstrASIN, pintRating, pstrComment, pCallback, pblnCustomAdd, pExtraData)
+	{
+		
+		addBookToShelf_helper(pstrASIN, strActiveBookcase, pintRating, pstrComment, pCallback, pblnCustomAdd, pExtraData);
+	}
+	
+	function addBookToShelf_helper(pstrASIN, pstrBookcase, pintRating, pstrComment, pCallback, pblnCustomAdd, pExtraData)
+	{
+	
+		if (pExtraData == null)
+		{
+			pExtraData = {};
+		}
+		
+		if (!pExtraData.hasOwnProperty('title'))
+		{
+			pExtraData.title = "";
+		}
+
+		if (!pExtraData.hasOwnProperty('author'))
+		{
+			pExtraData.author = "";
+		}
+
+	
+		$.ajax({
+			type: 'POST',
+			url: strBaseURL + "service.php",
+			dataType: 'json',
+			data: { method: "addbooktoshelf", bookid: pstrASIN, bookshelf: pstrBookcase, rating: pintRating, comment: pstrComment, accesstoken: strAccessToken, customadd: pblnCustomAdd, title: pExtraData.title, author: pExtraData.author, year: strActiveYear },
+			success: function(response)
+			{
+				if (response.status == "success")
+				{
+					var book = response.data;
+					
+					if (pstrBookcase == strActiveBookcase)
+					{
+    					buildBookOnShelf(book.bookid, book.cover, book.url, pstrBookcase, book.bookonshelfid, strActiveYear);
+					}
+					
+					
+					if (pCallback)
+					{
+					    var lintNumBooksRead = parseFloat($("#numbooksread").text()) + 1;
+					    
+					    if (lintNumBooksRead == null || lintNumBooksRead <= 0)
+					    {
+    					    lintNumBooksRead = 1;
+					    }
+					    
+						pCallback(lintNumBooksRead, book.bookid);
+						
+						if (pstrBookcase == 'r')
+						{
+    						$("#numbooksread").text(lintNumBooksRead);
+						}
+                        
+					}
+				}
+				else
+				{
+					alert(response.message);
+				}
+				
+				
+			},
+			error: function(x, y, z)
+			{
+				alert(x + "-" + y + "-" + z + "-" + x.responseText);
+			}
+		});
+	}
+	
+	function deletebook_click(pstrBookOnShelfId, pCallback)
+	{
+
+		if (confirm('Are you sure you want to delete this book from your bookshelf?'))
+		{
+
+			deleteBook_helper(pstrBookOnShelfId, pCallback);
+
+		}
+
+		
+	}
+
+	function deleteBook_helper(pstrBookOnShelfId, pCallback)
+	{
+		$.ajax({
+				type: 'POST',
+				url: strBaseURL + "service.php",
+				dataType: 'json',
+				data: { method: "deletebookfromshelf", bookonshelfid: pstrBookOnShelfId, accesstoken: strAccessToken},
+				success: function(response)
+				{
+					if (response.status == "success")
+					{
+						// escape pipe character with 2 backslashes
+						selector_strBookOnShelfId = pstrBookOnShelfId.replace(/\|/g,'\\|')
+
+						$("#" + selector_strBookOnShelfId).css("display", "none");
+						
+						// update counts
+						mintNumBooks--;
+						
+						updateReadStats();
+						
+						if (pCallback)
+						{
+							pCallback();
+						}
+						
+						if (strActiveBookcase == 'r')
+						{
+                            var lintNumBooksRead = parseFloat($("#numbooksread").text()) - 1;
+					    
+    					    if (lintNumBooksRead == null || lintNumBooksRead <= 0)
+    					    {
+        					    lintNumBooksRead = 0;
+    					    }
+    					    
+    						
+                            $("#numbooksread").text(lintNumBooksRead);
+
+						}
+					}
+					else
+					{
+						alert(response.message);
+					}
+					
+	
+				},
+				error: function(x, y, z)
+				{
+					alert(x + "-" + y + "-" + z + "-" + x.responseText);
+				}
+			});
+	}
+
+	function bookinfo_click(pstrASIN, pstrBookOnShelfId, pstrShelfOverride)
+	{
+
+        var strShelf = strActiveBookcase;
+        var strBookcaseColour = "wood";
+
+        if (pstrShelfOverride != null)
+        {
+            strShelf = pstrShelfOverride;
+
+            if (strShelf == 'r')
+            {
+                strBookcaseColour = "wood";
+            }
+            else if (strShelf == 'c')
+            {
+                strBookcaseColour = "wood";
+            }
+            else if (strShelf == 'f')
+            {
+                strBookcaseColour = "wood";
+            }
+            else if (strShelf == 'q')
+            {
+                strBookcaseColour = "wood";
+            }
+        }
+
+
+		var strURL = strBaseURL + "bookinfo.php?bookid=" + pstrASIN + "&user=" + strUser + "&username=" + encodeURIComponent(strUserName) + "&bookcase=" + strShelf + "&colour=" + strBookcaseColour + "&bookonshelfid=" + encodeURIComponent(pstrBookOnShelfId) + "&year=" + strActiveYear;
+		
+		if (strUser == "promo")
+		{
+			strURL += "&promoshelf=" + "";
+		}
+
+		if (!blnDisableFancybox)
+		{
+			$.fancybox.open(strURL,
+			{
+				type: 'iframe',
+				autoSize : false,
+				width: "600px",
+				height: "500px",
+				padding: 10
+				
+			});
+		}
+		else
+		{
+			// window.open for IE 6 since it doesn't seem to work well with fancybox
+			window.open(strURL);
+		}
+
+	}
+    
+    function closesearch()
+	{
+		jQuery.fancybox.close();
+	}
+	
+	function closeinfo()
+	{
+		jQuery.fancybox.close();
+	}
+	
+	
+	function drawNewCustomShelfField() 
+        {
+
+            $("#shelflinkcontainer").append("<div id='newcustomshelf_container'><input id='newcustomshelf' style='width: 100px;' /> <span id='btnSaveCustomShelf' class='textlink' onclick='addCustomShelf();'>Save</span></div>");
+            $("#btnAddShelf").hide();
+            
+        }
+        
+        function addCustomShelf()
+        {
+            var strCustomShelfName = $("#newcustomshelf").val();
+            
+            $.ajax({
+    			type: 'POST',
+    			url: strBaseURL + "service.php",
+    			dataType: 'json',
+    			data: { method: "addcustomshelf", accesstoken: strAccessToken, shelfname: strCustomShelfName},
+    			success: function(response)
+    			{
+    			    
+    				if (response.status == "success")
+    				{
+    				    
+    				    strCustomShelfSlug = response.data.slug;
+    				
+    					$("#shelflinkcontainer").append("<a id='" + strCustomShelfSlug + "_link' href='http://www.50bookpledge.ca/user/116906169r/" + strCustomShelfSlug + "/2015' class='textlink'>" + strCustomShelfName + "</a><br />");
+        
+                        $("#newcustomshelf_container").remove();
+                        $("#btnAddShelf").show();
+    				}
+    				else
+    				{
+    					alert(response.message);
+    				}
+    				
+    
+    			},
+    			error: function(x, y, z)
+    			{
+    				console.log(x + "-" + y + "-" + z + "-" + x.responseText);
+    			}
+    		});
+
+            
+            
+        }
+
+        // note: duplicated on Bookshelf and Profile. make changes to both or consolidate.
+        function deleteShelf(pstrShelfSlug)
+        {
+            if (confirm('Are you sure you want to delete this shelf?'))
+    		{
+    
+                $.ajax({
+        			type: 'POST',
+        			url: strBaseURL + "service.php",
+        			dataType: 'json',
+        			data: { method: "deletecustomshelf", accesstoken: strAccessToken, shelfslug: pstrShelfSlug},
+        			success: function(response)
+        			{
+        			    
+        				if (response.status == "success")
+        				{
+        				    console.log(response.data);
+                            $("#" + pstrShelfSlug + "_link").remove();
+                            
+                            if (pstrShelfSlug == strActiveBookcase)
+                            {
+                                
+                                window.location = "http://www.50bookpledge.ca/user/" + strUser + "/r";
+                                
+                            }
+                            
+        				}
+        				else
+        				{
+        					alert(response.message);
+        				}
+        				
+        
+        			},
+        			error: function(x, y, z)
+        			{
+        				console.log(x + "-" + y + "-" + z + "-" + x.responseText);
+        			}
+        		});
+    
+    		}
+
+
+        }
+
+        function yearChanged()
+        {
+            var strNewYear = $("#ddYear").val();
+            
+            var strUrl = '';
+            
+            if (strUser == "promo")
+            {
+                strUrl = 'savvytop10s//' + strNewYear;
+            }
+            else
+            {
+                strUrl = 'user/' + strUser + '/' + strActiveBookcase + '/' + strNewYear;
+            }
+            
+            window.location = strBaseURL + strUrl;
+            
+            
+        }
+        
+        function shareFB(pstrFBAccessToken, pstrShareMessage, pstrURL, pstrCaption)
+		{
+		
+			pstrURL = pstrURL + "/" + strActiveBookcase + "/" + strActiveYear;
+		
+		  // calling the API ...
+		    var obj = {
+		      method: 'feed',
+		      //display: 'popup',
+		      access_token: pstrFBAccessToken,
+		      link: pstrURL,
+		      picture: "http://static.50bookpledge.ca/images/logo2014_250.png",
+		      name: pstrShareMessage,
+		      caption: pstrCaption,
+		      description: "Join this online community to make your pledge, keep track of the books you read, see what your friends are reading, earn fun badges, win prizes, and more."
+		    };
+		
+		    function callback(response) {
+		      //document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
+		    }
+		
+		    FB.ui(obj, callback);
+		}
+
+</script>
+
+    	
+    	
+    	    <br clear='both' /> <!-- needed to clear any floated divs -->
+    	    <br />
+    
+    </div><!-- ends MAIN div -->
+</div><!-- ends WRAP div -->
+<div id='footer' style='text-align: center; background-color: rgb(0, 95, 150); color: white; font-size: 12px;'>
+    <br />
+    Copyright &copy; 2013-2015 <a href='http://www.thesavvyreader.ca' class='textlink'>TheSavvyReader.ca</a><br />
+	<a href='http://www.harpercollins.ca/footer/privacyPolicy.aspx' target="_blank" style='text-decoration: none; color:rgb(235, 243, 230);'>Privacy Policy</a><br />
+
+	<div style='margin-bottom: 1px; margin-top: 10px;'>
+		Built By <a href='http://www.84northstudios.com' style='text-decoration: none; color: white;'><img src='http://static.50bookpledge.ca/images/84logo.png' alt='84' style='border: 0px;' /> North Studios Inc</a>
+	</div>
+
+    <br />
+</div>
+
+    <script type="text/javascript">
+
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-5495415-17']);
+ _gaq.push(['_trackPageview']);
+
+ _gaq.push(['b._setAccount', 'UA-36316457-2']);
+ _gaq.push(['b._trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+
+</script>
+</body>
+</html>
+    	
+    	

@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head profile="http://gmpg.org/xfn/11">
+	<title>The Whelming &rsaquo; Thy data, writ large</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" media="screen,projection" href="http://magnusmanske.de/wordpress/wp-content/themes/veryplaintxt/style.css" title="veryplaintxt" />
+	<link rel="stylesheet" type="text/css" media="print" href="http://magnusmanske.de/wordpress/wp-content/themes/veryplaintxt/print.css" />
+	<link rel="alternate" type="application/rss+xml" href="http://blog.magnusmanske.de/?feed=rss2" title="The Whelming RSS feed" />
+	<link rel="alternate" type="application/rss+xml" href="http://blog.magnusmanske.de/?feed=comments-rss2" title="The Whelming comments RSS feed" />
+	<link rel="pingback" href="http://magnusmanske.de/wordpress/xmlrpc.php" />
+
+<link rel="alternate" type="application/rss+xml" title="The Whelming &raquo; Thy data, writ large Comments Feed" href="http://blog.magnusmanske.de/?feed=rss2&#038;p=265" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://magnusmanske.de/wordpress/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://magnusmanske.de/wordpress/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Red vs. blue' href='http://blog.magnusmanske.de/?p=250' />
+<link rel='next' title='Linkin mash' href='http://blog.magnusmanske.de/?p=268' />
+<meta name="generator" content="WordPress 4.1.1" />
+<link rel='canonical' href='http://blog.magnusmanske.de/?p=265' />
+<link rel='shortlink' href='http://blog.magnusmanske.de/?p=265' />
+
+<style type="text/css" media="all">
+/*<![CDATA[*/
+/* CSS inserted by theme options */
+body{font-family:verdana,geneva,sans-serif;font-size:90%;}
+body div#container { float: left; margin: 0 -200px 2em 0; } body div#content { margin: 3em 200px 0 0; } body div.sidebar { float: right; }
+body div#content div.hentry{text-align:justify;}
+body div#content h2,div#content h3,div#content h4,div#content h5,div#content h6{font-family:arial,helvetica,sans-serif;}
+body div#wrapper{max-width:55em;min-width:35em;width:80%;}
+body div.sidebar{text-align:center;}
+/*]]>*/
+</style>
+
+</head>
+
+<body class="wordpress y2015 m04 d04 h12 single s-y2015 s-m02 s-d08 s-h11 s-category-wikidata s-author-adminimum">
+
+<div id="wrapper">
+
+	<div id="header">
+		<h1 id="blog-title"><a href="http://blog.magnusmanske.de/" title="The Whelming">The Whelming</a></h1>
+		<div id="blog-description">Tech, tools, and tribulations</div>
+	</div><!-- #header -->
+	
+	<div class="access"><span class="content-access"><a href="#content" title="Skip to content">Skip to content</a></span></div>
+
+<div id="globalnav"><ul id="menu"><li class="page_item_home home-link"><a href="http://blog.magnusmanske.de/" title="The Whelming" rel="home">Home</a></li><li class="page_item page-item-2"><a href="http://blog.magnusmanske.de/?page_id=2">About</a></li></ul></div>
+
+	<div id="container">
+		<div id="content" class="hfeed">
+
+
+			<div id="post-265" class="hentry p1 post publish author-adminimum category-wikidata y2015 m02 d08 h11">
+				<h2 class="entry-title">Thy data, writ large</h2>
+				<div class="entry-content">
+<p>Ever since <a href="https://en.wikipedia.org/wiki/User:Rambot">Rambot</a> effectively doubled the size of English Wikipedia in a matter of days, automatic text generation from a dataset has been met with suspicion in the Wikiverse. Some text is better than none, for most readers, say some; but number-heavy, boring bot text is not really an encyclopaedia entry, and it could also take away some of the joy of writing, say others. To this day, it is an issue that can split Wikipedians into fierce combatant groups like little else.</p>
+<p>Change of scenery. Wikidata is a young but vibrant Wikimedia project, and in many aspects still finding its shape. Each item on Wikidata can have a brief, textual description. This is helpful, for example in the current Wikipedia mobile app, where these descriptions are superimposed on a header image, say some; it is a waste of volunteer&#8217;s time to write a text that just reiterates the item statements, say others. Some (including myself) say that manual descriptions make sense for a few items, but the vast majority of items do not require a human to describe the item.</p>
+<p>The solution for both above issues is, of course, bot-generated text on-the-fly; text that is written by software based on a data source, but that is not permanently stored. That way, essential information can be given to the reader, without discouraging writers, and without the need to maintain and update the bot-generated text, as it is never stored in the first place, but updated from the current dataset on demand.</p>
+<p>I have previously written some code that does aspects of this; <a href="http://magnusmanske.de/wordpress/?p=108">Wikidata search results</a> are displayed on some Wikipedias (e.g. Italian) underneath the standard ones; they contain a brief, automatically generated description of each Wikidata item. And some people have seen my <a href="http://tools.wmflabs.org/reasonator/?q=Q1339">Reasonator</a> tool, where (for some item types, and some languages) rather long descriptions can be generated.</p>
+<p>But these examples are &#8220;trapped&#8221; in their respective tool or environment; other tools, websites, or third-party users have no way to get automated descriptions for Wikidata items easily. That is, until now. <a href="http://tools.wmflabs.org/autodesc/"><strong>AutoDesc</strong></a> is a web API that can generate automated descriptions of almost any Wikidata item; the quality of the description improves with the quality of the statements in the item, of course.</p>
+<p>And thanks to <a href="https://en.wikipedia.org/wiki/Node.js">node.js</a>, which is now available as a server on Wikimedia Labs (thanks to <a href="https://en.wikipedia.org/wiki/User:YuviPanda_%28WMF%29">YuviPanda</a>!), little rewriting of code was necessary; the &#8220;long description&#8221; generator is, in fact, the exact same source code used in Reasonator at this moment. This means that previous development by myself and other volunteers is not lost, but has paid off; and future improvement to either version of the text generator can simply be copied to the other.</p>
+<p>The API can take an item number, a language code, and some other options, and generate a description of that item. It can return the description wrapped in JSON(P), or as an HTML page. It can generate plain text, wiki markup, or HTML with Wikipedia/Wikidata/Reasonator links. If you request the long description, it will automatically fall back to the short one if the item type or language for a long description are not supported (yet!).</p>
+<p>Now, a word of caution: As I cobbled the text generation together from previously existing code, and code that was intended for use in a browser at that, things may not run as smoothly as one would expect. There is, in fact, little caching, and the cache that exists is not invalidated until the next server restart; an event that will be necessary to put new code live, and that will mean several seconds (the horror!) downtime for the API. If you base anything important on the API at this moment in time, homework will be eaten, data will be lost, and the write-everything-by-hand-fanatics will win. Be warned!</p>
+<p>That said, I will try to improve the code over the coming weeks; if you want to help out, you can find the code <a href="https://bitbucket.org/magnusmanske/autodesc">here</a>.</p>
+
+				</div>
+
+				<div class="entry-meta">
+					This was written by <span class="vcard"><span class="fn n">Magnus</span></span>. Posted on <abbr class="published" title="2015-02-08T22:26:19+0000">Sunday, February 8, 2015, at 22:26</abbr>. Filed under <a href="http://blog.magnusmanske.de/?cat=9" rel="category">Wikidata</a>. Bookmark the <a href="http://blog.magnusmanske.de/?p=265" title="Permalink to Thy data, writ large" rel="bookmark">permalink</a>. Follow comments here with the <a href="http://blog.magnusmanske.de/?feed=rss2&#038;p=265" title="Comments RSS to Thy data, writ large" rel="alternate" type="application/rss+xml">RSS feed</a>.					Both comments and trackbacks are currently closed.
+				</div>
+			</div><!-- .post -->
+
+<div class="comments">
+
+
+
+	<h3 class="comment-header" id="numcomments">2 Comments</h3>
+	<ol id="comments" class="commentlist">
+		<li id="comment-5731" class="comment c-y2015 c-m02 c-d09 c-h11 alt c1">
+			<div class="comment-author vcard"><img alt='' src='http://1.gravatar.com/avatar/99179994e4bed2d51ba765de5d5ff677?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='photo avatar avatar-40 photo' height='40' width='40' /> <span class="fn n"><a href='http://purl.org/net/pietsch' rel='external nofollow' class='url url'>Christian Pietsch</a></span> wrote:</div>
+						<p>When I visit AutoDesc , it says “no webservice”.</p>
+			<div class="comment-meta">
+				<span class="comment-datetime">Monday, February 9, 2015 at 10:32</span> <span class="meta-sep">|</span> <span class="comment-permalink"><a href="#comment-5731" title="Permalink to this comment">Permalink</a></span> 
+			</div>
+		</li>
+
+		<li id="comment-5732" class="comment byuser commentauthor-adminimum bypostauthor c-y2015 c-m02 c-d09 c-h12 c2">
+			<div class="comment-author vcard"><img alt='' src='http://0.gravatar.com/avatar/e3cbed604b9bf3289a426d7e7b0cb52d?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='photo avatar avatar-40 photo' height='40' width='40' /> <span class="fn n">Magnus</span> wrote:</div>
+						<p>I warned about potential issues <img src="http://magnusmanske.de/wordpress/wp-includes/images/smilies/icon_smile.gif" alt=":-)" class="wp-smiley" /> Restarted now.</p>
+			<div class="comment-meta">
+				<span class="comment-datetime">Monday, February 9, 2015 at 11:23</span> <span class="meta-sep">|</span> <span class="comment-permalink"><a href="#comment-5732" title="Permalink to this comment">Permalink</a></span> 
+			</div>
+		</li>
+
+
+	</ol>
+
+
+
+
+</div>
+			<div id="nav-below" class="navigation">
+				<div class="nav-previous">&lsaquo; <a href="http://blog.magnusmanske.de/?p=250" rel="prev">Red vs. blue</a></div>
+				<div class="nav-next"><a href="http://blog.magnusmanske.de/?p=268" rel="next">Linkin mash</a> &rsaquo;</div>
+			</div>
+
+		</div><!-- #content .hfeed -->
+	</div><!-- #container -->
+
+		<div id="primary" class="sidebar">
+			<ul>
+
+				<li id="home-link">
+					<h3><a href="http://blog.magnusmanske.de" title="The Whelming">&lsaquo; Home</a></h3>
+				</li>
+
+				<li id="search">
+					<h3><label for="s">Search</label></h3>
+					<form id="searchform" method="get" action="http://blog.magnusmanske.de">
+						<div>
+							<input id="s" name="s" type="text" value="" size="10" />
+							<input id="searchsubmit" name="searchsubmit" type="submit" value="Find" />
+						</div>
+					</form>
+				</li>
+<li class="pagenav"><h3>Contents</h3><ul><li class="page_item page-item-2"><a href="http://blog.magnusmanske.de/?page_id=2">About</a></li>
+</ul></li>
+				<li id="categories">
+					<h3>Categories</h3>
+					<ul>
+	<li class="cat-item cat-item-10"><a href="http://blog.magnusmanske.de/?cat=10" >Apple</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://blog.magnusmanske.de/?cat=13" >Commons</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://blog.magnusmanske.de/?cat=14" >gender</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="http://blog.magnusmanske.de/?cat=11" >Harwdare</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://blog.magnusmanske.de/?cat=1" >Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://blog.magnusmanske.de/?cat=9" >Wikidata</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://blog.magnusmanske.de/?cat=7" >Wikimedia</a>
+</li>
+
+					</ul>
+				</li>
+
+				<li id="tag-cloud">
+					<h3>Tags</h3>
+					<p><a href='http://blog.magnusmanske.de/?tag=commons' class='tag-link-5' title='2 topics' style='font-size: 22pt;'>commons</a>
+<a href='http://blog.magnusmanske.de/?tag=gamification' class='tag-link-12' title='1 topic' style='font-size: 8pt;'>gamification</a>
+<a href='http://blog.magnusmanske.de/?tag=javascript' class='tag-link-6' title='2 topics' style='font-size: 22pt;'>javascript</a>
+<a href='http://blog.magnusmanske.de/?tag=toolserver' class='tag-link-8' title='1 topic' style='font-size: 8pt;'>Toolserver</a></p>
+				</li>
+
+				<li id="archives">
+					<h3>Archives</h3>
+					<ul>
+	<li><a href='http://blog.magnusmanske.de/?m=201503'>March 2015</a></li>
+	<li><a href='http://blog.magnusmanske.de/?m=201502'>February 2015</a></li>
+	<li><a href='http://blog.magnusmanske.de/?m=201501'>January 2015</a></li>
+	<li><a href='http://blog.magnusmanske.de/?m=201412'>December 2014</a></li>
+	<li><a href='http://blog.magnusmanske.de/?m=201411'>November 2014</a></li>
+	<li><a href='http://blog.magnusmanske.de/?m=201410'>October 2014</a></li>
+	<li><a href='http://blog.magnusmanske.de/?m=201408'>August 2014</a></li>
+	<li><a href='http://blog.magnusmanske.de/?m=201407'>July 2014</a></li>
+	<li><a href='http://blog.magnusmanske.de/?m=201406'>June 2014</a></li>
+	<li><a href='http://blog.magnusmanske.de/?m=201405'>May 2014</a></li>
+	<li><a href='http://blog.magnusmanske.de/?m=201404'>April 2014</a></li>
+	<li><a href='http://blog.magnusmanske.de/?m=201403'>March 2014</a></li>
+	<li><a href='http://blog.magnusmanske.de/?m=201402'>February 2014</a></li>
+	<li><a href='http://blog.magnusmanske.de/?m=201401'>January 2014</a></li>
+	<li><a href='http://blog.magnusmanske.de/?m=201312'>December 2013</a></li>
+	<li><a href='http://blog.magnusmanske.de/?m=201311'>November 2013</a></li>
+	<li><a href='http://blog.magnusmanske.de/?m=201310'>October 2013</a></li>
+	<li><a href='http://blog.magnusmanske.de/?m=201309'>September 2013</a></li>
+	<li><a href='http://blog.magnusmanske.de/?m=201308'>August 2013</a></li>
+	<li><a href='http://blog.magnusmanske.de/?m=201208'>August 2012</a></li>
+	<li><a href='http://blog.magnusmanske.de/?m=201106'>June 2011</a></li>
+	<li><a href='http://blog.magnusmanske.de/?m=201105'>May 2011</a></li>
+
+					</ul>
+				</li>
+
+
+				<li id="rss-links">
+					<h3>RSS Feeds</h3>
+					<ul>
+						<li><a href="http://blog.magnusmanske.de/?feed=rss2" title="The Whelming RSS 2.0 Feed" rel="alternate" type="application/rss+xml">All posts</a></li>
+						<li><a href="http://blog.magnusmanske.de/?feed=comments-rss2" title="The Whelming Comments RSS 2.0 Feed" rel="alternate" type="application/rss+xml">All comments</a></li>
+					</ul>
+				</li>
+
+				<li id="meta">
+					<h3>Meta</h3>
+					<ul>
+												<li><a href="http://magnusmanske.de/wordpress/wp-login.php">Log in</a></li>
+											</ul>
+				</li>
+
+			</ul>
+		</div><!-- #primary .sidebar -->	<div id="footer">
+		<span id="copyright">&copy; 2015 <span class="vcard"><a class="url fn n" href=""><span class="given-name"></span> <span class="family-name"></span></a></span></span>
+		<span class="meta-sep">&para;</span>
+		<span id="generator-link">Thanks, <a href="http://wordpress.org/" title="WordPress">WordPress</a>.</span>
+		<span class="meta-sep">&para;</span>
+		<span id="theme-link"><a href="http://www.plaintxt.org/themes/veryplaintxt/" title="veryplaintxt theme for WordPress" rel="follow designer">veryplaintxt</a> theme by <span class="vcard"><a class="url fn n" href="http://scottwallick.com/" title="scottwallick.com" rel="follow designer"><span class="given-name">Scott</span><span class="additional-name"> Allan</span><span class="family-name"> Wallick</span></a></span>.</span>
+		<span class="meta-sep">&para;</span>
+		<span id="web-standards">It's nice <a href="http://validator.w3.org/check/referer" title="Valid XHTML">XHTML</a> &amp; <a href="http://jigsaw.w3.org/css-validator/validator?profile=css2&amp;warning=2&amp;uri=http://magnusmanske.de/wordpress/wp-content/themes/veryplaintxt/style.css" title="Valid CSS">CSS</a>.</span>
+	</div><!-- #footer -->
+
+
+</div><!-- #wrapper -->
+
+</body><!-- end trasmission -->
+</html>

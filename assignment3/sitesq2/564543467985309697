@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class='no-js' ng-app='thedoctors'>
+<!--<![endif]-->
+<head>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta charset='utf-8'>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"88c44e808f","applicationID":"4726583","transactionName":"elZfFUtcX1tSQx5KUl9QXwRLShxWRUVYW1tcSh4AS0daVFtUQhdEUVZG","queueTime":0,"applicationTime":570,"agent":"js-agent.newrelic.com/nr-632.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UAcHUFdADAQCUlRaBA=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:9,3:7,4:11,5:3,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:9,3:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<meta content='PTIjElD06zLQ9AQMHGKtSeZXudXfRMQyA1bTpVmoEY0' name='google-site-verification'>
+<meta content='Hear the incredible story of a young teen who survived a massive explosion in her home. Plus, see the surprises The Doctors have in store...' name='description'>
+<meta content='http://www.thedoctorstv.com/system/images/W1siZiIsIjIwMTUvMDIvMDQva2lsZWUuanBnIl1d/kilee.jpg' property='og:image'>
+<meta content='Hear the incredible story of a young teen who survived a massive explosion in her home. Plus, see the surprises The Doctors have in store for her!' property='og:description'>
+<meta content='The Doctors' property='og:site_name'>
+<meta content='Teen Survives Home Explosion' property='og:title'>
+<meta content='http://www.thedoctorstv.com/articles/2920-teen-survives-home-explosion' property='og:url'>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="xEkS92Yu04AOnpuGE2FHW/nhsgUMz9hp3psG6N7C9TE=" name="csrf-token" />
+<title>Teen Survives Home Explosion</title>
+<link href='https://plus.google.com/107223298387056203599' rel='publisher'>
+<!--[if lt IE 9]>
+<script src="/assets/html5shiv-printshiv.min-ed23b70b65df003e119fec219764ce52.js" type="text/javascript"></script>
+<script src="/assets/ie9-dc414b07af0ceaac15b2a564095ccbac.js" type="text/javascript"></script>
+<![endif]-->
+<link href="/assets/framework_and_overrides-1734bef0fef4fe853654c2544b370649.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/application-90c4aa6e306777afdf3740ac5bf0dc03.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body ng-controller='LineupsController'>
+<div class='device-xs visible-xs'></div>
+<!-- / If this div is visible, the viewport width will be changed for tablets -->
+<div class='device-sm visible-sm'></div>
+<div class='device-md visible-md'></div>
+<div class='device-lg visible-lg'></div>
+<div data-data-parms="{&quot;zipcode&quot;:&quot;&quot;,&quot;ptype&quot;:&quot;&quot;,&quot;provider&quot;:{&quot;name&quot;:&quot;&quot;,&quot;lineupId&quot;:&quot;&quot;}}" id="ll_parms"></div>
+<div class='close_header_banner'>
+<div class='ad_header'>
+<div class='sticky_ad dots'>
+<div id='header_banner'>
+<!-- Zone 1 Header ad -->
+<div class='banner head_banner hidden-xs' id='div-gpt-ad-thedoctorstv-com-zone-1'></div>
+
+</div>
+<div class='close_header pulse-divider hidden-xs'><img alt="Headerborderpulseline" src="/assets/headerBorderPulseLine-877ea138a4a11b99374ffccd4ee76cb6.png" /></div>
+</div>
+</div>
+<div class='hidden-xs' id='ad_wrapper_holder'></div>
+<div class='close_header' id='header'>
+<div class='container this_week_container'>
+<div class='row clearfix'>
+<div class='col-sm-4 this_week_wrapper'>
+<div class='this_week'>
+THIS WEEK
+</div>
+<div class='on_the_docs'>
+ON THE DOCTORS
+</div>
+</div>
+<div class='col-sm-8' ng-controller='headFootCtrl'>
+<div class='episode_wrapper' ng-repeat='episode in episodes'>
+<a href='{{ episode.location }}' ng-click='' ng-model='episodes'>
+<img class='play' src='/assets/playbutton.png' style='position:absolute; padding:4px;'>
+<img ng-src='{{ episode.video_preview }}' style='height:70px;'>
+<div style='width:110px; margin-top:3px;'>
+<span class='day_of_week'>
+<span class='ng-cloak'>{{ episode.date }}:</span>
+</span>
+<span class='day_tease'>
+<span class='ng-cloak'>{{ episode.teaser }}</span>
+</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class='container'>
+<div class='row-fluid clearfix'>
+<div class='col-sm-8 meet_our_docs hidden-xs'>
+<a href="/doctors"><div class='meet_our_doctors_wrapper'>
+<div class='meet_our_doctors_wrapper_header'>
+MEET OUR DOCTORS
+</div>
+<div class='meet_our_doctors_wrapper_text'>
+<!-- Lorem facil sisesdsed ipsum sit consectetuer dolor. -->
+</div>
+</div>
+</a><a href="/doctors"><img alt="Full-cast" src="/assets/full-cast-c796065af9f417228104f4a4c5161dca.png" style="height:205px; margin-top:15px; max-width:500px;" /></a>
+</div>
+<div class='col-sm-4 clearfix header_info'>
+<div class='watch_text_medium'>
+WATCH THE DOCTORS
+</div>
+<div style='margin-top:5px; margin-bottom:15px;'>
+<div class='inline_div' ng-switch="status | showIt : 'upcoming_show'">
+<div class='descriptive_text_medium'>
+<span class='user_loc_top' style='text-transform:uppercase'>
+Local Listings
+<span class='ng-cloak'>{{zipcode}}</span>
+</span>
+/
+<span class='change_zip_first'><a href="/local-listings">Change Zip</a></span>
+</div>
+<div class='descriptive_text_medium'>
+<span class='upcoming_show' ng-switch-when='true' style='text-transform: uppercase'>
+<span class='ng-cloak'>{{airing.station.callSign}}</span>
+<span class='ng-cloak'>{{airing.channels[0] | number : 0 | replace : ',' : '' }} | Mon - Fri @</span>
+<span class='ng-cloak'>{{airing.startTime | calcTime: offset | date:'h:mm a'}}</span>
+</span>
+</div>
+</div>
+<div class='inline_div right_arrow hidden-xs'>
+<a href="/episodes"><img alt="Gray_arrow" src="/assets/gray_arrow-82fe71d6bddc83b674c667cc3adcd313.png" /></a>
+</div>
+</div>
+<div class='header_link_wrapper'>
+<a href="/be-on-the-show" class="get_tickets">BE ON THE SHOW</a>
+<span style='margin-right:10px; margin-left:10px;'>/</span>
+<a href="/be-on-the-show/audience-tickets" class="get_tickets">GET TICKETS</a>
+</div>
+<div id='header_social'>
+<div class='header_social_text'>
+Connect with The Doctors
+</div>
+<span><a href="https://www.facebook.com/TheDoctors" class="fa fa-lg fa-facebook" target="_blank"></a></span>
+<span><a href="https://twitter.com/thedoctors" class="fa fa-lg fa-twitter" target="_blank"></a></span>
+<span><a href="http://www.pinterest.com/thedoctors/" class="fa fa-lg fa-pinterest" target="_blank"></a></span>
+<span><a href="http://www.youtube.com/thedoctorstv" class="fa fa-lg fa-youtube" target="_blank"></a></span>
+<span><a href="http://instagram.com/thedoctorstv?ref=badge" class="fa fa-lg fa-instagram" target="_blank"></a></span>
+<span><a href="https://plus.google.com/+thedoctors" class="google_plus fa fa-lg fa-google-plus" target="_blank"></a></span>
+</div>
+</div>
+<div class='col-sm-8 meet_our_docs visible-xs'>
+<a href="/doctors"><div class='meet_our_doctors_wrapper'>
+<div class='meet_our_doctors_wrapper_header'>
+MEET OUR DOCTORS
+</div>
+<div class='meet_our_doctors_wrapper_text'>
+<!-- Lorem facil sisesdsed ipsum sit consectetuer dolor. -->
+</div>
+</div>
+</a><a href="/doctors"><img alt="Full-cast" src="/assets/full-cast-c796065af9f417228104f4a4c5161dca.png" style="width:100%;" /></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='mp_db_back make_sticky_wrapper hidden-xs' id='nav_wrapper'>
+<div class='container'>
+<div class='col-sm-3'>
+<a href="/"><img alt="Doctorslogo" class="logo_image" src="/assets/doctorslogo-fa1bf57be88b5983b980ff069ff7fd04.png" style="margin-top:28px" /></a>
+</div>
+<div class='col-sm-9'>
+<div class='row'>
+<div class='col-sm-12' style='padding-right:0px;'>
+<div class='loc_info mp_mb_back rounded_bottoms'>
+<span class='change_zip' ng-switch="status | showIt : 'upcoming_show'">
+<span class='user_loc'>
+Local Listings
+<span class='ng-cloak'>{{zipcode}}</span>
+</span>
+/
+<a href="/local-listings">Change Zip</a>
+<span class='upcoming_show' ng-switch-when='true'>
+<span class='ng-cloak'>{{airing.station.callSign}}</span>
+<span class='ng-cloak'>{{airing.channels[0] | number : 0 | replace : ',' : '' }}</span>
+Mon - Fri @
+<span class='ng-cloak'>{{airing.startTime | calcTime: offset | date:'h:mm a'}}</span>
+</span>
+</span>
+<span class='loc_slash'>
+/
+</span>
+<span class='be_on_show'>
+<a href="/be-on-the-show" class="get_tickets">BE ON THE SHOW</a>
+</span>
+<span class='loc_slash'>
+/
+</span>
+<span class='get_tickets'>
+<a href="/be-on-the-show/audience-tickets" class="get_tickets">GET TICKETS</a>
+</span>
+<span class='loc_slash'>
+/
+</span>
+<span class='watch_doctors open_header'>
+<a href="#" class="get_tickets">Watch The Doctors
+<img alt="Uparrow" src="/assets/uparrow-26660d05b788d6ed726d8ab4c8c50178.png" />
+</a></span>
+</div>
+
+</div>
+</div>
+<div class='row'>
+<div class='col-sm-9 nav_buttons_wrapper' style='width:77%;'>
+<nav class="main clearfix navbar-collapse collapse" id="main_nav"><ul><li class="first"><a href="/videos">Videos</a></li><li><a href="/topics">Browse Topics</a></li><li><a href="/episodes">Episodes</a></li><li><a href="/doctors">Meet The Doctors</a></li><li><a href="/be-on-the-show">Be On The Show</a></li><li><a href="/giveaways">Giveaways</a></li><li><a href="/articles/2694-the-doctors-word-of-the-day-giveaway">Word of the Day</a></li><li><a href="/inquiry/contact">Contact Us</a></li><li class="last"><a href="/local-listings">Local Listings</a></li></ul></nav>
+</div>
+<div class='col-sm-3 pull-right' id='search' ng-controller='SearchCtrl' style='padding-right:0px; width:23%;'>
+<input autocomplete='off' class='form-control' ng-model='query' placeholder='Search' type='text' typeahead-loading='loading' typeahead-min-length='3' typeahead-on-select='headerSelect($item, $model, $label)' typeahead-template-url='searchResult.html' typeahead-wait-ms='400' typeahead='query as result for result in getSearchResults($viewValue) | limitTo:5 | filter:$viewValue'>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='make_sticky_wrapper visible-xs xs_nav' id='nav_wrapper'>
+<div class='container mp_db_back' style='width:100%; padding:0px;'>
+<div style='z-index:1000;overflow:auto; padding:0;'>
+<div class='col-xs-2' style='padding:0;'>
+<button class='navbar-toggle' data-target='.navbar-collapse' data-toggle='collapse' style='margin:0px; float:left;'>
+<img src='/assets/bars.png' style='height:20px; min-width:20px;'>
+</button>
+</div>
+<div class='col-xs-8' style='text-align:center; padding-top:6px;'>
+<a href='/'>
+<img src='/assets/doctorslogo.png' style='height:30px;'>
+</a>
+</div>
+<div class='col-xs-2 clock_wrapper' style='padding:8px 0'>
+<a href="#" class="open_header"><img alt="Clock" src="/assets/clock-c224f742e347ad6c375c4afe0ae497aa.png" />
+</a></div>
+</div>
+</div>
+<div class='col-xs-6 nav_buttons_wrapper mp_db_back' style='z-index:1000;position:absolute;margin-top:-1px;'>
+<nav class="main clearfix navbar-collapse collapse" id="main_nav"><ul><li class="first"><a href="/videos">Videos</a></li><li><a href="/topics">Browse Topics</a></li><li><a href="/episodes">Episodes</a></li><li><a href="/doctors">Meet The Doctors</a></li><li><a href="/be-on-the-show">Be On The Show</a></li><li><a href="/giveaways">Giveaways</a></li><li><a href="/articles/2694-the-doctors-word-of-the-day-giveaway">Word of the Day</a></li><li><a href="/inquiry/contact">Contact Us</a></li><li class="last"><a href="/local-listings">Local Listings</a></li></ul></nav>
+<div class='navbar-collapse collapse' style='border-top:1px dotted #8EC2DD; padding-bottom:7px; padding-top:7px; margin-left:7px; margin-right:4px; '>
+<div id='search' ng-controller='SearchCtrl'>
+<input autocomplete='off' class='form-control' ng-model='query' placeholder='Search' style='margin-top:0px;' type='text' typeahead-loading='loading' typeahead-min-length='3' typeahead-template-url='searchResult.html' typeahead-wait-ms='400' typeahead='query as result for result in getSearchResults($viewValue) | limitTo:5 | filter:$viewValue'>
+</div>
+</div>
+</div>
+</div>
+<div class='hidden-xs' id='nav_wrapper_holder'></div>
+
+<div class='container'>
+</div>
+<div class='container no-padding-xs'>
+<div class='row'>
+<div class='col-sm-12 hidden-xs'>
+<div class='row'>
+<div class='col-sm-12'>
+<ul class='breadcrumb'>
+<li><a href="/">Home</a></li>
+<li><a href="/topics">Browse Topics</a></li>
+<li><a href="/topics/safety">Safety</a></li>
+<li class='active'>Teen Survives Home Explosion</li>
+</ul>
+</div>
+</div>
+
+</div>
+</div>
+<div class='row'>
+<div class='col-sm-8'>
+February 05, 2015
+<div class='topic_detail_header'>
+Teen Survives Home Explosion
+</div>
+<div class='article_image topic_detail_image_video'>
+<div class='video_clips clearfix'>
+<div class='ng-cloak' data-video='12934' ng-cloak ng-controller='VideoCtrl'>
+<div class='mediacont' id='video-12934'>
+<a class='video_link' ng-click='startVideo()' style='background-image:url(/system/images/W1siZiIsIjIwMTUvMDIvMDQvUHJvY2Ftc0Q3MTEwX0tpbGVlZV9pbnRyby0yLmpwZyJdLFsicCIsInN0cmlwIl0sWyJwIiwidGh1bWIiLCI3NTB4NDAwIl0sWyJwIiwib3B0aW0iXSxbInAiLCJzdHJpcCJdXQ/ProcamsD7110_Kileee_intro-2.jpg); background-size:100%; background-repeat: no-repeat;'>
+<div class='playbutton'></div>
+<div class='disclaimer' ng-hide='hideDisclaimer' style='text-align:center;'>
+<div style='padding:20px;'>
+<div style='font-size:16px;'>
+The following video <span style="color:#126591;">{{ video.title }}</span> contains content that may not be suitable for young audiences.
+</div>
+<div style='margin-top:15px;'>
+<button class='btn btn-primary' ng-click='acceptDisclaimer()'>Accept</button>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+
+</div>
+<div class='row'>
+<div class='col-sm-12 text-right sharing'>
+<div>Share this:</div>
+<div class='addthis_sharing_toolbox' data-title='Teen Survives Home Explosion' data-url='http://www.thedoctorstv.com/articles/2920-teen-survives-home-explosion'>
+</div>
+
+</div>
+</div>
+<div class='topic_detail_wrapper topic_detail_wrapper_padding'>
+<p>Kilee, 16, recalls smelling an odd odor when she walked into her home after school one day. When the odor didn’t dissipate, she decided to light a candle, unknowingly igniting a massive explosion that destroyed the house.</p>
+<p>When Kilee emerged from the home engulfed in fire, nearby neighbors helped drown the flames and called 9-1-1. Her parents arrived just minutes after the explosion to find a devastating scene. </p>
+<p>Kilee was airlifted to a children’s hospital and immediately evaluated by a team of doctors. She suffered burns on 45 percent of her body, 20 percent of which were third degree. She lost her eyebrows and eyelashes, and the hair on her head was severely singed.&#160;</p>
+<p>“You’re lucky to be alive,” plastic surgeon Dr. Andrew Ordon says. “That is a potentially deadly injury.”</p>
+<p>Dr. Ordon explains that third degree burns penetrate through the dermis and the epidermis, ultimately burning down to the fat, which means that the skin will not be able to grow back. He advises that Kilee will need several skin grafts (donor skin harvested from an unburned area of the body) to repair the damage from the blaze. The injured areas will also require constant care.</p>
+<p>Just two months after the incident, Kilee joins The Doctors onstage and says her recovery is going well.&#160;</p>
+<p>“I feel good about it,” she says. “I think I’ll be able to make a full recovery.”</p>
+<p>To help the family redecorate their new home, The Doctors surprise them with a $4,000 gift card to <a href="http://www.apt2b.com/" title="http://www.apt2b.com/" target="_blank">Apt 2B</a>.&#160;</p>
+<p>Additionally, a special guest who heard about Kilee’s incredible story makes a surprise appearance to show his support:<br /><br /><iframe style="float:left" src="http://www.thedoctorstv.com/videos/surprise-for-teen-who-survived-explosion?embed=1" scrolling="no" height="274" width="488" frameborder="0"></iframe>
+</p>
+</div>
+<div class='OUTBRAIN' data-ob-template='TheDoctorsTV.com' data-src='http://www.thedoctorstv.com/articles/2920-teen-survives-home-explosion' data-widget-id='AR_1'></div>
+<script async="async" src="http://widgets.outbrain.com/outbrain.js" type="text/javascript"></script>
+
+<p id='disqus_guidlines' style='padding-top:10px;'>
+Please help keep the community civil.
+<i>The Doctors</i>
+moderates this forum and all comments must follow TheDoctorsTV.com
+<a href="/community-guidelines">Community Guidelines</a>
+and
+<a href="/terms-of-use">New Terms of Use</a>
+.
+<i>The Doctors</i>
+reserves the right to use the comments you submit in whole or in part, and to use the commenter’s name and location, in any medium. Note that DISQUS operates this forum and you must log-in or register with DISQUS to participate.
+</p>
+<div id='disqus_thread'></div>
+<script>
+  (function() {
+    var dsq;
+  
+    if (typeof DISQUS === 'undefined') {
+      dsq = document.createElement('script');
+      dsq.async = true;
+      dsq.type = 'text/javascript';
+      dsq.src = "//thedoctorstv.disqus.com/embed.js";
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }
+  
+  }).call(this);
+</script>
+<noscript>
+Please enable JavaScript to view comments.
+</noscript>
+
+</div>
+<div class='col-sm-4 sidebar'>
+<div class='sidebar_ad_wrapper'>
+<!-- Zone 2 Sidebar ad -->
+<div id='div-gpt-ad-thedoctorstv-com-zone-2' style='display: block !important; margin-bottom:30px;'></div>
+</div>
+
+
+<div class='newsletter_sidebar_wrapper hidden-sm hidden-xs'>
+<form accept-charset="UTF-8" action="http://listman.peteskiproductions.com/subscribe/subscribe.tml" id="newsletter_sidebar" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xEkS92Yu04AOnpuGE2FHW/nhsgUMz9hp3psG6N7C9TE=" /></div>
+<h3>Subscribe to</h3>
+<input id="list" name="list" type="hidden" value="doctors_community" />
+<input id="confirm" name="confirm" type="hidden" value="one" />
+<input id="showconfirm" name="showconfirm" type="hidden" value="T" />
+<div class='email_field'>
+<label for="email">the doctors newsletter</label>
+<div class='input-group'>
+<input class="form-control" id="email" name="email" placeholder="Enter Your Email" type="email" />
+<input class="btn btn-newsletter" name="commit" type="submit" value="Submit" />
+</div>
+</div>
+</form>
+
+</div>
+
+<div class='OUTBRAIN' data-ob-template='TheDoctorsTV.com' data-src='http://www.thedoctorstv.com/articles/2920-teen-survives-home-explosion' data-widget-id='SB_1'></div>
+<script async="async" src="http://widgets.outbrain.com/outbrain.js" type="text/javascript"></script>
+
+</div>
+</div>
+</div>
+
+<!-- Zone 4 Footer ad -->
+<div class='footer_ad hidden-xs' id='div-gpt-ad-thedoctorstv-com-zone-4'></div>
+<div class='footer_ad visible-xs' id='div-gpt-ad-thedoctorstv-com-zone-3'></div>
+
+<footer>
+<div class='container'>
+<div class='row'>
+<div class='col-sm-4 hidden-xs'>
+<div class='logo' style='overflow:auto;'>
+<a href="/"><img alt="Footerlogo" class="img-responsive" src="/assets/footerlogo-dc541865f9f217a01940bd9e80a86dde.png" /></a>
+</div>
+</div>
+<div class='col-sm-4 visible-xs'>
+<div class='logo' style='overflow:auto; width:58.3%;'>
+<a href="/"><img alt="Footerlogo" class="img-responsive" src="/assets/footerlogo-dc541865f9f217a01940bd9e80a86dde.png" /></a>
+</div>
+</div>
+<div class='col-xs-12 visible-xs'>
+<div class='newsletterContent'>
+<form accept-charset="UTF-8" action="http://listman.peteskiproductions.com/subscribe/subscribe.tml" id="newsletterForm" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xEkS92Yu04AOnpuGE2FHW/nhsgUMz9hp3psG6N7C9TE=" /></div>
+<input id="list" name="list" type="hidden" value="doctors_community" />
+<input id="confirm" name="confirm" type="hidden" value="one" />
+<input id="showconfirm" name="showconfirm" type="hidden" value="T" />
+<label for="email">Sign Up For Our Newsletter</label>
+<div class='input-group'>
+<input class="form-control" id="email" name="email" placeholder="yourname@email.com" type="email" />
+<div class='visible-xs'>
+<br/>
+</div>
+<span class='input-group-btn' style='vertical-align:top;'>
+<input class="btn btn-newsletter" name="commit" type="submit" value="Submit" />
+</span>
+</div>
+</form>
+
+</div>
+
+</div>
+<div class='col-xs-12 visible-xs text-center social-icons'>
+<div class='icons'>
+<a href="" class="newsletter" data-content="newsletterContent" target="_blank">newsletter</a>
+<a href="https://www.facebook.com/TheDoctors" class="facebook" data-content="facebookContent" target="_blank">facebook</a>
+<a href="https://twitter.com/thedoctors" class="twitter" data-content="twitterContent" target="_blank">twitter</a>
+<a href="http://www.pinterest.com/thedoctors/" class="pinterest" data-content="pinterestContent" target="_blank">pinterest</a>
+<a href="http://www.youtube.com/thedoctorstv" class="youtube" data-content="youtubeContent" target="_blank">youtube</a>
+<a href="http://www.instagram.com/thedoctorstv" class="instagram" data-content="instagramContent" target="_blank">instagram</a>
+<a href="https://plus.google.com/+thedoctors" class="google_plus" data-content="googlePlusContent" target="_blank">google_plus</a>
+</div>
+
+<div class='white-border'></div>
+</div>
+<div class='col-sm-2 tablet_footer_links_wrapper' style='position:static;'>
+<div class='divLine hidden-xs'></div>
+<div class='col-sm-11 footer-nav text-center'>
+<ul>
+<li><a href="/be-on-the-show">Be on the Show</a></li>
+<li><a href="/be-on-the-show/audience-tickets">Audience Tickets</a></li>
+<li><a href="/videos">Videos</a></li>
+<li><a href="/topics">Browse Topics</a></li>
+<li><a href="/episodes">Episodes</a></li>
+<li><a href="/doctors">Meet Our Doctors</a></li>
+<li><a href="/inquiry/advertise">Advertise With Us</a></li>
+<li><a href="/inquiry/contact">Contact Us</a></li>
+</ul>
+</div>
+<div class='divLine hidden-xs'></div>
+</div>
+<div class='col-sm-6 hidden-xs'>
+<div class='footer-social'>
+<div class='row display_nav social-icons'>
+<div class='col-sm-5 connect'>Connect with The Doctors</div>
+<div class='col-sm-7'><div class='icons'>
+<a href="" class="newsletter" data-content="newsletterContent" target="_blank">newsletter</a>
+<a href="https://www.facebook.com/TheDoctors" class="facebook" data-content="facebookContent" target="_blank">facebook</a>
+<a href="https://twitter.com/thedoctors" class="twitter" data-content="twitterContent" target="_blank">twitter</a>
+<a href="http://www.pinterest.com/thedoctors/" class="pinterest" data-content="pinterestContent" target="_blank">pinterest</a>
+<a href="http://www.youtube.com/thedoctorstv" class="youtube" data-content="youtubeContent" target="_blank">youtube</a>
+<a href="http://www.instagram.com/thedoctorstv" class="instagram" data-content="instagramContent" target="_blank">instagram</a>
+<a href="https://plus.google.com/+thedoctors" class="google_plus" data-content="googlePlusContent" target="_blank">google_plus</a>
+</div>
+</div>
+</div>
+<div id='display_box'>
+<img alt="Bottomarrowblueline" class="display_arrow hidden-md hidden-sm" src="/assets/bottomArrowBlueLine-f4bf8ceff09c7922966aa57f8aa11c1d.png" />
+<div class='newsletterContent'>
+<form accept-charset="UTF-8" action="http://listman.peteskiproductions.com/subscribe/subscribe.tml" id="newsletterForm" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xEkS92Yu04AOnpuGE2FHW/nhsgUMz9hp3psG6N7C9TE=" /></div>
+<input id="list" name="list" type="hidden" value="doctors_community" />
+<input id="confirm" name="confirm" type="hidden" value="one" />
+<input id="showconfirm" name="showconfirm" type="hidden" value="T" />
+<label for="email">Sign Up For Our Newsletter</label>
+<div class='input-group'>
+<input class="form-control" id="email" name="email" placeholder="yourname@email.com" type="email" />
+<div class='visible-xs'>
+<br/>
+</div>
+<span class='input-group-btn' style='vertical-align:top;'>
+<input class="btn btn-newsletter" name="commit" type="submit" value="Submit" />
+</span>
+</div>
+</form>
+
+</div>
+
+<div class='facebookContent'>
+<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.thedoctorstv.com&amp;width=450&amp;height=21&amp;colorscheme=light&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;send=false&amp;appId=1404638946415666" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
+</div>
+<div class='twitterContent'>
+<a href="https://twitter.com/TheDoctors" class="twitter-follow-button" data-show-count="false">Follow @TheDoctors</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</div>
+<div class='pinterestContent'>
+<a data-pin-do="buttonFollow" href="http://pinterest.com/thedoctors/">The Doctors</a>
+<script async src="//assets.pinterest.com/js/pinit.js"></script>
+</div>
+<div class='youtubeContent'>
+<script async src="https://apis.google.com/js/plusone.js"></script>
+<div class="g-ytsubscribe" data-channel="thedoctorstv" data-layout="default"></div>
+</div>
+<div class='instagramContent'>
+<style>.ig-b- { display: inline-block; }
+.ig-b- img { visibility: hidden; }
+.ig-b-:hover { background-position: 0 -60px; } .ig-b-:active { background-position: 0 -120px; }
+.ig-b-v-24 { width: 137px; height: 24px; background: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24.png) no-repeat 0 0; }
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+.ig-b-v-24 { background-image: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24@2x.png); background-size: 160px 178px; } }</style>
+<a href="http://instagram.com/thedoctorstv?ref=badge" class="ig-b- ig-b-v-24"><img src="//badges.instagram.com/static/images/ig-badge-view-24.png" alt="Instagram" /></a>
+</div>
+<div class='googlePlusContent'>
+<!-- Place this code where you want the badge to render. -->
+<a href="https://plus.google.com/+thedoctors"
+   rel="publisher" target="_top" style="text-decoration:none;">
+<img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="float:left;border:0;width:32px;height:32px;"/>
+</a>
+</div>
+</div>
+</div>
+
+</div>
+<div class='col-xs-12 visible-xs'>
+<div class='white-border'></div>
+</div>
+</div>
+</div>
+<div class='hidden-xs' style='position:relative;'>
+<div class='white-border'></div>
+<img alt="Footerpulse" class="footer-pulse hidden-xs" src="/assets/footerPulse-369b484fcf3214ba8e1c3003ce930c48.png" />
+</div>
+<div class='container legal'>
+<div class='row'>
+<div class='col-sm-6'>
+<div class='footer-nav legal-nav'>
+<ul>
+<li><a href="/inquiry/technical-help">Technical Help</a></li>
+<li><a href="/privacy-policy">New Privacy Policy</a></li>
+<li><a href="/terms-of-use">New Terms of Use</a></li>
+<li><a href="/disclaimer-page">Disclaimer</a></li>
+</ul>
+</div>
+</div>
+<div class='col-xs-12 visible-xs'>
+<div class='white-border'></div>
+</div>
+<div class='col-sm-6 col-xs-12'>
+<div class='copyright text-right'>COPYRIGHT &copy; 2015 STAGE 29, LLC. ALL RIGHTS RESERVED | CBS Television Distribution</div>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- jQuery -->
+<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js' type='text/javascript'></script>
+<!-- AngularJS -->
+<script src='//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js' type='text/javascript'></script>
+<script src='//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-sanitize.js' type='text/javascript'></script>
+<script src='//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.js' type='text/javascript'></script>
+<!-- JWPlayer -->
+<script src='//jwpsrv.com/library/ubHtKiCzEeOCJRIxOUCPzg.js' type='text/javascript'></script>
+<!-- GMaps API -->
+<script src='//maps.googleapis.com/maps/api/js?sensor=false' type='text/javascript'></script>
+<!-- Application JavaScript -->
+<script src="/assets/application-8af4362aa10e73404f3ae07e1f43ad5c.js" type="text/javascript"></script>
+<script>
+  $(function(){window.googleAds.load([1, 2, 3, 4],'http://www.thedoctorstv.com/articles/2920-teen-survives-home-explosion',["Burn", "Home Health Hazards"],'A',2920);});
+</script>
+<script>
+$(function() { replaceZoneDivId("div-gpt-ad-thedoctorstv-com-zone-2", "div-gpt-ad-thedoctorstv-com-zone-2"+dynamic_zone_id);
+googletag.cmd.push(function() { googletag.display("div-gpt-ad-thedoctorstv-com-zone-2"+dynamic_zone_id); });
+replaceZoneDivId("div-gpt-ad-thedoctorstv-com-zone-1", "div-gpt-ad-thedoctorstv-com-zone-1"+dynamic_zone_id);
+googletag.cmd.push(function() { googletag.display("div-gpt-ad-thedoctorstv-com-zone-1"+dynamic_zone_id); });
+replaceZoneDivId("div-gpt-ad-thedoctorstv-com-zone-4", "div-gpt-ad-thedoctorstv-com-zone-4"+dynamic_zone_id);
+googletag.cmd.push(function() { googletag.display("div-gpt-ad-thedoctorstv-com-zone-4"+dynamic_zone_id); });
+replaceZoneDivId("div-gpt-ad-thedoctorstv-com-zone-3", "div-gpt-ad-thedoctorstv-com-zone-3"+dynamic_zone_id);
+googletag.cmd.push(function() { googletag.display("div-gpt-ad-thedoctorstv-com-zone-3"+dynamic_zone_id); });
+ });
+</script>
+<!-- Angular Templates -->
+<script id='searchResult.html' type='text/ng-template'>
+<a href='{{ match.label.url }}' ng-if='match.label.type == "predictive"'>
+<div class='predictive-search-result' ng-bind-html='match.label.phrase | typeaheadHighlight:query | html_safe'></div>
+</a>
+<a class='search-result-link' href='{{ match.label.url }}' ng-if='match.label.type == "search"'>
+<div class='row search-result'>
+<div class='col-sm-3 no-padding'>
+<img ng-if="match.label.type != 'Refinery::Questions::Question'" ng-src='{{ match.label.thumbnails.small.url }}'>
+<div class='question-mark text-center' ng-if="match.label.type == 'Refinery::Questions::Question'">Q:</div>
+</div>
+<div class='col-sm-9'>
+<div class='title'>{{ match.label.title | stripTags | truncate:80 }}</div>
+<div class='teaser'>{{ match.label.teaser_text | stripTags | truncate:60 }}</div>
+</div>
+</div>
+</a>
+<div class='row view-all-search-result' ng-if='match.label.type == "View All"'>
+<div class='col-sm-6'>
+Search results for '<b>{{ query }}</b>'
+</div>
+<div class='col-sm-6 text-right'>
+<a href='/search?query={{ query }}'>View All Results</a>
+</div>
+</div>
+</script>
+<script id='predictiveSearchResult.html' type='text/ng-template'>
+<a>
+<div class='predictive-search-result' ng-bind-html='match.label.phrase | typeaheadHighlight:query | html_safe'></div>
+</a>
+</script>
+
+<script>
+  var disqus_shortname = 'thedoctorstv';
+  
+  (function () {
+    var s = document.createElement('script');
+  
+    s.async = true;
+    s.type  = 'text/javascript';
+    s.src   = '//' + disqus_shortname + '.disqus.com/count.js';
+  
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script>
+<script src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-534eb93f26e07771'></script>
+<script>
+  var _sf_async_config={uid:33107,domain:"thedoctorstv.com"};
+  (function(){
+    function loadChartbeat() {
+      window._sf_endpt=(new Date()).getTime();
+      var e = document.createElement('script');
+      e.setAttribute('language', 'javascript');
+      e.setAttribute('type', 'text/javascript');
+      e.setAttribute('src',
+         (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") +
+         "js/chartbeat.js");
+      e.async = true;
+      document.body.appendChild(e);
+    }
+    var oldonload = window.onload;
+    window.onload = (typeof window.onload != 'function') ?
+       loadChartbeat : function() { oldonload(); loadChartbeat(); };
+  })();
+</script>
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-5004002-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<script>
+  document.write(unescape("%3Cscript src='" + (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js' %3E%3C/script%3E"));
+  
+  $(function() {
+    COMSCORE.beacon({ c1:2, c2:"8628780", c3:"8628780", c4:"http://www.thedoctorstv.com", c5:"", c6:"", c15:"" });
+  });
+</script>
+<noscript>
+<img src='http://b.scorecardresearch.com/p?c1=2&amp;c2=8628780&amp;c3=8628780&amp;c4=http://www.thedoctorstv.com&amp;cj=1'>
+</noscript>
+
+</body>
+</html>

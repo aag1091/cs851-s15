@@ -1,0 +1,514 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+      <!-- errorception-->
+    <script>
+        (function(_,e,rr,s){_errs=[s];var c=_.onerror;_.onerror=function(){var a=arguments;_errs.push(a);
+            c&&c.apply(this,a)};var b=function(){var c=e.createElement(rr),b=e.getElementsByTagName(rr)[0];
+            c.src="//beacon.errorception.com/"+s+".js";c.async=!0;b.parentNode.insertBefore(c,b)};
+            _.addEventListener?_.addEventListener("load",b,!1):_.attachEvent("onload",b)})
+                (window,document,"script","50f52d9f917d17ea3f000029");
+    </script>
+
+
+
+    <script>
+        _errs.meta = {};
+    </script>
+    <!-- errorception-->
+
+          <!-- optimizely-->
+        <script src="//cdn.optimizely.com/js/5221179.js"></script>
+    <!-- optimizely-->
+
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"3dd65027a3","applicationID":"254665","transactionName":"IVtWRhNYXQkDExZbCQ9RF1sPU1Qd","queueTime":0,"applicationTime":11,"agent":"js-agent.newrelic.com/nr-632.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UAAEUFZACgYEUldX"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:9,3:7,4:11,5:3,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:9,3:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>
+<title>Twitter Community Management Dashboard | Twitter Marketing Tool | Commun.it</title>
+<meta name="description" content="Easy Twitter Management - The Leading Twitter Community Manager. Grow followers & manage multiple profiles with Commun.it, the leading Community & Relationship manager. Join free, today."/>
+<meta property="og:site_name" content="Commun.it"/>
+<meta property="og:title" content="Free Twitter Management Dashboard | Twitter Marketing Tool | Commun.it"/>
+<meta property="og:image" content="http://commun.it/images/profile_pic.png"/>
+<link rel="image_src" href="http://commun.it/images/profile_pic.png"/>
+<meta name="title" content="Free Twitter Management Dashboard | Twitter Marketing Tool | Commun.it"/>
+<meta name="google-site-verification" content="6y3KA80oAZqMb8AA4efzw36ZXDhI3MDt_7T3H-KBvzQ"/>
+<meta name="keywords" content="Twitter, Commun.it, social media, commun_it, free twitter Management software, Multiple Twitter Accounts, management, community, marketing, relationship, followers, dashboard, online marketing"/>
+<link rel="icon" href="/images/favicon.ico?v=6" type="image/ico"/>
+<link rel="shortcut icon" href="/images/favicon.ico?v=6" type="image/ico"/>
+
+  <link href="http://commun.it/stylesheets/homepage_sass.css?1427963367" media="screen" rel="stylesheet" type="text/css" />
+  <link href="http://commun.it/stylesheets/homepage/homepage_with_sass.css?1427963367" media="screen" rel="stylesheet" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'/>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script type="text/javascript">window.jQuery || document.write('<script src="/javascripts/jquery/jquery-1.8.3.min.js"><\/script>')</script>
+  <script src="http://commun.it/javascripts/user_actions/user_actions.js?1427963367" type="text/javascript"></script>
+  <script src="http://commun.it/javascripts/homepage/jquery.homepage.js?1427963367" type="text/javascript"></script>
+  <script src="http://commun.it/javascripts/general.js?1427963367" type="text/javascript"></script>
+  <link href="http://commun.it/javascripts/jquery/tooltipster/css/tooltipster.css?1427963367" media="screen" rel="stylesheet" type="text/css" />
+  <link href="http://commun.it/javascripts/jquery/tooltipster/css/themes/tooltipster-shadow.css?1427963367" media="screen" rel="stylesheet" type="text/css" />
+  <script src="http://commun.it/javascripts/jquery/tooltipster/js/jquery.tooltipster.min.js?1427963367" type="text/javascript"></script>
+  <script src="http://commun.it/javascripts/account.js?1427963367" type="text/javascript"></script>
+
+  <script type="text/javascript" src="https://mbsy.co/embed/v2/getcookie/communit"></script>
+
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.waitforimages/1.5.0/jquery.waitforimages.min.js"></script>
+  <!--[if IE]><script src="http://commun.it/javascripts/homepage/ie.js?1427963367" type="text/javascript"></script><![endif]-->
+  <!--[if lt IE 9]><link href="http://commun.it/stylesheets/homepage/homepage_ie.css?1427963367" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+  
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-17244907-1']);
+        _gaq.push(['_trackPageview']);
+        _gaq.push(['_trackPageLoadTime']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+    <!-- Woopra Code Start -->
+    <script type="text/javascript">
+        (function(){
+            var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/w.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
+        })("woopra");
+
+        woopra.config({
+            domain: 'commun.it',
+            idle_timeout: 300000
+        });
+
+
+        woopra.track();
+
+
+    </script>
+    <!-- Woopra Code End -->
+
+
+
+  <script src="http://commun.it/javascripts/homepage/twitter_signin_error_handler.js?1427963367" type="text/javascript"></script>
+</head>
+<body style="display:none;">
+<div id="header">
+  <strong class="logo"><a href="/home">Commun. It</a></strong>
+  <form accept-charset="UTF-8" action="/account_sessions" class="login-form" id="new_account_session" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="8yh7XdfP3SR3dxUi+dpCDlLhqw2nGY33v0DayxMG7+c=" /></div>
+    <a href="/account_sessions/new" class="popup-holder">Sign in</a>
+    <span class="have-account-title">Have an account?</span>
+    <fieldset>
+      <input id="account_session_submit" name="commit" onclick="UserAction.gaEvent('homepage', 'LogIn-Header','LogIn-Header')" type="submit" value="Log in" />
+    </fieldset>
+</form>
+</div>
+<div id="main" class="stop-station">
+  <div class="scroll-box">
+    <div class="promo-block">
+      <h1>Easy Twitter Management</h1>
+
+      <p class="slogan-subtitle">The Leading Twitter Community Manager!</p>
+
+      <div class="container">
+        <div class="block">
+          <p class="benefits-title">Give Your Twitter Community Management
+            a Professional Boost - It's Magical!</p>
+          <ul class="benefits-list">
+            <li>
+              <div></div>
+              Better Manage Your Twitter Relationships
+            </li>
+            <li>
+              <div></div>
+              Focus on your influencers & customers
+            </li>
+            <li>
+              <div></div>
+              FREE Twitter Analytics
+            </li>
+            <li>
+              <div></div>
+              Manage multiple profiles & schedule Tweets
+            </li>
+            <li>
+              <div></div>
+              Who to un/follow, what content to Tweet
+            </li>
+            <li>
+              <div></div>
+              Join 100,000+ satisfied users today, it's FREE!
+            </li>
+          </ul>
+        </div>
+        <div class='signup-form' >
+    <fieldset>
+        <div class="heading">
+            <span class="signup">Sign Up Today -</span>
+            <span class="free">Free</span>
+        </div>
+        <script type="text/javascript">
+    jQuery(function () {
+        var twitterSignIn = jQuery('#twitter-sign-in');
+        twitterSignIn.click(function() {
+            UserAction.gaEvent(GaEventsCategory.HOMEPAGE, 'SignInWithTwitter_click','SignInWithTwitter_click')
+            return signInWithTwitter(twitterSignIn);
+        });
+        var stickyHeaderBtn = jQuery('#sticky-header-btn');
+        stickyHeaderBtn.click(function() {
+            UserAction.gaEvent(GaEventsCategory.HOMEPAGE, 'SignUp-FloatingHeader','SignUp-FloatingHeader')
+            return signInWithTwitter(stickyHeaderBtn);
+        });
+    });
+
+    function signInWithTwitter(that) {
+        var hosted_app = window.self != window.top;
+        var communit_mbsy_short_code = ((typeof(mbsy_short_code) !== 'undefined') ? mbsy_short_code : '');
+        href = that.attr('href');
+        href += '?hosted_app_registration=' + hosted_app;
+        href += '&communit_mbsy_short_code=' + communit_mbsy_short_code;
+        href += '&sign_in_origin=' + document.location.href;
+        if (hosted_app) {
+            return popupWindow(href, 'twitter_authentication');
+        } else {
+            window.location = href;
+            return false;
+        }
+
+
+    };
+
+    function redirectToDashboard() {
+        window.location = '/quick_actions'
+    }
+</script>
+<a id="twitter-sign-in" href="/authentication/twitter_sign_in" target="_blank">
+  <div>
+    Sign in with Twitter
+  </div>
+</a>
+        <div class="or">
+            <div class="vertical-line"></div>
+                <div>
+                    OR
+                </div>
+            <div class="vertical-line"></div>
+        </div>
+        <a id="email-sign-in" href="/login">
+            <div>
+                Sign in with email
+            </div>
+        </a>
+    </fieldset>
+</div>
+
+      </div>
+    </div>
+    <div class="block-delimiter">
+    </div>
+    <div class="logo-block stop-station">
+  <div class="wrapper">
+    <div class="title">
+      The world's top brands trust Commun.it
+    </div>
+    <div class="list">
+      <ul>
+        <li><div class="sony-logo"/></li>
+        <li><div class="nike-logo"/></li>
+        <li><div class="microsoft-logo"/></li>
+        <li><div class="cocacola-logo"/></li>
+        <li><div class="mtv-logo"/></li>
+      </ul>
+    </div>
+    <div class="excerption">
+      "Commun.it turn the status-oriented world of Twitter to a relationship dashboard, 
+      enabling marketers to effectively analyze relationships & gain insights."
+    </div>
+    <div class="excerption-sign">
+      <div class="line"></div>
+      <b>-Robin Wauters Editor</b>, The Next Web
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="sticky-header">
+    <div class="sticky-holder">
+      <div class="wrapper">
+        <div class="text-block">
+          <p>Join 100,000 satisfied users today! Sign Up Now For FREE!</p>
+        </div>
+        <div class="btn-block">
+          <a href="/authentication/twitter_sign_in" class="btn" id="sticky-header-btn">Sign
+            Up Free</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-box">
+    <div class="holder">
+      <div class="container">
+        <div class="img-holder">
+          <img src="/images/homepage/frame.png?1414662353" width="555" height="357" alt=""/>
+
+          <div class="img-block">
+            <img src="/images/homepage/screen01.png?1414662353" width="524" height="313" alt=""/>
+
+            <div class="img-frame">
+              <img src="/images/homepage/img08.png?1414662353" width="231" height="231" alt=""/>
+            </div>
+          </div>
+        </div>
+        <div class="text-block">
+          <h3>PRIORITIZE YOUR TWITTER TASKS</h3>
+
+          <p>Quickly identify valuable people in your Twitter community that you were neglecting to engage because of
+            all the noise in your stream.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slideshow-holder style02">
+  <div class="slideshow" carousel-number="2">
+    <div class="slideset">
+      <div class="slide">
+        <div class="twocolumns">
+          <div class="column">
+            <div class="img-holder mark-red">
+              <img src="/images/homepage/news01.png?1414662353" width="142" height="142" alt=""/>
+            </div>
+            <blockquote>
+              <q>“Commun.it turn the status-oriented world of Twitter to a relationship dashboard, enabling marketers to
+                effectively analyze relationships &amp; gain insights.”</q>
+            </blockquote>
+          </div>
+          <div class="column">
+            <div class="img-holder mark-black">
+              <img src="/images/homepage/news02.png?1414662353" width="142" height="142" alt=""/>
+            </div>
+            <blockquote>
+              <q>“Commun.it changes the way people build relationships and generate business on Twitter.”</q>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="twocolumns">
+          <div class="column">
+            <div class="img-holder mark-orange">
+              <img src="/images/homepage/news03.png?1414662353" width="144" height="144" alt=""/>
+            </div>
+            <blockquote>
+              <q>“..I started using Commun.it to be more efficient on the way I manage out Twitter communities. My
+                favorite features? The prioritized feed to focus on the relevant members of the community..”</q>
+            </blockquote>
+          </div>
+          <div class="column">
+            <div class="img-holder mark-green">
+              <img src="/images/homepage/news04.png?1414662353" width="142" height="142" alt=""/>
+            </div>
+            <blockquote>
+              <q>“Kiva uses Commun.it to measure its impact and engagement on Twitter. But the service goes far beyond
+                that. It gives us all the tools we need to listen to our most influential fans and followers..”</q>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pagination" content-type='Reviews'>
+      <!-- pagination generated here -->
+    </div>
+  </div>
+</div>
+  <div class="main-box second">
+    <div class="holder">
+      <div class="container">
+        <div class="text-block">
+          <h3>IDENTIFY VALUABLE MEMBERS</h3>
+
+          <p>Commun.it categorizes people in 3 groups: Influencers, Supporters & Engaged Members. Judged by
+            followers/following ratio, your engagement history, retweets & brand mentions.</p>
+        </div>
+        <div class="img-holder style01">
+          <img src="/images/homepage/frame.png?1414662353" width="555" height="357" alt=""/>
+
+          <div class="img-block">
+            <img src="/images/homepage/screen02.png?1414662353" width="524" height="313" alt=""/>
+
+            <div class="img-frame">
+              <img src="/images/homepage/img09.png?1414662353" width="231" height="231" alt=""/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slideshow-holder style02 second">
+    <div class="slideshow" carousel-number="1">
+      <div class="slideset">
+        <div class="slide">
+          <div class="threecolumns" style="max-height: 271px;">
+            <div class="column">
+              <img src="/images/homepage/img05.png?1414662353" width="178" height="129" alt=""/>
+
+              <h3>FREE Twitter Analytics</h3>
+
+              <p>See Actionable Insights on Your Twitter Followers & Measure your social media efforts</p>
+            </div>
+            <div class="column">
+              <img src="/images/homepage/img04.png?1414662353" width="178" height="129" alt=""/>
+
+              <h3>Social Insights Campaigns</h3>
+
+              <p>One glance & you'll know whom to follow, thank &amp; respond + Automate insights via campaigns</p>
+            </div>
+            <div class="column">
+              <img src="/images/homepage/img02.png?1414662353" width="178" height="129" alt=""/>
+
+              <h3>Multiple Twitter Profiles</h3>
+
+              <p>Better manage multiple Twitter profiles &amp; schedule tweets easily from a single dashboard</p>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="threecolumns">
+            <div class="column">
+              <img src="/images/homepage/img03.png?1414662353" width="178" height="129" alt=""/>
+
+              <h3>Team Members</h3>
+
+              <p>Invite your team members to manage your community &amp; view reports/analytics</p>
+            </div>
+            <div class="column">
+              <img src="/images/homepage/img06.png?1414662353" width="178" height="129" alt=""/>
+
+              <h3>Influential Marketing</h3>
+
+              <p>Focus on your top influencers & supporters, don't miss their engagements, follow them</p>
+            </div>
+            <div class="column">
+              <img src="/images/homepage/img07.png?1414662353" width="178" height="129" alt=""/>
+
+              <h3>Manage Twitter Lists</h3>
+
+              <p>Easily build an engaged community using Twitter lists. Divide lists into custom categories</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pagination" content-type='TopFeatures'>
+        <!-- pagination generated here -->
+      </div>
+    </div>
+  </div>
+
+
+  <div class="main-box last">
+    <div class="holder">
+      <div class="container">
+        <div class="img-holder">
+          <img src="/images/homepage/frame.png?1414662353" width="555" height="357" alt=""/>
+
+          <div class="img-block">
+            <img src="/images/homepage/screen03.png?1414662353" width="524" height="313" alt=""/>
+
+            <div class="img-frame">
+              <img src="/images/homepage/img11.png?1414662353" width="231" height="231" alt=""/>
+            </div>
+          </div>
+        </div>
+        <div class="text-block">
+          <h3>FREE TWITTER ANALYTICS</h3>
+
+          <p>
+            See Actionable Insights on Your Twitter Followers & Measure your social media efforts
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="footer">
+  <div class="top">
+    <div class="wrapper">
+      <!-- share on twitter-->
+<ul>
+      <li style="float: left; margin-top: 0px;">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-url="http://commun.it" data-text="I love @commun_it :) a great way to build relationships &amp; discover leads on Twitter. Try it for free: ">Tweet</a>
+        <script>!function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, "script", "twitter-wjs");</script>
+      </li>
+      <!-- /share on twitter-->
+</ul>
+    </div>
+  </div>
+  <div class="delim">
+  </div>
+  <div class="bottom">
+    <ul>
+      <li>
+        <a href="/affiliates?origin=hp_footer" target="_blank" onclick="UserAction.gaEvent(GaEventsCategory.HOMEPAGE, 'affiliate_link-footer','affiliate_link-footer')">Affiliate</a>
+      </li>
+      <li>
+        <a href="http://blog.commun.it" target="_blank" onclick="UserAction.gaEvent(GaEventsCategory.HOMEPAGE, 'blog_link-footer','blog_link-footer')">Blog</a>
+      </li>
+      <li>
+        <a href="/content/contact_us" target="_blank" onclick="UserAction.gaEvent(GaEventsCategory.HOMEPAGE, 'contact_us_link-footer','contact_us_link-footer')">Contact
+          Us</a></li>
+      <li>
+        <a href="https://twitter.com/search?q=commun.it" target="_blank" onclick="UserAction.gaEvent(GaEventsCategory.HOMEPAGE, 'twitter_community_link-footer','twitter_community_link-footer')">Twitter
+          Community</a></li>
+      <li>
+        <a href="/content/terms" target="_blank" onclick="UserAction.gaEvent(GaEventsCategory.HOMEPAGE, 'terms_link-footer','terms_link-footer')">Terms</a>
+      </li>
+      <li>
+        <a href="/content/privacy" target="_blank" onclick="UserAction.gaEvent(GaEventsCategory.HOMEPAGE, 'privacy_link-footer','privacy_link-footer')">Privacy</a>
+      </li>
+    </ul>
+    <div class="copyright">
+        © 2015 Commun.it Inc.
+    </div>
+  </div>
+</div>
+<div id="bg">
+  <!--[if lt IE 9]>
+  <img src="/images/homepage/bg-body-ie8.jpg?1414662353" alt=""/>
+  <![endif]-->
+  <![if !lt IE 9]>
+  <img src="/images/homepage/bg-body.jpg?1414662353" alt=""/>
+  <![endif]-->
+</div>
+<!-- Google Code for Remarketing Tag -->
+<!--------------------------------------------------
+Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+--------------------------------------------------->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 1024436493;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+</script>
+<div style="display:none">
+  <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+  </script>
+</div>
+<noscript>
+  <div style="display:inline;">
+    <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1024436493/?value=0&amp;guid=ON&amp;script=0"/>
+  </div>
+</noscript>
+</body>
+</html>
+

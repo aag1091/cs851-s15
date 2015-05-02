@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<title>That can be my next tweet</title>
+		<meta name="description" content="Generates your future tweets based on the DNA of your existing messages" />
+		<meta property="og:title" content="That can be my next tweet" />
+		<meta property="og:type" content="product" />
+		<meta property="og:image" content="http://www.thatcan.be/images/pageIcon.png" />
+		<meta property="og:url" content="http://thatcan.be/my/next/tweet" />
+		<meta property="og:site_name" content="Thatcan.be" />
+		<meta property="fb:admins" content="791383270" />
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+		<link href='http://fonts.googleapis.com/css?family=Droid+Serif:regular,bold' rel='stylesheet' type='text/css' />
+		<link href="http://thatcan.be/css/myNextTweet.css?v=1.3" rel="stylesheet" type="text/css" />
+		<!--[if lt IE 9]><script type="text/javascript" src="/js/excanvas.compiled.js"></script><![endif]-->
+		<script type="text/javascript" src="http://thatcan.be/js/graphicUtils.min.js?v=1.2"></script>
+		<script type="text/javascript" src="http://thatcan.be/js/vendor/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="http://thatcan.be/js/vendor/hammer.js"></script>
+		<script type="text/javascript" src="http://thatcan.be/js/vendor/jquery.hammer.js"></script>
+		<script type="text/javascript" src="http://thatcan.be/js/myNextTweet.app.min.js?v=1.2"></script>
+		<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+		<script type="text/javascript">
+			window.onload = init;
+
+			//var _defaultInputText = 'enter text…';
+			//var _countTweet = 0;
+
+			function init() {
+				var date = new Date();
+				graphicUtils.drawBackground('background', 'container', date.getYear() + date.getMonth() + date.getDate());
+				graphicUtils.styleText('intro');
+				graphicUtils.styleText('header', 4);
+				graphicUtils.setColor('footer', true);
+				graphicUtils.setBackgroundColor('footerContainer', false);
+				graphicUtils.setBorderColor('footerContainer', true);
+				graphicUtils.setLinkColor('footer');
+				graphicUtils.setBackgroundColor('logo', true);
+				graphicUtils.setColor('logoText');
+				graphicUtils.setBorderColor('name', true);
+				graphicUtils.setBackgroundColor('name');
+				graphicUtils.setColor('name', true);
+				graphicUtils.setColor('intro');
+				graphicUtils.setBorderColor('goButton', true);
+				graphicUtils.setBackgroundColor('goButton', true);
+				graphicUtils.setColor('goButton');
+				graphicUtils.setColor('result', true);
+				graphicUtils.setBorderColor('result', true);
+				graphicUtils.setBackgroundColor('result');
+				graphicUtils.setColor('incentive', true);
+				graphicUtils.setBorderColor('incentive', true);
+				graphicUtils.setBackgroundColor('incentive');
+				graphicUtils.setLinkColor('incentive');
+				graphicUtils.setBorderColor('postTweet', true);
+				graphicUtils.setBackgroundColor('postTweet', true);
+				graphicUtils.setColor('postTweet');
+				graphicUtils.styleText('appText', 4);
+				graphicUtils.styleText('mainMessage', 4);
+				graphicUtils.setColor('iPhoneApp', false);
+				graphicUtils.setColor('androidApp', false);
+
+				_myNextTweet = new MyNextTweet();
+				var date = new Date();
+
+				_myNextTweet.setPlatformProperties({
+					device: {
+						type: 'web'
+					},
+					platform: {
+						name: 'web'
+					}
+				});
+
+				_myNextTweet.startApp({
+					hash: date.getYear() + date.getMonth() + date.getDate()
+				});
+			}
+
+		</script>
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-674478-17']);
+			_gaq.push(['_trackPageview']);
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+	</head>
+	<body>
+		<div id="background"><canvas></canvas></div>
+		<div id="container">
+			<div id="content">
+				<div id="main">
+					<div id="head">
+						<div id="logoHolder">
+							<div id="logo">
+								<p><a href="http://thatcan.be" id="logoText">that<br />can<br />.be</a></p>
+							</div>
+							<h1 id="intro">That can be<br />my next tweet!</h1>
+						</div>
+						<div id="messageHolder">
+							<h2 id="mainMessage">
+								Download the official app:<br />
+								<span class="sub">
+									★ New: send tweets based on COMBINED Twitter streams!
+								</span>
+							</h2>
+							<p id="appText">
+								<a href="http://itunes.apple.com/us/app/that-can-be-my-next-tweet/id434298188?mt=8" id="iPhoneApp">iPhone app</a>
+								<a href="https://market.android.com/details?id=air.nl.monokai.MyNextTweet" id="androidApp">Android app</a>
+							</p>
+						</div>
+					</div>
+					<div id="inputBox">
+						<form id="textForm" action="javascript:void(0);" method="get">
+							<div>
+								<p id="header">Your Twitter name: </p>
+								<input type="text" id="name" name="name" />
+								<input id="goButton" name="goButton" value="get your next tweet" />
+							</div>
+						</form>
+						<p id="incentive">Get <a href="http://itunes.apple.com/us/app/that-can-be-my-next-tweet/id434298188?mt=8" class="dark">the iPhone app</a> or <a href="https://market.android.com/details?id=air.nl.monokai.MyNextTweet" class="dark">the Android app</a><br /> for your instant tweet generating fun.</p>
+						<p id="result">your result…</p>
+						<p><a id="postTweet" href="#">post this tweet</a></p>
+					</div>
+				</div>
+			</div>
+			<div id="footerContainer">
+				<div>
+					<a href="http://www.monoslideshow.com" class="transparent"><img src="http://thatcan.be/images/monoslideshow.png" alt="Monoslideshow — the ultra customizable HTML5 slideshow for web professionals" title="Monoslideshow — the ultra customizable HTML5 slideshow for web professionals" width="728" height="90" /></a>
+				</div>
+				<div id="footer">
+					<h2 id="quotesHeadline">What others have said</h2>
+					<div id="quotes">
+						<div class="quote">
+							<a href="http://gizmodo.com/#!5791299/tweet+generating-website-knows-you-better-than-you-know-yourself" class="dark">Gizmodo</a>
+							<p>Dreamlike. Semi-sensical. Sort of terrifying. The site is less a Twitter toy than a disturbing peer into my subconscious.</p>
+						</div>
+						<div class="quote">
+							<a href="http://mashable.com/2011/04/12/that-can-be-my-next-tweet/" class="dark">Mashable</a>
+							<p>While some of the autogenerated tweets seem plausible enough (…), other autogenerated strings are nothing short of hilarious.</p>
+						</div>
+						<div class="quote">
+							<a href="http://edition.cnn.com/2011/TECH/social.media/04/14/twitter.my.next.tweet/" class="dark">CNN</a>
+							<p>A bizarrely addictive little time-waster (…) sounding something like a mashup of Yoda, a freshman philosophy major and Caine from Kung Fu.</p>
+						</div>
+						<div class="quote">
+							<a href="http://www.huffingtonpost.com/2011/04/13/7-sites-you-should-be-wasting_n_848228.html#s263551&title=That_Can_Be" class="dark">The Huffington Post</a>
+							<p>The results are, predictably, hilarious. I couldn't have said it better myself.</p>
+						</div>
+						<div class="quote">
+							<a href="http://techland.time.com/2011/04/12/new-site-predicts-your-next-tweet-sort-of/" class="dark">Time</a>
+							<p>Add this to the pile of brilliant Twitter-related time-wasters.</p>
+						</div>
+						<div class="quote">
+							<a href="http://thenextweb.com/shareables/2011/04/10/what-will-your-next-tweet-say-this-site-thinks-it-knows/" class="dark">The Next Web</a>
+							<p>Are we really so predictable that everything that we Tweet can be broken down by a machine to figure out what we’ll say next?</p>
+						</div>
+						<div class="quote">
+							<a href="https://twitter.com/#!/twitter/status/58205588420706304" class="dark">Twitter</a>
+							<p>This site is providing some good laughs this morning here at the Twitter office.</p>
+						</div>
+						<div class="quote">
+							<a href="http://www.washingtonpost.com/blogs/blogpost/post/twitter-foretold-what-should-your-next-tweet-be-mynexttweet/2011/04/13/AFZQNJXD_blog.html" class="dark">The Washington Post</a>
+							<p>My theory is that this generator captures the subliminal. This sounds a bit like how I’d like to spend a Sunday in an alternate universe.</p>
+						</div>
+						<div class="quote">
+							<a href="http://www.urlesque.com/2011/04/12/that-can-be-my-next-tweet/" class="dark">Urlesque</a>
+							<p>If you've ever wanted to write like a Twitter spambot, here's your chance. Trying it with Urlesque's Twitter gave us a whole bunch of ideas for animal videos we wish existed in real life.</p>
+						</div>
+						<div class="quote">
+							<a href="http://www.ted.com/talks/adam_ostrow_after_your_final_status_update.html" class="dark">TED talk from Adam Ostrow</a>
+							<p>You can image what something like this might look like five, ten or twenty years from now, as our technical capabilities improve.</p>
+						</div>
+					</div>
+					<div style="padding-top: 60px; clear: both">
+						<script type="text/javascript">
+							<!--
+							google_ad_client = "ca-pub-3572040507889018";
+							/* MyNextTweet */
+							google_ad_slot = "1775376648";
+							google_ad_width = 728;
+							google_ad_height = 90;
+							//-->
+						</script>
+						<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<p id="copyright">©2013 <a href="http://www.monokai.nl" class="dark">Monokai</a>. This page generates your future tweets based on the DNA of your existing messages.<br />Also check <a href="http://www.randomwordmachine.com" class="dark">Random Word Machine</a> and <a href="http://www.monoslideshow.com" class="dark">Monoslideshow</a>.</p>
+					<div id="facebookLike">
+						<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fthatcan.be%2Fmy%2Fnext%2Ftweet&amp;layout=button_count&amp;show_faces=false&amp;width=92&amp;action=like&amp;colorscheme=light&amp;height=21&amp;send=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:92px; height:21px; margin-right: 30px;" allowTransparency="true"></iframe>
+						<g:plusone href="http://yes.thatcan.be/my/next/tweet"></g:plusone>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

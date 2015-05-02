@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Who Unfollowed Me on Twitter - Catch Who Unfollowed You!</title>
+<meta name="keywords" content="Who unfollowed me, who unfollowed you, takibi bırakanlar, twitter unfollowers, unfollowers, unfollowers.net, who.unfollowed.me, twitter follow unfollow utility, twitter follow tools, twitter unfollow unfollowers, how to unfollowers" />
+<meta name="description" content="Who unfollowed me is a 3rd party twitter tool that helps you to catch your Unfollowers!" />
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css' />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<meta name="title" content="Who Unfollowed Me" />
+<link rel="image_src" type="image/jpeg" href="http://www.whounfollowedme.org/images/logo.jpg" />
+<link rel="thumbnail" type="image/jpeg" href="http://www.whounfollowedme.org/images/logo.jpg" />
+<link rel="icon" href="/images/icon.ico" /> 
+<script type="text/javascript">
+jQuery(document).ready(function() {
+$('#baslaform').submit(function() {
+    //$('#baslaform').fadeOut("normal");
+    $('#hatalar').hide();
+    $('#ajax-load').fadeIn("normal");
+    //$("#followusInput").attr('disabled','disabled');
+    //$("#tweetitInput").attr('disabled','disabled');
+	var sValues = $("#baslaform").serialize();
+    $.post('/unfollower-upd.php', sValues,function(data) {
+      if(data == "1") { //olumlu
+        window.location.replace("/unfollowers.php");
+        }
+      else {
+        $('#ajax-load').fadeOut("normal");
+        $('#hatalar').html(data);
+        $('#hatalar').show();
+        //$('#baslaform').fadeIn("normal");
+        //$("#followusInput").removeAttr('disabled');
+        //$("#tweetitInput").removeAttr('disabled');
+        
+     
+      }
+    });
+	return false;
+});
+    
+$('.remove').click(function() {
+	unfollowid = this.id;
+    var kapat=unfollowid.replace("unf","prt");
+    var getit = "/unfollow.php?id=" + unfollowid;
+    $.get(getit, function(data) {
+        $("#" + kapat).fadeOut("normal");
+    });
+	return false;
+});
+});
+</script>
+</head>
+<body>
+<div id="container">
+<div id="tepe">
+<div id="tepereklam"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-6267398079320379";
+/* whounmeorg-468x60 */
+google_ad_slot = "7694999575";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+
+ <div id="loginPanel">
+  <a href="http://whounfollowedme.org/redirect.php" style=""><img src="/img/lighter.gif" alt="Sign in with Twitter"/></a>
+ </div>
+
+
+</div>
+  <div id="header">
+    <h1><a href="/">Who Unfollowed Me</a></h1>
+    <ul>
+      <li id="home"><a href="/">Home</a></li>
+      <li id="about"><a href="/about.php">About</a></li>
+      <li id="work"><a href="/work.php">Work</a></li>
+      <li id="contact"><a href="/contact.php">Contact</a></li>
+    </ul>    <p id="featuredText"><a href="http://whounfollowedme.org/redirect.php" id="learnMoreButton"></a> <span id="monitor"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-6267398079320379";
+/* wunmeorg-336x280 */
+google_ad_slot = "8059869371";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></span></p>
+    
+    <div style="margin-left:100px;"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-6267398079320379";
+/* whounmeorg-728x90 */
+google_ad_slot = "8785726230";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+    
+    <div id="boxContainer">
+      <div class="box client">
+        <h2>Click Login</h2>
+        <p>Just a click to 'Sign in with Twitter' button and start to find your twitter unfollowers.</p>
+      </div>
+      <div class="box work">
+        <h2>List Users</h2>
+        <p>See the people that you follow and who doesnt follow you back on twitter.</p>
+      </div>
+      <div class="box work">
+        <h2>Unfollow!</h2>
+        <p>Start to unfollow them.</p>
+      </div>
+    </div>
+    
+    <div id="leftCol">
+      <h2>About Who Unfollowed Me</h2>
+      <p>
+      What is whounfollowedme.org unfollowers service ? <br />Hello, <br />
+        Welcome to Who unfollowed me. This is free 3rd twitter api service and that application helps you to find your unfollowers easily. You can find your unfollowers and unfollow by one click. <br />Who Unfollowed me service is completely independent 3rd service from Twitter. The Official Twitter is not responsible for our services! <br />Your unfollowers away from you a few simple clicks! Login to see them!
+      </p>
+    </div>
+    <form id="newsletter" action="#" method="get">
+      <label for="emailInput">Sign Up for Our Monthly Newsletter: </label>
+      <input id="emailInput" name="emailInput" type="text" />
+      <input id="submitButton" name="submitButton" value="Go" type="image" src="img/go.jpg" />
+    </form>
+    <div id="footer">
+      <p>Designed and Developed by <a href="https://twitter.com/unfollowedmeorg">Who Unfollowed Me</a> and thanks to <a href="http://www.twitter.com/">Twitter</a> &copy; 2012. All Rights Reserved <br /> Free to use Unfollowers service : <a href="http://www.whounfollowedme.org/" title="who unfollowed">who unfollowed me</a> - <a href="http://www.whounfollowedme.org/" title="twitter unfollowers">unfollowers</a> - <a href="http://www.whounfollowedme.org/">takibi bırakanlar</a></p>
+    </div>
+<!-- Histats.com  START (hidden counter)-->
+<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
+<a href="http://www.histats.com" target="_blank" title="free stats" ><script  type="text/javascript" >
+try {Histats.start(1,2095663,4,0,0,0,"");
+Histats.track_hits();} catch(err){};
+</script></a>
+<noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?2095663&101" alt="free stats" border="0"></a></noscript>
+<!-- Histats.com  END  -->    
+ <!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=8301816; 
+var sc_invisible=1; 
+var sc_security="b1b7e420"; 
+</script>
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script>
+<noscript><div class="statcounter"><a title="tumblr
+statistics" href="http://statcounter.com/tumblr/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/8301816/0/b1b7e420/1/"
+alt="tumblr statistics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+  </div>
+</div>
+</html>

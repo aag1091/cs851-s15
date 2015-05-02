@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title></title>
+								<meta http-equiv="refresh" content="2;url=http://preview.imaginedragonsmusic.com/?utm_source=smarturl&amp;utm_medium=allsocials&amp;utm_campaign=SmokeMirrorsPreview"/>	
+			<script>
+				var destinationUrl = "http://preview.imaginedragonsmusic.com/?utm_source=smarturl&utm_medium=allsocials&utm_campaign=SmokeMirrorsPreview";
+		var numRedirects = 0;
+		function LinkDecorator() {};
+		LinkDecorator.prototype.decorate = function(url) {
+						return url;
+		}
+		var linkDecorator = new LinkDecorator();
+				var numAsyncTasks = 0;
+						numAsyncTasks++;
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	  var trackerName = 'tracker_smarturl_ga';
+	  ga('create', 'UA-30550-127', 'auto', {'allowLinker': true, 'name':trackerName});
+	  	  ga('require', 'displayfeatures');
+	  	  ga(trackerName + '.send',
+	     'pageview', {
+	     'hitCallback': function() {
+	     	     	        if (window.gaplugins) {
+		     	var linker = new window.gaplugins.Linker(ga.getByName(trackerName));
+		     	if (linker) {
+			     	LinkDecorator.prototype.decorate = function(url) {
+			     					     		return linker.decorate(url);
+			     	}
+		     	}
+	     	}
+	     	     	onAsyncTaskComplete();
+	     }
+	  });
+			  function onAsyncTaskComplete() {
+		numAsyncTasks--;
+			    if (numAsyncTasks <= 0) {
+	    	onAllAsyncTasksComplete();
+	    }
+	   }
+		function makePixel(url) {
+						var img = document.createElement("img");
+			img.onload = function() {
+								onAsyncTaskComplete();
+			}
+			img.src = url;
+		}
+	   		function onAllAsyncTasksComplete() {
+			if (numRedirects == 0) {
+								numRedirects++;
+								window.location = linkDecorator.decorate(destinationUrl);
+							}
+		}
+	</script>		
+	</head>
+	<body>
+		<script type="text/javascript">
+									window.setTimeout(onAllAsyncTasksComplete, 2000);
+					</script>
+				<noscript>
+				</noscript>
+					</body>
+</html>

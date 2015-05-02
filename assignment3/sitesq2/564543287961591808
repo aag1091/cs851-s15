@@ -1,0 +1,219 @@
+<!-- EX:  --><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+<link rel="stylesheet" href="/css/main.css" type="text/css" />
+<link rel="stylesheet" href="/css/jqsimplemenu.css" type="text/css" media="screen" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta property="fb:app_id" content="1425689831043609"/>
+<meta property="fb:admins" content="659815327,503706282" /> 
+
+    <meta property="og:image" content="http://fwewrestling.com/images/fwepic.jpg" />    
+	    <meta property="og:url" content="http://fwewrestling.com//ticketing" />
+    <meta property="og:title" content="FWE Wrestling" />
+
+<meta property="og:type" content="fwewrestling:page" /> 
+<!-- meta name="viewport" content="width=device-width, initial-scale=0.5, user-scalable=no" -->
+<title>FWE Wrestling </title>
+ <!--[if lt IE 7]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"></script>
+<![endif]-->
+<!--[if lt IE 8]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<![endif]-->
+<!-- unsed fonts |Black+Ops+One|Rye   -->
+<link href='//fonts.googleapis.com/css?family=Kalam:700|Frijole' rel='stylesheet' type='text/css'>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<!--<script type="text/javascript" src="//w.sharethis.com/button/buttons.js"></script>-->
+<script type="text/javascript" src="/js/sharethislocaljs.js"></script>
+<script type="text/javascript">stLight.options({publisher: "2f094851-bf99-40c2-b2f5-f9db84300ce5", doNotHash: true, doNotCopy: false, hashAddressBar: false});</script>
+<script>
+if(window.location.hash)
+{
+	str=window.location.hash;
+var res = str.replace("#!/", "");
+window.location = res;
+}
+</script>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body style="background-color:black;">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1425689831043609&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<center>
+<div id="container">
+<div id="header">
+<div id="leftheader">
+	<div id="logo"><a href="/" style="text-decoration:none;"><img src="/images/logo.png"/></a><!-- <span style="color:red; font-weight:bold;">Beta</span>--></div>
+    <div id="midhead" style="text-align:left;">
+<div style="padding:1px;"><a target="_blank" href="http://www.facebook.com/FWEWrestling" style="text-decoration:none;"><img height="30" src="/images/social/facebook.png"/></a><a target="_blank" href="https://twitter.com/#!/FWEWrestling" style="text-decoration:none;"> <img height="30" src="/images/social/twitter.png"/></a><a target="_blank" href="https://www.youtube.com/channel/UCDsSz5SEUKp4ImfqHney-Dw" style="text-decoration:none;"> <img height="30" src="/images/social/youtube.png"/> </a><a target="_blank" href="https://plus.google.com/u/0/s/FWE%20Wrestling" style="text-decoration:none;"><img height="30" src="/images/social/googleplus.png"/></a></div>
+<div  style="float:right !important;" class="fb-like" data-href="https://www.facebook.com/FWEWrestling" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
+</div></div>
+<div id="userstats" ><style>
+#userheaderbox{
+ padding:5px;
+  border:medium dashed #FF0000;
+}
+.headerboxbutton{
+	display:inline-block;
+	border:thin red solid;
+	padding:3px;
+	background:#333333;
+	color:white;
+	text-decoration:none;
+	font-weight:bold;
+	
+}
+.headerboxbutton:hover{
+	background:#030;
+}
+</style>
+<div id="userheaderbox">
+<script>
+$(document).ready(function(e) {
+
+  $( "#email" ).on( "keydown", function(event) {
+      if(event.which == 13) 
+	  trylogin();
+    });
+	  $( "#password" ).on( "keydown", function(event) {
+      if(event.which == 13) 
+	  trylogin();
+    });
+$("#loginbutton").click( function(){
+	$("#widget_headerbox_buttons").hide();
+	$("#widget_headerbox_login").show();	
+});
+
+$("#loginbuttoncancel").click( function(){
+$("#widget_headerbox_buttons").show();
+	$("#widget_headerbox_login").hide();
+});
+
+$("#createnewaccount").click( function(){
+window.location="/newaccount";
+});
+
+$("#loginbuttonsubmit").click( function(){
+trylogin();
+});
+function trylogin(){
+
+	var email=$("#email").val();		
+	var password=$("#password").val();			
+	if(email.length<4){
+	alert( "Invalid Email address");
+		return false;	
+	}
+		if(password.length<5){
+	alert( "Very short password ");
+		return false;	
+	}
+$("#widget_headerbox_buttons").hide();
+$("#widget_headerbox_login").hide();
+$("#widget_headerbox_loggingin").show();
+
+	$.post( "/ajax/users/login.php", { email: email, password: password }).done(function( data ) { 
+//	 alert( "Data Loaded: " + data ); 
+//return "emailused" "shortpassword" invalidemail" "ok";
+if(data=="wrong"){
+	alert("Wrong Email/password combination please try again.");
+$("#widget_headerbox_login").show();
+$("#widget_headerbox_loggingin").hide();
+
+		return false;
+
+}
+if(data=="blocked")
+{
+	alert("Your IP is blocked because you entered too may wrong email/password combination, Please try again in 10 minutes.");	
+$("#widget_headerbox_login").show();
+$("#widget_headerbox_loggingin").hide();
+	return false;
+}
+	if(data=="ok"){
+
+    location.reload();
+	return false;
+}
+
+alert(data);
+});
+}
+
+
+
+});
+</script>
+<div id="widget_headerbox_data">
+<div id='widget_headerbox_buttons' >
+<button class="headerboxbutton" id="loginbutton" >Login</button> <button class="headerboxbutton" id="createnewaccount"> New account </button> <br /><a href="/fblogin.php" style="text-decoration:none; padding-top:2px;"><img border="0" src="/images/fblogin.png"/></a>
+</div>
+<div id='widget_headerbox_login' style="display:none">
+Email : <input id="email" /> <br>Password:  <input id="password" type="password"  /> <br><button class="headerboxbutton"  id="loginbuttoncancel" >Cancel</button><button class="headerboxbutton"  id="loginbuttonsubmit">Login</button>
+</div>
+<div id='widget_headerbox_loggingin' style="display:none">
+<strong> Logging in .... </strong><br />
+<img src="/images/loading.gif" />
+</div>
+</div>
+
+</div></div>
+</div>
+<div class="clearfix"></div><div id="nav" style="float:left;">
+ <ul class="menu">
+   <li  style="border-left:hidden !important;"><a href="/home" >Home</a></li>
+        <li ><a href="#">Superstars</a>
+<ul style="z-index:99;"> 
+		<li ><a href="/superstars"> All superstars </a></li> 
+<li><a href='/superstars/Champions'> Champions </a></li> <li><a href='/superstars/Men'> Men </a></li> <li><a href='/superstars/Tag Teams'> Tag Teams </a></li> <li><a href='/superstars/Women'> Women </a></li> <li><a href='/superstars/Commentators'> Commentators </a></li>      </ul></li>
+		<li ><a href="/events"> Events  </a></li>       
+		<li ><a href="/news"> News  </a></li>       
+		<li ><a href="/gallery"> Gallery  </a></li>   
+<li  ><a >Videos</a><ul style="z-index:99;">          
+		<li ><a href="/vod"> VOD (Premium) </a></li> 
+   		<li ><a target="_blank" href="https://www.youtube.com/channel/UCDsSz5SEUKp4ImfqHney-Dw"> Free videos  </a></li>
+        </ul></li>                              
+		<li ><a href="/shop"> Shop  </a></li>       
+		<li class="active"><a href="/ticketing"> Buy Tickets  </a></li>               
+		<li ><a href="/polls"> Polls </a></li>               
+<!--		<li ><a href="/news"> News  </a></li>               
+		<li ><a href="/help"> Help? Contact us  </a></li>       -->
+  </ul>
+</div><div id="pagecontent"> 
+<div class="clearfix"></div>
+<div style="color:white;"><style>.event{ text-decoration:none; color:white; font-size:28px; font-weight:bold;} .event:hover{ color:red;} </style> 	  <span class="fweheader3" style="color:red !important;">Please Select Event:</span>
+			  <p style="text-align: center">  <a class="event" href="ticketing/?eid=64"> October 10th, 2015 - Back 2 Brooklyn 2015 </a> <br /> -- <br /></p>	</div> <div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+
+<div id="footer">
+<center> All FWE programming, talent names, images, likenesses, slogans, wrestling moves, trademarks, logos and copyrights are the exclusive property of FWE, Inc.<br />
+All other trademarks, logos and copyrights are the property of their respective owners.<br />
+ © 2014 FWE, Inc. All Rights Reserved. </center>
+</div>
+</div>
+</center><!--
+<div style="position:fixed; top:80px; left:100px; min-height:200px; width:600px; display:block; background-color:#FFFFFF;">
+<h2> Hello </h2>
+</div>-->
+</body>
+
+    <script type="text/javascript" src="/js/jqsimplemenu.js"></script>
+     <script type="text/javascript">
+        $(document).ready(function () {
+            $('.menu').jqsimplemenu();
+        });
+    </script>
+</html>

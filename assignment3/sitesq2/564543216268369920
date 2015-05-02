@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"34018f2cf2","applicationID":"318731","transactionName":"IlgMFUdfWFlUEUkUAQMYFFMaQFtGRRBJEAwOQA==","queueTime":0,"applicationTime":2255,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-632.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VwQDUFJACwIIU1JT"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:20,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(3),window.onerror=e;try{throw new Error}catch(u){"stack"in u&&(t(4),t(5),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:8,3:3,4:7,5:6,6:21,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:21,2:22,ee:"QJf3ax",gos:"7eSDFh"}],6:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:22,2:21,ee:"QJf3ax"}],7:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:22,2:21,ee:"QJf3ax"}],8:[function(t,e){function n(){u.inPlace(this,p,"fn-")}function r(t,e){u.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),u=c(a),f=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),f.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,u.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:5,2:22,ee:"QJf3ax"}],9:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=n(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=n(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var f=0;c>f;f++)e.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:10,3:8,4:5,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],10:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],11:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:20,2:21,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===f.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=u.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),u=c.document,f=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:f,features:{}};u.addEventListener?(u.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(u.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:20,2:11,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],20:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],21:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],22:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:21,ee:"QJf3ax"}]},{},["G9z0Bl",4,9]);</script>
+    <title>SoundTracking: Share the soundtrack to your life</title>
+    <meta name="description" content="The SoundTracking app is the best way to share the soundtrack to your life. Post the music playing around you in your daily adventures, and share that moment with your friends on Facebook and Twitter.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="qQtImGxqIvrXuf7jNZZiYSNnUjt42/9upVQcD3YfFiA=" name="csrf-token" />
+      <meta name="twitter:card" value="player" />
+  <meta name="twitter:player:width" value="435" />
+  <meta name="twitter:player:height" value="435" />
+  <meta name="twitter:player" value="https://soundtracking.com/posts/bongwater-folk-song-54d7db734e934b53de006c45.twitter" />
+  <meta name="twitter:player:stream" value="http://a133.phobos.apple.com/us/r1000/112/Music2/v4/04/82/59/04825933-90b1-7a58-e093-07603cf3737d/mzaf_3741163442465218519.aac.m4a" />
+  <meta name="twitter:player:stream:content_type" content="audio/mp4; codecs=&quot;mp4a.40.2&quot;">
+  <meta name="twitter:image" value="https://d2ctzk2pkpn18q.cloudfront.net/songs/album_arts/cfad49981e5d1ef073b021d23a02f1af07d1dc3b_v2.jpg" />
+<meta name="twitter:url" value="https://soundtracking.com/posts/bongwater-folk-song-54d7db734e934b53de006c45" />
+<meta name="twitter:site" value="@SoundTracking" />
+<meta name="twitter:title" value="&quot;Folk Song&quot; by Bongwater" />
+  <meta name="twitter:creator" value="@eclecticfriend3" />
+  <meta name="twitter:creator:id" value="889458350" />
+<meta name="twitter:app:name:iphone" content="SoundTracking" />
+<meta name="twitter:app:id:iphone" content="414323798" />
+<meta name="twitter:app:url:iphone" content="sdtk://posts/54d7db734e934b53de006c45" />
+<meta name="twitter:app:name:googleplay" content="SoundTracking" />
+<meta name="twitter:app:id:googleplay" content="com.schematiclabs.soundtracking" />
+<meta name="twitter:app:url:googleplay" content="sdtk://posts/54d7db734e934b53de006c45" />
+    <script>
+  (function() {
+
+    // For a great while we were storing lots of data in
+    // localStorage. After many bugs and annoyances, we decided
+    // to remove the caching. This line is left here in the
+    // rememberence of the brave developers fighing those bugs,
+    // and to remind us all that cache expiration is hard.
+    //
+    // .. and to remove any legacy data that might be filling
+    // up our user's local storage, so our app wont crash. O_o
+    //
+    // And thus, we bear this scar:
+    localStorage.removeItem("backboneCache");
+
+  })();
+</script>
+
+    <link href="//d2331ugbxluo25.cloudfront.net/assets/web/v2/application-cc512a75b94e4cfe43d96cf9aedc3ac3.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="//d2331ugbxluo25.cloudfront.net/assets/v2/modernizr/modernizr.js" type="text/javascript"></script>
+    <script src="//d2331ugbxluo25.cloudfront.net/javascripts/emojify.js" type="text/javascript"></script>
+    <script>
+  var JS_BOOTSTRAP_DATA = "{\"web_root_url\":\"https://soundtracking.com/\",\"is_mobile\":false,\"is_ios\":false,\"is_android\":false,\"flash\":{},\"hashtags\":[\"nowplaying\",\"np\",\"stpicmatch\",\"tbt\",\"throwbackthursday\"],\"post\":\"{\\\"post\\\":{\\\"id\\\":\\\"54d7db734e934b53de006c45\\\",\\\"created_at\\\":\\\"2015-02-08T21:56:03Z\\\",\\\"description\\\":\\\"#np\\\",\\\"html_description\\\":\\\"#np\\\",\\\"url\\\":\\\"https://soundtracking.com/posts/bongwater-folk-song-54d7db734e934b53de006c45\\\",\\\"short_url\\\":\\\"http://sdtk.fm/16BTExT\\\",\\\"user_id\\\":\\\"514d04714e934bf93f000902\\\",\\\"song_id\\\":\\\"4e9f3072988b2f6f48914e06\\\",\\\"image_type\\\":\\\"album_art\\\",\\\"canonical_title\\\":\\\"bongwater-folk-song\\\",\\\"image_urls\\\":{\\\"thumb\\\":\\\"https://d2ctzk2pkpn18q.cloudfront.net/songs/album_arts/cfad49981e5d1ef073b021d23a02f1af07d1dc3b_v2_thumb_v2.jpg\\\",\\\"small\\\":\\\"https://d2ctzk2pkpn18q.cloudfront.net/songs/album_arts/cfad49981e5d1ef073b021d23a02f1af07d1dc3b_v2_small_v2.jpg\\\",\\\"medium\\\":\\\"https://d2ctzk2pkpn18q.cloudfront.net/songs/album_arts/cfad49981e5d1ef073b021d23a02f1af07d1dc3b_v2_medium_v2.jpg\\\",\\\"large\\\":\\\"https://d2ctzk2pkpn18q.cloudfront.net/songs/album_arts/cfad49981e5d1ef073b021d23a02f1af07d1dc3b_v2.jpg\\\"},\\\"counts\\\":{\\\"likes\\\":1,\\\"loves\\\":3,\\\"comments\\\":0,\\\"views\\\":103},\\\"comments\\\":[],\\\"reactions\\\":[{\\\"id\\\":\\\"54d7de8b4e934bce71006a51\\\",\\\"user_id\\\":\\\"533b03291d2834a753000af5\\\",\\\"reaction_type\\\":\\\"love\\\",\\\"created_at\\\":\\\"2015-02-08T22:09:15Z\\\"},{\\\"id\\\":\\\"54d7e65026414c9bf3006bef\\\",\\\"user_id\\\":\\\"54d72f5826414c2dfd006960\\\",\\\"reaction_type\\\":\\\"like\\\",\\\"created_at\\\":\\\"2015-02-08T22:42:24Z\\\"},{\\\"id\\\":\\\"54d7ed224e934bfc000069a4\\\",\\\"user_id\\\":\\\"4f0063a74e934b461a002a9d\\\",\\\"reaction_type\\\":\\\"love\\\",\\\"created_at\\\":\\\"2015-02-08T23:11:30Z\\\"},{\\\"id\\\":\\\"54d7f4334e934bf394006a6e\\\",\\\"user_id\\\":\\\"526f5a88e1639dbd7800049d\\\",\\\"reaction_type\\\":\\\"love\\\",\\\"created_at\\\":\\\"2015-02-08T23:41:39Z\\\"}]},\\\"places\\\":[],\\\"users\\\":[{\\\"id\\\":\\\"4f0063a74e934b461a002a9d\\\",\\\"username\\\":\\\"djmarie\\\",\\\"name\\\":\\\"Ryna\\\",\\\"html_name\\\":\\\"Ryna\\\",\\\"verified\\\":false,\\\"bio\\\":\\\"Welcome to my heartbreak station ...music is no border in a way, let\'s enjoy sharing musics, and i need somebody to love... Hokkaido prefecture...\\\\r\\\\n\\\",\\\"html_bio\\\":\\\"Welcome to my heartbreak station ...music is no border in a way, let&#x27;s enjoy sharing musics, and i need somebody to love... Hokkaido prefecture...\\\\r\\\\n\\\",\\\"profile_image_urls\\\":{\\\"small\\\":\\\"https://d2ctzk2pkpn18q.cloudfront.net/users/photos/1534728fb20239cb36a8907490e4eab9a814b4ae_small.jpg\\\"}},{\\\"id\\\":\\\"514d04714e934bf93f000902\\\",\\\"username\\\":\\\"eclecticfriend3\\\",\\\"name\\\":\\\"frenetic eclectic\\\",\\\"html_name\\\":\\\"frenetic eclectic\\\",\\\"verified\\\":false,\\\"bio\\\":\\\"Music evolves. I turn around and shiver with delight.\\\",\\\"html_bio\\\":\\\"Music evolves. I turn around and shiver with delight.\\\",\\\"profile_image_urls\\\":{\\\"small\\\":\\\"https://d2ctzk2pkpn18q.cloudfront.net/users/photos/caa3504749c8b61420cc76093295e87f826d7959_small.jpg\\\"}},{\\\"id\\\":\\\"526f5a88e1639dbd7800049d\\\",\\\"username\\\":\\\"BarelyBreathing\\\",\\\"name\\\":\\\"Nemia\\\",\\\"html_name\\\":\\\"Nemia\\\",\\\"verified\\\":false,\\\"bio\\\":\\\"rockmetalalternativepopcountry---lifeismusic---meowkittehcatsmeow😻❤️😻\\\",\\\"html_bio\\\":\\\"rockmetalalternativepopcountry---lifeismusic---meowkittehcatsmeow😻❤️😻\\\",\\\"profile_image_urls\\\":{\\\"small\\\":\\\"https://d2ctzk2pkpn18q.cloudfront.net/users/photos/054d461f89d6fa9434765b31f38d5cbc6a686a8a_small.jpg\\\"}},{\\\"id\\\":\\\"533b03291d2834a753000af5\\\",\\\"username\\\":\\\"chrizzzz\\\",\\\"verified\\\":false,\\\"bio\\\":\\\"\\\",\\\"html_bio\\\":\\\"\\\",\\\"profile_image_urls\\\":{\\\"small\\\":\\\"https://d2ctzk2pkpn18q.cloudfront.net/users/photos/22f483f5e14e9b755b1823a3a47bf4d99c718e63_small.jpg\\\"}},{\\\"id\\\":\\\"54d72f5826414c2dfd006960\\\",\\\"username\\\":\\\"nocothecoco\\\",\\\"name\\\":\\\"Novak Slavkovic\\\",\\\"html_name\\\":\\\"Novak Slavkovic\\\",\\\"verified\\\":false,\\\"bio\\\":\\\"\\\",\\\"html_bio\\\":\\\"\\\",\\\"profile_image_urls\\\":{\\\"small\\\":\\\"https://graph.facebook.com/100001302888446/picture?type=square\\\"}}],\\\"songs\\\":[{\\\"album_name\\\":\\\"The Power Of Pussy\\\",\\\"artist_display_name\\\":\\\"Bongwater\\\",\\\"id\\\":\\\"4e9f3072988b2f6f48914e06\\\",\\\"name\\\":\\\"Folk Song\\\",\\\"release_date\\\":\\\"2004-01-01T00:00:00Z\\\",\\\"artwork_url\\\":\\\"https://d2ctzk2pkpn18q.cloudfront.net/songs/album_arts/cfad49981e5d1ef073b021d23a02f1af07d1dc3b_v2.jpg\\\",\\\"album_art_urls\\\":{\\\"thumb\\\":\\\"https://d2ctzk2pkpn18q.cloudfront.net/songs/album_arts/cfad49981e5d1ef073b021d23a02f1af07d1dc3b_v2_thumb_v2.jpg\\\",\\\"small\\\":\\\"https://d2ctzk2pkpn18q.cloudfront.net/songs/album_arts/cfad49981e5d1ef073b021d23a02f1af07d1dc3b_v2_small_v2.jpg\\\",\\\"large\\\":\\\"https://d2ctzk2pkpn18q.cloudfront.net/songs/album_arts/cfad49981e5d1ef073b021d23a02f1af07d1dc3b_v2.jpg\\\"},\\\"itunes\\\":{\\\"song_id\\\":\\\"153598395\\\",\\\"view_url\\\":\\\"https://itunes.apple.com/us/album/folk-song/id153598276?i=153598395&uo=4&at=11laBT\\\",\\\"preview_url\\\":\\\"http://a133.phobos.apple.com/us/r1000/112/Music2/v4/04/82/59/04825933-90b1-7a58-e093-07603cf3737d/mzaf_3741163442465218519.aac.m4a\\\"},\\\"spotify\\\":{\\\"href\\\":\\\"spotify:track:41u0Ide0A2VSqAfLHplLqU\\\"},\\\"rdio\\\":{\\\"key\\\":\\\"t9522009\\\",\\\"embed_url\\\":\\\"https://rd.io/e/QivTFBo/\\\",\\\"short_url\\\":\\\"http://rd.io/x/QivTFBo/\\\",\\\"duration\\\":562}}],\\\"at_mentions\\\":{}}\"}";
+    var JS_BOOTSTRAP_FEED = "{}";
+</script>
+
+
+    <script src="//d2331ugbxluo25.cloudfront.net/assets/web/v2/environment-f359fac8fd5c8078b414cc147c75d55a.js" type="text/javascript"></script>
+    <script src="//d2331ugbxluo25.cloudfront.net/assets/web/v2/application-4791342f064855929ac975f6def82f84.js" type="text/javascript"></script>
+            <script>var require = {"baseUrl":"/assets","paths":{"main":"//d2331ugbxluo25.cloudfront.net/assets/main-bc4c21f3a398c65f02f0d83184633f33","find_friends":"//d2331ugbxluo25.cloudfront.net/assets/find_friends-3d55d30857bfdc1cb2809179ee72e6d0","login":"//d2331ugbxluo25.cloudfront.net/assets/login-9789fc198ba97f0354fba467f5f408b0","sign_up":"//d2331ugbxluo25.cloudfront.net/assets/sign_up-078dd55c7589e62d5e89b8539fd98cb9","suggested_users":"//d2331ugbxluo25.cloudfront.net/assets/suggested_users-968a3b0b89f03086ac150d4541e1ec9b","widget_wizard":"//d2331ugbxluo25.cloudfront.net/assets/widget_wizard-1c02f64ff16a24faa78586f5d683279a","password_reset":"//d2331ugbxluo25.cloudfront.net/assets/password_reset-b067f8dbadef3539f7a9433e21a243c8","new_password_reset":"//d2331ugbxluo25.cloudfront.net/assets/new_password_reset-75e48dc0a8307f64e2f78e53ad0b0aaf","widget4-main":"//d2331ugbxluo25.cloudfront.net/assets/widget4-main-d955e96f9c96a9aebf8febca601c1337","email_sign_up":"//d2331ugbxluo25.cloudfront.net/assets/email_sign_up-19ffa8e5fd9c53cc1c43b17481393db6","post_details_twitter":"//d2331ugbxluo25.cloudfront.net/assets/post_details_twitter-da3e81982c03563ac51631c4bacc7b90"},"waitSeconds":0};</script>
+      <script data-main="//d2331ugbxluo25.cloudfront.net/main" src="//d2331ugbxluo25.cloudfront.net/assets/require-ed04f9bce85a04c8c8d210c1073a0c3a.js"></script>
+
+      <meta property="og:type" content="soundtracking:music_moment" >
+<meta property="og:title" content="&quot;Folk Song&quot; by Bongwater" >
+<meta property="og:image" content="https://d2ctzk2pkpn18q.cloudfront.net/songs/album_arts/cfad49981e5d1ef073b021d23a02f1af07d1dc3b_v2.jpg" >
+<meta property="og:site_name" content="SoundTracking" >
+<meta property="og:description" content="#np" >
+<meta property="og:url" content="https://soundtracking.com/posts/bongwater-folk-song-54d7db734e934b53de006c45" >
+<meta property="soundtracking:created_time" content="2015-02-08T21:56:03+0000" >
+<meta property="soundtracking:username" content="eclecticfriend3" >
+<meta property="fb:app_id" content="116111805127522" >
+
+
+
+
+  <meta property="og:audio:type" content="audio/mp4a-latm" >
+  <meta property="og:audio:url" content="http://a133.phobos.apple.com/us/r1000/112/Music2/v4/04/82/59/04825933-90b1-7a58-e093-07603cf3737d/mzaf_3741163442465218519.aac.m4a" >
+
+      <meta name="apple-itunes-app" content="app-id=414323798, app-argument=sdtk://posts/54d7db734e934b53de006c45">
+
+    <link href="https://plus.google.com/101211313047993728333" rel="publisher"/>
+  </head>
+  <body class="l-body full-width">
+    <div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '116111805127522',                        // App ID from the app dashboard
+      channelUrl : '//soundtracking.com/channel.html', // Channel file for x-domain comms
+      status     : true,                                 // Check Facebook Login status
+      xfbml      : true                                  // Look for social plugins on the page
+    });
+
+    // Additional initialization code such as adding Event Listeners goes here
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+    <header class="l-header-page" id="l-header-page">
+  <nav class="top-bar">
+    <ul>
+      <li class="name">
+        <h1>
+          <a href="/" data-galabel="logo"><img alt="SoundTracking" height="34" id="header-logo" src="//d2331ugbxluo25.cloudfront.net/assets/layout/titlebar_foreground-49f0a13091ae5d80fb5f04d9f6c5e125.png" width="161" /></a>
+        </h1>
+      </li>
+      <li class="toggle-topbar e-toggle-topbar"><a href="#"></a></li>
+    </ul>
+    <section class="l-nav-wrapper">
+      <ul class="nav-bar nav-feed mobile left">
+        <li><a href="/trending" data-galabel="trending">Trending</a></li>
+        <li class="hashtag-search-outer" id="hashtag-search-wrapper">
+          <input id="header-search" disabled type="text" name="hashtag" class="e-hashtag-searchbar hashtag-search-input" placeholder="Search by #hashtag">
+          <button class="input-submit e-input-submit no-styles" data-icon="&#xe000;"></button>
+        </li>
+      </ul>
+      <ul class="right nav-bar mobile">
+        <li class="has-dropdown e-has-dropdown">
+          <a href="#" data-galabel="about">About</a>
+          <ul class="dropdown">
+            <li><a href="http://blog.soundtracking.com" data-galabel="blog">Blog</a></li>
+            <li><a href="/faq" data-galabel="faq">FAQ</a></li>
+            <li><a href="/tos" data-galabel="tos">Terms of Service</a></li>
+            <li><a href="/privacy" data-galabel="privacy">Privacy</a></li>
+            <li><a href="/contact" data-galabel="contact">Contact</a></li>
+          </ul>
+        </li>
+          <li class="has-button">
+            <a href="/sign-up" class="button-account-create button e-single-page-link" data-galabel="create account">Create an Account</a>
+          </li>
+          <li><a href="/login/new" class="e-single-page-link" data-galabel="sign in">Sign in</a></li>
+      </ul>
+    </section>
+  </nav>
+</header>
+
+    <div class="l-content-primary" id="content-primary">
+      <div id="flash-message-wrapper"></div>
+      <div class="content-wrapper">
+        <div role="main">
+          
+<div id="main-content"></div>
+
+        </div>
+
+        <div id="secondary-content">
+          <div class="row">
+            <div class="seven columns offset-by-four">
+              <div id="secondary-content-container" class="section-module">
+              </div>
+            </div>
+            <div class="one column">
+              <a href="#" class="e-secondary-content-control close-secondary-panel" data-action="close" title="Cancel">
+                <span class="hide-for-small">&#215;</span>
+                <span class="show-for-small">Cancel</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </body>
+</html>

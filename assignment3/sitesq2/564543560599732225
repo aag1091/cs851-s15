@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9 no-media-query"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vg4HVFBACgEGVlJRBw=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:20,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(3),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(4),t(5),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:8,3:3,4:7,5:6,6:21,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:21,2:22,ee:"QJf3ax",gos:"7eSDFh"}],6:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:22,2:21,ee:"QJf3ax"}],7:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:22,2:21,ee:"QJf3ax"}],8:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(o){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:5,2:22,ee:"QJf3ax"}],9:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=e(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=e(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var u=0;c>u;u++)n.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:10,3:8,4:5,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],10:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],11:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:20,2:21,handle:"D5DuLP"}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=l.info=NREUM.info;if(t&&t.licenseKey&&t.applicationID&&f&&f.body){s(h,function(e,n){e in t||(t[e]=n)}),l.proto="https"===p.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=f.createElement("script");e.src=l.proto+t.agent,f.body.appendChild(e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u="addEventListener",d="attachEvent",p=(""+location).split("?")[0],h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-593.min.js"},l=e.exports={offset:i(),origin:p,features:{}};f[u]?(f[u]("DOMContentLoaded",o,!1),c[u]("load",n,!1)):(f[d]("onreadystatechange",r),c[d]("onload",n)),a("mark",["firstbyte",i()])},{1:20,2:11,handle:"D5DuLP"}],20:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],21:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],22:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:21,ee:"QJf3ax"}]},{},["G9z0Bl",4,9]);</script>
+
+      <title>Craig's Badge on Untappd</title>
+    
+  <link rel="shortcut icon" href="https://3c66724003d974c2f72a-122c9eb518099aa035dafdfd38394a83.ssl.cf2.rackcdn.com/site/favicon_v3.ico?v=1"/>
+  <link rel="apple-touch-icon" href="">
+  <!--<meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">-->
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+  
+  <meta property="og:site_name" content="Untappd" />
+  
+  <!-- meta block -->
+      <meta name="description" content="Craig earned a Lager Jack (Level 6) badge on Untappd! | Untappd" />
+    
+        <meta property="fb:app_id" content="153339744679495" /> 
+    <meta property="og:title"  content="Lager Jack (Level 6)" />
+    <meta property="og:image" content="https://d1c8v1qci5en44.cloudfront.net/badges/bdg_LagerJack_lg.jpg" />
+    <meta property="og:description" content="After a long day, what better way to kick back than with a crisp and refreshing lager? You're already feeling more relaxed, aren't you?. That's 30 different Lagers! Try 5 more to unlock Level 7." />
+    <meta property="og:type"   content="untappd:badge" /> 
+    <meta property="og:url"    content="https://untappd.com/user/DeathsAngel/badges/46547392" /> 
+        <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@untappd">
+    <meta name="twitter:title" content="Lager Jack (Level 6)">
+    <meta name="twitter:description" content="Craig earned a Lager Jack (Level 6) on Untappd!">
+    <meta name="twitter:image:src" content="https://d1c8v1qci5en44.cloudfront.net/badges/bdg_LagerJack_lg.jpg">
+    <meta name="twitter:domain" content="untappd.com">
+    <meta name="twitter:app:name:iphone" content="Untappd">
+    <meta name="twitter:app:name:android" content="Untappd">
+    <meta name="twitter:app:id:iphone" content="id449141888">
+    <meta name="twitter:app:id:googleplay" content="com.untappdllc.app">
+    <meta name="robots" content="noindex">
+
+  <meta name="author" content="The Untappd Team" />
+  <meta name="Copyright" content="Copyright Untappd 2012. All Rights Reserved." />
+  <meta name="DC.title" content="Untappd" />
+  <meta name="DC.subject" content="Untappd is a mobile app that allows you to socially share the brew you're currently enjoying, as well as where you're enjoying it, with your friends!" />
+  <meta name="DC.creator" content="The Untappd Team" />
+
+  <meta name="google-site-verification" content="EnR7QavTgiLCzZCCOv_OARCHsHhFwkwnJdG0Sti9Amg" />
+  <meta name="bitly-verification" content="b3080898518a"/>
+  <meta content="153339744679495" property="fb:app_id">
+  <meta content="Untappd" property="og:site_name">
+  <meta content="Share your reviews and photos of your favorite beers with your friends. You can also discover new beers and bars wherever you are." property="og:description">
+  
+
+  <link id="canonical" rel="canonical" href="https://untappd.com/user/DeathsAngel/badges/46547392">
+
+  <link href="https://3c66724003d974c2f72a-122c9eb518099aa035dafdfd38394a83.ssl.cf2.rackcdn.com/site/v2/css/styles.css?v=2.4.3" media="all" rel="stylesheet" type="text/css" />
+  <link href="https://3c66724003d974c2f72a-122c9eb518099aa035dafdfd38394a83.ssl.cf2.rackcdn.com/site/v2/css/fonts.css" rel="stylesheet" type="text/css" />
+  <!--[if lt IE 9]><script src="https://3c66724003d974c2f72a-122c9eb518099aa035dafdfd38394a83.ssl.cf2.rackcdn.com/site/v2/js/html5shiv.js"></script><![endif]-->
+
+  <script type="text/javascript" src="https://3c66724003d974c2f72a-122c9eb518099aa035dafdfd38394a83.ssl.cf2.rackcdn.com/site/v3/js/common/min/site_common_min.js?v=1.4.8"></script>
+
+
+  
+  <link rel="stylesheet" href="https://3c66724003d974c2f72a-122c9eb518099aa035dafdfd38394a83.ssl.cf2.rackcdn.com/site/css/tipsy.css" type="text/css" media="screen" title="no title" charset="utf-8">
+  <script type="text/javascript" language="Javascript">
+      $(document).ready(function(){
+        $(".tip").tipsy({fade: true});
+      });
+
+      $(window).unload(function(){});
+  </script>
+
+  <link href="https://3c66724003d974c2f72a-122c9eb518099aa035dafdfd38394a83.ssl.cf2.rackcdn.com/site/v3/css/style.css?v=2.4.3" media="all" rel="stylesheet" type="text/css" />
+
+</head>
+
+
+
+<body>
+
+
+<div id="mobile_nav_user">
+
+   </div>
+
+<div id="mobile_nav_site">
+  <form class="search_box" method="get" action="/search">
+    <input type="text" class="track-focus search-input-desktop" autocomplete="off" data-track="desktop_search" placeholder="Find a beer, brewery or bar..." name="q" />
+    <input type="submit" value="Submit the form!" style="position: absolute; top: 0; left: 0; z-index: 0; width: 1px; height: 1px; visibility: hidden;" />
+    <div class="autocomplete">
+    </div>
+  </form>
+  <ul>
+    <li><a class="track-click" data-track="mobile_menu" data-href=":thepub" href="/thepub">The Pub</a></li>
+    <li><a class="track-click" data-track="mobile_menu" data-href=":beer/top_rated" href="/beer/top_rated">Top Rated</a></li>
+    <li><a class="track-click" data-track="mobile_menu" data-href=":supporter" href="/supporter">Supporter</a></li>
+    <li><a class="track-click" data-track="mobile_menu" data-href=":external/help" target="_blank" href="http://help.untappd.com">Help</a></li>
+          <li><a class="track-click" data-track="mobile_menu" data-href=":sidebar/login" href="/login">Login</a></li>
+      <li><a class="track-click" data-track="mobile_menu" data-href=":sidebar/create" href="/create?source=mobilemenu">Sign Up</a></li>
+        </ul>
+</div>
+
+<header>
+
+  <div class="inner">
+
+    <p class="logo"><a class="track-click" data-track="desktop_header" data-href=":root" href="/">Untappd</a></p>
+
+    
+      <div class="get_user_desktop">
+        <a class="sign_in track-click" data-track="mobile_header" data-href=":login" href="/login?go_to=http://untappd.com/user/DeathsAngel/badges/46547392">Sign In</a>
+        <a href="/create" class="join track_click" data-track="mobile_header" data-href=":create">Join Now</a>
+      </div>
+
+    
+    <div onclick="trackMobileEvent('menu');" class="mobile_menu_btn">Menu</div>
+
+    <div id="nav_site">
+      <ul>
+        <li><a class="track-click" data-track="desktop_menu" data-href=":thepub" href="/thepub">The Pub</a></li>
+        <li><a class="track-click" data-track="desktop_menu" data-href=":beer/top_rated" href="/beer/top_rated">Top Rated</a></li>
+        <li><a class="track-click" data-track="desktop_menu" data-href=":supporter" href="/supporter">Supporter</a></li>
+        <li><a class="track-click" data-track="desktop_menu" data-href=":external/help" target="_blank" href="http://help.untappd.com">Help</a></li>
+      </ul>
+      <form class="search_box" method="get" action="/search">
+        <input type="text" class="track-focus search-input-desktop" autocomplete="off" data-track="desktop_search" placeholder="Find a beer, brewery or bar..." name="q" />
+        <input type="submit" value="Submit the form!" style="position: absolute; top: 0; left: 0; z-index: 0; width: 1px; height: 1px; visibility: hidden;" />
+        <div class="autocomplete">
+        </div>
+      </form>
+    </div>
+
+  </div>    
+</header>
+<script id="auto-complete-template" type="text/x-handlebars-template">
+  {{#if beers.items}}
+      <div class="ac_section">
+          <p class="ac_header">Beers ({{beers.found}})</p>
+          {{#each beers.items}}
+              <a href="/beer/{{this.beer.bid}}" class="ac_item track-click" data-track="search_autocomplete" data-href=":beerlink">
+                  <p class="label">
+                      <img src="{{this.beer.beer_label}}">
+                  </p>
+                  <p class="info">
+                      <span class="title">{{this.beer.beer_name}}</span>
+                      <span class="sub_title">{{this.beer.brewery_name}}</span>
+                  </p>
+              </a>
+          {{/each}}
+      </div>
+  {{/if}}
+
+  {{#if breweries.items}}
+      <div class="ac_section">
+          <p class="ac_header">Breweries ({{breweries.found}})</p>
+          {{#each breweries.items}}
+              <a href="/brewery/{{this.brewery.brewery_id}}" class="ac_item track-click" data-track="search_autocomplete" data-href=":brewerylink">
+                  <p class="label">
+                      <img src="{{this.brewery.brewery_label}}">
+                  </p>
+                  <p class="info">
+                      <span class="title">{{this.brewery.brewery_name}}</span>
+                      <span class="sub_title">{{this.brewery.country_name}}</span>
+                  </p>
+              </a>
+          {{/each}}
+      </div>
+  {{/if}}
+
+  {{#if venues.items}}
+      <div class="ac_section">
+          <p class="ac_header">Venues ({{venues.found}})</p>
+          {{#each venues.items}}
+              <a href="/venue/{{this.venue.venue_id}}" class="ac_item track-click" data-track="search_autocomplete" data-href=":venuelink">
+                  <p class="label">
+                      <img src="{{this.venue.venue_icon.md}}">
+                  </p>
+                  <p class="info">
+                      <span class="title">{{this.venue.venue_name}}</span>
+                      <span class="sub_title">{{this.venue.location}}</span>
+                  </p>
+              </a>
+          {{/each}}
+      </div>
+  {{/if}}
+
+  {{#if is_result}}
+  <div class="see-more-results">
+      <a href="/search?q={{search}}" class="track-click" data-track="search_autocomplete" data-href=":seemore">See More</a>
+  </div> 
+  {{/if}}
+</script>
+<style type="text/css">
+    .ac-selected {
+        background-color: #f8f8f8;
+    }
+</style>
+<script type="text/javascript">
+  var onChangeInterval;
+  var currentValue;
+  var ajaxStatment;
+
+  var autoComplete = {
+      hightLight: function(direction) {
+
+        //console.log("highlight called");
+
+        var sel = $('a.ac-selected');
+
+        //console.log(sel.length);
+
+        if (sel.length == 0) {
+            $('#nav_site .search_box .autocomplete .ac_section a:first').addClass("ac-selected");
+        }
+        else {
+
+            var elementArray = new Array();
+
+            $('#nav_site .search_box .autocomplete .ac_section a').each(function() {
+                elementArray.push($(this));
+            });
+
+            var currentIndex = -1;
+
+            for (i = 0; i < elementArray.length; i++) {
+                var _this = elementArray[i];
+
+                if ($(_this).hasClass("ac-selected")) {
+                    //console.log("has class");
+                    $(_this).removeClass("ac-selected");
+                    //console.log("removing class")
+
+                    if (direction == "up") {
+                        //console.log("direction up is " + i);
+                        currentIndex = i - 1;
+                        //console.log("next index is " +currentIndex);
+                    }
+                    else {
+                        //console.log("direction down");
+                        currentIndex = i + 1;
+                        //console.log("next index is " +currentIndex);
+                    }
+
+                    break;
+                }
+                
+            }
+
+            //console.log("current Index is => " + i);
+
+            if (currentIndex != -1) {
+                if (elementArray[currentIndex]) {
+                    var selectedIndex = elementArray[currentIndex];
+                    $(selectedIndex).addClass("ac-selected");
+                }
+            }
+        }
+      },
+      checkKey: function(keynum) {
+        var UP = 38;
+        var DOWN = 40;
+        var ENTER = 13;
+
+        if (keynum === UP || keynum === DOWN) {
+            return false;
+        }
+        else {
+            return true;
+        }
+      },
+      moveSelection: function(keynum, event) {
+        var UP = 38;
+        var DOWN = 40;
+        var ENTER = 13;
+
+        if(keynum === UP) {
+           event.preventDefault();
+           autoComplete.hightLight("up");
+           _gaq.push(['_trackEvent', 'AutcompleteArrow', 'Click', "arrow-up"]);
+        }
+
+        if(keynum === DOWN) {
+          event.preventDefault();  
+          autoComplete.hightLight("down");
+          _gaq.push(['_trackEvent', 'AutcompleteArrow', 'Click', "arrow-down"]);
+        }
+
+        if(keynum === ENTER) {
+          if ($(".ac-selected").length != 0) {
+            event.preventDefault();
+            event.stopPropagation();
+            _gaq.push(['_trackEvent', 'AutcompleteArrow', 'Click', "arrow-select"]);
+            window.location.href = $(".ac-selected").attr('href');
+          }
+        }
+      },
+      checkValue: function(searchVal) {
+          currentValue = searchVal;
+      
+          clearInterval(onChangeInterval);
+
+          if (currentValue === '' || currentValue.length < 3) {
+              //$(".brewery-complete").hide();
+          } else {
+              autoComplete.search(currentValue);
+          }
+      },
+      validate: function(str) {
+          return /^[a-z\d\-_\s]+$/i.test(str);
+      },
+      search: function(currentValue) {
+          var d ="q="+currentValue;
+
+          $(".autocomplete").attr('data-text', currentValue);
+
+          /*if (ajaxStatment) {
+              ajaxStatment.abort();
+          }*/
+
+          ajaxStatment = $.ajax({
+              url: "/apireqs/autosearch",
+              type: "GET",
+              data: d,
+              dataType: "json",
+              error: function(xhr,ajaxOptions, thrownError)
+              {
+                  $(".autocomplete").removeClass("active");
+              },
+              success: function(data)
+              {
+                  if (data.error) {
+                      $(".autocomplete").removeClass("active");
+                  }
+                  else {
+                      if ($(".autocomplete").attr('data-text').length <= currentValue.length) {
+                        var source   = $("#auto-complete-template").html();
+                        var template = Handlebars.compile(source);
+                        var searchResults = template(data.response);
+
+                        $(".autocomplete").html(searchResults);
+                        $(".autocomplete").addClass("active");
+                      }
+                  }
+                  
+              }
+          });
+      }
+  }
+
+
+ $(document).ready(function() {
+
+    $("body").on("click", function(event) {
+        if ($(".autocomplete").hasClass('active')) {
+            if (event.currentTarget.className != "autocomplete") {
+                $(".autocomplete").html('');
+                $(".autocomplete").removeClass("active");
+                $('.autocomplete .ac_section').removeClass(".ac-selected");
+            }
+        }
+
+    });
+
+    $(".search-input-desktop").on("keydown paste", function(event) {
+
+        var searchVal = $(this).val();
+
+        var keyCode = "";
+
+        if (event.keyCode) { 
+            keyCode = event.keyCode;
+            autoComplete.moveSelection(event.keyCode, event);
+        }  // IE
+        else if(event.which) { 
+            keyCode = event.which;
+            autoComplete.moveSelection(event.which, event);
+        }
+
+        if (searchVal.length >= 2) {
+            if (autoComplete.validate(searchVal)) {
+              
+              if (autoComplete.checkKey(keyCode)) {
+                  if (searchVal == "") {
+                      $(".autocomplete").html('');
+                      $(".autocomplete").removeClass("active");
+                  }
+
+                  clearInterval(onChangeInterval);
+
+                  if (currentValue !== searchVal);
+                  {
+                      onChangeInterval = setInterval(function() { autoComplete.checkValue(searchVal); }, 25);
+                  }    
+              }
+          } 
+        }
+
+        
+    });
+
+    $(".track-focus").click(function() {
+      var d = $(this).attr("data-track") + ":" + $(this).attr("placeholder");
+      _gaq.push(['_trackEvent', 'Search Focus', 'Click', d]);
+    });
+
+    $(document).on("click", ".track-click", function() {
+      var d = $(this).attr("data-track");
+      if ($(this).attr("data-href")) {
+        d = d + $(this).attr("data-href");
+      }
+      _gaq.push(['_trackEvent', 'Click', 'Click', d]);
+    });
+   });
+
+  $(document).on("change", ".track-change", function() {
+      var d = $(this).attr("data-track");
+      if ($(this).attr("data-href")) {
+        if ($(this).attr("data-href") == ":sort") {
+          d = d + $(this).attr("data-href")+"/"+$(this).val();
+        }
+        else {
+          d = d + $(this).attr("data-href");
+        }
+        
+      }
+
+      _gaq.push(['_trackEvent', 'Click', 'Click', d]);
+  })
+
+  function trackMobileEvent(label) {
+    _gaq.push(['_trackEvent', 'Mobile Menu', 'Click', label]);
+  }
+</script>
+
+<div class="nav_open_overlay"></div>
+<div id="slide">
+
+
+
+
+  
+<div class="indiv_item center">
+
+  <div class="user">
+    <a class="avatar" href="/user/DeathsAngel"><img src="https://d1c8v1qci5en44.cloudfront.net/profile/d83ef36de10f2f23a8d85821ffb883a8_thumb.jpg" /></a>
+    <div class="name">
+      <p><a href="/user/DeathsAngel">Craig Norton</a></p>
+      <span>971 Check-ins &#149; 794 Distinct</span>
+    </div>
+  </div>
+
+  <div class="badge box">
+    <p class="headline">Craig unlocked a badge!</p>
+    <div class="badge_art">
+      <div class="scaler"></div>
+      <img src="https://d1c8v1qci5en44.cloudfront.net/badges/bdg_LagerJack_lg.jpg" />
+    </div>
+    <div class="details">
+      <p class="badge_name">Lager Jack (Level 6)</p>
+      <p>After a long day, what better way to kick back than with a crisp and refreshing lager? You're already feeling more relaxed, aren't you?. That's 30 different Lagers! Try 5 more to unlock Level 7.</p>
+    </div>
+  </div>  
+
+  <div class="checkin box">
+        <a class="label" href="/b/boston-beer-company-samuel-adams-samuel-adam-double-agent-ipl/259276"><img src="https://d1c8v1qci5en44.cloudfront.net/site/beer_logos/beer-_259276_5407bcb48935e9c1885ecb731e67.jpeg" /></a>
+    <div class="beer">
+      <p><a href="/b/boston-beer-company-samuel-adams-samuel-adam-double-agent-ipl/259276">Samuel Adams Double Agent IPL</a></p>
+      <span><a href="/brewery/157">Boston Beer Company (Samuel Adams)</a></span>
+    </div>    
+    <div class="bottom">
+      <div class="bottom-right">
+        <p class="time">Sun, 08 Feb 2015 21:56:49 +0000</p>
+      </div>
+            <div class="clear"></div>
+    </div>
+  </div>
+
+
+  
+ 
+
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+  /* Link Tracking */
+
+    refreshTime(".time", "h:mm A D MMM YY", true);
+
+    $(".fusionentire a").live("click", function() {
+      _gaq.push(['_trackEvent', 'Ad Click', 'Click', 'Fusion-Badge']);
+      console.log("adtrackdone");
+    });
+
+    $(".track-focus").click(function() {
+      var d = $(this).attr("data-track");
+      _gaq.push(['_trackEvent', 'Search Focus', 'Click', d]);
+    });
+
+    $(".track-click").click(function() {
+      var d = $(this).attr("data-track");
+      if ($(this).attr("href") != "" && $(this).attr("href") != "#") {
+        d = d + "_"+$(this).attr("href");
+      }
+      _gaq.push(['_trackEvent', 'Click', 'Click', d]);
+    });
+})
+</script>
+<script type="text/javascript">
+  
+  // Clear Text Feild
+  function clearText(thefield){
+    if (thefield.defaultValue==thefield.value)
+    thefield.value = ""
+  }
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-11061050-10']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+  $(document).on("click", ".track-click", function() {
+      var d = $(this).attr("data-track");
+      if ($(this).attr("data-href")) {
+        d = d + $(this).attr("data-href");
+      }
+      _gaq.push(['_trackEvent', 'Click', 'Click', d]);
+    });
+   });
+</script><iframe src="/profile/stats?id=46547392&type=badge&ref=social_badge&is_supporter=0" width="0" height="0" tabindex="-1" title="empty" class="hidden"></iframe><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"9cfba25275","applicationID":"2262330","transactionName":"NAdTZEZUChUFW0JdVg1NcFNAXAsIS2hEW18KDlQfQUYBFA==","queueTime":0,"applicationTime":41,"ttGuid":"","agentToken":"","atts":"GEBQEg5OGRs=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-593.min.js"}</script></body>
+</html>

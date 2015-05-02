@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"XA8AWVRRGwQBU1ZaAAI="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:9,3:7,4:11,5:3,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:9,3:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>
+        <meta http-equiv="Content-Language" content="en">
+        
+        <title>Hire Freelancers &amp; Find Freelance Jobs Online - Freelancer</title>
+
+        <!-- META ========================================================== -->
+
+        <meta http-equiv="x-dns-prefetch-control" content="on">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        
+        <meta property="og:image" content="https://cdn6.f-cdn.com/build/img/facebook/default.jpg?v=de39b5683deb440d4fadf2cbd4847b5e&amp;m=2"/>
+        <meta name="description" content="Hire freelance programmers, web developers, designers, writers, data entry &amp; more at a fraction of the cost on the World&#039;s Largest Outsourcing Marketplace."/>
+        
+        <meta name="robots" content="index, follow"/>
+        
+        
+        <meta name="verify-v1" content="TTmFSxUJxXuHsKl9kPGeYetHBfsjnO7s87WxaAha8NE="/>
+        <meta name="verify-v1" content="9ejzgFxg7wuxHdyyiqmdTe3JQgBUfIVvdJiXlVRHkEw="/>
+        <meta name="google-site-verification" content="s6tg1XRjKnD9we7DYaaGeUlxOrVgg4dJYUWyvhsD2B4"/>
+        <meta name="google-site-verification" content="Os01EUjriD5LgZ5VHZqf23SGdeCX-7g7dsi-8ekNBdk"/>
+        <meta name="google-site-verification" content="Xi9iryvGIjCbFdxBx5GjqMprKdhYIrOeKAgCSS_GEEs"/>
+        <meta name="google-site-verification" content="aUe2esuVVPvwLu9u_15cbwtL8CSU8cMP9ZtDNE_SNh8"/>
+        <meta name="alexaVerifyID" content="lOECm39vgYv4N9PwoW6nsSSLiUw"/>
+        <meta name="y_key" content="145378928393bc8d"/>
+        <meta name="msvalidate.01" content="756854B52F963132E377E441F92F1136"/>
+        <meta property="fb:admins" content="100000662403967"/>
+        <meta name="robots" content="noodp"/>
+
+        
+
+        
+
+<link href="https://www.freelancer.com/rss.xml" rel="alternate" type="application/rss+xml" title="Latest projects" >
+
+
+
+<script>
+    var _t = [];
+    var _lt = [];
+    var _ttref = [];
+    _ttref.push(['_setCookie']);
+</script>
+<link rel="dns-prefetch" href="//cdn2.f-cdn.com">
+<link rel="dns-prefetch" href="//cdn3.f-cdn.com">
+<link rel="dns-prefetch" href="//cdn4.f-cdn.com">
+<link rel="dns-prefetch" href="//cdn5.f-cdn.com">
+<link rel="dns-prefetch" href="//cdn6.f-cdn.com">
+
+<link rel="publisher" href="http://plus.google.com/+Freelancer"/>
+
+
+<link itemprop="sameAs" href="http://en.wikipedia.org/wiki/Freelancer.com"/>
+
+
+    <!-- Prevent FOUC by hiding the body. This is similar to ng-cloak however not all layouts have angularjs-yet -->
+    <style type="text/css">
+        .no-fouc { display: none;}
+    </style>
+    <script type="text/javascript">
+        document.documentElement.classList.add('no-fouc');
+    </script>
+
+    <!-- Google Analytics Content Experiment code -->
+    <script>function utmx_section(){}function utmx(){}(function(){var
+    k='294858-307',d=document,l=d.location,c=d.cookie;
+    if(l.search.indexOf('utm_expid='+k)>0)return;
+    function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+    indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+    length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+    '<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+    '://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+    '&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+    valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+    '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+    </script><script>utmx('url','A/B');</script>
+    <!-- End of Google Analytics Content Experiment code -->
+
+    <!--  "Unhide" afterwards.  -->
+    <script>
+        document.documentElement.classList.remove('no-fouc');
+    </script>
+
+
+
+<script type="text/javascript">
+    var _sf_startpt = (new Date()).getTime();
+
+    function getCookieBase() {
+        return 'GETAFREE';
+    }
+</script>
+
+
+<link rel="icon" href="https://www.freelancer.com/favicon.ico" type="image/ico"/>
+<link rel="shortcut icon" href="https://www.freelancer.com/favicon.ico"/>
+
+<link rel="alternate" hreflang="x-default" href="https://www.freelancer.com/"/><link rel="alternate" hreflang="en" href="https://www.freelancer.com/"/><link rel="alternate" hreflang="en-AU" href="https://www.freelancer.com.au/"/><link rel="alternate" hreflang="en-NZ" href="https://www.freelancer.co.nz/"/><link rel="alternate" hreflang="en-GB" href="https://www.freelancer.co.uk/"/><link rel="alternate" hreflang="en-HK" href="https://www.freelancer.hk/"/><link rel="alternate" hreflang="en-SG" href="https://www.freelancer.sg/"/><link rel="alternate" hreflang="en-PH" href="https://www.freelancer.ph/"/><link rel="alternate" hreflang="de" href="https://www.freelancer.de/"/><link rel="alternate" hreflang="de-DE" href="https://www.freelancer.de/"/><link rel="alternate" hreflang="en-CA" href="https://www.freelancer.ca/"/><link rel="alternate" hreflang="en-ZA" href="https://www.freelancer.co.za/"/><link rel="alternate" hreflang="en-IN" href="https://www.freelancer.in/"/><link rel="alternate" hreflang="en-JM" href="https://www.freelancer.com.jm/"/><link rel="alternate" hreflang="es" href="https://www.freelancer.com.es/"/><link rel="alternate" hreflang="es-ES" href="https://www.freelancer.com.es/"/><link rel="alternate" hreflang="es-MX" href="https://www.freelancer.mx/"/><link rel="alternate" hreflang="es-PE" href="https://www.freelancer.com.pe/"/><link rel="alternate" hreflang="es-EC" href="https://www.freelancer.ec/"/><link rel="alternate" hreflang="es-CL" href="https://www.freelancer.cl/"/><link rel="alternate" hreflang="en-PK" href="https://www.freelancer.pk/"/><link rel="alternate" hreflang="id" href="https://www.freelancer.co.id/"/><link rel="alternate" hreflang="id-ID" href="https://www.freelancer.co.id/"/><link rel="alternate" hreflang="en-BD" href="https://www.freelancer.com.bd/"/><link rel="alternate" hreflang="es-UY" href="https://www.freelancer.uy/"/><link rel="alternate" hreflang="pt" href="https://www.freelancer.pt/"/><link rel="alternate" hreflang="pt-PT" href="https://www.freelancer.pt/"/><link rel="alternate" hreflang="ro" href="https://www.freelancer.co.ro/"/><link rel="alternate" hreflang="ro-RO" href="https://www.freelancer.co.ro/"/><link rel="alternate" hreflang="ru" href="https://www.freelancer.com.ru/"/><link rel="alternate" hreflang="ru-RU" href="https://www.freelancer.com.ru/"/><link rel="alternate" hreflang="zh" href="https://www.freelancer.cn/"/><link rel="alternate" hreflang="zh-CN" href="https://www.freelancer.cn/"/><link rel="alternate" hreflang="ja" href="https://www.freelancer.jp/"/><link rel="alternate" hreflang="ja-JP" href="https://www.freelancer.jp/"/><link rel="alternate" hreflang="el" href="https://www.freelancer.gr/"/><link rel="alternate" hreflang="el-GR" href="https://www.freelancer.gr/"/><link rel="alternate" hreflang="en-IS" href="https://www.freelancer.is/"/><link rel="alternate" hreflang="th" href="https://www.freelancer.co.th/"/><link rel="alternate" hreflang="th-TH" href="https://www.freelancer.co.th/"/><link rel="alternate" hreflang="cs" href="https://www.cz.freelancer.com/"/><link rel="alternate" hreflang="cs-CZ" href="https://www.cz.freelancer.com/"/><link rel="alternate" hreflang="pt-BR" href="https://www.br.freelancer.com/"/><link rel="alternate" hreflang="es-AR" href="https://www.freelancer.com.ar/"/><link rel="alternate" hreflang="es-CO" href="https://www.freelancer.com.co/"/><link rel="alternate" hreflang="pl" href="https://www.freelancer.pl/"/><link rel="alternate" hreflang="pl-PL" href="https://www.freelancer.pl/"/>
+
+<link rel="canonical" href="https://www.freelancer.com/"/>
+<link rel="alternate" media="only screen and (max-width:640px)" href="https://m.freelancer.com" />
+
+
+
+    <link href="https://cdn3.f-cdn.com/build/css/skin/pinhp-base.css?v=ec84242bdcd4fed9d0a9a3de9c792982&amp;amp;m=2" type="text/css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="https://cdn6.f-cdn.com/build/js/modernizr2.6.2.min.js?v=a305adee51a11fae6bddfe9b5c296734&amp;amp;m=2" type="text/javascript"></script>
+
+<!-- google meta info starts -->
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org/",
+    "@type": "Organization",
+    "url": "http://www.freelancer.com/",
+    "logo": "http://www.freelancer.com/static/css/images/logo.png"
+}
+</script>
+<!-- google meta info ends -->
+
+<script src="https://cdn6.f-cdn.com/js/jquery-1.7.1.min.js?v=69e9edb32340c72a95b174dee04a036e&amp;m=2" type="text/javascript"></script>
+
+</head>
+<body data-role="page">
+    
+
+    <div class="pinky-template">
+        <div class="modal hide fb-bs-identifier" id="fb_popup">
+    <div class="modal-header">
+        <a class="close close-fb-modal-bs" data-dismiss="modal">&times;</a>
+        <h3 id="fb_login_welcome">Welcome, <span class ="fb_fullname"></span>! <span id='fb_login_status'>Processing &hellip;</span></h3>
+        <h3 id="fb_signup_welcome" style="display:none">Welcome <span class ="fb_fullname"></span>! Complete your account details:</h3>
+        <h3 id="fb_link_welcome" style="display:none">Link to existing Freelancer account</h3>
+        <h3 id="fb_error_title" style="display:none"></h3>
+    </div>
+    <div class="modal-body" id="fb-modal-body">
+        <div class="row no-margin">
+            <!-- Profile image - left column -->
+            <div id ="fb_profile_pic" class="fb_div span2" style="width:100px; min-height:100px; display:none"> </div>
+
+            <!-- Right column -->
+            <div id="fb_loading" class="fb_div pull-right" style="text-align:center; margin-top: 15px 0 15px; width:420px; line-height: 10"><img alt="Freelancer Loading..." src="https://cdn3.f-cdn.com/img/ajax-loader.gif?v=62d3d0c60d4c33ef23dcefb9bc63e3a2&amp;m=2"></div>
+            <div id="fb_link" class="fb_div pull-right" style="width:400px; display:none">
+                <p style="padding: 0px 0px 15px;line-height: 20px;">The email address <span id="fb_email_link"></span> is already associated with a Freelancer account. Enter your password below to link accounts:</p>
+
+                <div>
+                    <div>
+                        <p><strong>Username:</strong><br><span id="fb_link_user_display"></span></p>
+                    </div>
+                    <div class="ns_col fb-input-field-container">
+                        <input id='fb_link_user' type="hidden">
+                        <label for="fb_link_passwd">Password:</label>
+                        <input type="password" class="fb_passwd inline-error default-input" id="fb_link_passwd" placeholder="" name="password">
+                    </div>
+                </div>
+                <div class="link-account-error alert alert-error" style="display:none"></div>
+                <button id="fb_link_btn" type="button" value="Submit" class="fbLinkBtn btn btn-info">Link Accounts</button><span class="fb_submit_loading" style="display:none;"><img alt="Freelancer Loading..." src="https://cdn3.f-cdn.com/img/ajax-loader.gif?v=62d3d0c60d4c33ef23dcefb9bc63e3a2&amp;m=2" /></span>
+            </div>
+            <div id="fb_error_div" class="pull-right fb_div" style="width:400px; display:none">
+                <div id="fb_error_content" style="height:72px;">
+                </div>
+                    <button class="fbCloseBtn btn btn-small btn-info">Confirm</button>
+            </div>
+            <div class="pull-right fb-content hide" id='signupRadioBtns'>
+                <!-- User type selectors -->
+                <div class="btn-group margin-b20 user_type" data-toggle="buttons-radio">
+                    <span class="padding-0 btn btn-large" onclick="jQuery('#fb_signup_btn').attr('checked', 'checked').change()" type="button">
+                        <label class="radio padding-l30 padding-r20 padding-t10 padding-b10 margin-b0">
+                            <input type="radio" id="fb_signup_btn" name="connect_type" value="fb_signup" checked='checked'>I am a new user
+                        </label>
+                    </span>
+                    <span class="padding-0 btn btn-large" onclick="jQuery('#fb_login_btn').attr('checked', 'checked').change()" type="button">
+                        <label class="radio padding-l30 padding-r20 padding-t10 padding-b10 margin-b0">
+                            <input type="radio" id="fb_login_btn" name="connect_type" value="fb_login" class="min_height_reset" >I am a returning user
+                        </label>
+                    </span>
+                </div>
+
+                <!-- New user signup -->
+                <div id='fb_signup' class='connect_div fb_div' style="display:none">
+                    <p>Link your account to a new Freelancer account</p>
+                    <p><strong>Email address:</strong><br><span id="fb_email"></span></p>
+                    <div class="control-group">
+                        <label for="fb_user" class="control-label">Username:</label>
+                        <div class = "controls">
+                            <input id="fb_user" type="text" value="" class="default-input">
+                            <p class="help-block" id="chk_username_exist">Valid username</p>
+                        </div>
+                        <input type="hidden" id="fb_currency">
+                        <input type="hidden" id="fb_timezone">
+                    </div>
+                    <div class="control-group">
+                        <label id="fb_looking_for_label" class="control-label">I am looking to</label>
+                        <div class="btn-group margin-t10 margin-b10 looking_for" data-toggle="buttons-radio" data-default="none">
+                            <span class="padding-0 btn btn-mini" type="button">
+                                <label class="radio padding-l30 padding-r20 padding-t5 padding-b5 margin-b0">
+                                    <input type="radio" name="looking_for" id="fb_looking_to_hire" value="Employer" class="required">Hire
+                                </label>
+                            </span>
+                            <span class="padding-0 btn btn-mini" type="button">
+                                <label class="radio padding-l30 padding-r20 padding-t5 padding-b5 margin-b0">
+                                    <input type="radio" name="looking_for" id="fb_looking_for_work" value="Worker">Work
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <button id='fbSignupBtn' type="submit" value="Submit" class="btn btn-large btn-info">Create Account</button>
+                    <span class="fb_submit_loading" style="display:none;">
+                        <img alt="Freelancer Loading..." src="https://cdn3.f-cdn.com/img/ajax-loader.gif?v=62d3d0c60d4c33ef23dcefb9bc63e3a2&amp;m=2" />
+                    </span>
+                </div>
+
+                <!-- User login -->
+                <div id='fb_login' class='connect_div fb_div' style='display:none'>
+                    <p>Link to your existing Freelancer account</p>
+                    <div id='fb-returning-user-fields'>
+                        <div id='fb-return-user-username-field'>
+                            <label for='fb_login_user'>Username or Email:</label>
+                            <input id='fb_login_user' type="text" class="default-input" >
+                        </div>
+                        <div class="ns_col">
+                            <label>Password:</label>
+                            <input id='fb_login_passwd' type="password" class="default-input">
+                            <p class="forget-password">
+                                <a href="#" onclick='window.open("/users/forgot.php","","width=500, height=450, left=100,top=100,menu=no, toolbar=no,scrollbars=yes,resizable=yes");return false;'>
+                                    <small>I forgot my password</small>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="link-account-error alert alert-danger" style="display:none"></div>
+                    <button id="fb_login_btn" type="button" value="Submit" class="fbLinkBtn btn btn-large btn-info">Link Accounts</button>
+                    <span class="fb_submit_loading" style="display:none;">
+                        <img alt="Freelancer Loading..." src="https://cdn3.f-cdn.com/img/ajax-loader.gif?v=62d3d0c60d4c33ef23dcefb9bc63e3a2&amp;m=2" />
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    <div class="gaf-container">
+        <!-- This must be kept in sync manually with header-logged-out.htm -->
+<span id="new-nav">
+    <div class="primary-header-container" data-target="primary-header-container">
+        <header class="primary-header" data-target="primary-header">
+
+            <div class="primary-header-logo-and-network">
+                <a class="primary-header-logo" href="/" fl-analytics="PrimaryLogo">
+                    <svg version="1.1" class="flicon-logo-fullcolor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 286.7 72" enable-background="new 0 0 286.7 72" xml:space="preserve" width="162px">
+<!-- need to hardcode width temporarily to fix old chrome ubuntu, can still be overwritten by CSS -->
+  <g>
+    <g>
+      <g>
+        <g>
+          <path fill="#474A54" d="M84.1,32.6l0.8-4.6c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0-0.2-0.1-0.4-0.2-0.5c-0.1-0.1-0.3-0.2-0.6-0.2
+            h-3.4l0.2-1c0.1-0.6,0.2-1,0.4-1.3c0.1-0.3,0.3-0.5,0.6-0.5c0.3-0.1,0.6-0.1,1-0.1h1.8c0.3,0,0.6-0.1,0.8-0.2
+            c0.2-0.2,0.3-0.4,0.3-0.7l0.7-4.2c0,0,0-0.1,0-0.1c0-0.2-0.1-0.4-0.2-0.5c-0.1-0.1-0.3-0.2-0.5-0.2c-0.6-0.1-1.2-0.2-1.9-0.3
+            c-0.7-0.1-1.3-0.1-1.9-0.1c-1.3,0-2.6,0.1-3.6,0.3c-1.1,0.2-2,0.6-2.9,1.2c-0.8,0.6-1.5,1.4-2.1,2.5c-0.6,1.1-1,2.5-1.3,4.3
+            c-1,6.3-1.8,11.1-3.7,23c0,0.1,0,0.1,0,0.2l-0.6,3.4c0,0,0,0.1,0,0.1c0,0.2,0.1,0.4,0.3,0.6c0.2,0.2,0.4,0.3,0.6,0.3h6.9
+            c0.3,0,0.5-0.1,0.7-0.3c0.2-0.2,0.3-0.4,0.4-0.7l0.5-3.4l0-0.2l2.5-15.5H83C83.7,33.5,84,33.2,84.1,32.6z"/>
+        </g>
+        <g>
+          <path fill="#474A54" d="M101,33.6c0.2-0.2,0.3-0.4,0.3-0.6l0.9-5.3c0,0,0-0.1,0-0.1c0-0.2-0.1-0.4-0.2-0.6
+            c-0.2-0.1-0.3-0.2-0.6-0.2h-0.5c-0.5,0-1.1,0-1.8,0.1c-0.7,0.1-1.4,0.3-2.1,0.7c-0.7,0.3-1.5,0.9-2.2,1.6l0.1-1.1
+            c0,0,0-0.1,0-0.1c0-0.2-0.1-0.4-0.2-0.6c-0.1-0.1-0.3-0.2-0.5-0.2h-6.4c-0.3,0-0.5,0.1-0.7,0.3c-0.2,0.2-0.3,0.4-0.4,0.6
+            l-4,24.7c0,0,0,0.1,0,0.1c0,0.2,0.1,0.4,0.2,0.6c0.2,0.2,0.3,0.3,0.6,0.3h6.8c0.3,0,0.5-0.1,0.7-0.3c0.2-0.2,0.3-0.4,0.4-0.7
+            l2.8-17.7c0.8-0.4,1.6-0.7,2.6-0.8c0.9-0.2,1.9-0.2,2.9-0.2h0.6C100.7,33.8,100.9,33.8,101,33.6z"/>
+        </g>
+        <g>
+          <g>
+            <path fill="#474A54" d="M122.5,29.5c-0.8-0.9-1.8-1.6-3.1-2.1c-1.2-0.5-2.7-0.8-4.3-0.8c-0.6,0-1.2,0-1.8,0.1
+              c-1.2,0.1-2.3,0.3-3.4,0.6c-1.6,0.5-3,1.2-4.2,2.1c-1.2,1-2.2,2.3-3,3.8c-0.8,1.6-1.4,3.5-1.7,5.8l-0.5,3
+              c-0.1,0.4-0.1,0.8-0.1,1.2c0,0.4,0,0.8,0,1.1c0,1.3,0.2,2.5,0.6,3.5c0.4,1,0.9,1.9,1.6,2.7c0.7,0.8,1.4,1.4,2.3,1.9
+              c0.9,0.5,1.8,0.9,2.8,1.1c1,0.3,2,0.4,3,0.4c0.9,0,1.8,0,2.7-0.1c0.3,0,0.6,0,0.9-0.1c1.1-0.1,2.2-0.3,3.3-0.5
+              c1-0.2,2.1-0.5,3.1-0.8c0.4-0.1,0.6-0.3,0.8-0.5c0.2-0.2,0.3-0.5,0.3-0.8l0.7-4.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1
+              c0-0.2-0.1-0.4-0.2-0.4c-0.1-0.1-0.3-0.1-0.5-0.1c0,0-0.1,0-0.1,0c0,0-0.1,0-0.1,0c-0.3,0-0.8,0.1-1.3,0.1
+              c-0.5,0-1.1,0.1-1.8,0.1c-0.7,0-1.3,0.1-2,0.1c-0.7,0-1.3,0-2,0c-0.4,0-0.8,0-1.1,0c-0.2,0-0.4,0-0.6,0c-0.8,0-1.4,0-2-0.2
+              c-0.6-0.1-1-0.4-1.3-0.7c-0.3-0.4-0.5-0.9-0.5-1.7c0-0.2,0-0.4,0-0.7c0-0.2,0.1-0.5,0.1-0.8h4.2h10c0.3,0,0.5-0.1,0.7-0.3
+              c0.2-0.2,0.3-0.4,0.4-0.7l0.4-2.7c0.1-0.4,0.1-0.9,0.2-1.3c0-0.4,0-0.9,0-1.3c0-1.4-0.2-2.6-0.6-3.8
+              C123.9,31.4,123.3,30.4,122.5,29.5z M116.7,37c0,0.3-0.1,0.6-0.2,1h-3.3h-3.5c0.2-0.9,0.4-1.7,0.7-2.3c0.3-0.7,0.8-1.2,1.3-1.6
+              c0.4-0.3,0.9-0.5,1.4-0.5c0.2,0,0.4,0,0.7,0c1,0,1.7,0.3,2.2,0.8c0.4,0.5,0.7,1.1,0.7,1.9C116.8,36.4,116.7,36.7,116.7,37z"/>
+          </g>
+        </g>
+        <g>
+          <g>
+            <path fill="#474A54" d="M150.1,37.8c0-0.4,0-0.9,0-1.3c0-1.4-0.2-2.6-0.6-3.8c-0.4-1.2-1-2.2-1.8-3.1c-0.8-0.9-1.8-1.6-3.1-2.1
+              c-1.2-0.5-2.7-0.8-4.3-0.8c-0.6,0-1.2,0-1.8,0.1c-1.2,0.1-2.3,0.3-3.4,0.6c-1.6,0.5-3,1.2-4.2,2.1c-1.2,1-2.2,2.3-3,3.8
+              c-0.8,1.6-1.4,3.5-1.7,5.8l-0.5,3c-0.1,0.4-0.1,0.8-0.1,1.2c0,0.4,0,0.8,0,1.1c0,1.3,0.2,2.5,0.6,3.5c0.4,1,0.9,1.9,1.6,2.7
+              c0.7,0.8,1.4,1.4,2.3,1.9c0.9,0.5,1.8,0.9,2.8,1.1c1,0.3,2,0.4,3,0.4c0.9,0,1.8,0,2.7-0.1c0.3,0,0.6,0,0.9-0.1
+              c1.1-0.1,2.2-0.3,3.3-0.5c1-0.2,2.1-0.5,3.1-0.8c0.4-0.1,0.6-0.3,0.8-0.5c0.2-0.2,0.3-0.5,0.3-0.8l0.7-4.1c0,0,0-0.1,0-0.1
+              c0,0,0-0.1,0-0.1c0-0.2-0.1-0.4-0.2-0.4c-0.1-0.1-0.3-0.1-0.5-0.1c0,0-0.1,0-0.1,0c0,0,0,0-0.1,0c-0.4,0-0.8,0.1-1.3,0.1
+              c-0.5,0-1.1,0.1-1.8,0.1c-0.6,0-1.3,0.1-2,0.1c-0.7,0-1.3,0-2,0c-0.4,0-0.8,0-1.1,0c-0.2,0-0.4,0-0.6,0c-0.8,0-1.4,0-2-0.2
+              c-0.6-0.1-1-0.4-1.3-0.7c-0.3-0.4-0.5-0.9-0.5-1.7c0-0.2,0-0.4,0-0.7c0-0.2,0-0.5,0.1-0.8h4.2h10c0.3,0,0.5-0.1,0.7-0.3
+              c0.2-0.2,0.3-0.4,0.4-0.7l0.4-2.7C150,38.6,150.1,38.2,150.1,37.8z M141.9,37c0,0.3-0.1,0.6-0.2,1h-3.3H135
+              c0.2-0.9,0.4-1.7,0.7-2.3c0.3-0.7,0.8-1.2,1.3-1.6c0.4-0.3,0.9-0.5,1.4-0.5c0.2,0,0.4,0,0.7,0c1,0,1.7,0.3,2.2,0.8
+              c0.4,0.5,0.7,1.1,0.7,1.9C142,36.4,141.9,36.7,141.9,37z"/>
+          </g>
+        </g>
+        <g>
+          <path fill="#474A54" d="M164,19.2c0,0,0-0.1,0-0.1c0-0.2-0.1-0.4-0.2-0.5c-0.1-0.1-0.3-0.2-0.6-0.2h-6.9c-0.3,0-0.5,0.1-0.7,0.3
+            c-0.2,0.2-0.4,0.4-0.4,0.7l-5.4,33.4c0,0,0,0.1,0,0.1c0,0.2,0.1,0.4,0.2,0.6c0.2,0.2,0.4,0.3,0.6,0.3h6.9c0.3,0,0.5-0.1,0.7-0.3
+            c0.2-0.2,0.3-0.4,0.4-0.7L164,19.2C164,19.2,164,19.2,164,19.2z"/>
+        </g>
+        <g>
+          <path fill="#474A54" d="M210.1,29c-0.6-0.7-1.3-1.3-2.3-1.7c-0.9-0.4-2-0.6-3.3-0.6c-0.5,0-1.2,0-1.9,0.2
+            c-0.7,0.1-1.5,0.4-2.4,0.7c-0.9,0.4-1.9,0.9-2.9,1.6l0.2-1.2c0,0,0-0.1,0-0.1c0-0.2-0.1-0.4-0.2-0.6c-0.1-0.1-0.3-0.2-0.6-0.2
+            h-6.3c-0.3,0-0.5,0.1-0.7,0.3c-0.2,0.2-0.3,0.4-0.4,0.6l-4,24.7c0,0,0,0.1,0,0.1c0,0,0,0.1,0,0.1c0,0.3,0.1,0.5,0.3,0.6
+            c0.2,0.1,0.4,0.2,0.7,0.2h6.5c0.3,0,0.6-0.1,0.8-0.3c0.2-0.2,0.3-0.4,0.4-0.7L197,35c0.3-0.2,0.6-0.3,1.1-0.5
+            c0.4-0.1,0.9-0.3,1.4-0.4c0.5-0.1,1-0.1,1.4-0.2c0.5,0,0.9,0,1.2,0.1c0.3,0.1,0.5,0.3,0.7,0.6c0.2,0.3,0.2,0.6,0.2,1.1
+            c0,0.4,0,0.8-0.1,1.2c-0.1,0.4-0.1,0.8-0.2,1.2l-2.3,14.6c0,0,0,0,0,0.1c0,0,0,0.1,0,0.1c0,0.2,0.1,0.4,0.2,0.6
+            c0.1,0.2,0.3,0.3,0.6,0.3h6.8c0.3,0,0.5-0.1,0.7-0.3c0.2-0.2,0.3-0.4,0.4-0.7l2.3-14.3c0.1-0.6,0.2-1.3,0.2-1.9
+            c0.1-0.6,0.1-1.2,0.1-1.8c0-1.1-0.2-2.2-0.4-3.2C211.1,30.5,210.6,29.7,210.1,29z"/>
+        </g>
+        <g>
+          <path fill="#474A54" d="M233.2,28.3c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0-0.2-0.1-0.4-0.2-0.5c-0.1-0.1-0.3-0.2-0.6-0.2
+            c-0.6-0.2-1.5-0.3-2.5-0.5c-1.1-0.2-2.3-0.2-3.6-0.2c-2.3,0-4.4,0.4-6.2,1.2c-1.8,0.8-3.2,2.1-4.3,3.9c-1.1,1.8-1.9,4.1-2.4,6.9
+            l-0.5,3.4c-0.1,0.5-0.1,0.9-0.2,1.3c0,0.4,0,0.9,0,1.3c0,1.3,0.2,2.6,0.6,3.7c0.4,1.1,1,2.1,1.8,3c0.8,0.8,1.7,1.5,2.8,2
+            c1.1,0.5,2.4,0.7,3.9,0.7c1.3,0,2.5-0.1,3.6-0.2c1.1-0.1,2-0.3,2.8-0.5c0.3-0.1,0.6-0.2,0.7-0.3c0.2-0.1,0.3-0.4,0.3-0.6
+            l0.8-5.1c0,0,0,0,0-0.1c0,0,0-0.1,0-0.1c0-0.2-0.1-0.4-0.2-0.5c-0.1-0.1-0.3-0.2-0.5-0.2c0,0,0,0-0.1,0c0,0,0,0,0,0
+            c-0.5,0-1.1,0.1-1.6,0.1c-0.5,0-1.1,0.1-1.7,0.1c-0.6,0-1.3,0-2,0c-0.5,0-1-0.1-1.3-0.2c-0.4-0.1-0.7-0.4-0.8-0.8
+            c-0.2-0.4-0.3-0.9-0.3-1.6c0-0.3,0-0.6,0-0.9c0-0.3,0.1-0.7,0.1-1.1l0.5-3.4c0.1-0.9,0.3-1.7,0.6-2.3c0.2-0.6,0.5-1.1,0.8-1.4
+            c0.3-0.3,0.7-0.6,1.1-0.7c0.4-0.1,0.9-0.2,1.4-0.2c0.7,0,1.4,0,2,0.1c0.6,0,1.1,0.1,1.6,0.1c0.5,0,1,0.1,1.5,0.1c0,0,0,0,0,0
+            c0,0,0,0,0,0c0.3,0,0.5-0.1,0.7-0.2c0.2-0.2,0.3-0.4,0.4-0.6L233.2,28.3z"/>
+        </g>
+        <g>
+          <g>
+            <path fill="#474A54" d="M256.7,37.8c0-0.4,0-0.9,0-1.3c0-1.4-0.2-2.6-0.6-3.8c-0.4-1.2-1-2.2-1.8-3.1c-0.8-0.9-1.8-1.6-3.1-2.1
+              c-1.2-0.5-2.7-0.8-4.3-0.8c-0.6,0-1.2,0-1.8,0.1c-1.2,0.1-2.3,0.3-3.4,0.6c-1.6,0.5-3,1.2-4.2,2.1c-1.2,1-2.2,2.3-3,3.8
+              c-0.8,1.6-1.4,3.5-1.7,5.8l-0.5,3c-0.1,0.4-0.1,0.8-0.1,1.2c0,0.4,0,0.8,0,1.1c0,1.3,0.2,2.5,0.6,3.5c0.4,1,0.9,1.9,1.6,2.7
+              c0.7,0.8,1.4,1.4,2.3,1.9c0.9,0.5,1.8,0.9,2.8,1.1c1,0.3,2,0.4,3,0.4c0.9,0,1.8,0,2.7-0.1c0.3,0,0.6,0,0.9-0.1
+              c1.1-0.1,2.2-0.3,3.3-0.5c1-0.2,2.1-0.5,3.1-0.8c0.4-0.1,0.6-0.3,0.8-0.5c0.2-0.2,0.3-0.5,0.3-0.8l0.7-4.1c0,0,0-0.1,0-0.1
+              c0,0,0-0.1,0-0.1c0-0.2-0.1-0.4-0.2-0.4c-0.1-0.1-0.3-0.1-0.5-0.1c0,0-0.1,0-0.1,0c0,0-0.1,0-0.1,0c-0.4,0-0.8,0.1-1.4,0.1
+              c-0.5,0-1.1,0.1-1.8,0.1c-0.7,0-1.3,0.1-2,0.1c-0.7,0-1.3,0-2,0c-0.4,0-0.8,0-1.1,0c-0.2,0-0.4,0-0.6,0c-0.8,0-1.4,0-2-0.2
+              c-0.6-0.1-1-0.4-1.3-0.7c-0.3-0.4-0.5-0.9-0.5-1.7c0-0.2,0-0.4,0-0.7c0-0.2,0.1-0.5,0.1-0.8h4.2h10c0.3,0,0.5-0.1,0.7-0.3
+              c0.2-0.2,0.3-0.4,0.4-0.7l0.4-2.7C256.6,38.6,256.7,38.2,256.7,37.8z M248.5,37c0,0.3-0.1,0.6-0.2,1H245h-3.5
+              c0.2-0.9,0.4-1.7,0.7-2.3c0.3-0.7,0.8-1.2,1.3-1.6c0.4-0.3,0.9-0.5,1.4-0.5c0.2,0,0.4,0,0.7,0c1,0,1.7,0.3,2.2,0.8
+              c0.4,0.5,0.7,1.1,0.7,1.9C248.5,36.4,248.5,36.7,248.5,37z"/>
+          </g>
+        </g>
+        <g>
+          <path fill="#474A54" d="M259.1,36l-2.7,16.7c0,0,0,0.1,0,0.1c0,0.2,0.1,0.4,0.3,0.6c0.2,0.2,0.3,0.3,0.6,0.3h6.8
+            c0.3,0,0.5-0.1,0.7-0.3c0.2-0.2,0.3-0.4,0.4-0.7l4.1-25.6L259.1,36z"/>
+        </g>
+        <g>
+          <g>
+            <path fill="#474A54" d="M185.8,31.4c-0.4-1.3-1-2.3-1.9-3c-0.9-0.8-2-1.3-3.4-1.6c-1.3-0.3-2.8-0.5-4.5-0.5
+              c-0.7,0-1.5,0-2.3,0.1c-0.1,0-0.3,0-0.4,0c-0.7,0.1-1.4,0.1-2,0.2c-0.8,0.1-1.5,0.2-2.2,0.3c-0.7,0.1-1.2,0.3-1.6,0.4
+              c-0.3,0.1-0.5,0.2-0.7,0.4c-0.2,0.2-0.3,0.4-0.4,0.7l-0.8,4.4c0,0.3,0,0.5,0.1,0.7c0.1,0.2,0.3,0.3,0.6,0.3h0.1
+              c0.7-0.1,1.5-0.1,2.4-0.2c0.9,0,1.8-0.1,2.7-0.1c0.6,0,1.1,0,1.7,0c0.4,0,0.8,0,1.2,0c0.5,0,1,0,1.4,0.2c0.4,0.1,0.8,0.4,1,0.8
+              c0.2,0.4,0.3,0.9,0.2,1.7l-0.2,1.3h-2c-0.5,0-1.1,0-1.6,0c-1.9,0.1-3.6,0.3-5,0.7c-1.8,0.5-3.3,1.3-4.4,2.4
+              c-1.1,1.1-1.8,2.6-2.1,4.4l-0.1,0.6c-0.2,1.5-0.2,2.8,0.1,3.9c0.3,1,0.8,1.9,1.4,2.5c0.7,0.6,1.4,1.1,2.3,1.4
+              c0.9,0.3,1.8,0.4,2.7,0.4c0.8,0,1.7-0.1,2.5-0.3c0.8-0.2,1.6-0.5,2.3-0.8c0.1-0.1,0.2-0.1,0.3-0.2c0.6-0.3,1.2-0.6,1.8-1
+              l-0.2,1c0,0.3,0,0.5,0.2,0.6c0.1,0.2,0.3,0.3,0.6,0.3h6.3c0.3,0,0.5-0.1,0.7-0.3c0.2-0.2,0.3-0.4,0.4-0.6l2.7-16.2
+              C186.2,34.3,186.2,32.7,185.8,31.4z M175.6,46.6c-0.4,0.2-0.9,0.4-1.5,0.5c-0.2,0.1-0.5,0.1-0.7,0.1c-0.3,0-0.7,0.1-1,0.1
+              c-0.4,0-0.8-0.1-1.1-0.2c-0.3-0.1-0.6-0.3-0.7-0.6c-0.2-0.3-0.2-0.7-0.1-1.2l0.1-0.5c0.1-1,0.5-1.6,1.1-2
+              c0.4-0.3,1-0.5,1.8-0.6c0.2,0,0.5,0,0.8,0h2.2L175.6,46.6z"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#14A2DD" points="62.1,9 96.7,1.1 56.3,1.1  "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#14A2DD" points="22.1,72 40.6,53.8 29.5,41.8   "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#68C8EB" points="60.1,9.5 54.2,1.4 44.3,8.6  "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#14A2DD" points="37.1,8.3 15.5,0 18.8,7.3  "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#14A2DD" points="0,8.3 27.1,36.5 40.8,10.3   "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#68C8EB" points="60.8,11.3 42.9,10.4 28.5,38 41.9,52.5 56.3,38.2   "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#14A2DD" points="269.7,36 271.2,27 286.7,27  "/>
+  </g>
+</svg>
+
+                </a>
+            </div>
+
+            
+            
+            
+
+            
+                <div class="header-logged-out">
+                    <button class="header-login-bt btn" id="login-normal"
+                        role="button"
+                        data-toggle="modal" fl-analytics="LoginButton"
+                        data-action="login-section"
+                        data-section-toggle="login">
+                        Login
+                    </button>
+                    <button class="header-signup-bt btn" id="sign-up"
+                        role="button"
+                        data-toggle="modal" fl-analytics="SignupButton"
+                        data-action="signup-section"
+                        data-section-toggle="signup">
+                        Sign Up
+                    </button>
+
+                    <a id="header-post-project" href="/buyers/create.php"
+                        class="btn btn-primary btn-small header-post-project-bt" fl-analytics="PostAProjectButton">
+                        
+                        Post a Project
+                    </a>
+                </div>
+                
+        </header>
+    </div>
+</span>
+<script type="text/javascript">
+    var hide_contact_list = true;
+
+    //Adds has-header-ab class
+    jQuery('html').addClass('has-header-ab');
+</script>
+<script src="https://cdn3.f-cdn.com/build/js/navigation/fixed-state-control.js?v=afb3c51a62fa4384bb1a7e0332336820&amp;m=2" type="text/javascript"></script>
+<!-- facebook login module -->
+<script async src="//connect.facebook.net/en_US/all.js"></script>
+<script>
+// Facebook Connect and Login are now loaded asynchronously and uses the
+// Facebook SDK
+window.fbAsyncInit = function () {
+    if (!window.fbinit_run) {
+        window.fbinit_run = true;
+        (typeof FB != 'undefined') && FB.init({
+            appId: '120131118061981',
+            status: true,
+            cookie: true,
+            xfbml: true,
+            channelUrl: 'https://www.freelancer.com/facebook/channel.html',
+            oauth: true
+        });
+    }
+
+    if (typeof fbAsyncInit_func == 'function') {
+        fbAsyncInit_func();
+    }
+
+    if (typeof fbAsyncInit_pinky == 'function') { //if not defined, do it later
+        fbAsyncInit_pinky();
+    }
+}
+</script>
+
+
+<!-- login/signup modals placeholder -->
+<div id="default-modal-placeholder"></div>
+
+
+
+<div class="simple-hp template-b template-a" data-abtest="2" data-has_footer="true" data-has_image_hover="true">
+    <div id="acquisition-banner" style="display: none"></div>
+    <!----------------------------------------------  persona banner  ---------------------------------------------------- -->
+    <section id="home-banner" class="persona-banner-container">
+        <div class="container">
+
+            <div class="persona-banner-content">
+                <h1 class="persona-banner-title">Today is the day you turn your ideas into reality.</h1>
+                <p class="persona-banner-text">Millions of small businesses post their online jobs on Freelancer.com.
+                    Find an expert freelancer to bring your project to life!</p>
+                <a href="#hire" class="btn btn-plain-alt btn-xxlarge btn-hire banner-hire"
+                    data-action="hire-section"
+                    data-section-toggle="hire">
+                    Hire
+                </a>
+                <a href="#signup" class="btn btn-plain-alt btn-xxlarge btn-work banner-work"
+                    data-action="work-section"
+                    data-section-toggle="work">
+                    Work
+                </a>
+            </div>
+        </div>
+        <ol id="persona-banner-list" class="persona-banner-list">
+            <li class="persona-banner persona-1">
+              <div class="container">
+                <span class="banner-upsell">Exciting travel app design for $100</span>
+              </div>
+            </li>
+            <li class="persona-banner persona-2">
+              <div class="container">
+                <span class="banner-upsell">A beautiful illustration for only $30</span>
+              </div>
+            </li>
+            <li class="persona-banner persona-3">
+              <div class="container">
+                <span class="banner-upsell">Wedding fair logo for $90</span>
+              </div>
+            </li>
+            <li class="persona-banner persona-4">
+              <div class="container">
+                <span class="banner-upsell">This custom sketch was done for $100</span>
+              </div>
+            </li>
+            <li class="persona-banner persona-5">
+              <div class="container">
+                <span class="banner-upsell">Mr Munch the Sandwich Truck got a logo for $80</span>
+              </div>
+            </li>
+            <li class="persona-banner persona-6">
+              <div class="container">
+                <span class="banner-upsell">A logo and website design for only $400</span>
+              </div>
+            </li>
+            <li class="persona-banner persona-1">
+              <div class="container">
+                <span class="banner-upsell">Exciting travel app design for $100</span>
+              </div>
+            </li>
+        </ol>
+    </section>
+    <!----------------------------------------------  persona banner  ---------------------------------------------------- -->
+
+    <div class="sections-bg" id="sections-bg">
+        <div id="section-close" class="section-close-btn hidden">
+            <a href="#" data-section-toggle="home-banner"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 12 12" enable-background="new 0 0 12 12" xml:space="preserve" class="flicon-close">
+<g>
+    <line fill="none" x1="11.75" y1="0.25" x2="0.25" y2="11.75"/>
+    <line fill="none" x1="11.75" y1="11.75" x2="0.25" y2="0.25"/>
+</g>
+</svg>
+</a>
+        </div>
+        <div class="container">
+            <section id="hire" class="hire ">
+                <div class="row">
+                    <div class="span12">
+                        <h2 class="category-upsell-title">Hire freelancers for a fraction of the cost!</h2>
+                        <ul>
+                            <li>
+                                <span class="icon-bg">
+                                    <i></i>
+                                </span>
+                                <p>Post your project within seconds</p>
+                                <span class="arrow"></span>
+                            </li>
+                            <li>
+                                <span class="icon-bg">
+                                    <i></i>
+                                </span>
+                                <p>Compare prices & select bidders</p>
+                                <span class="arrow"></span>
+                            </li>
+                            <li>
+                                <span class="icon-bg">
+                                    <i></i>
+                                </span>
+                                <p>Pay only once satisfied</p>
+                                <span class="arrow"></span>
+                            </li>
+                        </ul>
+                        <form id="post-project-intro" class="post-project-intro" >
+                            <select id="project-categories-intro" name="skill_category" style="display: none;"></select>
+                            <select id="category-skill-intro" class="category-skill" name="skill_subcategory" style="display: none;"></select>
+                                <script type="text/template" id="category-template">
+                                    <option value="-1">Select a Category</option>
+                                    <% for (var i = 0; i < options.length; i++) { %>
+                                      <% var option = options[i]; %>
+                                        <option value="<%= option.id %>"><%= option.name %></option>
+                                    <% } %>
+                                    <option value="-2">Other</option>
+                                </script>
+                            <script type="text/template" id="skills-template">
+                                <% for (var i = 0; i < options.length; i++) { %>
+                                  <% var option = options[i]; %>
+                                    <option value="<%= option.id %>"><%= option.name %></option>
+                                <% } %>
+                            </script>
+                            
+                            <a href="#post-project" id="post-project-bt" class="button post-project-bt" onclick="_ttref.push(['_clearEntrypoint', 'PostProject'], ['_setEntrypoint', 'PostProject_SplashInline'], ['_trackEvent', 'PostProject', 'View']);" data-section-toggle="post-project">Get Started Now</a>
+                            
+                            
+                        </form>
+                        <a href="#work" class="back-bt" data-qts="GoToWork" data-section-toggle="work">Looking for work?</a>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section id="work" class="work">
+                <div class="row">
+                    <div class="span12">
+                        <div id="new-user">
+                            <h2 class="category-upsell-title">Become a freelancer and earn money!</h2>
+                            <ul>
+                                <li>
+                                    <span class="icon-bg">
+                                        <i></i>
+                                    </span>
+                                    <p>Browse jobs matching your skills</p>
+                                    <span class="arrow"></span>
+                                </li>
+                                <li>
+                                    <span class="icon-bg">
+                                        <i></i>
+                                    </span>
+                                    <p>Apply for work</p>
+                                    <span class="arrow"></span>
+                                </li>
+                                <li>
+                                    <span class="icon-bg">
+                                        <i></i>
+                                    </span>
+                                    <p>Get hired and earn money</p>
+                                    <span class="arrow"></span>
+                                </li>
+                            </ul>
+                            <button class="btn-facebook gaf-fb-connected-button btn btn-large" data-qts="FacebookSignup" data-track_click="true"
+                                data-category="pinterest_button" data-action="signUp-facebook" type="button">
+                                    <span><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="256" height="448" viewBox="0 0 256 448" class="flicon-facebook">
+    <path d="M239.75 3v66h-39.25q-21.5 0-29 9t-7.5 27v47.25h73.25l-9.75 74h-63.5v189.75h-76.5v-189.75h-63.75v-74h63.75v-54.5q0-46.5 26-72.125t69.25-25.625q36.75 0 57 3z"></path>
+</svg>
+</span>
+                                    <span>Sign up with Facebook</span>
+                                </button>
+                            <div class="hr">
+                                <div class="inner">or</div>
+                            </div>
+                            <a href="#signup" data-qts="EmailSignup" data-section-toggle="signup">Sign up with your email address</a>
+                        </div>
+                        <a href="#hire" class="back-bt" data-qts="GoToHire" data-section-toggle="hire">Looking to hire?</a>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section id="login" class="login " >
+                <div id="login-form-div" >
+                    <button class="btn-facebook gaf-fb-connected-button btn btn-large" data-track_click="true" data-category="pinterest_button"
+                        data-action="login-facebook" type="button">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="256" height="448" viewBox="0 0 256 448" class="flicon-facebook">
+    <path d="M239.75 3v66h-39.25q-21.5 0-29 9t-7.5 27v47.25h73.25l-9.75 74h-63.5v189.75h-76.5v-189.75h-63.75v-74h63.75v-54.5q0-46.5 26-72.125t69.25-25.625q36.75 0 57 3z"></path>
+</svg>
+
+                        <span>Login with Facebook</span>
+                    </button>
+                    <div class="hr">
+                        <div class="inner">or</div>
+                    </div>
+                    <form id="login-form" class="login-form pinhp-form" action="https://www.freelancer.com/users/onlogin.php" method="POST">
+                        <input type="hidden" name="fromHttps">
+                        <input type="hidden" name="submitted" value="true">
+                        <p class="form-error error">Sorry we don't recognise that username or password</p>
+
+                            <ol>
+                                <li>
+                                    <div id="login-success" class="alert alert-success" style="display:none;">
+                                        <strong>Success!</strong><br>Welcome back to Freelancer
+                                    </div>
+                                </li>
+                                <li>
+                                    <div id="login-error" class="alert alert-danger" style="display:none ;">
+                                        <strong>Oops!</strong> The login details you entered were incorrect.
+                                    </div>
+                                </li>
+                                <li data-target="login-fields"></li>
+                                <li id="login-ajax-spinner-div" style="display: none;">
+                                    <img alt="Freelancer Loading..." src="https://cdn3.f-cdn.com/img/ajax-loader.gif?v=62d3d0c60d4c33ef23dcefb9bc63e3a2&amp;m=2" />
+                                </li>
+                                <li id="login-bt-forgot-pwd">
+                                    <button class="login-bt btn btn-primary btn-large has-depth" data-track_click="true"
+                                        data-category="pinterest_button" data-action="login" id="login-bt">Login</button><a href="#" class="forgot-password-toggle" id="forgot-password-toggle">Forgot password?</a>
+                                </li>
+                            </ol>
+
+                    </form>
+                    <form id="forgot-password" class="forgot-password pinhp-form" method="POST">
+                        <fieldset>
+                            <ol>
+                                <li class="control-group">
+                                    <label for="signup-email">
+                                        <strong class="placeholder">Enter your email</strong>
+                                        <span class="control has-icon">
+                                            <i class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="448" height="448" viewBox="0 0 448 448" class="flicon-email">
+<path d="M448 177.5v198.5q0 16.5-11.75 28.25t-28.25 11.75h-368q-16.5 0-28.25-11.75t-11.75-28.25v-198.5q11 12.25 25.25 21.75 90.5 61.5 124.25 86.25 14.25 10.5 23.125 16.375t23.625 12 27.5 6.125h0.5q12.75 0 27.5-6.125t23.625-12 23.125-16.375q42.5-30.75 124.5-86.25 14.25-9.75 25-21.75zM448 104q0 19.75-12.25 37.75t-30.5 30.75q-94 65.25-117 81.25-2.5 1.75-10.625 7.625t-13.5 9.5-13 8.125-14.375 6.75-12.5 2.25h-0.5q-5.75 0-12.5-2.25t-14.375-6.75-13-8.125-13.5-9.5-10.625-7.625q-22.75-16-65.5-45.625t-51.25-35.625q-15.5-10.5-29.25-28.875t-13.75-34.125q0-19.5 10.375-32.5t29.625-13h368q16.25 0 28.125 11.75t11.875 28.25z"></path>
+</svg>
+</i>
+                                            <span data-tooltip="Please enter the email address registered to your Freelancer account." >
+                                                <input type="text" name="email" id="inputEmail" placeholder="Enter your email" data-msg-required="Please enter a valid email address" data-msg-email="Please enter a valid email address">
+                                            </span>
+                                        </span>
+                                        <span class="help-inline"></span>
+                                        <span id="forgot-password-error" class="help-block error" style="display: none;"></span>
+                                        <div id="forgot-password-server-error" class="error" style="display: none;">
+                                            Server error occurred. Please contact the administrator.
+                                        </div>
+                                    </label>
+                                </li>
+                                <li>
+                                    <button id="forgot-password-submit" type="button" class="btn btn-info btn-large has-depth">
+                                        Retrieve password
+                                    </button>
+                                </li>
+                            </ol>
+                        </fieldset>
+                        <img id="ajax-spinner" alt="Freelancer Loading..." src="https://cdn3.f-cdn.com/img/ajax-loader.gif?v=62d3d0c60d4c33ef23dcefb9bc63e3a2&amp;m=2" style="display: none;" class="margin-b20"/>
+                        <div id="pwd_sent" class="alert alert-success" style="display: none;">
+                            <strong>Email sent!</strong> If the email address you entered is registered at Freelancer, you'll receive an email with instructions on how to set a new password.
+                        </div>
+                    </form>
+                    <div class="hr">
+                    </div>
+                    <p>Don't have an account? <a href="#" data-section-toggle="signup">Sign up now!</a></p>
+                </div>
+            </section>
+
+
+
+            <section id="signup" class="signup ">
+                <h2 class="category-upsell-title">Sign up for free today!</h2>
+                <button class="btn-facebook gaf-fb-connected-button btn btn-large" data-track_click="true" data-category="pinterest_button"
+                    data-action="signUp-facebook" data-qts="FacebookSignup" type="button">
+                    <span><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="256" height="448" viewBox="0 0 256 448" class="flicon-facebook">
+    <path d="M239.75 3v66h-39.25q-21.5 0-29 9t-7.5 27v47.25h73.25l-9.75 74h-63.5v189.75h-76.5v-189.75h-63.75v-74h63.75v-54.5q0-46.5 26-72.125t69.25-25.625q36.75 0 57 3z"></path>
+</svg>
+Sign up with Facebook</span>
+                </button>
+                <div class="hr">
+                    <div class="inner">or</div>
+                </div>
+                <form id="signup-form" method="post" class="signup-form pinhp-form" action="https://www.freelancer.com/users/onsignup.php">
+                    <input type="hidden" name="thm_session" value="1816fdea6fba5d0c94b8fa632f2d9f6e054baf9e313121f7d04d5567d5e15a8d31fc1b551f13695ba41000208387">
+                    <fieldset>
+                        <ol data-target="signup-fields">
+
+                            <li data-target="signup-form"></li>
+                            <li class="control-group btn-group" data-toggle="buttons-radio">
+                                    <strong>I am looking to</strong>
+                                        <label class="btn btn-plain">
+                                            <span class="radio">
+                                                <input type="radio" name="looking_for" id="looking_to_hire" value="Employer" data-role="none" class="required">Hire</span>
+                                        </label><label class="btn btn-plain">
+                                            <span class="radio">
+                                                <input type="radio" name="looking_for" id="looking_for_work" value="Worker" data-role="none">Work</span>
+                                        </label>
+                                        <label for="looking_for" class="error"></label>
+                            </li>
+                            <li class="coupon-control-group control-group">
+                             
+                                <p class="margin-b20"><a href="" id='redeem_coupon'>I have a coupon code I would like to use</a></p>
+
+                                <div id='coupon_div' class="margin-b20" style="display:none;">
+                                    <label for="coupon">Coupon Code&nbsp;
+                                        <span style="font-weight:normal;">
+                                            <i>(Optional)</i>
+                                        </span></label>
+                                    <div class="control">
+                                        <input type="text" class="gaf_textbox" name="coupon" id="signup-coupon" size="40" value="">
+                                        <span class="help-inline small" style="display:block"></span>
+                                    </div>
+                                </div>
+                                
+                            </li>
+                            <li>
+                                <button type="submit" class="btn btn-success btn-large has-depth" data-track_click="true"
+                                    data-category="pinterest_button" data-action="login" data-qts="EmailSignup">Create account</button>
+                            </li>
+                            <li>
+                                <p class="terms-text">By registering you confirm that you accept the <a href="/about/terms" target="_blank">Terms and Conditions</a> and <a href="/about/privacy" target="_blank">Privacy Policy</a></p>
+                            </li>
+                        </ol>
+                    </fieldset>
+                </form>
+
+                
+<script type="text/javascript" src="https://cdn1.f-cdn.com/fp/tags.js?org_id=lar9e74p&amp;session_id=1816fdea6fba5d0c94b8fa632f2d9f6e054baf9e313121f7d04d5567d5e15a8d31fc1b551f13695ba41000208387"></script>
+<noscript>
+    <iframe style="width: 100px; height: 100px; border: 0; position: absolute; top: -5000px;" src="https://cdn1.f-cdn.com/tags?org_id=lar9e74p&amp;session_id=1816fdea6fba5d0c94b8fa632f2d9f6e054baf9e313121f7d04d5567d5e15a8d31fc1b551f13695ba41000208387"></iframe>
+</noscript>
+
+
+            </section>
+        </div>
+
+    <section class="freelancer-counter-section">
+        <div class="container">
+            <div class="row">
+                <div class="span6">
+                    <div class="typography-badge"></div>
+                </div>
+                <div class="span6">
+                    <div class="site-stat freelancer-counter">
+                        <span class="fl-footer-site-stat-val totalFp">--</span>
+                        <span class="fl-footer-site-stat-key">Registered Users</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!----------------------------------------------  introduction step  ---------------------------------------------------- -->
+    <section id="introduction-step" class="introduction-step">
+        <div class="container">
+            <div class="introduction-step-wrapper">
+                <div class="introduction-step-inner">
+                    <h2 class="introduction-step-title">How Freelancer Works</h2>
+                    <p>
+                        Post any project you need done and receive bids from our talented freelancers within minutes. Compare their proposals and price, then select the best freelancer to complete your project. Easy!
+                    </p>
+                    <p><strong>What are your benefits?</strong></p>
+                    <ul class="introduction-features-list">
+                        <li>
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="1024" viewBox="0 0 1024 1024" class="flicon-tick-in-circle">
+<path d="M512 96c-229.76 0-416 186.24-416 416s186.24 416 416 416 416-186.24 416-416-186.24-416-416-416zM744.256 393.824l-303.552 303.52c-7.616 7.584-19.936 7.584-27.552 0l-6.112-6.112-0.032 0.032-167.008-168.192c-7.616-7.616-7.616-19.968 0-27.584l41.408-41.376c7.616-7.616 19.968-7.616 27.584 0l118.048 118.912 248.192-248.192c7.616-7.616 19.968-7.616 27.584 0l41.408 41.408c7.648 7.584 7.648 19.936 0.032 27.584z"></path>
+</svg>
+Receive hundreds of proposals to compare within minutes
+                        </li>
+                        <li>
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="1024" viewBox="0 0 1024 1024" class="flicon-tick-in-circle">
+<path d="M512 96c-229.76 0-416 186.24-416 416s186.24 416 416 416 416-186.24 416-416-186.24-416-416-416zM744.256 393.824l-303.552 303.52c-7.616 7.584-19.936 7.584-27.552 0l-6.112-6.112-0.032 0.032-167.008-168.192c-7.616-7.616-7.616-19.968 0-27.584l41.408-41.376c7.616-7.616 19.968-7.616 27.584 0l118.048 118.912 248.192-248.192c7.616-7.616 19.968-7.616 27.584 0l41.408 41.408c7.648 7.584 7.648 19.936 0.032 27.584z"></path>
+</svg>
+Realtime chat, project collaboration and tracking of tasks
+                        </li>
+                        <li>
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="1024" viewBox="0 0 1024 1024" class="flicon-tick-in-circle">
+<path d="M512 96c-229.76 0-416 186.24-416 416s186.24 416 416 416 416-186.24 416-416-186.24-416-416-416zM744.256 393.824l-303.552 303.52c-7.616 7.584-19.936 7.584-27.552 0l-6.112-6.112-0.032 0.032-167.008-168.192c-7.616-7.616-7.616-19.968 0-27.584l41.408-41.376c7.616-7.616 19.968-7.616 27.584 0l118.048 118.912 248.192-248.192c7.616-7.616 19.968-7.616 27.584 0l41.408 41.408c7.648 7.584 7.648 19.936 0.032 27.584z"></path>
+</svg>
+Pay for work safely and securely. Only release payment when 100% satisfied with the work provided!
+                        </li>
+                    </ul>
+                </div>
+                <div class="interactive-step-image-wrapper">
+                    <a href="#hire" class="banner-hire"  data-section-toggle="hire">
+                        <div class="interactive-step">
+                            <img src="https://cdn6.f-cdn.com/static/css/images/homepage/interactive-step.gif?v=ef0a3d64f314368a10f63aa88a7bc0db&amp;m=2" alt="how to get work done on freelancer!" class="interactive-step-img">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!----------------------------------------------  introduction step end ---------------------------------------------------- -->
+
+    <section class="project-showcase-section">
+        <div class="container">
+            <h2 class="category-upsell-title">Hire Freelancers and Find Freelance Jobs Online</h2>
+            <ul class="project-showcase-list">
+                <li class="project-showcase is-showcase-1" title="Website Development" >
+                    <a class="project-showcase-cta" data-track_click="true"
+                        data-category="pinterest_button" data-action="gallery-post-project-1"
+                        onclick="_ttref.push(['_setCookie','PostProject_SplashRepostQ1']);"
+                        href="https://www.freelancer.com/post-project?skill_category=1&skill_subcategory=1">
+                        <div class="project-showcase-overlay">
+                            <div class="project-showcase-overlay-inner">
+                                <span class="project-showcase-name">
+                                    Website Development
+                                </span>
+                                <span class="project-showcase-price">
+                                    Starting from $100
+                                </span>
+                                <span class="btn btn-plain-alt">Post a Project Like This</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="project-showcase is-showcase-2" title="PSD for an Italian pizza restaurant web site">
+                    <a class="project-showcase-cta" data-track_click="true"
+                        data-category="pinterest_button" data-action="gallery-post-project-2"
+                        onclick="_ttref.push(['_setCookie','PostProject_SplashRepostQ2']);"
+                        href="https://www.freelancer.com/contest/create.php?skill_category=4&skill_subcategory=19">
+                        <div class="project-showcase-overlay">
+                            <div class="project-showcase-overlay-inner">
+                                <span class="project-showcase-name">Web Design</span>
+                                <span class="project-showcase-price">
+                                    Starting from $90
+                                </span>
+                                <span class="btn btn-plain-alt">Post a Contest Like This</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="project-showcase is-showcase-3" title="SEO Marketing for online businesses">
+                    <a class="project-showcase-cta" data-track_click="true"
+                        data-category="pinterest_button" data-action="gallery-post-project-3"
+                        onclick="_ttref.push(['_setCookie','PostProject_SplashRepostQ3']);"
+                        href="https://www.freelancer.com/buyers/repost.php?id=4417280">
+                        <div class="project-showcase-overlay">
+                            <div class="project-showcase-overlay-inner">
+                                <span class="project-showcase-name">SEO Marketing</span>
+                                <span class="project-showcase-price">
+                                    Starting from $100
+                                </span>
+                                <span class="btn btn-plain-alt">Post a Project Like This</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="project-showcase is-showcase-4" title="Mobile App Development">
+                    <a class="project-showcase-cta" data-track_click="true"
+                        data-category="pinterest_button" data-action="gallery-post-project-4"
+                        onclick="_ttref.push(['_setCookie','PostProject_SplashRepostQ4']);"
+                        href="https://www.freelancer.com/buyers/repost.php?id=3992787">
+                        <div class="project-showcase-overlay">
+                            <div class="project-showcase-overlay-inner">
+                                <span class="project-showcase-name">Mobile App</span>
+                                <span class="project-showcase-price">
+                                    Starting from $200
+                                </span>
+                                <span class="btn btn-plain-alt">Post a Project Like This</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="project-showcase is-showcase-5" title="Article Writing for Blog Posts">
+                    <a class="project-showcase-cta" data-track_click="true"
+                        data-category="pinterest_button" data-action="gallery-post-project-5"
+                        onclick="_ttref.push(['_setCookie','PostProject_SplashRepostQ5']);"
+                        href="https://www.freelancer.com/buyers/repost.php?id=4045988">
+                        <div class="project-showcase-overlay">
+                            <div class="project-showcase-overlay-inner">
+                                <span class="project-showcase-name">Article Writing</span>
+                                <span class="project-showcase-price">
+                                    Starting from $50
+                                </span>
+                                <span class="btn btn-plain-alt">Post a Project Like This</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="project-showcase is-showcase-6" title="Business Card Designs for Reign Building Solutions">
+                    <a class="project-showcase-cta" data-track_click="true"
+                        data-category="pinterest_button" data-action="gallery-post-project-6"
+                        onclick="_ttref.push(['_setCookie','PostProject_SplashRepostQ6']);"
+                        href="https://www.freelancer.com/contest/create.php?skill_category=4&skill_subcategory=25">
+                        <div class="project-showcase-overlay">
+                            <div class="project-showcase-overlay-inner">
+                                <span class="project-showcase-name">Business Card</span>
+                                <span class="project-showcase-price">
+                                    Starting from $30
+                                </span>
+                                <span class="btn btn-plain-alt">Post a Contest Like This</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="project-showcase is-showcase-7" title="Logo Design for Clothing brand">
+                    <a class="project-showcase-cta" data-track_click="true"
+                        data-category="pinterest_button" data-action="gallery-post-project-7"
+                        onclick="_ttref.push(['_setCookie','PostProject_SplashRepostQ7']);"
+                        href="https://www.freelancer.com/contest/create.php?skill_category=4&skill_subcategory=21">
+                        <div class="project-showcase-overlay">
+                            <div class="project-showcase-overlay-inner">
+                                <span class="project-showcase-name">Logo Design</span>
+                                <span class="project-showcase-price">
+                                    Starting from $150
+                                </span>
+                                <span class="btn btn-plain-alt">Post a Contest Like This</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="project-showcase is-showcase-8" title="Data Entry" >
+                    <a class="project-showcase-cta" data-track_click="true"
+                        data-category="pinterest_button" data-action="gallery-post-project-8"
+                        onclick="_ttref.push(['_setCookie','PostProject_SplashRepostQ8']);"
+                        href="https://www.freelancer.com/buyers/repost.php?id=4549650">
+                        <div class="project-showcase-overlay">
+                            <div class="project-showcase-overlay-inner">
+                                <span class="project-showcase-name">Data Entry</span>
+                                <span class="project-showcase-price">
+                                    Starting from $550
+                                </span>
+                                <span class="btn btn-plain-alt">Post a Project Like This</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section class="category-upsell-section">
+        <div class="container">
+            <h2 class="category-upsell-title">
+                Get your project started now...
+            </h2>
+            <ul class="category-upsell-list row">
+                <li class="category-upsell-item span3">
+                    <a href="https://www.freelancer.com/post-project?skill_category=1" class="category-upsell-link">
+                        <div class="category-upsell-icon">
+                            <span class="category-icon-web-dev">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                         viewBox="282 372 48 48" enable-background="new 282 372 48 48" xml:space="preserve">
+                                        <g>
+                                            <g opacity="0.24">
+                                                <polyline fill="none" stroke="#00A3E0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+                                                312.5,386.3 317.4,391.3 312.5,396.2         "/>
+
+                                                <polyline fill="none" stroke="#00A3E0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+                                                299.7,396.2 294.8,391.3 299.7,386.3         "/>
+
+                                                <line fill="none" stroke="#00A3E0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="303.2" y1="396.2" x2="309" y2="386.3"/>
+                                                </g>
+                                                <g>
+
+                                                <path fill="none" stroke="#231F20" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+                                                M329,409.6c0,1.7-1.3,3.2-3,3.2h-39.8c-1.7,0-3-1.4-3-3.2V380c0-1.7,1.3-3.2,3-3.2H326c1.7,0,3,1.4,3,3.2V409.6z"/>
+
+                                                <line fill="none" stroke="#231F20" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="292.1" y1="416.7" x2="320" y2="416.7"/>
+
+                                                <line fill="none" stroke="#231F20" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="306.1" y1="412.7" x2="306.1" y2="416.7"/>
+                                            <circle fill="none" stroke="#231F20" stroke-width="1.5" stroke-miterlimit="10" cx="306.1" cy="408.7" r="1"/>
+                                            <line fill="none" stroke="#231F20" stroke-width="1.5" stroke-miterlimit="10" x1="283.2" y1="404.8" x2="329" y2="404.8"/>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </span>
+                        </div>
+                        <span class="category-upsell-name">
+                            Website Development
+                        </span>
+                        <span class="category-upsell-price">
+                            Starting from $ 100
+                        </span>
+                    </a>
+                </li>
+                <li class="category-upsell-item span3">
+                    <a href="https://www.freelancer.com/post-project?skill_category=4" class="category-upsell-link">
+                        <div class="category-upsell-icon">
+                            <span class="category-icon-web-design">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+                                    <g>
+                                        <g>
+                                            <polygon fill="none" stroke="#010101" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+                                            42,58 33,61 36,52 55,33 61,39       "/>
+                                            <line fill="none" stroke="#010101" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" x1="50" y1="38" x2="56" y2="44"/>
+                                            <line fill="none" stroke="#010101" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="36" y1="52" x2="42" y2="58"/>
+                                    </g>
+                                    <path fill="none" stroke="#010101" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+                                        M29,43H8c-2.8,0-5-2.2-5-5V8c0-2.8,2.2-5,5-5h40c2.8,0,5,2.2,5,5v18"/>
+                                        <line fill="none" stroke="#010101" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="3" y1="13" x2="53" y2="13"/>
+                                        <circle fill="none" stroke="#010101" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="10" cy="8" r="1"/>
+                                        <circle fill="none" stroke="#010101" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="16" cy="8" r="1"/>
+                                        <circle fill="none" stroke="#010101" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="22" cy="8" r="1"/>
+                                        </g>
+                                    <rect x="10.8" y="19.9" fill="#C2E8F7" width="34.5" height="15.2"/>
+                                </svg>
+
+                            </span>
+                        </div>
+                        <span class="category-upsell-name">
+                            Website Design
+                        </span>
+                        <span class="category-upsell-price">
+                            Starting from $ 90
+                        </span>
+                    </a>
+                </li>
+                <li class="category-upsell-item span3">
+                    <a href="https://www.freelancer.com/post-project?skill_category=7" class="category-upsell-link">
+                        <div class="category-upsell-icon">
+                            <span class="category-icon-seo">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+                                <line fill="none" stroke="#C2E8F7" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="9.7" y1="33.3" x2="55" y2="3.5"/>
+                                <polyline fill="none" stroke="#C2E8F7" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points="54,12.5 55,3.5
+                                    46,2.5 "/>
+                                <line fill="none" stroke="#010101" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="3" y1="58.5" x2="61" y2="58.5"/>
+                                <rect x="7" y="50.5" fill="none" stroke="#010101" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="8" height="8"/>
+                                <rect x="21" y="40.5" fill="none" stroke="#010101" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="8" height="18"/>
+                                <rect x="35" y="30.5" fill="none" stroke="#010101" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="8" height="28"/>
+                                <rect x="49" y="20.5" fill="none" stroke="#010101" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="8" height="38"/>
+                                </svg>
+
+                            </span>
+                        </div>
+                        <span class="category-upsell-name">
+                            SEO Marketing
+                    </span>
+                        <span class="category-upsell-price">
+                            Starting from $ 150
+                        </span>
+                    </a>
+                </li>
+                <li class="category-upsell-item span3">
+                    <a href="https://www.freelancer.com/post-project?skill_category=2" class="category-upsell-link">
+                        <div class="category-upsell-icon">
+                            <span class="category-icon-mobile-app">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+                                    <g>
+                                        <path fill="none" stroke="#010101" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M49,55.5c0,2.8-2.2,5-5,5
+                                            H20c-2.8,0-5-2.2-5-5v-48c0-2.8,2.2-5,5-5h24c2.8,0,5,2.2,5,5V55.5z"/>
+
+                                            <line fill="none" stroke="#010101" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="15" y1="12.5" x2="49" y2="12.5"/>
+
+                                            <line fill="none" stroke="#010101" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="15" y1="50.5" x2="49" y2="50.5"/>
+
+                                            <line fill="none" stroke="#010101" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="25" y1="8.5" x2="39" y2="8.5"/>
+                                        <circle fill="none" stroke="#010101" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" cx="32" cy="55.5" r="2"/>
+                                    </g>
+                                    <rect x="23.8" y="21.4" fill="#C2E8F7" width="16" height="19"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <span class="category-upsell-name">
+                            Mobile App
+                        </span>
+                        <span class="category-upsell-price">
+                            Starting from $ 200
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <div class="fl-footer-site-statistics">
+    <ul class="fl-footer-site-stat-list">
+        <li class="fl-footer-site-stat site-stat">
+            <span class="fl-footer-site-stat-val COUNT-ONLINE-USER">--</span>
+            <span class="fl-footer-site-stat-key">Users Online</span>
+        </li>
+        <li class="fl-footer-site-stat site-stat">
+            <span class="fl-footer-site-stat-val totalFp">--</span>
+            <span class="fl-footer-site-stat-key">Registered Users</span>
+        </li>
+        <li class="fl-footer-site-stat site-stat">
+            <span class="fl-footer-site-stat-val totalPJ">--</span>
+            <span class="fl-footer-site-stat-key">Projects</span>
+        </li>
+    </ul>
+</div>
+
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <ul>
+                        <li><a href="/freelancers/">Find freelancers</a></li>
+                        <li><a href="/job/">Freelance projects</a></li>
+                        <li><a href="/jobs/">Freelance jobs</a></li>
+                        <li><a href="/contest/">Freelance contests</a></li>
+                        <li><a href="/hire/">Hire Freelancers</a></li>
+                        <li><a href="/work/">Freelance work</a></li>
+                    </ul>
+                    <p>Copyright 2015 Freelancer Technology Pty Limited
+                        <br>
+                        <a  href="/about">About us</a>&nbsp;&nbsp;&nbsp;&nbsp;<a  href="/about/privacy">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/about/terms">Terms & Conditions</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/feesandcharges/">Fees &amp; Charges</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/investor">Investor</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/community">Community</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script id='login-fields' type='text/template'>
+    <li class="control-group returning-user" data-target="returning-user">
+        <label>
+            <strong class="placeholder">Username or Email</strong>
+            <span class="control has-icon">
+                <i class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="640" height="640" viewBox="0 0 640 640" class="flicon-user">
+<path d="M247.2 68.672c-32.512 24.192-41.248 62.496-39.648 82.88 2.048 24.928 7.104 57.376 7.104 57.376s-10.016 5.44-10.016 27.328c3.488 54.944 21.856 31.232 25.632 55.328 9.088 58.048 29.856 47.712 29.856 79.392 0 52.768-21.76 77.44-89.696 106.688-68.16 29.376-138.432 66.336-138.432 130.336v32h576v-32c0-64-70.304-100.96-138.496-130.304-67.936-29.248-89.632-53.888-89.632-106.688 0-31.68 20.704-21.344 29.824-79.392 3.808-24.096 22.144-0.384 25.696-55.328 0-21.888-10.048-27.328-10.048-27.328s5.056-32.448 7.072-57.376c2.080-26.144-12.736-81.952-73.6-99.072-10.656-10.88-17.856-28.192 14.912-45.568-71.68-3.36-88.352 34.144-126.528 61.728z"></path>
+</svg>
+</i>
+                <input class="username" type="text" name="username" placeholder="Username or Email"
+                    data-msg-required="Please enter your username or email" required data-role="none" />
+            </span>
+            <span class="help-inline"></span>
+         </label>
+    </li>
+    <li class="control-group returning-user" data-target="returning-user">
+        <label>
+            <strong class="placeholder">Password</strong>
+                <span class="control has-icon">
+                    <i class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="288" height="448" viewBox="0 0 288 448" class="fl-icon-lock">
+    <g id="icomoon-ignore"></g>
+    <path d="M80 192h128v-48q0-26.5-18.75-45.25t-45.25-18.75-45.25 18.75-18.75 45.25v48zM288 216v144q0 10-7 17t-17 7h-240q-10 0-17-7t-7-17v-144q0-10 7-17t17-7h8v-48q0-46 33-79t79-33 79 33 33 79v48h8q10 0 17 7t7 17z"></path>
+</svg>
+</i>
+                    <input class="password" type="password" name="passwd" placeholder="Password" data-msg-required="Please enter your password" data-role="none" />
+                </span>
+                <span class="help-inline"></span>
+        </label>
+    </li>
+    <li>
+        <div class="checkbox">
+            <label class="remember-me">
+                Remember me<input id="savelogin" type="checkbox" name="savelogin">
+           </label>
+        </div>
+    </li>
+</script>
+
+<script id='signup-fields' type='text/template'>
+    <li class="control-group signup-field" data-target="signup-field">
+        <label>
+            <strong class="placeholder">Email Address</strong>
+            <span class="control has-icon" data-tooltip="An email will be sent to this address for verification to complete the signup process.">
+                <i class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="448" height="448" viewBox="0 0 448 448" class="flicon-email">
+<path d="M448 177.5v198.5q0 16.5-11.75 28.25t-28.25 11.75h-368q-16.5 0-28.25-11.75t-11.75-28.25v-198.5q11 12.25 25.25 21.75 90.5 61.5 124.25 86.25 14.25 10.5 23.125 16.375t23.625 12 27.5 6.125h0.5q12.75 0 27.5-6.125t23.625-12 23.125-16.375q42.5-30.75 124.5-86.25 14.25-9.75 25-21.75zM448 104q0 19.75-12.25 37.75t-30.5 30.75q-94 65.25-117 81.25-2.5 1.75-10.625 7.625t-13.5 9.5-13 8.125-14.375 6.75-12.5 2.25h-0.5q-5.75 0-12.5-2.25t-14.375-6.75-13-8.125-13.5-9.5-10.625-7.625q-22.75-16-65.5-45.625t-51.25-35.625q-15.5-10.5-29.25-28.875t-13.75-34.125q0-19.5 10.375-32.5t29.625-13h368q16.25 0 28.125 11.75t11.875 28.25z"></path>
+</svg>
+</i>
+                <input name="email" type="email" data-target="signup-email" data-required="Please enter a valid email address." data-email="Please enter a valid email address." data-remote="This email address is already in use, please try another." placeholder="Email Address" required data-role="none" />
+            </span>
+            <span class="help-inline"></span>
+        </label>
+    </li>
+    <li class="control-group signup-field" data-target="signup-field">
+        <label>
+            <strong class="placeholder">Username</strong>
+            <span class="control has-icon" data-tooltip="Please enter 3-16 alphanumeric characters [a-z 0-9] starting with a letter. No spaces." data-maxlength="Please enter no more that 16 alphanumeric characters." data-minlength="Please enter no more that 16 alphanumeric characters.">
+                <i class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="640" height="640" viewBox="0 0 640 640" class="flicon-user">
+<path d="M247.2 68.672c-32.512 24.192-41.248 62.496-39.648 82.88 2.048 24.928 7.104 57.376 7.104 57.376s-10.016 5.44-10.016 27.328c3.488 54.944 21.856 31.232 25.632 55.328 9.088 58.048 29.856 47.712 29.856 79.392 0 52.768-21.76 77.44-89.696 106.688-68.16 29.376-138.432 66.336-138.432 130.336v32h576v-32c0-64-70.304-100.96-138.496-130.304-67.936-29.248-89.632-53.888-89.632-106.688 0-31.68 20.704-21.344 29.824-79.392 3.808-24.096 22.144-0.384 25.696-55.328 0-21.888-10.048-27.328-10.048-27.328s5.056-32.448 7.072-57.376c2.080-26.144-12.736-81.952-73.6-99.072-10.656-10.88-17.856-28.192 14.912-45.568-71.68-3.36-88.352 34.144-126.528 61.728z"></path>
+</svg>
+</i>
+                <input name="newusername" type="text" data-target="signup-username" data-required="Please enter a username." data-minlength="Your username must be between 3-16 characters long." data-validateUsername="Invalid characters. Please enter 3-16 alphanumeric characters [a-z 0-9] starting with a letter. No spaces." data-remote="This username is already in use, please try another." required placeholder="Username" data-role="none" />
+            </span>
+            <span class="help-inline"></span>
+        </label>
+    </li>
+    <li class="control-group signup-field" data-target="signup-field">
+        <label for="signup-password">
+            <strong class="placeholder">Password</strong>
+            <span class="control has-icon" data-tooltip="Use a combination of numeric, lower and upper case characters to increase password strength.">
+                <i class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="288" height="448" viewBox="0 0 288 448" class="fl-icon-lock">
+    <g id="icomoon-ignore"></g>
+    <path d="M80 192h128v-48q0-26.5-18.75-45.25t-45.25-18.75-45.25 18.75-18.75 45.25v48zM288 216v144q0 10-7 17t-17 7h-240q-10 0-17-7t-7-17v-144q0-10 7-17t17-7h8v-48q0-46 33-79t79-33 79 33 33 79v48h8q10 0 17 7t7 17z"></path>
+</svg>
+</i>
+                <input id="signup-password" class="password" name="newuserpasswd" type="password" data-target="signup-password" data-required="Please enter a password." data-minlength="Password must be at least 6 characters." data-validatepasswordstrength="Sorry, your password is too weak. Use a combination of numeric, lower and upper case characters to increase password strength." data-passworddifferent="Password must be different to username." required placeholder="Password" data-role="none" />
+            </span>
+            <div class="password-meter" data-strength="" data-target="password-meter">
+                <div class="password-meter-bg">
+                    <div class="password-meter-bar"></div>
+                </div>
+            <div class="password-meter-message" data-weak="Password is weak" data-normal="Password is good" data-strong="Password is strong"></div>
+        </div>
+        <span class="help-inline"></span>
+        </label>
+    </li>
+    <li class="control-group signup-field" data-target="signup-field">
+        <label>
+            <strong class="placeholder">Confirm password</strong>
+            <span class="control has-icon" data-tooltip="This field must match the field above.">
+                <i class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="288" height="448" viewBox="0 0 288 448" class="fl-icon-lock">
+    <g id="icomoon-ignore"></g>
+    <path d="M80 192h128v-48q0-26.5-18.75-45.25t-45.25-18.75-45.25 18.75-18.75 45.25v48zM288 216v144q0 10-7 17t-17 7h-240q-10 0-17-7t-7-17v-144q0-10 7-17t17-7h8v-48q0-46 33-79t79-33 79 33 33 79v48h8q10 0 17 7t7 17z"></path>
+</svg>
+</i>
+                <input name="newuserpasswd1" type="password" data-target="signup-confirm-password" data-required="Please re-enter your password." data-minlength="Password must be at least 6 characters." data-passwordsmatch="Please enter the same password as above." required placeholder="Confirm password" data-role="none" />
+            </span>
+            <span class="help-inline"></span>
+        </label>
+    </li>
+</script>
+
+    </div>
+
+    <!-- Javascript -->
+
+    <script src="https://cdn2.f-cdn.com/build/js/err/error-handler.js?v=86bbb37d2f278b60a5c6e237fe81044e&amp;amp;m=2" type="text/javascript"></script>
+
+    
+
+    <script type="text/javascript">
+        _t = [];
+    </script>
+
+    <script src="https://cdn6.f-cdn.com/js/lib/backbone/underscore.js?v=b4d30ac1f8e39faced13591dfd39e45b&amp;m=2" type="text/javascript"></script>
+    <script src="https://cdn6.f-cdn.com/js/formTools/formTools.js?12&amp;v=1e479643470201bf941da8648d5c1e46&amp;m=2" type="text/javascript"></script>
+    <script src="https://cdn6.f-cdn.com/js/lib/backbone/backbone_0_5_3.js?v=f26e061c598879ffbbf60199b390549f&amp;m=2" type="text/javascript"></script>
+    <script src="https://cdn3.f-cdn.com/build/js/bootstrap.js?v=18190ee17f6ac7808687822f08da5380&amp;amp;m=2" type="text/javascript"></script>
+
+    
+    
+    
+    
+
+    <script type="text/javascript">
+        var freelancer = freelancer || {};
+        var flns = flns || {};
+
+        window.console = window.console || {
+            log: function() { return true; },
+            trace: function() { return true; }
+        };
+
+        var is_bootstrap = true;
+
+        (function(ns) {
+            ns.config = {};
+            ns.config.cdn_urls = ["cdn2.f-cdn.com","cdn3.f-cdn.com","cdn5.f-cdn.com","cdn6.f-cdn.com"];
+            ns.config.cookie_base = 'GETAFREE';
+            ns.config.notify_server = '//notifications.freelancer.com';
+            ns.config.currency = '1';
+            ns.config.site_name = 'Freelancer.com';
+            ns.config.cookie_domain = '.freelancer.com';
+        })(flns);
+
+        var ssl_base_url = 'https://www.freelancer.com';
+    </script>
+
+    <script src="https://cdn3.f-cdn.com/build/js/global.js?v=5fb2777f18b14cc8f9a8fc0aff471a2a&amp;amp;m=2" type="text/javascript"></script>
+    <script src="https://cdn2.f-cdn.com/build/js/require.js?v=7754fba670c6f2479b72ee0b8acd39a9&amp;amp;m=2" type="text/javascript"></script>
+<script type="text/javascript">
+    flns = flns || {};
+    flns.assets = {
+        lang: 'en'
+    };
+
+    require.config({
+        baseUrl: "https://cdn5.f-cdn.com/build/js",
+        urlArgs: "v=c659e55b7cca6112967eb76ccd054807&lang=en"
+    });
+</script>
+
+
+    <script type="text/javascript">
+        require(['https://cdn2.f-cdn.com/build/js/main-welcome_a.js?v=9b39041f12c41e482682a521c9221e2d&amp;m=2']);
+    </script>
+
+    <script src="https://cdn3.f-cdn.com/js/auto-increase-count.js?2&amp;v=edfdd17aff2cdb97149043815d84911d&amp;m=2" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      //initialize qts tracking for homepage
+      require(['qtsbinds', 'domReady'], function(qtsp, domReady) {
+          domReady(function(){
+              qtsp.init({
+                section: 'HomePage',
+                action: 'click'
+              });
+              qtsp.bind('[data-qts]');
+          });
+      });
+    </script>
+
+    <script src="//connect.facebook.net/en_US/all.js"></script>
+    <script>
+// Facebook Connect and Login are now loaded asynchronously and uses the
+// Facebook SDK
+window.fbAsyncInit = function () {
+    if (!window.fbinit_run) {
+        window.fbinit_run = true;
+        (typeof FB != 'undefined') && FB.init({
+            appId: '120131118061981',
+            status: true,
+            cookie: true,
+            xfbml: true,
+            channelUrl: 'https://www.freelancer.com/facebook/channel.html',
+            oauth: true
+        });
+    }
+
+    if (typeof fbAsyncInit_func == 'function') {
+        fbAsyncInit_func();
+    }
+
+    if (typeof fbAsyncInit_pinky == 'function') { //if not defined, do it later
+        fbAsyncInit_pinky();
+    }
+}
+</script>
+
+    <script type="text/javascript">
+        require(['https://cdn5.f-cdn.com/build/js/pinky/facebookConnect.js?v=051236a4a39f7e6b11c5e3605e27d293&amp;m=2']);
+    </script>
+    
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-223765-6']);
+
+  var path = null;
+  if (typeof location === "object") {
+    path = location.pathname;
+  }
+
+
+
+
+
+  
+    
+      _gaq.push(['_trackPageview', '/pinterest-homepage']);
+    
+  
+  
+
+
+
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+
+
+<script type="text/javascript">
+(function() {
+JQ = jQuery.noConflict();
+JQ(document).ready(function () {
+  //trackSocial
+      
+  });
+})();
+</script>
+
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-G7FX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-G7FX');</script>
+<!-- End Google Tag Manager -->
+
+
+
+    
+    <!-- Google Code for Remarketing Tag -->
+<script type="text/javascript">
+
+    if ((typeof window.usertype != 'undefined') && (window.usertype != '')) {
+       loadGARemarketingPixel(window.usertype);
+    }
+
+    function loadGARemarketingPixel(usertype) {
+        if (!document.getElementById('remarketingPixel')) {
+            var google_tag_params = google_tag_params || {};
+            var trackUrl = "https://www.googleadservices.com/pagead/conversion/viewthroughconversion/1015002772/";
+            var params =  "?value=0&guid=ON&script=0&remarketing_only=true";
+            params = params + '&usertype=' + usertype;
+            var img = document.createElement("img");
+            img.id = 'remarketingPixel'
+            img.src = trackUrl + params;
+            document.body.appendChild(img);
+        }
+    }
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1015002772/?value=0&amp;guid=ON&amp;script=0"/>
+    </div>
+</noscript>
+
+
+    <script src="https://cdn6.f-cdn.com/build/js/ttref.js?v=1c5e661fc18fa54479565655ae11a91e&amp;amp;m=2" type="text/javascript"></script>
+    <script src="//d2werhn82xczly.cloudfront.net/20140328/main.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+        try {
+            _t = new Tracking(
+              '//t.freelancer.com/1px.gif',
+              flns.config.cookie_domain,
+              {'user_id': getCookie(flns.config.cookie_base + '_USER_ID')}
+            ).init(_t);
+            _lt = new LocalTracking().init(_lt);
+        } catch (err) {
+            if (console) { console.log(err); }
+        }
+
+        // Define the screen resolution and browser resolution parameters
+        // to the QTS page_view event
+        var p = {
+          screenHeight: window.screen.height,
+          screenWidth: window.screen.width,
+          windowInnerHeight: window.innerHeight,
+          windowInnerWidth: window.innerWidth,
+          language: 'en'
+        };
+
+        //Push the page view event with the defined screen and browser resolution parameters
+        _t.push(['page_view', p]);
+
+        if (Math.random() < 0.01) {
+            var start_latency = new Date().getTime();
+            jQuery.ajax({
+                url: '/pong.php',
+                success: function () {
+                    _t.push(['latency', {'latency': (new Date().getTime() - start_latency)}]);
+                }
+            });
+        }
+
+        if (typeof window.performance !== 'undefined') {
+            jQuery(window).load(function() {
+                try {
+                    var pt = window.performance.timing;
+                    _t.push(['page_performance_timings', {
+                        'navigationStart' : pt.navigationStart,
+                        'unloadEventStart' : pt.unloadEventStart,
+                        'unloadEventEnd' : pt.unloadEventEnd,
+                        'redirectStart' : pt.redirectStart,
+                        'redirectEnd' : pt.redirectEnd,
+                        'fetchStart' : pt.fetchStart,
+                        'domainLookupStart' : pt.domainLookupStart,
+                        'domainLookupEnd' : pt.domainLookupEnd,
+                        'connectStart' : pt.connectStart,
+                        'connectEnd' : pt.connectEnd,
+                        'responseStart' : pt.responseStart,
+                        'responseEnd' : pt.responseEnd,
+                        'domLoading' : pt.domLoading,
+                        'domInteractive' : pt.domInteractive,
+                        'domContentLoadedEventStart' : pt.domContentLoadedEventStart,
+                        'domContentLoadedEventEnd' : pt.domContentLoadedEventEnd,
+                        'domComplete' : pt.domComplete,
+                        'loadEventStart' : pt.loadEventStart,
+                        'loadEventEnd' : Date.now()
+                    }]);
+                } catch (err) {
+                    // quiet handle
+                }
+            });
+        }
+</script>
+<script src="https://cdn6.f-cdn.com/build/js/tracking/extra-tracking.js?v=f5485575504b46c9cc0f0178ea35fcbd&amp;amp;m=2" type="text/javascript"></script>
+
+    
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"11b42b2df0","applicationID":"7177873","transactionName":"M1dUbUUEXhZRB0VRCwodY0teSlkLVAFJFhQMQg==","queueTime":0,"applicationTime":63,"atts":"HxBXGw0eTRg=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-632.min.js"}</script></body>
+</html>

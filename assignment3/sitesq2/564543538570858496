@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>Listen To Some Tunes</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script>
+
+var iFrequency = 5000; // expressed in miliseconds
+var myInterval = 0;
+
+// STARTS and Resets the loop if any
+function startLoop()
+{
+  if(myInterval > 0) clearInterval(myInterval);  // stop
+  myInterval = setInterval( "doSomething()", iFrequency );  // run
+}
+
+function doSomething()
+{
+  $("#div1").load("stats.php");
+}
+
+$(document).ready(function(){
+  startLoop();
+  $("#div1").load("stats.php");
+});
+
+</script>
+
+</head>
+<!--body bgcolor=black link=#82cafa vlink=#5B8DAF-->
+<body bgcolor=black link=yellow vlink=yellow>
+<div style="border: thin solid palegoldenrod;display: inline-block; padding:5px">
+<font color=palegoldenrod>
+<center>
+
+<!-- BEGINS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
+<script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
+<script type="text/javascript">
+MRP.insert({
+'url':'http://stream.7355608.wtf:8000/surge',
+'codec':'ogg',
+'volume':65,
+'autoplay':true,
+'buffering':5,
+'title':'Surgin\' Tunes',
+'welcome':'Wazzup',
+'bgcolor':'#000000',
+'skin':'radiovoz',
+'width':220,
+'height':69
+});
+</script>
+<br />
+<div id="div1" style="text-align:center; font-size: 100%"></div>
+</center>
+</font>
+</div>
+<!-- ENDS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
+<font color=palegoldenrod>
+<center>
+<a href="html5.php" target="new">Problems? Try the html5 player.</a>
+<center>
+</font>
+</body>

@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VwcFV1RSGwACVVlVAQU="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:20,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(3),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(4),t(5),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:8,3:3,4:7,5:6,6:21,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:21,2:22,ee:"QJf3ax",gos:"7eSDFh"}],6:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:22,2:21,ee:"QJf3ax"}],7:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:22,2:21,ee:"QJf3ax"}],8:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(o){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:5,2:22,ee:"QJf3ax"}],9:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=e(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=e(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var u=0;c>u;u++)n.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:10,3:8,4:5,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],10:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],11:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:20,2:21,handle:"D5DuLP"}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=l.info=NREUM.info;if(t&&t.licenseKey&&t.applicationID&&f&&f.body){s(h,function(e,n){e in t||(t[e]=n)}),l.proto="https"===p.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=f.createElement("script");e.src=l.proto+t.agent,f.body.appendChild(e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u="addEventListener",d="attachEvent",p=(""+location).split("?")[0],h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-593.min.js"},l=e.exports={offset:i(),origin:p,features:{}};f[u]?(f[u]("DOMContentLoaded",o,!1),c[u]("load",n,!1)):(f[d]("onreadystatechange",r),c[d]("onload",n)),a("mark",["firstbyte",i()])},{1:20,2:11,handle:"D5DuLP"}],20:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],21:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],22:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:21,ee:"QJf3ax"}]},{},["G9z0Bl",4,9]);</script>
+<title>&#039;Better Call Saul&#039; Review on AMC: What the Critics Are Saying - Hollywood Reporter</title>
+
+
+<meta name="viewport" content="width=device-width" />
+<link rel="shortcut icon" href="/static/frontend/2015_04_03_1742/assets/favicon.ico" type="image/x-icon" />
+<meta name="description" content="Better Call Saul, the highly anticipated prequel&amp;nbsp;spinoff&amp;nbsp;of AMC&amp;#39;s hit Breaking Bad, zooms in on Bob Odenkirk as Jimmy McGill, as he turns into ethically challenged lawyer Saul Goodman &amp;mdash; long before he started doing business with the&amp;nbsp;meth-cooking duo of Bad." />
+<meta name="keywords" content="Ashley Lee, , &#039;Better Call Saul&#039; Review on AMC: What the Critics Are Saying - Hollywood Reporter" />
+<link rel="canonical" href="http://www.hollywoodreporter.com/news/better-call-saul-review-amc-770784" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="//www.hollywoodreporter.com/apple-touch-icon.png" >
+<meta name="revisit-after" content="1 day" />
+
+<meta name="author" content="Ashley Lee" />
+
+<meta property="og:title" content="AMC&#039;s &#039;Better Call Saul&#039;: What the Critics Are Saying" />
+<meta property="og:description" content="Better Call Saul, the highly anticipated prequel&amp;nbsp;spinoff&amp;nbsp;of AMC&amp;#39;s hit Breaking Bad, zooms in on Bob Odenkirk as Jimmy McGill, as he turns into ethically challenged lawyer Saul Goodman &amp;mdash; long before he started doing business with the&amp;nbsp;meth-cooking duo of Bad." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.hollywoodreporter.com/news/better-call-saul-review-amc-770784" />
+	<meta property="og:image" content="//www.hollywoodreporter.com/sites/default/files/imagecache/modal_800/2015/02/Better_Call_Saul_Still.jpg" />
+	<meta property="og:image:width" content="649" />
+	<meta property="og:image:height" content="400" />
+	<meta property="og:image" content="//www.hollywoodreporter.com/sites/default/files/imagecache/thumbnail_large_300x401/2015/02/Better_Call_Saul_Still.jpg" />
+	<meta property="og:image:width" content="300" />
+	<meta property="og:image:height" content="401" />
+	<meta property="og:image" content="//www.hollywoodreporter.com/sites/default/files/imagecache/small_144x81/2015/02/Better_Call_Saul_Still.jpg" />
+	<meta property="og:image:width" content="144" />
+	<meta property="og:image:height" content="81" />
+
+<meta property="og:site_name" content="The Hollywood Reporter" />
+<meta property="fb:admins" content="3111204" />
+<meta property="fb:app_id" content="260546964027216" />
+<meta property="article:section" content="" />
+
+<meta name="twitter:site" content="@THR">
+<meta name="twitter:creator" content="@THR">
+<meta name="twitter:url" content="http://www.hollywoodreporter.com/news/better-call-saul-review-amc-770784">
+<meta name="twitter:domain" content="//www.hollywoodreporter.com">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image:src" content="//www.hollywoodreporter.com/sites/default/files/imagecache/twitter_large/2015/02/Better_Call_Saul_Still.jpg">
+
+<script>
+var THR = THR || {};
+THR.config = THR.config || {
+	mediaHost: "//www.hollywoodreporter.com",
+	contentHost: "//www.hollywoodreporter.com",
+	debug: ""
+};
+</script>
+
+<script type="text/javascript" src="/static/frontend/2015_04_03_1742/scripts/modernizr.js"></script>
+
+<script type="text/javascript" src="//s3.amazonaws.com/storage.kargo.com/ad/network/tag/v3/_jK-5bpqWnaY1KP9wnV8Ag0b.js" async="true"></script>
+<script type="text/javascript">
+(function(w){
+(w.Kargo = w.Kargo || {}).target_params = {
+	"CATEGORY": "thronl televi tvshow usa vinceg jonath bobode better"
+	,"ARTICLE_ID": "770784"
+};
+(w.Kargo.setTargetParams || function(){})();
+})(window);
+</script>
+
+<script type='text/javascript' src='//c.amazon-adsystem.com/aax2/amzn_ads.js'></script>
+<script type='text/javascript'>
+    try {
+        amznads.getAds('3125');
+    } catch(e) { /*ignore*/}
+</script>
+
+<!-- Start: GPT -->
+<script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+
+var THR = THR || {};
+THR.ads = THR.ads || {};
+THR.ads.adUnit = '/6419/thr.com/tv.article';
+THR.ads.slots = THR.ads.slots || {};
+
+(function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+})();
+</script>
+
+<script type='text/javascript'>
+googletag.cmd.push(function() {
+    try {
+        amznads.setTargetingForGPTAsync('amznslots');
+    } catch(e) { /*ignore*/}
+});
+
+    googletag.cmd.push(function() {
+                    var mapping = googletag.sizeMapping()
+                          .addSize([980, 0], [[980,50],[728,90],[970,90],[728,91],[980,250],[970,250],[970,66],[970,51],[970,251]])
+                                      .addSize([767, 0], [[728,90],[728,91]])
+                                    .addSize([0, 0], [])
+            .build();
+        
+        THR.ads.slots["t"] = googletag.defineSlot(THR.ads.adUnit, [[980,50],[728,90],[970,90],[728,91],[980,250],[970,250],[970,66],[970,51],[970,251]], 'dfp-ad-t')
+            .addService(googletag.pubads())
+            .setTargeting("pos", "t")
+                            .defineSizeMapping(mapping)
+                ;
+    });
+    googletag.cmd.push(function() {
+                    var mapping = googletag.sizeMapping()
+                          .addSize([980, 0], [[728,90],[728,92]])
+                                      .addSize([767, 0], [[728,90],[728,92]])
+                                    .addSize([0, 0], [])
+            .build();
+        
+        THR.ads.slots["a"] = googletag.defineSlot(THR.ads.adUnit, [[728,90],[728,92]], 'dfp-ad-a')
+            .addService(googletag.pubads())
+            .setTargeting("pos", "a")
+                            .defineSizeMapping(mapping)
+                ;
+    });
+    googletag.cmd.push(function() {
+                    var mapping = googletag.sizeMapping()
+                          .addSize([980, 0], [[300,250],[300,251],[300,600],[300,1050]])
+                                      .addSize([767, 0], [[300,250],[300,251]])
+                                    .addSize([0, 0], [])
+            .build();
+        
+        THR.ads.slots["m1"] = googletag.defineSlot(THR.ads.adUnit, [[300,250],[300,251],[300,600],[300,1050]], 'dfp-ad-m1')
+            .addService(googletag.pubads())
+            .setTargeting("pos", "m1")
+                            .defineSizeMapping(mapping)
+                ;
+    });
+    googletag.cmd.push(function() {
+                    var mapping = googletag.sizeMapping()
+                          .addSize([980, 0], [[300,250],[300,252]])
+                                      .addSize([767, 0], [[300,250],[300,252]])
+                                    .addSize([0, 0], [])
+            .build();
+        
+        THR.ads.slots["m2"] = googletag.defineSlot(THR.ads.adUnit, [[300,250],[300,252]], 'dfp-ad-m2')
+            .addService(googletag.pubads())
+            .setTargeting("pos", "m2")
+                            .defineSizeMapping(mapping)
+                ;
+    });
+    googletag.cmd.push(function() {
+                    var mapping = googletag.sizeMapping()
+                          .addSize([980, 0], [[300,250],[300,253]])
+                                      .addSize([767, 0], [[300,250],[300,253]])
+                                    .addSize([0, 0], [])
+            .build();
+        
+        THR.ads.slots["m3"] = googletag.defineSlot(THR.ads.adUnit, [[300,250],[300,253]], 'dfp-ad-m3')
+            .addService(googletag.pubads())
+            .setTargeting("pos", "m3")
+                            .defineSizeMapping(mapping)
+                ;
+    });
+
+googletag.cmd.push(function() {
+    THR.ads.slots["o1"] = googletag.defineOutOfPageSlot(THR.ads.adUnit, 'dfp-ad-o1').addService(googletag.pubads());
+
+            googletag.pubads().setTargeting("template", "n");
+            googletag.pubads().setTargeting("zone", "tv.article");
+            googletag.pubads().setTargeting("page", "770784");
+                            googletag.pubads().setTargeting('env', ["www"]);
+            
+    googletag.pubads().setTargeting("term", ["thronl", "televi", "tvshow", "usa", "vinceg", "jonath", "bobode", "better"]);
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().disableInitialLoad();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+
+    googletag.pubads().addEventListener('slotRenderEnded', function(e) {
+        // warn on empty slots
+        if (e.isEmpty) {
+            console.warn('Ad unit %s is empty.', e.slot.b.d);
+            return;
+        }
+
+        if (e.slot === THR.ads.slots["o1"]) document.body.className += ' full-page-ad';
+    });
+});
+</script>
+<!-- End: GPT -->
+
+<!-- Begin comScore Tag -->
+<script>
+    var _comscore = _comscore || [];
+    var comscoreVars = {
+        c1: "2"
+        ,c2: "7395269"
+        ,c3: ""
+        };
+    _comscore.push(comscoreVars);
+    (function() {
+        var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+        s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+        el.parentNode.insertBefore(s, el);
+    })();
+</script>
+<!-- End comScore Tag -->
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-6367557-1']);
+_gaq.push(['_setDomainName', '.hollywoodreporter.com']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
+
+<link type="text/css" rel="stylesheet" href="/static/frontend/2015_04_03_1742/css/article.css"></link>
+</head>
+
+<body class="article-page" data-adsitesection="">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WLF8ZZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WLF8ZZ');</script>
+<!-- End Google Tag Manager -->
+
+<div class="leaderboard-top">
+<div class="dfp-ad dfp-ad-t" id="dfp-ad-t" data-tracklabel="Ad Click">
+	<script type="text/javascript">
+		googletag.cmd.push(function(){ googletag.display('dfp-ad-t'); });
+	</script>
+</div>
+<div class="dfp-ad dfp-ad-o1" id="dfp-ad-o1" data-tracklabel="Ad Click">
+	<script type="text/javascript">
+		googletag.cmd.push(function(){ googletag.display('dfp-ad-o1'); });
+	</script>
+</div>
+</div>
+
+<div id="site-header-wrapper" class="site-header-wrapper">
+    <header id="site-header" class="site-header">
+        <div class="nav-wrap">
+           <nav id="site-nav" class="site-nav" data-trackaction="Main Nav">
+                <h1 id="site-logo" class="brand">
+                    <a href="/" title="The Hollywood Reporter" rel="home" data-tracklabel="THR Logo">The Hollywood Reporter</a>
+                    <span class="brand-ribbon"></span>
+                </h1>
+                    <div class="nav-current-section">
+                            <h2 class="nav-current-section-title">
+                                                                TV
+                            </h2>
+                            <ul class="dropdown">
+                                                                <li>
+                                    <a data-tracklabel=" Dropdown" href="/movies">Movies</a>
+                                </li>
+                                                                <li>
+                                    <a data-tracklabel=" Dropdown" href="/television">TV</a>
+                                </li>
+                                                                <li>
+                                    <a data-tracklabel=" Dropdown" href="/music">Music</a>
+                                </li>
+                                                                <li>
+                                    <a data-tracklabel=" Dropdown" href="/tech">Tech</a>
+                                </li>
+                                                                <li>
+                                    <a data-tracklabel=" Dropdown" href="/business">The Business</a>
+                                </li>
+                                                                <li>
+                                    <a data-tracklabel=" Dropdown" href="/style">Style</a>
+                                </li>
+                                                                <li>
+                                    <a data-tracklabel=" Dropdown" href="/culture">Culture</a>
+                                </li>
+                                                                <li>
+                                    <a data-tracklabel=" Dropdown" href="/awards">Awards</a>
+                                </li>
+                                                                <li>
+                                    <a data-tracklabel=" Dropdown" href="/video">Video</a>
+                                </li>
+                                                            </ul>
+                            <nav class="dropdown sub-dropdown">
+                                <h4>Blogs</h4>
+                                <ul>
+                                                                    <li>
+                                        <a href="/blogs/heat-vision">Heat Vision</a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/blogs/bastard-machine">Bastard Machine</a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/blogs/live-feed">Live Feed</a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/blogs/behind-screen">Behind the Screen</a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/blogs/thr-esq">ESQ</a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/blogs/earshot">Earshot</a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/blogs/race">The Race</a>
+                                    </li>
+                                                                </ul>
+                            </nav>
+                    </div>
+               <div class="nav-current-section-direction"></div>
+                <div class="sub-topics responsive-subnav-full">
+                                                                <ul><li><a href="/node/780101">Mad Men</a></li><li><a href="/television/reviews">Reviews</a></li><li><a href="/blogs/live-feed">Live Feed</a></li><li><a href="/blogs/bastard-machine">Bastard Machine</a></li><li><a href="/node/14266">Ratings</a></li><li><a href="/node/777751">'Parks and Rec'</a></li><li><a href="/node/729922">'SNL' at 40</a></li><li><a href="/node/576559">Emmys</a></li><li><a href="/videos/tv-clips-161">Clips</a></li><li><a href="/node/778255">Leonard Nimoy</a></li></ul>
+                                    </div>
+                <div class="nav-right">
+                    <div id="header-subscribe" class="header-subscribe">
+                        <a href="https://subscribe.hollywoodreporter.com/sub/?p=THR&f=saleb&s=IH1402HR12">Subscribe</a>
+                    </div>
+                    <div id="site-search" class="site-search" >
+                        <div class="nav-search" style="display:none;">
+                            <a href="javascript:;" class="close-search">Close Search</a>
+                            <form id="nav-search" class="search-form" method="post" accept-charset="UTF-8" action="/search/">
+                                <input class="nav-search-input form-text" placeholder="Search ..." name="keys" maxlength="255" />
+                                <a type="submit" class="search-icon" id="nav-search-submit" type="submit" value="Search" href="javascript:;"></a>
+                            </form>
+                        </div>
+                        <a href="javascript:;" id="submit-nav-search" class="open-search search-icon">Search</a>
+                    </div>
+                </div>
+
+            </nav>
+        </div>
+        <div class="promo-bar hidden">
+            <div class="promo-inner">
+                 <span class="promo-text">
+                    <a href="/newsletters/subscribe">SIGN UP FOR OUR NEWSLETTERS </a> & DON'T FORGET TO FOLLOW US:
+                 </span>
+                 <div class="social-icons">
+                    <a class="promo-bar-icon" href="https://www.facebook.com/HollywoodReporter"></a>
+                    <a class="promo-bar-icon" href="https://twitter.com/intent/follow?screen_name=THR"></a>
+                    <a class="promo-bar-icon" href="http://www.pinterest.com/THRmag"></a>
+                    <a class="promo-bar-icon" href="http://instagram.com/hollywoodreporter"></a>
+                    <a class="promo-bar-icon" href="https://www.youtube.com/user/thrnetwork"></a>
+                    <div id="promo-bar-close" class="promo-bar-close"></div>
+                    <a id="promo-bar-subscribe" class="promo-bar-pdf" href="//www.hollywoodreporter.com/daily">Daily PDF<br>Login</a>
+                </div>
+            </div>
+        </div>
+            </header>
+</div>
+
+<div id="page-content" class="page-content">
+		<div class="container">
+
+<article itemscope itemtype="http://schema.org/Article" id="article" class="article-main article-image-landscape has-imagetype-image " data-trackaction="Story Well">
+
+<h1 itemprop="headline" class="article-title">AMC&#039;s &#039;Better Call Saul&#039;: What the Critics Are Saying</h1>
+<div id="article-main-image" class="article-main-image landscape">
+		<figure class="landscape">
+        		    <img itemprop="image" alt="&#x27;Better&#x20;Call&#x20;Saul&#x27;" src="//www.hollywoodreporter.com/sites/default/files/imagecache/675x380/2015/02/Better_Call_Saul_Still.jpg">
+        		<figcaption>
+			<div class="image-caption">'Better Call Saul'</div>
+			<div class="image-credit">&nbsp;Courtesy of Berlin International Film Festival</div>
+		</figcaption>
+	</figure>
+	</div>
+	<aside id="article-supplementary" class="article-supplementary">
+		<div id="story-bullets" class="bullets">
+		 <ul>
+		   		       <li>Vince Gilligan and Peter Gould&#039;s &#039;Breaking Bad&#039; prequel stars Jonathan Banks, Michael McKean, Rhea Seehorn, Patrick Fabian and Michael Mando.</li>
+		   		 </ul>
+		</div>
+
+		<div class="article-supplementary-widgets">
+							<div class="gravity-next-article-widget" data-trackaction="Story Lead" data-tracklabel="NextUp Top">
+		<div id="grv-personalization-36"></div>
+		<script type='text/javascript'>
+		  //<![CDATA[
+		    (function(){
+		    window.gravityInsightsParams = {
+		      'type': 'content',
+		      'action': '',
+		      'site_guid': '01b0b9ad501e0c849a822e6124ff0fc2'
+		    };
+		    var adServerReq,bUrl,cburl,doUseGravityUserGuid,includeJs,jq,pfurl,type,ug,wlPrefix,wlUrl,_ref,_ref1,_ref2;includeJs=function(a){var b;b=document.createElement("script");b.async=!0;b.src=a;a=document.getElementsByTagName("script")[0];return a.parentNode.insertBefore(b,a)};bUrl="";ug=(doUseGravityUserGuid=!0===gravityInsightsParams.useGravityUserGuid?1:0)?"":gravityInsightsParams.user_guid||(null!=(_ref=/grvinsights=([^;]+)/.exec(document.cookie))?_ref[1]:void 0)||"";
+		    wlUrl=(wlPrefix="https:"===location.protocol?"https://secure-api.gravity.com/v1/api/intelligence":"http://rma-api.gravity.com/v1/api/intelligence",jq=(null!=(_ref1=window.jQuery)?null!=(_ref2=_ref1.fn)?_ref2.jquery:void 0:void 0)||"",type="jsonp",adServerReq=gravityInsightsParams.ad||"",cburl=gravityInsightsParams.cburl||"",pfurl=gravityInsightsParams.pfurl||"",""+wlPrefix+"/wl?jq="+jq+"&sg="+gravityInsightsParams.site_guid+"&ug="+ug+"&ugug="+doUseGravityUserGuid+"&id=grv-personalization-36&pl=36"+
+		    ("&type="+type+"&ad="+adServerReq+"&cburl=")+encodeURIComponent(cburl)+"&pfurl="+encodeURIComponent(pfurl)+("&x="+(new Date).getTime())+("undefined"!==typeof forceArticleIds&&null!==forceArticleIds&&forceArticleIds.join?"&ai="+forceArticleIds.join(","):"")+("undefined"!==typeof apids&&null!==apids&&""!==apids?"&apids="+encodeURIComponent(apids):""));bUrl&&includeJs(bUrl);wlUrl&&(window.gravityInsightsParams.sidebar&&(window.gravityInsightsParams.wlStartTime=(new Date).getTime()),includeJs(wlUrl));})();
+		  //]]>
+		</script>
+	</div>			
+
+	<div class="dfp-ad dfp-ad-m1" id="dfp-ad-m1" data-tracklabel="Ad Click">
+	<script type="text/javascript">
+		googletag.cmd.push(function(){ googletag.display('dfp-ad-m1'); });
+	</script>
+</div>
+		</div>
+	</aside>
+
+<aside id="article-summary" class="article-summary" data-trackaction="Left Rail">
+
+<div class="sharetools" data-url="http://www.hollywoodreporter.com/news/better-call-saul-review-amc-770784" data-title="AMC&#x27;s&#x20;&#x27;Better&#x20;Call&#x20;Saul&#x27;&#x3A;&#x20;What&#x20;the&#x20;Critics&#x20;Are&#x20;Saying">
+	<nav class="sharetools-inner">
+		<a href="javascript:void(0);" class="sharetools-link facebook thr-social-share" data-thr-share="facebook" data-thr-title="AMC&#x27;s&#x20;&#x27;Better&#x20;Call&#x20;Saul&#x27;&#x3A;&#x20;What&#x20;the&#x20;Critics&#x20;Are&#x20;Saying" data-thr-url="http&#x3A;&#x2F;&#x2F;www.hollywoodreporter.com&#x2F;news&#x2F;better-call-saul-review-amc-770784">
+			<span>Facebook</span>
+		</a>
+		<a href="javascript:void(0);" class="sharetools-link twitter thr-social-share" data-thr-share="twitter" data-thr-title="AMC&#x27;s&#x20;&#x27;Better&#x20;Call&#x20;Saul&#x27;&#x3A;&#x20;What&#x20;the&#x20;Critics&#x20;Are&#x20;Saying" data-thr-url="http&#x3A;&#x2F;&#x2F;j.mp&#x2F;1A0YXDi">
+			<span>Twitter</span>
+		</a>
+		<a href="#" class="sharetools-link email st_email_custom ml"popup="true" st_url="http://www.hollywoodreporter.com/news/better-call-saul-review-amc-770784">
+			<span>Email</span>
+		</a>
+		<a href="//www.hollywoodreporter.com/print/770784" target="_blank" class="sharetools-link print" data-tracklabel="Sharing Print">
+			<span>Print</span>
+		</a>
+		<a href="javascript:void(0);" class="sharetools-link comment">
+			<span>Comment</span>
+	</a>
+	</nav>
+</div>
+</aside>
+
+<div class="article-body">
+  <div class="article-meta">
+    <div itemprop="author" class="article-author">by Ashley Lee</div>
+    <div itemprop="dateCreated" class="article-created">2/7/2015 6:00am PST</div>
+  </div>
+       <div itemprop="articleBody" class="article-text">
+        <p><em>Better Call Saul</em>, the highly anticipated prequel&nbsp;spinoff&nbsp;of AMC&#39;s hit <em>Breaking Bad</em>, zooms in on <strong>Bob Odenkirk </strong>as Jimmy McGill, as he turns into ethically challenged lawyer Saul Goodman &mdash; long before he started doing business with the&nbsp;meth-cooking duo of <em>Bad</em>.</p>
+<p>Co-created by <strong>Vince Gilligan</strong> and <strong>Peter Gould</strong>, the series also stars <strong>Jonathan Banks</strong>,<strong>&nbsp;Michael McKean</strong>,<strong> Rhea Seehorn</strong>,<strong> Patrick Fabian </strong>and <strong>Michael Mando</strong>. It kicks off on AMC with a two-night premiere (Sunday and Monday at 10 p.m.).</p>
+<p>&nbsp;</p>
+<div class="read-more">
+	<a href="http://www.hollywoodreporter.com/live-feed/saul-finds-religion-new-better-734939" title="Saul Finds Religion in New 'Better Call Saul' Clip"> <span>Read More</span> <span>Saul Finds Religion in New &#39;Better Call Saul&#39; Clip</span> </a></div>
+<p>&nbsp;</p>
+<p>With a pilot directed by Gilligan, see what top critics are saying about <em>Better Call Saul</em>:</p>
+<p><a href="http://www.hollywoodreporter.com/review/better-call-saul-tv-review-765600" target="_blank"><em>The Hollywood Reporter&#39;s</em></a> <strong>Tim Goodman</strong>&nbsp;warns, &quot;<em>Better Call Saul</em> really isn&#39;t much of a comedy. It&#39;ll be funny &mdash; there are parts of the first two episodes that certainly are &mdash; but this is the familiar ground of black humor and, for those who just want a clean and clear description, more drama than comedy. It&#39;s essential to know that going in. ... <em>Saul</em> is very much its own beast, a fairly clear departure stylistically from <em>Breaking Bad</em> and a drama with wholly different roots as well. The first hour moves slower than people might be expecting, but builds to and ends on a wonderful cliff-hanger that is partly but not fully solved in the second episode (luckily airing only a day after the pilot). ...&nbsp;The first episode certainly lets Gilligan (who directed it) and Gould (who co-wrote it with Gilligan), tweak viewers&#39; shared history and remind people that their attention to detail, love of nuance and resistance to convention make for interesting television.&quot;</p>
+<p>Playing the title character, &quot;Odenkirk, for his part, is superb here. He proves yet again what a fine, grounded actor he is. Sure, he gets to unleash himself in fits and starts, but is primarily seen as introspective, still mostly innocent, as the series starts. Showing compassion (particularly as he interacts with brother Chuck) and lost-lamb desperation are the qualities that illustrate Odenkirk&#39;s range. He&#39;s in pretty much every scene, so coming to love his character (as well as understand him in these early days) is essential.&quot;</p>
+<p>&nbsp;</p>
+<div class="read-more">
+	<a href="http://www.hollywoodreporter.com/live-feed/better-call-saul-cast-creators-768430" title="'Better Call Saul' Cast, Creators Reveal Details of 'Breaking Bad' Spinoff"> <span>Read More</span> <span>&#39;Better Call Saul&#39; Cast, Creators Reveal Details of &#39;Breaking Bad&#39; Spinoff</span> </a></div>
+<p>&nbsp;</p>
+<p><a href="http://www.nytimes.com/2015/02/06/arts/television/better-call-saul-a-breaking-bad-spinoff-on-amc.html?_r=0" target="_blank"><em>The New York Times&#39;</em></a> <strong>Alessandra Stanley</strong>&nbsp;reassures that it&#39;s &quot;better than good: It&rsquo;s delightful &mdash; in a brutal, darkly comic way, of course. ... [It] takes its time, teasing the viewer with enigmatic shots and oblique conversations. There is an odd tilt to characters and situations &mdash; much like the show&rsquo;s cinematography. And the camera retains the restless, quirky spirit of <em>Breaking Bad. ...&nbsp;</em><em>Saul</em> really gets going in the second episode, especially in a scene in which Jimmy uses his verbal skills &mdash; a dizzying blend of humility, guile and volubility &mdash; to avert disaster. Best of all, this is a series that can stand on its own. Fans of Walter White have a leg up on the outcome, but there is so much to this offshoot that viewers who have never seen <em>Breaking Bad</em>&nbsp;won&rsquo;t feel left out.&quot;</p>
+<p><a href="http://www.washingtonpost.com/graphics/entertainment/2015-midseason-tv-preview/#better-call-saul" target="_blank"><em>The Washington Post&#39;s</em></a> <strong>Hank Stuever </strong>says it &quot;is right in line with the tone and style of the original, now-classic series. And like its predecessor, <em>Better Call Saul</em> raises more questions in two hours than it will readily answer. ...&nbsp;It isn&rsquo;t too long before Jimmy/Saul is bound and gagged and thrown to the desert ground under a big, blue sky dotted with clouds &mdash; and <em>Breaking Bad</em>&nbsp;fans are home. The instant the duct tape is ripped off his mouth by his captors, a certain Saul-ness kicks in and Odenkirk&rsquo;s talent is on full display as Jimmy delivers a pleading, philosophical monologue on &mdash; among other things &mdash; the awful nature of revenge. It&rsquo;s a beautiful, even melodious act of BS-ing.&quot;</p>
+<p><a href="http://www.nydailynews.com/entertainment/tv/better-call-saul-tv-review-article-1.2100810" target="_blank"><em>New York Daily News&#39;</em></a> <strong>David Hinckley</strong> writes it &quot;starts off doing the right things to outrun the shadow of <em>Breaking Bad</em>. ... Several elements in <em>Saul</em>&nbsp;echo <em>Breaking Bad</em>. Family entanglements, the pressure of a serious illness, a cross-generational alliance. ... <em>Saul</em>&nbsp;picks up plot speed rapidly at the end of the first hour. The beginning, however, is so deliberate it&rsquo;s almost hypnotic. It&rsquo;s shot in black-and-white, with no dialogue for several minutes. It&rsquo;s also shot out of time, and what we see falls right into the pocket for <em>Breaking Bad</em> fans.&quot;</p>
+<p>&nbsp;</p>
+<div class="read-more">
+	<a href="http://www.hollywoodreporter.com/live-feed/better-call-saul-wants-breaking-770751" title="'Better Call Saul' Wants 'Breaking Bad' Viewers ... But Not the Comparisons"> <span>Read More</span> <span>&#39;Better Call Saul&#39; Wants &#39;Breaking Bad&#39; Viewers ... But Not the Comparisons</span> </a></div>
+<p>&nbsp;</p>
+<p><a href="http://www.sfgate.com/tv/article/TV-Don-t-hang-up-on-Breaking-Bad-spin-off-6062113.php" target="_blank"><em>San Francisco Chronicle&#39;s</em></a> <strong>David Wiegand&nbsp;</strong>explains, &quot;No, it&rsquo;s not as good as <em>Breaking Bad</em>, but it has moments of possibility, if not out-and-out hope that with care and a more focused sense by Gould and Gilligan of what they want to do with their unlikely lead character, <em>Saul</em>&nbsp;might be worth a weekly call. ...&nbsp;By the third episode of the three sent to critics, the bits and pieces of apparent flotsam from the earlier episodes have begun to form a direction for<em> Saul</em>, and as they do, the series becomes less a comedy and more a serious exploration of a Falstaffian character who may be much more than the buffoon he seems on the surface.&quot;</p>
+<p><em>Twitter: @cashleelee</em></p>
+
+       </div>
+      <div class="dfp-ad dfp-ad-m3" id="dfp-ad-m3" data-tracklabel="Ad Click">
+	<script type="text/javascript">
+		googletag.cmd.push(function(){ googletag.display('dfp-ad-m3'); });
+	</script>
+</div>
+    </div>
+
+    <footer class="article-footer">
+    	<div class="article-author-social">
+		  <div class="author-twitter"><a href="https://twitter.com/intent/user?screen_name=cashleelee" data-tracklabel="Author Twitter">@cashleelee</a></div>
+        <div class="author-email" data-tracklabel="Author Email"><a href="mailto:THRnews@thr.com">THRnews@thr.com</a></div>
+    		    	</div>
+      <div class="article-footer-social">
+		
+<div class="sharetools" data-url="http://www.hollywoodreporter.com/news/better-call-saul-review-amc-770784" data-title="AMC&#x27;s&#x20;&#x27;Better&#x20;Call&#x20;Saul&#x27;&#x3A;&#x20;What&#x20;the&#x20;Critics&#x20;Are&#x20;Saying">
+	<nav class="sharetools-inner">
+		<a href="javascript:void(0);" class="sharetools-link facebook thr-social-share" data-thr-share="facebook" data-thr-title="AMC&#x27;s&#x20;&#x27;Better&#x20;Call&#x20;Saul&#x27;&#x3A;&#x20;What&#x20;the&#x20;Critics&#x20;Are&#x20;Saying" data-thr-url="http&#x3A;&#x2F;&#x2F;www.hollywoodreporter.com&#x2F;news&#x2F;better-call-saul-review-amc-770784">
+			<span>Facebook</span>
+		</a>
+		<a href="javascript:void(0);" class="sharetools-link twitter thr-social-share" data-thr-share="twitter" data-thr-title="AMC&#x27;s&#x20;&#x27;Better&#x20;Call&#x20;Saul&#x27;&#x3A;&#x20;What&#x20;the&#x20;Critics&#x20;Are&#x20;Saying" data-thr-url="http&#x3A;&#x2F;&#x2F;j.mp&#x2F;1A0YXDi">
+			<span>Twitter</span>
+		</a>
+		<a href="#" class="sharetools-link email st_email_custom ml"popup="true" st_url="http://www.hollywoodreporter.com/news/better-call-saul-review-amc-770784">
+			<span>Email</span>
+		</a>
+		<a href="//www.hollywoodreporter.com/print/770784" target="_blank" class="sharetools-link print" data-tracklabel="Sharing Print">
+			<span>Print</span>
+		</a>
+		<a href="javascript:void(0);" class="sharetools-link comment">
+			<span>Comment</span>
+	</a>
+	</nav>
+</div>
+      </div>
+          </footer>
+
+</article>
+<div class="gravity-widget gravity-next-article-widget" data-trackaction="Story Well" data-tracklabel="NextUp Bottom">
+	<div id="grv-personalization-37"></div>
+	<script type='text/javascript'>
+	  //<![CDATA[
+	    (function(){
+	    window.gravityInsightsParams = {
+	      'type': 'content',
+	      'action': '',
+	      'site_guid': '01b0b9ad501e0c849a822e6124ff0fc2'
+	    };
+	    var adServerReq,bUrl,cburl,doUseGravityUserGuid,includeJs,jq,pfurl,type,ug,wlPrefix,wlUrl,_ref,_ref1,_ref2;includeJs=function(a){var b;b=document.createElement("script");b.async=!0;b.src=a;a=document.getElementsByTagName("script")[0];return a.parentNode.insertBefore(b,a)};bUrl="";ug=(doUseGravityUserGuid=!0===gravityInsightsParams.useGravityUserGuid?1:0)?"":gravityInsightsParams.user_guid||(null!=(_ref=/grvinsights=([^;]+)/.exec(document.cookie))?_ref[1]:void 0)||"";
+	    wlUrl=(wlPrefix="https:"===location.protocol?"https://secure-api.gravity.com/v1/api/intelligence":"http://rma-api.gravity.com/v1/api/intelligence",jq=(null!=(_ref1=window.jQuery)?null!=(_ref2=_ref1.fn)?_ref2.jquery:void 0:void 0)||"",type="jsonp",adServerReq=gravityInsightsParams.ad||"",cburl=gravityInsightsParams.cburl||"",pfurl=gravityInsightsParams.pfurl||"",""+wlPrefix+"/wl?jq="+jq+"&sg="+gravityInsightsParams.site_guid+"&ug="+ug+"&ugug="+doUseGravityUserGuid+"&id=grv-personalization-37&pl=37"+
+	    ("&type="+type+"&ad="+adServerReq+"&cburl=")+encodeURIComponent(cburl)+"&pfurl="+encodeURIComponent(pfurl)+("&x="+(new Date).getTime())+("undefined"!==typeof forceArticleIds&&null!==forceArticleIds&&forceArticleIds.join?"&ai="+forceArticleIds.join(","):"")+("undefined"!==typeof apids&&null!==apids&&""!==apids?"&apids="+encodeURIComponent(apids):""));bUrl&&includeJs(bUrl);wlUrl&&(window.gravityInsightsParams.sidebar&&(window.gravityInsightsParams.wlStartTime=(new Date).getTime()),includeJs(wlUrl));})();
+	  //]]>
+	</script>
+</div><div id="email-subscribe" class="email-subscribe" data-template="emailSubscribeCompleted">
+	<h2 class="module-heading">
+		Never miss a story. Stay up-to-date with THR’s Daily Headlines.
+	</h2>
+	<form id="email-subscribe-form">
+		<input id="email-subscribe-input-email" class="email-subscribe-input-email" type="email" placeholder="Enter Your Email Address">
+		<input type="submit" value="Sign Up Now">
+		<p class="error-message"></p>
+	</form>
+</div>
+	</div>
+	<div class="container">
+		<div id="bottom-widget-area" class="bottom-widget-area">
+			<div id="story-points">
+														<div id="editorial-featured-content-module" class="editorial-featured-content-module">
+                <h3 class="module-heading">Must Reads</h3>
+            
+               <a href="/live-feed/muppets-revived-at-abc-big-786193">
+                     <img src="//www.hollywoodreporter.com/sites/default/files/imagecache/NFE_Landscape/2015/04/the_muppets_bill_prady_inset.jpg" />
+                    <p>
+          &#039;Muppets&#039; Revived at ABC With &#039;Big Bang Theory&#039; Co-Creator
+          </p>
+        </a>
+               <a href="/news/mad-men-uncensored-epic-never-780101">
+                     <img src="//www.hollywoodreporter.com/sites/default/files/imagecache/NFE_Landscape/2015/03/compgroup3.jpg" />
+                    <p>
+          The Uncensored, Epic, Never-Told Story Behind &#039;Mad Men&#039;
+          </p>
+        </a>
+               <a href="/live-feed/mad-men-blackface-fat-suits-786062">
+                     <img src="//www.hollywoodreporter.com/sites/default/files/imagecache/NFE_Landscape/2015/04/mad_men_split.jpg" />
+                    <p>
+          &#039;Mad Men&#039;: Blackface, Fat Suits, Severed Nipples and More Untold Stories From THR&#039;s Oral History
+          </p>
+        </a>
+               <a href="/news/game-thrones-star-emilia-clarke-783854">
+                     <img src="//www.hollywoodreporter.com/sites/default/files/imagecache/NFE_Landscape/2015/03/2015_bts_emilia_clarke_clean.jpg" />
+                    <p>
+          &#039;Game of Thrones&#039; Star Emilia Clarke on Playing Sarah Connor, Turning Down &#039;Fifty Shades&#039; and Moving on From Nudity
+          </p>
+        </a>
+               <a href="/news/gavin-polone-tvs-dirty-secret-783941">
+                     <img src="//www.hollywoodreporter.com/sites/default/files/imagecache/NFE_Landscape/2015/03/agent_gets_money_for_nothing_illo.jpg" />
+                    <p>
+          Gavin Polone on TV&#039;s Dirty Secret: Your Agent Gets Money for Nothing (Guest Column)
+          </p>
+        </a>
+               <a href="/news/teenage-mutant-ninja-turtles-untold-785653">
+                     <img src="//www.hollywoodreporter.com/sites/default/files/imagecache/NFE_Landscape/2015/03/teenage_mutant_turtles_still_2.jpg" />
+                    <p>
+          &#039;Teenage Mutant Ninja Turtles&#039;: Untold Story of the Movie &quot;Every Studio in Hollywood&quot; Rejected
+          </p>
+        </a>
+        </div>
+													<div id="gravity-story-points-widget" class="gravity-widget gravity-story-points-widget">
+				        <div id="gravity-story-points-widget" class="gravity-widget gravity-story-points-widget">
+    <div id="grv-personalization-38"></div>
+	<script type='text/javascript'>
+	  //<![CDATA[
+	    (function(){
+	    window.gravityInsightsParams = {
+	      'type': 'content',
+	      'action': '',
+	      'site_guid': '01b0b9ad501e0c849a822e6124ff0fc2'
+	    };
+	    var adServerReq,bUrl,cburl,doUseGravityUserGuid,includeJs,jq,pfurl,type,ug,wlPrefix,wlUrl,_ref,_ref1,_ref2;includeJs=function(a){var b;b=document.createElement("script");b.async=!0;b.src=a;a=document.getElementsByTagName("script")[0];return a.parentNode.insertBefore(b,a)};bUrl="";ug=(doUseGravityUserGuid=!0===gravityInsightsParams.useGravityUserGuid?1:0)?"":gravityInsightsParams.user_guid||(null!=(_ref=/grvinsights=([^;]+)/.exec(document.cookie))?_ref[1]:void 0)||"";
+	    wlUrl=(wlPrefix="https:"===location.protocol?"https://secure-api.gravity.com/v1/api/intelligence":"http://rma-api.gravity.com/v1/api/intelligence",jq=(null!=(_ref1=window.jQuery)?null!=(_ref2=_ref1.fn)?_ref2.jquery:void 0:void 0)||"",type="jsonp",adServerReq=gravityInsightsParams.ad||"",cburl=gravityInsightsParams.cburl||"",pfurl=gravityInsightsParams.pfurl||"",""+wlPrefix+"/wl?jq="+jq+"&sg="+gravityInsightsParams.site_guid+"&ug="+ug+"&ugug="+doUseGravityUserGuid+"&id=grv-personalization-38&pl=38"+
+	    ("&type="+type+"&ad="+adServerReq+"&cburl=")+encodeURIComponent(cburl)+"&pfurl="+encodeURIComponent(pfurl)+("&x="+(new Date).getTime())+("undefined"!==typeof forceArticleIds&&null!==forceArticleIds&&forceArticleIds.join?"&ai="+forceArticleIds.join(","):"")+("undefined"!==typeof apids&&null!==apids&&""!==apids?"&apids="+encodeURIComponent(apids):""));bUrl&&includeJs(bUrl);wlUrl&&(window.gravityInsightsParams.sidebar&&(window.gravityInsightsParams.wlStartTime=(new Date).getTime()),includeJs(wlUrl));})();
+	  //]]>
+	</script>
+</div>				    </div>
+								<div class="dfp-ad dfp-ad-m2" id="dfp-ad-m2" data-tracklabel="Ad Click">
+	<script type="text/javascript">
+		googletag.cmd.push(function(){ googletag.display('dfp-ad-m2'); });
+	</script>
+</div>
+			</div>
+		</div>
+
+		<div class="gravity-widget gravity-most-popular">
+	<div id="grv-personalization-41"></div>
+	<script type='text/javascript'>
+	  //<![CDATA[
+	    (function(){
+	    window.gravityInsightsParams = {
+	      'type': 'content',
+	      'action': '',
+	      'site_guid': '01b0b9ad501e0c849a822e6124ff0fc2'
+	    };
+	    var adServerReq,bUrl,cburl,doUseGravityUserGuid,includeJs,jq,pfurl,type,ug,wlPrefix,wlUrl,_ref,_ref1,_ref2;includeJs=function(a){var b;b=document.createElement("script");b.async=!0;b.src=a;a=document.getElementsByTagName("script")[0];return a.parentNode.insertBefore(b,a)};bUrl="";ug=(doUseGravityUserGuid=!0===gravityInsightsParams.useGravityUserGuid?1:0)?"":gravityInsightsParams.user_guid||(null!=(_ref=/grvinsights=([^;]+)/.exec(document.cookie))?_ref[1]:void 0)||"";
+	    wlUrl=(wlPrefix="https:"===location.protocol?"https://secure-api.gravity.com/v1/api/intelligence":"http://rma-api.gravity.com/v1/api/intelligence",jq=(null!=(_ref1=window.jQuery)?null!=(_ref2=_ref1.fn)?_ref2.jquery:void 0:void 0)||"",type="jsonp",adServerReq=gravityInsightsParams.ad||"",cburl=gravityInsightsParams.cburl||"",pfurl=gravityInsightsParams.pfurl||"",""+wlPrefix+"/wl?jq="+jq+"&sg="+gravityInsightsParams.site_guid+"&ug="+ug+"&ugug="+doUseGravityUserGuid+"&id=grv-personalization-41&pl=41"+
+	    ("&type="+type+"&ad="+adServerReq+"&cburl=")+encodeURIComponent(cburl)+"&pfurl="+encodeURIComponent(pfurl)+("&x="+(new Date).getTime())+("undefined"!==typeof forceArticleIds&&null!==forceArticleIds&&forceArticleIds.join?"&ai="+forceArticleIds.join(","):"")+("undefined"!==typeof apids&&null!==apids&&""!==apids?"&apids="+encodeURIComponent(apids):""));bUrl&&includeJs(bUrl);wlUrl&&(window.gravityInsightsParams.sidebar&&(window.gravityInsightsParams.wlStartTime=(new Date).getTime()),includeJs(wlUrl));})();
+	  //]]>
+	</script>
+</div>
+		<div class="gravity-widget gravity-videos">
+	<div id="grv-personalization-39"></div>
+	<script type='text/javascript'>
+	  //<![CDATA[
+	    (function(){
+	    window.gravityInsightsParams = {
+	      'type': 'content',
+	      'action': '',
+	      'site_guid': '01b0b9ad501e0c849a822e6124ff0fc2'
+	    };
+	    var adServerReq,bUrl,cburl,doUseGravityUserGuid,includeJs,jq,pfurl,type,ug,wlPrefix,wlUrl,_ref,_ref1,_ref2;includeJs=function(a){var b;b=document.createElement("script");b.async=!0;b.src=a;a=document.getElementsByTagName("script")[0];return a.parentNode.insertBefore(b,a)};bUrl="";ug=(doUseGravityUserGuid=!0===gravityInsightsParams.useGravityUserGuid?1:0)?"":gravityInsightsParams.user_guid||(null!=(_ref=/grvinsights=([^;]+)/.exec(document.cookie))?_ref[1]:void 0)||"";
+	    wlUrl=(wlPrefix="https:"===location.protocol?"https://secure-api.gravity.com/v1/api/intelligence":"http://rma-api.gravity.com/v1/api/intelligence",jq=(null!=(_ref1=window.jQuery)?null!=(_ref2=_ref1.fn)?_ref2.jquery:void 0:void 0)||"",type="jsonp",adServerReq=gravityInsightsParams.ad||"",cburl=gravityInsightsParams.cburl||"",pfurl=gravityInsightsParams.pfurl||"",""+wlPrefix+"/wl?jq="+jq+"&sg="+gravityInsightsParams.site_guid+"&ug="+ug+"&ugug="+doUseGravityUserGuid+"&id=grv-personalization-39&pl=39"+
+	    ("&type="+type+"&ad="+adServerReq+"&cburl=")+encodeURIComponent(cburl)+"&pfurl="+encodeURIComponent(pfurl)+("&x="+(new Date).getTime())+("undefined"!==typeof forceArticleIds&&null!==forceArticleIds&&forceArticleIds.join?"&ai="+forceArticleIds.join(","):"")+("undefined"!==typeof apids&&null!==apids&&""!==apids?"&apids="+encodeURIComponent(apids):""));bUrl&&includeJs(bUrl);wlUrl&&(window.gravityInsightsParams.sidebar&&(window.gravityInsightsParams.wlStartTime=(new Date).getTime()),includeJs(wlUrl));})();
+	  //]]>
+	</script>
+</div>
+	</div>
+
+<div class="leaderboard-bottom">
+	<div class="dfp-ad dfp-ad-a" id="dfp-ad-a" data-tracklabel="Ad Click">
+	<script type="text/javascript">
+		googletag.cmd.push(function(){ googletag.display('dfp-ad-a'); });
+	</script>
+</div>
+</div>
+
+<div class="container">
+	<section id="article-comments" class="disqus comments">
+    <div id="disqus_thread" class="discus-comments-wrapper"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'hollywoodreporter';
+        var disqus_identifier = 'node/770784';
+        var disqus_title = 'AMCs Better Call Saul: What the Critics Are Saying';
+        var disqus_url = 'http://www.hollywoodreporter.com/news/better-call-saul-review-amc-770784';
+    </script>
+    <script async src="//hollywoodreporter.disqus.com/embed.js"></script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+</div>
+
+</div><!-- #page-content -->
+
+<div class="gravity-whats-hot">
+    <div class="container">
+      	<div id="grv-personalization-40"></div>
+		<script type='text/javascript'>
+		  //<![CDATA[
+		    (function(){
+		    window.gravityInsightsParams = {
+		      'type': 'content',
+		      'action': '',
+		      'site_guid': '01b0b9ad501e0c849a822e6124ff0fc2'
+		    };
+		    var adServerReq,bUrl,cburl,doUseGravityUserGuid,includeJs,jq,pfurl,type,ug,wlPrefix,wlUrl,_ref,_ref1,_ref2;includeJs=function(a){var b;b=document.createElement("script");b.async=!0;b.src=a;a=document.getElementsByTagName("script")[0];return a.parentNode.insertBefore(b,a)};bUrl="";ug=(doUseGravityUserGuid=!0===gravityInsightsParams.useGravityUserGuid?1:0)?"":gravityInsightsParams.user_guid||(null!=(_ref=/grvinsights=([^;]+)/.exec(document.cookie))?_ref[1]:void 0)||"";
+		    wlUrl=(wlPrefix="https:"===location.protocol?"https://secure-api.gravity.com/v1/api/intelligence":"http://rma-api.gravity.com/v1/api/intelligence",jq=(null!=(_ref1=window.jQuery)?null!=(_ref2=_ref1.fn)?_ref2.jquery:void 0:void 0)||"",type="jsonp",adServerReq=gravityInsightsParams.ad||"",cburl=gravityInsightsParams.cburl||"",pfurl=gravityInsightsParams.pfurl||"",""+wlPrefix+"/wl?jq="+jq+"&sg="+gravityInsightsParams.site_guid+"&ug="+ug+"&ugug="+doUseGravityUserGuid+"&id=grv-personalization-40&pl=40"+
+		    ("&type="+type+"&ad="+adServerReq+"&cburl=")+encodeURIComponent(cburl)+"&pfurl="+encodeURIComponent(pfurl)+("&x="+(new Date).getTime())+("undefined"!==typeof forceArticleIds&&null!==forceArticleIds&&forceArticleIds.join?"&ai="+forceArticleIds.join(","):"")+("undefined"!==typeof apids&&null!==apids&&""!==apids?"&apids="+encodeURIComponent(apids):""));bUrl&&includeJs(bUrl);wlUrl&&(window.gravityInsightsParams.sidebar&&(window.gravityInsightsParams.wlStartTime=(new Date).getTime()),includeJs(wlUrl));})();
+		  //]]>
+		</script>
+    </div>
+</div><!-- footer -->
+<footer id="site-footer" class="site-footer" data-trackaction="Drip Pan Footer">
+
+	<div class="container">
+
+		<div class="branding column">
+
+			<div class="brand">
+
+				<a href="/" title="The Hollywood Reporter" rel="home" class="logo" data-tracklabel="DPF THR Logo">The Hollywood Reporter</a>
+
+			</div>
+			<p class="copyright date">
+				&copy;2015 The Hollywood Reporter.<br>All rights reserved.
+			</p>
+			<p class="copyright terms">
+				<a href="/legal/terms">Terms of Use</a> &nbsp; |
+				&nbsp; <a href="/legal/privacy">Privacy Policy</a>
+			</p>
+
+		</div>
+
+		<div class="affiliate column">
+			<ul>
+				<li>
+					<a href="/about/about" data-tracklabel="DPF About Us">About Us</a>
+				</li>
+				<li>
+					<a href="/user/login" data-tracklabel="DPF Login">Login</a>
+				</li>
+				<li>
+					<a href="/daily" data-tracklabel="DPF Daily PDF">Daily PDF</a>
+				</li>
+				<li>
+					<a href="//www.hollywoodreporter.com/subscribe3" data-tracklabel="DPF Subscribe">Subscribe</a>
+				</li>
+				<li>
+					<a href="/services" data-tracklabel="DPF Subscriber Services">Subscriber Services</a>
+				</li>
+				<li>
+					<a href="//shop.hollywoodreporter.com/" data-tracklabel="DPF Back Issues">Back Issues</a>
+				</li>
+				<li>
+					<a href="/faqs" data-tracklabel="DPF FAQs">FAQs</a>
+				</li>
+				<li>
+					<a href="/ad/contacts" data-tracklabel="DPF Advertising">Advertising</a>
+				</li>
+				<li>
+					<a href="/contact" data-tracklabel="DPF Contact Us">Contact Us</a>
+				</li>
+				<li>
+					<a href="/rss" target="_blank" data-tracklabel="DPF Ent RSS">Entertainment News RSS</a>
+				</li>
+			</ul>
+		</div>
+		<div class="follow column">
+			<ul>
+				<li>
+					Follow Us On
+					<a href="http://twitter.com/thr" target="_blank" data-tracklabel="DPF Twitter">Twitter</a>
+				</li>
+				<li>
+					Find Us On
+					<a href="http://www.facebook.com/HollywoodReporter" target="_blank" data-tracklabel="DPF Facebook">Facebook</a>
+				</li>
+				<li>
+					Watch Us On
+					<a href="http://www.youtube.com/thrnetwork" target="_blank" data-tracklabel="DPF YouTube">Youtube</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="partner column">
+			<div class="publications">
+				<p>Our affiliate publications</p>
+				<ul>
+					<li>
+						<a href="http://www.billboard.com/" target="_blank" class="footer logo billboard" data-tracklabel="DPF Billboard">Billboard</a>
+					</li>
+					<li>
+						<a href="http://www.adweek.com/" target="_blank" class="footer logo adweek" data-tracklabel="DPF Ad Week">Ad Week</a>
+					</li>
+					<li>
+						<a class="footer Backstage" href="http://www.backstage.com/" title="Backstage Casting" data-tracklabel="DPF Backstage">Backstage Casting</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</footer>
+
+<script type="application/ld+json">
+{ "@context" : "http://schema.org",
+  "@type" : "Organization",
+  "name" : "THe Hollywood Reqporter",
+  "url" : "http://www.hollywoodreporter.com",
+  "sameAs" : [
+  	"https://www.youtube.com/user/thrnetwork",
+    "https://twitter.com/thr",
+    "https://www.facebook.com/HollywoodReporter",
+    "https://instagram.com/hollywoodreporter/"] 
+}
+</script>
+<script type="text/javascript">var __st_loadLate=true;</script>
+<div id="fb-root"></div>
+<script type="text/javascript">
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId: '110545975674988',
+      xfbml: true  // parse XFBML
+    });
+  };
+  (function() {
+    var e = document.createElement('script');
+    e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+    e.async = true;
+    document.getElementById('fb-root').appendChild(e);
+  }());
+</script>
+<script type="text/javascript">
+    var tJsHost = (("https:" == document.location.protocol ) ? "https://ws." : "http://w.");
+    document.write(unescape("%3Cscript src='" + tJsHost + "sharethis.com/button/buttons.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script async type="text/javascript" src="//platform.twitter.com/widgets.js"></script> 
+<script type="text/javascript" src="/static/frontend/2015_04_03_1742/scripts/vendor.js"></script>
+<script type="text/javascript" src="/static/frontend/2015_04_03_1742/scripts/thr-article.js"></script>
+<noscript>
+    <img src="http://b.scorecardresearch.com/p?c1=2&c2=7395269&cv=2.0&cj=1" />
+</noscript>
+<script type="text/javascript">
+    setTimeout(function(){var a=document.createElement("script");
+        var b=document.getElementsByTagName("script")[0];
+        a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0021/6696.js?"+Math.floor(new Date().getTime()/3600000);
+        a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script><script type='text/javascript'>
+    var _sf_async_config={};
+    /** CONFIGURATION START **/
+    _sf_async_config.uid = 3388;
+    _sf_async_config.domain = 'hollywoodreporter.com';
+    _sf_async_config.useCanonical = true;
+    _sf_async_config.authors = "Ashley Lee";
+    _sf_async_config.sections = "television, tv show reviews";
+    /** CONFIGURATION END **/
+    (function(){
+        function loadChartbeat() {
+            window._sf_endpt=(new Date()).getTime();
+            var e = document.createElement('script');
+            e.setAttribute('language', 'javascript');
+            e.setAttribute('type', 'text/javascript');
+            e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+            document.body.appendChild(e);
+        }
+        var oldonload = window.onload;
+        window.onload = (typeof window.onload != 'function') ?
+                loadChartbeat : function() { oldonload(); loadChartbeat(); };
+    })();
+</script>
+<script type='text/javascript'>
+  //<![CDATA[
+    (function(){
+    window.gravityInsightsParams = {
+      'type': 'content',
+      'action': '',
+      'site_guid': '01b0b9ad501e0c849a822e6124ff0fc2'
+    };
+    window.GravityUtils||(window.GravityUtils={});
+    window.GravityUtils.includeJs||(window.GravityUtils.includeJs=function(g,d,b){var f,c,e,a;null==d&&(d=function(){});null==b&&(b=function(){});f=document.getElementsByTagName("head")[0];a=document.createElement("script");a.async=!0;c=!1;e=function(){c=!0;a.onreadystatechange=a.onload=null;return d()};a.onreadystatechange=function(){if(!c&&(!this.readyState||"complete"===this.readyState||"loaded"===this.readyState))return e()};a.onload=function(){if(!c)return e()};a.addEventListener?a.addEventListener("error",
+    b,!1):a.attachEvent&&a.attachEvent("onerror",b);a.src=g;return(document.body||f).appendChild(a)});
+    var adServerReq,bUrl,doUseGravityUserGuid,jq,type,ug,wlPrefix,wlUrl,_ref,_ref1,_ref2;bUrl="https:"===document.location.protocol?"https://b-ssl.grvcdn.com/moth-min.js":"http://b.grvcdn.com/moth-min.js";ug=(doUseGravityUserGuid=!0===gravityInsightsParams.useGravityUserGuid?1:0)?"":gravityInsightsParams.user_guid||(null!=(_ref=/grvinsights=([^;]+)/.exec(document.cookie))?_ref[1]:void 0)||"";wlUrl=(wlPrefix="","");bUrl&&window.GravityUtils.includeJs(bUrl);wlUrl&&window.GravityUtils.includeJs(wlUrl);})();
+  //]]>
+</script>
+<!-- Sailthru Horizon -->
+<script type="text/javascript">
+
+  (function() {
+    function loadHorizon() { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = location.protocol + '//ak.sail-horizon.com/horizon/v1.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); }
+    loadHorizon();
+    var oldOnLoad = window.onload;
+    window.onload = function() {
+      if (typeof oldOnLoad === 'function') { oldOnLoad(); }
+                        Sailthru.setup({"domain":"horizon.hollywoodreporter.com"});
+          
+    };
+  })();
+
+</script>
+<!-- / End Sailthru Horizon -->
+
+<!-- Sailthru Horizon -->
+<meta name="sailthru.date" content="2015-02-07 06:00:00" />
+       
+        
+     
+        
+     
+        
+     
+  
+  <meta name="sailthru.tags" content="Vince Gilligan ,Jonathan Banks,Bob Odenkirk,Better Call Saul" />
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"645958bbf2","applicationID":"3218764","transactionName":"YAZRbEJXC0VUURFZV1lMZkpZGQxYUVcdHkhfEw==","queueTime":0,"applicationTime":11929,"atts":"TEFSGgpNGEs=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-593.min.js"}</script></body>
+</html>

@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="no-js ie ie6 lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7 ]>   <html class="no-js ie ie7 lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8 ]>   <html class="no-js ie ie8 lt-ie9"> <![endif]--><!--[if IE 9 ]>   <html class="no-js ie ie9"> <![endif]--><!--[if (gt IE 9)|!(IE)]<!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"516102e2a5","applicationID":"56389","transactionName":"elxcRUVfVVwBSxYNV0pAXV9EH0pYC04=","queueTime":5,"applicationTime":2511,"agent":"js-agent.newrelic.com/nr-632.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQYFUFFXGwYGV1lb"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:20,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(3),window.onerror=e;try{throw new Error}catch(u){"stack"in u&&(t(4),t(5),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:8,3:3,4:7,5:6,6:21,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:21,2:22,ee:"QJf3ax",gos:"7eSDFh"}],6:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:22,2:21,ee:"QJf3ax"}],7:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:22,2:21,ee:"QJf3ax"}],8:[function(t,e){function n(){u.inPlace(this,p,"fn-")}function r(t,e){u.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),u=c(a),f=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),f.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,u.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:5,2:22,ee:"QJf3ax"}],9:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=n(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=n(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var f=0;c>f;f++)e.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:10,3:8,4:5,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],10:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],11:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:20,2:21,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===f.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=u.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),u=c.document,f=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:f,features:{}};u.addEventListener?(u.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(u.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:20,2:11,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],20:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],21:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],22:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:21,ee:"QJf3ax"}]},{},["G9z0Bl",4,9]);</script>
+    <title>How do dogs &quot;see&quot; with their noses? - Alexandra Horowitz | TED-Ed</title>
+    <meta content="You may have heard the expression that dogs ‘see with their noses.’ But these creature’s amazing nasal architecture actually reveals a whole world beyond what we can see. Alexandra Horowitz illustr..." name="description" />
+    <meta content="http://ed.ted.com/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz" property="og:url" />
+    <meta content="How do dogs &quot;see&quot; with their noses? - Alexandra Horowitz" property="og:title" />
+    <meta content="You may have heard the expression that dogs ‘see  with their noses.’ But these creature’s amazing nasal architecture  actually reveals a whole world beyond what we can see. Alexandra  Horowitz illustrates how the dog’s nose can smell the past, the future  and even things that can’t be seen at all." property="og:description" />
+    <meta content="http://i.ytimg.com/vi/p7fXa2Occ_U/0.jpg" property="og:image" />
+    <meta content="TED-Ed" property="og:site_name" /><meta content="authenticity_token" name="csrf-param" />
+    <meta content="Xqg1vl44UAS/1CPGxH29QR7QP8KMdjwWfBPjMyqdocM=" name="csrf-token" />
+    <meta content="on" http-equiv="cleartype">
+    <link href="//teded.tedcdn.com/assets/application-3d3e07682f3274ffe65a9d9d42d6671e.css" media="all" rel="stylesheet" type="text/css" /><link href="//teded.tedcdn.com/assets/_ui-ba6be1640be28934beb22e4dc6b1d1b6.css" media="all" rel="stylesheet" type="text/css" /><link href="//teded.tedcdn.com/assets/_wrapper-36082c46f40fcee9dd79bc1eae1f2e2a.css" media="all" rel="stylesheet" type="text/css" /><link href="//teded.tedcdn.com/assets/_on-5ff46f71af27229bfb6d40968eba4445.css" media="all" rel="stylesheet" type="text/css" /><link href="//teded.tedcdn.com/assets/_pages-004bf2f7aa73fe07b386f7c66ead1823.css" media="all" rel="stylesheet" type="text/css" /><link href="//teded.tedcdn.com/assets/_responsive-9d6ee166ac6134a50318a0a7740ff97d.css" media="all" rel="stylesheet" type="text/css" /><script src="//teded.tedcdn.com/assets/modernizr-73b68ee425725db92ca9bfce5d5e03ec.js" type="text/javascript"></script><!--[if IE 8]><link href="//teded.tedcdn.com/assets/ie8-b36c1f2f4e9248af95d13d80f2e32871.css" media="all" rel="stylesheet" type="text/css" /><![endif]-->
+  </head>
+  <body class="lessonsLayout lessonsShowView  lessonsShowView">
+    <!--[if lt IE 8]>
+    <p class="chromeframe">
+      Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.
+    </p>
+    <![endif]-->
+    <div id="header-top">
+      <div class="container">
+        <div class="row-fluid">
+          <div class="span12">
+            <section class="user-controls">
+              <ul class="main-nav pull-right logged-out">
+                <li>
+                  <a href="/users/new" target="_top">Register</a> or <a href="/session" target="_top">Log In</a>
+                </li>
+                <li>
+                  <a href="http://ted.com" class="hover-unstyled">
+                        <div class="icon-ted-ed ted"></div></a>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header class="header" id="headerNav">
+      <div class="container">
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="pull-left">
+              <div class="logo">
+                <h1><a href="/" class="hover-unstyled" target="_top" title="TED Ed: Lessons Worth Sharing">
+                                <div class="icon-ted-ed ted text-assertive"></div>
+                                <div class="icon-ted-ed ed muted"></div>
+                                <small>
+                                  <div class="icon-ted-ed lessons-worth-sharing visible-desktop muted"></div>
+                                  <div class="icon-ted-ed lessons-worth-sharing-compact hidden-desktop muted"></div>
+                                </small></a>
+                </h1>
+              </div>
+            </div>
+            <div class="pull-right">
+              <section class="secondary-navigation">
+                <ul class="inline text-ultralight">
+                  <li><a href="/tour" target="_top">Tour</a></li><li><a href="http://ed.ted.com/blog" target="_top">Blog</a></li><li><a href="/get_involved" target="_top">Get Involved</a></li><li><a href="http://support.ed.ted.com/" target="_top">FAQ</a></li><li><a href="/about" target="_top">About</a></li>
+                </ul>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="primary-navigation">
+        <div class="container">
+          <div class="row-fluid">
+            <div class="span12">
+              <div class="pull-left">
+                <ul class="inline text-light">
+                  <li><a href="/lessons" target="_top">Lessons</a></li><li><a href="/series" target="_top">Series</a></li><li><a href="http://community.ed.ted.com/teded" target="_top">Community</a></li><li><a href="/clubs" target="_top">Clubs</a></li>
+                </ul>
+              </div>
+              <div class="pull-right">
+                <div class="global-search text-left"><form accept-charset="UTF-8" action="/search" class="nomargin" id="search" method="get" target="_top"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+                    <input class="query-input text-ultralight nomargin input-block-level" id="search_field" name="qs" type="text" value="" /><button class="submit-search" type="submit"><i class="icon-search"></i></button></form>
+                  <div class="no-results">
+                    <section>
+                      <p>
+                        Sorry! No search results for <strong class="search-query"></strong>
+                      </p>
+                      <p>
+                        Help us expand our collection and be the first to <a class="create-a-lesson" href="#">create a lesson on  »</a>
+                      </p>
+                    </section>
+                    <section>
+                      <div class="media">
+                        <div class="pull-left">
+                          <img alt="ted" class="media-object" src="//teded.tedcdn.com/assets/icon-ted-55fb06de56bd3b983e1aea04cad0dcd9.png" />
+                        </div>
+                        <div class="media-body">
+                          New to TED Ed? Learn how to <a href="/tour">create a lesson &raquo;</a>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <section class="find-and-flip">
+      <div class="masthead">
+        <div class="top-wash"></div>
+        <div class="container">
+          <div class="bottom-wash"></div>
+          <div class="row-fluid">
+            <div class="span12 text-center">
+              <h2 class="text-ultralight inverse text-shadowed">
+                Build a lesson around any TED-Ed Original, TED Talk or YouTube video
+              </h2>
+            </div>
+          </div>
+          <div class="row-fluid">
+            <div class="span12 text-center">
+              <h2><a href="/videos">
+                          Create a Lesson<i class="icon icon-drawn-plus"></i></a>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><article class="top-padded">
+      <div class="container">
+        <div class="row-fluid">
+          <div class="span6">
+            <h1>
+              How do dogs &quot;see&quot; with their noses? - Alexandra Horowitz
+            </h1>
+          </div>
+          <div class="span6">
+            <div class="stats">
+              <div class="media">
+                <div class="pull-left">
+                  <div class="lesson-badge pull-left original"></div>
+                </div>
+                <div class="media-body">
+                  <ul class="inline">
+                    <li class="stat">
+                      <h3 class="text-ultralight">
+                        495,877 
+                        <div class="descriptor">
+                          Views
+                        </div>
+                      </h3>
+                    </li>
+                    <li class="stat">
+                      <h3 class="text-ultralight">
+                        1,991 
+                        <div class="descriptor">
+                          Questions Answered
+                        </div>
+                      </h3>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span12">
+            <hr>
+          </div>
+        </div>
+      </div>
+      <div class="topBd clearfix" id="begin">
+        <div class="row-fluid">
+          <div class="container">
+            <div class="letsBegin">
+              <h4>
+                Let&rsquo;s Begin&hellip;
+              </h4>
+            </div>
+            <div class="lessonDescription">
+              You may have heard the expression that dogs ‘see  with their noses.’ But these creature’s amazing nasal architecture  actually reveals a whole world beyond what we can see. Alexandra  Horowitz illustrates how the dog’s nose can smell the past, the future  and even things that can’t be seen at all.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btmpad  official" id="bodyWrapper" role="main">
+        <div class="container clearfix">
+          <div class="videoContainer">
+            <div id='playerContainer' data-lesson-id='573542' data-video-id='p7fXa2Occ_U'>
+                    </div>
+          </div>
+          <div class="rail defaultState" id="sideRail">
+            <ul class="uiToggleSwitch text-ultralight" id="learnNav">
+              <li class="watch">
+                <a class="active" data-panel="watch" data-url="/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz#watch" href="#watch" id="watch-link">Watch</a>
+              </li>
+              <li>
+                <a data-panel="review" data-url="/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz#review" href="#review" id="think-link">Think</a><a href="/lessons/573542/review_open?review=false" class="openReviewBody" data-remote="true" data-url="/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz#review" rel="nofollow">Open Review Body</a>
+                <div class="nav_tooltip review">
+                  <span>5 Multiple Choice &amp;<br/> 3 Open Answer Questions</span>
+                  <div class="arrowWrapper">
+                    <div class="arrow"></div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a data-panel="dig" data-url="/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz#digdeeper" href="#digdeeper" id="dig-link">Dig Deeper</a>
+                <div class="nav_tooltip dig">
+                  <span>Learn<br/>More</span>
+                  <div class="arrowWrapper">
+                    <div class="arrow"></div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a data-panel="discussion" data-url="/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz#discussion" href="#discussion">Discuss</a>
+                <div class="nav_tooltip discussions">
+                  <span>1 Guided Discussions &amp;<br/> 1 Open Discussions</span>
+                  <div class="arrowWrapper">
+                    <div class="arrow"></div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="toggleswitchbg"></div>
+            <div id="discussionPadding"></div>
+            <div class="visible-desktop">
+              <div class="clearfix nowrap">
+                <p>
+                  <br><a class="customize-this-lesson btn btn-large btn-assertive pull-left" data-track-action="lesson [573542]" data-track-category="flip this lesson" data-track-on="click" href="/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz/flip" rel="nofollow"><span class="buttonText">Customize This Lesson</span></a>
+                  <div class="counter-tooltip">
+                    113
+                  </div>
+                </p>
+              </div>
+              <p class="lead">
+                Create and share a new lesson based on this one.
+              </p>
+            </div>
+            <div class="discussionState" id="discussToggleContent" style="">
+              <div class="aboutLesson non-mobile clearfix">
+                <div class="content">
+                  <div class="aboutVideoSection clearfix" id="aboutVideoSidebar"></div>
+                  <div class="aboutDesc">
+                    <h2 class="text-light">
+                      About TED-Ed Originals
+                    </h2>
+                    <p class="lead">
+                      TED-Ed Original lessons feature the words and ideas of educators brought to life by professional animators. Are you an educator or animator interested in creating a TED-Ed original? <a href="/get_involved">Nominate yourself here »</a>
+                    </p>
+                  </div>
+                  <div class="aboutCreators">
+                    <h2 class="text-light">
+                      Meet The Creators
+                    </h2>
+                    <div class="creatorRow">
+                      <div class="row-fluid">
+                        <div class="span12">
+                          <div class="row-fluid">
+                            <div class="creator">
+                              <div class="media">
+                                <div class="pull-left">
+                                  <img alt="Jffpcn14tfwx4nwilray" class="media-object" height="60" src="http://res.cloudinary.com/heiglcqk3/image/upload/c_fill,h_120,w_120/v1422891125/jffpcn14tfwx4nwilray.jpg" width="60" />
+                                </div>
+                                <div class="media-body">
+                                  <h5 class="nomargin">
+                                    Alexandra Horowitz
+                                  </h5>
+                                  <br>Educator
+                                </div>
+                              </div>
+                            </div>
+                            <div class="creator">
+                              <div class="media">
+                                <div class="pull-left">
+                                  <img alt="Bu8ivhgo0hddzydmqhqs" class="media-object" height="60" src="http://res.cloudinary.com/heiglcqk3/image/upload/c_fill,h_120,w_120/v1375921782/bu8ivhgo0hddzydmqhqs.jpg" width="60" />
+                                </div>
+                                <div class="media-body">
+                                  <h5 class="nomargin">
+                                    Iuri Araújo
+                                  </h5>
+                                  <br>Director
+                                </div>
+                              </div>
+                            </div>
+                            <div class="creator">
+                              <div class="media">
+                                <div class="pull-left">
+                                  <img alt="D7fsctloe61hjqmpegya" class="media-object" height="60" src="http://res.cloudinary.com/heiglcqk3/image/upload/c_fill,h_120,w_120/v1375921841/d7fsctloe61hjqmpegya.jpg" width="60" />
+                                </div>
+                                <div class="media-body">
+                                  <h5 class="nomargin">
+                                    Guilherme Araujo
+                                  </h5>
+                                  <br>Director
+                                </div>
+                              </div>
+                            </div>
+                            <div class="creator">
+                              <div class="media">
+                                <div class="pull-left">
+                                  <img alt="Rxjhu31lvu3ptftzb0qp" class="media-object" height="60" src="http://res.cloudinary.com/heiglcqk3/image/upload/c_fill,h_120,w_120/v1375948195/rxjhu31lvu3ptftzb0qp.jpg" width="60" />
+                                </div>
+                                <div class="media-body">
+                                  <h5 class="nomargin">
+                                    Alex Gendler
+                                  </h5>
+                                  <br>Script Editor
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="rail">
+                  <div class="about-share" style="">
+                    <h2 class="text-light">
+                      Share
+                    </h2>
+                    <div class="share-buttons orange">
+                      <span class="facebook"><a data-popup="true" data-track-action="lesson [573542]" data-track-category="share" data-track-label="facebook" data-track-on="click" href="https://www.facebook.com/sharer/sharer.php?u=http://ed.ted.com/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz"><span class="icon-facebook"></span></a></span><span class="twitter"><a data-track-action="lesson [573542]" data-track-category="share" data-track-label="twitter" data-track-on="click" href="https://twitter.com/intent/tweet?via=TED_ED&amp;url=http://ed.ted.com/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz‎&amp;text=How%20do%20dogs%20%22see%22%20with%20their%20noses?%20-%20Alexandra%20Horowitz"><span class="icon-twitter"></span></a></span><span class="pinterest"><a data-track-action="lesson [573542]" data-track-category="share" data-track-label="pinterest" data-track-on="click" href="http://pinterest.com/pin/create/button/?url=http://ed.ted.com/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz&amp;media=http://i.ytimg.com/vi/p7fXa2Occ_U/0.jpg&amp;description=How%20do%20dogs%20%22see%22%20with%20their%20noses?%20-%20Alexandra%20Horowitz" target="_blank"><span class="icon-pinterest"></span></a></span><span class="google-plus"><a data-popup="true" data-track-action="lesson [573542]" data-track-category="share" data-track-label="google-plus" data-track-on="click" href="https://plus.google.com/share?url=http://ed.ted.com/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz"><span class="icon-google-plus"></span></a></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content" id="panels" style="">
+            <div class="panels closed">
+              <div class="panel watch"></div>
+              <div class="panel review"></div>
+              <div class="panel dig published">
+                <div class="content">
+                  <div class="heading">
+                    Additional Resources for you to Explore
+                  </div>
+                  <div class="text scroll uiScroll">
+                    <div class="more_text">
+                      A dog’s sense of smell is an amazing advantage.  Visit <a href="http://www.pbs.org/wgbh/nova/nature/dogs-sense-of-smell.html">NOVA’s Dog’s Dazzling Sense of Smell</a> website and find out just how awesome it is!  Wondering if your dog is one of the breeds with acute olfactory senses?  This <a href="http://dogtime.com/10-dog-breeds-with-the-best-sense-of-smell.html">site</a> lists the top ten most sensitive dog noses. The BBC also offers some insight into the nose of a dog with: <a href="https://www.youtube.com/watch?v=XPluctLY8Y4">How powerful is a dog’s nose?</a> Watch as “Fern,” a search and rescue dog, seeks out a canister of meat deep underwater.  An impressive feat, to be sure.  Can she find it?  Looking to “sniff” out more information about dogs? National Geographic’s <a href="http://channel.nationalgeographic.com/wild/wonder-of-dogs/videos/dogs-super-senses/">Wonder of Dogs</a> discusses all of a dog’s senses.<br><br>    Dogs are an immense part of many people’s lives and can open the world to people suffering from mobility issues, anxiety, seizures or autism.  Learn how dogs have helped <a href="http://www.smithsonianmag.com/science-nature/how-dogs-can-help-veterans-overcome-ptsd-137582968/?no-ist">Veterans recover from Post Traumatic Stress Syndrome</a>, provided <a href="https://www.youtube.com/watch?v=lwn5XngHgGU">assistance to autistic individuals</a>  (<a href="http://4pawsforability.org/autism-assistance-dog/">Four Paws for Ability</a>) and helped people with seizures as a <a href="http://www.epilepsy.com/get-help/staying-safe/seizure-dogs">Seizure Dog</a>. For a list of services provide by dogs to humans click <a href="http://www.buzzfeed.com/kaelintully/8-types-of-service-dogs-we-should-be-grateful-for#.wd6EqNNNJ">here</a>.  Interested in finding out more about service dogs or know someone who would benefit from one?  Visit the <a href="http://usdogregistry.org/?gclid=Cj0KEQiAl7KmBRDW6s-Xi_uT9OgBEiQAZdbbSbbhnYAZtY6-qpIfF99ggNPwZPqyRefjK4AhC4_OKp4aAu0O8P8HAQ">United States Dog Registry</a> for more information and links to <a href="http://www.assistancedogsinternational.org/about-us/types-of-assistance-dogs/service-dog/">International Services</a>.<br><br>    The canine sense of smell can do wonders.  What will the future bring for man’s best friend?  Dogs  that can detect cancer and bombs? Read this article and find out about <a href="http://well.blogs.nytimes.com/2014/09/10/training-dogs-to-sniff-out-cancer/">McBaine</a>, the highly trained cancer detection dog. Then, watch <a href="http://channel.nationalgeographic.com/channel/videos/nose-for-explosives/">here</a> as a dog is trained from a young age to <a href="http://ngm.nationalgeographic.com/2014/06/war-dogs/paterniti-text">detect explosives</a>.   Like to read about dogs? Check out <a href="http://www.smithsonianmag.com/innovation/the-education-of-a-bomb-dog-4945104/">Education of a Bomb Dog</a> from Smithsonian Magazine. <br><br>Dogs are also being used in conservation to “sniff” out invasive species like the <a href="http://www.nydailynews.com/news/national/florida-officials-labrador-retrievers-combat-invasive-snail-species-article-1.1441719">Giant African Snail</a>, and the <a href="http://www.cbsnews.com/videos/dogs-sniffing-out-invasive-zebra-mussels-in-minn/">zebra mussel</a>.  <a href="http://science.kqed.org/quest/2014/03/20/dog-detectives-a-nose-for-conservation/">Dog Detectives</a> have been of great assistance to scientists in the field.  Watch as a scat detecting canine opens up a <a href="http://video.nationalgeographic.com/video/dematteo-sniffing-dog">new world to scientists</a>.  Visit the University of Washington site: <a href="http://conservationbiology.uw.edu/conservation-canines/">Conservation Canines</a> and find out the details.<br>
+                    </div>
+                  </div>
+                  <div class="scroll-started-trigger" data-track-action="dig deeper" data-track-category="lesson [573542]" data-track-label="scroll - start" data-track-on="click" data-track-once="true"></div>
+                  <div class="scroll-to-bottom-trigger" data-track-action="dig deeper" data-track-category="lesson [573542]" data-track-label="scroll - finish" data-track-on="click" data-track-once="true"></div>
+                  <div class="dig-deeper-link-trigger" data-track-action="dig deeper" data-track-category="lesson [573542]" data-track-label="outbound click - [href of anchor tag]" data-track-on="click"></div>
+                </div>
+              </div>
+              <div class="panel final published">
+                <div class="content">
+                  <div class="text scroll uiScroll">
+                    <div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel discussion published"></div>
+            </div>
+          </div>
+          <div class="notVisible" id="discuss">
+            <div class="discussWrapper">
+              <div class="discussHeader guided guided" data-id="discuss-header">
+                <div class="discussTab guided">
+                  <div class="text">
+                    <a href="/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz/guided/discussions?lesson_id=how-do-dogs-see-with-their-noses-alexandra-horowitz" data-remote="true" data-url="/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz#discussion" rel="nofollow">1 Guided Discussion</a>
+                  </div>
+                  <div class="activeTab">
+                    <div class="shape"></div>
+                  </div>
+                </div>
+                <div class="discussTab open">
+                  <div class="text">
+                    <a href="/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz/open/discussions?lesson_id=how-do-dogs-see-with-their-noses-alexandra-horowitz" data-remote="true" data-url="/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz#discussion-open" rel="nofollow">1 Open Discussion</a>
+                  </div>
+                  <div class="activeTab">
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="discussBody guided" data-id="discuss-body">
+                <div class="discussContent">
+                  <div class="orator" data-id="orator-discuss">
+                    <div class="oratorImage">
+                      <img alt="Teded-square-logo" height="50" src="//teded.tedcdn.com/assets/avatars/teded-square-logo-8d3fe6bf2a87a2c196468f3c5c98c7c5.png" width="50" />
+                    </div>
+                    <div class="oratorInfo">
+                      <div class="name">
+                        TED-Ed
+                      </div>
+                      <div class="title">
+                        Lesson Creator
+                      </div>
+                      <div class="location">
+                        New York, NY
+                      </div>
+                    </div>
+                  </div>
+                  <div class="responses" data-id="responses-body">
+                    <div class="response" data-id="discussion-102635">
+                      <div class="responseWrapper">
+                        <div class="responsePadding">
+                          <div class="title"><a href="http://ed.ted.com/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz/discussions/dogs-are-said-to-be-a-man-s-or-woman-s-best-friend-give-four-examples-of-how-dogs-assist-humans-based-on-what-you-learned-about-canine-olfactory-senses-predict-how-dogs-may-continue-to-aid-humans-in-the-future-how-do-you-feel-about-using-dogs-in" data-remote="true" rel="nofollow">
+                                    Dogs are said to be a man's (or woman's) best friend. Give four examples of how dogs assist humans. Based on what you learned about canine olfactory senses, predict how dogs may continue to aid humans in the future. How do you feel about using dogs in service to humans?</a>
+                          </div>
+                          <div class="responseContent">
+                            <p></p>
+                          </div>
+                          <div class="toolset guided">
+                            <div class="date stats">
+                              <span>02/02/2015</span><span class="disc">&nbsp;&#149;&nbsp;</span>
+                              <div class="count">
+                                <span class="total">9 Responses</span>
+                              </div>
+                              <span class="slash">&nbsp;/&nbsp;</span><span><a href="http://ed.ted.com/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz/discussions/dogs-are-said-to-be-a-man-s-or-woman-s-best-friend-give-four-examples-of-how-dogs-assist-humans-based-on-what-you-learned-about-canine-olfactory-senses-predict-how-dogs-may-continue-to-aid-humans-in-the-future-how-do-you-feel-about-using-dogs-in">9</a>&nbsp;Updates</span>
+                            </div>
+                            <div class="join">
+                              <a href="http://ed.ted.com/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz/discussions/dogs-are-said-to-be-a-man-s-or-woman-s-best-friend-give-four-examples-of-how-dogs-assist-humans-based-on-what-you-learned-about-canine-olfactory-senses-predict-how-dogs-may-continue-to-aid-humans-in-the-future-how-do-you-feel-about-using-dogs-in" class="btn btn-xs btn-red" data-remote="true" rel="nofollow">View discussion</a>
+                            </div>
+                            <a href="/session" class="login-required"><div class="upvote">+0</div></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a data-discussion="loaded"></a><div class="container defaultState" id="standardToggleContent">
+        <div class="aboutLesson mobile clearfix">
+          <div class="row-fluid">
+            <div class="span7">
+              <p>
+                <a class="customize-this-lesson btn btn-large btn-assertive" data-track-action="lesson [573542]" data-track-category="flip this lesson" data-track-on="click" href="/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz/flip" rel="nofollow">Customize This Lesson</a>
+              </p>
+              <p class="lead">
+                Create and share a new lesson based on this one.
+              </p>
+            </div>
+            <div class="span5 text-right">
+              <div class="share-buttons orange">
+                <span class="facebook"><a data-popup="true" data-track-action="lesson [573542]" data-track-category="share" data-track-label="facebook" data-track-on="click" href="https://www.facebook.com/sharer/sharer.php?u=http://ed.ted.com/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz"><span class="icon-facebook"></span></a></span><span class="twitter"><a data-track-action="lesson [573542]" data-track-category="share" data-track-label="twitter" data-track-on="click" href="https://twitter.com/intent/tweet?via=TED_ED&amp;url=http://ed.ted.com/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz‎&amp;text=How%20do%20dogs%20%22see%22%20with%20their%20noses?%20-%20Alexandra%20Horowitz"><span class="icon-twitter"></span></a></span><span class="pinterest"><a data-track-action="lesson [573542]" data-track-category="share" data-track-label="pinterest" data-track-on="click" href="http://pinterest.com/pin/create/button/?url=http://ed.ted.com/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz&amp;media=http://i.ytimg.com/vi/p7fXa2Occ_U/0.jpg&amp;description=How%20do%20dogs%20%22see%22%20with%20their%20noses?%20-%20Alexandra%20Horowitz" target="_blank"><span class="icon-pinterest"></span></a></span><span class="google-plus"><a data-popup="true" data-track-action="lesson [573542]" data-track-category="share" data-track-label="google-plus" data-track-on="click" href="https://plus.google.com/share?url=http://ed.ted.com/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz"><span class="icon-google-plus"></span></a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="aboutLesson non-mobile clearfix">
+          <div class="content">
+            <div class="aboutVideoSection clearfix" id="aboutVideoSidebar"></div>
+            <div class="aboutDesc">
+              <h2 class="text-light">
+                About TED-Ed Originals
+              </h2>
+              <p class="lead">
+                TED-Ed Original lessons feature the words and ideas of educators brought to life by professional animators. Are you an educator or animator interested in creating a TED-Ed original? <a href="/get_involved">Nominate yourself here »</a>
+              </p>
+            </div>
+            <div class="aboutCreators">
+              <h2 class="text-light">
+                Meet The Creators
+              </h2>
+              <div class="creatorRow">
+                <div class="row-fluid">
+                  <div class="span12">
+                    <div class="row-fluid">
+                      <div class="creator">
+                        <div class="media">
+                          <div class="pull-left">
+                            <img alt="Jffpcn14tfwx4nwilray" class="media-object" height="60" src="http://res.cloudinary.com/heiglcqk3/image/upload/c_fill,h_120,w_120/v1422891125/jffpcn14tfwx4nwilray.jpg" width="60" />
+                          </div>
+                          <div class="media-body">
+                            <h5 class="nomargin">
+                              Alexandra Horowitz
+                            </h5>
+                            <br>Educator
+                          </div>
+                        </div>
+                      </div>
+                      <div class="creator">
+                        <div class="media">
+                          <div class="pull-left">
+                            <img alt="Bu8ivhgo0hddzydmqhqs" class="media-object" height="60" src="http://res.cloudinary.com/heiglcqk3/image/upload/c_fill,h_120,w_120/v1375921782/bu8ivhgo0hddzydmqhqs.jpg" width="60" />
+                          </div>
+                          <div class="media-body">
+                            <h5 class="nomargin">
+                              Iuri Araújo
+                            </h5>
+                            <br>Director
+                          </div>
+                        </div>
+                      </div>
+                      <div class="creator">
+                        <div class="media">
+                          <div class="pull-left">
+                            <img alt="D7fsctloe61hjqmpegya" class="media-object" height="60" src="http://res.cloudinary.com/heiglcqk3/image/upload/c_fill,h_120,w_120/v1375921841/d7fsctloe61hjqmpegya.jpg" width="60" />
+                          </div>
+                          <div class="media-body">
+                            <h5 class="nomargin">
+                              Guilherme Araujo
+                            </h5>
+                            <br>Director
+                          </div>
+                        </div>
+                      </div>
+                      <div class="creator">
+                        <div class="media">
+                          <div class="pull-left">
+                            <img alt="Rxjhu31lvu3ptftzb0qp" class="media-object" height="60" src="http://res.cloudinary.com/heiglcqk3/image/upload/c_fill,h_120,w_120/v1375948195/rxjhu31lvu3ptftzb0qp.jpg" width="60" />
+                          </div>
+                          <div class="media-body">
+                            <h5 class="nomargin">
+                              Alex Gendler
+                            </h5>
+                            <br>Script Editor
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rail">
+            <div class="about-share" style="">
+              <h2 class="text-light">
+                Share
+              </h2>
+              <div class="share-buttons orange">
+                <span class="facebook"><a data-popup="true" data-track-action="lesson [573542]" data-track-category="share" data-track-label="facebook" data-track-on="click" href="https://www.facebook.com/sharer/sharer.php?u=http://ed.ted.com/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz"><span class="icon-facebook"></span></a></span><span class="twitter"><a data-track-action="lesson [573542]" data-track-category="share" data-track-label="twitter" data-track-on="click" href="https://twitter.com/intent/tweet?via=TED_ED&amp;url=http://ed.ted.com/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz‎&amp;text=How%20do%20dogs%20%22see%22%20with%20their%20noses?%20-%20Alexandra%20Horowitz"><span class="icon-twitter"></span></a></span><span class="pinterest"><a data-track-action="lesson [573542]" data-track-category="share" data-track-label="pinterest" data-track-on="click" href="http://pinterest.com/pin/create/button/?url=http://ed.ted.com/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz&amp;media=http://i.ytimg.com/vi/p7fXa2Occ_U/0.jpg&amp;description=How%20do%20dogs%20%22see%22%20with%20their%20noses?%20-%20Alexandra%20Horowitz" target="_blank"><span class="icon-pinterest"></span></a></span><span class="google-plus"><a data-popup="true" data-track-action="lesson [573542]" data-track-category="share" data-track-label="google-plus" data-track-on="click" href="https://plus.google.com/share?url=http://ed.ted.com/lessons/how-do-dogs-see-with-their-noses-alexandra-horowitz"><span class="icon-google-plus"></span></a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="container">
+        <div id="moreSeries">
+          <div class="row-fluid">
+            <h2 class="text-light">
+              More from <a href="/series/awesome-nature">Awesome Nature</a>
+            </h2>
+            <div class="videoCells lessonMore">
+              <div class="lesson videoCell four columns" id="lesson_592205"><div class="videoThumb">
+                <div class="video-hit-count">
+                  39,239<span class="views"> Views</span>
+                </div>
+                <div class="imageWrapper">
+                  <a href="/lessons/how-do-geckos-defy-gravity-eleanor-nelsen"><img alt="0" src="http://i.ytimg.com/vi/YeSuQm7KfaE/0.jpg" /></a>
+                </div>
+              </div>
+              <div class="videoStats">
+                <div class="videoTaxonomy">
+                  <a href="/series#/awesome-nature">Awesome Nature</a>
+                </div>
+              </div>
+              <div class="videoText">
+                <a href="/lessons/how-do-geckos-defy-gravity-eleanor-nelsen">How do geckos defy gravity? - Eleanor Nelsen<span class="lesson-title-duration"> - 4:30</span></a>
+              </div>
+              <div class="bestFlip">
+                Lesson by <a href="http://www.ted.com/profiles/1810181" class="black" target="_blank">TED Ed</a><br>Video by <a href="https://www.youtube.com/channel/UCsooa4yRKGN_zEE8iknghZA" class="black" target="_blank">TED-Ed</a>
+              </div></div>
+              <div class="lesson videoCell four columns" id="lesson_587472"><div class="videoThumb">
+                <div class="video-hit-count">
+                  67,190<span class="views"> Views</span>
+                </div>
+                <div class="imageWrapper">
+                  <a href="/lessons/where-did-earth-s-water-come-from-zachary-metz"><img alt="0" src="http://i.ytimg.com/vi/RwtO04EXgUE/0.jpg" /></a>
+                </div>
+              </div>
+              <div class="videoStats">
+                <div class="videoTaxonomy">
+                  <a href="/series#/awesome-nature">Awesome Nature</a>
+                </div>
+              </div>
+              <div class="videoText">
+                <a href="/lessons/where-did-earth-s-water-come-from-zachary-metz">Where did Earth’s water come from? - Zachary Metz<span class="lesson-title-duration"> - 3:53</span></a>
+              </div>
+              <div class="bestFlip">
+                Lesson by <a href="http://www.ted.com/profiles/1810181" class="black" target="_blank">TED Ed</a><br>Video by <a href="https://www.youtube.com/channel/UCsooa4yRKGN_zEE8iknghZA" class="black" target="_blank">TED-Ed</a>
+              </div></div>
+              <div class="lesson videoCell four columns" id="lesson_586086"><div class="videoThumb">
+                <div class="video-hit-count">
+                  69,972<span class="views"> Views</span>
+                </div>
+                <div class="imageWrapper">
+                  <a href="/lessons/how-parasites-change-their-host-s-behavior-jaap-de-roode"><img alt="0" src="http://i.ytimg.com/vi/g09BQes-B7E/0.jpg" /></a>
+                </div>
+              </div>
+              <div class="videoStats">
+                <div class="videoTaxonomy">
+                  <a href="/series#/awesome-nature">Awesome Nature</a>
+                </div>
+              </div>
+              <div class="videoText">
+                <a href="/lessons/how-parasites-change-their-host-s-behavior-jaap-de-roode">How brain parasites change their host's behavior - Jaap de Roode<span class="lesson-title-duration"> - 5:14</span></a>
+              </div>
+              <div class="bestFlip">
+                Lesson by <a href="http://www.ted.com/profiles/1810181" class="black" target="_blank">TED Ed</a><br>Video by <a href="https://www.youtube.com/channel/UCsooa4yRKGN_zEE8iknghZA" class="black" target="_blank">TED-Ed</a>
+              </div></div>
+              <div class="lesson videoCell four columns" id="lesson_579318"><div class="videoThumb">
+                <div class="video-hit-count">
+                  57,847<span class="views"> Views</span>
+                </div>
+                <div class="imageWrapper">
+                  <a href="/lessons/how-we-think-complex-cells-evolved-adam-jacobson"><img alt="0" src="http://i.ytimg.com/vi/9i7kAt97XYU/0.jpg" /></a>
+                </div>
+              </div>
+              <div class="videoStats">
+                <div class="videoTaxonomy">
+                  <a href="/series#/awesome-nature">Awesome Nature</a>
+                </div>
+              </div>
+              <div class="videoText">
+                <a href="/lessons/how-we-think-complex-cells-evolved-adam-jacobson">How we think complex cells evolved - Adam Jacobson<span class="lesson-title-duration"> - 5:42</span></a>
+              </div>
+              <div class="bestFlip">
+                Lesson by <a href="http://www.ted.com/profiles/1810181" class="black" target="_blank">TED Ed</a><br>Video by <a href="https://www.youtube.com/channel/UCsooa4yRKGN_zEE8iknghZA" class="black" target="_blank">TED-Ed</a>
+              </div></div>
+            </div>
+          </div>
+        </div>
+      </div><script id="modalFlagTemplate" type="text/template">
+        <div class="uiModal uiModalSmaller {{modalCss}}" data-autoopen="false" id="modalFlag">
+          <form accept-charset="UTF-8" action="{{url}}" class="simple-form discussion" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="Xqg1vl44UAS/1CPGxH29QR7QP8KMdjwWfBPjMyqdocM=" /></div>
+              <div class="uiModalContents">
+                <div class="uiModalMain clearfix">
+                  <div class="row-fluid">
+                    <h3 class="flagResponse">
+                      Flag this response
+                    </h3>
+                    <h3 class="flagDiscussion">
+                      Flag this discussion
+                    </h3>
+                  </div>
+                  <div class="row-fluid">
+                    <p class="flagResponse">
+                      Flagging a response sends a notification to our moderation team. They will review the message and take the appropriate action.
+                    </p>
+                    <p class="flagDiscussion">
+                      Flagging a discussion sends a notification to our moderation team. They will review the message and take the appropriate action.
+                    </p>
+                  </div>
+                  <div class="row-fluid radio-buttons">
+                    <h4>
+                      This action cannot be undone.
+                    </h4>
+                    <div class="row-fluid">
+                      <input id="spam" name="flag" type="radio" value="spam"><label for="spam">Flag as spam</label>
+                    </div>
+                    <div class="row-fluid">
+                      <input id="inappropriate" name="flag" type="radio" value="inappropriate"><label for="inappropriate">Flag as inappropriate</label>
+                    </div>
+                  </div>
+                  <div class="action-buttons">
+                    <input class="btn btnGrey" name="commit" type="submit" value="Flag" /><button class="btn btnGrey close-modal" href="#">Cancel</button>
+                  </div>
+                </div>
+              </div></form>
+        </div>
+      </script><script id="modalDisccusionsRemoveTemplate" type="text/template">
+        <div class="uiModal uiModalSmaller {{modalCss}}" data-autoopen="false" id="modalDisccusionsRemove">
+          <div class="uiModalContents confirm-message">
+            <h3 class="flagResponse">
+              Response Removed
+            </h3>
+            <h3 class="flagDiscussion">
+              Discussion Removed
+            </h3>
+            <button class="btn btnGrey close-modal">OK</button>
+          </div>
+          <form accept-charset="UTF-8" action="{{url}}" class="simple-form discussion" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="Xqg1vl44UAS/1CPGxH29QR7QP8KMdjwWfBPjMyqdocM=" /></div>
+              <div class="uiModalContents">
+                <div class="uiModalMain clearfix">
+                  <div class="row-fluid">
+                    <h3 class="flagResponse">
+                      Remove this response
+                    </h3>
+                    <h3 class="flagDiscussion">
+                      Remove this discussion
+                    </h3>
+                  </div>
+                  <div class="row-fluid">
+                    <h4>
+                      Removing a discussion or response cannot be undone.
+                    </h4>
+                  </div>
+                  <div class="row-fluid radio-buttons">
+                    <p class="description-text">
+                      In order to remove a discussion or response, please select a reason below. This will send the appropriate notification email to the discussion or response's author.
+                    </p>
+                    <div class="row-fluid">
+                      <input id="rude" name="removal_reason" type="radio" value="0"><label for="rude">Rude to Educator</label>
+                    </div>
+                    <div class="row-fluid">
+                      <input id="off-topic" name="removal_reason" type="radio" value="2"><label for="off-topic">Off-Topic</label>
+                    </div>
+                    <div class="row-fluid">
+                      <input id="inappropriate" name="removal_reason" type="radio" value="1"><label for="inappropriate">Inappropriate</label>
+                    </div>
+                    <div class="row-fluid">
+                      <input id="poorly-written" name="removal_reason" type="radio" value="3"><label for="poorly-written">Poorly Written</label>
+                    </div>
+                    <div class="row-fluid discussion-owner-radio">
+                      <input id="discussion-owned" name="removal_reason" type="radio" value="4">
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="alert alert-error">
+                      Select a Reason
+                    </div>
+                  </div>
+                  <div class="action-buttons">
+                    <input class="btn btnGrey" name="commit" type="submit" value="Remove" /><button class="btn btnGrey close-modal" href="#">Cancel</button>
+                  </div>
+                </div>
+              </div></form>
+        </div>
+      </script>
+    </article><footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <div class="pull-left">
+              <ul class="inline nomargin">
+                <li>
+                  <a href="http://ed.ted.com/" target="_top">
+                                <div class="icon-ted-ed ted-ed muted"></div></a>
+                </li>
+                <li>
+                  <a href="http://support.ed.ted.com/" target="_top">Help</a>
+                </li>
+                <li>
+                  <a href="http://ed.ted.com/feedback" target="_top">Contact</a>
+                </li>
+                <li>
+                  <a href="http://community.ed.ted.com/teded" target="_top">Community</a>
+                </li>
+                <li>
+                  <a href="http://ed.ted.com/blog" target="_top">Blog</a>
+                </li>
+              </ul>
+              <ul class="inline inline-compact">
+                <li>
+                  <small class="text-uppercase text-smaller"><a href="http://ted.com/" target="_top">TED Conferences, LLC</a></small>
+                </li>
+                <li>
+                  <small class="text-uppercase text-smaller"><a href="http://www.ted.com/termsofuse" target="_top">Terms of Use</a></small>
+                </li>
+                <li>
+                  <small class="text-uppercase text-smaller"><a href="http://www.ted.com/privacy" target="_top">Privacy Policy</a></small>
+                </li>
+              </ul>
+            </div>
+            <div class="pull-right">
+              <div class="user-actions">
+                <ul class="inline">
+                  <li><a href="http://teded.tumblr.com/" class="hover-unstyled" data-track-action="tumblr" data-track-category="subscribe" data-track-on="click" target="_blank">
+                                    <i class="icon-social icon-tumblr"></i></a>
+                  </li>
+                  <li><a href="https://twitter.com/TED_ED" class="hover-unstyled" data-track-action="twitter" data-track-category="subscribe" data-track-on="click" target="_blank">
+                                    <i class="icon-social icon-twitter"></i></a>
+                  </li>
+                  <li><a href="https://www.facebook.com/TEDEducation" class="hover-unstyled" data-track-action="facebook" data-track-category="subscribe" data-track-on="click" target="_blank">
+                                    <i class="icon-social icon-facebook-sign"></i></a>
+                  </li>
+                  <li><a href="http://pinterest.com/tededucation/" class="hover-unstyled" data-track-action="pinterest" data-track-category="subscribe" data-track-on="click" target="_blank">
+                                    <i class="icon-social icon-pinterest-sign"></i></a>
+                  </li>
+                  <li><form accept-charset="UTF-8" action="/newsletter/subscribe" class="footer-subscribe form-inline position-relative nomargin" data-parsley-validate="true" data-remote="true" data-track-action="newsletter" data-track-category="subscribe" data-track-on="submit" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="Xqg1vl44UAS/1CPGxH29QR7QP8KMdjwWfBPjMyqdocM=" /></div>
+                                    <input name="location" type="hidden" value="footer-subscribe"><input class="nomargin" data-parsley-required="true" data-parsley-type="email" name="email" placeholder="Subscribe to Our Newsletter" type="email"><button class="btn btn-default no-rounded-borders no-bg" type="submit">GO</button></form>
+                    <div class="footer-subscribe-complete hide">
+                      Thank You
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer><div class="stay-updated-popup">
+      <div class="bg-closebutton"></div>
+      <div class="icon-closebutton"></div>
+      <a href="/set_stay_updated_cookie" class="icon-closebutton-link" data-method="put" data-remote="true" rel="nofollow">test</a>
+      <div class="stay-updated-content">
+        <h3 class="text-light js-stay-updated-title">
+          Stay Updated
+        </h3><form accept-charset="UTF-8" action="/newsletter/subscribe" class="stay-updated-subscribe" data-parsley-errors-container="#stay-updated-errors-container" data-parsley-validate="true" data-remote="true" data-track-action="newsletter" data-track-category="subscribe" data-track-on="submit" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="Xqg1vl44UAS/1CPGxH29QR7QP8KMdjwWfBPjMyqdocM=" /></div>
+            <input name="location" type="hidden" value="stay-updated-subscribe"><input class="input-medium email-input" data-parsley-trigger="change" name="email" placeholder="Your Email" required="true" type="email"><button class="btn btn-medium btn-assertive" type="submit"><small class="text-bold">Subscribe</small></button></form><small id="stay-updated-errors-container"></small>
+        <div class="subscribe-complete">
+          Thank You
+        </div>
+        <div class="stay-updated-social-share">
+          <hr>
+          <div class="facebook">
+            <div class="fb-like" data-href="https://www.facebook.com/TEDEducation" data-layout="button_count" data-send="false" data-show-faces="false" data-width="90"></div>
+          </div>
+          <div class="twitter">
+            <a class="twitter-follow-button" data-lang="en" data-show-count="true" href="https://twitter.com/TED_ED">Follow @TED_ED</a>
+          </div>
+        </div>
+      </div>
+    </div><div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=347099038755884";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script><div class="modalLogin uiModal uiModalSmaller" data-autoopen="false">
+      <div class="uiModalContents">
+        <div class="uiModalMain clearfix">
+          <div class="row-fluid">
+            <h3 class="header default">
+              Log in to Take or Create a Lesson
+            </h3>
+            <h3 class="header discussion">
+              Log in to participate
+            </h3>
+            <h3 class="header club">
+              Please Log in to Apply
+            </h3>
+            <h3 class="header facilitator">
+              Please Log in to Access Facilitator Resources
+            </h3>
+          </div>
+          <div class="row-fluid">
+            <div class="copy">
+              If you have already logged into ted.com, this will verify your authentication. Upon successfully logging in, you will be returned to this page.
+            </div>
+          </div>
+          <div class="row-fluid buttons">
+            <a href="/users/new" target="_top"><button class="btnGrey left-margin right">Register</button></a><a href="/session" target="_top"><button class="btnGrey right">Log In</button></a>
+          </div>
+        </div>
+      </div>
+    </div><script src="//teded.tedcdn.com/assets/application-5e7cc969319beebb6d901db1bcb9876a.js" type="text/javascript"></script><script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-170299-26']);
+      _gaq.push(['_trackPageview']);
+      
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <!--Begin comScore Tag-->
+    <script type="text/javascript">
+      var _comscore = _comscore || [];
+      _comscore.push({ c1: "2", c2: "7341760" });
+      (function() {
+        var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+        s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+        el.parentNode.insertBefore(s, el);
+      })();
+    </script>
+    <noscript><img src="http://b.scorecardresearch.com/p?c1=2&c2=7341760&cv=2.0&cj=1"></noscript><!--End comScore Tag-->
+  </body>
+</html>

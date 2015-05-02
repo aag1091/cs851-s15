@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>ATC-SIM: a web-based air traffic control simulator</title>
+	<meta name="title" content="ATC-SIM: a web-based air traffic control simulator" />
+	<meta name="keywords" content="atc, atc game, air traffic control, air traffic controller, control tower, simulator, simulation, airport, airline" />
+	<meta name="description" content="A web-based air traffic control simulator." />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<meta http-equiv="content-style-type" content="text/css" />
+	<link rel="stylesheet" type="text/css" href="/style.css?20141013" />
+<script type="text/javascript">
+//<![CDATA[
+window.onload = function() {
+	var frm = document.getElementById("frmOptions");
+
+	if (document.documentElement && document.documentElement.clientWidth) {
+		frm.hdnScreenWidth.value=document.documentElement.clientWidth;
+		frm.hdnScreenHeight.value=document.documentElement.clientHeight;
+	} else {
+		frm.hdnScreenWidth.value=window.innerWidth;
+		frm.hdnScreenHeight.value=window.innerHeight;
+	}
+
+	try {document.execCommand("BackgroundImageCache", false, true);} catch(e){};
+	var cacheMapScaleH = new Image();
+	cacheMapScaleH.src = "/images/mapscaleH.gif";
+	var cacheMapScaleV = new Image();
+	cacheMapScaleV.src = "/images/mapscaleV.gif";
+	var cacheMapScaleC = new Image();
+	cacheMapScaleC.src = "/images/mapscaleC.gif";
+}
+//]]>
+</script>
+</head>
+<body>
+<div class="layout_center">
+	<div class="toplogo"></div>
+	<div class="titlebar"><div class="userbar">
+<a href="/login.php">Member Login</a> <span class="sep1">|</span> Not a Member?&nbsp; <a href="/signup.php">Sign Up</a>	</div></div>
+	<div class="layout_main">
+		<div class="layout_photobg"><div class="layout_photo"><img src="/images/atc_header24.jpg" width="800" height="215" alt="" /></div></div>
+		<div class="layout_pad5"></div>
+<div class="navbar">
+	<div class="button185on"><a href="/">Simulator</a></div>
+	<div class="button120"><a href="/gallery">Gallery</a></div>
+	<div class="button120"><a href="/high_score.php">High Scores</a></div>
+	<div class="button120"><a href="/news">Site News</a></div>
+	<div class="button120"><a href="/links">ATC Links</a></div>
+	<div class="button120"><a href="http://groups.google.com/group/atc-sim">Forum</a></div>
+</div>		<div class="layout_pad20"></div>
+
+<form id="frmOptions" method="post" action="atc.php">
+<div>
+<input type="hidden" name="hdnScreenHeight" value="" />
+<input type="hidden" name="hdnScreenWidth" value="" />
+</div>
+
+<table class="layout_columns"><tr><td>
+	<input type="submit" value="Begin simulation" class="buttonorange" />
+	<br />
+	<br />
+	<span class="Header">Airport</span><br />
+	<div style="border: solid 2px #D4D4D4; padding: 5px; width: 320px;">
+		<select name="selAirport" class="GrayText" style="width: 250px;">
+		<option value="KORD" selected="selected">Chicago O'Hare (ORD)</option>
+		<option value="OMDB">Dubai Intl. (DXB / OMDB)</option>
+		<option value="RJBE">Kobe Airport (UKB / RJBE)</option>
+		<option value="EGLL">London Heathrow (LHR / EGLL)</option>
+		<option value="RJBB">Osaka Kansai (KIX / RJBB)</option>
+		<option value="KPHX">Phoenix Sky Harbor (PHX)</option>
+		<option value="SBGL">Rio de Janeiro Galeao (GIG / SBGL)</option>
+		<option value="KSTL">St. Louis Lambert (STL)</option>
+		<option value="YSSY">Sydney Kingsford Smith (SYD / YSSY)</option>
+		</select>
+		<br />
+		<br />
+		<span class="GrayText">Need more airports?</span>
+		<a class="PageNavigation" href="/login.php">Login here</a>
+	</div>
+	<br />
+	<span class="Header">Airline Codes</span><br />
+	<span class="SubHead">Regional Preferences</span>
+	<div style="border: solid 2px #D4D4D4; padding: 5px; width: 320px; height: 50px;">
+		<p class="GrayText">
+		<input type="radio" name="rdoICAOorIATA" value="ICAO" checked="checked" />ICAO (3-digit)
+		<input type="radio" name="rdoICAOorIATA" value="IATA" />IATA (2-digit)
+		</p>
+	</div>
+	<br />
+	<span class="Header">Wind Direction</span><br />
+	<span class="SubHead">Frequency of change</span>
+	<div style="border: solid 2px #D4D4D4; padding: 5px; width: 320px; height: 50px;">
+		<select name="WindChance" class="GrayText" style="width: 160px;">
+		<option value="0">Wind will not change</option>
+		<option value="10">10% chance</option>
+		<option value="25">25% chance</option>
+		<option value="50">50% chance</option>
+		<option value="75">75% chance</option>
+		<option value="100">100% chance</option>
+		</select>
+	</div>
+	<br />
+	<span class="Header">Realism</span><br />
+	<span class="SubHead">Level of difficulty</span>
+	<div style="border: solid 2px #D4D4D4; padding: 5px; width: 320px;">
+		<select name="PlayMode" class="GrayText" style="width: 160px;">
+		<option value="0">Normal</option>
+		<option value="1">Easy Mode</option>
+		<option value="2">Arrivals Only</option>
+		<option value="3">Departures Only</option>
+		</select>
+		<br />
+		<br />
+		<span class="Warning">* If you select anything other than "normal",<br />
+		&nbsp; you will not qualify for the high score table.</span>
+	</div>
+	<br />
+	<span class="Header">Map Scale Markers</span><br />
+	<span class="SubHead">Customize the Scale command</span>
+	<div style="border: solid 2px #D4D4D4; padding: 5px; width: 320px; height: 50px;">
+		<select name="ScaleMarks" class="GrayText" style="width: 200px;">
+		<option value="0">Circles</option>
+		<option value="1">Edge markers</option>
+		<option value="2">Both circles and edge markers</option>
+		</select>
+	</div>
+	<br /><br />
+	<div class="menudiv">
+		<div class="menubar">Performance Options</div>
+		<div class="menudata">
+			<b>Enhancements for older PCs</b><br />
+			<input type="radio" name="rdoTrails" value="On" checked="checked" />Plane trails on
+			<input type="radio" name="rdoTrails" value="Off" />Plane trails off
+		</div>
+	</div>
+	<br />
+	<input type="submit" value="Begin simulation" class="buttonorange" />
+</td><td class="layout_col40"></td><td>
+	<div class="iborder">
+		<object type="text/html" data="/instructions.php" class="iframe">Please consider using a different browser.</object>
+	</div>
+	<br /><br />
+	<div class="videotutorial">
+		<div class="menubar">Video Tutorial</div>
+		<object type="application/x-shockwave-flash" width="430" height="345" data="http://www.youtube.com/v/WkoCAm_rdSM?version=3&amp;hl=en_US&amp;rel=0" class="videoscreen"><param name="movie" value="http://www.youtube.com/v/WkoCAm_rdSM?version=3&amp;hl=en_US&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param></object>
+		<!-- <a href="http://www.youtube.com/watch?v=WkoCAm_rdSM"><img src="/images/videotutorial.jpg" width="430" height="345" class="videoscreen" alt="Click here for Video Tutorial" /></a> //-->
+	</div>
+
+<p class="GrayText">
+Questions? Comments? Need help? Email: info (at) atc-sim.com
+</p>
+
+<p class="GrayText">
+View <a href="http://www.atc-sim.com/news.php" class="PageNavigation">site news &amp; recent additions</a>
+</p>
+
+<p class="GrayText">
+See the <a href="/high_score.php" class="PageNavigation">Top 100 Controllers</a>!
+</p>
+
+<p class="GrayText">
+Ready for a break? Here are some <a href="/links.php" class="PageNavigation">suggested links</a> and <a href="http://www.ringsurf.com/ring/atcring/" class="PageNavigation">the ATC Webring</a>.
+</p>
+
+<p>
+<a class="twitter-follow-button" href="https://twitter.com/atcsimulator" data-show-count="true" data-lang="en">Follow @atc-sim</a>
+<script type="text/javascript">//<![CDATA[
+window.twttr = (function (d, s, id) {
+	var t, js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src= "https://platform.twitter.com/widgets.js";
+	fjs.parentNode.insertBefore(js, fjs);
+	return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } });
+}(document, "script", "twitter-wjs"));
+//]]></script>
+</p>
+</td></tr></table>
+</form>
+
+	</div>
+</div>
+</body>
+</html>

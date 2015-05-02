@@ -1,0 +1,998 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="Windows-1252">
+  <meta http-equiv="Content-Language" content="en" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--meta http-equiv="X-UA-Compatible" content="IE=edge" /-->
+  <title>BINGBING Play Connection</title>
+  
+    <meta name="keywords" content="BINGBING, Blog, Celeb, Cocktail, Delight, Fashion, Fortune, Luxury, Play, Exciting BINGBING World, Everything You Want To Know, app, game, video, google, apple, app, amazon, youtube, twitter, facebook, googleplus, yahoo, bing, baidu, free, ipad, iphone, android, app, magazine, winter 2012, diet, exercise, calorie, app store, apple, pdf"/>
+ <meta name="description" content="BINGBING, Blog, Celeb, Cocktail, Delight, Fashion, Fortune, Luxury, Play, Exciting BINGBING World"/>
+ <meta http-equiv="Content-Language" content="en" /> 
+ <link rel="shortcut icon" href="images/favicon.ico"/>
+ <link rel="icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/>
+ <link rel="icon" type="image/png" href="images/favicon.png"/>
+
+ <!-- facebook image -->
+ <meta property="og:image" content="http://www.thebingbing.com/images/bb_logo_round.png"/>
+ 
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/jquery.min.js"></script>
+<!-- image crop support -->
+<link rel="stylesheet" href="/jquery.Jcrop.css" type="text/css" />
+<script src="/jquery.Jcrop.js"></script>
+
+<!-- filehandling -->
+<script src="/filehandler.js"></script>
+<link href="/main.css" rel="stylesheet"/>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<link href="/bootstrap.css" rel="stylesheet" />
+<script src="/bootstrap.min.js"></script>
+
+
+<!-- Custom styles for this template -->
+
+<link href="/sticky-footer.css" rel="stylesheet"/>
+<link href="/styles.css" rel="stylesheet"/>
+
+<!-- my scripts -->
+<script src="/scripts.js"></script>
+
+<!-- small scrollbars -->	
+<script src="/enscroll-0.6.1.min.js"></script>
+
+<script src="/jquery.slimscroll.js"></script>
+
+<script >
+$(function() {
+			$('.collapse.show-footer').on('show.bs.collapse', 
+				function () 
+				{
+					$("html, body").animate({ scrollTop: $(document).height() }, "slow");
+				});
+			});
+</script>
+<style type="text/css">
+
+	/* Apply these styles only when #preview-pane has
+	   been placed within the Jcrop widget */
+	.jcrop-holder #preview-pane {
+	  display: block;
+	  position: absolute;
+	  z-index: 2000;
+	  top: 10px;
+	  right: -180px;
+	  padding: 6px;
+	  border: 1px rgba(0,0,0,.4) solid;
+	  background-color: white;
+
+	  -webkit-border-radius: 6px;
+	  -moz-border-radius: 6px;
+	  border-radius: 6px;
+
+	  -webkit-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+	  -moz-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+	  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+	}
+
+	/* The Javascript code will set the aspect ratio of the crop
+	   area based on the size of the thumbnail preview,
+	   specified here */
+	#preview-pane .preview-container {
+	  width: 64px;
+	  height: 64px;
+	  overflow: hidden;
+	}
+
+	</style>
+	
+	<style>
+		* { margin: 0; padding: 0; }
+		
+		html { 
+			background: url(http://www.thebingbing.com/images/bg.jpg) repeat fixed; 
+			background-color:#d66672;
+		}
+		
+
+
+	</style>
+
+  
+	<!-- run script that will populate the buzz -->
+	<script type="text/javascript">
+		
+		$(document).ready(function() {
+			PlayConnectionSetup('','');
+
+		});
+		
+	</script>
+
+</head>
+
+
+
+
+<body>
+
+<div class="hidden-xs">
+	<div class="well blogWell blogBorder container">
+		<div class="row">
+			<div class="text-center">
+				<a href="http://www.thebingbing.com/" target="_blank" >
+					<img src="http://www.thebingbing.com/images/home.png" class="  bb_pad_bottom " alt="The BINGBING">
+				</a>	
+				
+				<a href="http://www.thebingbing.com/blog" target="_blank" >
+					<img src="http://www.thebingbing.com/images/blog.png" class="  bb_pad_bottom " alt="BINGBING Blog">
+				</a>
+				
+				<a href="http://www.thebingbing.com/celeb" target="_blank" >
+					<img src="http://www.thebingbing.com/images/celeb.png" class="  bb_pad_bottom " alt="BINGBING Celeb">
+				</a>
+				
+				<a href="http://www.thebingbing.com/cocktail" target="_blank" >
+					<img src="http://www.thebingbing.com/images/cocktail.png" class="  bb_pad_bottom " alt="BINGBING Cocktail">
+				</a>
+				
+				<a href="http://www.thebingbing.com/delight" target="_blank" >
+					<img src="http://www.thebingbing.com/images/delight.png" class="  bb_pad_bottom " alt="BINGBING Delight">
+				</a>
+
+				<a href="http://www.thebingbing.com/fashion" target="_blank" >
+					<img src="http://www.thebingbing.com/images/fashion.png" class="  bb_pad_bottom " alt="BINGBING Fashion">
+				</a>
+				
+				<a href="http://www.thebingbing.com/fortune" target="_blank" >
+					<img src="http://www.thebingbing.com/images/fortune.png" class="  bb_pad_bottom " alt="BINGBING Fortune">
+				</a>
+				
+				<a href="http://www.thebingbing.com/luxury" target="_blank" >
+					<img src="http://www.thebingbing.com/images/luxury.png" class="  bb_pad_bottom " alt="BINGBING Luxury">
+				</a>
+				
+
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+				<a href="http://www.thebingbing.com/play" target="_blank" >
+					<img src="http://www.thebingbing.com/images/bingbingplay.png" class="img-responsive logoPadding  bb_pad_bottom center-block" alt="BINGBING Play">
+				</a>
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+			<div class="text-center">
+				<a href="https://www.facebook.com/Play.BINGBING" target="_blank" >
+						<img src="http://www.thebingbing.com/images/facebook_logo.jpg" class="headerIconPad   bb_pad_bottom " alt="BINGBING Play on Facebook">
+					</a>
+				<a href="https://twitter.com/BINGBING_PLAY" target="_blank" >
+						<img src="http://www.thebingbing.com/images/twitter_logo.jpg" class="headerIconPad  bb_pad_bottom " alt="BINGBING Play on Twitter">
+					</a>
+				<a href="mailto:play@thebingbing.com" target="_blank" >
+						<img src="http://www.thebingbing.com/images/mail.jpg" class="headerIconPad  bb_pad_bottom " alt="Email BINGBING Play">
+				</a>
+			</div>
+			</div>
+			<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+				<img src="http://www.thebingbing.com/images/about_play.png" class="img-responsive logoPadding  bb_pad_bottom center-block" alt="Everything on Music, Movies & Games">
+			</div>
+		</div>
+	</div>
+</div>
+	
+<div class="visible-xs-block">
+	<div class="well blogWell mobileWell blogBorder container">
+		<div class="row">
+			<div class="text-center">
+				<a href="http://www.thebingbing.com/" target="_blank" >
+					<img src="http://www.thebingbing.com/images/home.png" class="bbSmallPics  bb_pad_bottom " alt="The BINGBING">
+				</a>	
+								
+				<a href="http://www.thebingbing.com/blog" target="_blank" >
+					<img src="http://www.thebingbing.com/images/blog.png" class="bbSmallPics  bb_pad_bottom " alt="BINGBING Blog">
+				</a>
+				
+				<a href="http://www.thebingbing.com/celeb" target="_blank" >
+					<img src="http://www.thebingbing.com/images/celeb.png" class="bbSmallPics  bb_pad_bottom " alt="BINGBING Celeb">
+				</a>
+				
+				<a href="http://www.thebingbing.com/cocktail" target="_blank" >
+					<img src="http://www.thebingbing.com/images/cocktail.png" class="bbSmallPics  bb_pad_bottom " alt="BINGBING Cocktail">
+				</a>
+				
+				<a href="http://www.thebingbing.com/delight" target="_blank" >
+					<img src="http://www.thebingbing.com/images/delight.png" class="bbSmallPics  bb_pad_bottom " alt="BINGBING Delight">
+				</a>
+
+				<a href="http://www.thebingbing.com/fashion" target="_blank" >
+					<img src="http://www.thebingbing.com/images/fashion.png" class="bbSmallPics  bb_pad_bottom " alt="BINGBING Fashion">
+				</a>
+				
+				<a href="http://www.thebingbing.com/fortune" target="_blank" >
+					<img src="http://www.thebingbing.com/images/fortune.png" class="bbSmallPics  bb_pad_bottom " alt="BINGBING Fortune">
+				</a>
+				
+				<a href="http://www.thebingbing.com/luxury" target="_blank" >
+					<img src="http://www.thebingbing.com/images/luxury.png" class="bbSmallPics  bb_pad_bottom " alt="BINGBING Luxury">
+				</a>
+
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+				<a href="http://www.thebingbing.com/play" target="_blank" >
+					<img src="http://www.thebingbing.com/images/bingbingplay.png" class="bbLogoSmall  bb_pad_bottom center-block" alt="BINGBING Play">
+				</a>
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+			<div class="text-center">
+				<a href="https://www.facebook.com/Play.BINGBING" target="_blank" >
+						<img src="http://www.thebingbing.com/images/facebook_logo.jpg" class=" bbSmallSocialIcons  bb_pad_bottom " alt="BINGBING Play on Facebook">
+					</a>
+				<a href="https://twitter.com/BINGBING_PLAY" target="_blank" >
+						<img src="http://www.thebingbing.com/images/twitter_logo.jpg" class="bbSmallSocialIcons  bb_pad_bottom " alt="BINGBING Play on Twitter">
+					</a>
+				<a href="mailto:play@thebingbing.com" target="_blank" >
+						<img src="http://www.thebingbing.com/images/mail.jpg" class=" bbSmallSocialIcons bb_pad_bottom " alt="Email BINGBING Play">
+				</a>
+			</div>
+			</div>
+			<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+				<img src="http://www.thebingbing.com/images/about_play.png" class="bbTextLogoSmall  center-block" alt="Everything on Music, Movies & Games">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		
+	</div>
+</div>		
+		  
+		
+<div class="container-fluid" id="indexContainer">
+
+	 <div class="col-lg-8 col-md-6 col-sm-6 col-xs-12 col-lg-push-2 col-md-push-3 col-sm-push-3 ">
+			<div class="row" name="PlayConnectionsGroup">
+
+	<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12" name="PlayConnectionListGroup">
+
+	</div>
+	<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12" name="PlayConnectionListGroup2">
+
+	</div>
+	<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12" name="PlayConnectionListGroup3">
+
+	</div>
+	
+	
+</div>
+<div class="row">
+
+	<div class="loadMore" id="loadMorePlayConnection" >
+	</div>
+	<h2 class="hidden loadMoreText" id="loadMorePlayConnectionText"> Loading More </h2>
+	
+</div>
+ 
+	</div>
+
+	<div class="col-lg-2 col-md-3 col-sm-3 col-xs-12 col-sm-push-3 col-lg-push-2 ">
+		<div class="row">
+				<div class="well panel_trans">
+	<form role="form" action="" method="post" id="loginform">
+		<div class="form-group">
+			<input type="text" placeholder="Username" class="form-control" name="username" id="username">
+		</div>
+		<div class="form-group">
+			<input type="password" placeholder="Password" class="form-control" name="password" id="password">
+		</div>
+	<button type="submit" class="btn btn-bbgold buttonBB" onClick="Login(this.form);return false;">Login to BINGBING</button>
+	</form>
+	<button type="submit" class="btn btn-bbwhite buttonBB" onClick="GotoForgotPassword();return false;">Forgot Password ?</button>
+	</form>
+</div>
+<div class="well panel_trans">
+	<form role="form" action="" method="post" id="signupform">
+		<div class="form-group">
+			<input type="text" placeholder="Username" class="form-control" name="username" id="username">
+		</div>
+		<div class="form-group">
+			<input type="password" placeholder="Password" class="form-control" name="password" id="password">
+		</div>
+		<div class="form-group">
+				<input type="email" placeholder="Email" class="form-control" name="email" id="email">
+		</div>
+		<!--
+		<div class="checkbox">
+			<label><input type="checkbox"> Remember me</label>
+		</div>
+		-->
+	<button type="submit" class="btn btn-bbgold buttonBB" onClick="presignup(this.form); return false;">Sign Up to BINGBING</button>
+	</form>
+</div>
+	
+
+			<div class="hidden-xs">
+				
+<div class="well panel_trans">
+	<div class="col">
+		<H4 class="text-center bbTextColor"> Get Your Weekend App </H4>
+
+
+		<img src="http://www.thebingbing.com/images/app_icon.png" class="img-responsive center-block bb_pad_bottom" alt="Weekend App">
+		
+		<a href="https://itunes.apple.com/us/app/bingbing-weekend-hd/id949879371?ls=1&mt=8" target="_blank">
+			<img src="http://www.thebingbing.com/images/appstore.png" class="img-responsive center-block bb_pad_bottom" alt="App Store">
+		</a>	
+		
+
+		<img src="http://www.thebingbing.com/images/googleplay.png" class="img-responsive center-block" alt="Google Play">
+	</div>
+</div>
+				
+<div class="well panel_trans">
+	<div class="col">
+		<H4 class="text-center bbTextColor"> Play BINGBING Games </H4>
+
+		<div class="c-wrapper">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+			  </ol>
+
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner" role="listbox">
+				<div class="item active ">
+					<a href="http://www.thebingbing.com/games" target="_blank">
+						<img src="/images/games/veggie_match.jpg" alt="Veggie Match">
+					</a>	
+				</div>
+				<div class="item">
+					<a href="http://www.thebingbing.com/games" target="_blank">
+						<img src="/images/games/calorie_attacker.jpg" alt="Calorie Attacker">
+					</a>	
+				</div>
+				<div class="item">
+					<a href="http://www.thebingbing.com/games" target="_blank">	
+						<img src="/images/games/food_jack.jpg" alt="Food Jack">
+					</a> 
+				</div>
+				<div class="item">
+					<a href="http://www.thebingbing.com/games" target="_blank">
+						<img src="/images/games/diet_match.jpg" alt="Diet Match">
+					</a>	
+				</div>
+				<div class="item">
+					<a href="http://www.thebingbing.com/games" target="_blank">
+						<img src="/images/games/calorie_killer.jpg" alt="Calorie Killer">
+					</a>	
+				</div>
+
+			  </div>
+
+			  <!-- Controls -->
+			  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			  </a>
+			  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			  </a>
+			</div>
+		</div>
+	</div>	
+</div>
+				<div class="well panel_trans">
+<a href="http://www.accuweather.com/en/gb/london/ec4a-2/weather-forecast/328328" class="aw-widget-legal">
+<!--
+By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at http://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at http://www.accuweather.com/en/privacy.
+-->
+</a><div id="awcc1410130215274" class="aw-widget-current"  data-locationkey="" data-unit="c" data-language="en-us" data-useip="true" data-uid="awcc1410130215274"></div><script type="text/javascript" src="http://oap.accuweather.com/launch.js"></script>
+</div>				<div class="well panel_trans social_panel">
+	<div class="row">
+		
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.twitter.com" target="_blank">
+			<img src="/images/twitter_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.facebook.com/" target="_blank">
+				<img src="/images/fb_icon.png" class="img-responsive bb_pad_bottom" > </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.pinterest.com/" target="_blank">
+			
+			<img src="/images/pinterest_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.instagram.com/" target="_blank">	
+				<img src="/images/instagram_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+	</div>	
+	<div class="row">
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.tumblr.com/" target="_blank">
+				<img src="/images/tumblr_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://plus.google.com/" target="_blank">
+			
+				<img src="/images/googleplus_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://mail.google.com/" target="_blank">
+			
+				<img src="/images/gmail_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.youtube.com/" target="_blank">
+			
+				<img src="/images/youtube_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+	</div>		
+	<div class="row">	
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.linkedin.com/" target="_blank">
+			
+				<img src="/images/linkedin_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.amazon.com/" target="_blank">
+			
+				<img src="/images/amazon_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.weibo.com/" target="_blank">
+			
+				<img src="/images/weibo_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.wechat.com/" target="_blank">
+			
+				<img src="/images/wechat_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+	</div>	
+	<div class="row">	
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.baidu.com/" target="_blank">
+			
+				<img src="/images/baidu_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.imqq.com/" target="_blank">
+			
+				<img src="/images/imqq_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.taobao.com/" target="_blank">
+			
+				<img src="/images/taobao_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.hao123.cn/" target="_blank">
+			
+				<img src="/images/hao123_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+	</div>		
+</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-2 col-md-3 col-sm-3 col-xs-12 col-sm-pull-9 col-lg-pull-10 col-md-pull-9 ">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-10">
+			<div class="well panel_trans">
+	
+	<h4 class="bbTextColor"> BINGBING Buzz </h4>
+
+		<!--div class="list-group scrollbox3" name="TopBuzzListGroup"-->
+		<div class="list-group scrollbox3" name="FrontPageBuzzListGroup">
+		
+		</div>
+		<div class="loadMore" id="loadMoreFrontPageBuzz" > 
+		</div>
+		<h2 class="hidden loadMoreText" id="loadMoreFrontPageBuzzText"> Loading More </h2>
+</div>
+
+
+
+ 
+			<div class="visible-xs-block">
+				
+<div class="well panel_trans">
+	<div class="col">
+		<H4 class="text-center bbTextColor"> Get Your Weekend App </H4>
+
+
+		<img src="http://www.thebingbing.com/images/app_icon.png" class="img-responsive center-block bb_pad_bottom" alt="Weekend App">
+		
+		<a href="https://itunes.apple.com/us/app/bingbing-weekend-hd/id949879371?ls=1&mt=8" target="_blank">
+			<img src="http://www.thebingbing.com/images/appstore.png" class="img-responsive center-block bb_pad_bottom" alt="App Store">
+		</a>	
+		
+
+		<img src="http://www.thebingbing.com/images/googleplay.png" class="img-responsive center-block" alt="Google Play">
+	</div>
+</div>
+				
+<div class="well panel_trans">
+	<div class="col">
+		<H4 class="text-center bbTextColor"> Play BINGBING Games </H4>
+
+		<div class="c-wrapper">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+			  </ol>
+
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner" role="listbox">
+				<div class="item active ">
+					<a href="http://www.thebingbing.com/games" target="_blank">
+						<img src="/images/games/veggie_match.jpg" alt="Veggie Match">
+					</a>	
+				</div>
+				<div class="item">
+					<a href="http://www.thebingbing.com/games" target="_blank">
+						<img src="/images/games/calorie_attacker.jpg" alt="Calorie Attacker">
+					</a>	
+				</div>
+				<div class="item">
+					<a href="http://www.thebingbing.com/games" target="_blank">	
+						<img src="/images/games/food_jack.jpg" alt="Food Jack">
+					</a> 
+				</div>
+				<div class="item">
+					<a href="http://www.thebingbing.com/games" target="_blank">
+						<img src="/images/games/diet_match.jpg" alt="Diet Match">
+					</a>	
+				</div>
+				<div class="item">
+					<a href="http://www.thebingbing.com/games" target="_blank">
+						<img src="/images/games/calorie_killer.jpg" alt="Calorie Killer">
+					</a>	
+				</div>
+
+			  </div>
+
+			  <!-- Controls -->
+			  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			  </a>
+			  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			  </a>
+			</div>
+		</div>
+	</div>	
+</div>
+				<div class="well panel_trans">
+<a href="http://www.accuweather.com/en/gb/london/ec4a-2/weather-forecast/328328" class="aw-widget-legal">
+<!--
+By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at http://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at http://www.accuweather.com/en/privacy.
+-->
+</a><div id="awcc1410130215274" class="aw-widget-current"  data-locationkey="" data-unit="c" data-language="en-us" data-useip="true" data-uid="awcc1410130215274"></div><script type="text/javascript" src="http://oap.accuweather.com/launch.js"></script>
+</div>				<div class="well panel_trans social_panel">
+	<div class="row">
+		
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.twitter.com" target="_blank">
+			<img src="/images/twitter_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.facebook.com/" target="_blank">
+				<img src="/images/fb_icon.png" class="img-responsive bb_pad_bottom" > </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.pinterest.com/" target="_blank">
+			
+			<img src="/images/pinterest_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.instagram.com/" target="_blank">	
+				<img src="/images/instagram_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+	</div>	
+	<div class="row">
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.tumblr.com/" target="_blank">
+				<img src="/images/tumblr_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://plus.google.com/" target="_blank">
+			
+				<img src="/images/googleplus_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://mail.google.com/" target="_blank">
+			
+				<img src="/images/gmail_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.youtube.com/" target="_blank">
+			
+				<img src="/images/youtube_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+	</div>		
+	<div class="row">	
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.linkedin.com/" target="_blank">
+			
+				<img src="/images/linkedin_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.amazon.com/" target="_blank">
+			
+				<img src="/images/amazon_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.weibo.com/" target="_blank">
+			
+				<img src="/images/weibo_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.wechat.com/" target="_blank">
+			
+				<img src="/images/wechat_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+	</div>	
+	<div class="row">	
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.baidu.com/" target="_blank">
+			
+				<img src="/images/baidu_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.imqq.com/" target="_blank">
+			
+				<img src="/images/imqq_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.taobao.com/" target="_blank">
+			
+				<img src="/images/taobao_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<a href="http://www.hao123.cn/" target="_blank">
+			
+				<img src="/images/hao123_icon.png" class="img-responsive bb_pad_bottom"> </img>
+			</a>
+		</div>
+	</div>		
+</div>
+			</div>
+		</div>
+		<div class="col-xs-3">
+		</div>
+	 </div>
+
+ </div>
+ 
+ <!-- Modal for sign up error etc -->
+<div class="container modal fade " id="myModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="col-lg-3 col-md-3 col-sm-3">
+	</div>
+	<div class="col-lg-6 col-md-6 col-sm-6">
+	  <div class="modal-dialog ">
+		<div class="modal-content panel_trans">
+		  <div class="modal-header ">
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			<h3 class="modal-title text-center bbTextColor" id="myModalLabel">
+			Sign up error
+			</h3>
+		  </div>
+		  <div class="modal-body">
+			<h4 id="myModalMessage" class="text-center bbTextColor" >
+			
+			</h4>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+	  </div>
+	</div> 
+	
+	<div class="col-lg-3 col-md-3 col-sm-3">
+	</div>
+</div>
+
+<div class="container modal fade" id="Modal1" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="col-lg-3 col-md-3 col-sm-3">
+	</div>
+	<div class="col-lg-6 col-md-6 col-sm-6">
+	  <div class="modal-dialog">
+		<div class="modal-content panel_trans">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			<h3 class="modal-title text-center bbTextColor" id="ModalLabel1">
+			Sign up in progress
+			</h3>
+		  </div>
+		  <div class="modal-body">
+			<h4 id="ModalMessage1" class="text-center bbTextColor">
+			</h4>
+		  </div>
+		</div>
+	  </div>
+	 </div> 
+	
+	<div class="col-lg-3 col-md-3 col-sm-3">
+	</div> 
+</div>
+
+<div class="container modal fade" id="ModalSignup" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="ModalSignup" aria-hidden="true">
+	<div class="col-lg-3 col-md-3 col-sm-3">
+	</div>
+	<div class="col-lg-6 col-md-6 col-sm-6">
+	  <div class="modal-dialog dialogOffset">
+		<div class="modal-content panel_trans_modal">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			<h3 class="modal-title text-center bbTextColor" id="ModalSignupLabel">
+			Please Signup
+			</h3>
+		  </div>
+		  <div class="modal-body">
+			<h4 id="ModalSignupMessage" class="text-center bbTextColor">
+			</h4>
+			<div class="well panel_trans">
+	<form role="form" action="" method="post" id="signupform">
+		<div class="form-group">
+			<input type="text" placeholder="Username" class="form-control" name="username" id="username">
+		</div>
+		<div class="form-group">
+			<input type="password" placeholder="Password" class="form-control" name="password" id="password">
+		</div>
+		<div class="form-group">
+				<input type="email" placeholder="Email" class="form-control" name="email" id="email">
+		</div>
+		<!--
+		<div class="checkbox">
+			<label><input type="checkbox"> Remember me</label>
+		</div>
+		-->
+	<button type="submit" class="btn btn-bbgold buttonBB" onClick="presignup(this.form); return false;">Sign Up to BINGBING</button>
+	</form>
+</div>
+			
+			<h4 class="text-center bbTextColor">
+			Or Login with your existing account.
+			</h4>
+			<div class="well panel_trans">
+	<form role="form" action="" method="post" id="loginform">
+		<div class="form-group">
+			<input type="text" placeholder="Username" class="form-control" name="username" id="username">
+		</div>
+		<div class="form-group">
+			<input type="password" placeholder="Password" class="form-control" name="password" id="password">
+		</div>
+	<button type="submit" class="btn btn-bbgold buttonBB" onClick="Login(this.form);return false;">Login to BINGBING</button>
+	</form>
+	<button type="submit" class="btn btn-bbwhite buttonBB" onClick="GotoForgotPassword();return false;">Forgot Password ?</button>
+	</form>
+</div>
+		  </div>
+		</div>
+	  </div>
+	 </div> 
+	
+	<div class="col-lg-3 col-md-3 col-sm-3">
+	</div> 
+</div>
+
+<div class="container modal fade" id="ModalAccLogin" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="ModalAccLogin" aria-hidden="true">
+	<div class="col-lg-3 col-md-3 col-sm-3">
+	</div>
+	<div class="col-lg-6 col-md-6 col-sm-6">
+	  <div class="modal-dialog">
+		<div class="modal-content panel_trans">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			<h3 class="modal-title text-center bbTextColor" id="ModalAccLoginLabel">
+			Please Signup
+			</h3>
+		  </div>
+		  <div class="modal-body">
+			<h4 id="ModalAccLoginMessage" class="text-center bbTextColor">
+			</h4>
+			<div class="well panel_trans">
+	<form role="form" action="" method="post" id="loginform">
+		<div class="form-group">
+			<input type="text" placeholder="Username" class="form-control" name="username" id="username">
+		</div>
+		<div class="form-group">
+			<input type="password" placeholder="Password" class="form-control" name="password" id="password">
+		</div>
+	<button type="submit" class="btn btn-bbgold buttonBB" onClick="Login(this.form);return false;">Login to BINGBING</button>
+	</form>
+	<button type="submit" class="btn btn-bbwhite buttonBB" onClick="GotoForgotPassword();return false;">Forgot Password ?</button>
+	</form>
+</div>
+		  </div>
+		</div>
+	  </div>
+	 </div> 
+	<div class="col-lg-3 col-md-3 col-sm-3">
+	</div> 
+</div>
+
+<div class="container modal fade" id="ModalAccSignup" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="ModalAccSignup" aria-hidden="true">
+	<div class="col-lg-3 col-md-3 col-sm-3">
+	</div>
+	<div class="col-lg-6 col-md-6 col-sm-6">
+	  <div class="modal-dialog">
+		<div class="modal-content panel_trans">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			<h3 class="modal-title text-center bbTextColor" id="ModalAccSignupLabel">
+			Please Signup
+			</h3>
+		  </div>
+		  <div class="modal-body">
+			<h4 id="ModalAccSignupMessage" class="text-center bbTextColor">
+			</h4>
+			<div class="well panel_trans">
+	<form role="form" action="" method="post" id="signupform">
+		<div class="form-group">
+			<input type="text" placeholder="Username" class="form-control" name="username" id="username">
+		</div>
+		<div class="form-group">
+			<input type="password" placeholder="Password" class="form-control" name="password" id="password">
+		</div>
+		<div class="form-group">
+				<input type="email" placeholder="Email" class="form-control" name="email" id="email">
+		</div>
+		<!--
+		<div class="checkbox">
+			<label><input type="checkbox"> Remember me</label>
+		</div>
+		-->
+	<button type="submit" class="btn btn-bbgold buttonBB" onClick="presignup(this.form); return false;">Sign Up to BINGBING</button>
+	</form>
+</div>
+		  </div>
+		</div>
+	  </div>
+	 </div> 
+	<div class="col-lg-3 col-md-3 col-sm-3">
+	</div> 
+</div>
+
+<div class="container modal fade" id="MessagePopup" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="MessagePopup" aria-hidden="true">
+
+	<div class="modal-dialog dialogOffset">
+	  
+		<div class="modal-content panel_trans_white_modal">
+			<button type="button" class="popupCloseBtnBlack" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			<div class="well panel_trans_white_modal">
+
+	<h4 class="bbTextColor" id="accBuzzTitle"> Message </h4>
+
+		<div class="list-group modalscroll" name="AccBuzzPopupListGroup">
+		<div class="reverse"> </div>
+		<!--No messages have been sent yet!-->
+		</div>
+
+</div>
+
+ 
+
+		</div> 
+	 </div> 
+
+</div>
+
+
+<!--
+<div class="container modal fade" id="ModalFriendList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="col-lg-3 col-md-3 col-sm-2">
+	</div>
+	<div class="col-lg-6 col-md-6 col-sm-8">
+
+			<div class="modal-content panel_trans">
+				<div class="panel-heading">
+					<h3 class="bbTextColor text-center"> Choose Friends </h3>
+				</div>
+				<button type="submit" class="btn btn-bbgold btnSharePrivate center-block" disabled="disabled" id="submit" name="send" onClick="SendMessagePrivately();return false;" >Share Privately</button>
+				<div class="panel-body">
+					<div class="list-group center-block" name="ModalAllFriendsListGroup">
+						<div class="bb_list_item">
+							<div class="row">
+								<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+									<p class="textCenter bbTextColor pBB">
+										ALL FRIENDS
+									</p>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+									<input id="allFriendChkBox" class="bbCheckBox" type="checkbox" disabled="disabled" onclick="OnSelectAllFriend(this);" >
+									</input>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="list-group modalscroll center-block" name="ModalFriendsListGroup">
+					</div>
+				</div>
+				
+			</div>
+
+	 </div> 
+	
+	<div class="col-lg-3 col-md-3 col-sm-2">
+	</div> 
+</div>
+-->
+
+
+
+	
+	<nav class="navbar navbar-fixed-bottom header navbar-inverse ">
+
+				<ul class="nav navbar-nav navbar-left">
+
+				 <li><a> Copyright &#169; BINGBING<sup>&#174;</sup> 2015 </a></li>
+				</ul>
+
+				  <ul class="nav navbar-nav navbar-right">
+				  <li><a href="/terms"><span class="glyphicon glyphicon-book"></span> Terms of Use</a></li>
+				   <li><a href="/privacy"><span class="glyphicon glyphicon-lock"></span> Privacy</a></li>
+					<li><a href="mailto:info@thebingbing.com"><span class="glyphicon glyphicon-envelope"></span> Contact Us</a></li>
+				   </ul>
+
+		</nav>
+
+
+
+
+</body>
+</html>

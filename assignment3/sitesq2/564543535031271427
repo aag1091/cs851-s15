@@ -1,0 +1,1031 @@
+<!doctype html>
+<html class="">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Introduction to API Reviews &#124; .NET Framework &#124; Channel 9</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"a59d48e8ab","applicationID":"2686449","transactionName":"Y1JUbUpTXBFZUUYPC1oYclZMfFcWe11cEhZbW1pcSh13DExAS0ktQFJb","queueTime":15,"applicationTime":269,"ttGuid":"9553456C1BEDEDBA","agent":"js-agent.newrelic.com/nr-632.min.js"}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UAcHVV9XGwEGXFdWAwg="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:20,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(3),window.onerror=e;try{throw new Error}catch(u){"stack"in u&&(t(4),t(5),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:8,3:3,4:7,5:6,6:21,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:21,2:22,ee:"QJf3ax",gos:"7eSDFh"}],6:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:22,2:21,ee:"QJf3ax"}],7:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:22,2:21,ee:"QJf3ax"}],8:[function(t,e){function n(){u.inPlace(this,p,"fn-")}function r(t,e){u.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),u=c(a),f=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),f.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,u.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:5,2:22,ee:"QJf3ax"}],9:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=n(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=n(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var f=0;c>f;f++)e.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:10,3:8,4:5,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],10:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],11:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:20,2:21,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===f.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=u.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),u=c.document,f=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:f,features:{}};u.addEventListener?(u.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(u.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:20,2:11,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],20:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],21:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],22:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:21,ee:"QJf3ax"}]},{},["G9z0Bl",4,9]);</script>
+	<meta name="generator" content="Rev9"/>
+	<meta name="WT.z_bdb" content="1"/>
+    <meta name="C9ID" content="b02da388b5a842158b05b383385d44db"/><meta name="WT.signedin" content="0"/>
+
+	<meta name="msapplication-task" content="name=Coffeehouse;action-uri=/forums/coffeehouse;icon-uri=/favicon.ico"/>
+	<meta name="msapplication-task" content="name=Browse All Content;action-uri=/Browse;icon-uri=/favicon.ico"/>
+	<meta name="msapplication-task" content="name=Shows;action-uri=/Browse/Shows;icon-uri=/favicon.ico"/>
+		<meta name="application-name" content="Channel 9">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<meta name="msapplication-config" content="/browserconfig.xml"><meta name="msApplication-ID" content="App"/> <!-- View Code on Win 8 app package.appxmanifest, <Application Id="App" StartPage="default.html"> -->
+<meta name="msApplication-PackageFamilyName" content="Microsoft.Channel9_8wekyb3d8bbwe"/>
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link href="http://channel9.msdn.com/styles/site.css?v=txnhXsQECuWZBf0cgJkba-62J9BzfjV9q0_13sKzk8I1" rel="stylesheet" type="text/css"/>
+  <link href="http://channel9.msdn.com/styles/print.css?v=gZp9m-jfzgsMv8rfF2TqSmh6QjY1" media="print" rel="stylesheet" type="text/css" />
+  <link href="http://channel9.msdn.com/styles/handheld.css?v=gZp9m-jfzgsMv8rfF2TqSmh6QjY1" media="handheld" rel="stylesheet" type="text/css" />
+	<link href="http://channel9.msdn.com/styles/rating.css?v=gZp9m-jfzgsMv8rfF2TqSmh6QjY1" rel="stylesheet" type="text/css"/>
+	<link href="http://channel9.msdn.com/styles/videoPlayer.css?v=4nLANg9-3AKIRR92SrNZMtyUJefsBb17pBuigbsexjc1" rel="stylesheet" type="text/css"/>
+  <link href="http://channel9.msdn.com/styles/userComments.css?v=oiVBBbUW3oF-rl5WKTm4ElRi1ReoAHpYMr7r1CiX5KE1" rel="stylesheet" type="text/css"/>
+  <link href="http://channel9.msdn.com/styles/sourcecode.css?v=gZp9m-jfzgsMv8rfF2TqSmh6QjY1" rel="stylesheet" type="text/css"/>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+	<link href="http://channel9.msdn.com/styles/admin.css?v=gZp9m-jfzgsMv8rfF2TqSmh6QjY1" rel="stylesheet" type="text/css"/>
+	<link href="http://channel9.msdn.com/styles/comments.css?v=gZp9m-jfzgsMv8rfF2TqSmh6QjY1" rel="stylesheet" type="text/css"/>
+	<link href="http://channel9.msdn.com/styles/entry.css?v=gZp9m-jfzgsMv8rfF2TqSmh6QjY1" rel="stylesheet" type="text/css"/>
+	<link href="http://channel9.msdn.com/scripts/sh/sh.css?v=gZp9m-jfzgsMv8rfF2TqSmh6QjY1" rel="stylesheet" type="text/css"/>
+	
+	<link href="http://channel9.msdn.com/styles/ch9lightbox.css?v=gZp9m-jfzgsMv8rfF2TqSmh6QjY1" rel="stylesheet" type="text/css"/>
+	<meta property="og:title" content="Introduction to API Reviews (Channel 9)"/>
+	<meta property="og:description" content="In this video, Dan Fernandez talks to Eric St. John, Immo Landwerth, David Kean, and Krzysztof Cwalina from the .NET team about API reviews. How do we conduct API reviews?How does this work in an open"/>
+	<meta property="og:type" content="video"/>
+	<meta property="og:image" content="http://video.ch9.ms/ch9/6229/41402ad9-8aa0-45e8-939e-cc9a44d86229/20150126APIReview_512.jpg"/>
+	<meta property="og:url" content="http://channel9.msdn.com/Series/NET-Framework/Introduction-to-API-Reviews"/>
+	<meta property="og:site_name" content="Channel 9"/>
+		<meta property="og:video:width" content="512"/>
+		<meta property="og:video:height" content="288"/>
+      <meta property="og:video" content="http://video.ch9.ms/ch9/6229/41402ad9-8aa0-45e8-939e-cc9a44d86229/20150126APIReview_mid.mp4"/>
+      <meta property="og:video:secure_url" content="https://sec.ch9.ms/ch9/6229/41402ad9-8aa0-45e8-939e-cc9a44d86229/20150126APIReview_mid.mp4"/>
+      <meta property="og:video:type" content="video/mp4"/>
+      <meta property="og:video" content="https://channel9.msdn.com/Series/NET-Framework/Introduction-to-API-Reviews/player"/>
+      <meta property="og:video:secure_url" content="https://channel9.msdn.com/Series/NET-Framework/Introduction-to-API-Reviews/player"/>
+      <meta property="og:video:type" content="text/html"/>
+
+  <meta name="twitter:card" content="player"/>
+  <meta name="twitter:site" content="@ch9"/>
+  <meta name="twitter:title" content="Introduction to API Reviews (Channel 9)"/>
+  <meta name="twitter:description" content="In this video, Dan Fernandez talks to Eric St. John, Immo Landwerth, David Kean, and Krzysztof Cwalina from the .NET team about API reviews. How do we conduct API reviews?How does this work in an open"/>
+  <meta name="twitter:image:src" content="https://sec.ch9.ms/ch9/6229/41402ad9-8aa0-45e8-939e-cc9a44d86229/20150126APIReview_960.jpg"/>
+  <meta name="twitter:player" content="https://channel9.msdn.com/Series/NET-Framework/Introduction-to-API-Reviews/player"/>
+  <meta name="twitter:player:stream" content="https://sec.ch9.ms/ch9/6229/41402ad9-8aa0-45e8-939e-cc9a44d86229/20150126APIReview_mid.mp4"/>
+  <meta name="twitter:player:stream:content_type" content="video/mp4"/>
+  <meta name="twitter:player:height" content="288">
+  <meta name="twitter:player:width" content="512">  
+                        
+	<meta name="WT.entryid" content="Entry:WebView:ebf62e1dab3e4133b6caa42d014585a8"/>
+		<link type="image/jpeg" rel="videothumbnail" href="http://video.ch9.ms/ch9/6229/41402ad9-8aa0-45e8-939e-cc9a44d86229/20150126APIReview_512.jpg"/>
+		<link rel="image_src" href="http://video.ch9.ms/ch9/6229/41402ad9-8aa0-45e8-939e-cc9a44d86229/20150126APIReview_512.jpg"/>
+	<meta name="title" content="Introduction to API Reviews"/>
+	<meta name="Search.ID" content="ebf62e1d-ab3e-4133-b6ca-a42d014585a8"/>
+	<link rel="canonical" href="http://channel9.msdn.com/Series/NET-Framework/Introduction-to-API-Reviews"/>
+	<link href="/Series/NET-Framework/Introduction-to-API-Reviews/RSS" title="Comment Feed - Introduction to API Reviews" rel="alternate" type="application/rss+xml"/>
+	<meta name="description" content="In this video, Dan Fernandez talks to Eric St. John, Immo Landwerth, David Kean, and Krzysztof Cwalina from the .NET team about API reviews. How do we conduct API reviews?How does this work in an open"/>
+	<meta name="keywords" content=".NET,OSS"/>
+		<meta name="WT.cg_n" content="Series"/>
+		<meta name="WT.cg_s" content="NET-Framework"/>
+	<meta name="CommentCount" content="6"/>
+	<noscript><link href="http://channel9.msdn.com/styles/noscript.css?v=gZp9m-jfzgsMv8rfF2TqSmh6QjY1" rel="stylesheet" type="text/css"/></noscript>
+	<!--[if IE 9]><link href="http://channel9.msdn.com/styles/ie9.css?v=gZp9m-jfzgsMv8rfF2TqSmh6QjY1" rel="stylesheet" type="text/css"/><![endif]-->
+	<!--[if IE 8]><link href="http://channel9.msdn.com/styles/ie8.css?v=gZp9m-jfzgsMv8rfF2TqSmh6QjY1" rel="stylesheet" type="text/css"/><![endif]-->
+	<!--[if lt IE 8]><link href="http://channel9.msdn.com/styles/ie7_6.css?v=gZp9m-jfzgsMv8rfF2TqSmh6QjY1" rel="stylesheet" type="text/css"/><![endif]-->
+	<!--[if lt IE 7]><link href="http://channel9.msdn.com/styles/ie6.css?v=gZp9m-jfzgsMv8rfF2TqSmh6QjY1" rel="stylesheet" type="text/css"/><![endif]-->
+	<!--[if IEMobile 7]> <link href="http://channel9.msdn.com/styles/ieMobile7.css?v=gZp9m-jfzgsMv8rfF2TqSmh6QjY1" rel="stylesheet" type="text/css"/><![endif]--><script>
+	var ch9={data:{},functions:{},value:{}};
+	ch9.value.CDNRoot='http://channel9.msdn.com/';
+	ch9.value.rnd='gZp9m-jfzgsMv8rfF2TqSmh6QjY1';
+</script>
+<!--[if lte IE 8]><script src="http://channel9.msdn.com/scripts/global/iso8601parse.js?v=gZp9m-jfzgsMv8rfF2TqSmh6QjY1"></script><![endif]-->
+
+		<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.11.2.min.js" type="text/javascript"></script>
+	<script src="http://channel9.msdn.com/scripts/globals.js?v=4jZJ6LzFyeLSRUwVpQCl4VEUAXndu7xeEohLwlNaxM01"></script>
+	<!--[if lt IE 7]><script>ch9.data.isIE6=true;</script><![endif]-->
+	<script src="http://channel9.msdn.com/scripts/videoplayer.js?v=sGEP-ys7RR1SirkbD02lQLAigx1XkEwMPZSQCUXjJ741"></script>
+	
+	<script src="http://channel9.msdn.com/scripts/entry.js?v=gZp9m-jfzgsMv8rfF2TqSmh6QjY1"></script>
+	
+	<script src="http://channel9.msdn.com/scripts/ch9lightbox.js?v=gZp9m-jfzgsMv8rfF2TqSmh6QjY1"></script>
+	<script type="text/javascript">
+		$(function () {
+			$("a[rel='lightbox']").ch9lightbox({});
+		});
+	</script>
+		<script src="//nexus.ensighten.com/msdn/ch9prod/Bootstrap.js"></script>
+</head>
+<body class="hasSidebar entry hasTopContent  " data-guid="ebf62e1d-ab3e-4133-b6ca-a42d014585a8">
+
+<div class="userUberInfoTemplate ch9Template">
+	<div class="userUberInfo rounded">
+
+		<div class="ch9 icon">
+			<a href="/" title="Channel 9">
+				<img src="/styles/images/9Guy_30x30.png" alt="Channel 9"/>
+			</a>
+		</div>
+		<div class="ch9 info data">
+			<a href="#" class="profile"></a>
+			<p class="memberDate"></p>
+			<p class="caption"></p>
+			<p class="followus" title="Twitter">
+				<a href="#"></a>
+			</p>
+			<p class="links"></p>
+			<p class="bio"></p>
+			<dl class="counts">
+				<dt class="userEntries">Entries:</dt>
+				<dd class="userEntries">
+					<a href="#"></a>
+				</dd>
+				<dt class="userComments">Comments:</dt>
+				<dd class="userComments">
+					<a href="#"></a>
+				</dd>
+				<dt class="userPosts">Posts:</dt>
+				<dd class="userPosts">
+					<a href="#"></a>
+				</dd>
+			</dl>
+		</div>
+		<div class="ch9 loading data">
+			<img src="/styles/images/ui-anim_basic_16x16.gif"/>
+			<p>Loading User Information from Channel 9</p>
+		</div>
+		<div class="ch9 error data">
+			<p class="alert">Something went wrong getting user information from Channel 9</p>
+		</div>
+
+		<div class="msdn icon">
+			<a href="http://www.msdn.com" title="MSDN">
+				<img src="/styles/images/msdn_60x16.png" alt="MSDN"/>
+			</a>
+		</div>
+		<div class="msdn info data">
+			<a href="#" class="profile"></a>
+			<p class="links">
+				<a href="#" class="threads">Activity</a>
+				<a href="#" class="profile">Profile</a>
+			</p>
+			<p class="points"></p>
+			<ul class="achievements">
+				<li class="gold" title="Gold"><span></span></li>
+				<li class="silver" title="Silver"><span></span></li>
+				<li class="bronze" title="Bronze"><span></span></li>
+			</ul>
+			<div class="recentAchievement">
+				<div>Latest Achievement:</div>
+				<div class="achievement">
+					<span></span>
+					<div></div>
+				</div>
+			</div>
+			<a class="website" href="#"></a>
+			<p class="company" href="#"></p>
+			<p class="biography"></p>
+
+		</div>
+		<div class="msdn loading data">
+			<img src="/styles/images/ui-anim_basic_16x16.gif"/>
+			<p>Loading User Information from MSDN</p>
+		</div>
+		<div class="msdn error data">
+			<p class="alert">Something went wrong getting user information from MSDN</p>
+		</div>
+
+		<div class="achievements icon">
+			<a href="/achievements" title="Visual Studio Achievements">
+				<img src="/styles/images/VSachievements_30x50.png" alt="Visual Studio Achievements"/>
+			</a>
+		</div>
+		<div class="achievements info data">
+			<a href="" class="profile">Visual Studio Achievements</a>
+			<p class="points"></p>
+			<div class="latest">
+				<span>Latest Achievement:</span>
+				<img src=""/>
+				<div class="description">
+					<a href="#"></a>
+					<span></span>
+				</div>
+			</div>
+		</div>
+		<div class="achievements loading data">
+			<img src="/styles/images/ui-anim_basic_16x16.gif"/>
+			<p>Loading Visual Studio Achievements</p>
+		</div>
+		<div class="achievements error data">
+			<p class="alert">Something went wrong getting the Visual Studio Achievements</p>
+		</div>
+
+	</div>
+</div>
+
+<div class="branding">
+	<div class="toolbar">
+		<div class="container">
+<ul>
+	<li class="region"><a class="globe" href="/Blogs/C9Team/Channel-9-has-gone-global"><span class="datacenter rounded">North Central US</span></a></li>
+    <li class="followus"><a href="http://twitter.com/ch9">Follow Us @Ch9</a></li>
+	<li class="subscribe site"><a href="/Feeds/RSS">Subscribe to Channel 9</a></li>
+	<!--IE7 needs a return here-->
+		<li class="signIn"><a href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=12&amp;ct=1428103088&amp;rver=6.6.6577.0&amp;wp=MBI&amp;wreply=http:%2F%2Fchannel9.msdn.com%2FSeries%2FNET-Framework%2FIntroduction-to-API-Reviews&amp;id=47159">Sign In</a></li>
+</ul>
+		</div>
+	</div>
+	<div class="navigation">
+		<div class="container">
+				<div class="logo"><a href="/">Channel&#160;9</a></div>
+<div class="search bing">
+	<form action="/Search" autocomplete="off" class="siteSearch">
+		<input type="text" class="text inactive" value="Search this site" name="term"/>
+		<input class="theSubmit" type="submit" alt="Submit"/>
+	</form>
+</div>
+<ul class="mainNav aNav" role="navigation">
+	<li class="browse">
+		<a href="/Browse" class="ch9_chMain">Browse</a>
+		<ul class="rounded ch9_chSub">
+			<li>
+				<a href="/Windows">Windows Content</a>
+			</li>
+			<li>
+				<a href="/WindowsPhone">Windows Phone Content</a>
+			</li>
+			<li>
+				<a href="/Azure">Azure Content</a>
+			</li>
+			<li><a href="/Browse/Tags">Tags</a></li>
+			<li><a href="/Browse/Shows">Shows</a></li>
+			<li><a href="/Browse/Series">Series</a></li>
+			<li><a href="/Browse/Blogs">Blogs</a></li>
+			<li><a href="/Browse/Authors">Authors</a></li>
+			<li><a href="/Browse/Events">Events</a></li>
+		</ul>
+	</li>
+	<li class="forums">
+		<a href="/Forums" class="ch9_chMain">Forums</a>
+		<ul class="rounded ch9_chSub">
+			<li><a href="/Forums/Coffeehouse">Coffeehouse</a></li>
+			<li><a href="/Forums/Feedback">Site Feedback</a></li>
+			<li><a href="/Forums/TechOff">Tech Off</a></li>
+			<li><a href="/Forums/Build">Build</a></li>
+			<li><a href="/Forums/MicrosoftIgnite">Microsoft Ignite</a></li>
+			<li><a href="/Forums/TechEdEU">TechEd Europe</a></li>
+		</ul>
+	</li>
+	<li class="learn">
+		<a href="/coding4fun" class="ch9_chMain">Coding<span>4</span>Fun</a>
+		<ul class="rounded ch9_chSub">
+			<li><a href="/coding4fun/blog">Blog</a></li>
+			<li><a href="/coding4fun/projects">Projects</a></li>
+	<li>
+		<a href="/coding4fun/kinect">Kinect</a>
+	</li>
+	<li>
+		<a href="/coding4fun/articles">Articles</a>
+	</li>
+	<li>
+		<a href="/coding4fun/tv">Show</a>
+	</li>
+
+	</ul>
+	</li>
+	<li class="events">
+		<a href="/Events" class="ch9_chMain">Events</a>
+		<ul class="rounded ch9_chSub">
+			<li>
+				<a href="/Events/WinHEC/2015">WinHEC</a>
+			</li>
+			<li>
+				<a href="/Events/Visual-Studio">Visual Studio</a>
+			</li>
+			<li>
+				<a href="/Events/TechEd">TechEd</a>
+			</li>
+			<li>
+				<a href="/Events/Build">Build</a>
+			</li>
+			<li>
+				<a href="http://ignite.microsoft.com">Microsoft Ignite</a>
+			</li>
+			<li>
+				<a href="/Events/Microsoft-Azure">Azure</a>
+			</li>
+			<li>
+				<a href="/Events/Speakers">Speakers</a>
+			</li>
+		</ul>
+	</li>
+</ul>
+		</div>
+	</div>
+
+
+</div>
+
+
+
+<div class="firstContent text">
+	
+  <div class="breadcrumbs"><ul><li class="first"><a href="/Browse/Series">Series</a></li><li class="last"><a href="/Series/NET-Framework">.NET&#160;Framework</a></li></ul></div>
+	<div class="entry">
+		<div class="entry-header item-header">
+			<h1>Introduction to API&#160;Reviews</h1>
+			<ul class="entry-data item-data">
+				<li class="date">
+						Posted: Jan 28, 2015 at 11:54 AM
+				</li>
+				<li class="author">
+					By: 
+						<a href="/Niners/terrajobst">Immo Landwerth</a>
+				</li>
+				<li class="rating">
+<div class="rating">
+	<div class="rating-average">
+			<fieldset>
+					<input type="radio" value="0.25"/>
+					<input type="radio" value="0.5"/>
+					<input type="radio" value="0.75"/>
+					<input type="radio" value="1"/>
+					<input type="radio" value="1.25"/>
+					<input type="radio" value="1.5"/>
+					<input type="radio" value="1.75"/>
+					<input type="radio" value="2"/>
+					<input type="radio" value="2.25"/>
+					<input type="radio" value="2.5"/>
+					<input type="radio" value="2.75"/>
+					<input type="radio" value="3"/>
+					<input type="radio" value="3.25"/>
+					<input type="radio" value="3.5"/>
+					<input type="radio" value="3.75"/>
+					<input type="radio" value="4"/>
+					<input type="radio" value="4.25"/>
+					<input type="radio" value="4.5"/>
+					<input type="radio" value="4.75" checked="checked"/>
+					<input type="radio" value="5"/>
+			</fieldset>
+	</div>
+	<p class="avg-rating">Avg Rating: <span>4.75</span></p>
+</div>
+<div class="rating-count">(6)</div>
+
+				</li>
+				<li class="views">
+						<span class="count">48,902</span> Views
+				</li>
+				<li class="comments">
+					<a href="#comments"><span class="count">6</span> Comments</a>
+				</li>
+				<li class="sharelinks">
+
+
+	
+
+
+
+
+	<div class="redditHolder" data-href="http://channel9.msdn.com/Series/NET-Framework/Introduction-to-API-Reviews" data-title="Introduction to API Reviews (Channel 9)" data-target="programming">
+		<div class="sharingPositioner">
+			<a href="http://www.reddit.com/r/programming/submit?url=http://channel9.msdn.com/Series/NET-Framework/Introduction-to-API-Reviews&amp;title=Introduction to API Reviews (Channel 9)" class="redditButton" target="_blank">reddit</a>
+		</div>
+	</div>
+
+
+
+	<div class="twitterHolder">
+		<div class="sharingPositioner">
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://channel9.msdn.com/Series/NET-Framework/Introduction-to-API-Reviews" data-text="Introduction to API Reviews (Channel 9)" data-via="ch9" data-related="dotnet" data-hashtags="">Tweet</a>
+		</div>
+	</div>
+
+	<div class="facebookLikeHolder">
+		<div class="sharingPositioner">
+			<div class="fb-like" data-href="http://channel9.msdn.com/Series/NET-Framework/Introduction-to-API-Reviews" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-font="arial"></div>
+		</div>
+	</div>
+
+
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	
+
+	<div class="playerContainer" style="">
+		<a class="video" style="background-image:url(http://video.ch9.ms/ch9/6229/41402ad9-8aa0-45e8-939e-cc9a44d86229/20150126APIReview_960.jpg);" href="http://video.ch9.ms/ch9/6229/41402ad9-8aa0-45e8-939e-cc9a44d86229/20150126APIReview_mid.mp4" title="Click to Play" data-user='{
+				"isLoggedIn": "False",
+				"c9Id": "b02da388b5a842158b05b383385d44db"
+			}' data-player='{
+				"playerPreference": "auto",
+				"language": "",
+				"isSecure": "False"
+			}' data-episode='{
+				"contentId": "ebf62e1d-ab3e-4133-b6ca-a42d014585a8",
+				"length": "00:58:28",
+				"api": "/Entries(guid&#39;ebf62e1d-ab3e-4133-b6ca-a42d014585a8&#39;)/",
+				"relatedApi": "/Related?id=ebf62e1d-ab3e-4133-b6ca-a42d014585a8",
+				"isMVA": "False"
+			}'>
+			<div class="playButtonImage"></div>
+			<div class="entry-caption">
+				58 minutes, 28 seconds
+			</div>
+		</a>
+		<div class="playerGoesHere"></div><ul class="smooth mediaformat">
+	
+</ul>
+<ul class="progressive mediaformat">
+	
+	<li>
+		<a rel="Mp4Med" href="http://video.ch9.ms/ch9/6229/41402ad9-8aa0-45e8-939e-cc9a44d86229/20150126APIReview_mid.mp4"></a>
+	</li>
+</ul>
+<ul class="html5 mediaformat">
+	
+	<li>
+		<a rel="Mp4" href="http://video.ch9.ms/ch9/6229/41402ad9-8aa0-45e8-939e-cc9a44d86229/20150126APIReview.mp4"></a>
+	</li>
+	<li>
+		<a rel="WebM" href="http://video.ch9.ms/ch9/6229/41402ad9-8aa0-45e8-939e-cc9a44d86229/20150126APIReview.webm"></a>
+	</li>
+	<li>
+		<a rel="Mp4High" href="http://video.ch9.ms/ch9/6229/41402ad9-8aa0-45e8-939e-cc9a44d86229/20150126APIReview_high.mp4"></a>
+	</li>
+	<li>
+		<a rel="Mp4Med" href="http://video.ch9.ms/ch9/6229/41402ad9-8aa0-45e8-939e-cc9a44d86229/20150126APIReview_mid.mp4"></a>
+	</li>
+</ul>
+<ul class="flash mediaformat">
+	
+	<li>
+		<a rel="Mp4Med" href="http://video.ch9.ms/ch9/6229/41402ad9-8aa0-45e8-939e-cc9a44d86229/20150126APIReview_mid.mp4"></a>
+	</li>
+</ul>
+
+	</div>
+
+
+<div class="video-options">
+	<ul>
+		<li class="rounded">
+			<a href="#formats" class="formats" data-selectedformat="auto">
+				<span class="icon">&nbsp;</span> format
+			</a>
+		</li>
+		<li class="rounded">
+			<a href="#embed" class="embed">
+				<span class="icon">&lt;&nbsp;&gt;</span> embed
+			</a>
+		</li>
+		<li class="rounded queue-form">
+			<form id="manage-queue" method="POST" action="#" data-addtoqueueurl="/post/ebf62e1d-ab3e-4133-b6ca-a42d014585a8/AddToQueue" data-removefromqueueurl="/post/ebf62e1d-ab3e-4133-b6ca-a42d014585a8/RemoveFromQueue">
+				<a href="#" class="queue">
+						<span class="add icon">&#43;</span>
+					queue
+				</a>
+			</form>
+			<div class="queue-login alert info hidden">
+				<p><a href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=12&amp;ct=1428103088&amp;rver=6.6.6577.0&amp;wp=MBI&amp;wreply=http:%2F%2Fchannel9.msdn.com%2FSeries%2FNET-Framework%2FIntroduction-to-API-Reviews&amp;id=47159">Sign In</a> first to access your queue.</p>
+				<a class="close" href="#">Close</a>
+			</div>
+			<div class="queue-error alert info hidden">
+				<p>
+					Sorry, video was not added to the queue, an error occurred. Please <a href="/ContactUs">Contact Us</a> and let us know.
+				</p>
+				<a class="close" href="#">Close</a>
+			</div>
+		</li>
+	</ul>
+	<div class="overlay">
+		<a class="close" href="#">Close</a>
+		<div class="overlay-content"></div>
+	</div>
+</div>
+		<div class="downloadsAndEvals">
+
+	<div id="video-download">
+		<div class="helpHolder">
+			<h3>Download</h3>
+			<div class="help">
+				<img src="/styles/images/bg-help.gif"/>
+				<div class="popup rounded">
+					<h3>How do I download the videos?</h3>
+					<ul class="default">
+						<li>
+							To download, right click the file type you would like and pick 
+							&#8220;Save target as&#8230;&#8221; or &#8220;Save link as&#8230;&#8221;
+						</li>
+					</ul>
+					<h3>Why should I download videos from Channel9?</h3>
+					<ul class="default">
+						<li>It's an easy way to save the videos you like&nbsp;locally.</li>
+						<li>You can save the videos in order to watch them&nbsp;offline.</li>
+						<li>If all you want is to hear the audio, you can download the&nbsp;MP3!</li>
+					</ul>
+					<h3>Which version should I choose?</h3>
+					<ul class="default">
+						<li>
+							If you want to view the video on your PC, Xbox or Media Center,
+							download the High Quality MP4 file (this is the highest quality version
+							we have&nbsp;available).
+						</li>
+						<li>
+							If you'd like a lower bitrate version, to reduce the download time or 
+							cost, then choose the Medium Quality MP4&nbsp;file.
+						</li>
+						<li>If you have a Windows Phone, iPhone, iPad, or Android device, choose the low or medium MP4&nbsp;file.</li>
+						<li>If you just want to hear the audio of the video, choose the MP3&nbsp;file.</li>
+					</ul>
+				</div>
+			</div>
+			<p class="note">Right click &#8220;Save as&#8230;&#8221;</p>
+		</div>
+		<ul class="download">
+				<li>
+					
+			<div class="help">
+				<a href="http://video.ch9.ms/ch9/6229/41402ad9-8aa0-45e8-939e-cc9a44d86229/20150126APIReview.mp3">MP3</a> <span class="usage">(Audio only)</span>
+				<div class="popup rounded">
+					<h3>File size</h3>
+					53.5 MB
+				</div>
+			</div>
+				</li>
+				<li>
+					
+			<div class="help">
+				<a href="http://video.ch9.ms/ch9/6229/41402ad9-8aa0-45e8-939e-cc9a44d86229/20150126APIReview.mp4">MP4</a> <span class="usage">(iPhone, Android)</span>
+				<div class="popup rounded">
+					<h3>File size</h3>
+					147.2 MB
+				</div>
+			</div>
+				</li>
+				<li>
+					
+			<div class="help">
+				<a href="http://video.ch9.ms/ch9/6229/41402ad9-8aa0-45e8-939e-cc9a44d86229/20150126APIReview_high.mp4">High Quality MP4</a> <span class="usage">(iPad, PC, Xbox)</span>
+				<div class="popup rounded">
+					<h3>File size</h3>
+					1.3 GB
+				</div>
+			</div>
+				</li>
+				<li>
+					
+			<div class="help">
+				<a href="http://video.ch9.ms/ch9/6229/41402ad9-8aa0-45e8-939e-cc9a44d86229/20150126APIReview_mid.mp4">Mid Quality MP4</a> <span class="usage">(Windows Phone, HTML5, iPhone)</span>
+				<div class="popup rounded">
+					<h3>File size</h3>
+					765.7 MB
+				</div>
+			</div>
+				</li>
+		</ul>
+	</div>
+
+		</div>
+	
+</div>
+<div class="mainHolder">
+	<div class="mainContent text">
+			
+
+
+
+
+
+<div class="entry">
+	<div class="entry-content">
+		<div id="entry-body">
+			<p>In this video, <a href="https://twitter.com/danielfe">Dan Fernandez</a>&nbsp;talks to <a href="https://twitter.com/theesj">Eric St. John</a>, <a href="https://twitter.com/terrajobst">Immo Landwerth</a>, <a href="https://twitter.com/davkean">David Kean</a>, and <a href="https://twitter.com/kcwalina">Krzysztof Cwalina</a>&nbsp;from the .NET team&nbsp;about API reviews.</p><ul><li>How do we conduct API reviews?</li><li>How does this work in an open source world?</li><li>How do we deal with compatibility issues?</li><li>How do we evolve guidelines?</li></ul><p><strong>Curious?</strong> Jump right in!</p>
+		</div>
+	</div>
+	<div id="entry-tags">
+		<h3>Tags:</h3>
+		<ul>
+			<li>
+				<a href="/Tags/.net">.NET</a>, 
+			</li>
+			<li>
+				<a href="/Tags/oss">OSS</a>
+			</li>
+		</ul>
+	</div>
+	<div class="comments followDiscussion">
+		<a name="comments"></a>
+		<div class="comments-header">
+			<h2>Follow the Discussion</h2>
+			<ul class="rss">
+
+
+
+
+<li class="followHolder state_initializing" data-follow_type="entry">
+	<a href="#" class="follow"><span>Follow</span></a>
+	<div class="rounded followTypes">
+		<div class="followStates">
+			<div class="error">
+				<p>Oops, something didn't work.</p>
+			</div>
+
+			<div class="tryAgain">
+				<a href="#">Try again</a>?
+			</div>
+
+			<div class="signIn">
+				<a href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=12&amp;ct=1428103088&amp;rver=6.6.6577.0&amp;wp=MBI&amp;wreply=http:%2F%2Fchannel9.msdn.com%2FSeries%2FNET-Framework%2FIntroduction-to-API-Reviews&amp;id=47159">Sign In</a> to begin to follow these comments
+				<div class="help">
+					<img src="/styles/images/bg-help.gif">
+						<div class="popup rounded">
+							<h3>What does this mean?</h3>
+							Following an item on Channel 9 allows you to watch for new content and comments that you are interested in. You need to be signed in to Channel 9 to use this feature.
+						</div>
+					</div>
+			</div>
+
+			<div class="gettingInformation">
+				Getting "follow" information<img src="/styles/images/ellipsis.gif" alt=""/>
+			</div>
+
+			<div class="stopWatching">
+				<a href="#">Stop following these comments</a>
+			</div>
+
+			<div class="startWatching">
+				<a href="#">Start following these comments</a>
+				<div class="help">
+					<img src="/styles/images/bg-help.gif">
+						<div class="popup rounded">
+							<h3>What does this mean?</h3>
+							Following an item on Channel 9 allows you to watch for new content and comments that you are interested in and view them all on <a href="#">your notifications page</a>.
+						</div>
+					</div>
+			</div>
+
+			<div class="removingFollow">
+				Removing your "follow"<img src="/styles/images/ellipsis.gif" alt=""/>
+			</div>
+
+			<div class="settingUpFollow">
+				Setting up your "follow"<img src="/styles/images/ellipsis.gif" alt=""/>
+			</div>
+
+			<div class="signUp">
+				Did you know you can<br/><a href="#">sign up</a> for email notifications?
+			</div>
+
+			<div class="manage">
+			</div>
+
+		</div>
+		<div class="rssHolder">
+			<ul class="feeds">
+				<li>
+					<a href="/Series/NET-Framework/Introduction-to-API-Reviews/RSS">
+						Subscribe to these comments
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</li>
+			</ul>
+		</div>
+			<ul class="posts">
+					<li data-author="eddie31003">
+
+<div class="author hasUberInfo" data-uberinfo="{&quot;userName&quot;:&quot;eddie31003&quot;,&quot;MSDNId&quot;:&quot;f3ed4ee2-4acb-4307-a220-b7dd648de431&quot;,&quot;hasAchievements&quot;:false,&quot;isSelf&quot;:false}">
+		<a class="button" href="/Niners/eddie31003"><img alt="eddie31003" class="avatar" src="http://files.channel9.msdn.com/avatar/a8130323-7b29-4d7e-bc7a-208227683fad.jpeg" title="eddie31003" /><span class="name">eddie31003</span></a>
+</div>
+
+<div class="post" id="c635582405001521005">
+	<div class="post-header">
+		<a class="permalink" href="/Series/NET-Framework/Introduction-to-API-Reviews#c635582405001521005" title="Comment Permalink">Jan 30, 2015 at 10:48&#160;AM</a>
+	</div>
+	<div class="post-content">
+			<p>I'm currently reading Framework Design Guidelines. This&nbsp;is great insight into your process.&nbsp;</p>
+	</div>
+</div>
+
+
+					</li>
+					<li data-author="name">
+
+<div class="author hasUberInfo" data-uberinfo="{&quot;userName&quot;:&quot;name&quot;,&quot;MSDNId&quot;:&quot;&quot;,&quot;hasAchievements&quot;:false,&quot;isSelf&quot;:false}">
+		<span><img alt="name" class="avatar" src="file://www.gravatar.com/avatar/433588da1242e9d12834e8a5c247f846%3Fs=100&amp;d=https%253a%252f%252fsec.ch9.ms%252fcontent%252fdefaults%252fc9-100x66.png" title="name" /><span class="name">name</span></span>
+</div>
+
+<div class="post" id="c635582650163144701">
+	<div class="post-header">
+		<a class="permalink" href="/Series/NET-Framework/Introduction-to-API-Reviews#c635582650163144701" title="Comment Permalink">Jan 30, 2015 at 5:36&#160;PM</a>
+	</div>
+	<div class="post-content">
+			<p>Smaller size videos please. Thanks.</p>
+	</div>
+</div>
+
+
+					</li>
+					<li data-author="shivam">
+
+<div class="author hasUberInfo" data-uberinfo="{&quot;userName&quot;:&quot;shivam&quot;,&quot;MSDNId&quot;:&quot;&quot;,&quot;hasAchievements&quot;:false,&quot;isSelf&quot;:false}">
+		<span><img alt="shivam" class="avatar" src="file://www.gravatar.com/avatar/cb87b49c7820b5692df38d295936bbab%3Fs=100&amp;d=https%253a%252f%252fsec.ch9.ms%252fcontent%252fdefaults%252fc9-100x66.png" title="shivam" /><span class="name">shivam</span></span>
+</div>
+
+<div class="post" id="c635582880448915135">
+	<div class="post-header">
+		<a class="permalink" href="/Series/NET-Framework/Introduction-to-API-Reviews#c635582880448915135" title="Comment Permalink">Jan 31, 2015 at 12:00&#160;AM</a>
+	</div>
+	<div class="post-content">
+			<p>Above video is not compressed please make it small.</p>
+	</div>
+</div>
+
+
+					</li>
+					<li data-author="DanRevell">
+
+<div class="author hasUberInfo" data-uberinfo="{&quot;userName&quot;:&quot;DanRevell&quot;,&quot;MSDNId&quot;:&quot;fa1481ec-74f0-4d8a-997f-5ce5e0c313f2&quot;,&quot;hasAchievements&quot;:false,&quot;isSelf&quot;:false}">
+		<a class="button" href="/Niners/DanRevell"><img alt="Dan Revell" class="avatar" src="http://files.channel9.msdn.com/avatar/5a521ad2-ab19-45d9-b223-c65ea79e2bf3.jpg" title="Dan Revell" /><span class="name">DanRevell</span></a>
+</div>
+
+<div class="post" id="c635583845733177709">
+	<div class="post-header">
+		<a class="permalink" href="/Series/NET-Framework/Introduction-to-API-Reviews#c635583845733177709" title="Comment Permalink">Feb 01, 2015 at 2:49&#160;AM</a>
+	</div>
+	<div class="post-content">
+			<p>What's this book you guys keep referencing?</p>
+	</div>
+</div>
+
+
+					</li>
+					<li data-author="WinInsider">
+
+<div class="author hasUberInfo" data-uberinfo="{&quot;userName&quot;:&quot;WinInsider&quot;,&quot;MSDNId&quot;:&quot;e882bea0-e8cf-40fb-83e4-0d05103b3ef6&quot;,&quot;hasAchievements&quot;:false,&quot;isSelf&quot;:false}">
+		<a class="button" href="/Niners/WinInsider"><img alt="WinInsider" class="avatar" src="http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/avatars/c9classic/default.gif" title="WinInsider" /><span class="name">WinInsider</span></a>
+		<span class="caption">Mike,&#160;MCAD</span>
+</div>
+
+<div class="post" id="c635584281483641961">
+	<div class="post-header">
+		<a class="permalink" href="/Series/NET-Framework/Introduction-to-API-Reviews#c635584281483641961" title="Comment Permalink">Feb 01, 2015 at 2:55&#160;PM</a>
+	</div>
+	<div class="post-content">
+			<p>@<a href="/Series/NET-Framework/Introduction-to-API-Reviews#c635583845733177709">DanRevell</a>: <span id="productTitle" class="a-size-large">Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries</span></p>
+	</div>
+</div>
+
+
+					</li>
+					<li class="owner 
+							microsoft" data-author="terrajobst">
+
+<div class="author hasUberInfo" data-uberinfo="{&quot;userName&quot;:&quot;terrajobst&quot;,&quot;MSDNId&quot;:&quot;01aab62d-ed5c-4d6f-84e4-fe7022b1e1ad&quot;,&quot;hasAchievements&quot;:false,&quot;isSelf&quot;:false}">
+		<a class="button" href="/Niners/terrajobst"><img alt="Immo Landwerth" class="avatar" src="http://files.channel9.msdn.com/avatar/4bc80e7b-bd8d-4aaa-a02b-792cdaded285.jpg" title="Immo Landwerth" /><span class="name">terrajobst</span></a>
+</div>
+
+<div class="post" id="c635589423330761570">
+	<div class="post-header">
+		<a class="permalink" href="/Series/NET-Framework/Introduction-to-API-Reviews#c635589423330761570" title="Comment Permalink">Feb 07, 2015 at 1:45&#160;PM</a>
+	</div>
+	<div class="post-content">
+			<p></p><blockquote><div class="quoteText"><p></p><p><a class="permalink" title="Comment Permalink" href="/Series/NET-Framework/Introduction-to-API-Reviews#c635582650163144701">Jan 30, 2015 at 5:36&nbsp;PM</a></p><p>Smaller size videos please. Thanks.</p><p></p></div></blockquote><p></p><p></p><blockquote><div class="quoteText"><p></p><p><a class="permalink" title="Comment Permalink" href="/Series/NET-Framework/Introduction-to-API-Reviews#c635582880448915135">Jan 31, 2015 at 12:00&nbsp;AM</a></p><p>Above video is not compressed please make it small.</p><p></p></div></blockquote><p></p><p>Sorry about that. I probably messed up the upload...</p><p></p><blockquote><div class="quoteText"><p></p><p><a class="permalink" title="Comment Permalink" href="/Series/NET-Framework/Introduction-to-API-Reviews#c635583845733177709">6 days&nbsp;ago</a>, <a href="/Niners/DanRevell">DanRevell</a> wrote</p><p>What's this book you guys keep referencing?</p><p></p></div></blockquote><p></p><p>Here is the <a href="http://www.amazon.com/dp/0321545613">Amazon link</a>.</p>
+	</div>
+</div>
+
+
+					</li>
+			</ul>
+<div id="adminRemoveComment" class="text">
+	<h2 class="removeThisComment">Remove this comment</h2>
+	<h2 class="removeThisThread">Remove this thread</h2>
+	<div class="message alert"></div>
+	<form method="POST" action="#">
+		
+		<dl>
+			<dt>
+				<input type="radio" name="reason" value="Spam" id="deleteCommentReasonSpam" checked="checked"/>
+			</dt>
+			<dd>
+				<label for="deleteCommentReasonSpam">Spam</label>
+			</dd>
+			<dt>
+				<input type="radio" name="reason" value="guidlines" id="deleteCommentReasonGuidlines"/>
+			</dt>
+			<dd>
+				<label for="deleteCommentReasonGuidlines">Violates C9 guidelines</label>
+			</dd>
+			<dt>
+				<input type="radio" name="reason" value="language" id="deleteCommentLanguage"/>
+			</dt>
+			<dd>
+				<label for="deleteCommentLanguage">Foul language</label>
+			</dd>
+			<dt>
+				<input type="radio" name="reason" value="attack" id="deleteCommentPersonalAttack"/>
+			</dt>
+			<dd>
+				<label for="deleteCommentPersonalAttack">Personal attacks</label>
+			</dd>
+		</dl>
+		<input type="submit" value="Remove Comment" class="submit removeThisComment"/>
+		<input type="submit" value="Remove Thread" class="submit removeThisThread"/>
+	</form>
+	<a class="close" href="#">close</a>
+</div>
+
+
+
+
+	</div>
+
+<div class="comments add-comment">
+			<div class="comments-header">
+				<h2>Comment on the Post</h2>
+			</div>
+			<div class="goSignIn">
+				<p><strong>Already have a Channel 9 account?</strong> Please <a href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=12&amp;ct=1428103088&amp;rver=6.6.6577.0&amp;wp=MBI&amp;wreply=http:%2F%2Fchannel9.msdn.com%2FSeries%2FNET-Framework%2FIntroduction-to-API-Reviews&amp;id=47159">sign&#160;in</a></p>
+			</div>
+			<form method="post" id="commentState" class="commentform" autocomplete="off">
+				<div class="validation-summary-valid" id="validationSummary"><ul><li style="display:none"></li>
+</ul></div>
+				<fieldset>
+					<ol>
+						<li class="subject">
+							<span class="field-validation-valid" id="CommentState_Subject_validationMessage"></span>
+							<label for="CommentState_Subject">Are you human? If so, leave this field blank.</label>
+							<input id="CommentState_Subject" name="CommentState.Subject" type="text" value="" />
+						</li>
+							<li>
+								<span class="field-validation-valid" id="CommentState_AnonymousUser_DisplayName_validationMessage"></span>
+								<label for="CommentState_AnonymousUser_DisplayName">Name</label>
+								<input id="CommentState_AnonymousUser_DisplayName" name="CommentState.AnonymousUser.DisplayName" type="text" value="" />
+							</li>
+							<li>
+								<span class="field-validation-valid" id="CommentState_AnonymousUser_Email_validationMessage"></span>
+								<label for="CommentState_AnonymousUser_Email">Email</label>
+								<input id="CommentState_AnonymousUser_Email" name="CommentState.AnonymousUser.Email" type="text" value="" />
+							</li>
+						<li class="textarea">
+								<span class="field-validation-valid" id="CommentState_AnonymousBody_validationMessage"></span>
+								<label for="CommentState_AnonymousBody">Comment</label>
+								<textarea cols="100" id="CommentState_AnonymousBody" name="CommentState.AnonymousBody" rows="10">
+</textarea>
+						</li>
+					</ol>
+				</fieldset>
+				
+				<p class="submit">
+					<input type="submit" value="Comment"/>
+				</p>
+			</form><script type="text/javascript">
+//<![CDATA[
+if (!window.mvcClientValidationMetadata) { window.mvcClientValidationMetadata = []; }
+window.mvcClientValidationMetadata.push({"Fields":[{"FieldName":"CommentState.Subject","ReplaceValidationMessageContents":true,"ValidationMessageId":"CommentState_Subject_validationMessage","ValidationRules":[]},{"FieldName":"CommentState.AnonymousUser.DisplayName","ReplaceValidationMessageContents":true,"ValidationMessageId":"CommentState_AnonymousUser_DisplayName_validationMessage","ValidationRules":[{"ErrorMessage":"The Name field is required.","ValidationParameters":{},"ValidationType":"required"},{"ErrorMessage":"Please enter a name with only letters, numbers, and spaces","ValidationParameters":{"pattern":"[A-Za-z0-9][A-Za-z 0-9]+[A-Za-z0-9]"},"ValidationType":"regex"}]},{"FieldName":"CommentState.AnonymousUser.Email","ReplaceValidationMessageContents":true,"ValidationMessageId":"CommentState_AnonymousUser_Email_validationMessage","ValidationRules":[{"ErrorMessage":"The Email field is required.","ValidationParameters":{},"ValidationType":"required"},{"ErrorMessage":"Please enter a valid email address","ValidationParameters":{},"ValidationType":"email"}]},{"FieldName":"CommentState.AnonymousBody","ReplaceValidationMessageContents":true,"ValidationMessageId":"CommentState_AnonymousBody_validationMessage","ValidationRules":[]}],"FormId":"commentState","ReplaceValidationSummary":true,"ValidationSummaryId":"validationSummary"});
+//]]>
+</script>
+</div>
+
+</div>
+	</div>
+
+	<div class="pageNavHolder">
+	</div>
+
+	<div class="sidebarHolder">	
+	<div class="sidebar">
+			<div class="related series">
+				<h2>
+					More entries 
+					in this series
+				</h2>
+<ul>
+	<li>
+        <a href="/Series/NET-Framework/NET-Core-API-Review-2015-01-14?wt.mc_id=EntriesInArea">
+	<img class="thumb" src="http://video.ch9.ms/ch9/b97e/58b82243-083b-49aa-8654-d3ee1e93b97e/APIReview20150114_100.jpg" alt=".NET Core API Review 2015-01-14"/>
+	<span class="title">.NET Core API Review 2015-01-14</span></a>
+
+	</li>
+	<li>
+        <a href="/Series/NET-Framework/Git-Training-for-the-NET-Team?wt.mc_id=EntriesInArea">
+	<img class="thumb" src="http://video.ch9.ms/ch9/aed1/a8efa0b8-0fbe-4239-83b9-4f5fc0b0aed1/DotNetTeamGitTraining_100.jpg" alt="Git Training for the .NET Team"/>
+	<span class="title">Git Training for the .NET Team</span></a>
+
+	</li>
+	<li>
+			<strong>
+	<img class="thumb" src="http://video.ch9.ms/ch9/6229/41402ad9-8aa0-45e8-939e-cc9a44d86229/20150126APIReview_100.jpg" alt="Introduction to API Reviews"/>
+	<span class="title">Introduction to API Reviews</span></strong>
+	</li>
+</ul>
+
+				<p class="more"><a href="/Series/NET-Framework">See More</a></p>
+			</div>
+			<div class="related">
+				<h2>Related entries</h2>
+<ul>
+	<li>
+        <a href="/Blogs/dotnet/NET-Internals-2015-03-11?wt.mc_id=relatedentry">
+	<img class="thumb" src="http://video.ch9.ms/ch9/ea0d/4026440b-e5b9-4446-873a-0e430275ea0d/DotNetFoundations20150311_100.jpg" alt=".NET Internals 2015-03-11: ASP.NET v5 and DNX"/>
+	<span class="title">.NET Internals 2015-03-11: ASP.NET v5 and DNX</span></a>
+
+	</li>
+	<li>
+        <a href="/Blogs/dotnet/NET-Foundations-2015-03-04?wt.mc_id=relatedentry">
+	<img class="thumb" src="http://video.ch9.ms/ch9/990d/dbc0faaa-3d1d-4940-aa7b-8b3b29db990d/DotNetFoundation20150304_100.jpg" alt=".NET Internals 2015-03-04: .NET Core &amp; Cross Platform"/>
+	<span class="title">.NET Internals 2015-03-04: .NET Core & Cross&#8230;</span></a>
+
+	</li>
+	<li>
+        <a href="/Blogs/dotnet/NET-Foundations-2015-02-25?wt.mc_id=relatedentry">
+	<img class="thumb" src="http://video.ch9.ms/ch9/5919/e36994d1-9f5c-42d3-a4b2-394543d35919/DotNetFoundations20150225_100.jpg" alt=".NET Internals 2015-02-25: Open Source"/>
+	<span class="title">.NET Internals 2015-02-25: Open Source</span></a>
+
+	</li>
+	<li>
+        <a href="/Blogs/dotnet/github-for-the-roslyn-team?wt.mc_id=relatedentry">
+	<img class="thumb" src="http://video.ch9.ms/ch9/e918/e5daca1d-50e8-484e-af9d-390b1edde918/RoslynGitHub_100.jpg" alt="GitHub for the Roslyn Team"/>
+	<span class="title">GitHub for the Roslyn Team</span></a>
+
+	</li>
+</ul>
+
+				<a class="azureMLLink" target="_blank" href="http://azure.com/ml">
+					Powered by Azure Machine Learning
+				</a>
+			</div>
+	</div>	
+	</div>
+</div>
+<div class="footer">
+	<div class="container">
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" class="ccl">
+	<img alt="Creative Commons License" src="http://channel9.msdn.com/styles/images/somerights20.png"/>
+</a>
+<p class="copyright">
+	&copy; 2015 Microsoft. <a href="/info">Except where designated</a> as licensed by <br/>
+	<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/">Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 License</a>,<br/>
+	Microsoft reserves all rights associated with the materials on this site.
+</p>
+<ul class="footerNav">
+	<li class="subscribe site"><a href="/Feeds/RSS">Subscribe to Channel 9</a></li>
+	<li class="followus"><a href="http://twitter.com/ch9">Follow Us @Ch9</a></li>
+	<li class="feedback"><a href="/Forums/Feedback">Feedback</a></li>
+	<li class="privacy"><a href="http://www.microsoft.com/privacystatement/en-us/Channel9App/Default.aspx">Privacy Statement</a></li>
+	<li class="termsofuse"><a href="http://go.microsoft.com/?linkid=4412892">Terms Of Use</a></li>
+	<li class="codeofconduct"><a href="/CodeOfConduct">Code Of Conduct</a></li>
+	<li class="contactus"><a href="/ContactUs">Contact Us</a></li>
+</ul>
+
+	</div>
+</div>
+  <script src="http://channel9.msdn.com/scripts/jqueryUI-core_widget.js?v=kRFVVb8qrjVsyxSXF9t5VXaJkyK6774LSuvcMMY27eI1"></script>
+  <script src="http://channel9.msdn.com/scripts/ratings.js?v=_Sji27QUW6aRdGb3_QH_TN-pB34-SVDO-T5o55ET7241"></script>
+  <script src="http://channel9.msdn.com/scripts/userComments.js?v=mHfCEFqIJht33LOraCxFq-k8Nwkd0ubkSAjYoRuPAwE1"></script>
+  <script src="http://channel9.msdn.com/scripts/markDirty.js?v=gZp9m-jfzgsMv8rfF2TqSmh6QjY1"></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+	<script src="http://channel9.msdn.com/scripts/admin/removeComment.js?v=gZp9m-jfzgsMv8rfF2TqSmh6QjY1"></script>
+  <script src="http://channel9.msdn.com/scripts/tiny_mce_loader.js?v=4O9eNjEkwfKkN9BRkjVktnJz9CeTD48705Zmbu_9s1c1"></script>
+  <script src="http://channel9.msdn.com/scripts/validation.js?v=LqKoriuOoQhwabwwQRC7ORIsHfLc9OgX7P0qj0gguUo1"></script>
+  <script src="http://channel9.msdn.com/scripts/syntaxhighlighter.js?v=oijh0xcFgNMKqqyVTO9nKLE-xupdFnj_4mjMuP6v_041"></script><!-- START OF SmartSource Data Collector TAG -->
+<!-- Copyright (c) 1996-2009 WebTrends Inc.  All rights reserved. -->
+
+<!-- Warning: The two script blocks below must remain inline. Moving them to an external -->
+<!-- JavaScript include file can cause serious problems with cross-domain tracking.      -->
+<script type="text/javascript">
+var _tag=new WebTrends();
+_tag.dcsid="dcs1wotjh10000w0irc493s0e_6x1g";
+_tag.fpcdom=".channel9.msdn.com";
+_tag.dcsGetId();
+_tag.trackevents=true;
+
+// Add custom parameters here.
+//_tag.DCSext.param_name=param_value;
+_tag.dcsCollect();
+</script>
+  <noscript>
+    <div>
+      <img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://m.webtrends.com/dcs1wotjh10000w0irc493s0e_6x1g/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=MS.3.0.0"/>
+    </div>
+  </noscript>
+<!-- END OF SmartSource Data Collector TAG -->
+
+  <!-- Host Location: North Central US -->
+</body>
+</html>

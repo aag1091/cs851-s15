@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Client-side MVC's major bug - TimKadlec.com</title>
+
+  <meta name="author" content="Tim Kadlec">
+
+  
+  <meta name="description" content="&#8212; February 6, 2015 &#8212; Client-side MVC's Major Bug Over the past year I conducted performance audits on a handful of sites that all used &hellip;">
+  
+  <meta id="theme-color" name="theme-color" content="#D33405">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+  html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font:inherit;font-size:100%;vertical-align:baseline}html{line-height:1}ol,ul{list-style:none}table{border-collapse:collapse;border-spacing:0}caption,th,td{text-align:left;font-weight:normal;vertical-align:middle}q,blockquote{quotes:none}q:before,q:after,blockquote:before,blockquote:after{content:"";content:none}a img{border:none}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary{display:block}em{font-style:italic}@-ms-viewport{width:device-width}@-o-viewport{width:device-width}@viewport{width:device-width}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}body{background:#fff;color:#1f1f1f;font:100%/1.375em Palatino,Georgia,"Times New Roman",serif}code{color:black;text-shadow:0 1px white;font-family:Consolas, Monaco, 'Andale Mono', monospace}header[role="banner"]{background:#242322;color:#fff;letter-spacing:0 -1px 1px #000;width:100%;overflow:hidden;position:relative;padding:0 1em}header[role="banner"] nav{text-transform:uppercase;font-size:.9em;margin-bottom:2em;z-index:1000;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}header[role="banner"] a{text-decoration:none}header[role="banner"] h1{font-size:1.5em;font-weight:normal;letter-spacing:0;float:left;text-align:center;width:50%;max-width:200px}header[role="banner"] h1 img{max-width:100%}@media screen and (min-width: 50em){header[role="banner"] .inner{font-size:.9em}header[role="banner"] nav{float:right;margin-bottom:.5em;margin-top:1.3em}}@media screen and (min-width: 63em){header[role="banner"] .inner{font-size:1em;width:90%;position:relative}}header[role=banner] nav li{display:block;border-bottom:1px dotted rgba(255,255,255,0.2)}header[role=banner] nav li a{padding:.5em;display:block;color:#aaaaa9;font-weight:bold}header[role=banner] nav li a:hover{color:#fff;text-decoration:underline}@media screen and (min-width: 50em){header[role=banner] nav li{margin-left:1.5em;display:inline;border:0px}header[role=banner] nav li a{display:inline;padding:0}}.testResults{width:80%}.testResults td{padding:.2em;border-bottom:1px solid #fff}.testResults th{font-weight:bold;border-bottom:1px solid #333}.testResults .fail,.testResults .pass{color:#fff;text-align:center}.testResults .fail{background:#CB000F}.testResults .pass{background:#00882D}.media{margin:1em}.media .bd{overflow:hidden;_overflow:visible;zoom:1}.media .img{margin:0 auto 1em;display:block}@media screen and (min-width: 40em){.media .img{display:inline;float:left;margin-right:1em;margin-bottom:0}}.media .img img{display:block}a{color:#d33405}.btn{background:#d33405;color:#fff;padding:1em;-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;-o-border-radius:10px;border-radius:10px;text-decoration:none;text-transform:uppercase;letter-spacing:.083333333em;font-size:.75em;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:bold;-webkit-transition-property:padding,background;-moz-transition-property:padding,background;-o-transition-property:padding,background;transition-property:padding,background;-webkit-transition-duration:0.3s;-moz-transition-duration:0.3s;-o-transition-duration:0.3s;transition-duration:0.3s}.btn:hover{background:#a12804;color:#fff;padding:1em 1.5em}ins{text-decoration:none}a:hover{color:#a12804}#wrap,.inner{margin:0 auto;max-width:71.25em;padding:1em 0 0 0}#wrap{padding-top:2em;clear:both;font-size:1.1em;line-height:1.55em}#home #wrap,#about #wrap{max-width:100%;padding-top:1em;padding-bottom:0}#home footer,#about footer{margin-top:0}abbr{border-bottom:1px dotted #333}h1{font-size:2.5em;font-weight:bold;margin-bottom:0.625em;letter-spacing:-2px;line-height:1.1em}h1 a{text-decoration:none}p,.h-entry ol,.h-entry ul{margin-bottom:1em}article{position:relative;width:90%;margin:0 auto}h2{font-size:1.75em;font-weight:bold;margin:1em 0 0.625em 0;letter-spacing:-0.063em;line-height:1.1em}article h3,.slats h3{font-size:1.25em;font-weight:bold;margin:1em 0 0.625em 0}.h-entry ol{list-style-type:decimal}.h-entry section strong{font-weight:bold}.h-entry .e-content .note{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.75em;color:#636363;line-height:1.4em;padding:1.5em 0;margin-bottom:1.5em}.h-entry .e-content ul{list-style-type:disc}.h-entry .e-content ul li{margin-left:2.25em;margin-bottom:.5em}.h-entry .e-content ol li{margin-left:2.25em;margin-bottom:.5em}.h-entry .e-content h2{margin-top:1.286em;margin-bottom:0.429em;font-size:1.556em}.slats{margin:auto 0;padding:0}.slats h3{margin-bottom:0.125em}.slats .group{padding-bottom:.5em}blockquote{margin-left:5%;border-left:3px solid #d33405;font-style:italic;padding-left:1.25em}header time{text-transform:uppercase;color:#9f9f9f;letter-spacing:.2em;display:block;padding-bottom:1em}time{font-size:.85em}.additional{font-size:.65em;text-transform:uppercase}article header{border-bottom:1px dotted rgba(0,0,0,0.2);margin-bottom:1.875em;text-align:center}.comments{border-top:1px dotted #ebebeb;margin-top:1.875em}figure{text-align:center;font-size:.85em;line-height:1.3em}figure img{margin:auto;display:block}figure.banner{max-width:100%;margin-bottom:1em}figure.banner figcaption{color:#9f9f9f;padding:.25em;font-style:italic}figure.lg-right{max-width:100%;margin-bottom:1em}figure.lg-right figcaption{color:#9f9f9f;padding:.25em;font-style:italic}@media (min-width: 43.75em){figure.lg-right{float:right;width:30%;margin-left:1.5em}figure.lg-right img{width:100%}}@media (min-width: 62.9375em){figure.lg-right{width:40%;margin-right:-7em}}#toggle{float:right;padding-top:.1em;font-size:2.5em;text-transform:uppercase;z-index:2001;color:#aaaaa9}@media screen and (min-width: 27.8125em){#toggle{padding-top:.3em}}#toggle span{font-size:1.5em;position:relative;top:.1em}footer{background:#242322;color:#fff;letter-spacing:0 -1px 1px #000;width:100%;overflow:hidden;position:relative;padding:0 1em}footer nav{text-transform:uppercase;font-size:.9em;margin-bottom:2em;z-index:1000;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}.vevent{margin-bottom:1.5em;padding-bottom:1em;border-bottom:1px dotted #d2d2d2}.vevent .date{color:#767676;margin-top:0;min-width:10em;margin-bottom:0;font-size:.9em;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}@media screen and (min-width: 63em){.vevent .date{float:left;margin-right:2em}}.vevent .date time{font-size:1em}.vevent .summary{color:#000;font-weight:bold}.vevent .event-details{overflow:hidden}.vevent h3{font-weight:bold;font-size:1.785714286em;line-height:1em;margin-bottom:.3em;margin-top:0}.vevent h3 a{text-decoration:none}.vevent h3 a:hover{text-decoration:underline}.vevent .resources{font-size:.8em;margin-bottom:0;margin-top:0em}footer{border-bottom:0px}footer a{color:#fb6d43;text-decoration:none}footer a:hover{border-bottom:1px dotted #fb6d43}footer .copy{margin:0;padding:1em 0;font-size:1em;clear:both;color:#999;text-align:center}footer .copy strong{color:#e6e6e6}@media screen and (min-width: 40em){footer .copy .loaded{float:right}}footer .extra .fusionimg{margin-bottom:1em}footer .lc{max-width:62em;padding:.75em 1.25em}.blog-index{width:100%;overflow:auto}.blog-index img{margin-left:1em}#blog-archives{margin-top:0}#blog-archives .slats li{margin-bottom:2.5em}#blog-archives time,#blog-archives .elsewhere .meta{font-size:.6875em;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;float:none;margin-right:0;text-transform:uppercase}#blog-archives h3{font-size:1.785714286em;margin-top:.2em;margin-bottom:.1em;line-height:1.1em}#blog-archives h3 a{text-decoration:none}#blog-archives h3 a:hover{text-decoration:underline}#blog-archives .tags{font-size:.875em}#blog-archives .tags a{border-bottom:1px solid #d2d1d0;color:#54524f;text-decoration:none}#blog-archives .tags a:before{content:"#"}#blog-archives .tags a:hover{color:#000;border-bottom:1px solid #000}#blog-archives .blog-archives-main,#blog-archives .blog-archives-aside{padding-top:2em}@media screen and (min-width: 55em){#blog-archives .blog-archives-main{width:64.5855759%;border-right:1px solid #dfdfdf;float:left}#blog-archives .blog-archives-aside{float:right;margin-left:2px;width:34%}#blog-archives .blog-archives-aside h3{font-size:1.125em}#blog-archives .blog-archives-aside .elsewhere li{padding-bottom:.5em;border-bottom:1px solid #dfdfdf;margin-bottom:1em}}.home,#about,#blog-archives{color:#504e4c;overflow:auto;width:100%;padding:0}.home .lc,#about .lc,#blog-archives .lc{padding:1em}.home .img,#about .img,#blog-archives .img{max-width:250px}@media screen and (min-width: 40em){.home .img,#about .img,#blog-archives .img{margin-left:0;margin-right:2em}}.home .tri,#about .tri,#blog-archives .tri{padding:1em 0}@media screen and (min-width: 40em){.home .tri,#about .tri,#blog-archives .tri{display:table-cell;width:34%;padding:.5em 1em;border-right:1px solid #dedede;margin-bottom:1.5em}.home .tri:first-child,#about .tri:first-child,#blog-archives .tri:first-child{padding-left:0;width:32%}.home .tri:last-child,#about .tri:last-child,#blog-archives .tri:last-child{border-right:0}}.home .extras img,#about .extras img,#blog-archives .extras img{margin-right:1em;height:200px;border:1px solid #858585}.home .extras .noborder,#about .extras .noborder,#blog-archives .extras .noborder{border:0px;padding:0 1em}.home .img,#about .img,#blog-archives .img{border:0;-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;-o-border-radius:10px;border-radius:10px}.home .lede,#about .lede,#blog-archives .lede{font-size:1.5em;line-height:1.4em}.home .lede strong,#about .lede strong,#blog-archives .lede strong{font-weight:bold;color:#242322}.home .clients,#about .clients,#blog-archives .clients{display:table;width:100%}.home .clients:before,#about .clients:before,#blog-archives .clients:before{content:" ";height:9px;width:100%;background:#e9e9e9;border-radius:5px;display:table-caption;margin-bottom:.5em}.home .clients:after,#about .clients:after,#blog-archives .clients:after{content:" ";height:9px;width:100%;background:#e9e9e9;border-radius:5px;display:table-caption;margin-top:.5em;margin-bottom:1em;caption-side:bottom}.home .clients li,#about .clients li,#blog-archives .clients li{text-align:center;vertical-align:middle;padding:.5em 0;display:table-cell}@media screen and (min-width: 40em){.home .clients li,#about .clients li,#blog-archives .clients li{display:table-cell;width:33%;padding:0;float:none}.home .clients li:nth-child(3n),#about .clients li:nth-child(3n),#blog-archives .clients li:nth-child(3n){clear:none}.home .clients li:nth-child(4n),#about .clients li:nth-child(4n),#blog-archives .clients li:nth-child(4n){padding-top:0}}.home .clients li img,#about .clients li img,#blog-archives .clients li img{max-width:80%}.home h2,#about h2,#blog-archives h2{text-transform:uppercase;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:1px;font-size:1em;margin-bottom:2em}.home div.upcoming,#about div.upcoming,#blog-archives div.upcoming{margin-left:0;padding:1em}.home div.upcoming .date,#about div.upcoming .date,#blog-archives div.upcoming .date{font-size:.6875em;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;float:none;margin-right:0;text-transform:uppercase}.home div.upcoming h3,#about div.upcoming h3,#blog-archives div.upcoming h3{font-size:2.063em;margin-top:.3em;margin-bottom:.3em}.home div.upcoming h3 a:hover,#about div.upcoming h3 a:hover,#blog-archives div.upcoming h3 a:hover{text-decoration:underline}.home div.upcoming .vevent,#about div.upcoming .vevent,#blog-archives div.upcoming .vevent{border-bottom:0}.home div.upcoming .resources,#about div.upcoming .resources,#blog-archives div.upcoming .resources{font-size:.875em;margin-top:.2em}@media screen and (min-width: 40em){.home div.upcoming,#about div.upcoming,#blog-archives div.upcoming{float:right;width:50%;padding-left:2em}}.home div.book-promo,#about div.book-promo,#blog-archives div.book-promo{text-align:center;margin-bottom:2em;border-bottom:1px solid #dedede;padding-bottom:1em}.home div.book-promo img,#about div.book-promo img,#blog-archives div.book-promo img{margin-top:-2em}.home div.book-promo h3,#about div.book-promo h3,#blog-archives div.book-promo h3{margin-top:1em;margin-bottom:.5em;font-size:1.438em;color:#000;font-weight:bold}.home div.book-promo h3 a,#about div.book-promo h3 a,#blog-archives div.book-promo h3 a{text-decoration:none}.home div.book-promo h3 a:hover,#about div.book-promo h3 a:hover,#blog-archives div.book-promo h3 a:hover{text-decoration:underline;color:#333}.home div.book-promo p,#about div.book-promo p,#blog-archives div.book-promo p{font-size:.9em;margin-bottom:2.5em}@media screen and (min-width: 40em){.home div.book-promo,#about div.book-promo,#blog-archives div.book-promo{float:left;width:49%;padding-right:1.2em;padding-left:1em;padding-bottom:1.5em;margin-bottom:0;border-bottom:0;border-right:1px solid #dedede}}.home h2 small,#about h2 small,#blog-archives h2 small{font-weight:normal;text-transform:none;font-family:Palatino,Georgia,"Times New Roman",serif;font-size:0.889em}.home h2 small a,#about h2 small a,#blog-archives h2 small a{text-decoration:none;letter-spacing:0}.home h2 small a:hover,#about h2 small a:hover,#blog-archives h2 small a:hover{text-decoration:underline}.home div.recent,#about div.recent,#blog-archives div.recent{margin-left:0;padding:2em 1em}@media screen and (min-width: 40em){.home div.recent,#about div.recent,#blog-archives div.recent{padding:2em 0}}.home div.recent ol.slats li,#about div.recent ol.slats li,#blog-archives div.recent ol.slats li{margin-bottom:2em}@media screen and (min-width: 40em){.home div.recent ol.slats li,#about div.recent ol.slats li,#blog-archives div.recent ol.slats li{display:inline-block;width:49%;float:left}.home div.recent ol.slats li:nth-child(3n),#about div.recent ol.slats li:nth-child(3n),#blog-archives div.recent ol.slats li:nth-child(3n){clear:both}.home div.recent ol.slats li:nth-child(2n),#about div.recent ol.slats li:nth-child(2n),#blog-archives div.recent ol.slats li:nth-child(2n){float:right;width:50%;padding-left:2em}}.home div.recent ol.slats time,#about div.recent ol.slats time,#blog-archives div.recent ol.slats time{font-size:.6875em;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;float:none;margin-right:0;text-transform:uppercase}.home div.recent ol.slats h3,#about div.recent ol.slats h3,#blog-archives div.recent ol.slats h3{font-size:1.785714286em;margin-top:.2em;margin-bottom:.1em;line-height:1.1em}.home div.recent ol.slats h3 a,#about div.recent ol.slats h3 a,#blog-archives div.recent ol.slats h3 a{text-decoration:none}.home div.recent ol.slats h3 a:hover,#about div.recent ol.slats h3 a:hover,#blog-archives div.recent ol.slats h3 a:hover{text-decoration:underline}.home div.recent ol.slats .tags,#about div.recent ol.slats .tags,#blog-archives div.recent ol.slats .tags{font-size:.875em}.home div.recent ol.slats .tags a,#about div.recent ol.slats .tags a,#blog-archives div.recent ol.slats .tags a{border-bottom:1px solid #d2d1d0;color:#54524f;text-decoration:none}.home div.recent ol.slats .tags a:before,#about div.recent ol.slats .tags a:before,#blog-archives div.recent ol.slats .tags a:before{content:"#"}.home div.recent ol.slats .tags a:hover,#about div.recent ol.slats .tags a:hover,#blog-archives div.recent ol.slats .tags a:hover{color:#000;border-bottom:1px solid #000}#about .lede{margin-top:.5em}.alt{background:#f7f7f7;padding:0;clear:both;margin-top:1em}.home .alt .lc,#about .alt .lc{padding-top:0;padding-bottom:0;overflow:visible}.home .alt .lc:after,#about .alt .lc:after{content:" ";display:block;clear:both}@media screen and (min-width: 28.75em){#writing #wrap{background:url('/images/pen-head-sm.png?1388414294') top center no-repeat;background-size:100%}}@media screen and (min-width: 44.5em){#writing #wrap{background:url('/images/pen-head.png?1388414294') top center no-repeat;background-size:auto}}.rating{display:block}.rating:before{content:"Rating: ";font-weight:bold}@media screen and (min-width: 34.375em){.rating{display:inline-block;visibility:hidden}.rating:before{content:""}}@media screen and (min-width: 34.375em){[data-rating="3of5"]:after{content:"\2605 \2605 \2605 \2606 \2606";visibility:visible;margin-left:-1.25em}[data-rating="4of5"]:after{content:"\2605 \2605 \2605 \2605 \2606";visibility:visible;margin-left:-1.25em}[data-rating="5of5"]:after{content:"\2605 \2605 \2605 \2605 \2605";visibility:visible;margin-left:-1.25em}}#books-read .h-entry ol li p:first-of-type{margin-top:.5em}article.palatino{font-family:Palatino, Georgia, serif}article.georgia{font-family:Georgia, serif;font-size:1.125em;line-height:1.545454545em;width:88%}article.georgia h1{font-weight:normal;font-size:5.375em}#disqus_thread{margin-top:2em;border-top:1px dotted rgba(0,0,0,0.2);padding-top:2em}code[class*="language-"],pre[class*="language-"]{color:black;text-shadow:0 1px white;font-family:Consolas, Monaco, 'Andale Mono', monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*="language-"]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*="language-"]{padding:.1em;border-radius:.3em}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.namespace{opacity:.7}.token.property,.token.tag,.token.boolean,.token.number{color:#905}.token.selector,.token.attr-name,.token.string{color:#690}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#a67f59;background:rgba(255,255,255,0.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.regex,.token.important{color:#e90}.token.important{font-weight:bold}.token.entity{cursor:help}.full .plleft{border:1px solid #9f9f9f;margin:auto;display:block}footer{padding-top:1em}.plain caption{font-size:1.2em;text-align:center;font-weight:bold;padding:.5em;margin-bottom:.5em;border-bottom:1px dotted rgba(0,0,0,0.2)}table{border:1px double #ccc}.about header{text-align:left}@media screen and (min-width: 63em){#wrap .about header,#wrap .about section{width:90%;margin-left:auto;margin-right:auto}#wrap .about #what-i-do{float:left;width:62%;margin-bottom:1.5em}#wrap .about #bio{float:right;width:30%;font-size:.8em;line-height:1.5em}#wrap .about #bio h2{margin-top:0}#wrap .about .workStatus{clear:both;margin-bottom:1.5em}}#archives #wrap section{width:98%;margin-left:auto;margin-right:auto}#archives header{margin-bottom:0}#jump{display:none}.workStatus{margin:1em 0;background:#f8f8f8;border:1px dotted #d2d2d2;padding:.5em}.workStatus strong{font-weight:bold}.workStatus p{margin-bottom:0}@media screen and (min-width: 19em) and (max-width: 50em){nav{margin-top:-280px;position:absolute;width:100%}nav:target{margin-top:0;left:0px;position:static;z-index:1001}nav:target ~ #jump{position:relative;display:block;text-indent:-9999px;position:absolute;z-index:2001;left:0;right:0;bottom:0;height:4.5em;width:100%}}@media screen and (min-width: 19em){.extras .extra:first-child{border-bottom:1px dashed #525252;padding-bottom:3em;padding-top:1.5em}.extra{clear:both;width:100%;overflow:hidden;padding-top:1.5em;text-align:center}.extra h3{font-size:1em;text-transform:uppercase;color:#fb6d43;font-weight:normal}.extra img{display:block;text-align:center;margin:auto}}@media screen and (min-width: 50em){.plain{width:100%;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;background:#eaebec;font-size:.9em;margin-bottom:1em}.plain thead th{padding:1em;border:1px solid #e0e0e0;border-width:1px;background:#ededed}.plain td,.plain th{padding:.5em;border-top:1px solid #fff;border-bottom:1px solid #e0e0e0;border-left:1px solid #e0e0e0;background:#fafafa}.plain tbody th{font-weight:bold}.num tbody th,.num tbody td{text-align:right}td.num{text-align:right}.recent h2{margin-top:0}footer{padding-top:0}footer .copy{text-align:left}.extra{text-align:left}.extra h3{font-size:1em;text-transform:uppercase;color:#fb6d43;font-weight:normal;margin-top:1.5em}.extra img{float:left;margin-right:2em}.intouch h3{margin-top:1em}.home .upcoming,.home .recent,.home .workStatus{margin-left:300px}.home .workStatus{margin-top:0}.home .plright{float:left;margin:0 1em 2em}#wrap,.inner{padding-bottom:1em}.pull{width:100%}.pull section{width:65.8%}.full .plleft{position:static;float:right;margin-left:1em;margin-bottom:1em}footer{padding-left:0}#jump,#toggle{display:none}}@media screen and (min-width: 63em){.pullquote{position:absolute;right:34.2%;width:34.2%;padding-right:5%;font-style:italic;color:#787878;font-size:1.2em;font-family:"Palatino Linotype", Palatino, Georgia, serif}.pullquote-left:after{position:absolute;right:105%;width:23.2%;font-style:italic;color:#787878;font-size:1em;font-family:Palatino, Georgia, serif;content:"\201C" attr(data-pullquote) "\201D"}.pull .pullquote-left:after{left:110%;width:34.2%}.pullquote-right:after{position:absolute;left:105%;width:23.2%;font-style:italic;color:#787878;font-size:1em;font-family:Palatino, Georgia, serif;content:"\201C" attr(data-pullquote) "\201D"}.pull .pullquote-right:after{left:110%}.pull .plleft{width:34.2%;left:110%;text-align:center}.pull .plleft img{width:100%}.extras .extra{float:left;clear:none;width:50%;padding:.5em 2em 0 0;margin:1.5em 0 0 0}.extras .extra:last-child{padding-left:2em;padding-right:0}.extras .extra:first-child{border-right:1px dashed #525252;border-bottom:0px;padding-top:0;padding-bottom:0}.extras .extra:first-child img{margin-right:1em}.extras .extra img{float:left;margin-right:2em;margin-bottom:3em}.home{margin:auto}.lc{width:80%;margin:auto;overflow:hidden;max-width:57em}article section{width:90%;margin:auto;position:relative}#wrap article section{width:70%}footer{margin-top:2em}#wrap .full section{width:90%}#wrap .sidebar h1{text-align:left}#wrap .sidebar section{padding-right:38%;width:100%;position:relative;margin:0}.pull{width:100%}.pull section{width:65.8%;margin:0}}@media screen and (max-width: 46.75em){.plain{border:0;padding-bottom:0;display:block;width:100%}.plain caption{display:block}.plain thead{display:none;visibility:hidden}.plain tbody,.plain tr,.plain th,.plain td{border:0;display:block;padding:0;text-align:left;white-space:normal}.plain tr{margin-bottom:1em}.plain th[data-title]:before,.plain td[data-title]:before{content:attr(data-title) ":\00A0";font-weight:bold}.plain th:not([data-title]){font-weight:bold}.plain td:empty{display:none}}
+  </style>
+  
+  <link rel="canonical" href="http://timkadlec.com/2015/02/client-side-templatings-major-bug/">
+  <link href="/favicon.ico" rel="icon">
+  <link href="http://timkadlec.com/atom.xml" rel="alternate" title="TimKadlec.com" type="application/atom+xml">
+</head>
+
+<body   >
+  <header id="top" role="banner">
+  	<div class="inner">
+      <nav id="nav" role="navigation">
+        <ul class="subscription" data-subscription="rss">
+  
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li>
+  	<a href="/remembers">Archives</a>
+  </li>
+  <li>
+  	<a href="/me">What I Do</a>
+  </li>
+  <li>
+  	<a href="/talks">Speaking</a>
+  </li>
+  <li><a href="http://timkadlec.com/atom.xml" rel="subscribe-rss" title="subscribe via RSS">Feed</a></li>
+    <li>
+    <a href="http://implementingresponsivedesign.com">My Book</a>
+  </li>
+  <li>
+    <a rel="me" href="http://twitter.com/tkadlec">Twitter</a>
+  </li>
+
+</ul>
+
+
+      </nav>
+  		<hgroup>
+  <h1><a title="TimKadlec.com" href="/"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTgiIGhlaWdodD0iNDMiPjxwYXRoIG9wYWNpdHk9Ii44IiBmaWxsPSIjOUUxMzA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IiBkPSJNNC43MjMgMTZjLTIuNjA5IDAtNC43MjMgMi4xMTQtNC43MjMgNC43MjN2Mi41NTRjMCAyLjYwOSAyLjExNCA0LjcyMyA0LjcyMyA0LjcyM2gxMS4yNzd2LTEyaC0xMS4yNzd6Ii8+PHBhdGggb3BhY2l0eT0iLjgiIGZpbGw9IiM5RTEzMDgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXciIGQ9Ik0zOC4yNzcgMTZoLTEwLjI3N3YxMmgxMC4yNzdjMi42MDkgMCA0LjcyMy0yLjExNCA0LjcyMy00LjcyM3YtMi41NTVjMC0yLjYwOC0yLjExNC00LjcyMi00LjcyMy00LjcyMnoiLz48cGF0aCBvcGFjaXR5PSIuOCIgZmlsbD0iIzlFMTMwOCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyIgZD0iTTE2IDM4LjI3N2MwIDIuNjA5IDIuMTE0IDQuNzIzIDQuNzIzIDQuNzIzaDIuNTU1YzIuNjA4IDAgNC43MjItMi4xMTQgNC43MjItNC43MjN2LTEwLjI3N2gtMTJ2MTAuMjc3eiIvPjxwYXRoIG9wYWNpdHk9Ii44IiBmaWxsPSIjOUUxMzA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IiBkPSJNMjggNC43MjNjMC0yLjYwOS0yLjExNC00LjcyMy00LjcyMy00LjcyM2gtMi41NTVjLTIuNjA4IDAtNC43MjIgMi4xMTQtNC43MjIgNC43MjN2MTEuMjc3aDEydi0xMS4yNzd6Ii8+PHJlY3QgeD0iMTYiIHk9IjE2IiBvcGFjaXR5PSIuOCIgZmlsbD0iI0ZGNDcxMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyIgd2lkdGg9IjEyIiBoZWlnaHQ9IjEyIi8+PHBhdGggZmlsbD0iI0M4QzNCRCIgZD0iTTY1IDEwdjI2LjQwNWMwIDEuNDYtMS4wMjkgMi40OTUtMi41IDIuNDk1LTEuNTE4IDAtMi41LTEuMDM1LTIuNS0yLjQ5NXYtMjYuNDA1aC0zLjg3NGMtMS4yODIgMC0yLjIzLTEuMTgxLTIuMjMtMi41IDAtMS4yNzIuOTQ5LTIuNSAyLjIzLTIuNWgxNi4xMDVjMS4zMjkgMCAyLjIzMSAxLjIyOCAyLjIzMSAyLjUgMCAxLjMxOS0uOTAyIDIuNS0yLjIzMSAyLjVoLTcuMjMxem0xMCAyNi40MDVjMCAxLjQ2LTEuMDI5IDIuNDAxLTIuNSAyLjQwMXMtMi41LS45NDEtMi41LTIuNDAxdi0xOS43NzhjMC0xLjQ2IDEuMDI5LTIuNDAyIDIuNS0yLjQwMnMyLjUuOTQyIDIuNSAyLjQwMnYxOS43Nzh6bTIxLTE1LjgyM2MwLTEuMzE4LS42NDctMi4xNjYtMS45MjktMi4xNjYtLjk0OSAwLTIuMDcxLjQyNC0yLjA3MS44NDd2MTcuMTQxYzAgMS40Ni0xLjAyOSAyLjQwMi0yLjUgMi40MDJzLTIuNS0uOTQyLTIuNS0yLjQwMnYtMTUuODIyYzAtMS4zMTgtLjY0Ny0yLjE2Ni0xLjkyOS0yLjE2Ni0uOTQ5IDAtMS4wNzEuNDI0LTIuMDcxLjg0N3YxNy4xNDFjMCAxLjQ2LS41MjkgMi40MDItMiAyLjQwMnMtMi0uOTQyLTItMi40MDJ2LTE5LjY4M2MwLTEuNTA3LjYyNS0yLjMwNyAyLjA0OS0yLjMwN3MyLjExNi43MDYgMi4yMTEgMi4xMTljLjYxNy0xLjY0OCAxLjg4OS0yLjQ5NiAzLjgzNS0yLjQ5NiAyLjEzNiAwIDMuNTMxLjk0MiA0LjI5IDIuNDk2LjcxMi0xLjQ2IDIuNTI5LTIuNDk2IDQuNDc1LTIuNDk2IDMuMzIzIDAgNS4xNCAyLjI2MSA1LjE0IDUuNTF2MTYuODU5YzAgMS40Ni0xLjAyOSAyLjQwMi0yLjUgMi40MDJzLTIuNS0uOTQyLTIuNS0yLjQwMnYtMTUuODI0em0yMSAxLjM2NnYxNC40NTdjMCAxLjQ2LTEuMDI5IDIuNDk1LTIuNSAyLjQ5NS0xLjUyIDAtMi41LTEuMDM1LTIuNS0yLjQ5NXYtMjguOTE0YzAtMS40Ni45OC0yLjQ5NiAyLjUtMi40OTYgMS40NzEgMCAyLjUgMS4wMzYgMi41IDIuNDk2djEzLjcwM2w1LjgyOC0xNC41OThjLjQyNy0xLjEzIDEuMjUzLTEuNjAxIDIuNDM5LTEuNjAxIDEuMjM0IDAgMi40NzkuNzU0IDIuNDc5IDIuMjEzIDAgLjMzLS4wNjYuNzA2LS4yMDkgMS4xM2wtNS4zMDEgMTMuMjggNS41MTMgMTMuNzAyYy4xOS40NzIuMjg4Ljg0OC4yODggMS4yMjUgMCAxLjQ2LTEuMDQyIDIuMzU1LTIuNDE4IDIuMzU1LTEuMjgyIDAtMi4yMjEtLjcwNy0yLjY0OC0xLjc5MWwtNS45NzEtMTUuMTYxem0xNy0xLjMxOGMwIDEuMzE5LTEuMTk1IDIuMTY2LTIuNDc3IDIuMTY2LTEuNDcxIDAtMi41MjMtLjg0Ny0yLjUyMy0yLjE2NnYtLjY2YzAtMy42MjYgMi4xMDktNS45MzMgNi40NzctNS45MzMgNC4zNjYgMCA2LjUyMyAyLjExOSA2LjUyMyA2LjQwNHYxNi4wNThjMCAxLjM2NS0uODExIDIuMzA4LTIuMjgyIDIuMzA4LTEuMjgyIDAtMi4wNjctLjg0OS0yLjIwOS0xLjg4NS0uNjE2IDEuMjI1LTEuODE3IDIuMDcyLTMuNjIgMi4wNzItMy41NiAwLTUuMjAzLTMuMjQ5LTUuMjAzLTcuNDM5IDAtNC4zODEgMS41OTQtNy4xNTggNS40ODUtNy4xNTggMS4yODIgMCAyLjgyOS4zMyAyLjgyOS44NDd2LTUuMDg2YzAtMS4xNzctLjE3MS0xLjk3OC0xLjUtMS45NzhzLTEuNS43NTQtMS41IDIuMTE5di4zMzF6bTMgOC4wOTljMC0uMjM0LS42ODQtLjQyMi0xLjQ0My0uNDIyLTEuNTE5IDAtMi4xNjguODQ2LTIuMTY4IDMuMjQ4IDAgMi4zMDcuNSAzLjQ4NCAyLjExNCAzLjQ4NC43MTIgMCAxLjQ5Ny0uMjM2IDEuNDk3LS41MTh2LTUuNzkyem04LTkuNzk1YzAtMi45NjcgMS43OTQtNC44OTggNC44MzItNC44OTggMi4wNDEgMCAzLjE2OC45ODkgNC4xNjggMi4wMjV2LTguNTdjMC0xLjQ2LjUyOS0yLjQwMiAyLTIuNDAyczIgLjk0MiAyIDIuNDAydjI4LjkxNGMwIDEuNDEzLS42MjQgMi40MDEtMi4wOTYgMi40MDEtMS41MTggMC0yLjE2My0xLjAzNy0yLjMwNS0yLjI2MS0uNjY0IDEuMzY2LTIuMDIxIDIuNDQ5LTMuOTY4IDIuNDQ5LTIuOTg5IDAtNC42MzEtMi4zNTQtNC42MzEtNS4wMzl2LTE1LjAyMXptNSAxMy44NDVjMCAxLjI3MS42MjMgMi4wNzIgMS45NTIgMi4wNzIuOTAxIDAgMS4wNDgtLjMzIDIuMDQ4LS44NDh2LTE0Ljk3NWMtMS0uNDI0LTEuMDUxLS44NDgtMi0uODQ4LTEuMjM0IDAtMiAuNzA2LTIgMS45MzF2MTIuNjY4em0xNyAzLjYyNWMwIDEuNDYxLTEuMDI5IDIuNDAyLTIuNSAyLjQwMnMtMi41LS45NDEtMi41LTIuNDAydi0yOC45MTNjMC0xLjQ2IDEuMDI5LTIuNDAyIDIuNS0yLjQwMnMyLjUuOTQyIDIuNSAyLjQwMnYyOC45MTN6bTE2LTEwLjQ1M2MwIDEuMTc3LTEuMDAyIDIuMDQ5LTIuMDk0IDIuMDQ5aC02LjkwNnY1LjAxNGMwIDEuMzE5Ljc5IDIuMDI1IDEuOTc3IDIuMDI1IDEuMDQzIDAgMi4wMjMtLjUxOCAyLjAyMy0yLjAyNXYtLjI4MWMwLTEuNjAyIDEuMTQ2LTIuMzA4IDIuNDc3LTIuMzA4IDEuNTY2IDAgMi41MjMuOTg5IDIuNTIzIDIuMzU0di4zNzdjMCAzLjQzOC0yLjkxOCA1Ljg0LTYuOTA0IDUuODQtNC4zMiAwLTcuMDk2LTIuNDQ5LTcuMDk2LTYuNTk0di0xMS4zMDJjMC00LjU2OCAyLjgyMy03LjA2NCA3LjA0Ny03LjA2NCA0LjE3OCAwIDYuOTUzIDIuNTkgNi45NTMgNi43ODF2NS4xMzR6bS01LTUuNzkyYzAtMS40Ni0uODEyLTIuMTE5LTItMi4xMTktMS4xMzkgMC0yIC42NTktMiAyLjAyNXYzLjkzNWg0di0zLjg0MXptMTMuNSAxNC43MzljMS4yODIgMCAxLjUtLjg0OSAxLjUtMi4wMjV2LTEuMjI1YzAtMS4zNjQgMS4wNzYtMi4zMDcgMi41LTIuMzA3IDEuMzc2IDAgMi41Ljk0MiAyLjUgMi4zMDd2LjcwN2MwIDMuNzItMS45NDMgNi42NC02LjM1NyA2LjY0LTQuODg5IDAtNi42NDMtMi45NjgtNi42NDMtNi44NzZ2LTExLjIwN2MwLTMuOTA5IDEuNzU0LTYuODc1IDYuNjQzLTYuODc1IDQuNDE0IDAgNi4zNTcgMi45MiA2LjM1NyA2LjY0di43MDZjMCAxLjM2Ni0xLjEyNCAyLjMwNy0yLjUgMi4zMDctMS40MjQgMC0yLjUtLjk0MS0yLjUtMi4zMDd2LTEuMjI0YzAtMS4xNzctLjIxOS0yLjAyNS0xLjUtMi4wMjVzLTEuNS44NDctMS41IDIuMDI1djEyLjcxNWMwIDEuMTc2LjIxOCAyLjAyNCAxLjUgMi4wMjR6Ii8+PC9zdmc+" alt="Tim Kadlec"  onerror="this.src=/images/logo.png" /></a></h1>
+  
+</hgroup>
+
+
+            <a href="#top" id="jump">Back to top</a>
+  
+  		      <a id="toggle" href="#nav"><span>&#8801;</span></a>
+  	</div>
+  </header>
+  
+  <div id="wrap">
+    <section>
+    	<div>
+  <article class="h-entry " role="article">
+
+  <header>
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="dt-published" datetime="2015-02-06T13:50:00-06:00" pubdate data-updated="true">&#8212; February  6, 2015 &#8212;</time>
+    
+      <h1 class="entry-title">Client-side MVC's Major Bug</h1>
+    
+
+
+  </header>
+
+<section>
+  
+<div class="e-content"><p>Over the past year I conducted performance audits on a handful of sites that all used client-side MVC&#8217;s, typically Angular but not always. Each site had their own optimizations that needed to take place to improve performance. Yet a pattern emerged: client-side MVC&#8217;s were the major bottleneck for each. It slowed down the initial rendering of the page (particularly on mobile) and it limited our ability to optimize the critical path.</p>
+
+<p>So I get a great deal of happiness from reading posts from much smarter folks than I who are rallying against this all-to-common mistake.</p>
+
+<p>Back in December, <a href="http://www.filamentgroup.com/lab/mv-initial-load-times.html">The Filament Group analyzed a bunch of client -side MVC frameworks</a> to see their impact on the initial load time of a page. The results to render a simple To-Do app were disappointing:</p>
+
+<ul>
+<li>Ember: 5s on a Nexus 5, 3G connection</li>
+<li>Angular: 4s on a Nexus 5, 3G connection</li>
+<li>Backbone: 1s on a Nexus 5, 3G connection</li>
+</ul>
+
+
+<p>Only Backbone scores in a way that is at all acceptable, particularly in a world where people are trying to break the 1000 SpeedIndex barrier.</p>
+
+<p>And just last month PPK wrote up his <a href="http://www.quirksmode.org/blog/archives/2015/01/angular_and_tem.html">thoughts on client-side templating</a>. The full post is well worth your time, but for those of you who would like to cut to the chase:</p>
+
+<blockquote><p>I think it is wasteful to have a framework parse the DOM and figure out which bits of default data to put where while it is also initialising itself and its data bindings.</p></blockquote>
+
+<p>and:</p>
+
+<blockquote><p>Populating an HTML page with default data is a server-side job because there is no reason to do it on the client, and every reason for not doing it on the client.</p></blockquote>
+
+<p><a href="https://twitter.com/tkadlec/statuses/512677101292756992">I’ve said it before</a>: if your client-side MVC framework does not support server-side rendering, that is a bug. It cripples performance.</p>
+
+<p>It also limits reach and reduces stability. When you rely on client-side templating you create a single point of failure, something so commonly accepted as a bad idea that we&#8217;ve all been taught to avoid them even in our day-to-day lives.</p>
+
+<p>&#8220;Don&#8217;t put all your eggs in one basket.&#8221;</p>
+
+<p>It&#8217;s pretty good advice in general, and it&#8217;s excellent advise when you&#8217;re wading through an environment as unpredictable as the web with it&#8217;s broad spectrum of browsers, user settings, devices and connectivity.</p>
+
+<p>This might sound like I’m against these tools altogether. I’m not. I love the idea of a RESTful API serving up content that gets consumed by a JavaScript based templating system. I love the performance benefits that can be gained for subsequent page loads. It’s a smart stack of technology. But if that stack doesn’t also consist of a middle layer that generates the data—in full and on the server—for the first page load, then it&#8217;s incomplete.</p>
+
+<p>This isn&#8217;t idealism. Not only have I seen this on the sites I&#8217;ve been involved with, but companies like <a href="https://blog.twitter.com/2012/improving-performance-on-twittercom">Twitter</a>, <a href="http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/">AirBnB</a>, <a href="http://radar.oreilly.com/2014/10/isomorphic-javascript-with-lazojs.html">Wal-Mart</a> and <a href="http://www.slideshare.net/bigethan/isomorphic-javascript-at-trulia">Trulia</a> have all espoused the benefits of server-side rendering. In at least the case of the latter three, they&#8217;ve found that they don&#8217;t have to necessarily give up those JS-based templating systems that everyone loves. Instead, they&#8217;re able to take advantage of what <a href="http://www.nczonline.net/blog/2013/10/07/node-js-and-the-new-web-front-end/">Nicholas Zakas coined &#8220;the new web front-end&#8221;</a> by introducing a layer of Node.js into their stack and sharing their templates between Node and the client.</p>
+
+<p>This is where it gets interesting and where we can see the real benefits: when we stop with the stubborn insistence that everything has to be done entirely on the client-side and start to take advantage of the strengths of each of the layers of the web stack. Right now most of the progress in this area is coming from everyday developers who are addressing this issue for their own sites. Ember is aggressively pursuing this with FastBoot and <a href="https://twitter.com/tomdale/status/555153656127840256">making exciting progress</a>. React.js emphasizes this as well. But most of the other popular tools haven&#8217;t made a ton of progress here.</p>
+
+<p>I sincerely hope that this starts to change, sooner rather than later. Despite what is commonly stated, this isn’t a “web app” (whatever that is) vs “website” issue.</p>
+
+<p>It’s a performance issue.</p>
+
+<p>It’s a stability issue.</p>
+
+<p>It’s a reach issue.</p>
+
+<p>It&#8217;s a &#8220;building responsibly for the web&#8221; issue.</p>
+</div>
+
+    
+      <div class="meta">
+        
+        <p class="additional">
+
+        
+
+# <span class="tags">
+  
+    <a class='tag' href='/tags/frameworks/'>frameworks</a>, <a class='tag' href='/tags/javascript/'>javascript</a>, <a class='tag' href='/tags/performance/'>performance</a>
+  
+</span>
+
+        </p>
+
+      </div>
+    
+    
+</section>
+
+
+  <section id="disqus">
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</article>
+
+
+
+</div>
+
+
+      
+      
+    </section>
+    
+  </div><!-- /#wrap -->
+      <footer role="contentinfo">
+    
+    <!-- <h3><a href="http://fusionads.net">Powered by Fusion</a></h3>
+        <span id="fusion_ad">&nbsp;</span> -->
+<div class="lc">
+    <p class="copy">
+  &copy; 2015 Tim Kadlec.
+
+</p>
+</div>
+
+
+
+  </footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'timkadleccom';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://timkadlec.com/2015/02/client-side-templatings-major-bug/';
+        var disqus_url = 'http://timkadlec.com/2015/02/client-side-templatings-major-bug/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/javascripts/prism.js"></script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26806016-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+<script>
+window.onload = function(){
+  setTimeout(function(){
+    window.performance = window.performance || window.mozPerformance || window.msPerformance || window.webkitPerformance || {};
+    var t = performance.timing || {};
+
+    if (!t) {
+      //fail silently
+      return;
+    }
+    var start = t.navigationStart,
+        end = t.loadEventEnd
+        loadTime = (end - start) / 1000;
+
+    var copy = document.getElementsByClassName('copy');
+    copy[0].innerHTML += "<span class='loaded'>This page loaded in <strong>" + loadTime + " seconds</strong>.</span>";
+  }, 0); 
+}
+</script>
+
+</body>
+</html>

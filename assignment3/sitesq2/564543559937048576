@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html class='no-js' lang='en' xmlns:og='http://opengraphprotocol.org/schema/'>
+<head prefix='og: http://ogp.me/ns# audioboo: http://ogp.me/ns/apps/audioboo#'>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"8a803e7a5d","applicationID":"12190","transactionName":"dQ1bTBRdCQlURE5RFFILWmcFXgwVQhkSWA5B","queueTime":0,"applicationTime":154,"agent":"js-agent.newrelic.com/nr-632.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UQQHU0VSCgIJVA=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:9,3:7,4:11,5:3,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:9,3:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>
+<title>audioBoom / my first - the epilogue</title>
+<meta content='If you listened to my story - My First Time, I promised I would record the second part.&#x000A;Enjoy my humiliation.&#x000A;Love&#x000A;Jim&#x000A;x' name='description'>
+<meta content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'>
+<link data-turbolinks-track="1" href="https://d15mj6e6qmt1na.cloudfront.net/assets/audioboom_core-776dbf4ef51c16f6dd76bba3fb3c1b81.css" media="screen" rel="stylesheet" />
+<link data-turbolinks-track="1" href="https://d15mj6e6qmt1na.cloudfront.net/assets/audioboom_styles-bd48b867c5c726d5e0494669a09080c9.css" media="screen" rel="stylesheet" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-6532967-1', 'audioboom.com');
+  var gaWatchdog = setTimeout(function(){
+    function waitForJqueryThenSendFailure(){
+      if (window.$ && $.post) {
+        $.post('/stats/metrics/gafailed');
+      } else {
+        setTimeout(waitForJqueryThenSendFailure, 100);
+      }
+    }
+    waitForJqueryThenSendFailure();
+  }, 5000);
+  ga(function(){ clearTimeout(gaWatchdog); })
+ga('set', {"dimension4":"0","dimension3":"audio_clips/show","dimension2":2614899,"dimension9":""});
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+
+</script>
+<script src='//www.google-analytics.com/cx/api.js?experiment=vg6pdmLcTdOnBBXl3zbQvw'></script>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="lLKRT8ThjSbUvDbzAOB3Ikj2ZEmXN/or0gXm9/UUkg8=" name="csrf-token" />
+<link href='/osd.xml' rel='search' title='audioBoom search' type='application/opensearchdescription+xml'>
+<link href='https://audioboom.com/icons/apple-touch-icon-144x144.png' rel='apple-touch-icon-precomposed' sizes='144x144'>
+<link href='https://audioboom.com/icons/apple-touch-icon-152x152.png' rel='apple-touch-icon-precomposed' sizes='152x152'>
+<link href='https://audioboom.com/icons/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='https://audioboom.com/icons/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<meta content='audioBoom' name='application-name'>
+<meta content='#FFFFFF' name='msapplication-TileColor'>
+<meta content='https://audioboom.com/icons/mstile-144x144.png' name='msapplication-TileImage'>
+<link href='https://audioboom.com/' rel='home' title='Home'>
+<link href='http://microformats.org/profile/hcard' rel='profile'>
+
+<meta content='48950226243' property='fb:app_id'>
+<meta content='517380060' property='fb:admins'>
+<meta content='1979ce46ecf9652f' property='wb:webmaster'>
+<link href="http://audioboom.com/users/2503366/boos.rss" rel="alternate" title="JimCMackintosh&#39;s Posts" type="application/rss+xml" />
+<!--[if IE 8]>
+<link data-turbolinks-track="1" href="https://d15mj6e6qmt1na.cloudfront.net/assets/ie8-23849bc44a4fcfa6ff12eb42a3ad6414.css" media="screen" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 9]>
+<link data-turbolinks-track="1" href="https://d15mj6e6qmt1na.cloudfront.net/assets/ie9-9d5f5f0ddc5dac9b0bf774c93c64346d.css" media="screen" rel="stylesheet" />
+<![endif]-->
+<link data-turbolinks-track='1' href='https://d15mj6e6qmt1na.cloudfront.net/application' rel='asset-tracking'>
+
+<!-- Home Page -->
+<script type="text/spacebars" name="home">
+
+    <div class="bg-black-gd-ver pos-abs wi-100">
+      <div class="container tc pos-rel">
+        <div class="logo-or-icon dib tc mtm mbm mtl-nxs mbl-nxs">
+          <a class="boom logo-image-link blue logo-static" href="/" data-image-url="https://d15mj6e6qmt1na.cloudfront.net/assets/logo-blue-fab1875efe40814b1e2e5be8b2f915cf.png">audioBoom</a>
+        </div>
+        {{#if isShowingSignup}}
+          <a href="/login" ref="authLogin" class="js-activity-link pos-abs right-0 top-0 ptx prs f1 white">Log in</a>
+        {{else}}
+          <a href="/signup" ref="authSignUp" class="js-activity-link pos-abs right-0 top-0 ptx prs f1 white">Sign Up</a>
+        {{/if}}
+      </div>
+    </div>
+
+    <div class="fs-section section-01 ptxl">
+      <div class="container tc">
+        <h1 class="f1 mega-nxs white text-shadow-black">Radio Reimagined</h1>
+        <h3 class="f2 f1-nxs white text-shadow-black fwn">Breaking news, latest sport, longer listens</h3>
+
+        <div class="wi-100 hi-100 pos-abs left-0 z-4 flip-animation-container">
+          <div class="fn col-sm-8 col-md-6 col-lg-6 mw8 center pos-rel z-2 pal mtx-l mtx-m tc bg-white ba auth-modal-body flip-animation-container">
+            <div class="{{#if isBusy}}animate{{/if}} rainbow-stream pos-abs top-0 left-0 wi-100 hi1 loading-bar"></div>
+            <div class="auth-modal-content {{authActivity}}" role="dialog" tabindex="-1" aria-labelledby="dialogTitle">
+              {{> __dynamic template=authActivity}}
+            </div>
+          </div>
+
+          <div class="fs-section mtxxl-m mtxxl-l mbxl-l mbxl-m mbm pos-rel z-3 section-03">
+            <div class="container ptxl-l ptxl-m">
+              <div class="row">
+                <div class="col-sm-5 col-md-5 col-lg-5">
+                  <div class="phone {{phone}}-perspective"></div>
+                </div>
+                <div class="col-sm-7 col-md-7 col-lg-7 tc tl-m tl-l mbl">
+                  <h2 class="giant giant-responsive mbx blackish mvn">Listen anywhere</h2>
+                  <h3 class="h1-responsive mbx blackish">On-demand audio</h3>
+                  <div class="app-icons">
+                    <a href="https://itunes.apple.com/app/audioboo/id305204540?mt=8" target="_blank">
+                      <img alt="Download on the appstore" class="hi3 mrm mbm" src="https://d15mj6e6qmt1na.cloudfront.net/assets/download_on_the_appstore-5653fe0ccc9db6945870824b2ccc4a53.svg" />
+</a>                    <a href="https://play.google.com/store/apps/details?id=com.audioboom" target="_blank">
+                      <img alt="App2" class="hi3 mbm mrm" src="https://d15mj6e6qmt1na.cloudfront.net/assets/app2-9edfe81bba1a5b21638b200009b35151.png" />
+</a>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="fs-section prm plm section-04">
+            <div class="container">
+              <div class="row pos-rel">
+                <div class="col-sm-7 col-md-7 col-lg-7 tc tl-m tl-l ptxl-l pbxl-l ptxl-m pbxl-m pvm">
+                  <h2 class="giant giant-responsive mbm mbxl-ns blackish">Share your voice</h2>
+                  <h3 class="h1-responsive mvl mvxl-ns blackish">Record, upload and edit on the fly</h3>
+                  <div class="app-icons">
+                    <a href="https://itunes.apple.com/app/audioboo/id305204540?mt=8" target="_blank">
+                        <img alt="Download on the appstore" class="hi3 mrm mbm" src="https://d15mj6e6qmt1na.cloudfront.net/assets/download_on_the_appstore-5653fe0ccc9db6945870824b2ccc4a53.svg" />
+</a>                    <a href="https://play.google.com/store/apps/details?id=com.audioboom" target="_blank">
+                        <img alt="App2" class="hi3 mbm mrm" src="https://d15mj6e6qmt1na.cloudfront.net/assets/app2-9edfe81bba1a5b21638b200009b35151.png" />
+</a>                  </div>
+                </div>
+                <div class="col-sm-5 col-md-5 col-lg-5 pos-abs-l pos-abs-m bottom-0 right-0">
+                  <div class="phone {{phone}}-handed"></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="pal mtm">
+                  <a href="/privacy" class="mls mrs">Privacy</a>
+                  <a href="/about/terms" class="mls mrs">Terms of Use</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="fs-section section-02">
+    </div>
+
+
+</script>
+
+<!-- Auth Modal -->
+
+<script type="text/spacebars" name="auth">
+  <div class="wi-100 hi-100 pos-fix top-0 left-0 z-4 {{#unless isPage}}lightbox-fader{{/unless}} of-aut {{#if animated}}animated fadeIn{{/if}}">
+    <div class="pos-abs left-0 top-0 wi-100 hi-100 z-1"></div>
+    <div class="container hi-100">
+      <div class="row">
+
+        <div class="logo-or-icon tc mtm mbm mtl-nxs mbl-nxs pos-rel z-2">
+          <a class="boom logo-image-link blue logo-static" href="/">audioBoom</a>
+        </div>
+        {{#unless isPage}}
+        <h1 class="f1 mega-nxs white tc">Radio Reimagined</h1>
+        <h3 class="f2 f1-nxs white fwn tc">Breaking news, latest sport, longer listens</h3>
+        {{/unless}}
+
+        <div class="fn col-sm-8 col-md-6 col-lg-6 center pos-rel z-2 pal mtx mbx tc bg-white ba auth-modal-body">
+          <div class="{{#if isBusy}}animate{{/if}} rainbow-stream pos-abs top-0 left-0 wi-100 hi1 loading-bar"></div>
+          <div class="auth-modal-content {{activity}}" role="dialog" tabindex="-1" aria-labelledby="dialogTitle">
+            {{> __dynamic template=activity}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
+
+<script type="text/spacebars" name="authSignUp">
+  <div class="row">
+  <div class="fn center col-md-9 tl">
+    <div class="clearfix">
+      <h3 id="dialogTitle" class="dark-gray b fl">Sign Up</h3>
+      <a class="gray fr why-sign-up-link js-activity-link" ref="authWhySignUp" href="/about/why-signup">Why sign up <i class="fa fa-question-circle blue"></i></a>
+    </div>
+    <h3 class="blue fwn mbx">Unlimited listening with a free account</h3>
+  </div>
+  </div>
+  
+  <div class="clearfix mbl">
+    <form class="fn center col-sm-9 col-md-9 col-lg-9" action="/signup" novalidate >
+      {{#if postLoginRedirect }}
+        <input type='hidden' name='redirect' value="{{postLoginRedirect}}"/>
+      {{/if}}
+
+
+      <input class="dn" type='text' name='chromehoneypotusername'/>
+      <input class="dn" type='password' name='chromehoneypotpassword'/>
+
+      {{> inputFormGroup type='text' model='user' attribute='username' placeholder='Pick a username' icon='user' required=true}}
+
+      {{> inputFormGroup type='email' model='user' attribute='email' placeholder='Enter your email' icon='envelope' value='' required=true}}
+
+      {{> inputFormGroup type='password' model='user' attribute='password' placeholder='Enter your password' icon='lock' required=true}}
+
+      <div>
+        {{> submitButton text='Create My Account'}}
+        <small class="dib mtl">By clicking this button, you agree to audioBoom's<br class="dn db-ns"/>
+          <a href="/privacy">Privacy</a> &amp; <a href="/about/terms">Terms of Use</a> </small>
+      </div>
+    </form>
+  </div>
+
+  <div class="bg-light-gray bt auth-modal-footer">
+    <h3 class="mtn dark-gray b">Already have an account?</h3>
+    <a href="/login" ref="authLogin" class="js-activity-link h4 fwn blue dib mbm">Log in</a>
+  </div>
+</script>
+
+<script type="text/spacebars" name="authLogin">
+  <h3 id="dialogTitle" class="dark-gray b mbx">Log in to listen</h3>
+
+  <div class="clearfix mbx">
+    <form class="fn center col-sm-9 col-md-9 col-lg-9" novalidate>
+
+      {{#if postLoginRedirect }}
+        <input type='hidden' name='redirect' value="{{postLoginRedirect}}"/>
+      {{/if}}
+
+      {{> inputFormGroup type='text' model='user' attribute='username' placeholder='Username' icon='user' required=true}}
+
+      {{> inputFormGroup type='password' model='user' attribute='password' placeholder='Password' icon='lock' required=true}}
+
+      <div class="row form-group tl login--remember-me">
+        <div class="checkbox">
+          <div class='col-xs-12 col-sm-5' style='border: 0px solid red'>
+            <label>
+              <input type="checkbox" name="remember_me" class="remember_me" checked/> Remember me
+            </label>
+          </div>
+          <a href="/amnesia" ref="authForgotPassword" style='border: 0px solid red' class="col-xs-12 col-sm-7 mtm fudge-forgotten-password-link js-activity-link">Forgotten your password?</a>
+        </div>
+      </div>
+
+      <div>
+        {{> submitButton text='Log in'}}
+
+        <div class="pos-rel pvm">
+          <hr class="pos-abs top-0 wi-100"/>
+          <span class="bg-white mid-gray pos-rel z-2 phs dib">or</span>
+        </div>
+
+        <a href="/signup/twitter?redirect=%2Fboos%2F2614899" class="btn btn-lg btn-block bg-blue white clearfix tl f1">
+          Log in with <strong>Twitter</strong>
+          <i class="fa fa-twitter fr mtxs opa-40"></i>
+        </a>
+      </div>
+    </form>
+  </div>
+
+  <div class="bg-light-gray bt auth-modal-footer">
+    <h3 class="mtn mbl dark-gray b">Don't have an account?</h3>
+    <div class="fn center col-sm-9 col-md-9 col-lg-9">
+      <a href="/signup" ref="authSignUp" class="btn btn-lg btn-block bg-green white js-activity-link mbm tl f1">
+        Get audioBoom free
+        <i class="fa fa-chevron-right fr mtxs opa-40"></i>
+      </a>
+    </div>
+  </div>
+
+</script>
+
+<script type="text/spacebars" name="authForgotPassword">
+  <h3 id="dialogTitle" class="dark-gray b">Forgot your password?</h3>
+  <h3 class="blue fwn mbx">
+    We’ll email you with instructions<br/> on how to reset your password.
+  </h3>
+  {{#if errorMessages}}
+  {{> formErrors errorMessages=errorMessages}}
+  {{/if}}
+  <div class="clearfix mbx">
+    <form class="fn center col-sm-9 col-md-9 col-lg-9" novalidate>
+      {{> inputFormGroup type='text' model='user' attribute='username' placeholder='Your username' icon='user' required=true}}
+
+      {{> submitButton text='Reset Password'}}
+    </form>
+  </div>
+
+  <div class="bg-light-gray bt auth-modal-footer">
+    <h4>
+      <a href="/login" ref="authLogin" class="js-activity-link blue fwn">Log in</a> &nbsp;
+      <a href="/signup" ref="authSignUp" class="js-activity-link blue fwn">Sign up</a>
+    </h4>
+  </div>
+
+</script>
+
+<script type="text/spacebars" name="authSignedUp">
+  <h3 id="dialogTitle" class="dark-gray b">All done</h3>
+  <h3 class="blue fwn mbx">Happy listening!</h3>
+
+  <div class="green f1 mbx"><i class="fa fa-smile-o fa-5x"></i></div>
+  <div class="clearfix mbx">
+    <form class="main fn center col-sm-9 col-md-9 col-lg-9" novalidate>
+      {{> submitButton text='Continue'}}
+    </form>
+  </div>
+
+  <div class="mbx tl black">
+    <h3>Recommended</h3>
+    <p>Do you want to follow the {{recommendation.title}} podcast?</p>
+
+    <div class="flag">
+       <div class="flag--image">
+         <img src="{{recommendation.urls.logo_image.original}}" class="mb1 wi-100 dib mbs"/>
+
+         <form class="follow wi4" action="/streams/{{recommendation.stream_id}}/{{#if recommendation.following}}un{{/if}}follow">
+           <button type="submit" class="btn f3 wi-100 js-follow ttc">{{#if recommendation.following}}un{{/if}}follow</button>
+         </form>
+
+       </div>
+       <div class="flag--body">
+        <h4>{{recommendation.title}}</h4>
+        <p>{{recommendation.description}}</p>
+       </div>
+    </div>
+
+  </div>
+  <img src="https://pt.fiksu.com/pixel?partnerid=4a384ba9" width="1" height="1" class="pos-abs"/>
+
+</script>
+
+<script type="text/spacebars" name="authResetPassword">
+  <h3 id="dialogTitle" class="dark-gray b">Success!</h3>
+  <h3 class="blue fwn mbx">
+    We’ve just emailed you with instructions on how to reset your password
+  </h3>
+
+  <div class="clearfix mbx">
+    <div class="fn center col-sm-9 col-md-9 col-lg-9">
+      <a href="/login" ref="authLogin" class="btn btn-lg btn-block bg-orange-gd white clearfix tl f1 js-activity-link">
+        Continue
+        <i class="fa fa-chevron-right fr mtxs opa-40"></i>
+      </a>
+    </div>
+  </div>
+
+  <p class="mbx">Note: If the email doesn’t show up for a while it may have gone into your spam folder.
+It will be from noreply@audioboom.com</p>
+</script>
+
+<script type="text/spacebars" name="authWhySignUp">
+  <div class="reasons-to-signup-container tl fn center col-sm-10 col-md-10 col-lg-10">
+    <h3 id="dialogTitle" class="dark-gray b mbx">Why sign up?</h3>
+    {{#if content}}
+    {{{content}}}
+    {{else}}
+    <div class="mbx"><i class="fa fa-spinner fa-spin"></i> Loading</div>
+    {{/if}}
+  </div>  
+  
+  <div class="clearfix mvx">
+    <div class="fn center col-sm-9 col-md-9 col-lg-9">
+      <a class="btn btn-lg btn-block bg-orange-gd white clearfix tl f1 js-activity-link" ref="authSignUp">
+        Continue <i class="fa fa-chevron-right fr mtxs opa-40"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="bg-light-gray bt auth-modal-footer">
+    <h4>
+      <a href="/login" ref="authLogin" class="js-activity-link blue fwn">Log in</a> &nbsp;
+      <a href="/signup" ref="authSignUp" class="js-activity-link blue fwn">Sign up</a>
+    </h4>
+  </div>
+</script>
+
+<!-- Shared Comps -->
+<script type="text/spacebars" name="formErrors">
+  <div class="alert alert-warning animated fadeIn" role="alert">
+    <ul class="list tl pln fn center mbl">
+      {{#each errorMessages}}
+      <li>{{.}}</li>
+      {{/each}}
+    </ul>
+  </div>
+</script>
+
+<script type="text/spacebars" name="inlineErrorMessage">
+{{#if errorMessage attribute}}<div class="tl orange mts" role="alert">{{errorMessage attribute}}</div>{{/if}}
+</script>
+
+<script type="text/spacebars" name="inputFormGroup">
+<div class="pos-rel form-group has-feedback {{hasFeedback attribute}}" aria-live="assertive">
+  <div class="{{#if hasError attribute}}animated shake-short{{/if}}">
+    <input type="{{type}}" name="{{model}}[{{attribute}}]" class="form-control input-lg {{attribute}}" placeholder="{{placeholder}}" value="{{value}}" 
+    aria-label="{{placeholder}}" aria-required="{{required}}" aria-describedby="{{attribute}}Status" aria-invalid="{{hasError attribute}}" />
+    <i class="fa fa-{{icon}} form-control-feedback" aria-hidden="true"></i>
+  </div>
+  <span id="{{attribute}}Status">{{> inlineErrorMessage attribute=attribute}}</span>
+</div>
+</script>
+
+<script type="text/spacebars" name="submitButton">
+<button type="submit" class="btn btn-lg btn-block bg-orange-gd white clearfix tl f1">
+  {{text}}
+  <i class="fa fa-chevron-right fr mtxs opa-40"></i>
+</button>
+</script>
+
+<!-- Main -->
+<script type="text/spacebars" name="main">
+  {{> __dynamic template=modal}}
+  {{> __dynamic template=page}}
+</script>
+
+<script data-turbolinks-track="1" src="https://d15mj6e6qmt1na.cloudfront.net/assets/preload-3641acdd850ea27ec32a337b77325006.js"></script>
+<meta content="audioboo:///play_boo?id=2614899" property="al:ios:url" /><meta content="305204540" property="al:ios:app_store_id" /><meta content="audioBoom" property="al:ios:app_name" /><link href='https://audioboom.com/boos/2614899-my-first-the-epilogue' rel='canonical'>
+<link href='https://audioboom.com/publishing/oembed/v3.json?url=https%3A%2F%2Faudioboom.com%2Fboos%2F2614899-my-first-the-epilogue' rel='alternate' type='application/json+oembed'>
+<link href='https://audioboom.com/publishing/oembed/v3.xml?url=https%3A%2F%2Faudioboom.com%2Fboos%2F2614899-my-first-the-epilogue' rel='alternate' type='application/xml+oembed'>
+<meta content='audioBoom' property='og:site_name'>
+<meta content='audioboo:boo' property='og:type'>
+<meta content='audioBoom: my first - the epilogue' name='title'>
+<meta content='my first - the epilogue' name='audio_title'>
+<meta content='JimCMackintosh' name='audio_artist'>
+<!-- lie to facebook to get a custom player -->
+<meta content='video' name='medium'>
+<meta content='audio/mp3' name='audio_type'>
+<link href='https://audioboom.com/boos/2614899-my-first-the-epilogue.mp3' rel='audio_src'>
+<link href='https://d15mj6e6qmt1na.cloudfront.net/files/images/0977/0048/82A1D5C5-DF42-4ACF-87C8-1774C7CD30F6-698-0000015E8CD00319.jpg' rel='image_src'>
+<meta content='my first - the epilogue' property='og:title'>
+<meta content='If you listened to my story - My First Time, I promised I would record the second part.&#x000A;Enjoy my humiliation.&#x000A;Love&#x000A;Jim&#x000A;x' property='og:description'>
+<meta content='https://d15mj6e6qmt1na.cloudfront.net/files/images/0977/0048/82A1D5C5-DF42-4ACF-87C8-1774C7CD30F6-698-0000015E8CD00319.jpg' property='og:image'>
+<meta content='685' property='og:image:width'>
+<meta content='800' property='og:image:height'>
+<meta content='https://audioboom.com/boos/2614899-my-first-the-epilogue' property='og:url'>
+<meta content='https://audioboom.com/boos/2614899-my-first-the-epilogue.mp3' property='og:audio'>
+<meta content='my first - the epilogue' property='og:audio:title'>
+<meta content='JimCMackintosh' property='og:audio:artist'>
+<meta content='audio/mp3' property='og:audio:type'>
+<meta content='480' property='og:video:width'>
+<meta content='150' property='og:video:height'>
+<meta content='application/x-shockwave-flash' property='og:video:type'>
+<meta content='https://abfiles.s3.amazonaws.com/swf/audioboom_default_player_v1.swf?autostart=play&amp;imgURL=&amp;link_color=%233b5998&amp;mp3Author=JimCMackintosh&amp;mp3Duration=367015.0&amp;mp3LinkURL=https%3A%2F%2Faudioboom.com%2Fboos%2F2614899-my-first-the-epilogue&amp;mp3Time=05.50pm+02+Nov+2014&amp;mp3Title=my+first+-+the+epilogue&amp;mp3URL=https%3A%2F%2Faudioboom.com%2Fboos%2F2614899-my-first-the-epilogue.mp3%3Fsource%3Dfacebook&amp;no_social=1&amp;waveimgURL=https%3A%2F%2Fd15mj6e6qmt1na.cloudfront.net%2Fi%2Fw%2F1395344' property='og:video'>
+<meta content='https://abfiles.s3.amazonaws.com/swf/audioboom_default_player_v1.swf?autostart=play&amp;imgURL=&amp;link_color=%233b5998&amp;mp3Author=JimCMackintosh&amp;mp3Duration=367015.0&amp;mp3LinkURL=https%3A%2F%2Faudioboom.com%2Fboos%2F2614899-my-first-the-epilogue&amp;mp3Time=05.50pm+02+Nov+2014&amp;mp3Title=my+first+-+the+epilogue&amp;mp3URL=https%3A%2F%2Faudioboom.com%2Fboos%2F2614899-my-first-the-epilogue.mp3%3Fsource%3Dfacebook&amp;no_social=1&amp;waveimgURL=https%3A%2F%2Fd15mj6e6qmt1na.cloudfront.net%2Fi%2Fw%2F1395344' property='og:video:secure_url'>
+<meta content='https://audioboom.com/JimCMackintosh' property='audioboo:author'>
+<meta content='21184977' property='twitter:site:id'>
+<meta content='138413023' property='twitter:creator:id'>
+<meta content='If you listened to my story - My First Time, I promised I would record the second part.&#x000A;Enjoy my humiliation.&#x000A;Love&#x000A;Jim&#x000A;x' property='twitter:description'>
+<!-- / embed iframe already rendering something different than actual player -->
+<meta content='player' property='twitter:card'>
+<meta content='https://audioboom.com/boos/2614899-my-first-the-epilogue/embed/v3?image_option=none&amp;link_color=%2355ACEE&amp;source=twitter_card&amp;utm_campaign=detailpage&amp;utm_content=card&amp;utm_medium=social&amp;utm_source=twitter' property='twitter:player'>
+<meta content='435' property='twitter:player:width'>
+<meta content='150' property='twitter:player:height'>
+<meta content='audioBoom' name='twitter:app:name:iphone'>
+<meta content='305204540' name='twitter:app:id:iphone'>
+<meta content='audioboo:///play_boo?id=2614899' name='twitter:app:url:iphone'>
+<meta content='audioBoom' name='twitter:app:name:ipad'>
+<meta content='305204540' name='twitter:app:id:ipad'>
+<meta content='audioboo:///play_boo?id=2614899' name='twitter:app:url:ipad'>
+<meta content='audioBoom' name='twitter:app:name:googleplay'>
+<meta content='fm.audioboo.application' name='twitter:app:id:googleplay'>
+<meta content='http://audioboom.com/play_boo?id=2614899' name='twitter:app:url:googleplay'>
+<meta content='audio' property='weibo:type'>
+<meta content='https://abfiles.s3.amazonaws.com/swf/audioboom_default_player_v1.swf?autostart=play&amp;imgURL=&amp;mp3Author=JimCMackintosh&amp;mp3Duration=367015.0&amp;mp3LinkURL=https%3A%2F%2Faudioboom.com%2Fboos%2F2614899-my-first-the-epilogue&amp;mp3Time=05.50pm+02+Nov+2014&amp;mp3Title=my+first+-+the+epilogue&amp;mp3URL=https%3A%2F%2Faudioboom.com%2Fboos%2F2614899-my-first-the-epilogue.mp3%3Fsource%3Dweibo&amp;waveimgURL=https%3A%2F%2Fd15mj6e6qmt1na.cloudfront.net%2Fi%2Fw%2F1395344' property='weibo:audio:embed_code'>
+<meta content='https://audioboom.com/boos/2614899-my-first-the-epilogue.mp3' property='weibo:audio:stream'>
+<meta content='367.015' property='weibo:audio:duration'>
+
+</head>
+<body class='boo-detail-page publishable fully-responsive audio_clips show' data-ga-vars='{"dimension4":"0","dimension3":"audio_clips/show","dimension2":2614899,"dimension9":""}'>
+
+<noscript>
+<div class='bg-primary'>
+<div class='white mw8 center pal tc'>
+<img alt="Audioboom logo black and white 280 120" src="https://d15mj6e6qmt1na.cloudfront.net/assets/audioboom_logo_black_and_white_280_120-36c6e4ece2a45644317e8f3cc4601ae9.png" />
+<h1 class='f1'>audioBoom uses Javascript</h1>
+<h2 class='f2'>Please enable it in your browser's preferences.</h2>
+<p class='underlined-links'>Please visit our <a class="white" href="http://support.audioboom.com">support center</a> if you're having problems.</p>
+</div>
+</div>
+</noscript>
+<div id='page_wrapper'>
+<div id='page'>
+<div class='shared-header audioboom'>
+<div class='full-width-top-bit'>
+<div class='logo-or-icon'>
+<a class="boom logo-image-link pull-left" href="/">audioBoom</a>
+</div>
+<div class='page-header-main-nav g-container'>
+<ul class='page-header-main-nav-menu pull-left list-unstyled'>
+<li class='horiz mb-show mb-sidebar-toggle-container'>
+<a class='mb-sidebar-toggle'>
+<i class='fa fa-bars fa-2x'></i>
+</a>
+</li>
+<li class='horiz'>
+<a href="/browse">Browse</a>
+</li>
+<li class='horiz nav-link-store'>
+<a href="/browse/store">Store</a>
+</li>
+</ul>
+<ul class='loggedOut page-header-main-nav-menu pull-right' role='navigation'>
+<li class='horiz hidden-xxs'>
+<a class='js-sign-up'>
+Sign Up
+</a>
+</li>
+<li class='horiz hidden-xxs'>
+<a class='js-login'>
+Login
+</a>
+</li>
+<li class='horiz dropdown btstrp' data-hover-trigger-dropdown='1'>
+<a data-toggle="dropdown" href="http://support.audioboom.com" role="button"><span class='label'>More</span>
+<i class='fa fa-caret-down fa-lg'></i>
+</a><ul class='dropdown-menu btstrap dropdown-menu-right' role='menu'>
+<li class='visible-xxs-list-item'>
+<a class='js-sign-up'>
+Sign in
+</a>
+</li>
+<li class='visible-xxs-list-item'>
+<a class='js-login'>
+Log in
+</a>
+</li>
+<li class='visible-xxs-list-item divider'></li>
+<li><a href="/about/apps">Download the App</a></li>
+<li><a href="/about/upgrade">Get Started</a></li>
+<li><a href="http://support.audioboom.com">Help &amp; Feedback</a></li>
+<li><a href="/about/us">About us</a></li>
+<li><a href="/about/widgets">Widgets</a></li>
+<li class='divider'></li>
+<li><a href="/guidelines">Community Guidelines</a></li>
+<li><a href="/about/terms">Terms &amp; Conditions</a></li>
+<li><a href="/privacy">Privacy Policy</a></li>
+<li><a href="http://www.audioboomplc.com">Investor Relations</a></li>
+<li><a href="http://twitter.com/audioboom">Twitter</a></li>
+<li><a href="http://www.facebook.com/audioboom">Facebook</a></li>
+<li><a href="http://blog.audioboom.com">Blog</a></li>
+<li class='divider'></li>
+<li><a href="/about/for-broadcasters">For Broadcasters</a></li>
+<li><a href="/about/for-podcasts">For Podcasters</a></li>
+<li><a href="/about/education">For Educators</a></li>
+<li><a href="/about/local-communities">For Communities</a></li>
+<li><a href="/about/for-sportscasters">For Sports</a></li>
+<li><a href="http://github.com/audioboo/api">For Developers</a></li>
+<li class='divider'></li>
+<li class='dropdown-header'>&copy;2015 audioBoom</li>
+</ul>
+</li>
+<li class='horiz nav-link-search'>
+<a class="js-toggle-search-button" href="/boos/2614899?showsearch=1" title="Search"><img alt="Search" src="https://d15mj6e6qmt1na.cloudfront.net/assets/menu_search_button-e62169d80d2d7b5f0aa3bc4528a8adc2.png" />
+</a><div class='navbar-search'>
+<div class='page-header-search-field' data-js-live-searchwrapper='' role='search'>
+<form accept-charset="UTF-8" action="/search" method="get"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+<input autocomplete="off" class="search-field js-live-search" id="q" name="q" placeholder="Search" type="text" />
+<div class='sh-fa-wrapper fa fa-lg pull-right'>
+<input class="search-button" type="submit" value="" />
+</div>
+</form>
+
+</div>
+
+</div>
+</li>
+<li class='horiz last nav-link-record'>
+<a href="/boos/new" title="Record"><img alt="Record" src="https://d15mj6e6qmt1na.cloudfront.net/assets/menu_record_button-721f25bdb32878bbdc1c32934f302bfe.png" />
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<div style='padding-top: 1em'></div>
+
+<div id='bd'>
+<div class='single-slim-fixed-layout'>
+<div class='btn-toolbar'>
+</div>
+
+<div class='g-container'>
+
+<div class='container-with-shadow'>
+<div class='main-container' style='width: 100%; padding: 0em; position: relative;'>
+<div class='temporary-subpanel'>
+<div class='detail-page-content' role='main'>
+<div data-main-player-id='audio_clip_2614899' id='accessiblePlayer'>
+<button class='play'>play audio</button>
+<button class='pause' disabled>pause audio</button>
+</div>
+<div class='detail-page-content_page_header stubbornella-lastUnit'>
+<div class='social-buttons pull-right'>
+<ol class='social-sharing-buttons js-social-sharing-buttons' data-url='https://audioboom.com/boos/2614899-my-first-the-epilogue'>
+<li class='cell square more-button'>
+<a class='btn round more js-show-toggle pan' data-target='.social-sharing-buttons' href='javascript:void(0)' title='Sharing options'><i class='fa fa-facebook'></i>&nbsp;<i class='fa fa-twitter'></i><br>
+&hellip;
+</a>
+</li>
+<li class='cell n1 square'>
+<a class='btn round twitter' data-name='twitter' data-popup='twitter;width=550,height=420' href='https://twitter.com/share?lang=en&amp;text=my+first+-+the+epilogue&amp;url=https%3A%2F%2Faudioboom.com%2Fboos%2F2614899-my-first-the-epilogue%3Futm_campaign%3Ddetailpage%26utm_content%3Dretweet%26utm_medium%3Dsocial%26utm_source%3Dtwitter&amp;via=JimCMackintosh' title='Share to Twitter'><i class='fa fa-twitter'></i></a>
+</li>
+<li class='cell n2 square'>
+<a class='btn round facebook' data-name='facebook' data-popup='facebook;width=626,height=436' href='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Faudioboom.com%2Fboos%2F2614899-my-first-the-epilogue%3Futm_campaign%3Ddetailpage%26utm_content%3Dretweet%26utm_medium%3Dsocial%26utm_source%3Dfacebook' title='Share to Facebook'><i class='fa fa-facebook'></i></a>
+</li>
+<li class='cell n3 square'>
+<a class='btn round google' data-name='googleplus' data-popup='googleplus;width=480,height=420' href='https://plus.google.com/share?url=https%3A%2F%2Faudioboom.com%2Fboos%2F2614899-my-first-the-epilogue%3Futm_campaign%3Ddetailpage%26utm_content%3Dretweet%26utm_medium%3Dsocial%26utm_source%3Dgoogleplus' title='Share to Google Plus'><i class='fa fa-google-plus'></i></a>
+</li>
+<li class='cell n4 square'>
+<a class='btn round linkedin' data-name='linkedin' data-popup='linkedin;width=520,height=570' href='http://www.linkedin.com/shareArticle?mini=true&amp;source=audioBoom&amp;summary=If+you+listened+to+my+story+-+My+First+Time%2C+I+promised+I+would+record+the+second+part.%0AEnjoy+my+humiliation.%0ALove%0AJim%0Ax&amp;title=my+first+-+the+epilogue&amp;url=https%3A%2F%2Faudioboom.com%2Fboos%2F2614899-my-first-the-epilogue%3Futm_campaign%3Ddetailpage%26utm_content%3Dretweet%26utm_medium%3Dsocial%26utm_source%3Dlinkedin' title='Share to LinkedIn'><i class='fa fa-linkedin'></i></a>
+</li>
+<li class='cell n5 square'>
+<a class='btn round pinterest' data-name='pinterest' data-popup='pinterest;width=770,height=350' href='http://pinterest.com/pin/create/button/?description=my+first+-+the+epilogue&amp;url=https%3A%2F%2Faudioboom.com%2Fboos%2F2614899-my-first-the-epilogue%3Futm_campaign%3Ddetailpage%26utm_content%3Dretweet%26utm_medium%3Dsocial%26utm_source%3Dpinterest' title='Share to Pinterest'><i class='fa fa-pinterest'></i></a>
+</li>
+<li class='cell n6 square'>
+<a class="btn round email" data-name="email" href="mailto:?body=Hi%20-%20I%20thought%20you%27d%20like%20this%20audioBoom%20post%20by%20Jim%3A%0Ahttps%3A%2F%2Faudioboom.com%2Fboos%2F2614899-my-first-the-epilogue%3Futm_campaign%3Ddetailpage%26utm_content%3Dretweet%26utm_medium%3Dsocial%26utm_source%3Demail%0A%0A&amp;subject=audioBoom%3A%20my%20first%20-%20the%20epilogue" title="Send an email"><i class='fa fa-envelope'></i></a>
+</li>
+</ol>
+
+</div>
+<a class='category language small' href='/browse/language'>
+<i></i>
+Language
+</a>
+<i class='small'>&nbsp; | &nbsp;</i>
+
+<a class="author emphasis small" href="https://audioboom.com/JimCMackintosh">JimCMackintosh</a>
+<div class='simple-rule' style='width: 90%'></div>
+</div>
+<div class='audioboo'>
+<div class='detailPagePlayer'>
+<div class='audio_clip booPlayer standard_player' id='audio_clip_2614899'>
+<div class='vertical-centrereer'>
+<div class='vertical-centrereer_inner'>
+<h1 class='page-heading_ h3 black' data-peripheral-play-pause-link='1'><div class='playbutton-position'>
+<div style='width: 44px'>
+<div class='svg-play-button'>
+<button class='embed-play-button'>
+<span class='label'>play</span>
+<svg height='44' style='stroke-linejoin:round; stroke-width:2;' version='1.1' viewBox='0 0 44 44' width='44' xmlns='http://www.w3.org/2000/svg'>
+<g>
+<circle class='dynamic-embed-svg-back-color' cx='22' cy='22' r='20'></circle>
+<g class='svg-play-icon dynamic-embed-svg-fore-color'>
+<circle cx='22' cy='22' r='20'></circle>
+<svg viewBox='0 0 45 45'>
+<polygon points='17,13,17,31,32,22'></polygon>
+</svg>
+</g>
+<g class='svg-pause-icon svg-play-icon dynamic-embed-svg-fore-color'>
+<circle cx='22' cy='22' r='20'></circle>
+<svg viewBox='0 0 45 45'>
+<polygon points='14,14,19,14,19,30,14,30'></polygon>
+<polygon points='25,14,30,14,30,30,25,30'></polygon>
+</svg>
+</g>
+</g>
+</svg>
+<span class='fallbacks'>
+<span class='svg-play-icon'></span>
+<span class='svg-pause-icon'></span>
+</span>
+</button>
+</div></div>
+</div>
+my first - the epilogue</h1>
+</div>
+</div>
+<div class='boo-row-experimental'>
+<div class='standard_player light_theme'>
+<div class='progress-inset-inner-wrapper' style='margin: 1rem 5px 0 0'>
+<div class='wrapper-for-both-progress-bars' data-js-progressbarwrapper='1'>
+<div class='progress-no-canvas-fallback'>
+<div class='progress-bar-and-duration'>
+<div class='duration-column'>
+<span class='left-side dynamic-embed-mid-color' data-current-time-value='1'>0:00</span>
+</div>
+<div class='timeline-column' data-timeline='1'>
+<div class='progress-bar-background' style='overflow: visible; background:grey'>
+<div class='buffer'></div>
+<div class='play-progress' data-play-progress='0' style='background:#5fbce8'>
+<div class='cursor-bar' style='width: 1px; height: 14px; background-color:#5fbce8; position:absolute; top:-6px; right: 0'></div>
+</div>
+</div>
+</div>
+<div class='duration-column'>
+<span class='right-side dynamic-embed-mid-color' data-duration-value='1'>6:07</span>
+</div>
+</div>
+</div>
+<div class='wave-progress-bar'>
+<img alt="wave image" class="wave-src-img" src="https://d15mj6e6qmt1na.cloudfront.net/i/w/1395344" style="display:none" />
+<canvas class='progress-canvas' data-back-color='white' data-fore-color='black' data-js-waveprogressbar='1' data-link-color='#5fbce8' data-mid-color='grey' height='60' width='0'></canvas>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='embedcode-accordion'>
+<div class='collapse' id='collapseOne'>
+<div class='in-form-title-thing mtm'>
+Embed Code
+</div>
+<textarea class='embedcode js-autoselect' data-js-embedcode='1' readonly style='width:100%'>&lt;div class=&quot;ab-player&quot; data-boourl=&quot;http://audioboom.com/boos/2614899-my-first-the-epilogue/embed/v3?eid=AQAAAKcfH1Vz5icA&quot; data-boowidth=&quot;100%&quot; data-maxheight=&quot;150&quot; data-iframestyle=&quot;background-color:transparent; display:block; min-width:300px; max-width:700px;&quot; style=&quot;background-color:transparent;&quot;&gt;&lt;a href=&quot;https://audioboom.com/boos/2614899-my-first-the-epilogue&quot;&gt;listen to &amp;#x2018;my first - the epilogue&amp;#x2019; on audioBoom&lt;/a&gt;&lt;/div&gt;&lt;script type=&quot;text/javascript&quot;&gt;(function() { var po = document.createElement(&quot;script&quot;); po.type = &quot;text/javascript&quot;; po.async = true; po.src = &quot;https://d15mj6e6qmt1na.cloudfront.net/cdn/embed.js&quot;; var s = document.getElementsByTagName(&quot;script&quot;)[0]; s.parentNode.insertBefore(po, s); })();&lt;/script&gt;</textarea>
+<a class='underline' data-js-embed-options='1' href='/boos/2614899-my-first-the-epilogue.embed'>
+options
+</a>
+
+</div>
+</div>
+<div class='left-column'>
+<br>
+<div class='description'>
+If you listened to my story - My First Time, I promised I would record the second part.<br/>Enjoy my humiliation.<br/>Love<br/>Jim<br/>x
+</div>
+<div class='detail-page-author-credit well'>
+<div class='line'>
+<div class='avatar mrm'>
+<a href="https://audioboom.com/JimCMackintosh"><img alt="JimCMackintosh" class="tall " src="https://d15mj6e6qmt1na.cloudfront.net/i/9770048/75x75/c" /></a>
+</div>
+<div class='text'>
+<p class='username'>
+<a href="https://audioboom.com/JimCMackintosh">JimCMackintosh</a>
+</p>
+<p class='totals'>
+<span><a class="emphasis" href="/JimCMackintosh">view recent activity</a></span>
+</p>
+</div>
+</div>
+</div>
+
+<div class='timeAndLocation small mbm'>
+<abbr class='time' data-epochTime='1414950618' title='06.01pm GMT, 02 Nov 2014'>5 months ago</abbr>
+</div>
+<div class='attachments'>
+</div>
+<div class='dibf'>
+
+</div>
+<div class='commentPanel'>
+<div class='comments-detail-page-comment-panel'>
+<div class='updatable' id='comments'>
+<div class='logIn'>
+You need to be
+<a class='js-login emphasis' data-redirect-url='https://audioboom.com/boos/2614899-my-first-the-epilogue'>
+logged in
+</a>
+to post a comment
+</div>
+<div class='commentList'>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+<br>
+<div class='right-column action-buttons'>
+<div class='detail-page-buttons stubbornella-lastUnit'>
+<div class='cell wide'>
+<a class="btn btn-xs btn-default fa-spacer" href="/login?redirect=https%3A%2F%2Faudioboom.com%2Fboos%2F2614899"><i class='fa fa-plus'></i><span class='btn-txt'>Playlist</span></a></div><div class='cell wide' data-remote-swap-link-container='0'>
+<form action="/boos/2614899/ratings" class="button_to" method="post"><div><button class="btn btn-xs btn-default love-this-button fa-spacer link-needs-js is-off" type="submit"><i class="fa fa-heart"></i><span class='btn-txt'>Like</span></button><input name="authenticity_token" type="hidden" value="lLKRT8ThjSbUvDbzAOB3Ikj2ZEmXN/or0gXm9/UUkg8=" /></div></form>
+
+</div><div class='cell wide'>
+<a class='btn btn-xs btn-default fa-spacer' data-parent='#embedcode-accordion' data-toggle='collapse' href='#collapseOne'><i class='fa fa-paperclip'></i><span class='btn-txt'>Embed</span></a>
+</div>
+</div>
+
+</div>
+<div class='right-column'>
+<br>
+<div class='suggestedContentColumn'>
+<div class='user-sidebar'>
+<ul class='sidebar-list'>
+<li class='sidebar-item' data-hoogle-async-link-click='{"category":"internal link","action":"/boos/detail_page sidebar","label":"next post"}'>
+<div class='audio-clips-next-audio-clip audio_clip line' id='audio_clip_2625297'>
+<a class="emphasis" href="/boos/2625297-contoversial-swimming?playlist_direction=forward"><div class='unit mrm'>
+<img alt="JimCMackintosh" class="tall sq64" src="https://d15mj6e6qmt1na.cloudfront.net/i/9770048/75x75/c" />
+</div>
+<div class='unit lastUnit'>
+<div class='title'>
+<strong class='db mbs gray'>Next</strong>
+contoversial swimming
+</div>
+</div>
+</a></div>
+
+</li>
+<li class='sidebar-item' data-hoogle-async-link-click='{"category":"internal link","action":"/boos/detail_page sidebar","label":"user clips"}'>
+<div class='sidebar-item-title'>
+<h5>
+Top posts
+</h5>
+</div>
+
+<div class='sidebar-mini-clips-list'>
+<div class='audio_clip line mbm sidebar-mini-clip-item' id='audio_clip_2348136'>
+<a class="unit mrm" href="/boos/2348136-night-blooms"><div class='clipImage_ sq48'><img alt="Boo Image" class=" tall" height="48" src="https://d15mj6e6qmt1na.cloudfront.net/i/10040994/75x75/c.jpg" width="48" /></div>
+</a><div class='clip-details unit lastUnit'>
+<a href="/boos/2348136-night-blooms"><div class='title'>
+night blooms
+</div>
+</a><p class='credit'>
+<span class='small'>
+by
+</span>
+<strong class='small'>
+<span class='author'>
+<a href="https://audioboom.com/JimCMackintosh">JimCMackintosh</a>
+</span>
+</strong>
+</p>
+</div>
+</div>
+<div class='audio_clip line mbm sidebar-mini-clip-item' id='audio_clip_2199899'>
+<a class="unit mrm" href="/boos/2199899-against-the-tide"><div class='clipImage_ sq48'><img alt="Boo Image" height="48" src="https://d15mj6e6qmt1na.cloudfront.net/i/9244239/75x75/c.jpg" width="48" /></div>
+</a><div class='clip-details unit lastUnit'>
+<a href="/boos/2199899-against-the-tide"><div class='title'>
+Against The Tide
+</div>
+</a><p class='credit'>
+<span class='small'>
+by
+</span>
+<strong class='small'>
+<span class='author'>
+<a href="https://audioboom.com/JimCMackintosh">JimCMackintosh</a>
+</span>
+</strong>
+</p>
+</div>
+</div>
+<div class='audio_clip line mbm sidebar-mini-clip-item' id='audio_clip_2281203'>
+<a class="unit mrm" href="/boos/2281203-loch-shiel"><div class='clipImage_ sq48'><img alt="Boo Image" height="48" src="https://d15mj6e6qmt1na.cloudfront.net/i/9683034/75x75/c.jpg" width="48" /></div>
+</a><div class='clip-details unit lastUnit'>
+<a href="/boos/2281203-loch-shiel"><div class='title'>
+Loch Shiel
+</div>
+</a><p class='credit'>
+<span class='small'>
+by
+</span>
+<strong class='small'>
+<span class='author'>
+<a href="https://audioboom.com/JimCMackintosh">JimCMackintosh</a>
+</span>
+</strong>
+</p>
+</div>
+</div>
+<div class='audio_clip line mbm sidebar-mini-clip-item' id='audio_clip_2361965'>
+<a class="unit mrm" href="/boos/2361965-one-more-try"><div class='clipImage_ sq48'><img alt="Boo Image" class=" tall" height="48" src="https://d15mj6e6qmt1na.cloudfront.net/i/10118601/75x75/c.jpg" width="48" /></div>
+</a><div class='clip-details unit lastUnit'>
+<a href="/boos/2361965-one-more-try"><div class='title'>
+one more try
+</div>
+</a><p class='credit'>
+<span class='small'>
+by
+</span>
+<strong class='small'>
+<span class='author'>
+<a href="https://audioboom.com/JimCMackintosh">JimCMackintosh</a>
+</span>
+</strong>
+</p>
+</div>
+</div>
+<div class='audio_clip line mbm sidebar-mini-clip-item' id='audio_clip_2771981'>
+<a class="unit mrm" href="/boos/2771981-television-by-roald-dahl"><div class='clipImage_ sq48'><img alt="JimCMackintosh" class="tall " src="https://d15mj6e6qmt1na.cloudfront.net/i/9770048/75x75/c" /></div>
+</a><div class='clip-details unit lastUnit'>
+<a href="/boos/2771981-television-by-roald-dahl"><div class='title'>
+Television by Roald Dahl
+</div>
+</a><p class='credit'>
+<span class='small'>
+by
+</span>
+<strong class='small'>
+<span class='author'>
+<a href="https://audioboom.com/JimCMackintosh">JimCMackintosh</a>
+</span>
+</strong>
+</p>
+</div>
+</div>
+</div>
+
+</li>
+<li class='sidebar-item'>
+<div class='sidebar-item-title'>
+<h5>
+More
+</h5>
+</div>
+
+<div class='audio-clips-detail-page-misc-stuff-sidebar-item small'>
+<div class='buttons-and-stuff' data-hoogle-async-link-click='{"category":"outgoing rss link","action":"/boos/detail_page sidebar","label":"recent posts feed"}'>
+<div class='empty-layout'>
+<div class='action-button-row btn-group btn-group-justified'>
+<a class="btn btn-default btn-xsm btn-secondary small-panel-action_ fa-spacer" data-hoogle-async-link-click="{&quot;category&quot;:&quot;outgoing rss link&quot;,&quot;action&quot;:&quot;action_button_row&quot;,&quot;label&quot;:&quot;itunes feed&quot;}" data-no-turbolink="true" href="itpc://audioboom.com/users/2503366/boos.rss" title="JimCMackintosh&#39;s posts"><i class='fa fa-music'></i><span>iTunes</span>
+</a><a class="btn btn-default btn-xsm btn-secondary small-panel-action_ fa-spacer" data-hoogle-async-link-click="{&quot;category&quot;:&quot;outgoing rss link&quot;,&quot;action&quot;:&quot;action_button_row&quot;,&quot;label&quot;:&quot;rss feed&quot;}" data-no-turbolink="true" href="https://audioboom.com/users/2503366/boos.rss" title=""><i class='fa fa-rss'></i>
+<span>RSS</span>
+</a><a class="btn btn-default btn-xsm btn-secondary small-panel-action_ fa-spacer" data-hoogle-async-link-click="{&quot;category&quot;:&quot;internal link&quot;,&quot;action&quot;:&quot;action_button_row&quot;,&quot;label&quot;:&quot;qr-code&quot;}" href="/publishing/qrcode/boos/2614899-my-first-the-epilogue"><i class='fa fa-qrcode'></i>
+<span>QRCode</span>
+</a></div>
+
+</div>
+
+<br>
+</div>
+<div class='btn btn-default btn-sm btn-block fa-spacer'>
+<a class="js-report-this-boo" data-report-title="my first - the epilogue" data-report-url="https://audioboom.com/boos/2614899-my-first-the-epilogue" data-reporting-user="null" href="http://support.audioboom.com"><i class='fa fa-exclamation-circle'></i><span>Report this post</span>
+</a></div>
+</div>
+
+</li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+<!--[if lte IE 8]>
+<style>
+  .logo-image-link { background-image: url("https://d15mj6e6qmt1na.cloudfront.net/assets/audioboom_logo_black_and_white_low_res-601f35c8d562fa1347e1f2e2acdc1766.png"); }
+</style>
+<![endif]-->
+<div id='fb-root'></div>
+
+</div>
+<script data-turbolinks-eval="false" data-turbolinks-track="1" src="https://d15mj6e6qmt1na.cloudfront.net/assets/application-0030debf3346d9f6e8e4a3830717c26a.js"></script>
+<script>
+  $js.fire('__base');
+</script>
+<script data-turbolinks-eval='false' type='text/javascript'>
+$(function(){
+  window.fbAsyncInit = function() {
+    FB.init({appId: "48950226243", status: true, cookie: true, oauth:true});
+    $(document).trigger('boo:facebook:ready');
+  };
+  var e = document.createElement('script'); e.async = true;
+  e.src = 'https://connect.facebook.net/en_US/all.js';
+  document.getElementById('fb-root').appendChild(e);
+});
+
+
+</script>
+
+<img src="https://pt.fiksu.com/pixel?partnerid=ea706fc6" width="1" height="1" class="pos-abs"/>
+</body>
+</html>
+
+<!--
+You were served by 'app4a.audioboo.cloud.ec'
+Hat tips to:
+famfamfam.com/lab/icons/silk & pinvoke.com for icons
+Matt Kruse for date formatting js
+Tim Berners-Lee for these new-fangled "hyperlinks"
+-->
+

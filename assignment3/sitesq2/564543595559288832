@@ -1,0 +1,535 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<META NAME="description" CONTENT="Cinch Gaming provides Custom Pro Controllers for Esports Gaming & Tournaments">
+<META NAME="keywords" CONTENT="pro controllers, custom controllers, pro xbox controllers, mlg controllers, pro ps4 controllers, tournament controllers, pro playstation controllers, pro ps4 controllers, custom xbox controllers, custom playstation controllers, custom ps4 controllers, custom xbox one controllers">
+<META NAME="Distribution" CONTENT="Unrestricted, but access may be monitored">
+<meta name="verify-v1" content="TFhSwJwUn0yXqRYim8ncRqWbaZ2xnIBnbBTSBkOeSFk=" />
+<meta property="twitter:account_id" content="4503599630820984" />
+<META HTTP-EQUIV="imagetoolbar" CONTENT="no" />
+<title>Cinch Gaming - eSports Tournament Game Controllers</title>
+<link rel="shortcut icon" href="transparent.ico" >
+<link href="http://cinchgaming.com/includes/style3.css" rel="stylesheet" type="text/css" />
+<style>input[type='submit'] { font-size: 14px; color: #FF0000; }</style>
+<style>input[type='button'] { font-size: 14px; color: #FF0000; }</style>
+<style>input[type='text'] { font-size: 14px; color: #FF0000; }</style>
+<style>input[type='textarea'] { font-size: 14px; color: #FF0000; }</style>
+<style>input[type='password'] { font-size: 14px; color: #FF0000; }</style>
+
+<script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+<!-- For jQuery stuff -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+
+<!--  SCRIPT LANGUAGE FOR register.php -->
+
+<script language="javascript"><!--
+var form = "";
+var submitted = false;
+var error = false;
+var error_message = "";
+
+function check_input(field_name, field_size, message) {
+  if (form.elements[field_name] && (form.elements[field_name].type != "hidden")) {
+    var field_value = form.elements[field_name].value;
+
+    if (field_value == '' || field_value.length < field_size) {
+      error_message = error_message + "* " + message + "\n";
+      error = true;
+    }
+  }
+}
+
+function CVVPopUpWindow(url) {
+	window.open(url,'popupWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,copyhistory=no,width=600,height=233,screenX=150,screenY=150,top=150,left=150')
+}
+
+function check_radio(field_name, message) {
+  var isChecked = false;
+
+  if (form.elements[field_name] && (form.elements[field_name].type != "hidden")) {
+    var radio = form.elements[field_name];
+
+    for (var i=0; i<radio.length; i++) {
+      if (radio[i].checked == true) {
+        isChecked = true;
+        break;
+      }
+    }
+
+    if (isChecked == false) {
+      error_message = error_message + "* " + message + "\n";
+      error = true;
+    }
+  }
+}
+
+function check_select(field_name, field_default, message) {
+  if (form.elements[field_name] && (form.elements[field_name].type != "hidden")) {
+    var field_value = form.elements[field_name].value;
+
+    if (field_value == field_default) {
+      error_message = error_message + "* " + message + "\n";
+      error = true;
+    }
+  }
+}
+
+function check_password(field_name_1, field_name_2, field_size, message_1, message_2) {
+  if (form.elements[field_name_1] && (form.elements[field_name_1].type != "hidden")) {
+    var password = form.elements[field_name_1].value;
+    var confirmation = form.elements[field_name_2].value;
+
+    if (password == '' || password.length < field_size) {
+      error_message = error_message + "* " + message_1 + "\n";
+      error = true;
+    } else if (password != confirmation) {
+      error_message = error_message + "* " + message_2 + "\n";
+      error = true;
+    }
+  }
+}
+
+function check_password_new(field_name_1, field_name_2, field_name_3, field_size, message_1, message_2, message_3) {
+  if (form.elements[field_name_1] && (form.elements[field_name_1].type != "hidden")) {
+    var password_current = form.elements[field_name_1].value;
+    var password_new = form.elements[field_name_2].value;
+    var password_confirmation = form.elements[field_name_3].value;
+
+    if (password_current == '' || password_current.length < field_size) {
+      error_message = error_message + "* " + message_1 + "\n";
+      error = true;
+    } else if (password_new == '' || password_new.length < field_size) {
+      error_message = error_message + "* " + message_2 + "\n";
+      error = true;
+    } else if (password_new != password_confirmation) {
+      error_message = error_message + "* " + message_3 + "\n";
+      error = true;
+    }
+  }
+}
+function refresh_form(form_name) {
+   form_name.action.value = 'refresh';
+   form_name.submit();
+   return true;
+   }
+   
+function check_form(form_name) {
+  if (submitted == true) {
+    alert("This form has already been submitted. Please press Ok and wait for this process to be completed.");
+    return false;
+  }
+
+  error = false;
+  form = form_name;
+  error_message = "Errors have occured during the process of your form.\n\nPlease make the following corrections:\n\n";
+
+
+  check_input("first_name", 2, "Your First Name must contain a minimum of 2 characters.");
+  check_input("last_name", 2, "Your Last Name must contain a minimum of 2 characters.");
+
+  check_password("email", "cemail", 6, "Your E-Mail Address must contain a minimum of 6 characters.", "The E-Mail Confirmation must match your E-Mail.");
+  
+  check_input("address1", 5, "Your Street Address must contain a minimum of 5 characters.");
+  check_input("city", 3, "Your City must contain a minimum of 3 characters.");
+  
+
+  check_password("password1", "password2", 5, "Your Password must contain a minimum of 5 characters.", "The Password Confirmation must match your Password.");
+  check_password("pin1", "pin2", 4, "Your Pin must contain 4 characters.", "Your pins must match.");
+
+  if (error == true) {
+    alert(error_message);
+    return false;
+  } else {
+    submitted = true;
+    return true;
+  }
+}
+//--></script>
+
+
+<!-- END register.php Script -->
+    <link rel="stylesheet" href="bjqs.css">
+    <script language="javascript">
+var vid = document.getElementById("bgvid");
+var pauseButton = document.querySelector("#polina button");
+
+function vidFade() {
+  vid.classList.add("stopfade");
+}
+
+vid.addEventListener('ended', function()
+{
+// only functional if "loop" is removed 
+vid.pause();
+// to capture IE10
+vidFade();
+}); 
+
+
+pauseButton.addEventListener("click", function() {
+  vid.classList.toggle("stopfade");
+  if (vid.paused) {
+    vid.play();
+    pauseButton.innerHTML = "Pause";
+  } else {
+    vid.pause();
+    pauseButton.innerHTML = "Paused";
+  }
+})
+
+</script>
+
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="js/bjqs-1.3.min.js"></script>
+    <!-- Font-Awesome CSS section-->
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+<!-- end Font-Awesome CSS section-->
+<body onload="MM_preloadImages('menu1-hov.jpg','menu2-hov.jpg','menu3-hov.jpg','menu4-hov.jpg','menu5-hov.jpg')">
+
+<video autoplay poster="http://spencer.cinchgaming.com/images/overlay.png" id="bgvid" loop>
+<source src="http://cinchgaming.com/red.webm" type="video/webm">
+<source src="http://cinchgaming.com/red.mp4" type="video/mp4">
+<div style="background:url(./images/overlay.png) top center fixed no-repeat;"></div>
+</video>
+<div id="bg_pattern"></div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+	<div id="container">
+		<div class="topheader">
+            <!--Social Media Buttons-->
+<div class="socmedcontainer">
+	<ul>
+        <li><img src="images/follow-us.jpg"></li>
+		<li><a target="_blank" href="http://www.twitter.com/cinchgaming"><img src="images/sm-twitter.jpg"></a></li>
+		<li><a target="_blank" href="http://www.facebook.com/cinchgaming"><img src="images/sm-facebook.jpg"></a></li>
+		<li><a target="_blank" href="https://plus.google.com/112863095964579231972" rel="publisher"><img src="images/sm-google.jpg"></a></li>
+		<li><a target="_blank" href="https://www.youtube.com/channel/UCYhYcJSpwKQfx9Cw9wKk7ww"><img src="images/sm-youtube.jpg"></a></li>
+        <li><img src="images/info-icon.jpg"></li>
+        <li><a href="http://cinchgaming.com/news.php"><img src="images/news-icon.jpg"></a></li>
+        <li><a href="http://cinchgaming.com/videos.php"><img src="images/videos-icon.jpg"></a></li>
+	</ul>
+</div>
+	<div class="teamsidecontainer">
+	<ul>
+        <li><img src="images/our-teams.jpg"></li>
+		<li><a href="./partners.php"><img src="images/mini-stunner.jpg" width="40" height="40" alt=""/></a></li>
+		<li><a href="custom_pro.php?team=vexx"><img src="images/mini-vexx.jpg" width="40" height="40" alt=""/></a></li>
+        <li><a href="custom_pro.php?team=automaticreload"><img src="images/mini-ar.jpg" width="40" height="40" alt=""/></a></li>
+ <!--       <li><a href="custom_pro.php?team=vq"><img src="images/mini-vanq.jpg" width="40" height="40" alt=""/></a></li> -->
+        <li><a href="./partners.php"><img src="images/mini-noble.jpg" width="40" height="40" alt=""/></a></li>
+        <li><a href="custom_pro.php?team=revenge"><img src="images/mini-revenge.jpg" width="40" height="40" alt=""/></a></li>
+        <li><a href="./partners.php"><img src="images/mini-stdx.jpg" width="40" height="40" alt=""/></a></li>
+        <li><a href="custom_pro.php?team=belowzero"><img src="images/mini-bz.jpg" width="40" height="40" alt=""/></a></li>
+ <!--       <li><a href="custom_pro.php?team=ex"><img src="images/mini-ex.jpg" width="40" height="40" alt=""/></a></li> -->
+        <li><a href="./partners.php"><img src="images/mini-carnage.jpg" width="40" height="40" alt=""/></a></li>
+        <li><a href="./partners.php"><img src="images/mini-mutiny.jpg" width="40" height="40" alt=""/></a></li>
+        <li><a href="./partners.php"><img src="images/mini-emp.jpg" width="40" height="40" alt=""/></a></li>
+        <!-- <li><a href="custom_pro.php?team=fuse"><img src="images/mini-fuse.jpg" width="40" height="40" alt=""/></a></li> -->
+        <li><a href="./partners.php"><img src="images/mini-freedom.jpg" width="40" height="40" alt=""/></a></li>
+	</ul>
+</div>	
+
+        </div>
+		<div id="hMenu">
+        <a href="./index.php" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image8','','images/menu1-hov.jpg',1)"><img src="images/menu1.jpg" alt="" width="170" height="40" id="Image8" /></a><a href="./myaccount.php" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image9','','images/menu2-hov.jpg',1)"><img src="images/menu2.jpg" alt="" width="170" height="40" id="Image9" /></a><a href="./view_cart.php" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image10','','images/menu3-hov.jpg',1)"><img src="images/menu3.jpg" alt="" width="170" height="40" id="Image10" /></a><a href="./track_order.php" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image11','','images/menu4-hov.jpg',1)"><img src="images/menu4.jpg" alt="" width="170" height="40" id="Image11" /></a><a href="./support.php" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image12','','images/menu5-hov.jpg',1)"><img src="images/menu5.jpg" alt="" width="170" height="40" id="Image12" /></a>
+<!--<ul>
+				<li id="frst"><a href="./index.php"><img border=0 src="./images/home.gif" /></a></li>
+				<li>|</li>
+				<li><a href="./myaccount.php"><img border=0 src="./images/my_account.gif" /></a></li>
+				<li>|</li>
+				<li><a href="./view_cart.php"><img border=0 src="./images/view_cart.gif" /></a></li>
+				<li>|</li>
+				<li><a href="./track_order.php"><img border=0 src="./images/order_status.gif" /></a></li>
+				<li>|</li>
+				<li><a href="./support.php"><img border=0 src="./images/help.gif" /></a></li>
+
+			</ul>-->
+		</div>		
+
+		<!-- Skip the slider for admins -->
+ 
+		    
+        <div id="banner-fade">
+
+        		 
+        
+        <!-- start Basic Jquery Slider -->
+        <ul class="bjqs">
+          <li><a href="custom_ps4.php"><img src="img/ps4-trigger-stops.jpg" title="Introducing the first PS4 adjustable trigger stops worldwide!! Available only at Cinch Gaming!"></a></li>
+          <li><a href="view_product.php?pid=82"><img src="img/cinchcase.jpg" title="All New! Cinch One Protective Game Case! With enough room for cables and game discs!!"></a></li>
+          <li><a href="custom_ps4.php"><img src="img/ps4-grip-banner.jpg" title="Cinch Grip now available for the Cinch PS4!! Select Cinch Grip under rear shell options."></a></li>
+          <li><a href="view_product.php?pid=80"><img src="img/banner01.jpg" title="Get Cinch Grips in our Accessories Department Now!"></a></li>
+          <li><a target="_blank" href="http://prokits.net/product/1-cinch-backpack"><img src="img/cinch-pro-backpack2.png" title="Pre-Order your Cinch Gaming Backpack!! Use the code above to unlock & get 15% Off"></a></li>
+          <li><a target="_blank" href="http://marketplace.xbox.com/en-US/Product/Cinch-Gaming-Pack/2aa0b0e6-c7cc-4244-83f1-26163bf1f7e7"><img src="img/pic_pack_ad.jpg" title="Available Now on XBOX Live for the XBOX 360! Get your picture pack today!"></a></li>
+          <li><a href="custom_pro.php?team=vexx"><img src="img/banner02.jpg" title="Customize your Vexx Gaming Controller today"></a></li>
+          <li><a href="view_product.php?pid=68"><img src="img/banner03.jpg" title="Turn heads with the Cinch Icey"></a></li>
+        </ul>
+        <!-- end Basic jQuery Slider -->
+
+        
+                
+      </div>
+      <!-- End outer wrapper -->
+      
+      
+
+      <script class="secret-source">
+        jQuery(document).ready(function($) {
+
+          $('#banner-fade').bjqs({
+            height      : 280,
+            width       : 850,
+			animspeed : 6000,
+            responsive  : true
+          });
+
+        });
+      </script>
+       
+       
+		<div id="news">
+        <div id="frogy">
+<ul>
+   <li><a href='./custom.php'><span><i class="fa fa-cogs fa-lg"></i>CUSTOMIZE</span></a>
+    <ul>
+         <li><a href='custom.php?type=1'><i class="fa fa-crosshairs fa-lg"></i><span>Cinch One</span></a></li>
+         <li><a href='custom_360.php'><i class="fa fa-crosshairs fa-lg"></i><span>Cinch 360</span></a></li>
+         <li><a href='custom_ps4.php'><i class="fa fa-crosshairs fa-lg"></i><span>Cinch PS4</span></a></li>
+         <li><a href='custom_ps3.php'><i class="fa fa-crosshairs fa-lg"></i><span>Cinch PS3</span></a></li>
+      </ul>
+   </li>
+   <li><a href='./browse.php?disp=6&s=0'><span><i class="fa fa-bullseye fa-lg"></i>CINCH PICKS</span></a></li>
+   <li><a href='./custom_pro.php'><span><i class="fa fa-users fa-lg"></i>TEAM CINCH</span></a></li>
+   <li><a href='./support.php?type=5'><span><i class="fa fa-envelope-o fa-lg"></i>SEND IN</span></a></li>
+   <li><a href='./features.php'><span><i class="fa fa-star fa-lg"></i>FEATURES</span></a></li>
+   <li><a href='./browse.php?disp=4&s=0'><span><i class="fa fa-tag fa-lg"></i>APPAREL</span></a></li>
+   <li><a href='./browse.php?disp=5&s=0'><span><i class="fa fa-bars fa-lg"></i>ACCESSORIES</span></a></li>
+   <li><a href='./partners.php'><span><i class="fa fa-exchange fa-lg"></i>PARTNERS</span></a></li>
+   <li><a href='./events.php'><span><i class="fa fa-globe fa-lg"></i>EVENTS</span></a></li>
+   <li><a href='./support.php?type=8'><span><i class="fa fa-users fa-lg"></i>SPONSORSHIP</span></a></li>
+   <li><a href='./gift_cert.php'><span><i class="fa fa-money fa-lg"></i>GIFT CERTIFICATES</span></a></li>
+   <li><a href='./about.php'><span><i class="fa fa-info fa-lg"></i>ABOUT US</span></a></li>
+   <li><a href='./support.php?type=4'><span><i class="fa fa-question fa-lg"></i>FAQ</span></a></li>
+</ul>
+</div>
+			<!-- <br  />
+			<p><a href="./custom.php" id="customize2">Build your own Cinch Controller</a></p>
+			<br>-->
+			
+		<!--	<br  />
+			<p><a href="./browse.php?disp=3" id="pre-built">Pre-Built Cinch Controllers</a></p>
+		    <br />
+			<p>Ready to ship!</p>
+			<br /> -->
+			
+			<!--<br  />
+			<p><a href="./browse.php?disp=6&s=0" id="cinch_pick">Cinch Picks</a></p>
+			<br />
+			
+		    
+			<br  />-->
+			<!-- <p><a href="./browse.php?disp=8&s=0" id="team">Team Cinch</a></p> -->
+			<!--<p><a href="./custom_pro.php" id="team2">Team Cinch</a></p>
+			<br />
+			
+	<!--		
+			<br  />
+			<p><a href="./browse.php?disp=7&s=0" id="clearance">Specials</a></p>
+			<br />
+			<p>Ready to Ship!</p>
+			<br />
+		-->	
+			<!--<br  />
+			<p><a href="./support.php?type=5" id="upgrade">Make it a Cinch Upgrade Service</a></p>
+			<br />
+		
+			
+			<br  />
+			<p><a href="./browse.php?disp=4&s=0" id="apparel">Cinch Gaming Apparel</a></p>
+			<br />
+			
+		
+			<br  />
+			<p><a href="./browse.php?disp=5&s=0" id="accessories">Cinch Gaming Accessories</a></p>
+			<br />
+		
+			
+			<br  />
+			<p><a href="./partners.php" id="partners">Partners</a></p>
+			<br />
+		
+			
+			<br  />
+			<p><a href="./events.php" id="events">Events</a></p>
+			<br />
+		
+			
+			<br  />
+			<p><a href="./support.php?type=8" id="sponsorship">Sponsorship</a></p>
+			<br />
+			
+
+			<br  />
+			<p><a href="./gift_cert.php" id="giftcert">Gift Certs</a></p>
+			<br />
+		
+			
+			<br  />
+			<p><a href="./about.php" id="about">About Cinch</a></p>
+			<br />
+		
+			
+			<br  />
+			<p><a href="./support.php?type=4" id="faq">FAQ</a></p>
+		
+			<br  />-->
+		</div>
+	
+<div id="membership"> 
+
+<div id="login" style="position:absolute;top:12px;right:17px;width:240px;"><a href="./login.php"><img src="images/login.jpg"></li></a> <a href="./register.php"><img src="images/register.jpg"></a></div>
+
+
+<!--<center>
+
+<a href="custom_pro.php"><img border=0 src="images/TeamWebBanner.jpg" style="margin: 5px 0 0 -15px;"></a><br>
+
+<hr>
+
+</center>-->
+
+<!--p style="text-align: center; color: #FF0000; margin-bottom: 0; font-weight: bold; font-size: 14px;"><p style="text-align: center; color: #FF0000; margin-bottom: 0; font-weight: bold; font-size: 14px;">NOTES</p>
+
+<hr /-->
+
+
+
+<!--<div>
+
+  <img src="images/GripButtonAdText.jpg">
+
+  <a href="custom.php?type=1" title="Design your brand new Cinch One!"><img src="images/AdButtons_NewGrip.jpg"></a>
+
+  <a href="view_product.php?pid=80" title="Order grip panels and install them on your current controller!"><img src="images/AdButtons_GripAccs.jpg"></a>
+
+  <a href="custom.php?type=1&upgrade=1" title="Send in your controller for upgrades and Make it a Cinch!"><img src="images/AdButtons_SendIn.jpg"></a>
+
+</div>
+
+<hr>-->
+
+
+
+<a href="custom.php?type=1"><img border=0 src="images/info-one.jpg" style="display: block; margin: 0 auto;"></a><br>
+
+<hr><br>
+
+<a href="custom_ps4.php"><img border=0 src="images/info-ps4.jpg" style="margin-right:6px;"></a> <a href="custom_ps3.php"><img border=0 src="images/info-ps3.jpg" style="margin-right:6px;"></a> <a href="custom_360.php"><img border=0 src="images/info-360.jpg"></a><br><br>
+
+<hr><br>
+
+<div style="text-align:center;">
+
+<h1 align="center">Why Choose <font color="#ff0000">Cinch Gaming?</font></h1>
+
+<br>
+
+<div class="whybox" style="float:left;width:148px;margin-right:5px;">
+
+<h3 align="center">Our Controllers</h3>
+
+<br /><font color="#ff0000"><b>Cost A Lot Less</b></font>
+
+</div>
+
+<div class="whybox" style="float:left;width:148px;margin-right:5px;">
+
+<h3 align="center">Our Controllers Are</h3>
+
+<font color="#ff0000"><b>More Durable</b></font>
+
+</div>
+
+<div class="whybox" style="float:left;width:148px;margin-right:5px;">
+
+<h3 align="center">Our Controllers Are</h3>
+
+<font color="#ff0000"><b>More Ergonomic</b></font>
+
+</div>
+
+<div class="whybox" style="float:left;width:148px;margin-right:0px;">
+
+<h3 align="center">Our Controllers Are</h3>
+
+<font color="#ff0000"><b>Faster</b></font>
+
+</div>
+
+<div style="clear:both;"></div>
+
+<br>
+
+<h3 align="center">Your Thumbs don't move when engaging the rear buttons</h3>
+
+<h1><font color="#ff0000">Squeeze! Don't Reach!</font></h1>
+
+</div>
+
+<br>
+<hr><br>
+<h1 align="center">Our Latest News & Announcements</h1>
+<br />
+<!--
+// Created with FeedSweep Widget feed control v5.0.1.0
+// http://www.FeedSweep.com
+ -->
+<script type="text/javascript" src="http://www.feedsweep.com/Products/FeedSweep/Producer.aspx?feeds=http%3a%2f%2fcinchgaming.com%2fnewsadmin%2frss.php&amp;maxoutput=3&amp;width=655&amp;notitle=true&amp;linktitle=feed&amp;cat=24&amp;key=x-JS9YhrPU6Wa6sFvK0PLQ&amp;ver=5.0.1.0"></script>
+<!-- FeedSweep end -->
+<br /><br />
+</div><div id="copyright">
+			<p>&copy;Copyright 2015 Cinch Gaming</p>
+			<p><span class="sitemap"><a href="./sitemap.php">Site Map</a> 
+			<font color="black">|</font> <a href="./support.php">Support</a> 
+			<font color="black">|</font> <a href="./about.php">About</a> 
+			<font color="black">|</font> <a href="./support.php">Contact</a>
+			<font color="black">|</font> <a href="./support.php?type=9">Return Policy</a>
+			</span>
+			</p>
+		</div></div></body></html>

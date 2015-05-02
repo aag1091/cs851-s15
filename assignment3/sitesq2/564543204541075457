@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if IE 9]>    <html class="ie9"> <![endif]-->
+<!--[if gt IE 9]><!--> <html> <!--<![endif]-->
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# theplated: http://ogp.me/ns/fb/theplated#">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"b0f18ab7c9","applicationID":"1062298","transactionName":"IlpdEEAKCglSExcDUA5YXgFABgNKWgRWExwIW1cBSg==","queueTime":5,"applicationTime":154,"agent":"js-agent.newrelic.com/nr-632.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgYFVldQGwIAUlNQDgk="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:9,3:7,4:11,5:3,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:9,3:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>
+  <title>Chicken Tikka Masala</title>
+  <meta name="description" content="It might be your go-to takeout order, but this classic Indian recipe is definitely worth recreating at home! Our antibiotic free, no-added hormone chicken is marinated in yogurt, garlic, ginger and garam masala and stirred into a fragrant homemade tomato sauce. Scoop and slather it over toasted naan and enjoy with a side of sauteed spinach, for a flavorful, fun night in. ">
+  <meta name="keywords" content="beef recipes, chicken recipes, quick recipe, easy recipe, quick gourmet meals, fresh food kits, healthy plate kits, plated.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="//dusyefwqqyfwe.cloudfront.net/assets/favicon-ef96205c79b9b9063f57613fba0a7bc3.ico" rel="shortcut icon" type="image/x-icon" />
+  <link href="//dusyefwqqyfwe.cloudfront.net/assets/apple-touch-icon-precomposed-eaedd5599aced483742de33cd91a7bac.png" rel="apple-touch-icon-precomposed" type="image/png" />
+
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+  
+  <link href="//dusyefwqqyfwe.cloudfront.net/assets/application-8f56313b63dfe6981334a42ce8c898c1.css" media="all" rel="stylesheet" type="text/css" />
+
+
+  <meta property="fb:app_id" content="359267247499647">
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+
+    
+      <!-- pinterest verification tag--><meta name="p:domain_verify" content="ae05ac442beae04ac525214f9aab213d" />
+      <script type="text/javascript">
+var WRInitTime=(new Date()).getTime();
+</script>
+
+
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="8SBiEJGk+MC7yNebRocYDF5amHnYZnLDunGymzQR+ic=" name="csrf-token" />
+
+  <script src="//dusyefwqqyfwe.cloudfront.net/assets/application-65b76cc94b69de8a7b6feec01b1b52f5.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+//<![CDATA[
+      window.analytics_traits = {};
+      window.analytics_traits["first_party_cookie"] = $.cookie("fp_ck");
+      window.analytics_traits["first_or_repeat"] = $.cookie("first_or_repeat");
+      window.analytics_traits["zip_code"] = $.cookie("zip_code");
+
+        !function(){var analytics=window.analytics=window.analytics||[];if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.0.0";
+        analytics.load("Kj0d1ggEoECuAYfx6yuTplSpKtkiVuDx");
+        analytics.identify(window.analytics_traits);;
+        analytics.page( location.pathname, {}, { traits: window.analytics_traits } );
+        }}();
+
+//]]>
+</script>
+
+    <!--[if lt IE 9]>
+  <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <link href="//dusyefwqqyfwe.cloudfront.net/assets/ie8-e2fa727b68a8b3e65ff3b03bd2024aca.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="//dusyefwqqyfwe.cloudfront.net/assets/libs/selectivizr-33bb50fb4a72c06dd922e9f491febd1d.js" type="text/javascript"></script>
+  <script src="//dusyefwqqyfwe.cloudfront.net/assets/ie8-d5d8534379c6a272f27d82c19647ea18.js" type="text/javascript"></script>
+<![endif]-->
+
+<!--[if lt IE 10]>
+  <script src="//dusyefwqqyfwe.cloudfront.net/assets/ie9-4a89bd96edbc47df387dc55793cf493d.js" type="text/javascript"></script>
+<![endif]-->
+
+
+</head>
+<body>
+  <script>
+    dataLayer = [];
+  </script>
+
+        <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-T56GTL"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-T56GTL');</script>
+
+  <div id="session_state_data">
+    <input id="user_logged_in" name="user_logged_in" type="hidden" value="false" />
+
+
+  </div>
+
+  <header class="header-main nav nav-menu">
+  <div class="nav-top-container">
+    <div class="container">
+      <div class="row-fluid">
+        <nav class="nav-top">
+          <div class="span7">
+            <a class="mobile-visible nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <span class="referral-offer pull-left mobile-hidden">
+              <strong>Get free shipping</strong> on boxes over $50!
+              <a href="/menu">Shop now.</a>
+            </span>
+          </div>
+          <div class="span5">
+            <ul class="inline header-nav-top-right nav-collapse-bar">
+              <li class="mobile-visible"><a href="tel:855-525-2399">855-525-2399</a></li>
+              <li class="mobile-visible" "><a href="mailto:help@plated.com">help@plated.com</a></li>
+              <li class="mobile-visible"><a href="/how-it-works#delivery-zones">Delivery Areas</a></li>
+              <li class="relative mobile-hidden">
+                <a href="#" id="header-help-link">Help</a>
+                <div id="header-help-container" class="popover hide">
+                  <div class="arrow-top"></div>
+                  <div class="popover-inner header-help-inner">
+                    <div class="header-help-section-live-chat hide">
+                      <a href="#" class="header-help-section" id="header-help-live-chat">
+                        <i class="header-help-icon icon-chat-gray"></i>
+                        <h4>Live Chat Now</h4>
+</a>                    </div>
+
+                    <a href="tel:855-525-2399" class="header-help-section">
+                      <i class="header-help-icon icon-phone-gray"></i>
+                      <h4 class="header-help-phone">Call Toll-Free <br>855-525-2399</h4>
+                      Mon - Fri 9am-10pm ET
+</a>
+                    <a href="https://plated.zendesk.com/hc/en-us/requests/new" class="header-help-section" target="_blank">
+                      <i class="header-help-icon icon-email-gray"></i>
+                      <h4 class="header-help-email">help@plated.com</h4>
+</a>
+                    <a href="https://plated.zendesk.com" class="header-help-section" target="_blank">
+                      <i class="header-help-icon icon-faq-gray"></i>
+                      <h4>FAQ</h4>
+</a>
+                    <a href="/how-it-works#delivery-zones" class="header-help-section header-help-section-last">
+                      <i class="header-help-icon icon-delivery-gray"></i>
+                      <h4>Delivery Areas</h4>
+</a>                  </div>
+                </div>
+              </li>
+                <li><a href="/sign_in">Log In</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="nav-bottom-container">
+    <div class="container">
+      <div class="row-fluid">
+        <div class="span12">
+          <nav class="navbar">
+            <a href="/" class="logo nav-logo-link">Plated Home</a>
+            <ul class="inline nav-main">
+              <li><a href="/menu" class="mav-main-link">Menu</a></li>
+              <li><a href="/how-it-works" class="mav-main-link">How it works</a></li>
+              <li><a href="/gifts" class="mav-main-link">Gifts</a> </li>
+            </ul>
+
+            <div class="nav-cart-container">
+              <div class="nav-cart">
+                <div class="nav-cart-welcome nav-cart-inner">
+                    <a href="/sign_up" class="nav-cart-account-link">Sign Up</a>
+                </div>
+
+                <div class="nav-cart-basket nav-cart-inner">
+                  <a href="/basket" class="nav-cart-basket-link">
+                    <i class="cart-icon"></i>
+                    Basket
+                    <span class="label-round label-cart-count"></span>
+</a>                </div>
+              </div>
+              <div class="dropdown" id="dropdown-cart"></div>
+            </div>
+
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <script>window.my_cart = {"id":null,"can_checkout":false,"active_member":null,"tax_amount":0.0,"taxable_amount":0,"sub_total":0,"shipping_charges":0.0,"discounts":0,"dollar_credits":0,"gift_card_credits":0.0,"plate_credits":0,"total_price":0,"item_count":0,"menu_items":[],"plates":0,"desserts":0,"gift_cards":[],"memberships":[],"codes":[],"warnings":["Your cart is empty."],"notices":[]};</script>
+
+  <div id="menu-banner">
+    <div class="container">
+      <div class="row-fluid">
+
+        <div class="span12 box-image">
+          <div id="menu-banner-paragraph">
+            <h2 class="menu-banner-header">Start your Plated subscription</h2>
+              <p class="menu-banner-text">Enjoy weekly deliveries with fresh ingredients and chef-designed recipes.</p>
+              <p class="menu-banner-text">Skip a week at any time, and adjust your preferences and taste profile seamlessly.</p>
+              <span class="menu-banner-footer">Already subscribed? <a href="/sign_in">Log In</a></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+<div id="menu-container">
+  <div id="menu" data-product-id="5819"
+       data-short-name="Chicken Tikka Masala"
+       data-slug="chicken-tikka-masala"
+       data-recipe-id="413"
+       data-recipe-msrp="12.0"
+       data-recipe-type="main"
+    >
+
+    <input id="inventory" name="inventory" type="hidden" value="9999" />
+    <input id="sold-out" name="sold-out" type="hidden" value="false" />    <input id="sold-out-member" name="sold-out-member" type="hidden" value="false" />
+    <div class="menu-option-selector menu-option-selector-view">
+      <div class="container">
+        <div class="row-fluid">
+
+          <div class="span6 menu-option-selector-view-section">
+            <i class="icon-geo" id="menu-option-location-icon"></i> Viewing menu for <strong id="location-description">10001</strong>
+            <i class="icon-dropdown-dark"></i>
+          </div>
+
+          <div class="span6 menu-option-selector-border-left menu-option-selector-view-section">
+            <i class="icon-calendar"></i> Delivery on <strong>Monday, 04/06</strong>
+            <i class="icon-dropdown-dark"></i>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-option-selector menu-option-selector-edit hide">
+      <div class="container relative menu-option-selector-edit-container">
+        <div class="row-fluid">
+          <div class="span6">
+            <div id="menu-option-selector-location-error" class="menu-option-selector-msg hide menu-option-selector-border-bottom">
+              <div class="menu-option-selector-location-error-content">
+                <i class="icon-warning-small icon-inline"></i>
+                <span class="menu-option-selector-location-error-message"></span>
+                <div class="email-capture-form hide">
+                  <form accept-charset="UTF-8" action="/prospects.js" class="simple_form form-inline" data-remote="true" id="menu-option-email-capture-form" method="post" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="8SBiEJGk+MC7yNebRocYDF5amHnYZnLDunGymzQR+ic=" /></div>
+                    <input id="error_selector" name="error_selector" type="hidden" value="newsletter-menu-option-errors" />
+                    <input id="menu-option-marketing-prospect-zip" name="marketing_prospect[zip_code]" type="hidden" value="00000" />
+                    <div class="input email optional marketing_prospect_email"><label class="email optional control-label" for="menu-option-marketing-prospect-email">Enter your email address and we will let you know when we do</label><input class="string email optional" id="menu-option-marketing-prospect-email" name="marketing_prospect[email]" placeholder="Enter email address" size="25" type="email" /></div>
+                    <input class="button button secondary" name="commit" type="submit" value="Submit" />
+                    <div id="newsletter-menu-option-errors" class="block-error"></div>
+</form>                </div>
+              </div>
+              <div id="newsletter-menu-option-prospect-success" class="flash-success hide">We will notify you when we deliver to your area.</div>
+            </div>
+
+            <div id="menu-option-selector-location-success" class="menu-option-selector-msg  hide menu-option-selector-border-bottom">
+              <div id="newsletter-menu-option-zip-code-success" class="flash-success">
+                <i class="icon-check-green"></i> Zip code successfully submitted. Next, choose delivery date.
+              </div>
+            </div>
+
+
+            <div class="bold">
+              <span class="label-round label-dark">1</span>
+              <span id="menu-option-step-title">Enter location</span>
+            </div>
+
+            <div class="menu-option-zip-code-edit">
+              <form accept-charset="UTF-8" action="/zip_codes/check.js" class="simple_form shipping_zip_code" data-remote="true" method="post" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="8SBiEJGk+MC7yNebRocYDF5amHnYZnLDunGymzQR+ic=" /></div>
+                <input id="set_zip_code" name="set_zip_code" type="hidden" value="true" />
+                <div class="input string optional shipping_zip_code_zip_code"><label class="string optional control-label" for="shipping_zip_code_zip_code">Enter your zip code to see available recipes</label><input class="string optional input-compact" id="shipping_zip_code_zip_code" name="shipping_zip_code[zip_code]" placeholder="Zip code" size="15" type="text" /></div>
+                <input class="button secondary" id="menu-zip-code-submit" name="commit" type="submit" value="Next" />
+</form>            </div>
+          </div>
+
+          <div class="span6 menu-option-selector-border-left">
+            <div class="bold">
+              <span class="label-round label-dark">2</span>
+              Choose your delivery date
+            </div>
+            Our menu changes weekly
+
+            <div class="menu-option-delivery-dates-container menu-option-step-disabled">
+
+      <span class="menu-option-click-block"></span>
+      This week's menu:
+      <ul class="menu-option-delivery-dates inline clearfix bold"><li class=" sold-out"><a href="#" class="menu-option-set-delivery-date" data-date="2015-03-30"><div class="menu-option-set-delivery-date-day text-center">Mon</div><span class="text-center">03/30</span></a></li><li class=" sold-out"><a href="#" class="menu-option-set-delivery-date" data-date="2015-03-31"><div class="menu-option-set-delivery-date-day text-center">Tue</div><span class="text-center">03/31</span></a></li><li class=" sold-out"><a href="#" class="menu-option-set-delivery-date" data-date="2015-04-02"><div class="menu-option-set-delivery-date-day text-center">Thu</div><span class="text-center">04/02</span></a></li><li class=" sold-out"><a href="#" class="menu-option-set-delivery-date" data-date="2015-04-03"><div class="menu-option-set-delivery-date-day text-center">Fri</div><span class="text-center">04/03</span></a></li></ul>
+
+      <span class="menu-option-click-block"></span>
+      Next week's menu:
+      <ul class="menu-option-delivery-dates inline clearfix bold"><li class="selected "><a href="#" class="menu-option-set-delivery-date" data-date="2015-04-06"><div class="menu-option-set-delivery-date-day text-center">Mon</div><span class="text-center">04/06</span></a></li><li class=" "><a href="#" class="menu-option-set-delivery-date" data-date="2015-04-07"><div class="menu-option-set-delivery-date-day text-center">Tue</div><span class="text-center">04/07</span></a></li><li class=" "><a href="#" class="menu-option-set-delivery-date" data-date="2015-04-08"><div class="menu-option-set-delivery-date-day text-center">Wed</div><span class="text-center">04/08</span></a></li><li class=" "><a href="#" class="menu-option-set-delivery-date" data-date="2015-04-09"><div class="menu-option-set-delivery-date-day text-center">Thu</div><span class="text-center">04/09</span></a></li><li class=" "><a href="#" class="menu-option-set-delivery-date" data-date="2015-04-10"><div class="menu-option-set-delivery-date-day text-center">Fri</div><span class="text-center">04/10</span></a></li></ul>
+
+      <span class="menu-option-click-block"></span>
+      Future week's menus:
+        <ul class="menu-option-delivery-dates inline clearfix bold"><li class=" "><a href="#" class="menu-option-set-delivery-date" data-date="2015-04-13"><div class="menu-option-set-delivery-date-day text-center">Mon</div><span class="text-center">04/13</span></a></li><li class=" "><a href="#" class="menu-option-set-delivery-date" data-date="2015-04-14"><div class="menu-option-set-delivery-date-day text-center">Tue</div><span class="text-center">04/14</span></a></li><li class=" "><a href="#" class="menu-option-set-delivery-date" data-date="2015-04-15"><div class="menu-option-set-delivery-date-day text-center">Wed</div><span class="text-center">04/15</span></a></li><li class=" "><a href="#" class="menu-option-set-delivery-date" data-date="2015-04-16"><div class="menu-option-set-delivery-date-day text-center">Thu</div><span class="text-center">04/16</span></a></li><li class=" "><a href="#" class="menu-option-set-delivery-date" data-date="2015-04-17"><div class="menu-option-set-delivery-date-day text-center">Fri</div><span class="text-center">04/17</span></a></li></ul>
+        <ul class="menu-option-delivery-dates inline clearfix bold"><li class=" "><a href="#" class="menu-option-set-delivery-date" data-date="2015-04-20"><div class="menu-option-set-delivery-date-day text-center">Mon</div><span class="text-center">04/20</span></a></li><li class=" "><a href="#" class="menu-option-set-delivery-date" data-date="2015-04-21"><div class="menu-option-set-delivery-date-day text-center">Tue</div><span class="text-center">04/21</span></a></li><li class=" "><a href="#" class="menu-option-set-delivery-date" data-date="2015-04-22"><div class="menu-option-set-delivery-date-day text-center">Wed</div><span class="text-center">04/22</span></a></li><li class=" "><a href="#" class="menu-option-set-delivery-date" data-date="2015-04-23"><div class="menu-option-set-delivery-date-day text-center">Thu</div><span class="text-center">04/23</span></a></li><li class=" "><a href="#" class="menu-option-set-delivery-date" data-date="2015-04-24"><div class="menu-option-set-delivery-date-day text-center">Fri</div><span class="text-center">04/24</span></a></li></ul>
+
+</div>
+
+
+            <a href="#" class="button secondary" data-date="2015-04-06" id="menu-option-delivery-date-submit">Submit</a>
+          </div>
+
+        </div>
+        <a href="#" class="button button-gray button-sticky sticky-bottom sticky-right menu-option-selector-edit-close">Close</a>
+      </div>
+    </div>
+
+    <div id="menu-content-container">
+      <div id="menu-sidebar">
+  <div class="menu-item-container">
+    <h3 class="mobile-hidden">Menu</h3>
+    <button id="menu-sidebar-view-menu" class="mobile-visible" data-toggle="collapse" data-target=".menu-items">+ View the Menu</button>
+    <ul class="menu-items collapse">
+      <ul class="menu-item-filters">
+        <li class="menu-item-filter"><label class="checkbox menu-item-filter-label"> <input id="land" name="land" type="checkbox" value="1" /> Land </label></li>
+        <li class="menu-item-filter"><label class="checkbox menu-item-filter-label"> <input id="sea" name="sea" type="checkbox" value="1" /> Sea </label></li>
+        <li class="menu-item-filter"><label class="checkbox menu-item-filter-label"> <input id="veggie" name="veggie" type="checkbox" value="1" /> Veggie </label></li>
+      </ul>
+
+      
+<li class="menu-item menu-item-tag-chicken selected" data-slug="chicken-tikka-masala" data-title="Chicken Tikka Masala">    <img alt="Menu_small__chicken_tikka_masala_thumbnail" class="menu-sidebar-item-image" src="//dusyefwqqyfwe.cloudfront.net/uploads/utility/image/file/6694/menu_small__Chicken_Tikka_Masala_THUMBNAIL.jpg" />
+</li>
+<li class="menu-item menu-item-tag-fish" data-slug="fish-and-chips-e65774d5-74f1-4735-ae74-b1f10ece87c0" data-title="Fish and Chips">    <a href="/menu/fish-and-chips-e65774d5-74f1-4735-ae74-b1f10ece87c0" class="menu-item-link" data-page-title="Beer-Battered Fish and Chips with Lemony Peas"><img alt="Menu_small__beer-battered_fish_and_chips_with_mushy_peas_thumb" class="menu-sidebar-item-image" src="//dusyefwqqyfwe.cloudfront.net/uploads/utility/image/file/6697/menu_small__Beer-Battered_Fish_and_Chips_with_Mushy_Peas_THUMB.jpg" /></a>
+        <div class="menu-item-info">
+          <div class="arrow"></div>
+              <ul class="recipe-tags">
+                    <li class="recipe-tag">Fish</li>
+              </ul>
+          <h1 class="menu-item-title">Beer Battered Fish And Chips With Lemony Peas</h1>
+        </div>
+</li>
+<li class="menu-item menu-item-tag-ground-beef menu-item-tag-beef" data-slug="cheesy-beef-enchiladas" data-title="Cheesy Beef Enchiladas ">    <a href="/menu/cheesy-beef-enchiladas" class="menu-item-link" data-page-title="Cheesy Beef Enchiladas with Avocado, Spinach, and Black Beans"><img alt="Menu_small__cheesy_beef_enchiladas_with_avocado__spinach__and_black_beans_thumb" class="menu-sidebar-item-image" src="//dusyefwqqyfwe.cloudfront.net/uploads/utility/image/file/6703/menu_small__Cheesy_Beef_Enchiladas_with_Avocado__Spinach__and_Black_Beans_THUMB.jpg" /></a>
+        <div class="menu-item-info">
+          <div class="arrow"></div>
+              <ul class="recipe-tags">
+                    <li class="recipe-tag">Spicy</li>
+                    <li class="recipe-tag">Beef</li>
+                    <li class="recipe-tag">No Added Gluten*</li>
+              </ul>
+          <h1 class="menu-item-title">Cheesy Beef Enchiladas With Avocado, Spinach, And Black Beans</h1>
+        </div>
+</li>
+<li class="menu-item menu-item-tag-vegetarian" data-slug="tofu-scallion-dumplings" data-title="Tofu Scallion Dumplings">    <a href="/menu/tofu-scallion-dumplings" class="menu-item-link" data-page-title="Tofu Scallion Dumplings with Roasted Baby Bok Choy"><img alt="Menu_small__tofu_scallion_dumplings_with_baby_bok_choy_03" class="menu-sidebar-item-image" src="//dusyefwqqyfwe.cloudfront.net/uploads/utility/image/file/6687/menu_small__Tofu_Scallion_Dumplings_with_Baby_Bok_Choy_03.jpg" /></a>
+        <div class="menu-item-info">
+          <div class="arrow"></div>
+              <ul class="recipe-tags">
+                    <li class="recipe-tag">Vegetarian</li>
+                    <li class="recipe-tag">Dairy Free</li>
+                    <li class="recipe-tag">Low Calorie</li>
+              </ul>
+          <h1 class="menu-item-title">Tofu Scallion Dumplings With Roasted Baby Bok Choy</h1>
+        </div>
+</li>
+<li class="menu-item menu-item-tag-vegetarian" data-slug="mushroom-gruyere-toasts" data-title="Mushroom Gruyere Toasts">    <a href="/menu/mushroom-gruyere-toasts" class="menu-item-link" data-page-title="Roasted Mushroom and Gruyere Toasts with Little Gem Salad"><img alt="Menu_small__roasted_mushroom_and_gruyere_toasts_with_little_gem_salad_thumb" class="menu-sidebar-item-image" src="//dusyefwqqyfwe.cloudfront.net/uploads/utility/image/file/6690/menu_small__Roasted_Mushroom_and_Gruyere_Toasts_with_Little_Gem_Salad_THUMB.jpg" /></a>
+        <div class="menu-item-info">
+          <div class="arrow"></div>
+              <ul class="recipe-tags">
+                    <li class="recipe-tag">Vegetarian</li>
+              </ul>
+          <h1 class="menu-item-title">Roasted Mushroom And Gruyere Toasts With Little Gem Salad</h1>
+        </div>
+</li>
+<li class="menu-item menu-item-tag-vegetarian" data-slug="cauliflower-with-tahini" data-title="Cauliflower with Tahini">    <a href="/menu/cauliflower-with-tahini" class="menu-item-link" data-page-title="Roasted Rosemary Cauliflower with Red Rice, Dates, and Tahini"><img alt="Menu_small__roasted_rosemary_cauliflower_with_red_rice__dates__and_tahini_thumb" class="menu-sidebar-item-image" src="//dusyefwqqyfwe.cloudfront.net/uploads/utility/image/file/6684/menu_small__Roasted_Rosemary_Cauliflower_with_Red_Rice__Dates__and_Tahini_THUMB.jpg" /></a>
+        <div class="menu-item-info">
+          <div class="arrow"></div>
+              <ul class="recipe-tags">
+                    <li class="recipe-tag">No Added Gluten*</li>
+                    <li class="recipe-tag">Vegetarian</li>
+              </ul>
+          <h1 class="menu-item-title">Roasted Rosemary Cauliflower With Red Rice, Dates, And Tahini</h1>
+        </div>
+</li>
+<li class="menu-item menu-item-tag-pork-ground menu-item-tag-pork sold-out" data-slug="pork-chive-burgers" data-title="Pork Chive Burgers">    <a href="/menu/pork-chive-burgers" class="menu-item-link" data-page-title="Pork and Chive Burgers with Sriracha Aioli and Kimchi Slaw"><img alt="Menu_small__pork_and_chive_burgers_with_sriracha_aioli_and_kimchi_slaw_thumb" class="menu-sidebar-item-image" src="//dusyefwqqyfwe.cloudfront.net/uploads/utility/image/file/6700/menu_small__Pork_and_Chive_Burgers_with_Sriracha_Aioli_and_Kimchi_Slaw_THUMB.jpg" /></a>
+        <div class="menu-item-info">
+          <div class="arrow"></div>
+              <ul class="recipe-tags">
+                    <li class="recipe-tag">Dairy Free</li>
+                    <li class="recipe-tag">No Added Gluten*</li>
+                    <li class="recipe-tag">Spicy</li>
+                    <li class="recipe-tag">Pork</li>
+              </ul>
+          <h1 class="menu-item-title">Pork And Chive Burgers With Sriracha Aioli And Kimchi Slaw</h1>
+        </div>
+</li>    </ul>
+  </div>
+</div>
+
+      <div id="menu-content">
+
+        <div class="white-panel">
+          <div class="container">
+            <div class="row-fluid">
+              <div class="span12 menu-sidebar-offset recipe-title-bar-container">
+                <div class="recipe-title-bar">
+                  <div class="span7 recipe-title">
+                    <h1 class="menu-main-recipe-title">Chicken Tikka Masala</h1>
+                    <p class="recipe-price">
+                      <span class="bold">$12</span> / plate
+                    </p>
+                  </div>
+                  <div class="span5 text-right menu-button-group-wrapper">
+                    <div class="menu-button-group-container">
+                      <!-- handle bars template goes here. -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row-fluid">
+              <div class="span12 menu-sidebar-offset">
+                <div class="span12 menu-main-image-container">
+                  <img alt="Chicken Tikka Masala" class="main-image" src="//dusyefwqqyfwe.cloudfront.net/uploads/utility/image/file/6691/hero__Chicken_Tikka_Masala_HERO.jpg" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row-fluid">
+              <div class="span12 menu-sidebar-offset">
+                <div class="span9">
+                  <h2>The <strong>Story</strong></h2>
+                  <p>It might be your go-to takeout order, but this classic Indian recipe is definitely worth recreating at home! Our antibiotic free, no-added hormone chicken is marinated in yogurt, garlic, ginger and garam masala and stirred into a fragrant homemade tomato sauce. Scoop and slather it over toasted naan and enjoy with a side of sauteed spinach, for a flavorful, fun night in. </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="green-panel">
+          <div class="container">
+            <div class="row-fluid">
+              <div class="span12 menu-sidebar-offset">
+                <div class="span9">
+                  <div class="span6">
+                    <h2>What <strong>We Send</strong></h2>
+                    <ul class="inline ingredients">
+                        <li class="text-center ingredient">
+                          <div class="ingredient-image-container">
+                            <div class="ingredient-image-background">
+                              <img alt="boneless skinless chicken breast" class="ingredient-image" src="//dusyefwqqyfwe.cloudfront.net/uploads/recipe/ingredient/image/170/medium_square_chicken-breast-1.jpg" />
+                            </div>
+                            boneless skinless chicken breast
+                          </div>
+                        </li>
+                        <li class="text-center ingredient">
+                          <div class="ingredient-image-container">
+                            <div class="ingredient-image-background">
+                              <img alt="garlic, divided" class="ingredient-image" src="//dusyefwqqyfwe.cloudfront.net/uploads/recipe/ingredient/image/2/medium_square_garlic-whole.jpg" />
+                            </div>
+                            garlic, divided
+                          </div>
+                        </li>
+                        <li class="text-center ingredient">
+                          <div class="ingredient-image-container">
+                            <div class="ingredient-image-background">
+                              <img alt="inch ginger, divided" class="ingredient-image" src="//dusyefwqqyfwe.cloudfront.net/uploads/recipe/ingredient/image/62/medium_square_ginger.jpg" />
+                            </div>
+                            inch ginger, divided
+                          </div>
+                        </li>
+                        <li class="text-center ingredient">
+                          <div class="ingredient-image-container">
+                            <div class="ingredient-image-background">
+                              <img alt="spinach" class="ingredient-image" src="//dusyefwqqyfwe.cloudfront.net/uploads/recipe/ingredient/image/585/medium_square_spinach-2.jpg" />
+                            </div>
+                            spinach
+                          </div>
+                        </li>
+                        <li class="text-center ingredient">
+                          <div class="ingredient-image-container">
+                            <div class="ingredient-image-background">
+                              <img alt="nonfat Greek yogurt" class="ingredient-image" src="//dusyefwqqyfwe.cloudfront.net/uploads/recipe/ingredient/image/224/medium_square_greek-yogurt-copy.jpg" />
+                            </div>
+                            nonfat Greek yogurt
+                          </div>
+                        </li>
+                        <li class="text-center ingredient">
+                          <div class="ingredient-image-container">
+                            <div class="ingredient-image-background">
+                              <img alt="garam masala, divided" class="ingredient-image" src="//dusyefwqqyfwe.cloudfront.net/uploads/recipe/ingredient/image/181/medium_square_cumin-test.jpg" />
+                            </div>
+                            garam masala, divided
+                          </div>
+                        </li>
+                        <li class="text-center ingredient">
+                          <div class="ingredient-image-container">
+                            <div class="ingredient-image-background">
+                              <img alt="butter" class="ingredient-image" src="//dusyefwqqyfwe.cloudfront.net/uploads/recipe/ingredient/image/265/medium_square_butter-test.jpg" />
+                            </div>
+                            butter
+                          </div>
+                        </li>
+                        <li class="text-center ingredient">
+                          <div class="ingredient-image-container">
+                            <div class="ingredient-image-background">
+                              <img alt="sweet paprika" class="ingredient-image" src="//dusyefwqqyfwe.cloudfront.net/uploads/recipe/ingredient/image/155/medium_square_paprika-bowl-test.jpg" />
+                            </div>
+                            sweet paprika
+                          </div>
+                        </li>
+                        <li class="text-center ingredient">
+                          <div class="ingredient-image-container">
+                            <div class="ingredient-image-background">
+                              <img alt="tomato paste" class="ingredient-image" src="//dusyefwqqyfwe.cloudfront.net/uploads/recipe/ingredient/image/134/medium_square_tomato-paste-2.jpg" />
+                            </div>
+                            tomato paste
+                          </div>
+                        </li>
+                        <li class="text-center ingredient">
+                          <div class="ingredient-image-container">
+                            <div class="ingredient-image-background">
+                              <img alt="crushed tomatoes" class="ingredient-image" src="//dusyefwqqyfwe.cloudfront.net/uploads/recipe/ingredient/image/29/medium_square_crushed-tomatoes.jpg" />
+                            </div>
+                            crushed tomatoes
+                          </div>
+                        </li>
+                        <li class="text-center ingredient">
+                          <div class="ingredient-image-container">
+                            <div class="ingredient-image-background">
+                              <img alt="pieces naan" class="ingredient-image" src="//dusyefwqqyfwe.cloudfront.net/uploads/recipe/ingredient/image/308/medium_square_naan-bread.jpg" />
+                            </div>
+                            pieces naan
+                          </div>
+                        </li>
+                        <li class="text-center ingredient">
+                          <div class="ingredient-image-container">
+                            <div class="ingredient-image-background">
+                              <img alt="heavy cream" class="ingredient-image" src="//dusyefwqqyfwe.cloudfront.net/uploads/recipe/ingredient/image/71/medium_square_coconut-milk.jpg" />
+                            </div>
+                            heavy cream
+                          </div>
+                        </li>
+                    </ul>
+                  </div>
+                  <div class="span6">
+
+                    <h2>What <strong>You'll need</strong></h2>
+                    <ul>
+                        <li>
+                          olive oil
+                        </li>
+                        <li>
+                          kosher salt
+                        </li>
+                        <li>
+                          black pepper
+                        </li>
+                    </ul>
+
+                    <h2>What <strong>To Use</strong></h2>
+                    <ul>
+                        <li>large resealable plastic bag</li>
+                        <li>large high-sided pan</li>
+                        <li>baking sheet</li>
+                        <li>medium pan</li>
+                    </ul>
+
+                  </div>
+                </div>
+                <div class="span3">
+
+                  <div class="recipe-meta-container">
+                    <div class="recipe-meta">
+                        <h4>Calories</h4>
+                        660
+
+                        <h4>Type</h4>
+                            Chicken
+                          <br>
+
+                        <h4>Difficulty</h4>
+                        Easy
+
+                        <h4>Prep Time</h4>
+                        40-50 minutes
+
+                    </div>
+                  </div>
+
+                    <div class="chef-container  span12">
+
+                        <img alt="Elana Karp" class="chef-bio-image " src="//dusyefwqqyfwe.cloudfront.net/uploads/recipe/chef/headshot/1/square_Elana_Karp-2.jpg" />
+
+                      <h4>Chef Elana</h4>
+                      <a href="/chefs/elana-karp" class="chef-bio-link">view bio</a>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="white-panel manifestio-panel mobile-hidden">
+          <div class="container">
+            <div class="row-fluid">
+              <div class="span12 menu-sidebar-offset">
+                <div class="row-fluid">
+                  <div class="span12">
+                    <h2><strong>Our Manifesto</strong></h2>
+                  </div>
+                </div>
+                <div class="row-fluid">
+                  <div class="span4">
+                    <h3>Real</h3>
+                    <p>We believe food should be really fresh and really real. For us, living well means eating healthy, high quality foods that are fresh and full of flavor. We keep our ingredients whole to ensure everything arrives in ideal condition.</p>
+                  </div>
+                  <div class="span4">
+                    <h3>Honest</h3>
+                    <p>We like knowing exactly what is going into our meals by seeing, holding, chopping and cooking the raw ingredients. Still, we're all about leaving a few things out, which is why we only use meat raised without antibiotics <a class="no-hormones" data-toggle="tooltip">or added hormones.*</a></p>
+                  </div>
+                  <div class="span4">
+                    <h3>Responsible</h3>
+                    <p>We use local and seasonal produce whenever possible and source our meats from local providers we trust. We partner with responsible companies like Sea to Table and use 100% sustainably sourced seafood for fresh food that you can feel good about.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+  <footer>
+  <div class="footer-top">
+    <div class="container">
+      <div class="row-fluid footer-connect-row">
+        <div class="span7 footer-sign-up">
+          <h3 class="footer-top-header">Sign up for updates</h3>
+          <div class="footer-newsletter-signup pull-left">
+            <form accept-charset="UTF-8" action="/prospects.js" class="simple_form form-inline pull-left footer-newsletter-signup-form" data-remote="true" method="post" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="8SBiEJGk+MC7yNebRocYDF5amHnYZnLDunGymzQR+ic=" /></div>
+              <input id="error_selector" name="error_selector" type="hidden" value="newsletter-errors-footer" />
+              <div class="input email required marketing_prospect_email"><input class="string email required" id="marketing_prospect_email" name="marketing_prospect[email]" placeholder="Enter email address" size="25" type="email" /></div>
+              <div class="input string required marketing_prospect_zip_code"><input class="string required" id="marketing_prospect_zip_code" name="marketing_prospect[zip_code]" placeholder="Zip code" size="8" type="text" /></div>
+              <input class="button minibutton secondary" name="commit" type="submit" value="Sign Up" />
+              <div id="newsletter-errors-footer" class="block-error"></div>
+</form>          </div>
+        </div>
+        <div class="span5 footer-social">
+          <h3 class="footer-top-header">Connect with us!</h3>
+          <ul class="social-links inline pull-right">
+            <li class="social-link"><a href="https://www.facebook.com/theplated" class="social-facebook" target="_blank">Facebook</a></li>
+            <li class="social-link"><a href="http://instagram.com/plated" class="social-instagram" target="_blank">Intagram</a></li>
+            <li class="social-link"><a href="https://twitter.com/plated" class="social-twitter" target="_blank">Twitter</a></li>
+            <li class="social-link"><a href="http://www.pinterest.com/theplated" class="social-pinterest" target="_blank">Pinterest</a></li>
+            <li class="social-link"><a href="http://www.youtube.com/user/ThePlated" class="social-youtube" target="_blank">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row-fluid footer-nav-row">
+        <div class="span3">
+          <h4>Things to know</h4>
+          <ul>
+            <li><a href="/how-it-works">How it Works</a></li>
+            <li><a href="/how-it-works#delivery-zones">Delivery Zones</a></li>
+            <li><a href="/gifts">Buy a Gift Card</a></li>
+          </ul>
+        </div>
+        <div class="span3">
+          <h4>Getting to know Plated</h4>
+          <ul>
+            <li><a href="/about?content=our-mission">Our Mission</a></li>
+            <li><a href="/press">Press</a></li>
+            <li><a href="/about?content=careers-page">Careers</a></li>
+            <li><a href="http://thedish.plated.com">Blog</a></li>
+          </ul>
+        </div>
+        <div class="span3">
+          <h4>How can we help?</h4>
+          <ul>
+            <li>
+              <a href="https://plated.zendesk.com" target="_blank">FAQs</a>
+            </li>
+            <li>Call 855-525-2399</li>
+            <li>Email help@plated.com</li>
+          </ul>
+        </div>
+        <div class="span3">
+            <a href="#freePlatesModal" class="footer-refer-friend" data-toggle="modal">Refer a Friend and Get 2 Free Plates</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="row-fluid">
+        <div class="span9">
+          <ul class="inline footer-bottom-nav">
+            <li class="brand-link-mini"><a href="/" class="logo-mini">Plated Home</a></li>
+            <li class="copyright">&copy; 2015 PLATED</li>
+            <li><a href="/terms">Terms</a></li>
+            <li><a href="/privacy">Privacy</a></li>
+            <li class="mobile-hidden">Made with <i class="green-heart"></i> in NYC</li>
+          </ul>
+        </div>
+        <div class="span3">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <div id="freePlatesModal" class="modal hide fade">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>Refer a Friend</h3>
+  </div>
+  <div class="modal-body text-center">
+    <div class="like-eating-for-free">Like eating for free?</div>
+    <p>Create an account, forward your personal <br>
+       referral code to friends, and you'll both get 2 free plates <br>
+       when they make a full priced purchase!</p>
+    <br>
+    <p><a href="/sign_up" class="button button-orange">Sign Up Now</a></p>
+  </div>
+</div>
+
+  <div id="modal-zip-capture" class="modal hide fade">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>Confirm your location!</h3>
+  </div>
+  <div class="modal-body">
+    <p>Please enter your zip code to continue.</p>
+
+    <form accept-charset="UTF-8" action="/zip_codes/check.js" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="8SBiEJGk+MC7yNebRocYDF5amHnYZnLDunGymzQR+ic=" /></div>
+      <input id="set_zip_code" name="set_zip_code" type="hidden" value="{:value=&gt;true}" />
+      <input id="redirect_to" name="redirect_to" type="hidden" value="/basket" />
+      <input id="shipping_zip_code_zip_code" name="shipping_zip_code[zip_code]" placeholder="zip code" type="text" />
+      <div class="zip-code-capture errors" style="text-align: center; max-width: 410px; margin-left: auto; margin-right: auto;"></div>
+      <input class="button primary" id="check-delivery-btn" name="commit" type="submit" value="Continue" />
+</form>
+  </div>
+</div>
+
+
+
+  
+    <div id="plated-olark"><script data-cfasync="false" type='text/javascript'>/*{literal}<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){f[z]=function(){(a.s=a.s||[]).push(arguments)};var a=f[z]._={},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={0:+new Date};a.P=function(u){a.p[u]=new Date-a.p[0]};function s(){a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{b.contentWindow[g].open()}catch(w){c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{var t=b.contentWindow[g];t.write(p());t.close()}catch(x){b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});/* custom configuration goes here (www.olark.com/documentation) */olark.identify('7359-340-10-2321');/*]]>{/literal}*/</script><noscript><a href="https://www.olark.com/site/7359-340-10-2321/contact" title="Contact us" target="_blank">Questions? Feedback?</a></noscript></div>
+        <script type='text/javascript'>
+    setTimeout(function(){var a=document.createElement('script');
+    var b=document.getElementsByTagName('script')[0];
+    a.src=document.location.protocol+'//dnn506yrbagrg.cloudfront.net/pages/scripts/0013/3080.js?'+Math.floor(new Date().getTime()/3600000);
+    a.async=true;a.type='text/javascript';b.parentNode.insertBefore(a,b)}, 1);
+    </script>
+
+    <script type='text/javascript'>
+document.write(unescape("%3Cscript%20src='" + (document.location.protocol=='https:' ? "https://clicktalecdn.sslcs.cdngc.net/www07/ptc/38e2ccaa-d76f-41f0-bd15-61cee13b0dc3.js" : "http://cdn.clicktale.net/www07/ptc/38e2ccaa-d76f-41f0-bd15-61cee13b0dc3.js") + "'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+</body>
+</html>
+ </div>
+</div>
+
+
+  <div id="retweet-tweet-dialog" class="RetweetDialog modal-container">
+  <div class="close-modal-background-target"></div>
+  <div class="RetweetDialog-modal modal draggable">
+    <div class="modal-content">
+      <button type="button" class="modal-btn modal-close js-close">
+  <span class="Icon Icon--close Icon--medium">
+    <span class="visuallyhidden">Close</span>
+  </span>
+</button>
+
+
+      <div class="modal-header">
+        <h3 class="modal-title">Retweet this to your followers?</h3>
+      </div>
+
+        <div class="tweet-loading">
+  <div class="spinner-bigger"></div>
+</div>
+
+        <div class="modal-body modal-tweet"></div>
+
+        <div class="modal-footer isWithoutComment">
+          <button class="btn cancel-action js-close">Cancel</button>
+          <button class="btn primary-btn retweet-action">Retweet</button>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+  <div id="delete-tweet-dialog" class="modal-container">
+  <div class="close-modal-background-target"></div>
+  <div class="modal draggable">
+    <div class="modal-content">
+      <button type="button" class="modal-btn modal-close js-close">
+  <span class="Icon Icon--close Icon--medium">
+    <span class="visuallyhidden">Close</span>
+  </span>
+</button>
+
+
+      <div class="modal-header">
+        <h3 class="modal-title">Are you sure you want to delete this Tweet?</h3>
+      </div>
+
+      <div class="tweet-loading">
+  <div class="spinner-bigger"></div>
+</div>
+
+      <div class="modal-body modal-tweet"></div>
+
+      <div class="modal-footer">
+        <button class="btn cancel-action js-close">Cancel</button>
+        <button class="btn primary-btn delete-action">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div id="quick-promote-dialog" class="QuickPromoteDialog modal-container">
+  <div class="close-modal-background-target"></div>
+  <div class="modal draggable">
+    <div class="modal-content">
+      <button type="button" class="modal-btn modal-close js-close">
+  <span class="Icon Icon--close Icon--large">
+    <span class="visuallyhidden">Close</span>
+  </span>
+</button>
+
+      <div class="modal-header">
+        <h3 class="modal-title">Promote this Tweet</h3>
+      </div>
+      <div class="modal-body">
+        <div class="quick-promote-view-container">
+          <div class="media">
+            <iframe
+              class="quick-promote-iframe js-initial-focus"
+              scrolling="no"
+              frameborder="0"
+              src="">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="block-user-dialog" class="modal-container">
+  <div class="close-modal-background-target"></div>
+  <div class="modal draggable">
+    <div class="modal-content">
+      <button type="button" class="modal-btn modal-close js-close">
+  <span class="Icon Icon--close Icon--medium">
+    <span class="visuallyhidden">Close</span>
+  </span>
+</button>
+
+
+      <div class="modal-header">
+        <h3 class="modal-title">Block</h3>
+      </div>
+
+      <div class="tweet-loading">
+  <div class="spinner-bigger"></div>
+</div>
+
+      <div class="modal-body modal-tweet"></div>
+
+      <div class="modal-footer">
+        <button class="btn cancel-action js-close">Cancel</button>
+        <button class="btn primary-btn block-action">Block</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  
+  
+
+     <div id="geo-disabled-dropdown">
+      <div class="GeoSearch-dropdownMenu dropdown-menu" tabindex="-1">
+  <div class="dropdown-caret">
+    <span class="caret-outer"></span>
+    <span class="caret-inner"></span>
+  </div>
+  <ul>
+    <li class="geo-not-enabled-yet">
+      <h2>Add a location to your Tweets</h2>
+      <p>
+        When you tweet with a location, Twitter stores that location.&#32;
+        You can switch location on/off before each Tweet and always have the option to delete your location history.
+        <a href="http://support.twitter.com/forums/26810/entries/78525" target="_blank">Learn more</a>
+      </p>
+      <div>
+        <button type="button" class="geo-turn-on btn primary-btn">Turn location on</button>
+        <button type="button" class="geo-not-now btn-link">Not now</button>
+      </div>
+    </li>
+  </ul>
+</div>
+    </div>
+
+  <div id="geo-enabled-dropdown">
+    <div class="GeoSearch-dropdownMenu dropdown-menu" tabindex="-1">
+  <div class="dropdown-caret">
+    <span class="caret-outer"></span>
+    <span class="caret-inner"></span>
+  </div>
+  <ul>
+    <li class="geo-query-location">
+      <input class="GeoSearch-queryInput" type="text" autocomplete="off" placeholder="Search for a neighborhood or city">
+      <span class="icon generic-search"></span>
+    </li>
+    <li class="geo-dropdown-status"></li>
+    <li class="dropdown-link geo-turn-off-item GeoSearch-focusable">
+      <span class="icon close"></span>Turn off location
+    </li>
+  </ul>
+</div>
+  </div>
+
+
+  <div id="profile_popup" class="modal-container ProfilePopupContainer--bellbird">
+  <div class="close-modal-background-target"></div>
+  <div class="modal modal-small draggable">
+    <div class="modal-content clearfix">
+      <button type="button" class="modal-btn modal-close js-close">
+  <span class="Icon Icon--close Icon--medium">
+    <span class="visuallyhidden">Close</span>
+  </span>
+</button>
+
+      <div class="modal-header">
+        <h3 class="modal-title">Profile summary</h3>
+      </div>
+
+      <div class="modal-body profile-modal">
+
+      </div>
+
+      <div class="loading">
+        <span class="spinner-bigger"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div id="list-membership-dialog" class="modal-container">
+  <div class="close-modal-background-target"></div>
+  <div class="modal modal-small draggable">
+    <div class="modal-content">
+      <button type="button" class="modal-btn modal-close js-close">
+  <span class="Icon Icon--close Icon--medium">
+    <span class="visuallyhidden">Close</span>
+  </span>
+</button>
+
+      <div class="modal-header">
+        <h3 class="modal-title">Your lists</h3>
+      </div>
+      <div class="modal-body">
+        <div class="list-membership-content"></div>
+        <span class="spinner lists-spinner" title="Loading&hellip;"></span>
+      </div>
+    </div>
+  </div>
+</div>
+  <div id="list-operations-dialog" class="modal-container">
+  <div class="close-modal-background-target"></div>
+  <div class="modal modal-medium draggable">
+    <div class="modal-content">
+      <button type="button" class="modal-btn modal-close js-close">
+  <span class="Icon Icon--close Icon--medium">
+    <span class="visuallyhidden">Close</span>
+  </span>
+</button>
+
+      <div class="modal-header">
+        <h3 class="modal-title">Create a new list</h3>
+      </div>
+      <div class="modal-body">
+        
+<div class="list-editor">
+  <div class="field">
+    <label class="t1-label" for="list-name">List name</label>
+    <input id="list-name" type="text" class="text" name="name" value="" />
+  </div>
+  <hr/>
+
+  <div class="field">
+    <label class="t1-label" for="list-description">Description</label>
+    <textarea id="list-description" name="description"></textarea>
+    <span class="help-text">Under 100 characters, optional</span>
+  </div>
+  <hr/>
+
+  <fieldset class="field">
+    <legend class="t1-legend">Privacy</legend>
+    <div class="options">
+      <label class="t1-label" for="list-public-radio">
+        <input class="radio" type="radio" name="mode" id="list-public-radio" value="public" checked="checked"  />
+        <b>Public</b> &middot; Anyone can follow this list
+      </label>
+      <label class="t1-label" for="list-private-radio">
+        <input class="radio" type="radio" name="mode" id="list-private-radio" value="private"  />
+        <b>Private</b> &middot; Only you can access this list
+      </label>
+    </div>
+  </fieldset>
+  <hr/>
+
+  <div class="list-editor-save">
+    <button type="button" class="btn btn-primary update-list-button" data-list-id="">Save list</button>
+  </div>
+
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div id="activity-popup-dialog" class="modal-container">
+  <div class="close-modal-background-target"></div>
+  <div class="modal draggable">
+    <div class="modal-content clearfix">
+      <button type="button" class="modal-btn modal-close js-close">
+  <span class="Icon Icon--close Icon--medium">
+    <span class="visuallyhidden">Close</span>
+  </span>
+</button>
+
+
+      <div class="modal-header">
+        <h3 class="modal-title"></h3>
+      </div>
+
+      <div class="modal-body">
+        <div class="tweet-loading">
+  <div class="spinner-bigger"></div>
+</div>
+
+        <div class="activity-tweet modal-tweet clearfix"></div>
+        <div class="loading">
+          <span class="spinner-bigger"></span>
+        </div>
+        <div class="activity-content clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  <div id="copy-link-to-tweet-dialog" class="modal-container">
+  <div class="close-modal-background-target"></div>
+  <div class="modal modal-medium draggable">
+    <div class="modal-content">
+      <button type="button" class="modal-btn modal-close js-close">
+  <span class="Icon Icon--close Icon--medium">
+    <span class="visuallyhidden">Close</span>
+  </span>
+</button>
+
+      <div class="modal-header">
+        <h3 class="modal-title">Copy link to Tweet</h3>
+      </div>
+      <div class="modal-body">
+        <div class="copy-link-to-tweet-container">
+          <p class="copy-link-to-tweet-instructions">The URL of this tweet is below. Copy it to easily share with friends.</p>
+          <textarea class="link-to-tweet-destination js-initial-focus u-dir" dir="ltr" readonly></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div id="embed-tweet-dialog" class="modal-container">
+  <div class="close-modal-background-target"></div>
+  <div class="modal modal-medium draggable">
+    <div class="modal-content">
+      <button type="button" class="modal-btn modal-close js-close">
+  <span class="Icon Icon--close Icon--medium">
+    <span class="visuallyhidden">Close</span>
+  </span>
+</button>
+
+      <div class="modal-header">
+        <h3 class="modal-title embed-tweet-title">Embed this Tweet</h3>
+        <h3 class="modal-title embed-video-title">Embed this Video</h3>
+      </div>
+      <div class="modal-body">
+        <div class="embed-code-container">
+  <p class="embed-tweet-instructions">Add this Tweet to your website by copying the code below. <a href="//dev.twitter.com/docs/embedded-tweets">Learn more</a></p>
+  <p class="embed-video-instructions">Add this video to your website by copying the code below. <a href="//dev.twitter.com/docs/embedded-tweets">Learn more</a></p>
+  <form class="t1-form">
+
+    <div class="embed-destination-wrapper">
+      <div class="embed-overlay embed-overlay-spinner"><div class="embed-overlay-content"></div></div>
+      <div class="embed-overlay embed-overlay-error">
+        <p class="embed-overlay-content">Hmm, there was a problem reaching the server. <button type="button" class="btn-link retry-embed">Try again?</button></p>
+      </div>
+      <textarea class="embed-destination js-initial-focus"></textarea>
+      <div class="embed-options">
+        <div class="embed-include-parent-tweet">
+          <label class="t1-label" for="include-parent-tweet">
+            <input type="checkbox" id="include-parent-tweet" class="include-parent-tweet" checked>
+            Include parent Tweet
+          </label>
+        </div>
+        <div class="embed-include-card">
+          <label class="t1-label" for="include-card">
+            <input type="checkbox" id="include-card" class="include-card" checked>
+            Include media
+          </label>
+        </div>
+        <div class="embed-include-tweet-in-video">
+          <label class="t1-label" for="include-tweet-in-video">
+            <input type="checkbox" id="include-tweet-in-video" class="include-tweet-in-video" checked>
+            Include Tweet when logo is clicked
+          </label>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="embed-preview">
+    <h3>Preview</h3>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <div id="signup-dialog" class="SignupDialog modal-container u-textCenter">
+  <div class="close-modal-background-target"></div>
+  <div class="modal modal-large draggable">
+    <div class="SignupDialog-content modal-content">
+      <button type="button" class="modal-btn modal-close js-close">
+  <span class="Icon Icon--close Icon--medium">
+    <span class="visuallyhidden">Close</span>
+  </span>
+</button>
+
+      <div class="modal-header">
+        <h3 class="modal-title">Sign up for Twitter</h3>
+      </div>
+      <div class="SignupDialog-body modal-body">
+        <div class="SignupDialog-bird">
+          <span class="Icon Icon--bird Icon--large"></span>
+        </div>
+        <h2 class="SignupDialog-heading">Not on Twitter? Sign up, tune into the things you care about, and get updates as they happen.</h2>
+        <div class="SignupDialog-form">
+          <form action="https://twitter.com/signup" method="post" class="SignupForm
+  ">
+  <div class="SignupForm-inputsContainer">
+    <div class="SignupForm-input SignupForm-name">
+      <input class="js-initial-focus" type="text" autocomplete="off" name="user[name]" maxlength="20" placeholder="Full name">
+    </div><div class="SignupForm-input SignupForm-email">
+      <input class="email-input" type="text" autocomplete="off" name="user[email]" placeholder="Email">
+    </div><div class="SignupForm-input SignupForm-password">
+      <input type="password" name="user[user_password]" placeholder="Password">
+    </div>
+  </div>
+  <input type="hidden" value="" name="context">
+  <input type="hidden" value="df509840aed94afae5bed40acd6bd140deb93648" name="authenticity_token"/>
+  <input name="follows" type="hidden" value="">
+  <input type="submit" class="SignupForm-submit btn primary-btn" value="Sign up for Twitter">
+</form>
+        </div>
+      </div>
+      <div class="SignupDialog-footer modal-footer u-textCenter">
+        Have an account? <a class="SignupDialog-signinLink" href="/login">Log in &raquo;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div id="sms-codes-dialog" class="modal-container">
+  <div class="close-modal-background-target"></div>
+  <div class="modal modal-medium draggable">
+    <div class="modal-content">
+      <button type="button" class="modal-btn modal-close js-close">
+  <span class="Icon Icon--close Icon--medium">
+    <span class="visuallyhidden">Close</span>
+  </span>
+</button>
+
+      <div class="modal-header">
+        <h3 class="modal-title">Two-way (sending and receiving) short codes:</h3>
+      </div>
+      <div class="modal-body">
+        
+<table id="sms_codes" cellpadding="0" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>Code</th>
+      <th>For customers of</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>United States</td>
+      <td>40404</td>
+      <td>(any)</td>
+    </tr>
+    <tr>
+      <td>Canada</td>
+      <td>21212</td>
+      <td>(any)</td>
+    </tr>
+    <tr>
+      <td>United Kingdom</td>
+      <td>86444</td>
+      <td>Vodafone, Orange, 3, O2</td>
+    </tr>
+    <tr>
+      <td>Brazil</td>
+      <td>40404</td>
+      <td>Nextel, TIM</td>
+    </tr>
+    <tr>
+      <td>Haiti</td>
+      <td>40404</td>
+      <td>Digicel, Voila</td>
+    </tr>
+    <tr>
+      <td>Ireland</td>
+      <td>51210</td>
+      <td>Vodafone, O2</td>
+    </tr>
+    <tr>
+      <td>India</td>
+      <td>53000</td>
+      <td>Bharti Airtel, Videocon, Reliance</td>
+    </tr>
+    <tr>
+      <td>Indonesia</td>
+      <td>89887</td>
+      <td>AXIS, 3, Telkomsel, Indosat, XL Axiata</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Italy</td>
+      <td>4880804</td>
+      <td>Wind</td>
+    </tr>
+    <tr>
+      <td>3424486444</td>
+      <td>Vodafone</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="3">
+        &raquo; <a class="js-initial-focus" target="_blank" href="http://support.twitter.com/articles/14226-how-to-find-your-twitter-short-code-or-long-code">See SMS short codes for other countries</a>
+      </td>
+    </tr>
+  </tfoot>
+</table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="leadgen-confirm-dialog" class="modal-container">
+  <div class="close-modal-background-target"></div>
+  <div class="modal draggable">
+    <div class="modal-content">
+      <button type="button" class="modal-btn modal-close js-close">
+  <span class="Icon Icon--close Icon--medium">
+    <span class="visuallyhidden">Close</span>
+  </span>
+</button>
+
+      <div class="modal-header">
+        <h3 class="modal-title">Confirmation</h3>
+      </div>
+      <div class="modal-body">
+        <div class="leadgen-card-container">
+          <div class="media">
+            <iframe
+              class="cards2-promotion-iframe"
+              scrolling="no"
+              frameborder="0"
+              src="">
+            </iframe>
+          </div>
+        </div>
+        <div class="js-macaw-cards-iframe-container" data-card-name="promotion">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="promptbird-modal-prompt" class="modal-container">
+  <div class="close-modal-background-target"></div>
+  <div class="modal">
+    
+    <button type="button" class="modal-btn js-promptDismiss modal-close js-close">
+      <span class="Icon Icon--close Icon--medium">
+        <span class="visuallyhidden">Close</span>
+      </span>
+    </button>
+    <div class="modal-content"></div>
+  </div>
+</div>
+
+  <div id="buy-now-dialog" class="BuyNowDialog modal-container">
+  <div class="close-modal-background-target"></div>
+  <div class="modal draggable">
+    <div class="modal-content">
+      <button type="button" class="modal-btn modal-close js-close">
+  <span class="Icon Icon--close Icon--large">
+    <span class="visuallyhidden">Close</span>
+  </span>
+</button>
+
+      <div class="modal-header">
+        <h3 class="modal-title">Buy Now</h3>
+      </div>
+      <div class="modal-body">
+        <div class="buy-now-view-container">
+          <div class="media">
+            <iframe
+              class="buy-now-card-iframe js-initial-focus"
+              scrolling="no"
+              frameborder="0"
+              width="590px"
+              height="400px"
+              src="">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+   <div id="payment-order-detail-dialog" class="PaymentOrderDialog modal-container">
+  <div class="close-modal-background-target"></div>
+  <div class="modal draggable">
+    <div class="modal-content">
+      <button type="button" class="modal-btn modal-close js-close">
+  <span class="Icon Icon--close Icon--large">
+    <span class="visuallyhidden">Close</span>
+  </span>
+</button>
+
+      <div class="modal-header">
+        <h3 class="modal-title">Buy Now</h3>
+      </div>
+      <div class="modal-body">
+        <div class="alert">
+          <h4>Hmm... Something went wrong. Please try again.</h4>
+        </div>
+        <div class="spinner-bigger"></div>
+        <div class="PaymentOrderDialog-orderDetails"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div id="create-custom-timeline-dialog" class="modal-container"></div>
+<div id="edit-custom-timeline-dialog" class="modal-container"></div>
+<div id="curate-dialog" class="modal-container"></div>
+
+
+    <div class="hidden" id="hidden-content">
+  <iframe aria-hidden="true" class="tweet-post-iframe" name="tweet-post-iframe"></iframe>
+  <iframe aria-hidden="true" class="dm-post-iframe" name="dm-post-iframe"></iframe>
+
+</div>
+
+    
+    <div id="spoonbill-outer"></div>
+  </body>
+</html>
+  <input type="hidden" id="init-data" class="json-data" value="{&quot;profileHoversEnabled&quot;:false,&quot;baseFoucClass&quot;:&quot;swift-loading&quot;,&quot;bodyFoucClassNames&quot;:&quot;swift-loading&quot;,&quot;macawSwift&quot;:true,&quot;assetsBasePath&quot;:&quot;https:\/\/abs.twimg.com\/a\/1427937956\/&quot;,&quot;assetVersionKey&quot;:&quot;25b57f&quot;,&quot;environment&quot;:&quot;production&quot;,&quot;formAuthenticityToken&quot;:&quot;df509840aed94afae5bed40acd6bd140deb93648&quot;,&quot;isInRemoveDiscoverExperiment&quot;:false,&quot;loggedIn&quot;:false,&quot;screenName&quot;:null,&quot;fullName&quot;:null,&quot;userId&quot;:null,&quot;allowAdsPersonalization&quot;:true,&quot;scribeBufferSize&quot;:3,&quot;pageName&quot;:&quot;permalink&quot;,&quot;sectionName&quot;:&quot;permalink&quot;,&quot;scribeParameters&quot;:{},&quot;recaptchaApiUrl&quot;:&quot;https:\/\/www.google.com\/recaptcha\/api\/js\/recaptcha_ajax.js&quot;,&quot;internalReferer&quot;:null,&quot;geoEnabled&quot;:false,&quot;typeaheadData&quot;:{&quot;accounts&quot;:{&quot;enabled&quot;:true,&quot;localQueriesEnabled&quot;:false,&quot;remoteQueriesEnabled&quot;:true,&quot;limit&quot;:6,&quot;typeaheadExperiments&quot;:[]},&quot;contacts&quot;:{&quot;enabled&quot;:false},&quot;trendLocations&quot;:{&quot;enabled&quot;:true},&quot;dmConversations&quot;:{&quot;enabled&quot;:false},&quot;savedSearches&quot;:{&quot;enabled&quot;:false,&quot;items&quot;:[]},&quot;dmAccounts&quot;:{&quot;enabled&quot;:false,&quot;localQueriesEnabled&quot;:false,&quot;remoteQueriesEnabled&quot;:false,&quot;onlyDMable&quot;:true},&quot;mediaTagAccounts&quot;:{&quot;enabled&quot;:false,&quot;localQueriesEnabled&quot;:true,&quot;remoteQueriesEnabled&quot;:false,&quot;onlyShowUsersWithCanMediaTag&quot;:false,&quot;currentUserId&quot;:-1},&quot;selectedUsers&quot;:{&quot;enabled&quot;:false},&quot;prefillUsers&quot;:{&quot;enabled&quot;:false},&quot;topics&quot;:{&quot;enabled&quot;:true,&quot;localQueriesEnabled&quot;:false,&quot;remoteQueriesEnabled&quot;:true,&quot;prefetchLimit&quot;:500,&quot;limit&quot;:4},&quot;concierge&quot;:{&quot;enabled&quot;:false,&quot;localQueriesEnabled&quot;:false,&quot;remoteQueriesEnabled&quot;:false,&quot;prefetchLimit&quot;:500,&quot;limit&quot;:6,&quot;typeaheadExperiments&quot;:[]},&quot;recentSearches&quot;:{&quot;enabled&quot;:false},&quot;hashtags&quot;:{&quot;enabled&quot;:false,&quot;localQueriesEnabled&quot;:false,&quot;remoteQueriesEnabled&quot;:true,&quot;prefetchLimit&quot;:500},&quot;useIndexedDB&quot;:false,&quot;showSearchAccountSocialContext&quot;:false,&quot;showTypeaheadTopicSocialContext&quot;:false,&quot;showDebugInfo&quot;:false,&quot;useThrottle&quot;:true,&quot;accountsOnTop&quot;:false,&quot;remoteDebounceInterval&quot;:300,&quot;remoteThrottleInterval&quot;:300,&quot;reverseBoldingEnabled&quot;:false,&quot;tweetContextEnabled&quot;:false,&quot;fullNameMatchingInCompose&quot;:true,&quot;topicsWithFiltersEnabled&quot;:false,&quot;typeaheadExperiments&quot;:[]},&quot;dm_participant_max&quot;:20,&quot;pushStatePageLimit&quot;:500000,&quot;routes&quot;:{&quot;profile&quot;:&quot;\/&quot;},&quot;pushState&quot;:true,&quot;viewContainer&quot;:&quot;#page-container&quot;,&quot;dragAndDropPhotoUpload&quot;:true,&quot;href&quot;:&quot;\/plated\/status\/564210040844713984\/photo\/1?utm_content=bufferaa96f&amp;utm_medium=social&amp;utm_source=twitter.com&amp;utm_campaign=buffer&quot;,&quot;searchPathWithQuery&quot;:&quot;\/search?q=query&amp;src=typd&quot;,&quot;timelineCardsGallery&quot;:true,&quot;mediaGrid&quot;:true,&quot;deciders&quot;:{&quot;bulkUnfollowEnabled&quot;:true,&quot;custom_timeline_curation&quot;:false,&quot;disable_profile_popup&quot;:false,&quot;dm_user_updates_polling&quot;:true,&quot;dm_polling_frequency_in_seconds&quot;:3,&quot;enable_media_tag_prefetch&quot;:true,&quot;enableInlineEditingOnLegacyBrowsers&quot;:true,&quot;enableMacawNymizerConversionLanding&quot;:false,&quot;geoStructuredLocationEnabled&quot;:false,&quot;hqImageUploads&quot;:false,&quot;largeHeaderImageUpload&quot;:true,&quot;mqImageUploads&quot;:false,&quot;profile_image_upload_off_the_monorail&quot;:true,&quot;progressive_resize_enabled&quot;:true,&quot;promoted_video_logging_enabled&quot;:true,&quot;pushState&quot;:true,&quot;scribeActionQueue&quot;:false,&quot;scribeReducedActionQueue&quot;:true,&quot;smartInfiniteScroll&quot;:false,&quot;swift_contacts_typeahead&quot;:false,&quot;useHtml5Webcam&quot;:true,&quot;web_perftown_stats&quot;:true,&quot;web_perftown_ttft&quot;:true,&quot;web_upload_direct&quot;:true,&quot;dynamicVideoAdsEnabled&quot;:true,&quot;internationalShippingEnabled&quot;:false},&quot;experiments&quot;:{},&quot;permalinkCardsGallery&quot;:false,&quot;toasts_dm&quot;:false,&quot;toasts_spoonbill&quot;:false,&quot;toasts_timeline&quot;:false,&quot;toasts_dm_poll_scale&quot;:60,&quot;uploadDomain&quot;:&quot;upload.twitter.com&quot;,&quot;promptbirdData&quot;:{&quot;renderingEnabled&quot;:false,&quot;immediateTriggers&quot;:[&quot;PullToRefresh&quot;,&quot;Navigate&quot;],&quot;format&quot;:null},&quot;freezeDashboard&quot;:false,&quot;passwordResetAdvancedLoginForm&quot;:true,&quot;enableActivity&quot;:true,&quot;tweetId&quot;:&quot;564210040844713984&quot;,&quot;endpoint&quot;:&quot;\/i\/plated\/conversation\/564210040844713984&quot;,&quot;permalinkCardsGallery&quot;:true,&quot;showRelatedTweets&quot;:false,&quot;trendsCacheKey&quot;:null,&quot;decider_personalized_trends&quot;:true,&quot;trendsEndpoint&quot;:&quot;\/i\/trends&quot;,&quot;initialState&quot;:{&quot;title&quot;:&quot;plated on Twitter: \&quot;Empanadas = little pockets of happiness! http:\/\/t.co\/9P1MEfqCKa http:\/\/t.co\/yqJNB5otOp\&quot;&quot;,&quot;section&quot;:null,&quot;module&quot;:&quot;app\/pages\/permalink&quot;,&quot;cache_ttl&quot;:300,&quot;body_class_names&quot;:&quot;three-col logged-out user-style-plated&quot;,&quot;doc_class_names&quot;:&quot;route-permalink&quot;,&quot;route_name&quot;:&quot;permalink&quot;,&quot;page_container_class_names&quot;:&quot;AppContent wrapper wrapper-permalink&quot;,&quot;ttft_navigation&quot;:false}}">
+
+  
+
+    <input type="hidden" class="swift-boot-module" value="app/pages/permalink">
+  <input type="hidden" id="swift-module-path" value="https://abs.twimg.com/c/swift/en">
+
+  
+    <script src="https://abs.twimg.com/c/swift/en/init.748995ce91fb02a6d92383d6591619db26d77ad9.js" async></script>
+

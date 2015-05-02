@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="http://d1sojsgu0jwtb7.cloudfront.net/css/805f0577e15a5862cca34c657970a902/player_embedded_standard.min.css" />
+    <script type="text/javascript" src="http://d1sojsgu0jwtb7.cloudfront.net/js/0feddd459997f28abfb6184d833f7afb/player_embedded_standard.en_US.min.js"></script>
+
+    <script>
+        SP.Config.addGlobalConfig({
+            DOMAIN:             "spreaker.com",
+            API_URL:            "http:\/\/api.spreaker.com",
+            API_RECEIVER_URL:   "http:\/\/api.spreaker.com\/receiver.html?v=8b64b23512852dc8b9b609c4478b78f9",
+            API_CULTURE:        "en_US",
+            SITE_URL:           "http:\/\/www.spreaker.com",
+            AJAX_VERSION:       "8b64b23512852dc8b9b609c4478b78f9",
+            AUTH_COOKIE:        "spreaker_user",
+            AUTH_URL:           "http:\/\/www.spreaker.com\/connect",
+            PUSHER_APP_KEY:     "43f80ebf8fa8d7c1ebee",
+            PLAYER:             {"swf_url":"http:\/\/www.spreaker.com\/swf\/PlayerHeadless.swf?v=b9c2ca3dc695aec3796281aa3fbeca42","station_url":"http:\/\/api.spreaker.com\/episode\/3790153","playlist_url":null,"autoplay":true},
+            CONNECT:                {"fb_app_id":215002133707,"tw_connect_url":"http:\/\/www.spreaker.com\/twitter\/connect","go_connect_url":"http:\/\/www.spreaker.com\/google\/connect","sc_connect_url":"http:\/\/www.spreaker.com\/soundcloud\/connect","tb_connect_url":"http:\/\/www.spreaker.com\/tumblr\/connect","yt_connect_url":"http:\/\/www.spreaker.com\/youtube\/connect"}        });
+    </script>
+
+    <script>
+        if (window.outerWidth <= 767) {
+            var el = document.createElement("meta");
+            el.name = "viewport";
+            el.content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no";
+            document.getElementsByTagName("head")[0].appendChild(el);
+        }
+    </script>
+
+    <!-- Google Analytics -->
+    
+
+
+    <script type="text/javascript">
+
+        var _gaq      = _gaq || [];
+        var pageviews = ["\/embed\/player\/standard?autoplay=true&episode_id=3790153"];
+
+        _gaq.push(['_setAccount', "UA-9526709-4"]);
+        _gaq.push(['_setSessionCookieTimeout', 7200000]);
+
+                _gaq.push(['_setDomainName', ".spreaker.com"]);
+        
+        // Track pageviews
+        for (var i in pageviews) {
+            if (pageviews.hasOwnProperty(i)) {
+                _gaq.push(['_trackPageview', pageviews[i]]);
+            }
+        }
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+
+</head>
+<body>
+    
+<div id="pl_wrapper" class="pl_loading">
+
+    <!-- Loading -->
+    <div class="pl_loading_view">
+        <div class="pl_loading_message">Loading ...</div>
+    </div>
+
+    <!-- Error -->
+    <div class="pl_error_view">
+        <div id="pl_error_message" class="pl_error_message"></div>
+    </div>
+
+    <!-- Player -->
+    <div class="pl_player_view">
+        <!-- Image -->
+        <a id="pl_image_link" class="pl_image_link" href="#" target="_blank"></a>
+
+        <!-- Play / Pause -->
+        <a id="pl_play_button" class="pl_play_button" href="#" onclick="return false"></a>
+
+        <!-- Info -->
+        <div class="pl_info_box">
+            <a id="pl_title_link"  class="pl_title_link" href="#" target="_blank"></a>
+            <a id="pl_author_link" class="pl_author_link" href="#" target="_blank"></a>
+        </div>
+
+        <!-- Time -->
+        <div class="pl_time_box">
+            <span id="pl_time_elapsed" class="pl_time_elapsed"></span>
+            <span id="pl_time_total"   class="pl_time_total"></span>
+        </div>
+
+        <!-- Logo -->
+        <a id="pl_logo_link" class="pl_logo_large" href="http://www.spreaker.com" target="_blank"></a>
+
+        <!-- Actions -->
+        <div class="pl_actions_box">
+            <a id="pl_chat_button"   class="pl_chat_button" target="_blank"></a>
+            <a id="pl_tracks_button" class="pl_tracks_button" onclick="return false"></a>
+            <a id="pl_like_button"   class="pl_like_button" onclick="return false"></a>
+            <a id="pl_share_button"  class="pl_share_button" onclick="return false"></a>
+        </div>
+
+        <!-- Waveform -->
+        <div id="pl_waveform" class="pl_waveform"></div>
+
+        <!-- Offline -->
+        <span class="pl_player_offline">CURRENTLY OFFLINE</span>
+    </div>
+
+    <!-- Share -->
+    <div class="pl_share_view">
+
+        <a id="pl_share_close_button" class="pl_close_button" href="#" onclick="return false"></a>
+
+        <div class="pl_share_buttons">
+            <a id="pl_fb_button" class="pl_fb_button" href="#" onclick="Sp.ui.Window.open(this.href, 600, 500); return false;"></a>
+            <a id="pl_tw_button" class="pl_tw_button" href="#" onclick="Sp.ui.Window.open(this.href, 600, 500); return false;"></a>
+            <a id="pl_go_button" class="pl_go_button" href="#" onclick="Sp.ui.Window.open(this.href, 600, 500); return false;"></a>
+        </div>
+
+        <form class="pl_share_code_form">
+            <label>Embed this in your website or blog:</label>
+            <input id="pl_share_code" type="text" value="" onkeydown="event.preventDefault(); event.stopPropagation(); return false;"  oncut="event.preventDefault(); event.stopPropagation(); return false;" onclick="Ext.get(this).dom.select()"></input>
+        </form>
+    </div>
+
+    <!-- Tracks -->
+    <div class="pl_tracks_view">
+
+        <a id="pl_tracks_close_button" class="pl_close_button" href="#" onclick="return false"></a>
+
+        <div class="pl_tracks_container">
+            <ul id="pl_tracks_list" class="pl_tracks_list"></ul>
+
+            <span id="pl_tracks_loading" class="pl_tracks_loading">Loading ...</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+    SP.Config.addModuleConfig('player_embedded', {
+        station_type:     "episode",
+        station_id:       "3790153",
+        autoplay:         true,
+        url_params:       null,
+        waveform_host:    "http:\/\/d3770qakewhkht.cloudfront.net",
+        type:             'standard'
+    });
+
+    SP.Config.addModuleConfig('player_embedded_episodes', {
+        station_type:     "episode",
+        station_id:       "3790153"    });
+
+    // Start javascript core
+    Ext.onReady(function() {
+        SP.Core.init(SP.Config);
+        SP.Core.start(["player_embedded", "player_embedded_episodes", "like"]);
+    });
+
+    // Track pageview
+    Sp.util.Track.pageView("\/embed\/player\/standard\/episode_3790153");
+
+</script>
+</body>
+</html>

@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# indiegogo: http://ogp.me/ns/fb/indiegogo#" >
+  <meta charset="utf-8" />
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"52ee8e3327","applicationID":"265213","transactionName":"J1gLEkINVVQDRUkTSgtdAAVEERZLDlgR","queueTime":1,"applicationTime":573,"agent":"js-agent.newrelic.com/nr-632.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UQEDVFdACgUFVlBR"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:9,3:7,4:11,5:3,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:9,3:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>
+  <title>Support Cazfest Heart Charity! | Indiegogo</title>
+
+
+  <link href="https://g2.iggcdn.com/assets/favicon/favicon-32-ccb09c7cc3cd3f77bc61232de4ad24a0.png" rel="icon" sizes="32x32" type="image/png" />
+  <link href="https://g2.iggcdn.com/assets/favicon/favicon-48-9dfd667b35bfc9ad1ebaa80564c47168.png" rel="icon" sizes="48x48" type="image/png" />
+  <link href="https://g1.iggcdn.com/assets/favicon/favicon-64-38d78e8eecbe98eab58b446fac4075b3.png" rel="icon" sizes="64x64" type="image/png" />
+
+  <!--[if IE]>
+  <link href="https://g3.iggcdn.com/assets/favicon/favicon-faf511dad07c019ad9a0f91b98c5c868.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://g0.iggcdn.com/assets/favicon/apple-touch-icon-144x144-precomposed-7df091b50f2cccdb2d1e372271880cdb.png">
+  <![endif]-->
+
+
+
+<meta name="language" content="en" />
+<meta name="title" content="Support Cazfest Heart Charity! | Indiegogo" />
+<meta name="description" content="Please support #Cazfest 2015 and #Saveaheart" />
+<meta name="keywords" content="fundraising, crowdfunding ideas, raise money online, crowdfunding, fundraising ideas, crowdfunding sites, Indiegogo, new gadgets, film crowdfunding, hardware crowdfunding" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="UQp25y3kLm8I5wZZpyIHcmoIinkGRtHUVezbGexkPMw=" name="csrf-token" />
+<meta property="fb:app_id" content="2392863781"/>
+<meta property="og:site_name" content="Indiegogo"/>
+<meta property="og:type" content="indiegogo:campaign"/>
+<meta property="og:title" content="CLICK HERE to support Support Cazfest Heart Charity!"/>
+<meta content="Please support #Cazfest 2015 and #Saveaheart | Crowdfunding is a democratic way to support the fundraising needs of your community. Make a contribution today!" property="og:description" />
+<meta property="og:image" content="https://res.cloudinary.com/indiegogo-media-prod-cld/image/upload/c_fill,h_200,w_200/v1425477536/ztmvyddbpliyrlzw3aqf.jpg"/>
+<meta property="og:url" content="http://www.indiegogo.com/projects/1111504/fblk"/>
+<meta property="al:iphone:url" content="indiegogo://campaigns/1111504" />
+<meta property="al:iphone:app_store_id" content="752234889" />
+<meta property="al:iphone:app_name" content="Indiegogo" />
+<meta property="indiegogo:by" content="https://www.indiegogo.com/individuals/9760039"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="fb:profile_id" content=""/>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@indiegogo">
+<meta name="twitter:domain" content="https://www.indiegogo.com/">
+<meta name="twitter:app:name:iphone" content="Indiegogo" />
+<meta name="twitter:app:id:iphone" content="752234889" />
+<meta name="twitter:app:url:iphone" content="indiegogo://campaigns/1111504" />
+<meta name="twitter:title" content="Support Cazfest Heart Charity!">
+<meta content="Please support #Cazfest 2015 and #Saveaheart" name="twitter:description" />
+<meta name="twitter:image:src" content="https://res.cloudinary.com/indiegogo-media-prod-cld/image/upload/c_fill,h_200,w_200/v1425477536/ztmvyddbpliyrlzw3aqf.jpg">
+<meta name="twitter:creator" content="@Cazfest">
+
+<link rel="canonical" href="https://www.indiegogo.com/projects/support-cazfest-heart-charity"/>
+
+    <meta name="keywords" content="Please support #Cazfest 2015 and #Saveaheart" />
+
+  <meta name="robots" content="noindex"/>
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss/announcements/support-cazfest-heart-charity?agent_type=Project" />
+
+  <script type="text/javascript">
+    var utag_data = {"site_name":"www.indiegogo.com","site_country":"us","page_type":"campaign","logged_in_state":"signed_out","session_id":"f6f00149cb29e7400ee112b50d61de7ca634cae3396b6623d39f13b55ec7cc3b","site_currency":"GBP","campaign_id":"1111504","campaign_city":"Hertfordshire","campaign_country":"United Kingdom","campaign_goal_amount":"35000","campaign_raised_amount":"115","campaign_percent_of_goal":"0.003285714285714286","campaign_days_left":-14,"campaign_category":"Music","campaign_featured_perk":null,"campaign_start_date":"2015-02-01T03:33:03-08:00","campaign_end_date":"2015-03-20T23:59:59-07:00","campaign_name":"Support Cazfest Heart Charity!","campaign_description":"Please support #Cazfest 2015 and #Saveaheart","campaign_funders":"9","campaign_type":"flexible_funding","campaign_image_url":"http://res.cloudinary.com/indiegogo-media-prod-cld/image/upload/c_fill,h_220,w_220/v1425477536/ztmvyddbpliyrlzw3aqf.jpg","campaign_partnership":null,"page_name":"Support Cazfest Heart Charity! | Indiegogo"};
+  </script>
+  <!-- Loading script asynchronously -->
+  <script type="text/javascript">
+    (function(a,b,c,d){
+    a='//tags.tiqcdn.com/utag/indiegogo/main/prod/utag.js';
+    b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+    })();
+  </script>
+
+  <link href="https://g0.iggcdn.com/assets/select2/select2-01d1ad70f9743bee1f69f028fdd85ce9.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://g0.iggcdn.com/assets/site/fonts-30413bc003860c2328f741e7391994ee.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://g1.iggcdn.com/assets/site/common-167eb99d24d2effe09f85dfefad9fc54.css" media="screen" rel="stylesheet" type="text/css" />
+  
+    <link href="https://g1.iggcdn.com/assets/site/redactor-39f9dd0704d2440b3cb1efd6a2850e71.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://g1.iggcdn.com/assets/site/campaign_page-876db2207b3009b1bbd9f327de531e7e.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+  <script type="text/javascript">
+//<![CDATA[
+window.gon = {};gon.pusher={"app_id":"708c7b14a8de2f4e7820","channel":"project_1111504","options":{},"project_slug":"support-cazfest-heart-charity"};gon.tracking_info={"google_analytics_id":null,"fb_pixel_id":null,"amount":0,"currency_iso_code":"GBP"};gon.ga_impression_data={"id":"1111504","name":"Support Cazfest Heart Charity!","category":"Music","brand":"Int Nonprofit","list":"Hertfordshire, United Kingdom","variant":"Flexible"};gon.urls={"campaign_contribution_path":"/projects/support-cazfest-heart-charity/contributions/new","pitch_image_url":"/projects/missing/full.png","campaign_follow_path":"/private_api/projects/1111504/follow","campaign_unfollow_path":"/private_api/projects/1111504/unfollow","campaign_fb_login_follow_path":"https://www.indiegogo.com/project/track_with_facebook/support-cazfest-heart-charity"};gon.campaignPrivateJson={"followed":false,"facebook_friend_contributors":[],"funding_invalid_yet_live":false,"partner_name":null,"nonprofit":false};gon.current_user_email=null;gon.responsive_contribution_flow=true;gon.email_contacts=[];gon.show_share_modal=false;gon.env="production";gon.api_token="e88bd0a00305bfdfb18003a75665643b";gon.pageview_data={"new_url":"/projects/music/support-cazfest-heart-charity"};gon.trust_passport={"project":{"title":"Support Cazfest Heart Charity!","category":"Music","location":"Hertfordshire, United Kingdom","team_members":[{"name":"Emma Knewstub","role":null,"email_verified":true,"facebook_verified":true,"linkedin_verified":false,"avatar_url":"https://images.indiegogo.com/individuals/9760039/pictures/thumbnail/20150203022503-0669e09.jpg?1422959104","profile_url":"/individuals/9760039","admin_verified":false},{"name":"Jack Whitehead","role":null,"email_verified":true,"facebook_verified":false,"linkedin_verified":false,"avatar_url":"https://g1.iggcdn.com/assets/individuals/missing/thumbnail-0e261c1f18b2979de8a88494d5e747f7.png","profile_url":"/individuals/9761849","admin_verified":false},{"name":"Michaela Turner-Millar","role":null,"email_verified":false,"facebook_verified":true,"linkedin_verified":false,"avatar_url":"http://graph.facebook.com/10153764348303849/picture?width=200","profile_url":"/individuals/9760443","admin_verified":false},{"name":"Johnny Johnstone","role":null,"email_verified":true,"facebook_verified":true,"linkedin_verified":false,"avatar_url":"http://graph.facebook.com/554854746/picture?width=200","profile_url":"/individuals/9768829","admin_verified":false},{"name":"Becky Francis","role":null,"email_verified":true,"facebook_verified":true,"linkedin_verified":false,"avatar_url":"http://graph.facebook.com/614584233/picture?width=200","profile_url":"/individuals/9776043","admin_verified":false}],"websites":["https://www.facebook.com/CazFest?fref=ts","https://twitter.com/Cazfest","https://www.youtube.com/channel/UCJKKfl3PLS_seTgO8AJUHZA/feed","http://www.cazfest.com"],"bank_account_country":"United Kingdom","activity":"Becky Francis made a campaign update 13 days ago"},"owner":{"name":"Emma Knewstub","profile_url":"/individuals/9760039","description":"We took our young children to Cazfest 4 years ago, not knowing what to expect but hoping for a nice few hours. We were blown away, it was an amazing event, the kids loved it as much as we did.\r\n\r\nIt's small enough to feel safe and secure yet big enough to attract some amazing headlining bands, the following year we went back again, and straight after the festival I volunteered to help organise the event and raise money for a fantastic cause.","email_verified":true,"linkedin_profile_url":null,"facebook_profile_url":null,"facebook_friends_count":684,"campaigns_count":1,"avatar_url":"https://images.indiegogo.com/individuals/9760039/pictures/thumbnail/20150203022503-0669e09.jpg?1422959104","contributions_count":0,"comments_count":1,"role":"Campaigner","admin_verified":false},"contact_owner_endpoint_url":"/private_api/projects/support-cazfest-heart-charity/contact_owner.json","help_center_url":"https://support.indiegogo.com/hc/articles/205016827"};gon.default_event_tags={"project_id":1111504,"account_id":null,"page":"project_page"};gon.subdomain=null;gon.currency={"example":"\u00a39,999","iso_code":"GBP","delimiter":",","separator":".","symbol":"\u00a3"};
+//]]>
+</script>
+  <script type="text/javascript">
+  try {
+    var _gaq = _gaq || [];
+  } catch(err) {}
+</script>
+
+  <script type='text/javascript'>
+    try {
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    } catch(err) {}
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  </script>
+
+    <script>ga('create', 'UA-2250010-1', 'auto');</script>
+
+<script>ga('require', 'ec', 'ec.js');</script>
+
+
+    <script>ga('set', 'dimension7', 'Music');</script>
+    <script>ga('set', 'dimension9', 'Anonymous');</script>
+    <script>ga('set', 'dimension13', '87c5d7b2adcc074689837b194a61f55b505c93b2399c285ea56300953064bd0c');</script>
+    <script>ga('set', 'dimension18', 'en');</script>
+    <script>ga('set', 'dimension8', 'Not Logged In');</script>
+
+<!-- Google Analytics End -->
+
+
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <script src="https://g1.iggcdn.com/assets/igg/ie8/common-49efa31aa72149f618db1dbcab395e47.js" type="text/javascript"></script>
+  <script src="https://code.jquery.com/jquery-1.11.0.js"></script>
+  <link href="https://g3.iggcdn.com/assets/site/ie8-b1df367ed4fbf8df8cb80f89216c3e09.css" media="screen" rel="stylesheet" type="text/css" />
+  
+  <![endif]-->
+  <!--[if IE 9]>
+  <script src="https://g0.iggcdn.com/assets/css3-multi-column.1.02-6f35ddb3f392cace1a85d17febd3c8ba.js" type="text/javascript"></script>
+  <![endif]-->
+
+</head>
+<body ng-app="lite" class="nonresponsive">
+  <div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '2392863781',
+      version    : 'v2.2',
+      channelUrl: 'http://www.indiegogo.com//channel.html', // Channel File for x-domain communication
+      status: true, // check the login status upon init?
+      cookie: true, // set sessions cookies to allow your server to access the session?
+      xfbml: true
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    var fbLocale = {'en': 'en_US', 'fr': 'fr_FR', 'de': 'de_DE', 'es': 'es_ES'}['en'];
+    js.src = "//connect.facebook.net/" + fbLocale + "/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+
+  
+  
+
+      
+<div header-main>
+  <div class="i-page-header">
+    <div class="hidden">
+      <a class="i-search-button" href="" ng-click="toggleSearchMode()" ng-class="{'i-active': inSearchMode}"><span class="i-icon i-glyph-icon-30-search"></span></a>
+
+        <div class="i-header-bar" header-dropdown-link>
+          <span class="i-site-logo">INDIEGOGO</span>
+          <span class="i-icon i-glyph-icon-30-downcarrot"></span>
+        </div>
+        <div class="dropdown-menu i-linklist-dropdown i-capitalize">
+          <a href="/">Home</a>
+          <a href="/explore">Explore</a>
+          <a href="/learn-how-to-raise-money-for-a-campaign">How It Works</a>
+          <a href="/campaigns/new?simple=1">Start your campaign</a>
+            <a href="https://www.indiegogo.com/accounts/sign_up?return_to=https%3A%2F%2Fwww.indiegogo.com%2Fprojects%2Fsupport-cazfest-heart-charity">Log in or Sign up</a>
+        </div>
+    </div>
+    <div class="">
+      <div class="container">
+          <div class="i-header-links-area pull-right">
+            <div class="i-header-links i-header-account-links">
+                <a href="https://www.indiegogo.com/accounts/auth/facebook?csrf_token=UQp25y3kLm8I5wZZpyIHcmoIinkGRtHUVezbGexkPMw%3D" class="i-cta-1 i-cta-1-facebook i-fbconnect-header">connect</a>
+                <a href="#" ng-click="openModal('signupForm')">Sign up</a>
+                <a href="#" ng-click="openModal('loginForm')">Log in</a>
+            </div>
+            <div class="i-header-links i-header-menu-links">
+              <a href="/explore">Explore</a>
+              <a href="/learn-how-to-raise-money-for-a-campaign">How It Works</a>
+              <a href="/campaigns/new">Start your campaign</a>
+              <a href="#" class="i-search-button visible-inline-sm" ng-class="{&#x27;i-active&#x27;: inSearchMode}" ng-click="toggleSearchMode()">
+                <span class="i-icon i-glyph-icon-30-search "></span>
+</a>              <div class="i-inline-search visible-inline-md">
+                <form method="get" action="/explore"
+                      header-search-form template="header_search_form"
+                      term="">
+                </form>
+              </div>
+            </div>
+          </div>
+
+        <a href="/" class="i-site-logo">
+            <img alt="Igg_windowlogo_whiteappleandbeyond" src="https://images.indiegogo.com/logos/4/image/original/igg_windowlogo_whiteappleandbeyond.png?1396383932" />
+</a>      </div>
+    </div>
+
+    <div class="container i-mobile-fullwidth">
+      <form method="get" action="/explore"
+           header-search-form term=""
+           template="header_search_dropdown"
+           class="i-search-dropdown" ng-class="{'i-open': inSearchMode}"></form>
+    </div>
+  </div>
+</div>
+
+  <div session-modal id="session_modal" class="modal i-modal i-session-modal">
+  <div class="modal-dialog">
+    <div class="modal-content auth-modal">
+      <a class="close i-icon i-glyph-icon-30-close" data-dismiss="modal" aria-hidden="true"></a>
+
+      <div class="center-text fb-auth">
+        <a href="https://www.indiegogo.com/accounts/auth/facebook?csrf_token=UQp25y3kLm8I5wZZpyIHcmoIinkGRtHUVezbGexkPMw%3D" class="i-cta-1 i-cta-1-facebook">Continue with Facebook</a>
+        <p>No automatic posts, ever.</p>
+      </div>
+
+      <div class="auth-fields">
+        <div id="loginSession" ng-show="currentForm === 'loginForm'">
+          <p class="sign-up-with-email divider"><span class="divider-line">Or log in with email</span></p>
+          <div ng-controller="SessionController">
+            <form accept-charset="UTF-8" action="https://www.indiegogo.com/accounts/sign_in.json" method="post" name="loginForm" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="UQp25y3kLm8I5wZZpyIHcmoIinkGRtHUVezbGexkPMw=" /></div>
+  <p class="i-error" ng-if="loginFailed">Invalid email or password</p>
+  <label class="hide i-error signup"></label>
+  <input class="i-text-field" id="account_email" name="account[email]" ng-model="loginAccount.email" placeholder="Email" required="required" size="30" type="email" />
+
+  <label for="account_email'" class="i-input-error-subtext i-error" ng-if="loginForm['account[email]'].$error.email">Please enter a valid email address</label>
+  <label for="account_email'" class="i-input-error-subtext i-error" ng-if="loginForm['account[email]'].$error.required && loginForm['account[email]'].$dirty">This field is required</label>
+
+  <input autocomplete="off" class="i-text-field password-input password" id="account_password" name="account[password]" ng-minlength="6" ng-model="loginAccount.password" placeholder="Password" required="required" size="30" type="password" />
+  <label for="account_password" class="i-input-error-subtext i-error" ng-if="loginForm['account[password]'].$error.minlength">Must be at least 6 characters long</label>
+  <label for="account_password" class="i-input-error-subtext i-error" ng-if="loginForm['account[password]'].$error.required && loginForm['account[password]'].$dirty">This field is required</label>
+
+  <div class="i-field-row">
+    <div class="col-sm-6 i-checkbox-with-label">
+      <input name="account[rememberme]" type="hidden" value="0" /><input checked="checked" id="account_rememberme" name="account[rememberme]" type="checkbox" value="1" />
+      <label for="account_rememberme">Remember Me</label>
+    </div>
+    <div class="col-sm-6 i-forgot">
+      <a href="https://www.indiegogo.com/accounts/password/new" class="i-aqua-link">Forgot Password?</a>
+    </div>
+  </div>
+  <input class="i-cta-1 login" name="commit" ng-click="submitLogin()" type="submit" value="Log in" />
+</form>
+          </div>
+          <div class="topborder">
+            New to Indiegogo?  <a href="#" class="toggler" ng-click="switchForm()">Sign up</a>
+          </div>
+        </div>
+
+        <div id="signUpSession" ng-show="currentForm === 'signupForm'">
+          <p class="sign-up-with-email divider"><span class="divider-line">Or sign up with email</span></p>
+          <form accept-charset="UTF-8" action="https://www.indiegogo.com/accounts.json" method="post" name="signupForm" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="UQp25y3kLm8I5wZZpyIHcmoIinkGRtHUVezbGexkPMw=" /></div>
+  <p class="i-error" ng-if="errorMessage">{{errorMessage}}</p>
+  <input id="timestamp" name="timestamp" type="hidden" value="1428103137" /><input id="spinner" name="spinner" type="hidden" value="fe33a4091fd27a4cf26ef766c8fe02d3" />
+
+  <input class="i-text-field" id="account_firstname" name="account[firstname]" ng-model="signupAccount.firstname" placeholder="First Name" required="required" size="30" type="text" />
+  <label for="account_firstname" class="i-input-error-subtext i-error" ng-if="signupForm['account[firstname]'].$error.required && signupForm['account[firstname]'].$dirty">This field is required</label>
+
+  <input class="i-text-field" id="account_lastname" name="account[lastname]" ng-model="signupAccount.lastname" placeholder="Last Name" required="required" size="30" type="text" />
+  <label for="account_lastname" class="i-input-error-subtext i-error" ng-if="signupForm['account[lastname]'].$error.required && signupForm['account[lastname]'].$dirty">This field is required</label>
+  
+  <input class="i-text-field" id="811159be819716f6314abb7f83ff9ad6" name="811159be819716f6314abb7f83ff9ad6" ng-model="signupAccount.email" placeholder="Email" required="required" type="text" /><div style="position: absolute; left: -2000px;"><input autocomplete="off" id="email" name="email" tabindex="999" type="text" value="" /></div>
+  <label class="i-input-error-subtext i-error" for="811159be819716f6314abb7f83ff9ad6" ng-if="signupFailed &amp;&amp; !signupAccount.emailValid()">Please enter a valid email address</label>
+  <label class="i-input-error-subtext i-error" for="811159be819716f6314abb7f83ff9ad6" ng-if="signupFailed &amp;&amp; !signupAccount.email">This field is required</label>
+
+  <input autocomplete="off" class="i-text-field" id="take" minlength="6" name="912e8de45e9a34dd54842bf548ca7d2c" ng-model="signupAccount.password" placeholder="Password" required="required" type="password" /><div style="position: absolute; left: -2000px;"><input autocomplete="off" id="password" name="password" tabindex="999" type="password" value="" /></div>
+  <label class="i-input-error-subtext i-error" for="912e8de45e9a34dd54842bf548ca7d2c" ng-if="signupFailed &amp;&amp; !signupAccount.passwordValid()">Must be between 6 and 40 characters</label>
+  <label class="i-input-error-subtext i-error" for="912e8de45e9a34dd54842bf548ca7d2c" ng-if="signupFailed &amp;&amp; !signupAccount.password">This field is required</label>
+
+  <div class="i-field-row i-checkbox-with-label">
+    <input name="account[general_opt_in]" type="hidden" value="0" /><input checked="checked" id="account_general_opt_in" name="account[general_opt_in]" type="checkbox" value="1" />
+    <label for="account_general_opt_in">Sign me up for the weekly newsletter</label>
+  </div>
+
+  <input class="i-cta-1 js-submit-session" name="commit" ng-click="submitSignup()" type="submit" value="Create an Account" />
+
+  <div class="i-fine-print">
+
+
+    By signing up you agree to our <a href="https://www.indiegogo.com/about/terms" target="_blank">Terms of Use</a> and <a href="https://www.indiegogo.com/about/privacy" target="_blank">Privacy Policy</a>.
+  </div>
+
+</form>
+          <div class="topborder">
+            Already have an account? <a href="#" class="toggler" ng-click="switchForm()">Log in</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="container hidden" header-flash-container>
+</div>
+
+      
+
+
+
+
+
+
+
+
+    <div class='container i-campaign-page'>
+  <div class='i-campaign-page-title'>
+  <h1>Support Cazfest Heart Charity!</h1>
+  <div class='i-byline'>
+      <span class='i-keep-it-together'>
+        <span class="i-icon i-glyph-icon-30-location"></span>
+        <a href="/explore?filter_city=Hertfordshire&amp;filter_country=CTRY_GB" class="i-byline-location-link">Hertfordshire, United Kingdom</a>
+      </span>
+
+      <span class='i-keep-it-together'>
+        <span class='i-icon i-category-icon i-glyph-icon-30-music'></span>
+        <a href="/explore/music">Music</a>
+      </span>
+  </div>
+</div>
+
+
+  <div class="i-float-tab-links">
+    <div class='visible-lg'>
+<div class='i-vertical-share-links'>
+    <a class='js-anchor' name='share'></a>
+    <div class='i-share'>
+
+      <div class='i-fb'>
+        <div class='fb-share-button' data-href='http://www.indiegogo.com/projects/1111504/fblk' data-layout='box_count' data-ref=''></div>
+      </div>
+
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-counturl="http://www.indiegogo.com/projects/1111504" data-related="indiegogo:Indiegogo" data-text="Help make it happen for Support Cazfest Heart Charity! on @indiegogo" data-url="http://igg.me/p/1111504/twtr" target="_blank">Tweet</a>
+
+      <div class='i-google-button'>
+        <div class='g-plusone' data-href='http://www.indiegogo.com/projects/1111504/gpls' data-size='tall'></div>
+      </div>
+
+
+
+      <a href="/accounts/sign_up" class="i-icon-link">        <span class='i-icon i-glyph-icon-30-mail'></span>
+        <span class='i-name'>email</span>
+</a>
+
+      <a href="#" class="i-icon-link" data-target="#embed_lightbox" data-toggle="modal">
+        <span class='i-icon i-glyph-icon-30-embed'></span>
+        <span class='i-name'>embed</span>
+</a>
+      <a class='i-icon-link js-clip' data-clipboard-text='http://igg.me/at/cazfest2015/x'>
+        <span class='i-icon i-glyph-icon-30-link'></span>
+        <span class='i-name'>Link</span>
+      </a>
+
+        <a href="/project/track_login/support-cazfest-heart-charity" class="i-follow i-icon-link">
+          <span class='i-icon i-glyph-icon-30-following'></span>
+          <span class='i-name'>Follow</span>
+</a>    </div>
+</div>
+</div>
+        <span class="i-tab" data-tab-id="home">
+          <span>
+            <a href="#home" class="js-tab-link" data-url="/projects/support-cazfest-heart-charity/show_tab/home">Story</a>
+          </span>
+        </span>
+        <span class="i-tab" data-tab-id="activity">
+          <span>
+            <a href="#activity" class="js-tab-link" data-url="/projects/support-cazfest-heart-charity/show_tab/activity">Updates</a>
+              <span class="i-count">4</span>
+          </span>
+        </span>
+        <span class="i-tab" data-tab-id="comments">
+          <span>
+            <a href="#comments" class="js-tab-link" data-url="/projects/support-cazfest-heart-charity/show_tab/comments">Comments</a>
+              <span class="i-count">14</span>
+          </span>
+        </span>
+        <span class="i-tab" data-tab-id="pledges">
+          <span>
+            <a href="#pledges" class="js-tab-link" data-url="/projects/support-cazfest-heart-charity/show_tab/pledges">Funders</a>
+              <span class="i-count">9</span>
+          </span>
+        </span>
+        <span class="i-tab" data-tab-id="gallery">
+          <span>
+            <a href="#gallery" class="js-tab-link" data-url="/projects/support-cazfest-heart-charity/show_tab/gallery">Gallery</a>
+              <span class="i-count">6</span>
+          </span>
+        </span>
+
+  </div>
+
+  <div class="row i-campaign-body">
+    <div class="col-xs-8 i-main-column">
+      <div class="js-tab-flash"></div>
+      <div class="i-campaign-body-content" campaign-body>
+        <div class="js-tab-content">
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-4 i-sidebar">
+
+      <div class='i-bordered-box i-campaign-summary-sidebar'  >
+  <div class='i-project-nutshell'>
+    <div class='i-balance'><span class="currency currency-xlarge"><span>£115</span><em>GBP</em></span></div>
+      <div class='i-raised'>raised of <span class="currency"><span>£35,000</span></span> goal</div>
+    <div class='i-progress-bar'><div class='i-complete' style='width: 2%'></div></div>
+    <div class='i-bottom-row'>
+      <div class='i-percent'>
+        0%
+      </div>
+      <div class='i-time-left'>
+          <span class='i-icon i-glyph-icon-22-timeleft'>0 time left</span>
+      </div>
+    </div>
+
+      <div class='i-funding-duration'>This campaign started on Feb 01 and closed on March 20, 2015 (11:59pm PT).</div>
+  </div>
+
+
+
+    <div class='i-icon-project-note'>
+        <span class='i-icon i-glyph-icon-22-flexiblefunding'></span>
+      <span class='i-status'>Flexible Funding</span>
+              <span class='i-icon i-icon-info-bubble js-goal-info-popover'>
+                <span class='js-subinfo hidden'>This campaign has ended and will receive all funds raised.</span>
+              </span>
+    </div>
+
+  <!-- Facebook contributor friends -->
+  <div class='i-project-cards'>
+    <div class='project-card-friend-list'>
+      
+    </div>
+  </div>
+
+    <div class='i-contribute-button i-campaign-closed'>
+      Campaign Closed
+        <div class='i-campaign-closed-subheader'>This campaign ended on March 20, 2015</div>
+    </div>
+</div>
+
+
+
+
+          <div class="i-sidebar-header">Select a Perk</div>
+  <ul class="i-perks js-perks">
+    <li id="perk_id_2625489" class="perk rounded shadow i-perk">
+    <div class="amount bold i-perk-amount"><span class="currency currency-large"><span>£5</span><em>GBP</em></span></div>
+    <div class="perk-title i-perk-title">
+      Donation
+    </div>
+
+  <p class="description i-perk-description">Thank you for helping us raise awareness</p>
+
+
+  <div class="claim clearfix">
+    <p class="fl claimed big-perk-button i-claim-item"><span class="i-value">1</span>  claimed
+    </p>
+  </div>
+
+
+</li>
+
+<li id="perk_id_2632327" class="perk rounded shadow i-perk">
+    <div class="amount bold i-perk-amount"><span class="currency currency-large"><span>£10</span><em>GBP</em></span></div>
+    <div class="perk-title i-perk-title">
+      Cazfest Keyring &amp; Sweatshirt
+    </div>
+
+  <p class="description i-perk-description">Branded official Cazfest merchandise - 1x Keyring &amp; 1x Sweatshirt (available in sizes small - XL)</p>
+
+
+  <div class="claim clearfix">
+      <div class="fl perkdelivery big-perk-button i-claim-item i-delivery-date">Estimated delivery: <span class='i-value'>June 2015</span>
+      </div>
+    <p class="fl claimed big-perk-button i-claim-item"><span class="i-value">1</span>  out of <span class='i-value'>1000</span> claimed
+    </p>
+  </div>
+
+
+</li>
+
+<li id="perk_id_2632302" class="perk rounded shadow i-perk">
+    <div class="amount bold i-perk-amount"><span class="currency currency-large"><span>£20</span><em>GBP</em></span></div>
+    <div class="perk-title i-perk-title">
+      Adult Ticket &amp; Cazfest T-shirt
+    </div>
+
+  <p class="description i-perk-description">Early bird ticket to Cazfest 2015 and an official Cazfest T-shirt (Sizes X-small to XL available).</p>
+
+
+  <div class="claim clearfix">
+      <div class="fl perkdelivery big-perk-button i-claim-item i-delivery-date">Estimated delivery: <span class='i-value'>July 2015</span>
+      </div>
+    <p class="fl claimed big-perk-button i-claim-item"><span class="i-value">4</span>  out of <span class='i-value'>1000</span> claimed
+    </p>
+  </div>
+
+
+</li>
+
+<li id="perk_id_2625491" class="perk rounded shadow i-perk">
+    <div class="amount bold i-perk-amount"><span class="currency currency-large"><span>£100</span><em>GBP</em></span></div>
+    <div class="perk-title i-perk-title">
+      VIP ticket
+    </div>
+
+  <p class="description i-perk-description">VIP tickets include drinks vouchers, access to the VIP area where the stars mingle, band meet &amp; greet and a goody bag</p>
+
+
+  <div class="claim clearfix">
+      <div class="fl perkdelivery big-perk-button i-claim-item i-delivery-date">Estimated delivery: <span class='i-value'>July 2015</span>
+      </div>
+    <p class="fl claimed big-perk-button i-claim-item"><span class="i-value">0</span>  out of <span class='i-value'>20</span> claimed
+    </p>
+  </div>
+
+
+</li>
+
+<li id="perk_id_2623965" class="perk rounded shadow i-perk">
+    <div class="amount bold i-perk-amount"><span class="currency currency-large"><span>£500</span><em>GBP</em></span></div>
+    <div class="perk-title i-perk-title">
+      5 x VIP tickets
+    </div>
+
+  <p class="description i-perk-description">VIP tickets include drinks vouchers, access to the VIP area where the stars mingle, band meet &amp;amp; greet and a goody bag</p>
+
+
+  <div class="claim clearfix">
+      <div class="fl perkdelivery big-perk-button i-claim-item i-delivery-date">Estimated delivery: <span class='i-value'>July 2015</span>
+      </div>
+    <p class="fl claimed big-perk-button i-claim-item"><span class="i-value">0</span>  out of <span class='i-value'>5</span> claimed
+    </p>
+  </div>
+
+
+</li>
+
+<li id="perk_id_2632297" class="perk rounded shadow i-perk">
+    <div class="amount bold i-perk-amount"><span class="currency currency-large"><span>£5,500</span><em>GBP</em></span></div>
+    <div class="perk-title i-perk-title">
+      Bronze Sponsorship
+    </div>
+
+  <p class="description i-perk-description">Become an official Cazfest sponsor and receive thanks on our website &amp; Facebook event page as well as regular mentions in our newsletter and social media campaign. Sponsorship can be tailored to suit your needs and can include:
+ 
+VIP tickets, Advert on 11X4m TV screen for advertising and promotion, Programme presence, promotional area at the event, Partnership press released,  website, Logo/branding on banners</p>
+
+
+  <div class="claim clearfix">
+      <div class="fl perkdelivery big-perk-button i-claim-item i-delivery-date">Estimated delivery: <span class='i-value'>July 2015</span>
+      </div>
+    <p class="fl claimed big-perk-button i-claim-item"><span class="i-value">0</span>  out of <span class='i-value'>10</span> claimed
+    </p>
+  </div>
+
+
+</li>
+
+<li id="perk_id_2623964" class="perk rounded shadow i-perk">
+    <div class="amount bold i-perk-amount"><span class="currency currency-large"><span>£15,000</span><em>GBP</em></span></div>
+    <div class="perk-title i-perk-title">
+      Gold/Silver Sponsor
+    </div>
+
+  <p class="description i-perk-description">This opportunity includes radio, press and screen coverage, meet and greet bands, stage sponsorship, VIP tickets, food &amp; drink vouchers, branding on promo material, access to data, afterparty tickets, the list goes on! We can tailor this package to meet your requirements and make it work for you!</p>
+
+
+  <div class="claim clearfix">
+      <div class="fl perkdelivery big-perk-button i-claim-item i-delivery-date">Estimated delivery: <span class='i-value'>July 2015</span>
+      </div>
+    <p class="fl claimed big-perk-button i-claim-item"><span class="i-value">0</span>  out of <span class='i-value'>2</span> claimed
+    </p>
+  </div>
+
+
+</li>
+
+<li id="perk_id_2623960" class="perk rounded shadow i-perk">
+    <div class="amount bold i-perk-amount"><span class="currency currency-large"><span>£35,000</span><em>GBP</em></span></div>
+    <div class="perk-title i-perk-title">
+      Platinum Sponsor
+    </div>
+
+  <p class="description i-perk-description">This includes, VIP Access All Area tickets, co-branded ownership of the event, radio, screen, and press coverage, signposting, branding, access to data, input into band selection, website links, the list goes on. This is the daddy of all opportunities supporting CAZFEST</p>
+
+
+  <div class="claim clearfix">
+      <div class="fl perkdelivery big-perk-button i-claim-item i-delivery-date">Estimated delivery: <span class='i-value'>July 2015</span>
+      </div>
+    <p class="fl claimed big-perk-button i-claim-item"><span class="i-value">0</span>  out of <span class='i-value'>1</span> claimed
+    </p>
+  </div>
+
+
+</li>
+
+
+  </ul>
+
+
+
+
+      <div class="i-prohibited">
+        Do you think this campaign <a href="/about/terms" target="_blank">contains prohibited content</a>?
+
+        <a href="http://support.indiegogo.com/hc/en-us/requests/new?campaign=1111504&amp;description=https%3A%2F%2Fwww.indiegogo.com%2Fprojects%2F1111504&amp;subject=Prohibited+Content&amp;ticket_form_id=68803" target="_blank" title="Violates Indiegogo &#x27;Terms of Use&#x27;">Let us know.</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="embed_lightbox" class="modal i-modal i-embed-lightbox">
+  <div class="modal-dialog i-modal-wider">
+    <div class="modal-content">
+      <a class="close i-icon i-glyph-icon-30-close" data-dismiss="modal" aria-hidden="true"></a>
+
+      <div class="row">
+        <div class="col-sm-8">
+          <h3>Embed this card in your website or blog</h3>
+
+          <p>Copy the code below and paste it into your website or blog.</p>
+          <textarea class="i-code-text" readonly="true" onclick="javascript:this.select();" rows="8">&lt;iframe src=&quot;https://www.indiegogo.com/project/support-cazfest-heart-charity/embedded&quot; width=&quot;222px&quot; height=&quot;445px&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;</textarea>
+        </div>
+        <div class="col-sm-4">
+          
+
+
+
+
+
+<div class="i-project-card i-embedded">
+
+  <a href="/projects/support-cazfest-heart-charity/wdgt/9760039" class="i-project" target="_blank">
+    <div class="i-img" data-src="https://res.cloudinary.com/indiegogo-media-prod-cld/image/upload/c_fill,h_220,w_220/v1425477536/ztmvyddbpliyrlzw3aqf.jpg">
+    </div>
+    <div class="i-content">
+      <div class="i-title">Support Cazfest Heart Charity!</div>
+      <div class="i-tagline ">Please support #Cazfest 2015 and #Saveaheart</div>
+    </div>
+
+    <div class="i-stats">
+      <span class="currency currency-medium"><span>£115</span><em>GBP</em></span>
+      <div class="i-progress-bar">
+        <div class="i-complete" style="width: 2%"></div>
+      </div>
+      <div class="i-bottom-row">
+          <div class="i-percent">
+            0%
+          </div>
+          <div class="i-time-left">
+            0 time left
+          </div>
+      </div>
+    </div>
+</a></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade i-publishModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="i-publishModal-header">
+        <a class="i-publishModal-close">
+          <span class="i-icon i-glyph-icon-30-close"></span>
+        </a>
+        <img alt="Airplane" class="i-publishModal-gif" src="https://g3.iggcdn.com/assets/airplane-cab01fc68302df30e4b7105bc16a7554.gif" />
+        <h2>Your campaign is live!</h2>
+      </div>
+      <div class="i-publishModal-body">
+        <p class="i-publishModal-body-headline">Now spread the word</p>
+        <p class="i-publishModal-body-cta">Reach out to your social networks and start raising funds now!</p>
+        <div class="i-publishModal-socialIcons">
+          <a href="https://facebook.com/sharer/sharer.php?u=http%3A%2F%2Figg.me%2Fp%2Fsupport-cazfest-heart-charity"
+             target="_blank" class='i-socialIcon-fb'>
+              <span class="i-socialIcon i-glyph-icon-30-facebook"></span>
+             </a>
+          <a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Figg.me%2Fp%2Fsupport-cazfest-heart-charity&amp;text=Help+make+it+happen+for+%27Support+Cazfest+Heart+Charity%21%27&amp;via=indiegogo&amp;related=indiegogo&amp;hashtags=indiegogo"
+             target="_blank" class='i-socialIcon-twitter'>
+              <span class="i-socialIcon i-glyph-icon-30-twitter"></span>
+             </a>
+          <a href="https://plus.google.com/share?url=http%3A%2F%2Figg.me%2Fp%2Fsupport-cazfest-heart-charity&amp;hl=en"
+             target="_blank" class='i-socialIcon-gplus'>
+              <span class="i-socialIcon i-glyph-icon-30-gplus"></span>
+             </a>
+        </div>
+        <div class="i-publishModal-clip-copy hidden-xs hidden-sm">
+          <p class="i-publishModal-body-headline">Email or text your campaign link</p>
+          <p class="i-publishModal-body-cta">Personal messages work best at exciting your community.</p>
+          <input class="i-publishModal-link" value="http://igg.me/at/cazfest2015/x">
+          <a class="i-cta-1 i-cta-1-grey js-link" data-clipboard-text="http://igg.me/at/cazfest2015/x">Copy Link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+<div class="i-footer js-footer">
+  <div class="container">
+      <div class="visible-xs visible-sm">
+        <div class="row">
+          <section class="col-sm-8">
+            <div class="i-footer-header">Sign Up for Daily Inspiration</div>
+              <form accept-charset="UTF-8" action="https://www.indiegogo.com/accounts/quick_signup" class="i-flex-fixed-container" data-ajax="false" footer-newsletter-form="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="UQp25y3kLm8I5wZZpyIHcmoIinkGRtHUVezbGexkPMw=" /></div>
+    <div class="i-flexible-width-cell">
+      <input id="timestamp" name="timestamp" type="hidden" value="1428103137" /><input id="spinner" name="spinner" type="hidden" value="fe33a4091fd27a4cf26ef766c8fe02d3" />
+      <input class="i-footer-text-field" id="811159be819716f6314abb7f83ff9ad6" name="811159be819716f6314abb7f83ff9ad6" placeholder="Your email address" type="text" /><div style="position: absolute; left: -2000px;"><input autocomplete="off" id="email" name="email" tabindex="999" type="text" value="" /></div>
+    </div>
+    <div class="i-fixed-width-cell">
+      <a href="" class="i-cta-1 i-footer-btn" ng-click="submitForm()">Sign Up Now</a>
+    </div>
+</form>  <div class="i-footer-note">Private, secure, spam-free</div>
+
+          </section>
+
+            <section class="col-sm-4 i-top-lined-mobile-only">
+              <div class="i-footer-header">Get the Latest</div>
+              <a href="https://www.facebook.com/Indiegogo" class="i-footer-icon-button"><span class='i-icon i-glyph-icon-30-facebook'></span></a>
+              <a href="https://twitter.com/indiegogo" class="i-footer-icon-button"><span class='i-icon i-glyph-icon-30-twitter'></span></a>
+              <a href="https://plus.google.com/+indiegogo" class="i-footer-icon-button"><span class='i-icon i-glyph-icon-30-gplus'></span></a>
+              <a href="https://www.youtube.com/user/IndiegogoVideo" class="i-footer-icon-button"><span class='i-icon i-glyph-icon-30-youtube'></span></a>
+            </section>
+        </div>
+
+        <div class="row">
+          <section class="col-sm-8 i-top-lined">
+            <div class="i-footer-header">About Indiegogo</div>
+            <div class="row visible-xs">
+              <div class="col-xs-6">
+                <a href="/about/our-story" class="i-footer-about-link">About Us</a>
+                <a href="/careers" class="i-footer-about-link">Careers</a>
+                <a href="/partners" class="i-footer-about-link">Partner Pages</a>
+                <a href="/about/brand" class="i-footer-about-link">Brand Resources</a>
+                <a href="/contact/press" class="i-footer-about-link">Press</a>
+              </div>
+              <div class="col-xs-6">
+                <a href="http://blog.indiegogo.com/" class="i-footer-about-link">Blog</a>
+                <a href="http://go.indiegogo.com/playbook" class="i-footer-about-link">Playbook</a>
+                <a href="/trust" class="i-footer-about-link">Trust &amp; Safety</a>
+                <a href="http://support.indiegogo.com/hc/en-us" class="i-footer-about-link">Help &amp; Support</a>
+                <a href="/contact/questions" class="i-footer-about-link">Contact Us</a>
+              </div>
+            </div>
+            <div class="row hidden-xs">
+              <div class="col-sm-4">
+                <a href="/about/our-story" class="i-footer-about-link">About Us</a>
+                <a href="/careers" class="i-footer-about-link">Careers</a>
+                <a href="/partners" class="i-footer-about-link">Partner Pages</a>
+                <a href="/about/brand" class="i-footer-about-link">Brand Resources</a>
+              </div>
+              <div class="col-sm-4">
+                <a href="/contact/press" class="i-footer-about-link">Press</a>
+                <a href="http://blog.indiegogo.com/" class="i-footer-about-link">Blog</a>
+                <a href="http://go.indiegogo.com/playbook" class="i-footer-about-link">Playbook</a>
+                <a href="/trust" class="i-footer-about-link">Trust &amp; Safety</a>
+              </div>
+              <div class="col-sm-4">
+                <a href="http://support.indiegogo.com/hc/en-us" class="i-footer-about-link">Help &amp; Support</a>
+                <a href="/contact/questions" class="i-footer-about-link">Contact Us</a>
+              </div>
+            </div>
+
+          </section>
+
+          <section class="col-sm-4 i-top-lined">
+            <div class="row">
+              <div class="col-xs-6 col-sm-12">
+                <div class="i-footer-header i-footer-language-header">Language</div>
+              </div>
+              <div class="col-xs-6 col-sm-12">
+                  <div class="dropdown i-footer-dropdown" footer-locale-dropdown locale-options="{&quot;en&quot;:&quot;English&quot;,&quot;de&quot;:&quot;Deutsch&quot;,&quot;fr&quot;:&quot;Fran\u00e7ais&quot;,&quot;es&quot;:&quot;Espa\u00f1ol&quot;}"></div>
+
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="visible-md visible-lg">
+        <section class="row">
+          <div class="col-md-3">
+            <div class="i-footer-header">Campaigning</div>
+            <a href="/campaigns/new" class="i-footer-about-link">Start Your Campaign</a>
+            <a href="http://go.indiegogo.com/pricing-fees" class="i-footer-about-link">Pricing</a>
+            <a href="http://go.indiegogo.com/playbook/life-cycle-phase/the-basics" class="i-footer-about-link">Campaign Playbook</a>
+            <a href="http://support.indiegogo.com/hc/en-us/categories/17706-Creating-a-Campaign" class="i-footer-about-link">Campaign Support</a>
+          </div>
+          <div class="col-md-3">
+            <div class="i-footer-header">Contributing</div>
+            <a href="/explore" class="i-footer-about-link">Explore</a>
+            <a href="/partners" class="i-footer-about-link">Partner Pages</a>
+            <a href="http://go.indiegogo.com/playbook/contributing" class="i-footer-about-link">Contributing Playbook</a>
+            <a href="http://support.indiegogo.com/hc/en-us/categories/17716-Contributing-to-a-Campaign" class="i-footer-about-link">Contributing Support</a>
+          </div>
+          <div class="col-md-6">
+            <div class="i-footer-header">Sign Up for Daily Inspiration</div>
+              <form accept-charset="UTF-8" action="https://www.indiegogo.com/accounts/quick_signup" class="i-flex-fixed-container" data-ajax="false" footer-newsletter-form="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="UQp25y3kLm8I5wZZpyIHcmoIinkGRtHUVezbGexkPMw=" /></div>
+    <div class="i-flexible-width-cell">
+      <input id="timestamp" name="timestamp" type="hidden" value="1428103137" /><input id="spinner" name="spinner" type="hidden" value="fe33a4091fd27a4cf26ef766c8fe02d3" />
+      <input class="i-footer-text-field" id="811159be819716f6314abb7f83ff9ad6" name="811159be819716f6314abb7f83ff9ad6" placeholder="Your email address" type="text" /><div style="position: absolute; left: -2000px;"><input autocomplete="off" id="email" name="email" tabindex="999" type="text" value="" /></div>
+    </div>
+    <div class="i-fixed-width-cell">
+      <a href="" class="i-cta-1 i-footer-btn" ng-click="submitForm()">Sign Up Now</a>
+    </div>
+</form>  <div class="i-footer-note">Private, secure, spam-free</div>
+
+          </div>
+        </section>
+        <section class="row">
+          <div class="col-md-3">
+            <div class="i-footer-header">About Indiegogo</div>
+            <a href="/learn-how-to-raise-money-for-a-campaign" class="i-footer-about-link">How It Works</a>
+            <a href="/about/our-story" class="i-footer-about-link">About Us</a>
+            <a href="/careers" class="i-footer-about-link">Careers</a>
+            <a href="/about/brand" class="i-footer-about-link">Brand Resources</a>
+            <a href="/contact/press" class="i-footer-about-link">Press</a>
+            <a href="http://blog.indiegogo.com" class="i-footer-about-link">Blog</a>
+          </div>
+          <div class="col-md-3">
+            <div class="i-footer-header">Help</div>
+            <a href="http://go.indiegogo.com/playbook" class="i-footer-about-link">Crowdfunding Playbook</a>
+            <a href="/trust" class="i-footer-about-link">Trust &amp; Safety</a>
+            <a href="http://support.indiegogo.com/hc/en-us" class="i-footer-about-link">Help &amp; Support</a>
+            <a href="/contact/questions" class="i-footer-about-link">Contact Us</a>
+          </div>
+          <div class="col-md-4">
+              <div class="i-footer-header">Get the Latest</div>
+                <div class="i-footer-social-links" footer-share-icons>
+                  <a href="https://twitter.com/indiegogo" class="twitter-follow-button" data-show-count="true" data-show-screen-name="false">Follow
+                    @indiegogo</a><br/>
+                  <a class="i-youtube" href="http://www.youtube.com/subscription_center?add_user=IndiegogoVideo"><img src="//s.ytimg.com/yt/img/creators_corner/Subscribe_to_my_videos/YT_Subscribe_61x23_red.png" alt="Subscribe to me on YouTube"/></a>
+
+                  <div class="g-plusone" data-href="http://www.indiegogo.com" data-annotation="none"></div>
+                  <br/>
+
+                  <div class="fb-like" data-href="https://www.facebook.com/indiegogo" data-layout="standard" data-action="like" data-width="240" data-colorscheme="dark" data-show-faces="true" data-share="false"></div>
+                </div>
+          </div>
+          <div class="col-md-2">
+            <div class="i-footer-header">Language</div>
+              <div class="dropdown i-footer-dropdown" footer-locale-dropdown locale-options="{&quot;en&quot;:&quot;English&quot;,&quot;de&quot;:&quot;Deutsch&quot;,&quot;fr&quot;:&quot;Fran\u00e7ais&quot;,&quot;es&quot;:&quot;Espa\u00f1ol&quot;}"></div>
+
+          </div>
+        </section>
+      </div>
+
+    <section class="i-top-lined">
+      <div class="row">
+        <div class="i-footer-legal-links col-xs-12 col-sm-6">
+          <a href="https://www.indiegogo.com/about/terms">Terms of Use</a>
+          <a href="https://www.indiegogo.com/about/privacy">Privacy Policy</a>
+          <a href="https://www.indiegogo.com/about/cookies">Cookie Policy</a>
+          <a href="https://www.indiegogo.com/partners/terms">Partner Terms</a>
+
+
+
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <div class="i-footer-legal-links i-footer-copyright">
+            © 2015 Indiegogo, Inc. All Rights Reserved
+          </div>
+        </div>
+      </div>
+      <div class="hidden-xs">
+          <div class="i-footer-trust-bbb js-trust-bbb" footer-trust-bbb footer-trust-bbb-image-url="https://g3.iggcdn.com/assets/site/footer/bbbImage-3f39a05e610fb27b5dd5da0e1ad9fbb6.png"></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+
+
+  <!--[if gte IE 9]-->
+  <script src="https://g3.iggcdn.com/assets/jquery/jquery-c8d7df288bf1ae1b202521802c963053.js" type="text/javascript"></script>
+  <script src="https://g2.iggcdn.com/assets/hammerjs/hammer-0db29e689358e083f31fef49dde6e20a.js" type="text/javascript"></script>
+  <!--<![endif]-->
+
+
+    <script src="https://g1.iggcdn.com/assets/i18n_stack-8c06d0b9d7e52b046d90edd6147e6395.js" type="text/javascript"></script>
+    <script src="https://g1.iggcdn.com/assets/igg/site/common-53d66c0ff2e4dc5d6b820166e2d668e2.js" type="text/javascript"></script>
+    <script src="https://g2.iggcdn.com/assets/lite_angular-996659c5b3d382178c69a8a7be258862.js" type="text/javascript"></script>
+    <script src="https://g0.iggcdn.com/assets/ancillary-29346327440d1d10a17d780a23b21889.js" type="text/javascript"></script>
+    
+
+  <script type="text/javascript">
+    I18n.defaultLocale = "en";
+    I18n.locale = "en";
+
+      $(document).ready(function() {
+        igg.site.onDocumentReady();
+      });
+
+    $.cloudinary.config({"api_key":"754759674861391",
+      "cloud_name": "indiegogo-media-prod-cld",
+      "cname": ""
+    });
+
+      igg.site.setupZeroClipboard("https://g0.iggcdn.com/assets/zeroclipboard/ZeroClipboard-cd32310b2849d9fa8aed5381f3dc5c28.swf");
+  campaignPageView = new igg.site.CampaignPage({
+    el: $(".i-campaign-page"),
+    facebook_app_id: "2392863781"
+  });
+
+  campaignPageView.start();
+
+  new igg.projects.TrackingPixels(gon.tracking_info).setup();
+
+  </script>
+
+    <script type="text/javascript" src="//static.criteo.net/js/ld/ld.js" async="true"></script>
+
+<script type="text/javascript">
+
+window.igg_criteo_trigger_campaign = function() {
+  window.criteo_q = window.criteo_q || [];
+  window.criteo_q.push(
+    { event: "setAccount", account: 12644 },
+    { event: "setCustomerId", id: "" },
+    { event: "setSiteType", type: "d" },
+    { event: "viewItem", item: "1111504" }
+  );
+}
+
+</script>
+
+
+  <script type="text/javascript"> window.igg_criteo_trigger_campaign(); </script>
+
+
+  
+
+  
+  <!-- Google Code for Main List -->
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 1008738018;
+    var google_conversion_label = "pah0CP6GwQQQ4r2A4QM";
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+  </script>
+  <div class="hidden">
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+  </div>
+  <noscript>
+    <div style="display:inline;">
+      <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1008738018/?value=0&amp;label=pah0CP6GwQQQ4r2A4QM&amp;guid=ON&amp;script=0"/>
+    </div>
+  </noscript>
+
+
+    <!-- Remove Cookies -->
+  <script>
+    $.ajax({
+      url: '/www_cookies',
+      type: 'DELETE',
+      headers: {'X-CSRF-Token': 'UQp25y3kLm8I5wZZpyIHcmoIinkGRtHUVezbGexkPMw='}
+    });
+  </script>
+  <!-- Remove Cookies End -->
+
+
+  
+  <script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+  if (d.getElementById(id)) return;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+
+</body>
+</html>

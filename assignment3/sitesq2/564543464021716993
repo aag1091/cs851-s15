@@ -1,0 +1,666 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UgECWFBaGwAEXVJQBgQ="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(4),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(5),"addEventListener"in window&&t(2),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(3),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:7,3:11,4:3,5:9,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1);t("loader").features.stn=!0,t(2),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(o){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=e(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=e(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var u=0;c>u;u++)n.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=l.info=NREUM.info;if(t&&t.licenseKey&&t.applicationID&&f&&f.body){s(h,function(e,n){e in t||(t[e]=n)}),l.proto="https"===p.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=f.createElement("script");e.src=l.proto+t.agent,f.body.appendChild(e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u="addEventListener",d="attachEvent",p=(""+location).split("?")[0],h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-593.min.js"},l=e.exports={offset:i(),origin:p,features:{}};f[u]?(f[u]("DOMContentLoaded",o,!1),c[u]("load",n,!1)):(f[d]("onreadystatechange",r),c[d]("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>
+<title>Royal Worcester Vintage Kellogg's Tony The Tiger Set of 6 - Royal Worcester UK</title>
+<meta name="description" content="Royal Worcester's fine bone china mugs come in a wonderful array of designs. &lt;BR&gt;&lt;BR&gt;&lt;BR&gt; The retro Vintage Kellogg's collection features designs from Kellogg's archive. &lt;BR&gt;&lt;BR&gt;&lt;BR&gt;  © 2013 Kellogg Co
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<link rel="icon" href="http://media.portmeirion.com/media/favicon/default/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="http://media.portmeirion.com/media/favicon/default/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="http://media.portmeirion.com/media/css/99187adb69d08cdb1af3c3fb142de150_1418054417.css" />
+<link rel="stylesheet" type="text/css" href="http://media.portmeirion.com/media/css/1d606bdddf3ecc8238508a4aa0a03f64_1427464679.css" media="all" />
+<script type="text/javascript" src="http://media.portmeirion.com/media/js/6abacbcb79da32efbacff2c9340b1cfb_1418124144.js"></script>
+<link rel="canonical" href="http://www.royalworcester.co.uk/royal-worcester-vintage-kellogg-s-tony-the-tiger-set-of-6.html" />
+<!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css" href="http://media.portmeirion.com/media/css/c2334413f8a9f16597ec4ddca2b0e48d_1418054197.css" media="all" />
+<![endif]-->
+
+<script type="text/javascript">
+//<![CDATA[
+Mage.Cookies.path     = '/';
+Mage.Cookies.domain   = '.royalworcester.co.uk';
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+optionalZipCountries = ["HK","IE","MO","PA"];
+//]]>
+</script>
+<!-- BEGIN GOOGLE ANALYTICS CODEs -->
+<script type="text/javascript">
+//<![CDATA[
+    var _gaq = _gaq || [];
+    
+_gaq.push(['_setAccount', 'UA-38991373-4']);
+
+_gaq.push(['_trackPageview']);
+    
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://www' : 'http://www') + '.portmeirion.co.uk/js/google/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+//]]>
+</script>
+<!-- END GOOGLE ANALYTICS CODE -->
+</head>
+<body class=" catalog-product-view catalog-product-view product-royal-worcester-vintage-kellogg-s-tony-the-tiger-set-of-6">
+<div class="wrapper">
+        <noscript>
+        <div class="global-site-notice noscript">
+            <div class="notice-inner">
+                <img src="http://static.portmeirion.com/skin/frontend/pmgroup/default/images/jswarning.jpg" alt="No Javascript Detected" />
+            </div>
+        </div>
+    </noscript>
+    <div class="page">
+    	<div class="universal-header-container">
+  <div class="universal-header"> 
+ 
+<div id="store-switcher">
+	    	    	            					                	                                    									    	    	            					                	                                    									    	    	            					                	                                    									    	    	            					                	                                    									    	    	            					                	                                    									    	    	            					                	                                    											<ul>
+			<li class="portmeirion" title="Portmeirion store"><a href="http://www.portmeirion.co.uk/?SID=me4r6drf8kfp132a5ldv9q34j6">"></a></li>
+			<li class="spode" title="Spode store"><a href="http://www.spode.co.uk/?SID=me4r6drf8kfp132a5ldv9q34j6">"></a></li>
+			<li class="royalworcester" title="Royal Worcester store"><a href="http://www.royalworcester.co.uk/?SID=me4r6drf8kfp132a5ldv9q34j6">"></a></li>
+			<li class="pimpernel" title="Pimpernel store"><a href="http://www.pimpernelinternational.co.uk/?SID=me4r6drf8kfp132a5ldv9q34j6">"></a></li>
+			<li class="investorrelations" title="Investor Relations store"><a href="http://investor.portmeiriongroup.com/?SID=me4r6drf8kfp132a5ldv9q34j6">"></a></li>
+			<li class="factoryshops" title="Factory Shops store"><a href="http://www.portmeiriongroupfactoryshops.co.uk/?SID=me4r6drf8kfp132a5ldv9q34j6">"></a></li>
+	 
+	</ul>
+</div>
+    <div id="universal-user-block">
+      <div class="top-links-container">
+	  	                <div class="welcome-msg"> </div>
+        <ul class="links">
+                        <li class="first" ><a href="https://www.portmeirion.co.uk/customer/account/login/?SID=me4r6drf8kfp132a5ldv9q34j6" title="Log In" >Log In</a></li>
+                                <li class=" last" ><a href="https://www.portmeirion.co.uk/customer/account/create/?SID=me4r6drf8kfp132a5ldv9q34j6" title="Register" >Register</a></li>
+            </ul>
+        </div>
+      
+<div id="top-cart-wrapper">
+	<div id="top-cart-inner">
+    	<span class="cart-icon"></span>
+    	<span class="running-total">0 items in your basket</span>
+    	    </div>
+	<div id="top-cart-overlay" style="display: none;">
+		    	        <div class="bottom">
+        	<p class="view-basket"><a href="http://www.royalworcester.co.uk/checkout/cart/" title="View Basket">View Basket</a></p>
+            <div class="clear">&nbsp;</div>
+			<span class="subtotal">Subtotal: <span class="price">£0.00</span></span>
+			<div class="checkout-button"><button type="button" title="Checkout" class="button" onclick="setLocation('https://www.portmeirion.co.uk/checkout/onepage/?SID=me4r6drf8kfp132a5ldv9q34j6')"><span><span>Checkout</span></span></button></div>
+  		</div>
+	</div>        
+</div>
+
+<script type="text/javascript">
+var cartCheck = 0;
+
+if (cartCheck) { // only allow slide out if something is in the cart
+	$j(function () {    
+	  $j('#top-cart-wrapper').hover(function () {
+		 clearTimeout($j.data(this, 'timer'));
+		 $j('#top-cart-overlay', this).stop(true, true).slideDown(200);
+		 $j('#top-cart-wrapper').css( 'cursor', 'pointer' );
+	  }, function () {
+		$j.data(this, 'timer', setTimeout($j.proxy(function() {
+		  $j('#top-cart-overlay', this).stop(true, true).slideUp(200);
+		}, this), 200));
+	  });
+	});
+}
+</script>
+      </div>
+  </div>
+</div>
+        <div class="header-background">
+<div class="header-container">
+	<div class="header">
+        <div class="sub-menu">
+        	        	        	<a href="http://www.royalworcester.co.uk/" title="Royal Worcester Official UK Site - Tableware, Crystal, Gifts, Homeware" class="logo"><strong>Royal Worcester Official UK Site - Tableware, Crystal, Gifts, Homeware</strong><img src="http://static.portmeirion.com/skin/frontend/pmgroup/royal_worcester/images/logo.png" alt="Royal Worcester Official UK Site - Tableware, Crystal, Gifts, Homeware" /></a>
+        	            
+<div id="helper-links">
+    <ul>
+        <li><a title="Contact Us" href="http://www.royalworcester.co.uk/contact-us/">Contact Us</a></li>
+        <li><a title="Investor Relations" href="http://investor.portmeiriongroup.com/">Investor Relations</a></li>
+        <li><a title="Customer Services" href="http://www.royalworcester.co.uk/customer-services/">Customer Services</a></li>
+        <li>eShop: <strong>+44 (0)1782 743427</strong> General: <strong>+44 (0)1782 744721</strong></li>
+    </ul>
+</div>                        <div id="headerSelecter">
+				<div id="setLocaleContainter">
+<div id="localeInfo">
+	<ul>
+    	<li><a href="http://www.royalworcester.co.uk/choose-your-country/" class="GB flag"><span>Shipping to United Kingdom</span></a></li>
+        <li><a href="http://www.royalworcester.co.uk/choose-your-country/">Change Country</a></li>
+	</ul>
+</div>
+
+</div>
+				<div id="headerSearchBox"><form id="search_mini_form" action="http://www.royalworcester.co.uk/catalogsearch/result/" method="get">
+    <div class="form-search">
+        <input id="search" type="text" name="q" value="" class="input-text" maxlength="150" onfocus="this.style.background='whiteSmoke'" />
+        <button type="submit" title="Search">Search</button>
+        <div id="search_autocomplete" class="search-autocomplete"></div>
+        <script type="text/javascript">
+        //<![CDATA[
+            var searchForm = new Varien.searchForm('search_mini_form', 'search', 'Search the Store...');
+            searchForm.initAutocomplete('http://www.royalworcester.co.uk/catalogsearch/ajax/suggest/', 'search_autocomplete');
+        //]]>
+        </script>
+    </div>
+</form>
+</div>
+            </div>
+        </div>
+	</div>
+</div>
+<div class="nav-container">
+    <ul id="pmgroup-menu">
+                <li class="level-0 nav-1 parent new-additions"><a href="http://www.royalworcester.co.uk/new-additions.html" class="level-0">New Additions</a><div class="fly-out one-column left"><ul class=""><li class="level-1"><a href="http://www.royalworcester.co.uk/new-additions/royal-worcester-essentials.html" class="level-1">Worcester Essentials</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/new-additions/wrendale-designs.html" class="level-1">Wrendale Designs</a></li></ul></div></li><li class="level-0 nav-2 parent offers"><a href="http://www.royalworcester.co.uk/offers.html" class="level-0">Offers</a><div class="fly-out one-column left"><ul class=""><li class="level-1"><a href="http://www.royalworcester.co.uk/offers/mugs.html" class="level-1">Mugs</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/offers/peony-black.html" class="level-1">Peony Black</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/offers/serendipity-gold.html" class="level-1">Serendipity Gold </a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/offers/serendipity-platinum.html" class="level-1">Serendipity Platinum </a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/offers/serendipity.html" class="level-1">Serendipity White</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/offers/textiles.html" class="level-1">Textiles</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/offers/royal-worcester-essentials.html" class="level-1">Worcester Essentials</a></li></ul></div></li><li class="level-0 nav-3 parent shop-by-range"><a href="http://www.royalworcester.co.uk/shop-by-range.html" class="level-0">Shop by Range</a><div class="fly-out two-columns left"><ul class="col-1"><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-range/evesham-gold.html" class="level-1">Evesham Gold</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-range/china-mugs.html" class="level-1">Fine Bone China Mugs</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-range/paddington-bear.html" class="level-1">Paddington Bear</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-range/peony-black.html" class="level-1">Peony Black</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-range/rhs-flower-journal.html" class="level-1">RHS Flower Journal</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-range/royal-horticultural-society-roses.html" class="level-1">Royal Horticultural Society Roses</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-range/royal-worcester-painted-fruit.html" class="level-1">Royal Worcester Painted Fruit</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-range/royal-worcester-royal-birth-commemoratives.html" class="level-1">Royal Worcester Royal Birth Commemoratives</a></li></ul><ul class="col-2"><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-range/serendipity.html" class="level-1">Serendipity</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-range/serendipity-gold.html" class="level-1">Serendipity Gold</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-range/serendipity-platinum.html" class="level-1">Serendipity Platinum</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-range/sophie-conran-for-royal-worcester-cirrus.html" class="level-1">Sophie Conran For Royal Worcester Cirrus Crystal</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-range/textiles.html" class="level-1">Textiles</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-range/worcester-essentials.html" class="level-1">Worcester Essentials</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-range/wrendale-designs.html" class="level-1">Wrendale Designs</a></li></ul></div></li><li class="level-0 nav-4 parent shop-by-item"><a href="http://www.royalworcester.co.uk/shop-by-item.html" class="level-0">Shop By Item</a><div class="fly-out two-columns right"><ul class="col-1"><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-item/bowls.html" class="level-1">Bowls</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-item/cake-stands.html" class="level-1">Cake Stands</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-item/cookware.html" class="level-1">Cookware</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-item/cups-and-saucers.html" class="level-1">Cups and Saucers</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-item/jugs.html" class="level-1">Jugs</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-item/mugs.html" class="level-1">Mugs</a></li></ul><ul class="col-2"><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-item/plates.html" class="level-1">Plates</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-item/sugar.html" class="level-1">Sugar Pot</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-item/teapot.html" class="level-1">Teapot</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-item/textiles.html" class="level-1">Textiles</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/shop-by-item/vase.html" class="level-1">Vase</a></li></ul></div></li><li class="level-0 nav-5 parent warehouse-clearance"><a href="http://www.royalworcester.co.uk/warehouse-clearance.html" class="level-0">Warehouse Clearance</a><div class="fly-out two-columns right"><ul class="col-1"><li class="level-1"><a href="http://www.royalworcester.co.uk/warehouse-clearance/christmas-wish.html" class="level-1">Christmas Wish</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/warehouse-clearance/crazy-daisy.html" class="level-1">Crazy Daisy</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/warehouse-clearance/mugs-and-trays.html" class="level-1">Mugs and Trays</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/warehouse-clearance/pimpernel-placemats-and-coasters.html" class="level-1">Pimpernel Placemats and Coasters</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/warehouse-clearance/royal-worcester-evesham-gold.html" class="level-1">Royal Worcester Evesham Gold</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/warehouse-clearance/royal-worcester-serendipity.html" class="level-1">Royal Worcester Serendipity</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/warehouse-clearance/royal-worcester-serendipity-gold.html" class="level-1">Royal Worcester Serendipity Gold</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/warehouse-clearance/royal-worcester-serendipity-platinum.html" class="level-1">Royal Worcester Serendipity Platinum</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/warehouse-clearance/sophie-conran-christmas.html" class="level-1">Sophie Conran Christmas</a></li></ul><ul class="col-2"><li class="level-1"><a href="http://www.royalworcester.co.uk/warehouse-clearance/sophie-conran-cookware.html" class="level-1">Sophie Conran Cookware</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/warehouse-clearance/sophie-conran-for-royal-worcester-cirrus-crystal.html" class="level-1">Sophie Conran for Royal Worcester Cirrus Crystal</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/warehouse-clearance/spode-blue-italian.html" class="level-1">Spode Blue Italian</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/warehouse-clearance/spode-blue-room.html" class="level-1">Spode Blue Room</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/warehouse-clearance/spode-glen-lodge.html" class="level-1">Spode Glen Lodge</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/warehouse-clearance/textiles.html" class="level-1">Textiles</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/warehouse-clearance/the-very-hungry-caterpillar.html" class="level-1">The Very Hungry Caterpillar</a></li><li class="level-1"><a href="http://www.royalworcester.co.uk/warehouse-clearance/vintage-kellogg-s.html" class="level-1">Vintage Kellogg's</a></li></ul></div></li>        <li class="level-0"><a href="http://www.portmeiriongroupfactoryshops.co.uk/" class="level-0">Factory Shops</a></li>
+                <li class="level-0"><a href="/collections.html" class="level-0">Today's Code: SPRING20</a></li>
+            </ul>
+</div>
+<script type="text/jscript">
+$j(document).ready( function(){
+	if ('ontouchstart' in document.documentElement) {
+		$j('li.level-0').click( function(e){
+			$j("a.level-0").attr("href", "#")
+		});
+	};
+});
+</script>
+<div id="deliveryBar">
+<ul>
+<li>United Kingdom Delivery |</li>
+<li><span class="extra-bold">Free Shipping</span> on Orders Over £49&nbsp;|</li>
+<li><a href="http://www.royalworcester.co.uk/subscribe"><span class="extra-bold">Sign Up</span> for Email Notifications</a></li>
+</ul>
+</div></div>
+        <div class="main-content-background">
+        	<div class="main-container col1-layout">
+            	<div class="main">
+                	<div class="breadcrumbs">
+    <ul>
+                    <li class="home">
+                            <a href="http://www.royalworcester.co.uk/" title="Go to Home Page">Home</a>
+                                        <span>/ </span>
+                        </li>
+                    <li class="product">
+                            <strong>Royal Worcester Vintage Kellogg's Tony The Tiger Set of 6</strong>
+                                    </li>
+            </ul>
+</div>
+                	<div class="col-main">
+                    	                    	<script type="text/javascript">
+    var optionsPrice = new Product.OptionsPrice([]);
+</script>
+
+<div id="messages_product_view"></div>
+<div class="product-view">
+	<div class="product-essential">
+		<form action="http://www.royalworcester.co.uk/checkout/cart/add/uenc/aHR0cDovL3d3dy5yb3lhbHdvcmNlc3Rlci5jby51ay9yb3lhbC13b3JjZXN0ZXItdmludGFnZS1rZWxsb2dnLXMtdG9ueS10aGUtdGlnZXItc2V0LW9mLTYuaHRtbA,,/product/2605/form_key/qNlEScQRtXfQIDAb/" method="post" id="product_addtocart_form">
+    	<div class="no-display">
+      		<input type="hidden" name="product" value="2605" />
+      		<input type="hidden" name="related_product" id="related-products-field" value="" />
+    	</div>
+        <div class="product-shop">
+      		<div class="product-name"><h1>Royal Worcester Vintage Kellogg's Tony The Tiger Set of 6</h1></div>
+                        <div class="rating-container">    <p class="no-rating"><a href="#review-form">Be the first to review this product</a></p>
+</div>
+             
+
+
+                        
+    <div class="price-box">
+                                                                <span class="regular-price" id="product-price-2605">
+                                            <span class="price">£72.00</span>                                    </span>
+                        
+        </div>
+
+<p>Product Code: <span>MMKX9949-XT</span></p>
+    <p class="availability in-stock">Availability: <span>In stock</span></p>
+
+ 
+                         	<div class="add-to-box">
+                	                    	    <div class="add-to-cart">
+                <label for="qty">Qty:</label>
+        <input type="text" name="qty" id="qty" maxlength="12" value="1" title="Qty" class="input-text qty" />
+                <div class="clear"></div>
+        <div title="Add to Basket" class="button-container" onclick="productAddToCartForm.submit(this)">
+        	<span class="pmg-button pmg-button-pink add-to-cart">Add to Basket</span>
+        </div>
+        
+        
+        
+        <!--<button type="button" title="" class="pmg-button pmg-button-grey add-to-cart" onclick="productAddToCartForm.submit(this)"><span><span></span></span></button>-->
+            </div>
+                        					                    
+
+				</div>
+                			                           
+            <div class="product-collateral">
+				<ul class="tabs">
+					<li><a href="#tab1">Product Info</a></li>
+    				<li><a href="#tab2">Delivery &amp; Returns</a></li>
+				</ul>
+				<div class="tab-container">
+					<div id="tab1" class="tab-content">
+						    <div class="std">
+        Royal Worcester's fine bone china mugs come in a wonderful array of designs. <BR><BR><BR> The retro Vintage Kellogg's collection features designs from Kellogg's archive. <BR><BR><BR>  © 2013 Kellogg Co
+    </div>
+							    <table class="data-table" id="product-attribute-specs-table">
+        <col width="25%" />
+        <col />
+        <tbody>
+                                    
+            <tr>     
+                <th class="label">Material</th>
+                <td class="data">Fine Bone China</td>
+            </tr>
+            
+          
+                                    
+            <tr>     
+                <th class="label">Dimensions</th>
+                <td class="data">0.45L (16fl.oz)</td>
+            </tr>
+            
+          
+                                    
+          
+                                    
+            <tr>     
+                <th class="label">Product Care</th>
+                <td class="data">Dishwasher Safe, Microwave Safe</td>
+            </tr>
+            
+          
+                </tbody>
+    </table>
+   
+											</div>
+    				<div id="tab2" class="tab-content"><h5>Delivery Information</h5>
+<p>Our Delivery Costs are as follows:</p>
+<p>Delivery is free for all individual orders totalling £49.00 or more.
+<p>For individual orders under £49.00 a standard delivery charge of £4.95 will apply.</p>
+</p>
+<p>Please note these delivery charges are for Products purchased through our websites only. Free delivery is not available from our factory shops or other outlets.</p>
+<p>We aim to deliver all orders within 3-5 working days of receipt of your order (Monday to Friday between 8.00am and 6.00pm UK time). Every effort will be made to deliver the goods within this timescale. However, we will not be liable for any loss or damage suffered by you through any reasonable or unavoidable delay in delivery. We will inform you of any delay as soon as possible.</p>
+<p>Delivery will be completed when we deliver the Products to the address you gave us. If there is no one at the address given when we attempt to deliver the Products, the postman or courier should notify you of an alternative delivery date, an alternative place to collect the Products, or details of how to arrange an alternative delivery date.</p>
+<p>We may deliver orders of Products by instalments each of which shall be deemed to be the subject of a separate Contract and, unless otherwise agreed in writing, no failure by us in any one or more instalments shall entitle you to repudiate any Contract for Products previously delivered or to refuse to accept any undelivered Products (although this does not affect your rights under &ldquo;Cancelling your order&rdquo; above and/or any of your statutory rights).</p><h5>Returns Policy</h5>
+<p>If the products were already delivered to you, once we have received your cancellation&nbsp;notification, we will then arrange to have the package(s) collected by a nominated carrier and delivered to us. After contacting the customer services team you need to:</p>
+<p>Re-package the Product(s) in their original boxes along with the despatch note or order acknowledgement) stating the reason for the return. In the case of a defective product, please provide a full description of the fault;</p>
+<p>Make sure you wrap the package securely;</p>
+<p>Label the package(s) with your Sage Pay reference number and collection reference number that will be supplied to you by the customer service representative. There is no need to address the parcel.</p>
+<p>Please note the following:</p>
+<p>Unless the Products are faulty or not as described, you will be responsible for the cost of returning the Products to us or, where relevant, the cost of us collecting the Products from you. We&nbsp;charge £7.95 per collection. We may deduct this from any refund that we give to you;</p>
+<p>You have a legal obligation to keep the Products in your possession and to take reasonable care of the Products while they are in your possession.</p>
+<p>Products purchased from our websites can only be returned directly to Portmeirion Group UK Limited and not to subsidiaries, independent retailers, concessions, stockists, factory shops or alike.</p></div>
+				</div>
+			</div>
+    		<script type="text/javascript">
+    		// Wait until the DOM has loaded before querying the document
+    		jQuery(document).ready(function () {
+        		jQuery("ul.tabs").each(function () {
+					// For each set of tabs, we want to keep track of which tab is active and it's associated content
+            		var $active, $content, $links = jQuery(this).find("a");
+					var $liActive = jQuery(this).find("li");
+			
+            		$active = $links.first().addClass("active"); // Use the first link as the initial active tab
+					$liActive = $liActive.first().addClass("active");
+            		$content = jQuery($active.attr("href"));
+            
+					// Hide the remaining content
+            		$links.not(":first").each(function () {
+                		jQuery(jQuery(this).attr("href")).hide();
+
+            		});
+            		// Bind the click event handler
+           		 	jQuery(this).on("click", "a", function (e) {
+
+                		// Make the old tab inactive.
+                		$active.removeClass("active");
+						$liActive.removeClass("active");
+                		$content.hide();
+
+                		// Update the variables with the new link and content
+                		$active = jQuery(this);
+						$liActive = jQuery(this).parent('li');
+
+                		$content = jQuery(jQuery(this).attr("href"));
+
+                		// Make the tab active.
+                		$active.addClass("active");
+						$liActive.addClass("active");
+                		$content.show();
+
+                		// Prevent the anchor's default click action
+                		e.preventDefault();
+            		});
+        		});
+    		});
+		</script>
+		<!-- Check whether the plugin is enabled -->
+
+<!-- AddThis Button BEGIN -->
+
+<!-- AddThis API Config -->
+<script type='text/javascript'>
+var addthis_product = 'mag-sp-2.0.0';
+var addthis_config 	= {
+pubid : 'ra-52f24baa5d6957e2'
+}
+</script>
+<!-- AddThis API Config END -->
+<div class="addthis_toolbox addthis_default_style">
+<a class="addthis_button_facebook_like" fb:like:layout="button_count" style="width: 73px"></a>
+<a class="addthis_button_tweet" tw:count="none"></a>
+<a class="addthis_button_pinterest_pinit" style="margin-right:0"></a>
+<a class="addthis_button_google_plusone" g:plusone:size="medium" g:plusone:annotation="none"></a>
+<a class="addthis_button_email"></a>
+<a class="addthis_button_print"></a>
+</div>
+<script>
+	var ats_widget =  function(){
+	    if(typeof addthis_conf == 'undefined'){
+	        var at_script = document.createElement('script');
+	        at_script.src = '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52f24baa5d6957e2';
+	        document.getElementsByTagName('head')[0].appendChild(at_script);
+	        var addthis_product = 'mag-sp-2.0.0';
+	    }
+	};
+	if(window.addEventListener)
+		window.addEventListener('load',ats_widget);        
+	else                
+		window.attachEvent('onload',ats_widget);           	    
+</script>	    
+<!-- AddThis Button END -->
+<style>
+#at3win #at3winheader h3 {
+	text-align:left !important;
+}
+</style>  
+		</div>
+        <div class="product-img-box">	<p class="product-image">
+    			<a href="http://media.portmeirion.com/media/catalog/product/cache/9/image/9df78eab33525d08d6e5fb8d27136e95/m/m/mmkx9949-xt.jpg" class="jqzoom" rel='gal1' title="Royal Worcester Vintage Kellogg's Tony The Tiger Set of 6" ><img src="http://media.portmeirion.com/media/catalog/product/cache/9/image/450x/9df78eab33525d08d6e5fb8d27136e95/m/m/mmkx9949-xt.jpg" alt="Royal Worcester Vintage Kellogg's Tony The Tiger Set of 6" title="Royal Worcester Vintage Kellogg's Tony The Tiger Set of 6" /></a>
+          
+	</p>
+		<div class="more-views">
+    	<!--<h2></h2>-->
+    	<ul>
+    	        	            	                	                        	<li>
+            					<a href="javascript:void(0);" rel="{gallery: 'gal1', smallimage: 'http://media.portmeirion.com/media/catalog/product/cache/9/image/450x/9df78eab33525d08d6e5fb8d27136e95/m/m/mmkx9949-xt.jpg',largeimage: 'http://media.portmeirion.com/media/catalog/product/cache/9/image/9df78eab33525d08d6e5fb8d27136e95/m/m/mmkx9949-xt.jpg'}" title="Royal Worcester Vintage Kellogg's Tony The Tiger Set of 6"><img src="http://media.portmeirion.com/media/catalog/product/cache/9/thumbnail/56x/9df78eab33525d08d6e5fb8d27136e95/m/m/mmkx9949-xt.jpg" alt="Royal Worcester Vintage Kellogg's Tony The Tiger Set of 6" /></a>
+        	</li>
+                	    	</ul>
+	</div>
+
+<script type="text/javascript">
+$j(document).ready(function() {
+	var options = {  
+    	zoomType: 'standard',
+		zoomWidth: 450,
+		zoomHeight: 450,
+		title: false
+	};
+	$j(".product-image").on('mouseover',function(){
+        $j(".jqzoom").jqzoom(options);
+    }) 
+})
+</script>
+</div>
+        <div class="clearer"></div>
+                        </form>
+        <script type="text/javascript">
+    //<![CDATA[
+        var productAddToCartForm = new VarienForm('product_addtocart_form');
+        productAddToCartForm.submit = function(button, url) {
+            if (this.validator.validate()) {
+                var form = this.form;
+                var oldUrl = form.action;
+
+                if (url) {
+                   form.action = url;
+                }
+                var e = null;
+                try {
+                    this.form.submit();
+                } catch (e) {
+                }
+                this.form.action = oldUrl;
+                if (e) {
+                    throw e;
+                }
+
+                if (button && button != 'undefined') {
+                    button.disabled = true;
+                }
+            }
+        }.bind(productAddToCartForm);
+
+        productAddToCartForm.submitLight = function(button, url){
+            if(this.validator) {
+                var nv = Validation.methods;
+                delete Validation.methods['required-entry'];
+                delete Validation.methods['validate-one-required'];
+                delete Validation.methods['validate-one-required-by-name'];
+                // Remove custom datetime validators
+                for (var methodName in Validation.methods) {
+                    if (methodName.match(/^validate-datetime-.*/i)) {
+                        delete Validation.methods[methodName];
+                    }
+                }
+
+                if (this.validator.validate()) {
+                    if (url) {
+                        this.form.action = url;
+                    }
+                    this.form.submit();
+                }
+                Object.extend(Validation.methods, nv);
+            }
+        }.bind(productAddToCartForm);
+    //]]>
+    </script>       
+    </div>
+</div>
+<script type="text/javascript">
+    var lifetime = 3600;
+    var expireAt = Mage.Cookies.expires;
+    if (lifetime > 0) {
+        expireAt = new Date();
+        expireAt.setTime(expireAt.getTime() + lifetime * 1000);
+    }
+    Mage.Cookies.set('external_no_cache', 1, expireAt);
+</script>
+
+<div class="box-collateral box-reviews product-reviews" id="customer-reviews">
+	</div>
+<div class="form-add">
+    <h3>Write Your Own Review</h3>
+        <p class="review-nologged" id="review-form">
+        Only registered users can write reviews. Please, <a href="https://www.portmeirion.co.uk/customer/account/login/referer/aHR0cDovL3d3dy5yb3lhbHdvcmNlc3Rlci5jby51ay9jYXRhbG9nL3Byb2R1Y3Qvdmlldy9pZC8yNjA1Lz9fX19TSUQ9VSNyZXZpZXctZm9ybQ,,/?SID=me4r6drf8kfp132a5ldv9q34j6">log in</a> or <a href="https://www.portmeirion.co.uk/customer/account/create/?SID=me4r6drf8kfp132a5ldv9q34j6">register</a>    </p>
+    </div>
+                	</div>
+            	</div>
+        	</div>
+        </div>
+        <div class="footer"><div class="col">
+<h5>Customer Services</h5>
+<ul>
+<li><a title="Care &amp;Use" href="http://www.royalworcester.co.uk/care-and-use">Care &amp; Use</a></li>
+<li><a title="Delivery Information" href="http://www.royalworcester.co.uk/delivery-information">Delivery Information</a></li>
+<li><a title="Returns Policy" href="http://www.royalworcester.co.uk/returns-policy">Returns Policy</a></li>
+<li><a title="Contact Us" href="http://www.royalworcester.co.uk/contact-us">Contact Us</a></li>
+<li><a title="Terms &amp; Conditions" href="http://www.royalworcester.co.uk/terms-and-conditions">Terms &amp; Conditions</a></li>
+<li><a title="Security &amp; Privacy" href="http://www.royalworcester.co.uk/privacy-policy">Security And Privacy</a></li>
+<li><a title="Cookie Policy" href="http://www.royalworcester.co.uk/cookie-policy">Cookie Policy</a></li>
+<li><a title="Download Brochures" href="http://www.royalworcester.co.uk/download-brochures">Download Brochures</a></li>
+</ul>
+</div>
+<div class="col">
+<h5>Corporate</h5>
+<ul>
+<li><a title="Investor Relations" href="http://investor.portmeiriongroup.com/">Investor Relations</a></li>
+<li><a title="Press Enquiries" href="http://investor.portmeiriongroup.com/press.html">Press Enquiries</a></li>
+<!--<li><a title="International Agents/Distributors" href="http://investor.portmeiriongroup.com/international-agents-distributors.html">International Agents/Distributors</a></li>-->
+<li><a title="Portmeirion Group Careers" href="http://www.royalworcester.co.uk/careers">Careers</a></li>
+</ul>
+<h5 class="second-row">Our Shops</h5>
+<ul>
+<li><a title="Vistor our Portmeirion Group Factory Shops site" href="http://www.portmeiriongroupfactoryshops.co.uk">Factory Shops</a></li>
+<li><a title="Stockists" href="http://www.royalworcester.co.uk/stockists">Stockists</a></li>
+</ul>
+</div><div class="col">	
+		<h5>Our Other Brands</h5>
+		<ul>
+				
+				
+					<li><a href="http://www.pimpernelinternational.co.uk/?SID=me4r6drf8kfp132a5ldv9q34j6">Pimpernel</a></li>
+			
+					<li><a href="http://www.portmeirion.co.uk/?SID=me4r6drf8kfp132a5ldv9q34j6">Portmeirion</a></li>
+			
+				
+					<li><a href="http://www.spode.co.uk/?SID=me4r6drf8kfp132a5ldv9q34j6">Spode</a></li>
+			
+	 
+	</ul>
+</div><div class="col">
+	<div class="footer-signup" style="width: 240px;">
+		<h5>Sign Up for Savings</h5>
+		<p style="white-space:normal">We'd love to keep you informed of special offers and new products that we know you will find interesting.</p>
+		<form method="post" action="http://www.mailm.co.uk/3/form.php?form=79" id="frmSS79" onsubmit="return CheckForm79(this);">
+			<fieldset>
+				<input type="text" name="email" id="footerEmail" value="Your Email Address" />
+    			<input type="hidden" name="format" value="h" />
+				<div><input type="submit" value="Subscribe" class="submit pmg-button" /></div>
+    		</fieldset>
+		</form>
+		<a href="http://www.royalworcester.co.uk/privacy-policy" title="Read our Privacy Policy">Read our Privacy Policy</a>
+	</div>
+</div>
+
+<script type="text/javascript">
+// <![CDATA[
+
+	$j("#footerEmail").blur(function () {
+    	if(this.value == ''){ 
+        	this.value = 'Your Email Address';
+    	}
+	}); 
+
+ 	$j("#footerEmail").focus(function () {
+    	if (this.value == 'Your Email Address') {
+        this.value = ''; 
+    	}
+	});
+			
+	function CheckMultiple79(frm, name) {
+		for (var i=0; i < frm.length; i++)
+		{
+			fldObj = frm.elements[i];
+			fldId = fldObj.id;
+			if (fldId) {
+				var fieldnamecheck=fldObj.id.indexOf(name);
+				if (fieldnamecheck != -1) {
+					if (fldObj.checked) {
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
+	function CheckForm79(f) {
+		var email_re = /[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/i;
+		if (!email_re.test(f.email.value)) {
+			alert("Please enter your email address.");
+			f.email.focus();
+			return false;
+		}
+			
+		if (f.format.selectedIndex == -1) {
+			alert("Please choose a format to receive your email campaigns in");
+			f.format.focus();
+			return false;
+		}
+						
+		return true;
+	}
+		
+// ]]>
+</script>
+
+<div class="col">
+	 
+    <div class="footer-payment-container clear">
+	<div class="footer-payments" title="Secure payments with Sage Pay">&nbsp;</div>
+</div></div> <p class="copyright">Portmeirion Group UK Registered in England No. 417484 REGISTERED OFFICE Portmeirion Group UK London Road, Stoke-on-Trent, Staffordshire, England ST4 7QQ</p>
+	<address>
+  			Copyright &copy;  Portmeirion Group UK 2012-2015     	</address>
+</div>
+<script type="text/javascript">
+var websiteCode = "pmgroup_uk";
+if (websiteCode == "pmgroup_eu") {
+	$j("a[title='Stockists']").hide();
+}
+</script>
+        
+
+
+    <div id="cookienotice-container" class="cookienotice-container cookienotice-bar cookienotice-bar-bottom">
+        <!-- Content -->
+        <div class="cookienotice-content">
+            <!-- Message -->
+                            <div class="cookienotice-message">
+                    We use cookies to provide you with a better service. Carry on browsing if you are happy with this or                     <a title="find out more/how to manage cookies." class="cookienotice-page-link" href="http://www.royalworcester.co.uk/cookie-policy">find out more/how to manage cookies.</a>
+                </div>
+                        <!-- Close Button -->
+                            <div class="cookienotice-button-container">
+                    <a title="Close" id="cookienotice-close-button" class="cookienotice-button"><strong>x</strong></a>
+                </div>
+                    </div>
+    </div>
+
+    
+        <script type="text/javascript">
+
+        /**
+         * Cookie Set : Notice has been shown
+         */
+        createCookie('ow_cookie_notice', 'shown', 31);
+
+                /**
+             * Clicking the close button removes the notice
+             */
+            $('cookienotice-close-button').observe('click', function(event) {
+                $('cookienotice-container').remove();
+                /**
+                 * Cookie Set : Notice has been closed
+                 */
+                createCookie('ow_cookie_notice', 'closed', 31);
+                    });
+    
+    
+
+        /**
+         * Cookie Set JS Function
+         */
+        function createCookie(name, value, days) {
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                var expires = "; expires=" + date.toGMTString();
+            } else {
+                var expires = "";
+            }
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+    </script>
+
+    </div>
+</div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"55ae77a591","applicationID":"3493215","transactionName":"Z1IBYhdSDUVQURZYWV4YNkQMHApYVVcaH0ZYRw==","queueTime":0,"applicationTime":734,"atts":"SxUCFF9IHks=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-593.min.js"}</script></body>
+</html>

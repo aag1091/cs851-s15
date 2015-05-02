@@ -1,0 +1,559 @@
+
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			
+			 <title>2015 Big Farmland Bird Count - Game and Wildlife Conservation Trust</title> 
+
+			
+			
+			
+            <meta name="viewport" content="width=device-width, user-scalable=yes, minimum-scale=0.5" />
+
+			<meta http-equiv="cleartype" content="on"/>
+			
+			<!-- FAVICONS -->
+			<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+			
+			
+			<!-- STYLESHEETS ====================================================================================== -->
+			
+            <link type="text/css" rel="stylesheet" href="/css/960.css" media="all" />
+			<link type="text/css" rel="stylesheet" href="/css/global.crush.css?version=1" media="all" />
+			<link type="text/css" rel="stylesheet" href="/css/mobile.crush.css" media="only screen and (min-device-width : 0px) and (max-device-width:600px)" />
+            
+
+            <link type="text/css" rel="stylesheet" href="/css/fancybox.css" media="all"/>
+			<!-- ================================================================================================== -->
+			
+			<!-- JAVASCRIPT ======================================================================================= -->
+			<script>
+				// At the top because Opera mini is very reticent to run any JS at all.
+				document.documentElement.className += ' ' + (window.operamini ? '' : 'not-') + 'opera-mini';
+			</script>
+            
+
+			<script src="/scripts/gwct.min.js"></script>
+            <script src="//code.jquery.com/jquery-migrate-1.2.1.js"></script>
+            <script src="/scripts/jquery.fancybox.1.3.4.js"></script>
+            <script src="/scripts/jquery.treeview.js"></script>
+			<script src="/scripts/application.js"></script>
+			<script src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+			<script>
+				var flexsliderData = {};
+				var breakpoints = {
+				    mobile: window.matchMedia && matchMedia("only screen and (min-device-width : 0px) and (max-device-width:600px)").matches,
+				    ipad: navigator.userAgent.match(/iPad/i),
+				    android: navigator.userAgent.match(/android/i)
+				};
+				
+				if (breakpoints.mobile) {
+					// Load mobile scripts synchronously (blocking) so scripted layout manipulation
+					// always runs when DOM is ready.
+					document.write('<script src="/scripts/gwct-mobile.min.js"><\/script>');
+					document.write('<script src="/scripts/mobile.js"><\/script>');
+				} else {
+					var addthis_config = { "data_track_addressbar": false };
+					document.write('<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-520a4d4b1228a7ba"><\/script>');
+				}
+			</script>
+			<!-- ================================================================================================== -->
+			
+			
+	
+
+						
+			<!-- GOOGLE ANALYTICS -->
+			<script>
+			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			
+			  ga('create', 'UA-8918066-1', 'auto');
+			  ga('require', 'displayfeatures');
+			  ga('send', 'pageview');
+			
+			</script>
+		</head>
+		
+		<body class="front-end" id="body">
+			<form method="post" action="/bfbc" id="Form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUENTM4MQ9kFgJmD2QWAmYPZBYCZg9kFgJmD2QWAgIJEGRkFgQCAw9kFgJmD2QWCmYPDxYCHgdWaXNpYmxlaGRkAgIPDxYCHwBoZGQCBA8PFgIfAGhkZAIGDw8WAh8AaGRkAggPFgIfAGhkAg0PZBYCAgEPZBYCZg9kFgJmD2QWAgIBD2QWAmYPZBYCZg9kFgJmD2QWAgIED2QWCgIBDxYCHgRUZXh0BTNjbGFzcz0iZmFybWxhbmRiaXJkY291bnRpbnRlcmVzdCBmYXJtbGFuZGJpcmRjb3VudCJkAgMPFgIfAQU0PGg0IGNsYXNzPSdjb250b3VyUGFnZU5hbWUnPkZhcm1sYW5kIEJpcmQgQ291bnQ8L2g0PmQCBQ8WAh4LXyFJdGVtQ291bnQCARYCZg9kFgICBQ8WAh8CAgEWAmYPZBYIAgEPFgIfAQVIdGV4dCBlbnRlcnlvdXJlbWFpbHRvcmVjZWl2ZW5ld3N1cGRhdGVzYWJvdXR0aGVjb3VudCB0ZXh0ZmllbGQgbWFuZGF0b3J5ZAIDDw8WCB4IQ3NzQ2xhc3MFCmZpZWxkTGFiZWwfAQU5RW50ZXIgeW91ciBlbWFpbCB0byByZWNlaXZlIG5ld3MgdXBkYXRlcyBhYm91dCB0aGUgY291bnQ6HhNBc3NvY2lhdGVkQ29udHJvbElEBSQ3MWVlMDRiM19hYzNiXzRhODVfYWFlM185ZjVjZmY3M2I3MWYeBF8hU0ICAmRkAgUPZBYCZg8PFgQfAwUEdGV4dB8FAgJkZAIJDw8WCB4MRXJyb3JNZXNzYWdlBUZFbnRlciB5b3VyIGVtYWlsIHRvIHJlY2VpdmUgbmV3cyB1cGRhdGVzIGFib3V0IHRoZSBjb3VudDogaXMgbWFuZGF0b3J5Hg9WYWxpZGF0aW9uR3JvdXAFSENvbnRlbnRQbGFjZUhvbGRlckRlZmF1bHRfTGF5b3V0Q29udGVudF9sZWZ0Q29udGF0aW5lcl9jdGwwMl9jdGwwMV9jdGwwMB4RQ29udHJvbFRvVmFsaWRhdGUFJDcxZWUwNGIzX2FjM2JfNGE4NV9hYWUzXzlmNWNmZjczYjcxZh8AZ2RkAgcPDxYEHwEFBFByZXYfAGhkZAIIDw8WCB8DBSdjb250b3VyQnV0dG9uIGNvbnRvdXJOZXh0IGNvbnRvdXJTdWJtaXQfAQUGU3VibWl0HwcFSENvbnRlbnRQbGFjZUhvbGRlckRlZmF1bHRfTGF5b3V0Q29udGVudF9sZWZ0Q29udGF0aW5lcl9jdGwwMl9jdGwwMV9jdGwwMB8FAgJkZGQjXhaxaUrWkRYknI1YM7qybEgbJHOwbD47hZjZ7fVtkQ==" />
+</div>
+
+
+<script src="/ScriptResource.axd?d=w7owhAIUKSOAHSMS0AZhcIBBxHg-3kvUTIUl1BSs5On9Syb4b9Hgl2A21Y2xJOwsa6g-kGoyWcyERpVemoyqH0sUOd60npK-ARRDpecxgegGF-RN9wNN3waFAWzSuuryKZdhPBYNqk6gPYd0zcmObI56TvE33I03-IVIp30lo6bci4FUtaJPeIatoVNolnix0&amp;t=1c6ae475" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=xI2mdLDwYzi3qEFfGGdniB_Pox0Wq-AV94PsliuewTTAlwveoQ9P3XBJHdC2duqfV4ZstsHcI4MUP2QfPI2nt_7wKefqquylQotZJusGw47aoCrRzH_aMrz4uHeAn15vH9zMVCB_hRXo00dC9q7b_bkqrYwIQQrOv90D-3hWzarLx29Ar7nYOFULsS_rKqVr0&amp;t=fffffffff1a125d0" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=cy-mRvUeOfYhFcVJ2fW954BzZNQcg7z_0w_WsH9n9B9wTmEEvvPiDoezlqAH5USn_4Q_EzeXR4nq1FIj_lJ8P04IMiQkFZh0xxzvXTQgVast-JPV9lh2TX1D0EOKQbrXs8TSj3Oo-TlUy7XHnS6rpIWQKHLvq3jg5zXdiBFlmw7REF1e9v658P5T8kt9k8uoNza0_4g8YN7HbYPB2rCYYQ2&amp;t=ffffffffdeff9dd4" type="text/javascript"></script>
+				
+				
+<div style="position:fixed;top:0;left:0;z-index:250000;">
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+				<div class="page-body">
+					
+					<!-- HEADER ========================================================================================== -->
+					<div class="siteHeader" 
+		 style="background: url(/media/7122/wheat.jpg) no-repeat center;"
+>
+						<div class="container_12">
+							<div class="prefix_2 grid_10 navSecondary">
+								
+    <ul>                            
+        <li><a href="/about/">About Us</a></li> 
+        <li><a href="/advisory/">Advice &amp; Education</a></li> 
+        <li><a href="/policy/">Policy</a></li> 
+        <li><a href="/news/">News</a></li> 
+        <li><a href="/shop/">Shop</a></li> 
+        <li><a href="/blogs/">Blogs</a></li> 
+        <li><a href="/scotland/">Scotland</a></li> 
+        <li><a href="/email-newsletter/">Newsletter</a></li> 
+        <li><a href="/contact/">Contact Us</a></li> 
+        <li><a href="/sign-in/">Sign In</a></li> 
+    </ul>
+
+
+							</div>
+						</div>
+						
+						<div class="container_12 inline">
+							<div class="grid_3 siteLogo">
+								<a href="/">
+									<img src="/images/logo.svg" alt="Game &amp; Wildlife Conservation Trust" width="171" height="112" />
+								</a>
+							</div>
+							
+							<div class="grid_6 regionHeader">
+								
+<p class="regionHeaderTitle">Farming</p>
+							</div>
+							
+							<div class="grid_3 siteHeaderSearch clearfix">
+								
+									<!-- No whitespace in the markup -->
+									<span><input type="text" id="txtTopSearch" class="search-input" placeholder="Search GWCT"/></span>
+                                    <button class="search-button" id="btnTopSearch"><span>Search</span></button>
+								
+							</div>
+						</div>
+						
+						<div class="navMain__wrapper">
+							<div class="container_12 clearfix">
+								<div class="grid_12 navMain">
+									
+
+		<ul>
+			<li>
+				<a href="/"><span>Home</span></a>
+			</li>
+			
+				<li class="parent ">
+					<a href="/fishing/"><span>Fishing</span></a>
+					
+					    <div>
+						    <ul>
+						        <li><a href="/fishing/research/"><span>Research</span></a></li><li><a href="/fishing/advice/"><span>Advice</span></a></li><li><a href="/fishing/policy/"><span>Policy</span></a></li><li><a href="/fishing/news/"><span>News</span></a></li><li><a href="/fishing/courses-training-days/"><span>Courses & Training Days</span></a></li><li><a href="/fishing/salmon-appeal/"><span>Salmon Appeal</span></a></li><li><a href="/fishing/volunteer/"><span>Volunteer</span></a></li><li><a href="/fishing/fisheries-blog/"><span>Fisheries Blog</span></a></li>
+						    </ul>
+					    </div>
+				</li>
+				<li class="parent ">
+					<a class="active" href="/farming/"><span>Farming</span></a>
+					
+					    <div>
+						    <ul>
+						        <li><a href="/farming/research/"><span>Research</span></a></li><li><a href="/farming/advice/"><span>Advice</span></a></li><li><a href="/farming/allerton-project/"><span>Allerton Project</span></a></li><li><a href="/farming/policy/"><span>Policy</span></a></li><li><a href="/farming/news/"><span>News</span></a></li><li><a href="/farming/courses-training-days/"><span>Courses & Training Days</span></a></li><li><a href="/farming/big-farmland-bird-count/"><span>2015 Big Farmland Bird Count</span></a></li>
+						    </ul>
+					    </div>
+				</li>
+				<li class="parent ">
+					<a href="/game/"><span>Game</span></a>
+					
+					    <div>
+						    <ul>
+						        <li><a href="/game/research/"><span>Research</span></a></li><li><a href="/game/advice/"><span>Advice</span></a></li><li><a href="/game/policy/"><span>Policy</span></a></li><li><a href="/game/news/"><span>News</span></a></li><li><a href="/game/courses-training-days/"><span>Courses & Training Days</span></a></li><li><a href="/game/promoting-game-management/"><span>Promoting Game Management</span></a></li><li><a href="/game/campaign4game/"><span>Campaign4game</span></a></li><li><a href="/game/gwct-blog/"><span>GWCT Blog</span></a></li><li><a href="/game/predator-control-appeal/"><span>Predator Control Appeal</span></a></li><li><a href="/game/woodcock-appeal/"><span>Woodcock Appeal</span></a></li><li><a href="/game/woodcock-watch-blog/"><span>Woodcock Watch Blog</span></a></li><li><a href="/game/hopper-appeal/"><span>Hopper Appeal</span></a></li><li><a href="/game/shoot-sweepstake/"><span>Shoot Sweepstake</span></a></li><li><a href="/game/shoot-benchmarking/"><span>Shoot Benchmarking</span></a></li>
+						    </ul>
+					    </div>
+				</li>
+				<li class="parent ">
+					<a href="/wildlife/"><span>Wildlife</span></a>
+					
+					    <div>
+						    <ul>
+						        <li><a href="/wildlife/research/"><span>Research</span></a></li><li><a href="/wildlife/advice/"><span>Advice</span></a></li><li><a href="/wildlife/policy/"><span>Policy</span></a></li><li><a href="/wildlife/news/"><span>News</span></a></li><li><a href="/wildlife/courses-training-days/"><span>Courses & Training Days</span></a></li><li><a href="/wildlife/species-of-the-month/"><span>Species of the Month</span></a></li><li><a href="/wildlife/the-julian-gardner-awards/"><span>The Julian Gardner Awards</span></a></li><li><a href="/wildlife/lapwing-appeal/"><span>Lapwing Appeal</span></a></li><li><a href="/wildlife/songbird-appeal/"><span>Songbird Appeal</span></a></li><li><a href="/wildlife/peter-thompsons-blog/"><span>Peter Thompson's Blog</span></a></li><li><a href="/wildlife/woodcock-appeal/"><span>Woodcock Appeal</span></a></li><li><a href="/wildlife/woodcock-watch-blog/"><span>Woodcock Watch Blog</span></a></li>
+						    </ul>
+					    </div>
+				</li>
+				<li class="parent ">
+					<a href="/research/"><span>Research &amp; Surveys</span></a>
+					
+					    <div>
+						    <ul>
+						        <li><a href="/research/habitats/"><span>Habitats</span></a></li><li><a href="/research/species/"><span>Species</span></a></li><li><a href="/research/long-term-monitoring/"><span>Long-Term Monitoring</span></a></li><li><a href="/research/demonstration-projects/"><span>Demonstration Projects</span></a></li><li><a href="/research/scientific-publications/"><span>Scientific Publications</span></a></li><li><a href="/research/conference/"><span>Research Conference</span></a></li>
+						    </ul>
+					    </div>
+				</li>
+				<li class="parent ">
+					<a href="/events/"><span>Events &amp; Courses</span></a>
+					
+					    <div>
+						    <ul>
+						        <li><a href="/events/events/"><span>Events</span></a></li><li><a href="/events/advisory-courses/"><span>Advisory Courses</span></a></li><li><a href="/events/results/"><span>Event Results</span></a></li><li><a href="/events/cla-game-fair-2015/"><span>CLA Game Fair 2015</span></a></li><li><a href="/events/members-conference/"><span>Members' Conference</span></a></li>
+						    </ul>
+					    </div>
+				</li>
+				<li class="parent ">
+					<a href="/join/"><span>Join</span></a>
+					
+					    <div>
+						    <ul>
+						        <li><a href="/join/join-online/"><span>Join Online</span></a></li><li><a href="/join/reasons-to-join/"><span>Benefits of Joining</span></a></li><li><a href="/join/how-your-membership-helps/"><span>How your membership helps</span></a></li><li><a href="/join/gamewise/"><span>Members Magazine</span></a></li><li><a href="/join/testimonials/"><span>Testimonials</span></a></li><li><a href="/join/gift-membership/"><span>Gift Membership</span></a></li><li><a href="/join/life-membership/"><span>Life Membership</span></a></li><li><a href="/join/renew-your-membership/"><span>Renew your Membership</span></a></li><li><a href="/join/become-a-sponsor/"><span>Become a Sponsor</span></a></li>
+						    </ul>
+					    </div>
+				</li>
+				<li class="parent ">
+					<a href="/donate/"><span>Donate</span></a>
+					
+					    <div>
+						    <ul>
+						        <li><a href="/donate/general-donation/"><span>General Donation</span></a></li><li><a href="/donate/promoting-game-management/"><span>Promoting Game Management</span></a></li><li><a href="/donate/predator-control-appeal/"><span>Predator Control Appeal</span></a></li><li><a href="/donate/allerton-project/"><span>Allerton Project</span></a></li><li><a href="/donate/campaign4game/"><span>Campaign4game</span></a></li><li><a href="/donate/woodcock-appeal/"><span>Woodcock Appeal</span></a></li><li><a href="/donate/gun-draw/"><span>Gun Draw</span></a></li><li><a href="/donate/hopper-appeal/"><span>Hopper Appeal</span></a></li><li><a href="/donate/songbird-appeal/"><span>Songbird Appeal</span></a></li><li><a href="/donate/salmon-appeal/"><span>Salmon Appeal</span></a></li><li><a href="/donate/raffles/"><span>Other Raffles</span></a></li><li><a href="/donate/shoot-sweepstake/"><span>Shoot Sweepstake</span></a></li><li><a href="/donate/lapwing-appeal/"><span>Lapwing Appeal</span></a></li><li><a href="/donate/legacies/"><span>Leaving a Legacy</span></a></li><li><a href="/donate/in-memoriam/"><span>In Memoriam donations</span></a></li><li><a href="/donate/charitable-trusts-and-foundations/"><span>Charitable Trusts and Foundations</span></a></li><li><a href="/donate/gwct-credit-card/"><span>GWCT Credit Card</span></a></li><li><a href="/donate/donate-as-you-shop/"><span>Donate as you shop</span></a></li>
+						    </ul>
+					    </div>
+				</li>
+		</ul>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- ================================================================================================= -->
+					
+					<!-- CONTENT ========================================================================================= -->
+					<div class="siteContent">
+						
+	<div class="container_12">
+		<div class="contentBlock_3 container"><div class="block grid_3 predefined grid_3">
+	<div class="siteBlock blockSidebar">
+		<div class="blockTitle">
+			<a href="/farming/">
+Farming			</a>
+		</div>
+		
+		<div class="blockContent">
+			<ul class="subnav">
+    <li>
+            <a class=" " href="/farming/research/">Research</a>
+ 
+   </li>
+    <li>
+            <a class=" " href="/farming/advice/">Advice</a>
+ 
+   </li>
+    <li>
+            <a class=" " href="/farming/allerton-project/">Allerton Project</a>
+ 
+   </li>
+    <li>
+            <a class=" " href="/farming/policy/">Policy</a>
+ 
+   </li>
+    <li>
+            <a class=" " href="/farming/news/">News</a>
+ 
+   </li>
+    <li>
+            <a class=" " href="/farming/courses-training-days/">Courses & Training Days</a>
+ 
+   </li>
+    <li>
+            <a class="active active-parent" href="/farming/big-farmland-bird-count/">2015 Big Farmland Bird Count</a>
+ 
+                <ul>
+    <li>
+            <a class=" " href="/farming/big-farmland-bird-count/2015-bfbc-results/">2015 BFBC Results</a>
+ 
+   </li>
+    <li>
+            <a class=" " href="/farming/big-farmland-bird-count/why-are-we-counting/">Why are we counting?</a>
+ 
+   </li>
+    <li>
+            <a class=" " href="/farming/big-farmland-bird-count/register-your-interest/">Register your interest</a>
+ 
+   </li>
+    <li>
+            <a class=" " href="/farming/big-farmland-bird-count/farmland-bird-id-guide/">Farmland Bird ID Guide</a>
+ 
+   </li>
+    <li>
+            <a class=" " href="/farming/big-farmland-bird-count/farmland-bird-id-days/">Farmland Bird ID Days</a>
+ 
+   </li>
+    <li>
+            <a class=" " href="/farming/big-farmland-bird-count/taking-part-in-the-count/">Taking part in the count</a>
+ 
+   </li>
+    <li>
+            <a class=" " href="/farming/big-farmland-bird-count/count-sheet-downloads/">Count sheet downloads</a>
+ 
+   </li>
+    <li>
+            <a class=" " href="/farming/big-farmland-bird-count/submit-your-count-results/">Submit your count results</a>
+ 
+   </li>
+    <li>
+            <a class=" " href="/farming/big-farmland-bird-count/bfbc-blog/">BFBC Blog</a>
+ 
+   </li>
+    <li>
+            <a class=" " href="/farming/big-farmland-bird-count/2014-bfbc-results/">2014 BFBC Results</a>
+ 
+   </li>
+    <li>
+            <a class=" " href="/farming/big-farmland-bird-count/media-coverage/">Media Coverage</a>
+ 
+   </li>
+    <li>
+            <a class=" " href="/farming/big-farmland-bird-count/farmland-birds-to-count/">Farmland birds to count</a>
+ 
+   </li>
+                </ul>      
+   </li>
+			</ul>		
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+</div><div class="block grid_3">
+
+
+
+
+
+
+<div id='contour' class="farmlandbirdcountinterest farmlandbirdcount">
+
+    <h4 class='contourPageName'>Farmland Bird Count</h4>
+                <fieldset class='contourFieldSet '>
+                    
+                    
+                    
+                            
+                            <div class='contourField text enteryouremailtoreceivenewsupdatesaboutthecount textfield mandatory'>
+                            
+                             <!-- Our label -->
+                            <label for="ContentPlaceHolderDefault_LayoutContent_leftContatiner_ctl02_ctl01_ctl00_rpFieldsets_rpFields_0_71ee04b3_ac3b_4a85_aae3_9f5cff73b71f_0" id="ContentPlaceHolderDefault_LayoutContent_leftContatiner_ctl02_ctl01_ctl00_rpFieldsets_rpFields_0_label_0" class="fieldLabel">Enter your email to receive news updates about the count:</label>
+                                       
+                            <div>                           
+                            <!-- The data entry control -->
+                            <input name="ctl00$ctl00$ctl00$ContentPlaceHolderDefault$LayoutContent$leftContatiner$ctl02$ctl01$ctl00$rpFieldsets$ctl00$rpFields$ctl00$71ee04b3_ac3b_4a85_aae3_9f5cff73b71f" type="text" id="ContentPlaceHolderDefault_LayoutContent_leftContatiner_ctl02_ctl01_ctl00_rpFieldsets_rpFields_0_71ee04b3_ac3b_4a85_aae3_9f5cff73b71f_0" class="text" />
+                            </div>
+                            
+                             <!-- Our Tooltip -->                            
+                            
+                                                                                       
+                            <!-- Validation -->
+                            
+                            
+                            
+                                                       
+                            <br style="clear: both;" />
+                            </div>
+                                                   
+                         
+                                        
+                </fieldset>
+                
+            
+
+<div class="contourNavigation">
+    <input type="submit" name="ctl00$ctl00$ctl00$ContentPlaceHolderDefault$LayoutContent$leftContatiner$ctl02$ctl01$ctl00$b_next" value="Submit" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ctl00$ctl00$ContentPlaceHolderDefault$LayoutContent$leftContatiner$ctl02$ctl01$ctl00$b_next&quot;, &quot;&quot;, true, &quot;ContentPlaceHolderDefault_LayoutContent_leftContatiner_ctl02_ctl01_ctl00&quot;, &quot;&quot;, false, false))" id="ContentPlaceHolderDefault_LayoutContent_leftContatiner_ctl02_ctl01_ctl00_b_next" class="contourButton contourNext contourSubmit" />
+</div>
+</div>  
+  
+
+
+
+
+
+</div><div class="block grid_3 predefined grid_3 siteBlock -blue datedItemList -events">
+
+	
+</div></div>
+		
+		<!-- 
+			below: to be able to transfer wysiwyg content between template changes, 
+			include a page wysiwyg block inside a container named the same the container the wysiwyg exists in 
+		-->
+		<div class="contentBlock_9 container"><div class="block predefined breadcrumbNav">
+
+	
+	
+<ul>
+        <li><a href="/">Home</a><span>&gt;</span></li>
+        <li><a href="/farming/">Farming</a><span>&gt;</span></li>
+	<li>2015 Big Farmland Bird Count</li>
+
+	<li class="clear"></li>
+</ul></div><div class="block predefined bodyHeading">
+
+    <div>
+        <h1>2015 Big Farmland Bird Count</h1>
+			
+			<!-- AddThis Button BEGIN -->
+			<div class="addthis addthis_toolbox addthis_default_style ">
+				<a class="addthis_button_preferred_1"></a>
+				<a class="addthis_button_preferred_2"></a>
+				<a class="addthis_button_preferred_3"></a>
+				<a class="addthis_button_preferred_4"></a>
+				<a class="addthis_button_compact"></a>
+				<a class="addthis_counter addthis_bubble_style"></a>
+			</div>
+			<!-- AddThis Button END -->
+    </div>
+</div><div class="block grid_9 bodyText pageWysiwygBlock"><h3>Latest news - BFBC results now online<img style="color: #5d5d5d; font-size: 15px; line-height: 1.4; float: right;" src="/media/282173/corn-bunting-crop.jpg?width=230&height=153&crop=true" alt="Corn bunting" title="Corn bunting" width="230" height="153" rel="781,520" /></h3>
+<p>The 2015 Big Farmland Bird Count results are now online.</p>
+<p><a style="line-height: 1.4;" href="/farming/big-farmland-bird-count/2015-bfbc-results/" title="2015 BFBC Results">View results &gt;</a><span style="line-height: 1.4;"> </span></p>
+<p><span style="color: #006932; font-size: 18px; line-height: 1.15;">Farmland Bird ID Days</span></p>
+<p>Our <a href="/farming/big-farmland-bird-count/farmland-bird-id-days/">Farmland Bird ID Days</a> have been very well received and we’ve had some great feedback from those who have attended. Having committed to running 12 events this year we will be looking to run more across the country ahead of next year’s Big Farmland Bird Count.</p>
+<h3>What is the Big Farmland Bird Count?</h3>
+<p>The second Big Farmland Bird Count took place between <strong>7th and 15th February 2015 </strong>and we asked people to spend 30 minutes recording the species and number of birds seen on one particular area of the farm.</p>
+<p><strong><span style="font-family: Cabin, Helvetica, sans-serif;">Nearly </span>1,000 farmers</strong>, managing nearly <strong>one million acres</strong> of UK farmland, took part in the 2015 count.</p>
+<h3>Why have we organised the count?</h3>
+<p>To highlight the good work done by farmers and gamekeepers in helping to reverse the decline in farmland bird numbers. We want to help them record the effect of any conservation work on their land. <a href="/farming/big-farmland-bird-count/why-are-we-counting/" title="Why are we counting?">Read more &gt;</a></p></div><div class="block bodyText wysiwygBlock">
+<h4><br />BASF is proud to sponsor the Big Farmland Bird Count</h4>
+<p style="text-align: left;"><a href="http://www.basf.co.uk"><img width="250" height="106" src="/media/443939/basflogonewfw.png" alt="Basflogonew .fw"/></a></p>
+<h4>In Partnership with The FWAG Association<a href="http://www.basf.co.uk/" target="_blank" title="BASF UK"></a></h4>
+<p><a href="http://www.fwag.org.uk/" target="_blank"><img width="250" height="126" src="/media/349648/fwaglogo2.jpg" alt="FWAG Logo" style="float: left;"/></a></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h4>In Partnership with LEAF</h4>
+<p><a href="http://www.leafuk.org" target="_blank"><img width="250" height="127" src="/media/351165/leaflogo2.jpg" alt="Leaflogo2"/></a></p>
+
+</div></div>
+		
+		<div class="clear"></div>
+	</div>
+
+						
+					</div>
+					<!-- ================================================================================================= -->
+					
+					<!-- FOOTER ========================================================================================== -->
+					<div class="siteFooter">
+						<div class="container_12 clearfix">
+							<div class="grid_12 clearfix">
+								
+    <ul class="footerNav">                            
+        <li><a href="/contact/">Contact Us</a></li> 
+        <li><a href="/feedback/">Feedback</a></li> 
+        <li><a href="/sign-in/business-directory/">Business Directory</a></li> 
+        <li><a href="/about/terms-and-conditions/">Terms &amp; Conditions</a></li> 
+        <li><a href="/news/">News</a></li> 
+        <li><a href="/events/">Events &amp; Courses</a></li> 
+        <li><a href="/join/">Join</a></li> 
+        <li><a href="/about/twitter/">Twitter</a></li> 
+        <li><a href="/about/facebook/">Facebook</a></li> 
+    </ul>
+    <div class="footerCredits">
+        <p>© 2015 Game &amp; Wildlife Conservation Trust</p>
+<p>Charity registered in England and Wales, 1112023, in Scotland SC038868</p>
+	</div>
+
+
+								
+                                <a class="mentorLink" rel="new-window" href="http://www.mentordigital.co.uk/" title="Mentor Digital is a full service digital agency based in Bristol. We offer web design, software development, digital media &amp; video production services to clients in Bristol, and across the UK.">Web Design by Mentor Digital</a>
+							</div>
+
+							
+						</div>
+					</div>
+					<!-- ================================================================================================= -->
+				</div>
+			
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Umbraco.Forms.Core.Controls.Validation.ValidationFieldExtenderBehavior, {"InvalidLabelCssClass":"contourError","InvalidTextBoxCssClass":"contourError","TargetLabelID":$get("ContentPlaceHolderDefault_LayoutContent_leftContatiner_ctl02_ctl01_ctl00_rpFieldsets_rpFields_0_label_0"),"ValidLabelCssClass":"contourValid","ValidTextBoxCssClass":"contourValid","id":"ContentPlaceHolderDefault_LayoutContent_leftContatiner_ctl02_ctl01_ctl00_rpFieldsets_rpFields_0_ctl00_0"}, null, null, $get("ContentPlaceHolderDefault_LayoutContent_leftContatiner_ctl02_ctl01_ctl00_rpFieldsets_rpFields_0_mandatory_0"));
+});
+//]]>
+</script>
+</form>
+			
+
+  <div class="cookieBox">
+    <h2>Cookie Policy</h2>
+    <p>
+      Our website uses cookies to provide you with a better online experience. If you continue to use our site without changing your browser settings, we'll assume you are happy to receive cookies. Please read our <a href="/about/cookie-policy/">cookie policy</a> for more information.
+    </p>
+    <a href="#" id="cookieBoxAccept" class="fatOrange btn">Do not show this message again</a>
+  </div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#cookieBoxAccept").click(function (e) {
+            setCookieBoxCookie("cookieBox", "1", 100);
+            $(".cookieBox").remove();
+            e.preventDefault();
+            return false;
+        });
+    });
+
+    function setCookieBoxCookie(c_name, value, exdays) {
+        var exdate = new Date();
+        exdate.setDate(exdate.getDate() + exdays);
+        var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString() + "; path=/");
+        document.cookie = c_name + "=" + c_value;
+    }
+</script>
+			<!-- Google Code for Remarketing Tag -->
+            <!--------------------------------------------------
+            Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+            --------------------------------------------------->
+            <script type="text/javascript">
+                /* <![CDATA[ */
+                var google_conversion_id = 1048491036;
+                var google_custom_params = window.google_tag_params;
+                var google_remarketing_only = true;
+                /* ]]> */
+            </script>
+            <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+            </script>
+            <noscript>
+                <div style="display:inline;">
+                    <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1048491036/?value=0&amp;guid=ON&amp;script=0"/>
+                </div>
+            </noscript>	
+		</body>
+	</html>

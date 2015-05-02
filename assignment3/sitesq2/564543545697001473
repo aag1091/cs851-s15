@@ -1,0 +1,1274 @@
+<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="css/bootstrap-theme.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/ticker-style.css" type="text/css"/>
+   <script type="text/javascript" src="js/bootstrap-dropdown.min.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>        
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!------------slider---------->
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <!-- use jssor.slider.mini.js (40KB) instead for release -->
+    <!-- jssor.slider.mini.js = (jssor.js + jssor.slider.js) -->
+    <script type="text/javascript" src="js/jssor.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.js"></script>
+<script>
+        jQuery(document).ready(function ($) {
+            var options = {
+                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlaySteps: 4,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
+                $AutoPlayInterval: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $PauseOnHover: 1,                               //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+
+                $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                $SlideDuration: 160,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+                $SlideWidth: 200,                                   //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                //$SlideHeight: 150,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                $SlideSpacing: 3, 					                //[Optional] Space between each slide in pixels, default value is 0
+                $DisplayPieces: 4,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $ParkingPosition: 0,                              //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+                $DragOrientation: 1,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+
+                $BulletNavigatorOptions: {                                //[Optional] Options to specify and enable navigator or not
+                    $Class: $JssorBulletNavigator$,                       //[Required] Class to create navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 0,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
+                    $Lanes: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
+                    $SpacingX: 0,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
+                    $SpacingY: 0,                                   //[Optional] Vertical space between each item in pixel, default value is 0
+                    $Orientation: 1                                 //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                },
+
+                $ArrowNavigatorOptions: {
+                    $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 1,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 2,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 4                                       //[Optional] Steps to go for each navigation request, default value is 1
+                }
+            };
+
+            var jssor_slider1 = new $JssorSlider$("slider1_container1", options);
+
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizes
+            function ScaleSlider() {
+                var bodyWidth = document.body.clientWidth;
+                if (bodyWidth)
+                    jssor_slider1.$ScaleWidth(Math.min(bodyWidth, 750));
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+            ScaleSlider();
+
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+    </script>
+<script>
+        jQuery(document).ready(function ($) {
+            var options = {
+                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlaySteps: 4,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
+                $AutoPlayInterval: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $PauseOnHover: 1,                               //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+
+                $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                $SlideDuration: 160,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+                $SlideWidth: 200,                                   //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                //$SlideHeight: 150,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                $SlideSpacing: 3, 					                //[Optional] Space between each slide in pixels, default value is 0
+                $DisplayPieces: 4,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $ParkingPosition: 0,                              //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+                $DragOrientation: 1,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+
+                $BulletNavigatorOptions: {                                //[Optional] Options to specify and enable navigator or not
+                    $Class: $JssorBulletNavigator$,                       //[Required] Class to create navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 0,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
+                    $Lanes: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
+                    $SpacingX: 0,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
+                    $SpacingY: 0,                                   //[Optional] Vertical space between each item in pixel, default value is 0
+                    $Orientation: 1                                 //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                },
+
+                $ArrowNavigatorOptions: {
+                    $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 1,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 2,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 4                                       //[Optional] Steps to go for each navigation request, default value is 1
+                }
+            };
+
+            var jssor_slider2 = new $JssorSlider$("slider1_container2", options);
+
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizes
+            function ScaleSlider() {
+                var bodyWidth = document.body.clientWidth;
+                if (bodyWidth)
+                    jssor_slider1.$ScaleWidth(Math.min(bodyWidth, 750));
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+            ScaleSlider();
+
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+    </script>
+
+<!--  ticker include <br> -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script> 
+        <script type="text/javascript" src="js/jquery.ticker.js"></script>
+          <script type="text/javascript" src="js/site.js"></script>
+          <link rel="stylesheet" href="css/ticker-style.css" type="text/css"/>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <link rel="shortcut icon" href="res/logo.png" type="image/png" />      
+
+        <script type="text/javascript">
+$(document).ready(function() {
+    $("#comment_form").hide();
+    $("#more_comments").hide();
+    $("#btn_cmnt").show();
+    $("#btn2").hide();
+	$("#ul2").hide();
+});
+function fs() {
+    $("#comment_form").show();
+    $("#btn_cmnt").hide();
+}
+function fh() {
+    $("#btn_cmnt").show();
+    $("#comment_form").hide();
+}
+
+function cmore() {
+    $("#more_comments").show();
+    $("#btn_cmnt2").hide();
+}
+
+function f1() {
+    $("#ul2").show();
+    $("#btn1").hide();
+    $("#btn2").show();
+}
+
+function f2() {
+    $("#ul2").hide();
+    $("#btn2").hide();
+    $("#btn1").show();
+}
+
+
+    
+	    </script>
+ <!-- Bullet Navigator Skin Begin -->
+        <style>
+            /* jssor slider bullet navigator skin 03 css */
+            /*
+            .jssorb03 div           (normal)
+            .jssorb03 div:hover     (normal mouseover)
+            .jssorb03 .av           (active)
+            .jssorb03 .av:hover     (active mouseover)
+            .jssorb03 .dn           (mousedown)
+            */
+            .jssorb03 div, .jssorb03 div:hover, .jssorb03 .av
+            {
+                background: url(img/b03.png) no-repeat;
+                overflow:hidden;
+                cursor: pointer;
+            }
+            .jssorb03 div { background-position: -5px -4px; }
+            .jssorb03 div:hover, .jssorb03 .av:hover { background-position: -35px -4px; }
+            .jssorb03 .av { background-position: -65px -4px; }
+            .jssorb03 .dn, .jssorb03 .dn:hover { background-position: -95px -4px; }
+        </style>
+        
+        
+        <!-- Arrow Navigator Skin Begin -->
+        <style>
+            /* jssor slider arrow navigator skin 03 css */
+            /*
+            .jssora03l              (normal)
+            .jssora03r              (normal)
+            .jssora03l:hover        (normal mouseover)
+            .jssora03r:hover        (normal mouseover)
+            .jssora03ldn            (mousedown)
+            .jssora03rdn            (mousedown)
+            */
+            .jssora03l, .jssora03r, .jssora03ldn, .jssora03rdn
+            {
+            	position: absolute;
+            	cursor: pointer;
+            	display: block;
+                background: url(img/a03.png) no-repeat;
+                overflow:hidden;
+            }
+            .jssora03l { background-position: -3px -33px; }
+            .jssora03r { background-position: -63px -33px; }
+            .jssora03l:hover { background-position: -123px -33px; }
+            .jssora03r:hover { background-position: -183px -33px; }
+            .jssora03ldn { background-position: -243px -33px; }
+            .jssora03rdn { background-position: -303px -33px; }
+        </style>
+        <!-- Arrow Left -->
+        <style type="text/css">
+            @font-face {font-family: "Kruti_Dev_010c"; src: url(news/font/Kruti_Dev_010.ttf);}
+            .kruti_dev{color:#000000;  font-family:"Kruti_Dev_010c"; font-size:16px; font-weight:normal;text-decoration: none;}
+        </style>
+        <style type="text/css">
+         //   @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300,500italic);
+body{margin:0px; padding:0px; font-family: 'Ubuntu', sans-serif; color:#000}
+			.uli{
+			color: #fff;
+			}
+
+            .imgh:hover{
+                width: 100%;
+
+            }
+
+            .b{
+                box-shadow: 0 10px 20px #000;
+                height: auto;
+            }
+            .box:hover{
+                box-shadow: 0 10px 15px skyblue;
+                -webkit-box-shadow: 0 10px 15px skyblue;
+                -moz-box-shadow: 0 10px 15px skyblue;
+            }
+            .box-rt:hover{
+                -webkit-box-shadow: 0 10px 15px skyblue;
+                -moz-box-shadow: 0 10px 15px skyblue;
+                box-shadow: 5px 10px 15px skyblue;
+            }
+            .just-in2 .just-in-tricker {
+                color: #000;
+                width:800px;
+                font-size:18px;
+                font-weight:300;
+                list-style: none;
+                height: 1.2em;
+                margin-top:15px;
+                overflow: hidden;
+            }
+            ul li a{
+                text-decoration: none;
+            }
+            ul li {
+                text-decoration: none;
+            }
+            .just-in2 .just-in-tricker a,hover{text-decoration:none; color:#000}
+			#hed{font-size:14px; padding:5px; margin-top:5px; border:#C4C4C4 solid 1px; color:#000000; height:30px; font-size:16px; font-weight:550;}
+			
+			#colo{
+				border-right: 1px solid #e6e6e6;
+				height:45px;			
+			}
+        </style>
+    <style>
+#theblogservicesflotads {
+height:30px;
+width:auto;
+background: #333333 url('..');
+background-repeat:repeat-x;
+text-align:left;
+padding-top:4px;
+}
+#theblogservicesadsbase{
+height:600;
+margin:0auto;
+width:160px;
+background:#fff;
+border-bottom:2px #333333 solid;
+border-right:2px #333333 solid;
+border-left:2px #333333 solid;
+text-align:center;
+padding:4px;
+}
+#theblogservicesadsheadline{
+opacity:1.0;
+height:auto;
+width:auto;
+position:fixed;
+top:10px;
+left:5px;
+border-bottom:1px #005094 solid;
+border-bottom:0px blue solid;
+color:#333;
+padding:0px;
+z-index:1001;
+font-size:13px;}
+
+#theblogservicesflotads1 {
+height:30px;
+width:auto;
+background: #333333 url('..');
+background-repeat:repeat-x;
+text-align:right;
+padding-top:4px;
+}
+#theblogservicesadsbase1{
+height:600;
+margin:0auto;
+width:160px;
+background:#fff;
+border-bottom:2px #333333 solid;
+border-right:2px #333333 solid;
+border-left:2px #333333 solid;
+text-align:center;
+padding:4px;
+}
+#theblogservicesadsheadline1{
+opacity:1.0;
+height:auto;
+width:auto;
+position:fixed;
+top:10px;
+right:5px;
+border-bottom:1px #005094 solid;
+border-bottom:0px blue solid;
+color:#333;
+padding:0px;
+z-index:1001;
+font-size:13px;}
+</style>
+ <script type="text/javascript">
+function getValue()
+{
+document.getElementById("theblogservicesadsheadline").style.display = 'none';
+
+}
+function getValuee()
+{
+document.getElementById("theblogservicesadsheadline1").style.display = 'none';
+}
+</script>
+
+    </head>
+    <body  style=" background:#A09898; color: rgba(255,255,255,.8); background-color: #CBC1C1; background-image: url(images/bg.png);">
+        <div id="theblogservicesadsheadline">
+	<span style="color:#fff;font-size:13px;font-weight:bold;text-shadow:black 0.1em 0.1em 0.1em;float:right;padding-top:3px;padding-right:10px">
+		<a href="#" onClick="getValue()">close(x)</a>
+	</span>
+	<div id="theblogservicesflotads">
+		<span style="color:#fff;font-size:13px;font-weight:bold;text-shadow:black 0.1em 0.1em 0.1em"><a href="https://play.google.com/store/apps/details?id=com.medhaj.news" target="_blank"><img src="img/ads1.gif"></a></span>
+	</div>
+</div>
+
+<div id="theblogservicesadsheadline1">
+	<span style="color:#fff;font-size:13px;font-weight:bold;text-shadow:black 0.1em 0.1em 0.1em;float:right;padding-top:3px;padding-right:10px">
+		<a href="#" onClick="getValuee()">close(x)</a>
+	</span>
+	<div id="theblogservicesflotads1">
+		<span style="color:#fff;font-size:13px;font-weight:bold;text-shadow:black 0.1em 0.1em 0.1em"><a href="https://itunes.apple.com/us/app/medhaj-news/id953009718?mt=8" target="_blank"><img src="img/ads-apple.gif"></a></span>
+	</div>
+</div>
+      
+ <div class="container b" style=" background:#FFFFFF;">
+ <div class="row">
+ 		<div class="col-lg-14 col-md-14 col-sm-12 col-xs-12" style="">
+           <div class="row" style="">
+                <div class="row" style="" >
+                    <div class="col-lg-12 col-md-12" style="">
+                    <div class="col-lg-5 col-md-5" style=" ">
+                          <a href="index.php" style="text-decoration: none;"><img src="res/logo1.png" width="" /></a> <span style='color: #000; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px;margin-bottom:0px;margin-top:10px;font-style:italic'><br></span>					</div>
+<div class="col-lg-6 col-md-6 hidden-xs hidden-sm" style="margin-top:20px; margin:0px; font-size:20px;">
+<!--  header Center space   -->
+<div style="height:90px; width:600px;margin-top:0px; padding-top:0px; color:#000000;"><img src="res/banner_ads.jpg" height="120" class="img-responsive" ></div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+          
+            <div class="row" style="">
+                <ul class="nav nav-tabs  hidden-sm hidden-xs" style="border:#e6e6e6 solid 1px; color:#000000; height:45px; ">
+<li role="presentation"><a href="index.php" style="color:#000000;border:#BCBABA solid 1px;"><span class="glyphicon glyphicon-home" ></span> </a></li>
+<li role="presentation"><a href="your_new.php" style="color:#000000; border:#BCBABA solid 1px;">Your News</a></li>
+
+   <li role="presentation"  style=" " ><a href="category.php?cat=31" style="color:#000000; border:#BCBABA solid 1px;">उत्तर प्रदेश और हिंदी भाषी इलाके 	</a></li>
+     <li role="presentation"  style=" " ><a href="category.php?cat=25" style="color:#000000; border:#BCBABA solid 1px;">India</a></li>
+     <li role="presentation"  style=" " ><a href="category.php?cat=69" style="color:#000000; border:#BCBABA solid 1px;">Science & Technology</a></li>
+     <li role="presentation"  style=" " ><a href="category.php?cat=30" style="color:#000000; border:#BCBABA solid 1px;">World</a></li>
+     <li role="presentation"  style=" " ><a href="category.php?cat=68" style="color:#000000; border:#BCBABA solid 1px;">Sports</a></li>
+     <li role="presentation"  style=" " ><a href="category.php?cat=76" style="color:#000000; border:#BCBABA solid 1px;">From the States</a></li>
+         <li role="presentation" class="dropdown">
+                    	<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false" style="color:#000000; border:#BCBABA solid 1px;"><span class="glyphicon glyphicon-chevron-down"></span></a>
+                        
+                        <ul class="dropdown-menu" role="menu">
+                       <li role='presentation'><a role='presentation'  style='color:#000000'  href='category.php?cat=77' > Power - The Energy</a></li><li role='presentation'><a role='presentation'  style='color:#000000'  href='category.php?cat=24' > Political Buzz</a></li><li role='presentation'><a role='presentation'  style='color:#000000'  href='category.php?cat=67' > Business & Economy</a></li><li role='presentation'><a role='presentation'  style='color:#000000'  href='category.php?cat=33' > Entertainment & Lifestyle</a></li>                    </ul>
+                    </li>              
+                </ul>
+                <!-- Stacked list of category --> 
+                <ul class="nav">
+                    <li>
+                        <button id="btn1" class="hidden-lg hidden-md btn blockquote-reverse" style="background-color: #969999; float: right;" onClick="f1();">
+                            <img src="res/glyphicons_113_justify.png"/>
+                        </button>
+                         <button id="btn2" class="hidden-lg hidden-md btn blockquote-reverse" style="background-color: #969999; float: right;" onClick="f2();">
+                            <img src="res/glyphicons_113_justify.png"/> 
+                        </button>
+                       
+                    </li>
+                </ul>
+                <ul id="ul2" class="nav  nav-stacked hidden-lg hidden-md" style="color:#000000;	">
+       </ul>
+            </div>
+   			<div class="row" style="margin-top:5px;">
+       
+ <div class='visible-lg visible-md just-in2 well' style='width:100%; height:40px; padding: 0px; word-break: break-all; background:url(res/cream_bg.jpg) repeat-x; '>
+   
+   <ul id="js-news" class="js-hidden">
+        <li class="news-item"><a href="article.php?article=7054">रैना की शादी में पहुंचे कैप्टन कूल एम एस धोनी और उनकी पत्नी साक्षी</a></li>
+    
+        <li class="news-item"><a href="article.php?article=7053">गोवा कांड के बाद: दिल्ली के कई शोरूम में पुलिस का सर्च ऑपरेशन</a></li>
+    
+        <li class="news-item"><a href="article.php?article=7052">उत्तर प्रदेश - आईजी आशुतोष पाण्डेय ने किया तेल के खेल का खुलासा, रोजाना हजारों लीटर तेल इंडियन ऑयल की पाइपलाइन को ड्रील करते थे हजारों लीटर तेल की चोरी, दो गिरफ्तार</a></li>
+    
+        <li class="news-item"><a href="article.php?article=7051">You give up a gas subsidy and I will channel it to the poor and the needy, and thats how we shall save a household: PM Modi</a></li>
+    
+        <li class="news-item"><a href="article.php?article=7050">White revolution for milk, blue revolution for the seas, green revolution for the grains and saffron for energy revolution: PM</a></li>
+    
+        <li class="news-item"><a href="article.php?article=7049">We have 4 colors in our flag and we want four revolutions to take the nation forward: PM Modi</a></li>
+    
+    </ul>
+   </div>
+   </div>
+   </div></div><link type="text/css" rel="stylesheet" href="themes/base.css"/>
+<link type="text/css" rel="stylesheet" href="themes/default/theme.css"/>
+<script type="text/javascript" src="themes/jquery.accessible-news-slider.js"></script>
+ <script type="text/javascript">
+// when the DOM is ready, convert the feed anchors into feed content
+jQuery(document).ready(function()
+	{
+	jQuery('#newsslider').accessNews({
+	});
+	jQuery('#newsslider2').accessNews({
+		title : "",
+		subtitle:"",
+		speed : "slow",
+		slideBy : 4,
+		slideShowInterval: 100000,
+		slideShowDelay: 100000
+	});
+});
+</script>
+ <title>medhajnews-Home</title>
+<meta name="keywords" content="recent, news, new, articles, categories, category,  live, exclusive, exclusively, our news, your news, public journalism" >
+<meta name="description" content="All the recent activities reported by the journalists and the public, we promote public journalism." >
+<div class="row" style="">
+<!--------------------------------------center panel------------------------------------------------------>
+<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12" style="margin:0px; padding:0 5px 5px 5px;  "> 
+ <!-- *****************************Latest news Section********************************************** -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  style=" padding:0px; border:#B2AFAF solid 1px; border-radius:5px; margin-bottom:5px; ">
+         <div class="well" style="color:#333; height:40px; padding:9px; margin:0; " ><h4 style="margin:0; padding:0;">Latest News</h4></div>
+         	<ul id="newsslider" style="">
+         			<li>
+         				
+            	<a href="article.php?article=13308&locale=hi"><img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19106/v320x159_IMG-20150403-WA0014.jpg' width="150" height="150" alt="Medhaj News" /></a>
+				<h3><strong><a href="article.php?article=13308&locale=hi">कानपुर पुलिस ने किया तेल के खेल का बड़ा खुलासा</strong> </a> </h3>
+				<p>कानपुर।<br />
+<br />
+हमारे देश में पेट्रोल की घटती बढ़ती कीमतों को लेकर हमेशा राजनीती होती रहती है यहाँ तक इसकी कीमतों के चक्कर में कभी-कभी सरकारों की किरकरी तक हो जाती है लेकिन आपको शायद यह जानकारी कभी नहीं होती होगी की हमारे यहाँ पेट्रोल चोरो के ऐसे-ऐसे गैंग है जो सीधे-सीधे इंडियन आयल की पाइप लाइन से ही लाखो लीटर पेट्रोल चुरा लेते है ऐसे ही एक  गैंग को आज कानपुर पुलिस ने जब पेट्रोल चोरी में टैंक के साथ पकड़ा तो यह जानकार भौचक्की रह गई की इस गैंग के पैतीस टैंकर पेट्रोल चोरी में...&raquo; <strong>
+           <a href="article.php?article=13308&locale=hi"> read more </a> </strong></p>
+              
+		</li>
+        		<li>
+         				
+            	<a href="article.php?article=13308&locale=hi"><img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19109/v320x159_IMG-20150403-WA0005.jpg' width="150" height="150" alt="Medhaj News" /></a>
+				<h3><strong><a href="article.php?article=13308&locale=hi">कानपुर पुलिस ने किया तेल के खेल का बड़ा खुलासा</strong> </a> </h3>
+				<p>कानपुर।<br />
+<br />
+हमारे देश में पेट्रोल की घटती बढ़ती कीमतों को लेकर हमेशा राजनीती होती रहती है यहाँ तक इसकी कीमतों के चक्कर में कभी-कभी सरकारों की किरकरी तक हो जाती है लेकिन आपको शायद यह जानकारी कभी नहीं होती होगी की हमारे यहाँ पेट्रोल चोरो के ऐसे-ऐसे गैंग है जो सीधे-सीधे इंडियन आयल की पाइप लाइन से ही लाखो लीटर पेट्रोल चुरा लेते है ऐसे ही एक  गैंग को आज कानपुर पुलिस ने जब पेट्रोल चोरी में टैंक के साथ पकड़ा तो यह जानकार भौचक्की रह गई की इस गैंग के पैतीस टैंकर पेट्रोल चोरी में...&raquo; <strong>
+           <a href="article.php?article=13308&locale=hi"> read more </a> </strong></p>
+              
+		</li>
+        		<li>
+         				
+            	<a href="article.php?article=13308&locale=hi"><img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19111/v320x159_IMG-20150403-WA0006.jpg' width="150" height="150" alt="Medhaj News" /></a>
+				<h3><strong><a href="article.php?article=13308&locale=hi">कानपुर पुलिस ने किया तेल के खेल का बड़ा खुलासा</strong> </a> </h3>
+				<p>कानपुर।<br />
+<br />
+हमारे देश में पेट्रोल की घटती बढ़ती कीमतों को लेकर हमेशा राजनीती होती रहती है यहाँ तक इसकी कीमतों के चक्कर में कभी-कभी सरकारों की किरकरी तक हो जाती है लेकिन आपको शायद यह जानकारी कभी नहीं होती होगी की हमारे यहाँ पेट्रोल चोरो के ऐसे-ऐसे गैंग है जो सीधे-सीधे इंडियन आयल की पाइप लाइन से ही लाखो लीटर पेट्रोल चुरा लेते है ऐसे ही एक  गैंग को आज कानपुर पुलिस ने जब पेट्रोल चोरी में टैंक के साथ पकड़ा तो यह जानकार भौचक्की रह गई की इस गैंग के पैतीस टैंकर पेट्रोल चोरी में...&raquo; <strong>
+           <a href="article.php?article=13308&locale=hi"> read more </a> </strong></p>
+              
+		</li>
+        		<li>
+         				
+            	<a href="article.php?article=13307&locale=hi"><img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19105/v320x159_india-nepal_flags.jpg' width="150" height="150" alt="Medhaj News" /></a>
+				<h3><strong><a href="article.php?article=13307&locale=hi">विदेश सचिव जयशंकर और नेपाल के विदेश सचिव के बीच द्विपक्षीय वार्ता</strong> </a> </h3>
+				<p>काठमांठू।  <br />
+<br />
+दक्षिण एशियाई क्षेत्रीय सहयोग संगठन (दक्षेस) देशों की यात्रा के क्रम में काठमांडू पहुंचे भारतीय विदेश सचिव एस. जयशंकर ने नेपाल के विदेश सचिव बैरागी के साथ द्विपक्षीय बातचीत की और नेपाल और भारत की संयुक्त् परियोजनाओं के विकास की समीक्षा की। दोनों ने द्विपक्षीय हितों को पूरा करने वाली परियोजनाओं के साथ साथ (दक्षेस) सहित क्षेत्रीय एवं वैश्विक मसलों पर भी चर्चा की। श्री बैरागी ने संवाददाताओं को बताया कि दोनों पक्षों ने नेपाल और भारत के बीच गत वर्ष...&raquo; <strong>
+           <a href="article.php?article=13307&locale=hi"> read more </a> </strong></p>
+              
+		</li>
+        		<li>
+         				
+            	<a href="article.php?article=13306&locale=hi"><img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19104/v320x159_7.jpg' width="150" height="150" alt="Medhaj News" /></a>
+				<h3><strong><a href="article.php?article=13306&locale=hi">केन्या विश्वविद्यालय हमले में मृतकों की संख्या बढ़ने की आशंका</strong> </a> </h3>
+				<p>नैरोबी। <br />
+उत्तर पूर्वी केन्या के गरिसा विश्वविद्यालय परिसर में सोमालिया के कुख्यात आतंकवादी संगठन अल शबाब के हमले में मृतकों की संख्या 147 से काफी अधिक बढ़ने की आशंका है। इस हमले में 79 छात्र घायल हुए थे। आधिकारिक एवं मेडिकल सूत्रों के हवाले से मिली जानकारी के अनुसार लगभग 150 लोग मारे गये हैँ और कम से कम 79 घायल हुए हैँ लेकिन अभी कई छात्र और शिक्षक लापता हैं या उनके बारे में अभी पता नहीं चल पाया है, उनकी संख्या को देखते हुए मृतकों की संख्या बढ़ने की आशंका जताई जा रही है।...&raquo; <strong>
+           <a href="article.php?article=13306&locale=hi"> read more </a> </strong></p>
+              
+		</li>
+        		<li>
+         				
+            	<a href="article.php?article=13305&locale=hi"><img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19103/v320x159_saudi_arabia_flag.jpg' width="150" height="150" alt="Medhaj News" /></a>
+				<h3><strong><a href="article.php?article=13305&locale=hi">सऊदी अरब ने ईरान के साथ परमाणु समझौते का स्वागत किया</strong> </a> </h3>
+				<p>रियाद। <br />
+सऊदी अरब ने ईरान के साथ किए गये परमाणु समझौते का स्वागत किया है और आशा व्यक्त की है कि ईरान के साथ अंतिम समझौते से इस देश का परमाणु विवाद समाप्त हो सकेगा और इससे क्षेत्र तथा विश्व का स्थिरता और सुरक्षा सुनिश्चित हो सकेगी। सऊदी अरब के शाह सलमान ने यह बात अमेरिका के राष्ट्रपति बराक ओबामा से टेलीफोन पर कही। <br />
+<br />
+श्री ओबामा ने समझौते के बाद सऊदी अरब के शाह को टेलीफोन किया था। सऊदी अरब पहले ईरान के परमाणु कार्यक्रम का कट्टर आलोचक रहा है और उसके शाह अब्दुल्ला ने एक...&raquo; <strong>
+           <a href="article.php?article=13305&locale=hi"> read more </a> </strong></p>
+              
+		</li>
+        		<li>
+         				
+            	<a href="article.php?article=13304&locale=hi"><img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19102/v320x159_vasundhra_raje.JPG' width="150" height="150" alt="Medhaj News" /></a>
+				<h3><strong><a href="article.php?article=13304&locale=hi">प्रवासी राजस्थानी बने निवेश के पायनियर : मुख्यमंत्री</strong> </a> </h3>
+				<p>जयपुर। <br />
+मुख्यमंत्री वसुंधरा राजे ने प्रवासी राजस्थानियों का आह्वान किया है कि वे राज्य में आकर निवेश करें और यहां पायनियर बनें1 भाजपा राष्ट्रीय कार्यकारिणी की बैठक में शामिल होने वेंगलूरु गई श्रीमती राजे ने आज प्रवासी राजस्थानियों से मुलाकात के दौरान यह बात कही। श्रीमती राजे ने कहा कि राजस्थानी जिस भी राज्य में गए हैं वहां अग्रणी उद्यमियों के रूप में अपनी पहचान बनाई हैं। अब समय आ गया है कि प्रवासी राजस्थानी अपने मूल प्रदेश में निवेश कर यहां के विकास में...&raquo; <strong>
+           <a href="article.php?article=13304&locale=hi"> read more </a> </strong></p>
+              
+		</li>
+        		<li>
+         				
+            	<a href="article.php?article=13303&locale=hi"><img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19101/v320x159_allhabad_high_court.jpg' width="150" height="150" alt="Medhaj News" /></a>
+				<h3><strong><a href="article.php?article=13303&locale=hi">अभियोजन निदेशालय बनाये जाने की माँग वाली जनहित याचिका खारिज</strong> </a> </h3>
+				<p>लखनऊ। <br />
+उत्तर प्रदेश में अभियोजन निदेशालय बनाये जाने की माँग वाली जनहित याचिका को इलाहाबाद उच्च न्यायालय की लखनऊ पीठ ने आज खारिज कर दिया है। अदालत ने कहा कि ऐसे मामलों में जनहित याचिका पोषणीय नहीं है। यह आदेश न्यायमूर्ति एस एन शुक्ला और न्यायमूर्ति राजन राव की खण्डपीठ ने याची प्रेम प्रकाश की ओर से दायर जनहित याचिका को खारिज करते हुए दिया। <br />
+	<br />
+जनहित याचिका दायर कर कहा गया था कि प्रदेश में अभियोजन निदेशालय बनाया जाए क्योंकि सी आर पी सी की धारा 25 के तहत अभियोजन...&raquo; <strong>
+           <a href="article.php?article=13303&locale=hi"> read more </a> </strong></p>
+              
+		</li>
+        		<li>
+         				
+            	<a href="article.php?article=13302&locale=hi"><img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19100/v320x159_INLD_HARYANA_PARTY_LOGO.jpg' width="150" height="150" alt="Medhaj News" /></a>
+				<h3><strong><a href="article.php?article=13302&locale=hi">भाजपा झूठे वादे कर सत्ता में आई .कांग्रेस के घोटालों का पर्दाफाश करेंगे : इनेलो</strong> </a> </h3>
+				<p>चंडीगढ़। <br />
+हरियाणा विधानसभा में विपक्ष के नेता और इंडियन नेशनल लोकदल.इनेलो. नेता अभय सिंह चौटाला ने भारतीय जनता पार्टी.भाजपा. पर आज आरोप लगाया कि वह चुनाव घोषणापत्र में झूठे वादे कर सत्ता में आअी है और अगर उसने छह माह के भीतर अपने वादे पूरे नहीं किये तो पार्टी उसके खिलाफ सड़कों पर उतरेगी। श्री चौटाला और प्रदेशाध्यक्ष अशोक अरोड़ा ने यमुनानगर में पार्टी कार्यकर्ताओं को सम्बोधित करते हुये कहा कि भाजपा को राज्य में सत्ता में आये पांच महीने हो चुके हैं तथा अभी तक उसने...&raquo; <strong>
+           <a href="article.php?article=13302&locale=hi"> read more </a> </strong></p>
+              
+		</li>
+        		<li>
+         				
+            	<a href="article.php?article=13300&locale=hi"><img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19098/v320x159_raj_babbar.jpg' width="150" height="150" alt="Medhaj News" /></a>
+				<h3><strong><a href="article.php?article=13300&locale=hi">राज बब्बर ने गिरिराज को मानसिक रूप से बीमार बताया, इलाज का खर्चा उठाने को तैयार</strong> </a> </h3>
+				<p>पटना। <br />
+कांग्रेस के राज्यसभा सदस्य और फिल्म अभिनेता राज बब्बर ने केन्द्रीय मंत्री और भारतीय जनता पार्टी :भाजपा: के नेता गिरिराज सिंह को मानसिक रूप से बीमार व्यक्ति बताया और कहा कि मानवता के नाते वह उनके इलाज का पूरा खर्च उठाने को तैयार हैं। बिहार के छपरा में एक गैर राजनीतिक कार्यक्रम में हिस्सा लेने आये श्री राज बब्बर ने आज यहां हवाईअड्डे पर पत्रकारों से बातचीत में कहा कि श्री गिरिराज सिंह मानसिक रूप से बीमार हैं और उनका इलाज आगरा या रांची के पागलखाने में कराया...&raquo; <strong>
+           <a href="article.php?article=13300&locale=hi"> read more </a> </strong></p>
+              
+		</li>
+        		<li>
+         				
+            	<a href="article.php?article=13299&locale=hi"><img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19096/v320x159_crime_logo.jpg' width="150" height="150" alt="Medhaj News" /></a>
+				<h3><strong><a href="article.php?article=13299&locale=hi">बम बनाने के क्रम में हुए ब्लास्ट का फरार आरोपी कुंदन गिरफ्तार, पूछताछ जारी</strong> </a> </h3>
+				<p>पटना। <br />
+बिहार में राजधानी पटना के अगमकुंआ थाना के एमआईजी कॉलनी में बम बनाने के क्रम में हुए ब्लास्ट के मामले में फरार आरोपी कुंदन को आज पटना जिले की सीमा से लगे नालंदा के एकंगसराय क्षेत्र से गिरफ्तार कर पुलिस उससे कई महत्वपूर्ण सुराग हासिल करने में लगी है । पटना के वरिष्ठ पुलिस अधीक्षक जितेन्द्र राणा ने यहां बताया कि पिछले 30 मार्च को राजधानी के भूतनाथ रोड़ स्थित एमआईजी कॉलनी के फ्लैट नम्बर 21 में बम बनाने के क्रम में ब्लास्ट हो गया था और उसके बाद से ही कुंदन और उसके...&raquo; <strong>
+           <a href="article.php?article=13299&locale=hi"> read more </a> </strong></p>
+              
+		</li>
+        		<li>
+         				
+            	<a href="article.php?article=13298&locale=hi"><img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19095/v320x159_6.jpg' width="150" height="150" alt="Medhaj News" /></a>
+				<h3><strong><a href="article.php?article=13298&locale=hi">आजम ने दी खुले मंच से विरोधियों को चेतावनी</strong> </a> </h3>
+				<p>रामपुर। <br />
+उत्तर प्रदेश के काबीना मंत्री और समाजवादी पार्टी के वरिष्ठ नेता मोहम्मद आजम खां ने अपने विरोधियों को सुधर जाने की चेतावनी देते हुए कहा कि इतिहास बनते देर नहीं लगती। श्री खां आज यहां आर्य भट्ट प्लेनिटेरियम में खगोल विज्ञान गैलरी के उद्घाटन के बाद जनसभा को संबोधित कर रहे थे। उन्होंने राज्यपाल का नाम लिए बगैर उनकी जमकर आलोचना की। उन्होंने आरोप लगाया कि कुछ विरोधी लोग अपराधियों को संरक्षण दे रहे हैं। <br />
+<br />
+उन्होंने कहा कि संवैधानिक पदों पर बैठने वालों को...&raquo; <strong>
+           <a href="article.php?article=13298&locale=hi"> read more </a> </strong></p>
+              
+		</li>
+        	  </ul>
+      </div>
+ <!-- *************************************end Latest news Section ********************************************** -->
+
+  <!-- *****************************************Your news Section********************************************** -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  style=" padding:0px; border:#B2AFAF solid 1px; border-radius:5px; margin-bottom:5px; ">
+         <div class="well" style="color:#333; height:40px; padding:9px; margin:0; " ><h4 style="margin:0; padding:0;">Your News</h4></div>
+         	<ul id="newsslider2" style="">
+         			<li>
+         				<img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19099/v320x159_law.JPG' width="150" height="150" alt="Medhaj News" />
+			<h3><strong><a href="article.php?article=13301&locale=hi">न्यायिक सुधार और मुकदमों के बढ़ते बोझ पर न्यायाधीशों का मंथन</a></strong></h3>
+	<p>
+    
+	नयी दिल्ली। <br />
+देश में न्यायिक सुधारों के मार्ग में आ रही बाधाओं और उनके विभिन्न पहलुओं पर विचार -विमर्श के लिए सभी 24 उच्च न्यायालयों के मुख्य न्यायाधीशों और उच्चतम न्यायालय के न्यायाधीशों का दो-दिवसीय सम्मेलन आज शुरू हुआ, जिसकी अध्यक्षता शीर्ष अदालत के मुख्य न्यायाधीश एच एल दत्तू ने की। सम्मेलन में देश की न्यायपालिका के बुनियादी ढांचे को सुधारने, मुकदमों के बढ़ते बोझ से पार पाने और आम आदमी को सुलभ और किफायती न्याय दिलाने के विभिन्न पहलुओं पर विस्तार से चर्चा की 
+     &raquo;<strong>
+   <a href="article.php?article=13301&locale=hi">
+   read more</a>
+   </strong></p>
+		</li>
+        		<li>
+         				<img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19089/v320x159_104_yr_teen.jpg' width="150" height="150" alt="Medhaj News" />
+			<h3><strong><a href="article.php?article=13292&locale=en">A teenager with body of 104 year old person, died</a></strong></h3>
+	<p>
+    
+	London<br />
+ <br />
+<br />
+A 17-year-old UK girl, who was suffering from an incurable premature ageing disease that gave her the body of a 104-year-old, has died. <br />
+<br />
+Teenager Hayley Okines, born with Hutchinson-Gilford progeria syndrome (HGPS), was told she would never live past the age of 13 after being diagnosed with the disease but lived four years longer before breat 
+     &raquo;<strong>
+   <a href="article.php?article=13292&locale=en">
+   read more</a>
+   </strong></p>
+		</li>
+        		<li>
+         				<img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19063/v320x159_switezerland_flag.jpg' width="150" height="150" alt="Medhaj News" />
+			<h3><strong><a href="article.php?article=13268&locale=hi">भारत में ठहरने पर खर्च करने में स्विट्लरलैंड के यात्री अव्वल</a></strong></h3>
+	<p>
+    
+	नयी दिल्ली। <br />
+भारत आनेवाले विदेशी पर्यटकों में स्विट्जरलैंड के पर्यटक होटलों में ठहरने के लिए सबसे अधिक खर्च करते हैं। ऑनलाइन होटल बुक करने की सुविधा देनेवाली कंपनी होटल्स डॉट कॉम द्वारा जारी होटल प्राइस इंडेक्स (एचपीआई) के अनुसार स्विट्जरलैंड के यात्रियों ने पिछले साल भारत में ठहरने के लिए औसतन 8261 रुपये खर्च किया जो 2013 के औसत खर्च से 11 प्रतिशत अधिक है। रिपोर्ट में शामिल सभी अठारह देशों के यात्रियों ने 2013 के मुकाबले पिछले साल भारत में ठहरने के लिए अधिक खर्च किया। 
+     &raquo;<strong>
+   <a href="article.php?article=13268&locale=hi">
+   read more</a>
+   </strong></p>
+		</li>
+        		<li>
+         				<img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19049/v320x159_maryam.jpg' width="150" height="150" alt="Medhaj News" />
+			<h3><strong><a href="article.php?article=13256&locale=en">I tell my friends, never fight on religious basis, says Maryam </a></strong></h3>
+	<p>
+    
+	Mumbai<br />
+<br />
+<br />
+Twelve-year-old Maryam Siddiqui, who made headlines after winning a 'Gita competition' in Mumbai today said, she was inspired by her parents' views on the equality of all religions.<br />
+ <br />
+"My parents have inspired me that all relations and religions are equal. Humanity is a religion which has been divided. I also tell my friends circle that we are  
+     &raquo;<strong>
+   <a href="article.php?article=13256&locale=en">
+   read more</a>
+   </strong></p>
+		</li>
+        		<li>
+         				<img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19032/v320x159_google_search_2.jpg' width="150" height="150" alt="Medhaj News" />
+			<h3><strong><a href="article.php?article=13239&locale=en">Now, one will have to pay for searching on Google! </a></strong></h3>
+	<p>
+    
+	New Delhi<br />
+<br />
+<br />
+Google, a pioneer of internet services has introduced a path-breaking business model. It has become the first company to charge for its search engine service. This means that you will have to pay for searching content on Internet using world's most loved search engine.<br />
+<br />
+Speaking about the latest development, Patrick Douche, Senior Vice Presi 
+     &raquo;<strong>
+   <a href="article.php?article=13239&locale=en">
+   read more</a>
+   </strong></p>
+		</li>
+        		<li>
+         				<img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19023/v320x159_drone.jpg' width="150" height="150" alt="Medhaj News" />
+			<h3><strong><a href="article.php?article=13231&locale=en">Now Drones will help UP police to disperse crowd gatherings</a></strong></h3>
+	<p>
+    
+	Lucknow<br />
+<br />
+ <br />
+Drones will soon perform a special task in the state capital apart from functioning as eyes in the sky with the Lucknow Police planning to use them for dispersing mobs. <br />
+<br />
+These little unmanned mini-choppers are already in use in various sensitive parts of Uttar Pradesh for taking aerial snaps, but for the first time the hi-tech gadget will be 
+     &raquo;<strong>
+   <a href="article.php?article=13231&locale=en">
+   read more</a>
+   </strong></p>
+		</li>
+        		<li>
+         				<img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19017/v320x159_jay_prda.jpg' width="150" height="150" alt="Medhaj News" />
+			<h3><strong><a href="article.php?article=13228&locale=hi">सौंन्दर्य और अभिनय का अनूठा संगम है जयाप्रदा </a></strong></h3>
+	<p>
+    
+	जन्मदिन 3 अप्रैल के अवसर पर..<br />
+मुंबई <br />
+<br />
+बॉलीवुड में जया प्रदा का नाम उन गिनी-चुनी अभिनेत्रियों में हैं, जिनमें सौंदर्य और अभिनय का अनूठा संगम देखने को मिलता है। महान फिल्मकार सत्यजीत रे जयाप्रदा के सौंदर्य और अभिनय से इतने अधिक प्रभावित थे कि उन्होंने जयप्रदा को विश्व की सुंदरतम महिलाओं में एक माना था। <br />
+<br />
+सत्यजीत रे उन्हें लेकर एक बांग्ला फिल्म बनाने के लिये इच्छुक थे लेकिन स्वास्थ्य खराब रहने के कारण उनकी योजना अधूरी रह गयी। जया प्रदा, मूल नाम ललिता रानी का जन्म 
+     &raquo;<strong>
+   <a href="article.php?article=13228&locale=hi">
+   read more</a>
+   </strong></p>
+		</li>
+        		<li>
+         				<img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19015/v320x159_ganga_bridge_-_indian_express.jpg' width="150" height="150" alt="Medhaj News" />
+			<h3><strong><a href="article.php?article=13225&locale=en">Pragati meeting: Bureaucrats caught hiding irregularities in work </a></strong></h3>
+	<p>
+    
+	New Delhi <br />
+Irregularities in work were caught by Prime Minister Narendra during Pragati’s (Proactive Governance and Timely Implementation) first meeting last week. <br />
+<br />
+During video conferencing with chief secretaries of different states, PM Modi took stock of the progress work of the pending work of a bridge on the river Ganga. The Bihar chief secretary s 
+     &raquo;<strong>
+   <a href="article.php?article=13225&locale=en">
+   read more</a>
+   </strong></p>
+		</li>
+        		<li>
+         				<img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19016/v320x159_public_toilets.jpg' width="150" height="150" alt="Medhaj News" />
+			<h3><strong><a href="article.php?article=13224&locale=en">Odisha leading the other states in construction of public toilets</a></strong></h3>
+	<p>
+    
+	New Delhi<br />
+<br />
+<br />
+Odisha is the leader in construction of community toilets while Gujarat is ahead of other states in building of household toilets, according to the Urban Development Ministry data.<br />
+     <br />
+As per the data, 2,70,069 household toilets were constructed across the country during the last financial year, out of which Gujarat accounted for 60 per ce 
+     &raquo;<strong>
+   <a href="article.php?article=13224&locale=en">
+   read more</a>
+   </strong></p>
+		</li>
+        		<li>
+         				<img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/18996/v320x159_2050_religaious_telly_01.jpg' width="150" height="150" alt="Medhaj News" />
+			<h3><strong><a href="article.php?article=13208&locale=hi">'2050 तक भारत में होंगे सबसे ज्यादा मुस्लिम', तीसरे नंबर पर होंगे हिंदू</a></strong></h3>
+	<p>
+    
+	वॉशिंगटन<br />
+<br />
+साल 2050 तक भारत दुनियां का सर्वाधिक मुस्लिम आबादी वाला देश हो जाएंगा,  <br />
+दुनिया की कुल आबादी में हिंदुओं की संख्या तीसरे नंबर पर होगी। पीयू रिसर्च सेंटर की ओर से की गई स्टडी में इस बात का खुलासा किया गया है। <br />
+<br />
+स्टडी के मुताबिक मुस्लिम आबादी के मामले में भारस इंडोनेशिया को भी पीछे छोड़कर मुस्लिम आबादी के मामले में दुनिया का सबसे बड़ा देश बन जाएगा। रिपोर्ट में बताया गया है कि वर्ष 2050 में भी भारत में सबसे बड़ी आबादी हिंदुओं की होगी।<br />
+<br />
+2050 तक 1.4 अरब होंगे हिंदू<br />
+<br />
+पीयू 
+     &raquo;<strong>
+   <a href="article.php?article=13208&locale=hi">
+   read more</a>
+   </strong></p>
+		</li>
+        		<li>
+         				<img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/18959/v320x159_cricket_ground.jpg' width="150" height="150" alt="Medhaj News" />
+			<h3><strong><a href="article.php?article=13175&locale=en">First retractable roof Cricket Stadium to come up soon</a></strong></h3>
+	<p>
+    
+	Yorkshire<br />
+<br />
+<br />
+Cricket may soon erase Duckworth and Lewis from its memory. Rain stoppages and abandoned matches too may become part of distant memory. <br />
+<br />
+All this if Yorkshire's plans to build a retractable roof over Headingly spreads to cricket stadiums all over.<br />
+<br />
+According to a Cricinfo report, Yorkshire have planned to install the world's first retract 
+     &raquo;<strong>
+   <a href="article.php?article=13175&locale=en">
+   read more</a>
+   </strong></p>
+		</li>
+        		<li>
+         				<img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/18949/v320x159_pgi_lucknow.jpg' width="150" height="150" alt="Medhaj News" />
+			<h3><strong><a href="article.php?article=13166&locale=en">यूपी में एक करोड़ 12 लाख की आबादी पर मात्र एक हृदयरोग विशेषज्ञ</a></strong></h3>
+	<p>
+    
+	लखनऊ <br />
+<br />
+<br />
+उत्तर प्रदेश में करीब एक करोड़ 12 लाख की आबादी पर मात्र एक विशेषज्ञ हृदयरोग चिकित्सक हैं। चिकित्सा क्षेत्र के जानकारों का दावा है क 
+     &raquo;<strong>
+   <a href="article.php?article=13166&locale=en">
+   read more</a>
+   </strong></p>
+		</li>
+        	  </ul>
+      </div>
+  <!-- *************************************end Your news Section ********************************************** -->
+                
+      <!-- *****************************************Category news Section********************************************** -->
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  style=" padding:0px; border:#B2AFAF solid 1px; border-radius:5px; margin-bottom:10px;">
+         <div class="well" style="color:#333;height:40px; padding:9px; margin:0;"><h4 style="padding:0; margin:0;"><a href='category.php?cat=31' style="text-decoration:none; color:black;">उत्तर प्रदेश और हिंदी भाषी इलाके 	 </a> </h4></div>
+         <div align="center" class="col-lg-7 col-md-7 col-sm-12 hidden-xs"  style="margin-top:5px;border:#B0ADAE solid 1px; padding:10px 0 10px 0; border-radius:5px;	 ">
+         		 <img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19101/v320x159_allhabad_high_court.jpg' width="450" height="300" class="img-round">
+         </div>
+
+          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12" style="padding:5px;">
+          
+           <div class="panel panel-default">
+      <div class="panel-heading" style="">Headlines</div>
+       <div class="list-group" style="overflow:auto; height:280px">
+         <a href='article.php?article=13308&&locale=hi' class='list-group-item'>कानपुर पुलिस ने किया तेल के खेल का बड़ा खुलासा</a><a href='article.php?article=13303&&locale=hi' class='list-group-item'>अभियोजन निदेशालय बनाये जाने की माँग वाली जनहित याचिका खारिज</a><a href='article.php?article=13300&&locale=hi' class='list-group-item'>राज बब्बर ने गिरिराज को मानसिक रूप से बीमार बताया, इलाज का खर्चा उठाने को तैयार</a><a href='article.php?article=13299&&locale=hi' class='list-group-item'>बम बनाने के क्रम में हुए ब्लास्ट का फरार आरोपी कुंदन गिरफ्तार, पूछताछ जारी</a><a href='article.php?article=13298&&locale=hi' class='list-group-item'>आजम ने दी खुले मंच से विरोधियों को चेतावनी</a><a href='article.php?article=13297&&locale=hi' class='list-group-item'>गुस्साये कारोबारी ने बीबी और बच्ची की हत्या के बाद खुद को मारी गोली</a><a href='article.php?article=13283&&locale=hi' class='list-group-item'>राजधानी एक्सप्रेस से चोरी का मुख्य आरोपी गिरफ्तार</a><a href='article.php?article=13263&&locale=hi' class='list-group-item'>नीतीश कुमार की सुरक्षा में चूक के मामले में तीन एएसआई समेत दस पुलिसकर्मी निलंबित</a>        </div>
+        </div>
+      </div>
+       <!-- ******************************************images Slider  ******************************************** -->		
+<div class="hidden-lg hidden-mdhidden-xs hidden-sm"  style=" padding:10px;  height:170px;">
+    <div style="border-top:#B2AFAF dotted 1px; width:100%;"></div>
+    <!-- Jssor Slider Begin -->
+    <!-- You can move inline styles to css file or css block. -->
+        <div id="" style="margin-top:10px;" align="center">
+        <img src='photos/nitish_kumar_6.jpg' height='100' > 
+        </div>       
+  <!-- ******************************************images Slider END ******************************************** --> </div>
+     </div>
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  style=" padding:0px; border:#B2AFAF solid 1px; border-radius:5px; margin-bottom:10px;">
+         <div class="well" style="color:#333;height:40px; padding:9px; margin:0;"><h4 style="padding:0; margin:0;"><a href='category.php?cat=25' style="text-decoration:none; color:black;">India </a> </h4></div>
+         <div align="center" class="col-lg-7 col-md-7 col-sm-12 hidden-xs"  style="margin-top:5px;border:#B0ADAE solid 1px; padding:10px 0 10px 0; border-radius:5px;	 ">
+         		 <img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19099/v320x159_law.JPG' width="450" height="300" class="img-round">
+         </div>
+
+          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12" style="padding:5px;">
+          
+           <div class="panel panel-default">
+      <div class="panel-heading" style="">Headlines</div>
+       <div class="list-group" style="overflow:auto; height:280px">
+         <a href='article.php?article=13307&&locale=hi' class='list-group-item'>विदेश सचिव जयशंकर और नेपाल के विदेश सचिव के बीच द्विपक्षीय वार्ता</a><a href='article.php?article=13296&&locale=hi' class='list-group-item'>गरीब माताओं की खातिर सम्पन्न लोग गैस सबसिडी छोडें : मोदी</a><a href='article.php?article=13290&&locale=en' class='list-group-item'>Air India starts direct evacuation from Yemen</a><a href='article.php?article=13288&&locale=hi' class='list-group-item'>दिल्ली में पार्टी की हार को तवज्जो नहीं दी शाह ने</a><a href='article.php?article=13285&&locale=en' class='list-group-item'>FIR registered againt shop owner after HRD minister spots CCTV camera in outlet</a><a href='article.php?article=13284&&locale=en' class='list-group-item'>CBI likely to send notice to AITC shortly</a><a href='article.php?article=13282&&locale=en' class='list-group-item'>PM addresses issues like Land Bill & Black Money during Bengaluru rally</a><a href='article.php?article=13282&&locale=hi' class='list-group-item'>चतुरंगी क्रांति से देश को ऊंचाई पर ले जाना चाहते हैं मोदी</a>        </div>
+        </div>
+      </div>
+       <!-- ******************************************images Slider  ******************************************** -->		
+<div class="hidden-lg hidden-mdhidden-xs hidden-sm"  style=" padding:10px;  height:170px;">
+    <div style="border-top:#B2AFAF dotted 1px; width:100%;"></div>
+    <!-- Jssor Slider Begin -->
+    <!-- You can move inline styles to css file or css block. -->
+        <div id="" style="margin-top:10px;" align="center">
+        <img src='photos/modi_in_bengaluru.jpg' height='100' > 
+        </div>       
+  <!-- ******************************************images Slider END ******************************************** --> </div>
+     </div>
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  style=" padding:0px; border:#B2AFAF solid 1px; border-radius:5px; margin-bottom:10px;">
+         <div class="well" style="color:#333;height:40px; padding:9px; margin:0;"><h4 style="padding:0; margin:0;"><a href='category.php?cat=69' style="text-decoration:none; color:black;">Science & Technology </a> </h4></div>
+         <div align="center" class="col-lg-7 col-md-7 col-sm-12 hidden-xs"  style="margin-top:5px;border:#B0ADAE solid 1px; padding:10px 0 10px 0; border-radius:5px;	 ">
+         		 <img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/18774/v320x159_varansi.jpg' width="450" height="300" class="img-round">
+         </div>
+
+          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12" style="padding:5px;">
+          
+           <div class="panel panel-default">
+      <div class="panel-heading" style="">Headlines</div>
+       <div class="list-group" style="overflow:auto; height:280px">
+         <a href='article.php?article=12976&&locale=hi' class='list-group-item'>इनफ़ोसिस : ‘वेतन वृद्धि' से अच्छे दिन आये!</a><a href='article.php?article=12935&&locale=hi' class='list-group-item'>यूरिया संयंत्रों को समान दर पर गैस की आपूर्ति का निर्णय</a><a href='article.php?article=12933&&locale=hi' class='list-group-item'>कैबिनेट का होम्योपैथी कानून में संशोधन का फैसला</a><a href='article.php?article=12749&&locale=hi' class='list-group-item'>गैस आधारित बिजली संयंत्रों में सुधार से बैंकों को होगा लाभ</a><a href='article.php?article=12627&&locale=en' class='list-group-item'>India launches AWACS programme, deals worth Rs 10,000 cr cleared</a><a href='article.php?article=12626&&locale=en' class='list-group-item'>The fourth satellite of IRNSS Constellation, IRNSS-1D launched</a><a href='article.php?article=12626&&locale=hi' class='list-group-item'>भारत के चौथे नेविगेशनल सैटलाइट IRNSS-1D का सफल प्रक्षेपण, PSLV-C27 के साथ अंतरिक्ष में भेजा गया सैटलाइट</a><a href='article.php?article=12536&&locale=en' class='list-group-item'>गूगल न्यूज़ है  नंबर वन  खबरी!</a>        </div>
+        </div>
+      </div>
+       <!-- ******************************************images Slider  ******************************************** -->		
+<div class="hidden-lg hidden-mdhidden-xs hidden-sm"  style=" padding:10px;  height:170px;">
+    <div style="border-top:#B2AFAF dotted 1px; width:100%;"></div>
+    <!-- Jssor Slider Begin -->
+    <!-- You can move inline styles to css file or css block. -->
+        <div id="" style="margin-top:10px;" align="center">
+        <img src='photos/google_news.jpg' height='100' > 
+        </div>       
+  <!-- ******************************************images Slider END ******************************************** --> </div>
+     </div>
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  style=" padding:0px; border:#B2AFAF solid 1px; border-radius:5px; margin-bottom:10px;">
+         <div class="well" style="color:#333;height:40px; padding:9px; margin:0;"><h4 style="padding:0; margin:0;"><a href='category.php?cat=30' style="text-decoration:none; color:black;">World </a> </h4></div>
+         <div align="center" class="col-lg-7 col-md-7 col-sm-12 hidden-xs"  style="margin-top:5px;border:#B0ADAE solid 1px; padding:10px 0 10px 0; border-radius:5px;	 ">
+         		 <img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19104/v320x159_7.jpg' width="450" height="300" class="img-round">
+         </div>
+
+          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12" style="padding:5px;">
+          
+           <div class="panel panel-default">
+      <div class="panel-heading" style="">Headlines</div>
+       <div class="list-group" style="overflow:auto; height:280px">
+         <a href='article.php?article=13307&&locale=hi' class='list-group-item'>विदेश सचिव जयशंकर और नेपाल के विदेश सचिव के बीच द्विपक्षीय वार्ता</a><a href='article.php?article=13306&&locale=hi' class='list-group-item'>केन्या विश्वविद्यालय हमले में मृतकों की संख्या बढ़ने की आशंका</a><a href='article.php?article=13305&&locale=hi' class='list-group-item'>सऊदी अरब ने ईरान के साथ परमाणु समझौते का स्वागत किया</a><a href='article.php?article=13277&&locale=hi' class='list-group-item'>इजरायल ने ईरान के साथ परमाणु समझौते की निन्दा की</a><a href='article.php?article=13246&&locale=en' class='list-group-item'>Egypt militant group claims responsibility for Sinai attack on soldiers</a><a href='article.php?article=13244&&locale=en' class='list-group-item'>Russia, Greece to discuss EU sanctions, economy in Moscow</a><a href='article.php?article=13234&&locale=en' class='list-group-item'>2nd Black box confirms Germanwings crash was deliberate: Investigators</a><a href='article.php?article=13232&&locale=en' class='list-group-item'>Saudi-led coalition airdrops arms to Aden forces</a>        </div>
+        </div>
+      </div>
+       <!-- ******************************************images Slider  ******************************************** -->		
+<div class="hidden-lg hidden-mdhidden-xs hidden-sm"  style=" padding:10px;  height:170px;">
+    <div style="border-top:#B2AFAF dotted 1px; width:100%;"></div>
+    <!-- Jssor Slider Begin -->
+    <!-- You can move inline styles to css file or css block. -->
+        <div id="" style="margin-top:10px;" align="center">
+        <img src='photos/hadi_-__read.navize.com' height='100' > 
+        </div>       
+  <!-- ******************************************images Slider END ******************************************** --> </div>
+     </div>
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  style=" padding:0px; border:#B2AFAF solid 1px; border-radius:5px; margin-bottom:10px;">
+         <div class="well" style="color:#333;height:40px; padding:9px; margin:0;"><h4 style="padding:0; margin:0;"><a href='category.php?cat=68' style="text-decoration:none; color:black;">Sports </a> </h4></div>
+         <div align="center" class="col-lg-7 col-md-7 col-sm-12 hidden-xs"  style="margin-top:5px;border:#B0ADAE solid 1px; padding:10px 0 10px 0; border-radius:5px;	 ">
+         		 <img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19078/v320x159_gary_kirstan.jpg' width="450" height="300" class="img-round">
+         </div>
+
+          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12" style="padding:5px;">
+          
+           <div class="panel panel-default">
+      <div class="panel-heading" style="">Headlines</div>
+       <div class="list-group" style="overflow:auto; height:280px">
+         <a href='article.php?article=13287&&locale=en' class='list-group-item'>Shashikant, Ashpreet, Rishabh, Muskan win AITA titles</a><a href='article.php?article=13281&&locale=hi' class='list-group-item'>युवराज से आईपीएल में दिल्ली करेगी राज: कर्स्टन</a><a href='article.php?article=13279&&locale=en' class='list-group-item'>Ajmal makes comeback, while Akmal Shehzad & Jamshed out of Pak squad</a><a href='article.php?article=13270&&locale=en' class='list-group-item'>Bar Association recommends reforms in legal system</a><a href='article.php?article=13269&&locale=en' class='list-group-item'>Hyd ready to host Fed Cup</a><a href='article.php?article=13267&&locale=en' class='list-group-item'>Indian Cricket is Safe Hand under Dalmiya: Ganguly</a><a href='article.php?article=13266&&locale=en' class='list-group-item'>Chandigarh beat Bihar in Junior National Hockey</a><a href='article.php?article=13265&&locale=en' class='list-group-item'>IPL: BCCI to conduct two-day workshop for match officials</a>        </div>
+        </div>
+      </div>
+       <!-- ******************************************images Slider  ******************************************** -->		
+<div class="hidden-lg hidden-mdhidden-xs hidden-sm"  style=" padding:10px;  height:170px;">
+    <div style="border-top:#B2AFAF dotted 1px; width:100%;"></div>
+    <!-- Jssor Slider Begin -->
+    <!-- You can move inline styles to css file or css block. -->
+        <div id="" style="margin-top:10px;" align="center">
+        <img src='photos/match_officials.jpg' height='100' > 
+        </div>       
+  <!-- ******************************************images Slider END ******************************************** --> </div>
+     </div>
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  style=" padding:0px; border:#B2AFAF solid 1px; border-radius:5px; margin-bottom:10px;">
+         <div class="well" style="color:#333;height:40px; padding:9px; margin:0;"><h4 style="padding:0; margin:0;"><a href='category.php?cat=76' style="text-decoration:none; color:black;">From the States </a> </h4></div>
+         <div align="center" class="col-lg-7 col-md-7 col-sm-12 hidden-xs"  style="margin-top:5px;border:#B0ADAE solid 1px; padding:10px 0 10px 0; border-radius:5px;	 ">
+         		 <img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19100/v320x159_INLD_HARYANA_PARTY_LOGO.jpg' width="450" height="300" class="img-round">
+         </div>
+
+          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12" style="padding:5px;">
+          
+           <div class="panel panel-default">
+      <div class="panel-heading" style="">Headlines</div>
+       <div class="list-group" style="overflow:auto; height:280px">
+         <a href='article.php?article=13304&&locale=hi' class='list-group-item'>प्रवासी राजस्थानी बने निवेश के पायनियर : मुख्यमंत्री</a><a href='article.php?article=13302&&locale=hi' class='list-group-item'>भाजपा झूठे वादे कर सत्ता में आई .कांग्रेस के घोटालों का पर्दाफाश करेंगे : इनेलो</a><a href='article.php?article=13294&&locale=en' class='list-group-item'>'Don't make new Ganga bridge as prestige issue': Sushil Modi</a><a href='article.php?article=13291&&locale=en' class='list-group-item'>UP CM writes to PM for Central relief for farmers</a><a href='article.php?article=13289&&locale=en' class='list-group-item'>2 killed in mudslide in north Kashmir</a><a href='article.php?article=13285&&locale=en' class='list-group-item'>FIR registered againt shop owner after HRD minister spots CCTV camera in outlet</a><a href='article.php?article=13284&&locale=en' class='list-group-item'>CBI likely to send notice to AITC shortly</a><a href='article.php?article=13282&&locale=en' class='list-group-item'>PM addresses issues like Land Bill & Black Money during Bengaluru rally</a>        </div>
+        </div>
+      </div>
+       <!-- ******************************************images Slider  ******************************************** -->		
+<div class="hidden-lg hidden-mdhidden-xs hidden-sm"  style=" padding:10px;  height:170px;">
+    <div style="border-top:#B2AFAF dotted 1px; width:100%;"></div>
+    <!-- Jssor Slider Begin -->
+    <!-- You can move inline styles to css file or css block. -->
+        <div id="" style="margin-top:10px;" align="center">
+        <img src='photos/modi_in_bengaluru.jpg' height='100' > 
+        </div>       
+  <!-- ******************************************images Slider END ******************************************** --> </div>
+     </div>
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  style=" padding:0px; border:#B2AFAF solid 1px; border-radius:5px; margin-bottom:10px;">
+         <div class="well" style="color:#333;height:40px; padding:9px; margin:0;"><h4 style="padding:0; margin:0;"><a href='category.php?cat=77' style="text-decoration:none; color:black;">Power - The Energy </a> </h4></div>
+         <div align="center" class="col-lg-7 col-md-7 col-sm-12 hidden-xs"  style="margin-top:5px;border:#B0ADAE solid 1px; padding:10px 0 10px 0; border-radius:5px;	 ">
+         		 <img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/18974/v320x159_narendra_modi_4.jpg' width="450" height="300" class="img-round">
+         </div>
+
+          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12" style="padding:5px;">
+          
+           <div class="panel panel-default">
+      <div class="panel-heading" style="">Headlines</div>
+       <div class="list-group" style="overflow:auto; height:280px">
+         <a href='article.php?article=13213&&locale=hi' class='list-group-item'>पड़ोसियों के साथ बेहतर साझेदारी का पक्षधर है भारत- डोभाल</a><a href='article.php?article=13186&&locale=hi' class='list-group-item'>स्वच्छ गंगा अभियान देश की सभी नदियों के लिए: मोदी</a><a href='article.php?article=13172&&locale=en' class='list-group-item'>Sarada Ma college fitting moment to pay tribute to Ma Sarada: President</a><a href='article.php?article=13172&&locale=hi' class='list-group-item'>शारदा मां ने शिक्षा के विकास में दिया अभूतपुर्व योगदान : राष्ट्रपति</a><a href='article.php?article=13170&&locale=en' class='list-group-item'>बीजेपी कार्यकारिणी की बैठक के चलते तेज़ हुईं मंत्रिमंडल में फेरबदल की अटकलें</a><a href='article.php?article=13155&&locale=en' class='list-group-item'>Modi to give concluding remarks at National Executive meet</a><a href='article.php?article=13138&&locale=en' class='list-group-item'>India committed to strengthen multifaceted & mutually relationship with Nepal: S Jaishankar</a><a href='article.php?article=13128&&locale=en' class='list-group-item'>Professionalism of RBI has served the country well, said Arun Jaitley</a>        </div>
+        </div>
+      </div>
+       <!-- ******************************************images Slider  ******************************************** -->		
+<div class="hidden-lg hidden-mdhidden-xs hidden-sm"  style=" padding:10px;  height:170px;">
+    <div style="border-top:#B2AFAF dotted 1px; width:100%;"></div>
+    <!-- Jssor Slider Begin -->
+    <!-- You can move inline styles to css file or css block. -->
+        <div id="" style="margin-top:10px;" align="center">
+        <img src='photos/Arun_Jaitley.JPG' height='100' > 
+        </div>       
+  <!-- ******************************************images Slider END ******************************************** --> </div>
+     </div>
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  style=" padding:0px; border:#B2AFAF solid 1px; border-radius:5px; margin-bottom:10px;">
+         <div class="well" style="color:#333;height:40px; padding:9px; margin:0;"><h4 style="padding:0; margin:0;"><a href='category.php?cat=24' style="text-decoration:none; color:black;">Political Buzz </a> </h4></div>
+         <div align="center" class="col-lg-7 col-md-7 col-sm-12 hidden-xs"  style="margin-top:5px;border:#B0ADAE solid 1px; padding:10px 0 10px 0; border-radius:5px;	 ">
+         		 <img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19081/v320x159_CBI.jpg' width="450" height="300" class="img-round">
+         </div>
+
+          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12" style="padding:5px;">
+          
+           <div class="panel panel-default">
+      <div class="panel-heading" style="">Headlines</div>
+       <div class="list-group" style="overflow:auto; height:280px">
+         <a href='article.php?article=13295&&locale=hi' class='list-group-item'>तम्बाकू के हक में बोलने वाले सदस्यों को हटाया जाए संसदीय समिति से : कांग्रेस</a><a href='article.php?article=13284&&locale=en' class='list-group-item'>CBI likely to send notice to AITC shortly</a><a href='article.php?article=13282&&locale=en' class='list-group-item'>PM addresses issues like Land Bill & Black Money during Bengaluru rally</a><a href='article.php?article=13282&&locale=hi' class='list-group-item'>चतुरंगी क्रांति से देश को ऊंचाई पर ले जाना चाहते हैं मोदी</a><a href='article.php?article=13278&&locale=en' class='list-group-item'>5th April, not yet finalised for the merger of Janata Parivar: Nitish</a><a href='article.php?article=13257&&locale=en' class='list-group-item'>Kejriwal to lead AAP protest against Land Acquisition Ordinance on Apr 22</a><a href='article.php?article=13253&&locale=en' class='list-group-item'>Pacheco tenders resignation after SC uphold conviction in 2006 case</a><a href='article.php?article=13251&&locale=en' class='list-group-item'>IUML high powered body to decided on Rajya Sabha seat</a>        </div>
+        </div>
+      </div>
+       <!-- ******************************************images Slider  ******************************************** -->		
+<div class="hidden-lg hidden-mdhidden-xs hidden-sm"  style=" padding:10px;  height:170px;">
+    <div style="border-top:#B2AFAF dotted 1px; width:100%;"></div>
+    <!-- Jssor Slider Begin -->
+    <!-- You can move inline styles to css file or css block. -->
+        <div id="" style="margin-top:10px;" align="center">
+        <img src='photos/muslim_league_-_decanchronicle.com' height='100' > 
+        </div>       
+  <!-- ******************************************images Slider END ******************************************** --> </div>
+     </div>
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  style=" padding:0px; border:#B2AFAF solid 1px; border-radius:5px; margin-bottom:10px;">
+         <div class="well" style="color:#333;height:40px; padding:9px; margin:0;"><h4 style="padding:0; margin:0;"><a href='category.php?cat=67' style="text-decoration:none; color:black;">Business & Economy </a> </h4></div>
+         <div align="center" class="col-lg-7 col-md-7 col-sm-12 hidden-xs"  style="margin-top:5px;border:#B0ADAE solid 1px; padding:10px 0 10px 0; border-radius:5px;	 ">
+         		 <img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19083/v320x159_foreign_currency.JPG' width="450" height="300" class="img-round">
+         </div>
+
+          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12" style="padding:5px;">
+          
+           <div class="panel panel-default">
+      <div class="panel-heading" style="">Headlines</div>
+       <div class="list-group" style="overflow:auto; height:280px">
+         <a href='article.php?article=13296&&locale=hi' class='list-group-item'>गरीब माताओं की खातिर सम्पन्न लोग गैस सबसिडी छोडें : मोदी</a><a href='article.php?article=13286&&locale=hi' class='list-group-item'>विदेशी मुद्रा भंडार 341.38 अरब डॉलर के रिकॉर्ड स्तर पर</a><a href='article.php?article=13282&&locale=en' class='list-group-item'>PM addresses issues like Land Bill & Black Money during Bengaluru rally</a><a href='article.php?article=13282&&locale=hi' class='list-group-item'>चतुरंगी क्रांति से देश को ऊंचाई पर ले जाना चाहते हैं मोदी</a><a href='article.php?article=13272&&locale=en' class='list-group-item'>Aditya Birla Nuvo restarts its ammonia & urea plant in UP</a><a href='article.php?article=13252&&locale=hi' class='list-group-item'>नाल्को का कारोबार रिकॉर्ड 7774 करोड़ पर पहुँचा</a><a href='article.php?article=13247&&locale=hi' class='list-group-item'>दीपावली तक ई-साइकिल उतारने की तैयारी में हीरो</a><a href='article.php?article=13201&&locale=en' class='list-group-item'>China stocks flat, signs of money inflows ease IPO concerns</a>        </div>
+        </div>
+      </div>
+       <!-- ******************************************images Slider  ******************************************** -->		
+<div class="hidden-lg hidden-mdhidden-xs hidden-sm"  style=" padding:10px;  height:170px;">
+    <div style="border-top:#B2AFAF dotted 1px; width:100%;"></div>
+    <!-- Jssor Slider Begin -->
+    <!-- You can move inline styles to css file or css block. -->
+        <div id="" style="margin-top:10px;" align="center">
+        <img src='photos/china_stcks-_blogs.reuters.com' height='100' > 
+        </div>       
+  <!-- ******************************************images Slider END ******************************************** --> </div>
+     </div>
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  style=" padding:0px; border:#B2AFAF solid 1px; border-radius:5px; margin-bottom:10px;">
+         <div class="well" style="color:#333;height:40px; padding:9px; margin:0;"><h4 style="padding:0; margin:0;"><a href='category.php?cat=33' style="text-decoration:none; color:black;">Entertainment & Lifestyle </a> </h4></div>
+         <div align="center" class="col-lg-7 col-md-7 col-sm-12 hidden-xs"  style="margin-top:5px;border:#B0ADAE solid 1px; padding:10px 0 10px 0; border-radius:5px;	 ">
+         		 <img src='https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/19032/v320x159_google_search_2.jpg' width="450" height="300" class="img-round">
+         </div>
+
+          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12" style="padding:5px;">
+          
+           <div class="panel panel-default">
+      <div class="panel-heading" style="">Headlines</div>
+       <div class="list-group" style="overflow:auto; height:280px">
+         <a href='article.php?article=13293&&locale=hi' class='list-group-item'>'फास्ट एंड फ्यूरियस 7' ने भारत में बनाया कमाई का रिकॉर्ड</a><a href='article.php?article=13233&&locale=hi' class='list-group-item'>इंडिया इंटरनेशनल एनिमेशन व कार्टून फेस्टिवल की उदघोषणा</a><a href='article.php?article=13226&&locale=hi' class='list-group-item'>बेटी को रूपहले पर्दे से दूर रखना चाहते हैं रेनॉल्ड्स</a><a href='article.php?article=13223&&locale=hi' class='list-group-item'>अमिताभ बच्चन को लेकर फिल्म बनायेंगे विद्यु</a><a href='article.php?article=13220&&locale=hi' class='list-group-item'>नवाजुद्दीन के साथ काम करना चाहते है अमिताभ बच्चन</a><a href='article.php?article=13219&&locale=hi' class='list-group-item'>करीना कपूर को अपना लकी चार्म मानते है अक्षय</a><a href='article.php?article=13218&&locale=hi' class='list-group-item'>व्यवसाय और दर्शकों को कभी ध्यान में नहीं रखती- कल्कि कोचलीन</a><a href='article.php?article=13217&&locale=hi' class='list-group-item'>सैफ ने एकता कपूर के साथ तीन फिल्मों की डील साइन की</a>        </div>
+        </div>
+      </div>
+       <!-- ******************************************images Slider  ******************************************** -->		
+<div class="hidden-lg hidden-mdhidden-xs hidden-sm"  style=" padding:10px;  height:170px;">
+    <div style="border-top:#B2AFAF dotted 1px; width:100%;"></div>
+    <!-- Jssor Slider Begin -->
+    <!-- You can move inline styles to css file or css block. -->
+        <div id="" style="margin-top:10px;" align="center">
+        <img src='photos/SAF_ALI_KHAN.jpg' height='100' > 
+        </div>       
+  <!-- ******************************************images Slider END ******************************************** --> </div>
+     </div>
+     <!-- *************************************end Category news Section ********************************************** -->
+         <!-- *********************************************** FEATURE STORY END *********************************************** -->
+    <!-- <img src="res/banner_ads.jpg" class="img-responsive">**********************************ALL CATEGORY LIST END ************************************* -->
+    </div>
+ <!--------------------------------------  end Center panel------------------------------------------------------>
+<!-------------------------------------- right side panel------------------------------------------------------>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" style="background-color: lightgrey; padding: 0px; border-radius: 5px; " align="center">       
+  <div class="col-lg-3 col-md-3" style="background-color:#F8F8F8 ; padding: 10px; border-radius: 5px;  width:260px; height:auto; margin-bottom:10px; color:#000000;">
+   <h3>Daily Mantra</h3>
+      <div class="" style=" background:#FFF">
+		          <h5 class="" style="text-align:justify; color:#555; font-size:14px; "><strong><p>“To give real service you must add something which cannot be bought or measured with money, and that is sincerity and integrity. – Douglas Adams”</p></strong></h5>
+          <span style="text-align:justify; float:right">Douglas Adams</span><br />
+          <div class="lead" style="font-size:14px; text-align:justify;"><p><strong>Douglas Noel Adams</strong>�(11 March 1952 &ndash; 11 May 2001) was an English Writer humorist And dramatist. Adams is best known as the author of The Hitchhiker&rsquo;s Guide to the galaxy.��</p>
+</div>
+     </div>
+   </div>  
+	<div class="" style="background-color:#F8F8F8 ; padding: 10px; border-radius: 5px;  width:260px; height:auto;; margin-bottom:10px; color:#000000;">
+        <h4>Entertainment & Lifestyle </h4>
+              
+        </div>
+
+        
+        <div class="" style="background-color:#F8F8F8 ; padding: 10px; border-radius: 5px;  width:260px; height:530px; margin-bottom:10px; color:#000000;">
+       <a class="twitter-timeline" href="https://twitter.com/MedhajNewsApp" data-widget-id="574141234899369984">Tweets by @MedhajNewsApp</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+        
+        <div class="" style="background-color:#F8F8F8 ; padding: 10px 10px 10px 0; border-radius: 5px;  width:260px; height:380px; margin-bottom:10px; color:#000000;">
+        <h3>YouTube Channel </h3>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <style type="text/css">
+#player {
+    width: 260px;
+    height: 300px;
+    overflow: hidden;
+    background: gray;
+    position: absolute;
+    border: solid 2px gray;
+}
+
+.youtube .carousel {
+    width: 40%;
+    height: 90%;
+    overflow: auto;
+    position: absolute;
+    right: 0px;
+    z-index: 3;
+}
+
+.youtube .thumbnail {
+    margin: 2px;
+    width: 80%;
+    border: 1px solid black;  
+}
+
+.youtube iframe.player {
+    width: 100%;
+    height: 300px;  
+    overflow: auto;
+    border: 0;
+}
+        </style>
+    <div id="player">
+        </div>
+    <script language="JavaScript"  type="text/javascript">
+            (function() {
+    function createPlayer(jqe, video, options) {
+        var ifr = $('iframe', jqe);
+        if (ifr.length === 0) {
+            ifr = $('<iframe scrolling="no">');
+            ifr.addClass('player');
+        }
+        var src = 'http://www.youtube.com/embed/' + video.id;
+        if (options.playopts) {
+            src += '?';
+            for (var k in options.playopts) {
+                src+= k + '=' + options.playopts[k] + '&';
+            }  
+            src += '_a=b';
+        }
+        ifr.attr('src', src);
+        jqe.append(ifr);  
+    }
+    
+    function createCarousel(jqe, videos, options) {
+        var car = $('div.carousel', jqe);
+        if (car.length === 0) {
+            car = $('<div>');
+            car.addClass('carousel');
+            jqe.append(car);
+            
+        }
+        $.each(videos, function(i,video) {
+            options.thumbnail(car, video, options); 
+        });
+    }
+    
+    function createThumbnail(jqe, video, options) {
+        var imgurl = video.thumbnails[0].url;
+        var img = $('img[src="' + imgurl + '"]');
+        if (img.length !== 0) return;
+        img = $('<img>');    
+        img.addClass('thumbnail');
+        jqe.append(img);
+        img.attr('src', imgurl);
+        img.attr('title', video.title);
+        img.click(function() {
+            options.player(options.maindiv, video, $.extend(true,{},options,{playopts:{autoplay:1}}));
+        });
+    }
+    
+    var defoptions = {
+        autoplay: false,
+        user: null,
+        carousel: createCarousel,
+        player: createPlayer,
+        thumbnail: createThumbnail,
+        loaded: function() {},
+        playopts: {
+            autoplay: 0,
+            egm: 1,
+            autohide: 1,
+            fs: 1,
+            showinfo: 0
+        }
+    };
+    
+    
+    $.fn.extend({
+        youTubeChannel: function(options) {
+            var md = $(this);
+            md.addClass('youtube');
+            md.addClass('youtube-channel');
+            var allopts = $.extend(true, {}, defoptions, options);
+            allopts.maindiv = md;
+            $.getJSON('http://gdata.youtube.com/feeds/users/' + allopts.user + '/uploads?alt=json-in-script&format=5&callback=?', null, function(data) {
+                var feed = data.feed;
+                var videos = [];
+                $.each(feed.entry, function(i, entry) {
+                    var video = {
+                        title: entry.title.$t,
+                        id: entry.id.$t.match('[^/]*$'),
+                        thumbnails: entry.media$group.media$thumbnail
+                    };
+                    videos.push(video);
+                });
+                allopts.allvideos = videos;
+                allopts.carousel(md, videos, allopts);
+                allopts.player(md, videos[0], allopts);
+                allopts.loaded(videos, allopts);
+            });
+        } 
+    });
+    
+})();
+        
+$(function() {
+    $('#player').youTubeChannel({user:'UCRkVAXYFNJl2Uz_xeKuP52Q'});
+});
+        </script>
+        </div>
+        
+ <!--Banner Code-->
+<div class="" style="background-color:#F8F8F8 ; padding: 10px; border-radius: 5px;  width:260px; height:220px; margin-bottom:10px; color:#000000;">
+<script type="text/javascript" src="http://srvpub.com/adServe/banners?tid=28124_40081_3&size=200x200" ></script>
+</div>
+ <!--Banner Code-->
+        
+<div class="" style="background-color:#F8F8F8 ; padding: 10px; border-radius: 5px;  width:260px; height:100px; margin-bottom:10px; color:#000000;">
+	<object height="81" width="100%" id="myPlayer" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+  <param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fsoundcloud.com%2Fmatas%2Fhobnotropic&enable_api=true&object_id=myPlayer"></param>
+  <param name="allowscriptaccess" value="always"></param>
+  <embed allowscriptaccess="always" height="81" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fsoundcloud.com%2Fmatas%2Fhobnotropic&enable_api=true&object_id=myPlayer" type="application/x-shockwave-flash" width="100%" name="myPlayer"></embed>
+</object>
+</div>
+
+<div class="" style="background-color:#F8F8F8 ; padding: 10px; border-radius: 5px;  width:260px; height:auto; margin-bottom:10px; color:#000000;">
+        <h3>Science & Technology</h3>
+      <div class="" style=" background:#FFF">
+          <span class=""  style=" margin:2px;">
+             <h4 style="text-align:justify;">इनफ़ोसिस : ‘वेतन वृद्धि' से अच्छे दिन आये! </h4>
+      <img class="img-rounded" src="https://medhaj-staging.s3.amazonaws.com/uploads/photo/data_file/18730/v320x159_infy.jpg" alt="" width="240" height="200">
+    
+  </span><br><br>
+           <h5 class="media-heading" style="text-align:justify; color:#555; font-size:14px; text-height: 1.48"><p class="lead" style="font-size:14px;">इनफार्मेशन टेक्नोलॉजी क्षेत्र में अग्रणी कंपनी इनफ़ोसिस ने नए वित्तीय वर्ष में कर्मचारियों को वेतन बढ़ा के देने की घोषणा की| औसत से ज्यादा बेहतर परिणाम देने वाले कर्मचरियों को 9% बाकी को औसतन 5% से 6% तक का ग्रोथ मिला है| कंपनी के इंट्रानेट “स्पर्श” पर की गई घोषणा के मुताबिक वेतन वृद्धि के औपचारिक पत्र सत्ताईस को भेजे जायेंगे| ऑन साईट यानि कि दूसरे देशों में काम कर रहे कर्मचारियों को ग्रोथ की औपचारिक सूचना चौबीस अप्रैल तक मिलेगी| 
+मीडिया रिपोर्टों की मानें तो छः प्रतिशत की औसत वेतन वृद्धि के मायने यूँ लगाये जा रहे हैं जैसे कि अच्छे दिन सचमुच आ गए हों| लेकिन हमने जानना चाहा कंपनी के कर्मचारियों के लिए इस वेतन वृद्धि के क्या मायने हैं|
+हैदराबाद कैंपस के मयंक तिवारी बताते हैं, “इनफ़ोसिस का वर्क कल्चर बहुत शानदार है, मेरे कार्यकाल में यहाँ की वेतन वृद्धि कभी निराशाजनक नहीं रही| यह औसत वेतन वृद्धि रेटिंग के हिसाब से तय की जाती है| रेटिंग में  काम के हिसाब से प्रोजेक्ट मेनेजर और एचआर तय करते हैं कि क्या बढ़ोत्तरी की जाए| आम तौर पर ये रेटिंग परफॉरमेंस पर निर्भर करती है| जिस प्रकार इसमें सबसे अच्छी रेटिंग वाले को सबसे अच्छी ग्रोथ मिलती है उसी तरह लोवेस्ट रेटिंग वाले को सुधरने के लिए कहा जाता है”|
+नाम न छापने की शर्त पर दूसरे कर्मचारी बताते हैं कि, “इनफ़ोसिस में एंट्री लेवल पर कर्मचारियों की भर्ती होने पर सिस्टम इंजिनियर या सीनियर सिस्टम इंजिनियर का प्रोफाइल मिलता है| औसतन ढाई वर्ष किसी कर्मचारी का न्यूनतन प्रोग्रेसन पीरियड है | इस प्रोग्रेसन पीरियड के दौरान 6% की औसत वेतन वृद्धि मिलती है| बीते वित्तीय वर्ष में पहले ही दो बार वेतन में वृद्धि हुई है| एक बार आठ प्रतिशत और दूसरी बार दस प्रतिशत| चूँकि इतना हाइक कंपनी पहले ही दे चुकी है इसीलिए इस बार  फाइनेंसियल इयर क्लोजिंग की ग्रोथ कम रही”| 
+जानकारों की मानें तो ज्यादातर बहुराष्ट्रीय कंपनियों की वेतन वृद्धि मुद्रास्फीति से जुड़ी होती है| ऐसे में वेतन वृद्धि के मायने बाज़ार के मुताबिक तय होते हैं| अगर क्लाइंट है, काम है तो अच्छा वेतन होगा| फिलहाल बेहतर प्रदर्शन करने वालों के लिए अवसरों की कमी नहीं है|       
+</p></h5>
+  
+    
+    <hr>
+</div>
+        </div>
+<script type="text/javascript">
+  ( function() {
+    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+    var unit = {"calltype":"async[2]","publisher":"medhajnews","width":260,"height":450,"sid":"Chitika Default"};
+    var placement_id = window.CHITIKA.units.length;
+    window.CHITIKA.units.push(unit);
+    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+}());
+</script>
+<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+        <!--</div>-->
+    </div> <!-- ********************************** end right side panel ***************************************************-->
+</div>
+   <div class="row" style="">
+    <div class="container">
+    <ul class="nav nav-tabs  " style="border:#e6e6e6 solid 1px; color:#000000; height:45px; ">
+      <li role="presentation" id="colo" style=" " ><a href="index.php" style="color:#000000;">Home</a></li>
+      <li role="presentation" id="colo" style=""><a href="about_us.php" style="color:#000000;">About Us</a></li>
+      <li role="presentation" id="colo" style=""><a href="career.php" style="color:#000000;">Career </a></li>
+      <li role="presentation" id="colo" style=""><a href="your_news.php" style="color:#000000;">Your News</a></li>
+      <li role="presentation" id="colo" style=""><a href="disclaimer.php" style="color:#000000;">Disclaimer</a></li>
+      <li role="presentation" id="colo" style=""><a href="feedback.php" style="color:#000000;">Feedback</a></li>
+    </ul>
+    </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">Copyright &copy; 2014 Medhaj All Rights Reserved.</div>
+        	</div>
+		</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61415658-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>		<!-- Google Analytics -->
+        <!-- end Google Analytics -->

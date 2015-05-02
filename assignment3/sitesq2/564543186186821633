@@ -1,0 +1,2584 @@
+
+<!--[if HTML5]><![endif]-->
+<!doctype html>
+
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"><![endif]--><!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]--><!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+<script language="JavaScript">function popUpWholeHonorRoll(event_id,supporter_id,team_id){window.open("../includes/wholeHonorRoll.asp?event_id="+event_id+"&supporter_id="+supporter_id+"&team_id="+team_id,"honorroll","menubar=no,scrollbars=yes,resizable=no,width=180,height=350,left=350,top=100");return false;}</script>
+<script src="../../../CommonLib/lib/jquery-1.7.2.js"></script>
+
+<script>
+    function donateNow() {
+        
+        document.getElementById("buttonGive").style.display="none";
+    }
+</script>
+
+
+<style type="text/css">
+#donorscroll {
+	background-color: #fff;
+	border: 5px solid #cab47e;
+	width: 150px;
+	height: 266px;
+}
+
+#scrolltitle {
+	background-color: #cab47e;
+	width: 100%;
+	text-align: center;
+	font-family: Verdana, sans-serif;
+	font-size: 22px;
+	font-weight: bold;
+	color: #fff;
+	margin: 5px 0px 5px 0px;
+}
+#body_container {
+    padding: 0px;
+    margin: 5px;
+    background-color: #fff;
+    height: 220px;
+    width: 153px;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+}
+#scrollbody1 {
+    padding: 0px 5px 0px 5px;
+    position:absolute;
+	font-family: sans-serif;
+	font-size: 14px;
+	background-color: #fff;
+}
+#scrollbody2 {
+    padding: 0px 5px 0px 5px;
+    position:absolute;
+	font-family: sans-serif;
+	font-size: 14px;
+	background-color: #fff;
+}
+
+#honor_control {
+    background-color: #cab47e;
+    padding: 0px;
+    margin: 0px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 10px;
+    width: 163px;
+    border: solid 1px #fff;
+    border-top: 0px;
+    
+    
+    margin-top: -7px;
+    padding-left: 5px;
+    width: 158px;
+    
+}
+#honor_control a {
+    font-weight: bold;
+    font-size: 10px;
+    color: #fff;
+    text-decoration: none;
+    display: inline;
+}
+
+#honor_control a {
+    font-weight: bold;
+    font-size: 10px;
+    color: #fff;
+    text-decoration: none;
+    display: inline;
+
+}
+#honor_control a img {
+    border: none;
+}
+
+#honor_control .segment {
+    display: inline;
+    text-align: center;
+    font: 10px;
+    font-weight: bold;
+    
+    margin: 6px;
+    
+}
+
+#scroller_container {
+    display: block;
+    height: 260px;
+    background-color: #cab47e;
+    overflow: hidden;
+    border: solid 1px #fff;
+    border-bottom: 0px;
+    width: 163px;
+}
+#subheader_border {
+    background-color: #c4c4c4;
+    padding: 5px;
+    height: 100%;
+}
+</style>
+
+
+<script>
+    /* Honor Roll Scroll Functionality */
+    var x, y, delay = 20, hr_run = 1, direction = 1, delta = -1, lock = 0;
+
+    function honorscrollinit() {
+        x = 266;
+        y = x + parseInt($("#scrollbody1").height());
+        honorscroll();
+        //$("#native_honor_roll").hide();
+    }
+    function honorscroll() {
+        // Move the content up in tandem.
+        $("#scrollbody1").css("top", x + "px");
+        $("#scrollbody2").css("top", y + "px");
+
+        // If there is enough content to be able to scroll.
+        if ($("#scrollbody1").height() > 260) {
+            x = x + delta;
+            y = y + delta;
+            if (x == direction * -1 * $("#scrollbody1").height()) {
+                x = direction * $("#scrollbody2").height();
+            }
+            if (y == direction * -1 * $("#scrollbody2").height()) {
+                y = direction * $("#scrollbody1").height();
+            }
+        }
+        // Just keep y still.
+        else {
+            x = x + delta;
+            y = -100000;
+            if (direction == 1 && x < -1 * $("#scrollbody1").height()) {
+                x = 266;
+            }
+            else if (direction == -1 && x > 266) {
+                x = -5;
+            }
+        }
+
+        if (hr_run == 1) setTimeout('honorscroll()', delay);
+    }
+    $(document).ready(function() {
+        $("#hr_speed_up").click(
+        function() {
+            if (delay <= 0) delay = 0;
+            else delay = delay - 5;
+        }
+    );
+        $("#hr_speed_down").click(
+        function() {
+            delay = delay + 10;
+        }
+    );
+        $("#hr_scroll_up").click(
+        function() {
+            delta = -1;
+            direction = 1;
+        }
+    );
+        $("#hr_scroll_down").click(
+        function() {
+            delta = 1;
+            direction = -1;
+        }
+    );
+        $("#hr_start").click(
+        function() {
+            hr_run = 1;
+            if (lock == 0) {
+                lock = 1;
+                honorscroll();
+            }
+        }
+    );
+        $("#hr_stop").click(
+        function() {
+            lock = 0;
+            hr_run = 0;
+        }
+    );
+    });
+</script>
+
+
+<title>Leslie Raisor's Personal Page for Heart Mini 2014-2015 Cincinnati, OH</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<script language="JavaScript" src="/CommonLib/lib/jquery-1.7.2.js"></script><script language="JavaScript" src="/CommonLib/lib/plugins.js"></script><script language="JavaScript" src="/CommonLib/lib/custom.js"></script>
+<meta HTTP-EQUIV="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<meta property="og:image" content="https://www.kintera.org/AccountTempFiles/Account221/images/1104611_252142252541352.jpg"/>
+<link rel="stylesheet" href="../style/faf.css">
+<script language="JavaScript" src="/CommonLib/lib/INC_jsDataValidation.js"></script>
+<script language="javascript">
+var formPointer;
+
+
+
+
+
+
+function onload_setFormPointer(){
+	formPointer = document.registrationForm;
+}
+function checkRequiredFields(){
+	var fieldname = formPointer;
+	if(jsTools_strTrim(fieldname.elements['addAmount'].value) == ""){
+		return true;
+	}else{
+		return false;
+	}
+}
+function formCheck(){
+	var errorString = "";
+	if (checkRequiredFields()){
+		errorString = "\nPlease fill out the required fields.";
+	}else{
+		for(i = 0; i <= formPointer.elements['addAmount'].value.length -1; i++) 
+			formPointer.elements['addAmount'].value = formPointer.elements['addAmount'].value.replace(",","");
+		if((jsDV_isValidMoney(formPointer.elements['addAmount'].value) == "-1") || (checkMatching(formPointer.elements['addAmount'].value,".",1) == false)){
+			errorString = errorString + "The donation amount can not contain any punctuation. \nPlease re-enter your donation amount."
+		}else{
+			if(formPointer.elements['addAmount'].value < 25){
+				errorString = errorString + "\nPlease enter a donation amount greater than or equal to $25."
+			}
+			else if(formPointer.elements['addAmount'].value == "0")
+			{
+			    errorString = errorString + "\nA $0 donation cannot be entered. \nPlease re-enter your donation amount."
+			}
+			
+		}
+	}
+
+    if(document.getElementById("radioDonationOrgY")!=null)
+    {
+        if(document.getElementById("radioDonationOrgY").checked == false && document.getElementById("radioDonationOrgN").checked == false)
+        {
+            errorString = errorString + "\nPlease select Yes/No for donation organization.";
+        }
+	}
+	if(errorString == "")
+	{
+		return selectLevel2(formPointer.elements['addAmount'].value);
+	}
+	else
+	{
+		alert(errorString);
+		return false;
+	}
+}
+
+
+
+</script>
+<style type="text/css">
+.newMenuTextColor {color:##ffffff;text-decoration: none;}
+.joinTeamColor {color:#cab47e;text-decoration: underline;}
+.fundbar {background-image:url(../images/barcharts/fund_bar.gif);background-repeat:no-repeat}
+.gamebar {background-image:url(../images/barcharts/game_bar.gif);background-repeat:no-repeat}
+.rainbow {background-image:url(../images/barcharts/rainbow_bar.jpg);background-repeat:no-repeat}
+</style>
+
+<script LANGUAGE="javascript">
+function jsDV_strTrim(str){
+	var i = 0;
+	var j = str.length - 1;
+	trimstr = "";
+	if (j < 0) return trimstr;
+	flagbegin = true;
+	flagend = true;
+	while (flagbegin == true){
+		if (str.charAt(i) == ' ') i++;
+		else flagbegin = false;
+	}
+	while (flagend == true){
+		if (str.charAt(j) == ' ') j--;
+		else flagend = false;
+	}
+	if (j < i) return trimstr;
+	else trimstr = str.substring(i, j + 1);
+	return trimstr;
+}
+function specialCharCheck(val, msg){
+	var nrl = val;
+	var flag = 0;
+	var alphaErrorMsg = msg;
+	if(val == "") return false;
+	if(alphaErrorMsg == null) alphaErrorMsg = "This entry accepts only letters, periods, commas, hyphens and spaces.";
+	for (var i=0; i<nrl.length;i++){
+		cmp = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()+?:.,-_";
+		cmp += " ";
+		tst = nrl.substring(i,i+1);
+		if (cmp.indexOf(tst)<0) flag++;
+	}
+	if (flag != 0){
+		if(alphaErrorMsg != "nomsg") alert(alphaErrorMsg);
+		return false;
+	}
+	return true;
+}
+// Alphacheck that has options to check alpha only or AlphaNumeric with out special Characters.
+function validAlpha(val,typeCheck,msg){
+	var tempVal = val;
+	var Errormsg = msg;
+	var flag = 0;
+	switch(typeCheck){
+		case 1:  //alpha + , . -, for names ect.
+			cmp="ABCDEFGHIJKLMNOPQRSTUVWXYZ -abcdefghijklmnopqrstuvwxyz,.'";
+			break;
+		case 2: //alpha, numeric, + ,.-# , for addresses
+			cmp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ -abcdefghijklmnopqrstuvwxyz0123456789.,#'";
+			break;
+		case 3: //alpha, numeric, + ,.-# , no " or '
+			cmp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ -abcdefghijklmnopqrstuvwxyz0123456789.$#%*=+()@";
+			break;
+		case 4: //I am not sure when this was added but it is not correct for username or passwords -svp
+			cmp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ -abcdefghijklmnopqrstuvwxyz0123456789.$#%*/=+()@\\\"_";
+			break;
+		case 6: //alpha, numeric 
+			cmp = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+			break;
+		case 7: //alpha, numeric, + ,.-# , for username and password, no " or '
+			cmp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ-abcdefghijklmnopqrstuvwxyz0123456789.$#%*=+()@_";
+			break;
+		default:
+			cmp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ -abcdefghijklmnopqrstuvwxyz,.'";
+			break;
+	}
+	if (Errormsg == null) Errormsg = "You have entered an invalid character in this field.";
+
+	for(var i= 0; i < tempVal.length; i++){
+		test = tempVal.substring(i,i + 1);
+		if(cmp.indexOf(test)< 0) flag = -1;
+	}
+	if(flag != 0){
+		if(Errormsg != "nomsg") alert(Errormsg);
+		return false;
+	}
+	return true;
+}
+// Aplhacheck that has options to check alpha only or AlphaNumeric with out special Characters.
+function validAlpha(val,typeCheck,msg){
+	var tempVal = val;
+	var Errormsg = msg;
+	var flag = 0;
+	switch(typeCheck){
+		case 1: //alpha + , . -, for names ect.
+			cmp="ABCDEFGHIJKLMNOPQRSTUVWXYZ -abcdefghijklmnopqrstuvwxyz,.'";
+			break;
+		case 2: //alpha, numeric, + ,.-# , for addresses
+			cmp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ -abcdefghijklmnopqrstuvwxyz0123456789.,#'";
+			break;
+		case 3: //alpha, numeric, + ,.-# , for username and password, no " or '
+			cmp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ -abcdefghijklmnopqrstuvwxyz0123456789.$#%*=+()@";
+			break;
+		default:
+			cmp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ -abcdefghijklmnopqrstuvwxyz,.'";
+			break;
+	}
+	if (Errormsg == null) Errormsg = "You have entered an invalid character in this field.";
+	for(var i= 0; i < tempVal.length; i++){
+		test = tempVal.substring(i,i + 1);
+		if(cmp.indexOf(test)< 0) flag = -1;
+	}
+	if(flag != 0){
+		if(Errormsg != "nomsg") alert(Errormsg);
+		return false;
+	}
+	return true;
+}
+function numericCheck(val, type, msg){
+	var nr1 = val;
+	var typeCheck = type;
+	var flag = 0;
+	var numberErrorMsg = msg;
+	if(val == "") return false;
+	if (numberErrorMsg == null) numberErrorMsg = "This entry must be a number.  Please remove all letters, special characters, and spaces.";
+	switch(typeCheck){
+		case 0: //int
+			cmp = "0123456789";
+			break;
+		case 1: //int + commas
+			cmp="0123456789,";
+			break;
+		case 2: //float
+			cmp = "0123456789.,";
+			break;
+		case 3: //currency
+			cmp = "0123456789.,$-";
+			break;
+		case 4: //int + point
+			cmp = "0123456789.";
+			break;
+		case 5: //for zip codes
+			cmp = "0123456789-";
+			break;
+		default:
+			cmp = "0123456789";
+			break;
+	}
+	for (var i=0; i<nr1.length; i++){
+		tst = nr1.substring(i,i+1);
+		if ((cmp.indexOf(tst)<0) || (cmp.indexOf(" ") != -1)) flag++;
+	}
+	if (flag != 0){
+		if(numberErrorMsg != "nomsg") alert(numberErrorMsg);
+		return false;
+	}
+	return true;
+}
+function daysInFebruary (year){
+	return (  ((year % 4 == 0) && ( (!(year % 100 == 0)) || (year % 400 == 0) ) ) ? 29 : 28 );
+}
+function isDate (year, month, day){
+	var daysInMonth = new Array(12);
+	daysInMonth[1] = 31;
+	daysInMonth[2] = 29;
+	daysInMonth[3] = 31;
+	daysInMonth[4] = 30;
+	daysInMonth[5] = 31;
+	daysInMonth[6] = 30;
+	daysInMonth[7] = 31;
+	daysInMonth[8] = 31;
+	daysInMonth[9] = 30;
+	daysInMonth[10] = 31;
+	daysInMonth[11] = 30;
+	daysInMonth[12] = 31;
+	if (month <1 || month > 12) return false;
+	if (day <1 || day > 31) return false;
+	var intYear = parseInt(year, 10);
+	var intMonth = parseInt(month, 10);
+	var intDay = parseInt(day, 10);
+	if (intDay > daysInMonth[intMonth]) return false; 
+	if ((intMonth == 2) && (intDay > daysInFebruary(intYear))) return false;
+	return true;
+}
+function validDate(val, textBox, msg, msg2){
+	var dateErrorMsg = msg;
+	var spaceErrorMsg = msg2;
+	var indate = val;
+	var flag = 0;
+
+	if (indate == "") return false;
+	if (dateErrorMsg == null) dateErrorMsg = "You have entered an invalid date or date format.  Please use the MM/DD/YYYY format without spaces.";
+	if (spaceErrorMsg == null) spaceErrorMsg = "Please use the MM/DD/YYYY format without spaces.";
+	if (indate.indexOf(" ")!=-1){
+		if(dateErrorMsg != "nomsg") alert(spaceErrorMsg);
+		return false;
+	}
+	if (indate.indexOf("-")!=-1){
+		var delimeter = "-";
+	}
+	else if (indate.indexOf("/")!=-1){
+		var delimeter = "/";
+	}
+	else if (indate.indexOf(".")!=-1){
+		var delimeter = ".";
+	}
+	else {
+		flag++;
+	}
+	var dateArray = indate.split(delimeter);
+	if((dateArray.length != 3) || ((dateArray[2].length != 2) && (dateArray[2].length != 4)) ||
+	(dateArray[0].length < 1) || (dateArray[0].length > 2) || (dateArray[1].length < 1) ||
+	(dateArray[1].length > 2))  {
+		flag++;
+	}
+	else if ((numericCheck(dateArray[0], 0, dateErrorMsg)==false) || (numericCheck(dateArray[1], 0, dateErrorMsg)==false) || (numericCheck(dateArray[2], 0, dateErrorMsg)==false)){
+		return false;
+	}
+	var intYear = parseInt(dateArray[2], 10);
+	if ((intYear >= 0) & (intYear <= 29)){
+		dateArray[2] = 2000 + intYear;
+	}
+	else if ((intYear >= 30) & (intYear <= 99)){
+		dateArray[2] = 1900 + intYear;
+	}
+	if (isDate(dateArray[2], dateArray[0], dateArray[1])==false){
+		flag++;
+	}
+	if(flag != 0){
+		if(dateErrorMsg != "nomsg") alert(dateErrorMsg);
+		return false;
+	}
+	if ((dateArray[2] > 99) & (dateArray[2] < 1753)){
+		if(dateErrorMsg != "nomsg") alert("We do not support dates before 1753.  Please choose a later year and try again.");
+		return false;
+	}
+	indate = dateArray[0] + "/" + dateArray[1] + "/" + dateArray[2];
+	textBox.value = indate;  // Set the date in the form to the modified date.
+	return true;
+}
+// Check for valid Area Code in separate input box.
+function validAreaCode(val,msg){
+	var tempVal = val;
+	var Errormsg = msg;
+	var flag = 0;
+	var tempComp = "0123456789";
+
+	if(val == "") return false;
+	if(Errormsg == null) Errormsg = "You have entered an invalid 'Area Code',Please try again.";
+	for(var i=0; i < tempVal.length; i++){
+		tempTest = tempVal.substring(i,i+1);
+		if(tempComp.indexOf(tempTest)<0 || tempComp.indexOf(" ") != -1) flag = -1;
+	}
+	if(tempVal.length < 3){
+		flag = -1;
+	}
+	else{
+		for(var i=0; i < tempVal.length; i++){
+			tempTest = tempVal.substring(i,i+1);
+			if(tempComp.indexOf(tempTest)<0 || tempComp.indexOf(" ") != -1) flag = -1;
+		}
+	}
+	if(flag != 0){
+		if(Errormsg != "nomsg") alert(Errormsg);
+		return false;
+	}
+	return true;
+}
+//Check for valid phone number if phone is separate input from area code and extension.
+function validPhoneNum(val,msg){
+	while(val.search(" ") != -1) val = val.replace(" ", "");
+
+	var tempVal = val;
+	var Errormsg = msg;
+	var flag = 0;
+	var tempComp = "0123456789-";
+	//var isNum = numericCheck(tempVal,3)
+
+	if(val == "") return false;
+	if(Errormsg == null) Errormsg = "You have entered an invalid 'Phone Number', Please try again.";
+
+	for(var i; i < tempVal.length; i++){
+		tempTest = tempVal.substring(i,i+1);
+		if(tempComp.indexOf(tempTest)<0 || tempComp.indexOf(" ") != -1) flag = -1;
+	}
+	if(tempVal.indexOf("-") != -1){
+		if(tempVal.length != 8){
+			flag = -1;
+		}
+		else
+		{
+			for(var j=0; j < tempVal.length; j++){
+				tempTest = tempVal.substring(j,j+1);
+				if(tempComp.indexOf(tempTest)<0 || tempComp.indexOf(" ") != -1) flag = -1;
+			}
+		}
+	}
+	else if(tempVal.length != 7){
+		flag = -1;
+	}
+	else{
+		for(var j=0; j < tempVal.length; j++){
+			tempTest = tempVal.substring(j,j+1);
+			if(tempComp.indexOf(tempTest)<0 || tempComp.indexOf(" ") != -1) flag = -1;
+		}
+	}
+	if(flag != 0){
+		if(Errormsg != "nomsg") alert(Errormsg);
+		return false;
+	}
+	return true;
+}
+function validPhone(val, msg){
+	while(val.search(" ") != -1) val = val.replace(" ", "");
+
+	val = val.replace("", "")
+
+	var phone = val;
+	var flag = 0;
+	var phoneErrorMsg = msg;
+	if(phone == "") return false;
+	if (phoneErrorMsg == null) phoneErrorMsg = "You have entered an invalid phone #.  Please re-enter your # in the form xxx-xxx-xxxx.";
+
+	if(phone.indexOf(" ") != -1){
+		alert("Please re-enter your phone # without using spaces.");
+		return false;
+	}
+	if(phone.length < 10){
+		flag++;
+	}
+	else {
+		for (var i=0; i<phone.length; i++){
+			var cmp="0123456789()-.";
+			tst=phone.substring(i,i+1);
+			if (cmp.indexOf(tst)<0){
+				flag++;
+				break;
+			}
+		}
+	}
+	if(flag > 0){
+		if(phoneErrorMsg != "nomsg") alert(phoneErrorMsg);
+		return false;
+	}
+	return true;
+}
+//new function to format the phone number. kintera standard
+function phoneCheck(val){
+	var phonestr,formatphone;
+	strphone = val;
+	formatphone = "";
+	var intcount=0; charcount=0;
+	strint = "0123456789";
+	strchar = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+	for (var i=0; i<strphone.length; i++){
+		tst = strphone.substring(i,i+1);
+		if (!((strchar.indexOf(tst)<0)||(strchar.indexOf(" ") != -1))) charcount++;
+		if (!((strint.indexOf(tst)<0)||(strint.indexOf(" ") != -1))){
+			if (intcount == 0) formatphone = formatphone + "(";
+			if (intcount == 3) formatphone = formatphone + ") ";
+			if (intcount == 6) formatphone = formatphone + "-";
+			formatphone += tst;
+			intcount++;
+		}
+	}
+	if (intcount==10 && charcount==10)
+	return formatphone;
+	else
+	return strphone;
+}
+function validEmailOld(val, msg){
+	var email = val;
+	var flag = 0;
+	var emailErrorMsg = msg;
+
+	if (email == "") return false;
+	if(emailErrorMsg == null) emailErrorMsg = "You have entered an invalid email address.";
+	if(email.indexOf('@', 0) == -1){
+		flag++;
+	}
+	else if(email.indexOf('.', 0) == -1){
+		flag++;
+	}
+	if(flag > 0){
+		if(emailErrorMsg != "nomsg") alert(emailErrorMsg);
+		return false;
+	}
+	return true;
+}
+function validEmail(str, msg){
+	var emailErrorMsg = msg;
+	if(emailErrorMsg == null) emailErrorMsg = "You have entered an invalid email address.";
+	if (!isValidEmail(str)){
+		if(emailErrorMsg != "nomsg") alert(emailErrorMsg);
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+function isValidEmail(str){
+	var at = str.indexOf("@", 0);
+	var i = 0, count = 0;
+	var j = str.length - 1; 
+	if (at <= 0 || at == j) return false;
+	while (i < at){
+		if ((str.charAt(i) >= '0' && str.charAt(i) <= '9') ||
+		(str.charAt(i) >= 'a' && str.charAt(i) <= 'z') ||
+		(str.charAt(i) >= 'A' && str.charAt(i) <= 'Z') ||
+		str.charAt(i) == '.' || 
+		str.charAt(i) == '&' || 
+		str.charAt(i) == '?' || 
+		str.charAt(i) == '#' || 
+		str.charAt(i) == '$' || 
+		str.charAt(i) == '*' || 
+		str.charAt(i) == '+' || 
+		str.charAt(i) == '!' || 
+		str.charAt(i) == '%' || 
+		str.charAt(i) == '\'' || 
+		str.charAt(i) == '^' || 
+		str.charAt(i) == '/' || 
+		str.charAt(i) == '_' || 
+		str.charAt(i) == '-') i++;
+		else return false;
+	}
+
+	i = at + 1;
+	if (str.charAt(i) == '.' || str.charAt(j) == '.') return false;
+	while (i <= j){
+		if (str.charAt(i) == '.'){
+			count++;
+			if (str.charAt(i + 1) == '.') return false;
+			else i++;
+		}
+		if ((str.charAt(i) >= '0' && str.charAt(i) <= '9') ||
+		(str.charAt(i) >= 'a' && str.charAt(i) <= 'z') ||
+		(str.charAt(i) >= 'A' && str.charAt(i) <= 'Z') ||
+		str.charAt(i) == '_' || str.charAt(i) == '-') i++;
+		else return false;
+	}
+	return (count == 0) ? false : true;
+}
+
+function validateSphereEmailAddress(str, msg){
+	var regex;
+	
+	regex = /^[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z]{2,4}$/;
+	if (regex.test(str) == true)
+		return true;
+	else {
+		alert(msg);
+		return false;
+	}
+		
+}
+
+function validYear(val, msg){
+	var year = val;
+	var yearErrorMsg = msg;
+	var flag=0;
+	var checkYear = parseInt(year);
+
+	if (year == "") return false;
+	if (yearErrorMsg == null) yearErrorMsg = "Please enter the year in YYYY format.  ex 1990";
+	if (year.length > 0){
+		if (year.length < 4) flag++;
+	}
+	if (year.length > 4) flag++;
+	if(numericCheck(year, 0, "nomsg") == false) flag++;
+
+	if(flag != 0){
+		if(yearErrorMsg != "nomsg") alert(yearErrorMsg);
+		return false;
+	}
+	if (checkYear < 1753){
+		if(yearErrorMsg != "nomsg") alert("Please enter a year later than 1752.");
+		return false;
+	}
+	return true;
+}
+function isFieldBlank(theField){
+	var count = 0;
+	if(theField == "") return true;
+	for(i=0;i<theField.length;i++){
+		if(theField.indexOf(" ", i) == i) count++;
+	}
+	return (count == theField.length) ? true : false;
+}
+function minLength(textBox, min, msg){
+	var min_length = min;
+	var data = textBox.value;
+	var minLengthErrorMsg = msg;
+
+	if (min == null) return false;
+	if (data == "") return false;
+
+	if (minLengthErrorMsg == null) minLengthErrorMsg = "The "+textBox.name+" field requires at least "+min+" characters or more.";
+	if(textBox.value.length < min){
+		if(minLengthErrorMsg != "nomsg") alert(minLengthErrorMsg);
+		return false;
+	}
+	return true;
+}
+//check a string for a specific character. getVal - string, findChar - char to find, charLimit - number of times char can exist
+function checkMatchingChars(getVal,findChar,charLimit){
+	var i=0, t=0;
+	for(i=0 ; i <= getVal.length;i++){
+		if(getVal.indexOf(findChar,i) == i) t++;
+	}
+	return (t > charLimit) ? false : true;
+}
+
+//------------------------------------------------------------------------------------------
+// Newer functions: Some are redundant in functionality to the functions above
+// but are being kept for backwards compatibility
+//------------------------------------------------------------------------------------------
+function checknumber(object_value){
+	//Returns true if value is a number or is NULL
+	//otherwise returns false
+
+	if (object_value.length == 0) return true;
+
+	//Returns true if value is a number defined as
+	//   having an optional leading + or -.
+	//   having at most 1 decimal point.
+	//   otherwise containing only the characters 0-9.
+	//var start_format = " .+-0123456789";
+	var start_format = " .0123456789";
+	var number_format = " .0123456789";
+	var check_char;
+	var decimal = false;
+	var trailing_blank = false;
+	var digits = false;
+
+	//The first character can be + - .  blank or a digit.
+	check_char = start_format.indexOf(object_value.charAt(0))
+	//Was it a decimal?
+	if (check_char == 1) decimal = true;
+	else if (check_char < 1) return false;
+
+	//Remaining characters can be only . or a digit, but only one decimal.
+	for (var i = 1; i < object_value.length; i++){
+		check_char = number_format.indexOf(object_value.charAt(i))
+		if (check_char < 0)
+			return false;
+		else if (check_char == 1){
+			if (decimal)		// Second decimal.
+				return false;
+			else
+				decimal = true;
+		}
+		else if (check_char == 0){
+			if (decimal || digits) trailing_blank = true;
+			// ignore leading blanks
+		}
+		else if (trailing_blank)
+			return false;
+		else
+			digits = true;
+	}
+	return true
+}
+function checkinteger(object_value){
+	//Returns true if value is a number or is NULL
+	//otherwise returns false
+
+	if (object_value.length == 0) return true;
+
+	//Returns true if value is an integer defined as
+	//   having an optional leading + or -.
+	//   otherwise containing only the characters 0-9.
+	var decimal_format = ".";
+	var check_char;
+
+	//The first character can be + -  blank or a digit.
+	check_char = object_value.indexOf(decimal_format)
+	//Was it a decimal?
+	return (check_char < 1) ? checknumber(object_value) : false;
+}
+function getphone(strphone){
+	var object_phone,i,counter,formatphone,notusa_num;
+	object_phone = strphone;
+	i = 0;
+	counter = 0;
+	formatphone = "";
+	str24char = "+?:.,abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*";
+	notusa_num = 0;
+	for (i = 0; i < object_phone.length; i ++){
+		var inchar,indx;
+		indx = 0
+		inchar = object_phone.charAt(i);
+		if ( checkinteger(inchar) == true ){
+			if (counter == 0)
+				formatphone = "(" + inchar;
+			else{
+				if (counter == 3) { formatphone = formatphone + ") " }
+				if (counter == 6) { formatphone = formatphone + "-" }
+				formatphone = formatphone.concat(inchar);
+			}
+			counter++;
+		}
+		else{
+			indx = str24char.indexOf(inchar);
+			if (indx > 0) notusa_num = 1;
+		}
+	}
+	return (counter == 10 & notusa_num == 0) ? formatphone : object_phone;
+}
+function jsDV_isValidMoney(str){
+	// str must not be empty string
+	var pointPos;
+	var pointCount = 0;
+	var zeroFlag = 1;
+	
+	if (str.length < 1) return "0"; //empty input
+
+	//start with '.'
+	if (str.charAt(0) == '.'){
+		if (str.length == 1) return "-1";
+		else str = "0" + str;
+	}
+
+	if (str.charAt(str.length - 1) == '.') return "-1"; //end with '.'
+
+	//check the character set
+	for (i = 0; i < str.length; i++){
+		if ((str.charAt(i) >= '0' && str.charAt(i) <= '9') || (str.charAt(i) == '.')){
+			if (str.charAt(i) != '0' && str.charAt(i) != '.') zeroFlag = 0;
+			if (str.charAt(i) == '.') pointCount++;
+			if (pointCount > 1) return "-1";
+			continue;
+		}
+		else return "-1";
+	}
+
+	pointPos = str.indexOf(".", 0);
+	if (pointPos >= 0){
+		//e.g. 09.89
+		if (pointPos > 1 && str.charAt(0) == '0') return "-1";
+		//cut the long decimal part
+		if (str.length - pointPos -1 > 2) str = str.substring(0, pointPos + 3);
+	}
+	else {
+		if (str.length > 1){
+			//e.g. 0898
+			if (str.charAt(0) == '0') return "-1";
+		}
+	}
+	//multiple valid '0', just return single '0'
+	return (zeroFlag) ? "0" : str;
+}
+</script>
+
+
+<script language="javascript">
+ 	
+function validCreditCard(val, msg) {
+  var cardNum = val;
+  var creditErrorMsg = msg;
+  
+  if (cardNum == "") return false;
+
+  if (creditErrorMsg == null) {
+    creditErrorMsg = "Please enter a valid credit card.  We accept Visa, Mastercard, Discover or American Express only.";
+  }
+  	  
+  if (ccValid(cardNum)==false) {
+    if(creditErrorMsg != "nomsg") {
+	  alert(creditErrorMsg);
+	}  
+	return false;
+  }
+  return true;
+}
+
+function ccValid(val) {
+  var cardNum = val;
+  var len = cardNum.length;
+  var checksum = 0;
+    
+  if (len < 2)  {
+    return false;
+  }
+  for (var i = 1; i < len; i++) {
+    var ch = cardNum.charAt(len - 1 - i);
+    var digit = parseInt(ch);
+    var temp = digit * (1 + (i % 2));
+    if (temp < 10)
+      checksum = checksum + temp;
+    else
+      checksum = checksum + temp - 9;
+  }
+
+  checksum = (10 - (checksum % 10)) % 10;
+
+  if (parseInt(cardNum.charAt(len - 1)) != checksum)
+    return false;
+
+  var company = Issuer(cardNum);
+
+  if (company == "Unknown") {
+      return false;
+  }
+  return true;
+}
+
+function Issuer(ccNum) {
+  var cardNum = ccNum;
+  var rv = "Unknown";
+  var len = cardNum.length;
+
+  if (len < 2) {
+    return rv;
+  }
+  
+  if ((cardNum.charAt(0) == "3") && (len == 15)) {
+    rv = "American Express";
+  }else if ((cardNum.charAt(0) == '5') && (len == 16)) {
+    rv = "MasterCard";
+  }else if ((cardNum.charAt(0) == '4') && ((len == 13) || (len == 16))) {
+    rv = "Visa";
+  }else if ((cardNum.substring(0,4) == '6011') && (len == 16)) {
+    rv = "Discover";
+  }else {
+    rv = "Unknown";
+  }
+  return rv;
+}
+
+
+</script>
+
+<script language="javascript">
+//------------------------------
+// INC_jsTools.asp is a library of useful js functions, like opening pop up windows,  etc.
+//------------------------------
+
+function jsTools_openWin(winPage, winName, winParams){
+	var win = window.open(winPage, winName, winParams);
+	win.focus();
+}
+
+function jsTools_strTrim(str) {
+    var i = 0;    
+    var j = str.length - 1;    
+                    
+    trimstr = "";    
+    if (j < 0) return trimstr;    
+    
+    flagbegin = true;    
+    flagend = true;  
+      
+    while (flagbegin == true) {    
+        if (str.charAt(i) == ' ') i++;    
+        else flagbegin = false;    
+    }
+         
+    while (flagend == true) {    
+        if (str.charAt(j) == ' ') j--;
+        else flagend = false;    
+    }    
+
+    if (j < i) return trimstr;
+    else trimstr = str.substring(i, j + 1);    
+                    
+    return trimstr;    
+}
+</script>
+<script language="JavaScript">
+<!--
+var levelsArray = new Array();
+
+//check a string for a specific character. getVal - string, findChar - char to find, charLimit - number of times char can exist
+function checkMatching(getVal,findChar,charLimit){
+	var i=0,t=0;
+	for(i=0;i<=getVal.length;i++){
+		if(getVal.indexOf(findChar,i) == i) t++;
+	}
+	return (t>charLimit)? false : true;
+}
+function checkRadioButtons(){
+	var checkRadioCount = 0;
+	for(i=0; i <= formPointer.level.length-1; i++){
+		if(formPointer.level[i].checked == true) checkRadioCount = checkRadioCount + 1
+	}
+	return (checkRadioCount >=1)? true : false
+}
+function preloadImages(){
+	levelsArray = new Array();
+	levelsArray[0] = new Image();
+	if("image" == "image") levelsArray[0].src = '/AccountTempFiles/Account221/images/1104611_252142252541352.jpg';
+	
+}
+function imageSwap(idx){
+	var id = parseInt(idx);
+	var i = formPointer.levels;
+	i.src = levelsArray[id].src;
+}
+function isNumber(pVal){
+	if(jsDV_isValidMoney(formPointer.elements['addAmount'].value) == "-1"){
+		return false;
+	}else{
+		return true;
+	}
+}
+function parseChars(strField, removeChar){
+	var strVal = strField;
+	if(strVal != ""){
+		while(strVal.indexOf(removeChar) != -1){
+			strVal = strVal.replace(removeChar, "");
+		}
+		return strVal;
+	}
+}
+function parseDonationAmount(strField){
+	if(formPointer.elements['addAmount'].value != ""){
+		formPointer.elements['addAmount'].value = parseChars(strField, ",");
+		return parseChars(strField, ",");
+	}
+}
+function selectLevel2(amount){
+	if(amount != ""){
+		amount = parseDonationAmount(amount);
+		if(!isNumber(amount)) {
+			alert("The donation amount can not contain any punctuation.\nPlease re-enter your donation amount.");
+			formPointer.addAmount.value = "";
+			formPointer.addAmount.focus();
+			return false;
+		}
+		var ls = parseFloat(amount);
+		if(ls < 25) {
+			alert("For credit card donations a minimum donation of $25 is required ");
+			formPointer.addAmount.value = "";
+			formPointer.addAmount.focus();
+			return false;
+		}
+		
+	}
+	return true;
+}
+function selectLevel(amount){
+	if(amount != ""){
+		amount = parseDonationAmount(amount);
+		if(!isNumber(amount)){
+			return false;
+		}
+		var ls = parseFloat(amount);
+		if(ls < 25){
+			return false;
+		}
+		
+	}
+	return true;
+}
+function selectAmount(defaultAmount){
+	formPointer.addAmount.value = defaultAmount;
+	formPointer.addAmount.focus();
+}
+//added on 11/04/04 for Scroller
+var agt = navigator.userAgent.toLowerCase();
+var isMac = (agt.indexOf("mac")!=-1);
+//-->
+</script>
+
+<script language="JavaScript">
+<!--
+var fafJSONevent =
+
+{
+    "event": {
+        "id": "1107419",
+        "name": "Heart Mini 2014-2015 Cincinnati, OH",
+        "startdate": "3/15/2015",
+        "enddate": "5/15/2015",
+        "goal": "3200000",
+        "raised": "2596656",
+        "friendlyWebAddress": "http://cincinnati.kintera.org/heartmini",
+        "allowMobileDonation": "y",
+        "logoimage": "https://www.kintera.com/accounttempfiles/account221/images/aha-logo.gif"
+    },
+    "labels": {
+        "participant": "Participant",
+        "fundraisinggoal": "Fundraising Goal",
+        "moneyraisedtodate": "Funds Raised To Date",
+        "donor": "Donor",
+        "group": "Company",
+        "family": "Family",
+        "team": "Team",
+        "teamcaptain": "Team Captain",
+        "coach": "Coach",
+        "printabledonation": "Print Donation Form",
+        "printabledonationurl": "http:\/\/www.kintera.org\/FAF\/tools\/donationformAHA_2012.asp",
+        "volunteerproject": "Project",
+        "volunteerposition": "Position",
+        "item": "Item",
+        "customersupportlink": ""
+    },
+    "personalpage": {
+        "customlinkname": "",
+        "customlinkurl": "http://",
+        "pageextras": ""
+    },
+    "familypage": {
+        "customlinkname": "",
+        "customlinkurl": "",
+        "pageextras": ""
+    },
+    "session": {
+        "id": "EF540A0AC3CC4A7082D8D84D0D071157",
+        "login": "false"
+    }
+}
+
+//-->
+</script>
+
+<script language="JavaScript">
+<!--
+var fafJSONparticipant = {
+    "sid": "418715591",
+    "name": "Leslie Raisor",
+    "heading1": "Donate to the American Heart Association",
+    "heading2": "Support Leslie Raisor in the 3 Mile Walk",
+    "goal": "200",
+    "raised": "85",
+    "image1": "\/AccountTempFiles\/Account221\/images\/1104611_252142252541352.jpg",
+    "image2": "",
+    "caption": "Join me in my efforts to support the American Heart Association!",
+    "appeal": "Fifteen years ago my mother suffered a fatal heart event and my world was devastated.  I am now the same age she was when she passed away and I refuse to follow in her footsteps.  I have been working to lose weight and get in shape.  I have my own health struggles but I walk in honor of my mother and her love for me.  <br><br><br>",
+    "teampagelink": "",
+    "friendlyurl": "",
+    "showdonationflag":"1",
+    "teamrole": "",
+    "isfamily": "0",
+}
+//-->
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-24132612-5', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+
+<body bgcolor="#ffffff" background="../images/t.gif" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onload="honorscrollinit();onload_setFormPointer();preloadImages();donateNow();"">
+
+
+<link rel="stylesheet" href="../style/EssentialStyles.css">
+    <script type="text/javascript">
+       	<!--
+        var fafJSONoptions = {
+            "facebook": {
+                "appId": '',
+                "link": '',
+                "feedTitle": '',
+                "commentsTitle": '',
+                "hideAll": 'false',
+                "hideComments": 'false',
+                "hideLikeButton": 'false',
+                "hideNewsFeed": 'false'
+            },
+            "sharePage": {
+                "appId": '',
+                "title": '',
+                "services": '',
+                "hideAll": 'false'
+            },
+            "twitter": {
+                "appId": 'blackbaud',
+                "title": 'Find us on Twitter',
+                "link": '',
+                "count": "",
+                "hideAll": "false",
+                "widget": ''
+            },
+            "youTube": {
+                "title": '',
+                "link": '',
+                "embedCode": ''
+            },
+            "thermometer": {
+                "customGoal": "3150000",
+                "meterMinWidth": "0",
+                "hideAll": "false",
+                "hideGoal": "false",
+                "hideRaised": "false",
+                "hideDaysLeft": "false",
+                "hideGiveButton": "false"
+            },
+            "honorRoll": {
+                "title": "Honor Roll",
+                "count": "6",
+                "hideAll": "false"
+            },
+            "sponsorScroll": {
+                "title": "Our Sponsors",
+                "timeout": "6000",
+                "ease": "2000",
+                "hideAll": "false"
+            },
+            "design": {
+                "templateName": "default",
+                "pattern": "gradient",
+                "colors": {
+                    "canvas": "#ffffff",
+                    "thermBackground": "#ffffff",
+                    "thermProgress": "#e7ac2d",
+                    "bodyText": "#333333",
+                    "titleText": "#a30008",
+                    "subtitleText": "#010d1b",
+                    "buttons": "#0080b0",
+                    "menuLinks": "#333333",
+                    "textLinks": "#0080b0",
+                    "formMenu": "#cab47e",
+                    "formHeader": "#d3d3d3",
+                    "formSubHeader ": "#c4c4c4"
+                },
+                "fontFamilies": {
+                    "body": "helvetica,arial,sans-serif",
+                    "title": "helvetica,arial,sans-serif",
+                    "subtitle": "helvetica,arial,sans-serif"
+                },
+                "fontSizes": {
+                    "body": "13px",
+                    "title": "30px",
+                    "subtitle": "24px"
+                }
+            },
+            "session": {
+                "id": "EF540A0AC3CC4A7082D8D84D0D071157",
+                "login": "false"
+            }
+        }
+        
+        window.onresize = function (event) {
+            SetWidthHeight();
+        }
+        
+        function SetWidthHeight(){
+            document.cookie = "viewportWidth=" + $(window).width() + ";path=/";
+            document.cookie = "screenWidth=" + screen.width +";path=/";
+        }
+        
+        SetWidthHeight();
+        //alert(fafJSONoptions.youTube.embedCode);
+      //-->
+	</script>
+    <style id="themeStyles"> 
+		/* =========================
+		   PATTERNS (from fields)
+		========================= */
+			/* background pattern from select list*/ 
+			body {
+				background-image:url('../images/pattern-4_whiteGradient.png');
+				background-repeat:repeat-x;
+                
+			}
+			
+		/* =======================
+		   COLORS (from fields)
+		======================= */
+
+			/* Thermometer Container */
+	        #fundbar .thermometer {
+		         background-color:#ffffff;
+	         }
+           
+           /* Thermometer Progress */
+			#bar_progress, #fundbar .thermometer .meter {
+                 background-color:#e7ac2d /* Insert same color as thermometer progress */
+            }
+            
+            /* Subtitles */
+            #contentPrimary h5, 
+            #contentPrimary h6 {
+	            color:#010d1b;
+            }
+            
+            /* Text Links */
+	        #contentPrimary .gutter a {
+		        color:#0080b0;
+	        }
+
+	        /* Callout Buttons Background */
+			ul.buttonMenu a,
+			.fundbarButton a,
+			#giveNowButton .bigButton {
+				background-color:#0080b0;
+			}
+        	
+			#giveNowButton2 .bigButton {
+				background-color:#0080b0;
+			}
+
+	        /* Menu Links */
+			#contentSecondary ul.globalNav li,
+			ul.globalNav li a,
+			ul.globalNav li a:hover {
+				color:#333333;
+			}
+        	
+	        /* Text Links */
+			#contentPrimary a,
+			#contentTertiary .leaderboardLinkContainer a {
+				color:#0080b0;
+			}
+        	
+	        /* Border Colors */
+	        #contentTertiary .sidebarTitle {
+		        border-color:#e7ac2d; /* Use the same color that is chosen for the Thermometer Progress */
+	        }
+	        
+
+	        /* =======================
+	          FONTS (from fields)
+	        ======================= */
+
+			/* Body Text */
+			#content p, 
+	        #content td, 
+	        #content font, 
+	        #contentPrimary .BodyTextFont {
+                color: #333333; /* from color picker */
+                font-family: helvetica,arial,sans-serif; /* from body text select list */
+                font-size: 13px; /* from body font-size select list */
+            }
+             
+			
+			/* Title */
+			#contentPrimary h1, 
+	        #contentPrimary h3 
+            {
+               font-family :helvetica,arial,sans-serif;
+			   color:#a30008;
+               font-size:30px
+			}
+			
+			/* Subtitle */
+			#contentPrimary h2, 
+	        #contentPrimary h4 
+            {
+               font-family :helvetica,arial,sans-serif;
+			   color:#010d1b;
+               font-size:24px
+            } 			
+ 
+            /* =======================
+	          Browser style issue
+	        ======================= */
+           /*fixed browser issue
+           .FAFBodyTable{margin:0 auto;}
+           .FAFBodyTable td{text-align:left;}
+           .feFAFHelp,.feEmailFAFLink{ float:right;}
+           ul.leaderboardMenu li a{word-wrap: break-word;}
+           .myHQbodyli{list-style-type:disc !important; margin-left:15px;}
+           #myHQbody table td a {text-align: left;}
+           .fequizclass{line-height:1px}
+           .quizblack{text-align:center;display:block}
+           select:focus, textarea:focus {outline: 2px solid #ebc476;}
+           html{-webkit-text-size-adjust:none;} 
+           #shareThis {padding: 28px 0 0;}
+           .eventLogo{ height:142px; overflow:hidden}
+           .FAFBodytd{text-align:center !important}*/
+            						
+	</style>
+<meta name="apple-itunes-app" content="app-id=451276834">
+<script>
+//if (location.href.indexOf("checkPartLogin.asp") > 0) {
+//since GIGYA is still in use override janrain
+var janrainShareOnload = function() {
+janrain.engage.share.show = function(){return false};
+}
+//}
+</script>
+<link rel="SHORTCUT ICON" href="/atf/cf/{9dac21a8-151b-4260-a32e-387894e52ef8}/FAVICON_16X16.ICO"/> 
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-13230711-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<style type="text/css">
+a:hover.newMenuTextColor{color:#FFCC66;}
+.newMenuTextColor{color:#ffffff;text-decoration:none;}
+.newMenuHeaderText{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:12pt;color:#003399;font-weight:bold;text-decoration:none;}
+.newMenuColor{background-color:#003399;}
+
+.newFeMenuLinkColor{color:#333333;text-decoration:none;}
+</style>
+
+<script src="/CommonLib/lib/INC_jsTools.js" Language="JavaScript"></script>
+
+<script language="javascript">
+function redirectLoginMenu(flag){
+        if(flag == "email"){
+                window.location.href="https://www.kintera.org/faf/login/loginParticipant.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157&login=lmenu&area=email";
+        }else if(flag == "quiz"){
+                window.location.href="https://www.kintera.org/faf/login/loginParticipant.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157&login=lmenu&area=game";
+        }else if(flag == "personal"){
+                window.location.href="https://www.kintera.org/faf/login/loginParticipant.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157&login=lmenu&area=edit";
+        }else if(flag == "reports"){
+                window.location.href="https://www.kintera.org/faf/login/loginParticipant.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157&login=lmenu&area=reports";
+        }else if(flag == "tools"){
+                window.location.href="https://www.kintera.org/faf/login/loginParticipant.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157&login=lmenu&area=updateprofile";
+        }else if(flag == "hq"){
+                window.location.href="https://www.kintera.org/faf/login/loginParticipant.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157&login=lmenu";
+        }else{
+               window.location.href="https://www.kintera.org/faf/login/loginParticipant.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157&login=lmenu";
+        }
+}  
+function openLogoutWin(){
+	window.name = "partmenu"
+	window.open('../help/helpLogoutWin.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157','firstlogin','menubar=no,scrollbars=yes,resizable=yes,width=420,height=200');
+	
+}
+function doSubmit(type1){
+	if(type1 == 1){
+		window.location.target = "_top";
+		window.location.href = "&linkid=";
+	}
+	if(type1 == 2){
+		window.location.href = "&linkid=";
+	}
+}
+</script>
+
+      <div id="wrapPage">
+        <!-- UTILITY SECTION -->
+		<div id="utility">
+			<div class="container clearfix">
+				<!-- If logged in... -->
+				
+								<div id="logout">	
+								<!--terry-->
+					
+					
+				</div>
+				
+			<!-- If logged out... -->	
+<div id="login">
+					<div class="miniLogin">
+					<script language="javascript">
+					
+					function toploginCheck()
+					{
+						if(miniLoginForm.elements['miniLoginUsername'].value=="" || 
+		                miniLoginForm.elements['miniLoginPassword'].value=="")
+		                {
+		                    alert("\n-Please fill out the required fields.")
+			                return false;
+		                }
+		                else
+		                {
+			                return true;
+			            }
+                    }
+					</script>
+					<div id="loginFormContainer">
+					
+										
+					<div class="loginLinkContainer"><a href="#" id="loginLink"><span>Sign In</span></a></div>
+					
+					
+					<div id="loginForm">
+						<form method="POST" onSubmit="return toploginCheck()" action="../../faf/login/checkPartLogin.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157" name="miniLoginForm" id="miniLoginForm">
+							
+<div class="gutter clearfix">
+<div class="FAFFormContainer clearfix">
+								   <div class="FAFFormTitle">Sign in to My HQ</div> 
+						<div class="FAFFormFields">
+							<input type="text" class="FAFFormTextbox" name="username" value="Username" maxlength="100" id="miniLoginUsername" onfocus="if (this.value=='Username') this.value=''" onblur="if(this.value == '') this.value='Username'" />
+							<input type="password" class="FAFFormTextbox" name="password" value="Password" maxlength="20" id="miniLoginPassword" onfocus="if(this.value=='Password') this.value=''" onblur="if(this.value == '') this.value='Password'" />
+						</div>
+								    
+								    
+								    
+							<div class="FAFFormButtonContainer">
+							<input type="submit" border="0" class="FAFFormButton FAFFormButtonSubmit" name="imageField2" id="miniLoginSubmit" value="Login" />
+							</div>
+							<div class="FAFFormCheckboxContainer">
+								<input type="checkbox" name="faf_rememberme"    value="y" class="FAFFormCheckbox" id="miniLoginRememberCheckbox" />
+								<label class="FAFFormLabel FAFFormCheckboxLabel" for="miniLoginRememberCheckbox">Keep me logged in</label>
+							</div>
+						</div>
+								    
+								    
+						<div class="janrainLogin clearfix">
+							<iframe width="225" scrolling="no" height="106" frameborder="0" marginwidth="0" marginheight="0" src="../includes/janrain.asp" allowtransparency="true" id="JanrainLogin"></iframe>
+						</div>
+		                            
+
+
+								    <input type="hidden" id="miniLoginRemember" value="Password" name="passwordRem" />
+								    <input type="hidden" id="miniLoginSSL" value="" name="ssl" />
+								    <input type="hidden" id="miniLoginSection" value="y" name="miniLoginSection" />
+</div>
+							
+							
+						</form>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END UTILITY SECTION -->
+		  <div id="page">
+			<!-- HEADER SECTION -->
+			<div id="header">
+				<div class="container">
+					<div class="gutter clearfix">
+						<div id="logo">
+							<div class="gutter clearfix">						
+								<div class="eventLogo">
+									<a href="http://cincinnati.kintera.org/faf/home/default.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157"><img src="https://www.kintera.com/accounttempfiles/account221/images/aha-logo.gif" alt="Event Logo" /></a>
+								</div>
+							</div>
+						</div>
+						<div id="media">
+							<div class="gutter clearfix">
+								<div class="slideSet">
+									<div class="gutter clearfix">
+									   
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="additionalHeader">
+							<div class="headerHtml"><script>
+var nocacheID = new Date().getTime();
+</script>
+<link href="/atf/cf/{7d00878b-1894-44be-86ed-ff26a8f6ad7f}/AHA_DEFAULT_REVISED-2015.CSS" rel="stylesheet" type="text/css">
+<style>
+UL.buttonMenu A {
+*line-height: 0.8em !important;
+}
+
+#loginLink {
+*margin-top: 30px;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {font-size:12px;}
+#contentPrimary .gutter a.button {
+color:#fff;
+}
+body {background:#cccccc !important}
+dl {overflow:hidden}
+#shareThis, .feFAFHelp {display:none}
+.gigyaShareButton {cursor:pointer}
+#gigya_shareHead table {margin:0 !important;}
+#utility {
+    position:absolute;
+    left:-13px;
+    top:30px;
+    width:100%;
+    z-index:99999;
+}
+
+#contentPrimary h1, #contentPrimary h2 {
+text-align: center !important;	
+}
+#contentPrimary h1 {
+font-size: 26px;	
+}
+
+#contentPrimary h2 {
+font-weight: normal;
+font-size: 20px;	
+}
+
+#logo {
+width: 380px;	
+}
+#logo .forceWidth {
+	width: auto;
+}
+#logo img {
+	display:inline;
+        height: 109px !important;
+        width: auto !important;
+}
+ul.buttonMenu a {
+	padding-left: 45px;
+	background: url("/AccountTempFiles/account19087/images/fafleftnavbg.png?v=2") no-repeat;
+	height: 23px;
+	padding: 13px 12px 13px 45px;
+        font-size:12px;
+        font-weight:bold;
+        text-shadow: none;
+        text-align:left;
+}
+ul.buttonMenu {
+	margin: 0 0 10px -33px;
+	width: 235px;
+}
+ul.buttonMenu li {
+	box-shadow: none;
+	background:none
+}
+#header {
+	position:relative
+}
+#gigya_shareHead {
+	display: block;
+	padding: 0 0 20px;
+	position: absolute;
+	right: 25px;
+	top: 110px;
+}
+h6.sidebarTitle {
+	background: #B10303
+}
+/* Post 9.4.1 Hotfix Styles */
+.fafDonationTicker {
+	color: #8A0101;
+	font-size: 19px;
+	padding-left: 0;
+	width: 684px;
+}
+.bigButton, .smallButton {padding:12px;}
+table.FAFBodyTable table#Table1 table table {
+	text-align:left;
+}
+table.FAFBodyTable table form table table {
+	text-align: left;
+}
+h3 .hp_header {
+	width: 100%;
+}
+#hp_national #top_navigation {
+	clear:both;
+        background: url(/atf/cf/{7d00878b-1894-44be-86ed-ff26a8f6ad7f}/FAF_NAV_ENDS.PNG) no-repeat;
+        width:980px;
+        padding-right: 11px;
+        margin-left:-11px;
+}
+#hp_national #top_navigation ul#nav {
+        background: url(/atf/cf/{7d00878b-1894-44be-86ed-ff26a8f6ad7f}/FAF_NAV_BG.GIF) repeat-x;
+        height:50px;
+}
+#top_navigation ul#nav > li > a {
+  border-bottom: 0 none;
+  color: #FFFFFF;
+  font-family: helvetica;
+  font-size: 12px;
+  font-weight: bold;
+  list-style-image: none;
+  padding-left: 20px;
+  padding-right: 16px;
+  padding-top: 15px;
+  padding-bottom:11px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background:url(/atf/cf/{7d00878b-1894-44be-86ed-ff26a8f6ad7f}/faf_nav_divider.jpg) no-repeat right 12px;
+}
+#top_navigation ul#nav > li.last > a {
+   background:none;
+}
+#top_navigation ul#nav li ul {
+margin: 0 0 0 24px;
+display:none;
+}
+#utility .utilityName {
+    color: #000000;
+}
+#utility ul.utilityMenu li a {
+    color: #000000;
+}
+ul#myHQmenu, ul#myHQsubmenu {display:none}
+.FAFBodyTable {width:auto !important;margin-left:0px}
+div span {display: inline-block;*display:inline;zoom:1}
+.pageHeader {
+    color: #8a0101;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 18pt;
+    font-weight: bold;
+}
+#contentSecondary ul.globalNav li, ul.globalNav li a, ul.globalNav li a:hover {text-align:left}
+div#contentTertiary {text-align:left}
+.teamDonation dl, .captains dl, .members dl, #teamList h5 dl {width:100%}
+#contentPrimary {text-align:left}
+.description {float: left;width: 275px;}
+#fafNewHQ .fafChecklist a.button {min-height:122px;}
+.dataRowPercentage {padding-left:20px}
+#fundbar {width:980px !important;background: url(/atf/cf/{7d00878b-1894-44be-86ed-ff26a8f6ad7f}/SKY.PNG?v=1) no-repeat #3E78A8;margin-top:-7px;filter:none}
+#bar_progress, #fundbar .thermometer .meter {background-color:#B20303 /* Insert same color as thermometer progress */; text-align:left}
+#fundbar .thermometer {height:25px;overflow:hidden}
+.fundbarButton a, #giveNowButton .bigButton {
+    background-color: #B10303;
+}
+#fundbar .thermometer .meter {height:25px;}
+#fundbar .fundTitle {color:#333333}
+#fundbar .fundValue {color: #333333;text-align:left;}
+
+.sidebarBox {width:195px}
+#PersonalPageLayourContainer #rh-col .joinourteamlink a b, #PersonalPageLayourContainer .schoolPageButton a, #giveNowButton a, #PersonalPageLayourContainer #generalDonationBtn a, #PersonalPageLayourContainer #teamButtons a, #PersonalPageLayourContainer #teamPageButton a, #PersonalPageLayourContainer #teamPageJoinButton a, #PersonalPageLayourContainer h5#donationStats, #donateButton #donateSubmit {
+   border-color: #B10303;
+}
+#contentTertiary .sidebarTitle {
+    border-color: #7AC5CD;
+}
+#cboxLoadedContent {
+    border: none;
+}
+#givingOverlayInner #donateButton FONT {white-space:normal}
+
+#progress_box ul {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 7pt;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    text-transform: uppercase;
+    top: 0;
+    width: 100%;
+}
+#progress_box ul li {
+    float: left;
+    font-size: 9px;
+    width: 18.8%;
+}
+#progress_box ul li.last {
+    float: left;
+    width: 6%;
+}
+#progress_box {
+    text-align: left;
+    width: 100%;
+}
+#progress_box #bar {
+    background: none repeat scroll 0 0 #DDDDDD;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 2px 2px #CCCCCC inset;
+    height: 40px;
+    margin-bottom: 5px;
+}
+#progress_box #bar_progress {
+    background: none repeat scroll 0 0 #0781B4;
+    border-radius: 5px 5px 5px 5px;
+    display: inline-block;
+    height: 40px;
+    overflow: visible !important;
+    position: relative;
+}
+#progress_box .goalReached #bar_progress {
+    background: none repeat scroll 0 0 #05678E;
+}
+#progress_box .goalPassed #bar_progress {
+    background: none repeat scroll 0 0 #05678E;
+}
+#fundraisingThermometer #fundraisingRaised {
+    background: none repeat scroll 0 0 rgba(85, 85, 85, 0.75);
+    border-radius: 5px 5px 5px 5px;
+    color: #000000;
+    font-weight: bold;
+    height: 28px;
+    line-height: 30px;
+    position: absolute;
+    right: -38px;
+    text-align: center;
+    top: 45px;
+    transition: all 1s ease 0s;
+    width: 79px;
+}
+#fundraisingThermometer #fundraisingGoal {
+    background: none repeat scroll 0 0 #F4F4F4;
+    border-radius: 3px 3px 3px 3px;
+    font-weight: bold;
+    height: auto;
+    padding: 4px;
+    position: absolute;
+    right: 10px;
+    top: 28px;
+    z-index: 2;
+}
+#fundraisingThermometer #goalSurpassed {
+    background: none repeat scroll 0 0 #F4F4F4;
+    border-radius: 3px 3px 3px 3px;
+    font-weight: bold;
+    left: 10px;
+    padding: 4px;
+    position: absolute;
+    top: 28px;
+    z-index: 2;
+}
+#fafNewHQ #fundraisingThermometer {padding-bottom:0px;margin-top:5px;}
+#fafNewHQ #fundraisingThermometer #progress_box ul {top:0px}
+#Table5 select {width:200px}
+</style>
+<noscript>
+<style>
+.FAFBodyTable {visibility:visible;display:block}
+</style>
+</noscript>
+<script>
+$('div.eventLogo a').after('<a href="http://cincinnati.kintera.org/faf/home/default.asp?ievent=1107419"><img border="0" alt="" src="/AccountTempFiles/Account6087/images/cincy-logo-clearbg_small.gif"></a>');
+
+//  Post 9.4.1 Hotfix Scripts
+$(function() {
+  //Fixes page blowout issue on Committee view.
+    if ( document.location.href.indexOf('committeeMenu.asp') > -1 ) {
+        $('td [width=600]').attr('style','width: 507px;'); 
+    }
+    //Fixes page blowout issue on registration form.
+    if ( document.location.href.indexOf('register.asp') > -1 ) {
+        $('td [nowrap]').attr('style','white-space: normal;'); 
+    }
+ //Fixes page blowout issue on ACH donor billing form.
+    if ( document.location.href.indexOf('donorbilling.asp') > -1 ) {
+        $('td [nowrap]').attr('style','white-space: normal;'); 
+    }
+    //Removes the unnecessary h4 tag around event goal that causes line break in IE
+    var eventGoalContents =  $(".fafHomeBodyContent h4:first").html();
+    if ($.browser.msie && parseInt($.browser.version) > 8) {
+      $(eventGoalContents).appendTo(".hp_header");
+    }
+});
+</script>
+<script>
+$.getScript('/atf/cf/{7d00878b-1894-44be-86ed-ff26a8f6ad7f}/aha.refresh.with.essentials-2015.js?v='+nocacheID, function(){
+FAF20.AHAESS();
+});
+
+</script>
+<style type="text/css">
+ul.nationalnav{
+    float: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+	position: absolute;
+	margin-top: 20px;
+	top: 50px;
+	left: 184px;
+}
+
+ul.nationalnav li {
+    display: inline-table;
+	font-size: 0.8em;
+	margin-right: 20px;
+}
+ul.nationalnav li#title {
+font-size: 1.5em;	
+}
+
+ul.nationalnav div {
+font-size: 1.3em;	
+font-weight: bold;
+}
+
+</style>
+
+<div id="hp_national">
+  <div id="top_navigation">
+    <ul id="nav">
+      <li><a href="/site/lookup.asp?c=rjI0J6PHJoH&b=5767979">Why We Walk</a>
+        <ul>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.5801137/k.4D5B/About_My_Heart_My_Life.htm">About My Heart. My Life.</a></li>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.5767993/k.B929/My_Heart_My_Life.htm">My Heart. My Life.</a></li>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.5828431/k.A8BF/My_Community.htm">My Community</a></li>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.8633323/k.4DDB/2012_Top_100_Events.htm">2012 Top 100 Events</a></li>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.8633371/k.E072/2012_Top_Executive_Challenges.htm">2012 Top Executive Challenges</a></li>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.5767997/k.2E69/Check_out_how_we_are_doing_in_2013.htm">Check out how we are doing in 2013</a></li>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.5801151/k.4F3D/About_the_American_Heart_Association.htm">About the American Heart Association</a></li>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.5834351/k.7FF6/Frequently_Asked_Questions.htm">Frequently Asked Questions</a></li>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.5768001/k.D52D/Site_Map/apps/sitemap/sitemap.asp">Site Map</a></li>
+        </ul>
+      </li>
+      <li><a href="/site/lookup.asp?c=meIQLROnEjF&b=5767981">Participant Toolkit</a>
+        <ul>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.5842727/k.78A2/Heart_Walk__Getting_Started.htm">Participants - Getting Started</a></li>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.5794581/k.841A/Social_Networking_Tools.htm">Social Networking Tools</a></li>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.5794583/k.33B8/Tools_for_Companies_and_Teams.htm">Tools for Companies and Teams</a></li>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.5768011/k.60CC/En_Espa241ol.htm">En Español</a></li>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.5847467/k.A97C/Badges_and_Widgets.htm">Badges and Widgets</a></li>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.5801133/k.7FF2/Frequently_Asked_Questions.htm">Frequently Asked Questions</a></li>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.6214919/k.C06F/Heart_Walk__Prize_Incentives.htm">Prize Incentives</a></li>
+        </ul>
+      </li>
+      <li><a href="/site/lookup.asp?c=skJ2I9OLJpG&b=5767983">Get Involved</a>
+        <ul>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.5801197/k.88A0/Register_for_the_Heart_Walk.htm">Register for the Heart Walk</a></li>
+          <li><a href="http://www.heartwalk.org/donate">Donate to the American Heart Association</a></li>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.5768017/k.13DB/Join_a_My_Heart_My_Life_Marathon_Training.htm">Join a My Heart. My Life. Marathon Training</a></li>
+          <li><a href="http://www.heartwalk.org/tributewall">Heart Walk Tribute Wall</a>
+            <ul>
+              <li></li>
+            </ul>
+          </li>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.7323489/k.50D3/Form_a_Virtual_Heart_Walk_Event/apps/s/link.asp">Form a Virtual Heart Walk Event</a></li>
+        </ul>
+      </li>
+      <li><a href="/site/lookup.asp?c=ldIOLOPjEiE&b=5767435">National / Global Companies</a>
+        <ul style="width: 328px;" class="complist">
+          <li><span style="padding: 0px; font-weight: bold;"></span>
+            <ul style="left: auto; margin: 0px;">
+              <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.8127071/k.866F/AGL_Resources.htm">AGL Resources</a></li>
+              <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.8564225/k.B3A1/AIG.htm">AIG</a></li>
+              <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.8013917/k.BF58/ATT.htm">AT&T</a></li>
+              <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.8114785/k.5EE1/Blue_Shield_of_California.htm">Blue Shield of California</a></li>
+              <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.8491411/k.7C13/Cardinal_Health.htm">Cardinal Health</a></li>
+              <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.8509063/k.BA9C/Cintas.htm">Cintas</a></li>
+              <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.7956389/k.B763/Citi.htm">Citi</a></li>
+              <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.8581615/k.D98D/Ericsson.htm">Ericsson</a></li>
+              <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.8582619/k.8487/Giant_Eagle.htm">Giant Eagle</a></li>
+              <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.8013287/k.832A/Jenny_Craig.htm">Jenny Craig</a></li>
+              <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.8484637/k.A110/Johnson__Johnson.htm">Johnson & Johnson</a></li>
+              <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.8503309/k.A4AE/Kaiser_Permanente.htm">Kaiser Permanente</a></li>
+            </ul>
+          </li>
+          <li><span style="padding: 0px; font-weight: bold;"></span>
+            <ul style="left: auto; margin: 0px;">
+              <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.8467565/k.C363/MRC.htm">MRC</a></li>
+              <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.7632653/k.C93E/Oracle.htm">Oracle</a></li>
+              <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.8079427/k.8A03/Select_Medical.htm">Select Medical</a></li>
+              <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.8234791/k.7A74/Tata_Consultancy_Services.htm">Tata Consultancy Services</a></li>
+              <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.8054655/k.95BD/TE_Connectivity.htm">TE Connectivity</a></li>
+              <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.8543573/k.48B1/The_Scotts_MiracleGro_Company.htm">The Scotts Miracle-Gro Company</a></li>
+              <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.8114961/k.8D80/ThirtyOne_Gifts.htm">Thirty-One Gifts</a></li>
+              <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.8491163/k.AA13/UnitedHealthcare.htm">UnitedHealthcare</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="/site/lookup.asp?c=meKQIRNnHjG&b=5767987">Community Teams</a>
+        <ul>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.5907969/k.4EED/About_My_Heart_My_Life.htm">About My Heart. My Life.</a></li>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.5768055/k.BBF7/How_To_Get_Started.htm">How To Get Started</a></li>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.5970745/k.9A8C/Community_Fundraising_Tools.htm">Community Fundraising Tools</a></li>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.5768057/k.AD85/Take_Control_of_Your_Health.htm">Take Control of Your Health</a></li>
+          <li><a href="https://www.kintera.org/site/c.rjJ0J6MHIoE/b.5846273/k.7DD9/Send_an_eCard/apps/ka/mt/default.asp?kntaw42446=456E6CB81BA24941B7CB7E03B5F9ED6C">Send an eCard</a></li>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.6236783/k.F114/Share__Read_Stories.htm">Share / Read Stories</a>
+            <ul>
+              <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.6237661/k.99B6/Share_Your_Story/apps/ka/ct/default.asp">Share Your Story</a></li>
+              <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.6237679/k.D41A/Search_On_Story_In_Your_Area/apps/kb/cs/contactsearch.asp">Search On Story In Your Area</a></li>
+              <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.6239861/k.6139/Share_Your_Story_FAQs.htm">Share Your Story FAQs</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="last"><a href="/site/lookup.asp?c=skL2J9PLKpF&b=5767989">Spread the Word</a>
+        <ul>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.5768041/k.A78A/Badges_and_Widgets.htm">Badges and Widgets</a></li>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.5768047/k.8A7A/Photo_Gallery.htm">Photo Gallery</a></li>
+          <li><a href="http://www.heartwalk.org/site/c.rjJ0J6MHIoE/b.5834455/k.87F4/Register_for_the_Heart_Walk.htm">Register for the Heart Walk</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<script src="/atf/cf/{9DAC21A8-151B-4260-A32E-387894E52EF8}/jquery.url.packed.JS"></script> 
+<script src="/atf/cf/{7d00878b-1894-44be-86ed-ff26a8f6ad7f}/JQUERY.COOKIE.JS"></script>
+
+<!-- START Gigya share -->
+<div id="gigya_shareHead" style="display:none; padding:0px 0px 20px 0px;" align="center"></div>
+<script type="text/javascript" src="/atf/cf/{7d00878b-1894-44be-86ed-ff26a8f6ad7f}/GIGYA_HEARTWALK_2015.JS"></script> 
+<!-- STOP Gigya setup --></div>
+						</div>
+						
+						<div id="fundbar">
+							<div class="gutter clearfix">
+								<!-- Main Thermometer
+								if (mainThermometer) {
+								-->	
+								<table class="fundbarContainer" cellspacing="0" cellpadding="0">
+								<tbody>
+								<tr>
+									<!-- if (showThermGoal) { -->
+									
+									<td class="fundItem fundbarGoal" >
+										<div class="fundTitle">Goal</div>
+										<div class="fundValue" amount="3150000">$3150000</div>
+									</td>
+									
+									<!-- } -->
+									<td class="fundItem fundbarThermometer">
+										<div class="fundTitle">Progress</div>
+										<div class="fundValue">
+											<div class="thermometer">
+												<div class="thermGoal">
+													<span class="thermGoalTitle">Goal:</span>
+													<span class="thermGoalValue">$3150000</span>
+												</div>
+												<div id="devmeter" class="meter">
+													<div class="thermRaised">
+														<span class="thermRaisedTitle">Raised:</span>
+														<span class="thermRaisedValue">$2596656</span>
+													</div>
+													<div class="thermIcon"></div>
+												</div>
+											</div>
+										</div>
+									</td>
+									<!-- if (showThermRaised) { -->
+									<td class="fundItem fundbarRaised">
+										<div class="fundTitle">Raised</div>
+										<div class="fundValue" amount="2596656">$2596656</div>
+									</td>
+									<!-- } -->
+									<!-- if (showThermDays) { -->
+									
+									
+									<!-- } -->
+									<!-- if (showThermButton) { -->
+									
+									
+									<td class="fundItem fundbarButton">
+										<a id="buttonGive" class="button buttonGive" href="https://www.kintera.org/faf/donorReg/donorPledge.asp?supId=0&ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157&givenow=y">Give</a>
+									</td>
+									
+									<!-- } -->
+									</td>
+									</tr>
+									</tbody>
+								</table>							
+								<!-- } -->
+								<!-- END MAIN THERMOMETER -->
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<!-- END HEADER SECTION -->
+			
+		 <div id="content">
+		  <div class="container">
+		   <div class="gutter clearfix">
+		  
+		  
+			<!-- LEFT COLUMN SECTION -->
+			<div id="contentSecondary">
+				<div class="gutter clearfix">
+			  <!-- Callout Buttons -->
+			  
+			  <ul class="menu buttonMenu clearfix">
+			   
+				<li class="buttonMenuItem">
+				    <a href="https://www.kintera.org/faf/login/loginParticipant.asp?login=lmenu&ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157" title="">Login</a>
+				</li>
+			   
+				<li class="buttonMenuItem">  
+				    <a href="http://cincinnati.kintera.org/faf/home/waiver.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157" title="">Register Here</a>    
+				</li>
+				
+				<li class="buttonMenuItem">			    
+				    <a href="http://cincinnati.kintera.org/faf/search/searchParticipants.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157" title="">Sponsor Participant</a>	    
+				</li>
+				
+			 </ul>
+			 
+			
+			<!-- SIDE MENU -->
+             <ul class='menu globalNav clearfix'><li class="parentMenuItem"><span class="menuSubtitle">Information</span><ul class="menuSub"><li class="menuItem"><a href='http://cincinnati.kintera.org/faf/home/default.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157'>Home</a></li><li class="menuItem"><a href='http://cincinnati.kintera.org/faf/help/helpEventInfo.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157'>Event Information</a></li><li class='menuItem'><a href='#' onClick="var incvarwin = window.open('http://www.kintera.org/faf/teams/groupStatisticsList.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157&lis=1','linkwin','menubar=no,scrollbars=yes,resizable=yes,width=650,height=500');incvarwin.focus();" >Find a Company</a></li><li class='menuItem'><a href='#' onClick="var incvarwin = window.open('http://www.kintera.org/faf/teams/groupTeamStats.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157&lis=1','linkwin','menubar=no,scrollbars=yes,resizable=yes,width=650,height=500');incvarwin.focus();" >Find a Team</a></li><li class='menuItem'><a href='#' onClick="var incvarwin = window.open('http://www.kintera.org/htmlcontent.asp?cid=116437','linkwin','menubar=no,scrollbars=yes,resizable=yes,width=650,height=500');incvarwin.focus();" >Download the HW Mobile App</a></li><li class='menuItem'><a href='#' onClick="var incvarwin = window.open('http://www.matchinggifts.com/aha/','linkwin','menubar=no,scrollbars=yes,resizable=yes,width=650,height=500');incvarwin.focus();" >Double Your Dollars</a></li><li class='menuItem'><a href='#' onClick="var incvarwin = window.open('http://www.kintera.org/htmlcontent.asp?cid=652895','linkwin','menubar=no,scrollbars=yes,resizable=yes,width=650,height=500');incvarwin.focus();" >Resources & Tools</a></li><li class='menuItem'><a href='#' onClick="var incvarwin = window.open('http://www.kintera.org/htmlcontent.asp?cid=652894','linkwin','menubar=no,scrollbars=yes,resizable=yes,width=650,height=500');incvarwin.focus();" >Visit Our Sponsors</a></li><li class='menuItem'><a href='#' onClick="var incvarwin = window.open('http://sodiumbreakup.heart.org/','linkwin','menubar=no,scrollbars=yes,resizable=yes,width=650,height=500');incvarwin.focus();" >Take the Sodium Pledge</a></li><li class='menuItem'><a href='#' onClick="var incvarwin = window.open('http://ahaheartmini.promospark.com/home/','linkwin','menubar=no,scrollbars=yes,resizable=yes,width=650,height=500');incvarwin.focus();" >Mini 38 Apparel Store</a></li><li class='menuItem'><a href='#' onClick="var incvarwin = window.open('http://www.signupgenius.com/go/10c0a44aea922a1fb6-heart','linkwin','menubar=no,scrollbars=yes,resizable=yes,width=650,height=500');incvarwin.focus();" >Volunteer</a></li></ul></li><li class="parentMenuItem"><span class="menuSubtitle">Get Started Now</span><ul class="menuSub"><li class="menuItem"><a href='http://cincinnati.kintera.org/faf/home/waiver.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157'>Participant Registration</a></li><li class="menuItem"><a href='http://cincinnati.kintera.org/faf/search/searchParticipants.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157'>Donate to a Participant</a></li><li class="menuItem"><a href='http://cincinnati.kintera.org/faf/email/emailFriend.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157'>Spread the Word</a></li><li class="menuItem"><a href='http://cincinnati.kintera.org/faf/donorReg/donorPledge.asp?supId=0&ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157&team=' >General Donation</a></li></ul></li><li class="parentMenuItem"><span class="menuSubtitle">My Webpage</span><ul class="menuSub"><li class="menuItem"><a href='https://www.kintera.org/faf/login/loginParticipant.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157&login=lmenu'>Main Login</a></li><li class="menuItem"><a href="javascript:redirectLoginMenu('email')" >Email Friends</a></li><li class="menuItem"><a href="javascript:redirectLoginMenu('hq')" >Enter my HQ</a></li><li class="menuItem"><a href="javascript:redirectLoginMenu('personal')" >Edit my Site</a></li><li class="menuItem"><a href="javascript:redirectLoginMenu('reports')" >Check Reports</a></li><li class="menuItem"><a href="javascript:redirectLoginMenu('tools')" >Use Tools</a></li></ul></li></ul>
+			  </div>
+			</div>
+		   <!-- END LEFT COLUMN SECTION -->
+			
+		  <!-- CENTER COLUMN SECTION -->
+			<div id="contentPrimary">
+				<div class="gutter clearfix">
+				 <div class="FAFBodyTable">
+
+<table width="100%" border=0 cellspacing=0 cellpadding=0 bgcolor="#FFFFFF">
+	
+	<tr><td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td>
+	<table border="0" cellspacing="0" cellpadding="0">
+		<tr><td width="140" height="20" align="center" bgcolor="#c4c4c4"><b>My Personal Page</b></td></tr>
+	</table>
+</td></tr>
+<tr bgcolor="#c4c4c4"><td><img src="../images/t.gif" border="0" height="10"></td></tr>
+</table>
+</td></tr>
+	<tr><td>
+		<table width="100%" border=0 cellspacing=0 cellpadding=1 bgcolor="cab47e">
+		<tr><td>
+			<table width="100%" border=0 cellspacing=0 cellpadding=5 bgcolor="#FFFFFF"">
+	
+
+	<form method="post" action="https://www.kintera.org/faf/donorReg/donorBilling.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157" name="registrationForm" onSubmit="return formCheck()">
+	<input type="hidden" name="participantSupporterId" value="418715591">
+	<input type="hidden" name="participantFullName" value="Leslie Raisor">
+	<input type="hidden" name="pageType" value="donorreg">
+	<input type="hidden" name="teamID" value="0">
+	<input type="hidden" name="supID" value="418715591">
+	<input type="hidden" name="rangeMin" value="25">
+	<input type="hidden" name="js" value="false">
+	<input type="hidden" name="extWebsiteReference" value="" />
+	<tr><td>
+		<table width="100%" border=0 cellspacing=0 cellpadding=2 align=center>
+			<tr><td width="99%" align=center><br><b><font size="+1">Donate to the American Heart Association<br>Support Leslie Raisor in the 3 Mile Walk</font></b><br><br></td></tr>
+			
+		</table>
+	</td></tr>
+	<tr><td>
+			<table width="100%" border=0 cellspacing=0 cellpadding=0 align=center>
+		<tr>
+		
+			<td valign=top width="40%">
+				<table border=0 cellspacing=0 cellpadding=1 align=center width="100%">
+				
+					<tr><td align=right><input type='radio' name='level' value='779440' onclick='selectAmount(500);'></td><td><b>Teach more than 2,500 children how to avoid obesity and live longer.</b><br>($500.00 +)</td></tr><tr><td align=right><input type='radio' name='level' value='779441' onclick='selectAmount(250);'></td><td><b>Save lives by helping to distribute 15 innovative CPR Anytime kits to the community.</b><br>($250.00 +)</td></tr><tr><td align=right><input type='radio' name='level' value='779442' onclick='selectAmount(100);'></td><td><b>Empower 1,000 people to improve their heart health by taking the My Life Check.</b><br>($100.00 +)</td></tr><tr><td align=right><input type='radio' name='level' value='779443' onclick='selectAmount(25);'></td><td><b>Plant the seeds for research funding and the next medical breakthrough.</b><br>($25.00 +)</td></tr>
+					<tr><td colspan="2"><br></td></tr>
+					
+					
+					<tr><td colspan="2" align="center"><p><b>Enter Donation Amount Here:</b><br/><font size="1">*Currency shown: US Dollar</font><br>$<input type="text" name="addAmount" onblur="return selectLevel(this.value);" maxlength="9" size=20><br></p></td></tr>
+					
+					
+					
+					<tr>
+						<td colspan="2" align="center">
+						
+							<input type="image" border=0 name="imageField" src="../images/buttons/continuesilver.gif" width="84" height="24" alt='Continue'><br><br>
+							
+						</td>
+					</tr>
+				</table>
+				
+				<table border=0 cellspacing=0 cellpadding=2 align=center>
+				
+						<tr>
+							<td>
+								<table border=0 cellspacing=0 cellpadding=2>
+									<tr><td>My Fundraising Goal:<br><b>$200.00</b></td></tr>
+									<tr><td>Money Raised to Date:<br><b>$85.00</b></td></tr>
+								</table>
+							</td>
+							<td><img src="../images/barcharts/Therm42.gif" width=102 height=126></td>
+						</tr>
+						<tr><td>&nbsp;</td><td><br>If you are unable to donate online, please print out a <a href="#" onclick="javascript:window.open('http://www.kintera.org/FAF/tools/donationformAHA_2012.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157&tmpid=418715591&tmpval=&customlinkForPdf=http%3A%2F%2Fwww%2Ekintera%2Eorg%2FFAF%2Ftools%2FdonationformAHA%5F2012%2Easp&isPer=y','reg','menubar=yes,scrollbars=yes,resizable=yes')">donation form</a>.</td></tr>
+				</table>
+				
+				
+				
+			</td>
+			
+			<td valign=top width="60%">
+				<table border=0 cellspacing=0 cellpadding=2 align=center>
+					<tr><td align=center>
+						        <img name="levels" src="Account221/images/1104611_252142252541352.jpg" alt="" border=0 width=500 height="260px">
+						  </td></tr><tr style="word-break:break-all;"><td width="300px" valign=top align=center style="padding-left:30px;padding-right:30px;" ><b>Join me in my efforts to support the American Heart Association!</b><br><br></td></tr><tr style="word-wrap:break-word;"><td width="300px" valign=top >Fifteen years ago my mother suffered a fatal heart event and my world was devastated.  I am now the same age she was when she passed away and I refuse to follow in her footsteps.  I have been working to lose weight and get in shape.  I have my own health struggles but I walk in honor of my mother and her love for me.  <br>
+<br>
+<br>
+</td></tr>
+				</table>
+			</td>
+		</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+		</td>
+	</tr>
+
+</table>
+		</td>
+	</tr>
+
+</table>
+</form>
+</body>
+<script>
+    document.registrationForm.js.value = true;
+</script>
+
+<!--<script>
+var w = 0
+var y = 0
+processbarFe()
+function processbarFe()
+{
+    w = w+2;
+    if(Number(w)<Number())
+    {
+    document.getElementById("devmeter").style.width=w+"px";
+    setTimeout("processbarFe()",10);
+    }
+    else
+    {
+    document.getElementById("devmeter").style.width=+"px";
+    }
+}
+</script>-->
+            </div>
+        </div>
+    </div>
+				<!-- END CENTER COLUMN SECTION -->
+						<!-- RIGHT COLUMN SECTION -->
+						<div id="contentTertiary">
+							<div class="gutter clearfix">
+								<!-- Share Page -->
+								<div align=right class="feFAFHelp"><a href="#" onclick="javascript:jsTools_openWin('https://www.blackbaud.com/files/support/helpfiles/Participants/Default.html','help','width=600,height=400,toolbar=yes,menubar=yes,scrollbars=yes,resizable=yes')"><img src="../images/help_Button.gif" width=60 height=24 alt="Help Files" border=0></a></div><br><table border=0 cellspacing=0 cellpadding=1 class= "feEmailFAFLink"><tr><td><a href="http://cincinnati.kintera.org/faf/email/emailFriend.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157"><img src="../images/emailFriend.gif" width=132 height=39 alt="Email This Site to A Friend" border=0></a></td></tr><tr><td align=center><a href="#" onClick="javascript:jsTools_popup('../includes/INC_faf.asp','550','600');return false;"><img src="/CommonLib/images/FriendsAskingFriends.png" width=121 height=28 alt="About Friends Asking Friends&#153;" border=0></a></td></tr></table><div class="clearfix"></div><br>
+								<!-- Sponsor Logos -->
+								<div class="sponsorScroll">
+									
+	<script language="JavaScript" type="text/javascript"> 
+	<!--
+	// create the image arrays
+	if(document.images) {
+		sponsorSeries = new Array('/account6087/images/mercy_health_scroll_logo.jpg','/account6087/images/cincinnati_-_uc_health_scroll_boxjpg.jpg','/account6087/images/medpace_2014_scroll_box.jpg','/account6087/images/cincinnati_st_elizabeth_scroll_box.jpg','/account6087/images/kroger_scrollbox_logo.jpg','/account6087/images/powernet_scrolling_logo.jpg','/account6087/images/humanascrollboxlogo.jpg','/account6087/images/walgreens_2015_scroll_box.jpg')
+		sponsorURL = new Array('http://cincinnati.kintera.org/faf/tracking/track.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157&linkid=1268076','http://cincinnati.kintera.org/faf/tracking/track.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157&linkid=1268074','http://cincinnati.kintera.org/faf/tracking/track.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157&linkid=1270930','http://cincinnati.kintera.org/faf/tracking/track.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157&linkid=1268185','http://cincinnati.kintera.org/faf/tracking/track.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157&linkid=1299277','http://cincinnati.kintera.org/faf/tracking/track.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157&linkid=1304021','http://cincinnati.kintera.org/faf/tracking/track.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157&linkid=1299925','http://cincinnati.kintera.org/faf/tracking/track.asp?ievent=1107419&lis=1&kntae1107419=EF540A0AC3CC4A7082D8D84D0D071157&linkid=1299016')
+	    sponsorRealUrl = new Array('http://www.kintera.org/htmlcontent.asp?cid=652894','http://www.kintera.org/htmlcontent.asp?cid=652894','http://www.kintera.org/htmlcontent.asp?cid=652894','http://www.kintera.org/htmlcontent.asp?cid=652894','http://www.kintera.org/htmlcontent.asp?cid=652894','http://www.kintera.org/htmlcontent.asp?cid=652894','http://www.kintera.org/htmlcontent.asp?cid=652894','http://')
+	    sponsorCompanyName = new Array("Mercy Health Partners","UC Health University Hospital","Medpace","St. Elizabeth Healthcare","Kroger","Power Net Global","Humana","Walgreens")
+		imagesCache = new Array()
+
+		//Cache the images here
+		for (i=0;i<sponsorSeries.length;i++){	
+			imagesCache[i] = new Image
+			imagesCache[i].src = "/AccountTempFiles/"+sponsorSeries[i]
+			imagesCache[i].alt = sponsorCompanyName[i] + " Logo"
+		}
+		// theCount will keep track of the current image */
+		theCount = 0
+	}
+
+	// advance to the next image 
+	function turnPage(){
+		if (theCount == imagesCache.length-1) 
+		{theCount = 0}
+		else { theCount++ }
+
+		// (display a frame of the animation) 
+		document.dance.src = imagesCache[theCount].src
+		document.dance.alt = imagesCache[theCount].alt
+		// repeat the turnPage function set the Time 
+		setTimeout("turnPage()", 2000)
+	}
+	
+	//Return value of the querystring key parameter
+	function checkUrlString(urlString){
+		if(urlString != "" && typeof urlString != "undefined" && urlString != "1"){
+			var qs = urlString.substring(urlString.indexOf("?") + 1)
+			return qs;
+		}else{
+			return false;
+		}
+	}
+	
+	// pass querystring key, return value
+	// parameters: queryStringKey= keyName, urlString=either a url string or flag 1; if 1 get url from queryString
+	function checkQueryString(queryStringKey, urlString){
+		var query = "";
+		if(urlString == "1"){
+			query = location.search.substring(1);
+		}else{
+			query = checkUrlString(urlString);
+		}
+		
+		if(query == false){
+			return false;
+		}
+		
+		var pairs = query.split("&");
+		var qsKeyLength = 0;
+		if(queryStringKey != null){
+			for(var i=0; i<pairs.length; i++){
+				qsKeyLength = queryStringKey.length;
+				if(pairs[i].substring(0,qsKeyLength) == queryStringKey){
+					if(pairs[i].indexOf("=") != -1){
+						return pairs[i].substring(qsKeyLength + 1);
+					}
+				}
+			}
+		}
+		return false
+	}
+
+	function OpenWindow(){
+		if(checkQueryString("linkid",sponsorURL[theCount]) != false){
+	      	msg=window.open(sponsorURL[theCount],"DisplayWindow","toolbar=no,directories=no,scrollbars=1,resizable=1;menubar=yes");
+		}
+	}
+		
+	// check to see if the image is clickable
+	function onClickImg() {
+		var flag;
+		if (sponsorRealUrl[theCount].toLowerCase() != "http://" && sponsorRealUrl[theCount].toLowerCase() != "https://" && sponsorRealUrl[theCount] != "") {
+			flag = true;
+		}
+		else
+			flag = false;
+		
+		if(flag==true){
+			OpenWindow();
+		}
+	}
+	// -->
+	</script>
+	
+	<table width="140" border="0" cellspacing="0" cellpadding="1" bgcolor="#cab47e">
+		<tr><td>
+			<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#FFFFFF">
+				<tr><td class="white" bgcolor="#cab47e" align="center">Special Thanks to:</td></tr>
+				<tr>
+					<td align="center">
+					
+					<a href="#" onClick="onClickImg()"><img name="dance" src="/AccountTempFiles//account6087/images/mercy_health_scroll_logo.jpg" width="100" height="85" border="0" alt="Mercy Health Partners Logo"></a>
+					<script language="javascript">turnPage();</script>
+					
+					</td>
+				</tr>
+			</table> 
+		</td></tr>
+	</table>
+	<br>
+	
+								</div>
+								
+								<!-- Top specil page -->
+								<div class="leaderboard leaderboardspecilPage">
+								<br><script language='JavaScript'>
+if(navigator.javaEnabled()){
+document.write("<table width='100%' border='0' cellspacing='0' cellpadding='5' bgcolor='#c4c4c4' style='visibility: hidden; position: absolute; float: left;'><tr><td colspan='2' align='right'><APPLET code='ScrollDisp2.class' archive='../includes/JavaApplets/ScrollDisp2.jar' width='140' height='265'><PARAM NAME='NameList' VALUE=\"~~From anonymous ~~|~~From anonymous ~~|\"><PARAM NAME='BackgroundImage' VALUE='../images/Honor.gif'><PARAM NAME='colorScroll2' VALUE='0,0,255'><PARAM NAME='colorAppletBackgroundColor' VALUE='202,180,126'><PARAM NAME='colorScrollBackground' VALUE='255,255,255'><PARAM NAME='iMaxCharsInLine' VALUE='14'></APPLET><br></td></tr></table>");
+}
+else{
+document.write("<table width='140' border='0' cellspacing='0' cellpadding='1' bgcolor='#cab47e'><tr><td><table width='100%' border='0' cellspacing='0' cellpadding='5' bgcolor='#FFFFFF'><tr><td class='white' align='center' bgcolor='#cab47e'>Honor Roll</td></tr><tr><td><font color='red'><b>From anonymous </b></font></td></tr><tr><td><font color='red'><b>From anonymous </b></font></td></tr></table></td></tr></table>");
+}
+</script>
+								</div>
+								
+								<!-- Top Fundraisers -->
+								
+								<!-- Top Teams -->
+								
+								<!-- Top Groups -->
+								
+							</div>
+						</div>
+						<!-- END RIGHT COLUMN SECTION -->
+										
+					</div>
+				</div>
+			</div>
+						
+			<!-- FOOTER SECTION -->
+			<div id="footer">
+				<div class="container">
+					<div class="gutter clearfix">	
+							
+						<!-- Footer HTML -->
+						<div class="footerHtml">
+						<style type="text/css">
+#fafNewHQ .fafChecklist .offline { display: none; }
+</style>
+
+<script type="text/javascript">
+$('.loginLinkContainer a#loginLink span:contains(Sign In)').html('Login');
+$('td.fundbarButton a#buttonGive').attr("href","/faf/search/searchParticipants.asp?ievent="+fafJSONevent.event.id);
+$('li.buttonMenuItem a:contains(Sponsor Participant)').html("Make a Donation");
+$('table[width=400]').attr("width","500");
+if (location.href.indexOf("groupTeamList.asp") > 0 ||
+    location.href.indexOf("donorPledge.asp") > 0 ||
+    location.href.indexOf("searchTeamPart.asp") > 0) {
+   $('td.fundbarButton a#buttonGive').hide();
+}
+
+function overrideEss(){
+   if (location.href.indexOf("donorPledge.asp") > 0) {
+      //if team link found on personal page
+      if ($('a b:contains(My Team Page)').length > 0) {
+         //change team button
+         if ($('a.teamPageLink.smallButton').length > 0) {
+            $('a.teamPageLink.smallButton').html('My Team Page');
+         } else {
+            setTimeout(overrideEss,3);
+         }
+      }
+   }
+}
+function overrideEssEdit(){
+   if (location.href.indexOf("teamPageEdit.asp") > 0) {
+      //if team link found on personal page
+      if ($('.editppHeaderText').length > 0) {
+        $('#newEditPP').closest('td').addClass('newForm');
+        $('.newForm').append($('form[name=form1]'));
+        $('form[name=form1]').html($('#newEditPP, #oldEditPP,#newEditPPSub')).show();
+      } else {
+         setTimeout(overrideEssEdit,3);
+      }
+   }
+}
+
+function overrideEssDonateBtn(){
+   if (location.href.indexOf("donorPledge.asp") > 0) {
+      //if donation button found on personal page
+      if ($('#giveNowButton .bigButton').length > 0) {
+         setTimeout(function(){$('#giveNowButton .bigButton').colorbox({ href: "#givingOverlay", width: "600px", maxWidth: "100%", height: "410px", maxHeight: "700px", inline: true, opacity: 0.75 });},100);
+      } else {
+         setTimeout(overrideEssDonateBtn,3);
+      }
+   }
+}                
+
+
+function overrideEssWidth(){
+   if (location.href.indexOf("donorPledge.asp") > 0) {
+      //if donation button found on personal page
+      if ($('#contentTertiary div.gutter').length > 0) {
+         if ($('#contentTertiary').height() == 0) {
+            $('#contentTertiary').hide();
+            $('#contentPrimary').css('width', ' 700px');
+         }
+      } else {
+         setTimeout(overrideEssWidth,3);
+      }
+   }
+}                
+
+overrideEss();
+overrideEssEdit();
+overrideEssDonateBtn();
+//overrideEssWidth();
+
+
+if(location.href.indexOf("searchParticipants.asp") > 0 ){
+   $('.FAFBodyTable td p:eq(0)').html('If has never been so easy to make a donation to support a Participant.  Enter the Participant’s name below to locate their fundraising page.   Just click Search and then scroll down to see the results.  You can also choose to give to a <a href="/faf/teams/groupTeamStats.asp?ievent='+fafJSONevent.event.id+'&lis=1">Team</a>, <a href="/faf/teams/groupStatisticsList.asp?ievent='+fafJSONevent.event.id+'&lis=1">Company</a>, or give a <a href="/faf/donorReg/donorPledge.asp?supId=0&ievent='+fafJSONevent.event.id+'&lis=1&team=">General Event Donation');
+}
+
+if(location.href.indexOf("donorPledge.asp") > 0 ){
+$('hr').removeAttr("width"); };
+</script>
+
+<script type="text/javascript">
+if(location.href.indexOf("helpAboutOrg.asp") > 0 ){
+      document.getElementsByTagName('h3')[0].innerHTML=document.getElementsByTagName('h3')[0].innerHTML.replace("About Our Organization","About the American Heart Association"); } </script>
+<script>
+//change the iFrame to an AJAX call, removes issue with IE9 and null response objects
+//Also saves the sourceFile URI for use by the custom HQ script
+                var sourceFile;
+                var myIFrame = $('iframe').first();
+                if (myIFrame.length) {
+                                //bug existed until  the iFrame AND removed the src attribute from the iframe were removed
+                                //myIFrame.attr('src', '');
+                                //var iframeWrapper = myIFrame.parent();
+                                //$('iframe').remove();
+                }
+</script>
+
+<span style="font-size:10pt;">For more information please contact your Heart Mini Team:<p><span style="font-size:10pt;"> Mini News (513) 842-8861<a href="mailto:mininews@heart.org"><span style="font-size:10pt;">mininews@heart.org</a></span><br>
+<p><span style="font-size:8pt"><center>Before submitting any personal information, please read our <a href="http://www.heart.org/HEARTORG/General/Privacy-Policy_UCM_300371_Article.jsp" target="_new">Privacy Policy</a>.</center></span><br><br><br><br>
+
+<style>
+.joinTeam {display: none;}
+</style>
+<script>
+var tr = $('a:contains(I want to start my own team and become a Team Captain)').closest('tr');
+$(tr).addClass('joinTeam').prev('tr').addClass('joinTeam').prev('tr').addClass('jointeam');
+
+/* REMOVE TEAM NAME FROM PROFILE */
+if (location.href.indexOf("updateProfile.asp") > 0) {
+  $('input[name=teamname]').closest('tr').hide();
+}
+</script>
+
+<script>
+$('input#addAmountMulti').blur(function(){
+  if (!$('input#addAmountMulti:disabled').length) {
+    if ($('input#addAmountMulti').val() < 25) {
+      alert('A minimum donation of $25 is required.');
+      $('input#addAmountMulti').val('').focus();
+    }
+  }
+});
+</script>
+
+	<table border=0 cellspacing=0 cellpadding=5 width="100%" class="noprint">
+		<tr align=center>
+			
+		</tr>
+		
+		<tr>
+			<td align=center class=font1 colspan=3>
+			<a href="#" onClick="javascript:jsTools_popup2('http://www.kintera.org/confidence','width=800,scrollbars,resizable');return false;" class="footCopyRightLogo"><img src='/CommonLib/imagesSSL/kintera_149x36.gif' width='115' height='42' border='0' alt='Blackbaud, Kintera division - Donate With Confidence'></a>
+			</td>
+		</tr>
+		
+	</table>
+
+						</div>
+	                    <div class="footerCopyright">
+						    Powered by <a href="http://www.blackbaud.com">Blackbaud: Friends Asking Friends</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+			<!-- END FOOTER SECTION -->
+		</div>
+	</div>
+</body></html>

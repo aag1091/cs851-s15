@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" dir="ltr">
+<head id="ctl00_Head1"><meta http-equiv="X-UA-Compatible" content="IE=edge" /><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"0c4d2a794f","applicationID":"3940305","transactionName":"ZwEHZUAECkQFWhFbVl5LJGJiSjBwM1wHelZDEEpbXQcAUhBYDF5KHgUWQUo=","queueTime":0,"applicationTime":255,"ttGuid":"1473946AC97A3775","agent":"js-agent.newrelic.com/nr-632.min.js"}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UgAFU1ZaGwAJUFFRBwQ="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:9,3:7,4:11,5:3,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:9,3:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script><script type='text/javascript'>
+var isTagpageview=true;
+
+function tagPageView() {
+}
+
+</script>
+<meta id="ctl00_pageContent" /><meta name = "Inova Careers"  content = "job details page"/><meta name = "title"  content = " - Inova Careers - Job Details"/><meta name = "description"  content = "Job Details: "/><meta name = "keywords"  content = "BrassRing, job details, job employment, resume, job listing, job opening, job description, career, job opportunity, employment opportunities, job vacancy, post resume, professional, professionals, job application, job posting, hiring, job interview, employer"/><link rel="Stylesheet" type="text/css" href="CSS/TGStyleSheet.css" />
+        
+    <!--CSS file (default YUI Sam Skin) -->
+    
+    <!-- Dependencies -->
+        <script  type='text/javascript' src='JS/general.js'></script>       
+        <script src="JS/jquery-1.6.4.min.js" type="text/javascript"></script>
+         <script type="text/javascript">
+        //ldp256 accessibility changes starts
+             $(document).ready(function() {
+                 $(document.body).mousemove(function(event) {
+                     BodyMouseMove();
+                 });
+                 $(document.body).keyup(function(event) {
+                     BodyKeyUp();
+                 });
+                 $(document.body).focus(function(event) {
+                     BodyFocus();
+                 });
+                 var addOnClick = "no";
+                 if (addOnClick == "yes") {
+                     $(document.body).click(function(event) {
+                         hideAllLayer();
+                     });
+                 }
+             });
+        //ldp256 accessibility changes ends
+
+             function AddRfToken() {
+                 var forms = document.forms;
+
+                 for (i = 0; i < forms.length; i++) {
+
+                    
+                     if (forms[i].name == "aspnetForm" && forms[i].action.indexOf("attachments.aspx") > 0) {
+                        
+                      }
+                     else
+                      {
+                    
+                         var hdElement = forms[i].hdRft;
+
+                         if (typeof (hdElement) == 'undefined') {
+
+                             var input = document.createElement("input");
+
+                             input.setAttribute("type", "hidden");
+
+                             input.setAttribute("name", "hdRft");
+
+                             input.setAttribute("value", js_rft);
+
+                             document.forms[i].appendChild(input);
+                         }
+                         else {
+
+                             hdElement.value = js_rft;
+                         }
+                     }
+                 }
+             }
+
+        </script>
+        <script src="YUI/V2.8.0r4/yahoo-dom-event.js" type="text/javascript"></script>
+        <script src="YUI/V2.8.0r4/datasource-min.js" type="text/javascript"></script>
+        <script src="YUI/V2.8.0r4/element-min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="YUI/V2.8.0r4/datatable-min.js"></script>
+        <!-- OPTIONAL: JSON Utility (for DataSource) -->
+        <script src="YUI/V2.8.0r4/json-min.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="YUI/V2.8.0r4/container.css" />
+        <!-- Combo-handled YUI CSS files: -->  
+        <link rel="stylesheet" type="text/css" href="YUI/V2.8.0r4/datatable.css" />   
+        <script type="text/javascript" src="YUI/V2.8.0r4/container-min.js"></script>   
+        
+         <link rel="Stylesheet" type="text/css" href="YUI/CSS/SiteMaster_override_YUI.css" />
+   <title id="ctl00_head_PageTitle">Inova Careers - Job details</title>
+   <style type="text/css">    
+        .h1Title
+        {
+        	margin:0;
+		    padding: 6px 0 0px 0;
+        }
+	    .h1Tab
+        {
+	    	margin: 0pt; 
+		    padding: 1px 0pt 1pt; 
+		    overflow: hidden;	       	
+        }
+       .twitter-share-button {
+              position:relative;           
+              margin-left:3px;
+      }
+      
+      iframe { vertical-align: top; }
+      
+      
+    </style>
+    <script type='text/javascript'> if (navigator.appVersion.indexOf('Win') != -1) {if (document.all) { document.write("<LINK REL=stylesheet TYPE='text/css' HREF='/css/Partner_25649_5465.css'>"); } else if (document.layers) { document.write("<LINK REL=stylesheet TYPE='text/css' HREF='/css/Partner_25649_5465_NN.css'>"); } else if (document.images) { document.write("<LINK REL=stylesheet TYPE='text/css' HREF='/css/Partner_25649_5465.css'>"); } } else if (navigator.appVersion.indexOf('Mac') != -1) { if (document.all) { document.write("<LINK REL=stylesheet TYPE='text/css' HREF='/css/Partner_25649_5465_mac.css'>"); } else if (document.layers) { document.write("<LINK REL=stylesheet TYPE='text/css' HREF='/css/Partner_25649_5465_macNN.css'>"); } else if (document.images) { document.write("<LINK REL=stylesheet TYPE='text/css' HREF='/css/Partner_25649_5465_mac.css'>"); } } else {if (document.all) { document.write("<LINK REL=stylesheet TYPE='text/css' HREF='/css/Partner_25649_5465.css'>"); } else if (document.layers) { document.write("<LINK REL=stylesheet TYPE='text/css' HREF='/css/Partner_25649_5465_NN.css'>"); } else if (document.images) { document.write("<LINK REL=stylesheet TYPE='text/css' HREF='/css/Partner_25649_5465.css'>"); } }  var js_rft = '^Ynj10hlLEHKdIFnTSSpfKCV7CeehPeOStSdbpWAt7HamCFUZ2gQcC5AX7uF2TKBs8RT3QHPpkDUKhrqS09Nti/zvRFAPpBlTrMhv0kgpAWM='</script>
+    <Script language='javascript' type='text/javascript'>var MSG_SiteSwitch = "Recruitment for the selected job(s) will be in the language of the job posting(s).  To continue, the language of this site will change to match the language of the selected job(s).  You will need to provide your resume/CV in the language of the selected job(s) in order to maximize your visibility to the recruitment personnel.";var MSG_SocialMediaSiteSwitch = "Posting to social networks should be in the language of the job posting.  To continue, the language of this site will change to match the language of the selected job."; var js_LaunchGQ_DotNet ="No";</Script>
+    <script  type="text/javascript" src="JS/Windows.js"></script>
+    <script  type="text/javascript" src="JS/dialogBuilder.js"></script> 
+    <script language="javascript" type="text/javascript">  
+        var SR_READY = "";
+        var SR_PRIDE = "%5eXPo1WBzaZuM%3d";
+        var SR_STID = "5465";
+        var SR_CLID = "25649";
+        var SR_LOCALE = "1033";
+        var SR_FN = "";
+        var SR_LN = "";
+       function setReadyForSocialReferral(ready, clid, stid, pride, localeid,button,fn,ln) {
+            SR_READY = ready;
+            SR_PRIDE = pride;
+            SR_STID = stid;
+            SR_CLID = clid;
+            SR_LOCALE = localeid;
+            SR_FN = fn;
+            SR_LN = ln;
+            if (SR_READY == "yes") {
+                LaunchSocialReferralMenu(document.getElementById(button));
+            }
+        }
+        function LaunchSocialReferralMenu(button) {
+            var jobstr = document.getElementById("jobid").value;
+            var urlstring = "../tgnewui/referral/home/referralworkflowoptions?siteid=" + SR_STID + "&partnerid=" + SR_CLID + "&localeid=" + SR_LOCALE + "&bruid=" + SR_PRIDE + "&jobids=" + jobstr+ "&fn=" + SR_FN + "&ln=" + SR_LN
+            window.dialogBuilder.showDialog(button, urlstring);
+
+        }     
+        function ApplyNow()
+	    {			    
+			var ApplyURL = "-1";
+			if (ApplyURL=="-1" ) ApplyURL= "";
+			if (ApplyURL.length>0 )
+			{				
+			    window.location.href=ApplyURL; 
+			}
+			else
+			//In case GTG if the job siteid is different than the current siteid
+			//display warning pop-up to confirm site switched to job site
+			{			   
+				ApplyJobNow('1033');
+			}
+		}		
+			
+		function ApplyJobNow(strLocale)
+        {
+	        var strGQId;
+	        var iLen, iIndx;
+	        var arrGQId;
+	        var arrGQIds;
+	        var lngNewSelection = 0;
+	        var lngSiteLocale = 1033;
+	        var strSwitchSiteQS;
+	        strGQId = "0";	// from Querystring
+	        strSwitchSiteQS = "";
+
+	        //var lngSelect = 1;
+	        var lngSelect = 1;
+	        
+	        if  (strGQId == '')
+	        {	
+	            strGQId= document.frmJobDetail.JobInfo.value;
+			    arrGQId = (strGQId.substring(2, strGQId.length - 2)).split("%%");
+			    iLen = arrGQId.length;
+			    arrGQIds = arrGQId[lngSelect-1].split('|');
+			    if (arrGQIds[2] != 0)
+			    {
+				    if (strLocale == lngSiteLocale)
+				    {
+				        if (js_LaunchGQ_DotNet.toUpperCase() == 'YES')
+				        {
+				            openWindow11("gqlogin.aspx?SID=^imhM8s9JfqPBrKL4Asb0iH37fHC8KMXUj/mWggL_slp_rhc_NYKJ406jH47Rt0QVhMVmZDwj&fjd=true&referer=&gqid="+ arrGQIds[2] + "&jobinfo=__" + arrGQId[lngSelect-1] + "__&applycount=1&type=search_jobdetail");
+				        }
+				        else
+				        { 
+					        openWindow11("https://sjobs.brassring.com/" + strLocale + "/asp/tg/GQLogin.asp?SID=^imhM8s9JfqPBrKL4Asb0iH37fHC8KMXUj/mWggL_slp_rhc_NYKJ406jH47Rt0QVhMVmZDwj&fjd=true&referer=&gqid="+ arrGQIds[2] + "&jobinfo=__" + arrGQId[lngSelect-1] + "__&applycount=1&type=search_jobdetail");
+					    }
+				    }
+				    else
+				    {
+				        document.frmMassApply.GQID.value = arrGQIds[2];
+				        if(strSwitchSiteQS == '')
+				        {
+					        document.frmMassApply.action= "apply.aspx?SID=^imhM8s9JfqPBrKL4Asb0iH37fHC8KMXUj/mWggL_slp_rhc_NYKJ406jH47Rt0QVhMVmZDwj&src=jd&qs=partnerid%3d25649%26siteid%3d5465%26areq%3d9055BR";
+					    }
+					    else
+					    {
+					        document.frmMassApply.action= "apply.aspx?SID=^imhM8s9JfqPBrKL4Asb0iH37fHC8KMXUj/mWggL_slp_rhc_NYKJ406jH47Rt0QVhMVmZDwj&src=jd&qs=";
+					    }
+					    document.frmMassApply.submit();
+				    }
+			    }
+			    else
+			    {
+				    document.frmMassApply.action= "apply.aspx?SID=^imhM8s9JfqPBrKL4Asb0iH37fHC8KMXUj/mWggL_slp_rhc_NYKJ406jH47Rt0QVhMVmZDwj";
+				    document.frmMassApply.submit();
+			    }	        
+			        		        
+	        }
+	        else
+	        {
+	           	
+		        if (strGQId != 0)
+		        {
+			        if (strLocale == lngSiteLocale)
+			        {
+			            if (js_LaunchGQ_DotNet.toUpperCase() == 'YES')
+				        {
+				            openWindow11("gqlogin.aspx?SID=^imhM8s9JfqPBrKL4Asb0iH37fHC8KMXUj/mWggL_slp_rhc_NYKJ406jH47Rt0QVhMVmZDwj&fjd=true&referer=&gqid=" + document.frmMassApply.GQID.value + "&jobinfo=&applycount=1&type=search_jobdetail");
+				        }
+				        else
+				        { 
+				            openWindow11("https://sjobs.brassring.com/" + strLocale + "/asp/tg/GQLogin.asp?SID=^imhM8s9JfqPBrKL4Asb0iH37fHC8KMXUj/mWggL_slp_rhc_NYKJ406jH47Rt0QVhMVmZDwj&fjd=true&referer=&gqid=" + document.frmMassApply.GQID.value + "&jobinfo=&applycount=1&type=search_jobdetail");
+				        }
+			        }
+			        else
+			        {
+			            if(strSwitchSiteQS == '')
+				        {
+				            document.frmMassApply.action= "apply.aspx?SID=^imhM8s9JfqPBrKL4Asb0iH37fHC8KMXUj/mWggL_slp_rhc_NYKJ406jH47Rt0QVhMVmZDwj&src=jd&qs=partnerid%3d25649%26siteid%3d5465%26areq%3d9055BR";
+				        }
+				        else
+				        {
+				            document.frmMassApply.action= "apply.aspx?SID=^imhM8s9JfqPBrKL4Asb0iH37fHC8KMXUj/mWggL_slp_rhc_NYKJ406jH47Rt0QVhMVmZDwj&src=jd&qs=";
+				        }
+				        document.frmMassApply.submit();
+			        }
+ 	            }
+ 	            else
+ 		        {
+ 			        document.frmMassApply.action = "apply.aspx?SID=^imhM8s9JfqPBrKL4Asb0iH37fHC8KMXUj/mWggL_slp_rhc_NYKJ406jH47Rt0QVhMVmZDwj";
+			        document.frmMassApply.submit();
+ 		        }
+ 	        }
+        }
+        
+        //Send to friend email    
+        function sendToFriend()
+        {
+	        openWindowBySize2('about:blank?sessionid=7b2c01550e61e04362b24614185fda01be7d', 450, 360);	        
+	        document.frmSendToFriend.submit();
+        }
+        
+        function socialNetworkReferral(button) {
+		  if (SR_READY == "yes")
+            LaunchSocialReferralMenu(button);
+        else {
+            document.frmSocialNetworkReferral.ButtonId.value = button.id;
+            openWindowBySize2('about:blank?sessionid=7b2c01550e61e04362b24614185fda01be7d', 900, 720);
+            document.frmSocialNetworkReferral.submit();
+	        }
+		}
+        
+        
+        function showjob(lngNewSelection)
+	    {   		    
+		    document.frmJobDetail.action = "jobdetails.aspx?partnerid=25649&amp;siteid=5465&amp;areq=9055BR";
+		    document.frmJobDetail.CurSel.value= lngNewSelection;
+		    document.frmJobDetail.submit();
+	    }
+        
+        function launchSocialMedia()
+	    {
+	        var lngSiteLocale = '1033';
+	        var jobSiteID = '5465';
+	        var newLocaleId = getLocaleId(jobSiteID,'');
+	        var strSwitchSiteQS = '';
+	        
+
+	        if (newLocaleId == lngSiteLocale || newLocaleId == '')
+		    {
+			    openWindow1('about:blank?sessionid=7b2c01550e61e04362b24614185fda01be7d');
+		        document.frmSocialMedia.submit();
+		    }
+		    else
+		    {
+		        alert(MSG_SocialMediaSiteSwitch);
+		        if(strSwitchSiteQS == '')
+		        {
+			        document.frmMassApply.action= "apply.aspx?SID=^imhM8s9JfqPBrKL4Asb0iH37fHC8KMXUj/mWggL_slp_rhc_NYKJ406jH47Rt0QVhMVmZDwj&src=jdsm&qs=partnerid%3d25649%26siteid%3d5465%26areq%3d9055BR";
+			    }
+			    else
+			    {
+			        document.frmMassApply.action= "apply.aspx?SID=^imhM8s9JfqPBrKL4Asb0iH37fHC8KMXUj/mWggL_slp_rhc_NYKJ406jH47Rt0QVhMVmZDwj&src=jdsm&qs=";
+			    }
+			    document.frmMassApply.submit();
+		    }
+        }
+        
+        //Save to jobcart
+        function saveToJobCart()
+	    {
+		    var strTemp;
+		    var lIdx;
+		    var lLen;
+		    var arrSubInfo;
+
+		    if (document.frmJobDetail.jobcartcnt.value > 50)
+			    alert (MSG_cim_jobdetail_JobCart);
+		    else
+		    {
+			    document.frmSaveToCart.chkJobClientIds.value = ReplaceInString(document.frmSaveToCart.chkJobClientIds.value, "%%", "");
+			    arrSubInfo = document.frmSaveToCart.chkJobClientIds.value.split("|");		    
+
+			    if(arrSubInfo.length != 3)
+			    {
+				    strTemp =  arrSubInfo[0] + "|" + arrSubInfo[1];
+				    document.frmSaveToCart.chkJobClientIds.value = strTemp;
+			    }
+			    openWindow3('about:blank?sessionid=7b2c01550e61e04362b24614185fda01be7d');
+			    document.frmSaveToCart.submit();
+		    }
+	    }
+	    function goToSearchPage()
+	    {	   
+		    document.frmSearch.submit();
+	    }
+	    
+	    //QC #197940
+	    function reload(sParam)
+	    {
+		if (typeof(sParam) != 'undefined') 
+		{
+			if (sParam == 'ApplyAsRegularJob')
+				ApplyAsRegularJob();
+			return;
+		}
+		var sGQId =  "0";
+		var arrGQId;
+		var iLen = 0;
+		if (sGQId == '' )
+		{
+			sGQId= document.frmJobDetail.JobInfo.value;
+			arrGQId = (sGQId.substring(2, sGQId.length - 2)).split("%%");
+			iLen = arrGQId.length;
+		}
+		
+		if ((iLen == 1) || (sGQId != ''))
+		{
+			 
+		document.frmJobDetail.target = "_self";
+		 
+		document.frmJobDetail.action = "Logout.aspx?SID=^imhM8s9JfqPBrKL4Asb0iH37fHC8KMXUj/mWggL_slp_rhc_NYKJ406jH47Rt0QVhMVmZDwj&gqclose=yes&crl=yes&Exit=^VPbBpv82eWbDhCwKzWDUrT6iCUhsWNOr+koga53E/lzXlNjlAug5wQQ9zAIHEB3h8MY31WF6yImrg3MfBPqXIKPCcmzA0IykWELm092vYMXq9wSlJJU12kR4HpDNv6dg5sjZlQ2YgAMY5i/8mN6ErjRloAV3mx2Is0D/BHRg5OyKUiZHOVBThaWWbAlkp+F7OwtI+qpjQ+JGEfNI5psbV2t0BXM28Esi0msZlO+ALQoinhmoUAQh5WjsnaP467UdihQs7LW3Z46him3ZAPlIUhYKypKirnb6p2fOngvAc5Q=";
+		document.frmJobDetail.submit();
+		}
+	  }
+	  $(document).ready(function() {
+            
+            var n = ")";
+            if (n.length <= 1)
+                $("#ctl00_ProgressBar").hide();
+             });
+    </script>
+
+                
+    <!--general JS and variables-->    
+    <Script language='javascript' type='text/javascript'>var MSG_GEN_EntValdEmlAddr = "Please enter a valid e-mail address.\nDelete all the invalid characters, including spaces, from your e-mail address.";var MSG_GEN_PlsRmDblQut = "Please remove the  DOUBLE QUOTE (\")  you have entered.";var MSG_GEN_EnterVal = "Please enter a value for |QUESTION|";var MSG_GEN_EnterValidPassword = "Please enter a valid password.\nDelete all the invalid characters, including spaces, from your password.";var MSG_GEN_EnterValRange = "Please enter a value for |QUESTION| between |MIN| and |MAX|.";var MSG_GEN_EntValdPasswd = "Spaces are not allowed in the e-mail or in the password field. Please remove the spaces and try again.";var MSG_GEN_FromToDate = "The From date should be less than the To date.";var MSG_GEN_PlsDelPrdFrmBgnOfYrEmlAddr = "Please delete the period from the beginning of your e-mail address.";var MSG_GEN_PlsDelPrdFrmEndOfYrEmlAddr = "Please delete the period from the end of your e-mail address.";var MSG_GEN_PlsEntValdDate = "Please enter a valid date.";var MSG_GEN_PlsEntValdEmlAddr = "Please enter a valid e-mail address.";var MSG_GEN_PlsEntVldNumber = "Please enter a valid number.";var MSG_GEN_PlsEntVldSSN = "Please enter a valid SSN.";var MSG_GEN_SSNFormat = "The SSN should be in xxx-xx-xxxx format.";var MSG_GEN_UserNameInvalidChars = "The username must not include the following characters: < >";var MSG_GEN_UserNameLen = "Please enter a valid username.";var MSG_GEN_UserNameLength = "The username must be less than 100 characters.";var MSG_GEN_UserNameSpaces = "The username must not include any spaces.";var MSG_TSV_EnterValidInputSearchFields = "This entry should contain valid HTML characters.  Please reference the help file for a list of basic valid HTML tags.";var MSG_TSV_EnterValidInputText = "This entry should contain valid HTML characters.  Please reference the help file for a list of basic valid HTML tags.";var MSG_TSV_EnterValidInputTextArea = "This entry should contain valid HTML characters.  Please reference the help file for a list of basic valid HTML tags.";var MSG_InputValidationFail = "[QUESTION] requires a valid entry."; var MSG_RCF_LNPronunciation = "Last name pronunciation key: Please enter a value."; var MSG_RCF_FNPronunciation = "First name pronunciation key: Please enter a value."; var MSG_RCF_Valid_LNPronunciation = "Please enter a valid last name pronunciation key."; var MSG_RCF_Valid_FNPronunciation = "Please enter a valid first name pronunciation key."; var MSG_RCF_FirstName = "Please enter a first name."; var MSG_RCF_Valid_FirstName = "Please enter a valid first name."; var MSG_RCF_MiddleName = "Please enter a middle name."; var MSG_RCF_Valid_MiddleName = "Please enter a valid middle name."; var MSG_RCF_LastName = "Please enter a last name."; var MSG_RCF_Valid_LastName = "Please enter a valid last name."; var MSG_RCF_Address1 = "Please enter an address line 1."; var MSG_RCF_Address2 = "Please enter an address line 2."; var MSG_RCF_Country = "Please select a country name."; var MSG_RCF_City = "Please enter a city name."; var MSG_RCF_Valid_City = "Please enter a valid city name."; var MSG_RCF_State = "Please select a State/Region/Province."; var MSG_RCF_Zip = "Please enter a Zip/Postal code."; var MSG_RCF_HomePhone = "Please enter a home phone number."; var MSG_RCF_Valid_HomePhone = "Please enter a valid home phone number."; var MSG_RCF_WorkPhone = "Please enter a work phone number."; var MSG_RCF_Valid_WorkPhone = "Please enter a valid work phone number."; var MSG_RCF_CellPhone = "Please enter a phone number."; var MSG_RCF_Valid_CellPhone = "Please enter a valid phone number."; var MSG_RCF_Fax = "Please enter a fax number."; var MSG_RCF_Valid_Fax = "Please enter a valid fax number."; var MSG_RCF_Homepage = "Please enter a web address. Web addresses start with http:// or https://.";</Script><title>
+
+</title></head>
+
+<body id="ctl00_ContenBody" class="yui-skin-sam" marginwidth="0" marginheight="0" leftmargin="0" topmargin="0" onload="RemoveHover();loadTagpageview(); AddRfToken();" onunload="BodyUnLoad();"> 
+
+
+
+<!--  added in code behind to banner section
+<form name="frmtimeout" style="visibility:hidden">
+    <input name="timedout" value="0" type="hidden" />
+    <input name="landing" value="0" type="hidden" />
+    <input name="stopcount" value="0" type="hidden" />
+</form>
+-->
+
+<div id="pageContents" class="_portalMainPageContents">
+    
+    <table width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation'><tr><td align='center' width='100%'> </td> </tr> </table>  <table width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation'><tr> <td valign='top' class='TGAlignLeft' width='100%'> 
+
+        <div id="ctl00_Header"></div>
+        <div id="ctl00_ProgressBar"></div>
+        <div id="PrimaryContentBlock">
+            
+<div id="ctl00_MainContent_PrimaryContent" class="" style="overflow:auto;width:100%" align="center"><table width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation'><tr><td colSpan='2'><img height='2' alt='' src='images/pixel.gif'></td></tr><tr><td colSpan='2'>The job posting you are looking for has expired or the position has already been filled. If you are interested in one of our other opportunities, please visit our career site.</td></tr></table></div>
+     
+	    </div>	    
+        <div id="ctl00_Footer"></div>
+    
+    	</tr> </table>  <table width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation'>	<tr> <td align='center' width='100%'> 	</td>	</tr> </table> 
+ 
+</div> 
+
+           
+
+
+
+</body>
+</html>

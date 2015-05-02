@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="noydir" />
+<meta name="robots" content="noodp" />
+<meta name="robots" content="index,follow" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<meta property="og:title" content="radiko.jp" />
+<meta property="og:image" content="http://radiko.jp/images/radiko-icon-circle.png" />
+<meta property="og:site_name" content="radiko.jp" />
+<meta property="og:description"
+content="ご存知ですか？
+PC・スマートフォンでラジオが聴けるradiko.jp
+一人の時間をもっと快適に楽しく！
+今日からあなたもradiko.jpで音のある生活、はじめよう！
+" />
+
+<title>radiko.jp</title>
+<link href="/styles/base.css?_=20140101" rel="stylesheet" type="text/css" />
+<link href="/styles/station.css?_=20140101" rel="stylesheet" type="text/css" />
+<link href="/styles/station_program.css?_=20140101" rel="stylesheet" type="text/css" />
+<link href="/styles/merge.css?_=20140101" rel="stylesheet" type="text/css" />
+<link href="/styles/scroll-program.css?_=20140101" rel="stylesheet" type="text/css" />
+<link href="/styles/search.css?_=20140101" rel="stylesheet" type="text/css" />
+<link href="/styles/top.css?_=20140101" rel="stylesheet" type="text/css" />
+<link href="/styles/toolbar.css?_=20140101" rel="stylesheet" type="text/css" />
+<link href="/styles/colorbox.css?_=20140101" rel="stylesheet" type="text/css" />
+<link href="/styles/menu.css?_=20140101" rel="stylesheet" type="text/css" />
+<link href="/styles/mypage.css?_=20140101" rel="stylesheet" type="text/css" />
+<link href="/styles/member.css?_=20140101" rel="stylesheet" type="text/css" />
+<link type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/redmond/jquery-ui.css" rel="stylesheet" />
+<script type="text/javascript" src="/js/jquery-1.6.3.min.js"></script>
+<script type="text/javascript" src="/js/library.min.js"></script>
+<script type="text/javascript" src="/js/common.js?_=20140609"></script>
+<script type="text/javascript" src="/js/top.js?_=20140613"></script>
+<script type="text/javascript" src="/js/station_top.js?_=20140101"></script>
+<script type="text/javascript" src="/js/menu.js?_=20140101"></script>
+<script type="text/javascript" src="/js/tune_in.js?_=20140101"></script>
+<script type="text/javascript" src="/js/info.js?_=20140101"></script>
+<script type="text/javascript" src="/js/timetable_weekly.js?_=20140101"></script>
+<script type="text/javascript" src="/js/news_release.js?_=20140101"></script>
+<script type="text/javascript" src="/js/default.js?_=20140101"></script>
+<script type="text/javascript" src="/js/swfobject-2.1.js?_=20140101"></script>
+<script type="text/javascript" src="/js/player_4.1.0.js?_=20140101"></script>
+<script type="text/javascript" src="/js/station_program.js?_=20140101"></script>
+<script type="text/javascript" src="/js/timetable_search.js?_=20140101"></script>
+<script type="text/javascript" src="/js/search.js?_=20140101"></script>
+<script type="text/javascript" src="/js/scroll-program.js?_=20140101"></script>
+<script type="text/javascript" src="/js/jquery.colorbox.js"></script>
+<script type="text/javascript" src="/js/mypage.js?_=20140101"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+<script type="text/javascript" src="/js/exvalidation.js?_=20140101"></script>
+<script type="text/javascript" src="/js/gcalendar-holidays.js?_=20140101"></script>
+<script type="text/javascript" src="/js/jquery-ui-timepicker-addon.js"></script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-21104474-1']);
+  _gaq.push(['_setDomainName', 'radiko.jp']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    function is_mobile() {
+      var useragents = ['DoCoMo','KDDI','DDIPOKET','UP.Browser','J-PHONE','Vodafone','SoftBank'];
+      var pattern = new RegExp(useragents.join('|'), 'i');
+      return pattern.test(navigator.userAgent);
+    }
+    function is_wp() {
+      var useragents = ['IS12T'];
+      var pattern = new RegExp(useragents.join('|'), 'i');
+      return pattern.test(navigator.userAgent);
+        
+    }
+    if (is_wp()) {
+      location.href="http://radiko.jp/mobile/";
+    }
+    else if (is_mobile()) {
+      location.href="http://radiko.jp/mobile/feature/";
+    }
+  })();
+</script>
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+	});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+								 
+    // for IE 
+    $("#search_text").val("キーワードから番組を検索");
+
+    // トップページからの検索遷移
+    $("#search_btn").click(function() {
+            $.Radiko.loadDisplayPageOnSearch('timetable_search');
+    });
+	if (window.uid3) {
+		uid3();
+	}
+
+	var textbox = $("#search_text");
+	textbox.focus(function () {
+		$(this).css("color","#666");
+		if(this.value==this.defaultValue){
+			$(this).val('');
+		}
+	}).blur(function() {
+		if($(this).val() == '' ){
+			$(this).val(this.defaultValue).css("color","#CCC");
+		}
+	}).keyup(function(e) {
+		var code = e.which; // recommended to use e.which, it's normalized across browsers
+		if(code==13)e.preventDefault();
+		if(code==13) {
+			$("#search_btn").click();
+		} 
+	});
+	$("#goto_top").click(function() {
+		$(window).scrollTo(0, 500, {axis:"y"});
+	});
+
+});
+</script>
+</head>
+<body>
+
+<!-- Container -->
+<div id="container">
+	<!-- globalheader-cntl -->
+	<div id="globalheader-cntl">
+		<!-- Global Header -->
+		<div id="globalheader">
+			<!-- toolbar -->
+			<div id="toolbar"></div><!-- / #toolbar -->
+            <div id="info-bar"></div><!-- /#info-bar -->
+			<h1><a href="#" class="a_top_default"><img src="/images/top_radiko.png" alt="株式会社radiko" width="117" height="39" /><!--<img src="/images/top_logo.jpg" alt="株式会社radiko" width="101" height="26" />--></a></h1>
+			<div id="areatitle">
+				<p id="area" class="free"><script type="text/javascript" src="/area"></script></p>
+			</div>
+			<!--<div id="radiko-socialbtn">
+			<div class="about_radiko">radiko.jpについて</div>
+			<div class="gl-share-btn">
+			<a onclick="javascript:open_sns_iframe('twitter','top');" class="twitter" href="#">ツイートする</a>
+			<a onclick="javascript:open_sns_iframe('mixi','top');" class="mixi" href="#">つぶやく</a>
+			<a onclick="javascript:open_sns_iframe('facebook','top');" class="fb1" href="#">シェア</a>
+			<a onclick="javascript:open_sns_iframe('facebook2','top');" class="fb2" href="#">いいね！</a>
+			</div>
+			</div>-->
+			<div class="search" id="search">
+				<!--<input value="" type="text" id="search_text"/>-->
+				<input type="text" id="search_text" name="word" class="ttsrh_f_input" value="キーワードから番組を検索" style="color:#CCC;" />
+				<input type="image" src="images/search_btn.png" alt="検索" id="search_btn" />
+			</div>
+			<div class="hbnr"></div>
+			<div id="station_menu_eria">
+				<ul id="station_menu" class="cfix">
+				</ul>
+			</div>
+			<div id="new_player">
+				<div id="player">
+					<div class="player_wrap">
+						<div id="controller_unit_header" class="clearfix" style="display:none;">
+						</div>
+						<div id="controller_unit_main">
+							<div id="external_controller_wrap">
+								<div id="external_controller">
+									<a style="border:0px none; margin:0px; padding:0px;" href="http://www.adobe.com/go/getflash/" target="_blank"><img src="/images/no_flash.gif" alt="Flashプレイヤーがインストールされていません" style="border:0px none; margin:0px; padding:0px;" /></a>
+								</div>
+							</div>	
+						</div>
+					</div>
+					<!-- end of controller_unit -->
+			    </div>
+			    <!-- 新プレイヤーの設置部分ここから-->
+			    <!-- 新プレイヤーの設置部分ここまで-->
+
+				<!-- 選局名　表示予定箇所ここから　-->
+				<div id="station_name">
+                    <div id="nameinn"></div>
+                </div>
+				<div id="telop">放送局名、もしくは番組表から選局してください</div>
+				<!-- 選局名　表示予定箇所ここまで-->
+		</div>
+			<!--<div id="balloon">&nbsp;</div>-->
+	</div>
+	<!-- / Global Header -->
+</div>
+
+<!-- Main -->
+<div id="main" class="cfix">
+</div>
+<!-- / Main -->
+
+</div>
+<!-- / Container -->
+
+<!-- footer_Container -->
+<div id="footer_container">	
+	<!-- footer -->
+	<div class="footer">
+	<div class="footer-waku">
+        <div id="radiko-socialbtn">
+            <div class="gl-share-btn">
+                <a onclick="javascript:open_sns_iframe('twitter','top');" class="twitter" href="#">ツイートする</a>
+                <a onclick="javascript:open_sns_iframe('facebook2','top');" class="fb2" href="#">いいね！</a>
+            </div>
+        </div>
+		<p class="radiko-tool"><a href="#" class="a_download"><!-- <img alt="radiko.jp" src="/images/footer_radiko_tool.png" /> --></a></p>
+		<p class="f_area">
+			<a href="#" class="a_download">radiko.jpツール</a><span class="footer-slash">&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+			<a href="#" class="a_area">配信エリア</a><span class="footer-slash">&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+			<a href="#" class="a_howto">radiko.jpについて</a><span class="footer-slash">&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+			<a href="#" class="a_news_release">ニュースリリース</a><span class="footer-slash">&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+			<a href="#" class="a_faq">FAQ</a><span class="footer-slash">&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+			<a href="#" class="a_inquiry">お問い合わせ</a><span class="footer-slash">&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+			<a href="#" class="a_guidelines">利用規約</a><span class="footer-slash">&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+			<a href="#" class="a_privacy">プライバシーポリシー</a>
+		</p>
+		<p class="f_radiko">
+			<a href="#" class="a_about">株式会社radikoについて</a><span class="footer-slash">&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+			<a href="http://www.mp-lab.co.jp/index.html" target="_blank">株式会社メディアプラットフォームラボについて</a><span class="footer-slash">&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+			<a href="#" class="a_linkfree">リンクについて</a><span class="footer-slash">&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+			<a href="#" class="a_commercial">特定商取引に関する法律に基づく表示</a>
+		</p>
+		<p class="page_top_new"><a id="goto_top" href="javascript:void(0);"><img width="88" height="25" alt="radiko.jp" src="/images/top_btn_footer01.png" /></a></p>	
+		<p class="cr">Copyright © radiko co., Ltd. All rights reserved</p>
+		</div>
+	</div>
+	<!-- footer -->
+	<div id="log"></div>
+</div>
+<!-- footer_Container -->
+<!-- A-one -->
+<script type="text/javascript">
+(function(){
+  var oid = '0a44b7362c5d7b1f';
+  var interval = 300; // seconds
+  var timer;
+  try{
+    var params = {
+      getArea : function(){
+        return (typeof areaId != "undefined") ?  areaId : "";
+      },
+      getStation : function(){
+        return (typeof $.Radiko.stationId != "undefined") ?  $.Radiko.stationId : "";
+      },
+      getProgram : function(){
+        return (typeof $.Radiko.tickerProgram.title != "undefined") ?  $.Radiko.tickerProgram.title : "";
+      },
+      isPlaying : function(){
+        return (typeof isPlaying != "undefined") ?  isPlaying : !1;
+      }
+    }
+
+    var url_base = ('https:' == document.location.protocol ? 'https' : 'http')+'://a.one.impact-ad.jp/dc?';
+    var sendRequest = function(){
+      var collect_params = [];
+      var collect_url = "http://radiko.jp/";
+      if(params.getArea()){
+        collect_params.push(params.getArea());
+        if(params.getStation()){
+          collect_params.push(params.getStation());
+          if(params.getProgram()){
+            collect_params.push(params.getProgram());
+          }
+        }
+      }
+      var param_radiko_id = (typeof uid3 != "undefined") ? "&radiko_id="+uid3() : "";
+      (params.isPlaying()) ? collect_params.push("?playing=ON"+param_radiko_id) : collect_params.push("?playing=OFF"+param_radiko_id);
+      collect_url += collect_params.join("/");
+      var aone_params = [];
+      aone_params.push("oid=" + oid);
+      aone_params.push("src=" + encodeURIComponent(collect_url));
+
+      var img=document.createElement('img');
+      img.setAttribute('width', '1');
+      img.setAttribute('height', '1');
+      img.setAttribute('style', 'display:none');
+      img.src=url_base + aone_params.join("&");
+      var b = document.getElementsByTagName('script')[0];
+      b.parentNode.insertBefore(img, b); 
+    };
+    if ("complete" == document.readyState){
+        sendRequest();
+    }else{
+        if(window.addEventListener) {
+            window.addEventListener("load", function(){sendRequest();}, false);
+        }else if (window.attachEvent) {
+            window.attachEvent("onload", function(){sendRequest();});
+        }else{
+            window.onload = function(){sendRequest();};
+        }
+    }
+    timer = setInterval(function(){sendRequest()}, interval * 1000);
+  }catch(e){clearInterval(timer)}
+})();
+</script>
+<!-- /A-one -->
+
+<div id="script-position"></div>
+<!-- TURN -->
+<noscript><iframe src="//d.turn.com/r/dft/id/L21rdC8zMjgvcGlkLzQ4NTg1NzE2L3QvMA?ns" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(a,b,d){var c=a.getElementsByTagName(b)[0],a=a.createElement(b);a.async=!0;a.src=d;c.parentNode.insertBefore(a,c)})(document,"script","//d.turn.com/r/dft/id/L21rdC8zMjgvcGlkLzQ4NTg1NzE2L3QvMA");</script>
+<!-- /TURN -->
+
+</body>
+</html>

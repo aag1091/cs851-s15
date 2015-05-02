@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<!--[if IE 7]>    <html class="ie ie7 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="ie ie8 lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="v48DVLhIQTadbkorS1DMxnwZdFmNbsiNWSavFO99H7g=" name="csrf-token" />
+
+  <meta charset="utf-8">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"5b06465c9f","applicationID":"367227","transactionName":"el9cTBRXCl8EFk5HX0lZUUtJSw5cFg==","queueTime":0,"applicationTime":23,"agent":"js-agent.newrelic.com/nr-632.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VwcEVlFACwUHVlNV"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:20,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(3),window.onerror=e;try{throw new Error}catch(u){"stack"in u&&(t(4),t(5),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:8,3:3,4:7,5:6,6:21,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:21,2:22,ee:"QJf3ax",gos:"7eSDFh"}],6:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:22,2:21,ee:"QJf3ax"}],7:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:22,2:21,ee:"QJf3ax"}],8:[function(t,e){function n(){u.inPlace(this,p,"fn-")}function r(t,e){u.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),u=c(a),f=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),f.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,u.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:5,2:22,ee:"QJf3ax"}],9:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=n(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=n(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var f=0;c>f;f++)e.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:10,3:8,4:5,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],10:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],11:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:20,2:21,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===f.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=u.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),u=c.document,f=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:f,features:{}};u.addEventListener?(u.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(u.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:20,2:11,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],20:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],21:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],22:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:21,ee:"QJf3ax"}]},{},["G9z0Bl",4,9]);</script>
+  <meta property="fb:app_id" content="127105130696839">
+  <script>
+  if (/iPad/.test(navigator.userAgent)) {
+    // 972px layout + 20px gutter on left & right.
+    document.write('<meta name="viewport" content="width=1012">');
+  } else {
+    document.write('<meta name="viewport" content="width=device-width, initial-scale=1">');
+  }
+</script>
+
+  <meta content="Browse Violence against women news, research and analysis from The Conversation" name="description" />
+
+
+
+
+
+
+  <meta content="The Conversation" property="og:site_name" />
+<meta content="Violence against women News, Research and Analysis - The Conversation" property="og:title" />
+<meta content="Browse Violence against women news, research and analysis from The Conversation" property="og:description" />
+
+<meta content="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/74906/width496/image-20150316-9208-dffuev.jpg" property="og:image" />
+<meta content="2015-03-16T19:15:44Z" property="og:updated_time" />
+<meta content="http://theconversation.com/au/topics/violence-against-women" property="og:url" />
+
+
+  
+
+  <!-- refspec 1d4c109 -->
+  <title>Violence against women News, Research and Analysis - The Conversation</title>
+  <link href="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/assets/application-c6523341b7eeae9ccd7069ec176f52d5.css" media="screen" rel="stylesheet" />
+
+
+
+<!--[if lt IE 9]><script src="/javascripts/vendor/shim.js"></script><![endif]-->
+
+<!--[if IE 7]><link href="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/assets/ie/ie7-bda2b39eada0a0bfb1d0980eaed6c878.css" media="screen" rel="stylesheet" /><![endif]-->
+<!--[if IE 8]><link href="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/assets/ie/ie8-327d8e7f92f93059ebb66676c9f751ca.css" media="screen" rel="stylesheet" /><![endif]-->
+
+<link href="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/assets/print-5de0607eda407aaabdf0613a561616af.css" media="print" rel="stylesheet" />
+
+  <link rel="apple-touch-icon-precomposed" href="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/assets/ios-logo-e2f668397240b0b33a28a249e93953cd.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+  
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', "UA-21436757-1"]);
+
+  _gaq.push(['_setCustomVar', 1, 'UserType', 'Reader', 2]);
+_gaq.push(['_setCustomVar', 2, 'CommissioningRegion', 'us', 3]);
+_gaq.push(['_setCustomVar', 5, 'RegionCode', 'us', 3]);
+
+
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+    
+    <link href="/uk/topics/violence-against-women/articles.atom" rel="alternate" title="Violence against women Analysis and Comment" type="application/atom+xml" />
+
+</head>
+<body class="region_us topics topics-show ">
+  
+  <div id="sm-sidebar">
+    <div id="sm-sidebar-content">
+      <h3>Sections <span id="sm-sidebar-close-button" class="icon-delete"></span></h3>
+      <ul>
+          <li class="home-page ">
+            <a class="" href="/us">Home<span class="icon-chevron-right"></span></a>
+          </li>
+          <li class="arts ">
+            <a class="" href="/us/arts">Arts <span><span title="and">+</span> Culture</span><span class="icon-chevron-right"></span></a>
+          </li>
+          <li class="business ">
+            <a class="" href="/us/business">Economy <span><span title="and">+</span> Business</span><span class="icon-chevron-right"></span></a>
+          </li>
+          <li class="education ">
+            <a class="" href="/us/education">Education<span class="icon-chevron-right"></span></a>
+          </li>
+          <li class="environment ">
+            <a class="" href="/us/environment">Environment <span><span title="and">+</span> Energy</span><span class="icon-chevron-right"></span></a>
+          </li>
+          <li class="health ">
+            <a class="" href="/us/health">Health <span><span title="and">+</span> Medicine</span><span class="icon-chevron-right"></span></a>
+          </li>
+          <li class="politics ">
+            <a class="" href="/us/politics">Politics <span><span title="and">+</span> Society</span><span class="icon-chevron-right"></span></a>
+          </li>
+          <li class="technology last">
+            <a class="" href="/us/technology">Science <span><span title="and">+</span> Technology</span><span class="icon-chevron-right"></span></a>
+          </li>
+      </ul>
+
+      <h3>Services</h3>
+      <ul>
+          <li>
+            <a href="https://jobs.theconversation.com/?utm_source=theconversation.com&amp;utm_medium=website&amp;utm_campaign=mobile-sidebar">
+              Job board <span class="icon-chevron-right"></span>
+</a>          </li>
+        <li>
+          <a href="/us/newsletter">
+            Newsletter <span class="icon-chevron-right"></span>
+</a>        </li>
+        <li id="google-currents-link">
+          <a href="http://www.google.com/newsstand/s/editions/CAowro6aAg">Read on Google Play<span class="icon-chevron-right"></span></a>
+        </li>
+      </ul>
+
+      <h3>Information</h3>
+      <ul>
+        <li><a class="" href="/us/who-we-are">Who we are <span class="icon-chevron-right"></span></a></li>
+        <li><a class="" href="/us/charter">Our charter <span class="icon-chevron-right"></span></a></li>
+        <li><a class="" href="/us/team">Our team <span class="icon-chevron-right"></span></a></li>
+        <li><a class="" href="/us/partners">Partners and funders <span class="icon-chevron-right"></span></a></li>
+        <li><a class="" href="/institutions">Contributing institutions <span class="icon-chevron-right"></span></a></li>
+        <li><a class="" href="/us/contact-us">Contact us <span class="icon-chevron-right"></span></a></li>
+        <li><a class="" href="/us/privacy-policy">Privacy policy <span class="icon-chevron-right"></span></a></li>
+        <li><a class="" href="/us/terms-and-conditions">Terms and conditions <span class="icon-chevron-right"></span></a></li>
+        <li><a class="" href="/us/corrections">Corrections <span class="icon-chevron-right"></span></a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div id="page-wrapper">
+    <div id="sm-topbar">
+
+  <div>
+    <span id="sm-topbar-menu-button" class="icon-menu"></span>
+  </div>
+
+  <div id="sm-region-select">
+    <div>
+      <span id="sm-region-current">
+        <span class="code">US</span>
+        <span class="name">United States</span>
+      </span>
+      <span class="icon-caret-down"></span>
+    </div>
+    <select id="sm-region-select-dropdown">
+        <option data-code="AU" value="/au">
+          Australia
+        </option>
+        <option data-code="UK" value="/uk">
+          United Kingdom
+        </option>
+        <option data-code="US" value="/us" selected="selected">
+          United States
+        </option>
+    </select>
+  </div>
+
+  <div>
+    <span id="sm-topbar-search-button" class="icon-search"></span>
+  </div>
+
+  <div id="sm-search">
+    <form action="/search">
+      <input type="text" name="q" placeholder="Search analysis, academics…">
+      <button type="submit" class="button active"><span class="icon-search"></span></button>
+    </form>
+  </div>
+
+  <div id="sm-overlay"></div>
+
+</div>
+
+    <section id="topbar">
+  <div class="wrapper clearfix">
+
+    <div id="edition-selector">
+      <ul>
+        <li><div>Edition:</div></li>
+          <li class="region au">
+            <a href="/au" title="Australia">
+              AU
+</a>          </li>
+          <li class="region uk">
+            <a href="/uk" title="United Kingdom">
+              UK
+</a>          </li>
+          <li class="region us active">
+            <a href="/us" title="United States">
+              US
+</a>          </li>
+      </ul>
+    </div>
+
+    <nav id="site-nav">
+      <ul>
+          <li class="tc-jobs">
+            <a href="https://jobs.theconversation.com/?utm_source=theconversation.com&amp;utm_medium=website&amp;utm_campaign=topbar">Job Board</a>
+          </li>
+
+
+        <li class="newsletter">
+          <a href="/us/newsletter" title="Sign up to receive our daily email newsletter">Newsletter</a>
+        </li>
+
+        <li class="elsewhere">
+          <a href="https://www.facebook.com/theconversationUS" title="The Conversation on Facebook"><i class="icon-facebook"></i></a>
+          <a href="https://twitter.com/US_Conversation" title="The Conversation on Twitter"><i class="icon-twitter"></i></a>
+          <a class="rss" href="/us/feeds" title="The Conversation&#39;s Feeds"><i class="icon-rss"></i></a>
+        </li>
+      </ul>
+    </nav>
+
+    <nav class="account-nav">
+        <ul class="auth">
+          <li>
+            <a href="/become-an-author">Become an author</a>
+          </li>
+          <li>
+            <a href="https://theconversation.com/sign_up">Sign up as a reader</a>
+          </li>
+          <li>
+            <a href="/sign_in">Sign in</a>
+          </li>
+        </ul>
+    </nav>
+  </div>
+</section>
+
+    
+  <section id="header">
+    <div class="wrapper nocontent">
+      <header id="masthead" class="clearfix">
+  <a class="masthead-home-link" href="/us">
+    <img alt="The Conversation" src="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/assets/carlton/logos/logo-936ac9b464f03e7125bfde701e93b025.svg" />
+</a>
+  <form class="masthead-search" action="/search" method="get">
+    <fieldset>
+  <legend>Search</legend>
+  <div class="row">
+    <div class="input-wrapper">
+      <label for="q"><i class="icon-search"></i></label>
+      <input id="q" name="q" placeholder="Search analysis, research, academics…" type="text" value="" />
+    </div>
+    <button type="submit" class="button" value="Search"></button>
+  </div>
+</fieldset>
+
+  </form>
+
+  <div class="masthead-tagline">
+    Academic rigor, journalistic flair
+  </div>
+</header>
+
+      <nav id="primary-navigation" class=" nocontent">
+  <ol>
+      <li class="arts ">
+        <a class="" href="/us/arts" title="Arts + Culture">Arts <span><span title="and">+</span> Culture</span></a>
+      </li>
+      <li class="business ">
+        <a class="" href="/us/business" title="Economy + Business">Economy <span><span title="and">+</span> Business</span></a>
+      </li>
+      <li class="education ">
+        <a class="" href="/us/education" title="Education">Education</a>
+      </li>
+      <li class="environment ">
+        <a class="" href="/us/environment" title="Environment + Energy">Environment <span><span title="and">+</span> Energy</span></a>
+      </li>
+      <li class="health ">
+        <a class="" href="/us/health" title="Health + Medicine">Health <span><span title="and">+</span> Medicine</span></a>
+      </li>
+      <li class="politics ">
+        <a class="" href="/us/politics" title="Politics + Society">Politics <span><span title="and">+</span> Society</span></a>
+      </li>
+      <li class="technology last">
+        <a class="" href="/us/technology" title="Science + Technology">Science <span><span title="and">+</span> Technology</span></a>
+      </li>
+  </ol>
+</nav>
+
+    </div>
+  </section>
+
+    
+
+    <section id="topics">
+      <div class="wrapper nocontent">
+          <section id="hot-topics" class=" clearfix nocontent">
+    <h3>
+      <a href="/us/topics">Follow Topics</a>
+    </h3>
+
+    <ol>
+        <li>
+          <a class="nocontent" data-slug="stem-education" href="/us/topics/stem-education">STEM education</a>
+        </li>
+        <li>
+          <a class="nocontent" data-slug="vaccines" href="/us/topics/vaccines">Vaccines</a>
+        </li>
+        <li>
+          <a class="nocontent" data-slug="isis" href="/us/topics/isis">ISIS</a>
+        </li>
+        <li>
+          <a class="nocontent" data-slug="israeli-election-2015" href="/us/topics/israeli-election-2015">Israeli election 2015</a>
+        </li>
+        <li>
+          <a class="nocontent" data-slug="cybersecurity" href="/us/topics/cybersecurity">Cybersecurity</a>
+        </li>
+    </ol>
+  </section>
+
+      </div>
+    </section>
+
+
+    <div id="outer">
+      
+
+
+      <div id="page" class="wrapper">
+        <div id="body" class="clearfix">
+          
+<nav id="tabbed-navigation" class="tabbed tabbed-section-navigation">
+  <a href="#articles" class="tab active">Articles</a>
+  <a href="#contributors" class="tab">Contributors</a>
+  <a href="#links" class="tab">Links</a>
+</nav>
+
+<div class="topic-page sm-display-articles statically-cached-resource">
+  <h1>Violence against women</h1>
+
+  <div class="grid-ten large-grid-eight">
+      <section id="articles">
+        <h3 class="double-bordered">Articles <span class="count">(1 - 20 of 28)</span></h3>
+        <div class="content-list">
+            
+<article data-id="39437" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/everyday-rape-lets-turn-the-spotlight-on-known-perpetrators-39437">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/76729/width668x324/image-20150401-1263-1mne4dr.jpg" data-id="76729" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="caption">
+              The majority of sexual assaults are perpetrated by a man known to the victim.
+            </span>
+            <span class="source" title="Source">Legend_tp/Shutterstock</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+      <time data-format="tc_date" datetime="2015-04-01T04:15:23Z" pubdate="pubdate">April 1 2015</time>
+
+
+    <h2><a href="/everyday-rape-lets-turn-the-spotlight-on-known-perpetrators-39437">Everyday rape: let&rsquo;s turn the spotlight on known&nbsp;perpetrators</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/nicola-henry-95431">Nicola Henry</a><em>, La Trobe University</em> and <a href="http://theconversation.com/profiles/anastasia-powell-13883">Anastasia Powell</a><em>, RMIT University</em></span>
+      </p>
+  </header>
+
+    <div class="content" data-raw="">
+      <span>Australia is at a critical juncture of increasing awareness and understanding of men’s violence against women. But one important type of sexual violence is often overlooked: acquaintance rape.</span>
+    </div>
+</article>
+
+            
+<article data-id="38721" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/whistling-and-staring-at-women-in-the-street-is-harassment-and-its-got-to-stop-38721">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/74906/width240x240/image-20150316-9208-dffuev.jpg" data-id="74906" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="caption">
+              87% of Australian women have experienced some form of physical or verbal street harassment.
+            </span>
+            <span class="source" title="Source">Elena Dijour/Shutterstock</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+      <time data-format="tc_date" datetime="2015-03-16T19:15:44Z" pubdate="pubdate">March 16 2015</time>
+
+
+    <h2><a href="/whistling-and-staring-at-women-in-the-street-is-harassment-and-its-got-to-stop-38721">Whistling and staring at women in the street is harassment – and it&rsquo;s got to&nbsp;stop</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/bianca-fileborn-121080">Bianca Fileborn</a><em>, La Trobe University</em></span>
+      </p>
+  </header>
+
+    <div class="content" data-raw="">
+      <span>You may not have heard the term &quot;street harassment&quot;, but if you&#39;re a woman in Australia, you&#39;ve probably experienced it: whistles, stares, comments by strangers in the street.</span>
+    </div>
+</article>
+
+            
+<article data-id="38715" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/yes-sexism-is-rife-in-surgery-and-its-time-to-do-something-about-it-38715">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/74747/width240x240/image-20150313-7084-1kbm59a.jpg" data-id="74747" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="caption">
+              Fewer than one in three surgical trainees are women and the numbers fall as doctors reach advanced training.
+            </span>
+            <span class="source" title="Source">racorn/Shutterstock</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+      <time data-format="tc_date" datetime="2015-03-13T05:01:05Z" pubdate="pubdate">March 13 2015</time>
+
+
+    <h2><a href="/yes-sexism-is-rife-in-surgery-and-its-time-to-do-something-about-it-38715">Yes, sexism is rife in surgery – and it&rsquo;s time to do something about&nbsp;it</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/elizabeth-sturgiss-152652">Elizabeth Sturgiss</a><em>, Australian National University</em> and <a href="http://theconversation.com/profiles/christine-phillips-158576">Christine Phillips</a><em>, Australian National University</em></span>
+      </p>
+  </header>
+
+    <div class="content" data-raw="">
+      <span>In a high-pressure surgical environment, where older male consultants dominate, and there is great competition for training positions and jobs, women are vulnerable to sexual harassment.</span>
+    </div>
+</article>
+
+            
+<article data-id="37713" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/womens-personal-experiences-of-violence-should-indeed-incite-fury-37713">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/72238/editor_pick/width240x240/pzyxb85s-1424150193.jpg" data-id="72238" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="caption">
+              We need to smash the system that allows men’s violence against women to continue.
+            </span>
+            <span class="source" title="Source">Thomas Lieser</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+      <time data-format="tc_date" datetime="2015-02-17T05:42:25Z" pubdate="pubdate">February 17 2015</time>
+
+
+    <h2><a href="/womens-personal-experiences-of-violence-should-indeed-incite-fury-37713">Women&rsquo;s personal experiences of violence should indeed incite&nbsp;Fury</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/anastasia-powell-13883">Anastasia Powell</a><em>, RMIT University</em></span>
+      </p>
+  </header>
+
+    <div class="content" data-raw="">
+      <span>Women sharing their accounts of violence against them, and its aftermath, can be powerful. Feminism has long since taught us that personal experiences of violence, when shared collectively, can transcend…</span>
+    </div>
+</article>
+
+            
+<article data-id="37440" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/fifty-shades-of-grey-is-just-an-old-fashioned-romance-thats-the-problem-37440">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/71633/width240x240/image-20150210-24660-1ice5yw.jpg" data-id="71633" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="caption">
+              Harmless eroticism or something darker?
+            </span>
+            <span class="source" title="Source">Malics</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+      <time data-format="tc_date" datetime="2015-02-11T06:23:56Z" pubdate="pubdate">February 11 2015</time>
+
+
+    <h2><a href="/fifty-shades-of-grey-is-just-an-old-fashioned-romance-thats-the-problem-37440">Fifty Shades of Grey is just an <span class="nobr">old-fashioned</span> romance – that&rsquo;s the&nbsp;problem</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/karen-boyle-122664">Karen Boyle</a><em>, University of Stirling</em></span>
+      </p>
+  </header>
+
+    <div class="content" data-raw="">
+      <span>Fifty Shades of Grey film opens this Valentine’s weekend to much fanfare but, perhaps tellingly, with few press previews in the UK. With one UK cinema chain reporting advance ticket sales worth £1.3m…</span>
+    </div>
+</article>
+
+            
+<article data-id="33505" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/gender-stereotypes-make-teenagers-more-accepting-of-violence-33505">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/68200/width240x240/image-20150105-13830-1l2j4q8.jpg" data-id="68200" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="caption">
+              Break up the fights early.
+            </span>
+            <span class="source" title="Source">Teenage fight via Olly/Shutterstock</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+      <time data-format="tc_date" datetime="2015-01-06T05:55:07Z" pubdate="pubdate">January 6 2015</time>
+
+
+    <h2><a href="/gender-stereotypes-make-teenagers-more-accepting-of-violence-33505">Gender stereotypes make teenagers more accepting of&nbsp;violence</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/vanita-sundaram-142878">Vanita Sundaram</a><em>, University of York</em></span>
+      </p>
+  </header>
+
+    <div class="content" data-raw="">
+      <span>Teenagers' opinions about when violence is acceptable or not can be influenced by the way they perceive men and women and the relationships between them. Simply telling young people that violence is wrong…</span>
+    </div>
+</article>
+
+            
+<article data-id="33047" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/time-to-stop-playing-nice-about-misogyny-in-sports-33047">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/62017/width240x240/q6sncnws-1413490128.jpg" data-id="62017" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="caption">
+              A convicted rapist is no role model for this young fan.
+            </span>
+            <span class="source" title="Source">Darren Staples/Reuters</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+      <time data-format="tc_date" datetime="2014-10-23T09:21:32Z" pubdate="pubdate">October 23 2014</time>
+
+
+    <h2><a href="/time-to-stop-playing-nice-about-misogyny-in-sports-33047">Time to stop playing nice about misogyny in&nbsp;sports</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/kath-woodward-95117">Kath Woodward</a><em>, The Open University</em></span>
+      </p>
+  </header>
+
+    <div class="content" data-raw="">
+      <span>The persistence of violence against women across the globe is well documented, but what part do sports play in gendered aggression? It seems shocking to claim that sports and violence against women are…</span>
+    </div>
+</article>
+
+            
+<article data-id="32013" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/attitudes-to-violence-against-women-in-sports-havent-improved-in-30-years-32013">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/60455/width240x240/stmypvkn-1412108673.JPG" data-id="60455" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="caption">
+              Ray Rice has been suspended indefinitely from the NFL for domestic violence.
+            </span>
+            <span class="source" title="Source">Wallstreethotrod</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+      <time data-format="tc_date" datetime="2014-10-22T09:33:56Z" pubdate="pubdate">October 22 2014</time>
+
+
+    <h2><a href="/attitudes-to-violence-against-women-in-sports-havent-improved-in-30-years-32013">Attitudes to violence against women in sports haven&rsquo;t improved in 30&nbsp;years</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/helen-jefferson-lenskyj-115796">Helen Jefferson Lenskyj</a><em>, University of Toronto</em></span>
+      </p>
+  </header>
+
+    <div class="content" data-raw="">
+      <span>Another day, another headline about a sports player and domestic violence. LA Kings player Slava Voynov was arrested on suspicion of domestic violence on October 19, and has been suspended by the NHL…</span>
+    </div>
+</article>
+
+            
+<article data-id="31750" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/rape-culture-why-our-community-attitudes-to-sexual-violence-matter-31750">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/59213/width240x240/wvtcgzyd-1410913152.jpg" data-id="59213" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="caption">
+              The alarming aspect of today&rsquo;s survey findings is that younger Australians aged 16 to 25 were more likely to hold attitudes that excuse or trivialise sexual assault.
+            </span>
+            <span class="source" title="Source">AAP/Newzulu/Gail Orenstein</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+      <time data-format="tc_date" datetime="2014-09-17T00:36:32Z" pubdate="pubdate">September 17 2014</time>
+
+
+    <h2><a href="/rape-culture-why-our-community-attitudes-to-sexual-violence-matter-31750">Rape culture: why our community attitudes to sexual violence&nbsp;matter</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/anastasia-powell-13883">Anastasia Powell</a><em>, RMIT University</em></span>
+      </p>
+  </header>
+
+    <div class="content" data-raw="">
+      <span>Results from the National Community Attitudes Towards Violence Against Women (NCAS) 2013 Survey have been released today by VicHealth, and there is reason to be concerned about Australians' attitudes to…</span>
+    </div>
+</article>
+
+            
+<article data-id="29532" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/behind-media-silence-on-domestic-violence-are-blokey-newsrooms-29532">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/54762/width240x240/ygcwy3qf-1406180814.jpg" data-id="54762" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="caption">
+              Until recently, violence against women was not reported prominently or consistently by mainstream media. Why not?
+            </span>
+            <span class="source" title="Source">Dave Malkoff</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+      <time data-format="tc_date" datetime="2014-08-04T20:42:12Z" pubdate="pubdate">August 4 2014</time>
+
+
+    <h2><a href="/behind-media-silence-on-domestic-violence-are-blokey-newsrooms-29532">Behind media silence on domestic violence are blokey&nbsp;newsrooms</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/gael-jennings-132420">Gael Jennings</a><em>, University of Melbourne</em> and <a href="http://theconversation.com/profiles/margaret-simons-133939">Margaret Simons</a><em>, University of Melbourne</em></span>
+      </p>
+  </header>
+
+    <div class="content" data-raw="">
+      <span>Did the grim story of dapper real estate agent Gerard Baden-Clay’s calculated murder of his wife Allison in April 2012, played out recently in a Brisbane court with a life sentence, make you feel afraid…</span>
+    </div>
+</article>
+
+            
+<article data-id="29280" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/out-of-the-shadows-the-rise-of-domestic-violence-in-australia-29280">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/54844/width240x240/3cn5j5zs-1406252955.jpg" data-id="54844" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="caption">
+              Gerard Baden-Clay’s murder of his wife Allison has helped put the spectre of domestic violence firmly back in the national spotlight. How prevalent is it?
+            </span>
+            <span class="source" title="Source">AAP/Dan Peled</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+      <time data-format="tc_date" datetime="2014-08-03T20:05:28Z" pubdate="pubdate">August 3 2014</time>
+
+
+    <h2><a href="/out-of-the-shadows-the-rise-of-domestic-violence-in-australia-29280">Out of the shadows: the rise of domestic violence in&nbsp;Australia</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/terry-goldsworthy-105403">Terry Goldsworthy</a> and <a href="http://theconversation.com/profiles/matthew-raj-115388">Matthew Raj</a></span>
+      </p>
+  </header>
+
+    <div class="content" data-raw="">
+      <span>Once a hidden crime, domestic violence has in recent years emerged as a mainstream criminal justice issue in Australia. Cases such as Queensland man Gerard Baden-Clay’s murder of his wife Allison and the…</span>
+    </div>
+</article>
+
+            
+<article data-id="27274" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/the-banality-of-evil-violence-against-women-27274">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/51323/width240x240/86n9f4wc-1402987271.jpg" data-id="51323" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="caption">
+              Violence against women can be fostered in the workplace.
+            </span>
+            <span class="source" title="Source">Flickr/BenThompson</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+      <time data-format="tc_date" datetime="2014-07-04T04:23:14Z" pubdate="pubdate">July 4 2014</time>
+
+
+    <h2><a href="/the-banality-of-evil-violence-against-women-27274">The banality of evil: violence against&nbsp;women</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/hannah-piterman-9034">Hannah Piterman</a><em>, Monash University</em></span>
+      </p>
+  </header>
+
+    <div class="content" data-raw="">
+      <span>“How do you describe it? What alphabet do you employ? What words? What language? What silence, what scream?” The late Jacob Rosenberg, author and poet, poses these questions in explaining the evil of the…</span>
+    </div>
+</article>
+
+            
+<article data-id="26205" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/who-is-killing-women-in-south-africa-the-inconvenient-truth-26205">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/48275/width240x240/4x9bzz2v-1399896846.jpg" data-id="48275" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="caption">
+              Pistorius trial has kept violence against women on the frontpage.
+            </span>
+            <span class="source" title="Source">Kim Ludbrook/EPA</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+      <time data-format="tc_date" datetime="2014-05-14T05:17:19Z" pubdate="pubdate">May 14 2014</time>
+
+
+    <h2><a href="/who-is-killing-women-in-south-africa-the-inconvenient-truth-26205">Who is killing women in South Africa? The inconvenient&nbsp;truth</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/lisa-vetten-124695">Lisa Vetten</a><em>, University of the Witwatersrand</em></span>
+      </p>
+  </header>
+
+    <div class="content" data-raw="">
+      <span>Who is responsible for violence towards women? This question runs like a thread through some of the public discourses swirling around the trial of athlete Oscar Pistorius. In some ways he represents an…</span>
+    </div>
+</article>
+
+            
+<article data-id="24443" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/girls-are-taught-young-that-violence-towards-them-is-normal-24443">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/44097/width240x240/t44m83yy-1395054412.jpg" data-id="44097" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="caption">
+              Violence towards girls is trivialised and normalised from an early age.
+            </span>
+            <span class="source" title="Source">Ratterrell</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+      <time data-format="tc_date" datetime="2014-03-17T12:06:51Z" pubdate="pubdate">March 17 2014</time>
+
+
+    <h2><a href="/girls-are-taught-young-that-violence-towards-them-is-normal-24443">Girls are taught young that violence towards them is&nbsp;normal</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/nancy-lombard-104332">Nancy Lombard</a><em>, Glasgow Caledonian University</em></span>
+      </p>
+  </header>
+
+    <div class="content" data-raw="">
+      <span>The latest European survey on violence towards women did the usual rounds with the same old figures when it was released earlier in the month. One in three women have experienced abuse in their lifetime…</span>
+    </div>
+</article>
+
+            
+<article data-id="22957" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/gender-culture-and-class-collude-in-violence-against-women-22957">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/42730/width240x240/wdrn4h6z-1393564907.jpg" data-id="42730" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="caption">
+              Violence against women cuts across cultural and socioeconomic divides, but certain aspects of class do have a bearing on developing effective strategies of prevention.
+            </span>
+            <span class="source" title="Source">buttet/Shutterstock</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+      <time data-format="tc_date" datetime="2014-03-09T19:26:57Z" pubdate="pubdate">March 9 2014</time>
+
+
+    <h2><a href="/gender-culture-and-class-collude-in-violence-against-women-22957">Gender, culture and class collude in violence against&nbsp;women</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/anastasia-powell-13883">Anastasia Powell</a><em>, RMIT University</em></span>
+      </p>
+  </header>
+
+    <div class="content" data-raw="">
+      <span>The Conversation is running a series, Class in Australia, to identify, illuminate and debate its many manifestations. Here, Anastasia Powell considers the role of class in the complex of contributing factors…</span>
+    </div>
+</article>
+
+            
+<article data-id="24042" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/the-pitfalls-of-measuring-violence-against-women-24042">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/43207/width240x240/ph3jskwd-1394040922.jpg" data-id="43207" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="caption">
+              Women in Poland stand up against violence.
+            </span>
+            <span class="source" title="Source">EPA/Bartolomiej Zborowski</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+      <time data-format="tc_date" datetime="2014-03-06T06:10:09Z" pubdate="pubdate">March 6 2014</time>
+
+
+    <h2><a href="/the-pitfalls-of-measuring-violence-against-women-24042">The pitfalls of measuring violence against&nbsp;women</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/carol-mcnaughton-nicholls-113652">Carol McNaughton Nicholls</a><em>, NatCen Social Research</em></span>
+      </p>
+  </header>
+
+    <div class="content" data-raw="">
+      <span>It was simultaneously heartening and dispiriting to see the release of a survey by the European Union Agency for Fundamental Rights (FRA) on the prevalence of violence against women in Europe. Dispiriting…</span>
+    </div>
+</article>
+
+            
+<article data-id="23677" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/suicides-show-how-justice-system-fails-rape-victims-23677">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/42665/width240x240/jp6kr5sc-1393503886.jpg" data-id="42665" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="caption">
+              The UK&rsquo;s justice system has failed to protect rape complainants from harm.
+            </span>
+            <span class="source" title="Source">Valerie Everett</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+      <time data-format="tc_date" datetime="2014-02-27T14:40:43Z" pubdate="pubdate">February 27 2014</time>
+
+
+    <h2><a href="/suicides-show-how-justice-system-fails-rape-victims-23677">Suicides show how justice system fails rape&nbsp;victims</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/kate-cook-117902">Kate Cook</a><em>, Manchester Metropolitan University</em></span>
+      </p>
+  </header>
+
+    <div class="content" data-raw="">
+      <span>In the space of just over a year, two women in Greater Manchester have killed themselves because of their experiences as complainants in sexual offences cases. The challenge this poses to the criminal…</span>
+    </div>
+</article>
+
+            
+<article data-id="20339" class="clearfix placed research published">
+
+  <header>
+
+      <time data-format="tc_date" datetime="2013-11-14T23:59:20Z" pubdate="pubdate">November 14 2013</time>
+
+
+    <h2><a href="/disabled-women-twice-as-likely-to-be-abused-20339">Disabled women twice as likely to be&nbsp;abused</a></h2>
+      <p class="byline">
+        <a href="/institutions/unsw-australia">UNSW Australia</a>
+      </p>
+  </header>
+
+    <div class="content" data-raw="">
+      <span>The national Stop the Violence Project (STVP) has found that women with a disability are twice as likely to experience violence…</span>
+    </div>
+</article>
+
+            
+<article data-id="20173" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/ranking-violence-against-arab-women-feeds-tired-stereotypes-20173">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/35174/width240x240/pv329qw2-1384346888.jpg" data-id="35174" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="caption">
+              International women&rsquo;s day in Egypt.
+            </span>
+            <span class="source" title="Source">Al Jazeera English</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+      <time data-format="tc_date" datetime="2013-11-13T14:29:00Z" pubdate="pubdate">November 13 2013</time>
+
+
+    <h2><a href="/ranking-violence-against-arab-women-feeds-tired-stereotypes-20173">Ranking violence against Arab women feeds tired&nbsp;stereotypes</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/nicola-pratt-92938">Nicola Pratt</a><em>, University of Warwick</em></span>
+      </p>
+  </header>
+
+    <div class="content" data-raw="">
+      <span>The release of a Thomson Reuters poll on women’s rights in the Arab world has been greeted with incredulity by many in Egypt, the country that ranked at the very bottom. When polls such as this emerge…</span>
+    </div>
+</article>
+
+            
+<article data-id="18440" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/violence-against-women-starts-with-school-stereotypes-18440">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/31871/width240x240/mcrdbj9q-1380021303.jpg" data-id="31871" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="caption">
+              Prissy girls and macho boys.
+            </span>
+            <span class="source" title="Source">jodigreen</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+      <time data-format="tc_date" datetime="2013-09-26T05:38:21Z" pubdate="pubdate">September 26 2013</time>
+
+
+    <h2><a href="/violence-against-women-starts-with-school-stereotypes-18440">Violence against women starts with school&nbsp;stereotypes</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/nancy-lombard-104332">Nancy Lombard</a><em>, Glasgow Caledonian University</em></span>
+      </p>
+  </header>
+
+    <div class="content" data-raw="">
+      <span>Gender-based violence is a deeply embedded problem in many societies and cultures. Despite this, efforts to challenge it are rarely seen at a primary school level. There is a perception that children aged…</span>
+    </div>
+</article>
+
+        </div>
+
+        
+  <nav class="pagination">
+    
+    
+        <span class="page current">
+  1
+</span>
+
+        <span class="page">
+  <a href="/us/topics/violence-against-women?page=2" rel="next">2</a>
+</span>
+
+    <span class="next">
+  <a href="/us/topics/violence-against-women?page=2" rel="next"><i class="icon-caret-right" title="Next"></i></a>
+</span>
+
+    <span class="last">
+  <a href="/us/topics/violence-against-women?page=2">Last</a>
+</span>
+
+  </nav>
+
+      </section>
+  </div>
+  <div class="grid-six grid-last large-grid-eight">
+    <div class="grid-six large-grid-four">
+
+      <div class="grid-six large-grid-four">
+          <section class="module related-topics clearfix">
+            <h3 class="double-bordered">Related Topics</h3>
+            <!-- RELATED TOPICS -->
+              <ol>
+                  <li><a href="/uk/topics/author-qanda">Author Q&amp;A</a>
+                  <li><a href="/uk/topics/domestic-violence">Domestic violence</a>
+                  <li><a href="/uk/topics/domestic-violence-in-australia">Domestic violence in Australia</a>
+                  <li><a href="/uk/topics/feminism">Feminism</a>
+                  <li><a href="/uk/topics/gender">Gender</a>
+                  <li><a href="/uk/topics/gender-violence">Gender violence</a>
+                  <li><a href="/uk/topics/rape">Rape</a>
+                  <li><a href="/uk/topics/sexual-assault">Sexual assault</a>
+                  <li><a href="/uk/topics/sexual-harassment">Sexual harassment</a>
+                  <li><a href="/uk/topics/womens-rights">Womens rights</a>
+              </ol>
+          </section>
+        </div>
+
+        <div class="grid-six large-grid-four grid-last">
+          <section class="module expert-authors clearfix">
+            <h3 class="double-bordered">Top contributors</h3>
+            <!-- EXPERTS -->
+              <ol class="semantic">
+    <li class="vcard author-avatar large " id="author-13883" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/profiles/anastasia-powell-13883" rel="author">
+    <img alt="" height="54" itemprop="image" src="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/avatars/13883/thumb54/2xpy6324-1348737410.jpg" width="54" />
+    <h3 class="fn">
+      <span itemprop="name">Anastasia Powell</span>
+    </h3>
+</a>  
+  <p>
+    <span class="role">Senior Lecturer, Justice and Legal Studies at RMIT University</span>
+  </p>
+
+    </li>
+    <li class="vcard author-avatar large " id="author-10766" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/profiles/kate-fitz-gibbon-10766" rel="author">
+    <img alt="" height="54" itemprop="image" src="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/avatars/10766/thumb54/RackMultipart20130808-21909-1ctdseu.jpg" width="54" />
+    <h3 class="fn">
+      <span itemprop="name">Kate Fitz-Gibbon</span>
+    </h3>
+</a>  
+  <p>
+    <span class="role">Lecturer in Criminology at Deakin University</span>
+  </p>
+
+    </li>
+    <li class="vcard author-avatar large " id="author-104332" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/profiles/nancy-lombard-104332" rel="author">
+    <img alt="" height="54" itemprop="image" src="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/avatars/104332/thumb54/RackMultipart20130919-15832-1mt2jgt.jpg" width="54" />
+    <h3 class="fn">
+      <span itemprop="name">Nancy Lombard</span>
+    </h3>
+</a>  
+  <p>
+    <span class="role"> Reader in Sociology and Social Policy at Glasgow Caledonian University</span>
+  </p>
+
+    </li>
+    <li class="vcard author-avatar large " id="author-307" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/profiles/nicole-george-307" rel="author">
+    <img alt="" height="54" itemprop="image" src="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/avatars/307/thumb54/nicole-george-1315457784.jpg" width="54" />
+    <h3 class="fn">
+      <span itemprop="name">Nicole George</span>
+    </h3>
+</a>  
+  <p>
+    <span class="role">Lecturer in Peace and Conflict Studies at The University of Queensland</span>
+  </p>
+
+    </li>
+    <li class="vcard author-avatar large " id="author-9034" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/profiles/hannah-piterman-9034" rel="author">
+    <img alt="" height="54" itemprop="image" src="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/avatars/9034/thumb54/m3vph8gy-1336096154.jpg" width="54" />
+    <h3 class="fn">
+      <span itemprop="name">Hannah Piterman</span>
+    </h3>
+</a>  
+  <p>
+    <span class="role">Adjunct Associate Professor at Monash University</span>
+  </p>
+
+    </li>
+    <li class="vcard author-avatar large display-more" id="author-11547" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/profiles/sara-meger-11547" rel="author">
+    <img alt="" height="54" itemprop="image" src="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/avatars/11547/thumb54/hhr78xvt-1343013334.jpg" width="54" />
+    <h3 class="fn">
+      <span itemprop="name">Sara Meger</span>
+    </h3>
+</a>  
+  <p>
+    <span class="role">Researcher on Gender and International Relations at University of Melbourne</span>
+  </p>
+
+    </li>
+    <li class="vcard author-avatar large display-more" id="author-15396" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/profiles/kevin-mccracken-15396" rel="author">
+    <img alt="" height="54" itemprop="image" src="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/avatars/15396/thumb54/bpjwdzpf-1351732338.jpg" width="54" />
+    <h3 class="fn">
+      <span itemprop="name">Kevin McCracken</span>
+    </h3>
+</a>  
+  <p>
+    <span class="role">Honorary Fellow, Department of Environment and Geography at Macquarie University</span>
+  </p>
+
+    </li>
+    <li class="vcard author-avatar large display-more" id="author-18124" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/profiles/linda-murray-18124" rel="author">
+    <img alt="" height="54" itemprop="image" src="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/avatars/18124/thumb54/3g448nvd-1361962947.jpg" width="54" />
+    <h3 class="fn">
+      <span itemprop="name">Linda Murray</span>
+    </h3>
+</a>  
+  <p>
+    <span class="role">Lecturer in Global Health at University of Tasmania</span>
+  </p>
+
+    </li>
+    <li class="vcard author-avatar large display-more" id="author-20773" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/profiles/susan-harris-rimmer-20773" rel="author">
+    <img alt="" height="54" itemprop="image" src="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/avatars/20773/thumb54/RackMultipart20141112-23225-rpwswd.jpg" width="54" />
+    <h3 class="fn">
+      <span itemprop="name">Susan Harris Rimmer</span>
+    </h3>
+</a>  
+  <p>
+    <span class="role">Australian Research Council Future Fellow, Asia Pacific College of Diplomacy at Australian National University</span>
+  </p>
+
+    </li>
+    <li class="vcard author-avatar large display-more" id="author-22424" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/profiles/lesley-pruitt-22424" rel="author">
+    <img alt="" height="54" itemprop="image" src="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/avatars/22424/thumb54/6wbjxmbn-1362027696.jpg" width="54" />
+    <h3 class="fn">
+      <span itemprop="name">Lesley Pruitt</span>
+    </h3>
+</a>  
+  <p>
+    <span class="role">Postdoctoral Research Fellow in Political Science at RMIT University</span>
+  </p>
+
+    </li>
+    <li class="vcard author-avatar large display-more" id="author-92938" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/profiles/nicola-pratt-92938" rel="author">
+    <img alt="" height="54" itemprop="image" src="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/avatars/92938/thumb54/RackMultipart20131113-16869-1hhfx5e.jpg" width="54" />
+    <h3 class="fn">
+      <span itemprop="name">Nicola Pratt</span>
+    </h3>
+</a>  
+  <p>
+    <span class="role">Reader, International Politics of the Middle East  at University of Warwick</span>
+  </p>
+
+    </li>
+    <li class="vcard author-avatar large display-more" id="author-95117" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/profiles/kath-woodward-95117" rel="author">
+    <img alt="" height="54" itemprop="image" src="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/avatars/95117/thumb54/zmdjb58t-1369945925.jpg" width="54" />
+    <h3 class="fn">
+      <span itemprop="name">Kath Woodward</span>
+    </h3>
+</a>  
+  <p>
+    <span class="role">Professor of Sociology at The Open University</span>
+  </p>
+
+    </li>
+    <li class="vcard author-avatar large display-more" id="author-95431" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/profiles/nicola-henry-95431" rel="author">
+    <img alt="" height="54" itemprop="image" src="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/avatars/95431/thumb54/586jn8xq-1370314365.jpg" width="54" />
+    <h3 class="fn">
+      <span itemprop="name">Nicola Henry</span>
+    </h3>
+</a>  
+  <p>
+    <span class="role">Senior Lecturer in Legal Studies at La Trobe University</span>
+  </p>
+
+    </li>
+    <li class="vcard author-avatar large display-more" id="author-101210" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/profiles/hilary-charlesworth-101210" rel="author">
+    <img alt="" height="54" itemprop="image" src="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/avatars/101210/thumb54/RackMultipart20130826-31876-zubuww.jpg" width="54" />
+    <h3 class="fn">
+      <span itemprop="name">Hilary Charlesworth</span>
+    </h3>
+</a>  
+  <p>
+    <span class="role">Director, Centre for International Governance and Justice, Professor &amp; ARC Laureate Fellow at Australian National University</span>
+  </p>
+
+    </li>
+    <li class="vcard author-avatar large display-more" id="author-105403" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/profiles/terry-goldsworthy-105403" rel="author">
+    <img alt="" height="54" itemprop="image" src="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/avatars/105403/thumb54/RackMultipart20131002-22563-uuuf8r.jpg" width="54" />
+    <h3 class="fn">
+      <span itemprop="name">Terry Goldsworthy</span>
+    </h3>
+</a>  
+  <p>
+    <span class="role">Assistant Professor in Criminology at Bond University</span>
+  </p>
+
+    </li>
+</ol>
+  <p class="more">
+    <a class="button" href="#">More</a>
+  </p>
+
+          </section>
+        </div>
+      </div>
+
+      <div class="grid-six large-grid-four grid-last">
+        <div class="grid-six large-grid-four">
+          <section class="module social-media actions clearfix">
+            <h3 class="double-bordered slammed">Links</h3>
+              <ul>
+    <li class="email">
+      <a class="email-button" data-url="null" href="mailto:?subject=Violence%20against%20women%20on%20The%20Conversation&amp;body=Hi.%20I%20found%20this%20topic%20on%20http%3A%2F%2Ftheconversation.com%20that%20you%20might%20follow%3A%20%22Violence%20against%20women%22%20http%3A%2F%2Ftheconversation.com%2Ftopics%2Fviolence-against-women" target="_blank"><i class="icon-email"></i> <span>Email</span></a>
+    </li>
+
+    <li class="twitter">
+      <a class="twitter-button" data-url="http://theconversation.com/topics/violence-against-women" href="http://twitter.com/intent/tweet?text=Violence+against+women&amp;url=http%3A%2F%2Ftheconversation.com%2Ftopics%2Fviolence-against-women&amp;utm_campaign=none&amp;utm_medium=tweetbutton&amp;utm_source=twitter&amp;via=ConversationEDU" target="_blank"><i class="icon-twitter"></i> <span>Twitter</span></a>
+    </li>
+
+    <li class="facebook">
+      <a class="facebook-button" data-url="http://theconversation.com/topics/violence-against-women" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Ftheconversation.com%2Ftopics%2Fviolence-against-women&amp;utm_medium=facebookbutton&amp;utm_source=facebook" target="_blank"><i class="icon-facebook"></i> <span>Facebook</span></a>
+    </li>
+
+    <li class="linkedin">
+      <a class="linkedin-button" data-url="http://theconversation.com/topics/violence-against-women" href="http://www.linkedin.com/shareArticle?mini=true&amp;source=The+Conversation&amp;summary=Read+Violence+against+women+news%2C+research+and+analysis&amp;title=Violence+against+women&amp;url=http%3A%2F%2Ftheconversation.com%2Ftopics%2Fviolence-against-women&amp;utm_medium=linkedinbutton&amp;utm_source=linkedin" target="_blank"><i class="icon-linkedin"></i> <span>LinkedIn</span></a>
+    </li>
+
+    <li class="feed">
+      <a href="/au/topics/violence-against-women/articles.atom" rel="feed">
+        <i class="icon-rss"></i> Feed
+</a>    </li>
+
+
+  <li class="follow-link not-followed">
+      <a href="/us/topics/violence-against-women/follow" rel="nofollow">
+        <i class="icon-favourite"></i> Follow topic
+</a>  </li>
+</ul>
+
+          </section>
+        </div>
+
+        <div class="grid-six large-grid-four grid-last">
+          <section class="module trending clearfix">
+            <!-- TRENDING ARTICLES SITEWIDE -->
+            <h3 class="double-bordered slammed">Most read on The Conversation</h3>
+              <div class="content-list">
+    
+<article data-id="38808" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/feast-then-famine-how-fasting-might-make-our-cells-more-resilient-to-stress-38808">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/75981/width240x240/image-20150325-14488-b8xwni.jpg" data-id="75981" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="source" title="Source">Pasta via www.shutterstock.com</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+
+
+    <h2><a href="/feast-then-famine-how-fasting-might-make-our-cells-more-resilient-to-stress-38808">Feast then famine – how fasting might make our cells more resilient to&nbsp;stress</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/douglas-bennion-157922">Douglas Bennion</a><em>, University of Florida</em>; <a href="http://theconversation.com/profiles/martin-wegman-157918">Martin Wegman</a><em>, University of Florida</em>, and <a href="http://theconversation.com/profiles/michael-guo-157917">Michael Guo</a><em>, University of Florida</em></span>
+      </p>
+  </header>
+
+</article>
+
+    
+<article data-id="38075" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/how-can-dark-matter-cause-chaos-on-earth-every-30-million-years-38075">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/76318/width240x240/image-20150327-16120-awbsik.jpg" data-id="76318" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="source" title="Source">European Southern Observatory</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+
+
+    <h2><a href="/how-can-dark-matter-cause-chaos-on-earth-every-30-million-years-38075">How can dark matter cause chaos on Earth every 30 million&nbsp;years?</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/michael-rampino-156652">Michael Rampino</a><em>, New York University</em></span>
+      </p>
+  </header>
+
+</article>
+
+    
+<article data-id="38263" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/the-rise-and-fall-of-us-labor-unions-and-why-they-still-matter-38263">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/75847/width240x240/image-20150324-17672-1azzmd0.jpg" data-id="75847" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="source" title="Source">Labor power from www.shutterstock.com</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+
+
+    <h2><a href="/the-rise-and-fall-of-us-labor-unions-and-why-they-still-matter-38263">The rise and fall of US labor unions, and why they still&nbsp;matter</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/jake-rosenfeld-157231">Jake Rosenfeld</a><em>, University of Washington</em></span>
+      </p>
+  </header>
+
+</article>
+
+    
+<article data-id="39273" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/shrinking-of-antarctic-ice-shelves-is-accelerating-39273">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/76037/width240x240/image-20150325-14494-1nivjgq.jpg" data-id="76037" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="source" title="Source">Michael Studinger/NASA</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+
+
+    <h2><a href="/shrinking-of-antarctic-ice-shelves-is-accelerating-39273">Shrinking of Antarctic ice shelves is&nbsp;accelerating</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/laurence-padman-160501">Laurence Padman</a><em>, Earth and Space Research</em>; <a href="http://theconversation.com/profiles/fernando-paolo-160445">Fernando Paolo</a><em>, University of California, San Diego</em>, and <a href="http://theconversation.com/profiles/helen-amanda-fricker-160503">Helen Amanda Fricker</a><em>, University of California, San Diego</em></span>
+      </p>
+  </header>
+
+</article>
+
+    
+<article data-id="38965" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/what-changes-when-a-professor-trains-to-be-hot-this-photo-conceals-more-than-it-reveals-38965">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/76277/width240x240/image-20150327-16086-1bamiss.jpg" data-id="76277" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="source" title="Source">Lianne McTavish </span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+
+
+    <h2><a href="/what-changes-when-a-professor-trains-to-be-hot-this-photo-conceals-more-than-it-reveals-38965">What changes when a professor trains to be &lsquo;hot&rsquo;: this photo conceals more than it&nbsp;reveals</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/lianne-mctavish-159381">Lianne McTavish</a><em>, University of Alberta</em></span>
+      </p>
+  </header>
+
+</article>
+
+    
+<article data-id="39162" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/hard-evidence-why-pump-prices-havent-fallen-as-fast-as-oil-has-39162">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/75881/width240x240/image-20150324-17699-airxp3.jpg" data-id="75881" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="source" title="Source">Gas nozzle from www.shutterstock.com</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+
+
+    <h2><a href="/hard-evidence-why-pump-prices-havent-fallen-as-fast-as-oil-has-39162">Hard evidence: why pump prices haven&rsquo;t fallen as fast as oil&nbsp;has</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/jay-l-zagorsky-152952">Jay L Zagorsky</a><em>, The Ohio State University</em></span>
+      </p>
+  </header>
+
+</article>
+
+    
+<article data-id="38465" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/ode-to-the-fruit-fly-tiny-lab-subject-crucial-to-basic-research-38465">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/76357/editor_pick/width240x240/kyy3k9p8-1427951618.jpg" data-id="76357" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="source" title="Source">John Tann</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+
+
+    <h2><a href="/ode-to-the-fruit-fly-tiny-lab-subject-crucial-to-basic-research-38465">Ode to the fruit fly: tiny lab subject crucial to basic&nbsp;research</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/marco-gallio-157719">Marco Gallio</a><em>, Northwestern University</em></span>
+      </p>
+  </header>
+
+</article>
+
+    
+<article data-id="38818" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/shades-of-segregated-past-in-todays-campus-troubles-38818">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/75702/width240x240/image-20150323-17709-iqq6uf.jpg" data-id="75702" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="source" title="Source">Book image via www.shutterstock.com</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+
+
+    <h2><a href="/shades-of-segregated-past-in-todays-campus-troubles-38818">Shades of segregated past in today&rsquo;s campus&nbsp;troubles</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/leslie-m-harris-158854">Leslie M Harris</a><em>, Emory University</em></span>
+      </p>
+  </header>
+
+</article>
+
+    
+<article data-id="39219" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/explainer-crispr-technology-brings-precise-genetic-editing-and-raises-ethical-questions-39219">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/76029/width240x240/image-20150325-14494-1xgt7jo.jpg" data-id="76029" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="source" title="Source">Jennifer Doudna/University of California Berkeley</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+
+
+    <h2><a href="/explainer-crispr-technology-brings-precise-genetic-editing-and-raises-ethical-questions-39219">Explainer: CRISPR technology brings precise genetic editing – and raises ethical&nbsp;questions</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/shouguang-jin-160235">Shouguang Jin</a><em>, University of Florida</em></span>
+      </p>
+  </header>
+
+</article>
+
+    
+<article data-id="37573" class="clearfix placed analysis published">
+    <figure>
+      <a class="article-link" href="/know-more-than-one-language-dont-give-it-up-37573">
+        <img alt="" data-echo="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/74094/width240x240/image-20150306-13543-lu03m7.jpg" data-id="74094" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+</a>        <figcaption>
+            <span class="source" title="Source">Cesar Pics/Flickr</span>
+        </figcaption>
+    </figure>
+
+  <header>
+
+
+
+    <h2><a href="/know-more-than-one-language-dont-give-it-up-37573">Know more than one language? Don&rsquo;t give it&nbsp;up!</a></h2>
+      <p class="byline">
+        <span><a href="http://theconversation.com/profiles/rebecca-callahan-155047">Rebecca Callahan</a><em>, University of Texas at Austin</em></span>
+      </p>
+  </header>
+
+</article>
+
+</div>
+
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+        </div>
+      </div>
+      
+    </div>
+
+    
+  <div id="footers">
+    
+    <section id="sub-footer">
+  <header>
+    <div class="wrapper nocontent">
+      <h2>The Conversation</h2>
+    </div>
+  </header>
+
+  <div class="wrapper nocontent">
+    <section class="community grid-five">
+      <h6>Community</h6>
+      <nav>
+        <ul>
+          <li><a href="/us/community-standards">Community standards</a></li>
+          <li><a href="/us/republishing-guidelines">Republishing guidelines</a></li>
+            <li>
+              <a href="https://jobs.theconversation.com/?utm_source=theconversation.com&amp;utm_medium=website&amp;utm_campaign=footer">
+                <i class="icon icon-the-conversation"></i> Job Board
+</a>            </li>
+          <li><a href="/us/feeds"><i class="icon icon-rss-non-coloured"></i> Our feeds</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <section class="company grid-five">
+      <h6>Company</h6>
+      <nav>
+        <ul>
+          <li><a href="/us/who-we-are">Who we are</a></li>
+          <li><a href="/us/charter">Our charter</a></li>
+          <li><a href="/us/team">Our team</a></li>
+          <li><a href="/columns/blog-26">Our blog</a></li>
+          <li><a href="/us/partners">Partners and funders</a></li>
+          <li><a href="/institutions">Contributing institutions</a></li>
+          <li><a href="/us/contact-us">Contact us</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <section class="contact grid-five">
+      <h6>Contact</h6>
+      <nav>
+        <ul>
+          <li><span>Editorial</span> <a href="mailto:us-editorial@theconversation.com">us-editorial@theconversation.com</a></li>
+          <li><span>Support</span> <a href="mailto:support@theconversation.com">support@theconversation.com</a></li>
+        </ul>
+      </nav>
+      <div class="newsletter-signup-form">
+        <h6>Subscribe to our Newsletters</h6>
+        <form action="/subscriptions" method="post" class="subscribe">
+  <fieldset>
+    <label class="subscribe-email-label" for="subscribe_email">
+      Email address
+    </label>
+
+    <div class="field-wrapper">
+      <input class="email" id="subscribe_email" name="subscribe[email]" placeholder="Your email address" spellcheck="false" type="email" value="" />
+      <i class="success">✔</i>
+      <i class="icon-delete failure"></i>
+      <img alt="Spinner" class="spinner" src="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/assets/spinner-e4f315670ae243a9d55e9633ae30287e.gif" />
+    </div>
+
+    <input id="subscribe_location" name="subscribe[location]" type="hidden" value="footer" />
+
+    <fieldset class="regions select-boxes">
+  <select id="subscribe_region" name="subscribe[region]"><option value="au">Australia</option>
+<option value="uk">United Kingdom</option>
+<option selected="selected" value="us">United States</option></select>
+</fieldset>
+
+
+    <input class="subscribe button subtle" name="submit" type="submit" value="Subscribe" />
+  </fieldset>
+</form>
+
+      </div>
+    </section>
+  </div>
+</section>
+
+    <footer id="footer">
+  <div class="wrapper nocontent">
+    <nav>
+      <a href="/us/privacy-policy">Privacy policy</a>
+      <a href="/us/terms-and-conditions">Terms and conditions</a>
+      <a href="/us/corrections">Corrections</a>
+      <script>
+  (function() {
+    var img = document.createElement('img'); img.width = 1; img.height = 1;
+    img.src = 'https://www.facebook.com/tr?id=1517004835184558&amp;ev=NoScript';
+    img.style.display = "none";
+    var s = document.getElementsByTagName('footer')[0]; s.parentNode.insertBefore(img, s);
+  })();
+</script>
+
+    </nav>
+    <p class="copyright">
+      <span>Copyright &copy; 2010–2015</span><span class="comma">, </span><span><a href="/us/who-we-are">The Conversation US, Inc.</a></span>
+    </p>
+  </div>
+</footer>
+
+  </div>
+
+    <nav id="editorial-menu">
+  </nav>
+
+  </div>
+
+  <script src="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/assets/vendored-e0f118aec615e57f1d3950b5e02c4a7d.js"></script>
+<script src="https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/assets/application-245427bfd742ab5b3c0845cc80e0476c.js"></script>
+  <script>
+//<![CDATA[
+
+    if (window.TC) {
+      TC.time = new TC.TimeFormatter('en_us')
+      TC.currentUser = new TC.User(null);
+      TC.page = new TC.TopicPage()
+    } else {
+      function notifyAssetsFailed() {
+        var xmlHttpRequst = false;
+
+        if (window.XMLHttpRequest) { // non IE
+          xmlHttpRequst = new XMLHttpRequest();
+        } else if (window.ActiveXObject) { // IE
+          xmlHttpRequst = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+       // If AJAX supported
+       if(xmlHttpRequst != false) {
+         xmlHttpRequst.open("GET", "/no_assets", true);
+         xmlHttpRequst.send();
+       }
+      }
+      notifyAssetsFailed();
+    }
+
+//]]>
+</script>
+  
+</body>
+</html>

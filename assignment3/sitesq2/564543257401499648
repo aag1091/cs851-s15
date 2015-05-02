@@ -1,0 +1,736 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="ctl00_Head1"><title>
+	Transit.511.org
+</title><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /><meta name="description" content="San Francisco Bay Area public transit trip planning. Routes, schedules, fare information for all transit services including train, bus and ferry." /><meta name="keywords" content="public transit san francisco bay area sf regional transportation announcements" /><link rel="stylesheet" type="text/css" href="../css/uiStyles.css" /><link rel="stylesheet" type="text/css" href="../cssnew/reset.css" /><link rel="stylesheet" type="text/css" media="print" href="../cssnew/print.css" /><link rel="stylesheet" type="text/css" media="screen" href="../cssnew/screen.css" />
+<script type="text/javascript">
+var glb_ActiveSection='';
+var tickerRefreshInterval = '30000'
+function setMasterPageActiveSection(elementid)
+{
+ // 
+ if(glb_ActiveSection=='')
+ {
+    glb_ActiveSection=elementid;
+ }   
+    //$("#"+ elid).
+   // $("#subnav").find("li").find("a").removeClass("currentSection");
+    $("#"+elementid).addClass("currentSection");
+}
+function ResetMasterPageActiveSection(elementid)
+{
+   
+    if(glb_ActiveSection!=elementid)
+    { 
+        $("#"+elementid).removeClass("currentSection");
+    }
+}
+
+/* This is for Mac machine */
+var mactest=navigator.userAgent.indexOf("Mac")!=-1
+if(mactest==true)
+{
+    document.write('<link rel="stylesheet" type="text/css" href="../css/macStyles.css" />');
+}    
+
+
+function SuggestionClick()
+{
+  
+     window.location.href='../suggestions.aspx?ret='+  replacecharacter(replacecharacter(window.location.href,'#','%23'),'&','%26');
+}
+function CallDummy()
+{}
+
+sfHover = function() {
+	var sfEls = document.getElementById("internal-top-nav").getElementsByTagName("LI");
+	for (var i=0; i<sfEls.length; i++) {
+		sfEls[i].onmouseover=function() {
+			this.className+=" sfhover";
+		}
+		sfEls[i].onmouseout=function() {
+			this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+		}
+	}
+}
+if (window.attachEvent) window.attachEvent("onload", sfHover);
+
+
+//START Function to get elements by class name - iterates through all tag elements on the page
+            function getElementsByClassName( strClassName, obj ) {
+                var ar = arguments[2] || new Array();
+                var re = new RegExp("\\b" + strClassName + "\\b", "g");
+
+                if ( re.test(obj.className) ) {
+                    ar.push( obj );
+                }
+                for ( var aa = 0; aa < obj.childNodes.length; aa++ )
+                    getElementsByClassName( strClassName, obj.childNodes[aa], ar );
+                
+                return ar;
+            }
+            //END Function to get elements by class name - iterates through all tag elements on the page
+
+function updateurl(anchor_obj) //Mantis Issue 4153
+{   
+    if($.browser.msie)
+    {
+        if(window.location.href!=String(anchor_obj))
+        {
+            var arr_href=window.location.href.split("#");
+            var arr_anchor=String(anchor_obj).split("#");
+            if(arr_href[0]==arr_anchor[0])
+            {
+                location.reload(true);
+            }
+        }
+    }
+}
+
+function redirect()
+{
+   var url="http://"+window.location.href.split("/")[2] + "/"; 
+   self.parent.location= url + "schedules/realtimedepartures.aspx#enable=stopidlookup";
+   window.document.url=url + "schedules/realtimedepartures.aspx#enable=stopidlookup";
+   //location.reload(true);
+    document.form2.action =url + "schedules/realtimedepartures.aspx#enable=stopidlookup"; // July 13th 2010
+}
+</script>
+<script language="JavaScript1.2" type="text/javascript" src="../scripts/jquerymain.js"></script>
+<script type="text/javascript" language="javascript" src="../scripts/commonfunctions.js"></script>
+<script type="text/javascript" language="javascript" src="../scripts/PopUps.js"></script>  
+
+<!--<link rel="SHORTCUT ICON" href="../Master/favicon.ico" />-->
+<script language="javascript" type="text/javascript">
+    if($.browser.msie && $.browser.version=="6.0")
+    {
+        document.write('<link rel="stylesheet" type="text/css" href="../cssnew/ie6.css" />');
+
+    }
+</script>
+<!-- use this content place holder to put additional script libraries, style sheets, etc in the document head -->
+<!-- Note: the VS 2005 IDE complains about the asp:ContentPlaceHolder tag here, but it runs fine -->
+
+    
+</head>
+<body onload="CallDummy()">
+
+	<div id="container">
+        <form name="aspnetForm" method="post" action="index.aspx" id="aspnetForm">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTY1NDU2MTA1MmRkWqcIbzlSg8+50NiTB+SepDs/X2U=" />
+        
+        <h1 id="ticker_forscreenreader" style="display:none;font-size:1px;"></h1>
+        <a name="top" id="top"></a>
+	   
+	    
+	     <div id="header">
+            <div id="logo"> 
+             <a href="#mainContent" tabindex="1" style="color:#EAEAEA">
+                  <img height="1" width="1"  style="border-style: none;" alt="Click here to skip to main content." src="http://transit.511.org/accessible/include/511/images/spacer.gif"/>
+             </a>
+            <a tabindex="" href="http://511.org/"><img src="../img/logos/511-logo.gif" alt="511 logo" /></a> <span id="logo-tagline"></span>
+                <div id="my-login-tagline"><a   tabindex ='2' title='My 511 - Link to My511 Website' href="http://my511.org/"><img src="../img/global/my511.gif" width="36" height="36" alt="My 511" /></a>
+                  <ul>
+                    <li><a tabindex="3" href="http://www.my511.org/">Login</a></li>
+                    <li class="last"><a tabindex="4" href="http://www.my511.org/regstep1.aspx">Register</a></li>
+                  </ul>
+                </div>
+            </div><!-- END my-login-tagline -->
+            <ul id="external-top-nav">               
+                <li><a tabindex="6" href="http://511.org/">511.org</a></li>
+                <li class="active"><a tabindex="7" href="http://tripplanner.transit.511.org/mtc/XSLT_TRIP_REQUEST2?language=en">Transit</a></li>
+                <li><a  tabindex="8" href="http://traffic.511.org/">Traffic</a></li>
+                <li><a tabindex="9" href="http://rideshare.511.org/">Rideshare</a></li>
+                <li><a tabindex="10" href="http://bicycling.511.org/">Bicycling</a></li>
+                <li><a tabindex="11" href="http://traffic.511.org/parking/index">Parking</a></li>
+            </ul>
+            <ul id="internal-top-nav">
+               <li class="hilite"><a  tabindex="11"  href="http://tripplanner.transit.511.org/mtc/XSLT_TRIP_REQUEST2?language=en">Transit Home</a></li>
+                <li class="hilite"><a tabindex="12" href="http://tripplanner.transit.511.org/mtc/XSLT_TRIP_REQUEST2?language=en&itdLPxx_homepage=secondStep"">Trip Planning</a>
+                  <ul>
+                    <li><a tabindex="15" href="http://tripplanner.transit.511.org/mtc/XSLT_TRIP_REQUEST2?language=en&itdLPxx_homepage=secondStep">Plan a Trip</a></li>
+                    <li><a tabindex="16" href="http://tripplanner.transit.511.org/mtc/XSLT_DM_REQUEST?language=en&itdLPxx_homepage=secondStep">Nearby Stops and Routes</a></li>
+                    <li><a tabindex="17" href="http://tripplanner.transit.511.org/mtc/XSLT_TRIP_REQUEST2?language=en&itdLPxx_homepage=railSystems">Rail Systems</a></li>
+                   <!-- <li><a tabindex="18" id='a_511departure_mastertab' href="../511departuretimes.aspx">Real-Time Departures</a></li>-->
+                  </ul>
+                </li> <!--http://transit.511.org  -->
+                 <li class="hilite"><a tabindex="19" href="../schedules/realtimedepartures.aspx" id='realtimedepartures'>Real-Time Departures</a>
+                  <ul>
+		              <li><a tabindex="20" href="../schedules/realtimedepartures.aspx" title="Departure Times Predictions">Departure Times Predictions</a></li>
+		              <li><a tabindex="21" href="../schedules/departuretimestexting.aspx" title="Departure Times Texting">Departure Times Texting</a></li>
+                      <li><a tabindex="22" href="http://511.org/transittracker/transitTracker.aspx" title="511 Transit Tracker">511 Transit Tracker</a></li>
+		              <li><a tabindex="23" href="javascript:void(0);" onclick="redirect();" title="Stop ID Lookup">Stop ID Lookup</a></li>
+	              </ul>
+                 </li>
+
+                <li class="hilite"><a tabindex="24" href="../schedules/index.aspx" id='a_scheduleroute_mastertab'>Schedules, Maps & Fares</a>
+                  <ul>
+                    <li><a tabindex="25" href="../schedules/index.aspx">Schedules and Route Maps</a></li>
+                    <li><a tabindex="25" href="../TID/index.aspx">Transit Center Station Information</a></li>
+                    <li><a tabindex="26" onclick="javascript:updateurl(this)" href="../schedules/index.aspx#m1=F&m2=bus">Fares (and Commute Rewards)</a></li>
+                    <li><a tabindex="27" onclick="javascript:updateurl(this)" href="../schedules/index.aspx#m1=A&m2=bus">Agency Profiles</a></li>
+                    <li><a tabindex="28" id='a_translink_mastertab' href="../translink.aspx">Clipper<sup style="font-size: 0.75em;">&reg;</sup></a></li>                    
+                  </ul>
+                </li>
+                <li class="hilite" ><a tabindex="30" href="../destinations/index.aspx?m0=1" id='a_regionalfeature_mastertab'>Regional Info</a>
+                  <ul>
+                    <li><a tabindex="31" onclick="javascript:updateurl(this)" href="../destinations/index.aspx?m0=1#m1=T&m2=GeneralInformation">Transit Basics</a></li>
+                    <li><a tabindex="32" onclick="javascript:updateurl(this)" href="../destinations/index.aspx?m0=1#m1=P">Popular Destinations</a></li>
+                    <li><a tabindex="33" onclick="javascript:updateurl(this)" href="../destinations/index.aspx?m0=1#m1=N&m2=Allnighter">All Nighter Service</a></li>
+                    <li><a tabindex="34" href="../disabled/index.aspx">Accessibility & Seniors</a></li>
+                    <li><a tabindex="35" href="../RTC/RTDC.aspx">RTC Discount Card</a></li>
+                     <!-- Mantis:6361 - Start  -->
+                    <li><a tabindex="36" href="../announcements/index.aspx#m1=E" id='a1'>Announcements</a></li>
+                    <!-- Mantis:6361 - End  -->
+                  </ul>
+                </li>
+                <!-- Mantis:6361 - Start <li class="hilite"><a tabindex="41" href="../announcements/index.aspx#m1=E" id='a_announcement_mastertab'>Announcements</a></li> Mantis:6361 - End -->
+                <!--<li class="hilite"><a tabindex="42" href="../disabled/index.aspx" id='a_accessibleseniorservice_mastertab'>Accessibility & Seniors</a></li>-->
+                 <li class="hilite"><a tabindex="41" href="http://enhancedtripplanner.transit.511.org/transitmmtp/tripplanner/index.aspx">Enhanced Planner
+                 </a></li>
+
+  
+            </ul>
+        </div>
+         <script language="javascript" type="text/javascript">
+
+            //START Set the main nav elements to get the active treatment if the URLs match
+            url = document.location.href;
+            //alert(url);
+            var aryClassElements = getElementsByClassName( 'hilite', document.body );
+            for ( var bb = 0; bb < aryClassElements.length; bb++ ) {
+                if ((url.indexOf('departuretimestexting') > -1) || (url.indexOf('realtimedepartures') > -1) || (url.indexOf('stopidlookup') > -1) || (url.indexOf('DepartureTimesFAQ') > -1)){
+                //if (url.indexOf('realtimedepartures') > -1) {
+		            aryClassElements[2].className = 'active';
+		            break;
+	            }
+	            if (url.indexOf('schedules') > -1) {
+		            aryClassElements[3].className = 'active';
+	            }
+	            if (url.indexOf('destinations') > -1) {
+		            aryClassElements[4].className = 'active';
+		        }
+                /* Mantis:6361 - Start */ 
+	            if (url.indexOf('announcements') > -1) {
+		            aryClassElements[4].className = 'active';
+		         }
+		        /* Mantis:6361 - End */
+	            if (url.indexOf('disable') > -1) {
+		            aryClassElements[4].className = 'active';
+	            }
+            	
+            }
+            //END Set the main nav elements to get the active treatment if the URLs match
+
+            
+        </script>
+	    <script type="text/javascript">
+		<!--//--><![CDATA[//>
+		<!--
+
+	    sfHover = function() {
+	        var sfEls = document.getElementById("internal-top-nav").getElementsByTagName("LI");
+	        for (var i=0; i<sfEls.length; i++) {
+	            sfEls[i].onmouseover=function() {
+	                this.className+=" sfhover";
+	            }
+	            sfEls[i].onmouseout=function() {
+	                this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+	            }
+	        }
+	    }
+	    if (window.attachEvent) window.attachEvent("onload", sfHover);
+
+	    //--><!]]>
+	    </script>    
+  	      <div id="mainContent">
+  	            <div class="mainContentBox">
+                    <table cellspacing='0' cellpadding='0'  id='tbl_ticker' border="0" style="visibility:hidden;">
+					 <tr>
+					    <td>
+					   <div id="tickerBox">
+
+									<table cellpadding="0" cellspacing="0">
+										  <tr>
+												<td >
+													  <div id="div_tickericon" class="emergencyIcon">
+															<img alt='Emergency' src="http://images.transit.511.org/RUI/fw/emergencyIcon.gif" width="36" height="31"  border="1" />
+													  </div>
+												</td>
+												<td id="td_tickerdata">
+												<div id ='div_tickseprator' style="height:2px;background-color:transparent;font-size:1px"> </div>
+													  <div id='div_tickerInfomain' class="emergencyInfo" style="margin:0px">
+															<p id='div_ticker'>
+                                    					       
+                                    					       <!-- Comment/Uncomment the below line for disabling/enabling ticker -->
+                                    					        <script type="text/javascript" language="javascript" src="../scripts/ticker.js"></script>
+                                    					        <script language="javascript" type="text/javascript">
+                                    					          
+                                    					           if($.browser.version!=null)
+                                    					            {
+                                    					                if(($.browser.mozilla && $.browser.version.substr(0,3)=="1.9")||($.browser.msie && $.browser.version=="6.0"))
+                                    					                {
+                                        					                
+                                    					                    $("#div_tickericon").removeClass("emergencyIcon").addClass("emergencyIconFix");
+                                    					                }
+                                    					            }
+                                        					          
+                                    					        </script>
+                                                            </p>
+                                                           
+													  </div>
+												</td>
+										  </tr>
+									</table>
+
+							  </div>
+					    
+					    </td>
+					 </tr>
+					 </table>
+					    
+<script language="javascript" type="text/javascript">
+
+
+ $(window).load(function () {
+        $("body").removeClass("bodyloadclass").addClass("bodydefaultclass");
+        setInterval(RefreshAnnouncements,glb_announcerefreshtime);
+        $("#mlink").focus();
+      });
+
+ 
+     $(document).ready(function(){
+     
+           handle_markup_history(pageload_annoucements);
+           return false;
+         });
+      
+       function pageload_annoucements(hash)
+        {
+          load_announcepage();
+        }
+      
+</script>    
+  
+   
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="50%" valign="top">
+		  <table border="0" cellspacing="0" cellpadding="0" class="announcementsFullWidthBox">
+				<tr>
+					<td width="965"><!-- Top level tab menu -->
+					    <a name='mainContent'></a>
+					    <a name="FirstTab" class="hiddenText_508"> </a>
+						<table width="965" border="0" cellspacing="0" cellpadding="0">						    
+						    <tr>
+							    <td width="251" height="40" align="center" background="http://images.transit.511.org/RUI/fw/announcementsBox/emergency_off.jpg" class="topOff" id="td_emergency" >
+							       <div align="center">
+							        <span id="span_emergency_tab" >							        
+							            <a href="javascript:void(0);" id='tb_emergency' tabindex='1000' title='Priority Alerts - Tab'>Priority Alerts</a>
+							        </span>
+							       </div>
+							    </td>
+							    <td width="224" height="40" align="center" background="http://images.transit.511.org/RUI/fw/announcementsBox/regional_off.jpg" class="topOff" id="td_regional">
+							      <div align="center">							
+							      <span id="span_regional_tab" >							
+								    <a href="javascript:void(0);" id='tb_regional' tabindex='1002' title='Regional Announcements - Tab'>Regional Announcements</a>
+							      </span>
+							     </div>
+							    </td>
+							    <td width="259" height="40" align="center" background="http://images.transit.511.org/RUI/fw/announcementsBox/transit_on.jpg" class="topOn" id="td_transit" >
+							        <div align="center">
+							          <span id="span_transit_tab" > 
+									    <a href="javascript:void(0);" id='tb_transit' tabindex='1004' title='Agency Announcements - Tab'>Agency Announcements </a>
+								      </span>
+								    </div>
+							    </td>
+							    <td width="231" height="40" align="center" class="rightTabPlaceHolder" >
+								    <!-- begin rightTabPlaceHolderBtmBorder -->
+
+									    <table width='100%' cellspacing="0" cellpadding="0">
+									        <tr>
+									            <td width='85%'>
+									                <div id="searchTransitDiv">
+			<!-- Begin of PopUp -->
+	        <div id="searchTransitAnnouncementsBox">
+			    <table class="AnnounceSearchkeyTable" cellspacing="0">
+				    <tr>
+					    <td class="boxTop"></td>
+				    </tr>
+				    <tr>
+					    <td class="contentBox">
+					        <!-- PopUp Form header (and buttons) -->
+					        <div class="closeBox" style="padding-right: 4px;">
+					            <table>
+					                <tr>
+					                    <td id='td_searchhelp'>
+					                        <a title='Search Announcements Help - Opens Simulated Dialog' href="javascript:void(0);" id="a_transitsearch_help" tabindex='1102'>
+                                                <img alt='Help' src="http://images.transit.511.org/RUI/fw/iconHelp.gif" />
+                                            </a>
+                                        </td>
+					                    <td >
+					                        <!-- onclick="alert('tabIndex='+document.getElementById('a_transitsearch_close').tabIndex);return false;" -->
+					                        <a href="javascript:void(0);" id="a_transitsearch_close" title='Close' tabindex='1103' >
+					                            <img src="http://images.transit.511.org/RUI/fw/btnX_9pxSquare.gif" alt="Close" />
+					                        </a>
+					                    </td>
+					                </tr>
+					            </table>
+					        </div>
+					        <a title='Search Agency Announcements - Simulated Dialog' id='agencyAnnouce_start' tabindex='1101'></a>
+						    <h1 style="font-size: 14px;">Search Announcements</h1>
+						    <div class="boxDivider"></div>
+					        <!-- PopUp Form content/fields -->
+						    <table cellpadding="0" class="searchTransitFormTable">
+								
+							    <tr>
+								    <td><label  for='txt_transit_effdate'><strong>Posting Date (including):</strong></label></td>
+								    <td><input id="txt_transit_effdate" type="text" class="formfield" style="width: 115px;" />(mm/dd/yyyy)</td>
+							    </tr>
+							    <tr>
+								    <td><label for='txt_transit_searchtext'><strong>Text Search: </strong></label></td>
+								    <td><input id="txt_transit_searchtext" type="text" class="formfield" style="width: 165px;" /></td>
+							    </tr>
+								
+							    <tr>
+								    <td>&nbsp;</td>
+								    <td style="text-align: right; height:22px;">
+								        <a title='Reset Form' href="javascript:void(0);" id="a_reset_transit" class="resetLink">Reset Form</a>
+								        <a title='Get Announcements' href="javascript:void(0);" id="a_search_transit" class="cssButtonGold">Search</a> &nbsp;&nbsp;															
+										<a id='agencyAnnounce_end' title='Search Agency Announcements - Close Dialog'></a>
+									</td>
+							    </tr>
+						    </table>
+						</td>
+				    </tr>
+				    <tr>
+					    <td class="boxBtm"></td>
+				    </tr>
+			    </table>
+			</div>
+			<!--end of PopUp -->
+					                    
+            <div class="searchTransitBox" align="center">
+                <a title="Search Agency Announcements - Open a Simulated Dialog" href="javascript:void(0);" tabindex="1010" id="a_search_transitmainlink" class="cssButtonGold">
+                    Search Agency Announcements
+                </a><br />
+                <a href="javascript:void(0);" id="a_reset_transitlist" >Show All</a>
+            </div>
+									                </div>
+									            </td>
+									            <td style="width:15%;text-align:right" id='td_pagehelp'> 
+									                <a href="javascript:void(0);" tabindex="1010" title='Announcements Help - Open a Simulated Dialog' id="a_pagehelp">
+                                                        <img alt='Help' src="http://images.transit.511.org/RUI/fw/iconHelp.gif" />
+                                                    </a> 
+                                                </td>
+									        </tr>
+									    </table>									
+								    
+								    <!--end rightTabPlaceHolderBtmBorder-->
+						        </td>
+						    </tr>
+							<!-- START TAB CONTENT -->
+							<tr>
+								<td colspan="4" valign="bottom" class="contentBox"><div class="contentBoxTop">
+								
+										<!-- TAB 3: Emergency Announcements -->
+										<div id="tier_emergency" style="display:none;">
+											<div class="contentPadding">
+												<div class="CustomoverviewContent_frame" id="div_emergencymaincontainer">
+													<div  class="CustomoverviewContent" id="div_emergencycontainer">
+													</div>
+												</div>
+												<!--end overviewContent_frame--->
+												<br />
+												<div  class="AnnounceMoreContent_frame" id='div_emergencydetail' tabindex='-1'>
+												</div>
+											</div>
+											<!--end contentPadding--->
+										</div>
+										<!-- end TAB 3: Emergency Announcements -->
+										
+										<!-- TAB 1: Regional Announcements -->
+										<div id="tier_regional">
+											<div class="contentPadding">
+												<div class="CustomoverviewContent_frame" id='div_regionalmaincontainer'>
+													<div class="CustomoverviewContent" id='div_regionalcontainer'>
+													</div>
+													
+													<!--end overviewContent-->
+												</div>
+												<div  class="AnnounceMoreContent_frame" id='div_regionaldetail' tabindex='-1'>
+												</div>
+												<!--end overviewContent_frame--->
+											</div>
+											<!--end contentPadding--->
+										</div>
+										<!-- end TAB 1: Regional Announcements -->
+										
+										<!-- TAB 2: Transit Agency Annoucements -->
+										<div id="tier_transit" style="display:none;">
+											<div class="contentPadding">
+												<div class="CustomoverviewContent_frame" id='div_transitmaincontainer'>
+													<div class="CustomoverviewContent" id='div_transitcontainer' >
+													</div>
+													<!--end overviewContent-->
+												</div>
+												<div class="AnnounceMoreContent_frame" id='div_transitdetail' tabindex='-1'>
+												</div>
+												<!--end overviewContent_frame--->
+											</div>
+											<!--end contentPadding--->
+										</div>
+										<!-- end TAB 2: Transit Agency Annoucements -->
+										
+									</div>
+									<!--end contentBoxTop-->
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4" valign="bottom" class="contentBoxBottom"></td>
+							</tr>
+							<!-- END TAB CONTENT -->
+						</table>
+						<!-- End top level tab menu -->
+					</td>
+					<td width="5" background="http://images.transit.511.org/RUI/fw/transitBox/rightshadow.gif" class="rightShadow"></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="bottomShadow"></td>
+				</tr>
+			</table></td>
+	</tr>
+</table>
+
+    <script type="text/javascript" language="javascript" src="scripts/announcements.js"></script>
+    <script type="text/javascript" language="javascript" src="scripts/announcements_data.js"></script>
+    <script type="text/javascript" language="javascript" src="scripts/announcements_rendering.js"></script>
+    <script type="text/javascript" language="javascript" src="scripts/announcements_control.js"></script>            
+   
+    <!-- script type="text/javascript" language="javascript" src="../scripts/PopUps.js"></script -->
+    <script type="text/javascript" language="javascript" src="scripts/tablesorter.js"></script>
+
+                        <br />
+                     </div>
+      <!-- Commented Starts Here By SAIC
+        <div id="left-section">
+         <div id="two-col-span">
+            <div class="padding">
+            
+            </div>
+          </div>
+          
+          <div id="left-hp-span">
+            <div class="padding">
+            </div>
+
+          </div>
+          
+          <div id="center-hp-span">
+            <div class="padding">
+            </div>
+          </div>
+          
+        </div>
+        
+        <div id="right-section">
+        
+          <div id="right-hp-span">
+            <div class="padding">
+
+            </div>
+          </div>
+          
+        </div>
+        Commented Ends Here By SAIC-->
+      	  <!-- START footer -->
+                        <!--
+                ALTHOUGH THE FOOTER IS SET TO CLEAR: BOTH, 
+                IF THERE IS A VERY LONG ITEM IN THE MIDDLE COLUMN
+                IE6 WILL NOT UNDERSTAND THE CLEAR AND 
+                THE ITEM WILL RUN INTO THE FOOTER
+                THAT IS WHY THERE IS ANOTHER CLEAR BELOW -->
+                
+                <div class="clear"></div>
+                <div id="footer">
+                 <a tabindex='9000' title='Start page footer' name='EndPage'> </a>
+                    <div class="footer-menu width-220 border-none">
+                        <p>In This Section</p>
+
+                            <div class="center-menu">
+		                <div class="left">
+			                <ul>
+				                <li class="right-align"><a tabindex='9001' title="Contact info/Suggestions"  id='a_suggestion_mastertab' href="#" onclick="SuggestionClick()">Contact info/Suggestions</a></li>
+				                <li class="right-align"><a tabindex='9002' title="511 Transit Directory" id='a_sitemap_mastertab' href="../sitemap.aspx">511 Transit Directory</a></li>
+				                <li class="right-align">&nbsp;</li>
+			                </ul>
+		                </div>
+		
+		                <div class="right">
+			                <ul>
+			                    <li class="left-align"><a tabindex='9003' title="Announcements"  href="../announcements/index.aspx#m1=E">Announcements</a></li>
+			                    <li class="left-align"><a tabindex='9004' title="About  511 Transit"  id='a_abouttransit_mastertab' href="../abouttransit.aspx">About 511 Transit</a></li>
+			                    <li class="left-align">&nbsp;</li>
+			                </ul>
+		                </div>
+		                	  
+
+		    </div><!-- END center-menu -->
+                <ul><li><a tabindex="9005" title="Accessibility & Seniors" href="../disabled/index.aspx">Accessibility & Seniors</a></li></ul>
+		                     <ul class="accessible"><li><a tabindex='9006' title="Accessible Version of 511 Transit"  href="http://transit.511.org/accessible/">Accessible Version of 511 Transit</a></li></ul>
+                    </div><!-- END footer-menu -->
+          
+                    <div class="footer-menu width-205">
+                        <p>511.org</p>
+            <div class="center-menu">
+		          <div class="left">
+		            <ul>
+		              <li class="right-align"><a tabindex='9010' title="511 SF Bay" href="http://511.org">511 SF Bay</a></li>
+		              <li class="right-align"><a tabindex='9011' title="Transit" href="http://tripplanner.transit.511.org/mtc/XSLT_TRIP_REQUEST2?language=en">Transit</a></li>
+		              <li class="right-align"><a tabindex='9012' title="Traffic" href="http://traffic.511.org">Traffic</a></li>
+                      <li><a tabindex="9013" title="Mobile & Apps" href="http://www.511.org/apps.asp">Mobile&nbsp;&amp;&nbsp;Apps</a></li> 
+		            </ul>
+		          </div><!-- END left -->
+		          <div class="right">
+		            <ul>
+		              <li class="left-align"><a tabindex='9015' title="MY 511" href="http://www.my511.org/">MY 511</a></li>
+		              <li class="left-align"><a tabindex='9016' title="Rideshare" href="http://rideshare.511.org/">Rideshare</a></li>
+		              <li class="left-align"><a tabindex='9017' title="Bicycling" href="http://bicycling.511.org/">Bicycling</a></li>
+                      <li class="right-align"><a tabindex='9018' title="Parking" href="http://Traffic.511.org/parking/index">Parking</a></li>
+		            </ul>
+		          </div><!-- END right -->                  
+		        </div><!-- END center-menu -->
+
+
+          </div><!-- END footer-menu -->
+          
+                    <div class="footer-menu width-250">
+            <p>511 Tools</p>
+          		        <div class="center-menu">
+		          <div class="left">
+		              <ul>
+		              <li class="right-align"><a tabindex='9030' title="Traffic & Driving Times" href="http://traffic.511.org">Traffic & Driving Times</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+		              <li class="right-align"><a tabindex='9031' title="Parking" href="http://traffic.511.org/parking/index">Parking</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                      <li class="right-align"><a tabindex='9032' title="RideMatch Service" href="https://www.ridematch.511.org/">RideMatch Service</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                      <li class="right-align"><a tabindex='9033' title="BikeMapper" href="http://mtcgis.mtc.ca.gov/btp/Default.aspx">BikeMapper</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>		              
+		            </ul>
+		          </div><!-- END left -->
+		          <div class="right">
+		           <ul>
+		              <li class="left-align"><a tabindex='9034' title="Enhanced Trip Planner" href="http://enhancedtripplanner.transit.511.org/transitmmtp/tripplanner/index.aspx">Enhanced Trip Planner</a></li>
+                       <li class="left-align"><a tabindex='9035' title="Transit Trip Planner" href="http://tripplanner.transit.511.org/mtc/XSLT_TRIP_REQUEST2?language=en&itdLPxx_homepage=secondStep">Transit Trip Planner</a></li>
+		              <li class="left-align"><a tabindex='9036' title="Routes and Schedules" href="http://transit.511.org/schedules/index.aspx#m1=S&m2=bus">Routes &amp; Schedules</a></li>
+		              <li class="left-align"><a tabindex='9037' title="Departure Times" href="http://transit.511.org/schedules/realtimedepartures.aspx">Departure Times</a></li>		             
+		            </ul>
+		          </div><!-- END right -->
+		        </div><!-- END center-menu -->
+
+
+          </div><!-- END footer-menu -->
+          
+                    <div class="footer-menu width-96">
+            <p>Languages</p>
+            <ul>
+		          <li><a tabindex='9060' title="Disclaimer" href="http://511.org/language_disclaimer.asp">Disclaimer</a></li>
+		          <li><a tabindex='9061' title="En Español" href="http://translate.google.com/translate?u=http%3a%2f%2ftransit.511.org%2faccessible%2findex.aspx&langpair=en%7Ces&hl=en&ie=UTF-8&oe=UTF-8&prev=%2Flanguage_tools">En Español</a></li>
+		          <li><a tabindex='9062' title="中文" href="http://translate.google.com/translate?u=http%3a%2f%2ftransit.511.org%2faccessible%2findex.aspx&langpair=en%7Czh-CN&hl=en&ie=UTF-8&oe=UTF-8&prev=%2Flanguage_tools">中文</a></li>
+		        </ul>
+          </div><!-- END footer-menu -->
+          
+                    <div class="footer-menu width-last">
+            <p>About This Site</p>
+          <div class="center-menu">
+		          <div class="left">
+		             <ul>
+		              <li class="right-align"><a tabindex='9080' title="Brand Toolbox" href="http://511.org/511brandtoolbox/main.asp">Brand Toolbox</a></li>
+		              <li class="right-align"><a tabindex='9082' title="About 511" href="http://www.511.org/about-511.asp">About 511</a></li>
+		              <li class="left-align"><a tabindex='9084'  title="Terms of Use" href="http://511.org/terms.asp">Terms of Use</a></li>
+		              <li class="left-align"><a tabindex='9086'  title="Privacy Policy" href="http://511.org/privacy.asp">Privacy Policy</a></li>
+		            </ul>
+		          </div><!-- END left -->
+		          <div class="right">
+		            <ul>
+		              <li class="left-align"><a tabindex='9100' title="Accessibility" href="http://511.org/accessibility.asp">Accessibility</a></li>
+		              <li class="left-align"><a tabindex='9101' title="511 Phone Help" href="http://511.org/call-511-faq.asp">511 Phone Help</a></li>
+                      <li class="left-align"><a tabindex='9102' title="Dev Resources" href="http://511.org/developer-resources.asp">Dev Resources</a></li>
+                       <div style="margin-top:2px;"/>
+                      <li class="left-align">
+                        <a target="_blank"  tabindex="9120" title="Facebook" href="http://www.facebook.com/511SFBay">
+                        <img border="0" alt="Facebook" src="../img/global/facebook16x16.gif"/>
+                        </a>
+                        <a target="_blank"  tabindex ="9125" title="Twitter" style="margin-left:5px;"  href="http://twitter.com/511SFBay">
+                        <img border="0" alt="Twitter" src="../img/global/Twitter_Footer.jpg"/>
+                        </a>
+                        <a target="_blank" tabindex = "9126" href="http://instagram.com/511sfbay"  style="margin-left:5px;" title="Instagram">
+                        <img border="0" alt="Instagram" src="../img/global/instagram16x16.png"/>                        
+                        </a>
+                    </li>
+		            </ul>
+		          </div><!-- END right -->
+		        </div><!-- END center-menu -->
+
+          </div><!-- END footer-menu -->
+          
+                </div>
+        <!-- END footer -->
+
+		    </div>
+		  <!-- END mainContent -->
+		  
+
+		    <div id="copy-subfooter">
+
+		      <p><a tabindex='9209' title="© 2015 Metropolitan Transportation Commission"  href="http://www.mtc.ca.gov/" target="_blank">&copy;2015 Metropolitan Transportation Commission</a></p>
+		    </div>
+        </form>
+	</div><!-- END container -->
+
+<script language="javascript" type="text/javascript">
+  //    closeMaptipOnMouseWheel(); 
+   if(typeof(ESRI) != "undefined")
+   {  
+     var map = Maps['ctl00_ContentPlaceHolder1_Map1_map1'];   
+     if ($.browser.msie && map != null)
+     {
+       map.refresh();  
+     }
+      
+     ESRI.ADF.System.maximumLapseTime=20; 
+     ESRI.ADF.System.showLapseAlert = function()
+       {            
+            if( confirm(rskey_maptimeout))
+            {           
+                window.location.reload();
+                return false;
+            }
+            else
+            {           
+                enable_mapping=false;
+                $('#div_map_containerdetail').block();
+                return false;
+            }       
+       }       
+    }
+</script> 
+
+<!-- This is included for google analytics -->
+<script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+  try {
+  var pageTracker = _gat._getTracker("UA-6885000-1");
+  pageTracker._setDomainName("511.org");
+  // _setLocalRemoteServerMode() flags _trackPageView() to tell the UTM code to make a GIF request to both Google Analytics and Urchin. 
+  pageTracker._setLocalRemoteServerMode();
+  pageTracker._trackPageview();
+  } catch(err) {}
+
+</script>
+<!--WEB7-->
+
+</body>
+</html>
+

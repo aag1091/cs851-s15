@@ -1,0 +1,425 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><title>
+	Wide and Telephoto Lenses – What is the Difference? @ Weeder
+</title><meta name="viewport" content="width=1202" /><meta name="MobileOptimized" content="1202" />
+    
+	<link media="all" rel="stylesheet" href="/css/weeder.view.20140220.1821.min.css">
+    <link media="all" rel="stylesheet" href="css/_weeder.shared.css" /><link media="all" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript">	    window.jQuery || document.write('<script src="js/jquery-1.8.3.min.js"><\/script>')</script>
+	<script type="text/javascript" src="js/jquery.main.js"></script>
+    
+    <link rel="shortcut icon" href="images/weeder-fav.png" /><meta id="metaContents" name="description" /><meta id="metaKeywords" name="keywords" /><link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css" />
+
+    <style type="text/css">
+           
+    </style>
+</head>
+<body style="height:100%">
+
+    <script type="text/javascript">
+        loadAnalytics = true;
+    </script>
+
+    <script src="/js/weeder.helpers.20140220.1821.min.js" type="text/javascript"></script>
+    <script src="/js/weeder.comms.20140220.1821.min.js" type="text/javascript"></script>
+    <script src="/js/weeder.shared.20140220.1821.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var oneall_js_protocol = (("https:" == document.location.protocol) ? "https" : "http");
+        document.write(unescape("%3Cscript src='" + oneall_js_protocol + "://weeder.api.oneall.com/socialize/library.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    
+    <script type="text/javascript">
+
+        function loadSearch()
+        {
+            var s = $("#text-search").val();
+            document.location = '/#s=' + s;
+        }
+
+        $(document).ready(function () {
+            var dlg = oneall.api.plugins.social_login.build("weeder-login", {
+                'providers': ['facebook', 'google', 'twitter', 'windowslive'],
+                'callback_uri': 'http://weeder.org/oneall.aspx?r=' + escape(String(document.location)),
+                'modal': true
+            });
+        });
+
+        function runLogin() {
+            
+            $("#weeder-login").trigger("click");
+        }
+
+        function woopraReady(tracker) {
+            tracker.setDomain('weeder.org');
+            tracker.setIdleTimeout(1800000);
+            tracker.track();
+            return false;
+        }
+
+        
+
+            if (GetCookie("disable-analytics") == null || GetCookie("disable-analytics") != "true")
+            {
+                // load the analytics pages
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-3584364-12']);
+                _gaq.push(['_trackPageview']);
+
+                (function () {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+
+                (function() {
+                    var wsc = document.createElement('script');
+                    wsc.src = document.location.protocol+'//static.woopra.com/js/woopra.js';
+                    wsc.type = 'text/javascript';
+                    wsc.async = true;
+                    var ssc = document.getElementsByTagName('script')[0];
+                    ssc.parentNode.insertBefore(wsc, ssc);
+                })();
+            }
+        
+
+        function setInQueueClass(v)
+        {
+            if (v)
+            {
+                $("#entry-tweet-queue").addClass("in-queue");
+                $("#entry-tweet-queue").removeClass("no-queue");
+
+                $("#add-tweet-message").text("Remove from Tweet Queue");
+            }
+            else
+            {
+                $("#entry-tweet-queue").removeClass("in-queue");
+                $("#entry-tweet-queue").addClass("no-queue");
+
+                $("#add-tweet-message").text("Add to Tweet Queue");
+            }
+        }
+
+        function onWelcomeLook()
+        {
+            try {
+                SetCookieDays('dontloadintro_welcome', '1', 365); 
+                logAnalyticsEvent("general", "welcome-takelook", "");
+            }
+            catch (ex)
+            {
+            }
+            $.modal.close(); 
+            return true;
+        }
+
+        function onWelcomeClose()
+        {
+            try {
+                SetCookieDays('dontloadintro_welcome', '1', 2); 
+
+                // log the analytics
+                logAnalyticsEvent("general", "welcome-close", "");
+            }
+            catch (ex)
+            {
+            }
+
+            $.modal.close(); 
+            return false;
+        }
+
+        $(document).ready(function () {
+            $("#analyticsImg").load("/logview.aspx?id=rLH4hOH");
+
+            // make sure they have not told us to go away
+            
+            if (GetCookie("dontloadintro") != "1" && String("#photography or #arts").length > 0)
+            {
+                // only for non-mobile
+                if (jQuery.browser.mobile == false)
+                    $("#intro").modal();    
+            }
+            else
+                $("#intro").hide();
+
+            /*
+            if (GetCookie("dontloadintro_welcome") != "1")
+                $("#welcome-form").modal();*/
+                
+
+            // record the last keywords so we can use it as default values in the twitter profile
+            SetCookieDays("kw", String("#photography or #arts"), 365);
+
+            // hide button action
+            $("#intro a").click(function () {
+                //$.colorbox.close();
+                $.modal.close();
+
+                // hide.. doesnt seem to work properly on iOS
+                //$("#intro").hide();
+
+                SetCookieDays("dontloadintro", "1", 365);
+
+                return;
+            });
+
+            // we have a user id so lets do something with it..
+            var w = new Weeder();
+            w.checkRegistration(GetCookie("wuid"), function (d) {
+                switch (d)
+                {
+                    // not logged in
+                case 0:
+                    break;
+
+                    // logged in
+                case 1:
+                case 2:
+                    isLoggedIn= true;
+                    break;
+                }
+            });
+
+            $("#comments-needlogin").click(function(event) {
+                    checkLogin();
+                });
+
+            // record that we have viewed this one..
+            setViewed('1000001914589');
+
+            // get the 
+            w.getPost(GetCookie("wuid"), '1000001914589', getTwitterGuid(), function(data) {
+                //data = null;
+                
+                if (data == null)
+                {
+                    // no longer in primary data set so remove these features
+                    $("#view-vote-up").hide();
+                    $("#view-vote-down").hide();
+                    $("#view-vote-score").hide();
+                    $("#entry-comments").hide();
+                    $("#set-favorite").hide();
+                    return;
+                }
+
+                // show the post age
+                var ago = jQuery.timeago(w.datetimeFromLong(data.Published));
+                $("#post-time-ago").text(ago);
+                $("#post-time-ago").attr("title", "Posted: " + w.formatDatetime(w.datetimeFromLong(data.Published)));
+
+                //$("#set-favorite").hide();
+                $("#row_id").attr("id", "row_" + data.Id);
+
+                // set comment count
+                $(document).find("#comments-button").attr("hash", data.Id);
+                $(document).find("#comments-count").text(data.CommentCount);
+                $(document).find("#comments-button").click(function(event) { 
+                    event.stopPropagation();
+                    showComments($(this).attr("hash"), true);
+                    return false;
+                });
+
+                if (data.CommentCount == 1)
+                    $("#comments-label").text("comment");
+                else
+                    $("#comments-label").text("comments");
+
+                setInQueueClass(data.InTweetQueue);
+                
+                $("#entry-tweet-queue").attr("hash", data.Id);
+                $("#entry-tweet-queue").click(function(event) {
+                    event.stopPropagation();
+
+                    // are we logged in?
+                    if (getTwitterGuid() == null || getTwitterGuid() == "")
+                    {
+                        window.open("http://weeder.org/#o=feedmytwitter");
+                        return;
+                    }
+
+                    toggleTweetQueue($(this).attr("hash"), function(v) {
+                        setInQueueClass(v);
+                    });
+                    return false;
+                });
+
+
+                setFavIcon($(document).find("#set-favorite"), data.InFav);
+
+                $(document).find("#set-favorite").attr("hash", data.Id);
+                $(document).find("#set-favorite").click(function(event) {
+                    toggleFavorite($(this).attr("hash"), $(document).find("#set-favorite"));
+                });
+
+                $(document).find("#view-vote-score").text(data.Score);
+
+                $(document).find("#view-vote-up").attr("hash", data.Id);
+                $(document).find("#view-vote-up").click(function(event)
+                {
+                    addVote($(this).attr("hash"), 1, $(document).find("#view-vote-up"), $(document).find("#view-vote-down"), $(document).find("#view-vote-score"));
+                });
+            
+                $(document).find("#view-vote-down").attr("hash", data.Id);
+                $(document).find("#view-vote-down").click(function(event)
+                {
+                    addVote($(this).attr("hash"), -1, $(document).find("#view-vote-up"), $(document).find("#view-vote-down"), $(document).find("#view-vote-score"));
+                });
+
+                setVoteIcon(data.Vote, $(document).find("#view-vote-up"), $(document).find("#view-vote-down"));
+
+
+                $(".twitter").click(function() {
+                    window.open(
+                          'https://twitter.com/share?url='+encodeURIComponent(data.FullUrl) + '&text=' + data.Title + '&hashtags=photography', 
+                          'twitter-share-dialog', 
+                          'width=626,height=436'); 
+                        return false;
+                });
+
+                $('.google').click(function() {
+                    window.open("https://plus.google.com/share?url=" + data.FullUrl,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=550,width=500');return false;
+                });
+
+                $(".facebook").click(function() {
+                    window.open(
+                          'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(data.FullUrl), 
+                          'facebook-share-dialog', 
+                          'width=626,height=436'); 
+                        return false;
+                    });
+            });
+        });
+
+    </script>
+
+    <div id="fb-root"></div>
+<script>    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=506451626065553";
+        fjs.parentNode.insertBefore(js, fjs);
+    } (document, 'script', 'facebook-jssdk'));</script>
+
+    <form method="post" action="rLH4hOH" id="form1" style="height:100%">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMjExODY3NjI3MA9kFgICAQ9kFgJmDxYCHgtfIUl0ZW1Db3VudAICFgRmD2QWAmYPFQIhaHR0cDovL3dlZWRlci5vcmcvI3M9I3Bob3RvZ3JhcGh5DCNwaG90b2dyYXBoeWQCAQ9kFgJmDxUCGmh0dHA6Ly93ZWVkZXIub3JnLyNzPSNhcnRzBSNhcnRzZGQ5JaejAiUZ7ZKdPKk5L3bdkogkib+N4bSu3wUvT6fXXQ==" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="4C231FB0" />
+        <table cellpadding="0" cellspacing="0" height="100%" width="100%">
+          <tbody><tr height="1%">
+            <td style="top:0;width:100%;">
+          	    <div style="height:40px;"></div>
+                <div class="header-top" id="row_id">
+			        <strong class="sub-logo"><a href="/">Weeder</a></strong>
+			        <div class="list">
+				        <a href="#" id="view-vote-up" >prev</a>
+				        <span class="value" id="view-vote-score">0</span>
+				        <a href="#" id="view-vote-down" >next</a>
+			        </div>
+                    <div class=" view-post-time-ago green" id="post-time-ago"></div>
+			        <ul class="sub-nav">
+
+                        
+                                <li><a href="http://weeder.org/#s=#photography">#photography</a></li>
+                            
+                                <li><a href="http://weeder.org/#s=#arts">#arts</a></li>
+                            
+			        </ul>
+			        <div class="comment-block green">
+				        <span class="text" id="comments-button">
+					        <strong id="comments-count">0</strong>
+					        <span id="comments-label">Comments</span>
+				        </span>
+				        <ul class="social">
+					        <li class="soc twitter"><a href="#">twitter</a></li>
+					        <li class="soc facebook"><a href="#">facebook</a></li>
+					        <li class="soc google"><a href="#">google</a></li>
+					        <li class="star"><a class='set-favorite' id="set-favorite" href="#">star</a></li>
+				        </ul>
+			        </div>
+			        <div class="comment-block add entry-tweet-queue entry-tweet-queue" id="entry-tweet-queue">
+				        
+				        <span class="text" id="add-tweet-message">Add to Tweet Queue</span>
+			        </div>
+			        <a href="http://digital-photography-school.com/wide-and-telephoto-lenses-what-is-the-difference/" class="close">close</a>
+		        </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top" height="100%">
+            <div style="height:100%">
+               <iframe scrolling="auto" id="rf" src="http://digital-photography-school.com/wide-and-telephoto-lenses-what-is-the-difference/" frameborder="0" allowtransparency="true" style='background-color: #fff'></iframe>
+             </div>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <script type="text/javascript">            !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");</script>
+
+        <!-- need to exclude this text from SH.. or shall we just exclude all from SE? -->
+
+        <div id="intro">
+
+            <div id="intro-title">Do you Tweet about #photography or #arts?</div>
+
+            <div id="intro-buttons">
+                <a id="Hyperlink2" class="searchsubmit loadTwitter" href="/#o=feedmytwitter&amp;view" target="_blank">Yes.. get Started Now</a>
+                <a id="Hyperlink3" class="searchsubmit closeIntro" href="#">No Thanks!</a>
+            </div>
+        </div>
+
+        <div id="comments-form" class="dialog form-hidden">
+        
+        <h2>Weeder Comments</h2>
+
+        <div id="comments-box">
+        
+        </div>
+
+        <input type="text" class="defaultText" title="Write a comment and press enter..." id="comments-input" />
+
+        <div id="comments-needlogin">&lt; Click here to login / register &gt;</div>
+
+        <div>
+            <input type="submit" class="searchsubmit" value="Post Comment" onclick="postComment(); return false;" />
+            <input type="submit" class="searchsubmit" value="Refresh" onclick="refreshComments(); return false;" />
+            <input type="submit" class="searchsubmit" value="Close" onclick="$.modal.close(); return false;" />
+        </div>
+            
+    </div>
+
+    <div id="comment-template" class="form-hidden comment-entry" style="position: relative">
+        <div id="comment-text"></div>
+        <div id="comment-info">by <span id="comment-author"></span><span id="comment-posted"></span></div>
+        <div id="comment-delete" title="Delete this comment"></div>
+        
+    </div>
+
+    <div id="message-form" class="dialog">
+        <h2 id="message-title"></h2>
+        <h3 id="message-message"></h3>    
+        <div>
+            <input type="submit" class="searchsubmit" value="Close" id="message-close" onclick="showMessageComplete('close');  return false;" />
+            <input type="submit" class="searchsubmit" value="Yes" id="message-yes" onclick="showMessageComplete('yes'); return false;" />
+            <input type="submit" class="searchsubmit" value="No" id="message-no" onclick="showMessageComplete('no'); return false;" />
+        </div>
+    </div>
+
+    <div id="welcome-form" class="dialog form-hidden">
+        <a id="Hyperlink1" class=" welcome-look searchsubmit" onclick="return onWelcomeLook();" href="/#o=nowelcome" target="_blank">Open in new window</a>
+        <input type="submit" id="welcome-close" class="searchsubmit" value="Remind me later" onclick="return onWelcomeClose();" style="background-color: green" />
+    </div>
+
+   <div id="analyticsImg"></div><div id="weeder-login"></div>
+
+    </form>
+
+</body>
+</html>

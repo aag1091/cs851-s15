@@ -1,0 +1,1610 @@
+
+<html>
+<head>
+
+<script src="./js/popunder.js"></script>
+<script>
+jsPopunder('PopViewbannerAd.asp?adid=31659', {
+name: 'Popmap',
+width: (screen.width/1),
+height: (screen.height-100),
+top: 0, left: 0,
+wait: 1800, 
+cap: 5000,
+cookie: 'Map2'
+});
+</script>
+
+<script type="text/javascript" src="js/jquery-1.3.1.js"></script>
+<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+<script type="text/javascript" src="js/thickbox.js"></script>
+<link rel="stylesheet" type="text/css" href="js/thickbox.css" />
+<title>My Advertising Pays</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script type="text/javascript" src="js/jquery-1.3.1.js"></script>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="/css/jquery.jcarousel.css" type="text/css"/>
+<style type="text/css">
+<!--
+ body {
+        font-family: 'Open Sans';
+  
+		background-color: #f1f1f1;
+		overflow-x:hidden;
+      }
+    .style1 {
+	color: #FFFFFF;
+	font-style: italic;
+	font-size: 10px;
+}
+
+tbody, td {font-family: 'Open Sans';
+
+}
+.style3 {
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 10px;
+}
+.style4 {color: #FFFA00}
+.style5 {
+	font-size: 10px;
+	font-weight: bold;
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	text-decoration: none;
+}
+.style6 {color: #FFFFFF}
+.style7 {color: #42E907}
+.style9 {font-size: 9.5px}
+.style10 {color: #000000;font-size: 14px;}
+.style12 {font-size: 10px}
+.style15 {color: #FFFFFF; font-size: 10px; }
+-->
+</style>
+<script data-cfasync="false" src="/js/jquery.jcarousel.min.js" type="text/javascript"></script>
+ <script Language="JavaScript">
+
+function isEmailAddr(email)
+{
+  var result = false;
+  var theStr = new String(email);
+  var index = theStr.indexOf("@");
+  if (index > 0)
+  {
+    var pindex = theStr.indexOf(".",index);
+    if ((pindex > index+1) && (theStr.length > pindex+1))
+  result = true;
+  }
+  return result;
+}
+
+function validRequired(formField,fieldLabel)
+{
+  var result = true;
+  
+  if (formField.value == "")
+  {
+    alert('Please enter a value for the "' + fieldLabel +'" field.');
+    formField.focus();
+    result = false;
+  }
+  
+  return result;
+}
+
+function validEmail(formField,fieldLabel,required)
+{
+  var result = true;
+  
+  if (required && !validRequired(formField,fieldLabel))
+    result = false;
+
+  if (result && ((formField.value.length < 3) || !isEmailAddr(formField.value)) )
+  {
+    alert("Please enter a complete email address in the form: yourname@yourdomain.com");
+    formField.focus();
+    result = false;
+  }
+   
+  return result;
+
+}
+
+
+function validNum(formField,fieldLabel,required)
+{
+  var result = true;
+
+  if (required && !validRequired(formField,fieldLabel))
+    result = false;
+  
+   if (result)
+   {
+     var num = parseInt(formField.value,10);
+     if (isNaN(num))
+     {
+       alert('Please enter a number for the "' + fieldLabel +'" field.');
+      formField.focus();    
+      result = false;
+    }
+  } 
+  
+  return result;
+}
+
+function validDate(formField,fieldLabel,required)
+{
+  var result = true;
+
+  if (required && !validRequired(formField,fieldLabel))
+    result = false;
+  
+   if (result)
+   {
+     var elems = formField.value.split("/");
+     
+     result = (elems.length == 3); 
+     
+     if (result)
+     {
+       var month = parseInt(elems[0],10);
+        var day = parseInt(elems[1],10);
+       var year = parseInt(elems[2],10);
+      result = !isNaN(month) && (month > 0) && (month < 13) &&
+            !isNaN(day) && (day > 0) && (day < 32) &&
+            !isNaN(year) && (elems[2].length == 4);
+     }
+     
+      if (!result)
+     {
+       alert('Please enter a date in the format MM/DD/YYYY for the "' + fieldLabel +'" field.');
+      formField.focus();    
+    }
+  } 
+  
+  return result;
+}
+
+function validateForm(theForm)
+{
+
+  if (!validRequired(theForm.name,"Name"))
+    return false;
+
+  if (!validRequired(theForm.phone,"Phone",true))
+    return false;
+	
+  if (!validEmail(theForm.email,"Email Address",true))
+    return false;
+  
+  return true;
+}
+</script> 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47265166-1', 'myadvertisingpays.com');
+  ga('send', 'pageview');
+
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-37657437-2', 'myadvertisingpays.com');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+<table width="1366" border="0" cellspacing="2" cellpadding="4" align="center">
+  <tr>
+    <td align="center" valign="top"><div align="center"><font size="1">Sponsored <br>
+      Advertisements</font><br>
+ <a href='PopViewBannerAd.asp?adid=32011' target='_blank'><img src='https://www.getprofitadz.com/img/banners/20150329050319.gif' alt='32011/21558' title='32011/21558' border='0' width='125' height='125'></a></p>
+      <p><a href='PopViewBannerAd.asp?adid=31814' target='_blank'><img src='http://trafficmonsoon.com/data/aptools/125x125.gif' alt='31814/54442' title='31814/54442' border='0' width='125' height='125'></a></p>
+      <p><a href='PopViewBannerAd.asp?adid=31912' target='_blank'><img src='http://www.map-sponsorsystem.de/wp-content/uploads/2015/03/myadvertisingpays-125x1251.gif' alt='31912/5562' title='31912/5562' border='0' width='125' height='125'></a></p>
+      <p><a href='PopViewBannerAd.asp?adid=32221' target='_blank'><img src='http://www.tcfemailminer.com/wp-content/uploads/EM2GR-125x125b.gif' alt='32221/27638' title='32221/27638' border='0' width='125' height='125'></a></p>
+      <p><a href='PopViewBannerAd.asp?adid=32161' target='_blank'><img src='http://img.amc24.info/apm/affiliatepowermarketing_125x125-02.gif' alt='32161/6831' title='32161/6831' border='0' width='125' height='125'></a></p>
+	  <p><script type="text/javascript" src="//adhitzads.com/695962"></script></p>
+        
+		
+    </p></td>
+    <td width="1024" valign="top"><table width="1024" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_01">
+	<tr>
+		<td colspan="5">
+			<a href="default.asp"><img src="images/template_2013_01.gif" alt="" border="0"></a></td>
+		<td colspan="4">
+			<a href="register.asp?referURL=Dot_MembersPage.asp"><img src="images/template_2013_02.gif" alt="" border="0"></a></td>
+		<td height="52" colspan="6" background="images/template_2013_topgy.gif"><span class="style1">Already a Member?</span> <span class="style3">Sign-In</span><span class="style5"> <a href="Dot_memberlogin.asp?referURL=Dot_MembersPage.asp" class="style4">Here </a></span></td>
+		<td height="52" colspan="5" background="images/template_2013_topgy.gif"><div align="right"><span class="style6"><span class="style9"><strong><span class="style7">24/7 Support</span></strong></span></span> </div></td>
+		<td>
+			<a href="./helpdesk/index.asp" target="_blank"><img src="images/template_2013_05.gif" alt="" border="0"></a></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/template_2013_06.gif" alt=""></td>
+		<td height="52" colspan="5" background="images/tabselect.gif"><div align="center"><a href="default.asp" class="style6"><strong>Earn Money</strong></a><br>
+	    <span class="style9 style6">Sign Up, View Ads, Get Paid</span></div></td>
+		<td height="52" colspan="5" background="images/tabnot.gif"><div align="center" class="style12"><strong><a href="placeAds.asp" class="style10">Place Ads</a> </strong><br>
+              <span class="style9">Get Real Traffic &amp; Conversions Today! </span></div></td>
+		<td height="52" colspan="7" background="images/tabnot2.gif">
+			<a href="register.asp?referURL=Dot_MembersPage.asp"></a>
+		  <div align="center" class="style12"><strong><a href="referralProgram.asp" class="style10">Join the Referral Program</a> </strong><br>
+          <span class="style9">Start Your Network &amp; Earn Tons of Residual Cash!  </span></div></td>
+		<td colspan="3" background="images/template_2013_10.gif">&nbsp;</td>
+	</tr>
+	<tr>
+		<td height="98" colspan="21" bgcolor="#fcfcfc">
+			<table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+			  <tr>
+			    <td> 
+<table width="100%" border="0" cellspacing="1" cellpadding="3">
+  <tr>
+    <td width="5%"><div align="center"><img src="images/person.png" width="75" height="75"></div></td>
+    <td width="95%"><strong>LATEST CUSTOMER TESTIMONIAL</strong> <a href="testimonials.asp"><img src="images/viewall.gif" width="52" height="18" border="0"></a><br>
+    <font size="2">&quot;I've got to say this is the best business I've been apart of you can go to sleep and wake up with money in your account my family is happy also.&quot;</font></td>
+  </tr>
+</table>
+			</td>
+      <td><a href="register.asp?referURL=Dot_MembersPage.asp"><img src="images/template_2013_13.gif" alt="" width="135" height="98" border="0"></a></td>
+    </tr>
+			  <tr>
+			    <td colspan="2"><div align="center"><strong>Sponsored Advertisements </strong> <br>
+			      
+ <a href="http://www.trafficswarm.com/go.cgi?219541" target="_blank"><img src="http://www.trafficswarm.com/images/promo/ts-banner-728x90-1.jpg" width="728" height="90" border="0"></a>
+		        </div></td>
+      </tr>
+            </table></td>
+		</tr>
+	<tr>
+		<td colspan="21">
+			<img src="images/template_2013_15.gif" alt="" width="1024" height="31" border="0" usemap="#Map3"></td>
+	</tr>
+	<tr>
+		<td colspan="21"><img src="images/template_2013_16.gif" width="1024" height="286" alt="" /></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<img src="images/template_2013_17.gif" width="177" height="90" alt=""></td>
+		<td colspan="7">
+			<img src="images/template_2013_18.gif" width="322" height="90" alt=""></td>
+		<td colspan="7">
+			<img src="images/template_2013_19.gif" width="334" height="90" alt=""></td>
+		<td colspan="4">
+			<img src="images/template_2013_20.gif" width="191" height="90" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="21">
+			<img src="images/template_2013_21.gif" alt=""></td>
+	</tr>
+	<tr>
+		<td height="304" colspan="4">&nbsp;</td>
+		<td colspan="4">
+			<a href="register.asp?referURL=Dot_MembersPage.asp" onMouseOver="document.Imgs.src='images/template_2013_23_roll.gif'" onMouseOut="document.Imgs.src='images/template_2013_23.gif'"><img src="images/template_2013_23.gif" name="Imgs" width="220" height="304" border="0"></a></td>
+		<td colspan="4">
+			<a href="register.asp?referURL=Dot_MembersPage.asp" onMouseOver="document.Imgs2.src='images/template_2013_24_roll.gif'" onMouseOut="document.Imgs2.src='images/template_2013_24.gif'"><img src="images/template_2013_24.gif" alt="" width="185" height="304" border="0" name="Imgs2"></a></td>
+		<td colspan="4">
+			<a href="register.asp?referURL=Dot_MembersPage.asp" onMouseOver="document.Imgs3.src='images/template_2013_25_roll.gif'" onMouseOut="document.Imgs3.src='images/template_2013_25.gif'"><img src="images/template_2013_25.gif" alt="" width="220" height="304" border="0" name="Imgs3"></a></td>
+		<td height="304" colspan="5">&nbsp;</td>
+	</tr>
+	<tr>
+	  <td colspan="21" align="center"><table width="100%" border="0" cellspacing="3" cellpadding="3">
+        <tr>
+          <td><div align="center"><em><strong><h2>121931+ Users and GROWING FAST!</h2></strong></em></div></td>
+          </tr>
+      </table></td>
+	  </tr>
+	<tr>
+		<td colspan="21" align="center"><div class="jcarousel">
+                    <div class="rt-block">
+                                
+<div id="k2ModuleBox93" class="k2ItemsBlock jcarousel">
+
+	
+		
+  <ul id="jcarousel">
+  
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">I've got to say this is the best business I've been apart of you can go to sleep and wake up with money in your account my family is happy also.</font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">This is the only online business that is simple, effective and you see the results. you make money. I am very happy with MAP and looking forward to ea</font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">Maps is incredible! This is such a blessing and I'm very grateful it was introduced to me. Nothing else I've been involved in has produced like Maps h</font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">I only recently began using MyAdvertisingPays to promote my business and earn more money.  I would have to say that MAP delivers what it promises base</font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">Sehr gute dienstleisung habe so freude am My advertising pay thanks :). Translation: Staff was excellent, very have such joy on My advertising pay tha</font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">I've found Maps to be a great way to expose my brand and company to masses of other marketers.  Watching other ads also gives me fresh ideas that have</font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">Dear colleagues at MAPS!
+I wanted to thank your customers-support sincerely for resolving my issue in less than 24 hours - in the online industry it´</font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">This is Insane!!
+100% Make Money Daily 
+Impossible Not To Make Money.
+;)</font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">I cant belive it wooooooooooooo</font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">FANTASTYCZNY BIZNES ! POLECAM KAZDEMU KTO CHCE ZACZAC ZARABIAC POTEZNE PIENIADZE BEZ WIEKSZEGO WYSYLKI KASA PLYNIE TU SZEROKIM STRUMIENIEM Z KAZDEJ DO</font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">Best Team ever !!</font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">Hey there!!
+
+Im a very happy Map User for about 8 months soon. Its incredible how my results are.!! Come and Join MyAdvertisingPays </font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">i was skeptic about using maps at first but then once i tried it im ADDICTED. its amazing earning profit with little to no work involved</font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">je suis heureux d avoir decouvert my advertysing pays c'est vrait it real ca marche  et stimulant merci a guillaume mon parrain good guy. Translation:</font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">I LOVE this program!
+It's the only one I have ever
+made any money at starting out!
+Thank all of you for putting this program together.
+So many sca</font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">Super excellent.</font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">very good business that takes care of its members </font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">I started about 15 Days ago and I keep asking my self is it really this easy? 10-15 min a day. </font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">what a fantastic business, thanks to myadvertisingpays, you are stable, secure and absolutly awesome, never had an onlinebusiness like this</font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">Been in maps now 8 months exactly just hit over 6330 in profit share..1200 here I come.great programme. .get in get started you won't regret it.</font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">have been a basic member for just under two months now and I m loving the results,i can wait till  I max out my packs, I just like to say that this is</font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">MAP - really is world class! this is the opportunity of the century! GET IN this is just the beginning!</font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">I love MAPS because it really pays you money</font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">Can't wait to get started.</font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      	  
+      
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+                <div class="moduleItemIntrotext"><a href="testimonials.asp"><img src="images/ppicon.png" border="0" align="left"></a><font size="1">I am so happy that this is real and the income that can be generated on this is huge!</font>
+                  <!-- Last digit is a number of introtext symbols displayed -->
+          </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+	
+      </ul>
+	</div>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function popUp(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=500,height=500,left = 212,top = 184');");
+}
+// End -->
+</script> 
+<script data-cfasync="false" type="text/javascript">
+(function($){ 
+   $(window).load(function(){
+
+/*Carousel ID is defined by the module class suffix.*/
+
+var $carousel_ul_id = $('#jcarousel');
+
+	$carousel_ul_id.jcarousel({
+		visible: 4,
+		scroll: 1,
+		wrap: 'circular',
+		animation: 'slow',
+		start: 1
+	})
+});
+})(jQuery);     
+</script>
+            </div>
+            </div>
+		
+</div></td>
+	</tr>
+	<tr>
+		<td height="609" colspan="3" rowspan="2" bgcolor="#f1f1f1">&nbsp;</td>
+		<td colspan="15" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="3">
+          <tr>
+            <td><img src="images/template_2013_29.gif"></td>
+            <td><span class="style12">Latest blog Post:</span>              <br>
+              <script src="http://feeds.feedburner.com/wordpress/fCrV?format=sigpro" type="text/javascript" ></script>            </td>
+          </tr>
+        </table></td>
+		<td height="609" colspan="3" rowspan="2" bgcolor="#f1f1f1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td colspan="15">
+			<img src="images/template_2013_31.gif" alt="" width="670" height="356" border="0" usemap="#Map2"></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<img src="images/template_2013_32.gif" alt=""></td>
+		<td colspan="5">
+			<img src="images/template_2013_33.gif" alt="" width="223" height="51" border="0" usemap="#Map"></td>
+		<td colspan="11" background="images/template_2013_35.gif"><form method="post" name="addN" action="Dot_newsletteradd.asp"><table width="100%" border="0" cellspacing="0" cellpadding="4">
+          <tr>
+            <td width="68%" valign="middle"><div align="center"><span class="style5">Newsletter Signup </span></div></td>
+            <td width="68%" valign="middle"><input name="email" type="text" id="email" value="" size="30">
+                <input type="hidden" name="subscribe" value="1"></td>
+            <td width="13%" valign="middle"><span class="style12"><b>Email</b></span></td>
+            <td width="19%" valign="middle"><input type="submit" name="Submit2" value="Sign Me Up">            </td>
+          </tr>
+        </table></form></td>
+		<td colspan="3">
+			<img src="images/template_2013_35.gif" alt=""></td>
+	</tr>
+	<tr>
+		<td height="419" colspan="2" bgcolor="#333333">&nbsp;</td>
+		<td colspan="5" bgcolor="#333333">
+			<img src="images/template_2013_37.gif" alt=""><br>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="19%">&nbsp;</td>
+                <td width="81%" valign="top"><span class="style15">Mike comes from a long line of successful business men and women, and is a   Disabled United States Air Force Veteran who spent   years looking for a real no BS Internet income model   that can create a secure, reliable, and solid income.&nbsp; In a sea of scams and   empty promises, <em>My Advertising Pays</em> is the definitive online advertising   system created by Mike and his team of experienced marketers, mathematicians and   engineers to create a true Internet Income System.&nbsp; Mike&rsquo;s Passion is to help   people find and unlock their true income potential by plugging them into the   right money-making systems.</span></td>
+              </tr>
+            </table></td>
+		<td colspan="6" valign="top" bgcolor="#333333"><p>&nbsp;</p>
+	      </td>
+		<td colspan="6" valign="top" bgcolor="#333333"><p><img src="images/bottomlogo.gif"></p>
+	      <p class="style6"><strong><em>MyAdvertisingPays  (MAP) Limited</em></strong><em><br>
+            </em>201 Rogers Office  Building<br>
+	        Edwin Wallace Rey Drive<br>
+	        George Hill, Anguilla</p>
+	      <ul>
+	      <li class="style6"><a href="./helpdesk/" target="_blank"><font color="#FFFFFF">Support Ticket</font></a></li>
+	      <li class="style6"><a href="http://myadvertisingpays.wordpress.com/meet-team-map-2/" target="_blank"><span class="style6">About Us</span></a></li>
+	      <li class="style6"><a href="Dot_Faqs.asp"><span class="style6">F.A.Q's</span></a></li>
+	      <li class="style6"><a href="http://myadvertisingpays.info" target="_blank"><span class="style6">Our Blog</span></a></li>
+	      <li class="style6"><a href="terms.pdf" target="_blank"><font color="#FFFFFF">Terms of Use </font></a> </li>
+		  <li class="style6"><A href="javascript:popUp('refundpolicy.html')"><font color="#FFFFFF">Refund Policy</font></a> </li>
+          <li class="style6"><a href="income.pdf" target="_blank"><font color="#FFFFFF">Income Disclosure Statement</font></a> </li>
+          <li class="style6"><a href="Privacy.pdf" target="_blank"><font color="#FFFFFF">Privacy Statement</font></a></li>
+          </ul></td>
+		<td height="419" colspan="2" bgcolor="#333333">&nbsp;</td>
+	</tr>
+	<tr>
+		<td height="90" colspan="3" bgcolor="#288d03">&nbsp;</td>
+		<td colspan="7">
+			<img src="images/template_2013_42.gif" width="322" height="90" alt=""></td>
+		<td colspan="8">
+			<img src="images/template_2013_43.gif" width="348" height="90" alt=""></td>
+		<td height="90" colspan="3" bgcolor="#288d03">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/spacer.gif" width="149" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="12" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="16" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="19" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="60" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="110" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="18" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="32" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="33" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="50" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="79" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="23" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="36" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="49" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="68" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="67" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="12" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="14" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="10" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="59" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="108" height="1" alt=""></td>
+	</tr>
+</table></td>
+    <td align="center" valign="top"><div align="center"><font size="1">Sponsored <br>
+      Advertisements</font><br>
+    <a href='PopViewBannerAd.asp?adid=32121' target='_blank'><img src='http://dmtradex.nazwa.pl/money.jpg' alt='32121/73207' title='32121/73207' border='0' width='125' height='125'></a></p>
+      <p><a href='PopViewBannerAd.asp?adid=32098' target='_blank'><img src='http://www.map-sponsorsystem.de/wp-content/uploads/2015/03/myadvertisingpays-125x125.gif' alt='32098/49555' title='32098/49555' border='0' width='125' height='125'></a></p>
+      <p><a href='PopViewBannerAd.asp?adid=32307' target='_blank'><img src='http://www.images.pluginprofitsite.com/banners/PIPS_DD_125x125.gif' alt='32307/219' title='32307/219' border='0' width='125' height='125'></a></p>
+        <p><a href='PopViewBannerAd.asp?adid=31998' target='_blank'><img src='http://trafficmonsoon.com/data/aptools/125x125.gif' alt='31998/71829' title='31998/71829' border='0' width='125' height='125'></a></p>
+        <p><a href='PopViewBannerAd.asp?adid=31964' target='_blank'><img src='http://www.maperfolgsbuch.de/wp-content/uploads/2014/12/maperfolgsbuch2-125x125.gif' alt='31964/86788' title='31964/86788' border='0' width='125' height='125'></a></p>
+		<p><script type="text/javascript" src="//adhitzads.com/695962"></script></p>
+    </td></tr>
+</table>
+
+
+<DIV align="center">Copyright &copy; 2013-2015 MyAdvertisingPays (MAP) Limited<br>
+All Rights Reserved.<br>
+<a href="terms.pdf" target="_blank">Terms of Use</a>  <a href="income.pdf" target="_blank">Income Disclaimer</a>  <a href="Privacy.pdf" target="_blank">Privacy Statement</a> </DIV>
+<map name="Map"><area shape="circle" coords="174,26,10" href="https://twitter.com/CEOofMAP" target="_blank">
+<area shape="circle" coords="148,27,9" href="https://www.facebook.com/groups/275653409292824" target="_blank">
+</map>
+<map name="Map2"><area shape="rect" coords="480,273,636,323" href="register.asp?referURL=Dot_MembersPage.asp">
+</map>
+<map name="Map3"><area shape="rect" coords="470,1,591,29" href="testimonials.asp">
+<area shape="rect" coords="631,4,675,22" href="http://myadvertisingpays.wordpress.com/" target="_blank">
+<area shape="rect" coords="241,3,328,22" class="thickbox" href="howitworks.html?keepThis=true&TB_iframe=true&height=350&width=650">
+<area shape="rect" coords="373,4,428,23" class="thickbox" href="why.html?keepThis=true&TB_iframe=true&height=350&width=650">
+</map>
+
+</body>
+</html>

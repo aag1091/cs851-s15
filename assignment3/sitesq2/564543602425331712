@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title ng-bind-template="{{ pageTitle }}"></title>
+    <meta name="description" content="">
+    <meta name="fragment" content="!">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png"> 
+    <link rel="apple-touch-icon-precomposed" href="touch-icon-iphone.png"> 
+    <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png">
+
+    <!-- Canonical populated from footer - crazy but necessary -->
+    <link rel="canonical" href="">
+    <base href="/">
+    <link rel="stylesheet" href="/styles/main.css?rel=1427975910300">
+    <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>-->
+ 
+   <script src="//assets.adobedtm.com/406b28e75c8a35e01a06c8e4c9ff2a6d7ca1fe91/satelliteLib-e4cfe4b450ef24653c12f969af502717674052eb.js"></script>
+   <!-- adyoulike -->
+   <script type="text/javascript" async="async" defer="defer" crossorigin="anonymous" src="//adyoulike.omnitagjs.com"></script>
+
+    <!-- Start of Grapeshot Script  -->
+      <script type="text/javascript">
+      var gs_channels="DEFAULT";
+       
+      </script>
+    <!-- End of Lotame Script -->
+
+    <script type="text/javascript">
+      var googletag = googletag || {};
+      googletag.cmd = googletag.cmd || [];
+      (function() {
+        var gads = document.createElement("script");
+        gads.async = true;
+        gads.type = "text/javascript";
+        var useSSL = "https:" == document.location.protocol;
+        gads.src = (useSSL ? "https:" : "http:") +
+                   "//www.googletagservices.com/tag/js/gpt_mobile.js";
+        var node = document.getElementsByTagName("script")[0];
+        node.parentNode.insertBefore(gads, node);
+      })();
+    </script>
+    <script type="text/javascript" src="http://c.amazon-adsystem.com/aax2/amzn_ads.js"></script>
+<script type="text/javascript">
+    try {
+        amznads.getAds('3084');
+    } catch (e) { /*ignore*/ }
+</script>
+<script type="text/javascript">
+try { amznads.setTargetingForGPTAsync('amznslots'); } catch(e) { /*ignore*/}
+</script>
+
+
+    <script>
+      // Angulartics code (component)
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-42412357-1', document.domain.match(/^(.+)/)[1]);
+
+    </script>
+
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBYl7QRJxsbG4M5Rvuv7Me7kfqqVqNnYss&amp;sensor=false"></script>
+
+    <!-- This is for when a user pastes a Brightcove video into an article.
+         TODO (MBLWEB-126): Only pull this in on the article page.  Or only
+                            pull it in if a Brightcove include is detected? 
+    <script src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>-->
+  </head>
+
+  <body data-status="{{ status }}" id="{{ pageId }}" ng-controller="MainCtrl">
+
+    <!--<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '871490926214230',
+          xfbml      : true,
+          version    : 'v2.0'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+  -->
+        <div class="main-content clearfix" ng-class="{'menu-slideout-open': menuOpen}">
+          <div class="site-alerts" ng-controller="AlertCtrl">
+            <alert close="closeAlert($index, alert.alertType)" ng-repeat="alert in alerts" type="alert.type">
+              <p ng-bind-html="alert.msg"></p>
+            </alert>
+          </div>
+          <div data-ng-animate="{enter: 'view-enter'}" data-ng-hide="ignoreHeader" data-ng-include="'/views/includes/header.html'">
+          </div>
+
+        <nt-spinner></nt-spinner>
+
+        <div class="container" id="siteview" ng-view="">
+        </div>
+      </div>
+      <nav class="main-menu" ng-class="{'menu-slideout-open': menuOpen}">
+        <div ng-include="'/views/includes/main-menu.html'"></div>
+      </nav>
+
+      <div id="fb-root"></div> <!-- Facebook -->
+
+    <!-- Add only for Article pages <script src="http://cdn.taboolasyndication.com/libtrc/northcliffe-network/loader.js"></script> -->
+
+    <script src="scripts/libraries.js?rel=1427975910296"></script>
+
+
+    <script src="scripts/scripts.js?rel=1427975910294"></script>
+
+<!--
+    <script src="http://widget.youappi.com/widget-server/plugins/js/jquery.youappi.min.js"></script>
+
+    <script type="text/javascript">
+      // Crazy Egg
+      setTimeout(function(){var a=document.createElement("script");
+      var b=document.getElementsByTagName("script")[0];
+      a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0011/5371.js?"+Math.floor(new Date().getTime()/3600000);
+      a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+    </script> -->
+
+    <!-- Lotame Data Collection Tag -->
+    <script src="http://tags.crwdcntrl.net/c/991/cc.js?ns=_cc991" id="LOTCC_991"></script>
+    <script>_cc991.bcp();</script>
+    <!-- Lotame Data Collection Tag -->
+
+ <script type="text/javascript">_satellite.pageBottom();</script>
+  </body>
+</html>

@@ -1,0 +1,647 @@
+
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	
+	<style type="text/css">
+	.site-logo{width: 175px;height: 54px;background-repeat: no-repeat;background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK8AAAA2CAMAAACGJTnMAAAC+lBMVEUAAAD////////////l6wTR1gT////////////////////o7QX////////////+/v7////////////////////////////////////////////n7QTn7AX////////////////////////////X3QX///3////////////////////k6QT////////////////////////////////////////////////////////l6gXn7QT///////7////////////////////////////////////////////////////////////////////f6QP////////////////////////////i7AP////////////////////////////////////////////h6wP////////////////////////n7AUXGgApKwH////m8gIvMggcIAAjJwENDgH///////////8SFADh6QMJCgEGCAH///8wNQD+/v7m+wAOEQEPEgHg8AEJCwBlagIaHQAmKQ+4wQOwtgObnwO6ywAKDAEJCgArLwEGBwAREwA1OAF0ewL////g8AGMlgHm+QG3wwEICgAMDgBKTgGbpQG/yQKNlQKuswMREwEYGwGytgTe6wJCRgHB0gAOEAEaHQGdpgGgrQAkJgHl+gCGkQDn+wG+yQLb7QAcHwGfqAJrbwInKwDm9wFucgJARAGmqwSEiANgZgKJjgFxdU0dHRzh9QAWGQGfrQBHTQHp/wDh9gAxMyHq/wBdX05WXgEiJgE8PTmaqADa7AFJTgFWXQFmcAH+/vK0xABsdgKAjADG1wBkbgFcYQLA0QCqtQJxc2gJCwGXl5Hl5eTO3gFbXwNUVwLQ3QITFQHGyI/g7QPb5wO+wL6sswN7hQH///9tbl+coQOxsquXl5X///8QEgAHCQAXGgHp/wDm+wBkbgFITwEjJwHh9QDZ7ADJ2wCxwQCVogBXWFRVXgE4PgErLwGfrgCJlgBCQzM2OCasuwDw9nSfAAAA53RSTlMA8gf4AgED+f7SHATo43kgTA0oCghI+863aV0OCerb1L6pcSsIBbQ5MRgPBt6amGRWPzMjEsaMW0IUEgwBwrukg1lKBPTu4Neej4hrTkUuHRbszLGu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);}
+	@media screen and (min-width: 61.25em){.featured{height:456px;}.main-menu-container{font: 1.125em "Fjalla", sans-serif !important;}.site-logo{width: 258px;height: 79px;background-repeat: no-repeat;background: url(data:image/png;base64,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) !important;}
+}
+	</style>
+	<script type="text/javascript">
+		// Prevent variables from being global
+		(function () {
+
+			/*
+				1. Inject CSS which makes iframe invisible
+			*/
+
+			var div = document.createElement('div'),
+				ref = document.getElementsByTagName('base')[0] ||
+				document.getElementsByTagName('script')[0];
+
+			div.innerHTML = '&shy;<style> iframe { visibility: hidden; } </style>';
+
+			ref.parentNode.insertBefore(div, ref);
+
+
+			/*
+				2. When window loads, remove that CSS,
+				making iframe visible again
+			*/
+
+				window.onload = function() {
+				div.parentNode.removeChild(div);
+			}
+
+		})();
+	</script>
+	
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.7.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>New Concept Art for Rise of the Tomb Raider Debuts - ComingSoon.net</title>
+<link rel="original-source" href="" />
+<meta name="description" content="Five new pieces of concept art for the upcoming Rise of the Tomb Raider have debuted online!"/>
+<link rel="canonical" href="http://www.comingsoon.net/games/news/407757-new-concept-art-for-rise-of-the-tomb-raider-debuts" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="New Concept Art for Rise of the Tomb Raider Debuts - ComingSoon.net" />
+<meta property="og:description" content="Five new pieces of concept art for the upcoming Rise of the Tomb Raider have debuted online!" />
+<meta property="og:url" content="http://www.comingsoon.net/games/news/407757-new-concept-art-for-rise-of-the-tomb-raider-debuts" />
+<meta property="og:site_name" content="ComingSoon.net" />
+<meta property="article:tag" content="Rise of the Tomb Raider" />
+<meta property="article:tag" content="tomb raider" />
+<meta property="article:section" content="Games" />
+<meta property="article:published_time" content="2015-02-07T09:10:36+00:00" />
+<meta property="og:image" content="http://cdn1-www.comingsoon.net/assets/uploads/2015/02/tomb-raider-concept-feature-1.jpg" />
+<!-- / Yoast WordPress SEO plugin. -->
+
+
+	<script type="text/javascript">//<![CDATA[
+var _gaq = _gaq || [],
+	PB   = window.PB || {};
+
+PB.GAAccounts = ["UA-316697-10"];
+PB.GAAuthor   = 'Spencer Perry';
+PB.baseDomain = 'comingsoon.net';
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	//]]></script>
+<link rel='stylesheet' type='text/css' media='all' href='http://cdn1-www.comingsoon.net/wp-content/plugins/bwp-minify/min/?f=wp-content/plugins/pb-ads/media/css/pb_ad_styles.css,wp-content/plugins/pb-movies/assets/css/select2.css,wp-content/plugins/pb-slideshow/assets/css/slideshow.css,wp-content/plugins/pb-cover-panel/widget/assets/css/jquery.coverpanel.css,wp-content/themes/comingsoon/css/cs.css&amp;ver=11462' />
+<link rel='stylesheet' type='text/css' media='screen' href='http://cdn1-www.comingsoon.net/wp-content/plugins/bwp-minify/min/?f=wp-content/plugins/nextgen-gallery/css/nggallery.css&amp;ver=11462' />
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+<script type='text/javascript' src='http://cdn.triggertag.gorillanation.com/js/triggertag.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var AD_VALUES = {"gam_ids":"ca-pub-1304704158939332","site_name":"cr.comingsoon.net","ad_id":"130","prepend_kw":"","global_zone":"","dcopt_location":"4x4"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://cdn3-www.comingsoon.net/wp-content/plugins/bwp-minify/min/?f=wp-content/plugins/pebblebed/media/js/pb.singleevent.js,wp-content/plugins/pb-ads/media/js/pb.ad.js,wp-content/plugins/pb-ads/media/js/pb.triggertags.js,wp-content/plugins/pebblebed/media/js/modernizr.js&amp;ver=11462'></script>
+			<script>
+				(function (win) {
+					var PB = win.PB || {};
+
+					PB.wpQueryVars = {
+						query: 'a:8:{s:13:\"category_name\";s:5:\"games\";s:3:\"tag\";s:0:\"\";s:1:\"p\";i:407757;s:8:\"pagename\";s:0:\"\";s:9:\"post_type\";s:0:\"\";s:11:\"author_name\";s:0:\"\";s:8:\"taxonomy\";s:0:\"\";s:4:\"term\";s:0:\"\";}'
+					};
+
+					win.PB = PB;
+				}(window));
+			</script><meta name="google-site-verification" content="CoiZhYsfDKzDd_0NewV5MeATmTN6a98ZLT6RU0DCJm4" /><script type="text/javascript">
+function isMobileOrTablet() {
+	var b = navigator.userAgent||navigator.vendor||window.opera;
+	return (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od|ad)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(b)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(b.substr(0,4)));
+	}
+
+function getScrOrientation() {
+	return (window.innerHeight > window.innerWidth) ? 'portrait' : 'landscape';
+	}
+
+if (isMobileOrTablet()) {
+	var _gaq = _gaq || [];
+	var scrOrientation = getScrOrientation();
+
+	window.addEventListener('load', function() {
+		_gaq.push(['_trackEvent', 'Orientation', scrOrientation, undefined, undefined, true]);
+		});
+
+	window.addEventListener('resize', function() {
+		if (scrOrientation != getScrOrientation()) {
+			scrOrientation = getScrOrientation();
+			_gaq.push(['_trackEvent', 'Orientation', 'changed to ' + scrOrientation, undefined, undefined, true]);
+			}
+		});
+	}
+</script><script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<script type="text/javascript">
+    (function() {
+        function async_load(script_url){
+            var protocol = ('https:' == document.location.protocol ? 'https://' : 'http://');
+            var s = document.createElement('script'); s.src = protocol + script_url;
+            var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+        }
+        bm_website_code = '8043B9ADA2DA4D1B';
+        jQuery(document).ready(function(){async_load('asset.pagefair.com/measure.min.js')});
+        jQuery(document).ready(function(){async_load('asset.pagefair.net/ads.min.js')});
+    })();
+</script><style type="text/css">
+@media screen and (min-width: 61.25em){
+.wrapper {width: 980px;margin: 0 auto;}
+}
+</style><script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<link rel="pingback" href="http://www.comingsoon.net/xmlrpc.php" />
+	<link rel="shortcut icon" type="image/x-icon" href="http://cdn1-www.comingsoon.net/wp-content/themes/comingsoon/favicon.ico">
+	<link rel="apple-touch-icon" href="http://cdn3-www.comingsoon.net/wp-content/themes/comingsoon/touch-icon-iphone.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="http://cdn2-www.comingsoon.net/wp-content/themes/comingsoon/touch-icon-ipad.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="http://cdn2-www.comingsoon.net/wp-content/themes/comingsoon/touch-icon-iphone-retina.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="http://cdn2-www.comingsoon.net/wp-content/themes/comingsoon/touch-icon-ipad-retina.png">
+</head>
+<body class="single single-post postid-407757 single-format-standard">
+<div class="pb-ad js-pb-ad">
+        <script>
+        (function(w) {
+                
+                w.gnm_ord = w.gnm_ord || Math.random() * 10000000000000000;
+                w.gnm_tile = (w.gnm_tile) ? w.gnm_tile + 1 : 1;
+                w.gnm_extraparams = ';';
+
+                var post_url = '';
+                w.gnm_referer = post_url || parent.location.href;
+
+                document.write('<scr'+'ipt src="http://n4403ad.doubleclick.net/adj/gn.cr.comingsoon.net/games;sect=games;sz=1000x1000;ct=article;ci=407757;kw=rise-of-the-tomb-raider,tomb-raider-2;tile=' + w.gnm_tile + ';dc_ref=' + encodeURIComponent(w.gnm_referer) + ';type=;ord=' + w.gnm_ord + '' + w.gnm_extraparams + '?"></scr' + 'ipt>');
+
+                        }(window.top));
+        </script>
+        <script>
+        <!--
+    (function (win) {
+        var $       = win.top.jQuery,
+            PB      = win.top.PB,
+            options = win.options || win.gn_ads_opts || {},
+            adTitle = '1000x1000';
+
+        if (PB && PB.ad.event) {
+            // this event triggers when the ad has been called (not loaded)
+            PB.ad.event.trigger(adTitle, options);
+        }
+    }(this));
+        //-->
+        </script>
+</div>
+    <div class="pb-ad js-pb-ad">
+        <script>
+        (function(w) {
+                
+                w.gnm_ord = w.gnm_ord || Math.random() * 10000000000000000;
+                w.gnm_tile = (w.gnm_tile) ? w.gnm_tile + 1 : 1;
+                w.gnm_extraparams = ';dcopt=ist;type=pop;type=int;type=boom;';
+
+                var post_url = '';
+                w.gnm_referer = post_url || parent.location.href;
+
+                document.write('<scr'+'ipt src="http://n4403ad.doubleclick.net/adj/gn.cr.comingsoon.net/games;sect=games;sz=4x4;ct=article;ci=407757;kw=rise-of-the-tomb-raider,tomb-raider-2;tile=' + w.gnm_tile + ';dc_ref=' + encodeURIComponent(w.gnm_referer) + ';type=;ord=' + w.gnm_ord + '' + w.gnm_extraparams + '?"></scr' + 'ipt>');
+
+                        }(window.top));
+        </script>
+        <script>
+        <!--
+    (function (win) {
+        var $       = win.top.jQuery,
+            PB      = win.top.PB,
+            options = win.options || win.gn_ads_opts || {},
+            adTitle = '4x4';
+
+        if (PB && PB.ad.event) {
+            // this event triggers when the ad has been called (not loaded)
+            PB.ad.event.trigger(adTitle, options);
+        }
+    }(this));
+        //-->
+        </script>
+</div>
+    <div class="wrapper">
+
+	<div class="container-header contain">
+
+		<header id="header" class="header js-fixed-header fixed-header">
+
+			<div class="container-top-header">
+				<div class="top-header">
+
+					<a class="site-logo" href="http://www.comingsoon.net/" rel="home" title="ComingSoon.net | New Movies, Movie Trailers, DVD, TV &amp; Video Game News!">
+						ComingSoon.net | New Movies, Movie Trailers, DVD, TV &amp; Video Game News!					</a>
+
+					<div class="site-header-social">
+						<a target="_blank" class="site-header-social-icon fb" title="Comingsoon on Facebook" href="https://www.facebook.com/comingsoon">Comingsoon on Facebook</a>
+						<a target="_blank" class="site-header-social-icon tw" title="Follow us on Twitter" href="https://twitter.com/comingsoonnet">Follow us on Twitter</a>
+						<a target="_blank" class="site-header-social-icon gplus" title="Comingsoon on Google plus" href="https://plus.google.com/+comingsoon">Comingsoon on Google plus</a>
+					</div>
+
+					<a id="js-toggle-menu" class="toggle-button toggle-menu" href="http://www.comingsoon.net"><span>Menu</span></a>
+
+				</div>
+			</div>
+
+			<div class="container-nav">
+				<nav class="main-nav clearfix">
+					<div class="main-menu-container btn-decoration"><ul id="menu-main-menu" class="menu"><li id="menu-item-377071" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-377071"><a href="/">Home</a></li>
+<li id="menu-item-287373" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-287373"><a href="http://www.comingsoon.net/movies" >Movies</a></li>
+<li id="menu-item-287383" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-287383"><a href="http://www.comingsoon.net/tv" >TV</a></li>
+<li id="menu-item-287381" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-287381"><a href="http://www.comingsoon.net/games" >Games</a></li>
+<li id="menu-item-295875" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-295875"><a href="http://www.comingsoon.net/trailers" >Trailers</a></li>
+<li id="menu-item-287379" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-287379"><a href="http://www.comingsoon.net/dvd" >DVD</a>
+<ul class="sub-menu">
+	<li id="menu-item-376951" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-376951"><a href="http://www.comingsoon.net/dvd/dvd-releases" >DVD Releases</a></li>
+	<li id="menu-item-376949" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-376949"><a href="http://www.comingsoon.net/dvd/blu-ray-releases" >Blu-Ray Releases</a></li>
+</ul>
+</li>
+<li id="menu-item-287375" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-287375"><a href="http://www.comingsoon.net/extras" >Extras</a></li>
+</ul></div>
+										<div class="clearfix top-nav-widget">
+						<div class="pb-ad js-pb-ad promo-custom">
+        <script>
+        (function(w) {
+                
+                w.gnm_ord = w.gnm_ord || Math.random() * 10000000000000000;
+                w.gnm_tile = (w.gnm_tile) ? w.gnm_tile + 1 : 1;
+                w.gnm_extraparams = ';';
+
+                var post_url = '';
+                w.gnm_referer = post_url || parent.location.href;
+
+                document.write('<scr'+'ipt src="http://n4403ad.doubleclick.net/adj/gn.cr.comingsoon.net/games;sect=games;sz=1002x1002;ct=article;ci=407757;kw=rise-of-the-tomb-raider,tomb-raider-2,pos-top;tile=' + w.gnm_tile + ';dc_ref=' + encodeURIComponent(w.gnm_referer) + ';type=;ord=' + w.gnm_ord + '' + w.gnm_extraparams + '?"></scr' + 'ipt>');
+
+                        }(window.top));
+        </script>
+        <script>
+        <!--
+    (function (win) {
+        var $       = win.top.jQuery,
+            PB      = win.top.PB,
+            options = win.options || win.gn_ads_opts || {},
+            adTitle = '1002x1002';
+
+        if (PB && PB.ad.event) {
+            // this event triggers when the ad has been called (not loaded)
+            PB.ad.event.trigger(adTitle, options);
+        }
+    }(this));
+        //-->
+        </script>
+</div>
+    <div id="search-3" class="search-form-wrapper widget_search">
+<form method="get" id="searchform" class="search-form" action="http://www.comingsoon.net/search">
+	<label for="s" class="search-label">Search</label>
+	<input type="text" class="search-field" name="q" id="s" value="" placeholder="Search">
+	<input type="submit" title="Search" class="search-submit ir" name="submit" id="searchsubmit" value="Search">
+</form>
+</div>						<a id="js-toggle-search" class="toggle-button toggle-search" href="#search"><span>Search</span></a>
+					</div>
+									</nav>
+			</div>
+
+		</header>
+	</div>
+
+	<div id="roadblock" class="roadblock contain">
+		<div id="leaderboard" class="leaderboard js-main-leaderboard"></div>
+	</div>
+
+	<div class="contain">
+		<div class="clearfix main-content content js-main-content">
+
+<div id="column_content" class="column main article-container js-inview" data-ads-loaded="true" data-is-active="true">
+	<h1 class="post-title">New Concept Art for Rise of the Tomb Raider Debuts</h1>
+
+	<div id="column_main main" role="main" class="articles">
+		<!-- Inserting table so bad html in articles don't break layout -->
+		<table class="no-break" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+											<script type="text/template" id="js-single-article">
+							<div id="column_content" class="column main article-container js-inview">
+	<div class="leaderboard-ad js-leaderboard-ad"></div>
+	<header>
+		<h1 class="post-title"><%= title %></h1>
+	</header>
+	<div class="leaderboard-ad desktop js-leaderboard-desktop-ad"></div>
+	<div id="column_main" role="main" class="articles">
+
+		<!-- Inserting table so bad html in articles don't break layout -->
+		<table class="no-break" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<article class="post-407757 post type-post status-publish format-standard has-post-thumbnail hentry category-games tag-rise-of-the-tomb-raider tag-tomb-raider-2 js-article"						data-id="<%- id %>"
+						data-url="<%- url %>"
+						data-title="<%- title %>">
+						<div class="meta">
+							<div class="author">By
+								<% if (author.link) { %>
+									<a class="listed-article-author" href="<%= author.link %>"><%= author.name %></a>
+								<% } else { %>
+									<%= author.name %>
+								<% } %>
+								ON</div>
+							<div class="date">
+								<time datetime=""><%= date %></time>
+							</div>
+						</div>
+						<div class="js-medium-rectangle-ad"></div>
+						<div class="article-content">
+							<%= content %>
+						</div>
+						<% if (gallery_image_url) { %>
+							<a class="slideshow-preview js-slideshow-preview" href="<%- url %>">
+								<img src="<%- gallery_image_url %>">
+								<span class="btn-watch-trailer slideshow-preview-button">Go TO SLIDESHOW</span>
+								<i class="icon slideshow-preview-icon"></i>
+							</a>
+						<% } %>
+						<div class="article-footer js-article-footer"></div>
+					<div class="load-more load-more-article">
+						<div class="js-show-comments btn"
+							data-disqus-shortname="comingsoondotnet"
+							data-disqus-title="<%- title %>"
+							data-disqus-url="<%- disqus_url %>"> show comments </div>
+					</div>
+					<div class="article-ci-widget js-cs-article-ci-widget sidebar-module"></div>
+					</article>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<aside class="site-sidebar js-site-sidebar">
+		<div class="site-sidebar-module js-medium-rectangle-ad"></div>
+		<div class="site-sidebar-module js-releases-widget"></div>
+		<div class="site-sidebar-module js-article-sidebar-modules"></div>
+	</aside>
+</div>
+						</script>
+												<div class="tags-container">
+							<a href="http://www.comingsoon.net/tag/rise-of-the-tomb-raider" rel="tag">Rise of the Tomb Raider</a> <a href="http://www.comingsoon.net/tag/tomb-raider-2" rel="tag">tomb raider</a>						</div>
+						
+						<article class="post-407757 post type-post status-publish format-standard has-post-thumbnail hentry category-games tag-rise-of-the-tomb-raider tag-tomb-raider-2 js-article" id="post-407757"
+							data-id="407757"
+							data-url="http://www.comingsoon.net/games/news/407757-new-concept-art-for-rise-of-the-tomb-raider-debuts"
+							data-title="New Concept Art for Rise of the Tomb Raider Debuts">
+
+							<div class="meta clearfix">
+								<div class="meta-info clearfix">
+									<div class="author">By     <a class="listed-article-author"
+            rel="author"
+            href="http://www.comingsoon.net/author/spencer">Spencer Perry</a>
+ ON</div>
+									<div class="date">
+										<time datetime="2015-02-07"> February 7, 2015</time>
+									</div>
+									<div class="share article-header-widget">
+																			</div>
+								</div>
+								
+<div class="sharing-tools clearfix" data-url=http://www.comingsoon.net/games/news/407757-new-concept-art-for-rise-of-the-tomb-raider-debuts >
+
+	<!-- Facebook -->
+	<div class="facebook-share-button">
+		<div class="fb-share-button" data-href="#"  type="button_count"></div>
+		<div id="fb-root"></div>
+	</div>
+
+	<!-- Twitter -->
+	<div class="tw-share-button">
+		<a class="twitter-share-button" href="https://twitter.com/share"></a>
+	</div>
+
+	<!-- Pinterest -->
+	<div class="pinterest-share-button">
+		<a class="pn-share-button"
+			href="#"
+		    data-pin-do="buttonPin"
+		    data-pin-config="beside"></a>
+	</div>
+
+	<!-- G+ -->
+    <div class="gplus-share-button">
+		<div class="g-plus" data-action="share" data-annotation="bubble" data-href="#"></div>
+    </div>
+
+	<!-- Reddit -->
+	<div class="reddit-share-button">
+		<a href="javascript:void(0);" target="_blank">
+			<img src="//www.redditstatic.com/spreddit6.gif" alt="submit to reddit" border="0" />
+		</a>
+	</div>
+
+
+
+</div>
+
+							</div>
+
+							<div class="js-medium-rectangle-ad"></div>
+
+							<div class="article-content">
+								<p><img class="aligncenter" src="http://comingsoon.net/nextraimages/riseofthetombraiderhead.jpg" alt="" width="640" height="123" /></p>
+<p>Following the cover reveal <a href="http://www.superherohype.com/news/328805-rise-of-the-tomb-raider-lands-on-the-cover-of-game-informer" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.superherohype.com']);">earlier this week</a>, <a href="http://www.gameinformer.com/b/features/archive/2015/02/06/ominous-beauty-exclusive-rise-of-the-tomb-raider-concept-art-gallery.aspx" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.gameinformer.com']);" target="_blank">Game Informer</a> is back with some new concept art for the upcoming <strong>Rise of the Tomb Raider</strong>. Check it out in the gallery viewer below!</p>
+<p><em>&#8220;I’ve often said that the environment is the second most important character in the game. It is the adversary that Lara ultimately has to overcome,&#8221;</em> game director Brian Horton told the outlet.<em> &#8220;The weather and the danger of the traversal all have to come through in those concept pieces. A good concept for Tomb Raider tends to have those things: interesting composition, mood and atmosphere, and a sense of mystery and intrigue. There’s something over there I have to get there. How do I do that?&#8221;</em></p>
+<p><strong>Rise of the Tomb Raider</strong> continues the story of Lara Croft as she seeks to learn more about the deeper, secret world she has discovered around her. Obsessed by what she has seen, Lara is now threatened by a shadow organization intent on killing her for what she knows. She is pushed to her physical and mental limits as she seeks the truth buried deep within the tombs of an ancient world. To unravel the mystery of a Lost City, Lara must use her survival skills and wits, learn to trust new friends, and ultimately accept her destiny as the Tomb Raider.</p>
+<p><strong>Rise of the Tomb Raider</strong> will be released as a timed-exclusive for the Xbox One and Xbox 360 later this year.</p>
+<p><div class="js-slideshow" data-id="119459" data-template="galleryview"></div></p>
+							</div>
+
+							
+							<div class="bottom">
+								<div class="article-footer js-article-footer"></div>
+								
+<div class="sharing-tools clearfix" data-url=http://www.comingsoon.net/games/news/407757-new-concept-art-for-rise-of-the-tomb-raider-debuts >
+
+	<!-- Facebook -->
+	<div class="facebook-share-button">
+		<div class="fb-share-button" data-href="#"  type="button_count"></div>
+		<div id="fb-root"></div>
+	</div>
+
+	<!-- Twitter -->
+	<div class="tw-share-button">
+		<a class="twitter-share-button" href="https://twitter.com/share"></a>
+	</div>
+
+	<!-- Pinterest -->
+	<div class="pinterest-share-button">
+		<a class="pn-share-button"
+			href="#"
+		    data-pin-do="buttonPin"
+		    data-pin-config="beside"></a>
+	</div>
+
+	<!-- G+ -->
+    <div class="gplus-share-button">
+		<div class="g-plus" data-action="share" data-annotation="bubble" data-href="#"></div>
+    </div>
+
+	<!-- Reddit -->
+	<div class="reddit-share-button">
+		<a href="javascript:void(0);" target="_blank">
+			<img src="//www.redditstatic.com/spreddit6.gif" alt="submit to reddit" border="0" />
+		</a>
+	</div>
+
+
+
+</div>
+
+
+							</div>
+
+							
+								<div class="share article-footer-widget">
+
+									<iframe name="iframead"
+	class="iframead js-iframead"
+	resize="both"
+	allowtransparency="true"
+	scrolling="no"
+	frameborder="0"
+	style="margin: 0; border: none; overflow: hidden; display: block;"
+	width="100%"
+	height="250"
+	data-src="http://www.comingsoon.net/wp-content/plugins/pb-ads/ad-page/?content_id=407757&content_type=article&type=&debug_ads=false&extra_params=&keywords=rise-of-the-tomb-raider,tomb-raider-2,pos-bottom&size=600x250&resize=both&title=600x250&wait=0&zone=games_btf&ad_id=130&site_name=cr.comingsoon.net&"
+	src="http://www.comingsoon.net/wp-content/plugins/pb-ads/ad-page/?content_id=407757&content_type=article&type=&debug_ads=false&extra_params=&keywords=rise-of-the-tomb-raider,tomb-raider-2,pos-bottom&size=600x250&resize=both&title=600x250&wait=0&zone=games_btf&ad_id=130&site_name=cr.comingsoon.net&"
+	id="600x250"
+></iframe>
+<div id="text-22" class="widget_text">			<div class="textwidget"><!-- start Vibrant Media IntelliTXT script section -->
+<script type="text/javascript" src="http://comingsoon.us.intellitxt.com/intellitxt/front.asp?ipid=17172"></script>
+<!-- end Vibrant Media IntelliTXT script section --></div>
+		</div>
+								</div>
+
+							
+							<div id="ingageunit"></div>
+
+							<div class="load-more load-more-article">
+	<div class="js-show-comments btn"
+		data-disqus-shortname="comingsoondotnet"
+		data-disqus-title="New Concept Art for Rise of the Tomb Raider Debuts"
+		data-disqus-url="http://www.comingsoon.net/games/news/407757-new-concept-art-for-rise-of-the-tomb-raider-debuts"> show <a href="http://www.comingsoon.net/games/news/407757-new-concept-art-for-rise-of-the-tomb-raider-debuts#disqus_thread"> Comments </a>
+	</div>
+</div>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+							<div class="article-ci-widget js-cs-article-ci-widget sidebar-module">
+								<h3 class="title">From Around the Web</h3>
+								<script type='text/javascript'>
+									var _CI = _CI || {};
+									(function() {
+										var script = document.createElement('script');
+										ref = document.getElementsByTagName('script')[0];
+										_CI.counter = (_CI.counter) ? _CI.counter + 1 : 1;
+										document.write('<div id="_CI_widget_');
+										document.write(_CI.counter+'"></div>');
+										script.type = 'text/javascript';
+										script.src = 'http://widget.crowdignite.com/widgets/32331?v=2&_ci_wid=_CI_widget_'+_CI.counter;
+										script.async = true;
+										ref.parentNode.insertBefore(script, ref);
+									})(); </script>
+							</div>
+
+						</article>
+
+
+									</td>
+			</tr>
+		</table>
+
+	</div><!-- end .articles -->
+
+	<aside class="site-sidebar js-site-sidebar">
+		<div class="site-sidebar-module js-medium-rectangle-ad"></div>
+		<div class="site-sidebar-module js-releases-widget"></div>
+		<div class="site-sidebar-module js-article-sidebar-modules"></div>
+	</aside>
+
+</div>
+
+</div>
+
+<footer class="footer">
+        <a href="/" class="footer-logo"></a>
+    <div class="footer-menu"><ul id="menu-footer-main-menu" class="menu"><li id="menu-item-287385" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-287385"><a title="test" href="http://www.comingsoon.net/movies" >Movies</a></li>
+<li id="menu-item-376823" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-376823"><a href="http://www.comingsoon.net/tv" >TV</a></li>
+<li id="menu-item-287391" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-287391"><a href="http://www.comingsoon.net/games" >Games</a></li>
+<li id="menu-item-376953" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-376953"><a href="http://www.comingsoon.net/trailers" >Trailers</a></li>
+<li id="menu-item-287389" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-287389"><a href="http://www.comingsoon.net/dvd" >DVD</a></li>
+<li id="menu-item-287387" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-287387"><a href="http://www.comingsoon.net/extras" >Extras</a></li>
+<li id="menu-item-376825" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-376825"><a href="http://www.comingsoon.net/contact" >Contact Us</a></li>
+<li id="menu-item-376829" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-376829"><a href="mailto:sales@craveonline.com">Advertise</a></li>
+<li id="menu-item-376831" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-376831"><a href="http://www.craveonline.com/privacy?site=comingsoon.net" onclick="javascript:_gaq.push(['_trackEvent','outbound-menu','http://www.craveonline.com']);">Privacy Policy</a></li>
+<li id="menu-item-376833" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-376833"><a href="http://www.craveonline.com/termsofuse?site=comingsoon.net" onclick="javascript:_gaq.push(['_trackEvent','outbound-menu','http://www.craveonline.com']);">Terms of Use</a></li>
+</ul></div>    <div id="text-20" class="widget_text">			<div class="textwidget"><div style="position: absolute; left: -999em">
+monitoring_string = "df292225381015080a5c6c04a6e2c2dc"
+</div>
+<script type="text/javascript">
+document.write('<scr'+'ipt type="text/javascript">gn_tracking.init({comscore: {c1:2,c2:6036161,c3:"",c4:"",c5:"",c6:"",c15:""}})</scr'+'ipt>');
+</script></div>
+		</div><div id="text-18" class="footer-adchoices widget_text"><h3 class="title">AdChoices</h3>			<div class="textwidget"><a id="_bapw-link" href="http://www.comingsoon.net/games/news/407757-new-concept-art-for-rise-of-the-tomb-raider-debuts#" target="_blank" style="text-decoration:none !important"><img id="_bapw-icon" style="padding-left: 6px;border:0 !important;display:inline !important;vertical-align:top !important;padding-right:5px !important;"/><span style="vertical-align:top !important; font-size: 13px;
+font-family: 'Raleway',sans-serif;">AdChoices</span></a>
+<script type="text/javascript">
+  (function() {
+    var ev = document.createElement('script'); ev.type = 'text/javascript'; ev.async = true; ev.setAttribute('data-ev-tag-pid', 247); ev.setAttribute('data-ev-tag-ocid', 595); 
+    ev.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'c.betrad.com/pub/tag.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ev, s);
+  })();
+</script></div>
+		</div><div id="text-21" class="widget_text">			<div class="textwidget"><script type="text/javascript">
+var _sf_async_config={uid:8555,domain:"comingsoon.net"};
+(function(){
+  function loadChartbeat() {
+    window._sf_endpt=(new Date()).getTime();
+    var e = document.createElement('script');
+    e.setAttribute('language', 'javascript');
+    e.setAttribute('type', 'text/javascript');
+    e.setAttribute('src',
+       (("https:" == document.location.protocol) ? "https://s3.amazonaws.com/" : "http://") +
+       "static.chartbeat.com/js/chartbeat.js");
+    document.body.appendChild(e);
+  }
+  var oldonload = window.onload;
+  window.onload = (typeof window.onload != 'function') ?
+     loadChartbeat : function() { oldonload(); loadChartbeat(); };
+})();
+
+</script></div>
+		</div>    <!--60 queries. 0.674 seconds. -->
+    <p class="footer-copyright">ComingSoon.net is a property of CraveOnline Media, LLC, an Evolve Media, LLC company. &copy;2015 All Rights Reserved Copyright</p>
+</footer>
+</div><!-- end .body -->
+</div>
+
+<script type="text/template" id="js-fandango-modal">
+	<div class="fandango-modal">
+		<h2 class="fandango-modal-title">Tell us where you are</h2>
+		<p>
+			<span class="fandango-modal-subtitle">Looking for movie tickets?</span>
+			Enter your location to see which movie theaters are playing
+			<span class="fandango-modal-movie-name"><%- movieName %></span> near you.
+		</p>
+		<div class="fandango-modal-form">
+			<input type="text" class="fandango-modal-form-zipcode js-fandango-modal-form-zipcode" placeholder="Zip Code">
+			<button class="fandango-modal-form-submit js-fandango-submit" data-movie-id="<%- movieId %>">
+				Go
+			</button>
+		</div>
+	</div>
+</script>
+        <script type="text/javascript">
+        // <![CDATA[
+        var disqus_shortname = 'comingsoondotnet';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1) {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('data-dsqidentifier'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script'); 
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        // ]]>
+        </script>
+        <script type='text/javascript' src='http://b.scorecardresearch.com/beacon.js?ver=1.0'></script>
+<script type='text/javascript' src='http://cdn1-www.comingsoon.net/wp-content/plugins/bwp-minify/min/?f=wp-content/plugins/pb-chartbeat-share/assets/js/chartbeat-share.js,wp-content/themes/comingsoon/plugins/pb-trailer-image/assets/js/pb.trailer-image-uploader.js,wp-content/themes/comingsoon/plugins/pb-trailer-image/assets/js/pb.admin-init.js,wp-content/plugins/pb-movies/assets/js/vendor/select2.js,wp-content/plugins/pb-movies/assets/js/post-movies-lookup.js,wp-content/plugins/pebblebed/media/js/jquery.bxslider.min.js,wp-content/themes/comingsoon/js/utils/pikaday.js,wp-content/themes/comingsoon/js/utils/pikaday.jquery.js,wp-content/themes/comingsoon/js/utils/jquery.cookie.js,wp-content/plugins/pebblebed/media/js/pb.core.js,wp-includes/js/underscore.min.js,wp-content/themes/comingsoon/js/modules/single/pb.single-url-switcher.js,wp-content/themes/comingsoon/js/modules/single/pb.single-infinite-scroll.js,wp-content/themes/comingsoon/js/modules/single/pb.single-load-article.js,wp-content/themes/comingsoon/js/modules/single/pb.single-render.js,wp-content/themes/comingsoon/js/modules/single/pb.single-change-article.js,wp-content/themes/comingsoon/js/utils/pb.media-queries.js,wp-content/themes/comingsoon/js/modules/pb.comment-loader.js,wp-content/plugins/pebblebed/media/js/htmlParser.js,wp-content/plugins/pebblebed/media/js/postscribe.min.js&amp;ver=11462'></script>
+<script type='text/javascript' src='http://cdn2-www.comingsoon.net/wp-content/plugins/bwp-minify/min/?f=wp-content/plugins/pb-ajax-sidebars/js/pb.sidebar-loader.js,wp-content/plugins/pb-movies/assets/js/pb.movies-api.js,wp-content/themes/comingsoon/plugins/pb-releases-widget/assets/js/pb.new-releases.js,wp-content/themes/comingsoon/js/modules/single/pb.single-load-sidebar.js,wp-content/themes/comingsoon/js/modules/single/pb.single-load-ads.js,wp-content/themes/comingsoon/js/modules/pb.sharing.js,wp-content/themes/comingsoon/js/modules/single/pb.single-load-ci-widget.js,wp-content/themes/comingsoon/js/controllers/pb.single.js,wp-content/themes/comingsoon/js/vendor/bootstrap-affix.js,wp-content/themes/comingsoon/js/modules/pb.navigation.js,wp-content/themes/comingsoon/js/modules/pb.searchform.js,wp-content/themes/comingsoon/js/modules/pb.affix-nav.js,wp-content/themes/comingsoon/js/modules/pb.affix-nav-header.js,wp-content/themes/comingsoon/js/modules/pb.ads.js,wp-content/themes/comingsoon/js/modules/pb.tap-detector.js,wp-content/themes/comingsoon/js/controllers/pb.default.js,wp-content/plugins/pb-google-analytics-for-wordpress/js/pb.ga-manager.js,wp-content/plugins/pb-google-analytics-for-wordpress/js/pb.ga-init.js,wp-content/plugins/pb-slideshow/assets/js/pb.slideshow-loader.js,wp-content/plugins/pebblebed/media/js/jquery.history.js,wp-content/plugins/pebblebed/media/js/pb.slider.js,wp-content/plugins/pb-slideshow/assets/js/pb.carousel.js,wp-content/plugins/pb-slideshow/assets/js/jquery.mousewheel.js,wp-content/plugins/pb-slideshow/assets/js/jquery.jscrollpane.min.js,wp-content/plugins/pb-slideshow/assets/js/pb.slideshow.js,wp-includes/js/backbone.min.js,wp-content/plugins/pb-slideshow/assets/js/views/pb.slider-navigation-view.js,wp-content/plugins/pebblebed/media/js/pb.adreloader.js,wp-content/plugins/pebblebed/media/js/pb.adiframereloader.js,wp-content/plugins/pb-slideshow/assets/js/pb.reload-slideshow.js,wp-content/plugins/pb-slideshow/assets/js/pb.slideshow-ui.js,wp-content/plugins/pb-slideshow/assets/js/facades/pb.slideshow-view.js,wp-content/plugins/pb-slideshow/assets/js/pb.mobile-slideshow-ui.js,wp-content/plugins/pb-slideshow/assets/js/facades/pb.slideshow-mobile-view.js,wp-content/themes/comingsoon/js/controllers/pb.slideshow.ctrl.js&amp;ver=11462'></script>
+</body>
+</html>

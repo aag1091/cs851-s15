@@ -1,0 +1,1135 @@
+
+<!DOCTYPE html>
+<html>
+<!--[if IE 6]> <html class="ie6"> <![endif]-->
+<!--[if IE 7]> <html class="ie7"> <![endif]-->
+<!--[if IE 8]> <html class="ie8"> <![endif]-->
+<!--[if IE 9]> <html class="ie9"> <![endif]-->
+
+<head>
+    <script type="text/javascript" src="/Scripts/mobile.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="application-name" content="AnandTech" />
+    <meta name="google-site-verification" content="QejUZTJaqCr781DA0W_JNGjf4wS2xyffL3ohvIuRESc" />
+    <meta property="article:publisher" content="https://www.facebook.com/AnandTech" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/content/images/podcast_a_huge.png" />
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for AnandTech.com" href="/rss/"/>
+
+    <title>First Thoughts - The DirectX 12 Performance Preview: AMD, NVIDIA, &amp; Star Swarm</title>
+    <link href="http://fonts.googleapis.com/css?family=Rokkitt:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Arimo:400,400italic,700,700italic" rel="stylesheet" type="text/css">
+    <!--[if IE]><style type="text/css">.pie {behavior:url(/Content/PIE.htc);}</style><![endif]-->
+    <link href="/Content/css?v=4MQ-J1B9FbTFWxSRz_LNQXgd3xQvhkc6GCmwPPFppVI1" rel="stylesheet"/>
+
+<link href="/Content/resp?v=bLpsGHlbt2J0jFe7q4kOjMR6XTWKxEGuyW8fHKDd5HM1" rel="stylesheet"/>
+    <!--[if lt IE 9]>
+        <link type="text/css" href="/content/ie8.css" rel="stylesheet" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2pre/html5shiv.js"></script>
+    <![endif]-->
+    <script src="/bundles/jquery?v=OCFAn1NcaUrZ5VLi0Kt8lefDjHOF7mvtdw-2FUpZjJ01"></script>
+
+    <script src="/bundles/javascript?v=3zoMUnHQHQfKEAEU_MI-Vwh0i7NhmCdIOW4S7phdnJo1"></script>
+
+    <script type='text/javascript' src="/Scripts/dynamic.js"></script>
+    <script type='text/javascript' src='http://ads.servebom.com/tmnhead.js'></script>
+    <script type='text/javascript'>
+        if (screenContext != 'mobile') {
+            tmntag.placement('2002');
+        } else {
+            tmntag.placement('2012');
+        }
+        tmntag.target({ "ccat1": "gpus" });
+        tmntag.target({ "ctype": "article" });
+        tmntag.start();
+    </script>
+    
+
+    
+        <link rel="canonical" href="http://www.anandtech.com/show/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm/9" />
+            <link rel="shortlink" href="http://www.anandtech.com/show/8962/9" />
+    <meta property="og:title" content="The DirectX 12 Performance Preview: AMD, NVIDIA, &amp; Star Swarm" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.anandtech.com/show/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm" />
+    <meta property="og:image" content="http://images.anandtech.com/doci/8962/DirectX12_678x452.png" />
+    <meta name="author" content="Ryan Smith" />
+
+    <script type="text/javascript">
+
+        var loggedIn = false;
+        var isRoot = false;
+    </script>
+    <script src="/bundles/comments?v=4dsDdpYDBE_hkYPqV3fRU23zZmeXjfy10FIyxvSlyEk1"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('a.icAddComment').click(DoTopPost);
+
+        });
+
+    </script>
+
+
+</head>
+<body>
+    <!-- Begin comScore Tag -->
+    <script>
+        var _comscore = _comscore || [];
+        _comscore.push({ c1: "2", c2: "6035753" });
+        (function () {
+            var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+            s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+            el.parentNode.insertBefore(s, el);
+        })();
+    </script>
+    <noscript>
+        <img src="http://b.scorecardresearch.com/p?c1=2&c2=6035753&cv=2.0&cj=1" />
+    </noscript>
+    <!-- End comScore Tag -->
+    <header class="header">
+        <div class="header_top">
+            <div class="header_ad">
+                    <script type='text/javascript'>tmntag.adTag('header_ad');</script>
+            </div>
+            <div class="logo">
+                <a href="/">
+                    <img src="/Content/images/logo2.png" alt="">
+                </a>
+            </div>
+            <div class="header_top_right">
+                <div class="search_area">
+                    <form action="/SearchResults" method="get">
+                        <div class="search">
+                            <input name="q" type="text" class="search_field">
+                            <input name="" type="submit" class="search_btn" value="search">
+                            <div class="clear"></div>
+                        </div>
+                        <div class="login">
+                                <span id="loginHeader" style="display: none;">
+                                    Welcome <a href="/Account/Details"><b><span id="loginUser"></span></b></a>
+                                    <a href="/Account/Logout?r=%2fshow%2f8962%2fthe-directx-12-performance-preview-amd-nvidia-star-swarm%2f9">Log out</a>
+                                </span>
+                                <span id="logoutHeader">
+                                    <a id="loginTop" href="/Account/Login?r=%2fshow%2f8962%2fthe-directx-12-performance-preview-amd-nvidia-star-swarm%2f9">Login</a>
+                                    <a href="/Account/Register?r=%2fshow%2f8962%2fthe-directx-12-performance-preview-amd-nvidia-star-swarm%2f9">Register</a>
+                                </span>
+                        </div>
+                        <div class="clear"></div>
+                    </form>
+                </div>
+
+                    <div class="header_right_btm">
+                        <span>
+                            <a href="http://www.twitter.com/AnandTech">
+                                <img src="/Content/images/icon-twitter.png" alt="">
+                            </a>
+                            <a href="http://www.facebook.com/AnandTech/">
+                                <img src="/Content/images/icon-facebook.png" alt="">
+                            </a>
+                            <a href="/rss/">
+                                <img src="/Content/images/icon-rss.png" alt="">
+                            </a>
+                        </span>
+
+                        <ul>
+                            <li><a href="/home/about/">ABOUT</a></li>
+                            <li><a href="http://purch.com/advertise/">ADVERTISING</a></li>
+                            <li><a href="/bench/">BENCH</a></li>
+                            <li><a href="http://forums.anandtech.com">FORUMS</a></li>
+                            <li><a href="/gallery/">GALLERIES</a></li>
+                            <li><a href="/tag/podcast">PODCAST</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+            </div>
+            <div class=" clrflt"></div>
+        </div>
+
+        <div class="header_top_resp">
+            <div class="logo_resp">
+                <a href="/"><img src="/Content/images/logo_resp.png" alt=""></a>
+
+            </div>
+            
+            <div class="header_top_resp_right">
+
+                <a class="search_icon" href="#"></a>
+                <div class="drop_down_search">
+                    <span class="blk"></span>
+                    <form action="/SearchResults" method="get">
+                        <div class="search">
+                            <input name="q" type="text" class="search_field">
+                            <input name="" type="submit" class="search_btn" value="search">
+                            <div class="clear"></div>
+                        </div>
+                    </form>
+                </div>
+                <a class="home" href="#"></a>
+                <div class="drop_down_home ">
+                    <span class="blk"></span>
+                    <a href="/home/about/">ABOUT</a>
+                    <a href="http://purch.com/advertise/">ADVERTISING</a>
+                    <a href="/bench/">BENCH</a>
+                    <a href="http://forums.anandtech.com">FORUMS</a>
+                    <a href="/tag/podcast">PODCAST</a>
+                    <a id="loginTopMobile" href="/Account/Login">LOGIN</a>
+                    <a href="/Account/Register">REGISTER</a>
+                </div>
+                <a class="nav_icon show_resp2" href="#"></a>
+                <div class="drop_down_nav">
+                    <span class="blk"></span>
+                    <div class="navmobile ignoreclick"><a href="#">PC Components<span>▼</span></a></div>
+                    <div class="nav_sec">
+                        <ul>
+                            <li><a href="/tag/cpus">CPUs</a></li>
+                            <li><a href="/tag/gpus">GPUs</a></li>
+                            <li><a href="/tag/mb">Motherboards</a></li>
+                            <li><a href="/tag/ssd">SSDs</a></li>
+                            <li><a href="/tag/casecoolingpsus">Cases/Cooling/PSUs</a></li>
+                            <li><a href="/tag/memory">Memory</a></li>
+                            <li><a href="/tag/displays">Displays</a></li>
+                            <li><a href="/tag/nas">NAS</a></li>
+                            <li><a href="/tag/networking">Networking</a></li>
+                            <li><a href="/tag/hdd">HDDs</a></li>
+                            <li><a href="/tag/storage">Storage</a></li>
+                            <li><a href="/tag/keyboard">Keyboards</a></li>
+                        </ul>
+                    </div>
+                    <div class="navmobile ignoreclick"><a href="#">Smartphones &amp; tablets<span>▼</span></a></div>
+                    <div class="nav_sec">
+                        <ul>
+                            <li><a href="/tag/smartphones">Smartphones</a></li>
+                            <li><a href="/tag/tablets">Tablets</a></li>
+                            <li><a href="/tag/htc">HTC</a></li>
+                            <li><a href="/tag/samsung">Samsung</a></li>
+                            <li><a href="/tag/lg">LG</a></li>
+                            <li><a href="/tag/google">Google/Android</a></li>
+                            <li><a href="/tag/microsoft">Microsoft</a></li>
+                            <li><a href="/tag/apple">Apple</a></li>
+                            <li><a href="/tag/soc">SoCs</a></li>
+                        </ul>
+                    </div>
+                    <div class="navmobile ignoreclick"><a href="#">Systems<span>▼</span></a></div>
+                    <div class="nav_sec">
+                        <ul>
+                            <li><a href="/tag/laptops">Notebook Reviews</a></li>
+                            <li><a href="/tag/desktops">Desktop Reviews</a></li>
+                            <li><a href="/tag/mac">Mac Reviews</a></li>
+                            <li><a href="/tag/ultrabook">Ultrabooks</a></li>
+                            <li><a href="/tag/htpc">HTPC</a></li>
+                        </ul>
+                    </div>
+                    <div class="navmobile ignoreclick"><a href="#">Cloud/Datacenter &amp; IT<span>▼</span></a></div>
+                    <div class="nav_sec">
+                        <ul>
+                            <li><a href="/tag/cloud-computing">Cloud Computing</a></li>
+                            <li><a href="/tag/virtualization">Virtualization</a></li>
+                            <li><a href="/tag/enterprise">Enterprise CPUs</a></li>
+                            <li><a href="/tag/nas">Enterprise Storage</a></li>
+                        </ul>
+                    </div>
+                    <div class="navmobile"><a href="/tag/wearables">Wearables</a></div>
+
+                </div>
+            </div>
+        </div>
+        
+    <nav class="breadcrumb nowidth show_resp2">
+        <ul>
+            <li>
+                <a href="/">Home</a><span>&gt;</span>
+                    <a href="/tag/gpus">GPUs</a>
+            </li>
+        </ul>
+        <div class="clear"></div>
+    </nav>
+
+
+        
+        <nav class="nav inner_nav animenu">
+            <input type="checkbox" id="button">
+            <label for="button">Menu</label>
+            <ul>
+                <li>
+                    <a href="#" class="ignoreclick">PC Components<span>▼</span></a>
+                    <ul>
+                        <li><a href="/tag/cpus">CPUs</a></li>
+                        <li><a href="/tag/gpus">GPUs</a></li>
+                        <li><a href="/tag/mb">Motherboards</a></li>
+                        <li><a href="/tag/ssd">SSDs</a></li>
+                        <li><a href="/tag/casecoolingpsus">Cases/Cooling/PSUs</a></li>
+                        <li><a href="/tag/memory">Memory</a></li>
+                        <li><a href="/tag/displays">Displays</a></li>
+                        <li><a href="/tag/nas">NAS</a></li>
+                        <li><a href="/tag/networking">Networking</a></li>
+                        <li><a href="/tag/hdd">HDDs</a></li>
+                        <li><a href="/tag/storage">Storage</a></li>
+                        <li><a href="/tag/keyboard">Keyboards</a></li>
+                    </ul>
+
+                </li>
+                <li>
+                    <a href="#" class="ignoreclick">Smartphones &amp; tablets<span>▼</span></a>
+                    <ul>
+                        <li><a href="/tag/smartphones">Smartphones</a></li>
+                        <li><a href="/tag/tablets">Tablets</a></li>
+                        <li><a href="/tag/htc">HTC</a></li>
+                        <li><a href="/tag/samsung">Samsung</a></li>
+                        <li><a href="/tag/lg">LG</a></li>
+                        <li><a href="/tag/google">Google/Android</a></li>
+                        <li><a href="/tag/microsoft">Microsoft</a></li>
+                        <li><a href="/tag/apple">Apple</a></li>
+                        <li><a href="/tag/soc">SoCs</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="ignoreclick">Systems<span>▼</span></a>
+                    <ul>
+                        <li><a href="/tag/laptops">Notebook Reviews</a></li>
+                        <li><a href="/tag/desktops">Desktop Reviews</a></li>
+                        <li><a href="/tag/mac">Mac Reviews</a></li>
+                        <li><a href="/tag/ultrabook">Ultrabooks</a></li>
+                        <li><a href="/tag/htpc">HTPC</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="ignoreclick">Cloud/Datacenter &amp; IT<span>▼</span></a>
+                    <ul>
+                        <li><a href="/tag/cloud-computing">Cloud Computing</a></li>
+                        <li><a href="/tag/virtualization">Virtualization</a></li>
+                        <li><a href="/tag/enterprise">Enterprise CPUs</a></li>
+                        <li><a href="/tag/nas">Enterprise Storage</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/tag/wearables" class="">Wearables</a>
+                </li>
+            </ul>
+        </nav>
+
+            <nav class="topic_menu topic_inner" style="width: 280px; padding: 6px 0 0 6px;float: right;">
+                <div class="fbholder-fp" style="float:left; margin-right: 15px;"><div class="fb-like" data-href="http://www.facebook.com/AnandTech" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-colorscheme="dark"></div></div>
+                <a href="https://twitter.com/anandtech" class="twitter-follow-button" data-show-count="true" data-show-screen-name="false"></a>
+                <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+
+            </nav>
+            <nav class="topic_menu topic_inner">
+                <ul>
+                    
+                    <li class="topin_title">TRENDING TOPICS</li>
+                            <li class="nosep"><a href="/tag/storage">Storage</a></li>
+                            <li><a href="/tag/gpus">GPUs</a></li>
+                            <li><a href="/tag/intel">Intel</a></li>
+                            <li><a href="/tag/mobile">Mobile</a></li>
+                            <li><a href="/tag/ssd">SSDs</a></li>
+                            <li><a href="/tag/smartphones">Smartphones</a></li>
+                            <li><a href="/tag/laptops">Laptops</a></li>
+                            <li><a href="/tag/amd">AMD</a></li>
+                            <li><a href="/tag/cpus">CPUs</a></li>
+                </ul>
+                <div class="clear"></div>
+            </nav>
+    </header>
+
+    <section class="content">
+            <section class="main_cont">
+
+                
+
+<div class="breadcrumb_area hide_resp2">
+    <nav class="breadcrumb">
+        <ul>
+            <li><a href="/">Home</a><span>&gt;</span></li>
+                <li><a href="/tag/gpus">GPUs</a></li>
+        </ul>
+        <div class="clear"></div>
+    </nav>
+
+    
+    <div class="clear"></div>
+</div>
+
+
+
+<div class="review_blog">
+    <div class="blog_top_left">
+        <a href="/show/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm"><h1>The DirectX 12 Performance Preview: AMD, NVIDIA, &amp; Star Swarm</h1></a>
+        <span>by <a href="#"><a class='b' href='/Author/85'>Ryan Smith</a></a> <em>on February 6, 2015 2:00 PM EST</em> </span>
+        <ul class="hide_resp2">
+            <li>Posted in</li>
+            <li><a href="/tag/gpus">GPUs</a></li>
+                <li><a href="/tag/nvidia">NVIDIA</a></li>
+                <li><a href="/tag/amd">AMD</a></li>
+                <li><a href="/tag/microsoft">Microsoft</a></li>
+                <li><a href="/tag/directx-12">DirectX 12</a></li>
+        </ul>
+    </div>
+
+    <div class="blog_top_right show_resp2">
+        <span><a href="#comments">239 <small>Comments</small></a></span>
+        | <strong><a class="icAddComment" href="/Comment/NewComment/8962?page=9&amp;commentPage=1&amp;showAllComments=False">Add A Comment</a></strong>
+    </div>
+    <div class="blog_top_right hide_resp2">
+
+            <span><a href="#comments">239 <small>Comments</small></a></span>
+        <strong><a class="icAddComment" href="/Comment/NewComment/8962?page=9&amp;commentPage=1&amp;showAllComments=False">+ Add A<br>Comment</a></strong>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<div class="sidepadding review">
+
+
+            <div style="float: right; margin: 13px 0px 15px 15px;">
+                <script type='text/javascript'> tmntag.adTag('middle_ad'); </script>
+                <div class="clear"></div>
+
+
+
+            </div>
+
+
+        <div class="articleContent">
+            <h2>First Thoughts</h2>
+
+<p>Bringing our preview of DirectX 12 to a close, what we&rsquo;re seeing today is both a promising sign of what has been accomplished so far and a reminder of what is left to do. As it stands much of DirectX 12&rsquo;s story remains to be told &ndash; features, feature levels, developer support, and more will only finally be unveiled by Microsoft next month at GDC 2015. So today&rsquo;s preview is much more of a beginning than an end when it comes to sizing up the future of DirectX.</p>
+
+<p>But for the time being we&rsquo;re finally at a point where we can say the pieces are coming together, and we can finally see parts of the bigger picture. Drivers, APIs, and applications are starting to arrive, giving us our first look at DirectX 12&rsquo;s performance. And we have to say we like what we&rsquo;ve seen so far.</p>
+
+<p>With DirectX 12 Microsoft and its partners set out to create a cross-vendor but still low-level API, and while there was admittedly little doubt they could pull it off, there has always been the question of how well they could do it. What kind of improvements and performance could you truly wring out of a new API when it has to work across different products and can never entirely avoid abstraction? The answer as it turns out is that you can still enjoy all of the major benefits of a low-level API, not the least of which are the incredible improvements in CPU efficiency and multi-threading.</p>
+
+<p>That said, any time we&rsquo;re looking at an early preview it&rsquo;s important to keep our expectations in check, and that is especially the case with DirectX 12. Star Swarm is a best case scenario and designed to be a best case scenario; it isn&rsquo;t so much a measure of real world performance as it is technological potential.</p>
+
+<p align="center"><iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube-nocookie.com/embed/qVjjWyRugpc?rel=0" width="640"></iframe></p>
+
+<p>But to that end, it&rsquo;s clear that DirectX 12 has a lot of potential in the right hands and the right circumstances. It isn&rsquo;t going to be easy to master, and I suspect it won&rsquo;t be a quick transition, but I am very interested in seeing what developers can do with this API. With the reduced overhead, the better threading, and ultimately a vastly more efficient means of submitting draw calls, there&rsquo;s a lot of potential waiting to be exploited.</p>
+
+        </div>
+        <div class="article_links">
+                <a href="/show/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm/8" class="fl-lt">Frame Time Consistency & Recordings</a>
+            
+            <script type='text/javascript'>
+<!--
+    function go_here(navigation_list) {
+        var new_ContentPagesURL = navigation_list.options[navigation_list.selectedIndex].value;
+        if (new_ContentPagesURL != "") {
+            self.location = new_ContentPagesURL;
+        }
+    }
+    //--></script><noscript><a target='_blank' href='http://dynamic1.anandtech.com/ox/www/delivery/ck.php?n=59a538e'><img border='0' alt='' src='http://dynamic1.anandtech.com/ox/www/delivery/avw.php?zoneid=4&amp;n=59a538e' /></a></noscript>
+                <select name="ContentPagesList" onchange="go_here(this)">
+                            <option value="/show/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm">The DirectX 12 Preview</option>
+                            <option value="/show/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm/2">The Current State of DirectX 12 &amp; WDDM 2.0</option>
+                            <option value="/show/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm/3">Star Swarm &amp; The Test</option>
+                            <option value="/show/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm/4">CPU Scaling</option>
+                            <option value="/show/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm/5">GPU Scaling</option>
+                            <option value="/show/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm/6">DirectX 12 vs. Mantle, Power Consumption</option>
+                            <option value="/show/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm/7">Mid Quality Performance</option>
+                            <option value="/show/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm/8">Frame Time Consistency &amp; Recordings</option>
+                            <option selected="selected" value="/show/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm/9">First Thoughts</option>
+                </select>
+        </div>
+            <div class="clear"></div>
+            <div class="fl-lt" style="clear: both; margin: 25px 0px 15px; height: 35px; width:150px;">
+                <iframe src="//www.facebook.com/plugins/like.php?href=http://www.anandtech.com/show/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=21&amp;appId=201944423199922" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowtransparency="true"></iframe>
+            </div>
+            <div class="fl-lt" style="margin: 25px 0px 15px; height: 35px; width:90px;">
+                <div class="g-plusone" data-size="medium"></div>
+                <script type="text/javascript">
+                    (function () {
+                        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                        po.src = 'https://apis.google.com/js/platform.js';
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                    })();
+                </script>
+            </div>
+            <div class="fl-lt" style="margin: 25px 0px 15px; height: 35px; width:120px;">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </div>
+            <div class="fl-rt" style="margin: 22px 0px 15px;">
+                <div class="button left"><a href="/print/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm" class="print_article"><span>PRINT THIS ARTICLE</span></a></div>
+            </div>
+            <div class="fl-rt" style="margin: 22px 8px 15px; height: 0px;">
+            </div>
+            <div class="clear"></div>
+            <div style="text-align:center;">
+                <script type='text/javascript'> tmntag.adTag('resp_middle_ad'); </script>
+            </div>
+
+
+</div>
+
+    <div class="discussion" id="comments">
+        
+<script type="text/javascript">
+    
+    $(document).ready(function () {
+        window.hasCommenting = true;        
+        $('#icTopPost').click(DoTopPost);
+
+        $("#icLoginLink").click(function (e) {
+            window.gotoComment = true;
+
+            $.fancybox.open([
+                    {
+                        href: '#inlineLogin'
+                    }
+                ], {
+                    padding: 0,
+                    titlePosition: 'inside',
+                    transitionIn: 'none',
+                    transitionOut: 'none',
+                    afterShow: function (current, previous) {
+                        $('#UserName').focus();
+
+                    }
+                });
+
+            e.preventDefault();
+            return false;
+
+        });
+        
+        $("#inlineComment").click(function (e) {
+            DoComment();
+            e.preventDefault();
+            return false;
+        });
+
+        $("div#comments a.jqc").click(function () {
+            $.get(this.href, scrollComments);
+            return false;
+        });
+
+    });
+</script>
+<div><a id="commentsAnchor"></a></div>
+<ul id="icReplyHolder">
+    <li id="replybox" class="blog_post_area" style="display: none;">
+        <div class="blog_post_btm">
+            <h3>Post Your Comment</h3>
+            <span id="icMessage">
+                    
+                        Please <a id="icLoginLink" href="/Account/Login?r=%2fshow%2f8962%2fthe-directx-12-performance-preview-amd-nvidia-star-swarm%2f9">log in</a> or <a href="/Account/Register?r=%2fshow%2f8962%2fthe-directx-12-performance-preview-amd-nvidia-star-swarm%2f9">sign up</a> to comment. 
+                    
+                                                                                                                                                                                               
+            </span>
+            <textarea cols="10" rows="10" class="comment_txtarea" placeholder="Enter your comment" id="CommentInput" name="CommentInput"></textarea>
+            <input name="" type="button" id="inlineComment" class="submit_comment_btn" value="Submit Comment" disabled="disabled">
+            <img alt="" src="/Content/images/ajax-loader13.gif" id="icAjaxLoader"/>
+            <input type="hidden" name="ParentCommentId" id="ParentCommentId" />
+            <input type="hidden" name="ReplyLevel" id="ReplyLevel" />
+            <input data-val="true" data-val-number="The field ContentId must be a number." data-val-required="The ContentId field is required." id="ContentId" name="ContentId" type="hidden" value="8962" />
+            <div class="clear"></div>
+        </div>
+    </li>
+</ul>
+
+<div class="blog_comments">
+    
+    <a id="icTopPost" href="/Comment/NewComment/8962?page=9&amp;commentPage=1&amp;showAllComments=False" class="print_article top_post">POST A COMMENT</a>
+    
+
+    
+        <h2>239 Comments</h2>
+        <h3><a href="/comments/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm">View All Comments</a></h3>
+    <ul id="ulComments">
+
+
+<li id="cid439204" style="">
+    <h4><a>dakishimesan</a> - Friday, February 06, 2015 - <a href="/comments/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm/439204" style="font-weight:normal; color:#8E8C8C;">link</a></h4>
+    <span>Because DirectX 10 and WDDM 2.0 are tied at the hip, and by extension tied to Windows 10, DirectX 12 will only be available under Windows 10.</span>
+    <a onclick="loadReplyBox(this,'439204','0','RE: ');return false;" href="/Comment/NewComment/8962?page=9&amp;commentPage=1&amp;parentCommentId=439204&amp;showAllComments=False" class="reply_btn">Reply</a>
+    <div class="clear"></div>
+</li>
+
+
+
+<li id="cid439210" style="padding-left:18px;">
+    <h4><a>dakishimesan</a> - Friday, February 06, 2015 - <a href="/comments/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm/439210" style="font-weight:normal; color:#8E8C8C;">link</a></h4>
+    <span>PS: great article.</span>
+    <a onclick="loadReplyBox(this,'439210','1','RE: ');return false;" href="/Comment/NewComment/8962?page=9&amp;commentPage=1&amp;parentCommentId=439210&amp;showAllComments=False" class="reply_btn">Reply</a>
+    <div class="clear"></div>
+</li>
+
+
+
+<li id="cid440434" style="padding-left:36px;">
+    <h4><a>FlushedBubblyJock</a> - Sunday, February 15, 2015 - <a href="/comments/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm/440434" style="font-weight:normal; color:#8E8C8C;">link</a></h4>
+    <span>First thoughts:  R9 290X    dx11=8 frames   mantle=46 frames  TEST= TOTAL FRAUD<br /><br />Although the difference there is what AMD told us mantle would do, only in this gigantic liefest is such hilarity achieved.<br /><br />Another big industry lie-test blubbered out to the sheep at large.</span>
+    <a onclick="loadReplyBox(this,'440434','2','RE: ');return false;" href="/Comment/NewComment/8962?page=9&amp;commentPage=1&amp;parentCommentId=440434&amp;showAllComments=False" class="reply_btn">Reply</a>
+    <div class="clear"></div>
+</li>
+
+
+
+<li id="cid440532" style="padding-left:54px;">
+    <h4><a>0ldman79</a> - Monday, February 16, 2015 - <a href="/comments/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm/440532" style="font-weight:normal; color:#8E8C8C;">link</a></h4>
+    <span>It looks more like the people that coded that game are not very experienced and have spent far more time optimizing for future API than DX11.</span>
+    <a onclick="loadReplyBox(this,'440532','3','RE: ');return false;" href="/Comment/NewComment/8962?page=9&amp;commentPage=1&amp;parentCommentId=440532&amp;showAllComments=False" class="reply_btn">Reply</a>
+    <div class="clear"></div>
+</li>
+
+
+
+<li id="cid440714" style="padding-left:72px;">
+    <h4><a>Christopher1</a> - Monday, February 16, 2015 - <a href="/comments/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm/440714" style="font-weight:normal; color:#8E8C8C;">link</a></h4>
+    <span>Not necessarily. DX11 no matter how &#39;optimized&#39; still does not get you as close &#39;to the metal&#39; as Mantle does. So yes, there can be these kinds of extreme differences in FPS.</span>
+    <a onclick="loadReplyBox(this,'440714','4','RE: ');return false;" href="/Comment/NewComment/8962?page=9&amp;commentPage=1&amp;parentCommentId=440714&amp;showAllComments=False" class="reply_btn">Reply</a>
+    <div class="clear"></div>
+</li>
+
+
+
+<li id="cid441023" style="padding-left:72px;">
+    <h4><a>The_Countess666</a> - Thursday, February 19, 2015 - <a href="/comments/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm/441023" style="font-weight:normal; color:#8E8C8C;">link</a></h4>
+    <span>they are in fact very experienced. but they choose to do the things that previously DX11 bottleneck prevented them from doing in the past.</span>
+    <a onclick="loadReplyBox(this,'441023','4','RE: ');return false;" href="/Comment/NewComment/8962?page=9&amp;commentPage=1&amp;parentCommentId=441023&amp;showAllComments=False" class="reply_btn">Reply</a>
+    <div class="clear"></div>
+</li>
+
+
+
+<li id="cid441413" style="padding-left:90px;">
+    <h4><a>0ldman79</a> - Saturday, February 21, 2015 - <a href="/comments/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm/441413" style="font-weight:normal; color:#8E8C8C;">link</a></h4>
+    <span>That makes sense, still not quite an apples to apples comparison in that situation, though using previously unavailable features on the new API tends to show the differences.<br /><br />The question still remains, will we see similar improvements on the current crop of DX11 games?<br /><br />I don&#39;t think that will be the case, though I could be wrong.<br /><br />Seems the gains are from multithreading, which is part of the DX11 or 11.1 spec.</span>
+    <a onclick="loadReplyBox(this,'441413','5','RE: ');return false;" href="/Comment/NewComment/8962?page=9&amp;commentPage=1&amp;parentCommentId=441413&amp;showAllComments=False" class="reply_btn">Reply</a>
+    <div class="clear"></div>
+</li>
+
+
+
+<li id="cid440619" style="padding-left:54px;">
+    <h4><a>Fishymachine</a> - Monday, February 16, 2015 - <a href="/comments/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm/440619" style="font-weight:normal; color:#8E8C8C;">link</a></h4>
+    <span>DX11 can manage up 10k draw calls, Star Storms makes 100k. Also Assasins Creed Unity makes up to 50k in case you wanted a retail game that would skyrocket in low API(there&#39;s a spot where even 2 GTX980 get 17fps)</span>
+    <a onclick="loadReplyBox(this,'440619','3','RE: ');return false;" href="/Comment/NewComment/8962?page=9&amp;commentPage=1&amp;parentCommentId=440619&amp;showAllComments=False" class="reply_btn">Reply</a>
+    <div class="clear"></div>
+</li>
+
+
+
+<li id="cid441024" style="padding-left:54px;">
+    <h4><a>The_Countess666</a> - Thursday, February 19, 2015 - <a href="/comments/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm/441024" style="font-weight:normal; color:#8E8C8C;">link</a></h4>
+    <span>this engine was spefiically written to do all the things that previously DX11 doesn&#39;t allow game developers to do. it was designed to run headlong into every bottleneck that DX11 has.<br /><br />it is in fact a great demonstrations of the weaknesses of DX11.<br /><br />the fact that nvidia gets higher framerates in dx11 then ATI is because they optimized the hell out of this game. that isn&#39;t viable (costs too much, far too time consuming) for every game and was purely done by nvidia for marketing, but all it really does is further illustrate the need for a low level API where the burden of optimizations is shifted to the game engine developers where it belongs, not the driver developers.</span>
+    <a onclick="loadReplyBox(this,'441024','3','RE: ');return false;" href="/Comment/NewComment/8962?page=9&amp;commentPage=1&amp;parentCommentId=441024&amp;showAllComments=False" class="reply_btn">Reply</a>
+    <div class="clear"></div>
+</li>
+
+
+
+<li id="cid439214" style="padding-left:18px;">
+    <h4><a>Flunk</a> - Friday, February 06, 2015 - <a href="/comments/8962/the-directx-12-performance-preview-amd-nvidia-star-swarm/439214" style="font-weight:normal; color:#8E8C8C;">link</a></h4>
+    <span>That might annoy me more if they weren&#39;t giving everyone on Windows 7 and 8 an upgrade to 10 for nothing. I suppose not having to backport this to Windows 8 (as was originally announced) is probably saving a fair amount.</span>
+    <a onclick="loadReplyBox(this,'439214','1','RE: ');return false;" href="/Comment/NewComment/8962?page=9&amp;commentPage=1&amp;parentCommentId=439214&amp;showAllComments=False" class="reply_btn">Reply</a>
+    <div class="clear"></div>
+</li>
+
+
+
+    </ul>
+</div>
+    <nav class="page_nav">
+        <ul>
+                        
+                <li>
+                        <div  class="a"><label for="">1</label></div>
+                </li>
+                <li>
+<a class="jqc" href="/Show/Index/8962?cPage=2&amp;all=False&amp;sort=0&amp;page=9&amp;slug=the-directx-12-performance-preview-amd-nvidia-star-swarm#comments">2</a>                </li>
+                <li>
+<a class="jqc" href="/Show/Index/8962?cPage=3&amp;all=False&amp;sort=0&amp;page=9&amp;slug=the-directx-12-performance-preview-amd-nvidia-star-swarm#comments">3</a>                </li>
+                <li>
+<a class="jqc" href="/Show/Index/8962?cPage=4&amp;all=False&amp;sort=0&amp;page=9&amp;slug=the-directx-12-performance-preview-amd-nvidia-star-swarm#comments">4</a>                </li>
+                <li>
+<a class="jqc" href="/Show/Index/8962?cPage=5&amp;all=False&amp;sort=0&amp;page=9&amp;slug=the-directx-12-performance-preview-amd-nvidia-star-swarm#comments">5</a>                </li>
+                <li>
+<a class="jqc" href="/Show/Index/8962?cPage=6&amp;all=False&amp;sort=0&amp;page=9&amp;slug=the-directx-12-performance-preview-amd-nvidia-star-swarm#comments">6</a>                </li>
+                            <li>
+                    <a class="jqc" href="/Show/Index/8962?cPage=24&amp;all=False&amp;sort=0&amp;page=9&amp;slug=the-directx-12-performance-preview-amd-nvidia-star-swarm#comments">24</a>
+                </li>
+                            <li class="arrow">                    
+                    <a class="jqc" href="/Show/Index/8962?cPage=2&amp;all=False&amp;sort=0&amp;page=9&amp;slug=the-directx-12-performance-preview-amd-nvidia-star-swarm#comments">▶</a>
+                </li>
+        </ul>
+    </nav>
+
+    </div>
+
+
+
+            </section>
+
+
+     <aside class="sidebar">
+            <script type='text/javascript'> tmntag.adTag('side_ad'); </script>
+
+             <article class="pipeline_stories">
+                 <div class="pipeline_title">
+                     <h2><a href="/pipeline">PIPELINE STORIES</a></h2>
+                     <a href="mailto:tips@anandtech.com">+ Submit News</a>
+                     <div class="clrflt"></div>
+                 </div>
+                 
+                 <strong>
+                     <a href="/show/9141/chipworks-publishes-samsung-galaxy-s6-teardown">Chipworks Publishes Samsung Galaxy S6 Teardown</a>
+                     <img src="/Content/images/dell_reveal_arrow.png" alt="">
+                 </strong>
+                 
+                 <span><a href="/show/9140/dell-announces-mainstream-2560x1440-p2416d-display">Dell Announces Mainstream 2560x1440 P2416D Display</a></span>
+                 <span><a href="/show/9139/nvidia-posts-35005-hotfix-driver-fixes-games-adds-opencl-12-support">NVIDIA Posts 350.05 Hotfix Driver - Fixes Games &amp; Adds OpenCL 1.2 Support</a></span>
+                 
+                 <ul>
+                         <li ><a href="/show/9133/digital-storm-launches-the-upgraded-bolt-3-sff-gaming-system">Digital Storm Launches The Upgraded BOLT 3 SFF Gaming System</a></li>
+                         <li ><a href="/show/9108/sponsored-post-sandisk-ssd-deployment-case-study">Sponsored Post: SanDisk SSD Deployment Case Study</a></li>
+                         <li ><a href="/show/9134/htc-launches-the-one-m8s">HTC Launches the One M8s</a></li>
+                         <li ><a href="/show/9132/amd-to-face-securities-fraud-lawsuit">AMD To Face Securities Fraud Lawsuit</a></li>
+                         <li ><a href="/show/9128/playstation-plus-april-2015-free-games-preview">PlayStation Plus April 2015 Free Games Preview</a></li>
+                         <li ><a href="/show/9127/google-announces-new-lowcost-chromebooks-and-the-chromebit-hdmi-stick">Google Announces $149 Chromebooks and the Chromebit Chrome OS Stick</a></li>
+                         <li ><a href="/show/9123/ctl-launches-new-chromebook-for-education">CTL Launches New Chromebook For Education</a></li>
+                         <li ><a href="/show/9126/microsoft-announces-surface-3">Microsoft Announces Surface 3: 10.8-inch 2-in-1 with Atom x7 on 14nm from $499</a></li>
+                         <li ><a href="/show/9125/intel-braswell-details-quietly-launched-cherry-trail-and-airmont-on-14nm">Intel Braswell Details Quietly Launched: Cherry Trail and Airmont on 14nm</a></li>
+                 </ul>
+
+             </article>
+         
+         <script type='text/javascript'> tmntag.adTag('side_ad2'); </script>
+                
+         <article class="facebook_like">
+             <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+             <div class="holder">FACEBOOK
+                 <div class="fbholder"><div class="fb-like" data-href="http://www.facebook.com/AnandTech" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-colorscheme="dark"></div></div>
+                 <img alt="" src="/Content/images/like_arrow.png">
+             </div>
+	     <div class="fb-activity" data-site="anandtech.com" data-width="286" data-height="525" data-header="false" data-colorscheme="dark" data-font="arial" data-recommendations="true"></div>
+         </article>
+         
+            <article class="twitter">
+                <h2>TWEETS <img src="/Content/images/twiiter_bird.png" alt=""></h2>
+                <div class="twitter_box">
+                    <div class="twitter_cont">
+                        
+                            <ul>
+                                 <li><a href="https://twitter.com/IanCutress"><span>IanCutress</span></a>: <a href="https://twitter.com/IanCutress/status/583759257604120576">Things to do in Taiwan: Shilin, Maokong, Houdong, perhaps the beach, or a tour of Toroko? Any suggestions?</a></li>
+                                 <li><a href="https://twitter.com/RyanSmithAT"><span>RyanSmithAT</span></a>: <a href="https://twitter.com/RyanSmithAT/status/583742046642413568">@scottwasson It's never too early to start on that summer tan, right?</a></li>
+                                 <li><a href="https://twitter.com/IanCutress"><span>IanCutress</span></a>: <a href="https://twitter.com/IanCutress/status/583673010705408000">What SATA Express should be RT @anandtech: Intel SSD 750 PCIe SSD Review: NVMe for the Client http://t.co/xwCHq3qnAA</a></li>
+                                 <li><a href="https://twitter.com/RyanSmithAT"><span>RyanSmithAT</span></a>: <a href="https://twitter.com/RyanSmithAT/status/583415345152532481">@scottwasson There are people who will pay good money for anything that may give them a competitive edge, even monitor tweaks.</a></li>
+                                 <li><a href="https://twitter.com/RyanSmithAT"><span>RyanSmithAT</span></a>: <a href="https://twitter.com/RyanSmithAT/status/583415174649946112">@scottwasson Remember that this is the same industry that at one time sold wall hacking as a product feature</a></li>
+                                 <li><a href="https://twitter.com/IanCutress"><span>IanCutress</span></a>: <a href="https://twitter.com/IanCutress/status/583270920648826880">@SethColaner Unfortunately the pain aspect of stubbing a toe in LR is a tough one to overcome without the intravenous morphine add-on.</a></li>
+                                 <li><a href="https://twitter.com/RyanSmithAT"><span>RyanSmithAT</span></a>: <a href="https://twitter.com/RyanSmithAT/status/583167734260731905">@IanCutress Unfortunately we'll need 8Gb 7GHz GDDR5 first</a></li>
+                                 <li><a href="https://twitter.com/IanCutress"><span>IanCutress</span></a>: <a href="https://twitter.com/IanCutress/status/583146016020529152">@Fwiler You either get office gaming chairs (no speakers) or gaming chairs (low to ground, fixed base, not enough support)</a></li>
+                                 <li><a href="https://twitter.com/RyanSmithAT"><span>RyanSmithAT</span></a>: <a href="https://twitter.com/RyanSmithAT/status/583080026783907840">@IanCutress I'll be in hiding until April 2nd then</a></li>
+                                 <li><a href="https://twitter.com/IanCutress"><span>IanCutress</span></a>: <a href="https://twitter.com/IanCutress/status/583060566530486273">The fake spam has begun.</a></li>
+                                 <li><a href="https://twitter.com/ganeshts"><span>ganeshts</span></a>: <a href="https://twitter.com/ganeshts/status/582729457477124096">@ASUSTechMKTJJ JJ, is that a Broadwell version? Is there a marketing push for it in the US?</a></li>
+                                 <li><a href="https://twitter.com/ganeshts"><span>ganeshts</span></a>: <a href="https://twitter.com/ganeshts/status/575545956969639937">@Krewell Agreed :) Btw, what is the link-rate between the two dies? I am not finding that info anywhere (wasn't part of the briefing)</a></li>
+                                 <li><a href="https://twitter.com/ganeshts"><span>ganeshts</span></a>: <a href="https://twitter.com/ganeshts/status/575542296084680704">@Krewell Genuinely curious if that matters to customer who cares about BOM cost &amp; perf/watt :)</a></li>
+                                 <li><a href="https://twitter.com/ganeshts"><span>ganeshts</span></a>: <a href="https://twitter.com/ganeshts/status/573592496812388352">@smalltreecomm Does the product picture here: https://t.co/88q8JC3RZ3 : match the actual product?</a></li>
+                                 <li><a href="https://twitter.com/ganeshts"><span>ganeshts</span></a>: <a href="https://twitter.com/ganeshts/status/571391815338708992">@juhamattis Check for something with DZAT support. I have asked @kristianvatto to do some investigation on that.</a></li>
+                            </ul>
+                        
+                        
+                    </div>
+                
+                    <a class="twitter_follow_btn pie" href="http://twitter.com/anandtech">Follow <span>@</span>ANANDTECH</a>
+                </div>
+                <strong><img src="/Content/images/twitter_down_arrow.png" alt=""></strong>
+            </article>
+         
+
+         <div style="clear: both;">&nbsp;</div>
+
+         <script type='text/javascript'> tmntag.adTag('side_ad3'); </script>
+        
+    </aside>
+        <div class="clear"></div>
+
+        <div class="header_ad hide_resp">
+            <script type='text/javascript'>tmntag.adTag('footer_ad');</script>
+        </div>
+        <div class="header_ad show_resp" style="margin-bottom: 15px;">
+            <script type='text/javascript'>tmntag.adTag('resp_footer_ad');</script>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+
+        <div class="links">
+            <h2>LINKS</h2>
+            <div class="clear"></div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/home/about/">About</a></li>
+                <li><a href="http://forums.anandtech.com">Forums</a></li>
+                <li><a href="/rss/">RSS</a></li>
+                <li><a href="/pipeline/">Pipeline News</a></li>
+                <li><a href="/bench/">Bench</a></li>
+                <li><a href="/gallery/">Galleries</a></li>
+            </ul>
+        </div>
+
+        <div class="links">
+            <h2>TOPICS</h2>
+            <div class="clear"></div>
+            <ul>
+                <li><a href="/tag/cpus">CPUs</a></li>
+                <li><a href="/tag/mb">Motherboards</a></li>
+                <li><a href="/tag/storage">SSD/HDD</a></li>
+                <li><a href="/tag/gpus">GPUs</a></li>
+                <li><a href="/tag/mobile">Mobile</a></li>
+                <li><a href="/tag/IT">IT/Datacenter</a></li>
+                <li><a href="/tag/smartphones">Smartphones </a></li>
+                <li><a href="/tag/memory">Memory</a></li>
+                <li><a href="/tag/casecoolingpsus">Cases/Cooling/PSU(s) </a></li>
+            </ul>
+        </div>
+
+        <div class="links link2">
+            <ul>
+                <li><a href="/tag/displays">Displays </a></li>
+                <li><a href="/tag/mac">Mac </a></li>
+                <li><a href="/tag/systems">Systems </a></li>
+                <li><a href="/tag/cloud-computing">Cloud </a></li>
+                <li><a href="/tag/tradeshows">Trade Shows </a></li>
+                <li><a href="/tag/guides">Guides</a></li>
+            </ul>
+        </div>
+
+        <div class="links">
+            <h2>FOLLOW</h2>
+            <div class="clear"></div>
+            <ul class="follow">
+                <li>
+                    <a href="http://www.facebook.com/AnandTech/">
+                        <img src="/Content/images/icon-facebook2.png" alt=""><span>Facebook</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://twitter.com/AnandTech">
+                        <img src="/Content/images/icon-twitter2.png" alt=""><span>Twitter</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/rss/">
+                        <img src="/Content/images/icon-rss2.png" alt=""><span>RSS</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+
+        <div class="footer_left">The Most Trusted in Tech Since 1997</div>
+        <div class="footer_right">
+            <ul>
+                <li><a href="/home/about/">About</a></li>
+                <li><a href="http://purch.com/advertise/">Advertising</a></li>
+
+                <li class="nomrgn"><a href="http://purch.com/privacy-policy/">Privacy Policy</a></li>
+
+            </ul>
+            <a href="http://purch.com"><img style="margin-top: 10px;" src="/Content/images/PurchFooterLogo-Transparent.png" alt="purch" /></a>
+            <span>Copyright &copy; 2015. All rights reserved.</span>
+        </div>
+        <div class="clear"></div>
+    </footer>
+
+    <div class="rsp_ft">
+        <div class="footer_resp">
+            <ul class="tabs">
+                <li class="click_btn"><a href="#">TOPICS</a></li>
+                <li><a href="#">FOLLOW</a></li>
+                <li class="right"><a href="#">ABOUT</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <section class="panes">
+            <div class="topic_sec">
+                <div class="topic">
+                    <span class="blk_arrow"><img src="/Content/images/gryBg1.png" alt=""></span>
+                    <div class="topic_box">
+                        <ul>
+                            <li><a href="/tag/cpus">CPUs</a></li>
+                            <li><a href="/tag/mb">Motherboards</a></li>
+                            <li><a href="/tag/storage">SSD/HDD</a></li>
+                            <li><a href="/tag/gpus">GPUs</a></li>
+                            <li><a href="/tag/mobile">Mobile</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="topic_box">
+                        <ul>
+                            <li><a href="/tag/IT">IT/Datacenter</a></li>
+                            <li><a href="/tag/smartphones">Smartphones </a></li>
+                            <li><a href="/tag/memory">Memory</a></li>
+                            <li><a href="/tag/casecoolingpsus">Cases/Cooling/PSU(s) </a></li>
+                            <li><a href="/tag/displays">Displays </a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="topic_box no_mar">
+                        <ul>
+                            <li><a href="/tag/mac">Mac </a></li>
+                            <li><a href="/tag/systems">Systems </a></li>
+                            <li><a href="/tag/cloud-computing">Cloud </a></li>
+                            <li><a href="/tag/tradeshows">Trade Shows </a></li>
+                            <li><a href="/tag/guides">Guides</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="panes">
+            <div class="topic_sec">
+                <div class="topic">
+                    <span class="blk_arrow left"><img src="/Content/images/gryBg1.png" alt=""></span>
+                    <div class="follow_block ctr">
+                        <a href="http://www.facebook.com/AnandTech/"><img src="/Content/images/icon-facebook2.png" alt="">Facebook</a>
+                    </div>
+
+                    <div class="follow_block ctr">
+                        <a href="http://www.twitter.com/AnandTech"><img src="/Content/images/icon-twitter2.png" alt="">Twitter</a>
+                    </div>
+
+                    <div class="follow_block ctr">
+                        <a href="/rss/"><img src="/Content/images/icon-rss2.png" alt="">RSS</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="panes">
+            <div class="topic_sec">
+                <div class="topic">
+                    <span class="blk_arrow right"><img src="/Content/images/gryBg1.png" alt=""></span>
+                    <div class="follow_block ctr">
+                        <a href="/home/about/">About</a>
+                    </div>
+
+                    <div class="follow_block ctr">
+                        <a href="http://purch.com/advertise/">Advertising</a>
+                    </div>
+
+                    <div class="follow_block ctr">
+                        <a href="http://purch.com/privacy-policy/">Privacy Policy</a>
+                    </div>
+
+                    <div class="follow_block ctr">
+                        <a href="/account/fullsite?r=%2fshow%2f8962%2fthe-directx-12-performance-preview-amd-nvidia-star-swarm%2f9">Show Full Site</a>
+                    </div>
+
+
+                    <div class="clear"></div>
+                    <div class="footer_copy">Copyright &copy; 2015. All rights reserved.</div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="mobi-footer">
+            <div class="mobile"><a href="#">BENCH</a></div>
+            <div class="topic_sec">
+                <div class="bench_box show_resp2">
+                    <div class="bench_carousel show_resp2">
+                        <ul>
+                            <li><a href="/Bench/CPU"><img src="/Content/images/bench_li_pic1.jpg" alt=""><span>CPU</span></a></li>
+                            <li><a href="/Bench/SSD"><img src="/Content/images/bench_li_pic2.jpg" alt=""><span>SSD</span></a></li>
+                            <li><a href="/Bench/GPU13"><img src="/Content/images/gpubench2013.jpg" alt=""><span>GPU<br>2013</span></a></li>
+                            <li><a href="/Bench/GPU12"><img src="/Content/images/bench_li_pic3.jpg" alt=""><span>GPU<br>2012</span></a></li>
+                            <li><a href="/Bench/Smartphone11"><img src="/Content/images/bench_li_pic5.jpg" alt=""><span>Smartphone<br>2011</span></a></li>
+                            <li><a href="/Bench/Mobile"><img src="/Content/images/bench_li_pic6.jpg" alt=""><span>Mobile</span></a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile"><a href="#">TOPICS</a></div>
+
+            <div class="topic_sec">
+                <div class="topic res_topic">
+                    <div class="topic_box res_topicBox">
+                        <ul>
+                            <li><a href="/tag/cpus">CPUs</a></li>
+                            <li><a href="/tag/mb">Motherboards</a></li>
+                            <li><a href="/tag/storage">SSD/HDD</a></li>
+                            <li><a href="/tag/gpus">GPUs</a></li>
+                            <li><a href="/tag/mobile">Mobile</a></li>
+                            <li><a href="/tag/IT">IT/Datacenter</a></li>
+                            <li><a href="/tag/smartphones">Smartphones </a></li>
+                            <li><a href="/tag/memory">Memory</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="topic_box no_mar res_topicBox">
+                        <ul>
+                            <li><a href="/tag/casecoolingpsus">Cases/Cooling/PSU(s) </a></li>
+                            <li><a href="/tag/displays">Displays </a></li>
+                            <li><a href="/tag/mac">Mac </a></li>
+                            <li><a href="/tag/systems">Systems </a></li>
+                            <li><a href="/tag/cloud-computing">Cloud </a></li>
+                            <li><a href="/tag/tradeshows">Trade Shows </a></li>
+                            <li><a href="/tag/guides">Guides</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+            <div class="mobile"><a href="#">FOLLOW</a></div>
+            <div class="topic_sec">
+                <div class="topic res_topic">
+                    <div class="follow_block">
+                        <a href="http://www.facebook.com/AnandTech/"><img src="/Content/images/icon-facebook2.png" alt="">Facebook</a>
+                    </div>
+
+                    <div class="follow_block">
+                        <a href="http://www.twitter.com/AnandTech"><img src="/Content/images/icon-twitter2.png" alt="">Twitter</a>
+                    </div>
+
+                    <div class="follow_block width">
+                        <a href="/rss/"><img src="/Content/images/icon-rss2.png" alt="">RSS</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="mobile"><a href="#">ABOUT</a></div>
+            <div class="topic_sec">
+                <div class="topic res_topic">
+                    <div class="topic_box no_mar">
+                        <ul>
+                            <li><a href="/home/about/">About</a></li>
+                            <li><a href="http://purch.com/advertise/">Advertising</a></li>
+                            <li><a href="http://purch.com/privacy-policy/">Privacy Policy</a></li>
+                            <li><a href="/account/fullsite?r=%2fshow%2f8962%2fthe-directx-12-performance-preview-amd-nvidia-star-swarm%2f9">Show Full Site</a></li>
+                            <li class="nomar">Copyright &copy; 2015. All rights reserved.</li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="login_popup">
+        <div id="inlineLogin">
+            <h2>Log in</h2>
+            <h3><span id="ilMessage">Don't have an account? <a href="/Account/Register?r=%2fshow%2f8962%2fthe-directx-12-performance-preview-amd-nvidia-star-swarm%2f9">Sign up now</a></span></h3>
+            <div class="login_left">
+                <form action="#">
+                    <div class="login_form">
+                        <label>Username</label>
+                        <input id="UserName" name="UserName" type="text" class="login_field">
+
+                        <label>Password</label>
+                        <input id="Password" name="Password" type="password" class="login_field">
+
+                        <label class="fl-lt" style="margin-right: 10px;" for="RememberMe">Remember Me</label>
+                        <input class="fl-lt" id="RememberMe" name="RememberMe" type="checkbox" value="true" /><input name="RememberMe" type="hidden" value="false" />
+                        <input onclick="DoLogin(); return false;" name="" type="submit" class="login_btn" id="inlineLoginButton" value="LOG IN"><img alt="" src="/Content/images/ajax-loader.gif" id="ilAjaxLoader" />
+                        <div class="clear"></div>
+                    </div>
+                </form>
+                <div id="ilLost">
+                    <a href="/Account/ResetPassword?r=%2fshow%2f8962%2fthe-directx-12-performance-preview-amd-nvidia-star-swarm%2f9">Lost your password?</a>
+                </div>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+    <script type='text/javascript'>tmntag.adTag('oop_ad');</script>
+    <!-- Quantcast Tag -->
+    <script type="text/javascript">
+        var _qevents = _qevents || [];
+
+        (function () {
+            var elem = document.createElement('script');
+            elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+            elem.async = true;
+            elem.type = "text/javascript";
+            var scpt = document.getElementsByTagName('script')[0];
+            scpt.parentNode.insertBefore(elem, scpt);
+        })();
+
+        _qevents.push({
+            qacct: "p-bduwCJZfRi0AI"
+        });
+    </script>
+
+    <noscript>
+        <div style="display: none;">
+            <img src="//pixel.quantserve.com/pixel/p-bduwCJZfRi0AI.gif" border="0" height="1" width="1" alt="Quantcast" />
+        </div>
+    </noscript>
+    <!-- End Quantcast tag -->
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-1721979-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <!-- Begin omniture Beacon -->
+        <script language="JavaScript" type="text/javascript">
+            var om_info = {
+                account: 'tmn-anandtech, ttrglobalproduction'
+            };
+        </script>
+        <script type="text/javascript" src="/Scripts/VisitorAPI.js"></script>
+        <script type="text/javascript" src="/Scripts/AppMeasurement.js"></script>
+        <script id="omnitureProperties" language="JavaScript" type="text/javascript">
+            s.prop15 = "D=v15";
+            s.eVar15 = "Non Member";
+            s.prop35 = "";
+
+            s.pageName = "anand:edt:8962:The DirectX 12 Performance Preview: AMD, NVIDIA, &amp; Star Swarm:pg9";
+            s.channel = "Editorial";
+            s.prop2 = "D=v2";
+            s.eVar2 = "GPUs";
+            s.prop4 = "D=v4";
+            s.eVar4 = "Reviews";
+            s.prop5 = "D=v5";
+            s.eVar5 = "The DirectX 12 Performance Preview: AMD, NVIDIA, &amp; Star Swarm";
+            s.prop6 = "D=v6";
+            s.eVar6 = "anand-edt-8962";
+                              
+            s.prop34 = "GPUs|NVIDIA|AMD|Microsoft|DirectX 12";
+            
+            var s_code = s.t(); if (s_code) document.write(s_code);
+        </script>
+        <noscript>
+            <img src="http://metrics.toptenreviews.com/b/ss/tmn-test,ttrglobaldev/1/G.4--NS/172846225?ns=toptenreviews&v=N&ndh=0&ce=UTF-8&g=%2fshow%2f8962%2fthe-directx-12-performance-preview-amd-nvidia-star-swarm%2f9&pageName=anand%3aedt%3a8962%3aThe+DirectX+12+Performance+Preview%3a+AMD%2c+NVIDIA%2c+%26+Star+Swarm%3apg9&ch=Editorial&c15=D%3Dv15&v15=Non+Member&c26=D%3Dv36&c27=D%3Dv37&v36=TechMediaNetwork&v37=Anandtech&c35=&c2=D%3Dv2&v2=GPUs&c4=D%3Dv4&v4=Reviews&c5=D%3Dv5&v5=The+DirectX+12+Performance+Preview%3a+AMD%2c+NVIDIA%2c+%26+Star+Swarm&c6=D%3Dv6&v6=anand-edt-8962&c17=D%3Dv17&v17=&c34=GPUs%7cNVIDIA%7cAMD%7cMicrosoft%7cDirectX+12" height="1" width="1" border="0" alt="" />
+        </noscript>
+    <!-- End omniture Beacon -->
+    <!--BEGIN QUALTRICS SITE INTERCEPT-->
+<script type='text/javascript'>
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g+ "&t=" + (new Date()).getTime();document.body&&document.body.appendChild(a)}};
+this.start=function(){var a=this;window.addEventListener?window.addEventListener("load",function(){a.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){a.go()})}};
+try{(new g(100,"r","QSI_S_ZN_esT1tHB2Dfql5uB","//znest1thb2dfql5ub-techmedianetwork.siteintercept.qualtrics.com/WRSiteInterceptEngine/?Q_ZID=ZN_esT1tHB2Dfql5uB&Q_LOC="+encodeURIComponent(window.location.href))).start()}catch(i){}})();
+</script><div id='ZN_esT1tHB2Dfql5uB'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END SITE INTERCEPT-->
+
+    <!--  .25 -->
+
+</body>
+</html>

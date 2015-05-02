@@ -1,0 +1,1864 @@
+
+
+
+
+
+<!--  -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://www.backbase.com/2006/btl"
+	xmlns:c="http://www.backbase.com/2006/command"
+	xmlns:d="http://www.backbase.com/2006/tdl"
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:e="http://www.backbase.com/2006/xel"
+	xmlns:bf="http://www.backbase.com/2007/forms"
+	xmlns:smil="http://www.w3.org/2005/SMIL21/"
+	xmlns:bconc="http://www.backbase.com/2007/connectors/client" >
+
+<head>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>My Fundraising Page</title>
+ 	<link href="/content360/css/fundraising/team_member_styles.css" rel="stylesheet" type="text/css" />
+   <link href="/css/magnific-popup.css" rel="stylesheet" type="text/css" />
+
+ 	<link rel="stylesheet" type="text/css" href="../../struts_2_0/Backbase/bindings/www.backbase.com.2006.btl/basic.css" />
+	<script type="text/javascript">
+		function openTarget (form, features, windowName) {
+		  if (!windowName)
+		    windowName = 'formTarget' + (new Date().getTime());
+		  form.target = windowName;
+		  open ('', windowName, features);
+		}
+	</script>
+
+	<script type="text/javascript" src="/content360/javascript/fundraising/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript"	src="/content360/javascript/fundraising/jquery.magnific-popup.min.js"></script>	
+	<script type="text/javascript" src="/content360/javascript/fundraising/jquery.cookie.js"></script>
+  	
+  	<script type="text/javascript" src="/content360/javascript/fundraising/url.params.cookie.js"></script>
+
+	<script>	
+		window.onload =	manageCookieForURLParams();
+	</script>
+  	
+	<!-- ADDTHIS SCRIPT IE HACK BEGIN -->
+	<script type="text/javascript">
+	addthis_pub             = 'llsetools';
+	addthis_logo            = 'http://etools.teamintraining.org/assets/images/f360/addthis_tnt_logo.jpg';
+	
+	addthis_logo_background = 'EFEFFF';
+	addthis_logo_color      = '666699';
+	
+	
+	addthis_brand           = 'LLS | TNT';
+	addthis_options         = 'email, favorites, myspace, live, facebook, twitter, google, linkedin, delicious,more';
+	</script>
+
+	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js?pub=llsetools"></script>
+	<!--<script type="text/javascript" src="http://s7.addthis.com/js/152/addthis_widget.js"></script> -->
+	<!-- ADDTHIS SCRIPT IE HACK END -->
+
+ 	
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+	
+		$('.socks-promotion').magnificPopup({
+				type:'inline',
+				midClick: true 
+			});
+			showSocksPromotion= manageCookieForURLParamsSocksPromo('TNT', '');
+		if(showSocksPromotion){
+		$( ".socks-promotion" ).trigger( "click" );
+	}
+	});
+	
+	
+
+	function equalHeight() {
+			if (document.getElementById) {
+
+				var divs = new Array(document.getElementById('rightContent'),document.getElementById('leftContent'));
+
+				var maxHeight = 0;
+				for (var i = 0; i < divs.length; i++) {
+					if (divs[i].offsetHeight > maxHeight) maxHeight = divs[i].offsetHeight;
+				}
+
+				for (var i = 0; i < divs.length; i++) {
+					divs[i].style.height = maxHeight + 'px';
+
+					if (divs[i].offsetHeight > maxHeight) {
+						divs[i].style.height = (maxHeight - (divs[i].offsetHeight - maxHeight)) + 'px';
+					}
+				}
+			}
+		}
+
+		function fixColumnHeigth(){
+			var total=0;
+			list=document.getElementById('rightContent');
+			nodes = list.childNodes;
+			for(var i=0; i< nodes.length; i++){
+				if(nodes[i].nodeName=="DIV"){
+					total+=nodes[i].offsetHeight;
+				}
+			}
+			list.style.height = total+"px";
+
+			total=0;
+			list=document.getElementById('leftContent');
+			nodes = list.childNodes;
+			for(var i=0; i< nodes.length; i++){
+				if(nodes[i].nodeName=="DIV"){
+					total+=nodes[i].offsetHeight;
+				}
+			}
+			list.style.height = total+"px";
+
+			equalHeight();
+		}
+
+		window.onload = function() {
+			fixLowResolution();
+			equalHeight();
+			setPostNavHandlers();
+			setPaginationNavHandlers();
+			loadCurrentPageFromHash();
+			handleBackButton();
+			setValidation();
+		}
+
+		window.onresize = function() {
+			equalHeight();
+		}
+
+		function fixLowResolution(){
+			if(window.screen.availWidth < 1000){
+				document.getElementById("container").style.margin = 0;
+				
+				document.getElementById("container").style.marginTop = "177px";
+				
+				document.getElementById("container").style.marginLeft = "5px";
+				document.getElementById("container").style.left = 0;
+			}
+		}
+
+		
+
+		function navigateToRegister(){
+			
+				location.href = "#";
+			
+		}
+
+		
+
+	</script>
+
+	
+
+		<script type="text/javascript">
+		var ajaxService = "set ajax property";
+	</script>
+
+	<!-- Ajax for posts -->
+	<script type="text/javascript"><!--
+
+		var uuid_hash='91ee6680-b849-48c4-a2db-901af57ed243';
+
+		function btnNavClickHandler(e){
+			if (!e) e = window.event;  // IE event model
+			var target;
+			if (e.target) target = e.target;
+			else if (e.srcElement) target = e.srcElement;
+			if (target.nodeType == 3) target = target.parentNode; // defeat Safari bug
+
+			if( e.preventDefault ) { e.preventDefault(); }
+			e.returnValue = false;
+
+			var postID = extractPostID(target.href);
+			loadPost(postID);
+
+			if (e.stopPropagation) e.stopPropagation();      // DOM Level 2
+			else e.cancelBubble = true;  					 // IE
+		}
+
+		function extractPostID(url){
+			/*var token = "post-"
+						var posToken = url.indexOf(token);
+						var postID = url.substring(posToken + token.length);*/
+			var urlStrip = url.split("/");
+			var postID = urlStrip[(urlStrip.length -1)];
+			return postID;
+		}
+
+		function extractPage(url){
+			var token = "page="
+			var posToken = url.indexOf(token);
+			var page = url.substring(posToken + token.length);
+			return page;
+		}
+
+
+		function setPostNavHandlers(){
+
+			list=document.getElementById("postList");
+			nodes = list.childNodes;
+			for(var i=0; i<nodes.length; i++){
+				if(nodes[i].tagName == "DT"){
+					var link=nodes[i].getElementsByTagName("a")[0];
+					link.onclick = postClickHandler;
+				}
+			}
+
+			label_elements=getElementsByClass("comment_label");
+			for(var i=0; i<label_elements.length; i++){
+				var link=label_elements[i].getElementsByTagName("a")[0];
+				link.onclick = postClickCommentHandler;
+			}
+		}
+
+		function getElementsByClass(searchClass,node,tag) {
+			var classElements = new Array();
+			if ( node == null )
+				node = document;
+			if ( tag == null )
+				tag = '*';
+			var els = node.getElementsByTagName(tag);
+			var elsLen = els.length;
+			var pattern = new RegExp('(^|\\\\s)'+searchClass+'(\\\\s|$)');
+			for (i = 0, j = 0; i < elsLen; i++) {
+				if ( pattern.test(els[i].className) ) {
+					classElements[j] = els[i];
+					j++;
+				}
+			}
+			return classElements;
+		}
+
+		function postClickHandler(e){
+
+			try{
+				if (!e) e = window.event;  // IE event model
+				var target;
+				if (e.target) target = e.target;
+				else if (e.srcElement) target = e.srcElement;
+				if (target.nodeType == 3) target = target.parentNode; // defeat Safari bug
+
+				if( e.preventDefault ) { e.preventDefault(); }
+				e.returnValue = false;
+
+				var postID = extractPostID(target.parentNode.getAttribute('href'));
+				loadPost(postID);
+
+				e.preventDefault();
+
+				if (e.stopPropagation) {
+					e.stopPropagation();
+				} else {
+					e.cancelBubble = true;
+				}
+			}catch(err){
+				//prevent ie errors
+			}
+
+
+		}
+
+		function postClickCommentHandler(e){
+
+			try{
+				if (!e) e = window.event;  // IE event model
+				var target;
+				if (e.target) target = e.target;
+				else if (e.srcElement) target = e.srcElement;
+				if (target.nodeType == 3) target = target.parentNode; // defeat Safari bug
+
+				if( e.preventDefault ) { e.preventDefault(); }
+				e.returnValue = false;
+
+				var postID = extractPostID(target.parentNode.getAttribute('href'));
+				loadPost(postID);
+
+				e.preventDefault();
+
+				if (e.stopPropagation) {
+					e.stopPropagation();
+				} else {
+					e.cancelBubble = true;
+				}
+			}catch(err){
+				//prevent ie errors
+			}
+
+
+		}
+
+		function setPaginationNavHandlers(){
+			var newerPosts=document.getElementById("linkNewerPosts");
+			if (newerPosts != null){
+				newerPosts.onclick = paginationLinkClickHandler;
+			}
+			var olderPosts=document.getElementById("linkOlderPosts");
+			if (olderPosts != null){
+				olderPosts.onclick = paginationLinkClickHandler;
+			}
+		}
+
+		function paginationLinkClickHandler(e){
+			try{
+				if (!e) e = window.event;  // IE event model
+				var target;
+				if (e.target) target = e.target;
+				else if (e.srcElement) target = e.srcElement;
+				if (target.nodeType == 3) target = target.parentNode; // defeat Safari bug
+
+				if( e.preventDefault ) { e.preventDefault(); }
+				e.returnValue = false;
+
+				var page = extractPage(target.getAttribute('href'));
+				loadPost("home", page);
+
+				e.preventDefault();
+
+				if (e.stopPropagation) {
+					e.stopPropagation();
+				} else {
+					e.cancelBubble = true;
+				}
+			}catch(err){
+				//prevent ie errors
+			}
+		}
+
+		var lastHash = "";
+
+		function setNavEventListeners(){
+			var prev = document.getElementById("btnPrevious");
+			if (prev) prev.onclick = btnNavClickHandler;
+
+			var next = document.getElementById("btnNext");
+			if (next) next.onclick = btnNavClickHandler;
+
+			var home = document.getElementById("btnHome");
+			if (home) home.onclick = btnNavClickHandler;
+
+		}
+
+		function loadCurrentPageFromHash(){
+			var hash = window.location.hash.substring(1);
+			if (hash != ""){
+				loadPost(hash);
+			}
+		}
+
+		var lastHash = window.location.hash.substring(1);
+
+		function handleBackButton(){
+			var hash = window.location.hash.substring(1);
+			if (hash != lastHash){
+				if (hash != ""){
+					loadPost("home");
+				} else {
+					loadCurrentPageFromHash();
+				}
+			}
+			setTimeout('handleBackButton()', 200);
+		}
+
+		function setValidation(){
+
+			var target=document.getElementById("comment_form");
+			if (target == null){
+				return;
+			}
+			for (var i=0; i < target.elements.length; i++) {
+				var field = target.elements[i];
+				if(field.className.indexOf("requiredField") != -1){
+					document.getElementById(field.name+"_error").style.display = 'none';
+				}
+				if(field.name=="visitor_website"){
+					document.getElementById(field.name+"_error").innerHTML="";
+					document.getElementById(field.name+"_error").style.display = 'none';
+				}
+			}
+
+		}
+
+		function loadPost(postID, currentPage){
+
+			var isHome=false;
+
+			if(postID!="home"){
+				url= "/getPost?urlKey="+postID+"&UUIDSession="+uuid_hash;
+			}else{
+				if (currentPage==null){
+					currentPage=1;
+				}
+				url= "/getHome?page="+currentPage+"&UUIDSession="+uuid_hash;
+				isHome=true;
+			}
+
+			bb.command.load(url, "GET", null, {"Content-Type":"text/html"},null,null,
+					function(oRequest, oResponseElm) {
+						if (oRequest.responseText=="" && !isHome){
+							window.location.hash = "#home"
+							return;
+						}
+						try{
+							var container = document.getElementById('messagebox');
+							container.innerHTML=oRequest.responseText;
+
+							window.location.hash = "#"+postID;
+							lastHash = window.location.hash.substring(1);
+							if(!isHome){
+								equalHeight();
+								setNavEventListeners();
+								reloadCaptcha();
+								setFormUtils();
+							}else{
+								equalHeight();
+								setPostNavHandlers();
+								setPaginationNavHandlers();
+							}
+							self.scrollTo(0, 0);
+							fixColumnHeigth();
+							setValidation();
+
+
+						}catch(err){
+							//Prevent ie errors
+						}
+
+					},null,null,false);
+		}
+
+		function setFormUtils(){
+			var captchaInput = document.getElementById("captcha_verify");
+
+			captchaInput.onkeypress=uppercase;
+			captchaInput.onkeyup=uppercase;
+			captchaInput.onkeydown=uppercase;
+
+			var websiteInput = document.getElementById("visitor_website");
+
+			websiteInput.onchange=validateWebsite;
+			websiteInput.onkeyup=websiteKeyValidator;
+			websiteInput.onkeypress=websiteKeyValidator;
+			websiteInput.onkeydown=websiteKeyValidator;
+
+		}
+
+		function uppercase(){
+			this.value=this.value.toUpperCase();
+		}
+
+		function websiteKeyValidator(){
+			var url=this.value;
+			if(url.length>6 && url.substr(0,7)=="http://" && document.getElementById("visitor_website_error").innerHTML.length > 0){
+				document.getElementById("visitor_website_error").innerHTML="";
+				document.getElementById("visitor_website_error").style.display = 'none';
+			}
+
+			if(url.length<7){
+				this.value="http://";
+			}
+		}
+
+		function validateWebsite(){
+			var url=this.value;
+			if(url.substr(0,7)!="http://"){
+				this.value="http://";
+				document.getElementById("visitor_website_error").innerHTML="Is only allowed to use sites that start with http://";
+				document.getElementById("visitor_website_error").style.display = 'block';
+			}else{
+				document.getElementById("visitor_website_error").innerHTML="";
+				document.getElementById("visitor_website_error").style.display = 'none';
+			}
+		}
+
+		function appendChild(node, text) {
+		  if (null == node.canHaveChildren || node.canHaveChildren) {
+		    node.appendChild(document.createTextNode(text));
+		  } else {
+		    node.text = text;
+		  }
+		}
+
+		function formAjax(e){
+
+			if (!e) e = window.event;  // IE event model
+			var target;
+			if (e.target) target = e.target;
+			else if (e.srcElement) target = e.srcElement;
+			if (target.nodeType == 3) target = target.parentNode; // defeat Safari bug
+
+			if( e.preventDefault ) { e.preventDefault(); }
+			e.returnValue = false;
+
+			var fieldsToUrl="";
+
+			var validForm=true;
+
+			for (var i=0; i < target.elements.length; i++) {
+				var field = target.elements[i];
+
+				if(field.name=="visitor_website" && field.value=="http://"){
+					fieldsToUrl+=field.name+"=&";
+					continue;
+				}
+
+				if(field.type!="submit"){
+					fieldsToUrl+=field.name+"="+escape(field.value)+"&";
+				}
+
+				if(field.className.indexOf("requiredField") != -1){
+					if(field.value.length < 1 && field.name != null){
+						validForm=false;
+						document.getElementById(field.name+"_error").innerHTML="this field is required.";
+						document.getElementById(field.name+"_error").style.display = 'block';
+					}else{
+						document.getElementById(field.name+"_error").style.display = 'none';
+						if(field.name=="visitor_email" && !isValidEmail(field.value)){
+							validForm=false;
+							document.getElementById(field.name+"_error").innerHTML="invalid email.";
+							document.getElementById(field.name+"_error").style.display = 'block';
+						}
+
+					}
+				}
+
+				if(field.name=="visitor_website" && field.value.length>0){
+					if(!isUrl(field.value)){
+						validForm=false;
+						document.getElementById(field.name+"_error").innerHTML="invalid website.";
+						document.getElementById(field.name+"_error").style.display = 'block';
+					}else{
+						document.getElementById(field.name+"_error").innerHTML="";
+						document.getElementById(field.name+"_error").style.display = 'none';
+					}
+				}
+
+			}
+
+			baseURL="/addComment?";
+
+			if(validForm){
+				commentAjax(baseURL+fieldsToUrl+"&UUIDSession="+uuid_hash);
+			}
+
+			if (e.stopPropagation) e.stopPropagation();      // DOM Level 2
+			else e.cancelBubble = true;  					 // IE
+
+			return false;
+		}
+
+		function commentAjax(url){
+			bb.command.load(url, "GET", null, {"Content-Type":"text/html"},null,null,
+					function(oRequest, oResponseElm) {
+
+						serverMessage=oRequest.responseText.trim();
+						serverMessage=serverMessage.substr(0,11);
+
+						switch(serverMessage){
+							case "captchaFail":
+								reloadCaptcha();
+								document.getElementById("captcha_verify_error").innerHTML="invalid captcha code!";
+								document.getElementById("captcha_verify_error").style.display="block";
+								break;
+							case "serverError":
+								alert("Fail on server ! Please try later.");
+								resetCommentForm();
+								break;
+							default:
+								document.getElementById("comment_wrapper").innerHTML=oRequest.responseText;
+								setTimeout ( "fixColumnHeigth()", 500 );
+								resetCommentForm();
+						}
+
+					},null,null,false);
+		}
+
+		function resetCommentForm(){
+			reloadCaptcha();
+			document.getElementById("visitor_name").value="";
+			document.getElementById("visitor_email").value="";
+			document.getElementById("visitor_website").value="http://";
+			document.getElementById("comment_ta").value="";
+
+			document.getElementById("captcha_verify_error").innerHTML="";
+			document.getElementById("visitor_email_error").innerHTML="";
+			document.getElementById("comment_ta_error").innerHTML="";
+			document.getElementById("visitor_website_error").innerHTML="";
+
+		}
+
+		function reloadCaptcha(){
+			var randomnumber=Math.floor(Math.random()*5000);
+			document.getElementById("captchaImage").src="/captchaImage?"+randomnumber;
+			document.getElementById("captcha_verify").value="";
+			document.getElementById("captcha_verify_error").innerHTML="";
+			document.getElementById("captcha_verify_error").style.display="none";
+		}
+
+		Array.prototype.contains = function(obj) {
+			  var i = this.length;
+			  while (i--) {
+			    if (this[i] === obj) {
+			      return true;
+			    }
+			  }
+			  return false;
+			}
+
+		String.prototype.trim = function() {
+			return this.replace(/^\s+|\s+$/g,"");
+		}
+		String.prototype.ltrim = function() {
+			return this.replace(/^\s+/,"");
+		}
+		String.prototype.rtrim = function() {
+			return this.replace(/\s+$/,"");
+		}
+
+	--></script>
+
+	<!-- Utils -->
+	<script type="text/javascript">
+		Array.prototype.contains = function(obj) {
+			  var i = this.length;
+			  while (i--) {
+			    if (this[i] === obj) {
+			      return true;
+			    }
+			  }
+			  return false;
+			}
+
+		function isValidEmail(elementValue){
+			var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+			return emailPattern.test(elementValue);
+		}
+
+		function isUrl(elementValue) {
+			var urlPattern = new RegExp("^http\\://[a-zA-Z0-9\\-\\.]+\\.[a-zA-Z]{2,3}(/\\S*)?$");
+			return elementValue.match(urlPattern);//urlPattern.test(elementValue);
+		}
+	</script>
+	
+	<!-- URL Params -->
+
+
+	<!-- Google Analytics Tracking Code -->
+	<script type="text/javascript">
+		var _gadomain = "" 
+		var _gaq = _gaq || [];
+		
+			_gaq.push(['_setAccount', 'UA-225158-18']);	
+		
+		if("" != _gadomain) {
+		_gaq.push(['_setDomainName', '']);
+		} else {
+		_gaq.push(['_setDomainName', 'none']);
+		}
+		_gaq.push(['_setAllowLinker', true]);
+		_gaq.push(['_trackPageview']);
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; 
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+</head>
+
+<body>
+
+	
+		<!-- Google Tag Manager -->
+		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-LQ9C"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-LQ9C');</script>
+	
+	
+	
+
+
+	<script type="text/javascript" src="../../Backbase/backbase/4_3_1_optimized/engine/boot.js" ></script>
+
+
+	<script type="text/backbase+xml"
+		xmlns:d="http://www.backbase.com/2006/tdl"
+		xmlns:e="http://www.backbase.com/2006/xel"
+		xmlns:xi="http://www.w3.org/2001/XInclude"
+		xmlns:b="http://www.backbase.com/2006/btl"
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:bf="http://www.backbase.com/2007/forms"
+		xmlns:c="http://www.backbase.com/2006/command"
+		xmlns:bconc="http://www.backbase.com/2007/connectors/client">
+
+	<xi:include href="../../Backbase/backbase/4_3_1/bindings/config.xml" />
+	<xi:include href="../../Backbase/backbase/4_3_1/bindings/www.backbase.com.2007.connectors.client/bconc.xml"/>
+
+	</script>
+
+	<script type="text/javascript"
+		xmlns:d="http://www.backbase.com/2006/tdl"
+		xmlns:e="http://www.backbase.com/2006/xel"
+		xmlns:xi="http://www.w3.org/2001/XInclude"
+		xmlns:b="http://www.backbase.com/2006/btl"
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:bf="http://www.backbase.com/2007/forms"
+		xmlns:c="http://www.backbase.com/2006/command"
+		xmlns:bconc="http://www.backbase.com/2007/connectors/client">
+		function load_xml(sUrl, sTarget){
+			bb.command.load(sUrl, 'GET', null, null, bb.document.getElementById(sTarget),'replaceChildren');
+		}
+
+		function load_html(sUrl, sTarget){
+			// generate the html at the target location.
+			bb.command.load(sUrl, 'GET', null, null, document.getElementById(sTarget),'replaceChildren');
+		}
+	</script>
+
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+	<div id="container">
+
+		<div id="header">&nbsp;</div>
+
+	<!--
+		<div id="menubarAjax">
+			<div id="loadingMessage"><img src="http://devetools.teamintraining.org/assets/images/f360/loading.gif" />&#160;&#160;Please wait while loading...</div>
+		</div>
+
+		<script type="text/backbase+xml"
+			xmlns:d="http://www.backbase.com/2006/tdl"
+			xmlns:e="http://www.backbase.com/2006/xel"
+			xmlns:xi="http://www.w3.org/2001/XInclude"
+			xmlns:b="http://www.backbase.com/2006/btl"
+			xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:bf="http://www.backbase.com/2007/forms"
+			xmlns:c="http://www.backbase.com/2006/command"
+			xmlns:bconc="http://www.backbase.com/2007/connectors/client"
+			e:onload="load_html('HeaderAction', 'menubarAjax')">
+
+		</script>
+		-->
+		
+
+
+
+
+
+	<div id="menubar">
+		<ul><li class="item0 separator"><a href="http://www.teamintraining.org/"><span class="menuItem">Visit TNT</span></a></li><li class="item1 separator"><a href="http://www.addthis.com/bookmark.php" onmouseover="return addthis_open(this, '', '[URL]', '[TITLE]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><span class="menuItem">Tell your friends</span></a></li><li class="item2 separator"><a href="http://www.teamintraining.org/firsttimehere/tellmemore"><span class="menuItem">Find out how you can join TNT</span></a></li><li class="item3"><a href="http://etools.teamintraining.org/Etools?ProgramGroup=tnt"><span class="menuItem">Sign-in</span></a></li></ul>
+	</div>
+
+
+		
+		
+		<!-- This condition is for MWOY program group's CANDIDATE role ,For MWOY currently fund raising pages for candidate role only -->
+				
+				
+			
+
+
+
+
+	<div id="leftContent">
+		<div class="whiteContent">
+			
+
+
+
+
+
+
+<div id="topContainer" class="headerContainer"
+	xmlns="http://www.w3.org/1999/xhtml">
+		 <h1>My Fundraising Page</h1>
+	  	
+</div>
+
+	
+
+		
+			<div id="mainContent">			
+				<div id="messagebox" xmlns:b="http://www.backbase.com/2006/btl">
+				
+
+
+
+
+
+
+
+	<dl id="postList">
+		
+		<dt class="title">
+			<a href="My-Fundraising-Page">
+				<span class="heading">My Fundraising Page</span>
+			</a>
+			<div class="separator"></div>
+			<div class="dateCreation">Feb 09, 2015 
+			
+			</div>
+		</dt>
+		<dd>
+			<b:xhtml>
+				<!--HTML_STRING=<p><span class="heading"><strong>WELCOME TO MY TEAM IN TRAINING (TNT) HOME PAGE!</strong></span></p><br />
+<p>It takes more than one person to make up a team and that’s why I’m asking you to donate to my TNT fundraising page for TNT!</p><br />
+<p>By participating as a member of The Leukemia &amp; Lymphoma Society’s (LLS) TNT, I am raising funds to help find cures and ensure access to treatments for blood cancer patients.</p><br />
+<p>Your donation will help fund treatments that save lives every day; like immunotherapies that use a person’s own immune system to kill cancer. You may not know it, but every single donation helps save a life with breakthrough therapies such as these. </p><br />
+<p>Patients need these cures and they need your support. </p><br />
+<p>Please make a donation in support of my efforts with Team In Training and help get us all closer to a world without blood cancers.</p><br />
+<p>Thank you!</p>=HTML_STRING-->
+<p><span style="font-family: times new roman,times,serif;"><span style="font-size: 14px;"><span class="heading"><strong>WELCOME TO MY TEAM IN TRAINING (TNT) HOME PAGE!</strong></span></span></span></p>
+
+<p><span style="font-family: times new roman,times,serif;"><span style="font-size: 14px;"><span style="color: rgba(0, 0, 0, 0.8); line-height: 29.7px; letter-spacing: 0.15px;">On&nbsp;</span><b style="margin: 0px; padding: 0px; border: 0px currentColor; color: rgba(0, 0, 0, 0.8); line-height: 29.7px; letter-spacing: 0.15px; font-family: Lora, georgia, serif; font-size: 18px; vertical-align: baseline; box-sizing: border-box;">May 3, 2015,</b><span style="color: rgba(0, 0, 0, 0.8); line-height: 29.7px; letter-spacing: 0.15px;">&nbsp;I will be running in the <b>Flying Pig Marathon</b></span><span style="color: rgba(0, 0, 0, 0.8); line-height: 29.7px; letter-spacing: 0.15px;">&nbsp;in order to raise money for the Leukemia &amp; Lymphma Society. Although it will be a challenge for me to complete this race, I will be especially motivated by the excitement of knowing that it will benefit such a worthy cause.</span></span></span></p>
+
+<p><span style="font-family: times new roman,times,serif;"><span style="font-size: 14px;"><span style="color: rgba(0, 0, 0, 0.8); line-height: 29.7px; letter-spacing: 0.15px;">I am asking friends and family to consider sponsoring me for this event. I have two ambitious goals &ndash; first to complete the run without sustaining any bodily harm and second to meet my personal goal of raising&nbsp;</span><b style="margin: 0px; padding: 0px; border: 0px currentColor; color: rgba(0, 0, 0, 0.8); line-height: 29.7px; letter-spacing: 0.15px; font-family: Lora, georgia, serif; font-size: 18px; vertical-align: baseline; box-sizing: border-box;">$2500</b><span style="color: rgba(0, 0, 0, 0.8); line-height: 29.7px; letter-spacing: 0.15px;">&nbsp;for the Leukemia &amp; Lymphma Society. I would greatly appreciate your kind consideration by making a donation toward this goal. All donations are, of course, tax deductible.</span></span></span></p>
+
+<p><span style="font-family: times new roman,times,serif;"><span style="font-size: 14px;">Your donation will help fund treatments that save lives every day; like immnuotherapies that use a person&rsquo;s own immune system to kill cancer. You may not know it, but every single donation helps save a life with breakthrough therapies such as these.</span></span></p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-family: times new roman,times,serif;"><span style="font-size: 14px;">Patients need these cures and they need your support.</span></span></p>
+
+<p>&nbsp;</p>
+
+<p style="margin: 0px 0px 1.25rem; padding: 0px; border: 0px currentColor; color: rgba(0, 0, 0, 0.8); line-height: 29.7px; letter-spacing: 0.15px; font-family: Lora, georgia, serif; font-size: 18px; vertical-align: baseline; box-sizing: border-box;"><span style="font-family: times new roman,times,serif;"><span style="font-size: 14px;">One day we will have this beat, but until then please join me in supporting this very important cause.</span></span></p>
+
+<p style="margin: 0px 0px 1.25rem; padding: 0px; border: 0px currentColor; color: rgba(0, 0, 0, 0.8); line-height: 29.7px; letter-spacing: 0.15px; font-family: Lora, georgia, serif; font-size: 18px; vertical-align: baseline; box-sizing: border-box;"><span style="font-family: times new roman,times,serif;"><span style="font-size: 14px;"><span style="color: rgb(51, 51, 51); line-height: 1.6em;">Thank you!</span></span></span></p>
+
+<p style="margin: 0px 0px 1.25rem; padding: 0px; border: 0px currentColor; color: rgba(0, 0, 0, 0.8); line-height: 29.7px; letter-spacing: 0.15px; font-family: Lora, georgia, serif; font-size: 18px; vertical-align: baseline; box-sizing: border-box;"><span style="font-family: times new roman,times,serif;"><span style="font-size: 14px;"><span style="color: rgb(51, 51, 51); line-height: 1.6em;">Tom</span></span></span></p>
+
+<p style="margin: 0px 0px 1.25rem; padding: 0px; border: 0px currentColor; color: rgba(0, 0, 0, 0.8); line-height: 29.7px; letter-spacing: 0.15px; font-family: Lora, georgia, serif; font-size: 18px; vertical-align: baseline; box-sizing: border-box;">&nbsp;</p>
+
+<div id="ckimgrsz" style="left: 20px; top: 667px;">
+<div class="preview" style="left: 0px; top: 73px; width: 390px; height: 220px; display: none; background-image: url(&quot;http://etools.teamintraining.org/EtoolsBaseDir/2014/10/21/20/members/3444884/2014-09-21%2009.40.23.jpg&quot;);">&nbsp;</div>
+</div>
+
+					<!--
+					<div> Comments:
+					
+						0
+					
+					
+					</div>-->
+					<div class="util_container">
+       						<table style="width:100%"><tr><td>
+					  
+						 <div class="comment_balloon">
+							<div class="icon">
+							
+							0
+							
+							
+							</div>
+							
+							<div class="comment_label">
+								<a href="My-Fundraising-Page"><span>
+								Comment</span></a>
+							</div>
+							
+							<div class="clearAll">&nbsp;</div>
+						 </div>
+					  
+						</td><td>&nbsp;</td><td>
+							<div class="fb-like" data-href="http://pages.teamintraining.org/ga/flypig15/tom#My-Fundraising-Page" 
+								data-send="false" data-layout="button_count" 
+								data-width="100" data-show-faces="true" data-action="recommend"
+								></div>
+					
+						</td></tr></table>
+
+						 <div class="clearAll">&nbsp;</div>
+					</div>
+					
+			</b:xhtml> 
+		</dd>
+
+		
+	</dl>
+	
+
+
+ 
+
+
+
+				</div>
+			</div>
+		</div>
+		
+		<div class="whiteContent">
+			
+
+
+
+
+
+
+<div id="topContainer" class="headerContainer"
+	xmlns="http://www.w3.org/1999/xhtml">
+		 <h1>Supporter Comments</h1>
+	  	
+</div>
+
+
+			<div class="clearAll"></div>
+			
+
+
+
+
+
+
+
+<div id="comments" class="comments1">	
+		<!--<div class="separator"></div>-->
+        <div id="commentsbox" class="trebuchet-font">
+  		<!--
+  		
+  		
+  		<h3>17 comments</h3>
+  		
+  		-->	
+			<ul>
+				      
+				<li>
+					<div class="top_balloon">&nbsp;</div>
+					<div class="content_balloon">"Good luck! "</div>
+					<div class="bottom_balloon">&nbsp;</div>
+					<div class="commentSignature">
+	       				<p class="usercomment">Tricia Miller</p>	       				
+	              		<p class="timestamp">	Tue Oct 21 09:11:24 EDT 2014</p>
+					</div>
+              	</li>
+				      
+				<li>
+					<div class="top_balloon">&nbsp;</div>
+					<div class="content_balloon">"Good Luck, be healthy, have fun and GOOOO TEAM! So excited to hear you are on this adventure.  Great example for your girls.  TNT changed my life in 1998 and I know you will enjoy it too!  "</div>
+					<div class="bottom_balloon">&nbsp;</div>
+					<div class="commentSignature">
+	       				<p class="usercomment">Cindy in Seattle : )</p>	       				
+	              		<p class="timestamp">	Wed Oct 22 03:09:43 EDT 2014</p>
+					</div>
+              	</li>
+				      
+				<li>
+					<div class="top_balloon">&nbsp;</div>
+					<div class="content_balloon">"Tom: It is with pleasure to donate and assist you with your achieving your goal to raise money for the Leukemia &amp; Lymphoma Society .  My daughter Nicole was treated successfully for Childhood Leukemia 20 years ago, (treated for 3 years 1995-1998) this association is near and dear to my heart.  Good Luck with your challenge , I am sure the family of Aliza Zitser and your employee Catherine Brown are honored for your support . Hoping this helps you hit your goal.  Sincerely,  Anne Krajewski CEO / Renue Systems GA "</div>
+					<div class="bottom_balloon">&nbsp;</div>
+					<div class="commentSignature">
+	       				<p class="usercomment">Anne Krajewski</p>	       				
+	              		<p class="timestamp">	Wed Jan 07 11:42:34 EST 2015</p>
+					</div>
+              	</li>
+				      
+				<li>
+					<div class="top_balloon">&nbsp;</div>
+					<div class="content_balloon">"This donation is in honor of an amazing girl, Haya Admoni, that had survived Leukemia."</div>
+					<div class="bottom_balloon">&nbsp;</div>
+					<div class="commentSignature">
+	       				<p class="usercomment">Ayelet Gilad</p>	       				
+	              		<p class="timestamp">	Thu Feb 05 09:34:24 EST 2015</p>
+					</div>
+              	</li>
+				      
+				<li>
+					<div class="top_balloon">&nbsp;</div>
+					<div class="content_balloon">"Good luck! Wishing you the best and hoping for a cure!"</div>
+					<div class="bottom_balloon">&nbsp;</div>
+					<div class="commentSignature">
+	       				<p class="usercomment">Lisa Alter Krule</p>	       				
+	              		<p class="timestamp">	Mon Feb 09 07:23:09 EST 2015</p>
+					</div>
+              	</li>
+				      
+				<li>
+					<div class="top_balloon">&nbsp;</div>
+					<div class="content_balloon">"Good Luck Tom!"</div>
+					<div class="bottom_balloon">&nbsp;</div>
+					<div class="commentSignature">
+	       				<p class="usercomment">Patrick Algyer</p>	       				
+	              		<p class="timestamp">	Wed Feb 11 11:49:50 EST 2015</p>
+					</div>
+              	</li>
+				      
+				<li>
+					<div class="top_balloon">&nbsp;</div>
+					<div class="content_balloon">"Best of luck Tom!  Great and important cause!"</div>
+					<div class="bottom_balloon">&nbsp;</div>
+					<div class="commentSignature">
+	       				<p class="usercomment">Flinn Flexer</p>	       				
+	              		<p class="timestamp">	Wed Feb 18 04:23:40 EST 2015</p>
+					</div>
+              	</li>
+				      
+				<li>
+					<div class="top_balloon">&nbsp;</div>
+					<div class="content_balloon">"I wish you the best towards this great cause!"</div>
+					<div class="bottom_balloon">&nbsp;</div>
+					<div class="commentSignature">
+	       				<p class="usercomment">Raymond Robinson</p>	       				
+	              		<p class="timestamp">	Fri Feb 20 05:21:08 EST 2015</p>
+					</div>
+              	</li>
+				      
+				<li>
+					<div class="top_balloon">&nbsp;</div>
+					<div class="content_balloon">"What a great cause - happy to support!"</div>
+					<div class="bottom_balloon">&nbsp;</div>
+					<div class="commentSignature">
+	       				<p class="usercomment">Impulse! Enterprises</p>	       				
+	              		<p class="timestamp">	Thu Mar 05 09:43:06 EST 2015</p>
+					</div>
+              	</li>
+				      
+				<li>
+					<div class="top_balloon">&nbsp;</div>
+					<div class="content_balloon">"Tom: I wish you all the luck on your journey and efforts for such a worthy cause... All the best, MC "</div>
+					<div class="bottom_balloon">&nbsp;</div>
+					<div class="commentSignature">
+	       				<p class="usercomment">michael  coppola</p>	       				
+	              		<p class="timestamp">	Fri Mar 06 07:14:01 EST 2015</p>
+					</div>
+              	</li>
+				      
+				<li>
+					<div class="top_balloon">&nbsp;</div>
+					<div class="content_balloon">"Good luck Tom you can do it if this old lady just did it!"</div>
+					<div class="bottom_balloon">&nbsp;</div>
+					<div class="commentSignature">
+	       				<p class="usercomment">Donna Stanton</p>	       				
+	              		<p class="timestamp">	Thu Mar 12 09:14:15 EDT 2015</p>
+					</div>
+              	</li>
+				      
+				<li>
+					<div class="top_balloon">&nbsp;</div>
+					<div class="content_balloon">"Good luck and have fun!"</div>
+					<div class="bottom_balloon">&nbsp;</div>
+					<div class="commentSignature">
+	       				<p class="usercomment">Jill Brooks</p>	       				
+	              		<p class="timestamp">	Tue Mar 17 05:32:15 EDT 2015</p>
+					</div>
+              	</li>
+				      
+				<li>
+					<div class="top_balloon">&nbsp;</div>
+					<div class="content_balloon">"Thank you for the opportunity to support your cause - God Bless you, family, co-workers and your entire Flying Pig Marathon team mates!
+
+Hi Tom - this is from Jill Comfort - so if you see 'Laura' that's my real name FYI!
+
+Take care best of luck - "</div>
+					<div class="bottom_balloon">&nbsp;</div>
+					<div class="commentSignature">
+	       				<p class="usercomment">Jill Comfort</p>	       				
+	              		<p class="timestamp">	Thu Mar 19 12:32:49 EDT 2015</p>
+					</div>
+              	</li>
+				      
+				<li>
+					<div class="top_balloon">&nbsp;</div>
+					<div class="content_balloon">"Hey Tom, so happy to give to your fundraiser. Best of luck to you and your team!
+
+God Bless!
+
+Steve Kwon"</div>
+					<div class="bottom_balloon">&nbsp;</div>
+					<div class="commentSignature">
+	       				<p class="usercomment">Steve Kwon</p>	       				
+	              		<p class="timestamp">	Thu Mar 19 12:59:00 EDT 2015</p>
+					</div>
+              	</li>
+				      
+				<li>
+					<div class="top_balloon">&nbsp;</div>
+					<div class="content_balloon">"Great cause! Thank you for running!"</div>
+					<div class="bottom_balloon">&nbsp;</div>
+					<div class="commentSignature">
+	       				<p class="usercomment">Terry Marks</p>	       				
+	              		<p class="timestamp">	Fri Mar 27 09:21:12 EDT 2015</p>
+					</div>
+              	</li>
+				      
+				<li>
+					<div class="top_balloon">&nbsp;</div>
+					<div class="content_balloon">"Run Tom Run!!!!"</div>
+					<div class="bottom_balloon">&nbsp;</div>
+					<div class="commentSignature">
+	       				<p class="usercomment">Chitra Jayanathan</p>	       				
+	              		<p class="timestamp">	Mon Mar 30 04:26:58 EDT 2015</p>
+					</div>
+              	</li>
+				      
+				<li>
+					<div class="top_balloon">&nbsp;</div>
+					<div class="content_balloon">"Best of luck, Tom!!! from Breandan, Esther and Saoirse"</div>
+					<div class="bottom_balloon">&nbsp;</div>
+					<div class="commentSignature">
+	       				<p class="usercomment">breandan, esther &amp; saoirse</p>	       				
+	              		<p class="timestamp">	Tue Dec 16 07:46:35 EST 2014</p>
+					</div>
+              	</li>
+		
+			</ul>           	
+         </div>		
+</div>
+
+
+		</div>
+		
+	</div>
+	<div id="rightContent">
+		
+        	
+
+
+
+
+
+
+
+<div id="teamMemberTotal" 
+	xmlns="http://www.w3.org/1999/xhtml">
+	<!-- <b:groupBox label="My Fundraising Total" padding="5px" class="btl-bevel-left-right btl-bevel-bottom" icon="icon-bb-window"> -->	
+	<div class="topWidget">
+		<h2>My Fundraising Total</h2>
+	</div>	
+	<div  class="contentWidget fundraisingTotal trebuchet-font">
+   		<div class="amount"><b>Raised: </b> <span class="raisedVal">$2,760.30 </span><span class="separator"> | </span> <b> Goal: </b> <span class="goalVal">$2,500.00</span></div>
+
+        
+        
+
+       		<div class="thermContainer">
+             		<div class="step100">&nbsp;</div>
+           	</div>
+
+        	<div id="thermPercent">
+        		
+        		110
+        	%</div>	         	
+
+	    	
+	    
+	    	
+	    	<div class="myteam">
+	    	  	<p>My Team</p>
+	    	  	<div class="horizontal_separator">&nbsp;</div>
+	        	<div class="amount"><b>Team Total: </b><span class="raisedVal">$31,916.39</span><span class="separator"> | </span><b>Goal: </b> <span class="goalVal">$32,000.00</span>
+	         	</div>
+
+	     	</div>
+	    
+	    	
+	    <div class="view-team-page">
+            <input name="button" type="button" class="view-team-page-btn" id="button" value="" onclick="location.href ='http://pages.teamintraining.org/ga/flypig15/TeamOmni'"/>
+        </div>
+	     			
+
+
+	<!-- </b:groupBox>  -->
+	</div>
+</div>
+
+        	
+		
+
+
+
+
+
+
+
+<div id="makeDonationForm" 
+	xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.backbase.com/2006/btl"> 
+<!--	<b:groupBox label="Make a Donation" class="btl-bevel-left-right btl-bevel-bottom btl-groove-inner-bottom contentWidget makedonation trebuchet-font" icon="icon-bb-window"> -->
+		<div class="topWidget">	
+			
+			
+			<h2>Make a Donation</h2>
+			
+		</div>
+		<div class="contentWidget makedonation trebuchet-font">
+		    
+			
+			            
+				<p>Join  Tom Hazay in the Mission to wipe out blood cancer:</p>
+				<form name="proccessDonationForm" id="proccessDonationForm" action="https://donate.lls.org/tnt/donate?programGroupName=TNT&fundraiserPageID=1936840&participantFirstName=Tom&participantLastName=Hazay&displayName=Tom Hazay&fundraiserPageURL=http://pages.teamintraining.org/ga/flypig15/tom" method="POST" onsubmit="submitDonationForm()">					
+					 <table class="wwFormTable"> 						
+						
+						<input type="hidden" name="amount" value="" id="amount"/>
+						<input type="hidden" name="promotion" value="" id="promotion"/>
+						<input type="hidden" name="isSocksPromotionFlag" value="" id="isSocksPromotionFlag"/>
+						
+						<b:xhtml>	
+							<input type="radio" value="1000" alt="1000" id="donateAmountId" name="donateAmount" class="Radio_Group"/>&nbsp;Titanium $1,000.00<br>
+<input type="radio" value="500" alt="500" id="donateAmountId" name="donateAmount" class="Radio_Group"/>&nbsp;Platinum $500.00<br>
+<input type="radio" value="250" alt="250" id="donateAmountId" name="donateAmount" class="Radio_Group"/>&nbsp;Gold $250.00<br>
+<input type="radio" value="100" alt="100" id="donateAmountId" name="donateAmount" class="Radio_Group"/>&nbsp;Silver $100.00<br>
+<input type="radio" value="50" alt="50" id="donateAmountId" name="donateAmount" class="Radio_Group"/>&nbsp;Super $50.00<br>
+<input type="radio" value="25" alt="25" id="donateAmountId" name="donateAmount" class="Radio_Group"/>&nbsp;Star  $25.00<br>
+<input type="radio" value="0" alt="Other" id="donateAmountId" name="donateAmount" class="Radio_Group"/>&nbsp;Other $ 
+<input type='text' alt="OtherAmount" name="enteredAmount" class="otherfieldcell" maxlength="15"/><br>
+						</b:xhtml>
+												 
+						<tbody>
+							<tbody>
+								<tr>
+									<td colspan="2">
+										<div align="right">
+											<tr>
+    <td colspan="2"><div align="right"><input type="submit" id="ProcessDonation_0" value="" class="registerButton"/>
+</div></td>
+</tr>
+
+	
+										</div>
+									</td>
+								</tr>
+							</tbody>
+					 	</table>
+				
+							 	
+					 	
+					</form>
+				<script>
+				
+					/**
+					* replaced logic from redirect /ProcessDonation
+					*/
+					function submitDonationForm(){
+						var checkedRadio = selectCheckedRadio()
+						if (checkedRadio==null ||  checkedRadio.value=="0"){
+							//no radio or "Other" is selected
+							var amount = getFirstElementValueByName("enteredAmount");
+						} else {
+							//amount in input
+							var amount = checkedRadio.value;
+						}
+						
+						document.forms['proccessDonationForm'].elements['amount'].value=amount;
+						//document.getElementsByName("amount")[0].value = amount;
+					}
+					
+					/**
+					* return checked radio; name=donateAmount by default
+					*/
+					function selectCheckedRadio(name){
+					
+						var elements = document.getElementsByName(name || "donateAmount");
+						for(var element=0;element<elements.length;element++){
+							var radio=elements[element];
+							if (radio.checked){
+																
+								var isSocksPromotionFlag = document.getElementsByName("isSocksPromotionFlag")[0].value;
+								if(isSocksPromotionFlag){													
+										 document.forms['proccessDonationForm'].elements['promotion'].value="socksoption150";	   								   			  	
+								}								
+								return radio;
+							}
+						}
+						return null;
+					}	
+					
+					/**
+					* return first input with existing value
+					*/
+					function getFirstElementValueByName(name){
+						var elements = document.getElementsByName(name);
+						for (var element in elements) {
+							var htmlElement=elements[element];
+							if (typeof(htmlElement.value)!="undefined"){
+								return htmlElement.value;
+							}
+						}
+						return null;
+					}
+				</script>
+				
+		</div>
+<!--	</b:groupBox> -->
+
+
+</div>
+       	 
+
+		 
+
+		
+				
+		
+			
+
+
+
+
+
+
+
+
+	<div id="myThanksTo" 	xmlns="http://www.w3.org/1999/xhtml">
+	<!-- <div id="myThanksTo"
+		xmlns:d="http://www.backbase.com/2006/tdl"
+		xmlns:e="http://www.backbase.com/2006/xel"
+		xmlns:xi="http://www.w3.org/2001/XInclude"
+		xmlns:b="http://www.backbase.com/2006/btl"
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:bf="http://www.backbase.com/2007/forms"	
+		xmlns:c="http://www.backbase.com/2006/command"
+		xmlns:bconc="http://www.backbase.com/2007/connectors/client">
+		<b:groupBox label="My Thanks To" padding="5px" class="btl-bevel-left-right btl-bevel-bottom" icon="icon-bb-window"> -->
+					<div class="topWidget">
+						
+					    
+							<h2>My Thanks To</h2>
+						
+					</div>
+					<div class="contentWidget mythanks trebuchet-font">
+	
+	  					<table border="0" cellspacing="0" cellpadding="2">
+								
+								    
+							  			 <tr class="alt">
+								    
+								    
+	
+								   	  <td  width="66%" class="nameThanks">
+								   	  	<span title="Parking Management Services of GA, Inc">
+				 			       				
+	                                       	 
+	 											Parking Management Servic...
+	                                       	
+										</span> 
+					 			     </td>												 
+									 <td width="34%" class="fundsThanks">
+										   
+							 			   
+								 				$142.80
+								 		   
+									 </td>													
+					 			   </tr>
+								
+								    
+								    
+							   			<tr>
+								    
+	
+								   	  <td  width="66%" class="nameThanks">
+								   	  	<span title="Chitra Jayanathan">
+				 			       			
+					 			       		    Chitra Jayanathan
+					 			       			
+	                                       	
+										</span> 
+					 			     </td>												 
+									 <td width="34%" class="fundsThanks">
+										   
+							 			   
+								 				$100.00
+								 		   
+									 </td>													
+					 			   </tr>
+								
+								    
+							  			 <tr class="alt">
+								    
+								    
+	
+								   	  <td  width="66%" class="nameThanks">
+								   	  	<span title="Flinn Flexer">
+				 			       			
+					 			       		    Flinn Flexer
+					 			       			
+	                                       	
+										</span> 
+					 			     </td>												 
+									 <td width="34%" class="fundsThanks">
+										   
+							 			   
+								 				$100.00
+								 		   
+									 </td>													
+					 			   </tr>
+								
+								    
+								    
+							   			<tr>
+								    
+	
+								   	  <td  width="66%" class="nameThanks">
+								   	  	<span title="Scott Beyke">
+				 			       			
+					 			       		    Scott Beyke
+					 			       			
+	                                       	
+										</span> 
+					 			     </td>												 
+									 <td width="34%" class="fundsThanks">
+										   
+							 			   
+								 				$100.00
+								 		   
+									 </td>													
+					 			   </tr>
+								
+								    
+							  			 <tr class="alt">
+								    
+								    
+	
+								   	  <td  width="66%" class="nameThanks">
+								   	  	<span title="Family Hatzfeld">
+				 			       			
+					 			       		    Family Hatzfeld
+					 			       			
+	                                       	
+										</span> 
+					 			     </td>												 
+									 <td width="34%" class="fundsThanks">
+										   
+							 			   
+								 				$50.00
+								 		   
+									 </td>													
+					 			   </tr>
+								
+								    
+								    
+							   			<tr>
+								    
+	
+								   	  <td  width="66%" class="nameThanks">
+								   	  	<span title="michael  coppola">
+				 			       			
+					 			       		    michael  coppola
+					 			       			
+	                                       	
+										</span> 
+					 			     </td>												 
+									 <td width="34%" class="fundsThanks">
+										   
+							 			   
+								 				$50.00
+								 		   
+									 </td>													
+					 			   </tr>
+								
+								    
+							  			 <tr class="alt">
+								    
+								    
+	
+								   	  <td  width="66%" class="nameThanks">
+								   	  	<span title="Patrick Algyer">
+				 			       			
+					 			       		    Patrick Algyer
+					 			       			
+	                                       	
+										</span> 
+					 			     </td>												 
+									 <td width="34%" class="fundsThanks">
+										   
+							 			   
+								 				$50.00
+								 		   
+									 </td>													
+					 			   </tr>
+								
+								    
+								    
+							   			<tr>
+								    
+	
+								   	  <td  width="66%" class="nameThanks">
+								   	  	<span title="Cindy in Seattle : )">
+				 			       			
+					 			       		    Cindy in Seattle : )
+					 			       			
+	                                       	
+										</span> 
+					 			     </td>												 
+									 <td width="34%" class="fundsThanks">
+										   
+							 			   
+								 				$50.00
+								 		   
+									 </td>													
+					 			   </tr>
+								
+								    
+							  			 <tr class="alt">
+								    
+								    
+	
+								   	  <td  width="66%" class="nameThanks">
+								   	  	<span title="Jill Brooks">
+				 			       			
+					 			       		    Jill Brooks
+					 			       			
+	                                       	
+										</span> 
+					 			     </td>												 
+									 <td width="34%" class="fundsThanks">
+										   
+							 			   
+								 				$25.00
+								 		   
+									 </td>													
+					 			   </tr>
+								
+								    
+								    
+							   			<tr>
+								    
+	
+								   	  <td  width="66%" class="nameThanks">
+								   	  	<span title="Nikki Collier">
+				 			       			
+					 			       		    Nikki Collier
+					 			       			
+	                                       	
+										</span> 
+					 			     </td>												 
+									 <td width="34%" class="fundsThanks">
+										   
+							 			   
+								 				$25.00
+								 		   
+									 </td>													
+					 			   </tr>
+								
+								    
+							  			 <tr class="alt">
+								    
+								    
+	
+								   	  <td  width="66%" class="nameThanks">
+								   	  	<span title="Lisa Alter Krule">
+				 			       			
+					 			       		    Lisa Alter Krule
+					 			       			
+	                                       	
+										</span> 
+					 			     </td>												 
+									 <td width="34%" class="fundsThanks">
+										   
+							 			   
+								 				$18.00
+								 		   
+									 </td>													
+					 			   </tr>
+								
+								    
+								    
+							   			<tr>
+								    
+	
+								   	  <td  width="66%" class="nameThanks">
+								   	  	<span title="Donna Stanton">
+				 			       			
+					 			       		    Donna Stanton
+					 			       			
+	                                       	
+										</span> 
+					 			     </td>												 
+									 <td width="34%" class="fundsThanks">
+										   
+							 			   
+								 				$10.00
+								 		   
+									 </td>													
+					 			   </tr>
+								
+								    
+							  			 <tr class="alt">
+								    
+								    
+	
+								   	  <td  width="66%" class="nameThanks">
+								   	  	<span title="Tricia Miller">
+				 			       			
+					 			       		    Tricia Miller
+					 			       			
+	                                       	
+										</span> 
+					 			     </td>												 
+									 <td width="34%" class="fundsThanks">
+										   
+							 			   
+								 				$10.00
+								 		   
+									 </td>													
+					 			   </tr>
+								
+								    
+								    
+							   			<tr>
+								    
+	
+								   	  <td  width="66%" class="nameThanks">
+								   	  	<span title="Terry Marks">
+				 			       			
+					 			       		    Terry Marks
+					 			       			
+	                                       	
+										</span> 
+					 			     </td>												 
+									 <td width="34%" class="fundsThanks">
+										   
+												&nbsp;   
+										   
+							 			   
+									 </td>													
+					 			   </tr>
+								
+								    
+							  			 <tr class="alt">
+								    
+								    
+	
+								   	  <td  width="66%" class="nameThanks">
+								   	  	<span title="Steve Kwon">
+				 			       			
+					 			       		    Steve Kwon
+					 			       			
+	                                       	
+										</span> 
+					 			     </td>												 
+									 <td width="34%" class="fundsThanks">
+										   
+												&nbsp;   
+										   
+							 			   
+									 </td>													
+					 			   </tr>
+								
+								    
+								    
+							   			<tr>
+								    
+	
+								   	  <td  width="66%" class="nameThanks">
+								   	  	<span title="Jill Comfort">
+				 			       			
+					 			       		    Jill Comfort
+					 			       			
+	                                       	
+										</span> 
+					 			     </td>												 
+									 <td width="34%" class="fundsThanks">
+										   
+												&nbsp;   
+										   
+							 			   
+									 </td>													
+					 			   </tr>
+								
+								    
+							  			 <tr class="alt">
+								    
+								    
+	
+								   	  <td  width="66%" class="nameThanks">
+								   	  	<span title="Hermann Reiner">
+				 			       			
+					 			       		    Hermann Reiner
+					 			       			
+	                                       	
+										</span> 
+					 			     </td>												 
+									 <td width="34%" class="fundsThanks">
+										   
+												&nbsp;   
+										   
+							 			   
+									 </td>													
+					 			   </tr>
+								
+								    
+								    
+							   			<tr>
+								    
+	
+								   	  <td  width="66%" class="nameThanks">
+								   	  	<span title="Impulse! Enterprises">
+				 			       			
+					 			       		    Impulse! Enterprises
+					 			       			
+	                                       	
+										</span> 
+					 			     </td>												 
+									 <td width="34%" class="fundsThanks">
+										   
+												&nbsp;   
+										   
+							 			   
+									 </td>													
+					 			   </tr>
+								
+								    
+							  			 <tr class="alt">
+								    
+								    
+	
+								   	  <td  width="66%" class="nameThanks">
+								   	  	<span title="Raymond Robinson">
+				 			       			
+					 			       		    Raymond Robinson
+					 			       			
+	                                       	
+										</span> 
+					 			     </td>												 
+									 <td width="34%" class="fundsThanks">
+										   
+												&nbsp;   
+										   
+							 			   
+									 </td>													
+					 			   </tr>
+								
+								    
+								    
+							   			<tr>
+								    
+	
+								   	  <td  width="66%" class="nameThanks">
+								   	  	<span title="Ayelet Gilad">
+				 			       			
+					 			       		    Ayelet Gilad
+					 			       			
+	                                       	
+										</span> 
+					 			     </td>												 
+									 <td width="34%" class="fundsThanks">
+										   
+												&nbsp;   
+										   
+							 			   
+									 </td>													
+					 			   </tr>
+								
+								    
+							  			 <tr class="alt">
+								    
+								    
+	
+								   	  <td  width="66%" class="nameThanks">
+								   	  	<span title="Anne Krajewski">
+				 			       			
+					 			       		    Anne Krajewski
+					 			       			
+	                                       	
+										</span> 
+					 			     </td>												 
+									 <td width="34%" class="fundsThanks">
+										   
+												&nbsp;   
+										   
+							 			   
+									 </td>													
+					 			   </tr>
+								
+								    
+								    
+							   			<tr>
+								    
+	
+								   	  <td  width="66%" class="nameThanks">
+								   	  	<span title="breandan, esther &amp; saoirse">
+				 			       				
+	                                       	 
+	 											breandan, esther &amp; saoirs...
+	                                       	
+										</span> 
+					 			     </td>												 
+									 <td width="34%" class="fundsThanks">
+										   
+												&nbsp;   
+										   
+							 			   
+									 </td>													
+					 			   </tr>
+								
+							 </table>								       
+	       			</div>	
+	<!--	</b:groupBox> -->
+	</div>
+
+
+			
+		
+
+
+
+
+
+
+<script type="text/backbase+xml" 
+	xmlns:b="http://www.backbase.com/2006/btl"
+	xmlns="http://www.w3.org/1999/xhtml">
+<div id="marketing" 
+	xmlns="http://www.w3.org/1999/xhtml">
+	<div class="contentWidget marketing trebuchet-font">
+		<b:xhtml>	
+			
+		</b:xhtml>
+    </div>
+</div>
+</script>
+
+
+	</div>
+
+
+				
+		
+		
+		
+		<!-- This fund raiser template type is currently used for mwoy program group -->
+		
+		<div class="clearAll"></div>
+
+		
+
+
+
+
+
+
+<div id="footer" class="trebuchet-font" xmlns:b="http://www.backbase.com/2006/btl"
+	xmlns="http://www.w3.org/1999/xhtml" style="position:static">
+		<b:xhtml>
+				<div id="icons"><ul>	<li><a href="http://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=3993" target="_blank" title="Charity Navigator"><img alt="" height="32" longdesc="c:/after.html" src="http://www.teamintraining.org/assets/images/31848/CharityNavLogo" width="90" /></a></li>	<li><a href="http://charityreports.give.org/Public/Report.aspx?CharityID=1094" title=""><img alt="BBB Accredited Charity Logo" border="0" height="65" hspace="0" longdesc="c:/after.html" mslinkref="true" src="http://www.teamintraining.org/chapter/national/image/BBB_Accr_Charity_Logo" width="36" /></a>&nbsp;</li></ul></div><div id="sublinks"><div class="menu"><a href="http://www.teamintraining.org/siteinfo/refund" target="_new">Refund</a>| <a href="http://www.teamintraining.org/siteinfo/privacy" target="_new">Privacy</a>| <a href="http://www.teamintraining.org/siteinfo/copyright" target="_new">Copyright</a>| <a href="http://www.teamintraining.org/siteinfo/security" target="_new">Security</a>| <a href="http://www.teamintraining.org/siteinfo/disclaimer" target="_new">Disclaimer</a></div><div class="info"><p>Do you have technical issues or questions about our website?</p><p>For assistance, contact us by <a href="mailto:supportservices@lls.org?subject=TNT eTools Question" target="_new" title="">email</a> , submit a <a href="http://customerservice.lls.org" target="_new" title="">support request</a></p><p>or call us at 888-LLS-7177</p></div></div>
+		</b:xhtml>	   		
+ </div> 			
+
+		<!--  	bb.command.load('FooterPage', 'GET', null, null, document.getElementById('ajaxFooter'),'replaceChildren'); -->
+
+
+	</div>
+
+	
+
+</body>
+</html>

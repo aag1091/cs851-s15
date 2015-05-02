@@ -1,0 +1,735 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_ctl00_Head1"><title>
+	Intro to R with Stephanie Locke
+</title><link rel="icon" href="../../Favicon.ico" /><link rel="stylesheet" type="text/css" title="CSS" href="../../styles/layout.css" media="screen" /><link rel="stylesheet" type="text/css" title="CSS" href="../../styles/layoutstyle.css" media="screen" /><link rel="stylesheet" type="text/css" title="CSS" href="../../styles/style.css" media="screen" /><link rel="stylesheet" type="text/css" title="CSS" href="../../styles/Ajax.css" media="screen" /><link rel="stylesheet" type="text/css" title="CSS" href="../../styles/SqlBitsControls.css" media="screen" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta property="fb:admins" content="530006705" /><meta property="fb:admins" content="530006705" /><meta property="fb:admins" content="530006705" /><meta property="fb:admins" content="530006705" /><meta property="fb:page_id" content="330145840330125" />
+    
+
+
+    <!--[if IE 6]>
+    <style type="text/css">
+        #leftnav { width: 132px; }
+        #content div div div { position: static; }
+    </style>
+    <![endif]-->
+<meta name="Description" content="SQLBits Session - R was originally for doing stats, but it now does database CRUD, reporting, documentation, and even websites.  It can be awkward to know where to start, so this session fast tracks you to the sections you need to know about. with Stephanie Locke" /><meta name="Keywords" content="SQL Server,Free,Community,Conference,Training,UK,TSQL,Event,BI, Business Intelligence, Development, DBA, Adminstration, Microsoft,England,Performance,Tuning, Query, Optimisation, Reporting, Analysis Services,Integration Services, SSIS, SSAS, SSRS" /><link href="/WebResource.axd?d=yTcXDMQSp8Cutbi-vq9n1P3qRZa7k97K45bGgsxD1lZR5SzERHJAz0PkO0kcBEqVmyHDNbBNK9wta2__Vx8nCTPrP6k6UwB5QdTvXTxxZk8N8YPF0Ck5zW7eC2GE7EEd1j55v_8kUZXSznNQQGrvxw2&amp;t=634568588760000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=Znf_U4TQJQ4j-CcvyUBPbj8gpgZOY4wA3ONzffFMjzZE5TJYCgLfcks5VC5gpDp1RDZ2ZkGWfHhE5t9PtAMxloP6-vznSVOPgay28H-s91iG69kgVXGWbQkD0XpTnCwmRASEo8TIpgu0r5_FEfdpczZSZRIQECVL90O96PNMjOM1&amp;t=634568588760000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=YEXlAaCdtjRVOlDPIz8WescpyvOofFhKXMJk3MT85kr1onHgk9YmBdo6wKh21GB3zEqsa4J-4X7fgLtJ-070lfrDmElO3a7o6garW1ymQ8cIYhzA5jo42h3_4u6MPDfTs7rzA7IG8pWGA17haP6CxQ2&amp;t=634568588760000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=Y3QO6j3Gwz9NWrFL7OvU3LExOWWB4eRdYe2RSn_DSyG9tKvIAJWgZzhjP33vY_y2HXVfH30JSssc50boea3nttZu8rNRe13Fi9qYbfLPyW0AvgpWmNiGjrs_dTmiv_1ig6BtiuK0Gc_dARcNClxOoBtVzgD4R55zjOR0CCU_NG41&amp;t=634568588760000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /></head>
+<body id="ctl00_ctl00_mybody">
+
+    <form name="aspnetForm" method="post" action="/Sessions/Event12/Intro_to_R" id="aspnetForm">
+<div>
+<input type="hidden" name="ctl00_ctl00_RadScriptManager1_TSM" id="ctl00_ctl00_RadScriptManager1_TSM" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNTA3NjcyMzUzD2QWAmYPZBYCZg9kFgICBA9kFgICARBkZBYCAgcPZBYCAgsPZBYCAgcPZBYKAgEPFgIeBFRleHQFCkludHJvIHRvIFJkAgMPZBYCAgEPFgIfAAWnA1IsIHRoZSBzdGF0aXN0aWNhbCBwcm9ncmFtbWluZyBsYW5ndWFnZSwgaXMgYW5vdGhlciBvcGVuLXNvdXJjZSBwcm9ncmFtIG1ha2luZyBpbnJvYWRzIGludG8gdGhlIE1pY3Jvc29mdCB3b3JsZC4mbmJzcDs8YnIgLz4NCjxiciAvPg0KPGJyIC8+DQpSIHdhcyBvcmlnaW5hbGx5IGZvciBkb2luZyBzdGF0cywgYnV0IGl0IG5vdyBkb2VzIGRhdGFiYXNlIENSVUQsIHJlcG9ydGluZywgZG9jdW1lbnRhdGlvbiwgYW5kIGV2ZW4gd2Vic2l0ZXMuICZuYnNwO0l0IGNhbiBiZSBhd2t3YXJkIHRvIGtub3cgd2hlcmUgdG8gc3RhcnQsIHNvIHRoaXMgc2Vzc2lvbiBmYXN0IHRyYWNrcyB5b3UgdG8gdGhlIHNlY3Rpb25zIHlvdSBuZWVkIHRvIGtub3cgYWJvdXQgdG8gc2F2ZSB5b3Vyc2VsZiBwYWlucyB5b3UgZGlkbid0IGV2ZW4ga25vdyB5b3UgaGFkLmQCCw8PFgQfAAULU1FMQml0cyBYSUkeC05hdmlnYXRlVXJsBRF+L0NvbnRlbnQvRXZlbnQxMmRkAg0PFCsAAg8WBB4LXyFEYXRhQm91bmRnHgtfIUl0ZW1Db3VudGZkZGQCDw8UKwACFCsAAg8WAh4XRW5hYmxlQWpheFNraW5SZW5kZXJpbmdoZBAWA2YCAQICFgMUKwACZGQUKwACZGQUKwACZGQPFgNmZmYWAQV1VGVsZXJpay5XZWIuVUkuUmFkUGFuZWxJdGVtLCBUZWxlcmlrLldlYi5VSSwgVmVyc2lvbj0yMDExLjMuMTExNS40MCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0xMjFmYWU3ODE2NWJhM2Q0ZBYGZg9kFgICAQ8UKwACDxYEHwJnHwMCA2RkFgJmD2QWAgIBD2QWBgIBD2QWBgIHDw8WAh4HVmlzaWJsZWdkZAIJDw8WBB8ABQpTbGlkZSBEZWNrHwEFI2h0dHA6Ly9ycHVicy5jb20vc3RlcGhsb2NrZS9zcWxiaXRzZGQCCw8PFgIfAGVkZAICD2QWBgIDDw8WAh8FZ2RkAgkPDxYEHwAFCURlbW8gQ29kZR8BBSF+L0Rvd25sb2Fkcy80NjMvUmludHJvLW1hc3Rlci56aXBkZAILDw8WAh8ABQY3ODIgS0JkZAIDD2QWBgIFDw8WAh8FZ2RkAgkPDxYEHwAFDE1QNCBWaWRlbyBIRB8BBTpodHRwOi8vZmlsZXMuc3FsYml0cy5jb20vZXZlbnQxMi9JbnRyb190b19SL0ludHJvX3RvX1IubXA0ZGQCCw8PFgIfAAUGNTQwIE1CZGQCAQ9kFgICAQ9kFgoCAQ8PFgIfBWdkFgJmDw8WBh4GSGVpZ2h0GwAAAAAAAGRAAQAAAB4FV2lkdGgbAAAAAAAAXkABAAAAHgRfIVNCAoADZBYCAgEPDxYGHwcbAAAAAAAAXkABAAAAHwYbAAAAAAAAZEABAAAAHwgCgANkFgICAQ8PFgIfAQUyfi9HYWxsZXJ5L0ltYWdlcy9TcGVha2VyUGhvdG9zXFN0ZXBoYW5pZV9Mb2NrZS5wbmdkFgJmDw8WBh4KSW1hZ2VBbGlnbgsqJFN5c3RlbS5XZWIuVUkuV2ViQ29udHJvbHMuSW1hZ2VBbGlnbgQeCEltYWdlVXJsBUF+L0dhbGxlcnkvSW1hZ2VzL1NwZWFrZXJQaG90b3NcdGh1bWJzXDEyMF8xNjBcU3RlcGhhbmllX0xvY2tlLnBuZx4NQWx0ZXJuYXRlVGV4dAUTU3RlcGhhbmllX0xvY2tlLnBuZxYEHgVTdHlsZQUbZGlzcGxheTpibG9jaztoZWlnaHQ6MTYwcHg7HgROYW1lBQ1Mb2dvSW1hZ2UyNDE0ZAIDD2QWAgIBDxYCHwAFUjxoMT48YSBocmVmPSdodHRwOi8vc3FsYml0cy5jb20vU3BlYWtlcnMvU3RlcGhhbmllX0xvY2tlJz5TdGVwaGFuaWUgTG9ja2U8L2E+PC9oMT5kAgUPFgIfAAX3AVN0ZXBoIExvY2tlIChAU3RlZmZMb2NrZSkgZG9lcyBhIGxvdCBvZiBzdHVmZiBpbiBCSSwgZnJvbSBidWlsZGluZyBzbmF6enkgQXp1cmUgNk5GIGRhdGEgd2FyZWhvdXNlcyB0byBkZXZlbG9waW5nIFIgd2ViIHNlcnZpY2VzLiBPbiB0b3Agb2YgdGhlIGNvb2wgZGF5IGpvYiwgc2hlIG9yZ2FuaXNlcyB1c2VyIGdyb3VwcyAmYW1wOyBTUUxSZWxheSwgc3BlYWtzIGF0IGV2ZW50cywgYW5kIHJ1bnMgYSBib2FyZGdhbWUgY29tcGFueS5kAgcPDxYEHwEFGmh0dHA6Ly9zdGVmZi5pdHNhbG9ja2UuY29tHwVnZBYCZg8PFgIfCwUaaHR0cDovL3N0ZWZmLml0c2Fsb2NrZS5jb21kZAIJDw8WBB8BBSRodHRwOi8vaXRzYWxvY2tlLmNvbS9pbmRleC5waHAvZmVlZC8fBWdkFgJmDw8WAh8LBSRodHRwOi8vaXRzYWxvY2tlLmNvbS9pbmRleC5waHAvZmVlZC9kZAICD2QWAgIBD2QWBAICDw8WAh8FZ2RkAgQPDxYCHwVoZGQYCQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgcFKmN0bDAwJGN0bDAwJFBsYXRpbnVtU3BvbnNvcnMkU3BvbnNvckJhbm5lcgUgY3RsMDAkY3RsMDAkbG9naW5TdGF0dXNUb3AkY3RsMDEFIGN0bDAwJGN0bDAwJGxvZ2luU3RhdHVzVG9wJGN0bDAzBUVjdGwwMCRjdGwwMCRQYWdlQm9keSRTcG9uc29yTG9nb0xpc3QkY3RybDAkU3BvbnNvckxvZ29zJFNwb25zb3JCYW5uZXIFRWN0bDAwJGN0bDAwJFBhZ2VCb2R5JFNwb25zb3JMb2dvTGlzdCRjdHJsMSRTcG9uc29yTG9nb3MkU3BvbnNvckJhbm5lcgUpY3RsMDAkY3RsMDAkUGFnZUJvZHkkQnJvbnplJFNwb25zb3JCYW5uZXIFJmN0bDAwJGN0bDAwJFBhZ2VCb2R5JEJvZHkkU2Vzc2lvblN0dWZmBTxjdGwwMCRjdGwwMCRQYWdlQm9keSRCb2R5JFNlc3Npb25TdHVmZiRpMCRTZXNzaW9uQ29udGVudExpc3QPFCsADmRkZGRkZGQUKwADZGRkAgNkZGRmAv////8PZAUrY3RsMDAkY3RsMDAkUGxhdGludW1TcG9uc29ycyRTdGF0aWNMaXN0Vmlldw9nZAUkY3RsMDAkY3RsMDAkUGFnZUJvZHkkU3BvbnNvckxvZ29MaXN0DxQrAA5kZGRkZGRkFCsAAmRkAgJkZGRmAv////8PZAUqY3RsMDAkY3RsMDAkUGFnZUJvZHkkQnJvbnplJFN0YXRpY0xpc3RWaWV3D2dkBUZjdGwwMCRjdGwwMCRQYWdlQm9keSRTcG9uc29yTG9nb0xpc3QkY3RybDEkU3BvbnNvckxvZ29zJFN0YXRpY0xpc3RWaWV3D2dkBUZjdGwwMCRjdGwwMCRQYWdlQm9keSRTcG9uc29yTG9nb0xpc3QkY3RybDAkU3BvbnNvckxvZ29zJFN0YXRpY0xpc3RWaWV3D2dkBSVjdGwwMCRjdGwwMCRQYWdlQm9keSRCb2R5JFRhZ0xpc3RWaWV3DzwrAA4DCGYMZg0C/////w9kBTljdGwwMCRjdGwwMCRQYWdlQm9keSRDb21tdW5pdHlTcG9uc29yTG9nb3MkU3RhdGljTGlzdFZpZXcPZ2Ql9D2nUmdwnWoBQvm9Na5GXPVpJMFjmpQSZJIYDkld0g==" />
+</div>
+
+
+<script src="http://sqlbits.com/scripts/Helper.js" type="text/javascript"></script><script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www."); document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script><script type="text/javascript">var pageTracker = _gat._getTracker("UA-346537-3");pageTracker._setDomainName("none");pageTracker._setAllowLinker(true); pageTracker._trackPageview();</script>
+<script src="/WebResource.axd?d=QJ3aQfjbbf9ygWHzEdk4gUjwjy-estE8LEr9IvPvZIJnVOIz6OoFyZYpWL0ximpRjrLsT-xWK87OGxJ7sY0idnwqHf6KskkJuacq53ZBGyg1&amp;t=635418570520000000" type="text/javascript"></script>
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl00_ctl00_RadScriptManager1_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3af319b152-218f-4c14-829d-050a68bb1a61%3aea597d4b%3bTelerik.Web.UI%2c+Version%3d2011.3.1115.40%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3ace7a9233-a889-4168-aaf5-47af6f19d7c9%3a16e4e7cd%3aed16cbdc%3af7645509%3a24ee1bba%3a19620875%3a3f6e8f3f%3af46195d3%3a1e771326%3a4cacbc31" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="49E74C42" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAL4WD99WeZbqAaCcweRyv2KPCVsqw7TQ1Y5casCce4KlDyoNAfOXXlX59SWy5hRoWDvnxhbtdfRVQDl6tUAPJSN" />
+</div>
+    
+    <!-- 2011.3.1115.40 --><div id="ctl00_ctl00_RadAjaxManager1SU">
+	<span id="ctl00_ctl00_RadAjaxManager1" style="display:none;"></span>
+</div>
+    <!-- Begin PageDiv -->
+    
+    <div id="ctl00_ctl00_PageDiv" class="Page">
+        <!-- Begin Headers -->
+        <div id="ctl00_ctl00_headers" class="Header">
+	
+            <div id="logo">
+                <a id="ctl00_ctl00_LogoLink" href="../../"><img id="ctl00_ctl00_SqlBitsImage" src="http://sqlbits.com/images/sqlbits/SQLBitsLogo.png" alt="SQLBits Logo" style="height:93px;width:210px;border-width:0px;" /></a>
+            </div>
+            <div id="ConferenceLabel">
+                <h2></h2>
+                <h2></h2>
+            </div>
+            <div id="platinumlogos">
+                <table id="ctl00_ctl00_PlatinumSponsors_SponsorLogo" class="sponsorLogos" width="100%">
+		<tr id="ctl00_ctl00_PlatinumSponsors_LevelLabel" class="SponsorGroupLabel">
+			<td>
+            <span style='color: #C0C0C0'>
+                Platinum Sponsors</span>
+        </td>
+		</tr>
+		<tr>
+			<td align="&lt;%=Alignment %>">
+            
+            <div id="ctl00_ctl00_PlatinumSponsors_SponsorBanner" class="RadRotator RadRotator_Vista" style="height:60px;width:255px;">
+				<div class="rrRelativeWrapper">
+					<div class="rrClipRegion">
+						<ul class="rrItemsList">
+							<li class="rrItem" style="height:55px;width:250px;"><div id="ctl00_ctl00_PlatinumSponsors_SponsorBanner_i0">
+								<a id="ctl00_ctl00_PlatinumSponsors_SponsorBanner_i0_SponsorLink" href="http://bit.ly/MSFTDataCulture" target="_blank"><img id="ctl00_ctl00_PlatinumSponsors_SponsorBanner_i0_SponsorLogo" src="http://sqlbits.com/images/sponsors/Microsoft.Platinum.Logo.Web.png" alt="Microsoft" style="height:50px;width:222px;border-width:0px;padding:5px 0;" /></a>
+							</div></li><li class="rrItem" style="height:55px;width:250px;"><div id="ctl00_ctl00_PlatinumSponsors_SponsorBanner_i1">
+								<a id="ctl00_ctl00_PlatinumSponsors_SponsorBanner_i1_SponsorLink" href="http://www.pyramidanalytics.com/?utm_source=sqlbits&amp;utm_medium=banner&amp;utm_campaign=sqlbits-2015" target="_blank"><img id="ctl00_ctl00_PlatinumSponsors_SponsorBanner_i1_SponsorLogo" src="http://sqlbits.com/images/sponsors/PyramidAnalytics.gif" alt="Pyramid Analytics" style="height:50px;width:213px;border-width:0px;padding:5px 0;" /></a>
+							</div></li><li class="rrItem" style="height:55px;width:250px;"><div id="ctl00_ctl00_PlatinumSponsors_SponsorBanner_i2">
+								<a id="ctl00_ctl00_PlatinumSponsors_SponsorBanner_i2_SponsorLink" href="http://www.sandisk.com/" target="_blank"><img id="ctl00_ctl00_PlatinumSponsors_SponsorBanner_i2_SponsorLogo" src="http://sqlbits.com/images/sponsors/SanDisk.jpg" alt="SanDisk" style="height:50px;width:213px;border-width:0px;padding:5px 0;" /></a>
+							</div></li>
+						</ul>
+					</div><a class="rrButton rrButtonUp" href="javascript:void(0);">&nbsp;</a><a class="rrButton rrButtonLeft" href="javascript:void(0);">&nbsp;</a><a class="rrButton rrButtonRight" href="javascript:void(0);">&nbsp;</a><a class="rrButton rrButtonDown" href="javascript:void(0);">&nbsp;</a>
+				</div><input id="ctl00_ctl00_PlatinumSponsors_SponsorBanner_ClientState" name="ctl00_ctl00_PlatinumSponsors_SponsorBanner_ClientState" type="hidden" />
+			</div>
+
+            
+
+        </td>
+		</tr>
+	</table>
+	
+
+
+
+            </div>
+            <!-- Begin breadcrumb -->
+            <div class="Breadcrumb">
+                <div class="breadcrumb-right">
+                    <a id="ctl00_ctl00_loginStatusTop" href="javascript:__doPostBack(&#39;ctl00$ctl00$loginStatusTop$ctl02&#39;,&#39;&#39;)">Login or Join</a>
+                </div>
+                <div class="breadcrumb-right">
+                    
+                </div>
+                <div class="breadcrumb-right" style="overflow:hidden;width:90px;margin-top:-2px">
+                </div>
+                <span id="ctl00_ctl00_breadcrumbPath" class="breadcrumb-trail"><a href="#ctl00_ctl00_breadcrumbPath_SkipLink"><img alt="Skip Navigation Links" src="/WebResource.axd?d=lDN7ayER0_wSd9e7Df6lA6WBUa_cLZ5H9jBUFvjTJjIWbcoMkBHDdYu8Jdsr7nWadAg_gixQsWyeYxc4dnn0UIkYYF-0wT8_GtBWp0xoTCU1&amp;t=635418570520000000" width="0" height="0" style="border-width:0px;" /></a><a id="ctl00_ctl00_breadcrumbPath_SkipLink"></a></span>
+            </div>
+            <!-- End breadcrumb -->
+        
+</div>
+        <!-- End Headers -->
+        <!-- Begin RightContent -->
+        <div class="Content">
+            <!-- Begin leftnav -->
+            <div class="LeftNav">
+                <a href="#ctl00_ctl00_LeftMenu_SkipLink"><img alt="Skip Navigation Links" src="/WebResource.axd?d=lDN7ayER0_wSd9e7Df6lA6WBUa_cLZ5H9jBUFvjTJjIWbcoMkBHDdYu8Jdsr7nWadAg_gixQsWyeYxc4dnn0UIkYYF-0wT8_GtBWp0xoTCU1&amp;t=635418570520000000" width="0" height="0" style="border-width:0px;" /></a><table id="ctl00_ctl00_LeftMenu" class="staticMenu" cellpadding="0" cellspacing="0" border="0">
+	<tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="SQLBits" id="ctl00_ctl00_LeftMenun0">
+		<td><table class="menuLevel1 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="white-space:nowrap;width:100%;"><a class="menuLevel1 staticMenuItem" href="/" style="text-decoration:none;border-style:none;">Home</a></td>
+			</tr>
+		</table></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="staticMenu">
+			<tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ctl00_LeftMenun1">
+				<td><table class="menuLevel2 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="menuLevel2 staticMenuItem" href="/content/" style="text-decoration:none;border-style:none;">Content</a></td>
+					</tr>
+				</table></td>
+			</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ctl00_LeftMenun2">
+				<td><table class="menuLevel2 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="menuLevel2 staticMenuItem" href="/content/speakers.aspx" style="text-decoration:none;border-style:none;">Speakers</a></td>
+					</tr>
+				</table></td>
+			</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ctl00_LeftMenun3">
+				<td><table class="menuLevel2 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="menuLevel2 staticMenuItem" href="/default.aspx" style="text-decoration:none;border-style:none;">SQLBits XIV</a></td>
+					</tr>
+				</table></td>
+			</tr><tr>
+				<td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="staticMenu">
+					<tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ctl00_LeftMenun4">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/information/Pricing.aspx" style="text-decoration:none;border-style:none;">Booking & Pricing</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ctl00_LeftMenun5">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/information/TrainingDay.aspx" style="text-decoration:none;border-style:none;">Training Day</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ctl00_LeftMenun6">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/information/Agenda.aspx" style="text-decoration:none;border-style:none;">Agenda</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ctl00_LeftMenun7">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/information/Overview.aspx" style="text-decoration:none;border-style:none;">Overview</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ctl00_LeftMenun8">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/information/PublicSessions.aspx" style="text-decoration:none;border-style:none;">Sessions</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ctl00_LeftMenun9">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/information/PublicSpeakers.aspx" style="text-decoration:none;border-style:none;">Speakers</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ctl00_LeftMenun10">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/information/faq.aspx" style="text-decoration:none;border-style:none;">FAQ</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ctl00_LeftMenun11">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/information/Travel.aspx" style="text-decoration:none;border-style:none;">Travel & Accommodation</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ctl00_LeftMenun12">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/information/Platinum.aspx" style="text-decoration:none;border-style:none;">Platinum Sponsors</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ctl00_LeftMenun13">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/information/Sponsors.aspx" style="text-decoration:none;border-style:none;">Gold Sponsors</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ctl00_LeftMenun14">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/information/Exhibitors.aspx" style="text-decoration:none;border-style:none;">Exhibitors</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ctl00_LeftMenun15">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/information/Sponsorship.aspx" style="text-decoration:none;border-style:none;">Sponsorship</a></td>
+							</tr>
+						</table></td>
+					</tr>
+				</table></td>
+			</tr><tr id="ctl00_ctl00_LeftMenun16">
+				<td><table class="menuLevel2 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="menuLevel2 staticMenuItem" style="text-decoration:none;border-style:none;">Previous Events</a></td>
+					</tr>
+				</table></td>
+			</tr><tr>
+				<td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="staticMenu">
+					<tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="SQLBits XII - July 2014" id="ctl00_ctl00_LeftMenun17">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/events/event12/SQLBitsXII.aspx" style="text-decoration:none;border-style:none;">SQLBits XII</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="SQLBits XI - May 2013" id="ctl00_ctl00_LeftMenun18">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/events/event11/SQLBitsXI.aspx" style="text-decoration:none;border-style:none;">SQLBits XI</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="SQLBits X UK SQL Server 2012 Technical Launch - March 2012" id="ctl00_ctl00_LeftMenun19">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/events/event10/SQLBitsX.aspx" style="text-decoration:none;border-style:none;">SQLBits X</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="SQLBits Query across the mersey - September 2011" id="ctl00_ctl00_LeftMenun20">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/events/event9/SQLBitsIX.aspx" style="text-decoration:none;border-style:none;">SQLBits 9 Query across the mersey</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="SQLBits Beside the seaside - April 2011" id="ctl00_ctl00_LeftMenun21">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/events/event8/SQLBitsVIII.aspx" style="text-decoration:none;border-style:none;">SQLBits 8 Beside the seaside</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="SQLBits The Seven Wonders of SQL - September 2010" id="ctl00_ctl00_LeftMenun22">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/events/event7/SQLBitsVII.aspx" style="text-decoration:none;border-style:none;">SQLBits 7 Wonders of SQL</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="SQLBits The 6th Sets - April 2010" id="ctl00_ctl00_LeftMenun23">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/events/event6/SQLBitsVI.aspx" style="text-decoration:none;border-style:none;">SQLBits The 6th Sets (VI)</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="SQLBits goes West- November 2009" id="ctl00_ctl00_LeftMenun24">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/events/event5/SQLBitsV.aspx" style="text-decoration:none;border-style:none;">SQLBits Goes West (V)</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="SQLBits goes Forth - March 2009" id="ctl00_ctl00_LeftMenun25">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/events/event4/SQLBitsIV.aspx" style="text-decoration:none;border-style:none;">SQLBits goes Forth (IV)</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="SQLBits Cubed - October 2008" id="ctl00_ctl00_LeftMenun26">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/events/event3/SQLBitsIII.aspx" style="text-decoration:none;border-style:none;">SQLBits Cubed (III)</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="SQLBits II The SQL - March 2008" id="ctl00_ctl00_LeftMenun27">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/events/event2/SQLBitsII.aspx" style="text-decoration:none;border-style:none;">SQLBits II The SQL</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ctl00_LeftMenun28">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/Events/event1/SQLBits_October_2007/conference.aspx" style="text-decoration:none;border-style:none;">SQLBits I</a></td>
+							</tr>
+						</table></td>
+					</tr>
+				</table></td>
+			</tr><tr id="ctl00_ctl00_LeftMenun29">
+				<td><table class="menuLevel2 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="menuLevel2 staticMenuItem" style="text-decoration:none;border-style:none;">About</a></td>
+					</tr>
+				</table></td>
+			</tr><tr>
+				<td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="staticMenu">
+					<tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ctl00_LeftMenun30">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/about/about.aspx" style="text-decoration:none;border-style:none;">About SQLBits</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ctl00_LeftMenun31">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/about/WhosWho.aspx" style="text-decoration:none;border-style:none;">Who's Who</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ctl00_LeftMenun32">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/about/Privacy.aspx" style="text-decoration:none;border-style:none;">Privacy</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ctl00_LeftMenun33">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/about/TsAndCs.aspx" style="text-decoration:none;border-style:none;">Ts&Cs</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ctl00_LeftMenun34">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/about/Contact.aspx" style="text-decoration:none;border-style:none;">Contact</a></td>
+							</tr>
+						</table></td>
+					</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ctl00_LeftMenun35">
+						<td><table class="menuLevel3 staticMenuItem" cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:0.2em 0.6em 0.2em 0.6em;">
+							<tr>
+								<td style="white-space:nowrap;width:100%;"><a class="menuLevel3 staticMenuItem" href="/about/Community.aspx" style="text-decoration:none;border-style:none;">Community</a></td>
+							</tr>
+						</table></td>
+					</tr>
+				</table></td>
+			</tr>
+		</table></td>
+	</tr>
+</table><a id="ctl00_ctl00_LeftMenu_SkipLink"></a>
+                <hr />
+                <table style="margin: auto">
+                    <tr>
+                        <td align="center">
+                            <!--                            <p>Brought to you by the UK SQL Server Community.</p>-->
+                            <p>
+                                Copyright &copy; 2015 SQLBits. All Rights Reserved.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <p>
+                                <a id="ctl00_ctl00_OrcsWebLink" title="Hosted by Orcsweb" href="http://www.orcsweb.com"><img id="ctl00_ctl00_OrcsWeb" title="Hosted by Orcsweb" src="../../images/sponsors/owlogo.gif" alt="Orcsweb" style="height:40px;width:120px;border-width:0px;" /></a>
+                            </p>
+                            <p>
+                                <a id="ctl00_ctl00_HyperLink1" title="Hosted by Orcsweb" href="http://www.orcsweb.com"><img id="ctl00_ctl00_Office365" title="Hosted by Orcsweb" src="../../images/sponsors/Powered_by_O365.png" alt="Orcsweb" style="height:90px;width:120px;border-width:0px;" /></a>
+                            </p>
+                            <p>
+                                <a id="ctl00_ctl00_TelerikLink" href="http://www.telerik.com"><img id="ctl00_ctl00_TelerikImage" title="Build with Telerik Asp.Net Components" src="../../images/sponsors/telerik_square.gif" alt="Telerik" style="border-width:0px;" /></a>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- End Leftnav -->
+            <!-- BeginEditable "PageBody" -->
+            
+    <div class="RightNav">
+        
+
+        
+                <table id="ctl00_ctl00_PageBody_SponsorLogoList_itemPlaceholderContainer" class="sponsorLogos" width="100%">
+
+		
+                <tr>
+                    <table id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorLogo" class="sponsorLogos" width="100%">
+			<tr id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_LevelLabel" class="SponsorGroupLabel">
+				<td>
+            <span style='color: #cfc042'>
+                Gold Sponsors</span>
+        </td>
+			</tr>
+			<tr>
+				<td align="&lt;%=Alignment %>">
+            
+            <div id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner" class="RadRotator RadRotator_Vista" style="height:300px;width:165px;">
+					<div class="rrRelativeWrapper">
+						<div class="rrClipRegion">
+							<ul class="rrItemsList">
+								<li class="rrItem" style="height:60px;width:160px;"><div id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i0">
+									<a id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i0_SponsorLink" href="http://www.profisee.com/" target="_blank"><img id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i0_SponsorLogo" src="http://sqlbits.com/images/sponsors/Profisee.png" alt="Profisee" style="height:50px;width:142px;border-width:0px;padding:5px 0;" /></a>
+								</div></li><li class="rrItem" style="height:60px;width:160px;"><div id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i1">
+									<a id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i1_SponsorLink" href="http://software.dell.com/" target="_blank"><img id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i1_SponsorLogo" src="http://sqlbits.com/images/sponsors/Dell.jpg" alt="Dell Software" style="height:50px;width:121px;border-width:0px;padding:5px 0;" /></a>
+								</div></li><li class="rrItem" style="height:60px;width:160px;"><div id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i2">
+									<a id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i2_SponsorLink" href="http://www.hp.com/uk" target="_blank"><img id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i2_SponsorLogo" src="http://sqlbits.com/images/sponsors/HP.Logo.png" alt="Hewlett Packard" style="height:50px;width:50px;border-width:0px;padding:5px 0;" /></a>
+								</div></li><li class="rrItem" style="height:60px;width:160px;"><div id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i3">
+									<a id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i3_SponsorLink" href="http://red-gate.com" target="_blank"><img id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i3_SponsorLogo" src="http://sqlbits.com/images/sponsors/RedGate.png" alt="Red-Gate" style="height:50px;width:101px;border-width:0px;padding:5px 0;" /></a>
+								</div></li><li class="rrItem" style="height:60px;width:160px;"><div id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i4">
+									<a id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i4_SponsorLink" href="http://www.coeo.com" target="_blank"><img id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i4_SponsorLogo" src="http://sqlbits.com/images/sponsors/coeo.png" alt="coeo" style="height:40px;width:160px;border-width:0px;padding:5px 0;" /></a>
+								</div></li><li class="rrItem" style="height:60px;width:160px;"><div id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i5">
+									<a id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i5_SponsorLink" href="http://www.xlcubed.com" target="_blank"><img id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i5_SponsorLogo" src="http://sqlbits.com/images/sponsors/xlcubed.png" alt="XLCubed" style="height:31px;width:160px;border-width:0px;padding:5px 0;" /></a>
+								</div></li><li class="rrItem" style="height:60px;width:160px;"><div id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i6">
+									<a id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i6_SponsorLink" href="http://www.sqlsentry.com/?ad=sqlbits2015 " target="_blank"><img id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i6_SponsorLogo" src="http://sqlbits.com/images/sponsors/SQLSentry.jpg" alt="SQLSentry" style="height:50px;width:154px;border-width:0px;padding:5px 0;" /></a>
+								</div></li><li class="rrItem" style="height:60px;width:160px;"><div id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i7">
+									<a id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i7_SponsorLink" href="http://www.attunity.com" target="_blank"><img id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_i7_SponsorLogo" src="http://sqlbits.com/images/sponsors/Attunity.gif" alt="Annuity" style="height:36px;width:147px;border-width:0px;padding:5px 0;" /></a>
+								</div></li>
+							</ul>
+						</div><a class="rrButton rrButtonUp" href="javascript:void(0);">&nbsp;</a><a class="rrButton rrButtonLeft" href="javascript:void(0);">&nbsp;</a><a class="rrButton rrButtonRight" href="javascript:void(0);">&nbsp;</a><a class="rrButton rrButtonDown" href="javascript:void(0);">&nbsp;</a>
+					</div><input id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_ClientState" name="ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_ClientState" type="hidden" />
+				</div>
+
+            
+
+        </td>
+			</tr>
+		</table>
+		
+
+
+
+                </tr>
+            
+		
+                <tr>
+                    <table id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl1_SponsorLogos_SponsorLogo" class="sponsorLogos" width="100%">
+			<tr id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl1_SponsorLogos_LevelLabel" class="SponsorGroupLabel">
+				<td>
+            <span style='color: #707070'>
+                Silver Sponsors</span>
+        </td>
+			</tr>
+			<tr>
+				<td align="&lt;%=Alignment %>">
+            
+            <div id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl1_SponsorLogos_SponsorBanner" class="RadRotator RadRotator_Vista" style="height:120px;width:165px;">
+					<div class="rrRelativeWrapper">
+						<div class="rrClipRegion">
+							<ul class="rrItemsList">
+								<li class="rrItem" style="height:60px;width:160px;"><div id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl1_SponsorLogos_SponsorBanner_i0">
+									<a id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl1_SponsorLogos_SponsorBanner_i0_SponsorLink" href="http://www.solarwinds.com/" target="_blank"><img id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl1_SponsorLogos_SponsorBanner_i0_SponsorLogo" src="http://sqlbits.com/images/sponsors/SolarWinds.jpg" alt="SolarWinds" style="height:50px;width:150px;border-width:0px;padding:5px 0;" /></a>
+								</div></li><li class="rrItem" style="height:60px;width:160px;"><div id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl1_SponsorLogos_SponsorBanner_i1">
+									<a id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl1_SponsorLogos_SponsorBanner_i1_SponsorLink" href="http://www.ammonite-group.com" target="_blank"><img id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl1_SponsorLogos_SponsorBanner_i1_SponsorLogo" src="http://sqlbits.com/images/sponsors/Ammonite.png" alt="Ammonite" style="height:42px;width:160px;border-width:0px;padding:5px 0;" /></a>
+								</div></li>
+							</ul>
+						</div><a class="rrButton rrButtonUp" href="javascript:void(0);">&nbsp;</a><a class="rrButton rrButtonLeft" href="javascript:void(0);">&nbsp;</a><a class="rrButton rrButtonRight" href="javascript:void(0);">&nbsp;</a><a class="rrButton rrButtonDown" href="javascript:void(0);">&nbsp;</a>
+					</div><input id="ctl00_ctl00_PageBody_SponsorLogoList_ctrl1_SponsorLogos_SponsorBanner_ClientState" name="ctl00_ctl00_PageBody_SponsorLogoList_ctrl1_SponsorLogos_SponsorBanner_ClientState" type="hidden" />
+				</div>
+
+            
+
+        </td>
+			</tr>
+		</table>
+		
+
+
+
+                </tr>
+            </table>
+
+            
+        
+
+        <table width="100%">
+            <tr>
+                <td align="right">
+                    <table id="ctl00_ctl00_PageBody_Bronze_SponsorLogo" class="sponsorLogos" width="100%">
+	<tr id="ctl00_ctl00_PageBody_Bronze_LevelLabel" class="SponsorGroupLabel">
+		<td>
+            <span style='color: #996600'>
+                Bronze Sponsor</span>
+        </td>
+	</tr>
+	<tr>
+		<td align="&lt;%=Alignment %>">
+            
+            <div id="ctl00_ctl00_PageBody_Bronze_SponsorBanner" class="RadRotator RadRotator_Vista" style="height:60px;width:165px;">
+			<div class="rrRelativeWrapper">
+				<div class="rrClipRegion">
+					<ul class="rrItemsList">
+						<li class="rrItem" style="height:55px;width:160px;"><div id="ctl00_ctl00_PageBody_Bronze_SponsorBanner_i0">
+							<a id="ctl00_ctl00_PageBody_Bronze_SponsorBanner_i0_SponsorLink" href="http://www.adatis.co.uk" target="_blank"><img id="ctl00_ctl00_PageBody_Bronze_SponsorBanner_i0_SponsorLogo" src="http://sqlbits.com/images/sponsors/adatis.jpg" alt="adatis" style="height:42px;width:160px;border-width:0px;padding:5px 0;" /></a>
+						</div></li>
+					</ul>
+				</div><a class="rrButton rrButtonUp" href="javascript:void(0);">&nbsp;</a><a class="rrButton rrButtonLeft" href="javascript:void(0);">&nbsp;</a><a class="rrButton rrButtonRight" href="javascript:void(0);">&nbsp;</a><a class="rrButton rrButtonDown" href="javascript:void(0);">&nbsp;</a>
+			</div><input id="ctl00_ctl00_PageBody_Bronze_SponsorBanner_ClientState" name="ctl00_ctl00_PageBody_Bronze_SponsorBanner_ClientState" type="hidden" />
+		</div>
+
+            
+
+        </td>
+	</tr>
+</table>
+
+
+
+
+                </td>
+            </tr>
+        </table>
+        
+        <table width="100%">
+            <tr>
+                <td align="right">
+                    
+                </td>
+            </tr>            
+        </table>
+    </div>
+    <div class="CenterBar">
+        <div class="InnerCenterBar">
+            <div class="CenterBarContent">
+                <noscript><span id='noscriptText'>It appears that your browser does not support JavaScript, or you have it disabled.  This site is best viewed with JavaScript enabled. If JavaScript is disabled in your browser, please turn it back on then reload this page. If your browser does not support JavaScript, <a rel='nofollow' href='http://sqlbits.com/content/detail/session.aspx?HttpName=intro_to_r&&noscript=true'>click here for a page that doesn't require javascript</a>.</span><hr /></noscript>
+                
+
+<div class="SponsorBanner">
+    <a id="ctl00_ctl00_PageBody_SponsorLogo_SponsorLink" href="https://software.dell.com/reglanding/130" target="_blank"><img id="ctl00_ctl00_PageBody_SponsorLogo_SponsorLogo" src="../../images/sponsors/BannerAd.DellSoftware.gif" alt="Dell" align="middle" style="border-width:0px;" /></a>
+</div>
+
+<div id="ctl00_ctl00_PageBody_SponsorLogo_Divider" style="background-color: #E9E9FF; width: 100%; height: 5px; 
+    margin-top: 10px; margin-bottom: 10px">
+</div>
+
+                
+    <h2>Intro to R</h2>
+    <div id="ctl00_ctl00_PageBody_Body_DescriptionContainer">
+        R, the statistical programming language, is another open-source program making inroads into the Microsoft world.&nbsp;<br />
+<br />
+<br />
+R was originally for doing stats, but it now does database CRUD, reporting, documentation, and even websites. &nbsp;It can be awkward to know where to start, so this session fast tracks you to the sections you need to know about to save yourself pains you didn't even know you had.
+    </div>
+    
+    <div class="pad_top">
+        Presented by
+        <a href="http://sqlbits.com/Speakers/Stephanie_Locke">Stephanie Locke</a>
+        at
+        <a id="ctl00_ctl00_PageBody_Body_ConferenceLink" href="../../Content/Event12">SQLBits XII</a>
+    </div>
+
+    <div class="fb-like" data-send="false" data-width="350" data-show-faces="true" data-action="like" data-font="segoe ui"></div>
+
+    
+            <div id="TagList" >
+                <span>
+                    <img src="../../images/icons/16/tag.png" id="ctl00_ctl00_PageBody_Body_TagListView_ctrl0_Tag" alt="Tags" /></span>
+                (no tags)</div>
+        
+   
+    
+    <div class="clear ">
+        <div id="ctl00_ctl00_PageBody_Body_SessionStuff" class="RadPanelBar RadPanelBar_Vista" style="border-style:None;width:100%;">
+	<ul class="rpRootGroup">
+		<li class="rpItem rpFirst"><a href="#" class="rpLink rpExpandable rpExpanded" style="border-style:None;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText">Downloads</span></span></a><div class="rpSlide" style="display:block;">
+			<div class="rpTemplate">
+				
+                        
+                                <div id="ctl00_ctl00_PageBody_Body_SessionStuff_i0_SessionContentList_ContentList" class="pad_top">
+                                    
+                                <div class="item left pad_all">
+                                    
+                                    
+                                    
+                                    
+                                    <img id="ctl00_ctl00_PageBody_Body_SessionStuff_i0_SessionContentList_ctrl0_Link" title="Link available" src="../../images/icons/24/link.png" alt="Link available" style="height:24px;width:24px;border-width:0px;" />
+                                    
+                                    <a id="ctl00_ctl00_PageBody_Body_SessionStuff_i0_SessionContentList_ctrl0_SessionLink" href="http://rpubs.com/stephlocke/sqlbits">Slide Deck</a>
+                                    <span id="ctl00_ctl00_PageBody_Body_SessionStuff_i0_SessionContentList_ctrl0_ContentText"></span>
+                                </div>
+                            
+                                <div class="item left pad_all">
+                                    
+                                    
+                                    <img id="ctl00_ctl00_PageBody_Body_SessionStuff_i0_SessionContentList_ctrl1_OtherSample" title="Samples available" src="../../images/icons/24/blueprint.png" alt="Samples available" style="height:24px;width:24px;border-width:0px;" />
+                                    
+                                    
+                                    
+                                    <a id="ctl00_ctl00_PageBody_Body_SessionStuff_i0_SessionContentList_ctrl1_SessionLink" href="../../Downloads/463/Rintro-master.zip">Demo Code</a>
+                                    <span id="ctl00_ctl00_PageBody_Body_SessionStuff_i0_SessionContentList_ctrl1_ContentText">782 KB</span>
+                                </div>
+                            
+                                <div class="item left pad_all">
+                                    
+                                    
+                                    
+                                    <img id="ctl00_ctl00_PageBody_Body_SessionStuff_i0_SessionContentList_ctrl2_Video" title="Video available" src="../../images/icons/24/video-clapper.png" alt="Video available" style="height:24px;width:24px;border-width:0px;" />
+                                    
+                                    
+                                    <a id="ctl00_ctl00_PageBody_Body_SessionStuff_i0_SessionContentList_ctrl2_SessionLink" href="http://files.sqlbits.com/event12/Intro_to_R/Intro_to_R.mp4">MP4 Video HD</a>
+                                    <span id="ctl00_ctl00_PageBody_Body_SessionStuff_i0_SessionContentList_ctrl2_ContentText">540 MB</span>
+                                </div>
+                            
+                                </div>
+                            
+                    
+			</div>
+		</div></li><li class="rpItem"><a href="#" class="rpLink rpExpandable"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText">SpeakerBIO</span></span></a><div class="rpSlide">
+			<div class="rpTemplate">
+				
+                        
+
+<div class="right pad_left"><div id="ctl00_ctl00_PageBody_Body_SessionStuff_i1_SpeakerDetails_SpeakerPhoto_PhotoDiv" style="height:160px;width:120px;position: relative; display: block; ">
+					
+    <div style="text-align: center;overflow:hidden">
+        <div id="ctl00_ctl00_PageBody_Body_SessionStuff_i1_SpeakerDetails_SpeakerPhoto_PhotoImageDiv" style="height:160px;width:120px;">
+						
+            <a id="ctl00_ctl00_PageBody_Body_SessionStuff_i1_SpeakerDetails_SpeakerPhoto_PhotoLink" href="../../Gallery/Images/SpeakerPhotos/Stephanie_Locke.png" target="photo"><img id="ctl00_ctl00_PageBody_Body_SessionStuff_i1_SpeakerDetails_SpeakerPhoto_PhotoImage" Name="LogoImage2414" src="../../Gallery/Images/SpeakerPhotos/thumbs/120_160/Stephanie_Locke.png" alt="Stephanie_Locke.png" align="top" style="border-width:0px;display:block;height:160px;" /></a>
+        
+					</div>
+     
+    </div>
+
+				</div>
+</div>
+
+<div id="ctl00_ctl00_PageBody_Body_SessionStuff_i1_SpeakerDetails_TitlePanel">
+					
+    <h1><a href='http://sqlbits.com/Speakers/Stephanie_Locke'>Stephanie Locke</a></h1>
+
+				</div>
+
+<div>Steph Locke (@SteffLocke) does a lot of stuff in BI, from building snazzy Azure 6NF data warehouses to developing R web services. On top of the cool day job, she organises user groups &amp; SQLRelay, speaks at events, and runs a boardgame company.</div>
+
+<div class="right">
+    <a id="ctl00_ctl00_PageBody_Body_SessionStuff_i1_SpeakerDetails_SpeakerLink" href="http://steff.itsalocke.com"><img id="ctl00_ctl00_PageBody_Body_SessionStuff_i1_SpeakerDetails_SpeakerLinkIcon" src="../../images/icons/24/link.png" alt="http://steff.itsalocke.com" style="height:24px;width:24px;border-width:0px;" /></a>
+    <a id="ctl00_ctl00_PageBody_Body_SessionStuff_i1_SpeakerDetails_RssLink" href="http://itsalocke.com/index.php/feed/"><img id="ctl00_ctl00_PageBody_Body_SessionStuff_i1_SpeakerDetails_RssLinkIcon" src="../../images/icons/24/rss.png" alt="http://itsalocke.com/index.php/feed/" style="height:24px;width:24px;border-width:0px;" /></a>
+</div>
+                    
+			</div>
+		</div></li><li class="rpItem rpLast"><a href="#" class="rpLink rpExpandable rpExpanded"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText">Video</span></span></a><div class="rpSlide" style="display:block;">
+			<div class="rpTemplate">
+				
+                        
+ <div id="ctl00_ctl00_PageBody_Body_SessionStuff_i2_SessionVideo_VideoPanelMP4">
+					
+
+    <video width="640" height="363" controls="controls" poster="http://sqlbits.com/information/Agenda/VideoImage.ashx?SessionId=4209&Regenerate=0">
+        <source src="http://files.sqlbits.com/event12/Intro_to_R/Intro_to_R.mp4" type="video/mp4"></source>
+        Your browser does not support HTML5 and the Video tag. Please use the download links above.
+    </video>
+
+				</div>
+ 
+                    
+			</div>
+		</div></li>
+	</ul><input id="ctl00_ctl00_PageBody_Body_SessionStuff_ClientState" name="ctl00_ctl00_PageBody_Body_SessionStuff_ClientState" type="hidden" />
+</div>
+    </div>
+
+            </div>
+            <div class="Footer"></div>
+        </div>
+    </div>
+
+
+
+
+            <!-- #EndEditable PageBody-->
+            <!-- Begin footer -->
+        </div>
+        <!-- End Footer -->
+    </div>
+    <!-- End PageDiv -->
+    
+    
+    
+    
+    
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_ctl00_LeftMenu_Data = new Object();
+ctl00_ctl00_LeftMenu_Data.disappearAfter = 500;
+ctl00_ctl00_LeftMenu_Data.horizontalOffset = 0;
+ctl00_ctl00_LeftMenu_Data.verticalOffset = 0;
+ctl00_ctl00_LeftMenu_Data.hoverClass = 'menuHover';
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAjaxManager, {"_updatePanels":"","ajaxSettings":[],"clientEvents":{OnRequestStart:"",OnResponseEnd:""},"defaultLoadingPanelID":"","enableAJAX":true,"enableHistory":false,"links":[],"styles":[],"uniqueID":"ctl00$ctl00$RadAjaxManager1","updatePanelsRenderMode":0}, null, null, $get("ctl00_ctl00_RadAjaxManager1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadRotator, {"_itemHeight":"55px","_itemWidth":"250px","clientStateFieldID":"ctl00_ctl00_PlatinumSponsors_SponsorBanner_ClientState","enableRandomOrder":true,"frameDuration":4000,"items":[{},{},{}],"scrollDirection":4,"skin":"Vista"}, null, null, $get("ctl00_ctl00_PlatinumSponsors_SponsorBanner"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadRotator, {"_itemHeight":"60px","_itemWidth":"160px","clientStateFieldID":"ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner_ClientState","frameDuration":4000,"items":[{},{},{},{},{},{},{},{}],"scrollDirection":4,"skin":"Vista"}, null, null, $get("ctl00_ctl00_PageBody_SponsorLogoList_ctrl0_SponsorLogos_SponsorBanner"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadRotator, {"_itemHeight":"60px","_itemWidth":"160px","clientStateFieldID":"ctl00_ctl00_PageBody_SponsorLogoList_ctrl1_SponsorLogos_SponsorBanner_ClientState","frameDuration":4000,"items":[{},{}],"scrollDirection":4,"skin":"Vista"}, null, null, $get("ctl00_ctl00_PageBody_SponsorLogoList_ctrl1_SponsorLogos_SponsorBanner"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadRotator, {"_itemHeight":"55px","_itemWidth":"160px","clientStateFieldID":"ctl00_ctl00_PageBody_Bronze_SponsorBanner_ClientState","frameDuration":4000,"items":[{}],"scrollDirection":4,"skin":"Vista"}, null, null, $get("ctl00_ctl00_PageBody_Bronze_SponsorBanner"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadPanelBar, {"_skin":"Vista","clientStateFieldID":"ctl00_ctl00_PageBody_Body_SessionStuff_ClientState","collapseAnimation":"{\"duration\":450}","expandAnimation":"{\"duration\":450}","itemData":[{"text":"Downloads","expanded":true,"templated":true,"hasContentTemplate":true},{"text":"SpeakerBIO","templated":true,"hasContentTemplate":true},{"text":"Video","expanded":true,"templated":true,"hasContentTemplate":true}]}, null, null, $get("ctl00_ctl00_PageBody_Body_SessionStuff"));
+});
+//]]>
+</script>
+</form>
+</body>
+<!--[if lt IE 7]>
+<script defer type="text/javascript" >
+
+var arVersion = navigator.appVersion.split("MSIE")
+var version = parseFloat(arVersion[1])
+
+if ((version >= 5.5) && (document.body.filters)) 
+{
+   for(var i=0; i<document.images.length; i++)
+   {
+      var img = document.images[i]
+      var imgName = img.src.toUpperCase()
+      if (imgName.substring(imgName.length-3, imgName.length) == "PNG")
+      {
+         var imgID = (img.id) ? "id='" + img.id + "' " : ""
+         var imgClass = (img.className) ? "class='" + img.className + "' " : ""
+         var imgTitle = (img.title) ? "title='" + img.title + "' " : "title='" + img.alt + "' "
+         var imgStyle = "display:inline-block;" + img.style.cssText 
+         if (img.align == "left") imgStyle = "float:left;" + imgStyle
+         if (img.align == "right") imgStyle = "float:right;" + imgStyle
+         if (img.parentElement.href) imgStyle = "cursor:hand;" + imgStyle
+         var strNewHTML = "<span " + imgID + imgClass + imgTitle
+         + " style=\"" + "width:" + img.width + "px; height:" + img.height + "px;" + imgStyle + ";"
+         + "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader"
+         + "(src=\'" + img.src + "\', sizingMethod='scale');\"></span>" 
+         img.outerHTML = strNewHTML
+         i = i-1
+      }
+   }
+}
+</script>
+<![endif]-->
+</html>

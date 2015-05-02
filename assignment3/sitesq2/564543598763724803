@@ -1,0 +1,1806 @@
+
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"><!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>BuddyBounce</title>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<meta name="viewport" content="width=device-width"/>
+
+
+  <meta name="description" content="The new way for you to discover, share and be rewarded for supporting your favourite artists! Fun, smart and really addictive - ready?"/>
+  <meta name="keywords" content="music, fan, fan club, social, news, artists, heartbeat, bounces, buddy, buddybounce, rewards, competitions, win tickets, meet&amp;greet, video chat, believer, maniacs, directioners, passion, support"/>
+  <meta property="og:image" content="https://www.buddybounce.com/assets/FBimageBIG-88e58d2a79c55efa2502fe93e8ca3829.png"/>
+  <meta property="og:url" content="https://www.buddybounce.com/buddybounce/rewards/205"/>
+  <meta property="og:title" content="Buddybounce"/>
+  <meta property="og:description" content="The new way for you to discover, share and be rewarded for supporting your favourite artists! Fun, smart and really addictive - ready?"/>
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<link rel="apple-touch-icon" href="/assets/touchIcon/AppIcon60x60-cbdd3e76e385f897d9f023fac7e8205b.png"/>
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/touchIcon/AppIcon76x76-0ab8243d7feac3da5ae1291d850de7f4.png"/>
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/touchIcon/AppIcon120x120-9f2407974746054858ecbedff6b1576c.png"/>
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/touchIcon/AppIcon152x152-04ac681bd5911366d6aa4bfca1dde33c.png"/>
+<link rel="apple-touch-icon" sizes="512x512" href="/assets/touchIcon/AppIcon512x512-df99f2ff6f1067a29397b558e1b1d045.png"/>
+<link rel="apple-touch-icon" sizes="1024x1024" href="/assets/touchIcon/AppIcon1024x1024-81f630296008d2bb55cee6d58c509d52.png"/>
+<link rel="shortcut icon" type="image/x-icon" href="/assets/BB_favicon-a8011992a3edfc8c04dc4e7047a0db11.ico"/>
+
+<script src="/assets/jquery/jquery-1.7.2.min-e77c49b906f3b3048ef4a27d406b0823.js" type="text/javascript" ></script>
+
+<link rel="stylesheet" href="/assets/main-cb25a78803f5b9fb07bac05cbe363cc4.css"/>
+<script src="/assets/add2home-c16c6bcf27f41ec1f5bc752273e11ed0.js" type="text/javascript" ></script>
+
+<script src="/assets/main-e1a8225aba56bae8e3ec21b656d35831.js" type="text/javascript" ></script>
+
+<script type='text/javascript'>
+  window.App = {
+      mobile: function () {
+        var constants = {
+          maxWidth: 750,
+          addToHomeConfig:{
+            autostart: false,			// Automatically open the balloon
+            returningVisitor: true,	// Show the balloon to returning visitors only (setting this to true is highly recommended)
+            animationIn: 'drop',		// drop || bubble || fade
+            animationOut: 'fade',		// drop || bubble || fade
+            startDelay: 2000,			// 2 seconds from page load before the balloon appears
+            lifespan: 15000,			// 15 seconds before it is automatically destroyed
+            bottomOffset: 31,			// Distance of the balloon from bottom
+            expire: 0,					// Minutes to wait before showing the popup again (0 = always displayed)
+            message: 'Install this web app on your %device- <strong>Tap</strong> %icon and then<br/><strong class="isAddToHome">Add to Home Screen.</strong>',				// Customize your message or force a language ('' = automatic)
+            touchIcon: false,			// Display the touch icon
+            arrow: true,				// Display the balloon arrow
+            hookOnLoad: true,			// Should we hook to onload event? (really advanced usage)
+            closeButton: true,			// Let the user close the balloon
+            iterations: 100,				// Internal/debug use
+            maxDisplayCount: 1
+          }
+        };
+
+        return {
+          isMobile: function () {
+            return ($(document).width() < 750);
+          },
+          getMaxWidth: function () {
+            return constants.maxWidth;
+          },
+          ifLoggedIn: function () {
+            var ifLoggedIn = false;
+            
+            return ifLoggedIn;
+          },
+          ifWebBrowser: function () {
+            return !this.ifMobile();
+          },
+          ifMobile:function(){
+            var ifMobile = false;
+            
+            return ifMobile;
+          },
+          isAddToHome: function () {
+            var autostart = false;
+            if (window.localStorage.getItem('isAddToHome') !== '1') {
+              autostart = true;
+            }
+            return autostart;
+          },
+          setLocalStorage: function (e) {
+            window.localStorage.setItem('isAddToHome', 1);
+          },
+          getConfigAddToHome: function () {
+            constants.addToHomeConfig.autostart = this.ifLoggedIn() ? this.ifMobile() && this.isAddToHome() : false;
+            return constants.addToHomeConfig;
+          }
+        }
+      }()
+    };
+    //custom settings addToHome.js
+  window.addToHomeConfig = App.mobile.getConfigAddToHome();
+
+</script>
+
+
+<script type='text/javascript'>
+  
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-19700169-1', 'buddybounce.com');
+    ga('send', 'pageview');
+  
+</script>
+
+
+
+
+    <link rel="stylesheet" href="/assets/layout_actor-da59607127b1fa3fddd66ab7d3d753ff.css"/>
+    <script src="/assets/jquery/plugins/jquery.scrollExtend-99c30f2401dd3a63cbf023c84e9153d9.js" type="text/javascript" ></script>
+    
+  <meta name="layout" content="actor"/>
+  
+  
+<meta name="keywords" content=""/>
+
+
+  
+    
+  
+  
+    
+      <meta property="og:image" content="https://bbdashboard.s3.amazonaws.com/Reward/BB_Austin_1422973075758.jpg"/>
+    
+    <meta property="og:description" content="Check out @BuddyBounce’s #AustinMahoneBB competition on @buddybounce and get your chance to WIN!"/>
+  
+
+  <link rel="stylesheet" href="/assets/rewards-74451202d673198c23a14e75f02a1aa0.css"/>
+<link rel="stylesheet" href="/assets/post-f76d44492c72e619932c5e5922b94997.css"/>
+<script src="/assets/jquery.countdown-e6f43ee56e92485d744a6533106f30e5.js" type="text/javascript" ></script>
+<script src="/assets/jquery.isotope.min-3b55356ba6dda1e79eded45d5c87c0d4.js" type="text/javascript" ></script>
+
+  
+
+
+  
+
+  
+</head>
+
+<body>
+<div class="container">
+  
+
+
+<div id="getsat-widget-3976" xmlns="http://www.w3.org/1999/html"></div>
+
+
+
+
+  
+
+
+    
+
+<div id="cookieDisclaimer" style="display: none;">
+  <div class="main_container">
+    <span>We use cookies to provide you with the best online experience. By browsing the site, you're agreeing to our <a href="https://www.buddybounce.com/info/privacy#cookies" class="pink_link">cookie policy</a></span>
+    <a id="closeCookieDisclaimer" href="javascript:void(0)"><img src="/assets/close-33a0daf040c86224716fc3174c3e46e0.svg" /></a>
+  </div>
+</div>
+<header class="white_header main_header">
+
+  <div id="header_content">
+
+    <div class="portal_logo">
+      <a href="/">
+        
+          
+            
+              <img src="/assets/logo_big_black-730d51eae6ed0cce5f7b00bd794756f6.svg" class="non_mobile_element not_log_in"/>
+            
+          
+          
+        
+
+        
+      </a>
+    </div>
+  
+    <nav>
+      <ul class="user_menu">
+      <li class="find_actor_menu_item">
+        
+          <div class="search_input_container element non_mobile_element">
+            <input type="text" name="actorName" autocomplete="off" class="actor_name actor_home_page" value="" placeholder="Buddybounce" id="actorName" />
+
+            <div class="search_icon_container element">
+              <img src="/assets/ICN_Search20x20-5b83a13f8672fda84f7eb7f8aa4f844a.svg" />
+            </div>
+          </div>
+        
+
+        <ul id="searchActorList">
+
+        </ul>
+
+      </li>
+      <li class="user_menu_list non_mobile_element not_log_in">
+        
+          <ul>
+            <li>
+              <a href="/home" page="home">
+                HOME
+              </a>
+            </li>
+            <li class="space_in_list"></li>
+            <li>
+              <a href="/artist/findArtist" page="discover">
+                DISCOVER
+              </a>
+            </li>
+            <li class="space_in_list"></li>
+            <li>
+              <a href="/info/about" page="about">
+                ABOUT</a>
+            </li>
+            <li class="space_in_list"></li>
+            <li>
+              <a href="/ambassador/buddyAmbassadors" page="ambassador">AMBASSADORS</a>
+            </li>
+          </ul>
+        
+      </li>
+
+      
+          <li class="menu_right_panel">
+            <a href="javascript:void(0)" class="button_small_green login_button" id="login_style_button">
+              Login
+            </a>
+            <div class="singin_box">
+              <ul>
+                <li class="box_elem">
+
+                  <a href="/oauthSpringSocialProviderSignIn/signin?redirectUrl=https%3A%2F%2Fwww.buddybounce.com%2Fbuddybounce%2Frewards%2F205&providerId=facebook&scope=user_likes%2Cuser_location%2Cemail%2Coffline_access%2Cuser_birthday%2Cuser_checkins%2Cuser_groups%2Cuser_actions.music%2Cuser_status%2Cmanage_pages%2Cread_stream%2Cstatus_update" id="login_facebook">
+                    <img src="/assets/singin_buttn/small/BTN_Login_FB-Small-5c6a23a7b7c77c19abe9ec354d7a4adf.svg" class="signin_image"/>
+                  </a>
+                </li>
+                <li class="box_elem">
+                  <a href="/oauthSpringSocialProviderSignIn/signin?redirectUrl=https%3A%2F%2Fwww.buddybounce.com%2Fbuddybounce%2Frewards%2F205&providerId=twitter" id="login_twitter">
+                    <img src="/assets/singin_buttn/small/BTN_Login_TW-Small-aec9aabffc69b08bd1c96f7df2619daf.svg" class="signin_image"/>
+                   </a>
+                </li>
+                <li class="box_elem">
+                  <a href="/login/auth?fromHeader=true" class="sign-up-email">
+                    or sign in with email
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        
+        
+      </ul>
+    </nav>
+    <div class="header_overlay"></div>
+  
+  </div>
+
+</header>
+<div class="fix_float"></div>
+
+
+
+
+
+  
+  
+  
+    
+  
+  <section class="content ">
+    
+      <div class="margin_top_40 float_left"></div>
+
+      <div class="fix_float"></div>
+    
+
+    <div id="overlayContainer"></div>
+    <div id="firstTimeOverlayContainer"></div>
+
+    <div id="postContainer"></div>
+    
+    <div id="messageContainer"></div>
+
+    
+    
+
+<div class="reward_page">
+  <div>
+    
+
+
+
+
+
+<div class="actor_actions full_width">
+  <div class="actor_menu_overlay jqmOverlay"></div>
+  
+
+
+
+
+
+  
+
+<ul class="actor_menu ">
+  <li id="activities" class="actor_journey">
+    <a href="/Buddybounce" class="">
+      <div class="mobile_element actor_menu_icon">
+        <img src="/assets/actor/feeds-337ddafd02663b6b3b60b5c521b6c0b7.svg" />
+      </div>
+      <span class="non_mobile_element">Activities</span>
+      <span class="mobile_element">Feeds</span>
+    </a>
+
+    <div id="actorJourneyActivitiesOverlay" class="jqmWindow actor_journey_dialog actor_journey_item">
+      <div class="text_holder">
+        <b>This is the fan wall.</b><br/>Here you can find all posts fans share across social media sites.
+      </div>
+      <div class="dialog_footer">
+        <div class="steps_holder journey_step">
+          <div class="step on"></div>
+          <div class="step"></div>
+          <div class="step"></div>
+          <div class="step non_mobile_element"></div>
+        </div>
+        <div class="close_button journey_step">
+          <span class="text-fixed">
+            Next
+          </span>
+        </div>
+      </div>
+    </div>
+  </li>
+  
+    
+    
+      <li class="disabled_item">
+        <a href="javascript:void(0)">
+          <div class="mobile_element actor_menu_icon">
+            <img src="/assets/actor/fans-d17492b4567aa1d8884d1ef70e84f695.svg" />
+          </div>
+          Fans
+        </a>
+      </li>
+    
+
+  
+
+  <li id="rewards" class="actor_journey">
+    <a href="/Buddybounce/rewards" class="active">
+      <div class="mobile_element actor_menu_icon">
+        <img src="/assets/actor/rewards-2eb4e291eaab9c951713317d43c29b8e.svg" />
+      </div>
+      <span class="actor_menu_item_text">Rewards</span>
+    </a>
+    <div id="actorJourneyRewardsOverlay" class="jqmWindow actor_journey_dialog actor_journey_item">
+      <div class="text_holder">
+        <b>Get rewarded</b><br/>If your artist joins BuddyBounce, you will get the chance to win rewards.
+      </div>
+      <div class="dialog_footer">
+        <div class="steps_holder journey_step">
+          <div class="step on"></div>
+          <div class="step on"></div>
+          <div class="step on"></div>
+          <div class="step on non_mobile_element"></div>
+        </div>
+        <div class="close_button journey_step">
+          <span class="text-fixed">
+            Done
+          </span>
+        </div>
+      </div>
+    </div>
+  </li>
+  
+  
+    <li class="disabled_item">
+      <a href="javascript:void(0)">
+        <div class="mobile_element actor_menu_icon">
+          <img src="/assets/actor/score-b2abd04075c9105a10ed647e3d458056.svg" />
+        </div>
+        My Score
+      </a>
+    </li>
+  
+</ul>
+</div>
+
+
+
+
+
+
+  </div>
+  <div class="fix_float"></div>
+
+  <div class="main_container">
+    <div class="reward_container">
+
+      
+        <div class="non_mobile_element">
+          
+          <div class="current_reward_header">
+            <div>
+              
+                Win a copy of Austin Mahone's book
+              
+            </div>
+            
+          </div>
+          
+
+<div class="reward">
+  
+    <div class="current_reward_left_container">
+      
+        <a href="/Buddybounce/rewards/205">
+          <div class="actor_image_overlay actor_image_overlay__primary"></div>
+          <div class="actor_image_overlay actor_image_overlay__secondary"></div>
+          <img class="lazy" src="" data-original="https://bbsite.s3.amazonaws.com/Reward/BB_Austin_1422973075758_490x363_1422973068403.jpg"/>
+        </a>
+      
+      
+    </div>
+  
+  <div class="reward_right_container">
+    
+
+    <div class="reward_description">
+      
+        Austin Mahone recently released his first book 'Just How It Happened' and guess what? We have 10 copies to giveaway! Want one? Keep reading to find out how to win... 
+      
+    </div>
+
+    <div class="fix_float"></div>
+
+    
+
+    
+      <div class="reward_info">
+        <div class="reward_info_date">
+          <div class="date_label">
+            Start date&nbsp;
+          </div>
+
+          <div class='reward_date'>
+             
+               03.02.2015, 06PM&nbsp;GMT+00:00
+             
+          </div>
+        </div>
+
+        <div class="fix_float"></div>
+        
+          <div class="reward_info_date">
+            <div class="date_label">
+              End date&nbsp;
+            </div>
+
+            <div class='reward_date'>
+              10.02.2015, 06PM&nbsp;GMT+00:00
+            </div>
+          </div>
+
+          <div class="fix_float"></div>
+        
+
+        <div class="reward_restriction_header">Restriction</div>
+
+        <div class="reward_info_restrictions">
+          <span>Minimum age:</span>&nbsp;13
+        </div>
+
+        <div class="fix_float"></div>
+        
+          <div class="reward_info_restrictions">
+            <span>Country:</span>
+            
+              GB
+            
+          </div>
+        
+      </div>
+    
+  </div>
+
+</div>
+<div class="fix_float mobile_element"></div>
+
+
+          
+<div class="reward_menu ">
+  <ul>
+    <li class='active '>
+      <a href="/Buddybounce/rewards/205" class="active ">
+        General rules
+      </a>
+    </li>
+    
+      <li class=''>
+        <a href="/Buddybounce/rewards/205?terms=true" class="">
+          Terms & Conditions
+        </a>
+      </li>
+    
+    
+      <li class=''>
+        <a href="/Buddybounce/rewards/205?winners=true" class="">
+          Winners
+        </a>
+      </li>
+    
+    
+  </ul>
+</div>
+        </div>
+      
+      <div class="mobile_element">
+        
+          <div class="current_reward_header">
+            <div>Win a copy of Austin Mahone's book</div>
+            <a href="javascript:void(0)" class="share_reward non_mobile_element">Share</a>
+          </div>
+          
+
+<div class="reward">
+  
+    <div class="current_reward_left_container">
+      
+        <a href="/Buddybounce/rewards/205">
+          <div class="actor_image_overlay actor_image_overlay__primary"></div>
+          <div class="actor_image_overlay actor_image_overlay__secondary"></div>
+          <img class="lazy" src="" data-original="https://bbsite.s3.amazonaws.com/Reward/BB_Austin_1422973075758_490x363_1422973068403.jpg"/>
+        </a>
+      
+      
+    </div>
+  
+  <div class="reward_right_container">
+    
+
+    <div class="reward_description">
+      
+        Austin Mahone recently released his first book 'Just How It Happened' and guess what? We have 10 copies to giveaway! Want one? Keep reading to find out how to win... 
+      
+    </div>
+
+    <div class="fix_float"></div>
+
+    
+
+    
+      <div class="reward_info">
+        <div class="reward_info_date">
+          <div class="date_label">
+            Start date&nbsp;
+          </div>
+
+          <div class='reward_date'>
+             
+               03.02.2015, 06PM&nbsp;GMT+00:00
+             
+          </div>
+        </div>
+
+        <div class="fix_float"></div>
+        
+          <div class="reward_info_date">
+            <div class="date_label">
+              End date&nbsp;
+            </div>
+
+            <div class='reward_date'>
+              10.02.2015, 06PM&nbsp;GMT+00:00
+            </div>
+          </div>
+
+          <div class="fix_float"></div>
+        
+
+        <div class="reward_restriction_header">Restriction</div>
+
+        <div class="reward_info_restrictions">
+          <span>Minimum age:</span>&nbsp;13
+        </div>
+
+        <div class="fix_float"></div>
+        
+          <div class="reward_info_restrictions">
+            <span>Country:</span>
+            
+              GB
+            
+          </div>
+        
+      </div>
+    
+  </div>
+
+</div>
+<div class="fix_float mobile_element"></div>
+
+
+        
+        
+<div class="reward_menu ">
+  <ul>
+    <li class='active '>
+      <a href="/Buddybounce/rewards/205" class="active ">
+        General rules
+      </a>
+    </li>
+    
+      <li class=''>
+        <a href="/Buddybounce/rewards/205?terms=true" class="">
+          Terms & Conditions
+        </a>
+      </li>
+    
+    
+      <li class=''>
+        <a href="/Buddybounce/rewards/205?winners=true" class="">
+          Winners
+        </a>
+      </li>
+    
+    
+  </ul>
+</div>
+      </div>
+
+      <div class="fix_float"></div>
+
+      
+
+        <div>
+         
+
+
+<div class="join_reward disabled">
+  
+    <div class="prizes_container">
+      
+      
+        <div class="prize_container">
+          
+
+          <div class="prize_overlay">
+            <span>
+              
+                1<sup>st</sup>
+              
+              &nbsp;prize
+              
+                &nbsp;(10x)
+              <br/>
+            </span>
+            a copy of Austin Mahone's book
+          </div>
+        </div>
+      
+    </div>
+    <div class="fix_float"></div>
+    <div class="prize_line"></div>
+  
+  
+</div>
+
+
+  <div class="join_reward not-logged-in">
+    <a href="javascript:void(0)" id='joinButton' class="button_small_green">
+      
+        JOIN REWARD
+      
+    </a>
+  </div>
+
+
+<script type="text/javascript">
+    $(function() {
+      
+ })
+
+  
+  $('.join_reward.not-logged-in #joinButton').click(function(){
+    $.post('/info/mixPanelStatistic',
+        {type:"Click Join button",
+          name:"first_visit_reward_join_not_logged",
+          page:"rewards"});
+  })
+  
+</script>
+        </div>
+
+      
+
+      <div class="fix_float"></div>
+
+    </div>
+  </div>
+</div>
+
+
+  
+  </section>
+
+  
+
+
+<footer class="">
+  <div class="footer_content main_container ">
+    <div class="footer-col">
+      <div class="footer-col-header">Stay in touch</div>
+      <a href="https://twitter.com/buddybounce" target="_blank">
+        Twitter
+      </a>
+      <a href="https://www.facebook.com/BuddyBouncePage" target="_blank">
+        Facebook
+      </a>
+      <a href="http://blog.buddybounce.com/" target="_blank">
+        Tumblr
+      </a>
+      <a href="https://www.google.com/+Buddybounce" target="_blank">
+        Google
+      </a>
+      <a href="http://www.youtube.com/user/BuddyBounceTV" target="_blank">
+        Youtube
+      </a>
+      <a href="https://mixpanel.com/f/partner"><img src="//cdn.mxpnl.com/site_media/images/partner/badge_light.png" alt="Mobile Analytics" /></a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-header">Discover more</div>
+      <a href="/info/about">About</a>
+      <a href="/ambassador/buddyAmbassadors">Ambassadors</a>
+      <a href="http://blog.buddybounce.com/" target="_blank">
+        Blog
+      </a>
+      <a href="/info/privacy">Privacy</a>
+      <a href="/info/terms">Terms</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-header">Need help?</div>
+      <a href="/info/battleOfTheBands">Battle Of The Bands</a>
+
+      <a href="https://buddybounce.uservoice.com/">
+        Help
+      </a>
+      <a href="/info/contact">Contact Us</a>
+      <div class="non_mobile_element"><br><br></div>
+      <a href="http://buddybounce.polldaddy.com/s/welcome-to-new-buddybounce" target="_blank">
+        Take our survey
+      </a>
+    </div>
+
+     <div class="copyright">
+      &copy; 2014 Buddy Bounce Ltd. All rights reserved. All material on this site is &copy; Buddy Bounce
+    </div>
+  </div>
+  
+    <div class="pd-embed" id="pd1392723306306"></div>
+    <script type="text/javascript">
+        var _polldaddy = [] || _polldaddy;
+
+        _polldaddy.push( {
+            title: 'Take Our Survey!',
+            type: 'banner',
+            style: 'corner',
+            align: 'bottom-left',
+            text_color: 'FFFFFF',
+            back_color: '000000',
+            domain: 'buddybounce.polldaddy.com/s/',
+            id: 'welcome-to-new-buddybounce',
+            placeholder: 'pd1392723306306'
+        } );
+
+        (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/survey.js':'http://i0.poll.fm/survey.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-embed'));
+    </script>
+    <noscript><a href="http://buddybounce.polldaddy.com/s/welcome-to-new-buddybounce" target="_blank">Take Our Survey!</a></noscript>
+  
+
+</footer>
+</div>
+
+
+</body>
+<script type="text/javascript">
+
+  var selectedPostIndex = 0;
+  var  postId=0;
+  
+
+  jQuery('.like_grey_icon').live("click", function () {
+      var parent = jQuery(this).parents('.post');
+      postId = parent.attr('postId');
+      if (postId && jQuery(this).hasClass('loggined')) {
+        jQuery.ajax({url:"/actor/likePost",
+          type:"POST",
+          data:{postId:postId},
+          success:function (responseJSON) {
+              if (!responseJSON.isUserFanOfActor) {
+                  if (true) {
+                      History.pushState({postId: postId, actorId: '8'}, document.title, '?actorId=' + '8');
+                  } else {
+                      History.pushState({postId: postId}, document.title, '?postId=' + postId);
+                  }
+                  location.hash = "#join";
+              } else {
+                  var postBeat = (parseInt(responseJSON.postBeat) !== 0) ? responseJSON.postBeat : "";
+                  if (postBeat > 0) {
+                    
+                      jQuery(".post[postId=" + postId + "]").find('.like_icon span').text(postBeat + " Like");
+                    
+                    
+                  } else {
+                    jQuery(".post[postId=" + postId + "]").find('.like_icon span').text(postBeat);
+                  }
+                  jQuery(".post[postId=" + postId + "]").find('.like_grey_icon').toggleClass('selected');
+              }
+          }
+        });
+      }
+  });
+
+  jQuery(document).on("click",".post .report_icon",function() {
+      var parent = jQuery(this).parents('.post');
+      if (jQuery(this).hasClass('loggined')) {
+          postId = parent.attr('postId');
+          if (true) {
+              History.pushState({postId: postId, actorId: '8'}, document.title, '?actorId=' + '8');
+              location.hash = "#join";
+          } else {
+              History.pushState({postId: postId}, document.title, '?postId=' + postId);
+              location.hash = "#report";
+          }
+      }
+  });
+
+  window.updatedBounceSize = function (postId,postBounce){
+    var postBounce = (parseInt(postBounce) !== 0) ? postBounce : "";
+       
+       
+         $('#post_'+postId).find('.bounce_icon span').text(postBounce + " Bounce");
+       
+  };
+
+  jQuery(".bounce_grey_icon").live("click", function() {
+     if (jQuery(this).hasClass('disabled')) {
+        return false;
+     }
+
+      var parent = jQuery(this).parents('.post');
+      if (jQuery(this).hasClass('loggined')) {
+        postId = parent.attr('postId');
+        History.pushState({postId: postId}, document.title, '?postId=' + postId+'&callback='+'updatedBounceSize');
+        location.hash = "#bounce";
+      }
+  });
+
+  window.openPostOverlay = function openPostOverlay(postId) {
+      var historyId = History.getState().id;
+      if (jQuery('.post .mobile_post').is(":visible")) {
+          document.location = "/actor/updatePostOverlay?postId=" + postId + "&historyId=" + historyId + "&mobile=true" + '';
+      } else {
+          History.pushState({postId: postId, historyId: historyId}, document.title, '?postId=' + postId);
+          location.href = '#activity'
+      }
+  }
+
+  jQuery(".open_post_overlay, .video").live('click', function () {
+      var postId = jQuery(this).parents('.post').attr('postId');
+      if (!postId) {
+        postId = jQuery(this).attr('postId')
+      }
+      openPostOverlay(postId);
+  });
+
+  jQuery(".actor_reward_badge").live('click', function () {
+      var container = jQuery(this);
+      var badgeId = container.find('.open_badge_page').attr('badgeId');
+      var postId = container.find('.open_badge_page').attr('postId');
+      if (container.find('.open_badge_page').is(":visible")) {
+          document.location = "/actor/showFanBadge?badgeId=" + badgeId + "&postId=" + postId;
+      }
+  });
+
+  jQuery(".open_post_overlay a[target]").live('click', function (event) {
+      event.stopPropagation();
+  });
+
+
+  jQuery('.video_play_icon').live('click', function () {
+     jQuery(this).siblings('.video').find('.video_holder').show();
+     jQuery(this).hide();
+  });
+
+  jQuery('.show_skip_report_overlay').live('click', function() {
+     var arrow = jQuery(this).siblings('.skip_report_arrow');
+     var overlay = jQuery(this).siblings('.skip_report_overlay');
+     if (arrow.is(':visible')) {
+        arrow.hide();
+        overlay.hide();
+     } else {
+        overlay.show();
+        arrow.show();
+     }
+  });
+
+  jQuery('.show_fan_liked_overlay').live('click', function (){
+     var postId = jQuery(this).attr('postId');
+      if (postId == null) {
+         postId = jQuery(this).parents('.post').attr('postId');
+      }
+
+     
+           jQuery.ajax({type:'POST',data:{isFansLiked:true,postId:postId}, url:'/actor/showFansBounceOverlay',success:function(data,textStatus){jQuery('#overlayContainer').html(data);},error:function(XMLHttpRequest,textStatus,errorThrown){}});
+     
+
+     
+  });
+
+   jQuery('.show_fan_bounced_overlay').live('click', function (){
+      var postId = jQuery(this).attr('postId');
+      if (postId == null) {
+         postId = jQuery(this).parents('.post').attr('postId');
+      }
+
+  
+      jQuery.ajax({type:'POST',data:'postId=' + postId, url:'/actor/showFansBounceOverlay',success:function(data,textStatus){jQuery('#overlayContainer').html(data);},error:function(XMLHttpRequest,textStatus,errorThrown){}});
+  
+
+  
+
+  });
+
+   jQuery('.showSkipOverlay').live('click', function () {
+       var postId = jQuery(this).attr('id') ;
+      jQuery.ajax({type:'POST',data:'id=' + postId + '&backUrl=' + '', url:'/actor/skipPostOverlay',success:function(data,textStatus){jQuery('#overlayContainer').html(data);},error:function(XMLHttpRequest,textStatus,errorThrown){}});
+  })
+
+  jQuery('.comment_action_icon').live('click', function () {
+     var postId = jQuery(this).parents('.post').attr('postId');
+     if (jQuery('.mobile_post_container').is(':visible')) {
+        postId = jQuery(this).parents('.mobile_post_container').attr('postId');
+     }
+     var commentsContainer = jQuery(".post-comments[postId='" + postId + "']");
+     var isHidden = commentsContainer.hasClass('hidden');
+     if (isHidden) {
+       commentsContainer.removeClass('hidden');
+     }
+
+     jQuery.ajax({
+        url:"/actor/loadComments",
+        type:"POST",
+        data:{postId: postId, max: 4, offset: 0},
+        success:function (data) {
+          commentsContainer.find('.view-comments').html(data);
+        }
+      })
+  })
+
+ jQuery('.show-more-comment').live('click', function () {
+     var postId = jQuery(this).parents('.post-comments').attr('postId');
+     var commentsContainer = jQuery(".post-comments[postId='" + postId + "']");
+     jQuery.ajax({
+        url:"/actor/loadComments",
+        type:"POST",
+        data:{ postId: postId , max: 1000, offset: 0},
+        success: function (data) {
+          commentsContainer.find('.view-comments').html(data);
+        }
+     })
+  })
+
+  jQuery('.create-new-comment').live('click', function() {
+     if (jQuery(this).hasClass('disabled')) {
+       return false;
+     } else {
+      
+        History.pushState(null, document.title, '?actorId=' + '8');
+            location.hash = "#login"
+      
+      
+     }
+  })
+
+  jQuery('.new-comment-message').live('keyup', function() {
+     if (jQuery(this).val() && jQuery(this).val().trim().length > 0) {
+       jQuery(this).parents('.comment-info').siblings('.create-new-comment').removeClass('disabled');
+     } else {
+        jQuery(this).parents('.comment-info').siblings('.create-new-comment').addClass('disabled');
+     }
+  })
+
+  jQuery('.delete-comment').live('click', function() {
+      var comment = jQuery(this).parents('.comment-container');
+      var commentId =  comment.attr('commentId');
+      var postId = jQuery(this).parents('.post-comments').attr('postId');
+      jQuery.ajax({
+        url:"/actor/deleteComment",
+        type:"POST",
+        data:{commentId: commentId},
+        success: function (data) {
+          var post = jQuery(".post[postId='" + postId + "']");
+
+          if (jQuery('.mobile_post_container').is(':visible')) {
+            post = jQuery(".mobile_post_container[postId='" + postId + "']");
+          }
+          var commentCountHolder = post.find('.comment-action span');
+          var commentCount = +data;
+          if (jQuery('#postOverlayDialog').is(':visible')) {
+            if (commentCount == 0) {
+              jQuery('.comment_container ').removeClass('commented');
+              jQuery('.commented_icon').removeClass('fan_commented');
+              jQuery('.commented_icon img').attr('src', "/assets/actor/ICN_comment-8365e050d718b086f281c8708be6ddff.svg");
+            }
+            var showMoreContainer = jQuery('#postOverlayDialog').find('.show-more-comment');
+            if (showMoreContainer.length > 0) {
+              showMoreContainer.find('span').text(commentCount);
+            }
+
+            jQuery('.comment_counter span').text(commentCount);
+          } else {
+            var showMoreContainer = post.find('.show-more-comment');
+            if (showMoreContainer.length > 0) {
+              showMoreContainer.find('span').text(commentCount);
+            }
+          }
+
+          if (commentCount == 0) {
+              post.find('.comment-action img').removeClass('selected');
+              commentCount = "";
+          }
+
+          
+            if (!commentCount) {
+               commentCountHolder.text(commentCount);
+            } else {
+              commentCountHolder.text(commentCount + " Comment");
+            }
+          
+          
+          comment.remove();
+        }
+      })
+  })
+
+  jQuery('.like-comment-action').live("click", function () {
+    
+    
+      History.pushState(null, document.title, '?actorId=' + '8');
+      location.hash = "#login"
+    
+  });
+
+
+</script><script type="text/javascript">
+    jQuery('section').addClass('actorHomePage');
+
+    
+
+    jQuery('.showPost').live('click', function() {
+      var postId = jQuery(this).attr('postId');
+      History.pushState({postId: postId, historyId: History.getState().id}, document.title, '?postId=' + postId);
+      location.href = '#activity'
+   })
+
+
+    $(function() {
+      $('#rewardFansContainer').isotope({
+        itemSelector : '.reward-post'
+      });
+
+      var page = 15;
+
+      function loadRewardPosts() {
+
+        jQuery.ajax({
+          type:'POST',
+          url: "/actor/rewardLeaderBoard",
+          data: {offset: page, rewardId: '205'},
+          success:function(data, textStatus) {
+             if (data != '') {
+                page += 15;
+             }
+          }
+        })
+      }
+
+      jQuery(".share-post").live("click", function() {
+        var postId = jQuery(this).attr('postId');
+        History.pushState({postId: postId}, document.title, '?postId=' + postId+'&callback='+'updatedBounceSize');
+        location.hash = "#bounce";
+      });
+
+      jQuery('#rewardFansContainer').scrollExtend({
+        'target': '#rewardFansContainer',
+        'url': function() {
+            return "/actor/rewardLeaderBoard?&offset="+ page + '&rewardId=' + '205';
+            },
+            'beforeStart': function(scroller, container) {
+                if (!$('#loader').hasClass('loaded')) {
+                   $('#loader').delay(500).addClass('loaded', 500, 'linear');
+                }
+                return true;
+            },
+            'onSuccess': function(scroller, container, new_elem) {
+                var elements = $(jQuery(container).find(".reward-post"));
+                console.log(new_elem);
+                $('#rewardFansContainer').append( elements ).isotope( 'appended', elements )
+                $('#rewardFansContainer').isotope('reLayout');
+                $('#loader').delay(500).removeClass('loaded', 500,'linear');
+                if (container[0].childNodes.length > 0) {
+                    page += 15;
+                } else {
+                    jQuery('#rewardFansContainer').scrollExtend("disable");
+                }
+            }
+      });
+    })
+  </script><script type="text/javascript">
+   jQuery('.view_all_ambassadors, .ambassador_dialog_opener').click(function() {
+        jQuery.ajax({type:'POST',data:{'actorId': '8'}, url:'/actor/showActorAmbassadorsOverlay',success:function(data,textStatus){jQuery('#overlayContainer').html(data);},error:function(XMLHttpRequest,textStatus,errorThrown){}});
+   })
+
+   jQuery(window).scroll(function() {
+   if (jQuery('.actor_actions').is(':visible')) {
+       if (f_scrollTop() >= jQuery('.main_header').height()*2) {
+         jQuery('.join_artist_holder').fadeOut(500);
+       } else {
+         jQuery('.join_artist_holder').fadeIn(500);
+       }
+   }
+
+    updateHeader();
+    });
+
+    jQuery(window).resize(function() {
+        var cookieHeight = 0;
+        var activity = 0;
+        if(!App.mobile.isMobile()) {
+
+            if (false) {
+                if (false) {
+                    activity = jQuery('.actor_fans').height() + parseInt($(".actor_fans").css('padding-top')) + parseInt($(".actor_fans").css('padding-bottom')) +parseInt($(".actor_fans").css('margin-bottom'));
+                    if (jQuery(".actor_info_holder_mobile").is(":visible")) {
+                        activity = jQuery(".actor_info_holder_mobile").parent().height() + 10;
+                    }
+                } else {
+                    activity += 10;
+                }
+
+            }
+            if (jQuery('#cookieDisclaimer').is(":visible")) {
+                cookieHeight = jQuery('#cookieDisclaimer').height();
+                updateHeader();
+            } else if(f_scrollTop() < (jQuery('.actor_image.main_background_image').height() - ((jQuery('.main_header').height() +  10)))) {
+                 jQuery('.actor_actions').css('top', Math.round(jQuery('.actor_image.main_background_image').height() + jQuery('.main_header').height() + activity - f_scrollTop())+ 'px');
+            }
+        }
+    });
+
+     function updateHeader () {
+          if(!App.mobile.isMobile()) {
+
+             var cookieHeight = 0;
+             var activity = 0;
+             var notActivity = 0;
+            if (false) {
+                if (false) {
+                    activity = jQuery('.actor_fans').height() + parseInt($(".actor_fans").css('padding-top')) + parseInt($(".actor_fans").css('padding-bottom')) +parseInt($(".actor_fans").css('margin-bottom'));
+                } else {
+                    activity += 10;
+                }
+
+            } else {
+                notActivity  = jQuery('.main_header').height();
+            }
+
+            if (jQuery('#cookieDisclaimer').is(":visible")) {
+                cookieHeight = jQuery('#cookieDisclaimer').height() ;
+            }
+
+            var emailBanner = 0;
+            if($('.email_verification_banner').is(':visible'))  {
+               emailBanner =  parseInt($(".email_verification_banner").css('padding-top')) +  parseInt($(".email_verification_banner").css('padding-bottom')) + $(".email_verification_banner").height();
+            }
+
+            if(f_scrollTop() >= (jQuery('.actor_image.main_background_image').height() + activity - 10)) {
+
+              var top = jQuery('.main_header').height() + cookieHeight + emailBanner + 2;
+
+              jQuery('.actor_actions').css('top', Math.round(top) + 'px');
+              if (false) {
+                 jQuery('.actor_actions').css('position', 'fixed');
+                 jQuery('.actor_actions').addClass('full_width');
+              }
+            } else {
+              if (false) {
+                 activity += jQuery('.main_header').height();
+                 jQuery('.actor_actions').removeClass('full_width');
+                 jQuery('.actor_actions').css('position', 'static');
+              }
+
+              jQuery('.actor_actions').css('top', Math.round(jQuery('.actor_image.main_background_image').height() + emailBanner + cookieHeight +  activity + 2 -  f_scrollTop()) + 'px');
+            }
+          }
+     }
+
+     jQuery(window).on('load', function() {
+          if (jQuery('#cookieDisclaimer').is(":visible")) {
+            updateHeader();
+            jQuery(".join_artist_holder").addClass("cookie_disclaimer");
+          }
+    });
+
+    jQuery("#closeCookieDisclaimer").click(function() {
+        if (jQuery(".join_artist_holder").is(":visible")) {
+            jQuery(".join_artist_holder").removeClass("cookie_disclaimer");
+        }
+    });
+
+    jQuery('.has_sub_menu_mobile').click(function() {
+       // update menu after all UI events
+       window.setTimeout(updateHeader,0);
+    });
+  jQuery("#joinButton").live('click', function() {
+    if($(this).hasClass('is_actor')){
+        $.post('/info/mixPanelStatistic',
+            {type: "Click Join button",
+              name: "first_visit_artist_join",
+              page: "actorHomePage"});
+      }
+          
+            History.pushState(null,  document.title, '?actorId=' + '8');
+            location.hash = "#login"
+
+          
+
+          
+
+      });
+
+</script><script type="text/javascript">
+    $('li.disabled_item a').click(function(){
+      
+        History.pushState(null, "Login", '?actorId=' + '8');
+        location.hash = "#login"
+      
+      
+    })
+  </script><script type="text/javascript">
+
+  $(function () {
+    //set Events in add2Home
+    $(document).on('click', '#addToHomeScreen .isAddToHome', window.App.mobile.setLocalStorage);
+    $(document).on('click', '#addToHomeScreen .addToHomeClose', window.App.mobile.setLocalStorage);
+    //Resolving problem with double click for iOS and links with images and hover state
+    var isScrolling = false;
+    $('a').on('touchstart',function () {
+      isScrolling = false;
+    }).on('touchmove',function (e) {
+          isScrolling = true;
+        }).on('touchend', function (e) {
+          if (!isScrolling) {
+            window.location = $(this).attr('href');
+          }
+        });
+
+    var lazyLoadImg = (function ($, _) {
+      var _$images;
+      var _effect_time = 500;
+
+      var _fUpdatedImg = function () {
+        _.each(_$images, function (img) {
+          var $self = $(img).hide();
+
+          $self.removeClass('lazy')
+              .addClass('load_lazy_img');
+
+          $("<img />").bind('load', function () {
+            $self.attr('src', $self.attr('data-original'))
+                .bind('load', function () {
+                  $(this).removeClass('load_lazy_img');
+                })
+                .removeAttr('data-original')
+                .fadeIn(_effect_time);
+          })
+              .bind('error', function () {
+              })
+              .attr('src', $self.attr('data-original'));
+        });
+      };
+
+      var LoadImg = function () {
+        this.loadImg();
+      };
+
+      LoadImg.prototype = {
+        constructor: LoadImg,
+        bindAjaxElem: function (selectName, ajaxEvent) {
+          $(selectName).bind(ajaxEvent, this.loadImg);
+        },
+        loadImg: function () {
+          _$images = $('img.lazy');
+          _fUpdatedImg();
+        }
+      };
+        return new LoadImg();
+    })(jQuery, _);
+
+    lazyLoadImg.bindAjaxElem('body', 'ajaxSuccess');
+  });
+
+  window.onload = function () {
+    initialiseStateFromURL();
+    setInterval(initialiseStateFromURL, 100);
+  };
+
+  var recentHash = '';
+
+  var History = window.History;
+
+  function getVarValueFromURL(url, varName) {
+    var query = url.substring(url.indexOf('?') + 1);
+    var vars = query.split("&");
+    for (var i = 0; i < vars.length; i++) {
+      var pair = vars[i].split("=");
+      if (pair[0] == varName) {
+        return pair[1];
+      }
+    }
+    return null;
+  }
+
+  function initialiseStateFromURL() {
+    if (location.hash == recentHash) {
+      return; // Nothing's changed since last polled.
+    }
+
+    var State = History.getState(); // Note: We are using History.getState() instead of event.state
+    var url = location.href;
+    var hash = location.hash;
+    recentHash = hash;
+    var historyId = '';
+    if (State.data && State.data.historyId) {
+      historyId = State.data.historyId
+    }
+
+    if (hash.indexOf('#join') > -1) {
+      url = url.replace('#join', '');
+      var actorId = getVarValueFromURL(url, 'actorId');
+      var postId = getVarValueFromURL(url, 'postId');
+      var isRedirectTo =  false;
+      if (State.data) {
+         isRedirectTo =  State.data.isRedirectTo;
+         if (!postId) {
+           postId = State.data.postId;
+          }
+      }
+    jQuery.ajax({type:'POST',data:'actorId=' + actorId + '&postId=' + postId + '&isRedirectTo=' + isRedirectTo, url:'/actor/showJoinOverlay',success:function(data,textStatus){jQuery('#overlayContainer').html(data);},error:function(XMLHttpRequest,textStatus,errorThrown){}});
+    } else if (hash.indexOf('#login') > -1) {
+      var actorId = getVarValueFromURL(url, 'actorId')
+      var postId = getVarValueFromURL(url, 'postId')
+      jQuery.ajax({type:'POST',data:'actorId=' + 8 + '&userLocationURL='+url, url:'/actor/loginOverlay',success:function(data,textStatus){jQuery('#overlayContainer').html(data);},error:function(XMLHttpRequest,textStatus,errorThrown){}});
+    } else if (hash.indexOf('#recalculatePoints') > -1) {
+      var   url = url.replace('#recalculatePoints', ''),
+      displayName = getVarValueFromURL(url, 'displayName');
+      jQuery.ajax({type:'POST',data:'displayName=' + displayName + '&recalculateHeartbeat=' + true, url:'/actor/myScore',success:function(data,textStatus){jQuery('#overlayContainer').html(data);},error:function(XMLHttpRequest,textStatus,errorThrown){}});
+
+      var $badges_container = $('.badges_container');
+      if ($badges_container.length !== 0) {
+         $badges_container.find('.recalculate').addClass('make-transparent');
+         $badges_container.find('.progressbar-container').addClass('make-visible').removeClass('display-none');
+      } else {
+         var $score_info = $('.score_info');
+         $score_info.find('.main_container').addClass('make-transparent');
+         $score_info.find('.progressbar-container').addClass('make-visible').removeClass('display-none');
+      }
+    } else if (hash.indexOf('#report') > -1) {
+      var postId = getVarValueFromURL(url, 'postId');
+      if (postId) {
+        postId = postId.replace("#report", '');
+        var idReturnToPost = (State.data && State.data.idReturnToPost) || false;
+        jQuery.ajax({type:'POST',data:'&postId=' + postId, url:'/actor/showReportOverlay',success:function(data,textStatus){jQuery('#overlayContainer').html(data);},error:function(XMLHttpRequest,textStatus,errorThrown){}});
+      }
+    } else if (hash.indexOf("#badge") > -1) {
+      var fanBadgeId = getVarValueFromURL(url, 'fanBadgeId');
+      if (fanBadgeId) {
+        fanBadgeId = fanBadgeId.replace("#badge", '')
+
+        jQuery.ajax({type:'POST',data:'fanBadgeId=' + fanBadgeId, url:'/actor/updateBadgeInfo',success:function(data,textStatus){jQuery('#overlayContainer').html(data);},error:function(XMLHttpRequest,textStatus,errorThrown){}});
+      }
+    } else if (hash.indexOf('#activity') > -1) {
+      
+        var postId = getVarValueFromURL(url, 'postId')
+        if (postId) {
+          postId = postId.replace("#activity", '');
+          jQuery.ajax({type:'POST',data:'&postId=' + postId + '&historyId=' + historyId, url:'/actor/updatePostOverlay',success:function(data,textStatus){jQuery('#postContainer').html(data);},error:function(XMLHttpRequest,textStatus,errorThrown){}});
+        }
+      
+    } else if (hash.indexOf('#editStory') > -1) {
+        var actorUsername = getVarValueFromURL(url, 'actorUsername');
+        var postId = getVarValueFromURL(url, 'postId');
+        postId = postId ? postId.replace("#editStory", '') : '';
+        actorUsername = actorUsername ? actorUsername.replace("#editStory", '') : '';
+        var isActorPage = getVarValueFromURL(url, 'isActorPage');
+        
+          if (isActorPage) {
+            jQuery.ajax({type:'POST',data:'&actorUsername=' + actorUsername + '&isActorPage=' + true + '&postId=' + postId, url:'/user/showStoryOverlay',success:function(data,textStatus){jQuery('#overlayContainer').html(data);},error:function(XMLHttpRequest,textStatus,errorThrown){}});
+          } else {
+            jQuery.ajax({type:'POST',data:'&actorUsername=' + actorUsername + '&postId=' + postId, url:'/user/showStoryOverlay',success:function(data,textStatus){jQuery('#overlayContainer').html(data);},error:function(XMLHttpRequest,textStatus,errorThrown){}});
+          }
+        
+        
+    } else if (hash.indexOf('#bounce') > -1) {
+      var postId = getVarValueFromURL(url, 'postId');
+      if (postId) {
+        var idReturnToPost =  false;
+        if (State.data) {
+          idReturnToPost =  State.data.idReturnToPost;
+        }
+
+        postId = postId.replace("#bounce", '');
+        jQuery.ajax({type:'POST',data:'&postId=' + postId + '&idReturnToPost=' + idReturnToPost, url:'/actor/showBounceOverlay',success:function(data,textStatus){jQuery('#overlayContainer').html(data);},error:function(XMLHttpRequest,textStatus,errorThrown){}});
+      }
+     } else if (hash.indexOf('#confirmEmail') > -1) {
+        jQuery.ajax({type:'POST', url:'/user/showConfirmEmailOverlay',success:function(data,textStatus){jQuery('#overlayContainer').html(data);},error:function(XMLHttpRequest,textStatus,errorThrown){}});
+    }
+  }
+
+jQuery('a.badge_to_click').live('click', function () {
+var fanBadgeId = jQuery(this).attr('id');
+if ( fanBadgeId == null) {
+    fanBadgeId = jQuery(this).attr('fanBadgeId');
+}
+History.pushState({fanBadgeId: fanBadgeId}, document.title, '?fanBadgeId=' + fanBadgeId);
+location.hash = "#badge";
+  });
+
+  //Prevent doubleclick
+  $("a, button, input[type=submit]").click(function (e) {
+    if (!$(this).data('isClicked')) {
+      var link = $(this);
+
+      // Your code on successful click
+
+      // Set the isClicked value and set a timer to reset in 3s
+      link.data('isClicked', true);
+      setTimeout(function () {
+        link.removeData('isClicked')
+      }, 3000);
+    } else {
+      // Anything you want to say 'Bad user!'
+      e.preventDefault();
+    }
+  });
+</script><script type="text/javascript">
+
+  function findActor(actorName) {
+      if(actorName != ''){
+      jQuery.ajax({
+          type:'POST',
+          url:"/actor/findActor",
+            data: {actorName: actorName, sort: '', order: ''},
+            success:function(data, textStatus){
+                jQuery('#actorsContainer').html(data);
+                if(actorName){
+                    $('.find_actors').scrollExtend("disable");
+                } else {
+                    $('.find_actors').scrollExtend("enable");
+                }
+             },
+            error:function(XMLHttpRequest,textStatus,errorThrown){}
+        });
+        }else{
+        jQuery.ajax({
+          type:'POST',
+          url:"/actor/getAllActors",
+          success:function(data, textStatus){
+                jQuery('#actorsContainer').html(data);
+                if(actorName){
+                    $('.find_actors').scrollExtend("disable");
+                } else {
+                    $('.find_actors').scrollExtend("enable");
+                }
+             },
+            error:function(XMLHttpRequest,textStatus,errorThrown){}
+        });
+        }
+    }
+    var findActorSearchTimer;
+
+    jQuery("#artistName").keyup(function() {
+        var actorName = jQuery(this).val();
+        clearTimeout(findActorSearchTimer);
+        findActorSearchTimer = setTimeout(function() {
+          if (jQuery(".search_container .search_img .mobile_element").is(":visible")) {
+              if (!jQuery(".search_container .search_img .reset_button").is(":visible")) {
+                  jQuery(".search_container .search_img .search_button").hide();
+                  jQuery(".search_container .search_img .reset_button").show();
+              }
+              if (actorName.length == 0) {
+                  jQuery(".search_container .search_img .search_button").show();
+                  jQuery(".search_container .search_img .reset_button").hide();
+              }
+          }
+          findActor(actorName);
+        }, 1000)
+
+    });
+
+    jQuery(".search_container .search_img .reset_button").click(function() {
+        jQuery("#artistName").val('');
+        jQuery(".search_container .search_img .search_button").show();
+        jQuery(".search_container .search_img .reset_button").hide();
+        jQuery('#artistName').trigger('keyup');
+    });
+
+    jQuery(".request").live('click', function() {
+        var selectedSpan = jQuery(this);
+
+        
+      
+        jQuery.ajax({type:'POST',data:'actorName=' + jQuery(selectedSpan).attr('actorName'), url:'/actor/showActorRequestNotLoginUserOverlay',success:function(data,textStatus){jQuery('#overlayContainer').html(data);},error:function(XMLHttpRequest,textStatus,errorThrown){}});
+      
+  });
+
+  function requestActorCallback(actorName) {
+    jQuery(".form_field_error").hide();
+    jQuery.ajax({type:'POST',data:'actorName=' + encodeURIComponent(actorName), url:'/actor/showActorRequestedOverlay',success:function(data,textStatus){jQuery('#overlayContainer').html(data);},error:function(XMLHttpRequest,textStatus,errorThrown){}});
+  }
+
+  
+    function requestActorNotLoggedInCallback(data) {
+      jQuery('#requestActorFormDialog').jqmHide();
+      var actorName = encodeURIComponent(jQuery("#requestActorFormDialog input[name='actorName']").val());
+      jQuery("span.not_exists[actorName=" + actorName.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g,'\\$1') + "]").parents(".actor_footer_container").html(data);
+    jQuery.ajax({type:'POST',data:'actorName=' + actorName, url:'/actor/showActorRequestedOverlay',success:function(data,textStatus){jQuery('#overlayContainer').html(data);},error:function(XMLHttpRequest,textStatus,errorThrown){}});
+    }
+  
+
+
+  function showValidationErrors(json) {
+      jQuery(".form_field_error").hide();
+      var errors = json.errors;
+      for (var i=0; i <= errors.length-1; i++) {
+          jQuery("#field_error_" + errors[i].field).show();
+          jQuery("#field_error_" + errors[i].field).html( errors[i].message);
+      }
+  }
+</script><script type="text/javascript">
+  
+    var _kmq = _kmq || [];
+    var _kmk = _kmk || 'df96b509c25e85bdf676c1d5528d9c274384b53a';
+    function _kms(u){
+        setTimeout(function(){
+            var d = document, f = d.getElementsByTagName('script')[0],
+            s = d.createElement('script');
+            s.type = 'text/javascript'; s.async = true; s.src = u;
+            f.parentNode.insertBefore(s, f);
+          }, 1);
+        }
+        _kms('//i.kissmetrics.com/i.js');
+        _kms('//doug1izaerwt3.cloudfront.net/' + _kmk + '.1.js');
+  
+  if (typeof GSFN !== "undefined") { GSFN.loadWidget(3976,{"containerId":"getsat-widget-3976"}); }
+      jQuery("#joinWithFacebookHeader").click(function () {
+      $("#facebookFormHeader").submit();
+  });
+
+  jQuery("#joinWithTwitterHeader").click(function () {
+      $("#twitterFormHeader").submit();
+  });
+
+  function updateCookie() {
+    if(!App.mobile.isMobile()) {
+         var emailBanner = 0;
+         var cookieDisclaimer = 0;
+         if($('.email_verification_banner').is(':visible'))  {
+            emailBanner = 30 +  $(".email_verification_banner").height();
+         }
+         if(!$.cookie("BUDDYBOUNCE_DISCLAIMER_WAS_READ"))  {
+            cookieDisclaimer = $("#cookieDisclaimer").height() ;
+         }
+         $(".main_header").css("top",  cookieDisclaimer + emailBanner);
+         if ($('.email_verification_banner').is(':visible')) {
+            $('.email_verification_banner').css("top",  cookieDisclaimer);
+         }
+
+         if($(".content").hasClass("contactPage") ||  $(".content").hasClass("editProfilePage") || $(".content").hasClass("application_form_page"))  {
+               $(".content").css("marginTop", cookieDisclaimer + emailBanner + "px");
+         } else if($(".content").hasClass("content_page")) {
+             $(".content").css("marginTop", cookieDisclaimer + emailBanner + "px");
+         } else if ($(".content").hasClass("actorHomePage")) {
+             if (jQuery('.fans_page').is(":visible") || jQuery('.reward_page').is(":visible") || jQuery('.shop_page').is(":visible")) {
+                $(".content").css("marginTop",  $(".main_header").height() + 2 + cookieDisclaimer + emailBanner + "px");
+             }  else if (jQuery('.my_likes_page').is(":visible")) {
+                $(".my_likes_page").css("paddingTop",  $(".main_header").height() + 2 + cookieDisclaimer + emailBanner  + "px");
+             }  else {
+                $(".content").css("marginTop",  $(".main_header").height() + 2 + cookieDisclaimer + emailBanner + "px");
+             }
+         } else if($(".content").hasClass("create-actor-page")) {
+            $(".content").css("paddingTop", cookieDisclaimer + emailBanner  + "px");
+         } else if(!$(".content").hasClass("actorHomePage")) {
+            $(".content").css("marginTop", cookieDisclaimer + emailBanner  + "px");
+         }
+    }
+  }
+
+  var delay = (function(){
+    var timer = 0;
+    return function(callback, ms){
+      clearTimeout (timer);
+      timer = setTimeout(callback, ms);
+    };
+  })();
+
+  var actorSearchIsInProcess = false;
+  $(function () {
+    jQuery(window).resize(function() {
+        if (jQuery('#cookieDisclaimer').is(":visible") || jQuery('.email_verification_banner').is(":visible")) {
+           updateCookie();
+        }
+    })
+
+   if(!$.cookie("BUDDYBOUNCE_DISCLAIMER_WAS_READ")){
+        updateCookie();
+       $("#cookieDisclaimer").show();
+    } else if (jQuery('.email_verification_banner').is(":visible")) {
+        updateCookie();
+    }
+
+     if(!$.cookie("FIRST_TIME_VISIT_DATE")){
+     var now = new Date();
+     if ($.cookie("BUDDYBOUNCE_DISCLAIMER_WAS_READ")) {
+      now.setDate(now.getDate() - 2)
+     }
+      jQuery.ajax({
+        type:'POST',
+        url:"/info/putCookie",
+        data: {cookieName: "FIRST_TIME_VISIT_DATE",value:now.getTime()}
+      });
+    }
+
+
+    $("#closeCookieDisclaimer").click(function() {
+      jQuery.ajax({
+        type:'POST',
+        url:"/info/putCookie",
+            data: {cookieName: "BUDDYBOUNCE_DISCLAIMER_WAS_READ",value:"true"},
+            success:function(data){
+                window.location.reload();
+            }
+      });
+     var now = new Date();
+     jQuery.ajax({
+        type:'POST',
+        url:"/info/putCookie",
+        data: {cookieName: "FIRST_TIME_VISIT_DATE",value:now.getTime()}
+      });
+
+
+       $("#cookieDisclaimer").hide();
+
+
+    });
+
+  jQuery('.has_sub_menu').mouseenter(function (event) {
+      jQuery('.has_sub_menu').css('height', '70px');
+      var menuContainer = jQuery(this);
+      if (menuContainer.find('.has_sub_menu_mobile').length > 0 && menuContainer.find('.has_sub_menu_mobile').is(":visible")) {
+          event.stopPropagation();
+      } else {
+          menuContainer.find('.sub_menu').show();
+          menuContainer.find('.sub_menu').find(".actor_page_search #searchActorList").show()
+      }
+  });
+
+  jQuery('.has_sub_menu').mouseleave(function () {
+      jQuery('.has_sub_menu').css('height', '53px');
+      jQuery(this).find('.sub_menu').hide();
+  });
+
+  jQuery('.has_sub_menu_mobile').click(function() {
+      var icon = jQuery(this);
+      var menuId = icon.attr('menuId');
+      jQuery(".has_sub_menu_mobile").each(function() {
+          var subMenuIcon = jQuery(this);
+          var subMenuId = subMenuIcon.attr('menuId');
+          if (menuId != subMenuId) {
+              if (subMenuIcon.is('img')) {
+                  subMenuIcon.attr('src', '/assets/mainMenu_black-0941a7f6a57ff8330f494781ed99a338.svg');
+                  subMenuIcon.removeClass("selected");
+              }
+              jQuery("#" + subMenuId).removeClass("selected_menu");
+              
+                jQuery('.mobile_menu_margin').css('margin-top', '0');
+              
+          }
+      });
+      jQuery('#' + menuId).toggleClass("selected_menu");
+      if (jQuery('#' + menuId).hasClass('selected_menu')) {
+        
+      } else {
+        
+          jQuery('.mobile_menu_margin').css('margin-top', '0');
+        
+      }
+      if (icon.is('img')) {
+          icon.toggleClass("selected");
+          if (icon.hasClass("selected")) {
+              icon.attr('src', '/assets/mainMenu_green-86d4a3b04b798260c03f510bb0c1a480.svg');
+
+          } else {
+
+              icon.attr('src', '/assets/mainMenu_black-0941a7f6a57ff8330f494781ed99a338.svg');
+          }
+      }
+  });
+
+  var searchTimer;
+  var placeholderValue = "";
+
+  
+    jQuery('.search_input_container .actor_name').mouseenter(function() {
+      if (jQuery(this).val()) {
+         jQuery('#searchActorList').show();
+       }
+    });
+
+    jQuery('.find_actor_menu_item').mouseleave(function() {
+      var isActorPage =  jQuery(this).hasClass("actor_page_search");
+      if (!isActorPage) {
+          jQuery('#searchActorList').hide();
+      }
+    });
+
+   $('.search_input_container .actor_name').blur(function () {
+     $(this).attr('placeholder', placeholderValue);
+   })
+   $('.search_input_container .actor_name').focus(function () {
+      placeholderValue = $(this).attr('placeholder'); // save the value
+      $(this).attr('placeholder', ''); // remove the value for that
+   })
+
+   jQuery('.search_input_container .actor_name').keyup(function() {
+     var username = jQuery(this).val();
+     if (username != '' && username.trim() != '') {
+       var isActorPage =  jQuery(this).parents('.find_actor_menu_item').hasClass("actor_page_search");
+       clearTimeout(searchTimer);
+       searchTimer = setTimeout(function() {
+           jQuery("#searchActorList").show().html('<img class="header-spinner" src="/assets/spinner_big-0317594cf5315ffa11a7060f12e77638.gif"/>');
+            jQuery.ajax({
+              type:'POST',
+              url:"/actor/findUsers",
+              data: {username: username, isHeader: true, isActorPage: isActorPage},
+              success:function(data, textStatus){
+                  jQuery('#searchActorList').html(data);
+              },
+              error:function(XMLHttpRequest,textStatus,errorThrown){}
+            });
+        }, 1000);
+      }
+    });
+
+    
+  
+
+  jQuery('.menu_item_admin .sub_menu').find("li").each(function() {
+    if ($(this).find("ul").length > 0) {
+      $(this).mouseenter(function() {
+        $(this).find("ul").stop(true, true).show();
+       });
+
+      $(this).mouseleave(function() {
+        $(this).find("ul").stop(true, true).hide();
+      });
+    }
+  });
+
+ });
+
+
+jQuery(".resend_email_link").click(function() {
+  jQuery.ajax({type:'POST', url:'/user/resendEmail',success:function(data,textStatus){jQuery('#emailVerificationBanner').html(data);},error:function(XMLHttpRequest,textStatus,errorThrown){}});
+});
+jQuery(".email_ask_help").click(function() {
+  location.hash = "#confirmEmail";
+});
+</script>
+</html>

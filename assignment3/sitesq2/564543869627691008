@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/icon-57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/icon-72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/icon-114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/icon-144.png" />
+                    <title>
+            Younique by Jenna White        </title>
+    	        <meta name="description" content="Younique's mission is to uplift, empower, validate, and ultimately build self-esteem in women around the world through high-quality products that encourage both inner and outer beauty and spiritual enlightenment; while also providing opportunities of personal growth and financial reward.">
+	    <meta name="google-site-verification" content="nZVz7NP3HVAioSGR0GtUs4ddh8tuvC0vMggY92LITro" />
+        <link rel="stylesheet" type="text/css" href="/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/dataTables.responsive.css">
+    <link href="/favicon.ico" type="image/x-icon" rel="icon" /><link href="/favicon.ico" type="image/x-icon" rel="shortcut icon" /><link rel="stylesheet" type="text/css" href="https://d2lu29c1rbtr6s.cloudfront.net/s/407/css/younique_shop.css" />    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>!window.jQuery && document.write('<script src="/js/jquery-1.7.2.min.js"><\/script>')</script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+    <script>!window.jQuery && document.write('<script src="/js/jquery-ui.1.8.23.min.js"><\/script>')</script>
+    <script src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.datatables.net/responsive/1.0.1/js/dataTables.responsive.js"></script>
+    <script type="text/javascript" src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/js/modernizr.custom.56853.js"></script><script type="text/javascript" src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/js/modernizr-test_position_fixed_ios.js"></script><script type="text/javascript" src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/js/jqmodal.js"></script><script type="text/javascript" src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/js/picturefill.js"></script><script type="text/javascript" src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/js/jquery.watermark.min.js"></script><script type="text/javascript" src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/js/jquery.maskedinput-1.3.min.js"></script><script type="text/javascript" src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/js/jquery.scrollTo-min.js"></script><script type="text/javascript" src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/js/jquery.localscroll-min.js"></script><script type="text/javascript" src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/js/tabber.js"></script><script type="text/javascript" src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/js/jquery.qtip-1.0.0-rc3.min.js"></script><script type="text/javascript" src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/js/spinner.min.js"></script><script type="text/javascript" src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/js/jquery.tablesorter.min.js"></script><script type="text/javascript" src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/js/global.js"></script><script type="text/javascript" src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/js/jquery.cookie.js"></script>    <!--[if lte IE 7]>
+    <script type="text/javascript" src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/js/lte-ie7.js"></script>    <![endif]-->
+    <!--[if lt IE 9]>
+    	<link rel="stylesheet" type="text/css" href="/css/younique_shop.css">
+	    <script type="text/javascript" src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/js/selectivizr-min.js"></script><script type="text/javascript" src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/js/html5shiv.js"></script>    	<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        $(function(){
+            var $body = $('body');
+            $body.attr('id','shop');
+            $body.addClass('presenterOwned');
+
+            $(".changemarket").on({
+                click: function(e) {
+                    e.stopPropagation();
+                    var $target = $(e.currentTarget);
+                    var $languageOption = $target.find('a');
+                    var market = parseInt($target.closest('li').find('input').val());
+                    var overrideLanguage = '';
+                    var userLanguage = overrideLanguage || '';
+                    var defaultLanguage = userLanguage || 'en_US';
+                    var languageSetting = "";
+                    API.call("/user/setMarket/"+market, {}, function(result) {
+                        if(market != 1) {
+                            defaultLanguage = 'en_US';
+                        }
+                        else if($languageOption.length > 0 && $languageOption.hasClass('marketLanguageOption')) {
+                            defaultLanguage = $languageOption.attr('id');
+                            languageSetting = "override";
+                        }
+                        API.call("/user/setLocale/" + defaultLanguage + "/" + languageSetting, {}, function(languageResult) {
+                            window.location.reload();
+                        });
+                    });
+                }
+            });
+        });
+	</script>
+        <script type="text/javascript" src="//use.typekit.net/hrj7atb.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    <!-- Crazy Egg: -->
+    <script type="text/javascript">
+        setTimeout(function(){var a=document.createElement("script");
+        var b=document.getElementsByTagName("script")[0];
+        a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0020/4026.js?"+Math.floor(new Date().getTime()/3600000);
+        a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+    </script>
+    <!--/ End Crazy Egg -->
+
+    <script type="text/javascript">
+ var _gaq = _gaq || [];
+ 	_gaq.push(['_setAccount', 'UA-34855407-1']);
+	_gaq.push(['._require', 'inpage_linkid', '//www.google-analytics.com/plugins/ga/inpage_linkid.js']);
+	_gaq.push(['_trackPageview']);
+
+
+  
+
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    //ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>    
+<!-- Twitter Meta Tags: -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jenna Greene&#039;s Younique Virtual Party">
+<meta name="twitter:description" content="Welcome to my Younique Virtual Party! This means that this party is done 100% online!  No need to leave your house-let&#039;s shop and party &quot;virtually!&quot;  So feel free to browse the wonderful Younique cosmetics, find something you love,  and remember that when you make a purchase it is helping me reach my party goals!  Party on!  
+                    ">
+<meta name="twitter:image" content="https://graph.facebook.com/629115764/picture?type=large">
+
+<!-- Open Graph Meta Tags: -->
+<meta property="og:title" content="Jenna Greene&#039;s Younique Virtual Party" >
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.youniqueproducts.com/OpLashBlast/party/1331522/view " >
+<meta property="og:image" content="https://graph.facebook.com/629115764/picture?type=large" >
+<meta property="og:description" content="Welcome to my Younique Virtual Party! This means that this party is done 100% online!  No need to leave your house-let&#039;s shop and party &quot;virtually!&quot;  So feel free to browse the wonderful Younique cosmetics, find something you love,  and remember that when you make a purchase it is helping me reach my party goals!  Party on!  
+                    " >
+
+
+</head>
+<body class=" en_US">
+<!-- site head -->
+<header id="siteHead">
+	<!-- display ribbon -->
+	<div class="clr ribbon">
+        <!-- utility -->
+        <div class="shopperUtil" id="userPanel">
+            <div class="userDisplay regularTools">
+
+                    <ul class="FL flatList lineNav no-print siteLanguage">
+        <li class="dropParent">
+            <a href="#" class="no-click">
+                <span class="acctLabel">
+                    English <span class="ico icon-arrow-down-2"></span>
+                </span>
+            </a>
+            <div class="dropDown userMenu languageMenu">
+                <div class="ddCnts ovfl">
+                                            <span class="block">
+                            <a id="en_US" class="bold languageOption selected"  href=""><span class="mr10 ico icon-checkmark v-hide"></span>English</a>
+                        </span>
+                                            <span class="block">
+                            <a id="es_US" class="bold languageOption "  href=""><span class="mr10 ico icon-checkmark v-hide"></span>Espanol</a>
+                        </span>
+                                        
+                </div>
+            </div>
+
+        </li>
+    </ul>
+
+                                    <ul class="FL flatList lineNav m-hid presLinks no-print m-hid">
+                        <li class="mr10"><a href="/OpLashBlast/presenter/contactme"> Connect with Me</a></li>
+                        <li class="mr10"><a href="/OpLashBlast/presenter/myparties"> My Parties</a></li>
+                                                <li class="mr10"><a href="/OpLashBlast/business/support"> Customer Support</a></li>
+                    </ul>
+                                <ul class="FR flatList lineNav greetUtility ">
+                                            <li class="m-hid">
+                            Welcome!                        </li>
+                        <li><a class="presenter-login set-login-type" href="/OpLashBlast/account/signin">Presenter Login</a></li>
+                        <li>or</li>
+                        <li>
+                            <!-- take the user to a page that explains how we authenticate, even if the  auth on that page does the exact same thing -->
+                            <a class="customer-login set-login-type" href="/OpLashBlast/account/signin">Customer Login</a>
+                        </li>
+                                    </ul>
+                <ul class="pAbs FR flatList lineNav utilityLinks">
+                    <li class="cart hasItems" id="miniCartTrig" style="display: none">
+                        <a id="viewCart" href="/OpLashBlast/products/cart" class="pRel shoppingcart" title="View my cart">
+                            <span class="ico icon-cart hasItems"></span>
+                            <span id="cartItems" class="pAbs"><span id="itemCount">0</span></span>
+                            <span class="pAbs" id="checkOutLabel">Checkout</span>
+                        </a>
+
+                        <!-- mini cart -->
+                        <div id="miniCart" data-marketid="1" class="partycart">
+                            <div class="touch-only ctr closeCart">close and continue shopping</div>
+                            <div class="contents">
+                                                                    <div class="span-group lhNorm left span-20-80 hostCartTy">
+                                        <div class="col i-col">
+                                            <img src="https://graph.facebook.com/629115764/picture?type=large">
+                                        </div>
+                                        <div class="col">
+                                            Thank you!  So far your order is contributing <span id="totalpoints"></span> points to my party. - <em>Jenna</em>
+                                            <!--<p class="hostName">Jenna Greene, Party Host</p>
+                                        <h2></h2>
+                                        -->
+                                        </div>
+                                        <span class="clr"></span>
+                                    </div>
+                                                                <ul class="flatList itemHead">
+                                    <li class="alt"><span class="pQty">Qty</span><span class="pName">Product</span><span class="pPrice">Price</span><span class="pPoints">Pts</span></li>
+                                </ul>
+                                <ul class="flatList items">
+                                    <li class="loadCart">
+                                    <span>
+                                        <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/loading_lg.gif" alt="Loading cart" title="Loading cart" />                                    </span>
+                                    </li>
+                                </ul>
+                                <a href="/OpLashBlast/products/cart" class="btn checkout"><span class="icomoon" data-icon=">"></span> Proceed to checkout</a>
+                            </div>
+                        </div>
+                        <!--/ end mini cart -->
+
+                    </li>
+                    <li class="cart isEmpty" >
+                        <a id="startShopping" href="/OpLashBlast/products/landing" title="Start shopping"><span class="ico icon-cart"></span></a>
+                    </li>
+                    <li class="mktPckr dropParent">
+                        <span class="selectedFlag block">
+                            <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/sprites/market_1.png" id="myCountry" class="myMktFlag" alt="" />                        </span>
+                        <div id="changemarket" class="dropDown">
+                            <div class="ddCnts ovfl flagList">
+                                                                    <ul class="flatList inlineNav span-group span-50-50 clr-fix">                                    <li class="col lhNorm mr10">
+                                        <span class="noWrap clr-fix">
+                                            <label class="FL mr5 m_USD                                            selected" title="Show prices in USD">
+                                                <input type="radio" class="changemarket" name="changemarket" value="1" id="market_USD" checked="checked" />
+                                            </label>
+                                            <span class="FL bold mb5 changemarket marketName">
+                                                U.S.A (USD)
+                                            </span>
+                                        </span>
+                                                                                    <span class="block changemarket">
+                                                <a id="en_US" class="bold marketLanguageOption selected"  href=""><span class="mr10 ico icon-checkmark v-hide"></span>English</a>
+                                            </span>
+                                                                                    <span class="block changemarket">
+                                                <a id="es_US" class="bold marketLanguageOption "  href=""><span class="mr10 ico icon-checkmark v-hide"></span>Espanol</a>
+                                            </span>
+                                                                            </li>
+                                                                                                                                            <li class="col lhNorm mr10">
+                                        <span class="noWrap clr-fix">
+                                            <label class="FL mr5 m_CAD                                            " title="Show prices in CAD">
+                                                <input type="radio" class="changemarket" name="changemarket" value="2" id="market_CAD"  />
+                                            </label>
+                                            <span class="FL bold mb5 changemarket marketName">
+                                                Canada (CAD)
+                                            </span>
+                                        </span>
+                                                                                    <span class="block changemarket">
+                                                <a id="en_US" class="bold marketLanguageOption "  href=""><span class="mr10 ico icon-checkmark v-hide"></span>English</a>
+                                            </span>
+                                                                            </li>
+                                    </ul>                                                                    <ul class="flatList inlineNav span-group span-50-50 clr-fix">                                    <li class="col lhNorm mr10">
+                                        <span class="noWrap clr-fix">
+                                            <label class="FL mr5 m_AUD                                            " title="Show prices in AUD">
+                                                <input type="radio" class="changemarket" name="changemarket" value="3" id="market_AUD"  />
+                                            </label>
+                                            <span class="FL bold mb5 changemarket marketName">
+                                                Australia (AUD)
+                                            </span>
+                                        </span>
+                                                                                    <span class="block changemarket">
+                                                <a id="en_US" class="bold marketLanguageOption "  href=""><span class="mr10 ico icon-checkmark v-hide"></span>English</a>
+                                            </span>
+                                                                            </li>
+                                                                                                                                            <li class="col lhNorm mr10">
+                                        <span class="noWrap clr-fix">
+                                            <label class="FL mr5 m_NZD                                            " title="Show prices in NZD">
+                                                <input type="radio" class="changemarket" name="changemarket" value="4" id="market_NZD"  />
+                                            </label>
+                                            <span class="FL bold mb5 changemarket marketName">
+                                                New Zealand (NZD)
+                                            </span>
+                                        </span>
+                                                                                    <span class="block changemarket">
+                                                <a id="en_US" class="bold marketLanguageOption "  href=""><span class="mr10 ico icon-checkmark v-hide"></span>English</a>
+                                            </span>
+                                                                            </li>
+                                    </ul>                                                                    <ul class="flatList inlineNav span-group span-50-50 clr-fix">                                    <li class="col lhNorm mr10">
+                                        <span class="noWrap clr-fix">
+                                            <label class="FL mr5 m_GBP                                            " title="Show prices in GBP">
+                                                <input type="radio" class="changemarket" name="changemarket" value="5" id="market_GBP"  />
+                                            </label>
+                                            <span class="FL bold mb5 changemarket marketName">
+                                                United Kingdom (GBP)
+                                            </span>
+                                        </span>
+                                                                                    <span class="block changemarket">
+                                                <a id="en_US" class="bold marketLanguageOption "  href=""><span class="mr10 ico icon-checkmark v-hide"></span>English</a>
+                                            </span>
+                                                                            </li>
+                                    </ul>                                                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <span class="clr"></span>
+            </div>
+        </div>
+        <!--/ end utility -->
+        <!-- nav -->
+        <nav class="primaryNav">
+            <ul class="flatList lineNav mainNavBar">
+    <li class="langChange">
+        <a href="/OpLashBlast/products/landing" class=" sn langChange">Shop</a>
+    </li>
+    <li class="langChange">
+        <a href="/OpLashBlast/business/presenterinfo" class=" langChange">Join</a>
+    </li>
+    <li class="langChange">
+        <a href="/OpLashBlast/business/party" class=" langChange">Party</a>
+    </li>
+    <li class="m-disp"><a href="javascript:void(0);" id="showMobileNavMore" class="ico icon-menu"></a></li>
+    <li class="navLogo presenterNavLogo">
+                    <a href="/OpLashBlast/business">
+                <span class="siteOwner">
+                    <span class="presImg"><img src="https://graph.facebook.com/629115764/picture?width=100&height=100"></span>
+                    <span class="presInfo mb10">
+                        <strong>Jenna White</strong>
+                        <span class="mdTxt">
+                            Yellow Status Presenter                        </span>
+                    </span>
+                </span>
+            </a>
+                <div class="logo">
+            <a href="/OpLashBlast/business"><img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/global/younique_logo.png" alt="Younique, LLC" id="siteLogo" /></a>            <div id="printLogo" class="print-only">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/logo_print.gif" alt="" />            </div>
+        </div>
+    </li>
+    <li class="m-hid langChange">
+        <a href="/OpLashBlast/looks/tutorials" class="">
+            Wear It        </a>
+    </li>
+    <li class="m-hid langChange">
+                    <a href="/OpLashBlast/presenter/aboutme" class="">
+                    About        </a>
+    </li>
+    <li class="m-hid langChange">
+        <a href="/OpLashBlast/business/support" class=" sn">
+            Support        </a>
+    </li>
+</ul>
+        </nav>
+        <!-- /end nav -->
+    </div>
+    <!-- end display ribbon -->
+	        <!-- secondary navigation -->
+                    <div id="secondaryNav" class="ctr">
+                                    <nav id="shoppingMenu">
+    <div class="m-disp">
+    	<span class="lbl m-trig" id="menuTrigger"><span class="ico icon-arrow-down-2"></span> product menu</span>
+    </div>
+    <div class="sec-nav dockHolder">
+        <div class="menuHolder dockIt basic">
+            <div class="ctr main">
+                <ul class="flatList lineNav megaMenuWrapper">
+                     
+                    <li data-sub-nav-id="eyes">
+                        <a href="javascript:void(0);" class="categoryLink">Eyes</a>
+                        <!-- TODO: UPDATE PRODUCT SKUS WHEN NEW SKUS ARE CONFIGURED -->
+<ul id="eyes-mega-menu" class="pAbs pAbs-LR flatList lineNav ovfl wellBox wellBox-4 span-group span-4 hide">
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-1017-00" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-1017-00-alt1-thumb.jpg" alt="Moodstruck 3D Fiber Lashes" title="Moodstruck 3D Fiber Lashes" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Moodstruck</span>
+                <span class="block productName"><b>3D Fiber Lashes</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-21000-00" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-21000-00-thumb.png" alt="Moodstruck  Minerals Pigments" title="Moodstruck Minerals Pigments" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Moodstruck</span>
+                <span class="block productName"><b>Minerals Pigments</b></span>
+            </span>
+        </a>
+    </li>
+
+   
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-12001-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-12001-01-thumb.jpg" alt="Glorious Face and Eye Primer" title="Glorious Face and Eye Primer" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Glorious</span>
+                <span class="block productName"><b>Face and Eye Primer</b></span>
+            </span>
+        </a>
+    </li>
+
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-12201-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-12201-01-thumb.jpg" alt="Uplift Eye Serum" title="Uplift Eye Serum" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Uplift</span>
+                <span class="block productName"><b>Eye Serum</b></span>
+            </span>
+        </a>
+    </li>
+
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-22102-00" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-22102-00-thumb.jpg" alt="Moodstruck Precision Eye Liners" title="Moodstruck Precision Eye Liners" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Moodstruck Precision</span>
+                <span class="block productName"><b>Eye Liners</b></span>
+            </span>
+        </a>
+    </li>
+
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-22501-00" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-22501-00-thumb.jpg" alt="SplurgeCream Shadow" title="SplurgeCream Shadow" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Splurge</span>
+                <span class="block productName"><b>Cream Shadow</b></span>
+            </span>
+        </a>
+    </li>
+
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-53021-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-53021-01-thumb.jpg" alt="Shine Eye Makeup Remover Cloths" title="Shine Eye Makeup Remover Cloths" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Shine</span>
+                    <span class="block productName"><b>Eye Makeup Remover Cloths</b></span>
+            </span>
+        </a>
+    </li>
+
+
+</ul>                    </li>
+                    <li data-sub-nav-id="lips">
+                        <a href="javascript:void(0);" class="categoryLink">Lips</a>
+                        <!-- TODO: UPDATE PRODUCT SKUS WHEN NEW SKUS ARE CONFIGURED -->
+<ul id="lips-mega-menu" class="pAbs pAbs-LR flatList lineNav ovfl wellBox wellBox-4 span-group span-4 hide">
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-21801-00" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-21801-00-thumb.jpg" alt="Lucrative Mineral Lip Gloss" title="Lucrative Mineral Lip Gloss" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Lucrative</span>
+                <span class="block productName"><b>Mineral Lip Gloss</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-22101-00" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-22101-00-thumb.jpg" alt="Moodstruck Precision Lip Liners" title="Moodstruck Precision Lip Liners" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Moodstruck Precision</span>
+                <span class="block productName"><b>Lip Liners</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-22301-00" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-22301-00-thumb.jpg" alt="Stiff Upper Lip Lip Stain" title="Stiff Upper Lip Lip Stain" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Stiff Upper Lip</span>
+                <span class="block productName"><b>Lip Stain</b></span>
+            </span>
+        </a>
+    </li>
+</ul>
+                    </li>
+                    <li data-sub-nav-id="face">
+                        <a href="javascript:void(0);" class="categoryLink">Face</a>
+                        <!-- TODO: UPDATE PRODUCT SKUS WHEN NEW SKUS ARE CONFIGURED -->
+<ul id="face-mega-menu" class="pAbs pAbs-LR flatList lineNav ovfl wellBox wellBox-4 span-group span-4 hide">
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-11901-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-11901-01-alt1-thumb.jpg" alt="Illuminate Clean Facial Cleanser" title="Illuminate Clean Facial Cleanser" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Illuminate Clean</span>
+                <span class="block productName"><b>Facial Cleanser</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-11902-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-11902-01-alt1-thumb.jpg" alt="Illuminate Clear Facial Cleanser" title="Illuminate Clear Facial Cleanser" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Illuminate Clear</span>
+                <span class="block productName"><b>Facial Cleanser</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-21401-00" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-21401-00-thumb.jpg" alt="Touch Mineral Cream Foundation" title="Touch Mineral Cream Foundation" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Touch</span>
+                <span class="block productName"><b>Mineral Cream Foundation</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-21300-00" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-21300-00-thumb.jpg" alt="Moodstruck Minerals Pressed Blusher" title="Moodstruck Minerals Pressed Blusher" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Moodstruck</span>
+                <span class="block productName"><b>Minerals Pressed Blusher</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-21200-00" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-21200-00-thumb.jpg" alt="Moodstruck Minerals Concealers" title="Moodstruck Minerals Concealers" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Moodstruck</span>
+                <span class="block productName"><b>Minerals Concealers</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-12001-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-12001-01-thumb.jpg" alt="Glorious Face and Eye Primer" title="Glorious Face and Eye Primer" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Glorious</span>
+                <span class="block productName"><b>Face and Eye Primer</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-21402-00" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-21402-00-thumb.jpg" alt="Touch Mineral Powder Foundation" title="Touch Mineral Powder Foundation" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Touch</span>
+                <span class="block productName"><b>Mineral Powder Foundation</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-11501-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-11501-01-thumb.jpg" alt="Refreshed Rose Water" title="Refreshed Rose Water" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Refreshed</span>
+                <span class="block productName"><b>Rose Water</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-11701-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-11701-01-thumb.jpg" alt="Divine Daily Moisturizer" title="Divine Daily Moisturizer" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Divine</span>
+                <span class="block productName"><b>Daily Moisturizer</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-21600-00" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-21600-00-thumb.jpg" alt="BB Flawless Complexion Enhancer" title="BB Flawless Complexion Enhancer" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">BB Flawless</span>
+                <span class="block productName"><b>Complexion Enhancer</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-12201-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-12201-01-thumb.jpg" alt="Uplift Eye Serum" title="Uplift Eye Serum" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Uplift</span>
+                <span class="block productName"><b>Eye Serum</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-22401-00" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-22401-00-thumb.jpg" alt="Beachfront Bronzer" title="Beachfront Bronzer" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Beachfront</span>
+                <span class="block productName"><b>Bronzer</b></span>
+            </span>
+        </a>
+    </li>
+    
+</ul>                    </li>
+                    <li data-sub-nav-id="tools">
+                        <a href="javascript:void(0);" class="categoryLink">Tools</a>
+                        <!-- TODO: UPDATE PRODUCT SKUS WHEN NEW SKUS ARE CONFIGURED -->
+<ul id="tools-mega-menu" class="pAbs pAbs-LR flatList lineNav ovfl wellBox wellBox-4 span-group span-4 hide">
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-52031-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-52031-01-alt1-thumb.jpg" alt="Foundation Brush" title="Foundation Brush" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Foundation</span>
+                <span class="block productName"><b>Brush</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-52021-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-52021-01-alt1-thumb.jpg" alt="Concealer Brush" title="Concealer Brush" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Concealer</span>
+                <span class="block productName"><b>Brush</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-52001-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-52001-01-alt1-thumb.jpg" alt="Blusher Brush" title="Blusher Brush" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Blusher</span>
+                <span class="block productName"><b>Brush</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-52011-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-52011-01-alt1-thumb.jpg" alt="Powder Puff Brush" title="Powder Puff Brush" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Powder Puff</span>
+                <span class="block productName"><b>Brush</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-51031-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-51031-01-alt1-thumb.jpg" alt="Lash Comb / Brow Brush" title="Lash Comb / Brow Brush" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Lash Comb/Brow</span>
+                <span class="block productName"><b>Brush</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-51001-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-51001-01-alt1-thumb.jpg" alt="Deluxe Brush" title="Deluxe Brush" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Deluxe Brush</span>
+                <span class="block productName"><b>Brush</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-51021-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-51021-01-thumb.jpg" alt="Liner / Shader" title="Liner / Shader" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Liner / Shader</span>
+                <span class="block productName"><b>Brush</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-51011-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-51011-01-alt1-thumb.jpg" alt="Crease Brush" title="Crease Brush" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Crease Brush</span>
+                <span class="block productName"><b>Brush</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-51041-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-51041-01-alt1-thumb.jpg" alt="Cream Shadow Brush" title="Cream Shadow Brush" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Cream Shadow</span>
+                <span class="block productName"><b>Brush</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-53001-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-53001-01-alt2-thumb.jpg" alt="Pencil Sharpener" title="Pencil Sharpener" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Pencil</span>
+                <span class="block productName"><b>Sharpener</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-53011-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-53011-01-alt1-thumb.jpg" alt="Blending Buds" title="Blending Buds" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Blending Buds</span>
+                <span class="block productName"><b>Tool</b></span>
+            </span>
+        </a>
+    </li>
+</ul>
+                    </li>
+                    <li data-sub-nav-id="collections">
+                        <a href="javascript:void(0);" class="categoryLink ">Collections</a>
+                        <!-- TODO: UPDATE PRODUCT SKUS WHEN NEW SKUS ARE CONFIGURED -->
+<ul id="collections-mega-menu" class="pAbs pAbs-LR flatList lineNav ovfl wellBox wellBox-4 span-group span-4 hide">
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-42011-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-42011-01-thumb.jpg" alt="Pucker Up Collection" title="Pucker Up Collection" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Pucker Up</span>
+                <span class="block productName"><b>Collection</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-42021-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-42021-01-thumb.jpg" alt="Kid in a Candy Store Collection" title="Kid in a Candy Store Collection" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Kid in a Candy Store</span>
+                <span class="block productName"><b>Collection</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-42031-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-42031-01-thumb.jpg" alt="Show Stopper Collection" title="Show Stopper Collection" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Show Stopper</span>
+                <span class="block productName"><b>Collection</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-42041-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-42041-01-thumb.jpg" alt="About Face Collection" title="About Face Collection" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">About Face</span>
+                <span class="block productName"><b>Collection</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-42051-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-42051-01-thumb.jpg" alt="All Eyes on You Collection" title="All Eyes on You Collection" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">All Eyes on You</span>
+                <span class="block productName"><b>Collection</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-42061-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-42061-01-thumb.jpg" alt="Radiant Beauty Collection" title="Radiant Beauty Collection" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Radiant Beauty</span>
+                <span class="block productName"><b>Collection</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col viewAll">
+        <a href="/OpLashBlast/products/collections" class="left ovfl">
+            <span class="FL block pinkText">
+                <span class="block productName"><b>View All Collections</b></span>
+            </span>
+        </a>
+    </li>
+</ul>                    </li>
+                    <li data-sub-nav-id="sets">
+                        <a href="javascript:void(0);" class="categoryLink">Sets</a>
+                        <!-- TODO: UPDATE PRODUCT SKUS WHEN NEW SKUS ARE CONFIGURED -->
+<ul id="sets-mega-menu" class="pAbs pAbs-LR flatList lineNav ovfl wellBox wellBox-4 span-group span-4 hide">
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-31401-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-31401-01-thumb.jpg" alt="Touch Mineral Foundation Set of 2" title="Touch Mineral Foundation Set of 2" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Touch Mineral Foundation</span>
+                <span class="block productName"><b>Set of 2</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-31001-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-31001-01-thumb.jpg" alt="Mineral Pigments Set of 4" title="Mineral Pigments Set of 4" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Mineral Pigments</span>
+                <span class="block productName"><b>Set of 4</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-31801-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-31801-01-thumb.jpg" alt="Lucrative Lip Gloss Set of 3" title="Lucrative Lip Gloss Set of 3" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Lucrative Lip Gloss</span>
+                <span class="block productName"><b>Set of 3</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-31801-02" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-31801-02-thumb.jpg" alt="Lucrative Lip Gloss Set of 10" title="Lucrative Lip Gloss Set of 10" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Lucrative Lip Gloss</span>
+                <span class="block productName"><b>Set of 10</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-35101-04" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-35101-04-thumb.jpg" alt="Eye Brush Set" title="Eye Brush Set" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Eye Brush Set</span>
+                <span class="block productName"><b>4 Eye Brushes</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-35101-02" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-35101-02-thumb.jpg" alt="MoodstruckFace Brush Set" title="Moodstruck Face Brush Set" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Face Brush Set</span>
+                <span class="block productName"><b>4 Face Brushes</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-35101-05" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-35101-05-thumb.jpg" alt="Complete Brush Set" title="Complete Brush Set" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Complete Brush Set</span>
+                <span class="block productName"><b>All 9 Brushes</b></span>
+            </span>
+        </a>
+    </li>
+
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-32101-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-32101-01-thumb.jpg" alt="Moodstruck Precision Pencils - Set of 3" title="Moodstruck Precision Pencils - Set of 3" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Precision Pencils</span>
+                <span class="block productName"><b>Set of 3</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-32101-02" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-32101-02-thumb.jpg" alt="Moodstruck Precision Pencils - Set of 10" title="Moodstruck Precision Pencils - Set of 10" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Precision Pencils</span>
+                <span class="block productName"><b>Set of 10</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-32101-03" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-32101-03-thumb.jpg" alt="Moodstruck Precision Pencils - Set of 15" title="Moodstruck Precision Pencils - Set of 15" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Precision Pencils</span>
+                <span class="block productName"><b>Set of 15</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-32301-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-32301-01-thumb.jpg" alt="Stiff Upper Lip Set of 3" title="Stiff Upper Lip Set of 3" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Stiff Upper Lip</span>
+                <span class="block productName"><b>Set of 3</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-32301-02" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-32301-02-thumb.jpg" alt="Stiff Upper Lip Set of 7" title="Stiff Upper Lip Set of 7" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Stiff Upper Lip</span>
+                <span class="block productName"><b>Set of 7</b></span>
+            </span>
+        </a>
+    </li>
+    <li class="col">
+        <a href="/OpLashBlast/products/view/US-31201-01" class="left ovfl">
+            <span class="FL mr10 ctr ovfl block productThumb">
+                <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-31201-01-thumb.jpg" alt="Highlight and Contour Set" title="Highlight and Contour Set" />            </span>
+            <span class="FL block">
+                <span class="block productTitle">Highlight and Contour</span>
+                <span class="block productName"><b>Set</b></span>
+            </span>
+        </a>
+    </li>
+</ul>
+    
+                    </li>
+                    <li>
+                        <a href="/OpLashBlast/products/kudos" class=" categoryLink">Kudos!</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                    </div>
+        <!--/ end secondary navigation -->
+    
+    <span class="clr"></span>
+</header>
+<!--/ end head -->
+
+<!-- site content wrapper -->
+<main id="container">
+	
+<section>
+<div id="partyBill">
+    <div class="contents c-flow mc2">
+        <!-- party host display: -->
+        <div id="hostImg" class="FL">
+            <img src="https://graph.facebook.com/629115764/picture?type=large">
+        </div>
+
+        <div class="FL greeting">
+
+            <!-- party ends on: -->
+            <div class="ppEndFlag" title="My party will end at Midnight on Feb 15, 2015. Get your order in today to help me with my rewards!">
+
+                                    <span class="tB ptyClosed">Party Closed</span>
+                
+            </div>
+            <!--/end party end display -->
+
+            <!-- display party name: -->
+            <h1 id="partyTitle">
+                <span class="partyName">
+                    Jenna Greene&#039;s Younique Virtual Party                </span>
+            </h1>
+            <div class="message">
+                <p>
+                    Welcome to my Younique Virtual Party! This means that this party is done 100% online!  No need to leave your house-let&#039;s shop and party &quot;virtually!&quot;  So feel free to browse the wonderful Younique cosmetics, find something you love,  and remember that when you make a purchase it is helping me reach my party goals!  Party on!  <br />
+                                    </p>
+                <em class="src">
+                    - Jenna Greene, Your Party Host                </em>
+            </div>
+
+            <!-- party action links: -->
+            <ul class="flatList lineNav partyActions">
+                                    <li class="closedMessage">
+                        This party is now closed. Thank you everyone for helping me to reach my goals!  You can see how I did by looking at the Virtual Party Scoreboard below.
+                    </li>
+                            </ul>
+
+            <div class="rsvpList">
+                <h4 style="display: none">These people are attending this party:</h4>
+                <p></p>
+            </div>
+
+            <p id="inviteResp" style="display:none;" class="happy">
+            </p>
+
+            <!--/ end party action links -->
+
+        </div>
+
+
+        <span class="clr"></span>
+    </div>
+</div>
+</section>
+<div class="content-group alt-group">
+    <!-- Product carousel -->
+    <div id="productList" class="c-flow ctr">
+        <h2>
+            Start Shopping!
+        </h2>
+        <p class="introText">
+            Here are a few products to help get you started. Just start clicking, and every product you buy will automatically count towards my party goal!
+        </p>
+        <ul class="flatList lineNav span-group span-5">
+            <li class="col i-col">
+                <a href="/OpLashBlast/products/view/US-1017-00" title="3D Fiber Lashes">
+                    <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-1017-00-alt4-thumb.jpg" alt="" />                    <span>Moodstruck 3D Fiber Lashes</span>
+                </a>
+            </li>
+            <li class="col i-col">
+                <a href="/OpLashBlast/products/view/US-12201-01" title="Uplift Eye Serum">
+                    <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-12201-01-thumb.jpg" alt="" />                    <span>Uplift Eye Serum</span>
+                </a>
+            </li>
+            <li class="col i-col">
+                <a href="/OpLashBlast/products/view/US-11902-01" title="Illuminate Clear Facial Cleanser">
+                    <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-11902-01-alt1-thumb.jpg" alt="" />                    <span>Illuminate Clear Facial Cleanser</span>
+                </a>
+            </li>
+            <li class="col i-col">
+                <a href="/OpLashBlast/products/view/US-22301-00" title="Stiff Upper Lip Lip Stain">
+                    <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-22301-00-thumb.jpg" alt="" />                    <span>Stiff Upper Lip Lip Stain</span>
+                </a>
+            </li>
+            <li class="col i-col">
+                <a href="/OpLashBlast/products/view/US-22102-00" title="Moodstruck Precision Pencil Eye Liners">
+                    <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/product_images/US-22102-00-thumb.jpg" alt="" />                    <span>Moodstruck Precision Pencil Eye Liners</span>
+                </a>
+            </li>
+        </ul>
+        <p class="introText">
+            <a href="/OpLashBlast/products" class="btnPartyShop">Browse all of the Younique products</a>
+        </p>
+        <span class="clr"></span>
+    </div>
+</div>
+
+<!-- promote the party: -->
+<div id="promoteBar">
+    <!-- close/cancel -->
+    <p id="closePromote" class="ctr hide">
+        <a href="#" class="btn clPrmt"><span class="ico icon-cancel"></span> Close Library</a>
+    </p>
+    <!--/ end close/cancel -->
+    <div id="promotePartyPanel" class="hide">
+        <div class="padLg ctr">
+            <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/loading_lg.gif" alt="Loading cart" title="Loading cart" />        </div>
+    </div>
+    <!--/ end panel -->
+    <div class="c-flow promoteBtn">
+        <h2>Help Promote My Party</h2>
+        <p>
+             In our Party Posts Library you'll find some images ready for you to share on Facebook and Pinterest that will help you get the word out.
+        </p>
+        <a href="/OpLashBlast/modal/promoteparty/1331522" id="promoteTrig" class="btn s3"><span class="ico icon-share"></span> Open the Library</a>
+    </div>
+
+</div>
+<!--/ end promote the party -->
+
+<div class="patternWell-1">
+    <div class="c-flow padMed">
+
+        <div class="ppInfo span-group span-60-40">
+
+            <!-- party  stats -->
+            <div id="partyStats" class="col mb10 mt10">
+                <!--
+                <h3>Jenna Greene&#039;s Younique Virtual Party Scoreboard</h3>
+                <p class="instr">
+                                    Hosting a Younique Virtual Party gives you a fantastic oppportunity to earn half-priced Younique products, or Younique Cash.
+                    <a href="/OpLashBlast/account/newparty">Click here</a> if you'd like to host a Virtual Party.
+                                </p>
+
+                <h4>These people have contributed to the party...</h4>
+                -->
+                <!-- guests and orders-->
+                <!--
+                <div id="guestScore">
+                    <table class="partyStats" width="100%">
+                    <thead>
+                        <tr>
+                            <th>Party Guest</th>
+                            <th>Purchased On</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                                                                <tr>
+                                <td>Jenna</td>
+                                <td>Feb13,2015</td>
+                            </tr>
+                                                        <tr>
+                                <td>Laura</td>
+                                <td>Feb14,2015</td>
+                            </tr>
+                                                        <tr>
+                                <td>Amy</td>
+                                <td>Feb14,2015</td>
+                            </tr>
+                                                        <tr>
+                                <td>katie</td>
+                                <td>Feb15,2015</td>
+                            </tr>
+                                                        <tr>
+                                <td>Danielle</td>
+                                <td>Feb15,2015</td>
+                            </tr>
+                                                        <tr>
+                                <td>Jenna</td>
+                                <td>Feb15,2015</td>
+                            </tr>
+                                                        <tr>
+                                <td>Jenna</td>
+                                <td>Feb15,2015</td>
+                            </tr>
+                                                        <tr>
+                                <td>Jenna</td>
+                                <td>Feb15,2015</td>
+                            </tr>
+                                                                        </tbody>
+                    </table>
+
+                </div>
+                -->
+                <!--/ end guests and orders -->
+
+                <h2>You're helping Jenna reach a goal!</h2>
+                <p>
+                Your contributions to the party help Jenna earn party rewards!
+                </p>
+
+                                <!-- goal visualizers: -->
+                <div id="ppViz" class="ovfl">
+                    <section id="ppCards">
+
+                        
+                        <!-- party points gauge: -->
+                        <div class="viz pointsGauge ctr">
+                            <div id="gauge" class="pAbs"></div>
+                            <div class="left pKey">
+                                <a href="#" class="FL pKeyTrig"><span class="ico icon-help"></span></a>
+                                <div id="pointsKey" class="FL">
+
+                                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Pts</th>
+                                            <th>Free Product</th>
+                                            <th>1/2 Priced Items</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2000-3499</td>
+                                            <td>10%</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3500-4999</td>
+                                            <td>12%</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5000-9999</td>
+                                            <td>14%</td>
+                                            <td>3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10000+</td>
+                                            <td>16%</td>
+                                            <td>4</td>
+                                        </tr>
+                                    </tbody>
+                                    </table>
+                                    <hr>
+                                    <p>
+                                        The sales accumulated in Younique parties are quantified by a points system.  To read more
+                                        about the party points system, or to inquire about hosting your own party, <a href="/OpLashBlast/account/rewardschart">click here</a>.
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ end party points gauge -->
+                    </section>
+                </div>
+                <!--/ end goal visualizers -->
+                <ul class="flatList lineNav vizSelector">
+                
+                </ul>
+
+                <!-- list of contributors: -->
+                                <div id="contributors" class="mt10 mb10">
+                    <h3>These people have contributed to the party:</h3>
+                    <ul class="flatList lineNav">
+                                                                    <li>
+                            <a href="https://facebook.com/629115764" target="_blank">
+                            <span class="profWrap"><img src="https://graph.facebook.com/629115764/picture?type=normal" alt="Jenna" title="Jenna"></span>
+                            </a>
+                        </li>
+                                                <li>
+                            <a href="https://facebook.com/36002456" target="_blank">
+                            <span class="profWrap"><img src="https://graph.facebook.com/36002456/picture?type=normal" alt="Laura" title="Laura"></span>
+                            </a>
+                        </li>
+                                                <li>
+                            <a href="https://facebook.com/532400017" target="_blank">
+                            <span class="profWrap"><img src="https://graph.facebook.com/532400017/picture?type=normal" alt="Amy" title="Amy"></span>
+                            </a>
+                        </li>
+                                                <li>
+                            <a href="https://facebook.com/" target="_blank">
+                            <span class="profWrap"><img src="https://graph.facebook.com//picture?type=normal" alt="katie" title="katie"></span>
+                            </a>
+                        </li>
+                                                <li>
+                            <a href="https://facebook.com/681303025" target="_blank">
+                            <span class="profWrap"><img src="https://graph.facebook.com/681303025/picture?type=normal" alt="Danielle" title="Danielle"></span>
+                            </a>
+                        </li>
+                                                                </ul>
+
+                                    </div>
+
+
+
+                                
+
+                
+
+
+            </div>
+            <!--/ end stats -->
+
+
+
+            <!-- media: -->
+            <div id="mediaDisplay" class="col ctr">
+                <h3>Explore Younique</h3>
+                <div class="media wellBox">
+                                    <span class="fluidImg">
+                        <img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/party/partypage_default.jpg" alt="" />                    </span>
+                                </div>
+
+                <div class="supplementals">
+                    <a href="/OpLashBlast/Modals/rewards" class="jqModal help inlineTip rewards"><span class="ico icon-medal"></span> View party rewards chart</a>
+                                        <a href="/OpLashBlast/corporate/younique"><span class="ico icon-help"></span> Learn more about Younique</a>
+                    <a href="/OpLashBlast/corporate/presenterinfo"><span class="ico icon-user"></span> Become a Presenter</a>
+                    <a href="/OpLashBlast/account/newparty"><span class="ico icon-star"></span> Host your own party</a>
+                </div>
+
+            </div>
+            <!--/ end media -->
+
+            <span class="clr"></span>
+        </div>
+        <!--/ end info -->
+    </div>
+</div>
+    <div class="c-flow">
+        
+
+
+       <span class="clr"></span>
+    </div>
+
+
+
+
+
+    <div class="jqmWindow adjWin" id="helpWindow">
+        <div class="ctr padLg"><img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/younique.png" alt="" /></div>
+    </div>
+	</main>
+<!-- / end site content wrapper -->
+
+    <!-- if attached to party display: -->
+    <div id="miniHostImg" title="Show party banner">
+        <div id="hostPhoto" class="toggleBanner">
+            <img src="https://graph.facebook.com/629115764/picture?type=large">
+        </div>
+        <div id="teaser">
+            <ul class="flatList inlineList">
+                <li class="t">
+                    Thanks for shopping from my party!
+                </li>
+                <!--  <li class="l1">
+                    <a href="#" class="toggleBanner"><span class="ico icon-arrow-right-2"></span>Quick Party Stats</a>
+                </li>-->
+                <li class="l2">
+                     <a href="/OpLashBlast/party/1331522/view"><span class="ico icon-arrow-right-2"></span>My Party Page</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--/ end sticky party banner -->
+
+<!-- footer: -->
+<footer id="footer" class="">
+	<div class="inner c-flow">
+        <div class="span-group span-70-30">
+            <div class="col left">
+                <div class="copyNotice">
+                    <p class="comprT">
+                        Copyright &copy; Younique, LLC. <span id="copyrightDate">2015</span>. All Rights Reserved.                    </p>
+                    <div class="footerMenu">
+                        <div class="fm m1">
+                            <ul class="flatList regList">
+
+                                <li>
+                                    <a href="/OpLashBlast/products/landing">Shop </a>
+                                </li>
+                                <li>
+                                    <a href="/OpLashBlast/business/presenterinfo">Join </a>
+                                </li>
+                                <li>
+                                    <a href="/OpLashBlast/business/party">Party </a>
+                                </li>
+                                <li>
+                                    <a href="/OpLashBlast/looks/tutorials">Makeup Tutorials</a>
+                                </li>
+                                <li>
+                                    <a href="/OpLashBlast/looks/browse">Younique Looks</a>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                        <div class="fm m2">
+                            <ul class="flatList regList">
+                                <li>
+                                    <a href="/OpLashBlast/products/kudos">Monthly Kudos</a>
+                                </li>
+                                <li>
+                                    <a href="/OpLashBlast/business/about">About Younique</a>
+                                </li>
+                                <li>
+                                    <a href="/OpLashBlast/business/leaderboards">Rising Stars </a>
+                                </li>
+                                <li>
+                                    <a href="/OpLashBlast/business/founderscircle">Triple Digits Club</a>
+                                </li>
+
+                                <li>
+                                    <a href="/OpLashBlast/business/founders">Meet the Founders</a>
+                                </li>
+
+
+
+                            </ul>
+                        </div>
+                        <div class="fm m2">
+                            <ul class="flatList regList">
+                                <li>
+                                    <a href="/OpLashBlast/business/support">Customer Support</a>
+                                </li>
+                                <li>
+                                    <a href="/OpLashBlast/business/privacy">Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <a href="/OpLashBlast/business/backorders">Back Order Policy</a>
+                                </li>
+                                <li>
+                                                                        <a href="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/files/Younique_Product_Catalog_March_2015_mkt_1_en_US.pdf" target="_blank">Catalog Download</a>
+                                                                    </li>
+                                <li>
+                                    <a href="/OpLashBlast/products/satisfaction">The Love It Guarantee</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <span class="clr"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col left">
+                    <div class="y_social left">
+                        <p class="comprT">Connect with Younique</p>
+                        <ul class="flatList lineNav">
+                            <li><a href="http://www.facebook.com/youniqueproducts" class="ico icon-facebook-3" target="_blank"></a></li>
+                            <li><a href="http://www.pinterest.com/youniquemakeup/" class="ico icon-pinterest-2" target="_blank"></a></li>
+                            <li><a href="https://plus.google.com/+Youniqueproducts" rel="publisher" class="ico icon-gplus" target="_blank"></a></li>
+                            <li><a href="http://www.youtube.com/youniquecorporate" class="ico icon-youtube-2" target="_blank"></a></li>
+                            <li><a href="http://instagram.com/younique_corporate" class="ico icon-instagram" target="_blank"></a></li>
+                        </ul>
+                    </div>
+                    <div class="left whtText read padT1 ptb2">
+                        
+                        <a class="dsaSeal" href="http://www.dsa.org/code-of-ethics" target="new" style="color:#fff;">
+                            We are proud to be a pending member of the Direct Selling Association.                            To view the Code of Ethics by which we abide, click here.                        </a>
+                    </div>
+                    <a href="http://www.bbb.org/utah/business-reviews/cosmetic-sales-by-internet/younique-llc-in-lehi-ut-22338963" target="_blank"><img src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/img/bbb1.png" alt="BBB Accredited Business" class="bbbSeal" /></a>
+            </div>
+            <span class="clr"></span>
+        </div>
+    </div>
+        <div class="left languageOptions">
+        <div class="c-flow">
+            <ul class="flatList lineNav regList">
+                                    <li class="selected">
+                        <a id="en_US" class="languageOption"  href="javascript:void(0);">english</a>
+                    </li>
+                                    <li class="">
+                        <a id="es_US" class="languageOption"  href="javascript:void(0);">espanol</a>
+                    </li>
+                            </ul>
+        </div>
+    </div>
+    </footer>
+
+<div id="variantChoice" class="jqmWindow">
+    <a href="#" class="ctr jqmBar jqmClose" title="Close window"> close </a>
+    <div class="inner">
+        <h1>Please Choose a Color</h1>
+        <p>A color must be selected from the dropdown menu, directly above the "add to cart" button, before this item can be added to your cart.</p>
+        <p><a href="#" class="btn jqmClose">OK</a></p>
+    </div>
+</div>
+
+
+
+
+<div id="fb-root"></div>
+
+<script type="text/javascript">
+
+var requireFacebookPermissions = function(requiredPermissions, callback,forceLogin) {
+	if(forceLogin !== false) {
+		forceLogin = true;
+	}
+    FB.getLoginStatus(function(response) {
+    	if (response.status !== 'connected') {
+        	if(forceLogin) {
+	    		FB.login(function(response) {
+		    		API.calllocal("/account/signinapi", {}, function() {
+		    			callback(response);
+		    		}, function() {
+			    		callback(response);
+		    		});
+				}, {scope: requiredPermissions.join(",")});
+        	}
+    	} else if(requiredPermissions.length) {
+    		FB.api('/me/permissions',function(resp) {
+        		var permissions = resp.data[0];
+        		var hasMissingPermissions = false;
+        		for(var i = 0; i < requiredPermissions.length; i++) {
+            		var perm = requiredPermissions[i];
+            		if(perm != '' && permissions[perm] != 1) {
+            			hasMissingPermissions = true;
+            			break;
+            		}
+        		}
+        		if(hasMissingPermissions) {
+        			FB.login(function(response) {
+                		callback(response);
+            		}, {scope: requiredPermissions.join(",")});
+        		} else {
+        			callback(response);
+        		}
+    	    });
+    	} else {
+    		API.calllocal("/account/signinapi", {}, function() {
+    			callback(response);
+    		}, function() {
+	    		callback(response);
+    		});
+    	}
+	});
+};
+var checkHasFacebookPermission = function(requiredPermissions, callback) {
+	FB.api('/me/permissions',function(resp) {
+		if(resp.error) {
+			callback(false);
+		} else {
+			var permissions = resp.data[0];
+			var hasMissingPermissions = false;
+			for(var i = 0; i < requiredPermissions.length; i++) {
+	    		var perm = requiredPermissions[i];
+	    		if(permissions[perm] != 1) {
+	    			hasMissingPermissions = true;
+	    			break;
+	    		}
+			}
+			callback(!hasMissingPermissions);
+		}
+    });
+};
+window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+//      appId      : '179262732208465', // App ID from the App Dashboard
+		appId      : '179262732208465', // App ID from the App Dashboard
+      status     : true, // check the login status upon init?
+      cookie     : true, // set sessions cookies to allow your server to access the session?
+      xfbml      : false  // parse XFBML tags on this page?
+    });
+
+    	    // Additional initialization code such as adding Event Listeners goes here
+	    var scope = '';
+	    scope = $.trim(scope);
+
+	    requireFacebookPermissions(scope.split(','), function() {
+		    $("body").trigger("facebookloaded");
+	    }, false);
+	  };
+
+  // Load the SDK's source Asynchronously
+  (function(d, debug){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all" + (debug ? "/debug" : "") + ".js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document, /*debug*/ false));
+</script><script type="text/javascript" src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/js/raphael.2.1.0.min.js"></script><script type="text/javascript" src="https://d2lu29c1rbtr6s.cloudfront.net/s/407/en_US/js/justgage.js"></script><script type="text/javascript">
+  $(document).ready(function(){
+    $('#promoteTrig').click(function(event){
+        event.preventDefault();
+        getPromoteParty();
+        $('#promotePartyPanel').slideDown('fast');
+        $('.promoteBtn').fadeOut('fast');
+        $('#closePromote').slideDown('fast');
+    });
+    $('#closePromote').click(function(e) {
+       e.preventDefault();
+       $('#promotePartyPanel').html('');
+       $(this).slideUp('fast');
+       $('.promoteBtn').slideDown('fast');
+    });
+
+    // promote the party:
+    function getPromoteParty() {
+         $.ajax({
+           url: "/OpLashBlast/modals/promoteparty/1331522",
+           cache: false
+         }).done(function( html ) {
+           $("#promotePartyPanel").html(html);
+         });
+    }
+  });
+</script>
+<script type="text/javascript">
+   $(function() {
+
+    if($("#kudosGauge").length) {
+        $('#ppCards .pointsGauge').css({'padding':'.75em 1em'});
+    }
+    if($("#gauge").length) {
+        var g = new JustGage({
+            id: "gauge",
+            label: "Points Earned",
+            levelColors: ["#8dc642","#8dc642","#8dc642"],
+            titleFontColor: "#f7e7d4",
+            valueFontColor: "#ffffff",
+            value: 8780,
+            min: 0,
+            max: 10000,
+            relativeGaugeSize: true,
+            title: "Party Points"
+          });
+        $('.toggleViz').click(function(e){
+            e.preventDefault();
+            $('.toggleViz').removeClass('selected');
+            $(this).addClass('selected');
+            $('#ppCards').toggleClass('flipped');
+            $('#gauge').fadeToggle('fast');
+        });
+        $('.pKeyTrig').click(function(e){
+            e.preventDefault();
+            $('#pointsKey').toggleClass('keyOut');
+        });
+    }
+
+$('#prevNext a').each(function(){
+    var dir = $(this).attr('data-dir');
+    $(this).click(function(){
+        if(dir == "right") {
+            $('#productList').scrollTo('.group',500);
+        }
+    });
+});
+
+$('.hostGoal .indicator').each(function(){
+    var range = $(this).attr('data-range');
+    var reward = $(this).attr('data-reward');
+    $(this).qtip({
+
+        content: '<div class="rw range">'+range+' in sales</div><div class="rw reward">' +reward+ '</div>',
+        show: 'mouseover',
+        hide: 'mouseout',
+        position: {
+          corner: {
+             target: 'bottomMiddle',
+             tooltip: 'topLeft'
+          }
+        },
+        style: {
+            background: '#444',
+          width: 200,
+          padding: 2,
+          textAlign: 'center',
+          border: {
+             width: 4,
+             radius: 2,
+             color: '#444'
+          },
+          tip: 'topLeft'
+        }
+
+    });
+});
+
+
+
+       $('.happy').each(function(){
+          $(this).click(function(){
+             $(this).fadeOut('fast');
+          });
+
+       });
+
+       $('#partyBanner, #miniHostImg').hide();
+       $('body').removeClass('hasParty');
+
+       $(".posttowall").click(function(e) {
+           e.preventDefault();
+           var post = {
+             method: 'feed',
+             name: "Jenna Greene&#039;s Younique Virtual Party",
+             link: window.location.href+"?autoplay=1#mediaDisplay",
+             caption: "Wow!  I just attended a Younique Virtual Party",
+             description: "So quick and easy!  Check it out here!"
+           };
+                      post.picture = "http://www.youniqueproducts.com/img/party/partypage_default.jpg";
+                      FB.ui( post, function(response) {
+                 if (response && response.post_id) {
+                  $('#shareResp').fadeIn('fast').delay(4000).fadeOut(500);
+                 }
+               }
+           );
+       });
+
+       $("body").on("facebookloaded", function() {
+           FB.api("//attending", 'get', function(resp) {
+               $(".greeting .rsvpList").find("img").remove();
+               $(".rsvpList h4").show();
+               var count = 0;
+               $.each(resp.data, function(i,e) {
+                   count++;
+                   if(count <= 20) {
+                       var img = $('<a href="https://facebook.com/'+e.id+'" target="_blank"><img width="32" height="32" src="https://graph.facebook.com/'+e.id+'/picture?type=square"/></a>');
+                       img.attr("alt", e.name);
+                       img.attr("title", e.name);
+                       $(".greeting .rsvpList p").before(img);
+                   }
+               });
+           });
+       });
+
+       $(".invitefriends").click(function(e) {
+           e.preventDefault();
+           FB.login(function(response) {
+                if (response.authResponse) {
+                    FB.api("//attending/", 'post', {}, function(resp) {
+                           FB.ui(
+                               {
+                                 method: 'apprequests',
+                                 data: "party=1331522",
+                                 message: 'Invite others to join this party'
+                               },
+                               function(response) {
+                                   //Now lets invite them to the event as well
+                                    FB.api("//invited/", 'post', {users: response.to.join(",")}, function(resp) {
+                                        //alert("You have invited " + response.to.length.toString() + " friends");
+                                        var inviteMsg = "<span class=\"icomoon\">c</span> Thank you! You invited "+response.to.length.toString()+ " friends";
+                                        $('#inviteResp').html(inviteMsg).fadeIn('fast').delay(4000).fadeOut(500);
+                                    });
+                               }
+                             );
+                       });
+                } else {
+                    alert("Please grant our application permission in order to invite others to this party");
+                }
+           }, {scope: "rsvp_event,create_event"});
+       });
+
+
+       
+
+   });
+</script>
+
+</body>
+</html>

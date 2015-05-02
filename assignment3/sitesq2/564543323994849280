@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/css/typography.css" type="text/css">
+        <link rel="stylesheet" href="/css/style.css" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script type="text/javascript">
+            var basePath = '';
+            var isMobile = false;
+            var isFacebook = (window.self !== window.top);
+        </script>
+        <script src="/js/popups.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $.ajaxSetup({ cache: true });
+                $.getScript('//connect.facebook.net/en_UK/all.js', function(){
+                    FB.init({
+                        appId: '1387359808211576'
+                    });     
+                    $('#loginbutton,#feedbutton').removeAttr('disabled');
+                
+                
+                    FB.Canvas.setAutoGrow();
+
+                    FB.Canvas.setSize({height: document.getElementsByTagName('body')[0].clientHeight});
+                    setTimeout(function(){
+                      FB.Canvas.setAutoGrow();
+                    }, 1000);
+                    FB.Canvas.setAutoGrow();
+                    FB.Canvas.scrollTo(0,0);
+                });
+            });
+        </script>
+        <script src="/js/results.js"></script>
+    </head>
+    <body>
+        
+        <div id="fb-root"></div>
+        
+        <div>
+            <script type="text/javascript">
+    var hasIdentity = '';
+    var feedbackId = '';
+    var identityId = '';
+    var showCaptcha = '';
+    var isAdmin = '';
+</script>
+
+<div id="fb-root" class=" fb_reset">
+
+<div id="app-frame">
+
+
+<div id="top-wrapper" >
+                    <a href="javascript:;" id="sign-main-btn" class="sign-main-btn-action">Sign In</a>
+            
+    <div id="logo"></div>
+            <div id="form-wrapper">
+            <div class="new_rantrave">
+    <div style="margin:0;padding:0;display:inline">
+        <input name="utf8" value="✓" type="hidden">
+        <input name="authenticity_token" value="af+Pi4td0qEQ17hzd/9jOvILoOTtVWuyhv9zMftX5M0=" type="hidden">
+    </div>
+    <div id="formInfo">Rave about what we are doing well or rant about what you<br>would like us to improve on. The more we know, the more<br>we can improve. So go ahead, rant or rave.</div>
+
+
+        <div class="socialLogin">
+        <h4>Sign up to submit your rant or rave</h4>
+                <form id="login">
+            <input type="hidden" name="login_type" value="">            <input type="hidden" name="first_name" value="">            <input type="hidden" name="last_name" value="">            <input type="hidden" name="facebook_id" value="">            <div>
+                <a href="javascript:;" class="facebookLogin facebook-login-btn ">Facebook Login</a>
+                                <a href="javascript:;" class="twitterLogin twitter-login-btn"></a>
+                <a href="javascript:;" class="emailLogin email-enable-form-btn last"></a>
+                            </div>
+        </form>
+        <a href="#bottom-wrapper">or view the Rant or Rave feed</a>
+    </div>
+    <form autocomplete="off" accept-charset="UTF-8" action="/rantraves" id="new_rantrave" method="post">
+    <div class="dash-divider"></div>
+    <div id="userInfo" class="faded">
+        <div class="field sm colOne">
+            <input disabled="disabled" class="required hasPlaceholder" id="rantrave_name" name="first_name" placeholder="First Name" size="30" type="text" value="" maxlength="50">
+        </div>
+        <div class="field sm">
+            <input disabled="disabled" class="required hasPlaceholder" id="rantrave_l_name" name="last_name" placeholder="Last Name" size="30" type="text" value="" maxlength="50">
+        </div>
+        <div class="field phone sm colOne">
+            <input disabled="disabled" class="required number hasPlaceholder" id="rantrave_phone" name="phone" placeholder="Phone # (###)-###-####" size="30" type="text" value="">
+        </div>
+        <div class="field zip sm">
+            <input disabled="disabled" class="hasPlaceholder" id="rantrave_zip" name="zip" placeholder="ZIP Code" size="30" type="text" value="" maxlength="5">
+        </div>
+        <div class="field email lg">
+            <input disabled="disabled" class="required email hasPlaceholder" id="rantrave_email" name="email" placeholder="Email" size="30" type="text" value="" maxlength="100">
+        </div>
+        <div class="field email lg bt">
+            <input disabled="disabled" class="required email hasPlaceholder" id="email_confirmation" name="confirmation_email" placeholder="Email Confirmation" type="text" maxlength="100">
+        </div>
+    </div>
+        <div class="dash-divider"></div>
+    <div id="locationWrapper" class="faded">
+        <div class="locationInfo">
+            Where did your experience or purchase take place?
+        </div>
+        <div id="radioButtons">
+            <div id="radioOne" class="field radio">
+                <input class="required" id="rantrave_dotcom_true" name="purchase_type" value="online" type="radio">
+                <span class="faux_radio required disabled"></span>
+                <label for="rantrave_dotcom">Online</label>
+            </div>
+            <div id="radioTwo" class="field radio">
+                <input class="required" id="rantrave_dotcom_false" name="purchase_type" value="store" type="radio">
+                <span class="faux_radio required disabled"></span>
+                <label for="rantrave_dotcom">In Store</label>
+            </div>
+            <div class="field zip">
+
+            </div>
+
+            <div id="result" class="height"></div>
+        </div>
+        <div class="dropdowns">
+            <div class="field category">
+                <span class="asterix">*</span>
+                                <select style="display: none;" sb="24999210" class="required" id="rantrave_category" name="category_id">
+                    <option value=""></option>
+                                            <option value="1">Delivery</option>
+                                            <option value="2">Installation</option>
+                                            <option value="3">Warranty</option>
+                                            <option value="4">Repair</option>
+                                            <option value="5">Product Quality</option>
+                                            <option value="6">Pricing/Promotion</option>
+                                            <option value="7">MyLowe’s</option>
+                                            <option value="8">In Store Experience</option>
+                                            <option value="9">Online/Mobile Experience</option>
+                                            <option value="10">Other</option>
+                                    </select>
+                <div class="sbHolder blackSelect disabled" id="sbHolder_category">
+                    <a class="sbToggle" href="javascript:;" id="sbToggle_category"></a>
+                    <a class="sbSelector" href="javascript:;" id="sbSelector_category">Category</a>
+                    <ul style="display: none;" class="sbOptions" id="sbOptions_category">
+                                                                                    <li><a rel="1" href="javascript:;">Delivery</a></li>
+                                                                                                                <li><a rel="2" href="javascript:;">Installation</a></li>
+                                                                                                                <li><a rel="3" href="javascript:;">Warranty</a></li>
+                                                                                                                <li><a rel="4" href="javascript:;">Repair</a></li>
+                                                                                                                <li><a rel="5" href="javascript:;">Product Quality</a></li>
+                                                                                                                <li><a rel="6" href="javascript:;">Pricing/Promotion</a></li>
+                                                                                                                <li><a rel="7" href="javascript:;">MyLowe’s</a></li>
+                                                                                                                <li><a rel="8" href="javascript:;">In Store Experience</a></li>
+                                                                                                                <li><a rel="9" href="javascript:;">Online/Mobile Experience</a></li>
+                                                                                                                <li><a rel="10" href="javascript:;">Other</a></li>
+                                                                        </ul>
+                </div>
+            </div>
+            <div class="field product last">
+                <span class="asterix">*</span>
+                                <select style="display: none;" sb="1206657" id="rantrave_product" name="product_id">
+                    <option value=""></option>
+                                            <option value="1">Appliances</option>
+                                            <option value="2">Bathroom</option>
+                                            <option value="3">Building Supplies</option>
+                                            <option value="4">Cleaning & Organization</option>
+                                            <option value="5">Electrical</option>
+                                            <option value="6">Flooring</option>
+                                            <option value="7">Garden Center</option>
+                                            <option value="8">Hardware</option>
+                                            <option value="9">Heating & Cooling</option>
+                                            <option value="10">Home Décor</option>
+                                            <option value="11">Kitchen</option>
+                                            <option value="12">Lawn Care & Landscape</option>
+                                            <option value="13">Lighting & Ceiling Fans</option>
+                                            <option value="14">Outdoor Living & Recreation</option>
+                                            <option value="15">Outdoor Power Equipment</option>
+                                            <option value="16">Paint</option>
+                                            <option value="17">Plumbing</option>
+                                            <option value="18">Tools</option>
+                                            <option value="19">Windows & Doors</option>
+                                            <option value="20">Holiday</option>
+                                    </select>
+                <div class="sbHolder blackSelect disabled" id="sbHolder_product">
+                    <a class="sbToggle" href="javascript:;" id="sbToggle_product"></a>
+                    <a class="sbSelector" href="javascript:;" id="sbSelector_product">Product (optional)</a>
+                    <ul style="display: none;" class="sbOptions" id="sbOptions_product">
+                                                                                    <li><a rel="1" href="javascript:;">Appliances</a></li>
+                                                                                                                <li><a rel="2" href="javascript:;">Bathroom</a></li>
+                                                                                                                <li><a rel="3" href="javascript:;">Building Supplies</a></li>
+                                                                                                                <li><a rel="4" href="javascript:;">Cleaning & Organization</a></li>
+                                                                                                                <li><a rel="5" href="javascript:;">Electrical</a></li>
+                                                                                                                <li><a rel="6" href="javascript:;">Flooring</a></li>
+                                                                                                                <li><a rel="7" href="javascript:;">Garden Center</a></li>
+                                                                                                                <li><a rel="8" href="javascript:;">Hardware</a></li>
+                                                                                                                <li><a rel="9" href="javascript:;">Heating & Cooling</a></li>
+                                                                                                                <li><a rel="10" href="javascript:;">Home Décor</a></li>
+                                                                                                                <li><a rel="11" href="javascript:;">Kitchen</a></li>
+                                                                                                                <li><a rel="12" href="javascript:;">Lawn Care & Landscape</a></li>
+                                                                                                                <li><a rel="13" href="javascript:;">Lighting & Ceiling Fans</a></li>
+                                                                                                                <li><a rel="14" href="javascript:;">Outdoor Living & Recreation</a></li>
+                                                                                                                <li><a rel="15" href="javascript:;">Outdoor Power Equipment</a></li>
+                                                                                                                <li><a rel="16" href="javascript:;">Paint</a></li>
+                                                                                                                <li><a rel="17" href="javascript:;">Plumbing</a></li>
+                                                                                                                <li><a rel="18" href="javascript:;">Tools</a></li>
+                                                                                                                <li><a rel="19" href="javascript:;">Windows & Doors</a></li>
+                                                                                                                <li><a rel="20" href="javascript:;">Holiday</a></li>
+                                                                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dash-divider"></div>
+    <div id="resetfields" style="display:none;"><a href="#" onclick="return false;" id="reset">Reset Fields</a></div>
+    <div class="rant-rave-container faded">
+        <div class="field rantfield">
+            <a class="closeRantRave"></a>
+            <div class="img"></div>
+            <textarea disabled="disabled" class="required" cols="40" id="rantrave_message_rant" name="rant" placeholder="Add your comment..." rows="20" maxlength="60000"></textarea>
+        </div>
+        <div class="field ravefield">
+            <a class="closeRantRave"></a>
+            <div class="img"></div>
+            <textarea disabled="disabled" class="required" cols="40" id="rantrave_message_rave" name="rave" placeholder="Add your comment..." rows="20" maxlength="60000"></textarea>
+        </div>
+    </div>
+    <div class="attach faded">
+        <a href="#/">
+            <label for="attachment-input" id="file-too-big" style="display: none;">File Too Big</label>
+            <label for="attachment-input" id="file-attached" style="display: none;">File Attached</label>
+            <label for="attachment-input" id="add-attachment">Add Attachment</label>
+            <input disabled="disabled" type="file" name="attachment" id="attachment-input" data-url="/feedback/add-attachment" />
+        </a>
+        <span id="trigger-add-attachment" style="display: none;"></span>
+        <p>(Up to 10 MB)</p>
+        <p>Optional and will not be displayed publicly, only customer care will be able to view your photo</p>
+    </div>
+    <div class="actions">
+        <input type="button" id="savefeed" class="faded" name="commit" value="SUBMIT" disabled="disabled">
+    </div>
+</form>
+</div>
+<div id="form-footer"></div>        </div>
+    </div>
+
+
+
+<div id="bottom-wrapper" >
+            <div class="menufeed">
+    <span>Rant or Rave Feed</span>
+    <div id="bottomNav">
+        <div class="mysubmissions">
+                            <a href="javascript:;" class="allEntries" fbid="559364109">All Submissions</a>
+                    </div>
+        <div class="resolveFilter">
+            <a href="javascript:;" id="filterResolved" fbid="559364109" onclick="return false;" data-resolved="yes">Resolved</a>
+        </div>
+        <div class="sortbylocation">
+            <a href="javascript:;">Location</a>
+        </div>
+        <div class="sortby" id="sortbyCategory">
+            <select style="display: none;" sb="87068004" fbid="559364109" id="category" name="category">
+                <option value="">All Categories</option>
+                                    <option value="1">Delivery</option>
+                                    <option value="2">Installation</option>
+                                    <option value="3">Warranty</option>
+                                    <option value="4">Repair</option>
+                                    <option value="5">Product Quality</option>
+                                    <option value="6">Pricing/Promotion</option>
+                                    <option value="7">MyLowe’s</option>
+                                    <option value="8">In Store Experience</option>
+                                    <option value="9">Online/Mobile Experience</option>
+                                    <option value="10">Other</option>
+                            </select>
+            <div class="sbHolder" id="sbHolder_87068004">
+                <a class="sbToggle" href="javascript:;" id="sbToggle_87068004"></a>
+                <a class="sbSelector" href="javascript:;" id="sbSelector_87068004">Category</a>
+                <ul style="display: none;" class="sbOptions" id="sbOptions_87068004">
+                    <li><a class="sbFocus" rel="" href="javascript:;">Category</a></li>
+                                            <li><a rel="1" href="javascript:;">Delivery</a></li>
+                                            <li><a rel="2" href="javascript:;">Installation</a></li>
+                                            <li><a rel="3" href="javascript:;">Warranty</a></li>
+                                            <li><a rel="4" href="javascript:;">Repair</a></li>
+                                            <li><a rel="5" href="javascript:;">Product Quality</a></li>
+                                            <li><a rel="6" href="javascript:;">Pricing/Promotion</a></li>
+                                            <li><a rel="7" href="javascript:;">MyLowe’s</a></li>
+                                            <li><a rel="8" href="javascript:;">In Store Experience</a></li>
+                                            <li><a rel="9" href="javascript:;">Online/Mobile Experience</a></li>
+                                            <li><a rel="10" href="javascript:;">Other</a></li>
+                                    </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="locationSelect" class="locationSelect" style="display:none;">
+    <input class="hasPlaceholder" id="searchThis" name="searchThis" placeholder="City, State, or ZIP Code" type="text" maxlength="50">
+    <ul id="locResults"></ul>
+</div>        <div id="rantfeed">
+        <div class="msgWrapper">
+
+    
+        </div>
+        <div id="viewMore">
+            <span>View More</span>
+            <a href="http://www.lowes.com/cd_Privacy+and+Security+Statement_137461171_" target="_blank"><span class="privacy">Privacy Policy</span></a>
+        </div>
+    </div>
+</div>
+
+    
+<div id="overlays" class="popup" style="display: none;">
+    <div class="popup-overlay"></div>
+</div>
+
+<div id="staticPopups" style="display: none;">
+    <div id="replyConfirm" class="overlayBox">
+        <img src="/img/closePopin.jpg" class="close-popin" onclick="closePopups();">
+        <div class="popupContent">
+            <img src="/img/checkMsg.jpg">
+            <h2>The user will now be notified that a reply was made.</h2>
+        </div>
+    </div>
+
+    <div id="replyConfirmEmail" class="overlayBox">
+        <img src="/img/closePopin.jpg" class="close-popin" onclick="closePopups();">
+        <div class="popupContent">
+            <h2>This user signed up through email.<br/>
+                Please notify them that a reply was made.</h2>
+            <a href="javascript:;" id="replaySubmit">Send Notification Email</a>
+        </div>
+    </div>
+    
+    <div id="confirmPopup" class="overlayBox">
+        <img src="/img/closePopin.jpg" class="close-popin" onclick="closePopups();">
+        <div class="popupContent">
+            <h2>Are you sure?</h2>
+            <a href="javascript:;" id="confirmPopupSuccess">Yes</a>
+            <a href="javascript:;" id="confirmPopupFailed">No</a>
+        </div>
+    </div>
+
+    
+    <div id="raveSuccess" class="overlayBox">
+        <img src="/img/closePopin.jpg" class="close-popin" onclick="closePopups();">
+        <div class="popupContent">
+            <img src="/img/checkMsg.jpg">
+            <h2>Thank you for your submission</h2>
+        </div>
+    </div>
+    
+    <div id="shareFeedbackVia" class="overlayBox">
+        <img src="/img/closePopin.jpg" class="close-popin" onclick="closePopups();">
+        <div class="popupContent">
+            <img src="/img/checkMsg.jpg">
+            <h2>Thank you for your submission</h2>
+            <span>Share your feedback</span>
+            <div class="icon-holder">
+                <a href="javascript:;" style="width: 12px; height: 25px" class="facebook-share" onclick="resultFacebookShare()"><img src="/img/fb-popin.png"></a>
+                <a href="javascript:;" class="last twitter-share" style="width: 30px; height: 25px" onclick="resultTwitterShare()"><img src="/img/twitter-popin.png"></a>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="resolveShareFeedbackVia" class="overlayBox">
+        <img src="/img/closePopin.jpg" class="close-popin" onclick="closePopups();">
+        <div class="popupContent">
+            <img src="/img/checkMsg.jpg">
+            <h2>Glad we were able to resolve your issue!</h2>
+            <span>Share your experience</span>
+            <div class="icon-holder">
+                <a href="javascript:;" style="width: 12px; height: 25px" class="facebook-share" onclick="resultFacebookShare()"><img src="/img/fb-popin.png"></a>
+                <a href="javascript:;" class="last twitter-share" style="width: 30px; height: 25px" onclick="resultTwitterShare()"><img src="/img/twitter-popin.png"></a>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="fbTwNotification" class="overlayBox">
+        <img src="/img/closePopin.jpg" class="close-popin" onclick="closePopups();">
+        <div class="popupContent">
+            <img src="/img/checkMsg.jpg">
+            <h2><center>The user will now be notified<br/> that a reply was made.</center></h2>
+        </div>
+    </div>
+
+</div>        </div>
+
+        <script src="/js/auth.js"></script>
+        <script src="/js/script.js"></script>
+        <script src="/js/maskedInput.js"></script>
+        <script src="/js/jquery.ui.widget.js"></script>
+        <script src="/js/jquery.iframe-transport.js"></script>
+        <script src="/js/jquery.fileupload.js"></script>
+    </body>
+</html>

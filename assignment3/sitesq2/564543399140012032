@@ -1,0 +1,1875 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if IE 7]><html class="ie7" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/" id="htmlTag"><![endif]-->
+<!--[if IE 8]><html class="ie8" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/" id="htmlTag"><![endif]-->
+<!--[if IE 9]><html class="ie9" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/" id="htmlTag"><![endif]-->
+<!--[if !(IE 7) | !(IE 8) | !(IE 9) ]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/" id="htmlTag">
+<!--<![endif]-->
+<head id="ctl00_Head1" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# blogtalk: http://ogp.me/ns/apps/blogtalk# profile: http://ogp.me/ns/profile#">
+<script type='text/javascript'>
+//<![CDATA[
+window['adrum-start-time'] = new Date().getTime();
+;/* Version f86d2a31df47d41865e76e563673cabf v:4.0.3.3, c:f287a08ea76d1e7e7a9c01e4e4ab5b4fae6f1bff, b:8309 n:19-4.0.3.next */(function(){(function(){if(!window.ADRUM&&!0!==window["adrum-disable"]){var a=window.ADRUM={};window["adrum-start-time"]=window["adrum-start-time"]||(new Date).getTime();(function(b){b.beaconUrlHttp="http://col.eum-appdynamics.com";b.beaconUrlHttps="https://col.eum-appdynamics.com";b.appKey=window["adrum-app-key"]||"AD-AAB-AAA-BYB";var c="https:"===document.location.protocol;if(window["adrum-geo-resolver-url"]){var e=window["adrum-geo-resolver-url"],d=e.indexOf("://");-1!=d&&(e=e.substring(d+3));e=(c?"https://":"http://")+e}else e=
+c?"":"";b.adrumExtUrl=(c?"https://cdn.appdynamics.com":"http://cdn.appdynamics.com")+"/adrum-ext.f86d2a31df47d41865e76e563673cabf.js";b.sendImageBeacon="false";b.geoResolverUrl=e;b.useStrictDomainCookies=!0===window["adrum-use-strict-domain-cookies"];b.k;(function(b){function e(b){return 0<=b.location.search.indexOf("ADRUM_debug=true")||0<=b.cookie.search(/(^|;)\s*ADRUM_debug=true/)}b.Ad=e;b.iDR=e})(b.a||(b.a={}));b.isDebug=b.a.Ad(document)})(a||
+(a={}));(function(b){b.logMessages=[];b.debug;b.warn;b.info;b.error;for(var c=["debug","warn","info","error"],e=0;e<c.length;e++)(function(e){b[e]=function(z,A){b.isDebug&&b.logMessages.push([e,Array.prototype.slice.call(arguments).join(" | ")])}})(c[e]);var d=0;(function(e){window.ADRUM.TPL=e;e.ea=function(b,e,z,m){b=z+"/eumcollector/error.gif?version=1&appKey="+m+"&msg="+encodeURIComponent(b.substring(0,500));e&&(b+="&stack=",b+=encodeURIComponent(e.substring(0,1500-b.length)));return b};e.cIEBU=
+e.ea;e.p=function(z,A){2<=d||((new Image).src=e.ea(z,A,b.beaconUrlHttps,b.appKey),d++)};e.dumpLog=b.isDebug?function(){for(var e="",z=0;z<b.logMessages.length;z++)var m=b.logMessages[z],e=e+("["+m[0]+"]\t"+m[1].replace(RegExp("<br/>","g"),"\n\t")+"\n");return e}:function(){}})(b.a||(b.a={}));var A=b.a,z=b.error;b.error=function(){for(var b=0;b<arguments.length-0;b++);0<arguments.length&&(b=Array.prototype.slice.call(arguments).join(" | "),z(b),A.p(b,null))};b.exception=function(){if(!(1>arguments.length)){var b=
+Array.prototype.slice.call(arguments),e;e=(e=b[0])?(e=e.stack)&&"string"===typeof e?e:null:null;b=b.slice(1).join(" | ");z(b);A.p(b,e)}};b.assert=function(e,z){e||b.error("Assert fail: "+z)};b.info("M0")})(a||(a={}));(function(b){(function(c){var e=function(){function e(){this.Kb=[];this.eb(e.nb,0)}e.prototype.ab=function(b){this.eb(e.Wb,b)};e.prototype.yb=function(b){this.eb(e.Zb,b)};e.prototype.bb=function(b){this.eb(e.Xb,b)};e.prototype.eb=function(b,e){this.Kb.push({Hd:(new Date).getTime(),Gd:e,
+pc:b});this.ld=b};e.prototype.getPhaseID=function(b){for(var z=0;z<e.Yb.length;z++)if(e.Yb[z]===b)return z;return null};e.prototype.getPhaseCallbackTime=function(b){for(var e=this.Kb,m=0;m<e.length;m++)if(e[m].pc===b)return e[m].Hd;return null};e.prototype.findPhaseAtNominalTime=function(c){b.assert(0<=c);for(var z=this.Kb,m=z.length-1;0<=m;m--)if(c>=z[m].Gd)return z[m].pc;b.error("M1",c,b.EXT.bc(z));return e.nb};e.nb="AFTER_FIRST_BYTE";e.Wb="AFTER_DOM_INTERACTIVE";e.Zb="AT_ONLOAD";e.Xb="AFTER_ONLOAD";
+e.Yb=[e.nb,e.Wb,e.Zb,e.Xb];return e}();c.Ta=e})(b.a||(b.a={}))})(a||(a={}));(function(b){(function(c){c.uc=function(b){setTimeout(b,0)};c.jd=function(){b.navTiming=null;var e=window.performance||window.f||window.g||window.i;if(e&&e.timing)if(e=e.timing,e.navigationStart&&e.navigationStart<=e.loadEventEnd){var c={},A;for(A in e){var z=e[A];"number"===typeof z&&(c[A]=z)}b.navTiming=c}else b.debug("M2")};c.kd=function(){b.resTiming=null;var e=window.performance||window.f||window.g||window.i;e&&e.getEntriesByType&&
+((e=e.getEntriesByType("resource"))&&e.length&&0!==e.length&&e.unshift?(b.resTiming=e,b.navTiming?(e=b.navTiming,e.initiatorType="other",e.name=document.URL,e.navigationStart&&!e.startTime&&(e.startTime=e.navigationStart),e.isBase=!0):e=null,e&&b.resTiming.unshift(e)):b.debug("M3"))}})(b.a||(b.a={}))})(a||(a={}));(function(b){(function(b){b.Sa=100;b.Aa=100})(b.a||(b.a={}));var c=b.a,e=function(){function b(e){this.max=e;this.qb=0}b.prototype.yd=function(){this.Ya()||this.qb++};b.prototype.Ya=function(){return this.qb>=
+this.max};b.prototype.reset=function(){this.qb=0};return b}(),d=function(){function A(){this.Va=[];this.Db=new e(c.Sa);this.xb=new e(c.Aa)}A.prototype.submit=function(e){this.push(e)&&b.initEXTDone&&this.processQ()};A.prototype.processQ=function(){for(var e=this.Ea(),m=0;m<e.length;m++){var c=e[m];"function"===typeof b.EXT.H[c[0]]?(b.isDebug&&b.debug("M4",c[0],c.slice(1).join(", ")),b.EXT.H[c[0]].apply(b,c.slice(1))):b.error("M5",c[0])}};A.prototype.Cd=function(b){return"reportXhr"===b||"reportError"===
+b};A.prototype.push=function(e){var m=e[0],c=this.Cd(m),A=c?this.Db:this.xb;if(A.Ya())return b.debug("M6",c?"spontaneous":"non spontaneous",m),!1;this.Va.push(e);A.yd();return!0};A.prototype.Ea=function(){var b=this.Va;this.reset();return b};A.prototype.size=function(){return this.Va.length};A.prototype.reset=function(){this.Va=[];this.Db.reset();this.xb.reset()};A.prototype.isSpontaneousQueueDead=function(){return this.Db.Ya()};A.prototype.isNonSpontaneousQueueDead=function(){return this.xb.Ya()};
+return A}();b.Ec=d})(a||(a={}));(function(b){b.q=new b.Ec;b.command=function(c,e){b.isDebug&&b.debug("M7",c,Array.prototype.slice.call(arguments).slice(1).join(", "));b.q.submit(Array.prototype.slice.call(arguments))}})(a||(a={}));(function(b){(function(c){window.ADRUM.aop=c;c.support=function(b){return!b||"apply"in b};c.around=function(e,d,A,z){b.assert(c.support(e),"aop.around called on a function which does not support interception");e=e||function(){};return function(){b.isDebug&&b.debug("M8",
+z,Array.prototype.slice.call(arguments).join(", "));var m=Array.prototype.slice.call(arguments),c;try{d&&(c=d.apply(this,m))}catch(l){b.exception(l,"M9",z,l)}b.assert(!c||"[object Array]"===Object.prototype.toString.call(c));var a=void 0;try{a=e.apply(this,c||m)}finally{try{A&&A.apply(this,m)}catch(n){b.exception(n,"M10",z,n)}}return a}};c.before=function(b,d){return c.around(b,d)};c.after=function(b,d){return c.around(b,null,d)}})(b.b||(b.b={}))})(a||(a={}));(function(b){b.initEXTDone=!1;b.addEventListener=
+function(c,e,d){function A(){try{return d.apply(this,Array.prototype.slice.call(arguments))}catch(z){b.exception(z,"M12",e,c,z)}}b.isDebug&&b.debug("M11",e,c);c.addEventListener?c.addEventListener(e,A,!1):c.attachEvent&&c.attachEvent("on"+e,A)};b.compareWindows=function(b,e){return b==e};b.lifecycle=new b.a.Ta;b.listenForErrors=null;(function(){var c=!1;b.listenForErrors=function(){b.b.support(window.onerror)?(window.onerror=b.b.around(window.onerror,function(e,d,A){c||b.command("reportError",e,d,
+A);c=!0},function(){c=!1},"onerror"),b.windowErrorHandler=window.onerror,b.info("M13")):b.info("M14")}})();b.windowErrorHandler=window.onerror;b.navTiming=null;b.resTiming=null;b.j=function(c){b.lifecycle.yb(c&&c.timeStamp);b.a.uc(function(){var e=(new Date).getTime();b.lifecycle.bb(e);b.command("mark","onload",e);b.a.jd();b.a.kd();b.command("reportOnload");b.e()});b.info("M15")};b.h=function(){function c(b){document.addEventListener?(document.removeEventListener("DOMContentLoaded",c,!1),e(b)):"complete"===
+document.readyState&&(document.detachEvent("onreadystatechange",c),e(b))}function e(e){d||(b.lifecycle.ab(e&&e.timeStamp),b.command("mark","onready",(new Date).getTime()),d=!0)}var d=!1;if(document.addEventListener)document.addEventListener("DOMContentLoaded",c,!1),window.addEventListener("load",e,!1);else{document.attachEvent("onreadystatechange",c);window.attachEvent("onload",e);var A=null;try{A=null===window.frameElement?document.documentElement:null}catch(z){}null!=A&&A.doScroll&&function h(){try{A.doScroll("left")}catch(b){setTimeout(h,
+10);return}e()}()}b.info("M16")};b.e=function(){var c=document.createElement("script");c.async=!0;c.src=b.adrumExtUrl;var e=document.getElementsByTagName("script")[0];e?(e.parentNode.insertBefore(c,e),b.info("M17")):b.info("M18")}})(a||(a={}));(function(b){b.startTimeCookie=null;b.cookieMetadataChunks=null;(function(c){c.M=function(e,c){function A(b){var e=[],z=u.exec(b);if(z){b=z[1];var z=z[2].replace(/^"|"$/g,""),z=decodeURIComponent(z).split("|"),c=z[0].split(":");if("R"===c[0]&&Number(c[1])===
+k)for(a(b),b=1;b<z.length;b++)e.push(z[b])}return e}function z(b){if(b=n.exec(b)){var e=b[1],z=b[4],c=b[5];if(Number(b[3])===k)return a(e),[Number(z),c]}return null}function m(e){var z=l.exec(e);z&&(b.debug("M21",e),3===z.length?(b.startTimeCookie={startTime:Number(z[1]),startPage:z[2]},a("ADRUM")):b.error("M22",e))}function a(e){b.debug("M20",e);var z=new Date;z.setTime(z.getTime()-1E3);document.cookie=e+"=;Expires="+z.toUTCString()}b.info("M19");for(var l=/^\s*ADRUM=s=([\d]+)&r=(.*)\s*/,k=c?c.length:
+0,n=/^\s*(ADRUM_(\d+)_(\d+)_(\d+))=(.*)\s*$/i,p=[],q=e.split(";"),r=0;r<q.length;r++){var s=q[r],t=z(s);t?p.push(t):m(s)}Array.prototype.sort.call(p,function(b,e){return b[0]-e[0]});s=[];for(r=0;r<p.length;r++)s.push(p[r][1]);for(var u=/^\s*(ADRUM_BT\w*)=(.*)\s*$/i,r=0;r<q.length;r++)(p=A(q[r]))&&0<p.length&&(s=s.concat(p));b.cookieMetadataChunks=s};c.eck=c.M})(b.a||(b.a={}))})(a||(a={}));(function(b){(function(e){e.$b=function(){return function(e,A){if(("load"===e||"error"===e)&&A&&this._adrumXhrData){var z;
+z=A;if(z.__adrumInterceptor)z=z.__adrumInterceptor;else if(b.b.support(z)){var m=c.ac(z,this,"XHR.invokeEventListener");z=z.__adrumInterceptor=m}else z=null;if(z)return m=Array.prototype.slice.call(arguments),m[1]=z,b.debug("M23"),m;b.debug("M24",e,A)}}}})(b.a||(b.a={}));(function(e){if(!0===window["adrum-xhr-disable"])b.info("M25");else if(window.XMLHttpRequest)if(e.I=window.XMLHttpRequest.prototype,e.I)if("open"in e.I&&"send"in e.I)if(b.b.support(e.I.open)&&b.b.support(e.I.send)){b.info("M30");
+b.xhrOpen=e.I.open;b.xhrSend=e.I.send;e.hc=function(e){var c=e._adrumXhrData;if(c){var A=(new Date).getTime();2==e.readyState?c.firstByteTime=c.firstByteTime||A:4==e.readyState&&(b.assert(null===c.respAvailTime,"M31"),c.respAvailTime=c.respAvailTime||A,c.firstByteTime=c.firstByteTime||A)}};e.d=function(e,c){var A=e.getAllResponseHeaders(),a=e.status;b.command("reportXhr",c,A,a,400<=a?e.responseText:null)};e.ac=function(z,m,A){return c(z,function(){e.hc(this)},function(){var z=m._adrumXhrData;if(z&&
+4==m.readyState){var c=(new Date).getTime();b.assert(null===z.respProcTime,"M32");z.respProcTime=z.respProcTime||c;e.d(m,z);delete m._adrumXhrData}},A)};e.gb=function(z){if(z._adrumXhrData){var c=(new Date).getTime()+3E4,A=function(){e.hc(z);var a=z._adrumXhrData;if(a){var d=(new Date).getTime();4==z.readyState?(b.assert(null===a.respProcTime,"M33"),a.respProcTime=a.respProcTime||d,b.debug("M34"),e.d(z,a),delete z._adrumXhrData):d<c?setTimeout(A,50):(delete z._adrumXhrData,b.debug("M35"))}};A()}};
+var c=function(e,c,A,a){var d=e;e&&"object"===typeof e&&"toString"in e&&"[xpconnect wrapped nsIDOMEventListener]"===e.toString()&&"handleEvent"in e&&(d=function(){e.handleEvent.apply(this,Array.prototype.slice.call(arguments))});return b.b.around(d,c,A,a)};e.I.open=b.b.around(e.I.open,function(){this._adrumXhrData={url:2<=arguments.length?String(arguments[1]):"",sendTime:null,firstByteTime:null,respAvailTime:null,respProcTime:null,parentPhase:null}},null,"XHR.open");var A=function(b){var e=document.createElement("a");
+e.href=b;b=document.location;return":"===e.protocol&&""===e.hostname&&""===e.port||e.protocol===b.protocol&&e.hostname===b.hostname&&e.port===b.port};e.I.send=b.b.around(e.I.send,function(){var c=this,m=c._adrumXhrData;if(m){var a=(new Date).getTime();b.assert(null===m.sendTime,"M36");m.sendTime=m.sendTime||a;m.parentPhase=b.lifecycle.ld;A(m.url)?c.setRequestHeader("ADRUM","isAjax:true"):b.debug("M37",document.location.href,m.url);var d=0,k=function(){if(4==c.readyState)b.debug("M38"),e.gb(c);else{var A=
+null;try{A=c.onreadystatechange}catch(m){b.debug("M39",m);e.gb(c);return}d++;A?b.b.support(A)?(c.onreadystatechange=e.ac(A,c,"XHR.onReadyStateChange"),b.debug("M40",d)):(b.debug("M41"),e.gb(c)):5>d?b.a.uc(k):(b.debug("M42"),e.gb(c))}};k()}},null,"XHR.send");"addEventListener"in e.I&&"removeEventListener"in e.I&&b.b.support(e.I.addEventListener)&&b.b.support(e.I.removeEventListener)?(e.I.addEventListener=b.b.around(e.I.addEventListener,b.a.$b(),null,"XHR.addEventListener"),e.I.removeEventListener=
+b.b.around(e.I.removeEventListener,function(e,c){if(this._adrumXhrData){var A=Array.prototype.slice.call(arguments);c.__adrumInterceptor?(A[1]=c.__adrumInterceptor,b.debug("M43")):b.debug("M44");return A}},null,"XHR.removeEventListener")):b.debug("M45");b.info("M46")}else b.info("M29");else b.info("M28");else b.info("M27");else b.info("M26")})(b.c||(b.c={}));var c=b.c})(a||(a={}));(function(){"APP_KEY_NOT_SET"===window.ADRUM.appKey&&"undefined"!==typeof console&&"undefined"!==typeof console.log&&
+console.log("AppDynamics EUM cloud application key missing. Please specify window['adrum-app-key']");var b=window.ADRUM;b.a.M(document.cookie,document.referrer);b.command("mark","firstbyte",window["adrum-start-time"]);b.listenForErrors();b.addEventListener(window,"load",b.j);b.h()})(a||(a={}))}})();})();
+
+
+
+//]]>
+</script>
+<title>
+	Top Three Things A Health Plan Should Do to Engage and Serve Consumers 01/31 by DST RADIO | Health Podcasts
+</title><link rel="shortcut icon" href="/favicon.ico" />
+	<script type="text/javascript">("header footer section aside nav article figure figcaption hgroup time").replace(/\w+/g,function(a){document.createElement(a)})</script>
+<meta property="twitter:card" content="player" /><meta property="twitter:site" content="@blogtalkradio" /><meta property="twitter:title" content="Top Three Things A Health Plan Should Do to Engage and Serve Consumers" /><meta property="twitter:description" content="Customer experience is the sum total of all experiences that a person has with a company. The healthcare market is becoming more and more a consumer retail market. Learn the three things every health plan shoul" /><meta property="twitter:url" content="http://www.blogtalkradio.com/dst-radio/2015/01/31/top-three-things-a-health-plan-should-do-to-engage-and-serve-consumers" /><meta property="twitter:image" content="http://www.blogtalkradio.com/pics/hostpics/thumbs/e79bcf36-c3a0-4fba-9965-bd5f2d62534b_radiologo600x600.jpg" /><meta property="twitter:player" content="https://player.cinchcast.com/?show_id=7269335&amp;platformId=1&amp;assetType=single" /><meta property="twitter:player:width" content="400" /><meta property="twitter:player:height" content="370" /><meta property="twitter:player:stream" content="http://www.blogtalkradio.com/dst-radio/2015/01/31/top-three-things-a-health-plan-should-do-to-engage-and-serve-consumers.mp3" /><meta property="twitter:player:stream:content_type" content="audio/mpeg" /><meta name="sailthru.featured" content="False" /><meta name="sailthru.tags" content="Health" /><meta name="sailthru.author" content="DST RADIO" /><meta name="sailthru.date" content="2015-01-31T05:00:00" /><meta name="sailthru.staff-picks" content="False" /><script type="text/javascript" language="javascript" src="http://cdn2.btrstatic.com/javascript/constantsr32bj0cqv5ga4hle627vw.js"></script><link href="http://www.blogtalkradio.com/feed/featuredlive.rss" rel="alternate" type="application/rss+xml" title="BlogTalkRadio RSS Main Feed" /><link href="http://www.blogtalkradio.com/feed/onair.rss" rel="alternate" type="application/rss+xml" title="BlogTalkRadio RSS On Air Feed" /><link href="http://www.blogtalkradio.com/feed/featured.rss" rel="alternate" type="application/rss+xml" title="BlogTalkRadio RSS Featured Feed" /><link href="http://www.blogtalkradio.com/feed/allnetworks.rss" rel="alternate" type="application/rss+xml" title="BlogTalkRadio RSS Networks Feed" /><link href="http://www.blogtalkradio.com/feed/popular.rss" rel="alternate" type="application/rss+xml" title="BlogTalkRadio RSS Popular Feed" /><meta name="title" content="Top Three Things A Health Plan Should Do to Engage and Serve Consumers 01/31 by DST RADIO | Health Podcasts" /><meta name="description" content="Customer experience is the sum total of all experiences that a person has with a company. The healthcare market is becoming more and more a consumer retail market. Learn the three things every health plan should be doing right now to engage and serve consumers. " /><meta name="medium" content="video" /><meta name="video_height" content="200" /><meta name="video_width" content="220" /><meta name="video_type" content="application/x-shockwave-flash" /><link href="http://cdn.btrcdn.com/pics/hostpics/e79bcf36-c3a0-4fba-9965-bd5f2d62534b_radiologo600x600.jpg" rel="image_src" /><link href="http://cdn.btrcdn.com/pics/hostpics/e79bcf36-c3a0-4fba-9965-bd5f2d62534b_radiologo600x600.jpg" rel="videothumbnail" /><link href="http://www.blogtalkradio.com/btrplayer.swf?file=http://www.blogtalkradio.com%2fdst-radio%2fplay_list.xml?show_id=7269335&amp;autostart=true&amp;shuffle=false&amp;volume=80&amp;corner=rounded&amp;height=180&amp;width=210&amp;callback=http://www.blogtalkradio.com/FlashPlayerCallback.aspx" rel="video_src" /><link href="http://www.blogtalkradio.com/dst-radio/podcast" rel="alternate" type="application/rss+xml" /><link href="http://www.blogtalkradio.com/dst-radio/atomfeed" rel="alternate" type="application/atom+xml" /><meta name="keywords" content="customer service, healthcare, Health, customer service, healthcare" /><meta name="thumbnail" content="http://cdn.btrcdn.com/pics/hostpics/e79bcf36-c3a0-4fba-9965-bd5f2d62534b_radiologo600x600.jpg" /><meta name="ROBOTS" content="INDEX,FOLLOW" /><meta property="og:description" content="Customer experience is the sum total of all experiences that a person has with a company. The healthcare market is becoming more and more a consumer retail market. Learn the three things every health plan should be doing right now to engage and serve consumers. " /><meta property="og:image" content="http://cdn.btrcdn.com/pics/hostpics/e79bcf36-c3a0-4fba-9965-bd5f2d62534b_radiologo600x600.jpg" /><meta property="og:site_name" content="BlogTalkRadio" /><meta property="og:title" content="Top Three Things A Health Plan Should Do to Engage and Serve Consumers" /><meta property="og:type" content="blogtalk:episodepage" /><meta property="og:url" content="http://www.blogtalkradio.com/dst-radio/2015/01/31/top-three-things-a-health-plan-should-do-to-engage-and-serve-consumers" /><meta property="og:video" content="https://player.cinchcast.com/assets/player/jwplayer-5.9.2156.swf?config=https://player.cinchcast.com/config?platformId%3d1%26assetId%3d7269335%26assetType%3dsingle%26version%3d2.0" /><meta property="og:video:secure_url" content="https://player.cinchcast.com/assets/player/jwplayer-5.9.2156.swf?config=https://player.cinchcast.com/config?platformId%3d1%26assetId%3d7269335%26assetType%3dsingle%26version%3d2.0" /><meta property="og:video:width" content="400" /><meta property="og:video:height" content="370" /><meta property="og:video:type" content="application/x-shockwave-flash" /><meta property="profile:username" content="DST RADIO" /><meta property="profile:image" content="http://cdn.btrcdn.com/pics/hostpics/e79bcf36-c3a0-4fba-9965-bd5f2d62534b_radiologo600x600.jpg" /><meta property="profile:url" content="http://www.blogtalkradio.com/dst-radio" /><meta property="profile:description" content="Subject matter experts on controlling the administrative costs of healthcare while improving health outcomes." /><meta property="fb:app_id" content="72364733256" /><meta property="fb:admins" content="686929151,1266030015,686929151,1266030015,1138243919,100002444163843,100006469459857,100006469459857,100006699283625,100006699283625,100000468058411,100000468058411,100006699283625,797064915,1162972587,797064915,100002304536069,100003671419862,100003671419862,1180318833,1335360029,1180318833,1335360029,686929151,1335360029,746379552,1497081862,620692898,1497081862,1075606712,832007452,832007452,100003196743945,508193487,100003773906712,100003196743945,508193487,100003773906712,751518572,561060199" /><script>(function(){
+var MOBILE_WIDTH=760;
+window.UserAccount={
+cookie:'',
+userCookie:'',
+isAuthenticated:false,
+isHost:false,
+isPremium:false,
+wasPremium:false,
+hasAccount:false,
+isMobile:screen.width<MOBILE_WIDTH,
+isAid:false,
+aidContent:"",
+hasRememberMe:false,
+userCookieValues:{},
+hostId:null,
+userUrl:null,
+userId:null,
+init:function(){
+this.createAid();
+this.parseCookie();
+this.setTrafficDrivingStatus();
+window.isAidCookiePresent=this.isAid;
+this.setAuthenticationStatus();
+this.setUserAccountStatus();
+this.setUserData();
+},
+reload:function(){
+this.init();
+EarlyLoadingCssManager.addHideCssClassesBasedOnUserStatus();
+if(this.profileRefresh){
+this.profileRefresh();
+}
+},
+parseCookie:function(){
+this.cookie=document.cookie.toLowerCase();
+var userCookieIndex=this.cookie.indexOf('user=');
+var userCookieTerminatorIndex=this.cookie.substring(userCookieIndex).indexOf(';');
+this.userCookie=userCookieTerminatorIndex>-1?this.cookie.substr(userCookieIndex,userCookieTerminatorIndex):this.cookie.substring(userCookieIndex);
+var userCookiePairs=UserAccount.userCookie.substring(5).split("&");
+for(var index=0;index<userCookiePairs.length;index++){
+var pair=userCookiePairs[index].split("=");
+this.userCookieValues[pair[0]]=pair[1];
+}
+},
+setTrafficDrivingStatus:function(){
+var aidCookieValueKeys=['jema','adon','adcom','adkno','tab','65687978','7376','90277','4806','obtr'];
+var currentAidValues=this.aidContent.split(";");
+for(var i=0;i<aidCookieValueKeys.length;i++){
+for(var j=0;j<currentAidValues.length;j++){
+if(currentAidValues[j].toLowerCase().indexOf(aidCookieValueKeys[i])>-1){
+this.isAid=true;
+return;
+}
+}
+}
+},
+setAuthenticationStatus:function(){
+var authedCookieKey='authed=';
+var authedCookieIndex=this.cookie.indexOf(authedCookieKey);
+this.isAuthenticated=(authedCookieIndex>-1&&!isNaN(this.cookie.substr(authedCookieIndex+authedCookieKey.length,1)));
+},
+setUserAccountStatus:function(){
+if(this.userCookie.length==0)return;
+var hostIdCookieKey='hid=';
+var hostIdFirstCharacter=this.userCookie.substr(this.userCookie.indexOf(hostIdCookieKey)+hostIdCookieKey.length,1);
+this.isHost=(!isNaN(hostIdFirstCharacter)&&Number(hostIdFirstCharacter)>0);
+var hasPremiumAccountKey='prem=',
+wasPremiumKey='wasprem=';
+this.isPremium=this.userCookie.substr(this.userCookie.indexOf(hasPremiumAccountKey)+hasPremiumAccountKey.length,4).toLowerCase()=='true';
+this.wasPremium=this.userCookie.substr(this.userCookie.indexOf(wasPremiumKey)+wasPremiumKey.length,4).toLowerCase()=='true';
+this.hasAccount=this.cookie.indexOf('hasbtracct=true')>-1;
+this.hasRememberMe=this.cookie.indexOf('mybtracct')>-1;
+},
+setUserData:function(){
+this.hostId=this.userCookieValues["hid"];
+this.userUrl=this.userCookieValues["url"];
+this.userId=this.isAuthenticated?this.userCookieValues["uid"]:this.readCookie('BTRListenGUID');
+},
+readCookie:function(name){
+var buffer=(document.cookie.match('(^|; )'+name+'=([^;]*)')||0);
+if(buffer.length===0){
+return null;
+}
+return buffer[2];
+},
+createAid:function(){
+if(document.cookie.toLowerCase().indexOf('aid=')>-1){
+var buffer=this.readCookie("_aid")||"";
+this.aidContent=buffer.toLowerCase().replace("aid=","");
+return;
+}
+var aid=this.getQueryVariable("aid");
+if(aid!==null&&aid!==''&&aid!==undefined){
+aid=aid.toLowerCase();
+this.aidContent=unescape(aid);
+this.createCookie('_aid','aid='+unescape(aid),10);
+}
+},
+getQueryVariable:function(variable){
+var vars=window.location.search.substring(1).split("&");
+for(var i=0;i<vars.length;i++){
+var pair=vars[i].split("=");
+if(pair[0]===variable){
+return pair[1];
+}
+}
+return null;
+},
+createCookie:function(name,value,days){
+var expires;
+var domain=location.host.toLowerCase().indexOf('blogtalkradio.com')>-1?'blogtalkradio.com':location.hostname;
+if(days){
+var date=new Date();
+date.setTime(date.getTime()+(days*24*60*60*1000));
+expires="; expires="+date.toUTCString();
+}else{
+expires="";
+}
+document.cookie=name+"="+value+expires+"; path=/; domain="+domain;
+}
+};
+})();
+;window.UserAccount.init();
+</script>
+
+<script>window.UserAccount.setToolsEnabled=function(cookieName){
+cookieName+='=';
+var cookies=document.cookie.toLowerCase();
+var toolsEnabledCookieIndex=cookies.indexOf(cookieName);
+this.toolsEnabled=this.isHost&&!!(toolsEnabledCookieIndex>-1&&!isNaN(cookies.substr(toolsEnabledCookieIndex+cookieName.length,1)));
+};
+;window.UserAccount.setToolsEnabled("tools-enabled");
+</script>
+<script>window.EarlyLoadingCssManager={
+init:function(){
+this.elementsRemoved=[];
+this.addHideCssClassesBasedOnUserStatus();
+},
+addHideCssClassesBasedOnUserStatus:function(){
+var cssClasses={
+IfAuthenticated:UserAccount.isAuthenticated||UserAccount.hasRememberMe,
+IfNotAuthenticated:!(UserAccount.isAuthenticated||UserAccount.hasRememberMe),
+IfIsAid:UserAccount.isAid,
+IfUserIsAHost:UserAccount.isHost,
+IfUserIsNotAHost:!UserAccount.isHost,
+IfCurrentIsPremium:UserAccount.isPremium,
+IfCurrentIsNotPremium:!UserAccount.isPremium,
+IfHasBeenPremium:UserAccount.wasPremium,
+IfHasNeverBeenPremium:!UserAccount.wasPremium,
+IfUserHasAnAccount:UserAccount.hasAccount,
+IfAuthenticatedAndIsNotAHost:UserAccount.isAuthenticated&&!UserAccount.isHost,
+IfToolsEnabled:UserAccount.toolsEnabled,
+IfToolsNotEnabled:!UserAccount.toolsEnabled,
+IfIsSignupPage:location.href.toLowerCase().indexOf("/signup")>-1
+};
+var cssToHead=[];
+var cssToBeRemoved=[];
+for(var cssClass in cssClasses){
+if(cssClasses[cssClass]){
+cssToBeRemoved.push(cssClass);
+cssToHead.push('.hide'+cssClass+' { display: none !important; }');
+}
+}
+this.addCssToHead(cssToHead.join(''));
+this.removeDomElementsOnLoad(cssToBeRemoved);
+},
+addCssToHead:function(cssString){
+var styleElement=self.styleElement;
+if(!styleElement){
+styleElement=document.createElement('style');
+styleElement.type='text/css';
+styleElement.id='css-manager-styles';
+}else{
+while(styleElement.hasChildNodes()){
+styleElement.removeChild(styleElement.lastChild);
+}
+}
+if(styleElement.styleSheet){
+styleElement.styleSheet.cssText=cssString;
+}else{
+styleElement.appendChild(document.createTextNode(cssString));
+}
+if(!self.styleElement){
+document.getElementsByTagName('head')[0].appendChild(styleElement);
+self.styleElement=styleElement;
+}
+},
+removeDomElementsOnLoad:function(cssToBeRemoved){
+if(this.pageLoaded){
+this.removeDomElements(cssToBeRemoved);
+return;
+}
+var self=this;
+var removeFunc=function(){
+self.pageLoaded=true;
+setTimeout(function(){
+self.removeDomElements(cssToBeRemoved);
+},1);
+};
+if(!window.addEventListener){
+window.attachEvent("onload",removeFunc);
+}
+else{
+window.addEventListener("load",removeFunc,false);
+}
+},
+removeDomElement:function(element){
+var commentText=' removed '+element.tagName;
+if(element.id){
+commentText+='#'+element.id;
+}
+var placeholder=document.createComment(commentText);
+element.parentNode.replaceChild(placeholder,element);
+this.elementsRemoved.push([element,placeholder]);
+},
+restoreDomElement:function(element,placeholder){
+placeholder.parentNode.replaceChild(element,placeholder);
+},
+removeDomElements:function(cssToBeRemoved){
+var nodes,node;
+while(this.elementsRemoved.length){
+this.restoreDomElement.apply(this,this.elementsRemoved.pop());
+}
+for(var index=0;index<cssToBeRemoved.length;index++){
+var cssClass="hide"+cssToBeRemoved[index];
+if(document.getElementsByClassName){
+nodes=document.getElementsByClassName(cssClass);
+for(;nodes.length>0;){
+node=nodes[0];
+this.removeDomElement(node);
+}
+}else{
+nodes=document.querySelectorAll("."+cssClass);
+for(var nodeIndex=0;nodeIndex<nodes.length;nodeIndex++){
+node=nodes[nodeIndex];
+this.removeDomElement(node);
+}
+}
+}
+}
+};
+;window.EarlyLoadingCssManager.init();
+</script><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" /><link href="http://cdn2.btrstatic.com/content/global-imports-dist.cache.6903bb5a.css" rel="stylesheet"/>
+
+<script type="text/javascript" language="javascript" src="http://cdn2.btrstatic.com/includefilesource/globaljs-bljegpgtzyferrmrfw.js"></script><script type="text/javascript" language="javascript" src="http://cdn1.btrstatic.com/includefilesource/defaultjs-f4m7cy3d7od7rtkzpw1aeq.js"></script><link href="http://cdn1.btrstatic.com/includefilesource/defaultcss-tjheu06rnpva3ginpochcq.css" rel="stylesheet" type="text/css" /><script type="text/javascript" language="javascript" src="http://cdn2.btrstatic.com/includefilesource/profileandepisodejs-cxbulhi9lcrj0agopodig.js"></script></head>
+<body id="ctl00_PageBody" class="mc640">
+    
+	<script type="text/javascript" language="javascript">
+		new UserAccountManager();
+		if (Browser.ie && (Browser.version == 7 || Browser.version == 8)) {
+			new IncludeManager().addCssInclude('/CSS/globalie' + Browser.version + '.css');
+		}
+	</script>
+	<div id="fb-root"></div>
+
+    <script src="http://cdn1.btrstatic.com/javascript/utag.header.js" type="text/javascript" language="javascript"></script>
+	<script type="text/javascript" language="javascript">
+var gconf = { 
+APIKey:'2_Rjx2fUtr3F4O28iJQEddgBuGHz26TPRZt5YUQu1Q8xSq_dfQ3tQuJqnwDpj__99w',
+facebookExtraPermissions:'publish_stream,create_event,offline_access',
+connectWithoutLoginBehavior:'alwaysLogin',
+signIDs:true,
+enabledProviders: 'facebook'};
+
+var logonParams = {
+	useHTML: true,
+	showTermsLink: false,
+	height:50,
+	width: 210,
+	containerID: "divGigya",
+	buttonsStyle: "fullLogo",
+	showWhatsThis:true,
+	UIConfig: "<config><b"+"ody><controls><snbuttons buttonsize='35'></snbuttons></controls></b"+"ody></config>"
+};
+</script>
+	<div class="headerback" id="header-banner">
+        <div id="ctl00_Div728x90"><div id="ctl00_Ad6_BanManAd" class="banmanad" style="min-height:90px;">
+    <div id="ctl00_Ad6_divFirstAd" class="banmanad"></div>
+    <iframe id="ctl00_Ad6_BanManIframe" scrolling="No" frameborder="0" vspace="0" hspace="0" marginheight="0" marginwidth="0" width="0" height="0"></iframe>
+</div>
+</div>
+	</div>
+	
+
+
+
+
+
+<div id="header">
+        <div id="headerAd" class="clearfix">
+            <div data-widget='newsletter-subscription-popup' data-newsletter-subscription-popup-parameters='{"newsletterSubscriptionTimeout":60000,"newsletterSubscriptionFrequency":7,"newsletterSubscriptionTemplateName":"DevNewsletterSubscriptionTemplate","newsletterSubscriptionUrl":"http://link.blogtalkradio.com/s/email_interstitial"}'></div>
+        </div>
+    <div class="navbar navbar-inverse navbar-static-top" id="primary-nav">
+        <div class="navbar-inner">
+            <div class="container">
+                <a href="http://www.blogtalkradio.com" class="brand"><span class="btr-nav-img img-sprite">BlogTalkRadio</span></a>
+                <ul class="nav">
+                    <li id="nav-live" class="">
+                        <a href="http://www.blogtalkradio.com/live">Live</a>
+                    </li>
+                    <li id="nav-categories" class="dropdown ">
+                        <a href="http://www.blogtalkradio.com/categories" class="dropdown-toggle">Categories <b class="caret"></b></a>
+                        <div class="categories-menu dropdown-menu">
+                            <div class="row">
+                                <div class="span3">
+                                    <ul class="categories-list">
+        <li><a href="http://www.blogtalkradio.com/art" data-tracker-category="Categories" data-tracker-action="Link Click" data-tracker-label="Art">Art</a></li>
+        <li><a href="http://www.blogtalkradio.com/automotive" data-tracker-category="Categories" data-tracker-action="Link Click" data-tracker-label="Automotive">Automotive</a></li>
+        <li><a href="http://www.blogtalkradio.com/business" data-tracker-category="Categories" data-tracker-action="Link Click" data-tracker-label="Business">Business</a></li>
+        <li><a href="http://www.blogtalkradio.com/education" data-tracker-category="Categories" data-tracker-action="Link Click" data-tracker-label="Education">Education</a></li>
+        <li><a href="http://www.blogtalkradio.com/entertainment" data-tracker-category="Categories" data-tracker-action="Link Click" data-tracker-label="Entertainment">Entertainment</a></li>
+        <li><a href="http://www.blogtalkradio.com/family" data-tracker-category="Categories" data-tracker-action="Link Click" data-tracker-label="Family">Family</a></li>
+        <li><a href="http://www.blogtalkradio.com/food" data-tracker-category="Categories" data-tracker-action="Link Click" data-tracker-label="Food">Food</a></li>
+        <li><a href="http://www.blogtalkradio.com/health" data-tracker-category="Categories" data-tracker-action="Link Click" data-tracker-label="Health">Health</a></li>
+        <li><a href="http://www.blogtalkradio.com/hobbies" data-tracker-category="Categories" data-tracker-action="Link Click" data-tracker-label="Hobbies">Hobbies</a></li>
+        <li><a href="http://www.blogtalkradio.com/life" data-tracker-category="Categories" data-tracker-action="Link Click" data-tracker-label="Lifestyle">Lifestyle</a></li>
+        <li><a href="http://www.blogtalkradio.com/music" data-tracker-category="Categories" data-tracker-action="Link Click" data-tracker-label="Music">Music</a></li>
+        <li><a href="http://www.blogtalkradio.com/news" data-tracker-category="Categories" data-tracker-action="Link Click" data-tracker-label="News">News</a></li>
+        <li><a href="http://www.blogtalkradio.com/politics" data-tracker-category="Categories" data-tracker-action="Link Click" data-tracker-label="Politics">Politics</a></li>
+        <li><a href="http://www.blogtalkradio.com/religion" data-tracker-category="Categories" data-tracker-action="Link Click" data-tracker-label="Religion">Religion</a></li>
+        <li><a href="http://www.blogtalkradio.com/science" data-tracker-category="Categories" data-tracker-action="Link Click" data-tracker-label="Science">Science</a></li>
+        <li><a href="http://www.blogtalkradio.com/self_help" data-tracker-category="Categories" data-tracker-action="Link Click" data-tracker-label="Self Help">Self Help</a></li>
+        <li><a href="http://www.blogtalkradio.com/spirituality" data-tracker-category="Categories" data-tracker-action="Link Click" data-tracker-label="Spirituality">Spirituality</a></li>
+        <li><a href="http://www.blogtalkradio.com/sports" data-tracker-category="Categories" data-tracker-action="Link Click" data-tracker-label="Sports">Sports</a></li>
+        <li><a href="http://www.blogtalkradio.com/technology" data-tracker-category="Categories" data-tracker-action="Link Click" data-tracker-label="Technology">Technology</a></li>
+        <li><a href="http://www.blogtalkradio.com/women" data-tracker-category="Categories" data-tracker-action="Link Click" data-tracker-label="Women">Women</a></li>
+</ul>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="nav-explore" class="dropdown ">
+                        <a href="http://www.blogtalkradio.com/popular" class="dropdown-toggle">Explore <b class="caret"></b></a>
+                        <div class="explore-menu dropdown-menu">
+                            <div class="row">
+                                <div class="span3">
+                                    <ul class="explore-list">
+                                        <li class="">
+                                            <a href="http://www.blogtalkradio.com/popular">Popular</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="http://www.blogtalkradio.com/todays-best">Today's Best Podcasts</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="http://www.blogtalkradio.com/best-of">Best Of</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.blogtalkradio.com/featured-hosts">Featured Hosts</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="nav-networks" class=" dropdown">
+                        <a href="http://www.blogtalkradio.com/networks" class="dropdown-toggle">Networks <b class="caret"></b></a>
+                        <div class="stations-menu dropdown-menu">
+    <div class="row">
+        <div class="span3">
+            <ul class="explore-list">
+                    <li><a href="http://www.blogtalkradio.com/eWNRadioNetwork">eWN Radio Network</a></li>
+                    <li><a href="http://www.blogtalkradio.com/sbnation">SB Nation</a></li>
+                    <li><a href="http://www.blogtalkradio.com/mobileinsightsradio">Mobile Insights Radio</a></li>
+                    <li><a href="http://www.blogtalkradio.com/standupnylabs">Stand Up NY Labs</a></li>
+                    <li><a href="http://www.blogtalkradio.com/exitcoachnetwork">EXIT COACH NETWORK</a></li>
+                    <li><a href="http://www.blogtalkradio.com/fantasysportsnetwork">Fantasy Sports Network</a></li>
+                <li><br/></li>
+                <li><strong><a href="http://www.blogtalkradio.com/networks">view all networks</a></strong></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+                    </li>
+                </ul>
+                <form id="headerSearchForm" class="search-form navbar-search" action="http://www.blogtalkradio.com/search">
+                    <input id="headerSearchBox" name="q" type="text" class="search-query-input" placeholder="Search BlogTalkRadio" autocomplete="off" />
+                    <button type="submit" class="btn btn-small"><span data-btr-icon="p"></span></button>
+                </form>
+                <ul id="user-menu" class="nav pull-right">
+                    <li class="hideIfNotAuthenticated hidden-phone"><a id="faq-link" href="http://blogtalkradio.desk.com">Help</a></li>
+                    <li class="hideIfIsAid hidden-phone">
+                        <a class="highlight-link hideIfAuthenticated" href="https://secure.blogtalkradio.com/registerhost?via=header">
+                            Start your show
+                        </a>
+                        <a class="highlight-link hideIfNotAuthenticated hideIfUserIsAHost" href="http://www.blogtalkradio.com/user/becomehost.aspx">
+                            Start your show
+                        </a>
+                        <a id="premium-link" class="highlight-link hideIfNotAuthenticated hideIfUserIsNotAHost" href="http://www.blogtalkradio.com/premium.aspx" data-tracker-category="GoPremium" data-tracker-action="Link Click" data-tracker-label="Header Link">
+                            <span class="hideIfCurrentIsPremium hideIfHasBeenPremium">Free Premium Trial</span>
+                            <span class="hideIfCurrentIsPremium hideIfHasNeverBeenPremium">Go Premium</span>
+                            <span class="hideIfCurrentIsNotPremium">Upgrade</span>
+                        </a>
+                    </li>
+                    <li class="hideIfAuthenticated"><a id="login-link" href="https://secure.blogtalkradio.com/login.aspx?f=h&aid=Signin">Log in</a></li>
+                    <li class="hideIfAuthenticated hideIfIsAid hideIfIsSignupPage"><a id="signup-link" href='https://secure.blogtalkradio.com/register.aspx?aid=CRMTS' title="Create My Talk Show" class="btn btn-small btn-warning">Sign Up</a></li>
+                    <li id="profileTab" class="hideIfNotAuthenticated">
+                        <ul class="profileTab unstyled">
+                            <li>
+                                <a class="tabHeader dropdown-toggle"><img id="profileTab-userimage" style="height:35px;width:35px;" /></a>
+                                <div class="subnav2 dropdown-menu span4">
+                                    <div class="row-fluid">
+                                        <ul class="user-nav span6">
+                                            <li class="hideIfUserIsNotAHost"><a href="http://my.blogtalkradio.com/tools">Dashboard</a></li>
+                                            <li class="hideIfUserIsNotAHost"><a href="http://my.blogtalkradio.com/tools/#/new-episode">Create</a></li>
+                                            <li class="hideIfUserIsNotAHost"><a href="http://my.blogtalkradio.com/tools/#/my-episodes">Episodes</a></li>                                            
+                                            <li class="hideIfUserIsNotAHost"><a href="http://my.blogtalkradio.com/reports/default.aspx">Stats</a></li>
+                                            <li class="hideIfUserIsNotAHost"><a href="http://sb.blogtalkradio.com/host/studio.aspx">Studio</a></li>
+                                            <li><a href="http://my.blogtalkradio.com/user/settings.aspx">Settings</a></li>
+                                            <li><a href="http://my.blogtalkradio.com/user/messaging.aspx">Messages</a></li>
+                                            <li>
+                                                <a class="highlight-link hideIfNotAuthenticated hideIfUserIsAHost" href="http://www.blogtalkradio.com/user/becomehost.aspx">
+                                                    Start your show
+                                                </a>
+                                                <a href="http://www.blogtalkradio.com/premium.aspx" class="highlight-link hideIfNotAuthenticated hideIfUserIsNotAHost">
+                                                    <span class="hideIfCurrentIsPremium hideIfHasBeenPremium">Free Premium Trial</span>
+                                                    <span class="hideIfCurrentIsPremium hideIfHasNeverBeenPremium">Go Premium</span>
+                                                    <span class="hideIfCurrentIsNotPremium">Upgrade</span>
+                                                </a></li>
+                                        </ul>
+                                        <div class="user-card span6">
+                                            <div class="profilename"><a id="usercard-displayName" class="center"></a></div>
+                                            <p><a id="userimage-link" href="#"><img id="usercard-userimage" /></a></p>
+                                            <p><a id="aLogOut" href="http://www.blogtalkradio.com/logout.aspx">Log Out</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="player-controls inverse hide">
+            <div class="container">
+                <div class="progress player-timeline">
+                    <div class="buffer"></div>
+                    <div class="bar"></div>
+                    <span class="player-time"></span>
+                    <span class="player-duration"></span>
+                    <span id="player-shuttle"></span>
+                    <div class="player-message-playingAd">Your show will resume after this message</div>
+                    <div class="player-message-buffering">Loading audio for smooth playback...</div>
+                    <div class="player-message-processing">The episode audio is being processed and will be ready shortly.</div>
+                </div>
+                <!--a href="#" class="player-prev"><span data-btr-icon="L" class="prev-icon"></span></a-->
+                <a href="#" class="player-play pause"><span data-btr-icon="(" class="play-icon"></span><span data-btr-icon=")" class="pause-icon"></span></a>
+                <a href="#" class="player-next"><span data-btr-icon=":" class="next-icon"></span></a>
+                <div class="player-volume">
+                    <input id="input-volume" data-slider-id='volume-control' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="80"/>
+                </div>
+                <a class="player-mute" href="#">
+                    <span data-btr-icon='=' data-volume="3" class="volume-icon"></span>
+                </a>
+                <a class="player-share" href="#" title="Embed this episode" data-tracker-category="player-onsite" data-tracker-action="embed episode" data-tracker-label="" target="_self" rel="nofollow">
+                    <span data-btr-icon="~" class="share-icon"></span>
+                </a>
+                <a class="player-download" href="#" title="Download this episode" data-tracker-category="player-onsite" data-tracker-action="download" data-tracker-label="" download="" rel="nofollow">
+                    <span data-btr-icon="J" class="download-icon"></span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="snap-header navbar navbar-inverse hide-desktop" style="display: none;">
+        <div class="navbar-inner">
+            <a class="btn btn-navbar" data-toggle="side-menu">
+                <span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </span>
+                Menu
+            </a>
+            <a href="http://www.blogtalkradio.com" class="brand"><span class="btr-nav-img img-sprite">BlogTalkRadio</span></a>
+        </div>
+    </div>
+
+</div>
+<!--  header end here -->
+
+	<!-- T&T Default Body --><div class="mboxDefault"></div><script type="text/javascript">if (!window.isAidCookiePresent) mboxCreate("global");</script><script>
+	(function(){
+		var redirectHost = function() { 
+				var wasLoggedOff = window.UserAccount.readCookie('wasLoggedOff');
+				if((window.UserAccount.hostId == 95599 || window.UserAccount.hostId == 320461) && !(wasLoggedOff === 'true')) {
+					window.UserAccount.createCookie('wasLoggedOff','true',360);
+					location.href = window.globalConstants.appRootUrl + '/logout.aspx';
+				} 
+			};
+
+		if(document.addEventListener){
+				document.addEventListener('DOMContentLoaded', redirectHost);
+		}
+		else{
+				document.attachEvent('onreadystatechange', function() { if(document.readyState == 'interactive') { redirectHost(); }});
+		}
+	})();
+	</script>
+    <section id="page-message-type-1000" class="page-message-workflow page-message-type-workflow"></section>
+
+	<form name="aspnetForm" method="post" action="/dst-radio/2015/01/31/top-three-things-a-health-plan-should-do-to-engage-and-serve-consumers" id="aspnetForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTYxNTkwMDEyNmRkj/34lFYosa3DzL2bm39EruzmjiQ=" />
+</div>
+
+
+<script type="text/javascript">
+//<![CDATA[
+var PageShows = [{ showID: 7269335, hostDisplayName: 'DST RADIO', showName: 'Top Three Things A Health Plan...', hostID: 735395, showDate: '1/31/2015 5:00:00 AM', hostUrl: 'dst-radio' },];//]]>
+</script>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="5C743765" />
+</div>
+        
+        <div class="container custom-image" id="station-masthead">
+            <input type="hidden" name="hdnStationID" value="0" />
+            <input type="hidden" name="ctl00$hdnUserLogo" id="ctl00_hdnUserLogo" value="false" />
+            
+            
+    <style type="text/css">
+        #station-masthead {
+            display: none;
+        }
+        #station-masthead .masthead-background {
+            background: transparent !important;
+        }
+
+        
+    </style>
+
+
+        </div>
+
+		<div id="container" class="container">
+			<div id="ctl00_headerBack" class="row">
+				<div class="span8 maincontent" id="maincontent">
+					
+
+    <div class="episode-details page-episode" itemscope itemtype="http://schema.org/Event">
+
+        <meta itemprop="name" content="Top Three Things A Health Plan Should Do to Engage and Serve Consumers" />
+        <meta itemprop="description" content="Customer experience is the sum total of all experiences that a person has with a company. The healthcare market is becoming more and more a consumer retail market. Learn the three things every health plan should be doing right now to engage and serve consumers. " />
+        <meta itemprop="url" content="http://www.blogtalkradio.com/dst-radio/2015/01/31/top-three-things-a-health-plan-should-do-to-engage-and-serve-consumers" />
+        <meta itemprop="image" content="http://cdn.btrcdn.com/pics/hostpics/e79bcf36-c3a0-4fba-9965-bd5f2d62534b_radiologo600x600.jpg" />
+        <meta itemprop="startDate" content="2015-01-31T05:00:00Z" />
+        <meta itemprop="endDate" content="2015-01-31T05:00:00Z" />
+        <meta itemprop="duration" content="T11M" />
+
+        <h1 id="episode-title" itemprop="name">Top Three Things A Health Plan Should Do to Engage and Serve Consumers</h1>
+
+        <ul class="inline">
+
+            <li class="player-category">Broadcast in <a href="/health">Health</a></li>
+
+            <li class="player-date" >
+                <time datetime='2015-01-31 05:00:00Z' data-duration='660000' data-time-label="#episode_archived" data-time-tooltip>
+                    <label id="757a9f31-77b6-4121-bc5e-139d66ef93bf" class="BTRUTC">Sat, Jan 31, 2015 05:00AM UTC</label><script language="javascript" type="text/javascript">{fixThisFF("757a9f31-77b6-4121-bc5e-139d66ef93bf", "ddd, MMM d, yyyy", "ddd, MMM d, yyyy hh:mmtt", "")};</script>
+                </time>
+                
+            </li>
+
+            
+                <li class="player-comments"><a href="#comments"><span>0</span> comments</a></li>
+            
+        </ul>
+
+        
+
+    </div>
+
+    <div id="host" class="episode-host" itemscope itemtype="http://schema.org/Person" style="background-image:url();">
+        <meta itemprop="url" content="http://www.blogtalkradio.com/dst-radio" />
+        <meta itemprop="jobTitle" content="DST RADIO" />
+        <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+            <meta itemprop="addressLocality" content="BlogTalkRadio" />
+            <meta itemprop="addressRegion" content="" />
+        </div>
+        <meta itemprop="name" content="DST RADIO" />
+        <meta itemprop="image" content="http://cdn.btrcdn.com/pics/hostpics/e79bcf36-c3a0-4fba-9965-bd5f2d62534b_radiologo600x600.jpg" />
+
+        <div id="avatar-wrapper" class="host_image">
+            <a href="/dst-radio"><img width="48" height="48" class="show-img" alt="DST RADIO" src="http://cdn1.btrstatic.com/pics/hostpics/thumbs/e79bcf36-c3a0-4fba-9965-bd5f2d62534b_radiologo600x600.jpg" /></a>
+        </div>
+
+        <h2 class="hostname" itemprop="performers" itemscope itemtype="http://schema.org/Person"><a href="/dst-radio"><span itemprop="name">DST RADIO</span></a></h2>
+
+        <div class="host-actions">
+            <a id="follow-host-button-735395" data-host-id="735395" title="Follow DST RADIO" data-tracker-category="Follow" data-tracker-action="Profile Page" data-tracker-label="Follow Click" class="btn btn-primary follow-host">follow</a>
+            
+        </div>
+
+        
+            <div class="label label-warning ribbon featured"> Featured Host </div>
+        
+
+        <div class="popover bottom collapse tooltip-follow episode-follow " id="tooltip-follow">
+            <div class="arrow"></div>
+            <span class="close" onclick="$(this).closest('.popover').removeClass('in');">&times; &nbsp;</span>
+            <h3 class="popover-title">Follow This Show</h3>
+            <div class="popover-content">If you liked this show, you should follow DST RADIO.</div>
+        </div>
+
+    </div>
+
+    <div class="well player-callin hide">
+        
+        <p>Call in to speak with the host</p>
+        <p class="host-phone">(516) 387-1805</p>
+        
+    </div>
+
+    <div class="hhelp">h:735395<br />s:7269335<br /><span id="sState">archived</span></div>
+
+
+    <div class="player-wrapper" itemscope itemtype="http://schema.org/AudioObject">
+
+        <meta itemprop="url" content="http://www.blogtalkradio.com/dst-radio/2015/01/31/top-three-things-a-health-plan-should-do-to-engage-and-serve-consumers" />
+        <meta itemprop="name" content="Top Three Things A Health Plan Should Do to Engage and Serve Consumers" />
+        <meta itemprop="description" content="Customer experience is the sum total of all experiences that a person has with a company. The healthcare market is becoming more and more a consumer retail market. Learn the three things every health plan should be doing right now to engage and serve consumers. " />
+        <meta itemprop="image" content="http://cdn.btrcdn.com/pics/hostpics/e79bcf36-c3a0-4fba-9965-bd5f2d62534b_radiologo600x600.jpg" />
+        <meta itemprop="duration" content="T11M" />
+        <meta itemprop="about" content="Health" />
+        <meta itemprop="thumbnailURL" content="http://cdn1.btrstatic.com/pics/hostpics/thumbs/e79bcf36-c3a0-4fba-9965-bd5f2d62534b_radiologo600x600.jpg" />
+        <meta itemprop="datePublished" content="2015-01-31T05:00:00Z" />
+        <meta itemprop="provider" content="BlogTalkRadio" />
+        <meta itemprop="publisher" content="DST RADIO" />
+        <meta itemprop="height" content="358" />
+        <meta itemprop="width" content="100%" />
+        <meta itemprop="encodingFormat" content="mp3" />
+
+        <div id="player">
+            <audio preload="none" id="player-audiotag" controls>
+                <source src="/dst-radio/2015/01/31/top-three-things-a-health-plan-should-do-to-engage-and-serve-consumers.mp3?localembed=showpage&guid=bcbb699e-94d4-4333-9052-fac3229f020f" type="audio/mpeg" />
+            </audio>
+        </div>
+
+        <a href="#" id="play-call-to-action">Play</a>
+
+        <div id="slideshow" class="slideshow">
+            <ul class="unstyled">
+            
+             <li class="slide" data-index="0">
+                <img src="http://cdn.btrcdn.com/pics/hostpics/e79bcf36-c3a0-4fba-9965-bd5f2d62534b_radiologo600x600.jpg" alt="Host">
+            </li>
+            
+            </ul>
+            <a href="#" class="prev slideshow-arrow"><span data-btr-icon="<"></span></a>
+            <a href="#" class="next slideshow-arrow"><span data-btr-icon=">"></span></a>
+        </div>
+
+    </div>
+
+    <div class="episode-details">
+
+        
+        <ul class="tags">
+            <li><a href="/tags?q=customer-service" rel="nofollow">customer service</a></li><li><a href="/tags?q=healthcare" rel="nofollow">healthcare</a></li>
+        </ul>
+        
+
+        <div class="KonaBody player-description"><p>Customer experience&nbsp;is the sum total of all experiences that a person has with a company.&nbsp;The healthcare market is becoming more and more a consumer retail market.&nbsp;Learn the&nbsp;three things every health plan should be doing right now to engage and serve consumers.</p>
+</div>
+
+    </div>
+
+<script type="text/javascript" language="javascript">
+var Episode = {
+    ApiRootUrl: 'http://www.blogtalkradio.com/api',
+    ads:"Sat, Jan 31, 2015",
+    adTag: "http://ox-d.blogtalkradio.com/v/1.0/av?pgid=17591&c.title=Top+Three+Things+A+Health+Plan+Should+Do+to+Engage+and+Serve+Consumers&c.url=http%3a%2f%2fwww.blogtalkradio.com%2fdst-radio%2f2015%2f01%2f31%2ftop-three-things-a-health-plan-should-do-to-engage-and-serve-consumers&c.show_id=7269335&c.hostid=735395&c.stationid=0&c.category=Health&c.aid={aid}&c.qdsd={qdsd}&c.tpt={tpt}&c.campaign=",
+    adTagMidroll: "http://ox-d.blogtalkradio.com/v/1.0/av?pgid=17591&c.title=Top+Three+Things+A+Health+Plan+Should+Do+to+Engage+and+Serve+Consumers&c.url=http%3a%2f%2fwww.blogtalkradio.com%2fdst-radio%2f2015%2f01%2f31%2ftop-three-things-a-health-plan-should-do-to-engage-and-serve-consumers&c.show_id=7269335&c.hostid=735395&c.stationid=0&c.category=Health&c.aid={aid}&c.qdsd={qdsd}&c.tpt={tpt}&c.campaign=",
+    bProfile:false,
+    bitrate:128,
+    customEmbedCode:"Check Out Health Podcasts at Blog Talk Radio with <a href=\"http://www.blogtalkradio.com/dst-radio\" rel=\"nofollow\">DST RADIO</a> on BlogTalkRadio",
+    CompanionHeight: 250,
+    CompanionId: 'companion1',
+    CompanionWidth: 300,
+    dur:660000,
+    Duration: 660,
+    EditDecisionList: [],
+    hostID:735395,
+    HostId: 735395,
+    hostName:"DST RADIO",
+    hName:"DST RADIO",
+    hUrl:"dst-radio",
+    hostUrl:"/dst-radio",
+    IsOvaEnabled: true,
+    jwPlayerKey: 'M+3IUee2GQZGAvOG7s09M+SNIWUCGpaekxAXsg==',
+    lp:true,
+    mod:"false",
+    notReady: false,
+    pageName:"top-three-things-a-health-plan-should-do-to-engage-and-serve-consumers",
+    showDateUTC:1422680400,
+    showDateSTR:"1/31/2015 5:00:00 AM",
+    showFile:'/dst-radio/2015/01/31/top-three-things-a-health-plan-should-do-to-engage-and-serve-consumers.mp3?localembed=showpage&guid=bcbb699e-94d4-4333-9052-fac3229f020f',
+    showID:7269335,
+    showImage: "http://cdn.btrcdn.com/pics/hostpics/e79bcf36-c3a0-4fba-9965-bd5f2d62534b_radiologo600x600.jpg",
+    showLink: "/dst-radio/2015/01/31/top-three-things-a-health-plan-should-do-to-engage-and-serve-consumers",
+    showName:"Top Three Things A Health Plan Should Do to Engage and Serve Consumers",
+    sIsMP3LiveStream:"1",
+    skipAds:false,
+    state:"archived",
+    status: "Archived",
+    ttstcd:-3600,
+    ttl:0,
+    wwwroot:"www.blogtalkradio.com",
+    userID:"e79bcf36-c3a0-4fba-9965-bd5f2d62534b",
+    z:{}
+}
+
+Player.createPlayer(Episode);
+
+$(document).ready(function () {
+    MYBTR.setupEpisode(Episode);
+
+    $(document).on("modulesReady", function() {
+        $(document).trigger("pageWireupReady", Episode);
+    });
+
+});
+
+
+</script>
+
+<div class="mboxDefault"></div><script type="text/javascript">if (!window.isAidCookiePresent) mboxCreate("episode-player");</script>
+
+    
+<div class="mboxDefault"></div>
+
+<script type="text/javascript">
+    (function() {
+        if (window.UserAccount.isAid) {
+           mboxCreate('EpisodeRecomNA',
+'entity.id=735395'
+);
+
+        }
+        else {
+            mboxCreate('episodePage',
+'entity.id=735395',
+'entity.categoryId=Health',
+'entity.name=DST RADIO',
+'entity.pageUrl=/dst-radio',
+'entity.thumbnailUrl=http://cdn.btrcdn.com/pics/hostpics/e79bcf36-c3a0-4fba-9965-bd5f2d62534b_radiologo600x600.jpg',
+'entity.nameEpisodeRecent=Top Three Things A Health Plan Should Do to Engage and Serve Consumers',
+'entity.pageUrlEpisodeRecent=/dst-radio/2015/01/31/top-three-things-a-health-plan-should-do-to-engage-and-serve-consumers',
+'entity.thumbnailUrlEpisodeRecent=http://cdn1.btrstatic.com/pics/showpics/thumbs/e79bcf36-c3a0-4fba-9965-bd5f2d62534b_radiologo600x600.jpg',
+'entity.nameEpisodePopular=Dual Eligibles: Richard Popper',
+'entity.pageUrlEpisodePopular=/dst-radio/2014/08/29/dual-eligibles-richard-popper',
+'entity.thumbnailUrlEpisodePopular=http://cdn1.btrstatic.com/pics/showpics/thumbs/e79bcf36-c3a0-4fba-9965-bd5f2d62534b_radiologo600x600.jpg',
+'entity.featured=false',
+'entity.numberOfFollowers=3',
+'entity.numberOfListeners=2101'
+);
+
+        }
+    })();
+</script>
+
+    <div class="addthis_recommended_horizontal"></div>
+
+    <div id="ctl00_ContentMain_Ad468x60" class="wideAd"><div id="ctl00_ContentMain_GoogleAdSense_BanManAd" class="banmanad" style="min-height:0px;">
+    <div id="ctl00_ContentMain_GoogleAdSense_divFirstAd" class="banmanad">
+<!-- FM Content Well 650x300 Zone --> 
+<script> if (!(window.isAidCookiePresent)) {
+federated_media_section = "blogtalkradio-perma"; document.write("<scr"+"ipt type='text/javascript' src='http://static.fmpub.net/zone/8896'></scr"+"ipt> "); }
+else {
+if (!window.OX_ads) { OX_ads = []; }
+OX_ads.push({ "auid" : "317131" });
+document.write('<scr'+'ipt src="http://ox-d.blogtalkradio.com/w/1.0/jstag"><\/scr'+'ipt>');}
+</script>
+</div>
+    <iframe id="ctl00_ContentMain_GoogleAdSense_BanManIframe" scrolling="No" frameborder="0" vspace="0" hspace="0" marginheight="0" marginwidth="0" width="0" height="0"></iframe>
+</div>
+</div>
+    
+
+    
+
+
+    <div class="comments-container">
+	    <div class="comments_wrap"></div>
+    </div>
+
+    
+    <script type="text/javascript" src="http://playerservices.live.streamtheworld.com/api/idsync.js?station=BLOGTALKRADIO"></script>
+
+
+				</div>
+				<div class="span4" id="rightColumn">
+					
+    <script id="userTemplate" type="text/html">
+        <# if (users) {
+            for (var i = 0; i < users.length; i++)
+            {
+                var u = users[i];
+        #>
+            <li><a href="/<#= u.userUrl #>"><img class="deferredLoad" data-src="<#= u.imgUrl #>" width="48" height="48" alt="<#= u.displayName #>" /></a></li>
+        <#  }
+        }else { #>
+            <div style="padding:10px;">[None]</div>
+        <# } #>
+    </script>
+    <script id="userTemplateExp" type="text/html">
+        <ul class="followers_lst_exp">
+        <# if (users) {
+            for (var i = 0; i < users.length; i++)
+            {
+                var u = users[i];
+        #>
+            <li>
+                <a class="aimg" href="/<#= u.userUrl #>"><img class="deferredLoad" data-src="<#= u.imgUrl #>" width="48" height="48" alt="<#= u.displayName #>" /></a>
+                <ul>
+                    <li>
+                        <a href="/<#= u.userUrl #>" class="uname"><#= u.displayName #></a>
+                    </li>
+                    <li>
+                        <# if (typeof(u.following) != "undefined") {
+                             if(u.following == "true") { #>
+                                <a class="btn tiny" title="unfollow <#= u.displayName #>" hid="<#= u.hid #>">unfollow</a>
+                            <# } else { #>
+                                <a class="btn tiny hot" title="follow <#= u.displayName #>" hid="<#= u.hid #>">follow</a>
+                            <# }
+                         } #>
+                    </li>
+                </ul>
+            </li>
+        <#  }
+        }else { #>
+            <div style="padding:10px;">[None]</div>
+        <# } #>
+        </ul>
+    </script>
+    <script id="commentsTemplate" type="text/html">
+        <div class="comments">
+            <# if (comments) {
+                for (var i = 0; i < comments.length; i++)
+                {
+                    var d = comments[i];
+            #>
+                <div class="comment_details">
+                    <div class="image_block"><a href="/<#= d.userUrl #>"><img class="deferredLoad" data-src="<#= d.imgUrl #>" width="50" height="50" alt="<#= d.displayName #>" /></a></div>
+                    <div class="text_block">
+                        <h3><a href="/<#= d.userUrl #>"><#= d.displayName #></a></h3>
+                        <# if (d.canDel) { #>
+                            <p><#= d.date #></p>
+                            <p class="date"><a class="delcmt" cid="<#= d.cid #>">delete</a></p>
+                        <# }else{ #>
+                            <p class="date"><#= d.date #></p>
+                        <# } #>
+                    </div>
+                    <p class="content"><#= d.text #></p>
+                </div>
+                <# } #>
+
+
+            <# } #>
+        </div>
+    </script>
+    <div id="ctl00_ContentRightColumn_RightColumn_pnlRightColumn" class="rightcolumnsidebar">
+	<div id="ctl00_ContentRightColumn_RightColumn_PremiumAd1_ucBanMan_BanManAd" class="banmanad" style="height:60px;min-height:60px;">
+    <div id="ctl00_ContentRightColumn_RightColumn_PremiumAd1_ucBanMan_divFirstAd" class="banmanad"></div>
+    <iframe id="ctl00_ContentRightColumn_RightColumn_PremiumAd1_ucBanMan_BanManIframe" scrolling="No" frameborder="0" vspace="0" hspace="0" marginheight="0" marginwidth="0" width="0" height="0"></iframe>
+</div>
+
+<div id='companion1' class="banmanad"></div><div id="ctl00_ContentRightColumn_RightColumn_Ad1_BanManAd" class="banmanad" style="min-height:250px;">
+    <div id="ctl00_ContentRightColumn_RightColumn_Ad1_divFirstAd" class="banmanad"></div>
+    <iframe id="ctl00_ContentRightColumn_RightColumn_Ad1_BanManIframe" scrolling="No" frameborder="0" vspace="0" hspace="0" marginheight="0" marginwidth="0" width="0" height="0"></iframe>
+</div>
+<div class='divListeners hide'></div>
+<div class="sections-legacy cards-legacy">
+    <section id="todays-best-podcasts" class="episode-cards">
+<header>
+    <h2>
+        <a name="todays-best-podcasts">Today&#39;s Best Podcasts</a>
+    </h2>
+</header>
+
+
+<ol class="card-list list-count-10 ">
+        <li class="list-first list-index-0 ">
+<article class="episode-card episode-archived" data-episode-id="60157">
+   
+    <div class="thumbnail">
+        <a href="http://www.blogtalkradio.com/worldkitchen/2015/03/04/world-kitchen-presents-wedding-day-radio-adele-wechsler">
+            
+                <img data-src="http://cdn.btrcdn.com/pics/highlights/445125ab-ac80-431a-829c-b3b0480acc67_01-wk-2015-icon.jpg" src="/img/spacer.gif" class="deferredLoad" alt="World Kitchen" />
+
+        </a>
+        <a class="play-button" href="http://www.blogtalkradio.com/worldkitchen/2015/03/04/world-kitchen-presents-wedding-day-radio-adele-wechsler"></a>
+    </div>
+    <header>
+        <a class="category" rel="tag" href="http://www.blogtalkradio.com/women">
+            Women
+        </a>
+        <h3>
+            <a rel="bookmark" href="http://www.blogtalkradio.com/worldkitchen/2015/03/04/world-kitchen-presents-wedding-day-radio-adele-wechsler">
+                World&#39;s Kitchen Wedding Day Radio
+            </a>
+        </h3>
+        <address>
+            <a rel="author" href="http://www.blogtalkradio.com/worldkitchen">
+                World Kitchen
+            </a>
+        </address>
+    </header>
+    
+        <time pubdate datetime="2015-03-04 08:00:00Z" data-duration="0" data-time-label="#episode_archived" data-time-tooltip>3/4/2015 8:00 AM</time>
+
+</article>
+<hr/>
+
+        </li>
+        <li class="list-index-1 ">
+<article class="episode-card episode-archived" data-episode-id="60123">
+   
+    <div class="thumbnail">
+        <a href="http://www.blogtalkradio.com/amyalkon/2015/03/23/joshua-wolf-shenk-the-science-of-partnering-up-for-greater-innovation-success">
+            
+                <img data-src="http://cdn.btrcdn.com/pics/hostpics/8396536c-c82f-47dd-b5dc-1fac9400b294_amyalkon.jpg" src="/img/spacer.gif" class="deferredLoad" alt="amyalkon" />
+
+        </a>
+        <a class="play-button" href="http://www.blogtalkradio.com/amyalkon/2015/03/23/joshua-wolf-shenk-the-science-of-partnering-up-for-greater-innovation-success"></a>
+    </div>
+    <header>
+        <a class="category" rel="tag" href="http://www.blogtalkradio.com/psychology">
+            Psychology
+        </a>
+        <h3>
+            <a rel="bookmark" href="http://www.blogtalkradio.com/amyalkon/2015/03/23/joshua-wolf-shenk-the-science-of-partnering-up-for-greater-innovation-success">
+                The Science Of Partnering Up
+            </a>
+        </h3>
+        <address>
+            <a rel="author" href="http://www.blogtalkradio.com/amyalkon">
+                amyalkon
+            </a>
+        </address>
+    </header>
+    
+        <time pubdate datetime="2015-03-23 02:00:00Z" data-duration="0" data-time-label="#episode_archived" data-time-tooltip>3/23/2015 2:00 AM</time>
+
+</article>
+<hr/>
+
+        </li>
+        <li class="list-index-2 ">
+<article class="episode-card episode-archived" data-episode-id="60119">
+   
+    <div class="thumbnail">
+        <a href="http://www.blogtalkradio.com/smallbusinessunstuck/2015/03/24/318-lessons-in-leadership-small-biz-resources-retirement-solving-problems">
+            
+                <img data-src="http://cdn.btrcdn.com/pics/hostpics/44247ddb-d3f6-4b1f-895d-876bf8c47c87_new_bitr_logo.jpg" src="/img/spacer.gif" class="deferredLoad" alt="Barry J Moltz" />
+
+        </a>
+        <a class="play-button" href="http://www.blogtalkradio.com/smallbusinessunstuck/2015/03/24/318-lessons-in-leadership-small-biz-resources-retirement-solving-problems"></a>
+    </div>
+    <header>
+        <a class="category" rel="tag" href="http://www.blogtalkradio.com/business">
+            Business
+        </a>
+        <h3>
+            <a rel="bookmark" href="http://www.blogtalkradio.com/smallbusinessunstuck/2015/03/24/318-lessons-in-leadership-small-biz-resources-retirement-solving-problems">
+                Brand Strategizing and Story Telling
+            </a>
+        </h3>
+        <address>
+            <a rel="author" href="http://www.blogtalkradio.com/smallbusinessunstuck">
+                Barry J Moltz
+            </a>
+        </address>
+    </header>
+    
+        <time pubdate datetime="2015-03-24 17:00:00Z" data-duration="0" data-time-label="#episode_archived" data-time-tooltip>3/24/2015 5:00 PM</time>
+
+</article>
+<hr/>
+
+        </li>
+        <li class="list-index-3 ">
+<article class="episode-card episode-archived" data-episode-id="60107">
+   
+    <div class="thumbnail">
+        <a href="http://www.blogtalkradio.com/callyourgirlfriend/2015/03/27/episode-22-your-time-to-shine">
+            
+                <img data-src="http://cdn.btrcdn.com/pics/hostpics/9edfd485-a150-4740-8416-0ee0ed03194a_13.jpg" src="/img/spacer.gif" class="deferredLoad" alt="Ann Friedman and Aminatou Sow" />
+
+        </a>
+        <a class="play-button" href="http://www.blogtalkradio.com/callyourgirlfriend/2015/03/27/episode-22-your-time-to-shine"></a>
+    </div>
+    <header>
+        <a class="category" rel="tag" href="http://www.blogtalkradio.com/culture">
+            Culture
+        </a>
+        <h3>
+            <a rel="bookmark" href="http://www.blogtalkradio.com/callyourgirlfriend/2015/03/27/episode-22-your-time-to-shine">
+                Your Time to Shine
+            </a>
+        </h3>
+        <address>
+            <a rel="author" href="http://www.blogtalkradio.com/callyourgirlfriend">
+                Ann Friedman and Aminatou Sow
+            </a>
+        </address>
+    </header>
+    
+        <time pubdate datetime="2015-03-27 21:00:00Z" data-duration="0" data-time-label="#episode_archived" data-time-tooltip>3/27/2015 9:00 PM</time>
+
+</article>
+<hr/>
+
+        </li>
+        <li class="list-index-4 ">
+<article class="episode-card episode-archived" data-episode-id="60101">
+   
+    <div class="thumbnail">
+        <a href="http://www.blogtalkradio.com/thethinkingatheist/2015/03/29/coexist">
+            
+                <img data-src="http://cdn.btrcdn.com/pics/hostpics/df124818-fe65-467d-b488-781445c12ed8_tta-blogtalkradio-icon-2014.jpg" src="/img/spacer.gif" class="deferredLoad" alt="TheThinkingAtheist" />
+
+        </a>
+        <a class="play-button" href="http://www.blogtalkradio.com/thethinkingatheist/2015/03/29/coexist"></a>
+    </div>
+    <header>
+        <a class="category" rel="tag" href="http://www.blogtalkradio.com/education">
+            Education
+        </a>
+        <h3>
+            <a rel="bookmark" href="http://www.blogtalkradio.com/thethinkingatheist/2015/03/29/coexist">
+                Ire Meets Insomnia
+            </a>
+        </h3>
+        <address>
+            <a rel="author" href="http://www.blogtalkradio.com/thethinkingatheist">
+                TheThinkingAtheist
+            </a>
+        </address>
+    </header>
+    
+        <time pubdate datetime="2015-03-29 11:30:00Z" data-duration="0" data-time-label="#episode_archived" data-time-tooltip>3/29/2015 11:30 AM</time>
+
+</article>
+<hr/>
+
+        </li>
+        <li class="list-index-5 ">
+<article class="episode-card episode-archived" data-episode-id="60095">
+   
+    <div class="thumbnail">
+        <a href="http://www.blogtalkradio.com/dougfarrarnfl/2015/03/27/the-nfl-draft-podcast-with-greg-cosell-the-receivers-1">
+            
+                <img data-src="http://cdn.btrcdn.com/pics/hostpics/113b2da8-a9aa-4a99-a073-4bb3bdfbd297_chalktalklarge.jpg" src="/img/spacer.gif" class="deferredLoad" alt="dfarrar777" />
+
+        </a>
+        <a class="play-button" href="http://www.blogtalkradio.com/dougfarrarnfl/2015/03/27/the-nfl-draft-podcast-with-greg-cosell-the-receivers-1"></a>
+    </div>
+    <header>
+        <a class="category" rel="tag" href="http://www.blogtalkradio.com/football">
+            Football
+        </a>
+        <h3>
+            <a rel="bookmark" href="http://www.blogtalkradio.com/dougfarrarnfl/2015/03/27/the-nfl-draft-podcast-with-greg-cosell-the-receivers-1">
+                Greg Cosell: The Receivers
+            </a>
+        </h3>
+        <address>
+            <a rel="author" href="http://www.blogtalkradio.com/dougfarrarnfl">
+                dfarrar777
+            </a>
+        </address>
+    </header>
+    
+        <time pubdate datetime="2015-03-27 16:30:00Z" data-duration="0" data-time-label="#episode_archived" data-time-tooltip>3/27/2015 4:30 PM</time>
+
+</article>
+<hr/>
+
+        </li>
+        <li class="list-index-6 ">
+<article class="episode-card episode-archived" data-episode-id="60111">
+   
+    <div class="thumbnail">
+        <a href="http://www.blogtalkradio.com/fromthehelicarrier/2015/03/24/fth-81-if-you-runaway-it-will-hurt-my-pride">
+            
+                <img data-src="http://cdn.btrcdn.com/pics/hostpics/52814faa-37ad-4bf0-a361-e8f2d51512f8_10900175_10203391364158138_3286238076591618056_o.jpg" src="/img/spacer.gif" class="deferredLoad" alt="From The Helicarrier" />
+
+        </a>
+        <a class="play-button" href="http://www.blogtalkradio.com/fromthehelicarrier/2015/03/24/fth-81-if-you-runaway-it-will-hurt-my-pride"></a>
+    </div>
+    <header>
+        <a class="category" rel="tag" href="http://www.blogtalkradio.com/video_games">
+            Video Games
+        </a>
+        <h3>
+            <a rel="bookmark" href="http://www.blogtalkradio.com/fromthehelicarrier/2015/03/24/fth-81-if-you-runaway-it-will-hurt-my-pride">
+                The Special Drops Op
+            </a>
+        </h3>
+        <address>
+            <a rel="author" href="http://www.blogtalkradio.com/fromthehelicarrier">
+                From The Helicarrier
+            </a>
+        </address>
+    </header>
+    
+        <time pubdate datetime="2015-03-24 20:00:00Z" data-duration="0" data-time-label="#episode_archived" data-time-tooltip>3/24/2015 8:00 PM</time>
+
+</article>
+<hr/>
+
+        </li>
+        <li class="list-index-7 ">
+<article class="episode-card episode-archived" data-episode-id="60121">
+   
+    <div class="thumbnail">
+        <a href="http://www.blogtalkradio.com/thehallicasserjayneshow/2015/03/25/former-radical-islamist-turned-undercover-agent-mubin-shaikh">
+            
+                <img data-src="http://cdn.btrcdn.com/pics/hostpics/8d400838-08a1-4ad6-9845-a8178917a3b9_btrlnewthehallicasserjayneshowlogo.jpg" src="/img/spacer.gif" class="deferredLoad" alt="The Halli Casser Jayne Show" />
+
+        </a>
+        <a class="play-button" href="http://www.blogtalkradio.com/thehallicasserjayneshow/2015/03/25/former-radical-islamist-turned-undercover-agent-mubin-shaikh"></a>
+    </div>
+    <header>
+        <a class="category" rel="tag" href="http://www.blogtalkradio.com/entertainment">
+            Entertainment
+        </a>
+        <h3>
+            <a rel="bookmark" href="http://www.blogtalkradio.com/thehallicasserjayneshow/2015/03/25/former-radical-islamist-turned-undercover-agent-mubin-shaikh">
+                Undercover Jihadi
+            </a>
+        </h3>
+        <address>
+            <a rel="author" href="http://www.blogtalkradio.com/thehallicasserjayneshow">
+                The Halli Casser Jayne Show
+            </a>
+        </address>
+    </header>
+    
+        <time pubdate datetime="2015-03-25 17:30:00Z" data-duration="0" data-time-label="#episode_archived" data-time-tooltip>3/25/2015 5:30 PM</time>
+
+</article>
+<hr/>
+
+        </li>
+        <li class="list-index-8 ">
+<article class="episode-card episode-archived" data-episode-id="60115">
+   
+    <div class="thumbnail">
+        <a href="http://www.blogtalkradio.com/nextonthetee/2015/03/28/next-on-the-tee-with-chris-mascaro--steve-mona">
+            
+                <img data-src="http://cdn.btrcdn.com/pics/hostpics/d292b2d5-90cf-4725-83fa-ce62f1f69bf1_ctmascaro_1-01.jpg" src="/img/spacer.gif" class="deferredLoad" alt="Next On The Tee" />
+
+        </a>
+        <a class="play-button" href="http://www.blogtalkradio.com/nextonthetee/2015/03/28/next-on-the-tee-with-chris-mascaro--steve-mona"></a>
+    </div>
+    <header>
+        <a class="category" rel="tag" href="http://www.blogtalkradio.com/golf">
+            Golf
+        </a>
+        <h3>
+            <a rel="bookmark" href="http://www.blogtalkradio.com/nextonthetee/2015/03/28/next-on-the-tee-with-chris-mascaro--steve-mona">
+                World Golf Foundation 
+            </a>
+        </h3>
+        <address>
+            <a rel="author" href="http://www.blogtalkradio.com/nextonthetee">
+                Next On The Tee
+            </a>
+        </address>
+    </header>
+    
+        <time pubdate datetime="2015-03-28 14:00:00Z" data-duration="0" data-time-label="#episode_archived" data-time-tooltip>3/28/2015 2:00 PM</time>
+
+</article>
+<hr/>
+
+        </li>
+        <li class="list-index-9 list-last ">
+<article class="episode-card episode-archived" data-episode-id="60109">
+   
+    <div class="thumbnail">
+        <a href="http://www.blogtalkradio.com/pro-wrestling-torch/2015/03/30/pwtorch-livecast--wrestlemania-31-post-game-show">
+            
+                <img data-src="http://cdn.btrcdn.com/pics/hostpics/57de1f20-ce66-409f-b5bc-0a30efeaade4_pwtorchlogo2012livecast.jpg" src="/img/spacer.gif" class="deferredLoad" alt="Pro Wrestling Torch" />
+
+        </a>
+        <a class="play-button" href="http://www.blogtalkradio.com/pro-wrestling-torch/2015/03/30/pwtorch-livecast--wrestlemania-31-post-game-show"></a>
+    </div>
+    <header>
+        <a class="category" rel="tag" href="http://www.blogtalkradio.com/wrestling">
+            Wrestling
+        </a>
+        <h3>
+            <a rel="bookmark" href="http://www.blogtalkradio.com/pro-wrestling-torch/2015/03/30/pwtorch-livecast--wrestlemania-31-post-game-show">
+                WrestleMania 31
+            </a>
+        </h3>
+        <address>
+            <a rel="author" href="http://www.blogtalkradio.com/pro-wrestling-torch">
+                Pro Wrestling Torch
+            </a>
+        </address>
+    </header>
+    
+        <time pubdate datetime="2015-03-30 03:30:00Z" data-duration="0" data-time-label="#episode_archived" data-time-tooltip>3/30/2015 3:30 AM</time>
+
+</article>
+<hr/>
+
+        </li>
+</ol>
+<footer>
+</footer>
+
+</section>
+
+
+</div>
+<div id="ctl00_ContentRightColumn_RightColumn_Ad2_BanManAd" class="banmanad" style="min-height:250px;">
+    <div id="ctl00_ContentRightColumn_RightColumn_Ad2_divFirstAd" class="banmanad"></div>
+    <iframe id="ctl00_ContentRightColumn_RightColumn_Ad2_BanManIframe" scrolling="No" frameborder="0" vspace="0" hspace="0" marginheight="0" marginwidth="0" width="0" height="0"></iframe>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+    var addthis_config = { "data_track_clickback": true, "image_include":"pinterestImage" };
+    var addthis_share = {
+        url: 'http://www.blogtalkradio.com/dst-radio/2015/01/31/top-three-things-a-health-plan-should-do-to-engage-and-serve-consumers',
+        title: 'Top Three Things A Health Plan Should Do to Engage and Serve Consumers 01/31 by DST RADIO | Health Podcasts',
+    	templates: {
+    	    twitter: 'Listening to Top Three Things A Health Plan Should Do to Engage and Se... by DST RADIO {{url}}'
+		}
+    };
+    (function () {
+        var addScriptToHead = function (url, async, onload) {
+            var head = document.getElementsByTagName("head")[0] || document.documentElement;
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            if (async) {
+                s.async = true;
+            }
+            if (typeof onload == 'function') {
+                // most browsers
+                s.onload = onload;
+                // IE 6, 7
+                s.onreadystatechange = function () {
+                    if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                        onload();
+                    }
+                };
+            }
+            s.src = url;
+            head.appendChild(s);
+            return s;
+        };
+
+        var asyncWidgetsLoad = function () {
+            addScriptToHead('http://s7.addthis.com/js/300/addthis_widget.js#pubid=blogtalkradio', true, function () {
+                function addthisReady(evt) {
+                    addthis.addEventListener('addthis.menu.share', MYBTR.UList.shareComplete);
+					addthis.layers({
+						'theme' : 'light',
+						'share' : {
+							'position' : 'left',
+							'offset': {'top':'160px'},
+							'numPreferredServices' : 5
+						}
+					});
+                }
+                addthis.addEventListener('addthis.ready', addthisReady);
+            });
+        };
+
+        if (window.addEventListener) {
+            window.addEventListener('load', asyncWidgetsLoad, false);
+        } else {
+            if (!Browser.ie7)
+                window.attachEvent('onload', asyncWidgetsLoad);
+        }
+    })();
+
+    function isMobile() {
+        return (RegExp("Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini","i").test(navigator.userAgent));
+    }
+    var adElements = [
+        // 'companion1',
+        'ctl00_Div728x90',
+        // 'ContentRightColumn_RightColumn_Ad1_OpenXAd',
+        'ContentRightColumn_RightColumn_Ad2_OpenXAd',
+        'ContentRightColumn_RightColumn_Ad3_OpenXAd',
+        'ctl00_ContentMain_Ad468x60',
+        'mobiletheory_overpass'
+    ]
+    if( isMobile() || window.innerWidth < 768 ) {
+        for(var i=0,m=adElements.length;i<m;i++) {
+            if(element = document.getElementById(adElements[i])) {
+                element.parentNode.removeChild(element);
+            }
+        }
+    }
+
+</script>
+
+  
+
+    
+
+<div id="modal-login" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modal-login-title" aria-hidden="true">
+    <div class="modal-header">
+        <h3 id="modal-login-title">Register or Sign In</h3>
+    </div>
+    <div class="modal-body modal-signup">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="external-auth-error-message alert alert-error">
+                    <p>
+                        Sorry we couldn&#39;t complete your registration. Please try again.
+                    </p>
+                </div>
+                <div class="external-auth-facebook">
+                    <a class="btn btn-large btn-facebook" data-external-auth-button-parameters="{&quot;networkName&quot;:&quot;facebook&quot;,&quot;redirectTo&quot;:&quot;reload&quot;}" data-widget="external-auth-button" href="javascript:void(0);"><span data-btr-icon="T"></span>&nbsp;Facebook</a>
+                </div>
+                <div class="external-auth-twitter">
+                    <div class="external-auth-info">
+                        <p class="description">
+                            Please enter your email to finish creating your account.
+                        </p>
+                        <div class="control-group">
+                            <div class="control-label">
+                                <label for="input-email">Email</label>
+                            </div>
+                            <div class="controls">
+                                <input class="input-xlarge" name="email" placeholder="Email" type="email" />
+                                <div class="help-inline">
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="controls">
+                                <label class="checkbox"><input checked="checked" name="newsletter" type="checkbox" /> Receive a daily list of shows picked for you </label>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="btn btn-large btn-twitter" data-external-auth-button-parameters="{&quot;networkName&quot;:&quot;twitter&quot;,&quot;redirectTo&quot;:&quot;reload&quot;}" data-widget="external-auth-button" href="javascript:void(0);"><span data-btr-icon="U"></span>&nbsp;Twitter</a>
+                </div>
+
+                <hr />
+                <a href="https://secure.blogtalkradio.com/signup">Register</a> for a free BlogTalkRadio account.
+                Already have one? <a href="https://secure.blogtalkradio.com/login.aspx?ReturnUrl=/dst-radio/2015/01/31/top-three-things-a-health-plan-should-do-to-engage-and-serve-consumers&f=h">Sign In</a>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-close" data-dismiss="modal" aria-hidden="true">close window</button>
+    </div>
+</div>
+
+    <div class="embedmodal modal hide" id="embedModal">
+    <div class="modal-header">
+        <button type="button" class="close" onclick="$('#embedModal').hide();$('#playerEmbedSample').attr('src','');" aria-hidden="true">&times;</button>
+        <h3>Add This Player To Your Website or Social Network</h3>
+    </div>
+    <div class="modal-body">
+        <div class='row-fluid'>
+            <div class='span4'>
+                <h4>Publish To Social Networks</h4>
+                <div id='addthisToolbox' class='addthis_toolbox addthis_default_style addthis_32x32_style'>
+                    <a class='addthis_button_facebook'></a>
+                    <a class='addthis_button_twitter at300b' title='Tweet' href='#'></a>
+                    <a class='addthis_button_linkedin'></a>
+                    <a class='addthis_button_compact'></a>
+                </div>
+
+                <h4>Embed To Sites &amp; Blogs</h4>
+                <p>
+                    <textarea onclick='this.select();' id="PlayerCodeTextBox" name='PlayerCodeTextBox'></textarea>
+                    <label for="old-embed-toggle"><input type="checkbox" id="old-embed-toggle" name="old-embed-toggle"> old-style code for hosted blogs</label>
+                </p>
+                <p>
+                    <strong>Player Size</strong>
+                    <select name="select-embed-size" id="select-embed-size" class="input-medium">
+                    <option value="300x295">300 x 295</option>
+                    <option value="400x370" selected="selected">400 x 370</option>
+                    <option value="640x550">640 x 550</option>
+                </select></p>
+            </div>
+            <div class='span8'>
+                <h4>Preview</h4>
+                <iframe id="playerEmbedSample" width="400" height="370" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+				</div>
+			</div>
+		</div>
+
+		<div id="dhtmltooltip" onmouseout="MYBTR.TT.rssHide(); "></div>
+		
+
+
+
+
+<div id="footer" class="hideIfIsAid">
+	<div class="container">
+		<div class="row">
+			<div class="span8">
+				<div class="row-fluid">
+					<div class="span3 hideIfIsAid">
+						<h4>Product</h4>
+						<ul class="unstyled">
+							<li><a href="http://www.blogtalkradio.com/whatis" class="hideIfIsAid" title="Features & Tour">Feature Tour</a></li>
+							<li id="footerBecomeHost" class="hideIfIsAid hideIfUserIsAHost"><a href="https://secure.blogtalkradio.com/register.aspx?aid=BEHOF">Pricing</a></li>
+							<li id="footerGoPremium" class="hideIfIsAid hideIfNotAuthenticated hideIfUserIsNotAHost"><a href="http://hosts.blogtalkradio.com/go-premium/?aid=GoPremF" data-tracker-category="GoPremium" data-tracker-action="Link Click" data-tracker-label="Footer Upgrade">Premium Services</a></li>
+							<li><a href="http://www.blogtalkradio.com/page/transcription" >Transcription Services</a></li>
+						</ul>
+					</div>
+					<div class="span3">
+						<h4>Community</h4>
+						<ul class="unstyled">
+							<li><a href="http://blogtalkradio.desk.com">Help &amp; Support</a></li>
+							<li><a class="hideIfIsAid" href="http://www.blogtalkradio.com/page/revshareprogram" title="Internet Radio Sitemap | BlogTalkRadio">Revenue Sharing</a></li>
+							<li><a href="http://www.blogtalkradio.com/page/affiliate" title="Affiliate Program | BlogTalkRadio">Affiliate Program</a></li>
+							<li><a href="http://www.blogtalkradio.com/contactus.aspx">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="span3">
+						<h4>Company</h4>
+						<ul class="unstyled">
+							<li><a href="http://www.blogtalkradio.com/about.aspx" class="hideIfIsAid" title="Free Internet Radio - Social Broadcasting | BlogTalkRadio">About Us</a></li>
+							<li><a href="http://www.blogtalkradio.com/press.aspx" title="Web Radio and Podcast Press Releases | BlogTalkRadio">Press</a></li>
+							<li><a href="http://www.blogtalkradio.com/page/advertising" >Advertisers</a></li>
+							<li><a href="http://www.blogtalkradio.com/page/careers" class="hideIfIsAid" title="Careers and jobs"><strong>Careers: We're Hiring!</strong></a></li>
+							<li class="hideIfIsAid"><a href="http://blog.blogtalkradio.com" target="_blank">Our Blog</a></li>
+						</ul>
+					</div>
+					<div class="span3">
+						<h4>Terms &amp; Policy</h4>
+						<ul class="unstyled">
+							<li><a href="http://www.blogtalkradio.com/termsofuse.aspx" class="hideIfIsAid">Terms of Use</a></li>
+							<li><a href="http://www.blogtalkradio.com/termsofuse.aspx">Privacy Policy</a></li>
+							<li><a href="http://www.blogtalkradio.com/sitemap.aspx" class="hideIfIsAid" title="Internet Radio Sitemap | BlogTalkRadio">Sitemap</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="span4">
+                <h4>Radio Picked Just For You</h4>
+                <p>Receive a personalized list of podcasts based on your preferences.</p>
+                <div class="form-inline">
+				    <input type="text" name="email" placeholder="Enter Your Email" class="input-medium" id="email-subscribe-input" onchange="$('#email-subscribe-btn').attr('href',$('#email-subscribe-btn').data('href')+$('#email-subscribe-input').val())" />
+				    <a href="#" data-href="http://link.blogtalkradio.com/join/3a9/newsletter-subscribe?#email=" id="email-subscribe-btn" class="btn btn-danger">Subscribe</a>
+                </div>
+				<ul class="social-list">
+					<li><a href="http://www.facebook.com/blogtalkradio.official?ref=ts" target="_blank"><span data-btr-icon="T">Facebook</span></a></li>
+					<li><a href="http://twitter.com/blogtalkradio" target="_blank"><span data-btr-icon="U">Twitter</span></a></li>
+					<li><a href="https://plus.google.com/u/0/117841845288490541498" target="_blank"><span data-btr-icon="R">Google+</span></a></li>
+					<li><a href="itms://itunes.apple.com/WebObjects/MZStore.woa/wa/viewArtist?id=258377512" target="_blank"><span data-btr-icon=",">iTunes</span></a></li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="bottom-content row">
+			<div class="span8">
+				&copy; <script type="text/javascript">document.write(new Date().getFullYear());</script> BlogTalkRadio, Inc. All Rights Reserved.
+			</div>
+		</div>
+	</div>
+</div>
+
+
+		<div id="dhtmlRss" > </div>
+		
+	
+
+<script type="text/javascript">
+//<![CDATA[
+$(function () { if (window.UserAccount.isAid) { $('.aidSensitive').remove(); } });$(function () { if (!window.UserAccount.isAid) { $('.aidOnlySensitive').remove(); } });if (window.UserAccount.isAid) { $("#ctl00_ContentRightColumn_RightColumn_PremiumAd1_ucBanMan_BanManIframe").remove(); $("#ctl00_ContentRightColumn_RightColumn_PremiumAd1_ucBanMan_BanManAd").remove(); }window.premiumAdConfig = { hostPremium: '748764', hostNoPremium: '741214', listnerNoHost: '732069', listnerNoRegister: '732051'};
+                    window.ctl00_ContentRightColumn_RightColumn_PremiumAd1_ucBanMan_BanManIframezoneID;
+                    if (User && User.isAuthenticated && (User.hostID > 0 || window.location.href.toLowerCase().indexOf('register.aspx') > -1))
+                        window.ctl00_ContentRightColumn_RightColumn_PremiumAd1_ucBanMan_BanManIframezoneID = User.hasPremiumPackage ? window.premiumAdConfig.hostPremium : window.premiumAdConfig.hostNoPremium;
+                    else if (User && User.isAuthenticated)
+                        window.ctl00_ContentRightColumn_RightColumn_PremiumAd1_ucBanMan_BanManIframezoneID = window.premiumAdConfig.listnerNoHost;
+                    else
+                        window.ctl00_ContentRightColumn_RightColumn_PremiumAd1_ucBanMan_BanManIframezoneID = window.premiumAdConfig.LISTNER_NO_REGISTER;//]]>
+</script>
+<script language="javascript" type="text/javascript">
+if (typeof window.ctl00_Ad6_BanManIframezoneID == 'undefined') { window.ctl00_Ad6_BanManIframezoneID = '936893'; }
+(function () {
+if (typeof window.ctl00_Ad6_BanManIframezoneID != 'undefined') {
+function async_loadctl00_Ad6_BanManIframe() {
+addBanManZone ('http://ads.blogtalkradio.com/', window.ctl00_Ad6_BanManIframezoneID,'ctl00_Ad6_BanManIframe','728','90','Health','1','','','','','%2fdst-radio%2f2015%2f01%2f31%2ftop-three-things-a-health-plan-should-do-to-engage-and-serve-consumers%7c');}
+
+                        }
+                        
+                        if(typeof(window.require) === 'undefined'){
+                            if (window.attachEvent)
+                                window.attachEvent('onload', async_loadctl00_Ad6_BanManIframe);
+                            else
+                                window.addEventListener('load', async_loadctl00_Ad6_BanManIframe, false);
+                        }
+                        else{
+                            var async_loadctl00_Ad6_BanManIframeLoader = function(){
+                                if(window.__requireReady){
+                                    require(['jquery'], function($){
+                                        var loaderDelayed = function(){
+                                            $(document).off('modulesReady', loaderDelayed);
+                                            setTimeout(async_loadctl00_Ad6_BanManIframe, 10);
+                                        }
+                                        if(window.__showElementsIfCompleted){
+                                            loaderDelayed();
+                                        }
+                                        else{
+                                            $(document).on('modulesReady', loaderDelayed);
+                                        }
+                                    });
+                                } else{
+                                    setTimeout(async_loadctl00_Ad6_BanManIframeLoader, 100);
+                                }
+                            };
+                            async_loadctl00_Ad6_BanManIframeLoader();
+                        }
+                })();
+</script>
+<script language="javascript" type="text/javascript">
+if (typeof window.ctl00_ContentMain_GoogleAdSense_BanManIframezoneID == 'undefined') { window.ctl00_ContentMain_GoogleAdSense_BanManIframezoneID = '936898'; }
+(function () {
+if (typeof window.ctl00_ContentMain_GoogleAdSense_BanManIframezoneID != 'undefined') {
+function async_loadctl00_ContentMain_GoogleAdSense_BanManIframe() {
+addBanManZoneWithFirst('http://ads.blogtalkradio.com/', window.ctl00_ContentMain_GoogleAdSense_BanManIframezoneID, 'ctl00_ContentMain_GoogleAdSense_BanManIframe', '600', '0', 'Health','1','','','','','%2fdst-radio%2f2015%2f01%2f31%2ftop-three-things-a-health-plan-should-do-to-engage-and-serve-consumers%7c','ctl00_ContentMain_GoogleAdSense_divFirstAd');}
+
+                        }
+                        
+                        if(typeof(window.require) === 'undefined'){
+                            if (window.attachEvent)
+                                window.attachEvent('onload', async_loadctl00_ContentMain_GoogleAdSense_BanManIframe);
+                            else
+                                window.addEventListener('load', async_loadctl00_ContentMain_GoogleAdSense_BanManIframe, false);
+                        }
+                        else{
+                            var async_loadctl00_ContentMain_GoogleAdSense_BanManIframeLoader = function(){
+                                if(window.__requireReady){
+                                    require(['jquery'], function($){
+                                        var loaderDelayed = function(){
+                                            $(document).off('modulesReady', loaderDelayed);
+                                            setTimeout(async_loadctl00_ContentMain_GoogleAdSense_BanManIframe, 10);
+                                        }
+                                        if(window.__showElementsIfCompleted){
+                                            loaderDelayed();
+                                        }
+                                        else{
+                                            $(document).on('modulesReady', loaderDelayed);
+                                        }
+                                    });
+                                } else{
+                                    setTimeout(async_loadctl00_ContentMain_GoogleAdSense_BanManIframeLoader, 100);
+                                }
+                            };
+                            async_loadctl00_ContentMain_GoogleAdSense_BanManIframeLoader();
+                        }
+                })();
+</script>
+<script language="javascript" type="text/javascript">
+if (typeof window.ctl00_ContentRightColumn_RightColumn_PremiumAd1_ucBanMan_BanManIframezoneID == 'undefined') { window.ctl00_ContentRightColumn_RightColumn_PremiumAd1_ucBanMan_BanManIframezoneID = '732051'; }
+(function () {
+if (typeof window.ctl00_ContentRightColumn_RightColumn_PremiumAd1_ucBanMan_BanManIframezoneID != 'undefined') {
+function async_loadctl00_ContentRightColumn_RightColumn_PremiumAd1_ucBanMan_BanManIframe() {
+addBanManZone ('http://ads.blogtalkradio.com/', window.ctl00_ContentRightColumn_RightColumn_PremiumAd1_ucBanMan_BanManIframezoneID,'ctl00_ContentRightColumn_RightColumn_PremiumAd1_ucBanMan_BanManIframe','300','60','','1','','','','','%2fdst-radio%2f2015%2f01%2f31%2ftop-three-things-a-health-plan-should-do-to-engage-and-serve-consumers%7c');}
+
+                        }
+                        
+                        if(typeof(window.require) === 'undefined'){
+                            if (window.attachEvent)
+                                window.attachEvent('onload', async_loadctl00_ContentRightColumn_RightColumn_PremiumAd1_ucBanMan_BanManIframe);
+                            else
+                                window.addEventListener('load', async_loadctl00_ContentRightColumn_RightColumn_PremiumAd1_ucBanMan_BanManIframe, false);
+                        }
+                        else{
+                            var async_loadctl00_ContentRightColumn_RightColumn_PremiumAd1_ucBanMan_BanManIframeLoader = function(){
+                                if(window.__requireReady){
+                                    require(['jquery'], function($){
+                                        var loaderDelayed = function(){
+                                            $(document).off('modulesReady', loaderDelayed);
+                                            setTimeout(async_loadctl00_ContentRightColumn_RightColumn_PremiumAd1_ucBanMan_BanManIframe, 10);
+                                        }
+                                        if(window.__showElementsIfCompleted){
+                                            loaderDelayed();
+                                        }
+                                        else{
+                                            $(document).on('modulesReady', loaderDelayed);
+                                        }
+                                    });
+                                } else{
+                                    setTimeout(async_loadctl00_ContentRightColumn_RightColumn_PremiumAd1_ucBanMan_BanManIframeLoader, 100);
+                                }
+                            };
+                            async_loadctl00_ContentRightColumn_RightColumn_PremiumAd1_ucBanMan_BanManIframeLoader();
+                        }
+                })();
+</script>
+<script language="javascript" type="text/javascript">
+if (typeof window.ctl00_ContentRightColumn_RightColumn_Ad1_BanManIframezoneID == 'undefined') { window.ctl00_ContentRightColumn_RightColumn_Ad1_BanManIframezoneID = '936895'; }
+(function () {
+if (typeof window.ctl00_ContentRightColumn_RightColumn_Ad1_BanManIframezoneID != 'undefined') {
+function async_loadctl00_ContentRightColumn_RightColumn_Ad1_BanManIframe() {
+addBanManZone ('http://ads.blogtalkradio.com/', window.ctl00_ContentRightColumn_RightColumn_Ad1_BanManIframezoneID,'ctl00_ContentRightColumn_RightColumn_Ad1_BanManIframe','300','250','Health','1','','','','','%2fdst-radio%2f2015%2f01%2f31%2ftop-three-things-a-health-plan-should-do-to-engage-and-serve-consumers%7c');}
+
+                        }
+                        
+                        if(typeof(window.require) === 'undefined'){
+                            if (window.attachEvent)
+                                window.attachEvent('onload', async_loadctl00_ContentRightColumn_RightColumn_Ad1_BanManIframe);
+                            else
+                                window.addEventListener('load', async_loadctl00_ContentRightColumn_RightColumn_Ad1_BanManIframe, false);
+                        }
+                        else{
+                            var async_loadctl00_ContentRightColumn_RightColumn_Ad1_BanManIframeLoader = function(){
+                                if(window.__requireReady){
+                                    require(['jquery'], function($){
+                                        var loaderDelayed = function(){
+                                            $(document).off('modulesReady', loaderDelayed);
+                                            setTimeout(async_loadctl00_ContentRightColumn_RightColumn_Ad1_BanManIframe, 10);
+                                        }
+                                        if(window.__showElementsIfCompleted){
+                                            loaderDelayed();
+                                        }
+                                        else{
+                                            $(document).on('modulesReady', loaderDelayed);
+                                        }
+                                    });
+                                } else{
+                                    setTimeout(async_loadctl00_ContentRightColumn_RightColumn_Ad1_BanManIframeLoader, 100);
+                                }
+                            };
+                            async_loadctl00_ContentRightColumn_RightColumn_Ad1_BanManIframeLoader();
+                        }
+                })();
+</script>
+<script language="javascript" type="text/javascript">
+if (typeof window.ctl00_ContentRightColumn_RightColumn_Ad2_BanManIframezoneID == 'undefined') { window.ctl00_ContentRightColumn_RightColumn_Ad2_BanManIframezoneID = '936896'; }
+(function () {
+if (typeof window.ctl00_ContentRightColumn_RightColumn_Ad2_BanManIframezoneID != 'undefined') {
+function async_loadctl00_ContentRightColumn_RightColumn_Ad2_BanManIframe() {
+addBanManZone ('http://ads.blogtalkradio.com/', window.ctl00_ContentRightColumn_RightColumn_Ad2_BanManIframezoneID,'ctl00_ContentRightColumn_RightColumn_Ad2_BanManIframe','300','250','Health','1','','','','','%2fdst-radio%2f2015%2f01%2f31%2ftop-three-things-a-health-plan-should-do-to-engage-and-serve-consumers%7c');}
+
+                        }
+                        
+                        if(typeof(window.require) === 'undefined'){
+                            if (window.attachEvent)
+                                window.attachEvent('onload', async_loadctl00_ContentRightColumn_RightColumn_Ad2_BanManIframe);
+                            else
+                                window.addEventListener('load', async_loadctl00_ContentRightColumn_RightColumn_Ad2_BanManIframe, false);
+                        }
+                        else{
+                            var async_loadctl00_ContentRightColumn_RightColumn_Ad2_BanManIframeLoader = function(){
+                                if(window.__requireReady){
+                                    require(['jquery'], function($){
+                                        var loaderDelayed = function(){
+                                            $(document).off('modulesReady', loaderDelayed);
+                                            setTimeout(async_loadctl00_ContentRightColumn_RightColumn_Ad2_BanManIframe, 10);
+                                        }
+                                        if(window.__showElementsIfCompleted){
+                                            loaderDelayed();
+                                        }
+                                        else{
+                                            $(document).on('modulesReady', loaderDelayed);
+                                        }
+                                    });
+                                } else{
+                                    setTimeout(async_loadctl00_ContentRightColumn_RightColumn_Ad2_BanManIframeLoader, 100);
+                                }
+                            };
+                            async_loadctl00_ContentRightColumn_RightColumn_Ad2_BanManIframeLoader();
+                        }
+                })();
+</script>
+</form>
+
+	<script type="text/javascript">window.__asyncTrackingFunctions = [];</script>
+<script type="text/javascript" language="javascript">
+var utag_data = {
+	load_ga:"0"
+}
+</script>
+<script type="text/javascript">
+
+   var gaCode = 'UA-1303968-1';
+   if (window.UserAccount.isAid) {
+      gaCode = 'UA-1303968-2';
+   }
+
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', gaCode]);
+   _gaq.push(['_setDomainName', 'blogtalkradio.com']);
+   _gaq.push(['_setCustomVar', 5, 'category', 'Health', 3]);
+   _gaq.push(['_setCustomVar', 3, 'Episode-Time', 'archived', 3]);
+   if (document.cookie.indexOf('_aid=') > 1) {
+      _gaq.push(['_setCustomVar', 2, '_aid', window.UserAccount.readCookie('_aid'), 1]);
+   }
+   _gaq.push(['_trackPageview', '/UserUrl/dst-radio']);
+   _gaq.push(['_set', 'page', '/UserUrl/dst-radio']);
+   (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+   })();
+</script>
+<script type="text/javascript" language="javascript">
+(function() {
+    if(window.apeend_to_utag_data !== undefined) for (var prop in apeend_to_utag_data) utag_data[prop] = apeend_to_utag_data[prop];
+    function async_utagload(){
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'http://www.blogtalkradio.com/includefilesource/utag.loader-bBLatH7NQHzfNyuFXovDFg.js';
+        var x = document.getElementsByTagName('head')[0];
+        x.appendChild(s);
+    }
+    window.__asyncTrackingFunctions.push(async_utagload);
+    if (window.attachEvent)
+        window.attachEvent('onload', async_utagload);
+    else
+        window.addEventListener('load', async_utagload, false);
+})();
+</script>
+
+	
+	
+<script type="text/javascript">
+    (function ($, undefined) {
+        function doJail(selector) {
+            if (!$.fn.jail)
+                return;
+
+            var validImages = [];
+
+            $(selector).each(function () {
+                var img = $(this);
+                var dataHref = img.data("href");
+                if (typeof (dataHref) !== "undefined") {
+                    img.attr("data-src", dataHref).removeAttr("data-href");
+                }
+                
+                if (typeof(img.data("src")) !== "undefined") {
+                    validImages.push(img);
+                }
+
+            }).removeClass("lazyDocumentReady lazyWindowLoad deferredLoad");
+
+            $(validImages).jail();
+        }
+
+        $(document).ready(function () {
+            doJail("img.lazyDocumentReady, img.deferredLoad");
+        });
+
+        $(document).on("domUpdated", function() {
+            doJail("img.deferredLoad, img.lazyDocumentReady, img.lazyWindowLoad");
+        });
+
+        $(window).load(function () {
+            doJail("img.lazyWindowLoad, img.deferredLoad");
+        });
+    })(jQuery);
+</script>
+	
+
+<div id="messageBox" class="modal hide fade">
+    <div class="alert alert-block" style="margin-bottom: 0px">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <span class="label"></span> <span class="message"></span>
+    </div>
+</div>
+<div data-widget='payment-process-notification'></div>
+<div data-widget='new-host-call-to-action-bar'></div>
+
+<script type="text/javascript">
+    window.dontLoadNewJQuery = true;
+    
+    // This will fix the Rad controls Ajax Upload bar not dissapearing because
+    // it is specifying the content-length for the request on browsers that are
+    // not nescape. That request header should never be set according to standards 
+    // http://www.w3.org/TR/XMLHttpRequest/#the-setrequestheader()-method
+    if (typeof(window["AjaxNS"]) !== 'undefined') {
+        window["AjaxNS"].IsNetscape = function() {
+            return true;
+        };
+    }
+</script>
+<script type="text/javascript">(function(){window['globalConstants']={"appRootUrl":"http://www.blogtalkradio.com","userAdminRootUrl":"http://my.blogtalkradio.com","registrationUrl":"https://secure.blogtalkradio.com/register.aspx","signupUrlForListeners":"https://secure.blogtalkradio.com/signup","studioUrl":"http://sb.blogtalkradio.com/","gigyaApiKey":"2_Rjx2fUtr3F4O28iJQEddgBuGHz26TPRZt5YUQu1Q8xSq_dfQ3tQuJqnwDpj__99w","toolsRootUrl":"http://my.blogtalkradio.com/tools","secureUrl":"https://secure.blogtalkradio.com","enableBundling":true,"playerHost":"http://player.cinchcast.com","securePlayerHost":"https://player.cinchcast.com","playerPlatformId":"1","profilePlayerItemCount":"6","sailthruDomain":"horizon.blogtalkradio.com","defaultCookieDomain":".blogtalkradio.com","fbApplicationID":"72364733256","useCaptcha":true,"newHostCallToActionBarDismissalExpirationDays":30,"audioUploadMaxSize":188743680,"loggingApiKey":"","loggingEndpoint":"log/{severity}/BlogTalkRadio","episodeShortLinkRoot":"http://tobtr.com/","hasBtrAccountCookieName":"HasBTRAcct","sailthruCookieName":"sailthru_hid","loginUrl":"https://secure.blogtalkradio.com/login.aspx","apiRootUrl":"http://www.blogtalkradio.com/api","apiFullUrl":"http://www.blogtalkradio.com/api","createEpisodeUrl":"http://my.blogtalkradio.com/tools/#/new-episode","editEpisodeUrl":"http://my.blogtalkradio.com/tools/#/my-episodes/edit?episode={0}","editAudioEpisodeUrl":"http://my.blogtalkradio.com/tools/#/my-episodes/edit-audio?episode={0}","editEpisodeRecurrenceUrl":"http://my.blogtalkradio.com/tools/#/my-episodes/edit?recurrence={0}"};})();</script>
+<script type="text/javascript">
+    (function () {
+        var mainBundle = document.createElement('script');
+        // automatically hashed url
+        mainBundle.src = 'http://cdn1.btrstatic.com/scripts/dist/main.cache.9aee0656.js';
+        mainBundle.setAttribute('async', 'true');
+        var head = document.getElementsByTagName("head")[0] || document.documentElement;
+        head.appendChild(mainBundle);
+    })();
+</script>
+<script type="text/javascript">(function(){var loadPageScripts=function(){
+
+
+
+if (typeof window.console !='undefined') { console.log('page scripts loaded'); }
+};
+if (window.__requireReady) { loadPageScripts(); } else { window.__loadPageScripts = loadPageScripts; } })();</script>
+<script data-modules type="application/json">{"view":{"views/shared/header":"","views/login/popup":"","views/shared/footer":"","views/shared/webformsinclude":""},"behavior":{"reminder":"","follow":"","datetime":""}}</script>
+
+
+
+
+</body>
+</html>

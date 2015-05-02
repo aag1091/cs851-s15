@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en" prefix="fb: http://www.facebook.com/2008/fbml fb: http://ogp.me/ns/fb# og: http://ogp.me/ns# profile: http://ogp.me/ns/profile#">
+<head>
+  <meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VwMFUV5RGwEDUVlRAgY="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(4),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(u){"stack"in u&&(t(5),t(3),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:4,2:7,3:5,4:18,5:6,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],4:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:18,2:19,ee:"QJf3ax",gos:"7eSDFh"}],5:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:19,2:18,ee:"QJf3ax"}],6:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:19,2:18,ee:"QJf3ax"}],7:[function(t,e){function n(){c.inPlace(this,d,"fn-")}function r(t,e){c.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}var i=t("ee").create(),a=t(1),s=t(2),c=s(i),u=s(a),f=window.XMLHttpRequest,d=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=i,window.XMLHttpRequest=function(t){var e=new f(t);try{i.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{i.emit("internal-error",[r])}catch(o){}}return e},window.XMLHttpRequest.prototype=f.prototype,c.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),i.on("send-xhr-start",r),i.on("open-xhr-start",r)},{1:4,2:19,ee:"QJf3ax"}],8:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=e(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var f=0;c>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:9,3:7,4:4,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],9:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&c&&c.body){p.proto="https"===d.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=c.createElement("script");e.src=p.proto+t.agent,c.body.appendChild(e)}}function r(){"complete"===c.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,c=s.document,u="addEventListener",f="attachEvent",d=(""+location).split("?")[0],p=e.exports={offset:i(),origin:d,features:{}};c[u]?(c[u]("DOMContentLoaded",o,!1),s[u]("load",n,!1)):(c[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],18:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],19:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:18,ee:"QJf3ax"}]},{},["G9z0Bl",3,8]);</script>
+  <meta name="apple-itunes-app" content="app-id=288087905" />
+  <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1" />
+    <link rel="canonical" href="http://www.stitcher.com/podcast/top-traders-unplugged/e/keep-the-long-term-view-in-mind-when-investing-mike-dever-36827683" />
+  
+  <title>Top Traders Unplugged | Conversations with the World’s Top CTAs, Trendfollowers &amp; Hedge Fund Managers - Keep The Long Term View in Mind When Investing | Mike Dever, Brandywine Asset Management | #68 | Listen via Stitcher Radio On Demand</title>
+<meta property="fb:app_id" content="65522782132" />
+<meta property="og:title" content="Keep The Long Term View in Mind When Investing | Mike Dever, Brandywine Asset Management | #68 from Top Traders Unplugged | Conversations with the World’s Top CTAs, Trendfollowers &amp; Hedge Fund Managers" />
+<meta property="og:url" content="http://www.stitcher.com/s?eid=36827683" />
+<meta property="og:description" content="Listen to Top Traders Unplugged | Conversations with the World’s Top CTAs, Trendfollowers &amp; Hedge Fund Managers episodes free, on demand. &quot;We learn all the time. I’ve continued to learn over the last few decades. You learn it’s never time to do a touchdown dance.&quot; - Mike Dever (Tweet)
+On our next year-in-review, Mike Dever talks about how 2014 evolved for his firm and what they learned from the year. He discusses the changes they made to their program as well as the recent Swiss Franc move and what they learned from that. He also talks about why investors need to keep the long term view in mind when investing, and not re-evaluate the program every time the profits take a dip.
+
+Thanks for listening and please welcome our guest Mike Dever.
+
+
+
+Subscribe on:
+
+  
+In This Episode, You'll Learn:
+
+	What Mike’s firm does that blends together different strategies in order to diversify a portfolio.
+	How 2014 was for his firm.
+	Why they had a great first quarter to 2014 when most CTAs did not.
+	How the Interest Rate sector and Agriculture sector did well for the program.
+	Why he saw the Swiss Franc move coming.
+&quot;The Swiss Franc move, as much as it was unanticipated, still gave some indicators that something was going on.&quot; - Mike Dever (Tweet)
+
+	How they are in a continual process of learning and subsequently improving their program.
+	Convergent vs. Divergent environments and what Mike is looking forward to.
+	How to mitigate a big inflow of investment followed by immediate outflow.
+	The book that Mike wrote and if the Myths still hold true today.
+	Why people think about the long term view when they invest, and think about the day-to-day view when they take their money out.
+
+Resources &amp; Links Mentioned in this Episode:
+Listen to 2 hour-long episodes with Mike Dever on this podcast here and here.
+This episode was sponsored by Swiss Financial Services:
+
+Connect with Brandywine:
+Visit the Website: www.brandywine.com
+
+Call Brandywine: +1 630 361 1000
+
+E-Mail Mike Directly: Mike@brandywine.com. Listen to over 25,000 radio shows, podcasts and live radio stations for free on your iPhone, iPad, Android and PC. Discover the best of news, entertainment, comedy, sports and talk radio on demand with Stitcher Radio." />
+<meta name="description" content="Listen to Top Traders Unplugged | Conversations with the World’s Top CTAs, Trendfollowers &amp; Hedge Fund Managers episodes free, on demand. &quot;We learn all the time. I’ve continued to learn over the last few decades. You learn it’s never time to do a touchdown dance.&quot; - Mike Dever (Tweet)
+On our next year-in-review, Mike Dever talks about how 2014 evolved for his firm and what they learned from the year. He discusses the changes they made to their program as well as the recent Swiss Franc move and what they learned from that. He also talks about why investors need to keep the long term view in mind when investing, and not re-evaluate the program every time the profits take a dip.
+
+Thanks for listening and please welcome our guest Mike Dever.
+
+
+
+Subscribe on:
+
+  
+In This Episode, You'll Learn:
+
+	What Mike’s firm does that blends together different strategies in order to diversify a portfolio.
+	How 2014 was for his firm.
+	Why they had a great first quarter to 2014 when most CTAs did not.
+	How the Interest Rate sector and Agriculture sector did well for the program.
+	Why he saw the Swiss Franc move coming.
+&quot;The Swiss Franc move, as much as it was unanticipated, still gave some indicators that something was going on.&quot; - Mike Dever (Tweet)
+
+	How they are in a continual process of learning and subsequently improving their program.
+	Convergent vs. Divergent environments and what Mike is looking forward to.
+	How to mitigate a big inflow of investment followed by immediate outflow.
+	The book that Mike wrote and if the Myths still hold true today.
+	Why people think about the long term view when they invest, and think about the day-to-day view when they take their money out.
+
+Resources &amp; Links Mentioned in this Episode:
+Listen to 2 hour-long episodes with Mike Dever on this podcast here and here.
+This episode was sponsored by Swiss Financial Services:
+
+Connect with Brandywine:
+Visit the Website: www.brandywine.com
+
+Call Brandywine: +1 630 361 1000
+
+E-Mail Mike Directly: Mike@brandywine.com. Listen to over 25,000 radio shows, podcasts and live radio stations for free on your iPhone, iPad, Android and PC. Discover the best of news, entertainment, comedy, sports and talk radio on demand with Stitcher Radio." />
+<meta property="og:image" content="http://cloudfront.assets.stitcher.com/feedimageswide/480x270_50221.jpg" />
+<meta name="keywords" content="investing, business, financial, market, wizards, hedge funds, cta, commodity, trading,  toptradersunplugged, successful, money,Niels Kaastrup-Larsen" />
+  <link rel="shortcut icon" href="/favicon.png" />
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <!-- IE<9 HTML/CSS3 Compatibility -->
+  <!--[if lte IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  <![endif]-->  
+
+<!-- EXTERNAL CSS -->
+<link href="http://app.stitcher.com/assets/css/stitcherLL.css" rel="stylesheet"> 
+
+
+	  	<link rel="stylesheet" href="/podcast/dist/release/showpage.min.css?v=1427849434">
+		<link rel="stylesheet" href="/podcast/dist/release/episodepage.min.css?v=1427849434">
+		<script src="/podcast/dist/release/episodepage.min.js"></script> 
+  
+<!-- EXTERNAL JS -->
+<script src="//display.ugc.bazaarvoice.com/static/stitcher/en_US/bvapi.js"></script> 
+<script>
+    $BV.configure('global', { productId: "50221"});
+    $BV.ui('rr','show_reviews', {doShowContent: function(json) { } , limit : 3});
+</script>
+ 
+<script>
+// Kill the stitcherGA & ga.js cookies that we are obsoleting
+// document.cookie = "stitcherGA=; domain=.stitcher.com; expires=Thu, 01 Jan 1970 00:00:00 GMT"; 
+// document.cookie = "__utma=; domain=.stitcher.com; expires=Thu, 01 Jan 1970 00:00:00 GMT"; 
+// document.cookie = "__utmb=; domain=.stitcher.com; expires=Thu, 01 Jan 1970 00:00:00 GMT"; 
+// document.cookie = "__utmv=; domain=.stitcher.com; expires=Thu, 01 Jan 1970 00:00:00 GMT"; 
+// document.cookie = "__utmz=; domain=.stitcher.com; expires=Thu, 01 Jan 1970 00:00:00 GMT"; 
+
+if (typeof(ga) === "undefined") {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+}
+
+// The original tracker we have used since we began using GA
+ga('create', 'UA-2210254-2', 'auto', { 'name': 'originalWebTracker'});
+ga('originalWebTracker.require', 'displayfeatures');
+ga('originalWebTracker.require', 'linkid');
+ga('originalWebTracker.send', 'pageview');
+
+// New rollup up property which will include events from proteus objects as well
+if (typeof(rollupTrackerCreated) === 'undefined') {
+  ga('create', 'UA-2210254-19', 'auto', { 'name': 'rollupTracker'});
+  ga('rollupTracker.require', 'displayfeatures');
+  ga('rollupTracker.require', 'linkid');
+  ga('rollupTracker.send', 'pageview');
+  rollupTrackerCreated = true;
+}
+
+// Create a function to send events to all defined trackers
+if (typeof(gaSendEvent) !== "function") {
+  function gaSendEvent(category, action, field, additional) {
+    if(typeof(category)==='undefined') category = "unknown";
+    if(typeof(action)==='undefined') action = "unknown";
+    if(typeof(field)==='undefined') field = "unknown";
+
+    ga( function() {
+      var allTrackers = ga.getAll();
+      var numTrackers = allTrackers.length;
+      var i = 0;
+
+      allTrackers.forEach( function(arrayItem) {
+        i++;
+        var trackerSend = arrayItem.get('name') + '.send';
+
+        // If our additional information is a hitCallback, we only want
+        // to execute it on the last ga.send
+        if ((additional) &&
+            (typeof(additional.hitCallback) === 'function') &&
+            (i == numTrackers))
+        {
+          ga(trackerSend, 'event', category, action, field, additional);
+        }
+        else
+        {
+          ga(trackerSend, 'event', category, action, field);
+        }
+      });
+    });
+  }
+}
+</script><script>
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "17817737" });
+  (function() {
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+    el.parentNode.insertBefore(s, el);
+  })();
+</script>
+<noscript>
+  <img src="http://b.scorecardresearch.com/p?c1=2&c2=17817737&cv=2.0&cj=1" />
+</noscript> 
+<!-- Config -->
+<script>
+	var stitcher = {
+		config: {
+			base_url: 'http://app.stitcher.com/',
+			assets_base_url: '/',
+			default_thumbail_url: '',
+			app_name: 'showPage',
+			ga_cat_suffix: '',
+			variant: 'ep',
+      		flavor: 'desktop',
+			mute_usage: false,
+			send_diagnostics: false,
+			no_ping: true,
+			no_download_prompt: false,
+			show_episodes: false,
+			isMobile: false,
+			autoplay : true,
+						episode: {
+				id: 36827683,
+				duration: 1655,
+				end_time: 0,
+				episodeImage: "http://cloudfront.assets.stitcher.com/feedimageswide/480x270_50221.jpg",
+				episodeURL: "http://cloudfront.stitcher.com/36827683.mp3",
+				isClip: false,
+				feedID: 50221,					
+				is_ad: false,
+				offset: 0,
+				origEpisodeURL: "http://traffic.libsyn.com/yapp/teb-ep20.mp3",
+				start_time: 0,
+				starting_offset: 0,
+				title: "Keep The Long Term View in Mind When Investing | Mike Dever, Brandywine Asset Management | #68",
+				simpleDuration: "27 minutes"
+			},
+										feed : {
+					id: 50221,
+					modeRestricted: false,
+					name: "Top Traders Unplugged | Conversations with the World’s Top CTAs, Trendfollowers & Hedge Fund Managers",
+					image : "http://cloudfront.assets.stitcher.com/feedimagesplain328/50221.jpg",
+					color : "#FDFDFC"
+				}
+					}
+	};
+
+	var tweetData = {
+		"showTitle"  		 	: "Top Traders Unplugged | Conversations with the World’s Top CTAs, Trendfollowers & Hedge Fund Managers",
+		"episodeTitle"  	: "Keep The Long Term View in Mind When Investing | Mike Dever, Brandywine Asset Management | #68",
+		"episodeShareUrl" : "http://www.stitcher.com/s?eid=36827683",
+		"feedShareUrl"  	: "http://www.stitcher.com/s?fid=50221",
+		"twitterName" 		: "@TopTradersLive"
+	}
+
+</script>
+
+<style media="screen">
+		#main:after {
+		content: "";
+		background: url(http://cloudfront.assets.stitcher.com/feedimageswide/480x270_50221.jpg);
+		background-size: cover;
+		background-position: 0px -171px;
+		opacity: 0.1;
+		top: 0px;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		position: absolute;
+		z-index: -1;
+		overflow: hidden;
+		height: 272px;
+	}
+	</style>
+
+</head>
+<body class="desktop">
+	
+<!-- Error -->
+<div id="error_box" style="display: none;">
+	<div id="error_message">
+		<span style="color: #cd3236; font-weight: bold;">Error</span> &#45; There was an error with your download request. Try again later.
+		<div id="error_close">Close</div>
+	</div>	
+</div>
+<!-- Error -->
+<!-- App Nag -->
+	<div id="appnag" style="display: none;" data-gaproperty=""
+		data-galabel="">
+		<div id="appnag_close"></div>
+		<div id="appnag_image"></div>	
+		<div id="appnag_mobile" class="appnag_content hide">
+			<h1 id="appnag_title">
+				Get the Stitcher App
+			</h1>
+			<h2 id="appnag_subtitle"> 
+				Take your podcasts on-the-go!
+			</h2>
+			<a id="appnag_mobile" 
+				onclick="gaSendEvent('', 
+									 'Click_Request_Link', 
+									 '', 
+									 { 'hitCallback': function() {
+											window.location.href='http://www.stitcher.com/7sp';
+									 }
+				});" target="_blank">Download The Free App</a>
+		</div>
+		<div id="appnag_desktop" class="appnag_content easter_egg">
+			<h1 id="appnag_title">
+				Get the Stitcher App
+			</h1>
+			<h2 id="appnag_subtitle"> 
+				Send a link to your phone to take </br> your podcasts on the go.
+			</h2>
+			<form id="appnag_input">		
+				<input id="appnag_input_field" type="text" name="ContactInfo" placeholder="Phone # or email">
+				<input id="appnag_input_submit" type="submit" value="GO">
+			</form>
+		</div>
+		<div id="appnag_content_confirm" style="display: none;">
+			<h1 id="appnag_title_confirm">
+				We Sent You a Link
+			</h1>
+			<h2 id="appnag_subtitle_confirm"> 
+				Did you get it?
+			</h2>
+			<div id="appnag_link_confirm" style="width: 120px;">
+				<h3 id="appnag_link-retry_confirm"> 
+					Retry
+				</h3>
+				<h3 id="appnag_link-close_confirm"> 
+					Close
+				</h3>
+			</div>
+		</div>
+	</div>
+<!-- App Nag -->   <div class="wrapper">
+							
+<!--HTML header-->
+<header id="header_main" class="current">
+	<div id="header_content">
+		<nav id="header_nav">
+			<a href="/"><img src="http://www.stitcher.com/images/header-logo.png" alt="Stitcher"/></a>
+			<ul id="header_nav-list">
+				<li class=""><a 
+					onClick="gaSendEvent('PageRequest', 'Click', 'download-global_header',{ 'hitCallback' : function() {
+            				window.location.href='/dl/';
+            			}
+            		});">GET THE APP</a></li>
+				<li class=""><a href="/learn-more">LEARN MORE</a></li>
+				<li class=""><a href="/stitcher-list/">TOP SHOWS</a></li>
+				<li class=""><a href="/toplists/">TOP EPISODES</a></li>
+				<li class=""><a 
+					onClick="gaSendEvent('WebAppRequest', 'Click', 'header_bar',{ 'hitCallback' : function() {
+            				window.location.href='http://app.stitcher.com';
+            			}
+            		});">LISTEN</a></li>
+			</ul>
+			<a href="/"><div id="mobile-home"></div></a>
+		</nav>
+	</div>
+</header>
+<div id="header_spacer"></div>
+			
+<!-- Facebook -->
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function() { 
+        FB.init({
+            appId      : '65522782132', // App ID
+            status     : true, // check login status
+            cookie     : true, // enable cookies to allow the server to access the session
+            xfbml      : true  // parse XFBML
+        });
+        
+        FB.Event.subscribe('comment.create', comment_callback); 
+        FB.Event.subscribe('comment.remove', comment_callback);
+    };
+
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;        
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    
+    var comment_callback = function(response) {
+        var response_json = JSON.stringify(response);
+        $.get('/webservice/UpdateFacebookCommentCount.php?response='+response_json, function(response){
+            //alert(response);    
+        })
+    }
+    
+</script>
+
+
+<!-- Twitter -->
+<script>
+(function (d,s,id) {
+  var t, js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+  js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+  return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+}(document, "script", "twitter-wjs"));
+</script>
+	
+    <!-- PLAYER -->
+    <div id="playerContainer" >
+        <!-- Loading animation -->
+        <div id="loading">
+          <div class="overlay"></div>
+          <div class="spinner">
+            <div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div>
+          </div>
+        </div>
+        <div id="main"><!-- the player is going to injected using splayer --></div>
+    </div>
+
+				  <script data-main="http://cloudfront.assets.stitcher.com/webapp/splayer/app/config" src="http://cloudfront.assets.stitcher.com/webapp/splayer/dist/release/require.js?v=1427849434"></script>
+		
+
+    <div id="episodePageContainer">
+        <!-- ----------------- -->
+        <!-- EPISODE CONTAINER -->
+        <!-- ----------------- -->
+        <div id="episodeContainer">
+            <!-- ----------------- -->
+            <!-- SHOW AND EPISODE INFO -->
+            <!-- ----------------- -->
+            <div id="info">
+                <div id="showInfoMobile">
+                    <h1 id="title">Show Info</h1>
+                    <div id="showImg" ><a onclick="gaSendEvent('ShowSelect-EpisodePage',document.location.href,'50221_36827683',{'hitCallback': function() {
+					          window.location.href='//www.stitcher.com\/podcast/top-traders-unplugged';
+					        }}); return 1;"><img src="http://cloudfront.assets.stitcher.com/feedimagesplain50/50221.jpg"></a></div>
+                    <div id="showTitle"><a onclick="gaSendEvent('ShowSelect-EpisodePage',document.location.href,'50221_36827683',{'hitCallback': function() {
+					          window.location.href='//www.stitcher.com\/podcast/top-traders-unplugged';
+					        }}); return 1;">Top Traders Unplugged | Conversations with the World’s Top CTAs, Trendfollowers & Hedge Fund Managers</a></div>
+                    <div class="shareWidgetMobile">
+                        <div class="shareItem listenLaterMobile stitcher-ll" data-eid="36827683" data-fid="50221"></div>
+                        <a class="overlay-twitter-share-button episodeTweetLink"
+					            onClick="gaSendEvent('PageShare-EpisodePage','','twitter');" data-count="none" target="_new" href=""><div class="shareItem twShare"></div></a>
+                        <a class="overlay-fb-share-button share_link"
+				            onclick="gaSendEvent('PageShare-EpisodePage','','facebook');" href='https://www.facebook.com/sharer/sharer.php?u=http://www.stitcher.com/s?eid=36827683&s=100&ref=fbShareButton' target="_blank"><div class="shareItem fbShare"></div></a>
+                    </div>
+                </div>
+                <div id="episodeInfo">
+                    <h1 id="title">Episode Info</h1>
+
+                    <p id="descrption"><span id="titleMobile" class="mobileOnly">Episode Info: </span>"We learn all the time. I’ve continued to learn over the last few decades. You learn it’s never time to do a touchdown dance." - Mike Dever (Tweet)
+On our next year-in-review, Mike Dever talks about how 2014 evolved for his firm and what they learned from the year. He discusses the changes they made to their program as well as the recent Swiss Franc move and what they learned from that. He also talks about why investors need to keep the long term view in mind when investing, and not re-evaluate the program every time the profits take a dip.
+
+Thanks for listening and please welcome our guest Mike Dever.
+
+
+
+Subscribe on:
+
+  
+In This Episode, You'll Learn:
+
+	What Mike’s firm does that blends together different strategies in order to diversify a portfolio.
+	How 2014 was for his firm.
+	Why they had a great first quarter to 2014 when most CTAs did not.
+	How the Interest Rate sector and Agriculture sector did well for the program.
+	Why he saw the Swiss Franc move coming.
+"The Swiss Franc move, as much as it was unanticipated, still gave some indicators that something was going on." - Mike Dever (Tweet)
+
+	How they are in a continual process of learning and subsequently improving their program.
+	Convergent vs. Divergent environments and what Mike is looking forward to.
+	How to mitigate a big inflow of investment followed by immediate outflow.
+	The book that Mike wrote and if the Myths still hold true today.
+	Why people think about the long term view when they invest, and think about the day-to-day view when they take their money out.
+
+Resources & Links Mentioned in this Episode:
+Listen to 2 hour-long episodes with Mike Dever on this podcast here and here.
+This episode was sponsored by Swiss Financial Services:
+
+Connect with Brandywine:
+Visit the Website: www.brandywine.com
+
+Call Brandywine: +1 630 361 1000
+
+E-Mail Mike Directly: Mike@brandywine.com<a id="readmore" title="read more" class="readmore">Read more »</a></p>
+					<p id="descrption-full" style="display:none; height:100%"><span id="titleMobile">Episode Info: </span>"We learn all the time. I’ve continued to learn over the last few decades. You learn it’s never time to do a touchdown dance." - Mike Dever (Tweet)
+On our next year-in-review, Mike Dever talks about how 2014 evolved for his firm and what they learned from the year. He discusses the changes they made to their program as well as the recent Swiss Franc move and what they learned from that. He also talks about why investors need to keep the long term view in mind when investing, and not re-evaluate the program every time the profits take a dip.
+
+Thanks for listening and please welcome our guest Mike Dever.
+
+
+
+Subscribe on:
+
+  
+In This Episode, You'll Learn:
+
+	What Mike’s firm does that blends together different strategies in order to diversify a portfolio.
+	How 2014 was for his firm.
+	Why they had a great first quarter to 2014 when most CTAs did not.
+	How the Interest Rate sector and Agriculture sector did well for the program.
+	Why he saw the Swiss Franc move coming.
+"The Swiss Franc move, as much as it was unanticipated, still gave some indicators that something was going on." - Mike Dever (Tweet)
+
+	How they are in a continual process of learning and subsequently improving their program.
+	Convergent vs. Divergent environments and what Mike is looking forward to.
+	How to mitigate a big inflow of investment followed by immediate outflow.
+	The book that Mike wrote and if the Myths still hold true today.
+	Why people think about the long term view when they invest, and think about the day-to-day view when they take their money out.
+
+Resources & Links Mentioned in this Episode:
+Listen to 2 hour-long episodes with Mike Dever on this podcast here and here.
+This episode was sponsored by Swiss Financial Services:
+
+Connect with Brandywine:
+Visit the Website: www.brandywine.com
+
+Call Brandywine: +1 630 361 1000
+
+E-Mail Mike Directly: Mike@brandywine.com</br><a id="readless" title="read more" class="readmore">Read Less</a></p>
+					<!-- LIKE STITCHER ON FACEBOOK -->
+					<div class="likeStitcher mobileOnly">
+						<h1>Discover more stories like this.</h1>
+						<h2>Like Stitcher On Facebook</h2>
+						<div class="container-facebook-like">
+							<div class="fb-like" data-href="https://www.facebook.com/stitcherradio" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+						</div>
+					</div>
+					<!-- END -->
+
+					<div id="share-widget">
+						<div class="shareItem stitcher-ll" id="listenLater" data-eid="36827683" data-fid="50221"></div>
+
+                        <a class="overlay-fb-share-button share_link"
+				            onclick="gaSendEvent('Share-EpisodePage','FacebookShare','50221_36827683');" href='https://www.facebook.com/sharer/sharer.php?u=http://www.stitcher.com/s?eid=36827683&s=100&ref=fbShareButton' target="_blank"><div class="shareItem" id="fbShare"></div>
+						</a>
+
+						<a class="overlay-twitter-share-button episodeTweetLink"
+					            onClick="gaSendEvent('Share-EpisodePage','TwitterShare','50221_36827683');" data-count="none" target="_new"><div class="shareItem" id="twShare"></div>
+						</a>
+
+                        <div class="shareItem embed desktopOnly" id="embed">EMBED</div>                    </div>
+                </div>
+
+                <div id="showInfo">
+                    <h1 id="title">Show Info</h1>
+                    <div id="showImg"><a title="Top Traders Unplugged | Conversations with the World’s Top CTAs, Trendfollowers & Hedge Fund Managers" href="/podcast/top-traders-unplugged"><img src="http://cloudfront.assets.stitcher.com/feedimagesplain50/50221.jpg"></a></div>
+                    <div id="showTitle"><a title="Top Traders Unplugged | Conversations with the World’s Top CTAs, Trendfollowers & Hedge Fund Managers" href="/podcast/top-traders-unplugged">Top Traders Unplugged | Conversations with the World’s Top CTAs, Trendfollowers & Hedge Fund Managers</a></div>
+                    <!-- <div id="addToPlaylist">+ Add to Playlist</div> -->
+                </div>
+            </div>
+            <!-- END OF SHOW AND EPISODE INFO -->
+
+            <!-- ----------------- -->
+            <!-- ACTIONS -->
+            <!-- ----------------- -->
+            <div id="actions">
+                <div id="episodeOptions">
+                    <h1>Episode Options</h1>
+                    <ul>
+                        <li class="stitcher-ll" data-eid="36827683" data-fid="50221">Listen Later</li>
+                        <li><span class="embed">Embed this Episode</span></li>                        <li><a class="web"
+	 												onclick="gaSendEvent('AutoOpenApp-EpisodePage',document.location.href,'50221_36827683',{'hitCallback': function() {
+								          window.location.href='http://app.stitcher.com/browse/feed/50221/details/e/36827683';
+								        }}); return 1;">Open In Web App</a></li>
+                    </ul>
+                </div>
+
+                <div id="shares">
+                    <h1>Shares</h1>
+                    <ul>
+												<!-- Facebook share -->
+                        <li><div class="sharesIcons" id="facebookIcon"></div><a class="overlay-fb-share-button share_link" onclick="gaSendEvent('Share-EpisodePage','FacebookShare','50221_36827683');" href='https://www.facebook.com/sharer/sharer.php?u=http://www.stitcher.com/s?eid=36827683&s=100&ref=fbShareButton' target="_blank">Share Via Facebook</a></li>
+                        <!-- Twitter share -->
+												<li><div class="sharesIcons" id="twitterIcon"></div><a class="overlay-twitter-share-button episodeTweetLink" onclick="gaSendEvent('Share-EpisodePage','TwitterShare','50221_36827683');" data-count="none" target="_new" href="https://twitter.com/intent/tweet?url=http://www.stitcher.com/s?eid=36827683&text=">Share Via Twitter</a></li>
+                        <!-- Google+ share -->
+												<li><div class="sharesIcons" id="googleIcon"></div><a class="share_link google_share" onclick="gaSendEvent('Share-EpisodePage', 'GoogleShare', '50221_36827683');" target="_blank" href="https://plus.google.com/share?url=http://www.stitcher.com/s?eid=36827683" >Share Via Google+</a></li>
+												<!-- Linkedin share -->
+                        <li><div class="sharesIcons" id="linkedinIcon"></div><a class="share_link linkedin_share" onclick="gaSendEvent('Share-EpisodePage', 'LinkedInShare','50221_36827683');" target="_blank" href="https://www.linkedin.com/shareArticle?summary=http%3A%2F%2Fwww.stitcher.com%2Fs%3Feid%3D36827683&title=Keep+The+Long+Term+View+in+Mind+When+Investing+%7C+Mike+Dever%2C+Brandywine+Asset+Management+%7C+%2368&mini=true&url=http%3A%2F%2Fwww.stitcher.com%2Fs%3Feid%3D36827683&source=http%3A%2F%2Fwww.stitcher.com%2Fs%3Feid%3D36827683">Share Via Linkedin</a></li>
+                    </ul>
+                </div>
+
+                <div id="listen">
+                    <h1>Listen Whenever</h1>
+                    <ul>
+                        <li><div class="listenIcons" id="iosIcon"></div><a class="ios"
+														onclick="gaSendEvent('Download-iOS-EpisodePage',document.location.href,'50221_36827683',{'hitCallback': function() {
+									          window.location.href='http://itunes.apple.com/us/app/stitcher-radio/id288087905?mt=8';
+									        }}); return 1;">iOS</a></li>
+                        <li><div class="listenIcons" id="androidIcon"></div><a class="android"
+	 												onclick="gaSendEvent('Download-Android-EpisodePage',document.location.href,'50221_36827683',{'hitCallback': function() {
+								          window.location.href='https://play.google.com/store/apps/details?id=com.stitcher.app';
+								        }}); return 1;">Android</a></li>
+                        <li><div class="listenIcons" id="webIcon"></div><a class="web"
+	 												onclick="gaSendEvent('AutoOpenApp-EpisodePage',document.location.href,'50221_36827683',{'hitCallback': function() {
+								          window.location.href='http://app.stitcher.com/browse/feed/50221/details/e/36827683';
+								        }}); return 1;">Web Player</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- END OF ACTIONS -->
+
+            <!-- ----------------- -->
+            <!-- FACEBOOK COMMENTS -->
+            <!-- ----------------- -->
+            <div class="social fb-comments desktopOnly" data-href="http://www.stitcher.com/s?eid=36827683" data-num-posts="2" width="580"></div>
+            <!-- END OF FACEBOOK COMMENTS -->
+        </div>
+        <!-- END OF EPISODE CONTAINER -->
+
+
+        <!-- ----------------- -->
+        <!-- SIMILAR EPISODES CONTAINER -->
+        <!-- ----------------- -->
+        <div id="similarEpisodesContainer">
+            <h1 class="desktopOnly">Similar Episodes</h1>
+            <h2 class="mobileOnly">Related Episodes</h2>
+        </div>
+        <!-- END OF SIMILAR EPISODES CONTAINER -->
+        <script id="similarEpisodeTemplate" type="text/html">
+            {{#.}}
+            <a id="similarEpisode" href="/s?eid={{id_Episode}}">
+                <div id="episodeImg">
+                    <img class="image" src="{{episodeImage}}" />
+                </div>
+                <h1 id="title">{{title}}</h1>
+                <p>{{name}}</p>
+                <div id="duration">{{#formatDuration}}duration{{/formatDuration}}</div>
+                <div id="shareWidgetMobile">
+                    <div class="shareItem" id="listenLater" data-eid="{{id_Episode}}"></div>
+                    <div class="shareItem" id="twShare"></div>
+                    <div class="shareItem" id="fbShare"></div>
+                </div>
+            </a>
+            {{/.}}
+        </script>
+    </div><!-- END episodePageContainer -->
+
+		<!--HTML footer-->		
+<footer id="footer_main" class="desktopOnly">
+	<div id="footer_content">
+		<div id="footer_primary">
+			<div id="footer_primary_about">
+				<h3 id="footer_section">Stitcher</h3>
+				<p>Stream the latest in news, sports, talk, and entertainment radio anywhere, on demand. Stitcher is the easiest way to discover the best of over 25,000+ radio shows, live radio stations and podcasts.</p>
+			</div>
+			<div id="footer_primary_download">
+				<h2 id="footer_section">Get the Free</span> App</h2> 
+				<p>Now available for iPhone, iPad, Android, Kindle Fire</p>
+				<div id="footer_primary_download-buttons">
+					<a onclick="gaSendEvent('Download', 'Click','AppStore-ios_download_footer', { 'hitCallback' : function() {
+								window.location.href='http://itunes.apple.com/us/app/stitcher-radio/id288087905?mt=8';
+							}
+						});"><img id="download-iphone-app" src="http://www.stitcher.com/toplists/assets/images/badge-app-store-263x90.png"></a>
+					<a onclick="gaSendEvent('Download', 'Click','AppStore-android_download_footer', { 'hitCallback' : function() {
+								window.location.href='https://play.google.com/store/apps/details?id=com.stitcher.app';
+							}
+						});"><img id="download-google-app" src="http://www.stitcher.com/toplists/assets/images/badge-google-play-259x89.png"></a>
+				</div>
+			</div>	 
+			<div id="footer_primary_copyright">
+				&copy; Stitcher 2014, all content is copyright of its owners.
+			</div>
+		</div>					
+		<nav id="footer_secondary">
+			<nav id="footer_secondary_radio-podcasts" class="footer_secondary-section">
+				<h3 id="footer_section">Radio &amp; Podcasts</h3>
+				<ul>
+					<li><a href="/stitcher-list/all-podcasts-top-shows">The Stitcher List</a></li>
+					<li><a href="http://app.stitcher.com/browse/23/1117909">News Radio</a></li>
+					<li><a href="http://app.stitcher.com/browse/28/890562">Technology Podcasts</a></li>
+					<li><a href="http://app.stitcher.com/browse/15/890241">Business News</a></li>
+					<li><a href="http://app.stitcher.com/browse/27/890560">Sports Radio</a></li>
+					<li><a href="http://app.stitcher.com/browse/30/890259">Storytelling Podcasts</a></li>
+				</ul>
+			</nav>	
+			<nav id="footer_secondary_partners" class="footer_secondary-section">
+				<h3 id="footer_section">Partners</h3>
+				<ul>
+					<li><a href="/content-providers">Partner Signup</a></li>
+					<li><a href="http://partners.stitcher.com">Partner Portal</a></li>
+					<li><a href="/content-faq">Partner FAQ</a></li>
+					<li><a href="/advertisers">Advertisers</a></li>
+				</ul>
+			</nav>
+			<nav id="footer_secondary_about" class="footer_secondary-section">
+				<h3 id="footer_section">About</h3>
+				<ul>
+					<li><a 	onClick="gaSendEvent('Click', 'download-generic_footer', '', { 'hitCallback': function() {
+									window.location.href='/dl/';
+								}
+							});">Download</a></li>      
+					<li><a href="/press">Newsroom</a></li>
+					<li><a href="http://www.stitcher.com/blog">Stitcher Blog</a></li>
+					<li><a href="/jobs">Careers</a></li>
+					<li><a href="/faqs">FAQs</a></li>
+					<li><a href="/contact-us">Contact</a></li>
+					<li><a href="/privacy">Privacy</a></li>
+					<li><a href="/terms">Terms of Use</a></li>
+					<li><a href="/leadership">Leadership</a></li>
+					<li><a href="/sitemap">Sitemap</a></li>
+				</ul>
+			</nav>
+			<nav id="footer_secondary_follow-us" class="footer_secondary-section">
+				<h3 id="footer_section">Follow Us</h3>
+				<a href="http://twitter.com/stitcher"><img src="http://www.stitcher.com/images/badge-twitter_19x19.png" alt="Twitter"/></a>
+				<a href="http://facebook.com/stitcherradio"><img src="http://www.stitcher.com/images/badge-fb_19x19.png" alt= "Facebook"/></a>
+				<a href="http://www.linkedin.com/company/stitcher"><img src="http://www.stitcher.com/images/badge-linkedin_19x19.png" alt="LinkedIn"/></a>
+				<a href="http://google.com/+stitcher"><img src="http://www.stitcher.com/images/badge-google-plus_19x19.png" alt="Google+"/></a>
+			</nav>
+		</nav>
+	</div>
+</footer>
+<!--/HTML footer-->
+		</div><!-- Wrapper -->
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-4.newrelic.com","licenseKey":"4b847bd531","applicationID":"2358357","transactionName":"NFABMkBZChUDBxBRCg0aNhRbFxQJBgcFSxFMXA0CV0BKFgoU","queueTime":0,"applicationTime":223,"ttGuid":"","agentToken":"","userAttributes":"","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-476.min.js"}</script></body>
+		<script id="embedTemplate" type="text/html">
+		<div id="embedContainer">
+			<div id="embedPopup">
+				<h1>Embed This Episode</h1>
+				<h2>Keep The Long Term View in Mind When Investing | Mike Dever, Brandywine Asset Management | #68</h2>
+				<textarea id="embedText"><iframe style="border: solid 1px #dedede;"  src="http://app.stitcher.com/splayer/f/50221/36827683" width="220" height="150" frameborder="0" scrolling="no"></iframe></textarea>
+				<div id="copy-button" data-clipboard-target="embedText">Copy</div>
+				<div class="caret-left"></div>
+				<div id="closeIcon">&#x2715;</div>
+            </div>
+		</div>
+    </script>
+	</html>

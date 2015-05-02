@@ -1,0 +1,1298 @@
+ <!doctype html>
+<!--[if !IE]>
+	<html class="no-js non-ie" lang="en-US"> <![endif]-->
+<!--[if IE 7 ]>
+	<html class="no-js ie7" lang="en-US"> <![endif]-->
+<!--[if IE 8 ]>
+	<html class="no-js ie8" lang="en-US"> <![endif]-->
+<!--[if IE 9 ]>
+	<html class="no-js ie9" lang="en-US"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+<script type="text/javascript">window.mrf={host:'bc.marfeel.com',blacklistedUrls:['www.randalolson.com/about','www.randalolson.com/research','www.randalolson.com/publications','www.randalolson.com/teaching','www.randalolson.com/mentoring','www.randalolson.com/press','www.randalolson.com/contact']};(function(e,t){var n=new XMLHttpRequest;n.open("GET","//bc.marfeel.com/statics/marfeel/gardab.js",false);n.send();if(n.status===200){var r=e.getElementsByTagName("script")[0],i=e.createElement("script");i.innerHTML=n.responseText;r.parentNode.insertBefore(i,r)}})(document,window)</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Here's Waldo: Computing the optimal search strategy for finding Waldo | Randal S. Olson</title>
+<link rel="profile" href="http://gmpg.org/xfn/11"/>
+<link rel="pingback" href="http://www.randalolson.com/xmlrpc.php"/>
+ 
+<meta name="description" content="Randy Olson uses machine learning techniques to find the best search strategy for finding Waldo."/>
+<meta name="keywords" content="where\'s waldo,find waldo,children\'s books,machine learning,genetic algorithm,traveling salesman problem,optimization,hillclimber,analysis,data visualization"/>
+<link rel="canonical" href="http://www.randalolson.com/2015/02/03/heres-waldo-computing-the-optimal-search-strategy-for-finding-waldo/"/>
+ 
+<link rel="alternate" type="application/rss+xml" title="Randal S. Olson &raquo; Feed" href="http://www.randalolson.com/feed/"/>
+<link rel="alternate" type="application/rss+xml" title="Randal S. Olson &raquo; Comments Feed" href="http://www.randalolson.com/comments/feed/"/>
+<link rel="alternate" type="application/rss+xml" title="Randal S. Olson &raquo; Here&#8217;s Waldo: Computing the optimal search strategy for finding Waldo Comments Feed" href="http://www.randalolson.com/2015/02/03/heres-waldo-computing-the-optimal-search-strategy-for-finding-waldo/feed/"/>
+<link rel='stylesheet' id='collapseomatic-css-css' href='http://www.randalolson.com/wp-content/plugins/jquery-collapse-o-matic/light_style.css?ver=1.5.4' type='text/css' media='all'/>
+<link rel='stylesheet' id='responsive-style-css' href='http://www.randalolson.com/wp-content/themes/responsive/core/css/style.css?ver=1.9.7.6' type='text/css' media='all'/>
+<link rel='stylesheet' id='responsive-media-queries-css' href='http://www.randalolson.com/wp-content/themes/responsive/core/css/responsive.css?ver=1.9.7.6' type='text/css' media='all'/>
+<link rel='stylesheet' id='genericons-css' href='http://www.randalolson.com/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css?ver=3.1' type='text/css' media='all'/>
+<link rel='stylesheet' id='jetpack_css-css' href='http://www.randalolson.com/wp-content/plugins/jetpack/css/jetpack.css?ver=3.4.1' type='text/css' media='all'/>
+ 
+<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-3573562-2']);
+	_gaq.push(['_gat._forceSSL']);
+	_gaq.push(['_trackPageview']);
+
+	(function () {
+		var ga = document.createElement('script');
+		ga.type = 'text/javascript';
+		ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+	})();
+
+</script>
+ 
+<script type='text/javascript' src='http://www.randalolson.com/wp-includes/js/jquery/jquery.js?ver=1.11.1'></script>
+<script type='text/javascript' src='http://www.randalolson.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://www.randalolson.com/wp-content/plugins/jquery-collapse-o-matic/js/collapse.js?ver=1.5.4'></script>
+<script type='text/javascript' src='http://www.randalolson.com/wp-content/plugins/jetpack/modules/related-posts/related-posts.js?ver=20141201'></script>
+<script type='text/javascript' src='http://www.randalolson.com/wp-content/themes/responsive/core/js/responsive-modernizr.min.js?ver=2.6.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.randalolson.com/xmlrpc.php?rsd"/>
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.randalolson.com/wp-includes/wlwmanifest.xml"/>
+<link rel='prev' title='Python usage survey 2014' href='http://www.randalolson.com/2015/01/30/python-usage-survey-2014/'/>
+<link rel='next' title='Design critique: Putting Big Pharma spending in perspective' href='http://www.randalolson.com/2015/03/01/design-critique-putting-big-pharma-spending-in-perspective/'/>
+<meta name="generator" content="WordPress 4.1.1"/>
+<link rel='shortlink' href='http://www.randalolson.com/?p=6062'/>
+<link href="http://www.randalolson.com/wp-content/plugins/google-syntax-highlighter/Styles/SyntaxHighlighter.css" type="text/css" rel="stylesheet"/>
+<script type='text/javascript'>
+var colomatduration = 'fast';
+var colomatslideEffect = 'slideFade';
+</script> 
+ 
+<style type="text/css">span.oe_textdirection{unicode-bidi:bidi-override;direction:rtl;}span.oe_displaynone{display:none;}</style>
+<style type="text/css">.broken_link,a.broken_link{text-decoration:line-through;}</style> </head>
+<body class="single single-post postid-6062 single-format-standard">
+<div id="container" class="hfeed">
+<div class="skip-container cf">
+<a class="skip-link screen-reader-text focusable" href="#content">&darr; Skip to Main Content</a>
+</div> 
+<div id="header">
+<div id="logo">
+<a href="http://www.randalolson.com/"><img src="http://www.randalolson.com/wp-content/uploads/2012/05/header.png" width="300" height="100" alt="Randal S. Olson"/></a>
+</div> 
+<div class="main-nav"><ul class="menu"><li><a href="http://www.randalolson.com/">Home</a></li><li class="page_item page-item-29"><a href="http://www.randalolson.com/blog/">Blog</a></li><li class="page_item page-item-19"><a href="http://www.randalolson.com/about/">About</a></li><li class="page_item page-item-22"><a href="http://www.randalolson.com/research/">Current Research</a></li><li class="page_item page-item-981"><a href="http://www.randalolson.com/publications/">Publications</a></li><li class="page_item page-item-1497"><a href="http://www.randalolson.com/teaching/">Teaching</a></li><li class="page_item page-item-1450"><a href="http://www.randalolson.com/mentoring/">Mentoring</a></li><li class="page_item page-item-1882"><a href="http://www.randalolson.com/press/">Press</a></li><li class="page_item page-item-2099"><a href="http://www.randalolson.com/coding/">Coding</a></li><li class="page_item page-item-34"><a href="http://www.randalolson.com/contact/">Contact</a></li></ul>
+</div>
+</div> 
+<div id="wrapper" class="clearfix">
+<div id="content" class="grid col-620">
+<div id="post-6062" class="post-6062 post type-post status-publish format-standard has-post-thumbnail hentry category-analysis category-data-visualization tag-genetic-algorithm tag-machine-learning tag-optimization tag-traveling-salesman-problem tag-wheres-waldo">
+<h1 class="entry-title post-title">Here&#8217;s Waldo: Computing the optimal search strategy for finding Waldo</h1>
+<div class="post-meta">
+<span class="meta-prep meta-prep-author posted">Posted on </span><a href="http://www.randalolson.com/2015/02/03/heres-waldo-computing-the-optimal-search-strategy-for-finding-waldo/" title="Here&#8217;s Waldo: Computing the optimal search strategy for finding Waldo" rel="bookmark"><time class="timestamp updated" datetime="2015-02-03T15:10:40+00:00">February 3, 2015</time></a><span class="byline"> by </span><span class="author vcard"><a class="url fn n" href="http://www.randalolson.com/author/rhiever/" title="View all posts by Randy Olson">Randy Olson</a></span>
+</div> 
+<div class="post-entry">
+<p>As I found myself unexpectedly snowed in this weekend, I decided to take on a weekend project for fun. While searching for something to catch my fancy, I ran across an old Slate article claiming that they found a <a href="http://www.slate.com/articles/arts/culturebox/2013/11/where_s_waldo_a_new_strategy_for_locating_the_missing_man_in_martin_hanford.html" onclick="_gaq.push(['_trackEvent', 'outbound-article', 'http://www.slate.com/articles/arts/culturebox/2013/11/where_s_waldo_a_new_strategy_for_locating_the_missing_man_in_martin_hanford.html', 'foolproof strategy']);">foolproof strategy</a> for finding Waldo in the classic &#8220;Where&#8217;s Waldo?&#8221; book series. Now, I&#8217;m no Waldo-spotting expert, but even I could tell that the strategy they proposed there is far from perfect.</p>
+<p>That&#8217;s when I decided what my weekend project would be: I was going to pull out every machine learning trick in my tool box to compute the optimal search strategy for finding Waldo. I was going to crush Slate&#8217;s supposed foolproof strategy and carve a trail of defeated Waldo-searchers in my wake.</p>
+<p>&#8220;But Randy, don&#8217;t you have better things to work on? You know, curing cancer, solving world hunger&#8230; ANYTHING else?&#8221;, a sane person would have said at that point.</p>
+<p>Too bad that sane person wasn&#8217;t around.</p>
+<h3>What is &#8220;Where&#8217;s Waldo&#8221;?</h3>
+<p>For the poor souls who have no clue who Waldo is, I&#8217;ll defer to the <a href="http://en.wikipedia.org/wiki/Where%27s_Wally%3F" onclick="_gaq.push(['_trackEvent', 'outbound-article', 'http://en.wikipedia.org/wiki/Where%27s_Wally%3F', 'Wikipedia description']);">Wikipedia description</a>:</p>
+<blockquote><p>&#8220;Where&#8217;s Waldo?&#8221; is a series of children&#8217;s books created by English illustrator Martin Handford. The books consist of a series of detailed double-page spread illustrations depicting dozens or more people doing a variety of amusing things at a given location.</p>
+<p>Readers are challenged to find a character named [Waldo] hidden in the group. [Waldo&#8217;s] distinctive red-and-white-striped shirt, bobble hat, and glasses make him slightly easier to recognize, but many illustrations contain &#8220;red herrings&#8221; involving deceptive use of red-and-white striped objects.</p></blockquote>
+<p>Here&#8217;s an example of a classic &#8220;Where&#8217;s Waldo?&#8221; illustration:</p>
+<p><a href="http://i.imgur.com/x8jZ7PQ.jpg" onclick="_gaq.push(['_trackEvent', 'outbound-article', 'http://i.imgur.com/x8jZ7PQ.jpg', '']);"><img src="http://i.imgur.com/x8jZ7PQ.jpg"/></a></p>
+<h3>Here&#8217;s Waldo</h3>
+<p>Thankfully, the Slate article provided a <a href="http://www.slate.com/content/dam/slate/articles/arts/culturebox/2013/11/131111_heresWaldo920_1.jpg.CROP.original-original.jpg" onclick="_gaq.push(['_trackEvent', 'outbound-article', 'http://www.slate.com/content/dam/slate/articles/arts/culturebox/2013/11/131111_heresWaldo920_1.jpg.CROP.original-original.jpg', 'chart']);">chart</a> that made it dead easy to acquire all 68 of Waldo&#8217;s coordinates in the primary 7 editions of the &#8220;Where&#8217;s Waldo?&#8221; books. I&#8217;ve reproduced those coordinates visually below. You can download the data file <a href="http://www.randalolson.com/wp-content/uploads/wheres-waldo-locations.csv">here</a>.</p>
+<p><a href="http://www.randalolson.com/wp-content/uploads/waldo-dots.png"><img src="http://www.randalolson.com/wp-content/uploads/waldo-dots.png" alt="waldo-dots" width="683" height="439" class="aligncenter size-full wp-image-6063"/></a></p>
+<p>If we perform a <a href="http://en.wikipedia.org/wiki/Kernel_density_estimation" onclick="_gaq.push(['_trackEvent', 'outbound-article', 'http://en.wikipedia.org/wiki/Kernel_density_estimation', 'kernel density estimation']);">kernel density estimation</a> of these points, we start to see some interesting trends already:</p>
+<ul>
+<li><strong>Waldo almost never appears in the top left corner.</strong> That&#8217;s because there was always some postcard from Waldo in the top left corner describing the setting and some interesting facts about it.</li>
+<li><strong>Waldo is rarely located on the edges.</strong> Slate&#8217;s Ben Blatt hypothesized that this was done on purpose because the edges are &#8220;locations that might be construed as too obvious&#8221; and are &#8220;where children and adults alike might begin their search.&#8221;</li>
+<li><strong>Waldo is never located on the very bottom of the right page.</strong> I was unsure about the reason for this at first, but Chris Metzger offered a <a href="http://www.randalolson.com/2015/02/03/heres-waldo-computing-the-optimal-search-strategy-for-finding-waldo/#comment-1835320792">probable explanation</a>: Whenever you flip to the next page in a book, the bottom of the right page is the first thing you see. Thus, the bottom of the right page would be one of the worst places to hide Waldo because that&#8217;s the most-viewed part of the book.</li>
+</ul>
+<p><a href="http://www.randalolson.com/wp-content/uploads/waldo-kde.png"><img src="http://www.randalolson.com/wp-content/uploads/waldo-kde.png" alt="waldo-kde" width="605" height="389" class="aligncenter size-large wp-image-6065"/></a> </p>
+<h3>Computing the optimal search strategy</h3>
+<p>Now on to the real fun! I decided to approach this problem as a <a href="http://en.wikipedia.org/wiki/Travelling_salesman_problem" onclick="_gaq.push(['_trackEvent', 'outbound-article', 'http://en.wikipedia.org/wiki/Travelling_salesman_problem', 'traveling salesman problem']);">traveling salesman problem</a>: We need to check every possible location that Waldo could be at while taking as little time as possible. That means we need to cover as much ground as possible without any backtracking.</p>
+<p>In computer terms, that means we&#8217;re making a list of all 68 points that Waldo could be at, then sorting them based on the order that we&#8217;re going to visit them. So now we just need to try every possible arrangement of the points and find the one with the shortest distance traveled. Easy, right? Wrong.</p>
+<p>Those 68 points can be arranged in ~2.48 x 10<sup>96</sup> possible ways. To provide some context, that&#8217;s more possible arrangements than the <a href="http://www.universetoday.com/36302/atoms-in-the-universe/" onclick="_gaq.push(['_trackEvent', 'outbound-article', 'http://www.universetoday.com/36302/atoms-in-the-universe/', 'number of atoms in the universe']);">number of atoms in the universe</a>. That&#8217;s so many possible arrangements that even if finding Waldo became an international priority and the world banded together to dedicate the 8.25 million computing cores from the <a href="http://www.top500.org/lists/2014/11/" onclick="_gaq.push(['_trackEvent', 'outbound-article', 'http://www.top500.org/lists/2014/11/', 'world&#8217;s 10 largest supercomputers']);">world&#8217;s 10 largest supercomputers</a> to the job, it would still take ~9.53 x 10<sup>77</sup> years &#8212; about 6.35 x 10<sup>67</sup>x longer than the universe has existed &#8212; to exhaustively evaluate all possible combinations. (Generously assuming that each core could perform 10,000 evaluations per second.) In other words: if we don&#8217;t have a smarter solution, Waldo is as gone as Carmen Sandiego.</p>
+<p>Thankfully, there are plenty of smarter methods for approximating the optimal search path for finding Waldo. Below, I visualized the best solution over time of one such method &#8212; a <a href="http://en.wikipedia.org/wiki/Genetic_algorithm" onclick="_gaq.push(['_trackEvent', 'outbound-article', 'http://en.wikipedia.org/wiki/Genetic_algorithm', 'genetic algorithm']);">genetic algorithm</a> &#8212; that found a nearly-perfect solution. As you can see, genetic algorithms continually tinker with the solution &#8212; always trying something slightly different from the current best solution and keeping the better one &#8212; until they can&#8217;t find a better solution any more.</p>
+<p>(Note: Because genetic algorithms &#8212; like many optimization algorithms &#8212; are <a href="http://en.wikipedia.org/wiki/Stochastic_process" onclick="_gaq.push(['_trackEvent', 'outbound-article', 'http://en.wikipedia.org/wiki/Stochastic_process', 'stochastic']);">stochastic</a> in nature, they won&#8217;t always result in the exact same solution at the end.)</p>
+<p><iframe src="http://gfycat.com/ifr/DeadlyJampackedFishingcat" frameborder="0" scrolling="no" width="600" height="400" style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);"></iframe></p>
+<p>After running the genetic algorithm for about 5 minutes, I ended up with the solution below. I colored the paths by whether they&#8217;re in the first (blue), second (orange), third (green), or final (red) 1/4 of the path. This path represents one of the shortest possible paths to follow on the page to find Waldo, so if we followed this path exactly, we&#8217;d most likely find Waldo <em>much</em> faster than someone following a more basic technique.</p>
+<p>If you&#8217;d like to learn more about the methodology used here, see the accompanying <a href="http://nbviewer.ipython.org/github/rhiever/Data-Analysis-and-Machine-Learning-Projects/blob/master/wheres-waldo-path-optimization/Where%27s%20Waldo%20path%20optimization.ipynb" onclick="_gaq.push(['_trackEvent', 'outbound-article', 'http://nbviewer.ipython.org/github/rhiever/Data-Analysis-and-Machine-Learning-Projects/blob/master/wheres-waldo-path-optimization/Where%27s%20Waldo%20path%20optimization.ipynb', 'methods and code document']);">methods and code document</a>.</p>
+<p>(For those interested: I also tried a standard <a href="http://en.wikipedia.org/wiki/Hill_climbing" onclick="_gaq.push(['_trackEvent', 'outbound-article', 'http://en.wikipedia.org/wiki/Hill_climbing', 'hillclimber algorithm']);">hillclimber algorithm</a>, but it always converged on a worse solution than the genetic algorithm.)</p>
+<p><a href="http://www.randalolson.com/wp-content/uploads/waldo-ga-optimal-search-path.png"><img src="http://www.randalolson.com/wp-content/uploads/waldo-ga-optimal-search-path.png" alt="waldo-ga-optimal-search-path" width="683" height="444" class="aligncenter size-full wp-image-6077"/></a></p>
+<p>Of course, we should never take results from machine learning too literally. A robot might be able to follow this path perfectly, but I wouldn&#8217;t be able to remember that path unless it was etched on every page for me. Instead, I think we can take some general lessons from the path that the genetic algorithm discovered:</p>
+<ol>
+<li><strong>The bottom of the left page is a good place to start.</strong> If Waldo isn&#8217;t on the bottom half of the left page, then he&#8217;s probably not on the left page at all.</li>
+<li><strong>The upper quarter of the right page is the next best place to look.</strong> Waldo seems to prefer to hide on the upper quarter of the right page.</li>
+<li><strong>Next check the bottom right half of the right page.</strong> Waldo also has an aversion to the bottom left half of the right page. Don&#8217;t bother looking there until you&#8217;ve exhausted the other hot spots.</li>
+</ol>
+<p>I annotated the best solution with a general path to follow when searching for Waldo. If you don&#8217;t find Waldo at the end of that trail, then you&#8217;ve got an outlier and should check the middle of the pages or the top left and right.</p>
+<h3>How does this strategy compare?</h3>
+<p><del datetime="2015-02-10T22:21:15+00:00">Unfortunately, I lost my old copies of &#8220;Where&#8217;s Waldo?&#8221; ages ago in a move, so I couldn&#8217;t test it out for myself. I&#8217;d love to put this strategy to the test, though, to see how much faster it is than the Slate strategy.</del></p>
+<p>The U.S. publishers of &#8220;Where&#8217;s Waldo?&#8221; generously <a href="https://twitter.com/randal_olson/status/565237906353430531" onclick="_gaq.push(['_trackEvent', 'outbound-article', 'https://twitter.com/randal_olson/status/565237906353430531', 'sent me']);">sent me</a> the entire series of books, so I was finally able to put this strategy to the test. As others have <a href="http://www.11points.com/Books/I_Test_Out_the_Optimal_Mathematical_Strategy_For_Wheres_Waldo" onclick="_gaq.push(['_trackEvent', 'outbound-article', 'http://www.11points.com/Books/I_Test_Out_the_Optimal_Mathematical_Strategy_For_Wheres_Waldo', 'reported']);">reported</a>, the strategy works <em>very</em> well for most of the illustrations: I zoomed through most every illustration the first book spending <10 seconds on each illustration.</p>
+<p>The trouble is when an outlier illustration comes along. When you're on an outlier illustration, you not only waste time following the path, but then you're left disoriented trying to trace back and worrying that you missed Waldo. Waldo-spotting performance degrades on these outlier illustrations, so don't be discouraged by Book 1, which has 4 (!) outliers in it.</p>
+<p>Overall, in terms of speed, this machine-learning based method is streets ahead of the old Slate strategy.</p>
+<h3>Conclusions</h3>
+<p>This was all done in good humor and &#8212; barring a situation where someone puts a gun to your head and forces you to find Waldo faster than their colleague &#8212; I don&#8217;t recommend actually using this strategy for casual &#8220;Where&#8217;s Waldo?&#8221; reading. As with so many things in life, the joy of finding Waldo is in the journey, not the destination.</p><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-6062" class="share-facebook sd-button share-icon" href="http://www.randalolson.com/2015/02/03/heres-waldo-computing-the-optimal-search-strategy-for-finding-waldo/?share=facebook" target="_blank" title="Share on Facebook"><span>Facebook</span></a></li><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-6062" class="share-twitter sd-button share-icon" href="http://www.randalolson.com/2015/02/03/heres-waldo-computing-the-optimal-search-strategy-for-finding-waldo/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-reddit"><a rel="nofollow" data-shared="" class="share-reddit sd-button share-icon" href="http://www.randalolson.com/2015/02/03/heres-waldo-computing-the-optimal-search-strategy-for-finding-waldo/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a></li><li class="share-linkedin"><a rel="nofollow" data-shared="sharing-linkedin-6062" class="share-linkedin sd-button share-icon" href="http://www.randalolson.com/2015/02/03/heres-waldo-computing-the-optimal-search-strategy-for-finding-waldo/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a></li><li class="share-google-plus-1"><a rel="nofollow" data-shared="sharing-google-6062" class="share-google-plus-1 sd-button share-icon" href="http://www.randalolson.com/2015/02/03/heres-waldo-computing-the-optimal-search-strategy-for-finding-waldo/?share=google-plus-1" target="_blank" title="Click to share on Google+"><span>Google</span></a></li><li class="share-stumbleupon"><a rel="nofollow" data-shared="" class="share-stumbleupon sd-button share-icon" href="http://www.randalolson.com/2015/02/03/heres-waldo-computing-the-optimal-search-strategy-for-finding-waldo/?share=stumbleupon" target="_blank" title="Click to share on StumbleUpon"><span>StumbleUpon</span></a></li><li class="share-pinterest"><a rel="nofollow" data-shared="sharing-pinterest-6062" class="share-pinterest sd-button share-icon" href="http://www.randalolson.com/2015/02/03/heres-waldo-computing-the-optimal-search-strategy-for-finding-waldo/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a></li><li class="share-tumblr"><a rel="nofollow" data-shared="" class="share-tumblr sd-button share-icon" href="http://www.randalolson.com/2015/02/03/heres-waldo-computing-the-optimal-search-strategy-for-finding-waldo/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a></li><li class="share-email"><a rel="nofollow" data-shared="" class="share-email sd-button share-icon" href="http://www.randalolson.com/2015/02/03/heres-waldo-computing-the-optimal-search-strategy-for-finding-waldo/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-print"><a rel="nofollow" data-shared="" class="share-print sd-button share-icon" href="http://www.randalolson.com/2015/02/03/heres-waldo-computing-the-optimal-search-strategy-for-finding-waldo/#print" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-end"></li></ul></div></div></div>
+<div id='jp-relatedposts' class='jp-relatedposts' >
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+</div>
+					
+						<div id="author-meta">
+							<img alt='' src='http://1.gravatar.com/avatar/bc264e8b1145c5291892c01cc9174db7?s=80&amp;d=&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' />							<div class="about-author">About <a href="http://www.randalolson.com/author/rhiever/" title="Posts by Randy Olson" rel="author">Randy Olson</a></div>
+							<p>Randy is a PhD candidate in Michigan State University's Computer Science program. As a member of Dr. Chris Adami's research lab, he studies biologically-inspired artificial intelligence and evolutionary processes.</p>
+						</div><!-- end of #author-meta -->
+
+					
+									</div><!-- end of .post-entry -->
+
+				<div class="navigation">
+					<div class="previous">&#8249; <a href="http://www.randalolson.com/2015/01/30/python-usage-survey-2014/" rel="prev">Python usage survey 2014</a></div>
+					<div class="next"><a href="http://www.randalolson.com/2015/03/01/design-critique-putting-big-pharma-spending-in-perspective/" rel="next">Design critique: Putting Big Pharma spending in perspective</a> &#8250;</div>
+				</div><!-- end of .navigation -->
+
+				
+
+	<div class="post-data">
+		Posted in <a href="http://www.randalolson.com/category/analysis/">analysis</a>, <a href="http://www.randalolson.com/category/data-visualization/">data visualization</a>		Tagged with: <a href="http://www.randalolson.com/tag/genetic-algorithm/" rel="tag">genetic algorithm</a>, <a href="http://www.randalolson.com/tag/machine-learning/" rel="tag">machine learning</a>, <a href="http://www.randalolson.com/tag/optimization/" rel="tag">optimization</a>, <a href="http://www.randalolson.com/tag/traveling-salesman-problem/" rel="tag">traveling salesman problem</a>, <a href="http://www.randalolson.com/tag/wheres-waldo/" rel="tag">where's waldo</a><br />	</div><!-- end of .post-data -->
+
+
+<div class="post-edit"></div>
+							</div><!-- end of #post-6062 -->
+			
+						
+<div id="disqus_thread">
+            <div id="dsq-content">
+
+
+            <ul id="dsq-comments">
+                    <li class="comment even thread-even depth-1" id="dsq-comment-7226">
+        <div id="dsq-comment-header-7226" class="dsq-comment-header">
+            <cite id="dsq-cite-7226">
+                <span id="dsq-author-user-7226">Kasper Allerslev</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7226" class="dsq-comment-body">
+            <div id="dsq-comment-message-7226" class="dsq-comment-message"><p>This was really entertaining read, but I have to wonder; why on Earth did you opt for a genetic algorithm, when you can solve TSP&#8217;s with thousands upon thousand of cities by using subtour elimination?</p>
+<p>To date, the largest problem solved has 89.500 cities. The TSP might be NP-hard, but it&#8217;s a very solvable problem in practice.</p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment odd alt depth-2" id="dsq-comment-7227">
+        <div id="dsq-comment-header-7227" class="dsq-comment-header">
+            <cite id="dsq-cite-7227">
+http://www.randalolson.com/                <span id="dsq-author-user-7227">Randy Olson</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7227" class="dsq-comment-body">
+            <div id="dsq-comment-message-7227" class="dsq-comment-message"><p>No particular reason. I felt like coding a genetic algorithm last weekend, and it&#8217;s one of several possible solutions to the problem. <img src="http://www.randalolson.com/wp-includes/images/smilies/icon_smile.gif" alt=":-)" class="wp-smiley" /></p>
+<p>If anyone feels up to it, I&#8217;d love to see what paths other methods come up with. IIRC the path I presented here had a total distance of ~59.</p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment even depth-3" id="dsq-comment-7228">
+        <div id="dsq-comment-header-7228" class="dsq-comment-header">
+            <cite id="dsq-cite-7228">
+                <span id="dsq-author-user-7228">Kasper Allerslev</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7228" class="dsq-comment-body">
+            <div id="dsq-comment-message-7228" class="dsq-comment-message"><p>I just read your bio, and it was suddenly kind of obvious why you&#8217;d go for it <img src="http://www.randalolson.com/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley" /></p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment odd alt depth-4" id="dsq-comment-7229">
+        <div id="dsq-comment-header-7229" class="dsq-comment-header">
+            <cite id="dsq-cite-7229">
+http://www.randalolson.com/                <span id="dsq-author-user-7229">Randy Olson</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7229" class="dsq-comment-body">
+            <div id="dsq-comment-message-7229" class="dsq-comment-message"><p>That too. <img src="http://www.randalolson.com/wp-includes/images/smilies/icon_smile.gif" alt=":-)" class="wp-smiley" /> EC is near and dear to my heart.</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment even depth-2" id="dsq-comment-7251">
+        <div id="dsq-comment-header-7251" class="dsq-comment-header">
+            <cite id="dsq-cite-7251">
+                <span id="dsq-author-user-7251">Luke</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7251" class="dsq-comment-body">
+            <div id="dsq-comment-message-7251" class="dsq-comment-message"><p>Out of interest and because I couldn&#8217;t find anything quickly on google&#8230; Do you know how subtour elimination compares to heuristics such as Lin Kernighan?<br />
+And how does subtour elimination work anyway? </p>
+<p>Thanks!</p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment odd alt depth-3" id="dsq-comment-7253">
+        <div id="dsq-comment-header-7253" class="dsq-comment-header">
+            <cite id="dsq-cite-7253">
+                <span id="dsq-author-user-7253">Kasper Allerslev</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7253" class="dsq-comment-body">
+            <div id="dsq-comment-message-7253" class="dsq-comment-message"><p>LK is basically a neighborhood search algorithm, making small changes to the current solution until none of the allowed &#8220;steps&#8221; yield a better one. It&#8217;s like a ball rolling down a hill until it stops in a hole, but you have no idea if it landed in the DEEPEST hole.</p>
+<p>Subtour elimination is pretty simple as a concept if you understand some basics in Mathematical Programming. You write up the TSP as an integer optimization problem, but ignore the subtour constraints. Then you solve it and see if there are subtours. If there are, you add a constraint that forces at least one of the nodes in a subtour to be connected to at least one of the nodes in another subtour.</p>
+<p>This means you will solve a lot of binary decision problems, but they all have in common that you don&#8217;t have many constraints. That&#8217;s the &#8220;feature&#8221; of the method, because the exact formulation of a TSP with n &#8220;cities&#8221; has 2^n subtour elimination constraints, but you only need an amazingly small fraction of these to compute the optimal feasible solution.</p>
+<p>So LK is really, really fast, and given a good starting solution, it will probably yield an excellent solution. Subtour elimination (which is also called a &#8220;row generation&#8221; algorithm) is much slower, but always yields an optimal solution. But in this case, &#8220;much slower&#8221; means next to nothing, because the time frame is already ridiculously small.</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment even thread-odd thread-alt depth-1" id="dsq-comment-7230">
+        <div id="dsq-comment-header-7230" class="dsq-comment-header">
+            <cite id="dsq-cite-7230">
+                <span id="dsq-author-user-7230">geotheory</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7230" class="dsq-comment-body">
+            <div id="dsq-comment-message-7230" class="dsq-comment-message"><p>This is important science. KDE bandwidth maybe a little too big however (hence edge effects) &#8211; Wally&#8217;s distribution (sorry, that&#8217;s his name down our way..) seems pretty random aside from 2 empty regions.. <img src="http://www.randalolson.com/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley" /></p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment odd alt depth-2" id="dsq-comment-7231">
+        <div id="dsq-comment-header-7231" class="dsq-comment-header">
+            <cite id="dsq-cite-7231">
+http://www.randalolson.com/                <span id="dsq-author-user-7231">Randy Olson</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7231" class="dsq-comment-body">
+            <div id="dsq-comment-message-7231" class="dsq-comment-message"><p>I wish you were on the review panel for my research grant to continue this work. I kept telling them that this is an important problem that requires a research institute to solve AT A MINIMUM, but they would hear nothing of it.</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="post pingback">
+        <p>Pingback: <a href='http://ahmedelazab.com/nagg/?p=240645' rel='external nofollow' class='url'>How I Found the Optimal Where’s Waldo Strategy With Machine Learning | Nagg</a>()</p>
+    </li>
+    </li><!-- #comment-## -->
+    <li class="post pingback">
+        <p>Pingback: <a href='http://pjtec.info/how-i-found-the-optimal-wheres-waldo-strategy-with-machine-learning/' rel='external nofollow' class='url'>How I Found the Optimal Where’s Waldo Strategy With Machine Learning | PJ Tec - Latest Tech News | PJ Tec - Latest Tech News</a>()</p>
+    </li>
+    </li><!-- #comment-## -->
+    <li class="post pingback">
+        <p>Pingback: <a href='http://www.umwelt-trends.info/how-i-found-the-optimal-wheres-waldo-strategy-with-machine-learning/' rel='external nofollow' class='url'>How I Found the Optimal Where?s Waldo Strategy With Machine Learning | Sports News</a>()</p>
+    </li>
+    </li><!-- #comment-## -->
+    <li class="post pingback">
+        <p>Pingback: <a href='http://www.krazyworks.com/how-i-found-the-optimal-wheres-waldo-strategy-with-machine-learning/' rel='external nofollow' class='url'>How I Found the Optimal Where’s Waldo Strategy With Machine Learning | KrazyWorks</a>()</p>
+    </li>
+    </li><!-- #comment-## -->
+    <li class="comment even thread-even depth-1" id="dsq-comment-7240">
+        <div id="dsq-comment-header-7240" class="dsq-comment-header">
+            <cite id="dsq-cite-7240">
+                <span id="dsq-author-user-7240">Nik Billings</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7240" class="dsq-comment-body">
+            <div id="dsq-comment-message-7240" class="dsq-comment-message"><p>I think the reason Waldo was never on the edges of pages was to account for printing irregularities that could cause the puzzle to be unsolvable.</p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment odd alt depth-2" id="dsq-comment-7241">
+        <div id="dsq-comment-header-7241" class="dsq-comment-header">
+            <cite id="dsq-cite-7241">
+http://www.randalolson.com/                <span id="dsq-author-user-7241">Randy Olson</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7241" class="dsq-comment-body">
+            <div id="dsq-comment-message-7241" class="dsq-comment-message"><p>That&#8217;s a viable possibility. The Slate article mentions this as well. Pretty smart!</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment even depth-2" id="dsq-comment-7590">
+        <div id="dsq-comment-header-7590" class="dsq-comment-header">
+            <cite id="dsq-cite-7590">
+                <span id="dsq-author-user-7590">Mark</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7590" class="dsq-comment-body">
+            <div id="dsq-comment-message-7590" class="dsq-comment-message"><p>In most professional printing scenarios, an eighth of an inch is the allotted margin—pun intended—for error. However, most printers are much more accurate than this. Nevertheless, Waldo could have been safely printed an eighth of an inch from the edge of the trimmed page.</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment odd alt thread-odd thread-alt depth-1" id="dsq-comment-7242">
+        <div id="dsq-comment-header-7242" class="dsq-comment-header">
+            <cite id="dsq-cite-7242">
+                <span id="dsq-author-user-7242">agam_b</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7242" class="dsq-comment-body">
+            <div id="dsq-comment-message-7242" class="dsq-comment-message"><p>Good stuff &#8230; out of curiosity, what did you use for these visualizations? What&#8217;s in your &#8220;data tinkering&#8221; toolset ? <img src="http://www.randalolson.com/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley" /></p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment even depth-2" id="dsq-comment-7243">
+        <div id="dsq-comment-header-7243" class="dsq-comment-header">
+            <cite id="dsq-cite-7243">
+http://www.randalolson.com/                <span id="dsq-author-user-7243">Randy Olson</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7243" class="dsq-comment-body">
+            <div id="dsq-comment-message-7243" class="dsq-comment-message"><p>I used Python&#8217;s matplotlib library for all of the visualizations except for the kernel density estimate. The KDE plot was created with Python&#8217;s Seaborn library. I highly recommend checking out Seaborn for easy statistical visualization.</p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment odd alt depth-3" id="dsq-comment-7249">
+        <div id="dsq-comment-header-7249" class="dsq-comment-header">
+            <cite id="dsq-cite-7249">
+                <span id="dsq-author-user-7249">agam_b</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7249" class="dsq-comment-body">
+            <div id="dsq-comment-message-7249" class="dsq-comment-message"><p>Thanks! Been procrastinating by refusing to decide between Python/R/something else, you made it a bit easier &#8230;</p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment even depth-4" id="dsq-comment-7250">
+        <div id="dsq-comment-header-7250" class="dsq-comment-header">
+            <cite id="dsq-cite-7250">
+http://www.randalolson.com/                <span id="dsq-author-user-7250">Randy Olson</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7250" class="dsq-comment-body">
+            <div id="dsq-comment-message-7250" class="dsq-comment-message"><p>Honestly, you should learn both. <img src="http://www.randalolson.com/wp-includes/images/smilies/icon_smile.gif" alt=":-)" class="wp-smiley" /></p>
+<p>R is really great for statistics and modeling. Its libraries are still more advanced than Python&#8217;s statistics packages.</p>
+<p>Python is great for general programming and (most) everything else. I love Python because there&#8217;s almost always a free package out there that saves me from coding up a custom solution.</p>
+<p>I personally find Python easier to code in, but it&#8217;s invaluable to be able to turn back to R when I need to do some advanced statistical modeling.</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment odd alt thread-even depth-1" id="dsq-comment-7244">
+        <div id="dsq-comment-header-7244" class="dsq-comment-header">
+            <cite id="dsq-cite-7244">
+                <span id="dsq-author-user-7244">rresrser</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7244" class="dsq-comment-body">
+            <div id="dsq-comment-message-7244" class="dsq-comment-message"><p>oh, so you only got a near perfect solution. Doesn&#8217;t sound very optimal to me</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment even thread-odd thread-alt depth-1" id="dsq-comment-7245">
+        <div id="dsq-comment-header-7245" class="dsq-comment-header">
+            <cite id="dsq-cite-7245">
+                <span id="dsq-author-user-7245">AssHat900</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7245" class="dsq-comment-body">
+            <div id="dsq-comment-message-7245" class="dsq-comment-message"><p>Finally world hunger has been solved.</p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment odd alt depth-2" id="dsq-comment-7641">
+        <div id="dsq-comment-header-7641" class="dsq-comment-header">
+            <cite id="dsq-cite-7641">
+                <span id="dsq-author-user-7641">Κώστας</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7641" class="dsq-comment-body">
+            <div id="dsq-comment-message-7641" class="dsq-comment-message"><p>Same thing someone would have said back in the 18th century when C.Maxwell presented his famous 4 equations. And yet, many years after that here we  are with our electric machines which give you the power to bitch about the not so usefulness of an algorithm you don&#8217;t know where else it might be applied in the future. Well done. Back to your cave now&#8230;</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment even thread-even depth-1" id="dsq-comment-7247">
+        <div id="dsq-comment-header-7247" class="dsq-comment-header">
+            <cite id="dsq-cite-7247">
+                <span id="dsq-author-user-7247">Chris Metzger</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7247" class="dsq-comment-body">
+            <div id="dsq-comment-message-7247" class="dsq-comment-message"><p>I have a theory on why Waldo is never in the bottom right of a spread based on my time as a design intern at a small magazine: Basically that&#8217;s the first area a person sees when turning the page. When turning the page, people tend to grab the bottom corner of page they&#8217;re on and lift from there. If Waldo was directly under that corner the reader might find him before even seeing the rest of the image.</p>
+<p>At my magazine, we used this to determine advertisement placement. Once you know you see it everywhere, generally ads are placed on the outside (left side of left page, right side of right page) of a spread and content is in the center. This is for a few reasons, but largely it&#8217;s because if someone is just flipping through the pages, say in line at the grocery store, there&#8217;s a better chance of seeing the ad which in turn funds the magazine. Along the same lines, advertising space on the right page costs more than on the left. This is because when a reader turns a page the next spread is revealed from the right edge to the left, so a righthand advertisement would be the first thing the reader saw.</p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment odd alt depth-2" id="dsq-comment-7248">
+        <div id="dsq-comment-header-7248" class="dsq-comment-header">
+            <cite id="dsq-cite-7248">
+http://www.randalolson.com/                <span id="dsq-author-user-7248">Randy Olson</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7248" class="dsq-comment-body">
+            <div id="dsq-comment-message-7248" class="dsq-comment-message"><p>That&#8217;s brilliant &#8211; thank you for the context. I&#8217;ll update the article to add this explanation.</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment even depth-2" id="dsq-comment-7283">
+        <div id="dsq-comment-header-7283" class="dsq-comment-header">
+            <cite id="dsq-cite-7283">
+                <span id="dsq-author-user-7283">Niels de Rooij</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7283" class="dsq-comment-body">
+            <div id="dsq-comment-message-7283" class="dsq-comment-message"><p>Yeah, except that 99,99% of the people grab the top right of a page before turning it over.</p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment odd alt depth-3" id="dsq-comment-7449">
+        <div id="dsq-comment-header-7449" class="dsq-comment-header">
+            <cite id="dsq-cite-7449">
+                <span id="dsq-author-user-7449">SkippyFlipjack</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7449" class="dsq-comment-body">
+            <div id="dsq-comment-message-7449" class="dsq-comment-message"><p>I like when people think that everyone does things exactly the way they do <img src="http://www.randalolson.com/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley" /></p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment even depth-4" id="dsq-comment-7495">
+        <div id="dsq-comment-header-7495" class="dsq-comment-header">
+            <cite id="dsq-cite-7495">
+                <span id="dsq-author-user-7495">Niels de Rooij</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7495" class="dsq-comment-body">
+            <div id="dsq-comment-message-7495" class="dsq-comment-message"><p>Well okay, but same goes for all of us. I for one always grab the top corner of a page when flipping it over. Otherwise I might tear a page.</p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment odd alt depth-5" id="dsq-comment-7631">
+        <div id="dsq-comment-header-7631" class="dsq-comment-header">
+            <cite id="dsq-cite-7631">
+                <span id="dsq-author-user-7631">Leah</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7631" class="dsq-comment-body">
+            <div id="dsq-comment-message-7631" class="dsq-comment-message"><p>yes I always grab top right corner as well. Perhaps not 99.99% of people, but I think a significant proportion do.</p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment even depth-6" id="dsq-comment-7645">
+        <div id="dsq-comment-header-7645" class="dsq-comment-header">
+            <cite id="dsq-cite-7645">
+                <span id="dsq-author-user-7645">Niels de Rooij</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7645" class="dsq-comment-body">
+            <div id="dsq-comment-message-7645" class="dsq-comment-message"><p>Yeah I might have over reacted a little there sorry <img src="http://www.randalolson.com/wp-includes/images/smilies/icon_razz.gif" alt=":P" class="wp-smiley" /></p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment odd alt thread-odd thread-alt depth-1" id="dsq-comment-7252">
+        <div id="dsq-comment-header-7252" class="dsq-comment-header">
+            <cite id="dsq-cite-7252">
+                <span id="dsq-author-user-7252">Maxamillion Mansionhouse III</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7252" class="dsq-comment-body">
+            <div id="dsq-comment-message-7252" class="dsq-comment-message"><p>I found this interesting.<br />
+I wouldn&#8217;t know where to start or what the process could even consist of with trying to put something like this into reality that another person could follow.<br />
+Thanks for doing this, I don&#8217;t think it was a waste of your time like you hinted to.</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment even thread-even depth-1" id="dsq-comment-7254">
+        <div id="dsq-comment-header-7254" class="dsq-comment-header">
+            <cite id="dsq-cite-7254">
+                <span id="dsq-author-user-7254">Isaiah DaProphet</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7254" class="dsq-comment-body">
+            <div id="dsq-comment-message-7254" class="dsq-comment-message"><p>This is pretty smart.</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment odd alt thread-odd thread-alt depth-1" id="dsq-comment-7255">
+        <div id="dsq-comment-header-7255" class="dsq-comment-header">
+            <cite id="dsq-cite-7255">
+                <span id="dsq-author-user-7255">disqus_tVhF5aQ8cN</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7255" class="dsq-comment-body">
+            <div id="dsq-comment-message-7255" class="dsq-comment-message"><p>This is an &#8220;optimal search&#8221; for Waldos that have already been found. Big deal! It seems more in the spirit of Where&#8217;s Waldo to search for him without any prior information but what he looks like. Now that would be impressive.</p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment even depth-2" id="dsq-comment-7257">
+        <div id="dsq-comment-header-7257" class="dsq-comment-header">
+            <cite id="dsq-cite-7257">
+http://www.randalolson.com/                <span id="dsq-author-user-7257">Randy Olson</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7257" class="dsq-comment-body">
+            <div id="dsq-comment-message-7257" class="dsq-comment-message"><p>That&#8217;s already been done &#8212; sort of: <a href="http://stackoverflow.com/questions/8479058/how-do-i-find-waldo-with-mathematica/8479757#8479757" onclick="_gaq.push(['_trackEvent', 'outbound-comment', 'http://stackoverflow.com/questions/8479058/how-do-i-find-waldo-with-mathematica/8479757#8479757', 'http://stackoverflow.com/questions/8479058/how-do-i-find-waldo-with-mathematica/8479757#8479757']);"  rel="nofollow">http://stackoverflow.com/questions/8479058/how-do-i-find-waldo-with-mathematica/8479757#8479757</a></p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment odd alt depth-3" id="dsq-comment-7261">
+        <div id="dsq-comment-header-7261" class="dsq-comment-header">
+            <cite id="dsq-cite-7261">
+                <span id="dsq-author-user-7261">disqus_tVhF5aQ8cN</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7261" class="dsq-comment-body">
+            <div id="dsq-comment-message-7261" class="dsq-comment-message"><p>Didn&#8217;t mean to minimize your accomplishment, it&#8217;s really pretty cool. What would you recommend as an intro to genetic algorithms (in Python) for a total noob?</p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment even depth-4" id="dsq-comment-7262">
+        <div id="dsq-comment-header-7262" class="dsq-comment-header">
+            <cite id="dsq-cite-7262">
+http://www.randalolson.com/                <span id="dsq-author-user-7262">Randy Olson</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7262" class="dsq-comment-body">
+            <div id="dsq-comment-message-7262" class="dsq-comment-message"><p>AFAIK DEAP is the main GA library in Python: <a href="https://github.com/DEAP/deap" onclick="_gaq.push(['_trackEvent', 'outbound-comment', 'https://github.com/DEAP/deap', 'https://github.com/DEAP/deap']);"  rel="nofollow">https://github.com/DEAP/deap</a></p>
+<p>There&#8217;s also a decent tutorial in Python here that shows you how to actually code up a GA yourself: <a href="http://lethain.com/genetic-algorithms-cool-name-damn-simple/" onclick="_gaq.push(['_trackEvent', 'outbound-comment', 'http://lethain.com/genetic-algorithms-cool-name-damn-simple/', 'http://lethain.com/genetic-algorithms-cool-name-damn-simple/']);"  rel="nofollow">http://lethain.com/genetic-algorithms-cool-name-damn-simple/</a></p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment odd alt thread-even depth-1" id="dsq-comment-7256">
+        <div id="dsq-comment-header-7256" class="dsq-comment-header">
+            <cite id="dsq-cite-7256">
+                <span id="dsq-author-user-7256">SirMaxim</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7256" class="dsq-comment-body">
+            <div id="dsq-comment-message-7256" class="dsq-comment-message"><p>I wonder what the results look like for his cane and other finds.</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment even thread-odd thread-alt depth-1" id="dsq-comment-7259">
+        <div id="dsq-comment-header-7259" class="dsq-comment-header">
+            <cite id="dsq-cite-7259">
+                <span id="dsq-author-user-7259">Neil</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7259" class="dsq-comment-body">
+            <div id="dsq-comment-message-7259" class="dsq-comment-message"><p>This isn&#8217;t really a traveling salesman problem, as the goal is not to minimize the time/distance required to &#8220;visit&#8221; all the places Waldo could be, but rather to find Waldo as quickly as possible (and then stop) so your path should start in the densest area, not the upper left corner. Your optimization should multiply each segment length by the likelyhood that you will have to travel that segment before finding Waldo. Rather than minimizing (X1+X2+X3+&#8230;+X(n-1)), you should be minimizing (X1*(n-1)+X2*(n-2)+&#8230;+X(n-1)*(1))</p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment odd alt depth-2" id="dsq-comment-7274">
+        <div id="dsq-comment-header-7274" class="dsq-comment-header">
+            <cite id="dsq-cite-7274">
+                <span id="dsq-author-user-7274">Thaïti Bob</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7274" class="dsq-comment-body">
+            <div id="dsq-comment-message-7274" class="dsq-comment-message"><p>that&#8217;s what I would say too. Start the serach on top of the big right hill, then continue to the lower peak and go down.<br />
+Maybe a mix between the &#8220;downhill path&#8221; and the traveling salesman ?<br />
+Is it what Randy tried using the hillclimber algorithm ?</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment even thread-even depth-1" id="dsq-comment-7260">
+        <div id="dsq-comment-header-7260" class="dsq-comment-header">
+            <cite id="dsq-cite-7260">
+                <span id="dsq-author-user-7260">Ben Allison</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7260" class="dsq-comment-body">
+            <div id="dsq-comment-message-7260" class="dsq-comment-message"><p>I like the post. I think you&#8217;re working on an interesting problem, and I think there is potential for a lot of interesting research, particularly where human deviations from optimal search are concerned. However, I have a couple of observations having done some work on visual search/eyetracking in images.</p>
+<p>You assert that optimality means the shortest distance travelled. I think that&#8217;s not correct&#8212;I would argue you want to cover as much of the page as possible in the fewest saccades (jumps)/shortest time, biasing towards locations where the target is likely to exist. Humans can percieve anything within a certain radius of their focal point with pretty good clarity (this region is called the fovea), with diminishing clarity radiating from that centre. This is normally approximated by a Gaussian centred on the focal point, which is similar to your KDE (assuming you&#8217;re using seaborn&#8217;s default of a Gaussian kernel).</p>
+<p>So I would argue that when fresh to the page, the optimal move is to the region with the highest probability of containing Waldo a priori. You can get that from your KDE. Conditioned on some search path in the image, you want to blend prior probability of containing Waldo with how well covered that region is by previous focal points. If you&#8217;re modeling humans, you probably also want to stick an inhibition-of-return style decay on past search events so you can get people to revisit the same location after an appropriate length of search with no luck.</p>
+<p>Fun research though, thanks for the post!</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment odd alt thread-odd thread-alt depth-1" id="dsq-comment-7271">
+        <div id="dsq-comment-header-7271" class="dsq-comment-header">
+            <cite id="dsq-cite-7271">
+                <span id="dsq-author-user-7271">Abishek Hariharan</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7271" class="dsq-comment-body">
+            <div id="dsq-comment-message-7271" class="dsq-comment-message"><p>Hey this was a neat adventure!</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment even thread-even depth-1" id="dsq-comment-7272">
+        <div id="dsq-comment-header-7272" class="dsq-comment-header">
+            <cite id="dsq-cite-7272">
+                <span id="dsq-author-user-7272">Linda</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7272" class="dsq-comment-body">
+            <div id="dsq-comment-message-7272" class="dsq-comment-message"><p>What a super smart guy! Who would have ever thought to put imagination in a box and reduce it to computation? Well, I&#8217;m impressed. He has a strong future ahead of him &#8211; I hope he can find a cure for cancer. Well done Mr. Olsen. I like how you spend your free time :0)</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment odd alt thread-odd thread-alt depth-1" id="dsq-comment-7275">
+        <div id="dsq-comment-header-7275" class="dsq-comment-header">
+            <cite id="dsq-cite-7275">
+                <span id="dsq-author-user-7275">André De Lange</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7275" class="dsq-comment-body">
+            <div id="dsq-comment-message-7275" class="dsq-comment-message"><p>Quite interesting, BUT, doesn&#8217;t the ability to find waldo in this way rely on already knowing where he is..?</p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment even depth-2" id="dsq-comment-7416">
+        <div id="dsq-comment-header-7416" class="dsq-comment-header">
+            <cite id="dsq-cite-7416">
+                <span id="dsq-author-user-7416">Xedecimal</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7416" class="dsq-comment-body">
+            <div id="dsq-comment-message-7416" class="dsq-comment-message"><p>This is exactly what I came to say, if they made a new Waldo book this wouldn&#8217;t find a Waldo.</p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment odd alt depth-3" id="dsq-comment-7524">
+        <div id="dsq-comment-header-7524" class="dsq-comment-header">
+            <cite id="dsq-cite-7524">
+                <span id="dsq-author-user-7524">John Black</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7524" class="dsq-comment-body">
+            <div id="dsq-comment-message-7524" class="dsq-comment-message"><p>Not at all true.</p>
+<p>The whole point of this article is to point out that there is a reliable consistency to where Waldo is generally placed in the books. A new book would, theoretically, place him in a similar position.</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment even depth-3" id="dsq-comment-7633">
+        <div id="dsq-comment-header-7633" class="dsq-comment-header">
+            <cite id="dsq-cite-7633">
+                <span id="dsq-author-user-7633">Leah</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7633" class="dsq-comment-body">
+            <div id="dsq-comment-message-7633" class="dsq-comment-message"><p>that&#8217;s only if they changed their system for Waldo-placing. The map shows that a majority of Waldos tend to be placed in similar areas. Who knows whether this is a coincidence or they have some kind of algorithm or system. But it&#8217;s probably safe enough to say future editions would follow a similar pattern, unless they alter it in the light of this article.</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment odd alt depth-2" id="dsq-comment-7742">
+        <div id="dsq-comment-header-7742" class="dsq-comment-header">
+            <cite id="dsq-cite-7742">
+http://philosophyofprogramming.tumblr.com/                <span id="dsq-author-user-7742">projectrevo</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7742" class="dsq-comment-body">
+            <div id="dsq-comment-message-7742" class="dsq-comment-message"><p>No, why? I mean it operates using the books that have already been published, not really newer ones, but he was simply backtracing it from the known locations. He was offering a way to find Waldo efficiently, not as if you need to know where he is.</p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment even depth-3" id="dsq-comment-7745">
+        <div id="dsq-comment-header-7745" class="dsq-comment-header">
+            <cite id="dsq-cite-7745">
+                <span id="dsq-author-user-7745">André De Lange</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7745" class="dsq-comment-body">
+            <div id="dsq-comment-message-7745" class="dsq-comment-message"><p>Well, to use your own words: &#8220;&#8230;from the known locations.&#8221;</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment odd alt thread-even depth-1" id="dsq-comment-7292">
+        <div id="dsq-comment-header-7292" class="dsq-comment-header">
+            <cite id="dsq-cite-7292">
+http://blog.wolfram.com/2015/02/27/find-waldo-faster/                <span id="dsq-author-user-7292">Vitaliy Kaurov</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7292" class="dsq-comment-body">
+            <div id="dsq-comment-message-7292" class="dsq-comment-message"><p>Awesome blog, Randy! Here is a follow up I wrote:</p>
+<p><a href="http://blog.wolfram.com/2015/02/27/find-waldo-faster" onclick="_gaq.push(['_trackEvent', 'outbound-comment', 'http://blog.wolfram.com/2015/02/27/find-waldo-faster', 'http://blog.wolfram.com/2015/02/27/find-waldo-faster']);"  rel="nofollow">http://blog.wolfram.com/2015/02/27/find-waldo-faster</a></p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment even depth-2" id="dsq-comment-7294">
+        <div id="dsq-comment-header-7294" class="dsq-comment-header">
+            <cite id="dsq-cite-7294">
+http://www.randalolson.com/                <span id="dsq-author-user-7294">Randy Olson</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7294" class="dsq-comment-body">
+            <div id="dsq-comment-message-7294" class="dsq-comment-message"><p>This is great! Thanks for sharing, Vitaliy! <img src="http://www.randalolson.com/wp-includes/images/smilies/icon_smile.gif" alt=":-)" class="wp-smiley" /></p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment odd alt thread-odd thread-alt depth-1" id="dsq-comment-7322">
+        <div id="dsq-comment-header-7322" class="dsq-comment-header">
+            <cite id="dsq-cite-7322">
+                <span id="dsq-author-user-7322">peterofsunday</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7322" class="dsq-comment-body">
+            <div id="dsq-comment-message-7322" class="dsq-comment-message"><p>Is it me or it looks a bit like Europe Map ? <img src="http://www.randalolson.com/wp-includes/images/smilies/icon_wink.gif" alt=";-)" class="wp-smiley" /></p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment even thread-even depth-1" id="dsq-comment-7469">
+        <div id="dsq-comment-header-7469" class="dsq-comment-header">
+            <cite id="dsq-cite-7469">
+https://www.facebook.com/wisdom.reigns                <span id="dsq-author-user-7469">Essy K</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7469" class="dsq-comment-body">
+            <div id="dsq-comment-message-7469" class="dsq-comment-message"><p>As Waldo says sadly,&#8221;I&#8217;ve always been here.&#8221;</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment odd alt thread-odd thread-alt depth-1" id="dsq-comment-7492">
+        <div id="dsq-comment-header-7492" class="dsq-comment-header">
+            <cite id="dsq-cite-7492">
+                <span id="dsq-author-user-7492">David Turner</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7492" class="dsq-comment-body">
+            <div id="dsq-comment-message-7492" class="dsq-comment-message"><p>I don&#8217;t get it.  I found the little guy within a minute.  Why do people find it so hard?</p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment even depth-2" id="dsq-comment-7744">
+        <div id="dsq-comment-header-7744" class="dsq-comment-header">
+            <cite id="dsq-cite-7744">
+http://philosophyofprogramming.tumblr.com/                <span id="dsq-author-user-7744">projectrevo</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7744" class="dsq-comment-body">
+            <div id="dsq-comment-message-7744" class="dsq-comment-message"><p>With this, it takes about 10 seconds, so you&#8217;re actually the one who seems to find it harder&#8230; And no one finds it hard.</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment odd alt thread-even depth-1" id="dsq-comment-7496">
+        <div id="dsq-comment-header-7496" class="dsq-comment-header">
+            <cite id="dsq-cite-7496">
+                <span id="dsq-author-user-7496">calenti</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7496" class="dsq-comment-body">
+            <div id="dsq-comment-message-7496" class="dsq-comment-message"><p>Really interesting post. Are there any introductory online classes you&#8217;d suggest for someone who was interested in learning more about topics like kernel density estimation and genetic algorithms? My browser&#8217;s display regularly explodes with ads for &#8220;Learn Big Data Now&#8221; &#8211; I&#8217;d prefer something basic and useful.</p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment even depth-2" id="dsq-comment-7522">
+        <div id="dsq-comment-header-7522" class="dsq-comment-header">
+            <cite id="dsq-cite-7522">
+http://www.randalolson.com/                <span id="dsq-author-user-7522">Randy Olson</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7522" class="dsq-comment-body">
+            <div id="dsq-comment-message-7522" class="dsq-comment-message"><p>You can check out this web page, which has a large list of great resources for when you&#8217;re just starting off in Machine Learning: <a href="http://www.reddit.com/r/MachineLearning/wiki/index" onclick="_gaq.push(['_trackEvent', 'outbound-comment', 'http://www.reddit.com/r/MachineLearning/wiki/index', 'http://www.reddit.com/r/MachineLearning/wiki/index']);"  rel="nofollow">http://www.reddit.com/r/MachineLearning/wiki/index</a></p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment odd alt thread-odd thread-alt depth-1" id="dsq-comment-7535">
+        <div id="dsq-comment-header-7535" class="dsq-comment-header">
+            <cite id="dsq-cite-7535">
+                <span id="dsq-author-user-7535">FishFlue</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7535" class="dsq-comment-body">
+            <div id="dsq-comment-message-7535" class="dsq-comment-message"><p>I think it takes the fun out of asking your onboard &#8211; inboard computer just to find him.  I think its accurate.</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment even thread-even depth-1" id="dsq-comment-7661">
+        <div id="dsq-comment-header-7661" class="dsq-comment-header">
+            <cite id="dsq-cite-7661">
+                <span id="dsq-author-user-7661">sergio morales</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7661" class="dsq-comment-body">
+            <div id="dsq-comment-message-7661" class="dsq-comment-message"><p>I found this very interesting. I think there are plenty of applications for this strategy. I&#8217;m working with facility location problems and I&#8217;m thinking maybe there&#8217;s something i could learn from your work, Anyway, thanks for sharing <img src="http://www.randalolson.com/wp-includes/images/smilies/icon_biggrin.gif" alt=":-D" class="wp-smiley" /></p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment odd alt thread-odd thread-alt depth-1" id="dsq-comment-7663">
+        <div id="dsq-comment-header-7663" class="dsq-comment-header">
+            <cite id="dsq-cite-7663">
+                <span id="dsq-author-user-7663">Elizabeth Olson</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7663" class="dsq-comment-body">
+            <div id="dsq-comment-message-7663" class="dsq-comment-message"><p>Isn&#8217;t the whole idea of finding Waldo to train a child&#8217;s brain to make it&#8217;s own algorithms?</p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment even depth-2" id="dsq-comment-7664">
+        <div id="dsq-comment-header-7664" class="dsq-comment-header">
+            <cite id="dsq-cite-7664">
+http://www.randalolson.com/                <span id="dsq-author-user-7664">Randy Olson</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7664" class="dsq-comment-body">
+            <div id="dsq-comment-message-7664" class="dsq-comment-message"><p>I wouldn&#8217;t show this algorithm to kids &#8212; just let them think you&#8217;re the Waldo-spotting expert! <img src="http://www.randalolson.com/wp-includes/images/smilies/icon_wink.gif" alt=";-)" class="wp-smiley" /></p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment odd alt depth-2" id="dsq-comment-7743">
+        <div id="dsq-comment-header-7743" class="dsq-comment-header">
+            <cite id="dsq-cite-7743">
+http://philosophyofprogramming.tumblr.com/                <span id="dsq-author-user-7743">projectrevo</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-7743" class="dsq-comment-body">
+            <div id="dsq-comment-message-7743" class="dsq-comment-message"><p>Yeah, and that&#8217;s why this article isn&#8217;t geared towards children&#8230;</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+            </ul>
+
+
+        </div>
+
+    </div>
+
+			
+		
+</div><!-- end of #content -->
+
+
+	<div id="widgets" class="grid col-300 fit">
+		
+		<div id="text-2" class="widget-wrapper widget_text"><div class="widget-title"><h3>About this blog</h3></div>			<div class="textwidget"><p>The data visualizations on this blog are the result of my “data tinkering” hobby, where I tackle a new data analysis problem every week. If I find something interesting, I report my findings here to share with the world.</p>
+<p>If you would like to use one of my graphs on your website or in a publication, please <a href="http://www.randalolson.com/contact/">email</a> me.</p>
+</div>
+		</div><div id="text-4" class="widget-wrapper widget_text">			<div class="textwidget"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Sidebar ad -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-5475335462909831"
+     data-ad-slot="7378130100"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+		</div>		<div id="recent-posts-3" class="widget-wrapper widget_recent_entries">		<div class="widget-title"><h3>Recent Posts</h3></div>		<ul>
+					<li>
+				<a href="http://www.randalolson.com/2015/03/25/optimized-walking-tours-of-new-york-city-and-philadelphia/">Optimized walking tours of New York City and Philadelphia</a>
+						</li>
+					<li>
+				<a href="http://www.randalolson.com/2015/03/18/pure-michigan-road-trip-optimized/">Pure Michigan road trip, optimized</a>
+						</li>
+					<li>
+				<a href="http://www.randalolson.com/2015/03/14/computing-the-optimal-road-trip-across-south-america/">Computing the optimal road trip across South America</a>
+						</li>
+					<li>
+				<a href="http://www.randalolson.com/2015/03/10/computing-the-optimal-road-trip-across-europe/">Computing the optimal road trip across Europe</a>
+						</li>
+					<li>
+				<a href="http://www.randalolson.com/2015/03/08/computing-the-optimal-road-trip-across-the-u-s/">Computing the optimal road trip across the U.S.</a>
+						</li>
+				</ul>
+		</div><div id="search-4" class="widget-wrapper widget_search"><div class="widget-title"><h3>Search</h3></div><form method="get" id="searchform" action="http://www.randalolson.com/">
+	<label class="screen-reader-text" for="s">Search for:</label>
+	<input type="text" class="field" name="s" id="s" placeholder="search here &hellip;" />
+	<input type="submit" class="submit" name="submit" id="searchsubmit" value="Go" />
+</form></div><div id="archives-2" class="widget-wrapper widget_archive"><div class="widget-title"><h3>Archives</h3></div>		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='http://www.randalolson.com/2015/03/'> March 2015 &nbsp;(8)</option>
+	<option value='http://www.randalolson.com/2015/02/'> February 2015 &nbsp;(1)</option>
+	<option value='http://www.randalolson.com/2015/01/'> January 2015 &nbsp;(4)</option>
+	<option value='http://www.randalolson.com/2014/12/'> December 2014 &nbsp;(6)</option>
+	<option value='http://www.randalolson.com/2014/11/'> November 2014 &nbsp;(6)</option>
+	<option value='http://www.randalolson.com/2014/10/'> October 2014 &nbsp;(7)</option>
+	<option value='http://www.randalolson.com/2014/09/'> September 2014 &nbsp;(4)</option>
+	<option value='http://www.randalolson.com/2014/08/'> August 2014 &nbsp;(3)</option>
+	<option value='http://www.randalolson.com/2014/06/'> June 2014 &nbsp;(11)</option>
+	<option value='http://www.randalolson.com/2014/05/'> May 2014 &nbsp;(12)</option>
+	<option value='http://www.randalolson.com/2014/04/'> April 2014 &nbsp;(5)</option>
+	<option value='http://www.randalolson.com/2014/03/'> March 2014 &nbsp;(5)</option>
+	<option value='http://www.randalolson.com/2014/02/'> February 2014 &nbsp;(1)</option>
+	<option value='http://www.randalolson.com/2014/01/'> January 2014 &nbsp;(7)</option>
+	<option value='http://www.randalolson.com/2013/12/'> December 2013 &nbsp;(5)</option>
+	<option value='http://www.randalolson.com/2013/11/'> November 2013 &nbsp;(6)</option>
+	<option value='http://www.randalolson.com/2013/07/'> July 2013 &nbsp;(3)</option>
+	<option value='http://www.randalolson.com/2013/06/'> June 2013 &nbsp;(1)</option>
+	<option value='http://www.randalolson.com/2013/05/'> May 2013 &nbsp;(1)</option>
+	<option value='http://www.randalolson.com/2013/04/'> April 2013 &nbsp;(1)</option>
+	<option value='http://www.randalolson.com/2013/03/'> March 2013 &nbsp;(6)</option>
+	<option value='http://www.randalolson.com/2013/02/'> February 2013 &nbsp;(1)</option>
+	<option value='http://www.randalolson.com/2013/01/'> January 2013 &nbsp;(2)</option>
+	<option value='http://www.randalolson.com/2012/08/'> August 2012 &nbsp;(3)</option>
+	<option value='http://www.randalolson.com/2012/06/'> June 2012 &nbsp;(2)</option>
+	<option value='http://www.randalolson.com/2012/05/'> May 2012 &nbsp;(2)</option>
+		</select>
+</div><div id="tag_cloud-2" class="widget-wrapper widget_tag_cloud"><div class="widget-title"><h3>Common Topics</h3></div><div class="tagcloud"><a href='http://www.randalolson.com/tag/american-dream/' class='tag-link-167' title='3 topics' style='font-size: 8pt;'>american dream</a>
+<a href='http://www.randalolson.com/tag/analysis/' class='tag-link-46' title='3 topics' style='font-size: 8pt;'>analysis</a>
+<a href='http://www.randalolson.com/tag/artificial-intelligence/' class='tag-link-22' title='3 topics' style='font-size: 8pt;'>artificial intelligence</a>
+<a href='http://www.randalolson.com/tag/college/' class='tag-link-171' title='3 topics' style='font-size: 8pt;'>college</a>
+<a href='http://www.randalolson.com/tag/data-visualization/' class='tag-link-109' title='4 topics' style='font-size: 9.9444444444444pt;'>data visualization</a>
+<a href='http://www.randalolson.com/tag/dating/' class='tag-link-298' title='4 topics' style='font-size: 9.9444444444444pt;'>dating</a>
+<a href='http://www.randalolson.com/tag/deadly/' class='tag-link-120' title='3 topics' style='font-size: 8pt;'>deadly</a>
+<a href='http://www.randalolson.com/tag/decision-making/' class='tag-link-75' title='3 topics' style='font-size: 8pt;'>decision making</a>
+<a href='http://www.randalolson.com/tag/education/' class='tag-link-169' title='5 topics' style='font-size: 11.5pt;'>education</a>
+<a href='http://www.randalolson.com/tag/evolution/' class='tag-link-40' title='7 topics' style='font-size: 13.833333333333pt;'>evolution</a>
+<a href='http://www.randalolson.com/tag/film/' class='tag-link-119' title='3 topics' style='font-size: 8pt;'>film</a>
+<a href='http://www.randalolson.com/tag/films/' class='tag-link-117' title='4 topics' style='font-size: 9.9444444444444pt;'>films</a>
+<a href='http://www.randalolson.com/tag/front-page/' class='tag-link-54' title='10 topics' style='font-size: 16.555555555556pt;'>front page</a>
+<a href='http://www.randalolson.com/tag/genetic-algorithm/' class='tag-link-351' title='6 topics' style='font-size: 12.861111111111pt;'>genetic algorithm</a>
+<a href='http://www.randalolson.com/tag/historical-trends/' class='tag-link-168' title='3 topics' style='font-size: 8pt;'>historical trends</a>
+<a href='http://www.randalolson.com/tag/hotness/' class='tag-link-197' title='4 topics' style='font-size: 9.9444444444444pt;'>hotness</a>
+<a href='http://www.randalolson.com/tag/ipython/' class='tag-link-3' title='6 topics' style='font-size: 12.861111111111pt;'>ipython</a>
+<a href='http://www.randalolson.com/tag/kill-counts/' class='tag-link-114' title='6 topics' style='font-size: 12.861111111111pt;'>kill counts</a>
+<a href='http://www.randalolson.com/tag/machine-learning/' class='tag-link-350' title='6 topics' style='font-size: 12.861111111111pt;'>machine learning</a>
+<a href='http://www.randalolson.com/tag/movies/' class='tag-link-116' title='11 topics' style='font-size: 17.333333333333pt;'>movies</a>
+<a href='http://www.randalolson.com/tag/notebook/' class='tag-link-8' title='5 topics' style='font-size: 11.5pt;'>notebook</a>
+<a href='http://www.randalolson.com/tag/open-science/' class='tag-link-49' title='4 topics' style='font-size: 9.9444444444444pt;'>open science</a>
+<a href='http://www.randalolson.com/tag/optimization/' class='tag-link-353' title='6 topics' style='font-size: 12.861111111111pt;'>optimization</a>
+<a href='http://www.randalolson.com/tag/outreach/' class='tag-link-25' title='3 topics' style='font-size: 8pt;'>outreach</a>
+<a href='http://www.randalolson.com/tag/pandas/' class='tag-link-18' title='3 topics' style='font-size: 8pt;'>pandas</a>
+<a href='http://www.randalolson.com/tag/post-ranking/' class='tag-link-198' title='4 topics' style='font-size: 9.9444444444444pt;'>post ranking</a>
+<a href='http://www.randalolson.com/tag/python/' class='tag-link-17' title='7 topics' style='font-size: 13.833333333333pt;'>python</a>
+<a href='http://www.randalolson.com/tag/reddit/' class='tag-link-45' title='20 topics' style='font-size: 22pt;'>reddit</a>
+<a href='http://www.randalolson.com/tag/research/' class='tag-link-5' title='4 topics' style='font-size: 9.9444444444444pt;'>research</a>
+<a href='http://www.randalolson.com/tag/road-trip/' class='tag-link-366' title='4 topics' style='font-size: 9.9444444444444pt;'>road trip</a>
+<a href='http://www.randalolson.com/tag/science-outreach/' class='tag-link-101' title='3 topics' style='font-size: 8pt;'>science outreach</a>
+<a href='http://www.randalolson.com/tag/social-media/' class='tag-link-102' title='3 topics' style='font-size: 8pt;'>social media</a>
+<a href='http://www.randalolson.com/tag/statistics/' class='tag-link-4' title='5 topics' style='font-size: 11.5pt;'>statistics</a>
+<a href='http://www.randalolson.com/tag/subreddit/' class='tag-link-52' title='5 topics' style='font-size: 11.5pt;'>subreddit</a>
+<a href='http://www.randalolson.com/tag/top-posts/' class='tag-link-55' title='3 topics' style='font-size: 8pt;'>top posts</a>
+<a href='http://www.randalolson.com/tag/traveling-salesman-problem/' class='tag-link-352' title='6 topics' style='font-size: 12.861111111111pt;'>traveling salesman problem</a>
+<a href='http://www.randalolson.com/tag/tutorial/' class='tag-link-7' title='4 topics' style='font-size: 9.9444444444444pt;'>tutorial</a>
+<a href='http://www.randalolson.com/tag/twitter/' class='tag-link-33' title='5 topics' style='font-size: 11.5pt;'>twitter</a>
+<a href='http://www.randalolson.com/tag/united-states/' class='tag-link-159' title='4 topics' style='font-size: 9.9444444444444pt;'>united states</a>
+<a href='http://www.randalolson.com/tag/upvotes/' class='tag-link-56' title='3 topics' style='font-size: 8pt;'>upvotes</a>
+<a href='http://www.randalolson.com/tag/usa/' class='tag-link-187' title='11 topics' style='font-size: 17.333333333333pt;'>usa</a>
+<a href='http://www.randalolson.com/tag/violence/' class='tag-link-121' title='4 topics' style='font-size: 9.9444444444444pt;'>violence</a>
+<a href='http://www.randalolson.com/tag/violent-films/' class='tag-link-113' title='4 topics' style='font-size: 9.9444444444444pt;'>violent films</a>
+<a href='http://www.randalolson.com/tag/virality/' class='tag-link-196' title='4 topics' style='font-size: 9.9444444444444pt;'>virality</a>
+<a href='http://www.randalolson.com/tag/visualization/' class='tag-link-142' title='5 topics' style='font-size: 11.5pt;'>visualization</a></div>
+</div><div id="blog_subscription-2" class="widget-wrapper jetpack_subscription_widget"><div class="widget-title"><h3>Subscribe</h3></div>
+			<form action="#" method="post" accept-charset="utf-8" id="subscribe-blog-blog_subscription-2">
+				<div id="subscribe-text"><p>Enter your email address to subscribe to this blog and receive notifications of new posts by email.</p>
+</div>					<p id="subscribe-email">
+						<label id="jetpack-subscribe-label" for="subscribe-field">
+							Email Address						</label>
+						<input type="email" name="email" value="" id="subscribe-field" placeholder="Email Address" />
+					</p>
+
+					<p id="subscribe-submit">
+						<input type="hidden" name="action" value="subscribe" />
+						<input type="hidden" name="source" value="http://www.randalolson.com/2015/02/03/heres-waldo-computing-the-optimal-search-strategy-for-finding-waldo/" />
+						<input type="hidden" name="sub-type" value="widget" />
+						<input type="hidden" name="redirect_fragment" value="blog_subscription-2" />
+												<input type="submit" value="Subscribe" name="jetpack_subscriptions_widget" />
+					</p>
+							</form>
+
+			<script>
+				( function( d ) {
+					if ( ( 'placeholder' in d.createElement( 'input' ) ) ) {
+						var label = d.getElementById( 'jetpack-subscribe-label' );
+	 					label.style.clip 	 = 'rect(1px, 1px, 1px, 1px)';
+	 					label.style.position = 'absolute';
+	 					label.style.height   = '1px';
+	 					label.style.width    = '1px';
+	 					label.style.overflow = 'hidden';
+					}
+				} ) ( document );
+			</script>
+		 
+		
+</div>
+			</div><!-- end of #widgets -->
+</div><!-- end of #wrapper -->
+</div><!-- end of #container -->
+
+<div id="footer" class="clearfix">
+	
+	<div id="footer-wrapper">
+
+		
+		<div class="grid col-940">
+
+			<div class="grid col-540">
+							</div><!-- end of col-540 -->
+
+			<div class="grid col-380 fit">
+				<ul class="social-icons"><li class="twitter-icon"><a href="https://twitter.com/randal_olson"><img src="http://www.randalolson.com/wp-content/themes/responsive/core/icons/twitter-icon.png" width="24" height="24" alt="Twitter"></a></li><li class="facebook-icon"><a href="https://www.facebook.com/RandalSOlson"><img src="http://www.randalolson.com/wp-content/themes/responsive/core/icons/facebook-icon.png" width="24" height="24" alt="Facebook"></a></li><li class="linkedin-icon"><a href="http://www.linkedin.com/in/randalolson"><img src="http://www.randalolson.com/wp-content/themes/responsive/core/icons/linkedin-icon.png" width="24" height="24" alt="LinkedIn"></a></li><li class="youtube-icon"><a href="http://www.youtube.com/user/Rhiever"><img src="http://www.randalolson.com/wp-content/themes/responsive/core/icons/youtube-icon.png" width="24" height="24" alt="YouTube"></a></li><li class="stumbleupon-icon"><a href="http://www.stumbleupon.com/stumbler/Rhiever"><img src="http://www.randalolson.com/wp-content/themes/responsive/core/icons/stumbleupon-icon.png" width="24" height="24" alt="StumbleUpon"></a></li></ul><!-- .social-icons -->			</div><!-- end of col-380 fit -->
+
+		</div><!-- end of col-940 -->
+		
+		<div class="grid col-300 copyright">
+			&copy; 2015<a href="http://www.randalolson.com/" title="Randal S. Olson">
+				Randal S. Olson			</a>
+		</div><!-- end of .copyright -->
+
+		<div class="grid col-300 scroll-top"><a href="#scroll-top" title="scroll to top">&uarr;</a></div>
+
+		<div class="grid col-300 fit powered">
+			<a href="http://cyberchimps.com/responsive-theme/" title="Responsive Theme">
+				Responsive Theme</a>
+			powered by <a href="http://wordpress.org/" title="WordPress">
+				WordPress</a>
+		</div><!-- end .powered -->
+
+	</div><!-- end #footer-wrapper -->
+
+	</div><!-- end #footer -->
+
+<script class="javascript" src="http://www.randalolson.com/wp-content/plugins/google-syntax-highlighter/Scripts/shCore.js"></script>
+<script class="javascript" src="http://www.randalolson.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushCSharp.js"></script>
+<script class="javascript" src="http://www.randalolson.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushPhp.js"></script>
+<script class="javascript" src="http://www.randalolson.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushJScript.js"></script>
+<script class="javascript" src="http://www.randalolson.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushJava.js"></script>
+<script class="javascript" src="http://www.randalolson.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushVb.js"></script>
+<script class="javascript" src="http://www.randalolson.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushSql.js"></script>
+<script class="javascript" src="http://www.randalolson.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushXml.js"></script>
+<script class="javascript" src="http://www.randalolson.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushDelphi.js"></script>
+<script class="javascript" src="http://www.randalolson.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushPython.js"></script>
+<script class="javascript" src="http://www.randalolson.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushRuby.js"></script>
+<script class="javascript" src="http://www.randalolson.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushCss.js"></script>
+<script class="javascript" src="http://www.randalolson.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushCpp.js"></script>
+<script class="javascript">
+dp.SyntaxHighlighter.ClipboardSwf = 'http://www.randalolson.com/wp-content/plugins/google-syntax-highlighter/Scripts/clipboard.swf';
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+	<div style="display:none">
+	<div class="grofile-hash-map-bc264e8b1145c5291892c01cc9174db7">
+	</div>
+	</div>
+		<script type="text/javascript">
+			!function(d,s,id){
+				var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+				if(!d.getElementById(id)){
+					js=d.createElement(s);
+					js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
+					fjs.parentNode.insertBefore(js,fjs);
+				}
+			}(document,"script","twitter-wjs");
+		</script>
+		
+	<script type="text/javascript">
+		WPCOM_sharing_counts = {"http:\/\/www.randalolson.com\/2015\/02\/03\/heres-waldo-computing-the-optimal-search-strategy-for-finding-waldo\/":6062}	</script>
+		<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-linkedin' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-google-plus-1' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+		});
+		</script>
+							<script type="text/javascript">
+			jQuery(document).on('ready', function(){
+				jQuery('body').on('click', 'a.share-pinterest', function(e){
+					e.preventDefault();
+
+					// Load Pinterest Bookmarklet code
+					var s = document.createElement("script");
+					s.type = "text/javascript";
+					s.src = window.location.protocol + "//assets.pinterest.com/js/pinmarklet.js?r=" + ( Math.random() * 99999999 );
+					var x = document.getElementsByTagName("script")[0];
+					x.parentNode.insertBefore(s, x);
+
+					// Trigger Stats
+					var s = document.createElement("script");
+					s.type = "text/javascript";
+					s.src = this + ( this.toString().indexOf( '?' ) ? '&' : '?' ) + 'js_only=1';
+					var x = document.getElementsByTagName("script")[0];
+					x.parentNode.insertBefore(s, x);
+				});
+			});
+			</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-tumblr' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomtumblr', 'menubar=1,resizable=1,width=450,height=450' );
+				return false;
+			});
+		});
+		</script>
+			<div id="sharing_email" style="display: none;">
+		<form action="/2015/02/03/heres-waldo-computing-the-optimal-search-strategy-for-finding-waldo/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email" value="" />
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="" />
+
+				<label for="source_email">Your Email Address</label>
+				<input type="email" name="source_email" id="source_email" value="" />
+
+			
+			
+			<img style="float: right; display: none" class="loading" src="http://www.randalolson.com/wp-content/plugins/jetpack/modules/sharedaddy/images/loading.gif" alt="loading" width="16" height="16" />
+			<input type="submit" value="Send Email" class="sharing_send" />
+			<a href="#cancel" class="sharing_cancel">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201514'></script>
+<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?ver=2015Apraa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.randalolson.com/wp-content/plugins/jetpack/modules/wpgroho.js?ver=4.1.1'></script>
+<script type='text/javascript' src='http://www.randalolson.com/wp-content/themes/responsive/core/js/responsive-scripts.min.js?ver=1.2.6'></script>
+<script type='text/javascript' src='http://www.randalolson.com/wp-content/themes/responsive/core/js/jquery.placeholder.min.js?ver=2.0.7'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var embedVars = {"disqusConfig":{"platform":"wordpress@4.1.1","language":""},"disqusIdentifier":"6062 http:\/\/www.randalolson.com\/?p=6062","disqusShortname":"randalolson","disqusTitle":"Here\u2019s Waldo: Computing the optimal search strategy for finding Waldo","disqusUrl":"http:\/\/www.randalolson.com\/2015\/02\/03\/heres-waldo-computing-the-optimal-search-strategy-for-finding-waldo\/","options":{"manualSync":false},"postId":"6062"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.randalolson.com/wp-content/plugins/disqus-comment-system/media/js/disqus.js?ver=4.1.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"randalolson"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.randalolson.com/wp-content/plugins/disqus-comment-system/media/js/count.js?ver=4.1.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.randalolson.com/wp-content/plugins/jetpack/modules/sharedaddy/sharing.js?ver=3.4.1'></script>
+</body>
+</html>
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Page Caching using disk: enhanced
+Object Caching 1610/1712 objects using disk
+
+ Served from: www.randalolson.com @ 2015-04-03 17:37:53 by W3 Total Cache -->

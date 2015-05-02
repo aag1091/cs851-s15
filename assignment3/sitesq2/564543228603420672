@@ -1,0 +1,610 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>British Orienteering - Volunteer Awards</title>
+<base href="http://www.britishorienteering.org.uk/index.php?pg=63" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<!-- designed by Zygo Consulting Ltd -->
+<meta name="AUTHOR" content="British Orienteering" />
+<script type="text/javascript" src="scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="lib/jquery-ui/jquery-ui.js"></script>
+<script type="text/javascript" src="lib/zygolib/zygolib.js"></script>
+<script type="text/javascript" src="lib/colorbox/jquery.colorbox-min.js"></script>
+<link rel="stylesheet" href="styles/reset-styles.css" type="text/css" />
+<link rel="stylesheet" href="styles/styles.css?x=6" type="text/css" />
+<link rel="stylesheet" href="lib/colorbox/example1/colorbox.css" media="screen" type="text/css" />
+<meta name="keywords" content="" />
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+
+<script>
+var images = ['toppic1.jpg', 'toppic2.jpg', 'toppic3.jpg', 'toppic4.jpg', 'toppic5.jpg', 'toppic6.jpg', 'toppic7.jpg', 'toppic8.jpg'];
+$(document).ready(function(){
+	for (var i=0; i<5; i++) {
+		var rannum = Math.floor(Math.random() * images.length);
+		var imgsrc = "images/"+images[rannum];
+		$(".image"+(i+1)).attr("src", imgsrc);
+		images.splice(rannum,1);
+	}
+  /*
+	$("#beginnerlink").click(function(){
+	$("#beginner").fadeIn("slow");
+    $("#expert").hide();
+    $("#beginnerlink").hide();
+    $("#expertlink").show();
+	initialiseAnimatedImages();	
+		setMenuCookie('1');
+	});
+  $("#expertlink").click(function(){
+    $("#beginner").hide();
+	$("#expert").fadeIn("slow");
+    $("#beginnerlink").show();
+    $("#expertlink").hide();
+	initialiseAnimatedImages();	
+		setMenuCookie('2');
+  });
+	*/
+ 	$(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390}); 
+});
+
+function setMenuCookie(menuId){
+	jQuery.ajax('includes/setmenu.php?menu=' + menuId);
+}
+
+function initialiseAnimatedImages() {
+    $("img.animated").each(function (Index) {
+        var interval = 60;
+        $(this).attr("index", "1");
+        var intervalID = setInterval(function () { animateImage(Index); }, interval);
+        $(this).attr("intervalid", intervalID);
+		var pattern = "images/switch#.png";
+		var src = pattern.replace("#", 2);
+            $(this).attr("index", 2);
+            $(this).attr("src", src);
+    });
+}
+function animateImage(Index) {
+    $("img.animated:eq(" + Index + ")").each(function (Index) {
+        if (!$(this).is(":visible")) {
+            var intervalID = parseInt($(this).attr("intervalid"));
+            clearInterval(intervalID);
+        } else {
+            var max = 9;
+            var pattern = "images/switch#.png";
+            var index = parseInt($(this).attr("index"));
+			if (index > 1) {
+				index++;
+			}
+            if (index > max) {
+                index = 1;
+            }
+            var src = pattern.replace("#", index);
+            $(this).attr("index", index);
+            $(this).attr("src", src);
+        }
+    });
+}
+function toggleMenuClicked(link){
+	var item = $(link).parent();
+	if(item.hasClass('open')){
+		item.removeClass('open');
+	}else{
+		item.addClass('open');
+	}
+}
+function closeMenuClicked(link){
+	var item = $(link).parent();
+	item.removeClass('open');
+}
+</script>
+
+
+</head>
+
+<body>
+<div id="mainframe">
+<div class="content">
+<div class="toppanel"><img src="images/logo.png" class="logo" alt="British Orienteering" /><img src="images/toppic1.jpg" class="image1" /><img src="images/toppic2.jpg" class="image2" /><img src="images/toppic9.jpg" class="image3" /><img src="images/toppic4.jpg" class="image4" /><img src="images/toppic5.jpg" class="image5" /><img src="images/toppic6.jpg" class="image6" /></div>
+<div class="topbar"><div class="switchlink"><a href="/index.php?setmenu=2" id="expertlink" style="display: inline">Switch to member view<img class="animated" src="images/switch1.png" /></a><a href="/index.php?setmenu=1" id="beginnerlink" style="display: none">Switch to newcomer view<img class="animated" src="images/switch1.png" /></a></div><div class="toplinks"><div id="beginner" style="display: block"><ul><li><a href="page/home">Home</a></li><li><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">About Orienteering</a><div class="dropdown"><div class="column1"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">A Sport for All</a><ul><li><a href="page/235">An Adventure Sport</a></li><li><a href="page/familes">A Family Sport</a></li><li><a href="page/236">An Urban Sport</a></li></ul></div><div class="column2"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Orienteering Disciplines</a><ul><li><a href="page/233">Foot Orienteering</a></li><li><a href="page/bmbo">Mountain Bike Orienteering</a></li><li><a href="page/ski_orienteering">Ski Orienteering</a></li><li><a href="page/Trail O">Trail Orienteering</a></li></ul></div><div class="column3"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Helpful Information</a><ul><li><a href="page/newcomers_guide">Newcomer's Guide</a></li><li><a href="page/orienteering_jargon">Orienteering Jargon</a></li></ul><a href="page/safeguardingandsafety">Safeguarding and Safety</a><ul></ul></div></div></li><li><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Membership</a><div class="dropdown"><div class="column1"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Be Part of our Sport</a><ul><li><a href="page/british_orienteering">About British Orienteering</a></li><li><a href="page/supporting_members">Supporting Members</a></li><li><a href="page/members">Member Discounts</a></li><li><a href="page/join_now">Joining British Orienteering</a></li></ul></div><div class="column2"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Clubs</a><ul><li><a href="page/find_a_club">Find a Club</a></li><li><a href="page/universities">University Clubs</a></li></ul></div><div class="column3"><a href="page/join_online">Join Online</a><ul></ul><a href="page/renew_membership">Renew your membership</a><ul></ul></div></div></li><li><a href="page/xplorer">Xplorer Events</a><div class="dropdown"><div class="column1"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Perfect for Families</a><ul><li><a href="page/245">Go Xplore!</a></li></ul></div></div></li><li><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Find a Club Event</a><div class="dropdown"><div class="column1"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Events Near You</a><ul><li><a href="page/event">Club Events Fixtures List</a></li><li><a href="page/event_map">Club Events Interactive Map</a></li></ul></div><div class="column2"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Permanent Orienteering Courses</a><ul><li><a href="page/pocs">Find a POC</a></li><li><a href="page/poc_map">POC Interactive map</a></li></ul></div></div></li><li><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Schools</a><div class="dropdown"><div class="column1"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Orienteering in Schools</a><ul><li><a href="page/schools">School Orienteering</a></li><li><a href="page/teaching">Teacher Training</a></li><li><a href="page/schools_mapping">Mapping</a></li><li><a href="page/school_games">School Games</a></li><li><a href="page/school_competitions">Competitions</a></li></ul></div><div class="column2"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">School Resources</a><ul><li><a href="page/237">Orienteering Equipment</a></li><li><a href="page/ozone">Ozone Magazine</a></li><li><a href="page/challenges">Challenge Sheets</a></li><li><a href="page/games">Games</a></li></ul></div><div class="column3"><a href="page/school_registration_form">Register Your School</a><ul></ul></div></div></li><li><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">British Team</a><div class="dropdown"><div class="column1"><a href="page/International">International Orienteering</a><ul></ul></div><div class="column2"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Athletes</a><ul><li><a href="page/squadathletes">Squad Athletes</a></li><li><a href="page/41">Athlete Success</a></li></ul></div></div></li><li><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">News</a><div class="dropdown"><div class="column1"><a href="page/news_archive">News Archive</a></div></div></li><li><a href="page/contact_us">Contact Us</a></li></ul></div><div id="expert" style="display: none"><ul><li><a href="page/home">Home</a></li><li><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">About Orienteering</a><div class="dropdown"><div class="column1"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">A Sport for All</a><ul><li><a href="page/235">An Adventure Sport</a></li><li><a href="page/familes">A Family Sport</a></li><li><a href="page/236">An Urban Sport</a></li></ul></div><div class="column2"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Orienteering Disciplines</a><ul><li><a href="page/233">Foot Orienteering</a></li><li><a href="page/bmbo">Mountain Bike Orienteering</a></li><li><a href="page/ski_orienteering">Ski Orienteering</a></li><li><a href="page/Trail O">Trail Orienteering</a></li></ul></div><div class="column3"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Helpful Information</a><ul><li><a href="page/newcomers_guide">Newcomer's Guide</a></li><li><a href="page/orienteering_jargon">Orienteering Jargon</a></li></ul><a href="page/welfareandsafety">Welfare and Safety</a><ul></ul></div></div></li><li><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">News</a><div class="dropdown"><div class="column1"><a href="page/consultations">Consultations</a><a href="page/news_archive">News Archive</a><a href="page/enews">Mike's E-News</a></div></div></li><li><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Membership</a><div class="dropdown"><div class="column1"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Be Part of our Sport</a><ul><li><a href="page/british_orienteering">About British Orienteering</a></li><li><a href="page/supporting_members">Supporting Members</a></li><li><a href="page/members">Member Discounts</a></li><li><a href="page/join_now">Joining British Orienteering</a></li></ul></div><div class="column2"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Clubs</a><ul><li><a href="page/find_a_club">Find a Club</a></li><li><a href="page/universities">University Clubs</a></li></ul></div><div class="column3"><a href="page/join_online">Join Online</a><ul></ul><a href="page/renew_membership">Renew your membership</a><ul></ul></div></div></li><li><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Governance</a><div class="dropdown"><div class="column1"><a href="page/british_orienteering">About British Orienteering</a><a href="page/directors">Board of Directors</a><a href="page/performance_targets">Performance Targets</a><a href="page/staff">Staff</a><a href="page/steering_groups">Steering Groups</a><a href="page/agm">AGM</a></div></div></li><li><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Events</a><div class="dropdown"><div class="column1"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Fixtures</a><ul><li><a href="page/event">Event Fixtures</a></li><li><a href="page/event_map">Club Events Interactive Map</a></li><li><a href="page/event_diary">Event Diary</a></li><li><a href="page/major_fixtures">Major Fixtures</a></li><li><a href="page/embargoed_areas">Embargoed Areas</a></li></ul><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Permanent Courses</a><ul><li><a href="page/pocs">POC Search</a></li><li><a href="page/poc_map">POCs Map Search</a></li><li><a href="page/poc_partners">Working with Partners</a></li></ul></div><div class="column2"><a href="page/results">Results</a><ul></ul><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">British Championships</a><ul><li><a href="page/boc">British Orienteering Championships</a></li><li><a href="page/british_sprint">Sprint</a></li><li><a href="page/british_middle">Middle</a></li><li><a href="page/british_night">Night</a></li><li><a href="page/british_champions">Past British Champions</a></li></ul><a href="page/rankings">Rankings</a><ul></ul><a href="page/incentives">Incentive and Badge Schemes</a><ul></ul><a href="page/rules">Rules</a><ul></ul></div><div class="column3"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">The JK</a><ul><li><a href="page/the_jk">The JK</a></li><li><a href="page/jk_champions">JK Champions</a></li></ul><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Competitions</a><ul><li><a href="page/national_competitions">National Competitions</a></li><li><a href="page/home_internationals">Home Internationals</a></li><li><a href="page/multi-day">Multi Day Events</a></li><li><a href="page/woc2015">WOC 2015</a></li></ul></div></div></li><li><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Event Officials</a><div class="dropdown"><div class="column1"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Event Officials</a><ul><li><a href="page/controllers">Controllers</a></li><li><a href="page/mappers">Mappers</a></li><li><a href="page/organisers">Organisers</a></li><li><a href="page/planners">Planners</a></li></ul></div><div class="column2"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Official's Handbook</a><ul><li><a href="page/handbook_rules">Rules & Regulations</a></li><li><a href="page/handbooks_landaccess">Land Access</a></li><li><a href="page/handbook_mapping">Mapping & Planning</a></li><li><a href="page/handbook_finances">Budget & Finances</a></li><li><a href="page/handbook_safety">Safety</a></li><li><a href="page/handbook_admin">Admin</a></li><li><a href="page/handbook_volunteers">Volunteers</a></li><li><a href="page/handbook_systems">Systems</a></li><li><a href="page/handbook_marketing">Marketing and Publicty</a></li><li><a href="page/handbook_checklists">Checklists</a></li></ul></div></div></li><li><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Coaching</a><div class="dropdown"><div class="column1"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Get Involved</a><ul><li><a href="page/coaching">Award Scheme</a></li><li><a href="page/leaders">Community Orienteering Leader Award</a></li><li><a href="page/trainingcourses">Training courses</a></li></ul></div><div class="column2"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">The Journey of a Coach</a><ul><li><a href="page/licenced_coaches">Licence to Coach</a></li><li><a href="page/231">Continuous Personal Development</a></li><li><a href="page/coach_support">Coach Support</a></li></ul></div><div class="column3"><a href="page/coach_education_staff">Coach Education Staff</a><ul></ul></div></div></li><li><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Club Development</a><div class="dropdown"><div class="column1"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Club Activities</a><ul><li><a href="page/club_nights">Club Nights</a></li><li><a href="page/comeandtry">Come and Try Events</a></li><li><a href="page/Weekly_Club">Weekly Club</a></li><li><a href="page/success_stories">Success Stories</a></li></ul><a href="page/clubmark">Clubmark</a><ul></ul></div><div class="column2"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Volunteers</a><ul><li><a href="page/238">Volunteer Strategy</a></li><li><a href="page/239">Volunteer Recruitment and Support</a></li><li><a href="page/awards">Volunteer Awards</a></li></ul><a href="page/funding">Funding</a><ul></ul></div><div class="column3"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Marketing Support</a><ul><li><a href="page/publicity">Publicity Materials</a></li><li><a href="page/print_portal">Print Portal</a></li><li><a href="page/generating_pr">Generating PR</a></li></ul><a href="page/development_team">Development Team</a><ul></ul></div></div></li><li><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">British Team</a><div class="dropdown"><div class="column1"><a href="page/gbprogramme">GB Programme</a><ul></ul><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Athlete Support</a><ul><li><a href="page/improving_performance">Improving Performance</a></li><li><a href="page/anti_doping">Anti Doping</a></li></ul></div><div class="column2"><a href="javascript:void(0);" class="nolink" onclick="toggleMenuClicked(this);" onmouseout="closeMenuClicked(this);">Athletes</a><ul><li><a href="page/squadathletes">Squad Athletes</a></li><li><a href="page/41">Althlete Success</a></li></ul></div><div class="column3"><a href="page/Selection">GB Selection</a><ul></ul><a href="page/partners">Partners</a><ul></ul></div></div></li><li><a href="page/contact_us">Contact Us</a></li></ul></div></div></div>
+<div class="breadcrumb">&nbsp;</div>
+
+<div id="leftcolumn">
+
+<div class="inputbox red"><div class="login">
+<script><!--
+function fieldFocus(fld, lbl, chg){
+  if(fld.value == lbl){
+		fld.value = '';
+  }
+}
+function fieldBlur(fld, lbl, chg){
+  if(fld.value == '' && fld.type != 'password'){
+    fld.value = lbl;
+  }
+}
+function passwdFocus(){
+	document.getElementById("fakePasswd").style.display = "none";
+	document.getElementById("varMshipPasswd").style.display = "";
+	document.getElementById("varMshipPasswd").focus();
+}
+function toggleFpwdText(){
+  el = document.getElementById('fpwd_text');
+  if(el.style.display != 'block'){
+    el.style.display = 'block';
+		document.getElementById('loginError').style.display='none';
+  }else{
+    el.style.display = 'none';
+  }
+}
+--></script><form method="post" style="display: inline;" action="/index.php" /><input type="hidden" name="doLogin" value="1" /><strong>Login to your account</strong><br /><input type="text" name="varMshipUname" value="Username" onfocus="fieldFocus(this,'Username', false)" onblur="fieldBlur(this,'Username', false)" /><input type="text" id="fakePasswd" value="Password" onfocus="passwdFocus()" /><input type="password" id="varMshipPasswd" name="varMshipPasswd" value="" style="display: none;" /></span><input type="submit" name="bLogin" class="button" value="Go"><br /><a onclick="toggleFpwdText(); return false;" href="javascript:void(0);">Forgotten login details</a><input type="hidden" name="pg" value="awards" /></form>
+</div></div>
+<br />
+<div class="inputbox blue">
+<form action="index.php" method="get"><input name="sitesearch" id="sitesearch" value="Search" onfocus="fieldFocus(this,'Search', false)" onblur="fieldBlur(this,'Search', false)" /><input type="submit" class="button" value="Go" /></form>
+</div>
+
+<br />
+<a href="http://www.britishorienteering.org.uk/page/join_online"><div class="roundbox" style="width: 159px; background-image:url('/images/uploaded/join.jpg'); background-repeat:no-repeat;background-position:right;height: 86px;background-color: #FFFFFF; margin-bottom:10px;">
+<div class="padded"></div>
+</div></a><a href="http://www.britishorienteering.org.uk/page/renew_membership"><div class="roundbox" style="width: 159px; background-image:url('/images/uploaded/renew.jpg'); background-repeat:no-repeat;background-position:right;height: 86px;background-color: #FFFFFF; margin-bottom:10px;">
+<div class="padded"></div>
+</div></a>
+		<a class="twitter-timeline"  href="https://twitter.com/GBRorienteering" width="156"  data-widget-id="397391211507372032">Tweets by @GBRorienteering</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script><div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, "script", "facebook-jssdk"));</script>
+
+			<div style="background-color: #fff; margin-top: 6px; border: 1px solid #ddd; border-radius: 10px; padding-bottom: 5px;">
+			<div class="fb-like-box" data-href="http://www.facebook.com/britishorienteering" data-width="156" data-height="286" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div></div><div style="height: 10px"></div><a href="http://www.thejk.org.uk"><div class="roundbox" style="width: 159px; background-image:url('/images/uploaded/JK2014.gif'); background-repeat:no-repeat;background-position:right;height: px;background-color: #FFFFFF; margin-bottom:10px;">
+<div class="padded"></div>
+</div></a><a href="http://www.woc2015.org/"><div class="roundbox" style="width: 159px; background-image:url('/images/uploaded/events_woc_advert.jpg'); background-repeat:no-repeat;background-position:right;height: 219px;background-color: #FFFFFF; margin-bottom:10px;">
+<div class="padded"></div>
+</div></a><div class="roundbox" style="width: 159px; background-image:url('/images/uploaded/temp(3).gif'); background-repeat:no-repeat;background-position:right;height: px;background-color: #FFFFFF; margin-bottom:10px;">
+<div class="padded"></div>
+</div>
+</div>
+
+<div class="popupcontainer"><div class="popupbox" id="fpwd_text" style="display: none;"><a class="closepopup" href="javascript:void(0)" onclick="toggleFpwdText()"><img src="images/close.gif" /></a><h3>Forgotten your login details?</h3><form method="post" action="index.php"><input type="hidden" name="pg" value="awards" />
+				<input type="hidden" name="fpwd" value="1">
+				<p>Please enter your British Orienteering membership number and new login details
+will be emailed to you.</p>
+				<label style="font-weight: bold; margin-right: 5px;">Membership Number</label> <input name="mem_code" value="" />
+				<input type="submit" name="submit" value="Submit" /><p>If you do not know your membership number please contact the National Office.  Tel: 01629 583037
+			<br />Email: <a href="mailto:info@britishorienteering.org.uk">info@britishorienteering.org.uk</a></p></form></div></div>
+
+<div id="centrerightcolumn"><div class="roundbox" style="margin-bottom:10px;">
+			   <h1>Volunteer Awards</h1><p style="margin-bottom: 0pt;"><span style="font-size: 14px;"><a href="#ClubofYear">Club of the Year Award</a></span></p>
+
+<p style="margin-bottom: 0pt;"><a href="#University Club of the Year Award">University Club of the Year Award</a></p>
+
+<p style="margin-bottom: 0pt;"><a href="#Youngvolunteeroftheyear">Young Volunteer of the Year Award</a></p>
+
+<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><a href="#Silva">Silva Award</a></span></p>
+
+<p style="margin-top: 0pt; margin-bottom: 0pt;">&nbsp;</p>
+
+<h2 class="memberBenefits2" style="margin-top: 0pt;"><span style="font-size: 14px;"><span style="font-family: arial;"><a id="ClubofYear" name="ClubofYear"></a>&nbsp;</span>Club of the Year Award</span></h2>
+
+<p align="left" style="margin-bottom: 0pt;">&nbsp;</p>
+
+<p style="margin-top: 0pt;"><span style="font-size: 14px;">Is your club an important part of the local community?</span></p>
+
+<ul>
+	<li>
+	<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;">Providing opportunities for everyone to experience high quality activities at all levels of your sport or recreation?</span></p>
+	</li>
+	<li>
+	<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;">Demonstrating a commitment to the development of participants as well as coaches and volunteers?</span></p>
+	</li>
+	<li>
+	<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;">Taking an innovative approach to the promotion of the club?</span></p>
+	</li>
+</ul>
+
+<p><span style="font-size: 14px;">If the answer is &ldquo;Yes&rdquo; why not enter the British Orienteering Club of the Year Award.</span><br />
+&nbsp;</p>
+
+<p><span style="font-size: 14px;">Nomination Forms are <a href="/images/uploaded/downloads/development_cluboftheyear_form.doc">available</a>&nbsp;here.</span></p>
+
+<p>&nbsp;</p>
+
+<table border="1" cellpadding="0" cellspacing="0" style="width: 350px;" width="211">
+	<tbody>
+		<tr>
+			<td height="20" style="height: 20px;"><strong>2015</strong></td>
+			<td>To be announced</td>
+		</tr>
+		<tr height="20">
+			<td height="20" style="height: 20px;"><strong>2014&nbsp;&nbsp;&nbsp;&nbsp; </strong></td>
+			<td>Not Awarded</td>
+		</tr>
+		<tr height="20">
+			<td height="20" style="height: 20px;"><strong>2013 </strong></td>
+			<td>South London Orienteers</td>
+		</tr>
+		<tr height="20">
+			<td height="20" style="height: 20px;"><strong>2012 </strong></td>
+			<td>Mar Orienteering Club</td>
+		</tr>
+		<tr height="20">
+			<td height="20" style="height: 20px;"><strong>2011</strong></td>
+			<td>Leicestershire Orienteering Club</td>
+		</tr>
+		<tr height="20">
+			<td height="20" style="height: 20px;"><strong>2010</strong></td>
+			<td>Grampian Orienteers&nbsp;</td>
+		</tr>
+		<tr height="20">
+			<td height="20" style="height: 20px;"><strong>2009</strong></td>
+			<td>West Cumberland Orienteering Club</td>
+		</tr>
+		<tr height="20">
+			<td height="20" style="height: 20px;"><strong>2008</strong></td>
+			<td>South Ribble Orienteering Club</td>
+		</tr>
+		<tr height="20">
+			<td height="20" style="height: 20px;"><strong>2007</strong></td>
+			<td>Octavian Droobers</td>
+		</tr>
+	</tbody>
+	<colgroup>
+		<col />
+		<col />
+	</colgroup>
+</table>
+
+<h2><br />
+<a id="UniversityCluboftheYearAward" name="UniversityCluboftheYearAward">University Club of the Year Award</a></h2>
+
+<p>Introduced in 2009 by the Development Committee, an award to recognise the efforts of University Clubs in the development of participants as well as coaches and volunteers.&nbsp;The award is also to show appreciation for the University introducing and providing a gateway to the sport to their&nbsp;students&nbsp;The University Club of the Year&nbsp;nomination form can be found <a href="/images/uploaded/downloads/University club of the year form.doc">here</a>.</p>
+
+<p>&nbsp;</p>
+
+<table border="1" cellpadding="0" cellspacing="0" style="width: 350px;" width="195">
+	<tbody>
+		<tr>
+			<td height="20" style="width: 35px; height: 20px;"><strong>2015</strong></td>
+			<td style="width: 160px;">To be announced</td>
+		</tr>
+		<tr height="20">
+			<td height="20" style="width: 35px; height: 20px;"><strong>2014</strong></td>
+			<td style="width: 160px;">University of Bristol Orienteering Club</td>
+		</tr>
+		<tr height="20">
+			<td height="20" style="height: 20px;"><strong>2013</strong></td>
+			<td>Cambridge UniversityOrienteering Club</td>
+		</tr>
+		<tr height="20">
+			<td height="20" style="height: 20px;"><strong>2012</strong></td>
+			<td>Sheffield University Orienteering Club</td>
+		</tr>
+		<tr height="20">
+			<td height="20" style="height: 20px;"><strong>2011</strong></td>
+			<td>Edingburgh University Orienteering Club</td>
+		</tr>
+		<tr height="20">
+			<td height="20" style="height: 20px;"><strong>2010</strong></td>
+			<td>Oxford University Orienteering Club</td>
+		</tr>
+		<tr height="20">
+			<td height="20" style="height: 20px;"><strong>2009</strong></td>
+			<td>University of Durham Orienteering Club</td>
+		</tr>
+	</tbody>
+	<colgroup>
+		<col />
+		<col />
+	</colgroup>
+</table>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="Youngvolunteeroftheyear">Young Volunteer of the Year Award</a></h2>
+
+<p>Originally piloted in 2009 following a Development Committee review. The award is for&nbsp; volunteers under the age of 25 who has demonstrated a commitment to supporting delivery of orienteering activity with passion, energy and enthusiasm. The Young Volunteer of the Year Award nomination form can be found <a href="/images/uploaded/downloads/young volunteer award_form.doc">here</a> and will be presented at AGMs from 2014.</p>
+
+<p>&nbsp;</p>
+
+<table border="1" cellpadding="0" cellspacing="0" style="width: 350px;" width="195">
+	<tbody>
+		<tr height="20">
+			<td height="20" style="width: 35px; height: 20px;"><strong>2015</strong></td>
+			<td style="width: 160px;">To be announced</td>
+		</tr>
+		<tr height="20">
+			<td height="20" style="height: 20px;"><strong>2012</strong></td>
+			<td>Adam Potter (BOK)</td>
+		</tr>
+		<tr height="20">
+			<td height="20" style="height: 20px;"><strong>2009</strong></td>
+			<td>Stephen Haley (INT)&nbsp;&amp; Stuart Hooton (EBOR)</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<h2 class="memberBenefits2"><span style="font-size: 14px;"><a id="Silva" name="Silva"></a>Silva Award</span></h2>
+
+<p><span style="font-size: 14px;">In 1983 SILVA (Sweden) AB decided to mark the fiftieth anniversary of the first Silva compass by establishing an annual award within each IOF member Federation. The awards were to enable Federations to honour those who have contributed in a special way to the development of orienteering. With the assistance of SILVA (UK) Ltd this was interpreted, within the UK, as being a person or persons who have made a very significant contribution to orienteering over a period of years, with an emphasis on &lsquo;field&#39; activities rather than committee work.&nbsp; Indeed, nominees may not be active or retiring members of the British Orienteering Board, nor part- or full-time employees of the Federation.</span><br />
+&nbsp;</p>
+
+<p><span style="font-size: 14px;">All members can nominate someone they believe has made a significant contribution to orienteering through &lsquo;field&rsquo; activities. </span><span style="font-size: 14px;"><a href="/images/uploaded/downloads/volunteers_silvaawardnomform_2015.doc">Silva Award nomination form</a></span><br />
+&nbsp;</p>
+
+<table border="1" cellpadding="0" cellspacing="0">
+	<tbody>
+		<tr>
+			<td width="79"><strong>2015</strong></td>
+			<td width="180">To be announced</td>
+		</tr>
+		<tr>
+			<td width="79"><strong><span style="font-size: 14px;">2014</span></strong></td>
+			<td width="180"><span style="font-size: 14px;">Carol McNeil</span></td>
+		</tr>
+		<tr>
+			<td width="79"><strong><span style="font-size: 14px;">2013</span></strong></td>
+			<td width="180"><span style="font-size: 14px;">John and Jenny Collyer</span></td>
+		</tr>
+		<tr valign="top">
+			<td width="79"><strong><span style="font-size: 14px;">2012</span></strong></td>
+			<td width="180"><span style="font-size: 14px;">Roger Baker</span></td>
+		</tr>
+		<tr valign="top">
+			<td width="79"><strong><span style="font-size: 14px;">2011</span></strong></td>
+			<td width="180"><span style="font-size: 14px;">Colin Dickson</span></td>
+		</tr>
+		<tr valign="top">
+			<td width="79"><strong><span style="font-size: 14px;">2010</span></strong></td>
+			<td width="180"><span style="font-size: 14px;">Beryl Blackhall</span></td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">2009</span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Ian MacMillan</span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">2008</span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Pat Martin</span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">2007</span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Brian Parker </span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">2006 </span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Peter Guillaume </span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">2005 </span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Sue Denmark </span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">2004 </span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Frank Rose </span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">2003 </span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Colin Henderson</span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">2002</span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Mike Hardy</span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">2001</span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Dick Carmichael</span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">2000</span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Doug Peel</span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">1999</span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Terry Dooris</span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">1998</span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Ann Smith</span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">1997</span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Keith &amp; Susan Marsden</span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">1996</span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Ken Broad</span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">1995</span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Terry O&rsquo;Brien</span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">1994</span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Stan &amp; Verena Johnston</span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">1993</span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Martin Hyman</span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">1992</span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Marlene Palmer</span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">1991</span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Vic &amp; Betty Roberts</span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">1990</span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Marjorie Challis</span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">1989</span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Roy Parkinson</span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">1988</span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">John Crosby</span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">1987</span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Gareth Bryan-Jones</span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">1986</span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Noel Bogle</span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">1985</span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Laurie Bradley</span></span></span></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="79">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">1984</span></span></span></strong></p>
+			</td>
+			<td width="180">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 14px;"><span style="font-family: times new roman;"><span style="font-family: arial;">Dave Gittus</span></span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p style="margin-bottom: 0pt;">&nbsp;</p>
+
+<p style="text-align: right;"><span style="font-size: 14px;"><a href="#">Back to top</a></span></p>
+
+
+
+</div>
+<div id="clearfooter"></div>
+</div>
+<div id="footer"><br />
+<strong>British Orienteering</strong>, Scholes Mill, Old Coach Road, Tansley, Matlock, Derbyshire, DE4 5FY<br />
+<strong>Tel:</strong> 01629 583037, <strong>Email:</strong> <a href="mailto:info@britishorienteering.org.uk">info@britishorienteering.org.uk</a></div></div>
+</body>
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33337735-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
+
+</html>

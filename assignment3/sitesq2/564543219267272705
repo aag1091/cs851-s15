@@ -1,0 +1,2069 @@
+
+
+	
+
+
+	
+	
+		
+
+
+									
+
+	
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="http://cdn.bankinvestmentconsultant.com/custom/js/jquery.jcarousel.js" ></script>
+	<script type="text/javascript" src="http://cdn.bankinvestmentconsultant.com/custom/js/utilities.js"></script>
+
+		
+			
+		
+<script>
+		window.showInterstitial = false;
+		window.showWelcomeAd = false;
+</script>
+
+		
+	<link rel="stylesheet" type="text/css" href="http://cdn.bankinvestmentconsultant.com/css/wa-styles.css">
+		<style>		
+									.welcome-overlay a.continue { color: #000000; }
+							#wait { display: none; }
+			
+	</style><!-- /css overrides -->		
+					
+			
+
+		
+	<script>
+	(function($){ // anon function
+		var debug = false;
+		
+		window.welcomeId = 'bic';
+		if (debug) console.log("Welcome Id: "+welcomeId);
+		welcomeId += welcomeId ? '_' : '';
+		var waDomain = ".bankinvestmentconsultant.com";
+				
+		// General Cookie functions
+		setCookie = function(cookieName, cookieValue, expire) {
+			if (expire) {
+				var expires = "; expires=" + expire.toGMTString();
+			}
+			else var expires = "";
+			document.cookie = cookieName + "=" +  escape(cookieValue) + "; domain=" + escape(waDomain) + expires + "; path=/";
+		}
+		
+		getCookie = function(cookieName) {
+			var i,x,y,ARRcookies=document.cookie.split(";");
+			for (i=0;i<ARRcookies.length;i++) {
+				x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+				y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+				x=x.replace(/^\s+|\s+$/g,"");
+				if (x==cookieName) {
+					return unescape(y);
+				}
+			}
+			return null;
+		}
+	
+		function deleteCookie (name) {
+			var exp = new Date();
+			exp.setTime (exp.getTime() - 1);
+			var cval = getCookie (name);
+			document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
+		}
+		// END - General Cookie functions
+
+		if (debug) console.log('function loaded and called.');
+
+		// check if the welcome ad should fire
+		var userAgent = navigator.userAgent;
+		if (userAgent.indexOf("Sailthru Content Spider") == -1){
+			var now = (new Date()).getTime();
+			var interval = (1-0) * 60000;
+			var maxCount = 1 - 0;
+			var expire = (new Date()).getTime() + (24-0) * 3600000;
+			expire = new Date(expire);
+			if (getCookie(welcomeId + "wa_first") == null) { // never seen
+				setCookie(welcomeId + "wa_first", now, expire);
+				setCookie(welcomeId + "wa_last", now, expire);
+				setCookie(welcomeId + "wa_count", 1, expire);
+				showInterstitial = 'Welcome Ad';
+				showWelcomeAd = true;
+				if (debug) console.log('NEW. now: '+now+', expire: '+expire+', count: 1');
+			} else {
+				var count = getCookie(welcomeId + "wa_count") - 0;
+				var last_seen = getCookie(welcomeId + "wa_last") - 0;
+				if (interval > 0 && last_seen + interval < now && count < maxCount) {
+					setCookie(welcomeId + "wa_last", now, expire);
+					setCookie(welcomeId + "wa_count", count + 1, expire);
+					showInterstitial = 'Welcome Ad';
+					showWelcomeAd = true;
+					if (debug) console.log('now: '+now+', expire: '+expire+', count: '+(count+1)+' of '+maxCount);
+				} else if (debug) {
+					console.log('now: '+now+', expire: '+expire+', count: '+count+' of '+maxCount+', next: '+(last_seen+interval)+', diff: '+(last_seen+interval-now));
+				}
+			}
+			if (debug) console.log('showInterstitial: '+showInterstitial+', showWelcomeAd: '+showWelcomeAd);
+		} // end showWelcomeAd check
+
+		if (showWelcomeAd){
+		
+			$(function(){ // doc ready
+				if (debug) console.log('showing ad');
+			
+				function goBack(){
+					$('.welcome-overlay').hide();
+					$('html, body').css({overflow:""});
+				}
+				
+				var timer = 10000;
+				var count= timer/1000;
+				var timeSpent=0;
+				var counter;
+				function countdown(){
+					timeSpent++;
+					if (count-- <= 0) {
+						clearInterval(counter);
+						ga('send', 'event', 'Overlay Welcome Ad', 'Auto Redirect to Site');
+						goBack();
+						return;
+					}
+				}
+				counter=setInterval(countdown, 1000); //1000 will run it every 1 second
+
+				ga('send', 'event', 'Overlay Welcome Ad', 'Impression');
+				$('#wait').click(function() {
+					clearInterval(counter);
+					goBack();
+					ga('send', 'event', 'Overlay Welcome Ad', 'Skip Ad', 'Time Spent on Ad',timeSpent);
+				});
+								setTimeout(function(){$('#wait').show();},1500);
+							}); // end doc ready
+		} // end if showWelcomeAd		
+
+	})(jQuery);
+	</script>
+
+
+		<script type="text/javascript" src="http://cdn.bankinvestmentconsultant.com/custom/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+	<link rel="stylesheet" href="http://cdn.bankinvestmentconsultant.com/custom/js/fancybox/jquery.fancybox-1.3.4.css" type="text/css" />
+
+		<script type="text/javascript" src="http://cdn.bankinvestmentconsultant.com/custom/js/jquery.functions.js"></script>
+
+				
+			
+		<title>Can Clients Achieve Their Retirement Dreams? | Bank Investment Consultant</title>
+	<link rel="Shortcut Icon" href="http://cdn.bankinvestmentconsultant.com/media/ui/bic/bic.ico?v=89" />
+	<link rel="apple-touch-icon" href="http://cdn.bankinvestmentconsultant.com/media/ui/bic-apple-touch-icon-precomposed.png" />
+
+			<meta name="title" content="Can Clients Achieve Their Retirement Dreams? | Bank Investment Consultant" />
+		
+					<meta name="robots" content="noindex" />
+				
+																	<link rel="canonical" href="http://www.onwallstreet.com/news/retirement_planning/can-clients-achieve-their-retirement-dreams-2691853-1.html" />
+			
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+
+	<meta name="robots" content="noarchive" />
+		
+		
+				<meta name="news_keywords" content="Ameriprise, retirement, wealth management, Marcy Keckler" />
+		<meta name="description" content="According to a new study, only 46% of new retirees are confident that they can afford the lifestyle they want in retirement." />
+
+	
+					
+	<meta property="og:title" content="Can Clients Achieve Their Retirement Dreams?" />	<meta property="og:site_name" content="IAG Breaking News" />	<meta property="og:url" content="http://www.bankinvestmentconsultant.com/news/retirement_planning/can-clients-achieve-their-retirement-dreams-2691853-1.html" />	<meta property="og:description" content="According to a new study, only 46% of new retirees are confident that they can afford the lifestyle they want in retirement." />
+			
+	<meta property="og:image" content="http://cdn.bankinvestmentconsultant.com/media/ui/BIC_FB180x180.png" />
+
+	
+	
+	<link rel="stylesheet" type="text/css" media="Screen" href="http://cdn.bankinvestmentconsultant.com/css/shared-styles.css?v=04031518" />
+	<link rel="stylesheet" type="text/css" media="Screen" href="http://cdn.bankinvestmentconsultant.com/css/zoomfixes.css?v=04031518" />
+
+	
+	<link rel="stylesheet" type="text/css" href="http://cdn.bankinvestmentconsultant.com/custom/js/jcarousel/skins/tango/skin.css?v=04031518" />
+	<link rel="stylesheet" type="text/css" href="http://cdn.bankinvestmentconsultant.com/css/boxes.css" />
+	<!--[if IE 7]>
+	<style>
+			#two-col-layout {overflow:visible;}
+			#footer {display:inline-block;}
+			#content {display:inline-block;}
+	</style>
+	<![endif]-->
+
+		
+							
+		
+
+	
+			
+		
+				
+					
+				
+				
+					
+						
+				
+	
+
+		
+	
+	
+	
+
+				
+							<script type="text/javascript">
+			(function() {
+				var useSSL = 'https:' == document.location.protocol;
+				var src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+				document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+			})();
+		</script>
+		<script>
+		
+var bigbox1 = googletag.defineSlot("/16059533/BankInvestmentConsultant/Channels/RetirementPlanning/Article", [[300, 250],[300,600]], "bigbox1")
+	.addService(googletag.pubads())
+	.setTargeting("bic_pos", "bigbox1");
+var bigbox2 = googletag.defineSlot("/16059533/BankInvestmentConsultant/Channels/RetirementPlanning/Article", [[300, 250],[300,600]], "bigbox2")
+	.addService(googletag.pubads())
+	.setTargeting("bic_pos", "bigbox2");
+var bigbox3 = googletag.defineSlot("/16059533/BankInvestmentConsultant/Channels/RetirementPlanning/Article", [[300, 250],[300,600]], "bigbox3")
+	.addService(googletag.pubads())
+	.setTargeting("bic_pos", "bigbox3");
+
+if (showWelcomeAd) { var welcomead = googletag.defineSlot("/16059533/BankInvestmentConsultant/Channels/RetirementPlanning/Article", [640, 480], "welcomead")
+	.addService(googletag.pubads())
+	.setTargeting("bic_pos", "welcomead") };
+var leaderboard = googletag.defineSlot("/16059533/BankInvestmentConsultant/Channels/RetirementPlanning/Article", [728, 90], "leaderboard")
+	.addService(googletag.pubads())
+	.setTargeting("bic_pos", "leaderboard");
+var interstitialbug = googletag.defineSlot("/16059533/BankInvestmentConsultant/Channels/RetirementPlanning/Article", [1, 1], "interstitialbug")
+	.addService(googletag.pubads())
+	.setTargeting("bic_pos", "interstitialbug");
+var interstitialmain = googletag.defineOutOfPageSlot("/16059533/BankInvestmentConsultant/Channels/RetirementPlanning/Article", "interstitialmain")
+	.addService(googletag.pubads())
+	.setTargeting("bic_pos", "interstitialmain");
+var pushdown = googletag.defineSlot("/16059533/BankInvestmentConsultant/Channels/RetirementPlanning/Article", [[970, 66],[970, 90]], "pushdown")
+	.addService(googletag.pubads())
+	.setTargeting("bic_pos", "pushdown");
+
+var bottombanner = googletag.defineSlot("/16059533/BankInvestmentConsultant/Channels/RetirementPlanning/Article", [728, 90], "bottombanner")
+	.addService(googletag.pubads())
+	.setTargeting("bic_pos", "bottombanner");
+
+googletag.pubads().enableSyncRendering();
+//googletag.pubads().enableSingleRequest();
+		googletag.enableServices();
+		</script>
+		
+
+		<!--[if lt IE 7]>
+		<script type="text/javascript" src="http://cdn.bankinvestmentconsultant.com/custom/js/ie7/IE9.js"></script>
+	<![endif]-->
+	
+	<script type="text/javascript">function addClassNames() { return false; }</script>
+		
+
+		<meta name="sailthru.title" content="Can Clients Achieve Their Retirement Dreams?" />
+	<meta name="sailthru.author" content="Andrew Welsch" />
+	<meta name="sailthru.description" content="According to a new study, only 46% of new retirees are confident that they can afford the lifestyle they want in retirement." />
+	<meta name="type" content="Article" />
+	<meta name="sailthru.tags" content="News, On Wall Street, Retirement Planning, Financial Planning, Bank Investment Consultant, Practice Management, Retirement Planning, Ameriprise, retirement, wealth management, Marcy Keckler, Article" />
+	<meta name="featured" content="0" />
+	<meta name="sailthru.date" content="2015-02-03 17:01:00" />
+	<meta name="sailthru.expire_date" content="2015-03-03 17:01:00" />
+	<meta name="wordcount" content="443" />
+	<meta name="domain" content="Bank Investment Consultant" />
+	<meta name="brand" content="IAG Breaking News" />
+	<meta name="status" content="open" />
+
+	<!-- Sailthru Horizon -->
+	<script type='text/javascript' src='http://ak.sail-horizon.com/horizon/v1.js'></script>
+	<script type='text/javascript'>
+	$(function() {
+		// Sailthru Concierge
+		if (window.Sailthru) {
+		  Sailthru.setup({
+			domain: 'horizon.email.bankinvestmentconsultant.com'
+		  });
+		}
+		// Open Sailthru link in new Window
+		var checkLink = true;
+		$(window).scroll(function () {
+		  var checkObject = $('.sailthruRecommendation').is(':hidden');
+		  if (checkLink && !checkObject) {
+			$('.recommendationFooter a').attr('target','_blank');
+			checkLink = false;
+		  }
+		});
+	});
+	</script>
+
+	
+<!-- Start Google Analytics Code -->
+<!-- Universal GA code for all sites -->
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+	ga('create', 'UA-219761-24', 'bankinvestmentconsultant.com', {
+		'allowLinker': true
+	});
+	ga('require', 'linkid', 'linkid.js'); 
+	ga('require', 'linker');
+	ga('require', 'displayfeatures');
+	ga('linker:autoLink', ['sourcemediaconferences.com']);
+	ga('set', 'dimension1', 'Story--20150203--2691853--Andrew Welsch');
+	ga('set', 'dimension2', 'news-news');
+	ga('set', 'dimension3', 'non-registered-user');
+	ga('set', 'dimension4', 'No');
+	ga('set', 'dimension5', 'Free');
+	
+	ga('send', 'pageview');
+	
+
+</script>
+
+
+<script type="text/javascript" src="http://platform.linkedin.com/in.js"></script>
+<script type="text/javascript">
+$(window).ready(function() {
+	$('.share-linkedin').click(function() {
+		ga('send', 'social', 'LinkedIn', 'Share', 'Can Clients Achieve Their Retirement Dreams? | Bank Investment Consultant', '/news/retirement_planning/can-clients-achieve-their-retirement-dreams-2691853-1.html');
+	});
+});
+</script>
+<script type="text/javascript" src="http://cdn.bankinvestmentconsultant.com/media/js/pi_biciagroup_article.js"></script></head>
+
+<body id="article" class="bic">
+
+
+	
+	
+			
+		<div class="welcome-overlay" style="display:none;">
+			<div class="interstitial_ad_wrapper">
+				<div class="header">
+					<div class="thought_of_the_day">
+						<img class="welcome-logo" src="http://cdn.bankinvestmentconsultant.com/media/newspics/bic-header-logo.png" alt="">
+					</div>
+					<div class="continue">
+						<div class="holdMe"><a id="wait" class="continue">Continue to Site &raquo;</a></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="ad_wrapper"><center><p>ADVERTISEMENT</p><div id="welcomead" style="width: 640px;height: 480px;">
+	<script type="text/javascript">
+		if (showWelcomeAd) { googletag.display("welcomead") }
+	</script>
+</div></center></div>
+			</div>
+		</div>
+		<script>
+			if (showWelcomeAd) {
+				$('.welcome-overlay').show();
+				$('html, body').css({overflow: "hidden"});
+			}
+		</script>
+		
+	
+	<div id="interstitialbug" style="width: 1px;height: 1px;">
+	<script type="text/javascript">
+		googletag.display("interstitialbug")
+	</script>
+</div>
+	<div id="interstitialmain" >
+	<script type="text/javascript">
+		googletag.display("interstitialmain")
+	</script>
+</div>
+
+<div id="fb-root"></div>
+<script>
+	window.fbAsyncInit = function() {
+	FB.init({
+		status	 : true, // check login status
+		cookie	 : true, // enable cookies to allow the server to access the session
+		xfbml		: true	// parse XFBML
+	});
+	// Additional initialization code here
+			FB.Event.subscribe('edge.create', function(targetUrl) {
+			ga('send', 'social', 'facebook', 'like', 'Can Clients Achieve Their Retirement Dreams? | Bank Investment Consultant', '/news/retirement_planning/can-clients-achieve-their-retirement-dreams-2691853-1.html');
+		});
+			};
+	// Load the SDK Asynchronously
+	(function(d){
+	 var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+	 if (d.getElementById(id)) {return;}
+	 js = d.createElement('script'); js.id = id; js.async = true;
+	 js.src = "//connect.facebook.net/en_US/all.js";
+	 ref.parentNode.insertBefore(js, ref);
+	}(document));
+</script>
+
+<a id="survey" href="/survey/bic_intercept_landing.html" class="iframe" rel="nofollow"></a>
+
+<div id="header" class="clearfix">
+	<div id="header-content" class="clearfix">
+		<div class="leaderboard-ad">
+			<div id="leaderboard" style="width: 728px;height: 90px;">
+	<script type="text/javascript">
+		googletag.display("leaderboard")
+	</script>
+</div>
+		</div>
+	</div>
+
+		
+	<div id="header-bottom" class="clearfix">
+
+				<div id="logo" class="left">
+			<a href="http://www.bankinvestmentconsultant.com"><img src="http://cdn.bankinvestmentconsultant.com/media/ui/bic-header-logo3.png" alt="Bank Investment Consultant" style="display:block;" /></a>
+		</div>
+				<div id="search" class="right">
+		<div class="holder clearfix">
+				<div class="links-holder right">
+					<div class="links top">
+			<a href="/register">Sign Up</a> &nbsp; | &nbsp; <a href="#signInContainer" class="fancybox">Sign In</a>					</div>
+				</div>
+		</div>
+		<div class="holder clearfix">
+			<div id="search-box" class="right">
+				<form name="search" id="form1" action="/search/index.html">
+					<input type="hidden" name="zkDo" value="search" id="zkDo" />
+					<input type="hidden" name="frommonth" value="10" />
+					<input type="hidden" name="fromday" value="03" />
+					<input type="hidden" name="fromyear" value="2013" />
+					<input type="hidden" name="tomonth" value="04" />
+					<input type="hidden" name="today" value="03" />
+					<input type="hidden" name="toyear" value="2015" />
+					<input type="hidden" name="publication" value="all_articles" />
+					<div class="left" id="search-text"><input name="query" id="term" /></div>
+					<div class="left" id="search-button"><input type="image" src="http://cdn.bankinvestmentconsultant.com/media/ui/mag-glass.png" /></div>
+				</form>
+			</div><!-- search box -->
+			<div class="social-media clearfix right">
+																										<a href="http://www.facebook.com/pages/Bank-Investment-Consultant/228500867183371" target="_blank"><img src="http://cdn.bankinvestmentconsultant.com/media/ui/facebook-20x20.png" /></a>
+				<a href="http://twitter.com/BIConline" target="_blank"><img src="http://cdn.bankinvestmentconsultant.com/media/ui/twitter-20x20.png" /></a>
+				<a href="http://www.linkedin.com/groups/Bank-Investment-Consultant-4035254" target="_blank"><img src="http://cdn.bankinvestmentconsultant.com/media/ui/linkedin-20x20.png" /></a>
+				<a href="http://plus.google.com/+Bankinvestmentconsultant"><img src="http://cdn.bankinvestmentconsultant.com/media/ui/google-20x20.png"></a>
+			</div>
+		</div>
+	</div><!-- search -->
+</div><!-- header-bottom -->
+
+</div>
+
+<div id="global-menu" class="clearfix">
+	<div class="nav-container">
+		<div id="publication-links" class="right">
+		<a href="http://www.bankinvestmentconsultant.com/events/">Events</a>  | <a href="http://www.bankinvestmentconsultant.com/ce_quiz/">CE Quiz</a> | <a href="http://www.bankinvestmentconsultant.com/channels/tax_strategies_scan.html">Tax Strategies Scan</a>
+		</div>
+	</div>
+</div>
+
+<div id="wrapper">
+	
+
+
+
+		
+		
+<div id="primary-menu">
+    <div class="nav-container">
+        <ul class="nav-items">
+			<li class="first off nav-item"><a href="http://www.bankinvestmentconsultant.com/">home</a></li>
+            <li class="off nav-item" id="menu-1"><a href="http://www.bankinvestmentconsultant.com/practice/">practice</a></li>
+            <li class="off nav-item" id="menu-2"><a href="http://www.bankinvestmentconsultant.com/portfolio/">portfolio</a></li>
+            <li class="off nav-item" id="menu-3"><a href="http://www.bankinvestmentconsultant.com/industry/">industry</a></li>
+            <li class="off nav-item" id="menu-4"><a href="http://www.bankinvestmentconsultant.com/video/">multimedia</a></li>
+            <li class="off nav-item" id="menu-5"><a href="http://www.bankinvestmentconsultant.com/blogs/">blogs</a></li>
+            <li class="off nav-item" id="menu-6"><a href="http://www.bankinvestmentconsultant.com/forums/">careers</a></li>
+            <li class="off nav-item flyout-last" id="menu-7"><a href="http://www.bankinvestmentconsultant.com/bd_scorecard/index.html?djoPage=summary">data &amp; rankings</a></li>
+        </ul>
+    </div><!-- content center -->
+</div><!-- primary-menu -->
+
+
+  <script type="text/javascript">
+
+	$(document).ready(function() {
+		var delayAmount=100;
+		$("#menu-1").hover(
+		  function () {
+			$("#hidden-4").delay(delayAmount).fadeIn();
+			$("#menu-1").addClass("on");
+		  },
+		  function () {
+			$("#hidden-4").hide();
+			$("#hidden-4").clearQueue();
+			$("#menu-1").removeClass("on");
+		  }
+		);
+
+		$("#menu-2").hover(
+		  function () {
+			$("#hidden-5").delay(delayAmount).fadeIn();
+			$("#menu-2").addClass("on");
+		  },
+		  function () {
+			$("#hidden-5").hide();
+			$("#hidden-5").clearQueue();
+			$("#menu-2").removeClass("on");
+		  }
+		);
+
+		$("#menu-3").hover(
+		  function () {
+			$("#hidden-6").delay(delayAmount).fadeIn();
+			$("#menu-3").addClass("on");
+		  },
+		  function () {
+			$("#hidden-6").hide();
+			$("#hidden-6").clearQueue();
+			$("#menu-3").removeClass("on");
+		  }
+		);
+
+		$("#menu-4").hover(
+		  function () {
+			$("#hidden-7").delay(delayAmount).fadeIn();
+			$("#menu-4").addClass("on");
+		  },
+		  function () {
+			$("#hidden-7").hide();
+			$("#hidden-7").clearQueue();
+			$("#menu-4").removeClass("on");
+		  }
+		);
+		$("#menu-5").hover(
+		  function () {
+			$("#hidden-1").delay(delayAmount).fadeIn();
+			$("#menu-5").addClass("on");
+		  },
+		  function () {
+			$("#hidden-1").hide();
+			$("#hidden-1").clearQueue();
+			$("#menu-5").removeClass("on");
+		  }
+		);
+
+		$("#menu-6").hover(
+		  function () {
+			$("#hidden-2").delay(delayAmount).fadeIn();
+			$("#menu-6").addClass("on");
+		  },
+		  function () {
+			$("#hidden-2").hide();
+			$("#hidden-2").clearQueue();
+			$("#menu-6").removeClass("on");
+		  }
+		);
+
+		$("#menu-7").hover(
+		  function () {
+			$("#hidden-3").delay(delayAmount).fadeIn();
+			$("#menu-7").addClass("on");
+		  },
+		  function () {
+			$("#hidden-3").hide();
+			$("#hidden-3").clearQueue();
+			$("#menu-7").removeClass("on");
+		  }
+		);
+
+		$("#menu-8").hover(
+		  function () {
+			$("#hidden-3").delay(delayAmount).fadeIn();
+			$("#menu-8").addClass("on");
+		  },
+		  function () {
+			$("#hidden-3").hide();
+			$("#hidden-3").clearQueue();
+			$("#menu-8").removeClass("on");
+		  }
+		);
+
+		$("#hidden-1").hover(
+		  function () {
+			$("#hidden-1").show();
+
+		  },
+		  function () {
+			$("#hidden-1").hide();
+		  }
+		);
+		$("#hidden-2").hover(
+		  function () {
+			$("#hidden-2").show();
+		  },
+		  function () {
+			$("#hidden-2").hide();
+		  }
+		);
+		$("#hidden-3").hover(
+		  function () {
+			$("#hidden-3").show();
+		  },
+		  function () {
+			$("#hidden-3").hide();
+		  }
+		);
+		$("#hidden-4").hover(
+		  function () {
+			$("#hidden-4").show();
+		  },
+		  function () {
+			$("#hidden-4").hide();
+		  }
+		);
+		$("#hidden-5").hover(
+		  function () {
+			$("#hidden-5").show();
+		  },
+		  function () {
+			$("#hidden-5").hide();
+		  }
+		);
+		$("#hidden-6").hover(
+		  function () {
+			$("#hidden-6").show();
+		  },
+		  function () {
+			$("#hidden-6").hide();
+		  }
+		);
+	  $("#hidden-7").hover(
+		  function () {
+			$("#hidden-7").show();
+		  },
+		  function () {
+			$("#hidden-7").hide();
+		  }
+		);
+		$("#hidden-8").hover(
+		  function () {
+			$("#hidden-8").show();
+		  },
+		  function () {
+			$("#hidden-8").hide();
+		  }
+		);
+	});
+
+</script>
+
+<div id="hidden-4" class="hidden-div hidden-div-btn" style="display:none;">
+    <div class="clear">
+        <div class="col-1 left">
+	        <h2>Topics</h2>
+					      	<div class="blog-watch-item">
+									<a href="/channels/career_advice.html" class="accent">Career Advice</a>
+								</div>
+					      	<div class="blog-watch-item">
+							      	<a href="/ce_quiz/" class="accent">CE Quiz</a>
+			  				</div>
+					      	<div class="blog-watch-item">
+									<a href="/channels/client.html" class="accent">Client</a>
+								</div>
+					      	<div class="blog-watch-item">
+									<a href="/channels/mass_affluent.html" class="accent">Mass Affluent</a>
+								</div>
+					      	<div class="blog-watch-item">
+									<a href="/channels/marketing.html" class="accent">Marketing</a>
+								</div>
+					      	<div class="blog-watch-item">
+									<a href="/channels/practice_management.html" class="accent">Practice Management</a>
+								</div>
+					      	<div class="blog-watch-item">
+									<a href="/channels/recruiting.html" class="accent">Recruiting</a>
+								</div>
+					      	<div class="blog-watch-item">
+									<a href="/channels/regulatory_compliance.html" class="accent">Regulatory/Compliance</a>
+								</div>
+					      	<div class="blog-watch-item">
+									<a href="/channels/retirement_planning.html" class="accent">Retirement Planning</a>
+								</div>
+					      	<div class="blog-watch-item">
+									<a href="/channels/social_media.html" class="accent">Social Media</a>
+								</div>
+					      	<div class="blog-watch-item">
+									<a href="/channels/succession_planning.html" class="accent">Succession Planning</a>
+								</div>
+			        </div>
+        <div class="col-2 left">
+            <h2>Most Recent</h2>
+						
+								        			      			        <div class="article-related-links-item">
+			            <a href="/news/investment_insights/long-treasuries-offer-income-plus-safety-2692439-1.html">Long Treasuries Offer Income Plus Safety</a>
+			        </div>
+			      			        <div class="article-related-links-item">
+			            <a href="/news/bank_channel/new-pay-rules-for-bank-advisors-2692396-1.html">New Pay Rules for Bank Advisors</a>
+			        </div>
+			      			        <div class="article-related-links-item">
+			            <a href="/news/recruiting/raymond-james-grabs-1m-producer-2692386-1.html">Raymond James Grabs $1M Producer</a>
+			        </div>
+			      			        <div class="article-related-links-item">
+			            <a href="/news/retirement_planning/can-these-policy-fixes-help-your-clients-retirement-scan-2692381-1.html">Can These Policy Fixes Help Your Clients?: Retirement Scan</a>
+			        </div>
+			      			        <div class="article-related-links-item">
+			            <a href="/news/bank_channel/catering-to-biz-owners-sterling-national-partners-with-ameriprise-2692358-1.html">Catering to Biz Owners, Sterling National Partners With Ameriprise</a>
+			        </div>
+			      			        <div class="article-related-links-item">
+			            <a href="/news/career_advice/is-asset-growth-easier-at-banks-2692351-1.html">Is Asset Growth Easier at Banks?</a>
+			        </div>
+			      			        <div class="article-related-links-item">
+			            <a href="/news/regulatory_compliance/after-8-years-morgan-stanley-claws-back-380k-from-ex-employee-2692348-1.html">After 8 Years, Morgan Stanley Claws Back $380K From Ex-Employee</a>
+			        </div>
+			      			        <div class="article-related-links-item last-item">
+			            <a href="/news/client/get-better-feedback-from-clients-2692346-1.html">Get Better Feedback From Clients</a>
+			        </div>
+			      			              </div>
+        <div class="col-3 left">
+            <h2>Commentary & Ideas</h2>
+            
+            			      									      			      	  <div class="article-related-links-item">
+			        	<div class="clearfix">
+	                		              																													
+																					              		              <div class="left img-holder">
+		                  <img width="110" src="http://cdn.bankinvestmentconsultant.com/media/newspics/MeaganHency.jpg" />
+		              </div>
+		              			        		<div class="title left"><a href="/blogs/4-tips-to-fix-advisor-websites-2692435-1.html">4 Tips to Fix Advisor Websites</a></div>
+			          </div>
+			        </div>
+			      									      			      	  <div class="article-related-links-item last-item">
+			        	<div class="clearfix">
+	                		              																													
+																					              			        		<div class="title left" style="width:100%;"><a href="/blogs/with-fiduciary-rules-pending-get-your-compliance-act-in-order-now-2692349-1.html">With Fiduciary Rules Pending, Get Your Compliance Act in Order -- Now</a></div>
+			          </div>
+			        </div>
+			      									      			                  <div class="read-more right"><a href="http://www.bankinvestmentconsultant.com/blogs/"><img src="http://cdn.bankinvestmentconsultant.com/media/ui/hidden-more-btn.png"></a></div>
+
+						
+												<div style="clear:both;"></div>
+            <h2>Retirement Scan</h2>
+			      									      			      	  <div class="article-related-links-item last-item">
+			        	<div class="clearfix">
+	                											              			        		<div class="title left" style="width:100%;"><a href="/news/retirement_planning/think-twice-about-roth-ira-conversions-retirement-scan-2692448-1.html">Think Twice About Roth IRA Conversions: Retirement Scan</a></div>
+			          </div>
+			        </div>
+			      									                  <div class="read-more right"><a href="http://www.bankinvestmentconsultant.com/channels/retirement_scan.html"><img src="http://cdn.bankinvestmentconsultant.com/media/ui/hidden-more-btn.png"></a></div>
+                    </div>  
+                
+        
+        <div class="col-4 left">
+            <h2>Multimedia</h2>
+
+              		          		            
+		          
+		          		          
+					  	
+	    			<div class="article-related-links-item">
+							<p><a href="/video/do-solo-advisors-have-a-future2691965-1.html">Do Solo Advisors Have a Future?</a> The industry has largely moved to a team model, but some advisors may finish out their careers as 'bachelors,' says John Taft, CEO of RBC's U.S. wealth management division.</p>
+	    			</div>
+	    			<div class="multimedia-holder"><a href="/video/do-solo-advisors-have-a-future2691965-1.html"><img width="208" src="http://cdn.bankinvestmentconsultant.com/media/newspics/ADTV_Taft_280.jpg"></a></div>
+	    			<div class="read-more right"><a href="http://www.bankinvestmentconsultant.com/video/"><img src="http://cdn.bankinvestmentconsultant.com/media/ui/hidden-more-btn.png"></a></div>
+        </div>
+    </div>
+</div>
+
+
+<div id="hidden-5" class="hidden-div hidden-div-btn" style="display:none;">
+
+    <div class="clear">
+        <div class="col-1 left">
+        	<h2>Topics</h2>
+							      	<div class="blog-watch-item">
+			      	<a href="/channels/alternative_investments.html" class="accent">Alternative Investments</a>
+			      </div>
+							      	<div class="blog-watch-item">
+			      	<a href="/channels/annuities.html" class="accent">Annuities</a>
+			      </div>
+							      	<div class="blog-watch-item">
+			      	<a href="/channels/college_savings_plans.html" class="accent">College Savings Plans</a>
+			      </div>
+							      	<div class="blog-watch-item">
+			      	<a href="/channels/estate_planning.html" class="accent">Estate Planning</a>
+			      </div>
+							      	<div class="blog-watch-item">
+			      	<a href="/channels/etfs.html" class="accent">ETFs</a>
+			      </div>
+							      	<div class="blog-watch-item">
+			      	<a href="/channels/fixed_income.html" class="accent">Fixed Income</a>
+			      </div>
+							      	<div class="blog-watch-item">
+			      	<a href="/channels/global_investing.html" class="accent">Global Investing</a>
+			      </div>
+							      	<div class="blog-watch-item">
+			      	<a href="/channels/insurance.html" class="accent">Insurance</a>
+			      </div>
+							      	<div class="blog-watch-item">
+			      	<a href="/channels/investment_insights.html" class="accent">Investment Insights</a>
+			      </div>
+							      	<div class="blog-watch-item">
+			      	<a href="/channels/investment_products.html" class="accent">Investment Products</a>
+			      </div>
+							      	<div class="blog-watch-item">
+			      	<a href="/channels/iras_401k.html" class="accent">IRAs/401K</a>
+			      </div>
+							      	<div class="blog-watch-item">
+			      	<a href="/channels/mutual_funds.html" class="accent">Mutual Funds</a>
+			      </div>
+							      	<div class="blog-watch-item">
+			      	<a href="/channels/philanthropy.html" class="accent">Philanthropy</a>
+			      </div>
+							      	<div class="blog-watch-item">
+			      	<a href="/channels/reits.html" class="accent">REITs</a>
+			      </div>
+					        </div>
+        <div class="col-2 left">
+            <h2>Most Recent</h2>
+            
+								        			      			        <div class="article-related-links-item">
+			            <a href="/news/regulatory_compliance/advisor-reminder-rmd-deadline-approaching-2692274-1.html">Advisor Reminder: RMD Deadline Approaching</a>
+			        </div>
+			      			        <div class="article-related-links-item">
+			            <a href="/news/tax_planning/besting-the-index-fund-tax-strategies-scan-2692270-1.html">Besting the Index Fund: Tax Strategies Scan</a>
+			        </div>
+			      			        <div class="article-related-links-item">
+			            <a href="/news/retirement_planning/deadline-for-first-ira-withdrawal-almost-here-retirement-scan-2692268-1.html">Deadline for First IRA Withdrawal Almost Here: Retirement Scan</a>
+			        </div>
+			      			        <div class="article-related-links-item">
+			            <a href="/news/etfs/investors-pull-6-billion-from-bond-etfs-amid-fed-concerns-2692261-1.html">Investors Pull $6.1B From Bond ETFs Amid Fed Concerns</a>
+			        </div>
+			      			        <div class="article-related-links-item">
+			            <a href="/news/investment_insights/fed-deletes-patient-opens-door-to-june-rate-increase-2692259-1.html">Fed Deletes 'Patient'; Opens Door to June Rate Increase</a>
+			        </div>
+			      			        <div class="article-related-links-item">
+			            <a href="/news/retirement_planning/retirement-not-just-yet-retirement-scan-2692257-1.html">Retirement? Not Just Yet: Retirement Scan</a>
+			        </div>
+			      			        <div class="article-related-links-item">
+			            <a href="/news/investment_insights/study-is-there-a-better-small-cap-index-2692252-1.html">Study: Is There a Better Small-Cap Index?</a>
+			        </div>
+			      			        <div class="article-related-links-item last-item">
+			            <a href="/news/etfs/the-fastest-growing-etfs-2692250-1.html">The Fastest-Growing ETFs</a>
+			        </div>
+			      			              </div>
+        <div class="col-3 left">
+            <h2>Commentary & Ideas</h2>
+            
+            			      									      			      	  <div class="article-related-links-item">
+			        	<div class="clearfix">
+	                											              			        		<div class="title left" style="width:100%;"><a href="/blogs/the-real-reason-brokers-oppose-a-fiduciary-standard-2692089-1.html">Real Reason Brokers Oppose a Fiduciary Standard</a></div>
+			          </div>
+			        </div>
+			      									      			      	  <div class="article-related-links-item last-item">
+			        	<div class="clearfix">
+	                		              																													
+																					              		              <div class="left img-holder">
+		                  <img width="110" src="http://cdn.bankinvestmentconsultant.com/media/newspics/Kyle_Brownlee.jpg" />
+		              </div>
+		              			        		<div class="title left"><a href="/blogs/to-help-clients-teach-heirs-try-a-foundation-lite-2692075-1.html">To Help Clients Teach Heirs, Try a 'Foundation Lite'</a></div>
+			          </div>
+			        </div>
+			      									      			                  <div class="read-more right"><a href="http://www.bankinvestmentconsultant.com/blogs/"><img src="http://cdn.bankinvestmentconsultant.com/media/ui/hidden-more-btn.png"></a></div>
+            
+            
+												<div style="clear:both;"></div>
+            <h2>Tax Strategies Scan</h2>
+			      									      			      	  <div class="article-related-links-item last-item">
+			        	<div class="clearfix">
+	                											              			        		<div class="title left" style="width:100%;"><a href="/news/tax_planning/taxable-bond-investor-checklist-tax-strategies-scan-2692449-1.html">Taxable-Bond Investor Checklist: Tax Strategies Scan</a></div>
+			          </div>
+			        </div>
+			      									                  <div class="read-more right"><a href="http://www.bankinvestmentconsultant.com/channels/tax_strategies_scan.html"><img src="http://cdn.bankinvestmentconsultant.com/media/ui/hidden-more-btn.png"></a></div>
+                    </div>
+        <div class="col-4 left">
+            <h2>Multimedia</h2>
+
+              		          		            
+		          
+		          		          
+					  	
+	    			<div class="article-related-links-item">
+							<p><a href="/video/alternative-investments-in-todays-changing-environment-jackson2689427-1.html">Alternative Investments in Today&#146;s Changing Environment</a> &#133;</p>
+	    			</div>
+	    			<div class="multimedia-holder"><a href="/video/alternative-investments-in-todays-changing-environment-jackson2689427-1.html"><img width="208" src="http://cdn.bankinvestmentconsultant.com/media/newspics/jacks-alternative-investments-pi-small.jpg"></a></div>
+	    			<div class="read-more right"><a href="http://www.bankinvestmentconsultant.com/video/"><img src="http://cdn.bankinvestmentconsultant.com/media/ui/hidden-more-btn.png"></a></div>
+
+        </div>
+    </div>
+</div>
+
+
+<div id="hidden-6" class="hidden-div hidden-div-btn" style="display:none;">
+
+    <div class="clear">
+        <div class="col-1 left">
+        	<h2>Topics</h2>
+							      	<div class="blog-watch-item">
+			      	<a href="/channels/bank_channel.html" class="accent">Bank Channel</a>
+			      </div>
+							      	<div class="blog-watch-item">
+			      	<a href="/channels/boutiques.html" class="accent">Boutiques</a>
+			      </div>
+							      	<div class="blog-watch-item">
+			      	<a href="/channels/clearinghouses_custodians.html" class="accent">Clearinghouses/ Custodians</a>
+			      </div>
+							      	<div class="blog-watch-item">
+			      	<a href="/channels/private_banks.html" class="accent">Private Banks</a>
+			      </div>
+							      	<div class="blog-watch-item">
+			      	<a href="/channels/regionals.html" class="accent">Regionals</a>
+			      </div>
+							      	<div class="blog-watch-item">
+			      	<a href="/channels/third_party_marketers.html" class="accent">Third Party Marketers</a>
+			      </div>
+					        </div>
+        <div class="col-2 left">
+            <h2>Most Recent</h2>
+            
+								        			      			        <div class="article-related-links-item">
+			            <a href="/news/regulatory_compliance/former-brokers-with-bank-of-america-fifth-third-barred-2692432-1.html">Former Brokers With Bank of America, Fifth Third Barred</a>
+			        </div>
+			      			        <div class="article-related-links-item">
+			            <a href="/news/wirehouses/your-pay-their-plan-why-advisor-compensation-is-changing-2692430-1.html">Your Pay, Their Plan: Why Advisor Compensation Is Changing</a>
+			        </div>
+			      			        <div class="article-related-links-item">
+			            <a href="/news/high_net_worth/citigroup-targets-10-percent-jump-in-asian-wealth-management-assets-2692416-1.html">Citigroup Targets 10% Jump in Asian Wealth Management Assets</a>
+			        </div>
+			      			        <div class="article-related-links-item">
+			            <a href="/news/regulatory_compliance/sec-builds-investigation-into-jpmorgan-asset-management-unit-2692404-1.html">SEC Builds Investigation into JPMorgan Asset Management Unit</a>
+			        </div>
+			      			        <div class="article-related-links-item">
+			            <a href="/news/career_advice/the-psychology-of-success-2692392-1.html">The Psychology of Success</a>
+			        </div>
+			      			        <div class="article-related-links-item">
+			            <a href="/news/reinvent_wealth/check-cashing-shops-offer-bank-like-loyalty-programs-2692371-1.html">Check-Cashing Shops Offer Bank-Like Loyalty Programs</a>
+			        </div>
+			      			        <div class="article-related-links-item">
+			            <a href="/news/recruiting/stifel-recruits-advisors-managing-290m-2692368-1.html">Stifel Recruits Advisors Managing $290M</a>
+			        </div>
+			      			        <div class="article-related-links-item last-item">
+			            <a href="/news/reinvent_wealth/gmail-bill-pay-a-bigger-threat-to-banks-than-google-wallet-2692354-1.html">Gmail Bill Pay a Bigger Threat to Banks than Google Wallet</a>
+			        </div>
+			      			              </div>
+        <div class="col-3 left">
+            <h2>Commentary & Ideas</h2>
+            
+            			      									      			      	  <div class="article-related-links-item last-item">
+			        	<div class="clearfix">
+	                											              			        		<div class="title left" style="width:100%;"><a href="/blogs/how-branches-can-help-small-banks-bridge-the-generation-gap-2692129-1.html">How Branches Can Help Small Banks Bridge the Generation Gap</a></div>
+			          </div>
+			        </div>
+			      									      			                  <div class="read-more right"><a href="http://www.bankinvestmentconsultant.com/blogs/"><img src="http://cdn.bankinvestmentconsultant.com/media/ui/hidden-more-btn.png"></a></div>
+        </div>
+        <div class="col-4 left">
+            <h2>Multimedia</h2>
+
+              		          		            
+		          
+		          		          
+					  	
+	    			<div class="article-related-links-item">
+							<p><a href="/video/a-new-breed-of-advisor2691632-1.html">A 'New Breed' of Advisor</a> Kevin Reed, head of wealth management for Janney Montgomery Scott, explains how the firm is shifting its focus to meet the needs of a "new breed of FA."</p>
+	    			</div>
+	    			<div class="multimedia-holder"><a href="/video/a-new-breed-of-advisor2691632-1.html"><img width="208" src="http://cdn.bankinvestmentconsultant.com/media/newspics/Kevin_Reed_small_pic.jpg"></a></div>
+	    			<div class="read-more right"><a href="http://www.bankinvestmentconsultant.com/video/"><img src="http://cdn.bankinvestmentconsultant.com/media/ui/hidden-more-btn.png"></a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div id="hidden-2" style="display:none;" class="hidden-div">
+	<div class="clear">
+						
+				<div class="col-2 left" style="width:300px;">
+			<h2>Events</h2>
+									<div class="article-related-links-item">
+						<div class="title"><a href="http://www.onwallstreet.com/conferences/tax-strategies/">2014 Tax Strategies for Financial Advisors</a></div>
+						<div class="date">03/04/2014</div>
+											</div>
+									<div class="article-related-links-item last-item">
+						<div class="title"><a href="http://www.financial-planning.com/conferences/women-advisors-forum-dallas/">Women Advisors Forum -  Dallas</a></div>
+						<div class="date">5/21/14</div>
+											</div>
+						</div>
+						<div class="col-3 left" style="width:300px;">
+			<h2>Women Advisors Forum</h2>
+																						<div class="article-related-links-item">
+						<div class="clearfix">
+																									<div class="title left" style="width:100%;"><a href="http://www.bankinvestmentconsultant.com/conferences/women-advisors-forum/">Women Advisors Forum 2014</a>
+														<br /></div>
+						</div>
+					</div>
+																			<div class="article-related-links-item last-item">
+						<div class="clearfix">
+																									<div class="title left" style="width:100%;"><a href="https://www.linkedin.com/groups?gid=2801512&trk=my_groups-b-grp-v">Join the LinkedIn Group</a>
+														<br /></div>
+						</div>
+					</div>
+							
+			<div class="read-more right"><a href="http://www.bankinvestmentconsultant.com/forums/"><img src="http://cdn.bankinvestmentconsultant.com/media/ui/hidden-more-btn.png"></a></div>
+		</div>
+		<div class="col-4 left" style="width:285px;">
+			<h2>Fat-Stack</h2>
+			<img src="http://cdn.bankinvestmentconsultant.com/media/ui/fatstatcklogo.png" width="160" style="padding-top:5px;">
+			<p style="font-weight:bold;">WHY DO FINANCIAL ADVISORS COME TO FAT-STACK.COM?</p>
+			<div class="fs-item"><b>1)</b> To find firms that match their practice best.</div>
+			<div class="fs-item"><b>2)</b> To research and compare multiple firms.</div>
+			<div class="fs-item"><b>3)</b> To communicate anonymously with chosen firms</div>
+			<p>Whether you're ready now, or just curious about what other firms might be offering, Fat-Stack can help.</p>	
+			<a href="/fat-stack"><img src="http://cdn.bankinvestmentconsultant.com/media/ui/getstarted.png" style="padding-top:10px;"></a>
+		</div>
+	</div>
+</div>
+
+<div id="hidden-3" class="hidden-div hidden-div-btn" style="display:none;">
+    <div class="clear">
+        <div class="col-1 left">
+	        <h2>Bank Investment Consultant</h2>
+	        <div class="rankings-col1">
+	      	        <h2 class="secondary">Top 50 Bank<br />Advisors</h2>
+									    <div class="blog-watch-item">
+							<a href="/gallery/bic/bic-top-fifty-part-two-2687404-1.html" class="accent">BIC Top 50 Bank Advisors (1-25)</a>
+						</div>
+									    <div class="blog-watch-item">
+							<a href="/gallery/bic/bic-top-fifty-part-one-2687401-1.html" class="accent">BIC Top 50 (26-50)</a>
+						</div>
+														</div>
+					<div class="rankings-col2">
+					        <h2 class="secondary">Lists & Rankings</h2>
+										  <div class="more-blogs-item left">
+														<div class="carousel-item-title">
+								<a href="/gallery/bic/top-bank-advisors-by-aum-2688013-1.html" class="accent">Top Bank Advisors by AUM</a>
+							</div>
+						</div>
+																  <div class="more-blogs-item left">
+														<div class="carousel-item-title">
+								<a href="/gallery/bic/top-bank-advisors-by-production-2688190-1.html" class="accent">Top Bank Advisors by Production</a>
+							</div>
+						</div>
+																  <div class="more-blogs-item left last-item">
+														<div class="carousel-item-image left">
+								<a href="/gallery/bic/top-bank-advisors-by-aum-increase-2688679-1.html"><img src="http://cdn.bankinvestmentconsultant.com/media/gallery/100/p18jgkv4pged41ou01dqr64619f24.JPG" /></a>
+							</div>
+														<div class="carousel-item-title">
+								<a href="/gallery/bic/top-bank-advisors-by-aum-increase-2688679-1.html" class="accent">Top Bank Advisors by AUM Increase</a>
+							</div>
+						</div>
+						<div class="clear"></div>											        <div class="rankings-col1">
+		      		        <h2 class="secondary">Top 20 Program<br />Managers</h2>
+											    <div class="blog-watch-item">
+								<a href="/gallery/bic/top-bank-program-managers-2689053-1.html" class="accent">Top 20 Program Managers</a>
+							</div>
+											    <div class="blog-watch-item">
+								<a href="/gallery/bic/program-managers-the-next-twenty-2689006-1.html" class="accent">Program Managers: The Next 20</a>
+							</div>
+																	</div>
+		        <div class="rankings-col1 nopad">
+		      						</div>
+					</div>
+        </div>
+        <div class="col-3 left">
+					<h2>On Wall Street</h2>
+										<h2 class="secondary">Wirehouse/<br />Regional BD Ranking</h2>
+													<div class="blog-watch-item last-item">
+								<a href="/ows_issues/2012_7/ranking-the-top-wirehouses-regional-firms-2679357-1.html">Ranking Wirehouses, Regionals</a>
+							</div>
+																<h2 class="secondary">Lists & Rankings</h2>
+																		<div class="article-related-links-item">
+								<div class="clearfix">
+																	<div class="left img-holder"><img width="100" src="http://cdn.bankinvestmentconsultant.com/media/gallery/100/p17sqh982d19kfev91o101pqc1eb06.jpg" /></div>
+																	<div class="title left"><a href="/gallery/ows/top-10-total-number-of-advisors-2685299-1.html">Top Regional Broker-Dealers by Advisors</a></div>
+								</div>
+							</div>
+													<div class="article-related-links-item">
+								<div class="clearfix">
+																	<div class="left img-holder"><img width="100" src="http://cdn.bankinvestmentconsultant.com/media/gallery/100/p17sqff2p81khn11ka1lpm1dbjucq7.jpg" /></div>
+																	<div class="title left"><a href="/gallery/ows/top-10-regional-broker-dealers-by-commission-revenue-2685298-1.html">Top Regional Broker-Dealers by Commission Revenue</a></div>
+								</div>
+							</div>
+													<div class="article-related-links-item last-item">
+								<div class="clearfix">
+																	<div class="left img-holder"><img width="100" src="http://cdn.bankinvestmentconsultant.com/media/gallery/100/p17sq1hgauqoi1p1e631qcc1alhq.jpg" /></div>
+																	<div class="title left"><a href="/gallery/ows/top-10-regional-broker-dealers-by-fee-revenue-2685294-1.html">Top Regional Broker-Dealers by Fee Revenue</a></div>
+								</div>
+							</div>
+															</div>
+        <div class="col-4 left">
+          <h2>Financial Planning</h2>
+	        <div class="rankings-col1">
+	      	        <h2 class="secondary">FP50 Broker-Dealer Data</h2>
+	        					  <div class="blog-watch-item">
+							<a href="http://www.financial-planning.com/bd_scorecard/index.html?djoPage=summary">Broker-Dealer Data 2015</a>
+						</div>
+										  <div class="blog-watch-item">
+							<a href="/gallery/fp/fp50-2014-biggest-independent-broker-dealers-2689527-1.html">FP50 2014: Biggest Independent Broker-Dealers</a>
+						</div>
+										  <div class="blog-watch-item">
+							<a href="/gallery/fp/fp-50-2014-top-10-fastest-growing-ibds-2689417-1.html">FP50 2014: Fastest-Growing IBDs</a>
+						</div>
+										  <div class="blog-watch-item">
+							<a href="/gallery/fp/fp50-2014-ibs-with-highest-average-payout-2689591-1.html">Which IBDs Have the Highest Average Payout?</a>
+						</div>
+														        <h2 class="secondary">&nbsp;<br />Top RIAs</h2>
+	        					  <div class="blog-watch-item">
+							<a href="/gallery/fp/ria-leaders-one-hundered-top-fee-only-firms-2687892-1.html">100 Top Fee-Only Firms</a>
+						</div>
+										  <div class="blog-watch-item">
+							<a href="/gallery/fp/top-fifty-fastest-growing-ria-firms-2687934-1.html">Top 50 Fastest-Growing RIA Firms</a>
+						</div>
+														</div>
+        </div>
+    </div>
+</div>
+
+<div id="hidden-7" class="hidden-div hidden-div-btn" style="display:none;">
+	<div class="clearfix">
+		<div id="data-tools-col-1" class="left col-1">
+			<h2>Video</h2>
+						
+									<div class="clearfix">
+								<div class="carousel-item-image left">
+					<a href="/video/how-wells-fargo-serves-the-ultra-rich2692315-1.html"><img width="208" src="http://cdn.bankinvestmentconsultant.com/media/newspics/ab-boudewyn-evans-032315-107_360.jpg" /></a>
+				</div>
+								<div class="left item">
+					<div class="carousel-item-title">
+						<a href="/video/how-wells-fargo-serves-the-ultra-rich2692315-1.html" class="accent">How Wells Fargo Serves the Ultra-Rich</a>
+					</div>
+					<div class="carousel-item-desc">
+						<p>Ultrahigh-net-worth investors can have complex needs. That's why Abbot Downing, Wells Fargo's group serving investors with $50 million or more, has family historians and psychologists on staff.</p>
+					</div>
+				</div>
+			</div>
+						<div class="clearfix">
+								<div class="carousel-item-image left">
+					<a href="/video/do-solo-advisors-have-a-future2691965-1.html"><img width="208" src="http://cdn.bankinvestmentconsultant.com/media/newspics/ADTV_Taft_280.jpg" /></a>
+				</div>
+								<div class="left item">
+					<div class="carousel-item-title">
+						<a href="/video/do-solo-advisors-have-a-future2691965-1.html" class="accent">Do Solo Advisors Have a Future?</a>
+					</div>
+					<div class="carousel-item-desc">
+						<p>The industry has largely moved to a team model, but some advisors may finish out their careers as 'bachelors,' says John Taft, CEO of RBC's U.S. wealth management division.</p>
+					</div>
+				</div>
+			</div>
+								</div>
+		<div id="data-tools-col-2" class="left col-2">
+			
+								</div>
+	</div>
+</div>
+
+
+<div id="hidden-1" class="hidden-div hidden-div-btn" style="display:none;">
+	<div class="clearfix">
+		<div id="data-tools-col-1" class="left col-1">
+			<h2>Editor's Picks</h2>
+			
+															
+																				<div class="left">
+								<div class="carousel-item-image left">
+					<a href="/blogs/carson-i-grew-my-practice-despite-3-weeks-of-bed-rest-2692218-1.html"><img src="http://cdn.bankinvestmentconsultant.com/media/newspics/Ron_Headshot_NEW.jpg" /></a>
+				</div>								<div class="left item">
+					<div class="carousel-item-tag">
+						Practice Perfect
+					</div>
+					<div class="carousel-item-title">
+						<a href="/blogs/carson-i-grew-my-practice-despite-3-weeks-of-bed-rest-2692218-1.html" class="accent">Carson: I Grew My Practice Despite 3 Weeks of Bed Rest&nbsp;&raquo;</a>
+					</div>
+				</div>
+			</div>
+															
+																				<div class="left">
+								<div class="carousel-item-image left">
+					<a href="/blogs/targeting-female-clients-read-this-first-2692148-1.html"><img src="http://cdn.bankinvestmentconsultant.com/media/newspics/faulknernew.jpg" /></a>
+				</div>								<div class="left item">
+					<div class="carousel-item-tag">
+						Idea Exchange
+					</div>
+					<div class="carousel-item-title">
+						<a href="/blogs/targeting-female-clients-read-this-first-2692148-1.html" class="accent">Targeting Female Clients? Read This First&nbsp;&raquo;</a>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>												
+																				<div class="left">
+								<div class="carousel-item-image left">
+					<a href="/blogs/ask-ed-slott-avoid-this-costly-conversion-mistake-2691926-1.html"><img src="http://cdn.bankinvestmentconsultant.com/media/newspics/slottnew.jpg" /></a>
+				</div>								<div class="left item">
+					<div class="carousel-item-tag">
+						Ask Ed Slott
+					</div>
+					<div class="carousel-item-title">
+						<a href="/blogs/ask-ed-slott-avoid-this-costly-conversion-mistake-2691926-1.html" class="accent">Ask Ed Slott: Avoid This Costly Conversion Mistake&nbsp;&raquo;</a>
+					</div>
+				</div>
+			</div>
+															
+																				<div class="left">
+								<div class="carousel-item-image left">
+					<a href="/blogs/estate-planning-checklist-5-things-to-do-now-2691779-1.html"><img src="http://cdn.bankinvestmentconsultant.com/media/newspics/Tracy_Craig_Headshot.jpg" /></a>
+				</div>								<div class="left item">
+					<div class="carousel-item-tag">
+						Wealth of Ideas
+					</div>
+					<div class="carousel-item-title">
+						<a href="/blogs/estate-planning-checklist-5-things-to-do-now-2691779-1.html" class="accent">Estate Planning Checklist: 5 Things to Do Now&nbsp;&raquo;</a>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>								</div>
+		<div id="data-tools-col-2" class="left col-2">
+			<h2>BIC Blogs</h2>
+										<div class="article-related-links-item">
+					<div class="carousel-item-tag">
+						Idea Exchange
+					</div>
+					<div class="carousel-item-title">
+						<a href="/blogs/dont-panic-says-rj-exec-robos-wont-replace-you-2692436-1.html">Don't Panic, Says RJ Exec: Robos Won't Replace You&nbsp;&raquo;</a>
+					</div>
+				</div>
+							<div class="article-related-links-item">
+					<div class="carousel-item-tag">
+						Idea Exchange
+					</div>
+					<div class="carousel-item-title">
+						<a href="/blogs/with-fiduciary-rules-pending-get-your-compliance-act-in-order-now-2692349-1.html">With Fiduciary Rules Pending, Get Your Compliance Act in Order -- Now&nbsp;&raquo;</a>
+					</div>
+				</div>
+							<div class="article-related-links-item article-related-links-item-last">
+					<div class="carousel-item-tag">
+						Idea Exchange
+					</div>
+					<div class="carousel-item-title">
+						<a href="/blogs/create-a-long-term-care-plan-without-insurance-2692251-1.html">Create a Long-Term Care Plan -- Without Insurance&nbsp;&raquo;</a>
+					</div>
+				</div>
+						<h2>Additional Blogs</h2>
+													
+											<div class="more-blogs-item left">
+										<div class="carousel-item-image left">
+						<a href="/blogs/time-to-hand-over-part-of-your-biz-5-key-questions-2692239-1.html"><img src="http://cdn.bankinvestmentconsultant.com/media/newspics/shirl.jpg" /></a>
+					</div>
+										<div class="carousel-item-tag">
+						Idea Exchange
+					</div>
+					<div class="carousel-item-title">
+						<a href="/blogs/time-to-hand-over-part-of-your-biz-5-key-questions-2692239-1.html">Time to Hand Over Part of Your Biz? 5 Key Questions&nbsp;&raquo;</a>
+					</div>
+				</div>
+																	<div class="more-blogs-item left">
+										<div class="carousel-item-tag">
+						Idea Exchange
+					</div>
+					<div class="carousel-item-title">
+						<a href="/blogs/why-fiduciary-revision-is-a-no-brainer-2692197-1.html">Why Fiduciary Revision Is a No-Brainer&nbsp;&raquo;</a>
+					</div>
+				</div>
+																	
+											<div class="more-blogs-item left">
+										<div class="carousel-item-image left">
+						<a href="/blogs/targeting-female-clients-read-this-first-2692148-1.html"><img src="http://cdn.bankinvestmentconsultant.com/media/newspics/faulknernew.jpg" /></a>
+					</div>
+										<div class="carousel-item-tag">
+						Idea Exchange
+					</div>
+					<div class="carousel-item-title">
+						<a href="/blogs/targeting-female-clients-read-this-first-2692148-1.html">Targeting Female Clients? Read This First&nbsp;&raquo;</a>
+					</div>
+				</div>
+				<div class="clear"></div>													<div class="more-blogs-item left">
+										<div class="carousel-item-image left">
+						<a href="/blogs/sec-needs-to-take-ownership-of-fiduciary-duty-question-2692134-1.html"><img src="http://cdn.bankinvestmentconsultant.com/media/newspics/gavel-small.jpg" /></a>
+					</div>
+										<div class="carousel-item-tag">
+						Idea Exchange
+					</div>
+					<div class="carousel-item-title">
+						<a href="/blogs/sec-needs-to-take-ownership-of-fiduciary-duty-question-2692134-1.html">SEC Needs to Take Ownership of Fiduciary Duty Question&nbsp;&raquo;</a>
+					</div>
+				</div>
+																	
+											<div class="more-blogs-item left">
+										<div class="carousel-item-image left">
+						<a href="/blogs/critical-moment-for-fiduciary-advisors-2692002-1.html"><img src="http://cdn.bankinvestmentconsultant.com/media/newspics/" /></a>
+					</div>
+										<div class="carousel-item-tag">
+						Idea Exchange
+					</div>
+					<div class="carousel-item-title">
+						<a href="/blogs/critical-moment-for-fiduciary-advisors-2692002-1.html">'Critical Moment' for Fiduciary Advisors&nbsp;&raquo;</a>
+					</div>
+				</div>
+																	
+											<div class="more-blogs-item left">
+										<div class="carousel-item-image left">
+						<a href="/blogs/going-independent-final-launch-stages-2691986-1.html"><img src="http://cdn.bankinvestmentconsultant.com/media/newspics/shirl.jpg" /></a>
+					</div>
+										<div class="carousel-item-tag">
+						Idea Exchange
+					</div>
+					<div class="carousel-item-title">
+						<a href="/blogs/going-independent-final-launch-stages-2691986-1.html">Going Independent? Final Launch Stages&nbsp;&raquo;</a>
+					</div>
+				</div>
+												</div>
+	</div>
+</div>
+
+<div id="content-wrapper">
+
+<!-- content start -->
+<div id="content" class="clearfix">
+	
+			<div id="search-date" class="left">
+						
+			Updated Friday, April  3, 2015 as of  7:25 PM ET
+		</div>
+		<div id="call-to-actions" class="clearfix">
+		<div class="right call-to-action last"><a href="/register/" class="blue">SEND ME THE PRINT EDITION</a></div>
+		<div class="right call-to-action"><a href="/register/" class="blue">SEND ME ELECTRONIC NEWSLETTERS & ALERTS</a></div>
+	</div>
+								<div id="top-ad">
+				<div id="pushdown" >
+	<script type="text/javascript">
+		googletag.display("pushdown")
+	</script>
+</div>
+			</div>
+			 					<div id="two-col-layout">
+		<!-- column one start -->
+		<div id="col-one" class=" left">
+						
+			
+	
+
+
+
+
+
+									
+		
+
+	
+
+	
+
+	
+
+    
+	
+	
+<!-- need to write special meta tags for stories that are not set to this client for SEO reasons -->
+	
+
+
+
+	
+																	
+
+
+
+
+
+													
+	
+	
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+	
+
+
+	  
+	  		 						<!-- index start -->
+		<div class="index clearfix" id="indexcard-carousel-holder">
+			<div class="subject left"><a href="/news/" class="accent">BREAKING NEWS:</a></div>
+			<div class="carousel-holder left">
+				<ul id="indexcard-carousel" class="jcarousel-skin-tango">
+															
+						<!-- carousel item -->
+						<li class=" first">
+							<div class="index-content ">
+								<span class="datetime">05:30PM&nbsp;ET</span><span class="title"><a href="/news/recruiting/ameriprise-recruits-advisors-with-combined-261m-aum-2692441-1.html">Ameriprise Recruits Advisors With Combined $261M AUM</a></span>
+							</div>
+						</li>
+						<!-- carousel item end -->
+																				
+						<!-- carousel item -->
+						<li class=" not-first">
+							<div class="index-content ">
+								<span class="datetime">04:57PM&nbsp;ET</span><span class="title"><a href="/news/tax_planning/taxable-bond-investor-checklist-tax-strategies-scan-2692449-1.html">Taxable-Bond Investor Checklist: Tax Strategies Scan</a></span>
+							</div>
+						</li>
+						<!-- carousel item end -->
+																				
+						<!-- carousel item -->
+						<li class=" not-first">
+							<div class="index-content ">
+								<span class="datetime">04:38PM&nbsp;ET</span><span class="title"><a href="/news/retirement_planning/think-twice-about-roth-ira-conversions-retirement-scan-2692448-1.html">Think Twice About Roth IRA Conversions: Retirement Scan</a></span>
+							</div>
+						</li>
+						<!-- carousel item end -->
+																				
+						<!-- carousel item -->
+						<li class=" not-first">
+							<div class="index-content ">
+								<span class="datetime">03:57PM&nbsp;ET</span><span class="title"><a href="/news/reinvent_wealth/the-boring-little-app-that-rocked-the-pfm-world-2692446-1.html">The Boring Little App That Rocked the PFM World</a></span>
+							</div>
+						</li>
+						<!-- carousel item end -->
+																				
+						<!-- carousel item -->
+						<li class=" not-first">
+							<div class="index-content ">
+								<span class="datetime">03:31PM&nbsp;ET</span><span class="title"><a href="/news/reinvent_wealth/dont-panic-says-rj-exec-robos-wont-replace-you-2692445-1.html">Don't Panic, Says RJ Exec: Robos Won't Replace You</a></span>
+							</div>
+						</li>
+						<!-- carousel item end -->
+																				
+						<!-- carousel item -->
+						<li class=" not-first">
+							<div class="index-content ">
+								<span class="datetime">11:48AM&nbsp;ET</span><span class="title"><a href="/news/recruiting/100m-team-joins-merrill-lynch-2692442-1.html">$100M Team Joins Merrill Lynch</a></span>
+							</div>
+						</li>
+						<!-- carousel item end -->
+																				
+						<!-- carousel item -->
+						<li class=" not-first">
+							<div class="index-content ">
+								<span class="datetime">11:35AM&nbsp;ET</span><span class="title"><a href="/news/career_moves/jpmorgan-names-horner-treasurer-cio-2692440-1.html">JPMorgan Names Horner Treasurer, CIO</a></span>
+							</div>
+						</li>
+						<!-- carousel item end -->
+													</ul>
+				<div class="control-holder">
+					<a href="#" id="indexcard-prev"><img src="http://cdn.bankinvestmentconsultant.com/media/ui/btn-carousel-left-trans.png" /></a>
+					&nbsp;
+					<a href="#" id="indexcard-next"><img src="http://cdn.bankinvestmentconsultant.com/media/ui/btn-carousel-right-trans.png" /></a>
+				</div>
+			</div>
+		</div>
+		<!-- index end -->
+	
+<div id="article-wrapper" class="clearfix">
+	<div class="left" id="article-right-col">
+		
+	
+	
+				
+				
+		
+
+								
+	  
+			  				  
+      
+      		  	
+      	
+	      						
+      
+
+	
+	<h1>Can Clients Achieve Their Retirement Dreams?</h1>
+	
+	
+	<div class="others clearfix widthfull">
+			</div><!-- end others -->
+	
+	
+	<div id="article-content">
+
+ 							<p>Most new retirees are confident that they can meet their basic needs, but less than half are confident that they can afford the retirement lifestyle they want, according to a new study.
+</p>
+				<div style="clear:both;"></div>
+				<div id="getaccess">
+					<div class="gaheader">Get access to this article and thousands more...</div>
+					<p><b>All Bank Investment Consultant articles are archived after 7 days.</b> <a href="/register/bic_0718.html?returnurl=/news/retirement_planning/can-clients-achieve-their-retirement-dreams-2691853-1.html">REGISTER NOW</a> for unlimited access to all recently archived articles, as well as thousands of searchable stories. Registered Members also gain access to exclusive industry white paper downloads, web seminars, blog discussions, the iPad App, CE Exams, and conference discounts.  Qualified members may also choose to receive our free monthly magazine and any of our daily or weekly e-newsletters covering the latest breaking news, opinions from industry leaders, developing trends and growth strategies.</p>
+					<div class="gaactivate"><a href="/register/bic_0718.html?returnurl=/news/retirement_planning/can-clients-achieve-their-retirement-dreams-2691853-1.html" class="activate">TO ACTIVATE YOUR MEMBERSHIP, REGISTER NOW FOR FREE HERE</a></div>
+					<div class="garegister"><a name="Login"></a>
+						<h4>Already Registered?</h4>
+												<form id="login" action="#Login" method="post">
+							<input type="hidden" name="zkLogin" value="true" />
+							<input type="hidden" name="client_id" value="iagroup_news" />
+							<input type="hidden" name="return_url" value="/news/retirement_planning/can-clients-achieve-their-retirement-dreams-2691853-1.html#read" />
+							<div class="galeft"><label for="login_id">E-mail Address</label><input type="text" name="login_id" id="login_id" value="" class="text" /></div>
+							<div class="garight"><label for="login_pwd">Password</label><input type="password" name="login_pwd" id="login_pwd" value="" class="text" /></div>
+							<div class="gawtf">
+								<input type="submit" name="submit" class="submit noMargin" value="Log In" />
+								<a href="/profile/password.reminder.html" class="needhelp" target="_blank">Forgot Password/Need Help?</a>
+							</div>
+						</form>
+					</div>
+				</div>
+
+</div>
+
+
+	</div><!--/article-content-->
+</div><!--/article-wrapper-->
+
+
+
+
+	
+
+
+
+
+<div id="comments">
+	<div class="comments-header">Comments (0)</div>
+
+					
+		
+				<p>Be the first to comment on this post using the section below.</p>
+	</div>
+
+<div id="add-comments" class="clearfix">
+  <div class="comments-header">
+  	Add Your Comments:
+  </div>
+	<div class="clearfix" id="logged-out-login">
+		<div id="logged-out-login-header">Not Registered?</div>
+		<div id="login-disclaimer">You must be registered to post a comment. <a id="profile-link-register" href="#">Click here to register.</a></div>
+		<div id="logged-out-login-header">Already registered? Log in here</div>
+	  <div id="login-left" style="width:100%;border-right:none;" class="left">
+	  	<form id="login" name="login" method="post" action="#comments">
+			<input type="hidden" name="zkLoginRedirectUrl" value="/news/retirement_planning/can-clients-achieve-their-retirement-dreams-2691853-1.html#comments" />
+			<input type="hidden" name="zkLogin" value="true" />
+			<input type="hidden" name="return_url" value="/news/retirement_planning/can-clients-achieve-their-retirement-dreams-2691853-1.html#comments" />
+	  	<div id="login-disclaimer">Please note you must now log in with your <strong>email address</strong> and password.</div>
+			<p style="color:#F00;"><b></b></p>
+	    <div class="login-input login-input-text">E-MAIL ADDRESS<br><input type="text" name="login_id" id="login_id" value="" class="text"></div>
+	    <div class="login-input login-input-text">PASSWORD<br><input type="password" name="login_pwd" id="login_pwd" value="" class="text" /></div>
+	    <div class="login-input"><input type="image" src="http://cdn.bankinvestmentconsultant.com/media/ui/login.png"></div>
+	    <div class="login-input login-input-checkbox"><input name="zkMaintainState" type="checkbox" class="ckBox" value="1" id="zkMaintainState" checked="checked" /> Remember me</div>
+	    </form>
+	  </div>
+	</div>
+</div>
+
+
+						
+								
+								
+								
+											
+								
+								
+											
+								
+								
+											
+								
+											
+														
+								
+								
+																				
+								
+								
+								
+								
+											
+											
+								
+											
+								
+								
+																	
+																																																																				
+								
+																	
+											
+																							
+											
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																										<h4 class="carousel-header">Videos</h4>
+		<div class="multimedia clearfix">
+									
+				
+								<div class="multimedia-item">
+					<div class="multimedia-image"><a href="/video/how-wells-fargo-serves-the-ultra-rich2692315-1.html"><img src="http://cdn.bankinvestmentconsultant.com/media/newspics/ab-boudewyn-evans-032315-107_360.jpg" /></a></div>					<div class="multimedia-content">
+						<div class="source"><a href="/channels/high_net_worth.html">High-Net-Worth</a></div><div class="title"><a href="/video/how-wells-fargo-serves-the-ultra-rich2692315-1.html">How Wells Fargo Serves the Ultra-Rich</a></div></div>
+				</div>
+												
+				
+								<div class="multimedia-item">
+					<div class="multimedia-image"><a href="/video/do-solo-advisors-have-a-future2691965-1.html"><img src="http://cdn.bankinvestmentconsultant.com/media/newspics/ADTV_Taft_280.jpg" /></a></div>					<div class="multimedia-content">
+						<div class="source"></div><div class="title"><a href="/video/do-solo-advisors-have-a-future2691965-1.html">Do Solo Advisors Have a Future?</a></div></div>
+				</div>
+												
+				
+								<div class="multimedia-item">
+					<div class="multimedia-image"><a href="/video/cybercrime-a-rising-threat2691701-1.html"><img src="http://cdn.bankinvestmentconsultant.com/media/newspics/ADTV_Taft_280.jpg" /></a></div>					<div class="multimedia-content">
+						<div class="source"><a href="/channels/regulatory_compliance.html">Regulatory/Compliance</a></div><div class="title"><a href="/video/cybercrime-a-rising-threat2691701-1.html">Cybercrime: A Rising Threat</a></div></div>
+				</div>
+																																																																																																																																																																		</div>
+	
+
+									
+																													
+																																																			<h4 class="carousel-header">Slide Shows</h4>
+		<div class="multimedia clearfix">
+									
+				
+								<div class="multimedia-item">
+					<div class="multimedia-image"><a href="/gallery/bic/top-10-retirement-challenges-2689899-1.html"><img src="http://cdn.bankinvestmentconsultant.com/media/gallery/p18tij279v1fu815giltb5g412vl6.jpg" /></a></div>					<div class="multimedia-content">
+						<div class="source"><a href="/channels/retirement_planning.html">Retirement Planning</a></div>
+						<div class="title"><a href="/gallery/bic/top-10-retirement-challenges-2689899-1.html">Top 10 Retirement Challenges</a></div>
+					</div>
+				</div>
+												
+				
+								<div class="multimedia-item">
+					<div class="multimedia-image"><a href="/gallery/bic/seven-taxpayer-misconceptions-2689011-1.html"><img src="http://cdn.bankinvestmentconsultant.com/media/gallery/p18md829sfd7tj426g8ait1nru6.jpg" /></a></div>					<div class="multimedia-content">
+						<div class="source"></div>
+						<div class="title"><a href="/gallery/bic/seven-taxpayer-misconceptions-2689011-1.html">7 Taxpayer Misconceptions</a></div>
+					</div>
+				</div>
+							</div>
+	
+<script type="text/javascript">
+function captionMatchImage() {
+	myWidth = $('#article-main-image img').width();
+	$('#article-main-caption').width(myWidth);
+}
+jQuery(document).ready(function() {
+	captionMatchImage();
+});
+function indexcard_initCallback(carousel) {
+	jQuery('#indexcard-next').bind('click', function() {
+		carousel.next();
+		return false;
+	});
+	jQuery('#indexcard-prev').bind('click', function() {
+		carousel.prev();
+		return false;
+	});
+};
+jQuery(document).ready(function() {
+	jQuery('#indexcard-carousel').jcarousel({
+		scroll: 1,
+		auto: 5,
+		wrap: 'circular',
+		initCallback: indexcard_initCallback,
+		buttonNextHTML: null,
+		buttonPrevHTML: null
+	});
+});
+</script>
+
+
+
+								</div>
+		<!-- column one end -->
+				<!-- right rail start -->
+			<div id="col-two" class=" right">
+							<!-- ad start -->
+<div class="module">
+	<div id="bigbox1" >
+	<script type="text/javascript">
+		googletag.display("bigbox1")
+	</script>
+</div>
+</div>
+<!-- ad end -->
+
+
+ <!-- most read start -->
+        <script type="text/javascript">
+
+        $(document).ready(function() {
+
+        $('#most-read').click(function() {
+
+				$('#most-read').removeClass("tab-off");
+				$('#most-emailed').removeClass("tab-on");
+
+				$('#most-read').addClass("tab-on");
+				$('#most-emailed').addClass("tab-off");
+
+				$('#most-read-content').show();
+				$('#most-emailed-content').hide();
+
+        });
+
+        $('#most-emailed').click(function() {
+
+				$('#most-read').removeClass("tab-on");
+				$('#most-emailed').removeClass("tab-off");
+
+				$('#most-read').addClass("tab-off");
+				$('#most-emailed').addClass("tab-on");
+
+				$('#most-read-content').hide();
+				$('#most-emailed-content').show();
+        });
+       });
+
+    </script>
+
+<div class="module">
+	<div id="tabs" class="clearfix">
+		<div id="most-read" class="left tab tab-on">MOST POPULAR</div>
+		<div class="left"><img src="http://cdn.bankinvestmentconsultant.com/media/ui/tab_divider.png" class="tab-divider"></div>
+    <div id="most-emailed" class="left tab tab-off">MOST EMAILED</div>
+  </div>
+	<div id="most-read-content" class="tab-content">
+		<ul>
+		
+																
+															<li><a href="/news/retirement_planning/rip-stretch-ira-here-are-alternatives-2692356-1.html">Slott: R.I.P., Stretch IRA? Here Are Alternatives</a></li>
+																
+							
+																					
+															<li><a href="/news/ria/how-should-advisors-be-charging-now-2692363-1.html">How Should Advisors Be Charging Now?</a></li>
+																
+							
+																					
+															<li><a href="/news/regulatory_compliance/after-8-years-morgan-stanley-claws-back-380k-from-ex-employee-2692348-1.html">After 8 Years, Morgan Stanley Claws Back $380K From Ex-Employee</a></li>
+																
+							
+																					
+															<li style="border-bottom:none;"><a href="/news/regulatory_compliance/nfl-player-brings-20m-fraud-case-against-merrill-lynch-2692433-1.html">NFL Player Brings $20M Fraud Case Against Merrill Lynch</a></li>
+																
+							
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																</ul>
+	</div>
+	<div id="most-emailed-content" style="display:none;" class="tab-content">
+		<ul>
+		
+																
+														<li><a href="/news/ria/how-should-advisors-be-charging-now-2692363-1.html">How Should Advisors Be Charging Now?</a></li>
+															
+							
+								  												
+														<li><a href="/news/client/high-income-jumbo-school-debt-smart-options-for-clients-2692361-1.html">High Income, Jumbo School Debt: Smart Options for Clients</a></li>
+															
+							
+								  												
+														<li><a href="/news/retirement_planning/rip-stretch-ira-here-are-alternatives-2692356-1.html">Slott: R.I.P., Stretch IRA? Here Are Alternatives</a></li>
+															
+							
+								  												
+														<li style="border-bottom:none;"><a href="/news/reinvent_wealth/young-2692395-1.html">Young &amp; Rich: Ready to Skip Advisors for Mobile Apps</a></li>
+															
+							
+								  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  															  							</ul>
+	</div>
+</div>
+<!-- most read end -->
+<!-- ad start -->
+<div class="module">
+	<div id="bigbox2" >
+	<script type="text/javascript">
+		googletag.display("bigbox2")
+	</script>
+</div>
+</div>
+<div class="module">
+	<div id="bigbox3" >
+	<script type="text/javascript">
+		googletag.display("bigbox3")
+	</script>
+</div>
+</div>
+<!-- ad end -->
+
+						</div>	<!-- right rail end -->
+		 		<div style="clear:both;"></div>
+	</div>	<!-- 2-col layout end -->
+	
+	
+	
+
+	
+</div>	<!-- content end -->
+
+
+</div> <!-- wrapper end -->
+
+	<!-- footer content end -->
+			<div id="footer-ad">
+							<div class="clearfix" id="leaderboard-ad" style="margin:15px auto;"><div id="bottombanner" style="width: 728px;height: 90px;">
+	<script type="text/javascript">
+		googletag.display("bottombanner")
+	</script>
+</div></div>
+								</div>
+	 
+</div><!-- wrapper -->
+
+<div id="footer-wrapper">
+	<div id="footer">
+		<div class="frame clearfix">
+													<div class="left footer-col-1">
+	<ul>
+		<li><a href="http://www.bankinvestmentconsultant.com">HOME</a></li>
+		<li><a href="http://www.bankinvestmentconsultant.com/global/about-us.html">About Us</a></li>
+		<li><a href="http://www.bankinvestmentconsultant.com/global/contact-us.html">Contact Us</a></li>
+		<li><a href="http://www.sourcemediareprints.com/" target="_blank">Content Licensing & Reprints</a></li>
+		<li><a href="http://www.sourcemedia.com/media_kits/financial_planning.html">Advertise</a></li>
+		<li><a href="http://www.bankinvestmentconsultant.com/subscribe/">Subscribe</a></li>
+                <li><a href="http://www.bankinvestmentconsultant.com/podcasts/">Podcasts</a></li>
+		<!--<li><a href="http://www.bankinvestmentconsultant.com/customer_service/">Customer Service</a></li>-->
+		<!--<li><a href="http://www.bankinvestmentconsultant.com/feedback/?client_id=americanbanker&form_id=storyeditform&link_id=4">Feedback</a></li>-->
+		<li><a href="http://www.bankinvestmentconsultant.com/profile/">My Account</a></li>
+		<li><a href="http://www.bankinvestmentconsultant.com/global/privacy-policy.html">Privacy Policy</a></li>
+		<li><a href="http://www.bankinvestmentconsultant.com/global/subscription-agreement.html">Subscription Agreement</a></li>
+                <li><a href="http://www.bankinvestmentconsultant.com/global/site-map.html">Site Map</a></li>
+
+</ul>
+</div>
+<div class="left footer-col-2">
+	<h2 class="gray"><a href="http://www.sourcemedia.com/">sourcemedia<br />corporate site</a></h2>
+	<div style="height:10px;"></div>
+	<h2>banking</h2>
+	<ul>
+		<li><a href="http://www.americanbanker.com">American Banker</a></li>
+		<li><a href="http://www.americanbanker.com/btn">Bank Technology News</a></li>
+		<li><a href="http://www.americanbanker.com/magazine/">American Banker Magazine</a></li>
+		<li><a href="http://www.cujournal.com">Credit Union Journal</a></li>
+	</ul>
+
+	<h2 class="second" style="margin: 10px 0 0px;">MORTGAGES</h2>
+	<ul>         	
+		<li><a href="http://www.nationalmortgagenews.com">National Mortgage News</a></li>
+	</ul>
+
+	<h2 class="second" style="margin: 10px 0 0px;">PAYMENTS
+</h2>
+	<ul>         	
+		<li><a href="http://www.paymentssource.com">PaymentsSource</a></li>
+		<li><a href="http://www.collectionscreditrisk.com">Collections & Credit Risk</a></li>
+		<li><a href="http://www.isoandagent.com/">ISO & Agent</a></li>
+	</ul>
+
+</div>
+<div class="left footer-col-3">
+	<h2>capital markets</h2>
+	<ul>         	
+		<li><a href="http://www.themiddlemarket.com">Mergers & Acquisitions</a></li>
+		<li><a href="http://www.structuredfinancenews.com">Asset Securitization Report</a></li>
+		<li><a href="http://www.leveragedfinancenews.com">Leveraged Finance News</a></li>
+		<li><a href="http://www.privateplacementletter.com">Private Placement Letter</a></li>
+		<li><a href="http://www.tradersmagazine.com">Traders Magazine</a></li>
+	</ul>
+	<h2 class="second" style="margin: 10px 0 0px;">MUNICIPAL FINANCE</h2>
+	<ul>         	
+		<li><a href="http://www.bondbuyer.com">The Bond Buyer</a></li>
+	</ul>
+	<h2 class="second" style="margin: 10px 0 0px;">accounting</h2>
+	<ul>
+		<li><a href="http://www.accountingtoday.com">Accounting Today</a></li>
+		<li><a href="http://www.accountingtoday.com/taxprotoday">Tax Pro Today</a></li>
+	</ul>
+
+</div>
+<div class="left footer-col-4">
+	<h2>HEALTHCARE & BENEFITS</h2>
+	<ul>
+		<li><a href="http://ebn.benefitnews.com">Employee Benefit News</a></li>
+		<li><a href="http://eba.benefitnews.com">Employee Benefit Adviser</a></li>
+		<li><a href="http://www.healthdatamanagement.com">Health Data Management</a></li>
+		<li><a href="http://www.insurancenetworking.com">Insurance Networking News</a></li>
+		<li><a href="http://www.information-management.com">Information Management</a></li>
+	</ul>
+	<h2 class="second" style="margin: 10px 0 0px;">INVESTMENT ADVISORY</h2>
+	<ul>
+		<li><a href="http://www.financial-planning.com">Financial Planning</a></li>
+		<li><a href="http://www.onwallstreet.com">On Wall Street</a></li>
+		<li><a href="http://www.bankinvestmentconsultant.com">Bank Investment Consultant</a></li>
+		<li><a href="http://www.mmexecutive.com">Money Management Executive</a></li>
+	</ul>
+</div>
+
+
+							 		</div>
+		<div id="footer-bottom" class="clearfix">
+			<div class="left" id="footer-bottom-logo">
+				<img src="http://cdn.bankinvestmentconsultant.com/media/ui/logo-sourcemedia.png" />
+			</div>
+			<div class="left" id="footer-bottom-more-links">
+				<div id="footer-bottom-privacy">
+				&copy; 2015 <a href="http://www.sourcemedia.com/">SourceMedia</a>. All rights reserved.
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// if ie6
+			if (!window.XMLHttpRequest) {var isIE6 = true;}
+			//if ipad
+			var isiPad = navigator.userAgent.match(/iPad/i) != null;
+			if (isiPad){
+				$('#term').addClass("ipad-search-box");
+			} else {
+				$('#term').addClass("web-search-box");
+			}
+		});
+	</script>
+	<div style="display: none;">
+	<div id="signInContainer">
+
+		
+		<div class="clearfix" id="logged-out-login">
+
+			<div id="logged-out-login-header">
+		  	Already a subscriber? Log in here
+		  </div>
+
+		  <div id="login-left" class="left">
+		  	<form method="post" action="/profile/">
+				<input type="hidden" name="zkLogin" value="true" />
+									<input type="hidden" name="zkLoginRedirectUrl" value="/my/" />
+						  	<div id="login-disclaimer">
+
+		    </div>
+		    <div class="login-input login-input-text">
+		    	E-MAIL ADDRESS
+		      <br>
+		      <input type="text" name="login_id" id="login_id" value="" class="text">
+		    </div>
+		    <div class="login-input login-input-text">
+		    	PASSWORD
+		      <br>
+		      <input type="password" name="login_pwd" id="login_pwd" value="" class="text" />
+		    </div>
+		    <div class="login-input">
+		    	<input type="image" src="http://cdn.bankinvestmentconsultant.com/media/ui/login.png">
+		    </div>
+		    <div class="login-input login-input-checkbox">
+		    	<input name="zkMaintainState" type="checkbox" class="ckBox" value="1" id="zkMaintainState" checked="checked" /> Remember me
+		    </div>
+		    </form>
+		  </div>
+
+		  <div id="login-right" class="left">
+		  	<a href="/profile/password.reminder.html">Forgot your password?</a>
+		    <br><br>
+		    <a href="/global/contact-us.html">Contact customer service.</a>
+		    <br><br>
+		    <a href="/register/">BankInvestmentConsultant.com Site Registration</a>
+		  </div>
+
+		</div>
+
+	</div>
+</div> 
+			
+	
+<script type="text/javascript" charset="utf-8">
+		window.twttr = (function (d,s,id) {
+		var t, js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+		js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+		return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+		}(document, "script", "twitter-wjs"));
+		//Wrap event bindings - Wait for async js to load
+	twttr.ready(function (twttr) {
+	//event bindings
+		twttr.events.bind('tweet', function(event) {
+			ga('send', 'social', 'twitter', 'tweet', 'Can Clients Achieve Their Retirement Dreams? | Bank Investment Consultant', '/news/retirement_planning/can-clients-achieve-their-retirement-dreams-2691853-1.html');
+		});
+	});
+	</script>
+<!-- Place this render call where appropriate -->
+<script type="text/javascript">
+	(function() {
+	var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+	po.src = 'https://apis.google.com/js/plusone.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	})();
+</script>
+
+<!-- Google Code for Remarketing tag -->
+<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 999788420;
+var google_conversion_label = "cD6WCOTU_QQQhJ_e3AM";
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/999788420/?value=0&amp;label=cD6WCOTU_QQQhJ_e3AM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+<script type="text/javascript">
+$.ajax({
+	url: document.location.protocol + '//munchkin.marketo.net/munchkin.js',
+	dataType: 'script',
+	cache: true,
+	success: function() {
+		Munchkin.init('555-ETU-514');
+	}
+});
+</script>
+<img src="http://ad.retargeter.com/seg?add=706869&t=2" width="1" height="1" />
+
+	
+			<!-- Quantcast Tag -->
+		<script type="text/javascript">
+		var _qevents = _qevents || [];
+		(function() {
+		var elem = document.createElement('script');
+		elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+		elem.async = true;
+		elem.type = "text/javascript";
+		var scpt = document.getElementsByTagName('script')[0];
+		scpt.parentNode.insertBefore(elem, scpt);
+		})();
+		_qevents.push({
+		qacct:"p-a2frTBW8R4ZJc"
+		});
+		</script>
+		<noscript>
+		<div style="display:none;">
+		<img src="//pixel.quantserve.com/pixel/p-a2frTBW8R4ZJc.gif" border="0" height="1" width="1" alt="Quantcast"/>
+		</div>
+		</noscript>
+		<!-- End Quantcast tag -->
+	<img src="http://leadback.advertising.com/adcedge/lb?site=695501&srvc=1&betr=41097=941446[8760]" width="1" height="1" border="0" />
+
+</body>
+</html>

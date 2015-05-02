@@ -1,0 +1,73 @@
+<html>
+<head>
+    <!-- iOS -->
+    <meta property="al:ios:url" content="fb144618135678502://" />
+    <meta property="al:ios:app_store_id" content="553573601" />
+    <meta property="al:ios:app_name" content="Xtreme Slots" />
+    <!-- Android -->
+    <meta property="al:android:url" content="fb144618135678502://" />
+    <meta property="al:android:package" content="net.odasoft.xtremeslots" />
+    <meta property="al:android:app_name" content="Xtreme Slots" />
+
+<title>Xtreme Slots</title>
+
+<style type="text/css" media="screen"> 
+	html, body  { height:100%; }
+	body { margin:0; padding:0; overflow:auto; text-align:center; background-color: #000000; color: #FFFFFF; font-family:arial; }
+	a { color: orange; }
+</style>
+
+
+</head>
+<body>
+<br/>
+
+<script type="text/javascript">
+	var isMobile = {
+		Android: function() {
+			return /Android/i.test(navigator.userAgent);
+		},
+		BlackBerry: function() {
+			return /BlackBerry/i.test(navigator.userAgent);
+		},
+		iOS: function() {
+			return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+		},
+		Windows: function() {
+			return /IEMobile/i.test(navigator.userAgent);
+		},
+		Kindle: function(){
+			return /Kindle/i.test(navigator.userAgent) || /Silk/i.test(navigator.userAgent) || /KFTT/i.test(navigator.userAgent) || /KFOT/i.test(navigator.userAgent) || /KFJWA/i.test(navigator.userAgent) || /KFJWI/i.test(navigator.userAgent) || /KFSOWI/i.test(navigator.userAgent) || /KFTHWA/i.test(navigator.userAgent) || /KFTHWI/i.test(navigator.userAgent) || /KFAPWA/i.test(navigator.userAgent) || /KFAPWI/i.test(navigator.userAgent);
+		},
+		any: function() {
+			return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows() || isMobile.Kindle());
+		}
+	};
+
+	var al; // app link
+	var sl; // store link
+	if (isMobile.iOS()){
+		al = "fb144618135678502://";
+		sl = "itms-apps://itunes.apple.com/app/id553573601";
+	}
+	else if (isMobile.Kindle()){
+		al = "fb144618135678502://";
+		sl = "amzn://apps/android?p=net.odasoft.xtremeslots";
+	}
+	else if (isMobile.Android()){
+		al = "fb144618135678502://";
+		sl = "market://details?id=net.odasoft.xtremeslots";
+	}
+	else { // PC or MAC --> Facebook
+		al = "https://apps.facebook.com/xtremeslots/";
+		sl = al;
+	}
+
+	document.write("Redirecting... click <a href='"+sl+"'>here</a> if it doesn't automatically happen within a few seconds.");
+
+	setTimeout(function () { window.location = sl; }, 1000);
+	window.location = al+location.search;
+</script>
+
+</body>
+</html>

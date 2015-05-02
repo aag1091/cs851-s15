@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgADUFFaGwQDVldWDwI="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(5),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(f){"stack"in f&&(t(1),t(4),"addEventListener"in window&&t(2),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(3),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:8,2:5,3:9,4:7,5:21,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],4:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(2);t("loader").features.stn=!0,t(1),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:6,2:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:21,2:22,ee:"QJf3ax",gos:"7eSDFh"}],6:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:22,2:21,ee:"QJf3ax"}],7:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:22,2:21,ee:"QJf3ax"}],8:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:22,2:21,ee:"QJf3ax"}],9:[function(t,e){function n(){c.inPlace(this,d,"fn-")}function r(t,e){c.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}var i=t("ee").create(),a=t(1),s=t(2),c=s(i),f=s(a),u=window.XMLHttpRequest,d=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=i,window.XMLHttpRequest=function(t){var e=new u(t);try{i.emit("new-xhr",[],e),f.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{i.emit("internal-error",[r])}catch(o){}}return e},window.XMLHttpRequest.prototype=u.prototype,c.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),i.on("send-xhr-start",r),i.on("open-xhr-start",r)},{1:5,2:22,ee:"QJf3ax"}],10:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=e(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=e(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var u=0;c>u;u++)n.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:11,3:9,4:5,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],11:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=l.info=NREUM.info;if(t&&t.licenseKey&&t.applicationID&&f&&f.body){s(h,function(e,n){e in t||(t[e]=n)}),l.proto="https"===p.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=f.createElement("script");e.src=l.proto+t.agent,f.body.appendChild(e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=window,f=c.document,u="addEventListener",d="attachEvent",p=(""+location).split("?")[0],h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-515.min.js"},l=e.exports={offset:i(),origin:p,features:{}};f[u]?(f[u]("DOMContentLoaded",o,!1),c[u]("load",n,!1)):(f[d]("onreadystatechange",r),c[d]("onload",n)),a("mark",["firstbyte",i()])},{1:20,handle:"D5DuLP"}],20:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],21:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],22:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:21,ee:"QJf3ax"}]},{},["G9z0Bl",3,10,4]);</script>        <meta http-equiv="Content-Type"
+              content="text/html; charset=UTF-8"/>
+                    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        
+         <meta name="description" content="This site is about health and wellness, how to achieve your goals of getting in shape with a healthy mind and body.">
+        <meta name="keywords" content="lose weight fast, slimming, how to get in shape fast, tone up, fast weight loss , eating clean, fast results, water, no surgery weight loss">
+        <meta name="author" content="HealthisWealth">
+
+
+        <link rel="pingback" href="http://buildingabrandonline.com/HealthandWellness/xmlrpc.php"/>
+        <link rel="stylesheet" type="text/css" media="all" href="http://buildingabrandonline.com/HealthandWellness/wp-content/themes/Theme_3/style.css"/>
+        <!-- these are not active right now -->
+                  <title>
+             &raquo; Being an &#8220;It Works!&#8221;Retail Customer V Loyal Customer V Distributor        </title>
+
+        <!-- Le styles -->
+        <link href="http://buildingabrandonline.com/HealthandWellness/wp-content/themes/Theme_3/css/bootstrap.min.css" media="screen, projection"
+              rel="stylesheet" type="text/css">
+        <link rel='stylesheet' id='rs-plugin-settings-css'
+              href='http://buildingabrandonline.com/HealthandWellness/wp-content/themes/Theme_3/css/settings.css?rev=4.5.95&#038;ver=3.9.2' type='text/css'
+              media='all'/>
+        <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css"/><link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css"/><link href="http://fonts.googleapis.com/css?family=empty" rel="stylesheet" type="text/css"/>
+        <style>
+
+             /* Theme Setting Controls*/
+
+            body
+            {
+                max-width        : 100%;
+                background-color : #fff !important;
+                font-family      : Oswald, sans-serif;
+            }
+            body a:link, body a:visited, .copyrightnotice > div{
+                color : #24c9e2 !important;
+            }
+             body a:hover {
+                 color : #14b6e8 !important;
+             }
+             h1, h2, h3, h4, h5, h6, .sidebarTitle, .challIntro{
+                font-family: Lobster, sans-serif;
+            }
+
+            p {
+                font-family: Oswald, sans-serif;
+            }
+             /* END - Theme Setting Controls*/
+            #cab-author .cab-author-info .cab-author-name {font-family: 'empty', cursive;}            .widget > .widget_tag_cloud div.tagcloud{
+                padding: 10px
+            }
+            .widget > .widget_tag_cloud div.tagcloud a {
+                display: inline-block;
+                padding: 4px;
+                border-radius: 4px;
+                margin: 0 3px 4px 0;
+                padding: 4px;
+                width: auto;
+                background: transparent;
+                border: 1px solid #000;
+                color: #000;
+                vertical-align: middle;
+                text-align: center;
+                transition: background 0.15s ease-in-out 0s, color 0.15s ease-in-out 0s;
+                -webkit-appearance: none;
+                text-decoration: none
+            }
+
+            .widget > .widget_tag_cloud div.tagcloud a:hover {
+              font-weight: bold;
+              color: #ff4629;
+              text-shadow: none;
+              transition: none;
+            }
+        </style>
+        <style type='text/css'>
+            .tp-caption a
+            {
+                color              : #ff7302;
+                text-shadow        : none;
+                -webkit-transition : all 0.2s ease-out;
+                -moz-transition    : all 0.2s ease-out;
+                -o-transition      : all 0.2s ease-out;
+                -ms-transition     : all 0.2s ease-out
+            }
+
+            .tp-caption a:hover
+            {
+                color : #ffa902
+            }
+
+            .retina-logo img
+            {
+                width  : 550px !important;
+                height : 88px !important
+            }
+
+            .tp-caption.small_thin_white_cap
+            {
+                position         : absolute;
+                color            : #fff;
+                font-weight      : 300;
+                font-size        : 24px;
+                line-height      : 1.3;
+                text-transform   : uppercase;
+                letter-spacing   : 10px;
+                padding          : 0;
+                margin           : 0px;
+                border-width     : 0px;
+                border-style     : none;
+                background-color : transparent;
+                text-shadow      : 0 1px 1px rgba(0, 0, 0, .2)
+            }
+
+            .tp-caption.big_thin_white_cap
+            {
+                position         : absolute;
+                color            : #fff;
+                font-weight      : 300;
+                font-size        : 100px;
+                line-height      : 1.3;
+                text-transform   : uppercase;
+                letter-spacing   : 30px;
+                padding          : 0;
+                margin           : 0px;
+                border-width     : 0px;
+                border-style     : none;
+                background-color : transparent;
+                text-shadow      : 0 1px 1px rgba(0, 0, 0, .2)
+            }
+
+            .tp-caption.medium_thin_white
+            {
+                position         : absolute;
+                color            : rgba(255, 255, 255, .6);
+                font-weight      : 300;
+                font-size        : 24px;
+                line-height      : 1.3;
+                padding          : 0;
+                margin           : 0px auto;
+                border-width     : 0px;
+                border-style     : none;
+                background-color : transparent;
+                text-shadow      : none;
+                text-align       : center
+            }
+
+            .tp-caption.small_thin_white_cap
+            {
+                position         : absolute;
+                color            : #fff;
+                font-weight      : 300;
+                font-size        : 24px;
+                line-height      : 1.3;
+                text-transform   : uppercase;
+                letter-spacing   : 10px;
+                padding          : 0;
+                margin           : 0px;
+                border-width     : 0px;
+                border-style     : none;
+                background-color : transparent;
+                text-shadow      : 0 1px 1px rgba(0, 0, 0, .2)
+            }
+
+            .tp-caption.medium_thin_white_left
+            {
+                position         : absolute;
+                color            : rgba(255, 255, 255, .6);
+                font-weight      : 300;
+                font-size        : 24px;
+                line-height      : 1.3;
+                padding          : 0;
+                margin           : 0px auto;
+                border-width     : 0px;
+                border-style     : none;
+                background-color : transparent;
+                text-shadow      : none;
+                text-align       : left
+            }
+
+            .tp-caption.big_thin_white
+            {
+                position         : absolute;
+                color            : #fff;
+                font-weight      : 300;
+                font-size        : 100px;
+                line-height      : 1.3;
+                padding          : 0;
+                margin           : 0px;
+                border-width     : 0px;
+                border-style     : none;
+                background-color : transparent;
+                text-shadow      : 0 1px 1px rgba(0, 0, 0, .2)
+            }
+            /* J.D. - this flexslider fix is because we now get them post background color control, so the default white with the extra spacing doesn't look good*/
+            /* Keep eyes open for side-effects to this fix */
+
+            .media-body > .flexslider{
+                background-color: transparent;
+                text-align: center;
+            }
+            .btnContainer .logoColor
+            {
+                font-weight: bold;
+                color       : #fff;
+                font-family : "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+
+            .btnContainer .logoColor2
+            {
+            	font-weight: normal;
+                color       : #fff;
+                font-size   : 1em;
+                font-family : "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+            div.smc{
+                background-color: #000;
+            }
+            .social_card > .smc > img{
+                border: 5px solid #000;
+            }
+            .span4 > div.development> .thumbnail, .span8 > .social_card_replaceable{
+                background-color: #FFF;
+            }
+            .row >.footer-banner {
+            	padding: 50px 0;
+            }
+            .fillerH1{
+                display: none;
+            }
+        </style>
+        <link rel='stylesheet' id='style-css' href='http://buildingabrandonline.com/HealthandWellness/wp-content/themes/Theme_3/css/style.css?ver=3.9.2'
+              type='text/css' media='all'/>
+        <style type='text/css'>
+            /*footer {
+             background-image: url(
+
+
+            
+
+                                    /wp-content/uploads/2013/09/bg_03.png);
+                                        }
+                                        .page-title .entheme3-video-poster {
+                                         background-image: url(
+
+
+            
+
+                                    /wp-content/uploads/2013/10/video_01.jpg);
+                                        }*/
+        </style>
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <link rel='prev' title='Typography' href='http://buildingabrandonline.com/HealthandWellness/typography/'/>
+        <link rel='next' title='Full Screen Layout' href='http://buildingabrandonline.com/HealthandWellness/full-screen-layout/'/>
+        <meta name="generator" content="WordPress 3.9.2"/>
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!-- Fav and touch icons -->
+        <link rel="shortcut icon" href="http://d1zlh37f1ep3tj.cloudfront.net/wp/wblob/54592E651337D2/471/335E8/mPj-8m5P_CDHYTjozJJKyw/photo-3.jpg">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <style type="text/css">
+                        .search-bar {
+                background-color: #18cedb;
+            }
+                        .tp-caption
+            {
+                font-family : "myriad-pro", sans-serif;
+            }
+
+            div.fb-post.fb_iframe_widget
+            {
+                margin-bottom : 30px;
+            }
+            #bg-div {
+                background-image: url() !important;
+                background-size: cover;
+            }
+            #header > .navbar > .navbar-inner, #header > .navbar >.navbar-inner .container .nav-collapse ul ul > li, #header .nav li ul.submenu, .collapse.in {
+               background-color: #33383F;
+            }
+            @media (max-width: 1159px) {
+            	#header .nav {
+            		background-color: #33383F !important;
+            	}
+            }
+            @media all and (max-width: 1159px) {#header > .navbar >.navbar-inner .container .nav-collapse ul > li{background-color: #33383F;}}
+            #header > .navbar > .navbar-inner ul > li > a, #header > .navbar > .navbar-inner ul > li > a > .icon-search, #header > .navbar >.navbar-inner .container .nav-collapse ul > li > a, .mobileNavButton > span{
+                color: #FFF;
+            }
+            .mobileNavButton > span.iconBar{
+                background-color: #FFF;
+            }
+
+            .mobileNavButton span
+            {
+                margin : 4px auto;
+            }
+            #header .nav li ul li:hover > a {
+                background: rgba(0, 0, 0, .4);
+                -webkit-box-shadow: inset -2px 0px 0 #18cedb;
+                -moz-box-shadow: inset -2px 0px 0 #18cedb;
+                box-shadow: inset -2px 0px 0 #18cedb;
+                color: #FFF;
+            }
+            .mobileMenuButton
+            {
+                border : 0;
+                color  : #FFF;
+            }
+
+            .iconBar
+            {
+                background-color : #FFF;
+                display          : block;
+                width            : 22px;
+                height           : 2px;
+                margin-top       : 4px;
+                border-radius    : 1px;
+            }
+
+            .iconBar:last-child
+            {
+                margin-bottom : 4px;
+            }
+            @media all and (min-width: 1160px) {
+                header .navbar-fixed-top.logo-image .navbar-inner {
+                    height: 100px;
+                }
+
+                header .navbar-fixed-top.logo-image.sticky .navbar-inner {
+                    height: 80px;
+                }
+
+                header .navbar-fixed-top.logo-image.sticky.navbar .nav > li > a {
+                    padding-top: 30px;
+                    padding-bottom: 30px;
+                }
+
+                header .navbar .nav > li > a:focus,
+                header .navbar .nav > li > a:hover,
+                header .navbar .nav > .active > a,
+                header .navbar .nav > .active > a:hover,
+                header .navbar .nav > .active > a:focus {
+                    background: rgba(0, 0, 0, .4);
+                    -webkit-box-shadow: inset 0 -2px 0 #18cedb;
+                    -moz-box-shadow: inset 0 -2px 0 #18cedb;
+                    box-shadow: inset 0 -2px 0 #18cedb;
+                    color: #fff;
+                }
+
+                header .navbar .nav li.dropdown > a:hover .caret,
+                header .navbar .nav li.dropdown > a:focus .caret {
+                    border-top-color: #18cedb;
+                    border-bottom-color: #18cedb;
+                }
+
+                header .navbar .nav li.dropdown.open > .dropdown-toggle,
+                header .navbar .nav li.dropdown.active > .dropdown-toggle,
+                header .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+                    background: rgba(0, 0, 0, .4);
+                    color: #fff;
+                }
+
+                header .navbar .nav .dropdown-toggle .caret {
+                    position: absolute;
+                    bottom: -4px;
+                    left: 50%;
+                    margin: 5px 0 0 -3px;
+                    border-top: 4px solid #000;
+                    border-right: 4px solid transparent;
+                    border-left: 4px solid transparent;
+                }
+
+                header .navbar .nav li.dropdown > .dropdown-toggle .caret {
+                    border-top-color: rgba(0, 0, 0, .6);
+                    border-bottom-color: rgba(0, 0, 0, .6);
+                }
+
+                header .sticky.navbar .nav li.dropdown > .dropdown-toggle .caret {
+                    border-top-color: rgba(0, 0, 0, .8);
+                    border-bottom-color: rgba(0, 0, 0, .8);
+                }
+
+                header .sticky.navbar .nav li.dropdown > a:hover .caret {
+                    border-top-color: #18cedb;
+                    border-bottom-color: #18cedb;
+                }
+
+                header .navbar .nav li.dropdown.open > .dropdown-toggle .caret,
+                header .navbar .nav li.dropdown.active > .dropdown-toggle .caret,
+                header .navbar .nav li.dropdown.open.active > .dropdown-toggle .caret {
+                    border-top-color: #18cedb;
+                    border-bottom-color: #18cedb;
+                }
+
+                header .navbar .nav li.dropdown.open > .dropdown-toggle .caret,
+                header .navbar .nav li.dropdown.active > .dropdown-toggle .caret,
+                header .navbar .nav li.dropdown.open.active > .dropdown-toggle .caret {
+
+                    border-top-color: #18cedb;
+                    border-bottom-color: #18cedb;
+                }
+            }
+            @media only screen and (max-width : 1159px)
+            {
+                header .navbar .brand
+                {
+                    /*margin-left: auto;
+                    margin-right: auto;*/
+                    /*float: none;*/
+                    position    : relative;
+                }
+            }
+
+        </style>
+        <meta property="og:title" content="Being an 'It Works!' Retail V Loyal Customer V It Works Distributor" />
+<meta property="og:description" content="Being an 'It Works!' Retail V Loyal Customer V It Works Distributor" />
+<meta property="og:url" content="http://buildingabrandonline.com/HealthandWellness/being-an-it-works-retail-v-loyal-customer-v-it-works-distributor/" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://bodywrapsberkshire.myitworks.com" />
+<meta property="og:site_name" content="HealthisWealth" />        <link rel="alternate" type="application/rss+xml" title="HealthisWealth &raquo; Being an &#8220;It Works!&#8221;Retail Customer V Loyal Customer V Distributor Comments Feed" href="http://buildingabrandonline.com/HealthandWellness/being-an-it-works-retail-v-loyal-customer-v-it-works-distributor/feed/" />
+<link rel='stylesheet' id='bwp-rc-css'  href='http://buildingabrandonline.com/HealthandWellness/wp-content/plugins/bwp-recent-comments/css/bwp-recent-comments.css?ver=1.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='en-global-themes-css'  href='http://buildingabrandonline.com/HealthandWellness/wp-content/mu-plugins/imb-en/overseers/en/css/global-themes.css' type='text/css' media='all' />
+<link rel='stylesheet' id='social_card-css'  href='http://buildingabrandonline.com/HealthandWellness/wp-content/mu-plugins/imb-en/helpers/social-card/css/style.css?ver=4.0' type='text/css' media='all' />
+<link rel='stylesheet' id='popup-maker-site-css'  href='http://buildingabrandonline.com/HealthandWellness/wp-content/plugins/lightbox/assets/styles/popup-maker-site.min.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='recent-posts-widget-css'  href='http://buildingabrandonline.com/HealthandWellness/wp-content/mu-plugins/imb-en/helpers/recent-posts-widget/css/recent-posts.css?ver=4.0' type='text/css' media='all' />
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-includes/js/jquery/jquery.js?ver=1.11.1'></script>
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-content/mu-plugins/imb-en/helpers/ajax-comments/js/ajaxifycomments.js?ver=4.0'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://buildingabrandonline.com/HealthandWellness/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://buildingabrandonline.com/HealthandWellness/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='The Question On Everyone&#8217;s Mind&#8230;.Who Are &#8220;It Works!&#8221; Global ?' href='http://buildingabrandonline.com/HealthandWellness/the-question-on-everyones-mind-who-are-it-works-global/' />
+<link rel='next' title='Maximize Your Results With The &#8220;It Works!&#8221; Ultimate Body Applicator' href='http://buildingabrandonline.com/HealthandWellness/maximize-your-results-with-the-it-works-ultimate-body-applicator/' />
+<link rel='canonical' href='http://buildingabrandonline.com/HealthandWellness/being-an-it-works-retail-v-loyal-customer-v-it-works-distributor/' />
+<link rel='shortlink' href='http://buildingabrandonline.com/HealthandWellness/?p=29' />
+
+        <script type='text/javascript'
+                src='http://buildingabrandonline.com/HealthandWellness/wp-content/themes/Theme_3/js/jquery.themepunch.tools.min.js?rev=4.5.95&#038;ver=3.9.2'></script>
+        <script type='text/javascript'
+                src='http://buildingabrandonline.com/HealthandWellness/wp-content/themes/Theme_3/js/jquery.themepunch.revolution.min.js?rev=4.5.95&#038;ver=3.9.2'></script>
+
+    </head>
+    <body class="page page-id-986 page-template-default mobileMView">
+        <div id="bg-div" ></div>
+        <h1 class="fillerH1">
+             &raquo; Being an &#8220;It Works!&#8221;Retail Customer V Loyal Customer V Distributor        </h1>
+        <div id="contact-form-success" class="modal hide fade">
+            <div class="modal-header">
+                <a href="#" class="close" data-dismiss="modal" aria-hidden="true">&times;</a>
+                <h3>Send us a message</h3>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-success alert-block"><strong>Succeeded!</strong> Your message has been sent
+                    successfully.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <div id="contact-form-fail" class="modal hide fade">
+            <div class="modal-header">
+                <a href="#" class="close" data-dismiss="modal" aria-hidden="true">&times;</a>
+                <h3>Send us a message</h3>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-error alert-block"><strong>Failed!</strong> The error occured, message is not
+                    sent. Please try again later.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <div id="contact-form" class="modal hide fade">
+            <form method="post" class="contacter" data-nonce="32b26dddb6">
+                <div class="modal-header">
+                    <a href="" class="close" data-dismiss="modal" aria-hidden="true">&times;</a>
+                    <h3>Send us a message</h3>
+                    <p>Enter your name, email address and text of the message below and click Send message button</p>
+                </div>
+                <div class="modal-body">
+                    <div class="row-fluid">
+                        <div class="span6">
+                            <p>
+                                <input type="text" id="contacter-name" class="input-block-level input-inverse"
+                                       placeholder="What's your name?">
+                            </p>
+                        </div>
+                        <div class="span6">
+                            <p>
+                                <input type="text" id="contacter-email" class="input-block-level input-inverse"
+                                       placeholder="Got an email address?">
+                            </p>
+                        </div>
+                    </div>
+                    <p>
+                        <input type="text" class="input-block-level input-inverse"
+                               placeholder="What's the subject of your message?">
+                    </p>
+                    <p>
+                        <textarea rows="4" id="contacter-message" class="input-block-level input-inverse"
+                                  placeholder="Tell us about how we can help."></textarea>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button id="contacter-button" class="btn btn-primary">Send message</button>
+                </div>
+            </form>
+        </div>
+        <!-- Header -->
+        <header id="header">
+
+            <!-- Search Bar -->
+            <div class="search-bar txtNone">
+                <div class="container">
+                    <div class="row-fluid">
+                        <a href="#" class="close">&times;</a>
+                        <div class="span12">
+                            <form method="get" id="searchform" action="http://buildingabrandonline.com/HealthandWellness">
+                                <input type="text" class="input-block-level input-inverse" name="s" id="s" value=""/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Nav -->
+            <div class="navbar navbar-fixed-top logo-text">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <!-- <button type="button" class="btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> -->
+
+
+                                                                                                                                        <div class="btnContainer txtContainer bigtext">
+                                        <button type="button" class="mobileNavButton collapsed" data-toggle="collapse"
+                                                data-target=".nav-collapse">
+                                            <span class="iconBar"></span>
+                                            <span class="iconBar"></span>
+                                            <span class="iconBar"></span>
+                                            <span>Menu</span>
+                                        </button><a class="clearfix" href="http://buildingabrandonline.com/HealthandWellness"><span
+                                            class="logoColor">Aruna<span
+                                            class="logoColor2">Bagha</span></span>                            </a>
+                        </div>
+                        <div class="nav-collapse collapse">
+                            <ul id="menu-main-menu-in-top" class="nav pull-right"><li id="menu-item-4" class="home menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-4"><a href="http://buildingabrandonline.com/HealthandWellness/">Home</a></li>
+<li id="menu-item-5" class="contact-page menu-item menu-item-type-custom menu-item-object-custom menu-item-5"><a href="http://buildingabrandonline.com/HealthandWellness/contact/">Contact Me</a></li>
+<li id="menu-item-6" class="category menu-item menu-item-type-custom menu-item-object-custom menu-item-6"><a href="http://buildingabrandonline.com/HealthandWellness/category/21-day-blogging-challenge/">My 21 Day Blogging Challenge</a></li>
+<li id="menu-item-14" class="home menu-item menu-item-type-custom menu-item-object-custom menu-item-14"><a href="http://buildingabrandonline.com/HealthandWellness/blog">Blog</a></li>
+                            <li class="">
+                                <a href="#" class="search-bar-btn">
+                                    <i class="icon-search"></i>
+
+                                    <div class="search-bar-corner"></div>
+                                </a>
+                            </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+<style type='text/css'>
+footer {
+    background-image: url();
+}
+.page-title {
+    background-image: url();
+}
+</style>
+    <!-- Page title
+    ======================================================================= --> 
+
+   
+    <!-- Content
+    ======================================================================= -->
+<div class="content" data-stellar-ratio="1" style="margin-bottom: 100px; -webkit-transform: translate3d(0px, 0px, 0px);">
+            <div class="mobileHeader">
+		        <div class="mobileHeaderLinks">
+		            <h2 class="fadeFromTop ThemeHeader1">Aruna Bagha</h2>
+		            <p class="fadeFromBottom">Welcome To My Blog</p>
+		        </div>
+		    </div> 
+        <div class="container fastFadeFromTop" style="top: 0px; opacity: 1;"><div class="gap80"></div>
+<div class="row-fluid">
+    <div class="span8">    
+                            
+                    
+                                <div id="post-29" class="social_card_replaceable post-29 post type-post status-publish format-standard has-post-thumbnail">
+										<div class="media-body">
+										
+                                                    <!-- Slider -->
+                                
+        <div class="flexslider ">
+														    <!--<ol class="flex-control-nav flex-control-paging"><li><a class="flex-active">1</a></li><li><a class="">2</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="#"></a></li><li><a class="flex-next" href="#"></a></li></ul>-->
+      
+        </div>
+        
+                                            
+                        <h2>Being an &#8220;It Works!&#8221;Retail Customer V Loyal Customer V Distributor</h2>
+                        <div class="post-meta">
+                            <div class="author"><a href="http://buildingabrandonline.com/HealthandWellness/being-an-it-works-retail-v-loyal-customer-v-it-works-distributor/#cab-author">Aruna Bagha</a> /</div>
+                            <div class="comments">February 6, 2015 /</div>
+                            <div class="tags"></div>
+                        </div>
+			                        <div class="post-entry">
+                            <p><p>Hey All</p>
+<p>I hope you are all well and life is treating you good.</p>
+<p><a href="http://d1zlh37f1ep3tj.cloudfront.net/wp/wblob/54592E651337D2/470/333E6/xYKff4agYnfheDPUH-GwbQ/Have-You-Tried-That-Crazy-Wrap-Thing-Banner580x215.jpg"><img class="alignnone size-medium wp-image-21" src="http://d1zlh37f1ep3tj.cloudfront.net/wp/wblob/54592E651337D2/470/333E8/LQ1drwXqHlxJctjCk_BLJA/Have-You-Tried-That-Crazy-Wrap-Thing-Banner580x215-300x111.jpg" alt="Have-You-Tried-That-Crazy-Wrap-Thing-Banner580x215" width="300" height="111" /></a></p>
+<p>Today I&#8217;m going to talk about being a Retail Customer, Loyal Customer V being a Distributor for It Works Global.  I am getting so many questions about the difference and the benefits of each hence why I am blogging about this subject. I wanted to make the information easily accessible for you and anyone you wanted to make aware.</p>
+<p>When I first came across It Works Global and their Crazy Wrap Thing last year, after doing a bit of research&#8230;oh how I love to research everything ha ha. I saw that their were 2 price options one which was a Retail price and one a Loyal Customer price.</p>
+<p>The Retail price consists of paying the full cost online, for either the Ultimate Body Applicator or any products in their range which includes skincare, supplements and shakes. This is a one off payment, you get your one or how many ever products you order delivered to your address one time. So once you have paid that is it. The retail prices are highlighted in black on the website.</p>
+<p>Now moving on to the Loyal Customer pricing which is highlighted in green on the website. This option is the most popular option. Why?</p>
+<p>Don&#8217;t worry I hear ya lol. Ok so what It Works Global offers a Loyal Customer first of all is  up to 40% off the Retail cost of any of their products  in exchange for a 3 month commitment of paying and receiving an auto shipment.  Let me break it down for you a bit more.</p>
+<p>Here is an example based on exchange rates today in US Dollars (USD)  and British Pounds (GBP) for both the Retail Cost and Loyal Customer Cost for 1 box of The Ultimate Body Applicator.</p>
+<p><strong>Retail Customer Cost </strong></p>
+<p><span style="color: #800080">USD 130.40 / GBP 85.64</span></p>
+<p><strong>Loyal Customer Cost </strong></p>
+<p><span style="color: #800080">USD 79.20 / GBP 52.01 </span></p>
+<p>As I mentioned earlier the Loyal Customer Cost is a value for money option as you get great savings on any of the It Works Global product range. You need to commit to 3 months worth of product being sent to your address, which also can be changed to a different product each month if you wish. After the 3 month period is up and you have your 3rd product delivered to your address, you can then cancel any further shipments to your address by contacting the free customer service number on your initial order email confirmation.</p>
+<p><strong>Why do I have to complete 3 months of the loyal customer program? </strong></p>
+<p>This is another perk of becoming a Loyal Customer. Once you complete 3 months and whether you decide to cancel further shipments or choose to carry on a bit longer. It Works Global will regard you as a Loyal Customer for LIFE.  So another example is, if you do your 3 months worth of shipments and cancel and then decide 6 months later&#8230;. I would like to order another It Works product&#8230;.Guess What?</p>
+<p>You are always going to that receive special price, up to 40% off their products. So if you order 6 weeks, 6 months or even 6 years down the line YOU will always be considered an It Works Loyal Customer. Just remember to keep your initial email order confirmation with your customer id, keep your password and keep the website you ordered from.</p>
+<p>There is also another option whereby instead of enrolling for the auto shipment you can pay a fee of $50 and become a Loyal Customer that way.</p>
+<p><strong>What if I don&#8217;t complete the 3 months ? </strong></p>
+<p>If for any reason you cancel before your 3 months is up, It Works Global will charge you a fee of $50 but its all good&#8230;when you start to see your results you wont want to cancel  :loll:</p>
+<p><strong>Hold on a minute&#8230;..there&#8217;s more </strong> ;-)</p>
+<p>Another benefit of being a Loyal Customer is Perks Point, if you say for example order 1 box of The Ultimate Body Applicator, you get some Perks Points. So one box equates to 7 Perks Points and 7 Perks Points equates to $7. 1 Perk Point equals $1&#8230;&#8230;soooo as you receive your shipments over the weeks/months ahead these Perk Points build up meaning you can use them towards getting cheaper or even FREE product from It Works Global&#8230;.Woop Woop!</p>
+<p><strong>And there is even more&#8230;..</strong></p>
+<p>When you sign up to become a Loyal Customer you get emailed what is called a Landing Page.</p>
+<p>Landing Page?&#8230;.What in the world? For those of you who have a Twitter or Pinterest account, if you share your Landing Page on one of these platforms and either a friend, relative or complete stranger clicks on this link and places an order with It Works Global&#8230;..YOU&#8230; yes YOU will get a FREE box of Ultimate Body Applicators. There is no limit to this the more people click&#8230; the more FREE boxes you get.</p>
+<p>Ok that&#8217;s it now for Loyal Customers&#8230;moving onto being a Distributor for It Works Global.</p>
+<p>So you know how when you go to a great restaurant or when you go the movies and watch the most amazing film&#8230;.You tell your friends and family about it right?</p>
+<p>Well that is what being a Distributor for It Works Global is all about. Most of us current Distributors started out as either a Retail Customer or a Loyal Customer. Believe me we were all skeptics however we took our curiosity a bit further and bought the  products to see if they actually really worked.</p>
+<p><strong>And guess what? </strong></p>
+<p>They did work, we followed the directions and had a little patience and BOOM! saw great results!</p>
+<p>Now if you have a poverty mindset, it&#8217;s not really worth you reading any further&#8230;.</p>
+<p>As I said, I saw my results, I was amazed! I took the plunge and signed up and became a Distributor for It Works Global  :-)</p>
+<p>I paid £85/$99 for my Business Builder Kit&#8230;This Kit comes with 1 Box of Ultimate Body Applicators and marketing materials. I showed my results to people I knew and pre sold each wrap for £25. I then ran my first auto shipment and bought another 2 boxes of The Ultimate Body Applicator with the money I made from selling my first box. It is necessary to run your first auto shipment because that gets you commission qualified to get PAID by It Works Global. From the first box I sold I gathered 8 customers (even though I only pre sold 4) but as my first 4 customers were impressed, they told their people and they wanted the product too! So after this happened the company gave me $120 in product credit which I used for another 2 boxes ( I only had to pay a small delivery fee). So I then had 4 boxes of wraps and made £400 from selling them.  The rest is history, I have never had to run another auto shipment to get commission qualified as I have always got customer after customer. I only order if  I want one of the It Works products for myself&#8230;.Their skincare line is absolutely fabulous&#8230;.I will NOT use anything else ever again!</p>
+<p>I became a Distributor for It Works Global in May 2014&#8230;..one of the very first in the UK and I have never looked back.  I am enjoying my journey with It Works Global,  helping people achieve their health and wellness goals naturally&#8230; And I LOVE receiving the BIG  company bonuses!</p>
+<p><a href="http://d1zlh37f1ep3tj.cloudfront.net/wp/wblob/54592E651337D2/7ED/B7EAC/sLEzdivljO2-Cl6qstjpgQ/uk-earnings-e1424193690670.jpg"><img class="alignnone size-medium wp-image-38" src="http://d1zlh37f1ep3tj.cloudfront.net/wp/wblob/54592E651337D2/7ED/B7E8D/7aXfwmNj4haQAsYtE8TDfA/uk-earnings-300x300.jpg" alt="Monthly UK Earnings" width="300" height="300" /></a></p>
+<p>The moral of the story is&#8230;..I could have stayed a Loyal Customer showed people my results and got tons of people to sign up and use The It Works Ultimate Body Applicator to change the shape of their body&#8230;..But I wouldn&#8217;t have got paid for doing this  :cry:</p>
+<p>So I took that leap, that one extra step further and became a Distributor. I have always been honest about what the products can do for a individual and WILL NOT let you BUY if you cannot make the effort to drink water and eat a little healthier. This also is the applies if you want to be a  DISTRIBUTOR on my team, if you are not motivated and are negative &#8211;  this business is not for you. If you can&#8217;t see the vision and the bigger picture of how much you can help others, along with how much life changing money you can receive every month then please just carry on with your own life.</p>
+<p><strong>What does it take to be an It Works Distributor?</strong></p>
+<p>A positive, motivated and driven individual.</p>
+<p>Honesty, a little patience and consistency&#8230;..put these into practice and watch your WORLD change.</p>
+<p>If you are ready for any of these options I have written about today, scroll right to the bottom of this page and click the link and go for it!!&#8230; Yay!!</p>
+<p>Ciao for now</p>
+<p>Aruna xx</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;
+<div class="c21-cta-prepared">
+<div class="c21_cta_blogging c21_cta_content">
+        <a href="http://www.empowernetwork.com/almostasecret?id=4070811" class="c21_cta_btn" target="_blank">Click Here To Watch The Free Presentation</a>
+    </div>
+</div>
+<div class="ssba" style="margin-bottom: 20px;"><div style="text-align:center;margin-top:10px;">Share this post and help spread the love!<br><a class="ssba_facebook_share shareModalButton" href='javascript:fbShare("http://buildingabrandonline.com/HealthandWellness/being-an-it-works-retail-v-loyal-customer-v-it-works-distributor/", "Fb Share", "Facebook share popup", "http://goo.gl/dS52U", 520, 350)'><img src="http://buildingabrandonline.com/HealthandWellness/wp-content/mu-plugins/imb-en/helpers/social-share-buttons/pagepeel/facebook.png" title="Facebook" class="ssba" alt="Share on Facebook" style="margin-bottom: 20px;"></a><a class="ssba_pinterest_share shareModalButton" href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','//assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());"><img src="http://buildingabrandonline.com/HealthandWellness/wp-content/mu-plugins/imb-en/helpers/social-share-buttons/pagepeel/pinterest.png" title="Pinterest" class="ssba" alt="Pin on Pinterest" style="margin-bottom: 20px;"></a><a class="ssba_twitter_share shareModalButton" href="http://twitter.com/share?url=http://buildingabrandonline.com/HealthandWellness/being-an-it-works-retail-v-loyal-customer-v-it-works-distributor/&amp;text=Being+an+%26%238220%3BIt+Works%21%26%238221%3BRetail+Customer+V+Loyal+Customer+V+Distributor"><img src="http://buildingabrandonline.com/HealthandWellness/wp-content/mu-plugins/imb-en/helpers/social-share-buttons/pagepeel/twitter.png" title="Twitter" class="ssba" alt="Tweet about this on Twitter" style="margin-bottom: 20px;"></a><br></div></div>    <style>
+	#cab-author {
+		margin-bottom: 15px;
+		border: 1px solid #e1e1e1;
+		border-bottom: 1px solid #979797;
+		background: url(images/author-top-background.png) repeat-x;
+		padding-top: 1px;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		position: relative;
+		box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+		-moz-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+		-webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+		min-height: 120px;
+		display: inline-block;
+		width: 100%;
+		margin-top: 10px;
+	}
+        .cab-author-img-wrapper {
+                        width: 200px;
+                        height: 200px;
+                        border-radius: 50%;
+                        border: 5px solid #b8c2d1;
+        }
+	#cab-twitter, #cab-facebook, #cab-google_plus, #cab-linkedin {
+
+	}
+
+	.postContent {
+		padding-right: 1px;
+	}
+	.cab-author-name {
+		margin-bottom: 5px;
+	}
+	.cab-author-name > a {
+		font-size:	22px;
+		color: #201F1F !important;
+		font-weight:bold;
+	}
+
+	.postContent #cab-author .cab-author-inner {
+		background: #f0f0f0 url(images/author-background.png) repeat-x bottom left; /* PREV #fbfbfb */
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		padding: 17px 21px 10px 17px;
+		/*min-height: 100px;*/
+		min-height: 125px;
+	}
+
+	.cab-author-inner .cab-author-image {
+		display: block;
+		width: 104px;
+		height: 104px;
+		position: absolute;
+		padding-left: 6px;
+		padding-top: 6px;
+	}
+	.postContent .cab-author-image img {
+		min-width: 100px;
+		min-height: 100px;
+		height: auto;
+		border-radius: 2px;
+		box-shadow: 0 1px 2px #666;
+
+	}
+	#cab-author .avatar  {
+		border: none !important;
+		margin: 0px 0px 0px 0px;
+		padding: 0px 0px 0px 0px;
+		max-height: 75px;
+		max-width: 75px;
+	}
+	#cab-author .cab-author-inner .cab-author-image img{
+		border: none !important;
+		margin: 0px 0px 0px 0px;
+		padding: 0px 0px 0px 0px;
+		width: 200px;
+                height: 200px;
+                border-radius: 50%;
+	}
+	.cab-author-inner .cab-author-image .cab-author-overlay {
+		width: 87px;
+		position: absolute;
+		height: 87px;
+		top: 0px;
+		left: 0px;
+		background: url(images/author-overlay-background.png) no-repeat;
+	}
+
+	.cab-author-inner .cab-author-info {
+		padding-left: 135px;
+
+		margin: 0;
+		outline: 0 none;
+		vertical-align: baseline;
+		border: 0 none;
+		font-size: 100%;
+	}
+	.postContent #cab-author .cab-author-info a {
+		text-decoration: none;
+		text-shadow: 0 1px 1px #fff;
+		font-size: 24px;
+	}
+
+	.cab-author {
+		box-sizing: border-box;
+		color: #201F1F !important;
+		text-shadow: none !important;
+	}
+
+	.cab-author	{
+		text-shadow: none !important;
+	}
+
+	/*=============================================================================
+		AUTHOR & COMMENTS
+	=============================================================================*/
+
+
+
+	</style>
+	<div id="cab-author" class="cab-author">
+        <div class="cab-author-inner">
+			<div class="cab-author-image">
+				<div class="cab-author-img-wrapper"><img src="https://graph.facebook.com/672066602/picture?type=square&height=300&width=300" alt="Author Image"></div>
+				<p></p>
+				<div class="cab-author-overlay"></div>
+			</div>
+			<div class="cab-author-info">
+				<div class="cab-author-name">
+					<a href="#" rel="author">Aruna Bagha</a>
+				</div>
+				<p>Thank you for reading my posts! If you would like to connect, reach out to me on Facebook and Twitter.</p>
+				<p> <a href="http://www.facebook.com/672066602" target="_blank" rel="Facebook me" id="cab-facebook"><img title="Facebook" src="http://buildingabrandonline.com/HealthandWellness/wp-content/mu-plugins/imb-en/pages/authors/images/facebook.png" alt="Facebook" border="0"></a> <a href="http://www.twitter.com/Arunaarunab" target="_blank" rel="Twitter me" id="cab-twitter"><img title="Twitter" src="http://buildingabrandonline.com/HealthandWellness/wp-content/mu-plugins/imb-en/pages/authors/images/twitter.png" alt="Twitter" border="0"></a>
+				</p>
+			</div>
+		</div>
+    </div></p>
+ 
+                                                    </div>
+                    </div>
+                </div>
+                            <!-- Comments -->
+			<div class="hide_on_social_card_replace" id="comments_section">
+
+                            <!-- Comments -->
+        <div class="comments" id="comments">
+            <h3 class="comments-title">2 Comments</h3>
+                            <div class="media-list comments-list">
+                        <div class="comment even thread-even depth-1 media" id="comment-15">
+                    <div class="madia-image">
+                <img src='http://www.gravatar.com/avatar/00ebe16a5ee0ab3da53b38f64e1a5046?d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536&s=60' class='avatar avatar-60 avatar-default' style='width: 60px; height: auto;' alt='avatar' />            </div>
+                <div class="media-body" id="div-comment-15">
+            <h4 class="media-heading"><a href='http://buildingabrandonline.com/veggie_momma' rel='external nofollow' class='url'>Violet Daniels</a></h4>
+            <span class="date">February 10, 2015 at 4:26 pm</span> - <a class='comment-reply-link' href='/HealthandWellness/being-an-it-works-retail-v-loyal-customer-v-it-works-distributor/?replytocom=15#respond' onclick='return addComment.moveForm("div-comment-15", "15", "respond", "29")'>Reply</a>                         <p>Well said!! I love it works products. It really works!</p>
+        </div>
+    <div class="comment byuser comment-author-ArunaBagha bypostauthor odd alt depth-2 media" id="comment-16">
+                    <div class="madia-image">
+                <img src='https://graph.facebook.com/672066602/picture?type=square&height=300&width=300' class='avatar avatar-60 avatar-default' style='width: 60px; height: auto;' alt='avatar' />            </div>
+                <div class="media-body" id="div-comment-16">
+            <h4 class="media-heading">Aruna Bagha</h4>
+            <span class="date">February 10, 2015 at 4:34 pm</span> - <a class='comment-reply-link' href='/HealthandWellness/being-an-it-works-retail-v-loyal-customer-v-it-works-distributor/?replytocom=16#respond' onclick='return addComment.moveForm("div-comment-16", "16", "respond", "29")'>Reply</a>                         <p>Thank you Violet! I am so glad you have used them and experienced the fabulous results for yourself :)</p>
+        </div>
+</div><!-- #comment-## -->
+</div><!-- #comment-## -->
+                </div>
+            
+        </div>
+        <!-- /Comments -->
+        <div class="gap30"></div>
+                								<div id="respond" class="comment-respond">
+				<h3 id="reply-title" class="comment-reply-title">Leave a comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="/HealthandWellness/being-an-it-works-retail-v-loyal-customer-v-it-works-distributor/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://buildingabrandonline.com/HealthandWellness/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+																			<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>							<p><input type="text" name="author" id="author" class="input-xlarge" placeholder="Name"></p>
+<p><input type="text" name="email" id="email" class="input-xlarge" placeholder="Email"></p>
+<p><input type="text" name="url" id="url" class="input-xlarge" placeholder="Website" /></p>
+												<p><textarea rows="8" name="comment" id="comment" class="input-block-level" placeholder="Comment"></textarea></p>
+                                <i id="tagsTooltip" class="fa fa-question-circle txtRight" data-toggle="tooltip" data-placement="left"></i>
+                                <span class="txtHide">
+                                    <p id="allowedTagsDiv" class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code class=" txtRed">&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt; </code></p>
+                                </span>												<p class="form-submit">
+							<input name="submit" type="submit" id="submit" value="Submit comment" />
+							<input type='hidden' name='comment_post_ID' value='29' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+						</p>
+						<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="13498b3b47" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="108"/></p>					</form>
+							</div><!-- #respond -->
+			            </div>
+					
+
+</div>
+<div class="span4">
+    <div class="row-fluid">
+	<div class="span11 pull-right">        
+                <style>
+	
+	</style>
+	<div class="widget"><div class="%2$s">	<div class="social_card social_card_area">
+        <div class='smc'>
+            <img src="https://graph.facebook.com/672066602/picture?type=square&height=300&width=300" alt="Author"/>
+            <h3 class="userName">Aruna Bagha</h3>
+            		    <p>View my latest social media posts by clicking the links</p>
+            	    <div class="social-media-links" style="padding:16px">
+            
+            
+                            <div style="float:left; width:50%; text-align:center; padding-right:16px;">
+	                <a href="facebook_feed" class="module_facebook_feed" rel="facebook"><img src="http://buildingabrandonline.com/HealthandWellness/wp-content/mu-plugins/imb-en/helpers/social-card/images/facebook.png" alt="Social Button"/></a>
+                </div>
+                                <div style="float:left; width:50%; text-align:center; padding-right:16px;">
+	                <a href="twitter_feed" class="module_twitter_feed" rel="twitter"><img src="http://buildingabrandonline.com/HealthandWellness/wp-content/mu-plugins/imb-en/helpers/social-card/images/twitter.png" alt="Social Button"/></a>
+                </div>
+                            	
+                
+            </div>
+        </div>
+    </div>
+	        </div></div>            </div>
+	<div class="span11 pull-right">
+	    <div class="widget">
+		
+	<a href="http://www.fighttheforcesofevil.com/beach/vbs-beach?id=4070811" target="_blank">
+		<img src="http://buildingabrandonline.com/HealthandWellness/wp-content/mu-plugins/imb-en/pages/banners/images/right_side.png" style="max-width:100%;" alt="right_side">
+	</a>	    </div>
+        </div>
+        <div class="span11 pull-right">        
+            <div class="widget"><div class="widget_youtubechannelwidget"></div></div><div class="widget"><div class="widget_enrecentpostswidget"><h3>Recent Posts</h3><div class="rpwe-block"><ul class="rpwe-ul"><li class="rpwe-li rpwe-clearfix"><h3 class="rpwe-title"><a href="http://buildingabrandonline.com/HealthandWellness/maximize-your-results-with-the-it-works-ultimate-body-applicator/" title="Maximize Your Results With The "It Works!" Ultimate Body Applicator">Maximize Your Results With The "It Works!" Ultimate Body Applicator</a></h3></li><li class="rpwe-li rpwe-clearfix"><h3 class="rpwe-title"><a href="http://buildingabrandonline.com/HealthandWellness/being-an-it-works-retail-v-loyal-customer-v-it-works-distributor/" title="Being an "It Works!"Retail Customer V Loyal Customer V Distributor">Being an "It Works!"Retail Customer V Loyal Customer V Distributor</a></h3></li><li class="rpwe-li rpwe-clearfix"><h3 class="rpwe-title"><a href="http://buildingabrandonline.com/HealthandWellness/the-question-on-everyones-mind-who-are-it-works-global/" title="The Question On Everyone's Mind....Who Are "It Works!" Global ?">The Question On Everyone's Mind....Who Are "It Works!" Global ?</a></h3></li><li class="rpwe-li rpwe-clearfix"><a href="http://buildingabrandonline.com/HealthandWellness/my-experience-with-the-it-works-ultimate-body-applicator/" title="My Experience With The "It Works!" Ultimate Body Applicator"><img width="225" height="300" src="http://d1zlh37f1ep3tj.cloudfront.net/wp/wblob/54592E651337D2/471/335EA/VQNwshIuLhweiJ0oOs-f5w/photo-3-225x300.jpg" class="rpwe-alignleft rpwe-thumb wp-post-image" alt="photo (3)" /></a><h3 class="rpwe-title"><a href="http://buildingabrandonline.com/HealthandWellness/my-experience-with-the-it-works-ultimate-body-applicator/" title="My Experience With The "It Works!" Ultimate Body Applicator">My Experience With The "It Works!" Ultimate Body Applicator</a></h3></li><li class="rpwe-li rpwe-clearfix"><h3 class="rpwe-title"><a href="http://buildingabrandonline.com/HealthandWellness/10-personal-development-quotes-to-motivate-you/" title="10 Personal Development Quotes To Motivate You!">10 Personal Development Quotes To Motivate You!</a></h3></li></ul></div></div></div><div class="widget"><div class="bwp-rc-widget"><h3>Recent Comments</h3>
+		<ul class="bwp-rc-ulist">
+<li class="recent-comment"><span class="recent-comment-avatar"><img src='https://graph.facebook.com/100006136036334/picture?type=square&height=300&width=300' class='avatar avatar-50 avatar-default' style='width: 50px; height: auto;' alt='avatar' /></span><span class="recent-comment-single"><span class="recent-comment-author">Violet Daniels</span><a href="http://buildingabrandonline.com/HealthandWellness/being-an-it-works-retail-v-loyal-customer-v-it-works-distributor/#comment-15" title="Comment on Being an &quot;It Works!&quot;Retail Customer V Loyal Customer V Distributor"><span class="recent-comment-text"> { Well said!! I love it works products. It really works! } &ndash; </span><strong>Feb 10, 4:26 PM</strong></a></span></li>
+<li class="recent-comment"><span class="recent-comment-avatar"><img src='https://graph.facebook.com/1387315222/picture?type=square&height=300&width=300' class='avatar avatar-50 avatar-default' style='width: 50px; height: auto;' alt='avatar' /></span><span class="recent-comment-single"><span class="recent-comment-author">Daniel &amp; Rebekah Ford (2people1Vision)</span><a href="http://buildingabrandonline.com/HealthandWellness/my-experience-with-the-it-works-ultimate-body-applicator/#comment-12" title="Comment on My Experience With The &quot;It Works!&quot; Ultimate Body Applicator"><span class="recent-comment-text"> { Great article. I have heard of this product having some awesome results. } &ndash; </span><strong>Jan 30, 4:13 AM</strong></a></span></li>
+<li class="recent-comment"><span class="recent-comment-avatar"><img src='/anobody/images/66269/James-pic40.jpg' class='avatar avatar-50 avatar-default' style='width: 50px; height: auto;' alt='avatar' /></span><span class="recent-comment-single"><span class="recent-comment-author">James Brown</span><a href="http://buildingabrandonline.com/HealthandWellness/my-experience-with-the-it-works-ultimate-body-applicator/#comment-11" title="Comment on My Experience With The &quot;It Works!&quot; Ultimate Body Applicator"><span class="recent-comment-text"> { I am so embarrassed to say, but I have to tell you that I totally thought that your pictures were of your rear end with... } &ndash; </span><strong>Jan 28, 11:36 AM</strong></a></span></li>
+<li class="recent-comment"><span class="recent-comment-avatar"><img src='https://graph.facebook.com/100008806177644/picture?type=square&height=300&width=300' class='avatar avatar-50 avatar-default' style='width: 50px; height: auto;' alt='avatar' /></span><span class="recent-comment-single"><span class="recent-comment-author">Regina</span><a href="http://buildingabrandonline.com/HealthandWellness/my-experience-with-the-it-works-ultimate-body-applicator/#comment-9" title="Comment on My Experience With The &quot;It Works!&quot; Ultimate Body Applicator"><span class="recent-comment-text"> { Wow! Some great information! } &ndash; </span><strong>Jan 28, 12:54 AM</strong></a></span></li>
+<li class="recent-comment"><span class="recent-comment-avatar"><img src='https://graph.facebook.com/1455603445/picture?type=square&height=300&width=300' class='avatar avatar-50 avatar-default' style='width: 50px; height: auto;' alt='avatar' /></span><span class="recent-comment-single"><span class="recent-comment-author">JDC</span><a href="http://buildingabrandonline.com/HealthandWellness/my-experience-with-the-it-works-ultimate-body-applicator/#comment-6" title="Comment on My Experience With The &quot;It Works!&quot; Ultimate Body Applicator"><span class="recent-comment-text"> { Awesome info... Thank you for posting... Looking forward to more.. } &ndash; </span><strong>Jan 27, 9:33 PM</strong></a></span></li>
+		</ul>
+</div></div>        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer
+======================================================================= -->
+<style>
+    footer div.top-tier div.row div.widget img
+    {
+        max-width  : 100%;
+        max-height : 100%;
+    }
+
+    footer div.top-tier div.row div.widget.span4 div.inner_widget_control
+    {
+        margin  : 0 20px;
+        /*background: rgba(0, 0, 0, .5);*/
+        padding : 10px 10px 10px;
+
+    }
+</style>                    <!-- footer widget styles -->
+<style>
+    footer .widget h3
+    {
+        color : #fff;
+    }
+
+    footer .widget ul
+    {
+        list-style : none;
+        margin     : 0;
+    }
+
+    footer .widget table
+    {
+        margin : 0 auto;
+    }
+    .container > .footerWidgetRow{
+        margin-left:0;
+    }
+</style>
+<!-- <footer>
+    <div class="top-tier">
+        <div class="container fastFadeFromBottom">
+            <div class="row widgetrow footerWidgetRow">
+                      <div class="span12 footer-widget">
+				
+	<a href="https://bodywrapsberkshire.myitworks.com" target="_blank">
+		<img src="http://d1zlh37f1ep3tj.cloudfront.net/wp/wblob/54592E651337D2/470/333E6/xYKff4agYnfheDPUH-GwbQ/Have-You-Tried-That-Crazy-Wrap-Thing-Banner580x215.jpg" style="max-width:100%;" alt="footer">
+	</a>		      </div>
+	    </div>
+            <div class="row widgetrow footerWidgetRow">
+                <div class="span4 footer-widget">
+                                    </div>
+                <div class="span4 footer-widget">
+                                    </div>
+                <div class="span4 footer-widget">
+                                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-tier">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+
+                    <div class="viewfull">
+                                                    <input type="button" value="View Full Site" class="viewasfull currentmobile"/>
+                        
+                    </div>
+                    <ul id="menu-footer-menu-in-bottom" class="copyright">
+                        <li>&copy; Copyright 2015 HealthisWealth. All rights reserved
+                        </li>
+                        <li id="menu-item-7" class="earnings-disclaimer menu-item menu-item-type-custom menu-item-object-custom menu-item-7"><a href="http://www.empowernetwork.com/income?id=4070811">Earnings Disclaimer</a></li>
+<li id="menu-item-8" class="terms-of-service menu-item menu-item-type-custom menu-item-object-custom menu-item-8"><a href="http://www.empowernetwork.com/TOC?id=4070811">Terms of Service</a></li>
+<li id="menu-item-9" class="privacy-policy menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a href="http://www.empowernetwork.com/privacy?id=4070811">Privacy Policy</a></li>
+<li id="menu-item-10" class="rss-feed menu-item menu-item-type-custom menu-item-object-custom menu-item-10"><a href="http://buildingabrandonline.com/HealthandWellness/feed/rss/">RSS Feed</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer> -->
+
+<footer>
+    <div class="row">
+        <div class="footer-banner">
+            <div class="copyrightnotice"> 
+	<a href="https://bodywrapsberkshire.myitworks.com" target="_blank">
+		<img src="http://d1zlh37f1ep3tj.cloudfront.net/wp/wblob/54592E651337D2/470/333E6/xYKff4agYnfheDPUH-GwbQ/Have-You-Tried-That-Crazy-Wrap-Thing-Banner580x215.jpg" style="max-width:100%;" alt="footer">
+	</a> </div>
+        </div>
+    </div>
+    <!-- Start Footer with Widgets -->
+    <div class="footer-widgets">
+        <div class="container">
+            <div class="row footer-banner">
+                <div class="span12 copyrightnotice">
+                    <div class="footer-widget-div">
+                                            </div>
+                    <div class="footer-widget-div">
+                                            </div>
+                    <div class="footer-widget-div">
+                                            </div>
+                </div>
+            </div>
+            <div class="row footer-banner">
+                <div class="span12 copyrightnotice">
+                    <div class="footer-menu">
+                        <ul class="menu-nav">
+                            <li class="earnings-disclaimer menu-item menu-item-type-custom menu-item-object-custom menu-item-7"><a href="http://www.empowernetwork.com/income?id=4070811">Earnings Disclaimer</a></li>
+<li class="terms-of-service menu-item menu-item-type-custom menu-item-object-custom menu-item-8"><a href="http://www.empowernetwork.com/TOC?id=4070811">Terms of Service</a></li>
+<li class="privacy-policy menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a href="http://www.empowernetwork.com/privacy?id=4070811">Privacy Policy</a></li>
+<li class="rss-feed menu-item menu-item-type-custom menu-item-object-custom menu-item-10"><a href="http://buildingabrandonline.com/HealthandWellness/feed/rss/">RSS Feed</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="viewfull">
+                                            <input type="button" value="View Full Site" class="viewasfull currentmobile"/>
+                                    </div>
+                <div class="span12 copyrightnotice">
+                    <div>
+                        <a href="http://buildingabrandonline.com/HealthandWellness/wp-admin/" class="">Admin</a> &copy; Copyright 2015 HealthisWealth.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer with Widgets -->
+
+</footer>
+
+<!-- To top -->
+<a href="#" id="to-top"></a>
+
+<!-- Le javascript
+================================================== --><!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript">
+    (function ()
+    {
+        var config = {
+            kitId        : 'dgz0vln',
+            scriptTimeout: 3000
+        };
+        var h = document.getElementsByTagName("html")[0];
+        h.className += " wf-loading";
+        var t = setTimeout(function ()
+                           {
+                               h.className = h.className.replace(/(s|^)wf-loading(s|$)/g, " ");
+                               h.className += " wf-inactive"
+                           }, config.scriptTimeout);
+        var tk = document.createElement("script"), d = false;
+        tk.src = '//use.typekit.net/' + config.kitId + '.js';
+        tk.type = "text/javascript";
+        tk.async = "true";
+        tk.onload = tk.onreadystatechange = function ()
+        {
+            var a = this.readyState;
+            if (d || a && a != "complete" && a != "loaded")
+            {
+                return;
+            }
+            d = true;
+            clearTimeout(t);
+            try
+            {
+                Typekit.load(config)
+            }
+            catch (b)
+            {
+            }
+        };
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(tk, s)
+
+        function createCookie(name,value,days) {
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime()+(days*24*60*60*1000));
+                var expires = "; expires="+date.toGMTString();
+            }
+            else var expires = "";
+            document.cookie = name+"="+value+expires+"; path=/";
+        }
+
+        function readCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+
+        function eraseCookie(name) {
+            createCookie(name,"",-1);
+        }
+
+        // $(document).ready(function(){
+            // $(document).on('click', '.viewasfull', function(e) {
+                // var elem = $('.viewasfull');
+                // console.log(elem.val());
+                // console.log('hasClass:[' + elem.hasClass('currentfull') + ']');
+                // if (elem.hasClass('currentfull')) {
+                    // console.log('full > mobile');
+                    // elem.val('View Full Site')
+                        // .removeClass('currentfull')
+                        // .addClass('currentmobile')
+                    // createCookie('imb-currentfull', 0, 30);
+                    // window.location.reload(true)
+                // }
+                // else
+                // {
+                    // console.log('mobile > full');
+                    // elem.val('View Mobile Site')
+                        // .removeClass('currentmobile')
+                        // .addClass('currentfull')
+                    // createCookie('imb-currentfull', 1, 0);
+                    // window.location.reload(true)
+                // }
+            // });
+        // })
+        // $('.ssba').css({'margin-bottom':'20px'});
+    })();        </script>
+
+
+<link rel='stylesheet' id='mediaelement-css'
+      href='http://buildingabrandonline.com/HealthandWellness/wp-content/themes/Theme_3/css/mediaelementplayer.min.css?ver=2.13.0' type='text/css' media='all'/>
+<link rel='stylesheet' id='wp-mediaelement-css'
+      href='http://buildingabrandonline.com/HealthandWellness/wp-content/themes/Theme_3/css/wp-mediaelement.css?ver=3.9.2' type='text/css' media='all'/>
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-content/themes/Theme_3/js/bootstrap.min.js?ver=3.9.2'></script>
+<script type='text/javascript'
+        src='http://buildingabrandonline.com/HealthandWellness/wp-content/themes/Theme_3/js/jquery.flexslider.min.js?ver=3.9.2'></script><!--
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-content/themes/Theme_3/js/jquery.stellar.min.js?ver=3.9.2'></script>
+-->
+<script type='text/javascript'
+        src='http://buildingabrandonline.com/HealthandWellness/wp-content/themes/Theme_3/js/jquery.imagesloaded.min.js?ver=3.9.2'></script>
+<script type='text/javascript'
+        src='http://buildingabrandonline.com/HealthandWellness/wp-content/themes/Theme_3/js/jquery.infinitescroll.min.js?ver=3.9.2'></script>
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-content/themes/Theme_3/js/jquery.isotope.min.js?ver=3.9.2'></script>
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-content/themes/Theme_3/js/jquery.fitvids.js?ver=3.9.2'></script>
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-content/themes/Theme_3/js/prettify.js?ver=3.9.2'></script>
+<script type='text/javascript'>
+    /* <![CDATA[ */
+    var theme = {
+        "ajax_url"           : "http:\/\/buildingabrandonline.com\/HealthandWellness\/wp-admin\/admin-ajax.php",
+        "theme_url"          : "http:\/\/buildingabrandonline.com\/HealthandWellness\/wp-content\/themes\/Theme_3",
+        "txt_loadingnewitems": "Loading new items...",
+        "txt_nomoreitems"    : "I think we've hit the end"
+    };
+    /* ]]> */
+</script>
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-content/themes/Theme_3/js/custom.js?ver=3.9.2'></script>
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-content/themes/Theme_3/js/comment-reply.min.js?ver=3.9.2'></script>
+
+<script type='text/javascript'>
+    /* <![CDATA[ */
+    var mejsL10n = {
+        "language": "en-US",
+        "strings" : {
+            "Close"              : "Close",
+            "Fullscreen"         : "Fullscreen",
+            "Download File"      : "Download File",
+            "Download Video"     : "Download Video",
+            "Play\/Pause"        : "Play\/Pause",
+            "Mute Toggle"        : "Mute Toggle",
+            "None"               : "None",
+            "Turn off Fullscreen": "Turn off Fullscreen",
+            "Go Fullscreen"      : "Go Fullscreen",
+            "Unmute"             : "Unmute",
+            "Mute"               : "Mute",
+            "Captions\/Subtitles": "Captions\/Subtitles"
+        }
+    };
+    var _wpmejsSettings = {"pluginPath": "\/wp-includes\/js\/mediaelement\/"};
+    /* ]]> */
+</script>
+<script type='text/javascript'
+        src='http://buildingabrandonline.com/HealthandWellness/wp-content/themes/Theme_3/js/mediaelement-and-player.min.js?ver=2.14.2'></script>
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-content/themes/Theme_3/js/wp-mediaelement.js?ver=3.9.2'></script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga( 'create', 'UA-57147124-1', 'auto' );
+	    		ga('create', 'UA-59594203-1', 'auto', {'name': 'newTracker', 'cookieName': '_ga_user'});
+		ga('newTracker.send', 'pageview');
+	                ga('send', 'pageview');
+	    
+        </script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41648077-5', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    <script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-content/plugins/akismet/_inc/form.js?ver=3.0.4'></script>
+<link rel='stylesheet' id='chall21-css'  href='http://buildingabrandonline.com/HealthandWellness/wp-content/plugins/21-day-challenge/public/assets/front.css?ver=4.0' type='text/css' media='all' />
+<link rel='stylesheet' id='chall21_css-css'  href='http://buildingabrandonline.com/HealthandWellness/wp-content/plugins/21-day-challenge/public/assets/cta.css?ver=4.0' type='text/css' media='all' />
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-content/plugins/optin-lite/js/opt-in-custom-scripts.js?ver=4.0'></script>
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-content/mu-plugins/imb-en/overseers/en/js/global.js?ver=4.0'></script>
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-content/mu-plugins/imb-en/overseers/en/js/include.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var MyAjax = {"ajaxurl":"http:\/\/buildingabrandonline.com\/HealthandWellness\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-content/mu-plugins/imb-en/helpers/social-card/js/social_card.js'></script>
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-includes/js/jquery/ui/jquery.ui.core.min.js?ver=1.10.4'></script>
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-includes/js/jquery/ui/jquery.ui.position.min.js?ver=1.10.4'></script>
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-content/plugins/lightbox/assets/scripts//gsap/TweenMax.min.js?ver=1.14.2'></script>
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-content/plugins/lightbox/assets/scripts//gsap/TweenLite.min.js?ver=1.14.2'></script>
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-content/plugins/lightbox/assets/scripts//gsap/jquery.gsap.min.js?ver=0.1.9'></script>
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-content/plugins/lightbox/assets/scripts/jquery.cookie.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var ajaxurl = "http:\/\/buildingabrandonline.com\/HealthandWellness\/wp-admin\/admin-ajax.php";
+var popmake_default_theme = ["1"];
+var popmake_themes = [];
+popmake_themes = {"1":{"overlay":{"background_color":"#dddddd","background_opacity":"87"},"container":{"padding":"18","background_color":"#ffffff","background_opacity":"98","border_style":"none","border_color":"#000000","border_width":"1","border_radius":"0","boxshadow_inset":"no","boxshadow_horizontal":"1","boxshadow_vertical":"1","boxshadow_blur":"#3","boxshadow_spread":"-31","boxshadow_color":"#020202","boxshadow_opacity":"23"},"title":{"font_align":"left","font_color":"#000000","line_height":"36","font_size":"32","font_family":"Arial","font_weight":"normal","textshadow_horizontal":"0","textshadow_vertical":"0","textshadow_blur":"0","textshadow_color":"#000000","textshadow_opacity":"23"},"content":{"font_color":"","font_family":"inherit","font_weight":"normal","font_style":"normal"},"close":{"text":"X","padding":"5","location":"topright","position_top":"-12","position_left":"","position_bottom":"","position_right":"-12","line_height":"16","font_color":"#ffffff","font_size":"16","font_family":"Sans-Serif","font_weight":"normal","font_style":"normal","background_color":"#999999","background_opacity":"100","border_radius":"12","border_color":"","border_width":"","boxshadow_inset":"no","boxshadow_horizontal":"0","boxshadow_vertical":"0","boxshadow_blur":"0","boxshadow_spread":"0","boxshadow_color":"#000000","boxshadow_opacity":"23","textshadow_horizontal":"0","textshadow_vertical":"0","textshadow_blur":"0","textshadow_color":"#000000","textshadow_opacity":"23"}}};;
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-content/plugins/lightbox/assets/scripts/popup-maker-site.min.js?defer&#038;ver=1.0' defer='defer'></script>
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-includes/js/comment-reply.min.js?ver=4.0'></script>
+<script type='text/javascript' src='http://buildingabrandonline.com/HealthandWellness/wp-content/plugins/21-day-challenge/public/assets/functions.js?ver=4.0'></script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-6.newrelic.com","licenseKey":"0013750a9b","applicationID":"7326483","transactionName":"YlcEMhNYWxVUV0NeWFsdJwUVUFoIGkdeWVBZVw==","queueTime":0,"applicationTime":542,"atts":"ThAHRFtCSBs=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-515.min.js"}</script>
+</body></html>
+<!-- Dynamic page generated in 0.708 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2015-04-04 00:18:07 -->
+
+<!-- Compression = gzip -->
+<!-- super cache -->

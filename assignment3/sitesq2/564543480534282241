@@ -1,0 +1,1446 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:og="http://ogp.me/ns#">
+<style type="text/css">
+	.rate_display {
+		float: left !important;
+		margin-left: 0px !important;
+		height: auto !important;
+	}
+	.groups-theme-bar {
+		float: left;
+		width: 100%;
+		height: 20px !important;
+		padding: 2px 4px !important;
+		box-sizing: border-box;
+	}
+	@media screen and (max-width:480px){
+		#buyandsellplus, #jobscity {
+			display: none;
+		}
+	}
+	.blue {
+		border-radius: 4px;
+		-moz-border-radius: 4px;	
+		-webkit-border-radius: 4px;
+	}
+	#bord {
+		float:left;
+		width: 100%;
+	}
+	@media screen and (max-width: 480px) {
+	.tour {
+			display: none;
+		}
+		.bar {
+			max-width: 100% !important;
+		}
+	}
+	@media screen and (max-width: 600px) {
+		.bar {
+			max-width: 100% !important;
+			padding: 2px !important;
+		}
+	}
+	.bar {
+		display: inline-block;
+		position: relative;
+		max-width: 50%;
+		padding: 5px;
+		box-sizing: border-box;
+		width: 100%;
+	}
+	.map-div {
+		float: left;
+		width: 100%;
+		margin-top: 0px;
+		/*padding: 0px 20%;*/
+		box-sizing: border-box;
+	}
+	.map-div div, img, table, td, iframe {
+	   	      max-width: none !important;
+	}
+	/*
+	@media screen and (max-width: 900px){
+	   .map-div {
+	      display: none;
+	   }
+	} */
+	.displaying-members-text {
+		float:left;
+		width: 100%;
+	}
+	.gadgets-gadget-title-bar {
+		float: left;
+		width: 100%;
+		box-sizing: border-box;
+	}
+</style>
+<!--[if !IE]><!-->
+<style type="text/css">
+	#buttonbar {
+	width: 100%;
+	height: 10px;
+	padding: 0px 10px;
+	margin-left: -10px;
+	}
+	#navigation-theme span {
+	padding-bottom: 0px !important;
+	margin-bottom: 5px;
+	}
+</style>
+
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<!--<![endif]-->
+
+<!--[if lte IE 7]>
+<style type="text/css">
+	#buttonbar {
+	width: 80px;
+	height: 10px;
+	}
+	#navigation-theme span {
+	padding: 0px !important;
+	margin-bottom: 5px;
+	text-align: center !important;
+	}
+	.bar {
+	float:left;
+	}
+	.groups-theme-bar {
+		max-width:95% !important;
+	}
+	.bar {
+		max-width: 45% !important;
+	}
+</style>
+<![endif]-->
+<!--[if gt IE 7]>
+<style type="text/css">
+	#buttonbar {
+	width: 100%;
+	height: 10px;
+	padding: 0px 10px;
+	margin-left: -10px;
+	}
+	#navigation-theme span {
+	padding-bottom: 0px !important;
+	margin-bottom: 5px;
+	}
+	.groups-theme-bar {
+		max-width:95% !important;
+	}
+	.bar {
+		max-width: 45% !important;
+	}
+</style>
+<![endif]-->
+
+<link href="/css/mobile_responsive.css" rel="stylesheet" type="text/css"><link href="/css/ratings.css" type="text/css" rel="stylesheet" /><link href="/css/bannerStyles.css" type="text/css" rel="stylesheet" /><link href="/css/ratings.css" type="text/css" rel="stylesheet" /><head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- mobile resposive -->
+	<!-- breaking point: 280px -->
+	<style type="text/css">
+		#headerDiv input, select {
+			margin: 1px;
+		}
+		#textLogo {
+			color: #2653A3 !important;
+		}
+		#headerDiv div, img {
+			max-width:100%;
+		}
+		
+		#headerDiv img {
+			height: auto; /* for IE */
+		}
+		
+		img.logo {
+			float: left; 
+			width: 312px;
+		}
+		
+		.small_logo {
+			display: none;	
+		}
+		
+		#headerDiv {
+			overflow: hidden;
+			min-height: 70px;
+		}
+		
+		#middle {
+			text-align: center;
+			width: auto;
+			margin-left: 314px;
+			margin-right: 200px;
+		}
+		
+		#menuRight {
+			padding: 2px;
+			text-align: right;
+		}
+		
+		#menuRight a{
+			color: #2653A3;
+		}
+		
+		#mainSearch {
+			margin: 0px !important;
+		}
+		@media screen and (max-width: 830px){
+			#middle {
+				margin-right: 0px;
+			}
+		}
+		@media screen and (max-width: 768px) {
+			#curveLine {
+				display: none !important;
+			}
+			#headerDivYellow {
+				border-bottom-right-radius: 4px;
+				-moz-border-bottom-right-radius: 4px;
+				-webkit-border-bottom-right-radius: 4px;
+			}
+		}
+		@media screen and (max-width: 650px){
+			#search_q {
+				width: 40%;
+			}
+		}
+		@media screen and (max-width: 550px){
+			#textLogo {
+				display: none;
+			}
+			#headerDiv {
+				min-height: 40px;
+			}
+			.small_logo {
+				display: inline;
+				width: 100px;
+				float: left;
+			}
+			#menuRight {
+				padding: 0px !important;
+				padding-left: 5px !important;
+			}
+			.logo {
+				display: none;
+			}
+			
+			#middle {
+				padding: 0px !important;
+				margin-left: 0px !important;
+			}
+		}
+		@media screen and (max-width: 480px) {
+			#middle, #mainSearch {
+				padding-top: 0px !important;
+				margin-top: 0px !important;
+			}
+			#headerDivYellow {
+				display: none !important;
+			}
+		}
+		@media screen and (max-width: 405px) {
+			#menuRight {
+				text-align: center;
+				padding: 10px 0px !important;
+			}
+			#middle {
+				float: left;
+				width: 100% !important;
+			}
+			#search_q, #go-button {
+				margin-top: 2px;
+			}
+		}
+	</style>
+	<!-- mobile responsive -->	
+	
+	<script type= "text/javascript">
+		var RecaptchaOptions = {
+			theme: 'clean'
+		};
+	</script>
+
+	<title>University of Sheffield - Alumni.NET</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link href="/elastic/dependencies/screen.css" type="text/css" rel="stylesheet" /><link href="/css/news.css" type="text/css" rel="stylesheet" /><link href="/css/container_responsive.css?v=5" rel="stylesheet" type="text/css"><link type="text/css" href="/css/jquery.css?v=5" rel="Stylesheet" /><link href="/css/jquery.alerts.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" media="print" href="http://wiki.alumni.net/wiki/skins/common/commonPrint.css?164" /><script type="text/javascript" src="http://shindigo.alumni.net/gadgets/js/rpc.js?c=1"></script><script type="text/javascript" src="/js/json2-ie.js"></script><script type="text/javascript" src="/js/jquery.all.js"></script><script type="text/javascript" src="/js/container.js"></script><script type="text/javascript" src="/js/jquery.watermark.js"></script><script src="/elastic/jquery.elastic.js" type="text/javascript" charset="utf-8"></script><link rel="openid2.provider openid.server" href="http://www.alumni.net/openid/auth"><meta http-equiv="X-XRDS-Location" content="http://www.alumni.net/xrds" /><meta property="og:type" content="school" /><meta property="og:url" content="http://www.alumni.net/Europe/United_Kingdom/England/Sheffield/University_of_Sheffield/" /><meta property="og:site_name" content="Alumni.NET" /><meta property="og:description" content="Reconnect with 216 members from University of Sheffield in Sheffield. University of Sheffield Alumni.NET enables people to connect using messages, photos, discussion boards, wiki pages, and maps." /><meta property="og:street-address" content="Western Bank" /><meta property="og:locality" content="Sheffield" /><meta property="og:region" content="England" /><meta property="og:county-name" content="United Kingdom" /><meta property="og:phone_number" content="0114 222 2000 / +44 114 222 2000" /><meta property="og:fax_number" content="" /><meta property="og:email" content="" /><meta property="og:image" content="http://wiki.alumni.net/wiki/alumni_net_125x75_1.gif" /><meta name="description" content="Reconnect with 216 members from University of Sheffield in Sheffield. University of Sheffield Alumni.NET enables people to connect using messages, photos, discussion boards, wiki pages, and maps." /><meta name="keywords" content="University of Sheffield, Sheffield, alumni, classmates, reunion, graduates, batchmates, workmates, groupmates" /><link rel="image_src" type="image/jpeg"  href="http://www.alumni.net/images/header.gif" /> </head>
+<body>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#search_q").watermark('search...', "#999999");
+		
+			$("#search_q").blur(function(data) {
+				$(this).css("color", "#8C8C8C");
+			});
+		});
+		
+		function changeField(form) {
+			if(form.value == 'Member') {
+				$("#search_q").watermark('e.g. Doe, John; user@email.com', "#999999");
+		
+			} else if(form.value == 'Affiliation') {
+				$("#search_q").watermark('friend\'s or groupmate\'s company...', "#999999");
+			}else {
+				$("#search_q").watermark('search...', "#999999");
+			}
+		}
+	</script>
+	<div id="headerDiv" class="ui-dark-widget-header ui-corner-all"><div style="max-width:none;"><a href="/" title="Go to Alumni.NET Home"><img class="logo" src="/images/header.gif" alt="Alumni.NET" /></a></div><div class="small_logo"><a href="/" title="Go to Alumni.NET Home"><img src="http://www.alumni.net/images/logo_small.png" alt="Alumni.NET" /></a></div><div id="middle"><span id="textLogo">School Central for Social Networking</span><div id="mainSearchdiv"><form id="mainSearch" method="get" action="/search"><select name="type" id ="type" onChange="changeField(this)"><option >Group</option><option >Location</option><option >Member</option><option >Affiliation</option></select><input type="text" id="search_q" name="q" size="30" value=""><input id="go-button" type="submit" value=" Go " /></form></div></div><div id="menuRight"><a href="/groups">groups</a> | <a href="/jobs">jobs</a> | <a href="/deals">deals</a> | <a href="/login?redirect=%2FEurope%2FUnited_Kingdom%2FEngland%2FSheffield%2FUniversity_of_Sheffield%2F">login</a> | <a href="/register?redirect=%2FEurope%2FUnited_Kingdom%2FEngland%2FSheffield%2FUniversity_of_Sheffield%2F">register</a></div></div><div id="headerDivYellow" style="height:15px;"><span id="curveLeft" style="margin-top:1px;"><img style="height:15px;" src="/images/curve-bottom.GIF" /></span></div><div id="curveLine"><div id="curveRight"><img src="/images/curve.GIF" /></div></div><div id="contentDiv"><input id="gid" type="hidden" value="10158227" /><input id="url" type="hidden" value="/Europe/United_Kingdom/England/Sheffield/University_of_Sheffield/" /><input id="redirect" type="hidden" value="" /><script type="text/javascript" src="/js/group_join.js"></script><style type="text/css">#buttonbar {background: #2266AA;}</style><div id="contentWrap"><div id="alumninetnewsDiv2" style = "display:none;"><div id="alumninews" style="margin-top:10px;"> <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#FFFFFF">
+		<tr> 
+			<td style="background-color:#2653A3; text-align:center; padding:2px;" >
+				<font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+					<b><span class=navbar1>Alumni.NET News</span></b>
+				</font> 
+			</td>
+		</tr>
+		<tr> 
+			<td style="border:solid 1px #2653A3; text-align:center !important; padding:4px; color:#003366; font-size:13px;">
+				<span id="news_msg3"></span>
+		     </td>
+		</tr>
+	</table></div><br>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var ip = '128.82.28.186';
+			jQuery.get('/news/get_msg', {'ip' : ip}, function(data) {
+				$('#news_msg3').html(data);
+			});
+		});
+	</script>
+
+</div><div id="profileDrop" style="display:none;"><a href="#hide1" id="hide1" class="hide">&#9658; University of Sheffield</a><a href="#show1" id="show1" class="show">&#9660; University of Sheffield</a></div><div id="profileInfo"><div class="blue" style="padding-top:12px; padding-bottom:30px; padding-right:5px;">
+
+<div style="text-align: center">
+		<div id="profpic" style="text-align:center">
+	<img src="/images/groups/nophoto_group.gif"/>
+	</div>
+</div>
+
+
+<div class="header" style="padding-left:8px">Information 
+<a href="http://twitter.com/sheffielduni" target="_blank"><img style="width:20px; height:20px; padding:2px;" src="http://www.alumni.net/images/Twitter_logo_blue.png" /></a>
+</div>
+	<ul class="profileMenu">
+		
+		<div id="groupInfo-information"><div id="ginfo_detail"><div style="font-weight:bold; color:#7AA5D6;"><label>Category</label></div>University/College</div><div id="ginfo_detail"><div style="font-weight:bold; color:#7AA5D6;"><label>Address</label></div>Western Bank, Sheffield, England, UK S10 2TN</div><div id="ginfo_detail"><div style="font-weight:bold; color:#7AA5D6;"><label>Phone</label></div>0114 222 2000 / +44 114 222 2000</div></div>	</ul>
+
+	<div style="border-bottom: 1px solid #7AA5D6; font-size: 12px; font-weight: bold; padding-bottom: 5px; color: #FFFFCC; padding-left: 7px; margin-bottom: 13px; margin-top: 10px; padding-left:8px">Moderator</div><div id="groupInfo-information"></div>  
+</div>
+<input type="hidden" id="url" value="Europe/United_Kingdom/England/Sheffield/University_of_Sheffield/" /><div id="group_options2"><div><a class="link_group_theme" href="/groups/link_to_group?gid=10158227" id="linktous">Link to Group</a></div></div>
+<div id="dialog-box"></div><script type="text/javascript"></script><div id="jobscity">		<script type="text/javascript" language="Javascript">
+			// <![CDATA[
+			var global_article = new Array();
+			var global_article_counter = 0;
+			var article = "";
+			var early_exit = 0;
+			var jobs_text = 0;	
+			// ]]>
+		</script> 
+		<script type="text/javascript" src="/js/localjobs.js"></script><script type="text/javascript">
+			    	jobscityCall("", "");
+			</script></div><a href="http://www.findshare.com/recommendations?country=United_Kingdom&city=Array" target="_blank" style="color: #000000  !important;"><div id="bannerAd" style="display:none; margin-top: 20px;"></div></a></div><div id="rightSideYellow2">
+<div style="padding-left:8px" style="position:absolute;">
+	<table width="95%" border="0" cellspacing="0" cellpadding="3" bgcolor="#FFFFFF">
+		<tr> 
+			<td style="background-color:#2653A3; text-align:center; padding:2px;" >
+				<font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+					<b><span class=navbar1>Alumni.NET News</span></b>
+				</font> 
+			</td>
+		</tr>
+		<tr> 
+			<td style="border:solid 1px #2653A3; background-color:#FFFFCC; padding:4px; color:#003366; font-size:13px;">
+				<span id="news_msg"></span>
+		     </td>
+		</tr>
+	</table>
+	<br />
+
+		<div align="center">
+	<!-- Google Ad 120x600 -->
+		<script type="text/javascript"><!--
+			// <![CDATA[
+			google_ad_client = "pub-9293773450788345";
+			google_ad_width = 120;
+			google_ad_height = 600;
+			google_ad_format = "120x600_as";
+			google_ad_channel ="";
+			google_color_border = "ffffcc";
+			google_color_bg = "ffffcc";
+			google_color_link = "003366";
+			google_color_url = "000000";
+			google_color_text = "000000";
+			// ]]>
+		//--></script>
+	
+		<script type="text/javascript"
+	  		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
+		<br><br>
+	</div>
+	
+	
+</div>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			var ip = '128.82.28.186';
+			jQuery.get('/news/get_msg', {'ip' : ip}, function(data) {
+				$('#news_msg').html(data);
+			});
+		});
+	</script>
+</div><div id="curveRightSide"><img src="/images/curve-rightside.GIF" width="145px" /></div><div id="containerwrap"><div id="container"><div id="alumninetnewsDiv" style = "display:none;"><div id="alumninews"> <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#FFFFFF">
+		<tr> 
+			<td style="background-color:#2653A3; text-align:center; padding:2px;" >
+				<font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+					<b><span class=navbar1>Alumni.NET News</span></b>
+				</font> 
+			</td>
+		</tr>
+		<tr> 
+			<td style="border:solid 1px #2653A3; text-align:center !important; padding:4px; color:#003366; font-size:13px;">
+				<span id="news_msg2"></span>
+		     </td>
+		</tr>
+	</table></div><br>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var ip = '128.82.28.186';
+			jQuery.get('/news/get_msg', {'ip' : ip}, function(data) {
+				$('#news_msg2').html(data);
+			});
+		});
+	</script>
+
+</div>
+<div id="google-ads-new">
+	<style type="text/css">
+	#google-ads-new {
+		text-align: center !important;
+		margin-bottom: 2px;
+	}
+	.adslot_1 {
+		width: 728px;
+		height: 90px;
+	}
+	
+	@media screen and (max-width:800px) {
+		.adslot_1 {
+			width: 468px;
+			height: 60px;
+		}
+	}
+	
+	@media screen and (max-width:500px) {
+		.adslot_1 {
+			width: 320px;
+			height: 50px;
+		}
+	}
+	
+	</style>
+	<script async
+		src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<ins class="adsbygoogle adslot_1" style="display: inline-block;"
+		data-ad-client="pub-9293773450788345" data-ad-slot="5701637120"></ins>
+	<script type="text/javascript">
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+
+</div>
+
+<style type="text/css">
+	.groups-theme-bar{
+		margin-bottom: 10px;
+		padding: 2px 4px;
+		min-height: 16px;
+		line-height:16px;
+		color: #000000;
+		font-weight: bold;
+		margin-right:5px;
+		padding-right:10px;
+		-webkit-border-radius: 4px;	
+		border-top-left-radius: 4px;
+		border-top-right-radius: 4px;
+		border-bottom-left-radius: 4px;
+		border-bottom-right-radius: 4px;	
+		border: 1px solid #22316C;; 
+		background: #E5ECF9;		
+	}
+
+	.groups-theme-bar a{
+		color: #2653A3;
+		font-weight:normal;
+		font-size:11px;
+		float: right;	
+	}
+	
+	#navigation-theme {
+		list-style:none;
+		padding: 0;
+		margin: 0 0 4px 0;
+	}
+	
+	#navigation-theme li{
+		display:inline;
+	}
+	
+	#navigation-theme a{
+		text-decoration:none;
+	}
+	
+	#navigation-theme span{
+		font-weight: bold;
+		color: #000000;
+		float:left; 
+		padding: 2px 10px 2px 10px;
+		-webkit-border-top-left-radius: 15px;
+		-webkit-border-top-right-radius: 15px;	
+		border-top-left-radius: 15px;
+		border-top-right-radius: 15px;	
+		background-color: #E5ECF9;	}
+	
+	#navigation-theme #selected{
+		font-weight: bold;
+		color: #FFFFFF;
+		background-color: #2266AA;	}
+	
+	#navigation-theme span:hover{
+		font-weight: bold;
+		color: #FFFFFF;
+		background-color: #2266AA;	}
+	
+	#border-theme{
+		
+		height:13px; 
+		background-color:#2266AA;	}
+	
+	#popup_title{
+		background-color:#2266AA;	}
+	#popup_ok{
+		background-color:#2266AA !important;	}
+	
+	.ui-widget-header{
+		background-color:#2266AA;	}
+	
+	button.ui-corner-all{
+		background-color:#2266AA !important	}
+	
+	.button_theme{
+		font-size: 11px;
+		font-weight: bold;
+		color: #FFFFFF !important;
+		background-color:#2266AA !important;		border-color:#2266AA !important;	}
+	
+	.button_theme:hover{
+		font-size: 11px;
+		font-weight: bold;
+		color: #000000 !important;
+		background-color:#E5ECF9 !important;	}
+	
+	.link_group_theme{
+		color: #2266AA;	}
+	
+	a.link_group_theme:visited{
+		color: #2266AA;	}
+	a.link_group_theme:hover{
+		color: #2266AA;	}
+</style>
+<div class="gadgets-gadget-chrome" id="g_header" style="width: 790px;"><div class="gadgets-gadget-title-bar"><span class="gadgets-gadget-title"><a style="color:#FFFFFF;" href="/groups">World</a><font style="color:#7aa5d6; padding:3px;"> ► </font><a style="color:#FFFFFF;" href="/Europe/">Europe</a><font style="color:#7aa5d6; padding:3px;"> ► </font><a style="color:#FFFFFF;" href="/Europe/United_Kingdom/">United Kingdom</a><font style="color:#7aa5d6; padding:3px;"> ► </font><a style="color:#FFFFFF;" href="/Europe/United_Kingdom/England/">England</a><font style="color:#7aa5d6; padding:3px;"> ► </font><a style="color:#FFFFFF;" href="/Europe/United_Kingdom/England/Sheffield/">Sheffield</a><font style="color:#7aa5d6; padding:3px;"> ► </font><a style="color:#FFFFFF;" href="/Europe/United_Kingdom/England/Sheffield/University_of_Sheffield/">University of Sheffield</a></span></div></div><div class="group-name"><a class="link_group_theme" style="text-decoration: none;" href="/Europe/United_Kingdom/England/Sheffield/University_of_Sheffield/">University of Sheffield</a><span style="font-size:9px; color:#808080; padding-left:5px;"><button class="ggjoin button_theme" style="margin-right:5px;">Join this group</button></span></div><div id="main_form"><ul id="navigation-theme" style="float:left;"><li><span id="selected">Overview<div id="buttonbar" style="border-top-left-radius: 2px; border-bottom-left-radius: 2px; -moz-border-top-left-radius: 2px; -moz-border-bottom-left-radius: 2px; -webkit-border-top-left-radius: 2px; -webkit-border-bottom-left-radius: 2px;"></div></span></li><li><a href="/bboard?gid=10158227"><span>Discussions<div id="buttonbar"></div></span></a></li><li><a href="/groups/reviews?gid=10158227"><span>Reviews<div id="buttonbar"></div></span></a></li><li><a href="/group_directory?gid=10158227"><span>Members<div id="buttonbar"></div></span></a></li><li><a href="/groups/photos?gid=10158227"><span>Photos<div id="buttonbar"></div></span></a></li><li><a href="/groups/jobs?gid=10158227"><span>Jobs<div id="buttonbar"></div></span></a></li><li><a href="/donate?gid=10158227"><span>Donate<div id="buttonbar"></div></span></a></li><li><a href="/groups/news?gid=10158227"><span>News<div id="buttonbar"></div></span></a></li><li><a href="/groups/deals?gid=10158227"><span>Deals<div id="buttonbar" style="border-top-right-radius: 2px; border-bottom-right-radius: 2px; -moz-border-top-right-radius: 2px; -moz-border-bottom-right-radius: 2px; -webkit-border-top-right-radius: 2px; -webkit-border-bottom-right-radius: 2px;"></div></span></a></li></ul><br /><div style="float:left; width: 100%;"><div class="bar"><div class="groups-theme-bar">Top School News</div><div id="topNews" class="group-content-individual-area"><div class="loader"><img src="/images/loader.gif" alt="Loading.." /></div></div></div><div class="bar"><div class="groups-theme-bar">Top Alumni Employers and Jobs</div><div id="topEmployers" style="border-bottom:none !important;" class="group-content-individual-area"><div class="loader"><img src="/images/loader.gif" alt="Loading.." /></div></div></div><div class="bar"><div class="groups-theme-bar">Discussions and Reviews</div><div style="float:left; width: 100%;"><div id="r1" class="rate_display"><div class="star_1 ratings_stars" id="star_1"></div><div class="star_2 ratings_stars" id="star_2"></div><div class="star_3 ratings_stars" id="star_3"></div><div class="star_4 ratings_stars" id="star_4"></div><div class="star_5 ratings_stars" id="star_5"></div></div><a href="http://www.alumni.net/groups/postreview?gid=10158227" style="float:right; font-weight:normal;margin-right:15px;" class="link_group_theme">Write a Review</a></div><div class="group-content-individual-area"><div class="displaying-members-text"><font>Displaying latest <b>1</b> out of <b>1</b> topics</font><a class="link_group_theme" style="float:right;" href="/bboard?gid=10158227">See All</a></div><div style="float: left; width: 100%; border-bottom: thin solid #E5ECF9; margin-bottom:3px; padding-bottom:2px;"><a style="float:left;" class="link_group_theme" title="Accountants" style="font-weight:normal;" href="/bboard/read?gid=10158227&thid=2200000001230">Accountants</a><span style="float:right; font-size:10px; color:#CCCCCC;">Latest post by <a class="link_group_theme" title="Angela Larkin" style="font-weight:normal; font-size:11px; margin-left:2px;" href="/profile/33102723">Angela Lar  ...</a></span></div></div></div><div class="bar"><div class="groups-theme-bar">Members</div><div class="group-content-individual-area"><div class="displaying-members-text"><font>Displaying <b>5</b> out of <b>216</b> members</font><a class="link_group_theme" style="float:right;" href="/group_directory?gid=10158227">See All</a></div><div class="friend"><center><div class="thumb"><center><a href="/profile/13864441" rel="friend"><img src="/images/people/13864441.50x50.jpg" alt="Kah-peng Cheong" title="Kah-peng Cheong" /></a></center></div><p class="uname"><a class="link_group_theme" href="/profile/13864441" rel="friend">Kah-peng Cheong</a></p><p class="uname"><span style='font-size:9px;'>Honeywell (Singapore) Pte Ltd</span></p><p class="uname"><span id="jobs_count13864441"></span></p><script type="text/javascript">$(document).ready(function() {jQuery.get("/jobs/check_jobs_count", {"company_name" : "Honeywell (Singapore) Pte Ltd" , "id" : "13864441"},  function(data) {$("#jobs_count13864441").html(data);});});</script></center></div><div class="friend"><center><div class="thumb"><center><a href="/profile/12913611" rel="friend"><img src="/images/people/12913611.50x50.jpg" alt="Anwar Hassan" title="Anwar Hassan" /></a></center></div><p class="uname"><a class="link_group_theme" href="/profile/12913611" rel="friend">Anwar Hassan</a></p><p class="uname"><span style='font-size:9px;'></span></p><p class="uname"><span id="jobs_count12913611"></span></p></center></div><div class="friend"><center><div class="thumb"><center><a href="/profile/12823454" rel="friend"><img src="/images/people/12823454.50x50.jpg" alt="Himanga Mettananda" title="Himanga Mettananda" /></a></center></div><p class="uname"><a class="link_group_theme" href="/profile/12823454" rel="friend">Himanga Mettananda</a></p><p class="uname"><span style='font-size:9px;'>Dept of Mechanical Engineering, University of Leeds</span></p><p class="uname"><span id="jobs_count12823454"></span></p><script type="text/javascript">$(document).ready(function() {jQuery.get("/jobs/check_jobs_count", {"company_name" : "Dept of Mechanical Engineering, University of Leeds" , "id" : "12823454"},  function(data) {$("#jobs_count12823454").html(data);});});</script></center></div><div class="friend"><center><div class="thumb"><center><a href="/profile/13016599" rel="friend"><img src="/images/people/13016599.50x50.jpg" alt="Vinay Gupta" title="Vinay Gupta" /></a></center></div><p class="uname"><a class="link_group_theme" href="/profile/13016599" rel="friend">Vinay Gupta</a></p><p class="uname"><span style='font-size:9px;'></span></p><p class="uname"><span id="jobs_count13016599"></span></p></center></div><div class="friend"><center><div class="thumb"><center><a href="/profile/12655907" rel="friend"><img src="/images/people/12655907.50x50.jpg" alt="Danny Castle" title="Danny Castle" /></a></center></div><p class="uname"><a class="link_group_theme" href="/profile/12655907" rel="friend">Danny Castle</a></p><p class="uname"><span style='font-size:9px;'></span></p><p class="uname"><span id="jobs_count12655907"></span></p></center></div></div></div><div class="bar"><div class="groups-theme-bar">Wiki.Alumni.NET</div><div class="group-content-individual-area"><div class="displaying-members-text"><a class="link_group_theme" style="font-weight:bold;" href="http://wiki.alumni.net/wiki/Europe/United_Kingdom/England/Sheffield/University_of_Sheffield/">Read and Share Information About University of Sheffield</a></div><ul style="float:left;"><li><a class="link_group_theme" style="font-weight:normal;" href="http://wiki.alumni.net/wiki/Europe/United_Kingdom/England/Sheffield/University_of_Sheffield/#University_of_Sheffield">University of Sheffield</a></li><li><a class="link_group_theme" style="font-weight:normal;" href="http://wiki.alumni.net/wiki/Europe/United_Kingdom/England/Sheffield/University_of_Sheffield/#Prospective_Students">Prospective Students</a></li><li><a class="link_group_theme" style="font-weight:normal;" href="http://wiki.alumni.net/wiki/Europe/United_Kingdom/England/Sheffield/University_of_Sheffield/#New_.26_Current_Students">New &amp; Current Students</a></li><li><a class="link_group_theme" style="font-weight:normal;" href="http://wiki.alumni.net/wiki/Europe/United_Kingdom/England/Sheffield/University_of_Sheffield/#Alumni">Alumni</a></li><li><a class="link_group_theme" style="font-weight:normal;" href="http://wiki.alumni.net/wiki/Europe/United_Kingdom/England/Sheffield/University_of_Sheffield/#Visitors">Visitors</a></li><li><a class="link_group_theme" style="font-weight:normal;" href="http://wiki.alumni.net/wiki/Europe/United_Kingdom/England/Sheffield/University_of_Sheffield/#Other_Links">Other Links</a></li><li><a class="link_group_theme" style="font-weight:normal;" href="http://wiki.alumni.net/wiki/Europe/United_Kingdom/England/Sheffield/University_of_Sheffield/#References">References</a></li></ul></div></div><div class="bar"><div class="groups-theme-bar">Photos</div><div class="group-content-individual-area"><div class="displaying-members-text"><font>Displaying <b>0</b> random uploaded photos</font><a class="link_group_theme" style="float:right;" href="/groups/photos?gid=10158227">See All</a></div><div class="no-results-message">No photos uploaded for this group. </div></div></div><div class="bar"><div class="groups-theme-bar">Related Links</div><div class="group-content-individual-area"><a class="link_group_theme" style="font-weight:normal;" href="http://www.shef.ac.uk/alumni"  target="_BLANK">Alumni Relations Office</a><br /><a class="link_group_theme" style="font-weight:normal;" href="http://www.shef.ac.uk"  target="_BLANK">Official Website of University of Sheffield</a><br /></div></div><div class="bar"><div class="groups-theme-bar">Subgroups</div><div class="group-content-individual-area"><a class="link_group_theme" style="font-weight:normal;" href="/Europe/United_Kingdom/England/Sheffield/University_of_Sheffield/MA_in_Advanced_Japanese_Studies_Distance_Learning/">MA in Advanced Japanese Studies Distance Learning</a><br /></div></div><div class="map-div"><br /><div class="groups-theme-bar"><center>Wiki.Alumni.NET Map</center></div><coord latitude="53.3813701" longitude="-1.4853644" ></coord><div id="mappo" style="width: 100%; height: 300px; margin-left: auto; margin-right: auto; margin-bottom:5px;"></div><div style="text-align: center"><form id="buttonLocation" style= "padding-left:0px;" ><br /></form></div></div></div></div>				<div id="dialog_confirm2" title="Request for membership"></div>
+				
+				</div></div></div>		<script type="text/javascript" src="/js/jquery.alerts.js"></script><div style="clear: both"></div><div style="font-size: 10px; text-align: center; clear: both"><br />				
+		    		<div id="google-ads-footer" style="text-align:center;">
+						<style type="text/css">
+							.adslot_2 { 
+								width: 728px; 
+								height: 90px;
+							}
+							@media screen and (max-width:800px) {
+								.adslot_2 { 
+									width: 468px; 
+									height: 60px;
+								}
+							}
+							@media screen and (max-width:500px) {
+								.adslot_2 { width: 320px; height: 50px;
+								}
+							}
+						</style>
+			    		<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			    		<ins class="adsbygoogle adslot_2" style="display:inline-block;" data-ad-client="pub-9293773450788345" data-ad-slot="6039598134"></ins>
+			    		<script>
+			    			(adsbygoogle = window.adsbygoogle || []).push({});
+			    		</script>
+		    		</div>
+			    <br /><img src="/images/line1.gif" width="450" height="30"><div style="text-align:center"><a style="font-weight:normal; font-size:11px;" href="http://wiki.alumni.net/wiki/Alumni.NET:Help" class="links">Help</a> | <a style="font-weight:normal; font-size:11px;" href="http://wiki.alumni.net/wiki/Alumni.NET:About_Us" class="links">About Us</a> | <a style="font-weight:normal; font-size:11px;" href="http://wiki.alumni.net/wiki/Alumni.NET:Terms_And_Conditions" class="links">Terms & Conditions</a> | <a style="font-weight:normal; font-size:11px;" href="http://wiki.alumni.net/wiki/Alumni.NET:Privacy" class="links">Privacy</a>        
+				<!--Google Analytics -->
+   
+				<script type="text/javascript">
+				    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+				    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+				    </script>
+				    <script type="text/javascript">
+				    try {
+				    var pageTracker = _gat._getTracker("UA-2119851-5");
+				    pageTracker._setDomainName(".alumni.net");
+				    pageTracker._trackPageview();
+				    } catch(err) {}
+				</script> 
+        
+				<div style="padding-top:2px; text-align:center; font-size:12px; color:#333;">Copyright&nbsp;&copy;&nbsp; <a href="http://www.alumni.net" target="_blank" class="copyright">Alumni.NET</a>, Patent Pending</div></div><br /><br /></div></div></body></html></div><!-- For the Dropdown profileInfo  -->
+<script type="text/javascript" >
+	$('.show').click(function(){
+		$('#profileInfo').slideUp('slow');
+	});
+	$('.hide').click(function(){
+		$('#profileInfo').css('display', 'inline');
+		$('#profileInfo').hide().slideDown('slow');
+	});
+
+	$(document).ready(function() {
+
+				$.get('http://www.alumni.net/groups/news_overview?gid=10158227', {}, function(data){
+			   $('#topNews').html(data);
+		});
+
+		$.get('http://www.alumni.net/groups/get_top_employers_overview?gid=10158227', {}, function(data){
+			   $('#topEmployers').html(data);
+		});
+
+				
+			     country = 'United_Kingdom';
+	     city = 'Sheffield';
+	   /*  alert(city+','+country); */
+	     
+	     $.get('http://www.alumni.net/deals/findshare_most_popular', {
+				city: 'Sheffield', 
+				country:'United Kingdom',
+				lat: '53.3813701',
+				lng: '-1.4853644',
+				org_abbrev: "",
+				org_name: "University of Sheffield"
+			}, function(data){
+			if(data){	   
+			$('#bannerAd').css("display", "block");
+			$('#bannerAd').html(data);
+			}
+			});
+
+	});
+	
+</script>
+
+<script type="text/javascript" src="/js/messages.js"></script>
+
+<!-- WIKIMAP -->
+
+<!-- Google Maps API Stuff --> 
+<script src="http://www.google.com/jsapi?key=ABQIAAAAEsvyObVRH2IzONuIeDbPrRT3nIwATlkKFTUB9tcWaGsiUGidQxTAoSH6cTBN_MCzHmCQ9vT_tt8bow" type="text/javascript"></script> 
+<script type="text/javascript"> google.load("maps", "2"); </script>
+<script type="text/javascript" src="http://gmaps-utility-library.googlecode.com/svn/trunk/markermanager/release/src/markermanager.js"> </script>
+<script type="text/javascript" src="/js/icon_url.js"></script>
+
+<script type="text/javascript"> 
+	var iconArray=[];
+	var icons=[];
+	var origIconSet=[];
+	var origArray=[];
+	 
+	function betweenString(prefix,suffix,s)
+		{
+				var i = s.indexOf(prefix);
+				if (i >= 0) {
+							s = s.substring(i + prefix.length);
+							}
+				else {
+							return '';
+					}
+				if (suffix) {
+							i = s.indexOf(suffix);
+						if (i >= 0) {
+										s = s.substring(0, i);
+									}
+						else {
+					return '';
+							}
+							}
+					return s;
+		}
+	function loadArray() {				
+		markerNameRequest= new XMLHttpRequest();			
+		markerNameRequest.open("GET", "/js/markerFile.xml", false);
+		markerNameRequest.send(null);
+		var markerNameText=markerNameRequest.responseText;
+		markerNameText=betweenString("<markers>","</markers>",markerNameText);
+		var markerXML=markerNameText.split("\n");
+	
+		var iconSetArray=[];
+		for(var cnt=2;cnt<markerXML.length-1;cnt++) {
+			var mName=betweenString('name="','" value="',markerXML[cnt]);
+			var origName=mName;
+			iconSetArray[cnt-2]=mName;
+			mName=mName.toLowerCase();
+			var mPos=betweenString('value="','" />',markerXML[cnt])
+			mPos=parseInt(mPos);
+			icons[mName]=mPos;
+			origArray[mPos]=origName;	
+		}
+		var iconNameArray=[];
+		var cnt=0;
+		for(var v in icons) {
+			iconNameArray[cnt]=v;
+			cnt++;
+		}
+		iconArray=iconNameArray.sort();
+		origIconSet=iconSetArray.sort();
+	}
+	
+	loadArray();
+
+	function checkIfInArray(orgName, arr){
+		var result = null;
+		for (var i = 0; i < arr.length; i++){
+	        var keyWord = new RegExp(arr[i], "i");
+	        result = keyWord.exec(orgName);
+	        if (result != null){
+		        break;
+	        }
+	    }
+	    return result;
+	}
+	
+	function getOrgType(orgName) {
+		var orgType = 0; // Default is Generic
+	
+		// Test for schools
+	    var result = null;
+	    var schoolKeyWords = ["school", "college", "university", "institute"];
+	    var churchKeyWords = ["church", "parish", "temple", "cathedral","chapel"];
+	    var lodgingKeyWords = ["lodge", "hotel", "motel", "resort", "bed and breakfast", "inn", "suites", "mansion", "condotel", "villa"];
+	    var bankKeyWords = ["bank", "banco", "banko"];
+	    var restaurantKeyWords = ["restaurant","cafe","grill","diner"];
+	    var hospitalKeyWords = ["hospital","medical"];
+	    var museumKeyWords = ["museum"];
+	    var summitKeyWords = ["mt.","peak","mount"];
+	    var cemeteryKeyWords = ["cemetery"];
+	    var zooKeyWords = ["zoo"];
+	    var anchorKeyWords = ["yacht","marina"];
+	    var buildingKeyWords = ["building","tower","plaza","center","place"]; 
+	    var parkKeyWords = ["park", "garden"];
+	    var departmentstoreKeyWords = ["SM","Robinsons"];
+	    var gasstationKeyWords = ["gas","chevron","exxon","caltex","shell","mobil","petron","total"];
+	    var golfKeyWords = ["golf"];
+	    var beachKeyWords = ["beach"];
+	    var airportKeyWords = ["airport"];
+	    var keyWord = null;
+	
+	    if(checkIfInArray(orgName, airportKeyWords) != null){
+		    orgType = 2;
+	    }else if(checkIfInArray(orgName, beachKeyWords) != null){
+			orgType = 8;
+		}else if(checkIfInArray(orgName, golfKeyWords) != null){
+			orgType = 11;
+		}else if(checkIfInArray(orgName, gasstationKeyWords) != null){
+			orgType = 10;
+		}else if(checkIfInArray(orgName, departmentstoreKeyWords) != null){
+			orgType = 4;
+		}else if(checkIfInArray(orgName, parkKeyWords) != null){
+			orgType = 14;
+		}else if(checkIfInArray(orgName, buildingKeyWords) != null){
+			orgType = 17;
+		}else if(checkIfInArray(orgName, anchorKeyWords) != null){
+			orgType = 16;
+		}else if(checkIfInArray(orgName, zooKeyWords) != null){
+			orgType = 18;
+		}else if(checkIfInArray(orgName, cemeteryKeyWords) != null){
+			orgType = 9;
+		}else if(checkIfInArray(orgName, summitKeyWords) != null){
+			orgType = 15;
+		}else if(checkIfInArray(orgName, museumKeyWords) != null){
+			orgType = 13;
+		}else if(checkIfInArray(orgName, hospitalKeyWords) != null){
+			orgType = 12;
+		}else if(checkIfInArray(orgName, restaurantKeyWords) != null){
+			orgType = 6;
+		}else if(checkIfInArray(orgName, bankKeyWords) != null){
+			orgType = 7;
+		}else if(checkIfInArray(orgName, lodgingKeyWords) != null){
+			orgType = 5;
+		}else if(checkIfInArray(orgName, churchKeyWords) != null){
+			orgType = 3;
+		}else if(checkIfInArray(orgName, schoolKeyWords) != null){
+			orgType = 1;
+		}
+		
+		return orgType;
+	
+	} // end getOrgType()
+	
+	// From JavaScript: The Definitive Guide
+	function getText(n) {
+	    var strings = [];
+	    getStrings(n, strings);
+	    return strings;
+	
+	    function getStrings(n, strings) {
+	        if (n.nodeType == 3 /* Node.TEXT_NODE */)
+	            strings.push(n.data);
+	        else
+	        if (n.nodeType == 1 /* Node.ELEMENT_NODE */)
+	        {
+	            for (var m = n.firstChild; m != null;
+	                m = m.nextSibling)
+	            {
+	                getStrings(m, strings);
+	            }
+	        }
+	    } // end getStrings()
+	} // end getText()
+
+	// Copyright (c) 2008.  Alumni.NET.  All Rights Reserved.
+	
+	function loadMap(lat, lon, coordId) {
+	    var map = null;
+	
+	    if ((lat == 0) && (lon == 0)) {
+	        coordId = null
+	        alert('if');
+	    } else {
+		    if (google.maps.BrowserIsCompatible() && coordId != null){  
+		    	map = new google.maps.Map2(document.getElementById("mappo"));
+		        map.addControl(new google.maps.SmallMapControl());
+		        map.addControl(new google.maps.MapTypeControl());
+		        
+		        var point = new google.maps.LatLng(lat, lon);
+		        thePoint = point;
+		        map.setCenter(point, defaultZoomLevel);
+		        map.enableDoubleClickZoom();
+		        map.enableScrollWheelZoom();
+		        map.enableContinuousZoom();
+		        map.addOverlay(new google.maps.Marker(point));
+		        map.setMapType(G_HYBRID_MAP);
+		        /* From http://groups.google.com/group/Google-Maps-API/browse_thread/thread/3d3166c80c0c5950/2ebf9574ec0aa813?lnk=gst&q=imagery#2ebf9574ec0aa813
+		        */
+		        G_SATELLITE_MAP.getErrorMessage = function()
+		        {
+		            var z = map.getZoom();
+		            if (z > 0)
+		            {
+		                map.setZoom(z - 1);
+		                return "";
+		            }
+		            return "No data available at this zoom level.";
+		        }
+		        G_NORMAL_MAP.getErrorMessage = function()
+		        {
+		            var z = map.getZoom();
+		            if (z > 0)
+		            {
+		                map.setZoom(z - 1);
+		                return "";
+		            }
+		            return "No data available at this zoom level.";
+		        }
+		        G_HYBRID_MAP.getErrorMessage = function()
+		        {
+		            var z = map.getZoom();
+		            if (z > 0)
+		            {
+		                map.setZoom(z - 1);
+		                return "";
+		            }
+		            return "No data available at this zoom level.";
+		        }	        
+		    }
+	    }
+	    return map;
+	}  // end loadMap()
+
+	// Taken from http://groups.google.com/group/Google-Maps-API/browse_thread/thread/ef5f704c0dd96e96/62a763f959206bb8?lnk=gst&q=auto+zoom#62a763f959206bb8
+	// Code by Paul Bowler
+	function resizeMap(map, markers) {
+	   // Create new bounds object
+	    var bounds = new google.maps.LatLngBounds();
+	
+	    // Loop through the points, extending the bounds as necessary
+	    //for (var i = 0; i < markers.length; i++)
+	    for (var k in markers)
+	    {
+	        bounds.extend(markers[k].getPoint());
+	    }
+	
+	    // Find the centre of the new bounds
+	    var lat = bounds.getSouthWest().lat() + ((bounds.getNorthEast().lat()
+	        - bounds.getSouthWest().lat()) / 2);
+	    var lon = bounds.getSouthWest().lng() + ((bounds.getNorthEast().lng()
+	        - bounds.getSouthWest().lng()) / 2);
+	
+	    // Get the bounds zoom level
+	    var zoom = map.getBoundsZoomLevel(bounds);
+	
+	    // Change the map to the new bounds values
+	    if ((zoom > minZoomLevel) || (markers.length > 4))
+	        map.setCenter(new google.maps.LatLng(lat, lon), zoom);	
+	} // end resizeMap()
+
+	function resizeMap2(map, markers, point) {
+	    var zoom = defaultZoomLevel;
+	    map.setCenter(point, defaultZoomLevel);
+	
+	    if (markers.length <= 5)
+	    {
+	        while (zoom >= minZoomLevel)
+	        {
+	            map.zoomOut();
+	            zoom--;
+	        }
+	    }
+	
+	} // end resizeMap2()
+
+	function clearNewMarkers() {
+	    newMarkers = [];
+	}
+
+	function updateMap(theMap){
+		
+	    // wgPageName is defined somewhere somehow
+	
+	   // var wgPageName = "Asia/Philippines/Metro_Manila/Manila/University_of_Santo_Tomas/";
+		var wgPageName = "Category:Europe/United_Kingdom/England/Sheffield/University_of_Sheffield/";  
+		var wgPageName2 = "Europe/United_Kingdom/England/Sheffield/University_of_Sheffield/";  
+	    //alert(wgPageName2);
+		var Url = "http://wiki.alumni.net/wiki/" + wgPageName;	
+		var Url2 = "http://wiki.alumni.net/wiki/" + wgPageName2;
+	    //document.write("<font size = \"-2\">" + Url + "</font>\n");
+	
+	    // Display initial bounds:
+	    var b = theMap.getBounds();
+	   // alert(b);
+		//document.getElementById("bounds").innerHTML = "Bounds: " + b.toString() ;
+	    var boundsSW = b.getSouthWest();
+	    var boundsNE = b.getNorthEast();
+	    var swLat = boundsSW.lat();
+	    var swLon = boundsSW.lng();
+	    var neLat = boundsNE.lat();
+	    var neLon = boundsNE.lng();
+	
+	    // Initially get XML file based on query
+	//    var xmlSrc = "http://www.alumni.net/maps/";
+	    var xmlSrc = "/js/";
+		//var xmlSrc = "http://partuza.alumni.net/";
+	    //xmlSrc += "getXml.php?swLat=" + swLat + "&swLon=" + swLon;
+		xmlSrc += "getXml.php?swLat=" + swLat + "&swLon=" + swLon;
+	    xmlSrc += "&neLat=" + neLat + "&neLon=" + neLon;
+		
+	//	document.write(xmlSrc);
+		xmlhttp = new XMLHttpRequest();
+	//    var request = HTTP.newRequest();
+	    var data = null;
+		
+	
+	    xmlhttp.open("GET", xmlSrc, false);	//to change later
+	    
+		
+		xmlhttp.send(null);
+	
+	    data = xmlhttp.responseText;
+	
+		var xml = google.maps.Xml.parse(data);
+		var xmlPoints = xml.documentElement.getElementsByTagName("point")
+	//	alert(xmlPoints[0].getAttribute("entity"));
+	    var point = [];
+	    var marker = [];
+	    var title = [];
+	    var url = [];
+	    var theMarker = null;
+	    var theUrl = null;
+	    var count = 0;
+		var orgType = 0; //Default is generic
+		var markerNumber;
+		currMarkers = [];
+	    //clearNewMarkers();
+		
+	    for (var i = 0; i < xmlPoints.length; i++)
+	    {
+	        point[i] = new google.maps.LatLng(parseFloat(xmlPoints[i].getAttribute("latitude")), parseFloat(xmlPoints[i].getAttribute("longitude")));
+	        title[i] = xmlPoints[i].getAttribute("entity");
+	        url[i] = xmlPoints[i].getAttribute("url");
+			markerNumber = parseInt(xmlPoints[i].getAttribute("marker"));
+	        
+			url[i] = decodeURI(url[i]);
+			
+			
+			
+			if(document.URL.match("wikitest.alumni.net"))
+			{
+				if(url[i].match("wiki.alumni.net"))
+				continue;
+			}
+			 var res = (url[i] == Url || url[i] == Url2); 
+	     
+		 
+	//	    var res = url[i].match(Url + "$");
+	
+	        title[i] = decodeURI(title[i]);
+			
+			//append here 3/16
+			
+			//alert(markerNumber);
+			
+			if(markerNumber!=0) {
+	
+				var iconTypes = origArray;
+				var oldIcons = ["Generic", "School", "Airport", "Church", "Department_Store", "Lodging", "Restaurant", "Bank", "Beach", "Cemetery", "Gas", "Golfcourse", "Hospital", "Museum", "Park", "Summit", "Anchor", "Building", "Zoo"];
+				var markerSizeType = 1;
+				for(var awikiCount = 0; awikiCount<oldIcons.length;awikiCount++) {
+					if(iconTypes[markerNumber].toLowerCase() == oldIcons[awikiCount].toLowerCase()) {
+						markerSizeType = 0;
+						break;
+					}
+				}
+				
+				whiteIcon.image="http://wiki.alumni.net/images/icons/" + origArray[markerNumber] + "/icon.png";
+	
+				if(markerSizeType==0)
+				{
+						//whiteIcon.image="http://wikitest.alumni.net/images/icons/" + iconTypes[markerNumber] + "/icon.png";
+						whiteIcon.iconSize = new google.maps.Size(32, 32);
+						whiteIcon.shadow="";
+				}
+				else {
+						whiteIcon.iconSize = new google.maps.Size(18, 30);
+						whiteIcon.shadow="";
+				}
+				
+			}
+			else
+			{
+				orgType = getOrgType(title[i]);
+				//orgType = 0;
+		        whiteIcon.iconSize = new google.maps.Size(32, 32);
+				whiteIcon.shadowSize = new google.maps.Size(32, 32);
+				whiteIcon.iconAnchor = new google.maps.Point(7, 29);
+				whiteIcon.infoWindowAnchor = new google.maps.Point(8, 2);
+	
+				if (orgType == 0)
+				{
+					whiteIcon.image = urlIcon;
+					whiteIcon.shadow = urlShadowIcon;
+					whiteIcon.transparent = urlTransIcon;
+					whiteIcon.iconSize = new google.maps.Size(16, 28);
+				}
+				else
+				{
+					whiteIcon.image = orgIcon[orgType];
+					whiteIcon.shadow = orgShadowIcon[orgType];
+					whiteIcon.transparent = urlTransIcon;
+				}
+			}
+			
+			
+			//alert(currMarkers);
+	       // if (res != null)
+	         if(res){
+			    marker[i] = new google.maps.Marker(point[i], {title : title[i]});
+	         }
+	        else {
+	            marker[i] = new google.maps.Marker(point[i], {title : title[i],
+	                icon : whiteIcon });
+	            }
+	        if (!currMarkers[url[i]])
+	        {
+	            currMarkers[url[i]] = marker[i];
+		//		document.write(url[i]+"\n");
+	            newMarkers[url[i]] = marker[i];
+	            theUrl = url[i];
+	            theMarker = marker[i];
+	            // User addOverlay to place Markers
+	            theMap.addOverlay(theMarker);
+	            
+	            // Create a callback function that takes arguments.
+	            // Then, use the callback function as a Listener for the
+	            // corresponding Marker
+	            var f = google.maps.Event.callbackArgs(theMarker, gotoUrl,
+	                        theUrl);
+	            google.maps.Event.addListener(theMarker, "click", f);
+	
+	            count++;
+	        }
+	    }
+	
+	} // end updateMap()
+
+	function gotoUrl(Url){
+	    window.location = Url;
+	}
+
+	function countMarkers(markers){
+		
+	    var count = 0;
+	    for (var i in markers) {
+		    count++;
+		}
+	    return count;
+	}
+
+	whiteIcon.image = urlIcon;
+	whiteIcon.shadow = urlShadowIcon;
+	whiteIcon.transparent = urlTransIcon;
+	whiteIcon.iconSize = new google.maps.Size(16, 28);
+	whiteIcon.shadowSize = new google.maps.Size(40, 28);
+	whiteIcon.iconAnchor = new google.maps.Point(8, 28);
+	whiteIcon.infoWindowAnchor = new google.maps.Point(8, 2);
+	
+	var coordElement = document.getElementsByTagName("coord")
+	 
+	var coordId = null;
+	var coordLat = 0;
+	var coordLon = 0;
+	if (coordElement.length > 0)
+	{
+	    coordId = 1;
+	    coordLat = coordElement[0].getAttribute("latitude");
+	    coordLon = coordElement[0].getAttribute("longitude");
+	}  
+	
+	//alert(coordId + " -- " + coordLat + " -- " +coordLon);
+	
+	if ((coordId == null) || ((Math.abs(coordLat) <= 1e-3) && (Math.abs(coordLon) <= 1e-3))) {               
+		//var style = document.getElementById("mappo");
+		//style.setAttribute("class","none");
+		var theMap = null;
+	} else{
+	    var theMap = loadMap(coordLat, coordLon, coordId);
+	}
+	 
+	var moveendListener = null;
+	var numMarkers = 0;
+	if (theMap != null) {
+		
+	    var zoom = theMap.getZoom();
+	 	
+	    /*while (zoom >= minZoomLevel) {		
+	        theMap.zoomOut();
+	        zoom = theMap.getZoom();	
+	        updateMap(theMap);
+	        numMarkers = countMarkers(currMarkers);
+	        if (numMarkers >= 5) break;
+	    }*/
+
+	    theMap.zoomOut();
+	    theMap.zoomOut();
+	 
+	    moveendListener = google.maps.Event.addListener(theMap, "moveend",
+	        function() {	        
+	            if (theMap != null) {
+	                updateMap(theMap);
+	            }
+	    });
+	}
+
+</script> 
+
+<script type="text/javascript">
+load_ratings();
+
+function load_ratings() {
+	var avg = 0;
+
+	if(avg == 5 || (avg > 4.75 && avg < 5)) {
+		$('#star_5').prevAll().andSelf().addClass('ratings_vote');
+	} else if(avg >= 4.25 && avg <= 4.75) { //half star
+		$('#star_5').andSelf().addClass('ratings_half');
+		$('#star_5').prevAll().addClass('ratings_vote'); 	
+	} else if((avg > 3.75 && avg < 4.25)) { //full star > 4 to  <4.25 = 4 stars
+		$('#star_4').prevAll().andSelf().addClass('ratings_vote');
+	} else if(avg >= 3.25 && avg <= 3.75) {
+		$('#star_4').andSelf().addClass('ratings_half');
+		$('#star_4').prevAll().addClass('ratings_vote'); 	
+	} else if((avg > 2.75 && avg < 3.25)) { //full star
+		$('#star_3').prevAll().andSelf().addClass('ratings_vote');
+	} else if(avg >= 2.25 && avg <= 2.75) {
+		$('#star_3').andSelf().addClass('ratings_half');
+		$('#star_3').prevAll().addClass('ratings_vote'); 	
+	} else if((avg > 1.75 && avg < 2.25)) { //full star
+		$('#star_2').prevAll().andSelf().addClass('ratings_vote');
+	} else if(avg >= 1.25 && avg <= 1.75) {
+		$('#star_2').andSelf().addClass('ratings_half');
+		$('#star_2').prevAll().addClass('ratings_vote'); 	
+	} else if((avg >= 1 && avg < 1.25)) { //full star
+		$('#star_1').prevAll().andSelf().addClass('ratings_vote');	
+	}
+	
+}
+
+
+if(document.getElementById('mappo')!=null)
+{
+	document.cookie='refURL="' + document.URL + '"; path=/ ';
+	document.getElementById('buttonLocation').innerHTML= '<input type="button" class="button_theme" value=" Add New Point " id="go-button" onClick="javascript:loadNewPoint()">' + 
+	'<input class="button_theme" type="button" value=" Modify Map Information " id="go-button" onClick="javascript:editPoint()">' +
+	'<input class="button_theme" type="button" value=" View in Iphone " id="go-button" onClick="javascript:iphoneURL()"><br />';
+	document.getElementById('buttonLocation').style.height="50px";
+	createUploadButton();
+	if(document.getElementById("mw-pages")!=null)
+		{
+			createAddPageButton();
+		}
+	else
+	{
+		if(document.URL.match("Category:"))
+		{
+			var paragraphs=document.getElementsByTagName("p");
+			for (var pTag=0;pTag<paragraphs.length;pTag++)
+			{
+				if(paragraphs[pTag].innerHTML.match("<i>This category currently contains no pages or media.</i>"))
+					paragraphs[pTag].innerHTML+='<br /><input type="button" value="Add New Page" onclick="javascript:addPage()" />';
+			}
+		}
+	}	
+}
+else
+{
+	if (navigator.userAgent.toLowerCase().match("iphone") || navigator.userAgent.toLowerCase().match("ipod"))
+	{
+		//iphone ipod detected
+	}
+	else
+	{
+		createUploadButton();
+		if(document.getElementById("mw-pages")!=null)
+		{
+			createAddPageButton();
+		}
+		else
+		{
+			if(document.URL.match("Category:"))
+			{
+				var paragraphs=document.getElementsByTagName("p");
+				for (var pTag=0;pTag<paragraphs.length;pTag++)
+				{
+					if(paragraphs[pTag].innerHTML.match("<i>This category currently contains no pages or media.</i>"))
+						paragraphs[pTag].innerHTML+='<br /><input type="button" value="Add New Page" onclick="javascript:addPage()" />';
+				}
+			}
+		}	
+		
+	}
+}
+function createAddPageButton()
+{
+	var mwPages=document.getElementById("mw-pages");
+	var mwPagesBtn=document.createElement("input");
+	mwPagesBtn.setAttribute("type","button");
+	mwPagesBtn.setAttribute("onclick","javascript:addPage()");
+	mwPagesBtn.setAttribute("value","Add New Page");
+	mwPages.appendChild(mwPagesBtn);
+}
+function addPage()
+{
+	if (document.getElementById('mappo')!=null)
+	{
+		var catURL=document.URL.split("/");
+		var catName=catURL[catURL.length-2];
+		catName=catName.replace(/_/g," ");
+		var askHTML="Will the new page have the exact same location (red marker in map) as <br /><center><b>" + catName + "</b>?</center><br /><br /><br />";
+		askHTML+='<input type="button" onclick="javascript:newLinkPage()" value="Yes" />';
+		askHTML+='<input type="button" onclick="javascript:loadNewPoint()" value="No" />';
+		askHTML+='<input type="button" onclick="javascript:hideDialog();" value="Cancel" />';
+		displayDialog(askHTML);
+	}
+	else
+		newLinkPage()
+}
+function newLinkPage()
+{
+	
+	var inputHTML='New Page Name: <br /><br /><input type="text" id="newPageInput" size="64" onkeyup="javascript:detectKey(event)" />';
+	inputHTML+='<br /><br /><input type="button" value="Ok" onclick="javascript:executeNewPage()" />';
+	inputHTML+='<input type="button" value="Cancel" onclick="hideDialog()" />';
+	displayDialog(inputHTML);
+}
+function detectKey(evt)
+{
+	if(evt.keyCode==13)
+		executeNewPage();
+}
+ 
+function displayDialog(htmlText)
+{
+	showDialog('Wiki.Alumni.NET Confirmation:',htmlText,'prompt');
+		
+		try
+		{
+					document.getElementById("dialog-content").style.height="110px";
+					document.getElementById("dialog").style.height="150px";
+					document.getElementById("dialog-mask").style.height=document.height+"px";
+		}
+		catch(err)//for ie
+		{
+					document.getElementById("dialog-content").style.clientHeight="110px";
+					document.getElementById("dialog").style.clientHeight="150px";
+					document.getElementById("dialog-mask").style.clientHeight=document.height+"px";
+		}
+}
+function executeNewPage()
+{
+	var askPageName=document.getElementById("newPageInput").value;
+	hideDialog();
+			askPageName=validateString(askPageName);
+			if(askPageName.length > 0)
+			{
+				var pageURL=document.URL;
+				pageURL=pageURL.replace("Category:","");
+				pageURL=pageURL.replace("wiki/","wiki/index.php?title=");
+				pageURL+=askPageName+"/";
+				pageURL+="&action=edit";
+				document.location=pageURL;
+			}
+			else
+				alert("input error");
+}
+ 
+ 
+function wordToUpper(strSentence) 
+	{
+		if(strSentence.length <1)
+		return "";
+		else
+		{	
+			 var s=strSentence.split(" ");
+			var out="";
+			for(var ctr=0;ctr<s.length;ctr++)
+			{
+				if((s[ctr].match(/\bthe\b|\bof\b|\band\b|\bat\b|\ba\b|\ban\b|\bfor\b|\bwith\b|\bby\b|\bor\b|\bto\b|\bbe\b|\bon\b|\bin\b|\bfrom\b|\binto\b|\bbut\b|\bnor\b|\byet\b|\bso\b/))&& (ctr !=0 || ctr !=s.length) )
+					out+=s[ctr].toLowerCase();
+				else
+				{
+					out+=s[ctr].charAt(0).toUpperCase()+s[ctr].slice(1);
+				}
+			out+=" ";
+			}
+			return out;
+		}
+	}
+ 
+function validateString(theString)
+	{
+		if(theString == null || theString.length < 1)
+		return "";
+		else
+		{
+			try
+			{
+				theString=theString.replace(/^\s+|\s+$/g, '');
+				theString=wordToUpper(theString);
+				theString=theString.replace(/ /g,"_");
+				theString=theString.replace(/_+/g,"_");
+				//theString=encodeSpecialStrings(theString);
+				theString=escape(theString);
+				theString=theString.replace(/"/g,"%22");
+				theString=theString.replace(/_+$/,"");
+				//theString=theString.replace(/[^a-zA-Z0-9&,'-_]+/g,"");
+				return theString;
+			}
+			catch(err)
+			{
+				alert("input error: " + err);
+			}
+			
+		}
+		
+	}
+ 
+function createUploadButton()
+{
+	var tableElements=document.getElementsByTagName("table");
+	for (var x=0;x<tableElements.length;x++)
+	{
+		if(tableElements[x].className=="gallery")
+		{
+			if(navigator.userAgent.match("MSIE"))
+			{
+				var tr1=tableElements[x].insertRow();
+				var td1=tr1.insertCell();
+				td1.innerHTML='<input type="button" value="Add New Image" onClick="javascript:showUpload()" />';
+			}
+			else
+			{
+				var galleryContents=tableElements[x].innerHTML;
+				galleryContents+='<input type="button" value="Add New Image" onClick="javascript:showUpload()" />';
+				tableElements[x].innerHTML=galleryContents;
+			}
+		}
+	}
+}
+ 
+function showUpload()
+{
+   if(document.getElementById("pt-anonlogin")==null && document.getElementById("pt-login")==null)
+   {
+		document.cookie='refURL="' + document.URL + '"; path=/ ';
+		if(document.URL.match("wikitest"))
+			document.location="http://wikitest.alumni.net/AddNewImage.php";
+		else
+			document.location="http://wiki.alumni.net/AddNewImage.php";
+   }
+   
+   else
+		alert("You need to log in to add a new image.");
+}
+ 
+function editPoint()
+{
+	
+	//var mapLat=document.getElementById('coord').childNodes[2].childNodes[0].childNodes[2].childNodes[0].childNodes[0].innerHTML;
+	//var mapLng=document.getElementById('coord').childNodes[2].childNodes[0].childNodes[2].childNodes[0].childNodes[2].innerHTML;
+	//var mapLat=theMap.getCenter().lat();
+	//var mapLng=theMap.getCenter().lng();
+	
+	/*
+	var mapZoom=theMap.getZoom();
+	
+	if(document.URL.match("wikitest"))
+	{
+		document.location="http://wikitest.alumni.net/CorrectPointLocation.html#" + mapLat + "&" + mapLng + "&" + mapZoom;
+	}
+	else
+	{
+		document.location="http://wiki.alumni.net/CorrectPointLocation.html#" + mapLat + "&" + mapLng + "&" + mapZoom;
+	}*/
+	var redirURL = "http://wiki.alumni.net/wiki/Europe/United_Kingdom/England/Sheffield/University_of_Sheffield/";
+	document.location = redirURL + '#map';
+				
+}
+	
+	
+function iphoneURL()
+{
+	document.location="http://wiki.alumni.net/wiki/Wikimap";
+}
+ 
+function loadNewPoint()
+{
+	var mapLat=theMap.getCenter().lat();
+	var mapLng=theMap.getCenter().lng();
+	
+	var mapZoom=theMap.getZoom();
+	
+				if(document.URL.match("wikitest"))
+				{
+					document.location="http://wikitest.alumni.net/AddNewWikiPoint.html#" + mapLat + "&" + mapLng + "&" + mapZoom;
+				}
+				else
+				{
+					document.location="http://wiki.alumni.net/AddNewWikiPoint.html#" + mapLat + "&" + mapLng + "&" + mapZoom;
+				}
+	
+}
+
+
+
+</script>  

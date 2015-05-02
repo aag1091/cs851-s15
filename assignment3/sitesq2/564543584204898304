@@ -1,0 +1,1364 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="description" content="Real-time buzz for upcoming live music & shows in Atlanta: find out what locals are saying right now about gigs and shows in Atlanta..."/>
+<meta name="keywords" content="Atlanta, gigs, shows, concerts, live music, local, events"/>
+<link rel="icon" type="favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link type="text/css" rel="stylesheet" media="screen" href="/style/citytweets.css"/>
+
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" media="screen" href="/style/citytweetsie6.css"/>
+<![endif]-->
+
+<!--ie6
+	src="images/citytweets_sprite.png" should be replaced by src="x.gif"
+-->
+
+
+
+<title>Atlanta - What's On - Live Music & Shows</title>
+
+<script type='text/javascript' src='http://partner.googleadservices.com/gampad/google_service.js'>
+</script>
+<script type='text/javascript'>
+  GS_googleAddAdSenseService("ca-pub-7424218284122496");
+  GS_googleEnableAllServices();
+</script>
+<script language="JavaScript">
+  GA_googleAddAttr("city","atlanta")
+   GA_googleAddAttr("category", "whatOn")
+   GA_googleAddAttr("subcat", "gigs-and-shows")
+</script>
+<script type='text/javascript'>
+  GA_googleAddSlot("ca-pub-7424218284122496", "rtguides_undermap_mediumrectangle300x250");
+  GA_googleAddSlot("ca-pub-7424218284122496", "rtguides_footer_leaderboard728x90");
+</script>
+<script type='text/javascript'>
+  GA_googleFetchAds();
+</script>
+
+
+<script type="text/javascript">
+midSizeCity = 0;
+smallSizeCity = 0;
+midSmallSizeCity = 0;
+
+show_dm_overlay = 0;
+has_dm_overlay = 1;
+
+temp = new Image(); temp.src = 'http://'+document.location.host+'/images/citytweets_sprite.png';
+//latitude top corner, longitude top corner, latitude bottom corder, longitude bottom corner
+//var mapBounds = '37.8123,-122.5278,37.7081,-122.3527';
+
+places = [{"iconcode": "", "web": "http://www.atlantaconcerts.com", "url_name": "tabernacle", "verified": "y", "screen_name": "", "url_category": "bars", "buzz_level": 85, "placeid": 18000404, "longitude": -84.390648999999996, "phone": "(404) 659-9022", "facebook_name": "", "address_1": "152 Luckie Street", "address_2": "Atlanta, GA 30303", "latitude": 33.758735000000001, "business_name": "Tabernacle", "email": ""}, {"iconcode": "", "web": "", "url_name": "opera_nightclub", "verified": "y", "screen_name": "", "url_category": "clubs", "buzz_level": 95, "placeid": 18004969, "longitude": -84.383047000000005, "phone": "", "facebook_name": "", "address_1": "1150 Peachtree St NE", "address_2": "Atlanta, GA", "latitude": 33.785966000000002, "business_name": "Opera Nightclub", "email": ""}, {"iconcode": "", "web": "http://www.apachecafe.info", "url_name": "apache_cafe", "verified": "y", "screen_name": "APACHECAFE", "url_category": "cafes", "buzz_level": 99, "placeid": 18000170, "longitude": -84.389508000000006, "phone": "(404) 876-5436", "facebook_name": null, "address_1": "64 3rd Street Northwest", "address_2": "Atlanta, GA 30308", "latitude": 33.773691999999997, "business_name": "Apache cafe", "email": "info@apachecafe.info"}, {"iconcode": "", "web": "", "url_name": "georgia_tech", "verified": "y", "screen_name": "", "url_category": "service", "buzz_level": 85, "placeid": 18004063, "longitude": -84.397818000000001, "phone": "", "facebook_name": "", "address_1": "801 Atlantic Dr NW", "address_2": "Atlanta, GA", "latitude": 33.776262000000003, "business_name": "Georgia Tech", "email": ""}, {"iconcode": "", "web": "http://www.villagecomedy.com/", "url_name": "village_theatre", "verified": "y", "screen_name": "villagetheatre", "url_category": "theaters", "buzz_level": 83, "placeid": 18009814, "longitude": -84.371695000000003, "phone": "(404) 688-8858", "facebook_name": "http://www.facebook.com/VillageTheatreATL", "address_1": "486 Decatur Street Southeast", "address_2": "Atlanta, GA", "latitude": 33.751480000000001, "business_name": "Village Theatre", "email": "VILLAGECOMEDY@GMAIL.COM"}, {"iconcode": "", "web": "", "url_name": "roxy_theatre", "verified": "y", "screen_name": "", "url_category": "theaters", "buzz_level": 83, "placeid": 18000941, "longitude": -84.379517000000007, "phone": "(404) 249-6400", "facebook_name": "", "address_1": "3110 Roswell Road Northwest", "address_2": "Atlanta, GA 30305", "latitude": 33.839924000000003, "business_name": "Roxy Theatre", "email": ""}, {"iconcode": "", "web": "http://www.phippsplaza.com", "url_name": "phipps_plaza", "verified": "y", "screen_name": "", "url_category": "shopping", "buzz_level": 94, "placeid": 18000383, "longitude": -84.360907999999995, "phone": "(404) 262-0992", "facebook_name": "", "address_1": "3500 Peachtree Road North East", "address_2": "Atlanta, GA 30326", "latitude": 33.852103999999997, "business_name": "Phipps Plaza", "email": ""}, {"iconcode": "", "web": "http://www.ritzcarlton.com", "url_name": "ritz_carlton", "verified": "y", "screen_name": "", "url_category": "hotels-and-lodging", "buzz_level": 76, "placeid": 18000334, "longitude": -84.361861000000005, "phone": "", "facebook_name": "", "address_1": "3434 Peachtree Road", "address_2": "Austin", "latitude": 33.850864000000001, "business_name": "Ritz-Carlton", "email": ""}, {"iconcode": "", "web": null, "url_name": null, "verified": "u", "screen_name": "", "url_category": null, "buzz_level": 50, "placeid": 18012639, "longitude": -84.384923999999998, "phone": null, "facebook_name": null, "address_1": "660 Peachtree Street Northeast", "address_2": "Atlanta, GA", "latitude": 33.772323999999998, "business_name": "Fox Theater", "email": null}, {"iconcode": "", "web": "http://www.starbar.net", "url_name": "star_community_bar", "verified": "y", "screen_name": "StarBarAtlanta", "url_category": "bars", "buzz_level": 95, "placeid": 18001244, "longitude": -84.349135000000004, "phone": "(404) 681-9018", "facebook_name": "http://www.facebook.com/profile.php?id=505409144&ref=mf", "address_1": "437 Moreland Ave", "address_2": "Atlanta, GA 30307", "latitude": 33.766283000000001, "business_name": "Star Community Bar", "email": null}, {"iconcode": "", "web": "", "url_name": "central_park", "verified": "y", "screen_name": "", "url_category": "parks", "buzz_level": 89, "placeid": 18003436, "longitude": -84.376217999999994, "phone": "", "facebook_name": "", "address_1": "Central Park", "address_2": "Atlanta, GA", "latitude": 33.768732999999997, "business_name": "Central Park", "email": ""}, {"iconcode": "", "web": "http://www.popeyes.com", "url_name": "popeyes", "verified": "y", "screen_name": "PopeyesChicken", "url_category": "restaurants", "buzz_level": 91, "placeid": 1809200, "longitude": -84.409599999999998, "phone": "(404) 209-1100", "facebook_name": null, "address_1": "1959 Metropolitan Parkway Southwest", "address_2": "Atlanta, GA 30315", "latitude": 33.701273999999998, "business_name": "Popeye's", "email": null}, {"iconcode": "", "web": "http://www.centerstage-atlanta.com/", "url_name": "center_stage", "verified": "y", "screen_name": "CenterStageAtl", "url_category": "theaters", "buzz_level": 95, "placeid": 18007502, "longitude": -84.387791000000007, "phone": null, "facebook_name": "http://www.facebook.com/CenterStageAtl", "address_1": "1374 West Peachtree St NW", "address_2": "Atlanta, Georgia", "latitude": 33.791893000000002, "business_name": "Center Stage ", "email": null}, {"iconcode": "", "web": "http://www.wonderroot.org/", "url_name": "wonderroot", "verified": "y", "screen_name": "wonderroot", "url_category": "groups-and-organizations", "buzz_level": 84, "placeid": 18006090, "longitude": -84.355159, "phone": null, "facebook_name": "http://www.facebook.com/group.php?gid=15081658419", "address_1": "982 Memorial Drive Southeast", "address_2": " Atlanta, GA", "latitude": 33.746825999999999, "business_name": "WonderRoot", "email": null}, {"iconcode": "", "web": "http://www.redlightcafe.com", "url_name": "red_light_cafe", "verified": "y", "screen_name": "", "url_category": "cafes", "buzz_level": 85, "placeid": 18001489, "longitude": -84.369367999999994, "phone": "(404) 874-7828", "facebook_name": "", "address_1": "553 Amsterdam Avenue", "address_2": "Atlanta, GA 30306", "latitude": 33.788131, "business_name": "Red Light Cafe", "email": "rlcbill@hotmail.com"}, {"iconcode": "", "web": "http://www.smithsoldebar.com", "url_name": "smiths_olde_bar", "verified": "y", "screen_name": "", "url_category": "bars", "buzz_level": 98, "placeid": 18000939, "longitude": -84.366220999999996, "phone": "(404) 875-1522", "facebook_name": "", "address_1": "1578 Piedmont Avenue", "address_2": "Atlanta, GA 30324", "latitude": 33.761558999999998, "business_name": "Smith's Olde Bar", "email": "nolenreevesmusic@mindspring.com"}];
+tl_lat = 33.867187;
+tl_lng = -84.4156465;
+br_lat = 33.686191;
+br_lng = -84.3430885;
+var mapBounds  = tl_lat + ',' + tl_lng + ',' + br_lat + ',' + br_lng;
+
+
+/* NICK [NEGIN] */
+url_lookup = 'gigs-and-shows';
+neighbourhood = 'None';
+last_tweet_id = '383704';
+current_count = '13';
+sort_by = 'None';
+guide_base_url = 'atlanta.schmap.com';
+/* NICK [END] */
+
+var default_icon = {
+	smalliconpath:'t000-normal.png',
+	bigiconpath:'a010-over.png',
+	bigiconwidth:38, bigiconheight:38,
+	bigiconanchorx:10, bigiconanchory:90
+	// THE OFFSET IS DIFFERENT FOR IE 6 bigiconanchorx:10, bigiconanchory:110
+};
+var isBottomPage = false, iphone=false, is_homePage = false;
+var clicked_id = '0'; // selected_place_id //id of the element that has to be highlighted in green on the page
+var clicked_index = '0'; // selected_tweet_num [1, ...] the position of the tweet in the $timeline ol
+
+var menuMODefaut = 'whatOn';
+var page_title = "What's on - Live Music & Shows";
+var abu_tweet_category = "", abu_tweet_url = "", owner_screenname = "", defaultplaceId = "";
+
+var currentCity_hide = "HIDE CITIES";
+
+
+var failed_neigh = '(none)';
+var failed_cat = '(none)';
+var failed_currentCat = "What's on - Live Music & Shows";
+
+
+	var loggedin_username = '';
+
+var overlay = 0;
+
+var homePage= {
+	hack : function() {return;},
+	switchTab : function() {return;},
+	scroll : function() {return;},
+	scrollMOver : function() {return;},
+	scrollMOut : function() {return;},
+	rotateMOOff : function() {return;},
+	rotateMOOn : function() {return;},
+	MO : function() {return;}
+};
+var menuMO = {
+	show : function() {return;},
+	showDefault : function() {return;},
+	cancelReset : function() {return;}
+}
+/* CITY TWEETS */
+function $(src){
+    if(typeof(src) == 'string'){
+        src = document.getElementById(src);
+	}
+    return src;
+}
+function addScript(url,callback){
+	var s = document.createElement("script");
+    s.type = "text/javascript";
+    s.language = "javascript";
+    s.src = url;
+	document.body.appendChild(s);
+	//if(callback){callback(s);}
+	return s;
+}
+// handle broken twitter image links
+// has to be put at the top. Called before the js file is loaded.
+var brokenImages = function() { // object that stores all broken images on the page
+	var images = new Array();
+	function add(img, name){
+		if (!$('SchmapKit.Maps__GStatic.Map.0.container')) {
+			var tmp = function tmp () {brokenImages.add(img, name);};
+			setTimeout(tmp, 200);
+			return;
+		}
+		else {
+			img.src = "/images/spacer.png";
+			img.className = "defaultTwitterPic_noBG ";
+			images.push([name, img]);
+			var url = "http://twitter.com/users/show/"+name+".json?callback=setTwitterImg";
+			addScript(url);
+			setTimeout(brokenImages.fail.bind(null, name, img), 5000);
+		}
+	}
+	function resolve(name, url){
+		// log(name+" "+url);
+		for (i=0; i<images.length; i++) {
+			if (images[i][0] && images[i][0].toLowerCase()==name.toLowerCase()) {
+				images[i][1].src = url;
+				images[i][1].className = '';
+				images[i][1].onerror = function(){setTwitterImgError(this);};
+				images[i][1].onload = function(){checkImage(this, name, true)};
+				//images[i][0] = null;
+	}}}
+	function fail(name, img) {
+		for (i=0; i<images.length; i++) {
+			if (images[i][0] && images[i][0].toLowerCase()==name.toLowerCase()) {
+				if (images[i][1].src.match("/images/spacer.png")) {
+					images[i][1].className = "defaultTwitterPic";
+					images[i][0] = 'setToDefault';
+	}}}}
+	return {add:add, resolve:resolve, fail:fail};
+}();
+function setTwitterImg(r){
+	brokenImages.resolve(r.screen_name, replaceMini(r.profile_image_url));
+}
+function replaceMini(url){
+	url1 = url.split('_normal.');
+	if (url1[1])
+		return url1[0]+"_mini."+url1[1];
+	url2 = url.split('_bigger.');
+	if (url2[1])
+		return url2[0]+"_mini."+url2[1];
+	else
+		return url;
+}
+function setTwitterImgError(r) {
+	img.src = "/images/spacer.png";
+	img.className = "defaultTwitterPic";
+	log('broken image not handled');
+	return;
+}
+function checkImage(img, name, secondTry) {
+	image = new Image(); image.src = img.src;
+	image.onload = function(){
+		if (!(this.width > 1 || this.height > 1)){
+			if (secondTry) {
+				log('broken image not handled');
+				img.src = "/images/spacer.png";
+				img.className = "defaultTwitterPic";
+			}
+			else
+				brokenImages.add(img, name);
+		}
+	};
+	img.onload = "";
+	img.onerror = "";
+}
+// This function is used to put entries into the blue menu
+function populateBlueMenu() {
+	li = document.createElement('li'); li.id = "tNparent";
+	if (!document.location.href.match('/error')) {
+		a = document.createElement('a'); a.id = "toggleNeigh_temp";
+		a.innerHTML = "Select neighborhood <span class='last-child'><img src='/images/x.gif' /></span>"; li.appendChild(a);
+	}
+	$('filter_preload').innerHTML = '';
+	$('filter_preload').appendChild(li);
+
+	if (menuMODefaut == 'whatOn') {count = categories.whatOn.menuCount; categories_ = categories.whatOn.categories_;
+		rows = categories.whatOn.numberRows;}
+	else if (menuMODefaut == 'restaurants') {count = categories.restaurants.menuCount; categories_ = categories.restaurants.categories_;
+		rows = categories.restaurants.numberRows;}
+	else if (menuMODefaut == 'barsClubs') {count = categories.barsClubs.menuCount; categories_ = categories.barsClubs.categories_;
+		rows = categories.barsClubs.numberRows;}
+	else if (menuMODefaut == 'shopServices') {count = categories.shopServices.menuCount; categories_ = categories.shopServices.categories_;
+		rows = categories.shopServices.numberRows;}
+	else if (menuMODefaut == 'artEnt') {count = categories.artEnt.menuCount; categories_ = categories.artEnt.categories_;
+		rows = categories.artEnt.numberRows;}
+	else if (menuMODefaut == 'healthBeauty') {count = categories.healthBeauty.menuCount; categories_ = categories.healthBeauty.categories_;
+		rows = categories.healthBeauty.numberRows;}
+	else if (menuMODefaut == 'toDoSee') {count = categories.toDoSee.menuCount; categories_ = categories.toDoSee.categories_;
+		rows = categories.toDoSee.numberRows;}
+	else if (menuMODefaut == 'more') {count = categories.more.menuCount; categories_ = categories.more.categories_;
+		rows = categories.more.numberRows;}
+	else /*if (menuMODefaut == 'nodefault')*/ {count = 0; return;}
+
+	buf = [];
+	for (i=0; i<count; i++) {buf[i] = "";}
+	for (i=0; i<categories_.length; i++) {
+		if (categories_[i] && categories_[i][2]) {
+			li = document.createElement('li');
+			if (categories_[i][2]==1 || (menuMODefaut=="more" && categories_[i][2]==2)) li.className="first-li";
+			a = document.createElement('a'); a.innerHTML = categories_[i][0];
+			a.href = 'http://'+document.location.host+'/'+categories_[i][1]+document.location.search;
+			span = document.createElement('span'); span.innerHTML = "&nbsp;|&nbsp;"; span.className = "spacer";
+			li.appendChild(a);
+			// only put the spacer after the last element if there is a 'show all' link
+			if (categories_[i][2] != count || rows > 0)
+				li.appendChild(span);
+			buf[categories_[i][2]-1] = li;
+		}
+	}
+	for (i=0; i<buf.length; i++) {
+		if(buf[i])
+			$('filter_preload').appendChild(buf[i]);
+	}
+
+	//if ($('filter_preload')) $('filter_preload').parentNode.removeChild($('filter_preload'));
+	li = document.createElement('li');
+	if (rows > 0) {
+		a = document.createElement('a');  a.innerHTML = 'Show all';
+		span = document.createElement('span'); span.innerHTML = '<img src="/images/x.gif" />'; span.className = "last-child";
+		a.appendChild(span); li.appendChild(a); $('filter_preload').appendChild(li);
+	}
+	if (menuMODefaut == 'nodefault') {li.innerHTML = '&nbsp;'; $('filter_preload').appendChild(li);}
+}
+
+	
+
+
+
+
+
+var categories = {
+deals : {menuTitle : 'Featured Deal',menuCount : 2,numberRows : 0,categories_ : [['See All Deals','deals',1],["Deal of the Day: 35% Off Moving Services","deals/jay-s-load-and-unload-1-3",2]]},
+whatOn : {menuTitle : 'What\'s on in Atlanta - select by event category',menuCount : 6,numberRows : 5,categories_ : [['All Events','whats-on',1],['Live Music & Shows','gigs-and-shows',2],['Concerts','concerts',3],['Parties & Nightlife','parties-and-nightlife',4],['Happy Hours','happy-hours',5],['Wining & Dining','wining-and-dining',0],['Festivals & Fairs','festivals-and-fairs',0],['Charity & Fundraisers','charity-and-fundraisers',0],['Film Screenings','film-screenings',0],['Book Readings','books-readings',0],['Art & Exhibitions','art-and-exhibitions',0],['Meetings & Gatherings','meetings-and-gatherings',0],['Sports & Competitions','sports-and-competitions',0],['Conferences & Expos','conferences-and-expos',0],['Classes & Workshops','classes-and-workshops',0],['Job Fairs & Auditions','job-fairs-and-auditions',0],['Sales & Promotions','sales-and-promotions',6],['Openings & Receptions','openings-and-receptions',0]]},
+restaurants : {menuTitle : 'Atlanta Restaurants - select by category',menuCount : 9,numberRows : 10,categories_ : [['All Restaurants','restaurants',1],['Afghan','afghan-restaurants',0],['African','african-restaurants',0],['Alfresco','alfresco-restaurants',0],['American','american-restaurants',0],['Argentine','argentine-restaurants',0],['Australian','australian-restaurants',0],['Barbeque','barbeque-restaurants',0],['Basque','basque-restaurants',0],['Belgian','belgian-restaurants',0],['Brazilian','brazilian-restaurants',0],['Breakfast & Brunch','breakfast-and-brunch-restaurants',0],['British','british-restaurants',0],['Buffets','buffet-restaurants',0],['Burgers','burgers',0],['Burmese','burmese-restaurants',0],['Cafes','cafes',2],['California','california-restaurants',0],['Cambodian','cambodian-restaurants',0],['Caribbean','caribbean-restaurants',0],['Chilean','chilean-restaurants',0],['Chinese','chinese-restaurants',6],['Colombian','colombian-restaurants',0],['Contemporary','contemporary-restaurants',0],['Continental ','continental-restaurants',0],['Creperies','creperies',0],['Cuban','cuban-restaurants',0],['Delis & Diners','delis-and-diners',0],['Eastern European','eastern-european-restaurants',0],['Eclectic','eclectic-restaurants',0],['Egyptian','egyptian-restaurants',0],['Ethiopian','ethiopian-restaurants',0],['Filipino','filipino-restaurants',0],['Fondue','fondue-restaurants',0],['French','french-restaurants',7],['Fusion','fusion-restaurants',0],['German','german-restaurants',0],['Greek','greek-restaurants',0],['Indian','indian-restaurants',0],['Indonesian','indonesian-restaurants',0],['Irish','irish-restaurants',0],['Italian','italian-restaurants',8],['Japanese','japanese-restaurants',0],['Korean','korean-restaurants',0],['Latin American','latin-american-restaurants',0],['Malaysian','malaysian-restaurants',0],['Mediterranean','mediterranean-restaurants',0],['Mexican','mexican-restaurants',9],['Middle Eastern','middle-eastern-restaurants',0],['Moroccan','moroccan-restaurants',0],['Pakistani','pakistani-restaurants',0],['Persian','persian-restaurants',0],['Peruvian','peruvian-restaurants',0],['Pizza','pizza',0],['Polish','polish-restaurants',0],['Portuguese','portuguese-restaurants',0],['Russian','russian-restaurants',0],['Sandwiches','sandwiches',5],['Scandinavian','scandinavian-restaurants',0],['Seafood','seafood-restaurants',3],['South African','south-african-restaurants',0],['Southwestern','southwestern-restaurants',0],['Spanish','spanish-restaurants',0],['Steakhouses','steakhouses',4],['Sushi','sushi-restaurants',0],['Swiss','swiss-restaurants',0],['Thai','thai-restaurants',0],['Tibetan','tibetan-restaurants',0],['Turkish','turkish-restaurants',0],['Vegetarian','vegetarian-restaurants',0],['Vietnamese','vietnamese-restaurants',0]]},
+barsClubs : {menuCount : 9,numberRows : 0,categories_ : [['All Bars & Clubs','bars-and-clubs',1],['Bars','bars',2],['Pubs','pubs',3],['Clubs','clubs',4],['Lounges','lounges',5],['Live Music','live-music',6],['Wine Bars','wine-bars',7],['Cocktail Bars','cocktail-bars',8],['Sports Bars','sports-bars',9]]},
+artEnt : {menuCount : 6,numberRows : 0,categories_ : [['All Art & Entertainment','art-and-entertainment',1],['Theaters','theaters',2],['Cinemas','cinemas',3],['Art Galleries','art-galleries',4],['Museums','museums',5],['Casinos & Arcades','casinos-and-arcades',6]]},
+healthBeauty : {menuCount : 6,numberRows : 0,categories_ : [['All Health & Beauty','health-and-beauty',1],['Hair & Beauty Salons','hair-and-beauty-salons',2],['Spas & Massage','spas-and-massage',3],['Gyms & Health Clubs','gyms-and-health-clubs',4],['Yoga & Dance','yoga-and-dance',5],['Other','other-health-and-beauty',6]]},
+shopServices : {menuTitle : 'Atlanta Shopping - select by category',menuCount : 6,numberRows : 5,categories_ : [['All Shopping','shopping',1],['Antiques & Collectibles','antiques-and-collectibles',0],['Arts & Crafts','art-and-craft-stores',4],['Automotive','automotive-dealerships',0],['Beauty & Cosmetics','beauty-and-cosmetics',0],['Bookshops','bookshops',0],['Clothing & Fashion','clothing-and-fashion',3],['Computers & Electronics','computers-and-electronics',0],['Drugstores','drugstores',0],['Food & Drink','food-and-drink',5],['Home & Garden','home-and-garden',6],['Malls & Markets','malls-and-markets',2],['Office Supplies','office-supplies',0],['Sporting Goods','sporting-goods',0],['Toy Stores','toy-stores',0],['Wedding & Bridal','wedding-and-bridal',0],['Wholesale','wholesale',0],['Other Shopping','other-shopping',0]]},
+toDoSee : {menuCount : 6,numberRows : 0,categories_ : [['All To do & see','to-do-and-see',1],['Sights & Attractions','sights-and-attractions',2],['Parks & Gardens','parks-and-gardens',3],['Stadiums','stadiums',4],['Sports & Recreation','sports-and-recreation',5],['Churches & Religion','churches-and-religion',6]]},
+more : {menuTitle : 'Atlanta Services & More - select by category',menuCount : 5,numberRows : 5,categories_ : [['Automotive','automotive-services',0],['Event Planning & Services','event-planning-and-services',0],['Financial Services','financial-services',0],['Groups & Organizations','groups-and-organizations',0],['Home Services & Utilities','home-services-and-utilities',0],['Hospitals & Clinics','hospitals-and-clinics',4],['Hotels & Lodging','hotels-and-lodging',2],['IT Services','it-services',0],['Manufacturers','manufacturers',0],['Professional Services','professional-services',5],['Public Services & Government','public-services-and-government',0],['Publishers','publishers',0],['Real Estate','real-estate',6],['Schools & Education','schools-and-education',3],['Other Services','other-services',0]]}};
+var neighborhoods = {menuTitle : ' - Filter by neighborhood',numberRows : 7, searchDefault : 'Anywhere in Atlanta', searchExample : 'e.g. Gold Room, pizza, party', neigh :[['buckhead','Buckhead'],['cabbagetown','Cabbage Town'],['candlerpark','Candler Park'],['cascadeheights','Cascade Heights'],['downtown','Downtown'],['edgewood','Edgewood-Kirkwood'],['fivepoints','Five Points'],['grantpark','Grant Park'],['homepark','Home Park'],['inmanpark','Inman Park'],['lakewoodheights','Lakewood Heights'],['midtown','Midtown'],['morningside','Morningside-Lenox Park'],['oakdale','Oakdale'],['oaklandcity','Oakland City'],['oldfourthward','Old Fourth Ward'],['ormewoodpark','Ormewood Park'],['ponceyhighland','Poncey-Highland'],['rockdale','Rockdale'],['sandtown','Sandtown'],['sweetauburn','Sweet Auburn'],['vinecity','Vine City'],['virginiahighland','Virginia-Highland'],['westend','West End']]};
+var overlay_accounts = [86375136,118663801,18822966];
+</script>
+</head>
+<body>
+<div style="display:none" id="hp_neigh_source"> 
+<p>Top Buzz Atlanta Neighborhoods</p>
+<ul>
+<li><span>&nbsp;</span><a href='http://atlanta.schmap.com/?n=buckhead'>Buckhead</a></li>
+<li><span>&nbsp;</span><a href='http://atlanta.schmap.com/?n=midtown'>Midtown</a></li>
+<li><span>&nbsp;</span><a href='http://atlanta.schmap.com/?n=downtown'>Downtown</a></li>
+<li><span>&nbsp;</span><a href='http://atlanta.schmap.com/?n=inmanpark'>Inman Park</a></li>
+<li><span>&nbsp;</span><a href='http://atlanta.schmap.com/?n=homepark'>Home Park</a></li>
+<li><span>&nbsp;</span><a href='http://atlanta.schmap.com/?n=virginiahighland'>Virginia-Highland</a></li>
+</ul>
+<ul class="notFirst">
+<li><span>&nbsp;</span><a href='http://atlanta.schmap.com/?n=fivepoints'>Five Points</a></li>
+<li><span>&nbsp;</span><a href='http://atlanta.schmap.com/?n=oldfourthward'>Old Fourth Ward</a></li>
+<li><span>&nbsp;</span><a href='http://atlanta.schmap.com/?n=ponceyhighland'>Poncey-Highland</a></li>
+<li><span>&nbsp;</span><a href='http://atlanta.schmap.com/?n=morningside'>Morningside</a></li>
+<li><span>&nbsp;</span><a href='http://atlanta.schmap.com/?n=westend'>West End</a></li>
+<li><span>&nbsp;</span><a href='http://atlanta.schmap.com/?n=sweetauburn'>Sweet Auburn</a></li>
+</ul>
+</div>  
+<div id='outestDiv' class='wrapper'>
+<div id='header'>
+<div id='masthead'>
+<ul class="hack00">
+<li class='hack0'>Atlanta buzz on Twitter:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a target='_blank' href='http://twitter.com/atlanta_now'>Events</a>&nbsp;
+<iframe scrolling="no" frameborder="0" allowtransparency="true" 
+src='http://platform1.twitter.com/widgets/follow_button.html?screen_name=atlanta_now&amp;show_screen_name=false&amp;button=grey&amp;lang=en&amp;show_count=false&amp;text_color=%23333333&amp;link_color=%23F0F1E9&amp;id=twitter_tweet_button_2'
+class="twitter-follow-button" title=""></iframe>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</li>
+<li class="hack1">
+<a target='_blank' href='http://twitter.com/AtlantasBest'>Wining & Dining</a>&nbsp;
+<iframe scrolling="no" frameborder="0" allowtransparency="true" 
+src='http://platform1.twitter.com/widgets/follow_button.html?screen_name=AtlantasBest&amp;show_screen_name=false&amp;button=grey&amp;lang=en&amp;show_count=false&amp;text_color=%23333333&amp;link_color=%23F0F1E9&amp;id=twitter_tweet_button_2'
+class="twitter-follow-button" title=""></iframe>
+</li>
+<li class="hack2">
+<span class='dmClick' onclick='overlay.loadOverlay2();'>
+<span class='twitter_link2 dm'></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get Event & Deal DMs <img src='/images/spacer.png' /></span>
+</li>
+
+
+			
+				<li id="signin"><a href='#' onclick="abu.login();"><span class='twitter_link2'>
+				</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign in with Twitter</a></li>
+			
+			</ul>
+		</div>
+		<div id="logo-advert" class="hp_logo-advert">
+			<a href="http://www.schmap.com">
+			<div id="logo" class="hp_logo">
+				<div id="tagline"></div>
+			</div>
+			</a>
+			<div id="header_search">
+				<span class="hs_label1"><b>SEARCH</b> e.g. Gold Room, pizza, party</span><span class="hs_label2"><b>NEAR</b> (city or town)</span><br />
+				<input type="text" id="address" name="address" autocomplete="on" class="hs_input1" onFocus="neigh.checkSearchInputFocus();" onBlur="neigh.checkSearchInputBlur();"></input>
+				<!--<select id="hs_city" onmouseover="homePage.hack('show');" onmouseout="homePage.hack('hide');"></select>-->
+				<input type="text" id="hs_city"></input>
+				<ul id="autocomplete_suggestions"></ul>
+				<div id="alert_as"></div>
+				<div id="search_button" class="hs_searchButton"></div>
+			</div>
+			<!--        
+	title (none)
+	then (none)
+	now (none)
+	url (none)
+	delta (none)
+	sold (none)
+	tipped (none)
+	endTime (none)
+	value (none)
+	discount (none)
+	discountPercent (none)
+-->
+
+		</div>
+
+		<ul id="navigation">
+			<li id="city"><a onclick="cities.show();return false;"><span>ATLANTA</span><span id="menuArrow"></span></a></li>
+
+			
+				
+				<li id="deals" 		onmouseover="menuMO.show('deals');" 		onmouseout="menuMO.showDefault();" class=""
+					><a href="http://atlanta.schmap.com/deals"">Deals</a></li>
+				
+				<li id="whatOn" 		onmouseover="menuMO.show('whatOn');" 		onmouseout="menuMO.showDefault();"
+					 class="selected" 
+					><a href="http://atlanta.schmap.com/whats-on"">What's on</a></li>
+				<li id="restaurants" 	onmouseover="menuMO.show('restaurants');" 	onmouseout="menuMO.showDefault();"
+					
+					><a href="http://atlanta.schmap.com/restaurants">Restaurants</a></li>
+				<li id="barsClubs" 		onmouseover="menuMO.show('barsClubs');" 	onmouseout="menuMO.showDefault();"
+					
+					><a href="http://atlanta.schmap.com/bars-and-clubs" >Bars & Clubs</a></li>
+				<li id="artEnt" 		onmouseover="menuMO.show('artEnt');" 		onmouseout="menuMO.showDefault();"
+					
+					><a href="http://atlanta.schmap.com/art-and-entertainment">Art & Entertainment</a></li>
+				<li id="healthBeauty" 	onmouseover="menuMO.show('healthBeauty');" 	onmouseout="menuMO.showDefault();"
+					
+					><a href="http://atlanta.schmap.com/health-and-beauty">Health & Beauty</a></li>
+				<li id="shopServices" 	onmouseover="menuMO.show('shopServices');"	onmouseout="menuMO.showDefault();"
+					
+					><a href="http://atlanta.schmap.com/shopping">Shopping</a></li>
+				
+					<li id="toDoSee" 		onmouseover="menuMO.show('toDoSee');" 		onmouseout="menuMO.showDefault();"
+						
+						><a href="http://atlanta.schmap.com/to-do-and-see">To do & See</a></li>
+					
+				
+			
+		</ul>
+
+		<ul id="tabHidder"></ul>
+
+		<ul id="changeCity" style="display:none;height:0px">
+			<li class="cg_li">
+				<span class="cg_title">Local Buzz in:<select id="cg_select_country"></select><select id="cg_select_state" style="display:none;"></select></span>
+				<div><ul id="cg_localBuzzIn"></ul></div>
+			</li>
+			<li class="cg_li li2">
+				<span class="cg_title">Top Buzz Cities Worldwide</span>
+				<div><ul id="cg_bigCities"></ul></div>
+			</li>
+		</ul>
+		
+			<ul id="filter_preload" class="filterCategory"><li>&nbsp;<li></ul>
+
+			<ul id="zeroResults"  onclick="zeroResults.disable();"><li id="zeroResults_li">&nbsp;</li></ul>
+
+			<ul id="filterNeigh" style="display:none;height:0px" onmouseover="menuMO.cancelReset();"></ul>
+
+			
+			<script style="text/javascript">
+				populateBlueMenu();
+			</script>
+			
+		
+
+		
+
+
+		
+		<div id="nav-container" class="clearfix ">
+			
+				<p class="pmiddle">What's on - Live Music & Shows</p><!--<div class="countryie6_middle"></div>-->
+				
+					<span class="activeFilter" style="visibility:hidden">for:&nbsp;&nbsp;<b></b><a href="">Remove filter...</a></span>
+				
+				<ul id="statusFixFF3" class="status statusMiddleIE">
+					
+						<li><a href="http://atlanta.schmap.com/" onClick="alert(HomeLink); return(false);"">Atlanta</a></li> > <li><a href="http://atlanta.schmap.com/whats-on">What's On</a></li> > <li>Gigs & Shows</li>
+					
+					<li id="twitter_facebook_buttons">
+						<!--[if IE 6]><span id="twitter_facebook_buttons_hack_ie_middle_page"><![endif]-->
+						<!--[if IE 7]><span id="twitter_facebook_buttons_hack_ie_middle_page"><![endif]-->
+						<!--[if IE 8]><span id="twitter_facebook_buttons_hack_ie8_middle_page"><![endif]-->
+							<a href="http://twitter.com/share" class="twitter-share-button"
+							data-text="What's on - Live Music & Shows: "
+							data-url="http://atlanta.schmap.com/gigs-and-shows" data-count="none"
+							data-via="ATLANTASBEST"
+							data-related="ATLANTA_NOW"></a>
+						<!--[if IE]></span><![endif]-->
+						<a id="fb_share" name="fb_share" type="icon" share_url="http://atlanta.schmap.com/gigs-and-shows"></a>
+					</li>
+				</ul>
+			
+		</div>
+
+	</div>
+	<div id="container" class="clearfix">
+		<div id="main">
+			
+			<div id="toptweets">
+				<h2>
+					<span class="title">Live Music & shows in <CNAME> - Special Offers & Editor's Picks</span>
+					
+					<ul><li class="numofall"><span id="currentCount">1</span> of <span id="maxCount">6</span></li>
+					<li><div id="prev" class="prev"></div></li>
+					<li><div id="next" class="next"></div></li><li>&nbsp;</li>
+					</ul>
+					
+				</h2>
+				<div class="toptweet">
+					<ol id="toptweet">
+						<li class="tweets place_1809200">
+  <table>
+    <tr>
+      <td colspan="4">
+        <div class="twtr-texttime">
+          <div class="text ct_bottom8">After today, I desperately need chicken. I'm stressed. Show up at my door with Publix or Popeyes chicken & get loved.</div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="ct1">
+        <a href="http://twitter.com/TheRealChanee" target="_blank"><img  onload = "checkImage(this, 'TheRealChanee');"onerror="brokenImages.add(this,'TheRealChanee');" src="http://pbs.twimg.com/profile_images/528404981037006848/gqcSoL_Z_normal.jpeg" height="24" width="24"></a>
+      </td>
+      <td class="ct2">
+        <a class="ct_bottom1" href="http://twitter.com/TheRealChanee" target="_blank">TheRealChanee</a>
+      </td>
+      <td class="ct3">5 months ago</td>
+      <td class="ct4">
+        <span class="ct_bottom5" onclick="abu.expand(this,'Popeye\'s','restaurants','0thn','PopeyesChicken','1809200','http://atlanta.schmap.com/restaurants/popeyes',true);"><img style="clip:rect(0,306,27,272);left:-302px;top:-10px;" src="/images/x.gif" width="503" height="556"><img src="/images/x.gif" class="abu_plus" /></span>
+        <a class="ct_bottom2" href="http://atlanta.schmap.com/restaurants/popeyes">Popeye's</a>
+        <span class="ct_bottom6"> Editor's Pick:</span>
+      </td>
+    </tr>
+  </table>
+</li>
+<li class="tweets place_18007502">
+  <table>
+    <tr>
+      <td colspan="4">
+        <div class="twtr-texttime">
+          <div class="text ct_bottom8">Fli University (FU) has a show on 11/06/2014 at 06:30 PM @ Center Stage Theater in Atlanta, GA <a target="_blank" href="http://t.co/3pGdQm9Nf6" >http://t.co/3pGdQm9Nf6</a> <a target="_blank" href="http://search.twitter.com/search?q=%23concert">#concert</a></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="ct1">
+        <a href="http://twitter.com/fliuniversity" target="_blank"><img  onload = "checkImage(this, 'fliuniversity');"onerror="brokenImages.add(this,'fliuniversity');" src="http://pbs.twimg.com/profile_images/444309713417547776/qUfeL7j1_normal.jpeg" height="24" width="24"></a>
+      </td>
+      <td class="ct2">
+        <a class="ct_bottom1" href="http://twitter.com/fliuniversity" target="_blank">fliuniversity</a>
+      </td>
+      <td class="ct3">5 months ago</td>
+      <td class="ct4">
+        <span class="ct_bottom5" onclick="abu.expand(this,'Center Stage ','theaters','0sIJ','CenterStageAtl','18007502','http://atlanta.schmap.com/theaters/center_stage',true);"><img style="clip:rect(0,170,27,136);left:-166px;top:-10px;" src="/images/x.gif" width="503" height="556"><img src="/images/x.gif" class="abu_plus" /></span>
+        <a class="ct_bottom2" href="http://atlanta.schmap.com/theaters/center_stage">Center Stage </a>
+        <span class="ct_bottom6"> Editor's Pick:</span>
+      </td>
+    </tr>
+  </table>
+</li>
+<li class="tweets place_18006090">
+  <table>
+    <tr>
+      <td colspan="4">
+        <div class="twtr-texttime">
+          <div class="text ct_bottom8">Tori Tinsley's solo show, "Contact Comfort", opens in the WonderRoot Gallery tomorrow at 6pm. RSVP here: https://t.co/XdLIYNHp8S  <a target="_blank" href="http://search.twitter.com/search?q=%23ATLARTS">#ATLARTS</a></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="ct1">
+        <a href="http://twitter.com/WonderRoot" target="_blank"><img  onload = "checkImage(this, 'WonderRoot');"onerror="brokenImages.add(this,'WonderRoot');" src="http://pbs.twimg.com/profile_images/248199392/twit_normal.png" height="24" width="24"></a>
+      </td>
+      <td class="ct2">
+        <a class="ct_bottom1" href="http://twitter.com/WonderRoot" target="_blank">WonderRoot</a>
+      </td>
+      <td class="ct3">1 month ago</td>
+      <td class="ct4">
+        <span class="ct_bottom5" onclick="abu.expand(this,'WonderRoot','orgs','0sIG','wonderroot','18006090','http://atlanta.schmap.com/groups-and-organizations/wonderroot',true);"><img style="clip:rect(27,204,51,170);left:-200px;top:-34px;" src="/images/x.gif" width="503" height="556"><img src="/images/x.gif" class="abu_plus" /></span>
+        <a class="ct_bottom2" href="http://atlanta.schmap.com/groups-and-organizations/wonderroot">WonderRoot</a>
+        <span class="ct_bottom6"> Editor's Pick:</span>
+      </td>
+    </tr>
+  </table>
+</li>
+<li class="tweets place_18001244">
+  <table>
+    <tr>
+      <td colspan="4">
+        <div class="twtr-texttime">
+          <div class="text ct_bottom8">Playing with @<a target="_blank" href="http://twitter.com/ClibberJonesEns">ClibberJonesEns</a> tonight at 10pm at The Star Bar in Atlanta. Doors open at 9pm. Hope to see you there!</div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="ct1">
+        <a href="http://twitter.com/nikkinotes" target="_blank"><img  onload = "checkImage(this, 'nikkinotes');"onerror="brokenImages.add(this,'nikkinotes');" src="http://pbs.twimg.com/profile_images/2189836921/Photo_NicoleCSquare_normal.jpg" height="24" width="24"></a>
+      </td>
+      <td class="ct2">
+        <a class="ct_bottom1" href="http://twitter.com/nikkinotes" target="_blank">nikkinotes</a>
+      </td>
+      <td class="ct3">3 months ago</td>
+      <td class="ct4">
+        <span class="ct_bottom5" onclick="abu.expand(this,'Star Community Bar','bars','0jaa','StarBarAtlanta','18001244','http://atlanta.schmap.com/bars/star_community_bar',true);"><img style="clip:rect(0,170,27,136);left:-166px;top:-10px;" src="/images/x.gif" width="503" height="556"><img src="/images/x.gif" class="abu_plus" /></span>
+        <a class="ct_bottom2" href="http://atlanta.schmap.com/bars/star_community_bar">Star Community Bar</a>
+        <span class="ct_bottom6"> Editor's Pick:</span>
+      </td>
+    </tr>
+  </table>
+</li>
+<li class="tweets place_18001489">
+  <table>
+    <tr>
+      <td colspan="4">
+        <div class="twtr-texttime">
+          <div class="text ct_bottom8">@<a target="_blank" href="http://twitter.com/RedLightCafeATL">RedLightCafeATL</a> Really looking forward to tomorrow nite Jan 24 at Red Light Cafe. Performing w/ Anne Buckle, Cedar Hill & 3 Way Street 8pm!</div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="ct1">
+        <a href="http://twitter.com/DavidEMusic" target="_blank"><img  onload = "checkImage(this, 'DavidEMusic');"onerror="brokenImages.add(this,'DavidEMusic');" src="http://pbs.twimg.com/profile_images/522036347662770176/uMxrk5lP_normal.jpeg" height="24" width="24"></a>
+      </td>
+      <td class="ct2">
+        <a class="ct_bottom1" href="http://twitter.com/DavidEMusic" target="_blank">DavidEMusic</a>
+      </td>
+      <td class="ct3">2 months ago</td>
+      <td class="ct4">
+        <span class="ct_bottom5" onclick="abu.expand(this,'Red Light Cafe','cafes','0je3',false,'18001489','http://atlanta.schmap.com/cafes/red_light_cafe',true);"><img style="clip:rect(27,170,51,136);left:-166px;top:-34px;" src="/images/x.gif" width="503" height="556"><img src="/images/x.gif" class="abu_plus" /></span>
+        <a class="ct_bottom2" href="http://atlanta.schmap.com/cafes/red_light_cafe">Red Light Cafe</a>
+        <span class="ct_bottom6"> Editor's Pick:</span>
+      </td>
+    </tr>
+  </table>
+</li>
+<li class="tweets place_18000939">
+  <table>
+    <tr>
+      <td colspan="4">
+        <div class="twtr-texttime">
+          <div class="text ct_bottom8">You gotta check it out! Digigost Live @ Smiths Olde Bar its gonna be a GREAT show! <a target="_blank" href="http://t.co/lkKAv01m6P" >http://t.co/lkKAv01m6P</a></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="ct1">
+        <a href="http://twitter.com/JerickoDigiGOst" target="_blank"><img  onload = "checkImage(this, 'JerickoDigiGOst');"onerror="brokenImages.add(this,'JerickoDigiGOst');" src="http://pbs.twimg.com/profile_images/504378797286633472/mOWsRKTT_normal.jpeg" height="24" width="24"></a>
+      </td>
+      <td class="ct2">
+        <a class="ct_bottom1" href="http://twitter.com/JerickoDigiGOst" target="_blank">JerickoDigiGOst</a>
+      </td>
+      <td class="ct3">5 months ago</td>
+      <td class="ct4">
+        <span class="ct_bottom5" onclick="abu.expand(this,'Smith\'s Olde Bar','bars','0j5x',false,'18000939','http://atlanta.schmap.com/bars/smiths_olde_bar',true);"><img style="clip:rect(0,68,27,34);left:-64px;top:-10px;" src="/images/x.gif" width="503" height="556"><img src="/images/x.gif" class="abu_plus" /></span>
+        <a class="ct_bottom2" href="http://atlanta.schmap.com/bars/smiths_olde_bar">Smith's Olde Bar</a>
+        <span class="ct_bottom6"> Editor's Pick:</span>
+      </td>
+    </tr>
+  </table>
+</li>
+
+					</ol>
+				</div>
+			</div>
+			
+			<div id="section">
+				
+				
+				<ul id="timelineTabs">
+					<li class="localBuzzFor">Latest buzz for Atlanta live music & shows</li>
+					<li class="sort"><span class="sort_textm">sort by: </span>
+
+						<div id="sort2" class="sort_notSelected">
+								<a href="http://atlanta.schmap.com/gigs-and-shows?s=buzz">
+								
+								
+									Venue Buzz
+								</a></div>
+						<div id="sort1" class="sort_selected"><a>
+								Time</a></div>
+
+					</li>
+				</ul>
+				
+				<ol id="timeline" class="timeline">
+					<li class="tweets place_18000404 ">
+  <table cellspacing="0">
+    <tr>
+      <td colspan='4'>
+        <div class="text ct_bottom0">Parachute is playing at the Tabernacle tonight and i cant go sadness</div>
+      </td>
+    </tr>
+    <tr>
+      <td class="ct1">
+        <a href="http://twitter.com/Masonwjones" target="_blank"><img onload = "checkImage(this, 'Masonwjones');"onerror="brokenImages.add(this,'Masonwjones');" src="http://pbs.twimg.com/profile_images/579015349632397313/-Av2Vv9l_normal.jpeg" height="24" width="24"></a>
+      </td>
+      <td class="ct2">
+        <a class="ct_bottom1" href="http://twitter.com/Masonwjones" target="_blank">Masonwjones</a>
+      </td>
+      <td class="ct3">9 hours ago</td>
+      <td class="ct4">
+        <span class="ct_bottom5" onclick="abu.expand(this, 'Tabernacle','bars','0iXe',false,'18000404','http://atlanta.schmap.com/bars/tabernacle',false);"><img style="clip:rect(27,170,51,136);left:-166px;top:-34px;" src="/images/x.gif" width="503" height="556" /><img src="/images/x.gif" class="abu_plus" /></span>
+        <a class="ct_bottom2" href="http://atlanta.schmap.com/bars/tabernacle">Tabernacle</a>
+        <span class="ct_bottom3"> at:</span>
+      </td>
+    </tr>
+  </table>
+  <span onclick="abu.expand(this, 'Tabernacle','bars','0iXe',false,'18000404','http://atlanta.schmap.com/bars/tabernacle',false);"><img class="abu_infoBubble" src="/images/x.gif" /></span>
+</li>
+<li class="tweets place_18004969 ">
+  <table cellspacing="0">
+    <tr>
+      <td colspan='4'>
+        <div class="text ct_bottom0">Opera & Illuminate present LOST KINGS 2nite at OPERA NIGHTCLUB! promocode=SINNER & SAVE <a target="_blank" href="http://t.co/4SyL8tPl0S" >http://t.co/4SyL8tPl0S</a> <a target="_blank" href="http://search.twitter.com/search?q=%23vip">#vip</a> <a target="_blank" href="http://search.twitter.com/search?q=%23lostkings">#lostkings</a> <a target="_blank" href="http://search.twitter.com/search?q=%23opera">#opera</a></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="ct1">
+        <a href="http://twitter.com/NickClaeboe" target="_blank"><img onload = "checkImage(this, 'NickClaeboe');"onerror="brokenImages.add(this,'NickClaeboe');" src="http://pbs.twimg.com/profile_images/557878191029616640/T166t0Fq_normal.jpeg" height="24" width="24"></a>
+      </td>
+      <td class="ct2">
+        <a class="ct_bottom1" href="http://twitter.com/NickClaeboe" target="_blank">NickClaeboe</a>
+      </td>
+      <td class="ct3">10 hours ago</td>
+      <td class="ct4">
+        <span class="ct_bottom5" onclick="abu.expand(this, 'Opera Nightclub','clubs','0k0g',false,'18004969','http://atlanta.schmap.com/clubs/opera_nightclub',false);"><img style="clip:rect(0,170,27,136);left:-166px;top:-10px;" src="/images/x.gif" width="503" height="556" /><img src="/images/x.gif" class="abu_plus" /></span>
+        <a class="ct_bottom2" href="http://atlanta.schmap.com/clubs/opera_nightclub">Opera Nightclub</a>
+        <span class="ct_bottom3"> at:</span>
+      </td>
+    </tr>
+  </table>
+  <span onclick="abu.expand(this, 'Opera Nightclub','clubs','0k0g',false,'18004969','http://atlanta.schmap.com/clubs/opera_nightclub',false);"><img class="abu_infoBubble" src="/images/x.gif" /></span>
+</li>
+<li class="tweets place_18004969 ">
+  <table cellspacing="0">
+    <tr>
+      <td colspan='4'>
+        <div class="text ct_bottom0">Rare Thursday night outing for me tonight. @<a target="_blank" href="http://twitter.com/ferrarisimmons">ferrarisimmons</a> @<a target="_blank" href="http://twitter.com/whoisdjblak">whoisdjblak</a> what up!! @ Opera Nightclub https://t.co/d70sHuIJDt</div>
+      </td>
+    </tr>
+    <tr>
+      <td class="ct1">
+        <a href="http://twitter.com/Ya_Boy_Za" target="_blank"><img onload = "checkImage(this, 'Ya_Boy_Za');"onerror="brokenImages.add(this,'Ya_Boy_Za');" src="http://pbs.twimg.com/profile_images/471478866650095618/6rWTgx2l_normal.jpeg" height="24" width="24"></a>
+      </td>
+      <td class="ct2">
+        <a class="ct_bottom1" href="http://twitter.com/Ya_Boy_Za" target="_blank">Ya_Boy_Za</a>
+      </td>
+      <td class="ct3">19 hours ago</td>
+      <td class="ct4">
+        <span class="ct_bottom5" onclick="abu.expand(this, 'Opera Nightclub','clubs','0k0g',false,'18004969','http://atlanta.schmap.com/clubs/opera_nightclub',false);"><img style="clip:rect(0,170,27,136);left:-166px;top:-10px;" src="/images/x.gif" width="503" height="556" /><img src="/images/x.gif" class="abu_plus" /></span>
+        <a class="ct_bottom2" href="http://atlanta.schmap.com/clubs/opera_nightclub">Opera Nightclub</a>
+        <span class="ct_bottom3"> at:</span>
+      </td>
+    </tr>
+  </table>
+  <span onclick="abu.expand(this, 'Opera Nightclub','clubs','0k0g',false,'18004969','http://atlanta.schmap.com/clubs/opera_nightclub',false);"><img class="abu_infoBubble" src="/images/x.gif" /></span>
+</li>
+<li class="tweets place_18000170 ">
+  <table cellspacing="0">
+    <tr>
+      <td colspan='4'>
+        <div class="text ct_bottom0">All our poets and spoken word artist that could use an extra $300-$500 come to Apache Cafe 4/18!! We will be performing live!! <a target="_blank" href="http://search.twitter.com/search?q=%23VN">#VN</a></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="ct1">
+        <a href="http://twitter.com/Vintage_Nation" target="_blank"><img onload = "checkImage(this, 'Vintage_Nation');"onerror="brokenImages.add(this,'Vintage_Nation');" src="http://pbs.twimg.com/profile_images/507927587352752128/CKBbFT7u_normal.jpeg" height="24" width="24"></a>
+      </td>
+      <td class="ct2">
+        <a class="ct_bottom1" href="http://twitter.com/Vintage_Nation" target="_blank">Vintage_Nation</a>
+      </td>
+      <td class="ct3">19 hours ago</td>
+      <td class="ct4">
+        <span class="ct_bottom5" onclick="abu.expand(this, 'Apache cafe','cafes','0iTz','APACHECAFE','18000170','http://atlanta.schmap.com/cafes/apache_cafe',false);"><img style="clip:rect(0,34,27,0);left:-30px;top:-10px;" src="/images/x.gif" width="503" height="556" /><img src="/images/x.gif" class="abu_plus" /></span>
+        <a class="ct_bottom2" href="http://atlanta.schmap.com/cafes/apache_cafe">Apache cafe</a>
+        <span class="ct_bottom3"> at:</span>
+      </td>
+    </tr>
+  </table>
+  <span onclick="abu.expand(this, 'Apache cafe','cafes','0iTz','APACHECAFE','18000170','http://atlanta.schmap.com/cafes/apache_cafe',false);"><img class="abu_infoBubble" src="/images/x.gif" /></span>
+</li>
+<li class="tweets place_18004063 ">
+  <table cellspacing="0">
+    <tr>
+      <td colspan='4'>
+        <div class="text ct_bottom0">@<a target="_blank" href="http://twitter.com/TheHoneycutters">TheHoneycutters</a> Thanks for performing today at Georgia Tech!  Next time y'all come over, visit our other mascot, the @<a target="_blank" href="http://twitter.com/TheRamblinReck">TheRamblinReck</a></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="ct1">
+        <a href="http://twitter.com/HenryPhanLe" target="_blank"><img onload = "checkImage(this, 'HenryPhanLe');"onerror="brokenImages.add(this,'HenryPhanLe');" src="http://pbs.twimg.com/profile_images/3249127362/4adbc577997ca81a1cf4a936962bc814_normal.jpeg" height="24" width="24"></a>
+      </td>
+      <td class="ct2">
+        <a class="ct_bottom1" href="http://twitter.com/HenryPhanLe" target="_blank">HenryPhanLe</a>
+      </td>
+      <td class="ct3">21 hours ago</td>
+      <td class="ct4">
+        <span class="ct_bottom5" onclick="abu.expand(this, 'Georgia Tech','services','0jNP',false,'18004063','http://atlanta.schmap.com/service/georgia_tech',false);"><img style="clip:rect(27,170,51,136);left:-166px;top:-34px;" src="/images/x.gif" width="503" height="556" /><img src="/images/x.gif" class="abu_plus" /></span>
+        <a class="ct_bottom2" href="http://atlanta.schmap.com/service/georgia_tech">Georgia Tech</a>
+        <span class="ct_bottom3"> at:</span>
+      </td>
+    </tr>
+  </table>
+  <span onclick="abu.expand(this, 'Georgia Tech','services','0jNP',false,'18004063','http://atlanta.schmap.com/service/georgia_tech',false);"><img class="abu_infoBubble" src="/images/x.gif" /></span>
+</li>
+<li class="tweets place_18009814 ">
+  <table cellspacing="0">
+    <tr>
+      <td colspan='4'>
+        <div class="text ct_bottom0">Level 3 Improv Show! Let's do this! @ The Village Theatre https://t.co/CoYtK88i2e</div>
+      </td>
+    </tr>
+    <tr>
+      <td class="ct1">
+        <a href="http://twitter.com/EdiTingle" target="_blank"><img onload = "checkImage(this, 'EdiTingle');"onerror="brokenImages.add(this,'EdiTingle');" src="http://pbs.twimg.com/profile_images/569628223097819136/N_maEoPk_normal.jpeg" height="24" width="24"></a>
+      </td>
+      <td class="ct2">
+        <a class="ct_bottom1" href="http://twitter.com/EdiTingle" target="_blank">EdiTingle</a>
+      </td>
+      <td class="ct3">22 hours ago</td>
+      <td class="ct4">
+        <span class="ct_bottom5" onclick="abu.expand(this, 'Village Theatre','theaters','1kwe','villagetheatre','18009814','http://atlanta.schmap.com/theaters/village_theatre',false);"><img style="clip:rect(27,238,51,204);left:-234px;top:-34px;" src="/images/x.gif" width="503" height="556" /><img src="/images/x.gif" class="abu_plus" /></span>
+        <a class="ct_bottom2" href="http://atlanta.schmap.com/theaters/village_theatre">Village Theatre</a>
+        <span class="ct_bottom3"> at:</span>
+      </td>
+    </tr>
+  </table>
+  <span onclick="abu.expand(this, 'Village Theatre','theaters','1kwe','villagetheatre','18009814','http://atlanta.schmap.com/theaters/village_theatre',false);"><img class="abu_infoBubble" src="/images/x.gif" /></span>
+</li>
+<li class="tweets place_18000941 ">
+  <table cellspacing="0">
+    <tr>
+      <td colspan='4'>
+        <div class="text ct_bottom0">I added a video to a @<a target="_blank" href="http://twitter.com/YouTube">YouTube</a> playlist <a target="_blank" href="http://t.co/BdfdaAXJUV" >http://t.co/BdfdaAXJUV</a> Blink-182 - Live at The Roxy Theater 18-03-2015 [First Show w/ Matt</div>
+      </td>
+    </tr>
+    <tr>
+      <td class="ct1">
+        <a href="http://twitter.com/TooMuchStache" target="_blank"><img onload = "checkImage(this, 'TooMuchStache');"onerror="brokenImages.add(this,'TooMuchStache');" src="http://pbs.twimg.com/profile_images/470032007422947328/4dAfT8HN_normal.png" height="24" width="24"></a>
+      </td>
+      <td class="ct2">
+        <a class="ct_bottom1" href="http://twitter.com/TooMuchStache" target="_blank">TooMuchStache</a>
+      </td>
+      <td class="ct3">23 hours ago</td>
+      <td class="ct4">
+        <span class="ct_bottom5" onclick="abu.expand(this, 'Roxy Theatre','theaters','0j5z',false,'18000941','http://atlanta.schmap.com/theaters/roxy_theatre',false);"><img style="clip:rect(27,238,51,204);left:-234px;top:-34px;" src="/images/x.gif" width="503" height="556" /><img src="/images/x.gif" class="abu_plus" /></span>
+        <a class="ct_bottom2" href="http://atlanta.schmap.com/theaters/roxy_theatre">Roxy Theatre</a>
+        <span class="ct_bottom3"> at:</span>
+      </td>
+    </tr>
+  </table>
+  <span onclick="abu.expand(this, 'Roxy Theatre','theaters','0j5z',false,'18000941','http://atlanta.schmap.com/theaters/roxy_theatre',false);"><img class="abu_infoBubble" src="/images/x.gif" /></span>
+</li>
+<li class="tweets place_18000383 ">
+  <table cellspacing="0">
+    <tr>
+      <td colspan='4'>
+        <div class="text ct_bottom0">Gig time !! Headed to Phipps Plaza... Rocking out from 630-8pm @<a target="_blank" href="http://twitter.com/LouiceBekkevold">LouiceBekkevold</a> ... Come out !! https://t.co/bM2HG12Vcv</div>
+      </td>
+    </tr>
+    <tr>
+      <td class="ct1">
+        <a href="http://twitter.com/DjNaturel" target="_blank"><img onload = "checkImage(this, 'DjNaturel');"onerror="brokenImages.add(this,'DjNaturel');" src="http://pbs.twimg.com/profile_images/378800000404874875/e2617a5f13b9c099f6d3490ec82cb1f6_normal.jpeg" height="24" width="24"></a>
+      </td>
+      <td class="ct2">
+        <a class="ct_bottom1" href="http://twitter.com/DjNaturel" target="_blank">DjNaturel</a>
+      </td>
+      <td class="ct3">1 day ago</td>
+      <td class="ct4">
+        <span class="ct_bottom5" onclick="abu.expand(this, 'Phipps Plaza','places to shop','0iWT',false,'18000383','http://atlanta.schmap.com/shopping/phipps_plaza',false);"><img style="clip:rect(0,204,27,170);left:-200px;top:-10px;" src="/images/x.gif" width="503" height="556" /><img src="/images/x.gif" class="abu_plus" /></span>
+        <a class="ct_bottom2" href="http://atlanta.schmap.com/shopping/phipps_plaza">Phipps Plaza</a>
+        <span class="ct_bottom3"> at:</span>
+      </td>
+    </tr>
+  </table>
+  <span onclick="abu.expand(this, 'Phipps Plaza','places to shop','0iWT',false,'18000383','http://atlanta.schmap.com/shopping/phipps_plaza',false);"><img class="abu_infoBubble" src="/images/x.gif" /></span>
+</li>
+<li class="tweets place_18000334 ">
+  <table cellspacing="0">
+    <tr>
+      <td colspan='4'>
+        <div class="text ct_bottom0">Asia Nicole has a show on 04/04/2015 at 02:00 PM @ Ritz Carlton  in Greensboro, GA <a target="_blank" href="http://t.co/foKAH61fIy" >http://t.co/foKAH61fIy</a> <a target="_blank" href="http://search.twitter.com/search?q=%23concert">#concert</a></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="ct1">
+        <a href="http://twitter.com/soofficialasia" target="_blank"><img onload = "checkImage(this, 'soofficialasia');"onerror="brokenImages.add(this,'soofficialasia');" src="http://pbs.twimg.com/profile_images/581196689681342464/W7zdtE1N_normal.jpg" height="24" width="24"></a>
+      </td>
+      <td class="ct2">
+        <a class="ct_bottom1" href="http://twitter.com/soofficialasia" target="_blank">soofficialasia</a>
+      </td>
+      <td class="ct3">1 day ago</td>
+      <td class="ct4">
+        <span class="ct_bottom5" onclick="abu.expand(this, 'Ritz-Carlton','hotels','0iW7',false,'18000334','http://atlanta.schmap.com/hotels-and-lodging/ritz_carlton',false);"><img style="clip:rect(51,136,75,102);left:-132px;top:-58px;" src="/images/x.gif" width="503" height="556" /><img src="/images/x.gif" class="abu_plus" /></span>
+        <a class="ct_bottom2" href="http://atlanta.schmap.com/hotels-and-lodging/ritz_carlton">Ritz-Carlton</a>
+        <span class="ct_bottom3"> at:</span>
+      </td>
+    </tr>
+  </table>
+  <span onclick="abu.expand(this, 'Ritz-Carlton','hotels','0iW7',false,'18000334','http://atlanta.schmap.com/hotels-and-lodging/ritz_carlton',false);"><img class="abu_infoBubble" src="/images/x.gif" /></span>
+</li>
+<li class="tweets place_18012639 no-infoBubble ">
+  <table cellspacing="0">
+    <tr>
+      <td colspan='4'>
+        <div class="text ct_bottom0">PIPPIN is coming to the Fox Theatre in May, and your dinner-and-show ticket deal awaits here: <a target="_blank" href="http://t.co/LIEkKZ9tfc" >http://t.co/LIEkKZ9tfc</a></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="ct1">
+        <a href="http://twitter.com/ATLMagPromo" target="_blank"><img onload = "checkImage(this, 'ATLMagPromo');"onerror="brokenImages.add(this,'ATLMagPromo');" src="http://pbs.twimg.com/profile_images/1420522189/AMPromotions_normal.jpg" height="24" width="24"></a>
+      </td>
+      <td class="ct2">
+        <a class="ct_bottom1" href="http://twitter.com/ATLMagPromo" target="_blank">ATLMagPromo</a>
+      </td>
+      <td class="ct3">1 day ago</td>
+      <td class="ct4">
+        <span class="ct_bottom2 unverified_business">Fox Theater</span>
+        <span class="ct_bottom3"> at:</span>
+      </td>
+    </tr>
+  </table>
+  <img class="abu_infoBubble" src="/images/x.gif" />
+</li>
+<li class="tweets place_18001244 ">
+  <table cellspacing="0">
+    <tr>
+      <td colspan='4'>
+        <div class="text ct_bottom0">Free show at Star Bar tonight, presented in Technicolor. <a target="_blank" href="http://t.co/1e4Jr9NpGw" >http://t.co/1e4Jr9NpGw</a></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="ct1">
+        <a href="http://twitter.com/Aaronious_Monk" target="_blank"><img onload = "checkImage(this, 'Aaronious_Monk');"onerror="brokenImages.add(this,'Aaronious_Monk');" src="http://pbs.twimg.com/profile_images/436858966052573184/ic5-raXu_normal.jpeg" height="24" width="24"></a>
+      </td>
+      <td class="ct2">
+        <a class="ct_bottom1" href="http://twitter.com/Aaronious_Monk" target="_blank">Aaronious_Monk</a>
+      </td>
+      <td class="ct3">1 day ago</td>
+      <td class="ct4">
+        <span class="ct_bottom5" onclick="abu.expand(this, 'Star Community Bar','bars','0jaa','StarBarAtlanta','18001244','http://atlanta.schmap.com/bars/star_community_bar',false);"><img style="clip:rect(0,170,27,136);left:-166px;top:-10px;" src="/images/x.gif" width="503" height="556" /><img src="/images/x.gif" class="abu_plus" /></span>
+        <a class="ct_bottom2" href="http://atlanta.schmap.com/bars/star_community_bar">Star Community Bar</a>
+        <span class="ct_bottom3"> at:</span>
+      </td>
+    </tr>
+  </table>
+  <span onclick="abu.expand(this, 'Star Community Bar','bars','0jaa','StarBarAtlanta','18001244','http://atlanta.schmap.com/bars/star_community_bar',false);"><img class="abu_infoBubble" src="/images/x.gif" /></span>
+</li>
+<li class="tweets place_18000170 ">
+  <table cellspacing="0">
+    <tr>
+      <td colspan='4'>
+        <div class="text ct_bottom0">Performing my song 'ANYTHING', Live in Apache Cafe. Check it out here:<br/><br/><a target="_blank" href="http://t.co/2L9DbGgoQS" >http://t.co/2L9DbGgoQS</a> <a target="_blank" href="http://t.co/WfcDIXdgxl" >http://t.co/WfcDIXdgxl</a></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="ct1">
+        <a href="http://twitter.com/IamKayDene" target="_blank"><img onload = "checkImage(this, 'IamKayDene');"onerror="brokenImages.add(this,'IamKayDene');" src="http://pbs.twimg.com/profile_images/570757148675854336/JbVS_sg5_normal.jpeg" height="24" width="24"></a>
+      </td>
+      <td class="ct2">
+        <a class="ct_bottom1" href="http://twitter.com/IamKayDene" target="_blank">IamKayDene</a>
+      </td>
+      <td class="ct3">1 day ago</td>
+      <td class="ct4">
+        <span class="ct_bottom5" onclick="abu.expand(this, 'Apache cafe','cafes','0iTz','APACHECAFE','18000170','http://atlanta.schmap.com/cafes/apache_cafe',false);"><img style="clip:rect(0,34,27,0);left:-30px;top:-10px;" src="/images/x.gif" width="503" height="556" /><img src="/images/x.gif" class="abu_plus" /></span>
+        <a class="ct_bottom2" href="http://atlanta.schmap.com/cafes/apache_cafe">Apache cafe</a>
+        <span class="ct_bottom3"> at:</span>
+      </td>
+    </tr>
+  </table>
+  <span onclick="abu.expand(this, 'Apache cafe','cafes','0iTz','APACHECAFE','18000170','http://atlanta.schmap.com/cafes/apache_cafe',false);"><img class="abu_infoBubble" src="/images/x.gif" /></span>
+</li>
+<li class="tweets place_18003436 ">
+  <table cellspacing="0">
+    <tr>
+      <td colspan='4'>
+        <div class="text ct_bottom0">Check out our comprehensive @<a target="_blank" href="http://twitter.com/ShakyKneesFest">ShakyKneesFest</a> featuring every artist playing next month in Central Park! https://t.co/Qxgu818AkE @<a target="_blank" href="http://twitter.com/SpotifyUSA">SpotifyUSA</a></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="ct1">
+        <a href="http://twitter.com/ATL_ToDo" target="_blank"><img onload = "checkImage(this, 'ATL_ToDo');"onerror="brokenImages.add(this,'ATL_ToDo');" src="http://pbs.twimg.com/profile_images/560997076608098304/s_HvS3f0_normal.jpeg" height="24" width="24"></a>
+      </td>
+      <td class="ct2">
+        <a class="ct_bottom1" href="http://twitter.com/ATL_ToDo" target="_blank">ATL_ToDo</a>
+      </td>
+      <td class="ct3">1 day ago</td>
+      <td class="ct4">
+        <span class="ct_bottom5" onclick="abu.expand(this, 'Central Park','parks','0jFL',false,'18003436','http://atlanta.schmap.com/parks/central_park',false);"><img style="clip:rect(27,34,51,0);left:-30px;top:-34px;" src="/images/x.gif" width="503" height="556" /><img src="/images/x.gif" class="abu_plus" /></span>
+        <a class="ct_bottom2" href="http://atlanta.schmap.com/parks/central_park">Central Park</a>
+        <span class="ct_bottom3"> at:</span>
+      </td>
+    </tr>
+  </table>
+  <span onclick="abu.expand(this, 'Central Park','parks','0jFL',false,'18003436','http://atlanta.schmap.com/parks/central_park',false);"><img class="abu_infoBubble" src="/images/x.gif" /></span>
+</li>
+
+				</ol>
+				<div id="pagination" onClick="getMore();" style="visibility:visible"><span class="more">more</span></div>
+			</div>
+		</div>
+		<div id="descriptions" class="hiddenDiv">
+		    <dl class="place_18000404">
+  <dt>
+    <a class="ct_bottom7" href="http://atlanta.schmap.com/bars/tabernacle">Tabernacle</a>
+  </dt>
+  <dd>152 Luckie Street</dd>
+  <dd>Atlanta, GA 30303</dd>
+  <dd>(404) 659-9022</dd>
+  <dd class="mail_face_twit">
+    <span class="mft_links">
+      <a style="float:left;" href="http://www.atlantaconcerts.com" target="_blank">Website</a>
+    </span>
+    <img src="/cityguidesdata/photos/atlanta_mini/18000404_6_mini.jpg" class="ml_placePhoto"/>
+  </dd>
+</dl>
+<dl class="place_18004969">
+  <dt>
+    <a class="ct_bottom7" href="http://atlanta.schmap.com/clubs/opera_nightclub">Opera Nightclub</a>
+  </dt>
+  <dd>1150 Peachtree St NE</dd>
+  <dd>Atlanta, GA</dd>
+  <dd></br></dd>
+  <dd class="mail_face_twit">
+    <span class="mft_links">
+    </span>
+  </dd>
+</dl>
+<dl class="place_18000170">
+  <dt>
+    <a class="ct_bottom7" href="http://atlanta.schmap.com/cafes/apache_cafe">Apache cafe</a>
+  </dt>
+  <dd>64 3rd Street Northwest</dd>
+  <dd>Atlanta, GA 30308</dd>
+  <dd>(404) 876-5436</dd>
+  <dd class="mail_face_twit">
+    <span class="mft_links">
+      <a style="float:left;" href="http://www.apachecafe.info" target="_blank">Website</a>
+      <a href="mailto:info@apachecafe.info" target="_blank"><span class="mail_link"></span></a>
+      <a href="http://twitter.com/APACHECAFE" target="_blank"><span class="twitter_link"></span></a>
+    </span>
+  </dd>
+</dl>
+<dl class="place_18004063">
+  <dt>
+    <a class="ct_bottom7" href="http://atlanta.schmap.com/service/georgia_tech">Georgia Tech</a>
+  </dt>
+  <dd>801 Atlantic Dr NW</dd>
+  <dd>Atlanta, GA</dd>
+  <dd></br></dd>
+  <dd class="mail_face_twit">
+    <span class="mft_links">
+    </span>
+  </dd>
+</dl>
+<dl class="place_18009814">
+  <dt>
+    <a class="ct_bottom7" href="http://atlanta.schmap.com/theaters/village_theatre">Village Theatre</a>
+  </dt>
+  <dd>486 Decatur Street Southeast</dd>
+  <dd>Atlanta, GA</dd>
+  <dd>(404) 688-8858</dd>
+  <dd class="mail_face_twit">
+    <span class="mft_links">
+      <a style="float:left;" href="http://www.villagecomedy.com/" target="_blank">Website</a>
+      <a href="mailto:VILLAGECOMEDY@GMAIL.COM" target="_blank"><span class="mail_link"></span></a>
+      <a href="http://twitter.com/villagetheatre" target="_blank"><span class="twitter_link"></span></a>
+      <a href="http://www.facebook.com/VillageTheatreATL" target="_blank"><span class="facebook_link"></span></a>
+    </span>
+  </dd>
+</dl>
+<dl class="place_18000941">
+  <dt>
+    <a class="ct_bottom7" href="http://atlanta.schmap.com/theaters/roxy_theatre">Roxy Theatre</a>
+  </dt>
+  <dd>3110 Roswell Road Northwest</dd>
+  <dd>Atlanta, GA 30305</dd>
+  <dd>(404) 249-6400</dd>
+  <dd class="mail_face_twit">
+    <span class="mft_links">
+    </span>
+    <img src="/cityguidesdata/photos/atlanta_mini/18000941_5_mini.jpg" class="ml_placePhoto"/>
+  </dd>
+</dl>
+<dl class="place_18000383">
+  <dt>
+    <a class="ct_bottom7" href="http://atlanta.schmap.com/shopping/phipps_plaza">Phipps Plaza</a>
+  </dt>
+  <dd>3500 Peachtree Road North East</dd>
+  <dd>Atlanta, GA 30326</dd>
+  <dd>(404) 262-0992</dd>
+  <dd class="mail_face_twit">
+    <span class="mft_links">
+      <a style="float:left;" href="http://www.phippsplaza.com" target="_blank">Website</a>
+    </span>
+    <img src="/cityguidesdata/photos/atlanta_mini/18000383_1_mini.jpg" class="ml_placePhoto"/>
+  </dd>
+</dl>
+<dl class="place_18000334">
+  <dt>
+    <a class="ct_bottom7" href="http://atlanta.schmap.com/hotels-and-lodging/ritz_carlton">Ritz-Carlton</a>
+  </dt>
+  <dd>3434 Peachtree Road</dd>
+  <dd>Austin</dd>
+  <dd></br></dd>
+  <dd class="mail_face_twit">
+    <span class="mft_links">
+      <a style="float:left;" href="http://www.ritzcarlton.com" target="_blank">Website</a>
+    </span>
+    <img src="/cityguidesdata/photos/atlanta_mini/18000334_mini.jpg" class="ml_placePhoto"/>
+  </dd>
+</dl>
+<dl class="place_18012639">
+  <dt>
+    <span class="ct_bottom7 unverified_business">Fox Theater</span>
+  </dt>
+  <dd>660 Peachtree Street Northeast</dd>
+  <dd>Atlanta, GA</dd>
+  <dd></br></dd>
+  <dd class="mail_face_twit">
+    <span class="mft_links">
+    </span>
+  </dd>
+</dl>
+<dl class="place_18001244">
+  <dt>
+    <a class="ct_bottom7" href="http://atlanta.schmap.com/bars/star_community_bar">Star Community Bar</a>
+  </dt>
+  <dd>437 Moreland Ave</dd>
+  <dd>Atlanta, GA 30307</dd>
+  <dd>(404) 681-9018</dd>
+  <dd class="mail_face_twit">
+    <span class="mft_links">
+      <a style="float:left;" href="http://www.starbar.net" target="_blank">Website</a>
+      <a href="http://twitter.com/StarBarAtlanta" target="_blank"><span class="twitter_link"></span></a>
+      <a href="http://www.facebook.com/profile.php?id=505409144&ref=mf" target="_blank"><span class="facebook_link"></span></a>
+    </span>
+    <img src="/cityguidesdata/photos/atlanta_mini/18001244_1_mini.jpg" class="ml_placePhoto"/>
+  </dd>
+</dl>
+<dl class="place_18003436">
+  <dt>
+    <a class="ct_bottom7" href="http://atlanta.schmap.com/parks/central_park">Central Park</a>
+  </dt>
+  <dd>Central Park</dd>
+  <dd>Atlanta, GA</dd>
+  <dd></br></dd>
+  <dd class="mail_face_twit">
+    <span class="mft_links">
+    </span>
+  </dd>
+</dl>
+<dl class="place_1809200">
+  <dt>
+    <a class="ct_bottom7" href="http://atlanta.schmap.com/restaurants/popeyes">Popeye's</a>
+  </dt>
+  <dd>1959 Metropolitan Parkway Southwest</dd>
+  <dd>Atlanta, GA 30315</dd>
+  <dd>(404) 209-1100</dd>
+  <dd class="mail_face_twit">
+    <span class="mft_links">
+      <a style="float:left;" href="http://www.popeyes.com" target="_blank">Website</a>
+      <a href="http://twitter.com/PopeyesChicken" target="_blank"><span class="twitter_link"></span></a>
+    </span>
+    <img src="/cityguidesdata/photos/chains_mini/XXX9200_B5_mini.jpg" class="ml_placePhoto"/>
+  </dd>
+</dl>
+<dl class="place_18007502">
+  <dt>
+    <a class="ct_bottom7" href="http://atlanta.schmap.com/theaters/center_stage">Center Stage </a>
+  </dt>
+  <dd>1374 West Peachtree St NW</dd>
+  <dd>Atlanta, Georgia</dd>
+  <dd></br></dd>
+  <dd class="mail_face_twit">
+    <span class="mft_links">
+      <a style="float:left;" href="http://www.centerstage-atlanta.com/" target="_blank">Website</a>
+      <a href="http://twitter.com/CenterStageAtl" target="_blank"><span class="twitter_link"></span></a>
+      <a href="http://www.facebook.com/CenterStageAtl" target="_blank"><span class="facebook_link"></span></a>
+    </span>
+  </dd>
+</dl>
+<dl class="place_18006090">
+  <dt>
+    <a class="ct_bottom7" href="http://atlanta.schmap.com/groups-and-organizations/wonderroot">WonderRoot</a>
+  </dt>
+  <dd>982 Memorial Drive Southeast</dd>
+  <dd> Atlanta, GA</dd>
+  <dd></br></dd>
+  <dd class="mail_face_twit">
+    <span class="mft_links">
+      <a style="float:left;" href="http://www.wonderroot.org/" target="_blank">Website</a>
+      <a href="http://twitter.com/wonderroot" target="_blank"><span class="twitter_link"></span></a>
+      <a href="http://www.facebook.com/group.php?gid=15081658419" target="_blank"><span class="facebook_link"></span></a>
+    </span>
+  </dd>
+</dl>
+<dl class="place_18001489">
+  <dt>
+    <a class="ct_bottom7" href="http://atlanta.schmap.com/cafes/red_light_cafe">Red Light Cafe</a>
+  </dt>
+  <dd>553 Amsterdam Avenue</dd>
+  <dd>Atlanta, GA 30306</dd>
+  <dd>(404) 874-7828</dd>
+  <dd class="mail_face_twit">
+    <span class="mft_links">
+      <a style="float:left;" href="http://www.redlightcafe.com" target="_blank">Website</a>
+      <a href="mailto:rlcbill@hotmail.com" target="_blank"><span class="mail_link"></span></a>
+    </span>
+    <img src="/cityguidesdata/photos/atlanta_mini/18001489_mini.jpg" class="ml_placePhoto"/>
+  </dd>
+</dl>
+<dl class="place_18000939">
+  <dt>
+    <a class="ct_bottom7" href="http://atlanta.schmap.com/bars/smiths_olde_bar">Smith's Olde Bar</a>
+  </dt>
+  <dd>1578 Piedmont Avenue</dd>
+  <dd>Atlanta, GA 30324</dd>
+  <dd>(404) 875-1522</dd>
+  <dd class="mail_face_twit">
+    <span class="mft_links">
+      <a style="float:left;" href="http://www.smithsoldebar.com" target="_blank">Website</a>
+      <a href="mailto:nolenreevesmusic@mindspring.com" target="_blank"><span class="mail_link"></span></a>
+    </span>
+    <img src="/cityguidesdata/photos/atlanta_mini/18000939_6_mini.jpg" class="ml_placePhoto"/>
+  </dd>
+</dl>
+
+		</div>
+		<div id="side">
+			<div id="slid">
+				<div id="mapContacts" >
+					<ul id="bizActions">
+						<li class="mapTitle">Map & Contacts</li>
+					</ul>
+					<div id="mapouter">
+						<div class="mi_map" id="map"></div>
+						<div id="staticmap"></div>
+						<div id="mapswitch"></div>
+						<div id="zoominout"></div>
+					</div>
+					<dl id="placeDetail">
+  <dt class="ct_bottom7">Tabernacle</dt>
+  <dd>152 Luckie Street</dd>
+  <dd>Atlanta, GA 30303</dd>
+  <dd>(404) 659-9022</dd>
+  <dd class="mail_face_twit">
+    <span class="mft_links">
+      <a style="float:left;" href="http://www.atlantaconcerts.com" target="_blank">Website</a>
+    </span>
+    <span class="heats">
+      <span style="float:left; ">Buzz level:</span><span class="buzzlevel"><span class="ct_bottom5"><img style="clip:rect(27,170,51,136);left:-166px;top:-34px;" src="/images/x.gif" width="503" height="556"></span></span>
+    </span>
+  </dd>
+</dl>
+
+				</div>
+				<div id="nationalAd"><script type='text/javascript'>
+  GA_googleFillSlot("rtguides_undermap_mediumrectangle300x250");
+</script>
+</div>
+			    
+				<div id="nationalAd"></div>
+				<div id="nationalAd"></div>
+				<div id="nationalAd"></div>
+				<div id="nationalAd"></div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+<div class="ad_footer_leaderboard728x90">
+	<div class="shadow"></div>
+	<div class="ad"><script type='text/javascript'>
+  GA_googleFillSlot("rtguides_footer_leaderboard728x90");
+</script>
+</div>
+</div>
+
+<div class="footer" id="footer">
+	<ul>
+		<li id="footer_first">&copy; 2013 Schmap, Inc. </li>
+		<li><a href="http://www.schmap.com/About">About us</a></li>
+		<li><a href="http://www.schmap.com/Contact">Contact</a></li>
+		<li><a href="http://www.schmap.com/Privacy">Privacy</a></li>
+		<li><a href="http://www.schmap.com/Termsofuse">Terms</a></li>
+		<li id="footer_last">Talk to us on Twitter: <a href="http://twitter.com/schmap" target="_blank">@schmap</a>&nbsp;&nbsp;
+		<iframe scrolling="no" frameborder="0" allowtransparency="true"
+		src="http://platform1.twitter.com/widgets/follow_button.html?_=1307072450788&amp;align=&amp;button=grey&amp;id=twitter_tweet_button_2&amp;lang=en&amp;link_color=&amp;screen_name=schmap&amp;show_count=false&amp;show_screen_name=&amp;text_color="
+		class="twitter-follow-button" style="height: 20px; width: 62px; position: relative; top: 5px;" title=""></iframe></li>
+	</ul>
+</div>
+
+
+
+<div id="addBuzzUnit_store" style="display:none">
+	<div id="addBuzzUnit" class="middle" style="left:0px;#left:4px;position:absolute;margin-top:4px;">
+		<div id="abu_innerBox">
+		<textarea id="abu_tweetText"></textarea><div class="prev" id="abu_prev"></div><div class="next" id="abu_next"></div><span id="abu_label1">Choose buzz or write/edit your own above...</span>
+		<span id="abu_label2" onClick="abu.starClick(0);" onMouseOver="abu.starMOver(0);" onMouseOut="abu.starMOut();">Add rating:&nbsp;&nbsp;&nbsp;</span>
+		<ul id="abu_stars">
+			<li onClick="abu.starClick(1);" onMouseOver="abu.starMOver(1);" onMouseOut="abu.starMOut();"></li>
+			<li onClick="abu.starClick(2);" onMouseOver="abu.starMOver(2);" onMouseOut="abu.starMOut();"></li>
+			<li onClick="abu.starClick(3);" onMouseOver="abu.starMOver(3);" onMouseOut="abu.starMOut();"></li>
+			<li onClick="abu.starClick(4);" onMouseOver="abu.starMOver(4);" onMouseOut="abu.starMOut();"></li>
+			<li onClick="abu.starClick(5);" onMouseOver="abu.starMOver(5);" onMouseOut="abu.starMOut();"></li>
+		</ul>
+		<div id="abu_size">140</div>
+		</div>
+		<div id="abu_tweetButton" class="tconnect"></div><span id="abu_label3"></span>
+	</div>
+</div>
+<div id="overlay_new" style="display:none"></div>
+<div id="overlay_1" class="overlay" style="display:none">
+	<img src="/images/spacer.png" class="close" onclick = "overlay.closeOverlay1();" />
+	<img src="/images/spacer.png" class="checkmark" />
+	<p id="p1"></p>
+	<!--<b style="line-height:200%">Your tweet has been sent!</b><br/>Thank your for adding buzz for xxx-->
+	<!--<b style="line-height:200%">Your are now signed in with Twitter!</b><br/>As a signed in user you can bla bla-->
+	<p id="p2">Recommended Schmap accounts to follow...</p>
+	<img id="overlay_spinner" src="/images/twitter_ajax_iphone.gif"/>
+	<ul id="accounts_list"></ul>
+	<p id="p3"></p>
+</div>
+<div id="overlay_2" class="overlay" style="display:none">
+	<img src="/images/spacer.png" class="close" onclick = "overlay.closeOverlay2();" />
+	<h1>Atlanta Event & Deal DMs!</h1>
+	<p style="text-align:left;">Be the first to hear about great local events and deals via our Twitter DM service. Set your preferences here, and
+	change them anytime!</p>
+	<ul class="dm_cat_titles">
+		<li>Atlanta Events</li>
+		<li style="margin-left:90px;#margin-left:95px;">Atlanta Deals</li>
+	</ul>
+	<ul>
+		<li id="dm_cat_list1"></li>
+		<li id="dm_cat_list2"></li>
+	</ul>
+	<p id="p3" style="display:block;">		
+		Please send me a maximum <select id="dm_count">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+								</select>
+		DMs/day <span></span><br/><br/>
+		<a id="unsubscribe">unsubscribe</a>
+		
+		<span>Sign in with Twitter to save your choices and get your DMs: </span><img onclick="abu.login('T-GD-DM-SUBS');" class="login" src="/images/spacer.png">
+		
+	</p>
+</div>
+<div id="overlay_3" class="overlay" style="display:none">
+	<img onclick="overlay.closeOverlay3();" class="close" src="/images/spacer.png">
+	<div class="overlay3_top"><div id="overlay3_done"></div></div>
+	<h1>You're all set to receive @schmap Event & Deal DMs</h1>
+	<p>You'll receive @schmap Event & Deal DMs in the categories you've selected. You can change your selected categories by clicking on the 'Event & Deal DMs' link at the top of any page on our site.</p>
+	<h2>Please help us spread the word!</h2>
+	<div id="overlay3_size">140</div>
+	<div id="overlay3_innerbox">
+		<div class="overlay3_text">
+			<textarea spellcheck="false" id="overlay3_textarea" rows="3"></textarea>
+		</div>
+		<div class="overlay3_PN">	
+			<div id="overlay3_prev" class="overlay3_prev"></div>
+			<div id="overlay3_next" class="overlay3_next"></div>
+		</div>	
+	</div>
+	<div id="overlay3_tweetButton" style="display: inline-block;"></div>
+	<div id="overlay3_doneButton" style="display: none"></div>
+	<span id="overlay3_lable">Choose or edit a message above, then click here to tweet:</span>
+</div>
+
+<script type="text/javascript" src="/ctrs/cities.js"></script>
+<script type="text/javascript">
+var groupon_url = "(none)";
+var searchQuery = "";
+var searchPage_init = "";
+
+var google_api_key = 'ABQIAAAAZH6MtmmlpyGAy_ktkxyYlxSjlsrIs7iRW_qDtQ6MGYnMAE6EVhR-9Xzfw-BwMQVuzYilUwaRMIVpsg';
+var gkey = google_api_key;
+var currentCity = 'Atlanta';
+var o3_tweet_short_url = 'ao5';
+var cities_city_url = 'atlanta';
+var cities_subdomain = 'atlanta';
+var cities_state = 'GA';
+var cities_city_with_state = 'ATLANTA';
+var topBanner = false;
+
+var footerBanner = false;
+
+	var footerBanner = true;
+
+addScript('/ctrs/guides.js');
+</script>
+
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+<script type="text/javascript" src="/ctrs/slideshow.js"></script>
+</body>
+</html>

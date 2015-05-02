@@ -1,0 +1,861 @@
+
+<style>
+.overWriteFont{
+	font-family: Arial, Helvetica, sans-serif !important;	
+}
+.overWriteFont table{
+	 
+}
+.overWriteFont tr{
+	 
+}
+.overWriteFont td{
+	letter-spacing: normal !important;
+	font-size: 13px !important;
+	/*color: #000000 !important;*/
+	font-style: normal !important;
+	
+}
+.overWriteFont hr{
+	margin: 5px 0 !important;
+	border-bottom: 1px solid #666 !important;
+}
+
+.overWriteFont img{
+	max-width:none;
+	
+}
+
+.overWriteFont p{
+	margin: 10px 0 10px 0 !important;
+}
+
+
+.overWriteFont textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+ 
+}
+
+</style>
+
+<!-- NEW TOP DESIGN CSS AND JS FILES -->
+
+<!-- Load Bootstrap 2.3.2 stylesheets -->
+<link rel="stylesheet" type="text/css" href="new-layout/wayout-menu/css/bootstrap.min.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="new-layout/wayout-menu/css/bootstrap-responsive.min.css" media="screen" />
+<!-- Load Fonts -->
+<link rel="stylesheet" type="text/css" href="new-layout/wayout-menu/css/fonts.css" />
+<!-- WAYOUT MENU -->
+<link rel="stylesheet" type="text/css" href="new-layout/wayout-menu/css/wayoutmenu.css?v=1.2" />
+<link rel="stylesheet" type="text/css" href="new-layout/wayout-menu/css/wayoutmenuboxed.css" />
+<link rel="stylesheet" type="text/css" href="new-layout/wayout-menu/css/wayoutmenueffects.css" />
+<link rel="stylesheet" type="text/css" href="new-layout/wayout-menu/css/swatch1.css?v=1.0" />
+<link rel="stylesheet" type="text/css" href="new-layout/wayout-menu/css/wayoutmenuresponsive.css" />
+  
+<!-- Lightbox stylesheet -->
+<link rel="stylesheet" type="text/css" href="new-layout/wayout-menu/css/jquery.lightbox.min.css" />
+<!-- Input slider -->
+<link rel="stylesheet" type="text/css" href="new-layout/wayout-menu/css/slider.css" />
+<!-- Color Picker --> 
+<link rel="stylesheet" type="text/css" href="new-layout/wayout-menu/css/spectrum.css" />
+
+<!-- jQuery 1.10.2 -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="new-layout/wayout-menu/js/bootstrap.min.js"></script>
+<!-- Lightbox -->
+<script src="new-layout/wayout-menu/js/jquery.lightbox.min.js"></script>  
+<!-- Wayout Menu -->
+<script src="new-layout/wayout-menu/js/wayoutmenu.boxed.js?v=1.3"></script>  
+
+
+<!-- Site JS file -->
+<script src="new-layout/js/siteJS.js"></script>
+
+<!-- END NEW TOP DESIGN CSS AND JS FILES -->
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta property="fb:admins" content="{768400430}"/>
+<title>  by  Christian CD Book Reviews | NRTeam Member  | NewReleaseTuesday.com</title>
+<link href="css/main.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+function review_point(point,review_id,num,review_user_id){
+
+	var SES="";
+	
+	if(SES==""){
+		alert("You Must Be A Registered NRTeam Member....")
+	} else {
+				if(review_user_id==SES){
+		alert("NRTeam Members Can Not Rate Their Own Reviews.")
+		}else{
+
+	
+		//alert("votes_popup.php?points="+ point + "&user_id=" + SES + "&review_id=" + review_id,"","width=300,height=200");
+		 window.open("votes_popup.php?points="+ point + "&user_id=" + SES + "&review_id=" + review_id,"","width=550,height=180,left=200,top=200,toolbar=No,location=No,scrollbars=No,status=No,resizable=No,fullscreen=No");
+		}
+   }
+
+}
+</script>
+
+</head>
+
+<body>
+<div align="center">
+   </div><!-- END <div align="center"> -->
+
+
+<!-- MAIN CONTAINER -->
+<div id="main-container" class="container-fluid relative overflow-hidden full-height">
+<!-- Side Menu (.st-effect-1) -->
+<nav class="hidden-menu st-effect-1" id="menu-1">
+      <h2>NRTeam</h2>
+      <ul>
+        
+       <li><a href="http://www.newreleasetuesday.com/nrteamdatabase.php"><i class="icon-user icon-white icon-pos"></i>profiles</a></li>
+       <li><a href="#"><i class="icon-envelope icon-white icon-pos"></i>messages</a></li>
+        <li><a href="#"><i class="icon-picture icon-white icon-pos"></i>photos</a></li>
+                <li><a href="http://www.newreleasetuesday.com/nrteam_points.php"><i class="icon-calendar icon-white icon-pos"></i>point store</a></li>
+        <li><a href="http://www.newreleasetuesday.com/blogs.php"><i class="icon-comment icon-white icon-pos"></i>blogs</a></li>
+       
+        <li><a href="http://www.newreleasetuesday.com/loginrequired.php"><i class="icon-off icon-white icon-pos"></i>login</a></li>
+      </ul>
+      <div class="social-media-sidebar">
+        <a class="facebook-sb" title="Facebook" target="_blank" href="https://www.facebook.com/newreleasetuesday"><span>Facebook</span></a>
+        <a class="twitter-sb" title="Twitter" target="_blank" href="https://twitter.com/newreleasetue"><span>Twitter</span></a>
+        <a class="google-plus-sb" title="Google+" target="_blank" href="https://plus.google.com/105884794340923798365/posts"><span>Google Plus</span></a>
+        <a class="yahoo-sb" title="Instagram" target="_blank" href="http://instagram.com/newreleasetuesday"><span>instagram</span></a>
+        <a class="pinterest-sb" title="Pinterest" target="_blank" href="http://www.pinterest.com/newreleasetue/"><span>Pinterest</span></a>
+        <a class="youtube-sb" title="Youtube" target="_blank" href="http://www.youtube.com/newreleasetuesday"><span>Youtube</span></a>
+      </div>
+</nav><!-- /Side Menu (.st-effect-1) --> 
+
+<!-- WRAPPER -->
+<div class="wrapper relative full-height"> <!-- Ending this div in bottom nav -->
+<!-- ST-CONTENT -->
+<div class="st-content relative full-height"> <!-- Ending this div in bottom nav -->
+<!-- this is the wrapper for the content --> 
+<!-- ST-CONTENT-INNER -->
+<div class="st-content-inner relative" style="width:980px; margin:0 auto;">  <!-- Ending this div in bottom nav -->
+	<!-- ADDIN - Detect Mobile Show Apps -->
+		<!-- ADDIN - Detect Mobile Show Apps -->
+ <script type="text/javascript" src="http://www.newreleasetuesday.com/js/my_ajax.js"></script> 
+ <link rel="stylesheet" type="text/css" href="http://www.newreleasetuesday.com/css/style_search.css"/>
+  <!-- MAIN HEADER -->
+  
+  <div class="main" style="position:relative">
+
+            <!-- MENU-BG -->
+            <div class="container-fluid menu-bg-boxed">
+              <!-- BM-CONTAINER -->
+              <div class="row-fluid site-width-boxed bm-container">
+                <div class="slidemenu-toggler">
+                  <button id="brien-button" class="side-menu-toggle"></button>
+                </div>
+                <div class="site-title"><a href="http://www.newreleasetuesday.com/"><img src="new-layout/wayout-menu/img/logo.png" title="New Release Tuesday" alt="New Release Tuesday" /></a></div>
+                <!-- Wayout Menu - TOP NAV -->
+                <div class="top-nav hidden-phone">
+                  <ul>
+                    <!-- MUSIC Nav -->
+                    <li><a href="#" title="Music">MUSIC</a>
+  <ul>
+  	<li><a href="http://www.newreleasetuesday.com/discover-music.php" title="Discover">Discover</a></li>
+    <li><a href="http://www.newreleasetuesday.com/new_release.php" title="New This Week">New This Week</a></li>
+    <li><a href="http://www.newreleasetuesday.com/coming_soon.php" title="Coming Soon">Coming Soon</a></li>
+    <li><a href="http://www.newreleasetuesday.com/freemusic.php" title="Free Downloads">Free Downloads</a></li>
+    <li><a href="http://www.newreleasetuesday.com/albumpreview.php" title="Album Preview">Album Preview</a></li>
+    <li><a href="http://www.newreleasetuesday.com/reviewdatabase_viewall.php?reviews=staff" title="Reviews">Reviews</a></li>
+  </ul>
+</li>                    <!-- / MUSIC Nav -->
+                    
+                    <!-- VIDEOS Nav -->
+                    <li><a href="#" title="Videos">VIDEOS</a>
+  <ul>
+    <li><a href="http://www.newreleasetuesday.com/videodatabase.php" title="Music Videos">Music Videos</a></li>
+    <li><a href="http://www.newreleasetuesday.com/videos-exclusives.php" title="Exclusives">Exclusives</a></li>
+    <li><a href="http://www.newreleasetuesday.com/videos-newmusichangout.php" title="NRT Live Hangout">#NRTLIVE Hangout</a></li>
+    <!--<li><a href="http://www.newreleasetuesday.com/videocontest.php" title="Video Contest">Video Contest</a></li>-->
+  </ul>
+</li>                    <!-- / VIDEOS Nav -->
+                    
+                    <!-- News Nav -->
+                    <li class="top-nav-mega"><a href="http://www.newreleasetuesday.com/news.php" title="">NEWS</a>
+   <ul class="top-nav-mega-1" style="width:419px !important;">
+    <div class="row-fluid">
+      <div class="span12">
+        <!-- Sample News Items  -->
+        
+        <div class="row-fluid mega-news-item" style="width:95.5% !important;">
+          <div class="span4">
+            <a href="http://www.newreleasetuesday.com/news_detail.php?newsid=707"><img src="http://www.newreleasetuesday.com/images/news_images/news_img_f_1428087289.jpg" width="120" height="100" alt="Chris August Launches Premiere Weekend On NRT Radio One"></a>
+          </div>
+          <div class="span8">
+            <h3><a href="http://www.newreleasetuesday.com/news_detail.php?newsid=707">Chris August Launches Premiere Weekend On NRT Radio One</a></h3>
+            New songs from upcoming album play every hour on growing online radio station          </div>
+        </div>
+        
+        
+        <div class="row-fluid mega-news-item" style="width:95.5% !important;">
+          <div class="span4">
+            <a href="http://www.newreleasetuesday.com/news_detail.php?newsid=701"><img src="http://www.newreleasetuesday.com/images/news_images/news_img_f_1428094256.jpg" width="120" height="100" alt="Matthew West Live Forever Releases April 28 Available Now For Pre-Order"></a>
+          </div>
+          <div class="span8">
+            <h3><a href="http://www.newreleasetuesday.com/news_detail.php?newsid=701">Matthew West Live Forever Releases April 28 Available Now For Pre-Order</a></h3>
+            West Honored With His Second ASCAP Christian Music Songwriter-Artist of the Year Award          </div>
+        </div>
+        
+        
+        <div class="row-fluid mega-news-item" style="width:95.5% !important;">
+          <div class="span4">
+            <a href="http://www.newreleasetuesday.com/news_detail.php?newsid=702"><img src="http://www.newreleasetuesday.com/images/news_images/news_img_f_1427994711.jpg" width="120" height="100" alt="Integrity Music Releases NCC Worships Label Debut You Alone"></a>
+          </div>
+          <div class="span8">
+            <h3><a href="http://www.newreleasetuesday.com/news_detail.php?newsid=702">Integrity Music Releases NCC Worships Label Debut You Alone</a></h3>
+            DC Dream Center Benefit Recording From NCC Worship Team Uniquely Bundled As A Digital Worship Resource Pack          </div>
+        </div>
+        
+   	
+		<div class="row-fluid mega-news-item" style="width:95.5% !important;">
+      	<p class="read_more_btn"><a href="http://www.newreleasetuesday.com/news.php">Read more</a></p>
+      </div>
+       
+      </div>
+    </div>
+  </ul>
+</li>                    <!-- / News Nav -->
+                    
+                    <!-- MOVIES Nav -->
+                    <li><a href="#" title="Movies/TV">MOVIES/TV</a>
+   <ul>
+    <li><a href="http://www.newreleasetuesday.com/christian-movies.php" title="Trailers">Trailers</a></li>
+    <li><a href="http://www.newreleasetuesday.com/articledatabase.php?view=7" title="Reviews">Reviews</a></li>
+   </ul>
+</li>                    <!-- / MOVIES Nav -->
+                    
+                     <!-- BOOKS Nav -->
+                    <li><a href="#" title="Books">BOOKS</a>
+  <ul>
+    <li><a href="http://www.newreleasetuesday.com/discover-books.php" title="Discover">Discover</a></li>
+    <li><a href="http://www.newreleasetuesday.com/releasedate_books.php" title="New This Month">New This Month</a></li>
+    <li><a href="http://www.newreleasetuesday.com/articledatabase.php?view=5" title="Excerpts">Excerpts</a></li>
+    <li><a href="http://www.newreleasetuesday.com/reviewdatabase_books.php" title="Reviews">Reviews</a></li>
+  </ul>
+</li>                    <!-- / BOOKS Nav -->
+                    
+                     <!-- EVENTS Nav -->
+                    <li><a href="#" title="EVENTS">EVENTS</a>
+  <ul>
+    <li><a href="http://www.newreleasetuesday.com/christian-music-tours.php" title="Tours">Tours</a></li>
+    <li><a href="http://www.newreleasetuesday.com/christian-music-festivals.php" title="Festivals">Festivals</a></li>
+    <li><a href="http://www.newreleasetuesday.com/articledatabase.php?view=6" title="Concert Reviews">Concert Reviews</a></li>
+  </ul>
+</li>                    <!-- / EVENTS Nav -->
+                    
+                    <!-- EXCLUSIVES Nav -->
+                    <style>
+.new-images { max-height:66px !important; overflow:hidden !important; border:rgba(255,255,255,0.3) 5px solid;}
+.new-images img{width:114px !important; background:none; padding:0px; }
+.read_more_btn {
+	font-size:13px;
+	display:block;
+	text-align:center;
+	margin:0;
+	padding:0;
+}
+.read_more_btn a {
+	color:#99ae6a !important;
+	text-decoration:none !important;
+}
+.read_more_btn a:hover {
+	text-decoration:underline !important;
+}
+</style>
+<li class="top-nav-mega fw"><a href="#" title="">EXCLUSIVES</a></li>
+<div class="top-nav-mega-full-width typo" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box; box-sizing: border-box;padding: 0 !important;">
+  <div class="row-fluid">
+  
+<div class="span4">
+    <!--<ul class="top-nav-mega-1">-->
+    <div class="row-fluid">
+    <h3>Featured Articles</h3>
+        <hr class="top-nav-mega-content-seperator">
+      <div class="span12">
+        <!-- Sample News Items  -->
+        
+        <div class="row-fluid mega-news-item" style="width:95% !important;">
+          <div class="span4">
+            <div class="new-images"><a href="http://www.newreleasetuesday.com/article.php?article_id=1507"><img src="http://www.newreleasetuesday.com/images/article_images/art_img_1507.jpg" alt=""Unoffendable" by Brant Hansen"></a></div>
+          </div>
+          <div class="span8">
+            <h3 style="line-height:22px !important;"><a style="text-transform:capitalize !important; margin:0 !important; font-size:16px !important; " href="http://www.newreleasetuesday.com/article.php?article_id=1507">"Unoffendable" by Brant Hansen</a></h3>
+            A BOOK EXCERPT          </div>
+        </div>
+        
+        <div class="row-fluid mega-news-item" style="width:95% !important;">
+          <div class="span4">
+            <div class="new-images"><a href="http://www.newreleasetuesday.com/article.php?article_id=1506"><img src="http://www.newreleasetuesday.com/images/article_images/art_img_1506.jpg" alt="#606 - "Drops In the Ocean" by Hawk Nelson"></a></div>
+          </div>
+          <div class="span8">
+            <h3 style="line-height:22px !important;"><a style="text-transform:capitalize !important; margin:0 !important; font-size:16px !important; " href="http://www.newreleasetuesday.com/article.php?article_id=1506">#606 - "Drops In the Ocean" by Hawk Nelson</a></h3>
+            BEHIND THE SONG WITH KEVIN DAVIS          </div>
+        </div>
+        
+        <div class="row-fluid mega-news-item" style="width:95% !important;">
+          <div class="span4">
+            <div class="new-images"><a href="http://www.newreleasetuesday.com/article.php?article_id=1505"><img src="http://www.newreleasetuesday.com/images/article_images/art_img_1505.jpg" alt="#605 - "Our Father has Won" by WorshipMob"></a></div>
+          </div>
+          <div class="span8">
+            <h3 style="line-height:22px !important;"><a style="text-transform:capitalize !important; margin:0 !important; font-size:16px !important; " href="http://www.newreleasetuesday.com/article.php?article_id=1505">#605 - "Our Father has Won" by WorshipMob</a></h3>
+            BEHIND THE SONG WITH KEVIN DAVIS          </div>
+        </div>
+         <div class="row-fluid mega-news-item" style="width:95% !important;">
+      	<p class="read_more_btn"><a href="http://www.newreleasetuesday.com/articledatabase.php">Read more</a></p>
+      </div>
+      </div>
+    </div>
+  <!--</ul>-->
+ </div>
+    
+    <!-- Bootstrap Slider and Image Showcase -->
+    <div class="span4">
+      <h3>NRT Radio Network</h3>
+      <hr class="top-nav-mega-content-seperator">
+      
+      <!-- Slider -->
+      <div id="myCarousel" class="carousel slide" style="z-index:2">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="item active">
+            <a href="http://www.NRTRadio.com"><img src="new-layout/wayout-menu/img/Exclusives_1.jpg" alt="NRT RADIO"></a>
+            <div class="carousel-caption transpare">
+              <h4>NRT RADIO</h4>
+              <p>The NEW Sound Of Christian Music</p>
+              </div>
+          </div>
+          <div class="item">
+            <a href="http://www.NRTRadio.com"><img src="new-layout/wayout-menu/img/Exclusives_Remix.jpg" alt="NRT RADIO REMIX "></a>
+            <div class="carousel-caption transpare">
+              <h4>NRT RADIO REMIX</h4>
+              <p>The NEW Sound Of Christian EDM</p>
+            </div>
+          </div>
+          <div class="item">
+            <a href="http://www.NRTRadio.com"><img src="new-layout/wayout-menu/img/Exclusives_JTH.jpg" alt="JAM THE HYPE RADIO "></a>
+            <div class="carousel-caption transpare">
+              <h4>JAM THE HYPE</h4>
+              <p>The NEW Sound Of Christian Rap/Hip-Hop</p>
+            </div>
+          </div> 
+        </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+      </div>
+      <!-- /Slider -->
+    </div>
+    <!-- /Bootstrap Slider and Image Showcase -->
+    
+    <!-- Icons and Images -->
+    <div class="span4">
+      <h3>Our Apps</h3>
+      <hr class="top-nav-mega-content-seperator">
+      
+      <!-- Black Icons -->
+      <div class="row-fluid item-with-images typo-icons" style="width:93% !important;">
+      	<a href="http://www.newreleasetuesday.com/nrtmobile"><img src="new-layout/wayout-menu/img/topnav_logo.gif" width="350"  /></a>  
+      </div>
+      <!-- /Black Icons -->
+      
+      <!-- White Icons -->
+      <div class="row-fluid item-with-images-black typo-icons" style="width:93% !important;">
+        
+      </div>
+      <!-- /White Icons -->
+      
+      <div class="row-fluid">
+      
+        <div class="span6" style="width:300px;">
+          <h3>Contests</h3>
+          <hr class="top-nav-mega-content-seperator">
+          <ul>
+                      <li><a href="http://www.newreleasetuesday.com/contest_NowNext2015.php" title="">iWorship NowNext 2015</a></li>
+            <li><a href="http://www.newreleasetuesday.com/contests.php" title="">MORE CONTESTS</a></li>
+            
+            
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+    <!-- /Icons and Images -->
+  </div>
+</div>                    <!-- /EXCLUSIVES Nav -->
+                    
+                    <!-- NRT RADIO Nav -->
+                    <li><a href="#" title="NRT RADIO NETWORK">NRT RADIO NETWORK</a>
+   <ul>
+    <li><a href="http://www.nrtradio.com/one" target="_blank" title="NRT Radio">NRT Radio One</a></li>
+    <li><a href="http://www.nrtradio.com/worship" target="_blank" title="NEW! NRT Radio Worship">NRT Radio Worship</a></li>
+    <li><a href="http://www.nrtradio.com/remix" target="_blank" title="NRT Radio Remix">NRT Radio Remix</a></li>
+    <li><a href="http://www.nrtradio.com/christmas" target="_blank" title="NRT Radio Christmas">NRT Radio Christmas</a></li>
+    <li><a href="http://www.nrtradio.com/jamthehype" target="_blank" title="Jam The Hype">Jam The Hype</a></li>
+   </ul>
+</li>                    <!-- /NRT RADIO Nav -->
+                  </ul>
+                </div>
+                <!-- /Wayout Menu - TOP NAV -->
+                
+                <!-- Wayout Menu - Search Toggle -->
+                <div class="search-toggler hidden-phone">
+                  <button id="search-form" class="search-toggle"></button>
+                </div>
+                <!-- /Wayout Menu - Search Toggle -->
+                
+                <!-- Wayout Menu - Login Toggle -->
+                <div class="loginbox-toggler">
+                  <button id="login-form" class="login-toggle"></button>
+                </div>
+                <!-- Wayout Menu - /Login Toggle -->
+                
+                <!-- Wayout Menu - Shopping Cart Toggle 
+                <div class="shop-toggler">
+                  <a href="http://www.nrtradio.com " target="_blank" title="Radio"><button id="shopping" class="shop-toggle"></button></a>
+                </div>-->
+                <!-- Wayout Menu - /Shopping Cart Toggle -->
+                
+              </div>
+              <!-- /BM-CONTAINER -->
+              <form id="searchFrm" name="searchFrm" method="post" action="http://www.newreleasetuesday.com/searchresults.php">
+              <div id="newspan" style="position:relative;">
+              <!-- Search Input -->
+              <input type="text" id="search-container" name="keyword" onKeyUp="searchSuggestion(this.value);" AUTOCOMPLETE="OFF" placeholder="Type here to search">
+              <input type="hidden" name="default" value="1" />
+              
+              	<ul class="sb_dropdown" style="display:none; position:absolute; top:48px; right:0px;z-index:99;">
+                	<!--<li>Ammar</li>
+                    <li>Ammar</li>
+                    <li>Ammar</li>
+                    <li>Ammar</li>-->
+                </ul>
+              </div>
+              <!-- /Search Input -->
+              </form>
+              <!-- Login Container -->
+              <style>
+			  #login-container form {
+				  margin:0;
+			  }
+              </style>
+              <div id="login-container">
+              
+                              <form id="loginFrm" name="loginFrm" method="post" action="http://www.newreleasetuesday.com/loginrequired1.php">
+                  <div class="control-group">
+                    <div class="controls">
+                      <input type="text" id="name" name="name" placeholder="Username">
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <div class="controls">
+                      <input type="password" id="password" name="password" placeholder="Password">
+                    </div>
+                  </div>
+                  <div class="register-forgot clearfix">
+                  	<div style="float:left"><a href="http://www.newreleasetuesday.com/registration_step1.php">Register</a></div>
+                    <div style="float:right"><a href="http://www.newreleasetuesday.com/register_forgotpassword.php">Forgot your details?</a></div>
+                  </div>
+                  
+                  <button type="submit" id="loginBtn">Login</button>
+                  <div class="fb-login-btn"><a href="http://www.newreleasetuesday.com/new-layout/fb-login.php"><img src="new-layout/wayout-menu/img/facebook-login.png" /></a></div>
+                 </form>
+				               
+              </div>
+              <!-- /Login Container -->
+              
+            </div>
+            <!-- /MENU-BG -->
+          </div>  
+  <!-- END MAIN HEADER --> 
+
+
+  
+  <!-- !!!!!!!!!!! YOUR CONTENT GOES HERE !!!!!!!!!!! -->
+          <table width="980" cellspacing="0" cellpadding="0">
+            <tr>
+              <td height="100" align="center" valign="middle" bgcolor="#222827"><!--/* Revive Adserver Javascript Tag v3.0.3 */-->
+
+
+<script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://www.newreleasetuesday.com/ads/www/delivery/ajs.php':'http://www.newreleasetuesday.com/ads/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=92&amp;target=_blank");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><noscript>
+<div align="center"><a href='http://www.newreleasetuesday.com/ads/www/delivery/ck.php?n=a90ffeaa&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.newreleasetuesday.com/ads/www/delivery/avw.php?zoneid=92&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a90ffeaa' border='0' alt='' /></a></div>
+</noscript>
+</td>
+            </tr>
+          </table>
+          <!-- !!!!!!!!!!! /YOUR CONTENT GOES HERE !!!!!!!!!!!  style="width:980px !important; overflow:hidden !important;" -->
+ 
+ <script type="text/javascript">
+
+$( document ).ready(function() {
+	
+	$('.st-content').append("<a href=\"http://bit.ly/1Gb05X5\" target=\"_blank\" id=\"background\"></a>");
+});
+</script>
+
+         
+   <div class="overWriteFont" >         <table width="980" height="500" cellpadding="0" cellspacing="0">
+    <tr align="left" valign="top">
+      <td width="788" bgcolor="#FFFFFF"><table width="100%"  cellspacing="0" cellpadding="8">
+        <tr>
+          <td><table width="100%"  cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="44%"><img src="images/headers/header_review.png" width="338" height="88" alt=""/></td>
+              <td><div align="right"><!-- AddThis Button BEGIN -->
+                <div class="addthis_toolbox addthis_default_style"><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a><a class="addthis_button_tweet"></a><a class="addthis_counter addthis_pill_style"></a><a href="nrteam_register.php"><img src="images/misc/button_jointeam.gif" alt="Join The NRTeam" width="106" height="21" border="0" align="absmiddle"></a></div><script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=newreleasetuesday"></script><!-- AddThis Button END --><a href="nrteam_register.php"></a></div></td>
+              </tr>
+          </table></td>
+        </tr>
+      </table>
+        <table width="100%"  cellspacing="0" cellpadding="8">
+        <tr>
+          <td><table width="100%"  cellspacing="0" cellpadding="8">
+            <tr>
+              <td><table width="315" border="0" align="left" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td><table width="300" border="0" align="left" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td><div align="center">
+                                                                        <a href="albumdetail.php?album_id="><img  src="thum_creater/phpThumb.php?src=../images/album_cover_images/image_not_available.jpg&w=300&h=300"  alt=" by  | CD Reviews And Information | NewReleaseTuesday.com" width="300" height="300" border="0"></a><br>
+                        "<a href="albumdetail.php?album_id="></a>"&nbsp;
+                        by <a href="artistdetail.php?artist_id=">&nbsp;</a>
+                                                <br>
+                        <br>
+                        <img src="images/ratings/rating_0.gif" width="60" height="11" alt="Rated  Stars">
+                        </p>
+                                                <hr align="center" width="100%" size="1">
+                        <p> <strong>Average Rating By NRTeam Members</strong><br>
+                                                    <img src="images/ratings/rating_0.gif" width="60" height="11" alt="Rated 0 Stars">  | 
+                                                    <a href="albumdetail.php?album_id=#reviews">View All Reviews</a>
+                                                            <br>
+                                  <a href="reviews_rss.php"><br>
+                                  <img src="images/misc/button_subscribe.gif" alt="" width="85" height="21" border="0" align="absmiddle"></a>                        </div></td>
+                    </tr>
+                  </table></td>
+                </tr>
+              </table>
+                <big><big><big><strong><a name="1"></a></strong></big></big></big><br>
+                  <span class="style3">Posted December 31, 1969</span> <br>
+                  <i>By <a href=""></a>,                     </i><br>
+                  <br><br>
+                   
+                  </p>
+                <p>&nbsp;</p>
+                <p><a href="userprofile_reviews.php?user_id=">View All  Music And Book Reviews By </a> | <a href="">View 's Profil</a><a href="">e</a><br>
+                  
+                </p>
+                <table width="100%" border="0" align="center" cellpadding="4" cellspacing="0">
+                  <tr>
+                        <td>
+                         <hr align="center"><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:comments href="newreleasetuesday.com/userprofile_reviewssinglepost.php?review_id=22866" num_posts="20" width="750"></fb:comments>
+                        </td>
+                      </tr>
+                  <tr>
+                    <td height="38" colspan="2" bordercolor="#FFFFFF" bgcolor="#F0EDED"><div align="left"><strong>Comments (0)&nbsp; |&nbsp; </strong><a href="userprofile_reviewscomment.php?review_id=22866&user_id="><strong>Add Comment</strong></a>&nbsp;|&nbsp;<strong>Is This Review Helpful?</strong> <a href="#reviews" onclick="review_point(1,,0,);"><strong>Yes</strong></a> | <a href="#reviews" onclick="review_point(-1,,0,);"><strong>No</strong></a></div></td>
+                  </tr>
+                                </table>
+                <br></td>
+            </tr>
+          </table>
+            <p>
+              
+<style>
+.new_reviews_outer{}
+.new_reviews_inner{border-left:#ccc 1px solid;  width:236px; float:left; padding:0px 0px 0px 12px; margin:0px 12px 0px 0px; }
+.new_review{text-align:center !important; padding:10px 0 10px 0 !important;}
+.new_review:hover{ background-color:#F0EDED;}
+.margin_bttm{ margin-bottom:3px;}
+.padding_left{border-left:none; padding:0px;}
+.review_text{ margin:0px 0px 0px 10px; text-align:left !important;}
+.line_img img{ margin:5px 0px;}
+</style>
+<div class="new_reviews_outer">
+	
+	<div class="reviews_title" style=" float:left; width:70%;"><a href="http://www.newreleasetuesday.com/reviewdatabase.php"><img src="/images/home/reviews_header.gif" alt="Christian Music Reviews"  height="47" border="0" /></a>
+    </div>
+    <div style=" float:right; margin-right:12px;">
+    <a href="http://www.newreleasetuesday.com/reviews_rss.php" target="_blank"><img src="/images/home/reviews_header2.gif" alt="Review RSS Feed" width="88" height="47" border="0" /></a></div>
+    <div style="clear:both;"></div>
+        <div class="new_reviews_inner padding_left">
+		<div class="new_review padding_left">
+		<div class="review_img">    
+            <a style="text-align:center;" href="http://www.newreleasetuesday.com/userprofile_reviewssinglepost.php?review_id=22995&amp;user_id=132696"><img src="thum_creater/phpThumb.php?src=../images/album_cover_images/cover_14967.jpg&w=135&h=135&zc=1" width="135" height="135" border="0" /></a>
+		</div>
+		<div class="review_text">    
+			<br>
+			<span class="reviews">
+	<a href="http://www.newreleasetuesday.com/userprofile_reviewssinglepost.php?review_id=22995&amp;user_id=132696"><strong>Where I Am Right Now E</strong></a>
+	<br>
+	by Jared Anderson    <br>
+	<span class="style5">Added 03/30/15 by ChristopherThiessen_NRT</span>
+	<br>
+	<img src="images/ratings/rating_3.5.gif" width="59" height="11" >|
+	<a href="http://www.newreleasetuesday.com/albumdetail.php?album_id=14967#reviews">Read All Reviews</a>(1)
+	</span>
+		</div>
+    </div>
+    </div>
+        
+        <div class="new_reviews_inner ">
+		<div class="new_review padding_left">
+		<div class="review_img">    
+            <a style="text-align:center;" href="http://www.newreleasetuesday.com/userprofile_reviewssinglepost.php?review_id=22986&amp;user_id=140"><img src="thum_creater/phpThumb.php?src=../images/album_cover_images/cover_14986.jpg&w=135&h=135&zc=1" width="135" height="135" border="0" /></a>
+		</div>
+		<div class="review_text">    
+			<br>
+			<span class="reviews">
+	<a href="http://www.newreleasetuesday.com/userprofile_reviewssinglepost.php?review_id=22986&amp;user_id=140"><strong>Saints and Sinners</strong></a>
+	<br>
+	by Matt Maher    <br>
+	<span class="style5">Added 03/29/15 by KevinDavis_NRT</span>
+	<br>
+	<img src="images/ratings/rating_5.gif" width="59" height="11" >|
+	<a href="http://www.newreleasetuesday.com/albumdetail.php?album_id=14986#reviews">Read All Reviews</a>(1)
+	</span>
+		</div>
+    </div>
+    </div>
+        
+        <div class="new_reviews_inner ">
+		<div class="new_review padding_left">
+		<div class="review_img">    
+            <a style="text-align:center;" href="http://www.newreleasetuesday.com/userprofile_reviewssinglepost.php?review_id=22987&amp;user_id=58120"><img src="thum_creater/phpThumb.php?src=../images/album_cover_images/cover_14966.jpg&w=135&h=135&zc=1" width="135" height="135" border="0" /></a>
+		</div>
+		<div class="review_text">    
+			<br>
+			<span class="reviews">
+	<a href="http://www.newreleasetuesday.com/userprofile_reviewssinglepost.php?review_id=22987&amp;user_id=58120"><strong>Mansion</strong></a>
+	<br>
+	by NF    <br>
+	<span class="style5">Added 03/28/15 by MarkRyan_NRT</span>
+	<br>
+	<img src="images/ratings/rating_3.5.gif" width="59" height="11" >|
+	<a href="http://www.newreleasetuesday.com/albumdetail.php?album_id=14966#reviews">Read All Reviews</a>(1)
+	</span>
+		</div>
+    </div>
+    </div>
+    <div class="line_img"><img src="/images/home/features_line.gif" width="100%" height="11" /></div>    
+        <div class="new_reviews_inner padding_left">
+		<div class="new_review padding_left">
+		<div class="review_img">    
+            <a style="text-align:center;" href="http://www.newreleasetuesday.com/userprofile_reviewssinglepost.php?review_id=22977&amp;user_id=130961"><img src="thum_creater/phpThumb.php?src=../images/album_cover_images/cover_14897.jpg&w=135&h=135&zc=1" width="135" height="135" border="0" /></a>
+		</div>
+		<div class="review_text">    
+			<br>
+			<span class="reviews">
+	<a href="http://www.newreleasetuesday.com/userprofile_reviewssinglepost.php?review_id=22977&amp;user_id=130961"><strong>The Remixes</strong></a>
+	<br>
+	by Britt Nicole    <br>
+	<span class="style5">Added 03/18/15 by CaitlinLassiter_NRT</span>
+	<br>
+	<img src="images/ratings/rating_4.5.gif" width="59" height="11" >|
+	<a href="http://www.newreleasetuesday.com/albumdetail.php?album_id=14897#reviews">Read All Reviews</a>(2)
+	</span>
+		</div>
+    </div>
+    </div>
+        
+        <div class="new_reviews_inner ">
+		<div class="new_review padding_left">
+		<div class="review_img">    
+            <a style="text-align:center;" href="http://www.newreleasetuesday.com/userprofile_reviewssinglepost.php?review_id=22976&amp;user_id=43067"><img src="thum_creater/phpThumb.php?src=../images/album_cover_images/cover_14994.jpg&w=135&h=135&zc=1" width="135" height="135" border="0" /></a>
+		</div>
+		<div class="review_text">    
+			<br>
+			<span class="reviews">
+	<a href="http://www.newreleasetuesday.com/userprofile_reviewssinglepost.php?review_id=22976&amp;user_id=43067"><strong>The Fear of God</strong></a>
+	<br>
+	by Eshon Burgundy    <br>
+	<span class="style5">Added 03/18/15 by DwayneLacy_NRT</span>
+	<br>
+	<img src="images/ratings/rating_4.gif" width="59" height="11" >|
+	<a href="http://www.newreleasetuesday.com/albumdetail.php?album_id=14994#reviews">Read All Reviews</a>(1)
+	</span>
+		</div>
+    </div>
+    </div>
+        
+        <div class="new_reviews_inner ">
+		<div class="new_review padding_left">
+		<div class="review_img">    
+            <a style="text-align:center;" href="http://www.newreleasetuesday.com/userprofile_reviewssinglepost.php?review_id=22975&amp;user_id=43067"><img src="thum_creater/phpThumb.php?src=../images/album_cover_images/cover_14993.jpg&w=135&h=135&zc=1" width="135" height="135" border="0" /></a>
+		</div>
+		<div class="review_text">    
+			<br>
+			<span class="reviews">
+	<a href="http://www.newreleasetuesday.com/userprofile_reviewssinglepost.php?review_id=22975&amp;user_id=43067"><strong>Man Vs Machine</strong></a>
+	<br>
+	by Bumps INF    <br>
+	<span class="style5">Added 03/18/15 by DwayneLacy_NRT</span>
+	<br>
+	<img src="images/ratings/rating_4.5.gif" width="59" height="11" >|
+	<a href="http://www.newreleasetuesday.com/albumdetail.php?album_id=14993#reviews">Read All Reviews</a>(1)
+	</span>
+		</div>
+    </div>
+    </div>
+        
+        
+    <div style="clear:both"></div>
+</div>
+
+
+            </p></td>
+        </tr>
+      </table></td>
+      <td width="192" background="images/navigation/rightnavbg.gif"><div align="center">
+        <link href="css/main.css" rel="stylesheet" type="text/css">
+<table width="192" cellspacing="0" cellpadding="0">
+  <tr>
+    <td background="images/navigation/rightnavbg.gif"><div align="center">
+      <table width="100%"  cellspacing="0" cellpadding="8">
+        <tr>
+          <td align="center"><img src="../images/navigation/right_socialicons2.gif" width="160" height="44" border="0" usemap="#Map46" />
+            <map name="Map46" id="Map46">
+              <area shape="rect" coords="3,4,37,40" href="http://www.facebook.com/newreleasetuesday" target="_blank" alt="NewReleaseTuesday.com On Facebook" />
+              <area shape="rect" coords="42,3,78,40" href="http://www.twitter.com/newreleasetue" target="_blank" alt="NewReleaseTuesday.com On Twitter" />
+              <area shape="rect" coords="81,3,117,40" href="https://plus.google.com/u/0/105884794340923798365/posts" target="_blank" alt="Christian Music On Google+" />
+              <area shape="rect" coords="122,5,155,40" href="http://www.youtube.com/newreleasetuesday" target="_blank" alt="NewReleaseTuesday.com On YouTube" />
+              </map>
+            <div align="center"><span class="style5">ADVERTISEMENT<br />
+                <!--/* OpenX Javascript Tag v2.8.7 */--><script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://www.newreleasetuesday.com/ads/www/delivery/ajs.php':'http://www.newreleasetuesday.com/ads/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=47");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><noscript><a href='http://www.newreleasetuesday.com/ads/www/delivery/ck.php?n=af9c7224&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.newreleasetuesday.com/ads/www/delivery/avw.php?zoneid=47&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=af9c7224' alt='' width="160" height="600" border='0' /></a></noscript>
+
+            </span><br>
+
+            </div></td>
+        </tr>
+        <tr>
+          <td align="center">
+            
+  </td>
+        </tr>
+      </table>
+    </div></td>
+  </tr>
+</table>
+        <br>
+      </div></td>
+    </tr>
+  </table>
+  <!--<link href="css/main.css" rel="stylesheet" type="text/css">-->
+<div align="center">
+  <table width="980" border="0" cellspacing="0" cellpadding="0" align="center">
+    <tr>
+      <td><img src="/images/navigation/btmnavbg.gif" width="980" height="81" border="0" usemap="#Map10"></td>
+    </tr>
+  </table><p class="btmnav">
+    <script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://www.newreleasetuesday.com/ads/www/delivery/ajs.php':'http://www.newreleasetuesday.com/ads/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=49");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script>
+    <noscript>
+    <a href='http://www.newreleasetuesday.com/ads/www/delivery/ck.php?n=afd21022&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><a href='http://www.newreleasetuesday.com/ads/www/delivery/ck.php?n=afd21022&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.newreleasetuesday.com/ads/www/delivery/avw.php?zoneid=49&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=afd21022' alt='' border='0' /></a>
+    </noscript>
+  </p>
+  <p class="btmnav"><a href="index.php" title="Christian Music">Home</a> | <a href="aboutus.php" title="New Release Tuesday, New Christian Music">About NRT</a> | <a href="http://www.nrtradio.net" title="Christian Music Internet Radio, Christian Online Radio" target="_blank">NRT Radio</a> | <a href="http://www.newreleasetuesday.com/advertise.php" title="Christian Music Advertising" target="_blank">Advertising Information</a> | <a href="privacy.php">Privacy &amp; Site Terms</a> | <a href="guidelines.php">NRTeam Policies</a> | <a href="contactus.php">Contact Us</a> <br />
+    <a href="http://www.newreleasetuesday.com/registration_step1.php" title="Christian Music Community, NRTeam">Become An NRTeam Member</a> | <a href="http://www.newreleasetuesday.com/email-subscribe.php" title="Subscribe, Christian Music, Newsletter">Subscribe To Newsletter</a> | <a href="/christian-music-rss-feeds.php" title="Christian Music">Christian Music RSS Feeds</a><br />
+  &copy;2002-14 NewReleaseTuesday.com, A Division Of NRT Media Inc. </p>
+  <P>  
+</div>
+<script src="http://www.newreleasetuesday.com/Scripts/gatag.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-131464-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- Start Quantcast tag -->
+<script type="text/javascript">
+_qoptions={
+qacct:"p-890MzPAV8SCek"
+};
+</script>
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<noscript>
+<img src="http://pixel.quantserve.com/pixel/p-890MzPAV8SCek.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/>
+</noscript>
+<!-- End Quantcast tag -->
+<script type="text/javascript">
+    __compete_code = 'e2f491c9208918a40c6c84430f2d9b05';
+    (function () {
+        var s = document.createElement('script'),
+            e = document.getElementsByTagName('script')[0],
+            t = document.location.protocol.toLowerCase() === 'https:' ?
+                'https://c.compete.com/bootstrap/' :
+                'http://c.compete.com/bootstrap/';
+            s.src = t + __compete_code + '/bootstrap.js';
+            s.type = 'text/javascript';
+            s.async = true;
+            if (e) { e.parentNode.insertBefore(s, e); }
+        }());
+</script>
+<map name="Map10" id="Map10">
+  <area shape="rect" coords="768,22,804,62" href="http://www.twitter.com/newreleasetue" target="_blank" alt="Follow Us On Twitter">
+  <area shape="rect" coords="806,21,847,60" href="http://www.myspace.com/newreleasetuesday" target="_blank" alt="Follow Us On MySpace">
+  <area shape="rect" coords="853,23,888,61" href="http://www.facebook.com/pages/NewReleaseTuesdaycom/44464288660" target="_blank" alt="Follow Us On Facebook">
+  <area shape="rect" coords="894,21,931,59" href="http://www.youtube.com/newreleasetuesday" target="_blank" alt="Follow Us On YouTube">
+  <area shape="rect" coords="935,20,975,62" href="http://www.shoutlife.com/newreleasetuesday" target="_blank" alt="Follow NRT On Shoutlife">
+</map></div>
+</body>
+</html>

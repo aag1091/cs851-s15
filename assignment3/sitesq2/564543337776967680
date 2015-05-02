@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UgEDVVNRGwAHXVFaAgM="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:20,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(3),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(4),t(5),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:8,3:3,4:7,5:6,6:21,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:21,2:22,ee:"QJf3ax",gos:"7eSDFh"}],6:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:22,2:21,ee:"QJf3ax"}],7:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:22,2:21,ee:"QJf3ax"}],8:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(o){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:5,2:22,ee:"QJf3ax"}],9:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=e(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=e(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var u=0;c>u;u++)n.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:10,3:8,4:5,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],10:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],11:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:20,2:21,handle:"D5DuLP"}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=l.info=NREUM.info;if(t&&t.licenseKey&&t.applicationID&&f&&f.body){s(h,function(e,n){e in t||(t[e]=n)}),l.proto="https"===p.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=f.createElement("script");e.src=l.proto+t.agent,f.body.appendChild(e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u="addEventListener",d="attachEvent",p=(""+location).split("?")[0],h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-593.min.js"},l=e.exports={offset:i(),origin:p,features:{}};f[u]?(f[u]("DOMContentLoaded",o,!1),c[u]("load",n,!1)):(f[d]("onreadystatechange",r),c[d]("onload",n)),a("mark",["firstbyte",i()])},{1:20,2:11,handle:"D5DuLP"}],20:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],21:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],22:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:21,ee:"QJf3ax"}]},{},["G9z0Bl",4,9]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Maine Voices: UNE making strides in understanding chronic pain - The Portland Press Herald / Maine Sunday Telegram</title>
+<link rel="icon" type="image/png" href="http://www.pressherald.com/wp-content/themes/mainetoday/assets/images/favicon.png"/>
+<link rel="apple-touch-icon" type="image/png" href="http://www.pressherald.com/wp-content/uploads/2014/06/apple-touch-icon-iphone.png"/>
+<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="http://www.pressherald.com/wp-content/uploads/2014/06/apple-touch-icon-ipad.png"/>
+<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="http://www.pressherald.com/wp-content/uploads/2014/06/apple-touch-icon-iphone-retina-display.png"/>
+ 
+<link href='http://fonts.googleapis.com/css?family=Lusitana:400,700' rel='stylesheet' type='text/css'/>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ 
+ 
+<meta name="google-site-verification" content="QWs9pxQP8fwo2-nR5mWopc6qCK2D3920f7bl-U-zkso"/>
+ 
+ 
+<meta name="apple-itunes-app" content="app-id=951845858">
+ 
+ 
+<link rel="original-source" href="http://www.pressherald.com/2015/02/07/maine-voices-une-making-strides-in-understanding-chronic-pain/"/>
+<meta name="description" content="Grateful to be taken seriously at last, chronic pain sufferers are glad to participate in the research."/>
+<link rel="canonical" href="http://www.pressherald.com/2015/02/07/maine-voices-une-making-strides-in-understanding-chronic-pain/"/>
+<link rel="publisher" href="https://plus.google.com/+Pressherald/posts"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Maine Voices: UNE making strides in understanding chronic pain - The Portland Press Herald / Maine Sunday Telegram"/>
+<meta property="og:description" content="Grateful to be taken seriously at last, chronic pain sufferers are glad to participate in the research."/>
+<meta property="og:url" content="http://www.pressherald.com/2015/02/07/maine-voices-une-making-strides-in-understanding-chronic-pain/"/>
+<meta property="og:site_name" content="The Portland Press Herald / Maine Sunday Telegram"/>
+<meta property="article:publisher" content="https://www.facebook.com/pressherald"/>
+<meta property="article:section" content="Columns"/>
+<meta property="article:section" content="Opinion"/>
+<meta property="article:published_time" content="2015-02-07T04:00:00+00:00"/>
+<meta property="article:modified_time" content="2015-02-06T20:36:36+00:00"/>
+<meta property="og:updated_time" content="2015-02-06T20:36:36+00:00"/>
+<meta property="og:image" content="http://www.pressherald.com/wp-content/uploads/2015/01/PHnewFBlogo.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@pressherald"/>
+<meta name="twitter:domain" content="The Portland Press Herald / Maine Sunday Telegram"/>
+<meta name="twitter:creator" content="@pressherald"/>
+<meta name="twitter:image:src" content="http://www.pressherald.com/wp-content/uploads/2015/01/PHnewFBlogo.png"/>
+ 
+<link rel="alternate" type="application/rss+xml" title="The Portland Press Herald / Maine Sunday Telegram &raquo; Maine Voices: UNE making strides in understanding chronic pain Comments Feed" href="http://www.pressherald.com/2015/02/07/maine-voices-une-making-strides-in-understanding-chronic-pain/feed/"/>
+<link rel='stylesheet' id='flexslider-css' href='http://www.pressherald.com/wp-content/themes/mainetoday/assets/css/vendor/flexslider.css?ver=2.2.0' type='text/css' media='all'/>
+<link rel='stylesheet' id='bxslider-css' href='http://www.pressherald.com/wp-content/themes/mainetoday/assets/css/vendor/jquery.bxslider.css?ver=4.0' type='text/css' media='all'/>
+<link rel='stylesheet' id='slick-css' href='http://www.pressherald.com/wp-content/themes/mainetoday/assets/css/vendor/slick/slick.css?ver=4.1.1' type='text/css' media='all'/>
+<link rel='stylesheet' id='ticker-css' href='http://www.pressherald.com/wp-content/themes/mainetoday/assets/css/vendor/ticker-style.css?ver=0.4.7' type='text/css' media='all'/>
+<link rel='stylesheet' id='mtm-css' href='http://www.pressherald.com/wp-content/themes/mainetoday/assets/css/mainetoday.min.css?ver=0.4.7' type='text/css' media='all'/>
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='ie-eight-css'  href='http://www.pressherald.com/wp-content/themes/mainetoday/assets/css/ie8.css?ver=0.4.7' type='text/css' media='all' />
+<![endif]-->
+<script type="text/javascript">
+				window._taboola = window._taboola || [];
+				_taboola.push({article:'auto'});
+				!function (e, f, u) {
+					e.async = 1;
+					e.src = u;
+					f.parentNode.insertBefore(e, f);
+				}(document.createElement('script'), document.getElementsByTagName('script')[0], 'http://cdn.taboola.com/libtrc/mainetodaymedia-pressheraldcom/loader.js');
+			</script>
+<style type="text/css"></style>
+<script type='text/javascript' src='http://www.pressherald.com/wp-includes/js/jquery/jquery.js?ver=1.11.1'></script>
+<script type='text/javascript' src='http://www.pressherald.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='//s7.addthis.com/js/300/addthis_widget.js?ver=4.1.1#pubid=ra-535983434d690928'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.pressherald.com/xmlrpc.php?rsd"/>
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.pressherald.com/wp-includes/wlwmanifest.xml"/>
+<meta name="generator" content="WordPress 4.1.1"/>
+<link rel='shortlink' href='http://www.pressherald.com/?p=584112'/>
+<link rel='https://github.com/WP-API/WP-API' href='http://www.pressherald.com/wp-json'/>
+<meta property="fb:app_id" content="178078215650057">
+<style type="text/css">.recentcomments a{display:inline!important;padding:0!important;margin:0!important;}</style>
+<script type="text/javascript">
+				<!--
+
+				var viewportwidth;
+				var viewportheight;
+
+				// the more standards compliant browsers (mozilla/netscape/opera/IE7) use window.innerWidth and window.innerHeight
+
+				if (typeof window.innerWidth != 'undefined')
+				{
+					viewportwidth = window.innerWidth,
+						viewportheight = window.innerHeight
+				}
+
+				// IE6 in standards compliant mode (i.e. with a valid doctype as the first line in the document)
+
+				else if (typeof document.documentElement != 'undefined'
+					&& typeof document.documentElement.clientWidth !=
+					'undefined' && document.documentElement.clientWidth != 0)
+				{
+					viewportwidth = document.documentElement.clientWidth,
+						viewportheight = document.documentElement.clientHeight
+				}
+
+				// older versions of IE
+
+				else
+				{
+					viewportwidth = document.getElementsByTagName('body')[0].clientWidth,
+						viewportheight = document.getElementsByTagName('body')[0].clientHeight
+				}
+
+				//-->
+			</script>
+<script type='text/javascript'>
+				var googletag = googletag || {},
+					mtmads = mtmads || {},
+					AdSection;
+
+				googletag.cmd = googletag.cmd || [];
+				(function() {
+					var gads = document.createElement('script');
+					gads.async = true;
+					gads.type = 'text/javascript';
+					var useSSL = 'https:' == document.location.protocol;
+					gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+					var node = document.getElementsByTagName('script')[0];
+					node.parentNode.insertBefore(gads, node);
+				})();
+			</script>
+<script type="text/javascript">
+				// Place to stash data (currently to only resize iframes when actually needed)
+				mtmads.iFrameData = mtmads.iFrameData || {};
+
+				function iFrameAutoResize(id){
+					var newheight;
+
+					if( document.getElementById ){
+						newheight = document.getElementById( id ).contentWindow.document .body.scrollHeight;
+					}
+
+					if ( "undefined" === typeof mtmads.iFrameData[ id ] || mtmads.iFrameData[ id ] !== newheight ) {
+						document.getElementById( id ).height= ( newheight ) + "px";
+						mtmads.iFrameData[ id ] = newheight;
+					}
+				};
+
+				googletag.cmd.push(function() {
+					var pos1homemapping = googletag.sizeMapping().
+						addSize([1000, 200], [[970, 90],[970,30],[728, 90],[1,1]]). // SLB only for desktop and tablet wide
+						addSize([750, 200], [728, 90]). // 728 only for Tablet Portrait and above
+						addSize([0, 0], [[320, 50], [300, 50]]). //all sizes
+						build();
+
+					var pos1mapping = googletag.sizeMapping().
+						addSize([1000, 200], [[970, 90],[728, 90]]). // SLB only for desktop and tablet wide
+						addSize([750, 200], [728, 90]). // 728 only for Tablet Portrait and above
+						addSize([0, 0], [[320, 50], [300, 50]]). //all sizes
+						build();
+
+					var pos2mapping = googletag.sizeMapping().
+						addSize([785, 200], [[300,600],[300,250]]). // Half Page in desktop and tablet wide
+						addSize([0, 0], [300, 250]). // MR all sizes
+						build();
+
+					var pencilmapping = googletag.sizeMapping().
+						addSize([1000, 200], [970,30]). // pencil only in desktop and tablet wide
+						addSize([0, 0], []). // supress below desktop
+						build();
+
+					var pos3mapping = googletag.sizeMapping().
+						addSize([785, 200], [[300,600],[300,250]]). // add half page in tablet wide and desktop
+						addSize([400, 200], [300, 250]). // medium rectangle only in tablet portrait
+						addSize([0, 0], []). // supress mobile -- additonal comment
+						build();
+
+					var pos4mapping = googletag.sizeMapping().
+						addSize([750, 200], [728, 90]). // Portait tablet
+						addSize([0, 0], []). //supress Position 4 below Tablet Portrait
+						build();
+
+					var btfmrmapping = googletag.sizeMapping().
+						addSize([785, 200], [300,250]). // Desktop
+						addSize([0, 0], []). //supress positions 8 and 9 below desktop.
+						build();
+
+				
+						mtmads.pos_1_atf_728x90 = googletag.defineSlot('/6119/pressherald.com/news/opinion/article', [728, 90], "pos_1_atf_728x90").setTargeting("pos", ["1","atf"]).defineSizeMapping(pos1mapping).addService(googletag.pubads());
+
+						
+						mtmads.pos_2_atf_300x250 = googletag.defineSlot('/6119/pressherald.com/news/opinion/article', [300, 250], "pos_2_atf_300x250").setTargeting("pos", ["2","atf"]).defineSizeMapping(pos2mapping).addService(googletag.pubads());
+
+						
+						mtmads.pos_3_btf_300x250_300x600 = googletag.defineSlot('/6119/pressherald.com/news/opinion/article', [300, 250], "pos_3_btf_300x250_300x600").setTargeting("pos", ["3","btf"]).defineSizeMapping(pos3mapping).addService(googletag.pubads());
+
+						if ( viewportwidth > 730 ) {
+						mtmads.pos_btf_728x90 = googletag.defineSlot('/6119/pressherald.com/news/opinion/article', [728, 90], "pos_btf_728x90").setTargeting("pos", ["4","btf"]).defineSizeMapping(pos4mapping).addService(googletag.pubads());
+
+						}				    //tracking section via ad code manager
+				    AdSection = "pressherald.com/news/opinion";
+
+					// Manually Controlled Ad Slots
+					// Interstitial - Originally googletag.defineOutOfPageSlot('/6119/mnt.pressherald.home', 'div-gpt-ad-1401897265346-0-oop').addService(googletag.pubads());
+					mtmads.interstitial = googletag.defineOutOfPageSlot('/6119/pressherald.com/news/opinion/article', 'div-gpt-ad-1401897265346-0-oop').addService(googletag.pubads());
+
+					mtmads.native_ad = googletag.defineSlot( '/6119/pressherald.com/news/opinion/article', [1,1], 'native_ad').addService(googletag.pubads());
+
+					mtmads.native_ad.oldRenderEnded = mtmads.native_ad.renderEnded;
+					mtmads.native_ad.renderEnded = function() {
+						// Remove height/width since the actual content of this ad will be larger than 1x1
+						var $iframe =  jQuery('#native_ad iframe');
+						$iframe.removeAttr('height').removeAttr('width');
+						iFrameAutoResize( $iframe.attr('id') );
+
+						mtmads.nativeAd.oldRenderEnded();
+					};
+					var is_logged_in = !!document.cookie.match(/MSPAN_Paywall_user/);
+					
+						if(is_logged_in) {
+							googletag.pubads().setTargeting("sub","true");
+						} else {
+							googletag.pubads().setTargeting("sub","false");
+						}
+						googletag.pubads().collapseEmptyDivs();
+						googletag.enableServices();
+										});
+			</script>
+</head>
+<body class="single single-post postid-584112 single-format-standard story-head">
+ 
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-10862716-1', 'auto');
+	ga('require', 'displayfeatures');
+
+	// Custom dimensions for analytics
+	jQuery(function( $ ){
+		var customDimensions = {};
+		var section = (function(){
+		   var $sectionTitles = $('.section');
+		   var reg = {
+		      word: /\w/,
+		      space: /^\s+|\s+$/g
+		   };
+		   var tmpText;
+
+		   for(var i = 0; i < $sectionTitles.length; i++){
+		      tmpText = $sectionTitles.eq(i).text().replace(reg.space, '');
+		      if(tmpText.match(reg.word)){
+		         return tmpText;
+		      }
+		   }
+		   return "unknown section";
+		}());
+
+		customDimensions.dimension2 = section;
+		customDimensions.dimension3 = 'logged ' + (document.cookie.match(/MSPAN_Paywall_user/i) ? 'in' : 'out');
+        customDimensions.dimension6 = AdSection;
+        
+		if( undefined !== window.MSPAN ) {
+			customDimensions.dimension4 = window.MSPAN.Paywall.totalViews();
+		}
+		
+		if(window.innerHeight > window.innerWidth) {
+			customDimensions.dimension5 = 'Portrait'; 
+		} else {
+			customDimensions.dimension5 = 'Landscape';
+		}
+
+		ga('send', 'pageview', customDimensions);
+
+			
+	});
+</script>
+  
+<div class="mtm-utility-launch">
+<div class="mtm-article-utility-bar">
+<div class="utility-logo" style="background-image: url(http://www.pressherald.com/wp-content/themes/mainetoday/assets/images/nav-white-p.png)" onClick="location.href='/'">
+</div>
+<div class="utility-menu">
+<span>SECTIONS</span>
+</div>
+<div class="utility-logo-large">
+<a href="http://www.pressherald.com/"><img src="http://www.pressherald.com/wp-content/uploads/header-images/pph-logo200x30.png" alt="logo"/></a>
+</div>
+<div class="subscribe-utility">
+<ul class="header-banner-subscribe logged-out">
+ 
+<li class='welcome'>Welcome </li>
+<li class='login-button'><a href="/login/" class="accountlogin">Log in</a></li>
+<li class='subscribe-button'><a href="https://myaccount.pressherald.com/order/?ref=paywall-topright&return=http://www.pressherald.com/?p=584112&promo=">Subscribe</a></li>
+<li><a class="support-button last" href="/support/">Support</a></li>
+<li><a class="accountlogin last logout-button" href="">Logout</a></li>
+</ul>
+</div>
+<div class="search-utility">
+<form method="get" action="http://www.pressherald.com/" id="searchform" class="search-mobile-form">
+<input type="text" class="search-box" name="s" id="s" placeholder="What are you looking for?" onFocus="this.placeholder = ''" onBlur="this.placeholder = 'Looking for something?'">
+<input type="submit" value="" class="search-submit-off" id="searchsubmit">
+</form>
+</div>
+<div class="mobile-search-toggle"></div>
+<div class="search-mobile slide">
+<form method="get" action="http://www.pressherald.com/" id="searchform" class="search-mobile-form">
+<input type="text" class="search-box" name="s" id="s" placeholder="What are you looking for?" onFocus="this.placeholder = ''" onBlur="this.placeholder = 'Looking for something?'">
+<input type="submit" value="" class="search-submit-off" id="searchsubmit">
+</form>
+</div>
+<div class="utility-article-assets">
+<ul>
+<li class="article-launch dynamic active" onclick="ga('send', 'event', 'UI', 'click', 'articlebar | viewarticle', {'nonInteraction': 1});">
+<span>&#8592; BACK TO ARTICLE</span>
+</li>
+</ul>
+</div>
+<div class="login-state">
+ 
+<div class="sign-in-button accountlogin log-in"><a href="/login/" style="color:#fff; font-weight: bold;">LOG IN</a></div>
+ 
+<div class="sign-in-button accountlogin log-out" onclick="MSPAN.Paywall.logout();">LOG OUT</div>
+</div>
+</div>
+ 
+<div class="utility-menu-skin">
+<div class="weather">
+<span class='wximage'><img src='http://www.pressherald.com/wp-content/themes/mainetoday/assets/images/weather/07.png' width='80' height='50' alt='weather'></span><span class='wxcurrent'>66&deg; Cloudy</span><span class='wxtemp'>High: 66&deg; | Low: 39&deg;<span><span class='wxforecast'><a href='/weather/'>Ten Day Forecast</a></span></span></span></div>
+<ul><li class=""><a href="/">Home</a></li><li class="news"><a href="http://www.pressherald.com/news/">+ News</a><ul class="sub"><li class="close">More In + News </li><li><a href="http://www.pressherald.com/news/localstate/">Local & State</a></li><li><a href="http://www.pressherald.com/news/nationworld/">Nation & World</a></li><li><a href="http://www.pressherald.com/news/mainecrime/">Cops &amp; Courts</a></li><li><a href="http://www.pressherald.com/news/healthcare/">Health care</a></li><li><a href="http://www.pressherald.com/news/schools/">Schools & Education</a></li><li><a href="http://www.pressherald.com/community-news/">Community News</a></li><li><a href="http://www.pressherald.com/news/special/">Special Features</a></li><li><a href="http://contributors.pressherald.com/news/the-maine-forecast/">The Maine Forecast</a></li><li><a href="http://www.pressherald.com/unsettled/"><img src="http://www.pressherald.com/wp-content/uploads/2014/06/Stone.jpg" alt="unsettled" width="150"/></a></li></ul></li><li class="politics"><a href="http://www.pressherald.com/politics/">+ Politics</a><ul class="sub"><li class="close">More In + Politics </li><li><a href="http://www.pressherald.com/politics/elections/elections-2014/governor/">Maine Governor's race</a></li><li><a href="http://www.pressherald.com/politics/">Politics</a></li><li><a href="http://contributors.pressherald.com/politics/open-season/">Open Season Blog</a></li><li><a href="http://contributors.pressherald.com/politics/capitol-ticker/">Capitol Ticker Blog</a></li><li><a href="http://contributors.pressherald.com/politics/agree-to-disagree/">Agree to Disagree Blog</a></li></ul></li><li class="business"><a href="http://www.pressherald.com/business/">+ Business</a><ul class="sub"><li class="close">More In + Business </li><li><a href="http://www.pressherald.com/business/wordwiththeboss/">A Word With the Boss</a></li><li><a href="http://www.pressherald.com/business/on-the-job/">On the Job</a></li><li><a href="http://www.pressherald.com/business/problem-solved/">Problem Solved</a></li><li><a href="http://www.pressherald.com/business/portfolio/">Portfolio</a></li><li><a href="http://contributors.pressherald.com/business/people-on-the-move/">People on the Move</a></li><li><a href="http://contributors.pressherald.com/business/the-startupline/">The Startup Line</a></li></ul></li><li class="sports"><a href="http://www.pressherald.com/sports/">+ Sports</a><ul class="sub"><li class="close">More In + Sports </li><li><a href="/sports/highschoolsports">High Schools</a></li><li><a href="http://www.pressherald.com/sports/college/">Colleges</a></li><li><a href="http://www.pressherald.com/sports/redsox/">Boston Red Sox</a></li><li><a href="http://www.pressherald.com/sports/seadogs/">Portland Sea Dogs</a></li><li><a href="http://www.pressherald.com/sports/patriots/">New England Patriots</a></li><li><a href="http://www.pressherald.com/sports/bruins/">Boston Bruins</a></li><li><a href="http://www.pressherald.com/sports/celtics/">Boston Celtics</a></li><li><a href="http://www.pressherald.com/sports/red_claws/">Maine Red Claws</a></li><li><a href="http://www.pressherald.com/sports/pirates/">Portland Pirates</a></li><li><a href="http://www.pressherald.com/sports/outdoors/">Outdoors</a></li></ul></li><li class="opinion"><a href="http://www.pressherald.com/opinion/">+ Opinion</a><ul class="sub"><li class="close">More In + Opinion </li><li><a href="http://www.pressherald.com/opinion/editorials/">Editorials</a></li><li><a href="http://www.pressherald.com/opinion/columnists-opinion/">Columns</a></li><li><a href="http://www.pressherald.com/opinion/bill-nemitz-opinion/">Bill Nemitz</a></li><li><a href="http://www.pressherald.com/opinion/greg-kesich-opinion/">Greg Kesich</a></li><li><a href="http://www.pressherald.com/agree-disagree-ethen-strimling-phil-harriman/">Agree to Disagree</a></li><li><a href="http://www.pressherald.com/letters/">Letters</a></li></ul></li><li class="foodanddining"><a href="http://www.pressherald.com/foodanddining/">+ Food</a><ul class="sub"><li class="close">More In + Food </li><li><a href="http://www.pressherald.com/source/"><img src="http://dev.mainetodaymedia.com/devtools/V3/images/source-mast.gif" alt="source " width="150"/></a></li><li><a href="http://www.pressherald.com/foodanddining/restaurant-reviews/">Restaurant reviews</a></li><li><a href="http://www.pressherald.com/foodanddining/recipes/">Recipes</a></li></ul></li><li class="life"><a href="http://www.pressherald.com/life/">+ Lifestyle</a><ul class="sub"><li class="close">More In + Lifestyle </li><li><a href="http://calendar.mainetoday.com/events">Things To Do</a></li><li><a href="http://mainetoday.com/tag/mainetoday-magazine/">MaineToday Magazine</a></li><li><a href="http://www.pressherald.com/life/audience/">Arts & Entertainment</a></li><li><a href="http://www.pressherald.com/life/books/">Books</a></li><li><a href="http://www.pressherald.com/life/religionandvalues/">Religion and Values</a></li><li><a href="http://www.pressherald.com/life/animals/">The Maine Animal Report</a></li><li><a href="http://www.pressherald.com/life/flashback/">Flashback</a></li><li><a href="http://www.pressherald.com/crossword/">Crossword</a></li><li><a href="http://www.pressherald.com/sudoku/">Sudoku</a></li><li><a href="http://www.mainetoday.com"><img src="http://mainetoday.com/wp-content/themes/mt/images/mainetoday-logo.png" alt="mainetoday " width="150"/></a></li></ul></li><li class=""><a href="http://video.pressherald.com/"><style>li#menu-item-15952{margin-left:-8px;}@media only screen and (max-width: 1024px) {.menu-image-video{display:none;}}</style> <img src="http://www.pressherald.com/wp-content/uploads/2014/11/small-arrow-menu4.png" class="menu-image-video" style="margin-right:2px; position:relative; top:5px; height:20px;"> Video</a></li><li class=""><a href="http://obituaries.pressherald.com/obituaries/mainetoday-pressherald/">Obituaries</a></li><li class=""><a href="http://mainejobs.mainetoday.com/">Jobs</a></li><li class=""><a href="http://cars.pressherald.com">Cars</a></li><li class=""><a href="http://realestate.pressherald.com">Real Estate</a></li></ul>
+</div>
+<div class="utility-menu-skin-cover">
+</div>
+</div>
+<div class="related-hidden"><p>Open</p></div>
+<div class="mtm-wrapper post-wrapper">
+<div id="pos_1_atf_728x90-wrap" class="ad-wrapper">
+<div id='pos_1_atf_728x90' class="mtm-leaderboard-pos1">
+<script type='text/javascript'>
+						googletag.cmd.push(function() { googletag.display('pos_1_atf_728x90'); });
+					</script>
+</div>
+</div>
+<div class="main-content-wrap"> <div itemscope itemtype="http://schema.org/Article" class="mtm-article">
+<div class="category">
+Opinion </div>
+<div class="timestamp">
+<div class="posted">
+Posted <time itemprop="datePublished" datetime="2015-02-07T04:00:00+00:00">February 7</time>
+</div>
+</div>
+<div class="font-resize">
+<span>increase font size</span>
+<img src="http://www.pressherald.com/wp-content/themes/mainetoday/assets/images/font-resize.png" alt="Resize Font"/>
+</div>
+<h1 itemprop="alternativeHeadline">Maine Voices: UNE making strides in understanding chronic pain</h1>
+<p class="article-excerpt" itemprop="description">Grateful to be taken seriously at last, chronic pain sufferers are glad to participate in the research.</p>
+<div class="byline">
+<div class="byline-author 1">
+<div class="name">
+<span class="by">By </span>Susan Dudley Gold<span class="sourceline">Special to the Press Herald</span> </div>
+</div>
+</div> 
+<div class="article-social-sharing">
+<div class="share-name">Share</div>
+<div class="facebook social-button">
+<a href="http://api.addthis.com/oexchange/0.8/forward/facebook/offer?title=Maine+Voices%3A+UNE+making+strides+in+understanding+chronic+pain&amp;pubid=ra-535983434d690928&amp;url=http%3A%2F%2Fwww.pressherald.com%2F2015%2F02%2F07%2Fmaine-voices-une-making-strides-in-understanding-chronic-pain%2F" target="_blank">
+<img src="http://www.pressherald.com/wp-content/themes/mainetoday/assets/images/article-fb-icon.png" alt="facebook">
+</a>
+</div>
+<div class="twitter social-button">
+<a href="http://api.addthis.com/oexchange/0.8/forward/twitter/offer?title=Maine+Voices%3A+UNE+making+strides+in+understanding+chronic+pain&amp;pubid=ra-535983434d690928&amp;url=http://www.pressherald.com/?p=584112" target="_blank">
+<img src="http://www.pressherald.com/wp-content/themes/mainetoday/assets/images/article-twitter-icon.png" alt="tweet">
+</a>
+</div>
+<div class="email social-button">
+<a href="http://api.addthis.com/oexchange/0.8/forward/email/offer?title=Maine+Voices%3A+UNE+making+strides+in+understanding+chronic+pain&amp;pubid=ra-535983434d690928&amp;url=http%3A%2F%2Fwww.pressherald.com%2F2015%2F02%2F07%2Fmaine-voices-une-making-strides-in-understanding-chronic-pain%2F" target="_blank">
+<img src="http://www.pressherald.com/wp-content/themes/mainetoday/assets/images/article-email-icon.png" alt="email">
+</a>
+</div>
+<div class="print social-button">
+<a href="http://api.addthis.com/oexchange/0.8/forward/printfriendly/offer?title=Maine+Voices%3A+UNE+making+strides+in+understanding+chronic+pain&amp;pubid=ra-535983434d690928&amp;url=http%3A%2F%2Fwww.pressherald.com%2F2015%2F02%2F07%2Fmaine-voices-une-making-strides-in-understanding-chronic-pain%2F" target="_blank">
+<img src="http://www.pressherald.com/wp-content/themes/mainetoday/assets/images/article-print-icon.png" alt="print">
+</a>
+</div>
+<div class="comment social-button comment-launch">
+<img src="http://www.pressherald.com/wp-content/uploads/2015/03/comment-icon.png" alt="print">
+<a class="disqus-comment-count " data-disqus-url="http://www.pressherald.com/2015/02/07/maine-voices-une-making-strides-in-understanding-chronic-pain/">Comment</a>
+</div>
+</div>
+<div class="comment-button article-launch" style="display:none;">
+<a onclick="ga('send', 'event', 'UI', 'click', 'articlebottom | viewarticle', {'nonInteraction': 1});">Read Article</a>
+</div>
+<div class="post-content clearfix" itemprop="articleBody">
+<p>SACO — Living with chronic pain can be a lifelong ordeal that is isolating, agonizing and demoralizing. Understanding the challenges a person with chronic pain faces can be difficult for others – even health care professionals – to achieve because pain is so subjective and each individual experiences it differently.</p>
+<p>For too long, people have been told by unbelieving medical professionals that pain is imaginary or a mental condition. Legislators have discounted patients&#8217; need for medication to control pain at tolerable levels. Society as a whole has ignored the need for more research (and more funding) to discover ways to help the millions who suffer with chronic pain to live better lives.</p><div class="inner-sidebar">
+<div class="article-sidebar">
+<div class="nugget-box article-asset-freeform">
+<h3>about the author</h3>
+<p><strong>Susan Dudley Gold</strong> is a Saco resident, founder of the Chronic Pain Support Group of Southern Maine and an ambassador for the Arthritis Foundation and the U.S. Pain Foundation.</p>
+<div class="nugget_box_scripts_styles"></div>
+</div>
+<div class="nugget-box article-asset-freeform">
+<h3>learn more</h3>
+<p>For more information about the Chronic Pain Support Group of Southern Maine, visit <a href="http://www.painsupportgroup.org">www.painsupportgroup.org</a>.</p>
+<div class="nugget_box_scripts_styles"></div>
+</div>
+</div>
+<div class="photo-store">
+<div class="photo-store-icon">
+<a href="http://mainetoday.mycapture.com/mycapture/index.asp" target="_blank">
+<img src="http://www.pressherald.com/wp-content/uploads/2015/03/photostore-icon.png" alt="photo-store">
+</a>
+</div>
+<div class="description">
+Search photos available for purchase:
+<a href="http://mainetoday.mycapture.com/mycapture/index.asp" target="_blank">Photo Store →</a>
+</div>
+</div>
+</div>
+<p>Fortunately, the University of New England is tackling the difficult assignment of understanding chronic pain and making strides I never believed possible when I began my own pain journey more than 20 years ago.</p>
+<p>One major goal of UNE&#8217;s work – and the light at the end of the tunnel for people living with pain – is to develop teams of health care professionals who understand pain and its effect on a person&#8217;s well-being and who work together with their patients to treat all aspects of the problem.</p>
+<p>My own ordeal began when my shoulder and both knees began to swell and throb. My doctor told me I was just getting older – at age 40.</p>
+<p>I consumed a dozen aspirin a day, trying to contain the pain, which spread to joints throughout my body. It became increasingly difficult for me to do even the simplest daily tasks. My doctor took a wait-and-see attitude.</p>
+<p>None of the other medical professionals I saw during this time provided any help until an alert and knowledgeable physical therapist suggested I get tested for rheumatoid arthritis. A Portland rheumatologist confirmed the diagnosis. Under his care I began treatment, which eventually put me into remission.</p>
+<p>During this time, a homeless man saw me wince as I struggled to get out of my car, my inflamed knee buckling under my weight. Looking into my eyes, he said gently, &#8220;Your knee hurts. I hope it gets better soon.&#8221; Then he walked on. Those simple words changed my life.</p>
+<p>Although my husband and my son were incredibly supportive, no one until then had grasped the depths of my pain. Yet here was this stranger, a man who had his own pain and his own troubles, reaching out to me. He understood! A wave of gratitude swept over me.</p>
+<p>At that moment, I realized I had to find other people who also understood. His words inspired me to found a support group for people with chronic pain.</p>
+<p>The Chronic Pain Support Group of Southern Maine held its first meeting in August 1993. I facilitated the group for 15 years, turning over its operation to a very capable member of the group, Ernest Merritt, in 2008.</p>
+<p>During group meetings, we talk about our challenges, laugh at our limitations and sometimes cry over our losses. Unfortunately, most of the members, like me, have faced unbelieving doctors who have discounted their pain and told them, &#8220;It&#8217;s all in your head.&#8221;</p>
+<p>That&#8217;s why we gratefully and wholeheartedly agreed to participate in the University of New England&#8217;s pain initiative and campaign to research pain and educate its students – from doctors to social workers to dentists to occupational and physical therapists – in the treatment of pain. Students not only study (and develop) the latest research but also interact with people living with pain to learn how it affects their lives.</p>
+<p>Since 2012, UNE undergraduate and graduate students have attended our support group meetings to observe and learn from members firsthand about the experience of living with chronic pain. They take their lessons back to the classroom and share their insights with teachers and other students.</p>
+<p>Under the leadership of Dr. Edward Bilsky, vice president for research and scholarship at UNE, these students are conducting groundbreaking research in the care and treatment of people with chronic pain. (Bilsky is founding director of the Center for Excellence in the Neurosciences and co-director of the Center of Biomedical Research Excellence for the Study of Pain and Sensory Function at UNE.)</p>
+<p>We are so fortunate to have UNE lead the way toward a better tomorrow for people living with pain. It will make a tremendous difference in the quality of care for us all.</p>
+</p>
+<div style="clear:both"></div>
+<div class="mobile-article-sidebar-1"></div>
+<div class="mobile-article-sidebar-2"></div>
+<div style="clear:both"></div>
+<div class="article-social-sharing bottom">
+<div class="share-name">Share</div>
+<div class="facebook social-button">
+<a href="http://api.addthis.com/oexchange/0.8/forward/facebook/offer?title=Maine+Voices%3A+UNE+making+strides+in+understanding+chronic+pain&amp;pubid=ra-535983434d690928&amp;url=http%3A%2F%2Fwww.pressherald.com%2F2015%2F02%2F07%2Fmaine-voices-une-making-strides-in-understanding-chronic-pain%2F" target="_blank">
+<img src="http://www.pressherald.com/wp-content/themes/mainetoday/assets/images/article-fb-icon.png" alt="facebook">
+</a>
+</div>
+<div class="twitter social-button">
+<a href="http://api.addthis.com/oexchange/0.8/forward/twitter/offer?title=Maine+Voices%3A+UNE+making+strides+in+understanding+chronic+pain&amp;pubid=ra-535983434d690928&amp;url=http://www.pressherald.com/?p=584112" target="_blank">
+<img src="http://www.pressherald.com/wp-content/themes/mainetoday/assets/images/article-twitter-icon.png" alt="tweet">
+</a>
+</div>
+<div class="email social-button">
+<a href="http://api.addthis.com/oexchange/0.8/forward/email/offer?title=Maine+Voices%3A+UNE+making+strides+in+understanding+chronic+pain&amp;pubid=ra-535983434d690928&amp;url=http%3A%2F%2Fwww.pressherald.com%2F2015%2F02%2F07%2Fmaine-voices-une-making-strides-in-understanding-chronic-pain%2F" target="_blank">
+<img src="http://www.pressherald.com/wp-content/themes/mainetoday/assets/images/article-email-icon.png" alt="email">
+</a>
+</div>
+<div class="print social-button">
+<a href="http://api.addthis.com/oexchange/0.8/forward/printfriendly/offer?title=Maine+Voices%3A+UNE+making+strides+in+understanding+chronic+pain&amp;pubid=ra-535983434d690928&amp;url=http%3A%2F%2Fwww.pressherald.com%2F2015%2F02%2F07%2Fmaine-voices-une-making-strides-in-understanding-chronic-pain%2F" target="_blank">
+<img src="http://www.pressherald.com/wp-content/themes/mainetoday/assets/images/article-print-icon.png" alt="print">
+</a>
+</div>
+</div>
+<div class="comment-button comment-launch">
+<a onclick="ga('send', 'event', 'UI', 'click', 'articlebottom | viewcomments', {'nonInteraction': 1});">Read or Post Comments</a>
+</div>
+<div class="feedback clearfix">
+<p>Were you interviewed for this story? If so, please fill out our
+<a href="/accuracy-form/?headline=Maine+Voices%3A+UNE+making+strides+in+understanding+chronic+pain&amp;pubdate=02%2F07%2F2015">accuracy form</a>.
+</p>
+<p><a href="/feedback-form/">
+Send questions/comments to the editors.
+</a></p>
+</div>
+<div class="taboola-widgets clearfix">
+<div id='taboola-below-article-thumbs-mix'></div>
+<script type="text/javascript">
+			if (window.innerWidth > 500) {
+				window._taboola = window._taboola || [];
+				_taboola.push({mode:'thumbs-1r', container:'taboola-below-article-thumbs-mix', placement:'below-article-thumbs', target_type:'mix'});
+			}
+		</script>
+<div id='taboola-below-article-text-links-mix'></div>
+<script type="text/javascript">
+			if (window.innerWidth > 500) {
+				window._taboola = window._taboola || [];
+				_taboola.push({mode:'hybrid-text-links-2c', container:'taboola-below-article-text-links-mix', placement:'below-article-text-links', target_type:'mix'});
+			}
+		</script>
+</div>
+</div>
+</div>
+<div class="mtm-ad-col-article">
+<ul class="widget-sidebar">
+<li id="text-11" class="widget widget_text"> <div class="textwidget"><div style="margin-top:30px;font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -.5px;
+  text-decoration: none;
+  color: #000;font-family: 'Open Sans', sans-serif;"><b>Continuous updates throughout the day:</b></div>
+<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpressherald&amp;width=300&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=178078215650057" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:258px;" allowTransparency="true"></iframe></div>
+</li>
+<li id="acm_ad_zones-10" class="widget acm_ad_zones"> <div id="pos_2_atf_300x250-wrap" class="ad-wrapper">
+<div id='pos_2_atf_300x250' class="pos_2_atf_300x250">
+<script type='text/javascript'>
+						googletag.cmd.push(function() { googletag.display('pos_2_atf_300x250'); });
+					</script>
+</div>
+</div>
+</li>
+<li id="acm_ad_zones-6" class="widget acm_ad_zones"> <div id="pos_6_atf_300x100-wrap" class="ad-wrapper">
+<div id='%tag%' class="%class%">
+<script type='text/javascript'>
+						googletag.cmd.push(function() { googletag.display('%tag%'); });
+					</script>
+</div>
+</div>
+</li>
+<div id="most-tabs">
+<ul class="most-tabs-button">
+<li class="thirds">
+<a href="#tabs-1">
+Recent </a>
+</li>
+<li class="thirds">
+<a href="#tabs-2">
+Read </a>
+</li>
+<li class="thirds">
+<a href="#tabs-3">
+Shared </a>
+</li>
+</ul>
+<div id="tabs-1">
+<ul>
+<li>
+<h3>
+<a href="http://www.pressherald.com/2015/04/03/portland-police-capture-bank-robber-who-violated-probation/" onclick="ga('send', 'event', 'click', 'mostRecent', 'Portland police capture bank robber who violated probation');">
+Portland police capture bank robber who violated probation </a>
+</h3>
+</li>
+<li>
+<h3>
+<a href="http://www.pressherald.com/2015/04/03/pier-fries-opens-season-old-orchard-beach/" onclick="ga('send', 'event', 'click', 'mostRecent', 'Pier Fries opens for the season at Old Orchard Beach');">
+Pier Fries opens for the season at Old Orchard Beach </a>
+</h3>
+</li>
+<li>
+<h3>
+<a href="http://www.pressherald.com/2015/04/03/portland-school-board-will-re-open-discussion-of-school-start-times/" onclick="ga('send', 'event', 'click', 'mostRecent', 'Portland school board to reconsider elementary school start times');">
+Portland school board to reconsider elementary school start times </a>
+</h3>
+</li>
+<li>
+<h3>
+<a href="http://www.pressherald.com/2015/04/03/troy-teen-enters-no-plea-in-stabbing-death-of-his-father/" onclick="ga('send', 'event', 'click', 'mostRecent', 'Troy teen enters no plea in stabbing death of his father');">
+Troy teen enters no plea in stabbing death of his father </a>
+</h3>
+</li>
+<li>
+<h3>
+<a href="http://www.pressherald.com/2015/04/03/portland-lawyer-spearheads-1-billion-lawsuit-over-nightmare-venereal-disease-study/" onclick="ga('send', 'event', 'click', 'mostRecent', 'Portland lawyer spearheads $1 billion lawsuit over \'nightmare\' venereal disease study');">
+Portland lawyer spearheads $1 billion lawsuit over &#039;nightmare&#039; venereal disease study </a>
+</h3>
+</li>
+</ul>
+</div>
+<div id="tabs-2">
+<ul>
+<li>
+<h3>
+<a href="http://www.pressherald.com/2015/03/29/the-farm-to-table-family-skip-the-knox-box/" onclick="ga('send', 'event', 'click', 'mostRead', 'Skip the Knox box and start collecting seaweed');">
+Skip the Knox box and start collecting seaweed </a>
+</h3>
+</li>
+<li>
+<h3>
+<a href="http://www.pressherald.com/2015/04/02/lepage-forum-ends-abruptly-after-ex-lawmaker-confronts-him-is-taken-away/" onclick="ga('send', 'event', 'click', 'mostRead', 'LePage forum comes to abrupt end as Democratic ex-lawmaker confronts him and gets taken away');">
+LePage forum comes to abrupt end as Democratic ex-lawmaker confronts him and gets taken away </a>
+</h3>
+</li>
+<li>
+<h3>
+<a href="http://www.pressherald.com/2015/04/01/gorham-treasure-hunter-officially-loses-salvage-rights/" onclick="ga('send', 'event', 'click', 'mostRead', 'Gorham treasure hunter officially loses salvage rights');">
+Gorham treasure hunter officially loses salvage rights </a>
+</h3>
+</li>
+<li>
+<h3>
+<a href="http://www.pressherald.com/2015/03/29/for-aging-baby-boomers-the-times-really-are-a-changin/" onclick="ga('send', 'event', 'click', 'mostRead', 'For aging baby boomers, the times really are a changin\'');">
+For aging baby boomers, the times really are a changin&#039; </a>
+</h3>
+</li>
+<li>
+<h3>
+<a href="http://www.pressherald.com/2015/04/01/old-orchard-beach-woman-faces-drug-charge-in-overdose-death/" onclick="ga('send', 'event', 'click', 'mostRead', 'Old Orchard Beach woman faces drug charge in overdose death');">
+Old Orchard Beach woman faces drug charge in overdose death </a>
+</h3>
+</li>
+</ul>
+</div>
+<div id="tabs-3">
+<ul>
+<li>
+<h3>
+<a href="http://www.pressherald.com/2015/03/31/festival-featuring-tall-ships-planned-in-portland-this-summer/" onclick="ga('send', 'event', 'click', 'mostShared', 'Tall ships set a course for Portland this summer');">
+Tall ships set a course for Portland this summer </a>
+</h3>
+</li>
+<li>
+<h3>
+<a href="http://www.pressherald.com/2015/03/29/for-aging-baby-boomers-the-times-really-are-a-changin/" onclick="ga('send', 'event', 'click', 'mostShared', 'For aging baby boomers, the times really are a changin\'');">
+For aging baby boomers, the times really are a changin&#039; </a>
+</h3>
+</li>
+<li>
+<h3>
+<a href="http://www.pressherald.com/2015/03/28/susan-kimball-message-on-cars-window-brings-potential-kidney-donor/" onclick="ga('send', 'event', 'click', 'mostShared', 'Message on car\'s window brings potential kidney donor to South Portland woman');">
+Message on car&#039;s window brings potential kidney donor to South Portland woman </a>
+</h3>
+</li>
+<li>
+<h3>
+<a href="http://www.pressherald.com/2015/03/29/meats-are-impounded-as-portland-area-chefs-innovate-with-high-risk-processes/" onclick="ga('send', 'event', 'click', 'mostShared', 'Meats are impounded as Portland area chefs innovate with high-risk processes');">
+Meats are impounded as Portland area chefs innovate with high-risk processes </a>
+</h3>
+</li>
+<li>
+<h3>
+<a href="http://www.pressherald.com/2015/03/30/looking-for-edge-maine-plunges-into-arctic-policy/" onclick="ga('send', 'event', 'click', 'mostShared', 'Looking for edge, Maine plunges into Arctic policy');">
+Looking for edge, Maine plunges into Arctic policy </a>
+</h3>
+</li>
+</ul>
+</div>
+</div>
+<li id="acm_ad_zones-11" class="widget acm_ad_zones"> <div id="pos_3_btf_300x250_300x600-wrap" class="ad-wrapper">
+<div id='pos_3_btf_300x250_300x600' class="%class%">
+<script type='text/javascript'>
+						googletag.cmd.push(function() { googletag.display('pos_3_btf_300x250_300x600'); });
+					</script>
+</div>
+</div>
+</li>
+<li id="text-9" class="widget widget_text"> <div class="textwidget"><style>#gform_wrapper_305 .article-signup{background-image:url('http://www.pressherald.com/wp-content/uploads/2015/01/breakingnews-newsletter.png');background-color:#fff;border:0px;padding-left:3%;box-shadow:0px 0px 0px #000 inset;padding-right:3%;padding-top:2%;padding-bottom:4.5%;width:97%;font-family:Helvetica neue,sans-serif;text-align:center!important;margin-top:14px;margin-bottom:14px;color:#fff!important;}#gform_wrapper_305 .article-signup .button{display:inline-block;margin-top:10px;padding:8px 22px;text-decoration:none;border:2px solid #008dde;background-color:#008dde;font-size:12px!important;font-weight:400;color:#fff;text-transform:uppercase;letter-spacing:3px;-webkit-transition-duration:.25s;transition-duration:.25s;cursor:pointer;}#gform_wrapper_305 .article-signup .button:hover{background-color:#fff;color:#008dde;-webkit-transition-duration:.25s;transition-duration:.25s;}#gform_wrapper_305 .article-signup #field_305_1 .gfield_label,#gform_wrapper_305 .article-signup #field_305_3 .gfield_label{display:none!important;}#gform_wrapper_305 .article-signup .email-field input{border:0px solid #ccc;padding:10px 35px;font-family:Georgia,"Times New Roman",Times,serif;font-size:16px;width:80%;margin:0 auto;color:#333;letter-spacing:.3px;font-style:italic;}#gform_wrapper_305 input#input_305_1{padding-top:14px;padding-bottom:14px;border:0px;width:96%;margin:0 auto;}#gform_wrapper_305 label#label_3_1{font-size:12px;}#gform_wrapper_305{margin-top:0px;}.article-signup .email-field input:focus{background-color:#CEE1EA;}#gform_wrapper_305 .article-signup .gform_footer.top_label{padding:0px!important;margin:0px!important;}#gform_wrapper_305 h3.gform_title span{text-transform:uppercase;font-size:14px;letter-spacing:1px;font-weight:200;display:block;margin-top:18px;}#gform_wrapper_305 .article-signup h3.gform_title,.article-signup h2.gform_title{font-size:32px!important;margin-bottom:4px;margin-top:12px;color:#fff;text-align:center;text-shadow:0px 0px 10px #000;}li#field_305_2{text-align:left;}#gform_wrapper_305 .gform_wrapper .gfield_checkbox li label,#gform_wrapper_305 .gform_wrapper .gfield_radio li label{font-size:13px;text-shadow:0px 0px 2px #000;}#gform_wrapper_305 .article-signup .gform_description{font-size:14px;letter-spacing:.3px;color:#fff;text-align:center;text-shadow:0px 0px 10px #000;}#gform_wrapper_305 .gform_wrapper ul.gfield_checkbox li,.gform_wrapper ul.gfield_radio li{margin-right:4%;font-size:14px;font-weight:400;text-transform:uppercase;}#gform_wrapper_305 .gform_wrapper ul.gfield_checkbox,#gform_wrapper_305 .gform_wrapper ul.gfield_radio{margin-top:14px!important;}#gform_wrapper_305 .gform_wrapper ul.gfield_checkbox a{color:#27aae1;}#field_305_2{display:none;}</style>
+<script>
+jQuery("#input_305_1").focus(function(){
+jQuery("#field_305_2").show();
+});
+</script></div>
+</li>
+<li id="text-12" class="widget widget_text"> <div class="textwidget"><div id="photoStore" style="margin:50px 0px;"></div>
+<script>
+
+
+jQuery(function(){
+if (jQuery(".article-sidebar").length <= 0){
+  jQuery(".photo-store").hide();
+}
+});
+</script>
+<style>.article-sidebar{clear:both;}.mtm-article .main-asset .image-crop{clear:both;}@media screen and (max-width: 532px) {.print.social-button{display:none;}}.article-social-sharing{height:15px;}</style>
+ 
+<script>
+
+jQuery(function(){
+jQuery.get('http://specialprojects.pressherald.com/photostore/pph/index.php', function(res){ jQuery('#photoStore').append(res); });
+});
+</script>
+</div>
+</li>
+<div class="e-edition-promo">
+<div class="title">Portland Press Herald e-edition</div>
+<div class="e-edition-image">
+<div class="overlay">
+<a href="https://myaccount.pressherald.com">
+<img src="http://www.pressherald.com/wp-content/themes/mainetoday/assets/images/MacScreen300.png" alt="Image Overlay"/>
+</a>
+</div>
+<div class="image-container">
+<img src="http://mtmstats.com/replicathumbs/PPH300.jpg" alt="edition"/>
+</div>
+</div>
+<h2>Portland Press Herald e-edition</h2>
+<p>Home delivery customers will have access at no additional cost to their print subscription. Print and digital only packages will be available.</p>
+<div class="button"><a href="https://myaccount.pressherald.com">Launch e-Edition</a></div>
+</div>
+</ul>
+</div>
+<div class="mtm-article-comments">
+<p>Here at <strong>MaineToday Media</strong> we value our readers and are committed to growing our community by encouraging you to add to the discussion. </p>
+<p>To ensure conscientious dialogue we have implemented a strict no-bullying policy. To participate, you must follow our <a target="_blank" href="/terms-use/">Terms of Use</a>. <a target="_blank" href="/feedback/">Click here</a> to flag and report a comment that violates our terms of use.</p>
+<fb:comments href="http://www.pressherald.com/2015/02/07/maine-voices-une-making-strides-in-understanding-chronic-pain/"></fb:comments>
+</div>
+<div style="clear:both; height:50px;"></div>
+<div class="paywall-callout-leavebehind">
+<div class="message">
+You've read <span>3 of 10</span> free articles
+<img src="http://www.pressherald.com/wp-content/themes/mainetoday/assets/images/back-to-top.png" alt="expand" class="expand-it"/>
+</div>
+</div>
+<div class="paywall-callout">
+<div class="close paywall-close">
+<img src="http://www.pressherald.com/wp-content/themes/mainetoday/assets/images/darkroom-close-button.png" alt="close"/>
+</div>
+<div class="welcome">
+Welcome back.
+</div>
+<div class="message-1">
+As of your last visit, you've read <span>3 of 10</span> free articles.
+</div>
+<div class="message-2">
+ 
+</div>
+<div class="message-3">
+Already a subscriber?
+<a href="/login/" class="accountlogin" style="color:#52CAF3; text-decoration: none;">Log In</a>
+</div>
+<div class="question">
+<a href="/support">?</a>
+</div>
+</div>
+</div>  
+<div class="mtm-footer">
+<div id="pos_btf_728x90-wrap" class="ad-wrapper">
+<div id='pos_btf_728x90' class="BannerAd">
+<script type='text/javascript'>
+						googletag.cmd.push(function() { googletag.display('pos_btf_728x90'); });
+					</script>
+</div>
+</div>
+<div class="TopPart">
+<div class="footer-logo">
+<img src="http://www.pressherald.com/wp-content/uploads/header-images/pph-logo185x29.png" width="185" height="29" alt="Portland Press Herald"/>
+</div>
+<div class="footer-logo-white">
+<div class="mtm-mobile-footer-menu"></div>
+<img src="http://www.pressherald.com/wp-content/themes/mainetoday/assets/images/pph-white.png" alt="Portland Press Herald"/>
+</div>
+<div class="social">
+<a href="https://www.facebook.com/pressherald" target="_blank"><img src="http://www.pressherald.com/wp-content/themes/mainetoday/assets/images/footer-facebook-icon.png" alt="facebook"/></a>
+<a href="https://twitter.com/PressHerald" target="_blank"><img src="http://www.pressherald.com/wp-content/themes/mainetoday/assets/images/footer-twitter-icon.png" alt="twitter"/></a>
+<a href="http://www.linkedin.com/company/the-portland-press-herald" target="_blank"><img src="http://www.pressherald.com/wp-content/themes/mainetoday/assets/images/footer-linkedin-icon.png" alt="linkedin"/></a>
+<a href="https://plus.google.com/+Pressherald/posts" target="_blank"><img src="http://www.pressherald.com/wp-content/themes/mainetoday/assets/images/footer-google-icon.png" alt="google"/></a>
+<a href="http://www.youtube.com/channel/UC0sPBv78fAj46b_AaU159qQ" target="_blank"><img src="http://www.pressherald.com/wp-content/themes/mainetoday/assets/images/footer-youtube-icon.png" alt="youtube"/></a>
+<a href="http://www.pressherald.com/feeds" target="_blank"><img src="http://www.pressherald.com/wp-content/themes/mainetoday/assets/images/footer-rss-icon.png" alt="rss"/></a>
+</div>
+<div class="back-to-top">
+BACK TO TOP
+</div>
+</div>
+<div class="Navigation">
+<ul>
+<li class="category">CUSTOMER SERVICE</li>
+<div class="menu-customer-service-container"><ul id="menu-customer-service" class="menu"><li id="menu-item-18707" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18707"><a target="_blank" href="https://myaccount.pressherald.com/">My Account</a></li>
+<li id="menu-item-18747" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18747"><a target="_blank" href="https://myaccount.pressherald.com/order/">Subscriptions</a></li>
+<li id="menu-item-513058" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-513058"><a href="/reader-services/home-delivery-help/">Home Delivery Help</a></li>
+<li id="menu-item-18766" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18766"><a target="_blank" href="https://myaccount.pressherald.com">Digital Subscriptions</a></li>
+<li id="menu-item-536989" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-536989"><a href="http://www.pressherald.com/reader-services/">Reader Services</a></li>
+<li id="menu-item-18781" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18781"><a href="/contact">Contact Us</a></li>
+<li id="menu-item-447179" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-447179"><a href="http://www.pressherald.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-537530" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-537530"><a href="http://mainetoday.mycapture.com/mycapture/index.asp">Purchase a Photo</a></li>
+</ul></div> </ul>
+<ul>
+<li class="category">CONNECT</li>
+<div class="menu-connect-container"><ul id="menu-connect" class="menu"><li id="menu-item-19101" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19101"><a href="https://myaccount.pressherald.com/login.php">e-Edition</a></li>
+<li id="menu-item-19108" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19108"><a href="/mobile-products">Mobile</a></li>
+<li id="menu-item-19123" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19123"><a href="/newsletters">Email Newsletters</a></li>
+<li id="menu-item-536990" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-536990"><a href="http://www.pressherald.com/contact-advertising/">Contact Advertising</a></li>
+<li id="menu-item-19138" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19138"><a href="/feedback">Site Feedback</a></li>
+<li id="menu-item-19159" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19159"><a href="/staff-directory">Staff Directory</a></li>
+<li id="menu-item-565999" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-565999"><a href="http://www.pressherald.com/uncategorized/"><style>@media screen and (max-width: 600px){.no-mobile{display:none;}}</style></a></li>
+</ul></div> </ul>
+<ul>
+<li class="category">SITE INDEX</li>
+<div class="menu-site-index-container"><ul id="menu-site-index" class="menu"><li id="menu-item-537226" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-537226"><a href="/site-index">Full Site Index</a></li>
+<li id="menu-item-536993" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-536993"><a href="http://www.pressherald.com/news/">News</a></li>
+<li id="menu-item-536997" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-536997"><a href="http://www.pressherald.com/politics/">Politics</a></li>
+<li id="menu-item-536994" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-536994"><a href="http://www.pressherald.com/business/">Business</a></li>
+<li id="menu-item-536995" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-536995"><a href="http://www.pressherald.com/life/">Lifestyle</a></li>
+<li id="menu-item-536996" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-536996"><a href="http://www.pressherald.com/opinion/">Opinion</a></li>
+<li id="menu-item-536998" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-536998"><a href="http://www.pressherald.com/sports/">Sports</a></li>
+<li id="menu-item-537000" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-537000"><a href="http://obituaries.pressherald.com/obituaries/mainetoday-pressherald/">Obituaries</a></li>
+<li id="menu-item-536999" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-536999"><a href="http://contributors.pressherald.com">Blogs</a></li>
+<li id="menu-item-537377" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-537377"><a href="http://video.pressherald.com">Video</a></li>
+<li id="menu-item-537378" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-537378"><a href="http://www.pressherald.com/uncategorized/"><br/></a></li>
+</ul></div> </ul>
+<ul>
+<li class="category">NETWORK</li>
+<div class="menu-network-container"><ul id="menu-network" class="menu"><li id="menu-item-16138" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16138"><a target="_blank" href="/about">About MaineToday Media Inc.</a></li>
+<li id="menu-item-551314" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-551314"><a href="http://www.pressherald.com/career-opportunities/">Work Here</a></li>
+<li id="menu-item-554434" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-554434"><a target="_blank" href="http://mediakit.pressherald.com">Media Kit</a></li>
+<li id="menu-item-554437" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-554437"><a href="http://www.centralmaine.com">CentralMaine.com</a></li>
+<li id="menu-item-554438" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-554438"><a href="http://www.mainetoday.com">MaineToday.com</a></li>
+<li id="menu-item-554439" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-554439"><a href="http://www.pressherald.com/uncategorized/"><script type="text/javascript" src="http://specialprojects.pressherald.com/scripts/simplifi.js"></script></a></li>
+<li id="menu-item-614383" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-614383"><a href="http://www.pressherald.com/uncategorized/"><script src="http://specialprojects.pressherald.com/js-mtm/mtm-quickfix.min.js"></script></a></li>
+<li id="menu-item-615465" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-615465"><a href="http://www.pressherald.com/news/"><style>.mtm-top-stories-masonry li p{display:none;}.mtm-top-stories-masonry .related{margin-top:10px;}.mtm-top-stories-masonry .related ul li{display:none;}.mtm-top-stories-masonry .related ul li:first-child{display:block;margin-left:8px;}.mtm-top-stories-masonry .related ul li:first-child a{color:#000;padding-left:8px;letter-spacing:-.5px;}.mtm-featured .related ul li a{color:#000;}.mtm-featured .related ul{margin-left:6px;}</style></a></li>
+</ul></div> </ul>
+</div>
+<div class="Copyright">
+&copy; 2015 MaineToday Media, Inc.
+</div>
+</div>
+</div> 
+<div class="mtm-login-skin" style="">
+</div>
+  <script type="text/javascript">
+			window._taboola = window._taboola || [];
+			_taboola.push({flush:true});
+		</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id))
+					return;
+				js = d.createElement(s);
+				js.id = id;
+				js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=178078215650057";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+<script type='text/javascript' src='http://www.pressherald.com/wp-includes/js/jquery/ui/core.min.js?ver=1.11.2'></script>
+<script type='text/javascript' src='http://www.pressherald.com/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.2'></script>
+<script type='text/javascript' src='http://www.pressherald.com/wp-includes/js/jquery/ui/tabs.min.js?ver=1.11.2'></script>
+<script type='text/javascript' src='http://www.pressherald.com/wp-includes/js/jquery/ui/effect.min.js?ver=1.11.2'></script>
+<script type='text/javascript' src='http://www.pressherald.com/wp-includes/js/jquery/ui/effect-slide.min.js?ver=1.11.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var MTMMailChimp = {"nonce":"d7e6308949","action":"mtm_mailchimp_subscribe","ajaxurl":"http:\/\/www.pressherald.com\/wp-admin\/admin-ajax.php"};
+var mtmSettings = {"isSingular":"true","isHome":"false","isComments":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.pressherald.com/wp-content/themes/mainetoday/assets/js/mainetoday.min.js?ver=0.4.7'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var paywall = {"global":{"count":"10","promo":"","returnPath":"http:\/\/www.pressherald.com\/wp-content\/themes\/mainetoday\/returnpath.php","currentPage":"http:\/\/www.pressherald.com\/?p=584112","resetCode":"qjqXGe5m","bypassCode":"Aprl15Ful","isSingle":1}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.pressherald.com/wp-content/themes/mainetoday/assets/js/paywall.min.js?ver=0.4.7'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"mtmpph"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.pressherald.com/wp-content/plugins/disqus-comment-system/media/js/count.js?ver=4.1.1'></script>
+<script type="text/javascript">
+		var addthis_config = {
+			data_ga_property: 'UA-10862716-1',
+			data_ga_social : true
+		};
+	</script>
+<script type="text/javascript">
+	var disqus_shortname = 'mtmpph';
+
+	(function () {
+		var s = document.createElement('script'); s.async = true;
+		s.type = 'text/javascript';
+		s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+		(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+	}());
+ </script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"a472c36f4c","applicationID":"3790852","transactionName":"MgdWYkVXWUVQAUIKXwtNYUReGRhfXwZTGx4VCkQ=","queueTime":0,"applicationTime":383,"ttGuid":"","agentToken":"","atts":"HkBVFA1NSks=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-593.min.js"}</script></body>
+</html>

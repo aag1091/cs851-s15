@@ -26,7 +26,7 @@ def fetchWebPage(url, fileName):
       
   opt.close()
 
-sites = 'sitesq'
+sites = 'sitesq4'
 if not os.path.exists(sites):
     os.makedirs(sites)
 

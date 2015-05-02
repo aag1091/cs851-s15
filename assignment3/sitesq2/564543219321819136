@@ -1,0 +1,545 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"f2edcff25e","applicationID":"190034","transactionName":"dgwMEkpfWVsHERpFWUcIEUlLWFpA","queueTime":1,"applicationTime":253,"agentToken":null,"agent":"js-agent.newrelic.com/nr-632.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQcCWV9RGwIJVFFRAw=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:20,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(3),window.onerror=e;try{throw new Error}catch(u){"stack"in u&&(t(4),t(5),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:8,3:3,4:7,5:6,6:21,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:21,2:22,ee:"QJf3ax",gos:"7eSDFh"}],6:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:22,2:21,ee:"QJf3ax"}],7:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:22,2:21,ee:"QJf3ax"}],8:[function(t,e){function n(){u.inPlace(this,p,"fn-")}function r(t,e){u.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),u=c(a),f=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),f.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,u.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:5,2:22,ee:"QJf3ax"}],9:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=n(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=n(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var f=0;c>f;f++)e.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:10,3:8,4:5,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],10:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],11:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:20,2:21,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===f.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=u.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),u=c.document,f=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:f,features:{}};u.addEventListener?(u.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(u.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:20,2:11,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],20:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],21:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],22:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:21,ee:"QJf3ax"}]},{},["G9z0Bl",4,9]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+    <title>
+        What the World needs now is Love, Sweet Love - sophannically - Glee [Archive of Our Own]
+    </title>
+
+        <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/A.1_site_screen_.css.pagespeed.cf.5lH4a20n4H.css"/>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 640px), handheld" href="/stylesheets/skins/skin_873_archive_2_0/A.4_site_maxwidth.handheld_.css.pagespeed.cf.WsG1QF3niz.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/skins/skin_873_archive_2_0/A.5_site_speech_.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/skins/skin_873_archive_2_0/A.6_site_print_.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/7_site_screen_IE8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/8_site_screen_IE5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/9_site_screen_IE6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/10_site_screen_IE7.css" /><![endif]-->
+
+
+<!--sandbox for developers	-->
+<style media="screen">.edit_external_author ul ul{margin-left:2.75em}</style>
+<script src="/javascripts/livevalidation_standalone.js,q1428042994.pagespeed.jm.Uoo3pUt-dG.js" type="text/javascript"></script>
+
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="RV5lBKUJB6l3TtHgIW04HJLrqCWhnjgOsfmiKMY2Mhg=" name="csrf-token"/>
+
+            <script>window.PHRASE_CONFIG={autoLowercase:false}</script>
+        
+
+
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#x27;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><script pagespeed_no_defer="" type="text/javascript">(function(){var g=this,h=function(b,d){var a=b.split("."),c=g;a[0]in c||!c.execScript||c.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===d?c[e]?c=c[e]:c=c[e]={}:c[e]=d};var l=function(b){var d=b.length;if(0<d){for(var a=Array(d),c=0;c<d;c++)a[c]=b[c];return a}return[]};var m=function(b){var d=window;if(d.addEventListener)d.addEventListener("load",b,!1);else if(d.attachEvent)d.attachEvent("onload",b);else{var a=d.onload;d.onload=function(){b.call(this);a&&a.call(this)}}};var n,p=function(b,d,a,c,e){this.f=b;this.h=d;this.i=a;this.c=e;this.e={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.g=c;this.b={};this.a=[];this.d={}},q=function(b,d){var a,c,e=d.getAttribute("pagespeed_url_hash");if(a=e&&!(e in b.d))if(0>=d.offsetWidth&&0>=d.offsetHeight)a=!1;else{c=d.getBoundingClientRect();var f=document.body;a=c.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);c=c.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+c;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.e.height&&c<=b.e.width)}a&&(b.a.push(e),b.d[e]=!0)};p.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&q(this,b)};h("pagespeed.CriticalImages.checkImageForCriticality",function(b){n.checkImageForCriticality(b)});h("pagespeed.CriticalImages.checkCriticalImages",function(){r(n)});var r=function(b){b.b={};for(var d=["IMG","INPUT"],a=[],c=0;c<d.length;++c)a=a.concat(l(document.getElementsByTagName(d[c])));if(0!=a.length&&a[0].getBoundingClientRect){for(c=0;d=a[c];++c)q(b,d);a="oh="+b.i;b.c&&(a+="&n="+b.c);if(d=0!=b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),c=1;c<b.a.length;++c){var e=","+encodeURIComponent(b.a[c]);131072>=a.length+e.length&&(a+=e)}b.g&&(e="&rd="+encodeURIComponent(JSON.stringify(s())),131072>=a.length+e.length&&(a+=e),d=!0);t=a;if(d){c=b.f;b=b.h;var f;if(window.XMLHttpRequest)f=new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(k){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(u){}}f&&(f.open("POST",c+(-1==c.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}},s=function(){var b={},d=document.getElementsByTagName("IMG");if(0==d.length)return{};var a=d[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var c=0;a=d[c];++c){var e=a.getAttribute("pagespeed_url_hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].k&&a.height>=b[e].j)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b},t="";h("pagespeed.CriticalImages.getBeaconData",function(){return t});h("pagespeed.CriticalImages.Run",function(b,d,a,c,e,f){var k=new p(b,d,a,e,f);n=k;c&&m(function(){window.setTimeout(function(){r(k)},0)})});})();pagespeed.CriticalImages.Run('/ngx_pagespeed_beacon','http://archiveofourown.org/works/3310289','zvpA3p__sJ',true,false,'7gb31Nco_Tw');</script><img alt="AO3 logo - the letters A O 3 combined with arms raised in celebration, symbolizing the joy of fannish creation in the Archive" class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAAqCAMAAAA3b6P4AAACslBMVEWXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACpit0XAAAA5XRSTlMAAQIDBAUGBwgJCgsMDQ4PEBESFBUWFxgZGhscHR4fICEiIyQlJygpKissLi8wMTM0NTY3ODk6Ozw9PkBBQkNFR0hJSktMTU5PUFFSVFVWV1hZWltcXV5fY2RlZmhpamtsbW5vcHFyc3V2d3p7fX5/gIGCg4SFhoeIiouMjY6PkJGSlJWWl5iZmpucnZ6foKGipKWnqKmrrK2ur7CxsrO0tba3uLm6u7y9vr/AwsPFxsfIycrLzM7P0NLT1NXW19na29zd3t/g4eLj5OXm5+jp6uvs7e7v8PHy8/T19vf4+fr7/P3+b1plRQAABBRJREFUSMedlvtb1FUQxgcEBMtQggUCxVACu1ApYmRmUqESkCkUREaS4h3JCDONEFPBoBQCJcDIGxkGKYGBkgGSAq4BARIXWWA//0c/7J39LvY0P82cd97nzJlzZuaIKvBRmVqmP/XOrrQNIbOVsNfyjq/3nYrs/1GlWjPe90v28wrgnOiDP7ddeN9WAE47O9DLQI6PksfDMWVjnfuDlCC3b4HbpYcOFjUC9UHKWywtQZNpjTmdgu60uSIis979HRr8bIT4YjVDqV6TFlPgVqjxjBegyM4MfSPepDsm9tAcb5mwHnpfMJmq39C+ZLQCytrfM3deUAylwWYL2+BTc4eICU4aNk/pLgm0DNQuqY+/Nk8zmuX0PmFx83V0eIiIyOPlmq3Wpw+tg1OG7Lk1c8YSzmZsqYhIhLp7pVLy3AugLUqnz73L15boHogUke1cW6ic+5n7QJvhLCLic4cTlmAGRIhdFhfdlcmPpUjCfSj3FpEZ9dQ5W6CFDPrLIc652rj2FWUi0f1wdZGI5DERbg56dlIvO6hyt1UTe8pEZKUa1JEiMVBhDu6GzbHc8LFZUSXHRUTC/oShBHG5DKkmbPUg1xPujSyxSba/sltEREJuA9tl0Qikz9JD8f1ovrjOVtvF7NexRqcsVgOfSIIW6pMDVe7z3zwLHDjFeSfb7GV/P6fXwrqATInuAvraWruB0U2bx4aenqKRJA/MMairhoAsCczr1TWH8dPLfO7w2VRtqKDZFFjsOHBY5JmNX549dzQ5ROQkLY9MQbZvKDCzNgHkGCvaLRGOznS2zQ6e2GJu7gXY7/3kiqQj52ubbo9C143asm2hLsrsD3jV8l2PAbcGsBRN9VuK7B+Gvc3N+WnDKEuqAtlz8FdT37J/5dhdk3vbxUb4Y23UusT08nZAobyTSDeoD8VUmKja3DCVcylk6LB5J7Qcts54Ncv13PVXDMQWLfC9o4SOMxqmd/TqocSKvZirTiIiTusM3NbM5aq9AGccPoYaB73jwn/ItWJ/xQ4RkTWVOupg4VqViEw7ApBTA5l6P9/T8LrV1veHA0RCirQANKU/q193KdZHEiUiMjc2vxUO2E9ml5MlXhn9ANRsVJmAWdUAjAaLiKoRaN9pRX6bdv9VjQD8FGv5HgNuAjS5ioj3Hd3jnyS+7RQfA+BSpONkMFwD5OvOVzEClZNmuV0hE/cAqqOmK7yjD4ENen1Jhpo+y6xt1SXmWoKNEtzS8qOn0Zi3jw7z1hg+BNCZ5m2z/DxmmFuZ7DKbATeBsYKgKX8/C6JNehjfmEZ3DlAb8YC/k1dVlrHx5LHaNNZ7GElzlQdJwOXaOA8REb9sSh2Myw5xn78s/0Fmpzc0V+TmVY1y2lP+h3jF5l9qvPpdnP4I/wITXDY67Xw1sAAAAABJRU5ErkJggg==" pagespeed_url_hash="3068567301" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a href="/user_sessions/new">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form accept-charset="UTF-8" action="/user_sessions" class="new_user_session" id="new_user_session" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;"/><input name="authenticity_token" type="hidden" value="RV5lBKUJB6l3TtHgIW04HJLrqCWhnjgOsfmiKMY2Mhg="/></div>
+	<dl>
+    <dt><label for="user_session_login">User name:</label></dt>
+    <dd><input class="text" id="user_session_login" name="user_session[login]" type="text"/></dd>
+    <dt><label for="user_session_password">Password:</label></dt>
+    <dd><input class="text" id="user_session_password" name="user_session[password]" type="password"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_session_remember_me" class="action"><input id="user_session_remember_me" name="user_session[remember_me]" type="checkbox" value="1"/>Remember Me</label>
+    <input name="commit" type="submit" value="Log In"/>
+  </p>    
+</form>
+<ul class="footnote actions">
+  <li><a href="/passwords/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+      <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+      <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+      <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+      <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+      <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+      <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+      <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+      <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+      <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+      <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+      <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form accept-charset="UTF-8" action="/works/search" class="search" id="search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;"/></div>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input aria-describedby="site_search_tooltip" class="text" id="site_search" name="work_search[query]" type="text"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: &quot;uchiha sasuke/uzumaki naruto&quot; angst kudos&gt;10</span>
+      <span class="submit actions"><input class="button" type="submit" value="Search"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+	<li><a name="top">&nbsp;</a></li>
+	<li><a href="#work">Skip header</a></li>
+</ul>
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a href="#comments">Comments</a>
+  </li>
+  
+
+    <li class="share hidden">
+      <a href="#share" aria-controls="#modal" class=" modal" title="Share Work">Share</a>
+      <div id="share">
+
+  <p class="note">Copy and paste the following code to link back to this work (<kbd>CTRL A</kbd>/<kbd>CMD A</kbd> will select all), or use the Tweet or Tumblr links to share the work on your Twitter or Tumblr account.</p>
+  
+  <p>
+    <textarea cols="50" rows="4" id="embed_code">&lt;a href=&quot;http://archiveofourown.org/works/3310289&quot;&gt;&lt;strong&gt;What the World needs now is Love, Sweet Love&lt;/strong&gt;&lt;/a&gt; (2632 words) by &lt;a href=&quot;http://archiveofourown.org/users/sophannically&quot;&gt;&lt;strong&gt;sophannically&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;Chapters: 1/1&lt;br /&gt;Fandom: &lt;a href=&quot;http://archiveofourown.org/tags/Glee&quot;&gt;Glee&lt;/a&gt;&lt;br /&gt;Rating: Teen And Up Audiences&lt;br /&gt;Warnings: Creator Chose Not To Use Archive Warnings&lt;br /&gt;Relationships: Blaine Anderson/Kurt Hummel&lt;br /&gt;Characters: Kurt Hummel, Blaine Anderson, others mentioned - Character&lt;br /&gt;Additional Tags: post 6x06, reaction fic&lt;br /&gt;Summary: &lt;p&gt;Seeing Blaine with a baby in his arms had hit him in unexpected ways, but it wasn’t the reason why Kurt had rushed to leave the room. It was his own feelings that threatened to overwhelm him.&lt;/p&gt;&lt;p&gt;Or: Kurt is overwhelmed by his feelings and hides in the kitchen where Blaine finds him and they have a little heart-to-heart.&lt;/p&gt;</textarea>
+  </p>
+  
+  <ul>
+    
+    <li>
+      <a href="http://twitter.com/share" class="twitter-share-button" data-size="large" data-via="ao3org" data-text="What the World needs now is Love, Sweet Love by sophannically - Glee" data-url="http://archiveofourown.org/works/3310289">
+        Tweet
+      </a>
+    </li>
+      
+    <li>
+      <a href="http://www.tumblr.com/share/link?url=http%3A%2F%2Farchiveofourown.org%2Fworks%2F3310289&name=What%20the%20World%20needs%20now%20is%20Love%2C%20Sweet%20Love%20%282632%20words%29%20by%20sophannically%20%5BAO3%5D&description=Chapters%3A%201%2F1%3Cbr%20%2F%3EFandom%3A%20%3Ca%20href%3D%22http%3A%2F%2Farchiveofourown.org%2Ftags%2FGlee%22%3EGlee%3C%2Fa%3E%3Cbr%20%2F%3ERating%3A%20Teen%20And%20Up%20Audiences%3Cbr%20%2F%3EWarnings%3A%20Creator%20Chose%20Not%20To%20Use%20Archive%20Warnings%3Cbr%20%2F%3ERelationships%3A%20Blaine%20Anderson%2FKurt%20Hummel%3Cbr%20%2F%3ECharacters%3A%20Kurt%20Hummel%2C%20Blaine%20Anderson%2C%20others%20mentioned%20-%20Character%3Cbr%20%2F%3EAdditional%20Tags%3A%20post%206x06%2C%20reaction%20fic%3Cbr%20%2F%3ESummary%3A%20%3Cp%3ESeeing%20Blaine%20with%20a%20baby%20in%20his%20arms%20had%20hit%20him%20in%20unexpected%20ways%2C%20but%20it%20wasn%E2%80%99t%20the%20reason%20why%20Kurt%20had%20rushed%20to%20leave%20the%20room.%20It%20was%20his%20own%20feelings%20that%20threatened%20to%20overwhelm%20him.%3C%2Fp%3E%3Cp%3EOr%3A%20Kurt%20is%20overwhelmed%20by%20his%20feelings%20and%20hides%20in%20the%20kitchen%20where%20Blaine%20finds%20him%20and%20they%20have%20a%20little%20heart-to-heart.%3C%2Fp%3E" title="Share on Tumblr" style="display:inline-block;text-indent:-9999px;overflow:hidden;width:81px;height:20px;background:url(http://platform.tumblr.com/v1/share_1.png) top left no-repeat transparent;border-bottom:none" target="_blank">
+        Share on Tumblr
+      </a>
+    </li>
+      
+  </ul>
+  
+</div>
+
+
+    </li>
+  
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+        <li><a href="/downloads/so/sophannically/3310289/What%20the%20World%20needs%20now.mobi?updated_at=1423372983">MOBI</a></li>
+        <li><a href="/downloads/so/sophannically/3310289/What%20the%20World%20needs%20now.epub?updated_at=1423372983">EPUB</a></li>
+        <li><a href="/downloads/so/sophannically/3310289/What%20the%20World%20needs%20now.pdf?updated_at=1423372983">PDF</a></li>
+        <li><a href="/downloads/so/sophannically/3310289/What%20the%20World%20needs%20now.html?updated_at=1423372983">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a href="http://archiveofourown.org/tags/Teen%20And%20Up%20Audiences/works" class="tag">Teen And Up Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a href="http://archiveofourown.org/tags/Choose%20Not%20To%20Use%20Archive%20Warnings/works" class="tag">Creator Chose Not To Use Archive Warnings</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a href="http://archiveofourown.org/tags/M*s*M/works" class="tag">M/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a href="http://archiveofourown.org/tags/Glee/works" class="tag">Glee</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a href="http://archiveofourown.org/tags/Blaine%20Anderson*s*Kurt%20Hummel/works" class="tag">Blaine Anderson/Kurt Hummel</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a href="http://archiveofourown.org/tags/Kurt%20Hummel/works" class="tag">Kurt Hummel</a></li><li><a href="http://archiveofourown.org/tags/Blaine%20Anderson/works" class="tag">Blaine Anderson</a></li><li><a href="http://archiveofourown.org/tags/others%20mentioned%20-%20Character/works" class="tag">others mentioned - Character</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a href="http://archiveofourown.org/tags/post%206x06/works" class="tag">post 6x06</a></li><li><a href="http://archiveofourown.org/tags/reaction%20fic/works" class="tag">reaction fic</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        English
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt>Published:</dt><dd>2015-02-08</dd><dt>Words:</dt><dd>2632</dd><dt>Chapters:</dt><dd>1/1</dd><dt>Kudos:</dt><dd>70</dd><dt>Bookmarks:</dt><dd><a href="/works/3310289/bookmarks">2</a></dd><dt>Hits:</dt><dd>1103</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      What the World needs now is Love, Sweet Love
+    </h2>
+    <h3 class="byline heading">
+      <a href="http://archiveofourown.org/users/sophannically/pseuds/sophannically" class="login author" rel="author">sophannically</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Seeing Blaine with a baby in his arms had hit him in unexpected ways, but it wasn’t the reason why Kurt had rushed to leave the room. It was his own feelings that threatened to overwhelm him.</p><p>Or: Kurt is overwhelmed by his feelings and hides in the kitchen where Blaine finds him and they have a little heart-to-heart.</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+
+
+
+
+    <blockquote class="userstuff">
+      <p>This is basically what I imagine happened after the last few seconds of the ep ended.</p><p>Enjoy!</p>
+    </blockquote>
+
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+        <h3 class="landmark heading" id="work">Work Text:</h3>
+          <div class="userstuff"><p>Kurt couldn’t help but smile as he realized that Blaine had come alone. He didn’t want to overanalyze this but Blaine coming alone plus their newly found again comfort around each other made him hopeful that maybe they did still have a chance.</p><p>Even though prior to their forced kiss in Sue’s elevator he had tried to convince himself otherwise, Kurt wanted nothing more than to be close to Blaine again. To be allowed to hold this beautiful man in his arms again, to love him.</p><p>But it was up to Blaine and Kurt knew that. Blaine had moved on and Kurt had no right to destroy Blaine’s relationship with Karofsky. Although from the way Blaine kept looking at him as he made his way into the room and greeted everyone, Kurt wasn’t quite certain if maybe Blaine hadn’t moved on after all.</p><p>Still smiling, he followed Blaine into the living room and sat down next to Rachel who was once again talking to Mercedes about how well her audition went. Kurt ignored her. Rachel had told him all about it at least three times already and he really didn’t need to hear it a fourth time.</p><p>Lost in thought, he looked around the room. Santana and Brittany were talking to Artie about their upcoming wedding, Sam was talking to some of the newbies about their latest musical number and Mr. and Mrs. Schuester were proudly presenting their baby to Blaine.</p><p>Kurt could see his ex-fiancé’s facial expression from where he was sitting and the smile that lit up Blaine’s face was so radiant and happy that for a second Kurt wasn’t sure if he could keep looking at it.</p><p>But then Mrs. Schuester was handing Daniel Finn over to Blaine and Kurt couldn’t breathe for a moment. Blaine looked so content and joyful with Daniel nestled safely in his arms. He looked so at ease and for a second, Kurt could picture him a few years into the future, holding a baby with beautiful hazel eyes and dark curls.</p><p>They had talked about having children numerous times; hell, they had even done it last week when they had been locked into Sue’s elevator. But to have the picture of Blaine as a father visualized before him was something Kurt hadn’t been prepared for.</p><p>He could feel the color drain from his face and out of the corner of his eye, he saw Mercedes looking at him with worry written all over her face.</p><p>He turned his head then, quickly put a fake smile on his face and told her and Rachel that he was just getting himself a drink in the kitchen. Quickly getting up, he rushed out of the living room and into the thankfully empty kitchen.</p><p>With his forehead pressed against the surface of a kitchen cupboard, he closed his eyes and breathed deeply through his nose. Seeing Blaine with a baby in his arms had hit him in unexpected ways, but it wasn’t the reason why Kurt had rushed to leave the room. It was his own feelings that threatened to overwhelm him.</p><p>Reminding himself that this really wasn’t the time or place to cry, he wiped his hands over his eyes to remove the few traitorous tears that had escaped.</p><p>He was so focused on calming himself down that he didn’t even hear the footsteps that announced that he wasn’t the only one in the kitchen anymore.</p><p>“Kurt?” Kurt’s head snapped up so fast that he got a bit dizzy. Turning around slowly, he was faced with the one person that made the chaos in his heart even more disorganized.</p><p>“Blaine, hi… again.” He stammered. He could feel the blood rushing to his head and was quite relieved that he hadn’t turned on the light in the kitchen when he had entered. Maybe this way Blaine wouldn’t notice the blush rising to his cheeks or the red around his eyes.</p><p>But of course Blaine recognized that something was wrong. After five years of knowing each other there was practically no way that Blaine wouldn’t notice when Kurt was upset.</p><p>“What’s wrong?” He asked and took another step into the kitchen.</p><p>Kurt crossed his arms in front of his chest then realized how protective the gesture might come across and instead used them to brace himself against the kitchen counter.</p><p>“I’m just being stupid, is all.” He tried to maneuver his way out of this uncomfortable situation.</p><p>“Whatever it is, I highly doubt you’re being stupid. You’re upset about something. Please tell me so that I… so that I can help.” Blaine answered. His eyes were locked onto Kurt’s face and he was looking so honest and like he genuinely wanted to help.</p><p>Kurt’s heart twisted painfully in his chest as he took in the way Blaine was looking at him. There was no way he would be able lie to Blaine like this. He sighed and instead settled for something close to the truth.</p><p>“Everything is just very overwhelming at the moment. You know, with Santana and Brittany’s wedding, glee club… you.” He forced himself to say. He had learned the hard way that he needed to be open with Blaine about his feelings. Even if that meant being vulnerable around the one person who could easily break him.</p><p>The way they were standing, Blaine with his back to the door from where the only light was streaming into the room, Kurt couldn’t quite see Blaine’s face. But he didn’t miss the surprised look crossing Blaine’s face.</p><p>“Me?” The shorter boy asked and stepped closer.</p><p>Kurt frowned at him, a bit shaken by Blaine coming closer. “Of course you. Always you.” His voice shook at the last sentence.</p><p>“Always me?” Blaine asked and stepped even closer.</p><p>This time Kurt couldn’t stop himself from crossing his arms protectively across his chest. “Are you just going to repeat everything I’m saying?” He asked not un-kindly.</p><p>Blaine smiled at him then and shrugged. “Maybe. We do kind of have this thing where we repeat each other’s sentence.”</p><p>Kurt rolled his eyes and snorted because yeah, he was definitely aware of that.</p><p>Blaine was still smiling at him. Tilting his head a little as if to study Kurt, he asked: “Why am I overwhelming?”</p><p>“You’re always overwhelming, Blaine. In a good way, but you’re always…” Kurt stopped there, searching for the right words to express his feelings.</p><p>Blaine waited patiently, sensing how important it was for Kurt to say this right.</p><p>“Every time I look at you it’s like I’ve been surrounded by darkness and am suddenly looking into the sun. You radiate so much brightness that sometimes it’s overwhelming to look at you.</p><p>“When I think about you it feels like my chest is going to explode because my heart keeps beating so fast. My thoughts are running around my mind and it is as if my brain is trying to think about everything at once. Your smile, your eyes, the way you used to look at me, how you told me you loved me.</p><p>“It’s so much, Blaine. You mean so much to me and I blew it, us. I hurt you and every time I look at you now my heart aches because I know I am not allowed to reach out to you anymore, to hug you and to comfort you.</p><p>And seeing you in there, holding that baby… It’s everything I want. And I can’t have it; because I was stupid and scared and because I broke your heart.</p><p>So when I look at you now, when I’m around you, I am not only overwhelmed by how much I love you but also by how much I hate myself for what I did.”</p><p>He stopped then to catch his breath. Tears were now freely streaming down his face but Kurt didn’t even care anymore. All he could do was stare at Blaine and wait for him to say something.</p><p>Blaine’s facial expression had changed over the duration of Kurt’s speech. The smile had disappeared and he was looking at Kurt with an expression that Kurt hadn’t seen on his face before and therefore couldn’t read.</p><p>They were quiet for a few seconds but then Blaine took a deep breath. “Please don’t say you hate yourself, Kurt.”</p><p>“How can I not, Blaine? How can I not, when I threw away the best thing that ever happened to me? When I hurt the love of my life so much? When I…”</p><p>He wanted to go on but suddenly two strong arms were wrapping themselves around him. For a few seconds he just stood there, tense and frozen to the spot.</p><p>But when it became obvious that Blaine had no intention of letting go, Kurt slowly calmed down. His arms uncrossed and automatically found their way over Blaine’s shoulders.</p><p>It was a tight hug; as if both boys were afraid to let go.</p><p>For the first time in month, Kurt felt like he could breathe again. He relaxed further into the hug and even dared to lean his head against Blaine’s.</p><p>“Why are you hugging me when I basically just stated the biggest mistake I ever made?” He asked quietly when he couldn’t take Blaine’s silence anymore.</p><p>Blaine shifted and pressed his face against Kurt’s neck before answering: “Because no matter what you did, do or will do in the future, I can’t stand you tearing yourself down like that.”</p><p>“But I hurt you.” Kurt answered almost automatically and then mentally slapped himself because his statement was so obvious and unnecessary.</p><p>“Yeah you did.” Blaine answered and sighed so deeply that Kurt could feel it. “But so did I.”</p><p>Kurt frowned. “No, that was years ago, Blaine. You can’t compare what you did to what I did because I had no reason to hurt…”</p><p>“Kurt.” Blaine interrupted him and drew back. Kurt immediately missed his embrace.</p><p>They were looking at each other now, still standing way too close but at the same time not close enough.</p><p>“What I’m trying to say is that we both did horrible things. We both screwed up and we hurt each other and we aren’t perfect.”</p><p>Blaine stopped and made sure that Kurt was directly looking him in the eyes before he continued.</p><p>“Our relationship isn’t perfect. It never really was. But that doesn’t matter. Wanna know why?”</p><p>“Why?” Kurt asked and even to himself his voice sounded way too small.</p><p>Blaine was smiling again and cupped Kurt’s face with one of his hands so that he could slowly stroke his thumb across his cheekbone.</p><p>“Because you’re the love of my life. And you just told me I’m the love of your life. Because what you described about how you feel when we’re close is true for me too. Because I have tried so hard to move on, Kurt. But I can’t and honestly, I don’t want to. Because I love you.”</p><p>The way he said this, so matter-of-factly took Kurt’s breath away. It never ceased to amaze him how Blaine always left him breathless.</p><p>“You have no idea how much I love you. And if you’ll let me, I will spend the rest of our lives showing you how much you mean to me and how much I love you.” Kurt whispered but they were so close that there was no way Blaine could have missed any of what he’d said.</p><p>“I want that, Kurt. I really want that.” His voice broke a little when he said Kurt’s name and there were tears glistening in his eyes.</p><p>Kurt himself was crying again too. His heart was filled with so much love and hope and happiness and his mind was screaming <em>Blaine, Blaine, Blaine</em> at him. He was gasping for air but through his tears he could see that Blaine was obviously having trouble breathing too.</p><p>He realized suddenly that he was gripping Blaine’s waist and his fingers flexed against Blaine’s shirt as everything in him urged him to pull Blaine closer.</p><p>But he just stood there and let Blaine decide. Because it was still Blaine’s decision what would happen next. Kurt knew without a doubt that if possible he would marry Blaine right then and there. But he also knew that Blaine still needed time.</p><p>“I’m gonna kiss you now, okay? And I’m gonna kiss you because I want to and not because Sue is forcing us. May I kiss you?” Blaine said and god, he was asking permission to kiss Kurt and Kurt just loved him so, so much.</p><p>He couldn’t speak, could only nod and gasp one final time before Blaine’s lips were on his.</p><p>His whole being zeroed in on where their lips met. Blaine’s hands were in Kurt’s hair and suddenly their mouths were open and Blaine was slipping his tongue into Kurt’s mouth. It was everything that Kurt remembered and so much more.</p><p>“Blaine.” He gasped and Blaine broke the kiss to press a million little kisses all over Kurt’s face, jaw and neck.</p><p>He kept kissing him everywhere he could reach while they stood there and calmed down a little. After a while, Kurt nuzzled his face against Blaine’s cheek and pressed his nose again Blaine’s ear. God, he had even missed the smell of Blaine’s hair gel.</p><p>“I just need a little more time.” Blaine said some time later. And Kurt understood what he meant.</p><p>So he just nodded and smiled, pressing the raised corner of his lips into Blaine’s skin so that the other boy could feel it.</p><p>“I know. I’m sorry. I didn’t mean to spring this all on you, I just… I saw you with Daniel and suddenly I couldn’t stop picturing you with our child in your arms and a ring on your finger and…” His voice, full of emotion, wobbled a little then and he let out a small breath.</p><p>“I get it. You don’t need to apologize.” Blaine pulled away a bit to look Kurt in the eyes when he said this.</p><p>They smiled at each other then and just stood there, entangled in their own little world.</p><p>“We really should get back inside the living room before anyone stumbles in here. I don’t think I want to hear any comments about our relationship tonight.” Blaine said after a while, still smiling.</p><p>Kurt nodded. “Yeah, me neither.”</p><p>Slowly, they managed to disentangle themselves from one another. Finally, Blaine took a step back so that there was room between them again.</p><p>But this time it didn’t feel so horrible to let go of each other. Still smiling at each other, they made their way towards the door.</p><p>Before they could step outside the kitchen, Kurt quickly grabbed Blaine’s wrist and pulled him back a little.</p><p>“Hey, eh, do you wanna… I mean, would you like to get some coffee sometime soon… with me?” Kurt asked.</p><p>Blaine’s blinding smile was answer enough but seeing him nod and answer yes made Kurt’s heart swell even more.</p><p>“It’s a date.” Blaine said and winked at Kurt before he left the room.</p><p>Kurt just stood there for a second, breathing deeply through his nose.</p><p>Of course this didn’t mean that suddenly everything was back to normal. They would have to work on themselves to make this relationship work. There would be good times and bad times and then times were everything seemed hopeless.</p><p>But if there was one thing that Kurt had learned over the past five years of loving Blaine, it was that their love was stronger than any obstacle that life might throw at them. And that together they could make it work.</p><p>When he sat down next to Rachel and Mercedes again he didn’t have the fake a smile. The smile would stay on his face for the rest of the evening.</p></div>
+        <!-- end cache -->
+    </div>
+<!--/chapter-->
+    
+  
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form accept-charset="UTF-8" action="/kudos" id="new_kudo" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;"/><input name="authenticity_token" type="hidden" value="RV5lBKUJB6l3TtHgIW04HJLrqCWhnjgOsfmiKMY2Mhg="/></div>
+          <input class="text" id="kudo_commentable_id" name="kudo[commentable_id]" type="hidden" value="3310289"/>
+          <input class="text" id="kudo_commentable_type" name="kudo[commentable_type]" type="hidden" value="Work"/>
+          <input id="kudo_submit" name="commit" type="submit" value="Kudos ♥"/>
+</form>      </li>
+
+
+
+
+  </ul>
+
+  <div id="kudos_message"></div>
+
+  <h3 class="landmark heading"><a name="comments">Comments</a></h3>
+
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/boxerrebellion">boxerrebellion</a>, <a href="/users/AkaKitsune133">AkaKitsune133</a>, <a href="/users/HeiwaAi">HeiwaAi</a>, <a href="/users/Tigerlily89">Tigerlily89</a>, <a href="/users/blainecarraway">blainecarraway</a>, <a href="/users/simplybeing">simplybeing</a>, <a href="/users/Kerrie_206">Kerrie_206</a>, <a href="/users/Arbar">Arbar</a>, <a href="/users/vlada_nemchina">vlada_nemchina</a>, <a href="/users/whoaaitsmichele">whoaaitsmichele</a>, <a href="/users/Jenzzyuk">Jenzzyuk</a>, <a href="/users/Gambe">Gambe</a>, <a href="/users/WhatKatyDidNext">WhatKatyDidNext</a>, <a href="/users/my_middle_name_is_awkward">my_middle_name_is_awkward</a>, <a href="/users/RoswellDeluca">RoswellDeluca</a>, <a href="/users/deathbybowties">deathbybowties</a>, <a href="/users/klainer829">klainer829</a>, <a href="/users/Lucy641">Lucy641</a>, <a href="/users/radear">radear</a>, <a href="/users/emquin">emquin</a>, <a href="/users/dontrainonmyparade_x">dontrainonmyparade_x</a>, <a href="/users/KlaineUnite">KlaineUnite</a>, <a href="/users/LSKlaineGleek">LSKlaineGleek</a>, <a href="/users/oohshinyfangirl">oohshinyfangirl</a>, <a href="/users/byrdie1126">byrdie1126</a>, <a href="/users/blackmorning">blackmorning</a>, and <a href="/users/thegourmez">thegourmez</a>
+             as well as 
+          43 guests
+         left kudos on this work!
+        <span class='kudos_expanded hidden'>
+          <a href="#">(collapse)</a>
+        </span>
+      </p>
+</div>
+
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_3310289">
+  <form accept-charset="UTF-8" action="/works/3310289/comments" class="new_comment" id="comment_for_3310289" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;"/><input name="authenticity_token" type="hidden" value="RV5lBKUJB6l3TtHgIW04HJLrqCWhnjgOsfmiKMY2Mhg="/></div>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_3310289">Name: </label></dt>
+          <dd>
+            <input class="text" id="comment_name_for_3310289" name="comment[name]" type="text"/>
+            <script type="text/javascript">var validation_for_comment_name_for_3310289=new LiveValidation('comment_name_for_3310289',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_3310289.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_3310289">Email: </label></dt>
+          <dd>
+            <input class="text" id="comment_email_for_3310289" name="comment[email]" type="text"/>
+            <script type="text/javascript">var validation_for_comment_email_for_3310289=new LiveValidation('comment_email_for_3310289',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_3310289.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+            <input class="text" id="comment_ip_address_for_3310289" name="comment[ip_address]" type="hidden" value="128.82.28.186"/>
+          </dd>
+        </dl>
+
+                
+
+      <p>
+        <label for="comment_content_for_3310289" class="landmark">Comment</label>
+        <textarea class="comment_form observe_textlength" id="comment_content_for_3310289" name="comment[content]" title="Enter Comment">
+</textarea>
+        <input type="hidden" id="controller_name_for_3310289" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span aria-live="polite" aria-valuemax="4300" aria-valuenow="comment_content_for_3310289" class="value" data-maxlength="4300" id="comment_content_for_3310289_counter">4300</span> characters left</p>
+      <script type="text/javascript">var validation_for_comment_content_for_3310289=new LiveValidation('comment_content_for_3310289',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_3310289.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_3310289.add(Validate.Length,{"maximum":"4300","tooLongMessage":"must be less than 4300 characters long."});</script>
+      <p class="submit actions">
+        <input data-disable-with="Please wait..." id="comment_submit_for_3310289" name="commit" type="submit" value="Comment"/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.55.2">otwarchive v0.9.55.2</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js,q1428042994+jquery.livequery.min.js,q1428042994+rails.js,q1428042994+application.js,q1428042994+bootstrap,_bootstrap-dropdown.min.js,q1428042994+jquery-shuffle.js,q1428042994+jquery.tokeninput.min.js,q1428042994+jquery.trap.min.js,q1428042994+ao3modal.min.js,q1428042994+jquery.cookie.js,q1428042994.pagespeed.jc.vqwy1blnPh.js"></script><script>eval(mod_pagespeed_CYhugoFyfG);</script>
+<script>eval(mod_pagespeed_1xbNmenCaU);</script>
+<script>eval(mod_pagespeed_$__IJglxCo);</script>
+<script>eval(mod_pagespeed_hLbwLoa6QL);</script>
+<script>eval(mod_pagespeed_nxc0GpYVrT);</script>
+<script>eval(mod_pagespeed_kZP74N6KiC);</script>
+<script>eval(mod_pagespeed_1cBJiqYo5v);</script>
+<script>eval(mod_pagespeed_WJtH5tAurY);</script>
+<script>eval(mod_pagespeed_aVBEYe0DQv);</script>
+<script>eval(mod_pagespeed_dsaMuA_tCr);</script>
+
+
+  <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+
+          <script type="text/javascript">var name_id="#comment_name_for_3310289";var email_id="#comment_email_for_3310289";if(!$j(name_id).val()){$j(name_id).val($j.cookie('comment_name'));}
+if(!$j(email_id).val()){$j(email_id).val($j.cookie('comment_email'));}</script>
+
+  </body>
+</html>

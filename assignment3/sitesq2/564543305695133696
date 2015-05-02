@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+<meta charset="UTF-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Uw4FUFBRGwYBVVZUAgk="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:9,3:7,4:11,5:3,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:9,3:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>
+<meta name="apple-itunes-app" content="app-id=702770635">
+<title>Jamie Carragher praises Brendan Rodgers&#039; &quot;brave&quot; decision to start Jordon Ibe against Everton | Squawka News</title>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://www.squawka.com/news/wp-content/themes/squawka-blog/styles/base.css">
+<link rel="stylesheet" href="http://www.squawka.com/news/wp-content/themes/squawka-blog/styles/blog.css?ver=12">
+<link rel="stylesheet" href="http://www.squawka.com/news/wp-content/themes/squawka-blog/styles/animate.css">
+<script type="text/javascript" src="http://aka-cdn-ns.adtech.de/dt/common/DAC.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/headjs/0.99/head.min.js"></script>
+<script type='text/javascript' src="//wurfl.io/wurfl.js"></script>
+<script>
+            head.js(
+                    {jquery: "http://code.jquery.com/jquery-1.9.1.min.js"},
+                    {menu: "http://www.squawka.com/news/wp-content/themes/squawka-blog/js/menu.js"},
+                    {blog: "http://www.squawka.com/news/wp-content/themes/squawka-blog/js/blog.js"},
+                    {mobile: "http://www.squawka.com/news/wp-content/themes/squawka-blog/js/mobile.js"},
+                    {scroll: "http://www.squawka.com/news/wp-content/themes/squawka-blog/js/scroll.js"},
+                    {cookie: "http://www.squawka.com/news/wp-content/themes/squawka-blog/js/cookie.js"}
+            );
+        </script>
+ 
+<script type="text/javascript">
+
+            var _gaq = _gaq || [];
+
+            _gaq.push(['_setAccount', 'UA-29786370-1']);
+
+            _gaq.push(['_setDomainName', 'squawka.com']);
+
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+
+                //ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+
+            })();
+
+            (function(tos) {
+                window.setInterval(function() {
+                    // Every 10,000 milliseconds, calculate the time
+                    tos = (function(t) {
+                        return t[0] == 50 ? (parseInt(t[1]) + 1) + ':00' : (t[1] || '0') + ':' + (parseInt(t[0]) + 10);
+                    })(tos.split(':').reverse());
+                    // Collect and send the time to Google Analytics
+                    window.pageTracker ? pageTracker._trackEvent('Time', 'Log', tos) : _gaq.push(['_trackEvent', 'Time', 'Log', tos]);
+                }, 20000);
+            })('00');
+
+        </script>
+<script type="text/javascript">
+            //Related Articles
+           head.ready(function()
+           {    
+              jQuery('a.jp-relatedposts-post-a').on("click", function(event) {
+                    event.preventDefault(); // don't open the link yet
+                    var url = jQuery(this).attr("href");
+                    var position = jQuery(this).attr("data-position");
+                        _gaq.push(['_trackEvent', 'Related Article', 'Clicked Position'+position, url]);
+                        _gaq.push(function() {window.open(url);});
+                });
+            });
+        </script>
+ 
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+ 
+ 
+<!--[if lt IE 9]>
+                <script src="http://www.squawka.com/news/wp-content/themes/squawka-blog/js/html5.js" type="text/javascript"></script>
+        <![endif]-->
+ 
+<link rel="profile" href="http://gmpg.org/xfn/11"/>
+<link rel="pingback" href="http://www.squawka.com/news/xmlrpc.php"/>
+<script type='text/javascript'>
+            var googletag = googletag || {};
+            googletag.cmd = googletag.cmd || [];
+            (function() {
+                var gads = document.createElement('script');
+                gads.async = true;
+                gads.type = 'text/javascript';
+                var useSSL = 'https:' == document.location.protocol;
+                gads.src = (useSSL ? 'https:' : 'http:') +
+                        '//www.googletagservices.com/tag/js/gpt.js';
+                var node = document.getElementsByTagName('script')[0];
+                node.parentNode.insertBefore(gads, node);
+            })();
+        </script>
+ 
+<script language="javascript" type="text/javascript" async="async" src="//widgets.kiosked.com/widget/sniff/sign/f6aed8efdcc6dfe656acc6e3fb0060b5/albumid/9233/co/10177.js"></script>
+<script>
+        if( typeof WURFL != 'undefined' && !WURFL.is_mobile ) //desktop
+        { 
+            var script = document.createElement("script");
+            script.src = "http://ads.ayads.co/ajs.php?zid=862";
+            script.async = false;
+            document.getElementsByTagName("body")[0].appendChild(script);
+        }
+        </script>
+ 
+<link rel="canonical" href="http://www.squawka.com/news/jamie-carragher-praises-brendan-rodgers-brave-decision-to-start-jordan-ibe-against-everton/295826"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@squawka"/>
+<meta name="twitter:creator" content="@dan_anwar"/>
+<meta name='twitter:image' content='http://www.squawka.com/news/wp-content/uploads/2015/02/4558579-300x214.jpg'/>
+<meta name="twitter:description" content="Former Liverpool defender Jamie Carragher has praised Brendan Rodgers&#8217; &#8220;brave&#8221; decision to start young winger Jordon Ibe in the Merseyside derby against Everton, reports The Sport Review. Ibe had only started one league game for Liverpool before the game at Goodison Park, and he was a surprise inclusion at right wing-back ahead of Lazar Markovic. [&hellip;]"/>
+<meta name="twitter:title" content="Jamie Carragher praises Brendan Rodgers&#039; &quot;brave&quot; decision to start Jordon Ibe against Everton - Squawka News"/>
+<meta name="twitter:url" content="http://www.squawka.com/news/jamie-carragher-praises-brendan-rodgers-brave-decision-to-start-jordan-ibe-against-everton/295826"/>
+ 
+<link rel="alternate" type="application/rss+xml" title="Squawka News &raquo; Feed" href="http://www.squawka.com/news/feed"/>
+<link rel="alternate" type="application/rss+xml" title="Squawka News &raquo; Comments Feed" href="http://www.squawka.com/news/comments/feed"/>
+<link rel="alternate" type="application/rss+xml" title="Squawka News &raquo; Jamie Carragher praises Brendan Rodgers&#8217; &#8220;brave&#8221; decision to start Jordon Ibe against Everton Comments Feed" href="http://www.squawka.com/news/jamie-carragher-praises-brendan-rodgers-brave-decision-to-start-jordan-ibe-against-everton/295826/feed"/>
+<meta property="og:title" content="Jamie Carragher praises Brendan Rodgers&#8217; &#8220;brave&#8221; decision to start Jordon Ibe against Everton"/><meta property="og:type" content="article"/><meta property="og:url" content="http://www.squawka.com/news/jamie-carragher-praises-brendan-rodgers-brave-decision-to-start-jordan-ibe-against-everton/295826"/><meta property="og:site_name" content="Squawka"/><meta property="og:image" content="http://www.squawka.com/news/wp-content/uploads/2015/02/4558579-300x214.jpg"/>
+<link rel='stylesheet' id='post-plugin-css' href='http://www.squawka.com/news/wp-content/plugins/post/post-plugin.css?ver=1' type='text/css' media='all'/>
+<link rel='stylesheet' id='style-css' href='http://www.squawka.com/news/wp-content/themes/squawka-blog/style.css?ver=4.1' type='text/css' media='all'/>
+<link rel='stylesheet' id='jetpack_css-css' href='http://www.squawka.com/news/wp-content/plugins/jetpack/css/jetpack.css?ver=3.3' type='text/css' media='all'/>
+<script type='text/javascript' src='http://www.squawka.com/news/wp-includes/js/jquery/jquery.js?ver=1.11.1'></script>
+<script type='text/javascript' src='http://www.squawka.com/news/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://www.squawka.com/news/wp-content/plugins/jetpack/modules/related-posts/related-posts.js?ver=20141201'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.squawka.com/news/xmlrpc.php?rsd"/>
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.squawka.com/news/wp-includes/wlwmanifest.xml"/>
+<meta name="generator" content="WordPress 4.1"/>
+<link rel='shortlink' href='http://www.squawka.com/news/?p=295826'/>
+<script type="text/javascript">
+(function ()
+{
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = 'http://i.po.st/static/v3/post-widget.js#publisherKey=dl1ne12g9qsuubkjie7v';
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+})();
+</script><style type='text/css'>img#wpstats{display:none}</style><meta property="og:type" content="article"/>
+<meta property="og:url" content="http://www.squawka.com/news/jamie-carragher-praises-brendan-rodgers-brave-decision-to-start-jordan-ibe-against-everton/295826"/>
+<meta property="og:title" content="Jamie Carragher praises Brendan Rodgers&#8217; &#8220;brave&#8221; decision to start Jordon Ibe against Everton"/>
+<meta property="og:site_name" content="Squawka News"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:description" content="Former Liverpool defender Jamie Carragher has praised Brendan Rodgers' &quot;brave&quot; decision to start young winger Jordon Ibe in the Merseyside derby against Everton, reports The Sport Review. Ibe had only started one league game for Liverpool before the game..."/>
+<meta property="og:image" content="http://www.squawka.com/news/wp-content/uploads/2015/02/Screen-Shot-2015-02-08-at-14.13.50.png"/>
+</head>
+<body class="single single-post postid-295826 single-format-standard group-blog"><script type="text/javascript">
+//<![CDATA[
+try{(function(a){var b="http://",c="www.squawka.com",d="/cdn-cgi/cl/",e="img.gif",f=new a;f.src=[b,c,d,e].join("")})(Image)}catch(e){}
+//]]>
+</script>
+ 
+<script type="text/javascript">
+        _atrk_opts = { atrk_acct:"CWO9i1acVE00w0", domain:"squawka.com",dynamic: true};
+        (function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+        </script>
+<noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=CWO9i1acVE00w0" style="display:none" height="1" width="1" alt=""/></noscript>
+ 
+ 
+<script>
+            if( typeof WURFL != 'undefined' && !WURFL.is_mobile ) //desktop
+            { 
+                document.write("<script type=\"text/javascript\" src=\"http://ads.ayads.co/ajs.php?zid=862\"></script\>");
+            }
+        </script>
+ 
+<script>
+            head.ready(function(){
+                if( typeof WURFL != 'undefined' && WURFL.is_mobile ) //desktop
+                { 
+                    $('body').addClass('isMobile');
+                }
+            });
+        </script>
+<div id="app-cta-message-header">
+ 
+ 
+<div id="5246381">
+ 
+<noscript><a href="http://adserver.adtech.de/adlink|3.0|1587.1|5246381|0|225|ADTECH;loc=300;key=key1+key2+key3+key4;alias=" target="_blank"><img src="http://adserver.adtech.de/adserv|3.0|1587.1|5246381|0|225|ADTECH;loc=300;key=key1+key2+key3+key4;alias=" border="0" width="728" height="90"></a></noscript>
+</div>
+</div>
+ 
+<header id="header-wrap" class="">
+<div id="sq-live-topbar">
+<div class="sq-live-container">
+<a href="http://www.squawka.com/team-directory" id="search-box-side">
+<span class="shirt-icon"></span>Find a team/player&nbsp;&nbsp;|
+</a>
+<div id="holder">
+<form method="get" action="http://www.squawka.com/search-results">
+<input type="text" id="search-box" name="q" placeholder="Search Squawka">
+<input type="image" id="search-submit" src="http://www.squawka.com/news/wp-content/themes/squawka-blog/images/clear.png">
+</form>
+</div>
+<div class="social-media">
+<a class="sm-click twitter-icon" target="_blank" href="http://www.twitter.com/squawka"></a>
+<a class="sm-click facebook-icon" target="_blank" href="http://www.facebook.com/SquawkaFootball"></a>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="sq-live-container">
+<a id="squawka-logo" href="http://www.squawka.com"></a>
+<div class="clearer"></div>
+</div>
+<nav id="sq-live-nav">
+<div id="sq-live-nav-left">
+<div id="mobsearch">
+<form method="get" action="http://www.squawka.com/search-results">
+<input id="mobsearcharea" type="text" name="q" placeholder="Search Squawka">
+<input id="mobsearchbtn" type="image" src="http://www.squawka.com/news/wp-content/themes/squawka-blog/images/clear.png">
+</form>
+</div>
+<ul class="sq-live-nav-contain">
+<li><a href="http://www.squawka.com/" title="">Home</a></li>
+<li><a href="http://www.squawka.com/match-fixtures" title="">Fixtures</a></li>
+<li><a href="http://www.squawka.com/match-results" title="">Results</a></li>
+<li id="stats-centre-dd" class="nav-dropdown">
+<a href="javascript:void(0)">STATS CENTRE</a>
+<ul>
+<li><a href="/comparison-matrix">Comparison Matrix</a></li>
+<li><a href="/football-team-rankings">Team Rankings</a></li>
+<li><a href="/football-player-rankings">Player Rankings</a></li>
+</ul>
+</li>
+<li class="nav-selected"><a href="http://www.squawka.com/news/" title="">News</a></li>
+<li><a href="http://www.squawka.com/tailorbet-p2p-betting" title="">Bet Now</a></li>
+<li><a href="http://battlemode.squawka.com" title="Battle Mode">Battle Mode</a></li>
+<li><a href="/news/category/ball-ctrl" title="">Gaming</a></li>
+</ul>
+</div>
+<div id="sq-live-nav-right">
+<ul class="sq-live-nav-contain">
+<li id="sq-live-setting-info" class="nav-selected">
+<a href="http://www.squawka.com/login">SIGN IN</a>
+</li>
+<li><a href="http://www.squawka.com/live-football-blog">LIVE BLOG</a></li>
+</ul>
+</div>
+<div id="mobile-navigation">
+<div class="nav-holder">
+<a href="#" class="nav-button-icon">
+<img src="http://www.squawka.com/news/wp-content/themes/squawka-blog/images/menu-icon-white.svg">
+</a>
+<nav id="squawka-news-m-nav" class="mobile-nav">
+<a href="/football-stats">Stats</a>
+<a href="/football-team-rankings">Stat rankings</a>
+<a href="/comparison-matrix">Comparison Matrix</a>
+<a href="/news/category/news">News</a>
+<a href="/news/category/ball-ctrl">Gaming</a>
+<a href="/news/category/matchday">Matchday</a>
+<a href="/news/category/squawka-analysis">Squawka Analysis</a>
+<a href="/news/category/features">Features</a>
+<a href="/news/category/opinion">Opinion</a>
+<a href="/news/category/cult-corner">Cult Corner</a>
+<a href="http://www.squawka.com/tailorbet-p2p-betting" title="">Bet Now</a>
+<a href="http://battlemode.squawak.com" title="Battle Mode">Battle Mode</a>
+<a href="/news/contact-us">Contact</a>
+</nav>
+</div>
+</div>
+</nav>
+</header>
+ 
+<div id="page" class="hfeed site">
+<div id="nav-pannel-overlay"></div>
+<div id="mobile-search">
+<div id="blog-search" class="floating-header">
+<form method="get" id="searchform" class="searchform" action="http://www.squawka.com/news/" role="search">
+<div class="search-box-container">
+<input type="search" class="field" name="s" value="" id="s" placeholder="Search Squawka News"/>
+<input type="submit" class="submit" id="searchsubmit" value=""/>
+</div>
+</form>
+</div>
+</div>
+<div id="whole-page-container">
+<header id="squawka-news-masthead">
+ 
+<hgroup id="news-titles">
+<a href="/news/">
+<p class="ntitle">Squawka News</p>
+ 
+</a>
+</hgroup>
+<div id="new-masthead-ad">
+<div id="news-cat-nav">
+<a href="/news/category/news">News</a> |
+<a href="/news/category/matchday">Matchday</a> |
+<a href="/news/category/squawka-analysis">Analysis</a> |
+<a href="/news/category/features">Features</a> |
+<a href="/news/category/opinion">Opinion</a> |
+<a href="/news/category/cult-corner">Cult Corner</a>
+<a href="/news/contact-us">Contact</a>
+</div>
+</div>
+<div class="clearer"></div>
+</header>
+<div id="main" class="site-main">
+<div id="primary" class="content-area">
+<div id="content" class="site-content" role="main">
+<div id='middle'>
+<div id="big-vid-cont">
+<div id="big-vid-left">
+<iframe width="640" height="360" frameborder="0" scrolling="no" src="http://vds.rightster.com/v/01yzzx1wx2qoto?target=iframe&autoplay=1&startmuted=0&nocontrolswhileads=0&show_title=0" allowtransparency="true" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+</div>
+<div class="clearer"></div>
+</div>
+<header id="post-header" class="floating-header gallery-post-header">
+<div class="share-button-holder">
+<div class="share-button-list">
+<ul>
+<li class="icon-twitter"><a href=""></a></li>
+<li class="icon-facebook"><a href=""></a></li>
+<li class="icon-pinterest"><a href=""></a></li>
+<li class="icon-rss"><a href="/news/?feed=rss2" title="RSS feed for Squawka News articles posted in "></a></li>
+</ul>
+</div>
+</div>
+</header>
+<article id="post-295826" class="post-295826 post type-post status-publish format-standard has-post-thumbnail hentry category-reaction tag-brendan-rodgers tag-jamie-carragher tag-jordon-ibe">
+<div class="mob-ad">
+<div id="mob-ad-cont">
+ 
+ 
+<div id="5246322">
+ 
+<noscript><a href="http://adserver.adtech.de/adlink|3.0|1587.1|5246322|0|3055|ADTECH;loc=300;key=key1+key2+key3+key4;alias=" target="_blank"><img src="http://adserver.adtech.de/adserv|3.0|1587.1|5246322|0|3055|ADTECH;loc=300;key=key1+key2+key3+key4;alias=" border="0" width="320" height="50"></a></noscript>
+</div>
+</div>
+</div>
+<header class="entry-header" role="article">
+<p class="post-meta">
+<a href="http://www.squawka.com/news/category/news/reaction" rel="category tag">Reaction</a> </p>
+<h1>Jamie Carragher praises Brendan Rodgers&#8217; &#8220;brave&#8221; decision to start Jordon Ibe against Everton</h1>
+<div class="entry-meta">
+<p class="author">By <a href="http://www.squawka.com/news/author/daniel-anwar" title="Posts by Daniel Anwar" rel="author">Daniel Anwar</a></p>
+<p class="posted">
+<a href="http://www.squawka.com/news/date/2015/02/08">Posted on February 8, 2015</a>
+</p>
+</div> 
+</header> 
+<div id="featuredimage">
+<img width="800" height="571" src="http://www.squawka.com/news/wp-content/uploads/2015/02/4558579.jpg" class="attachment-post-thumbnail wp-post-image" alt="Ibe has been impressive since Rodgers gave him a chance"/> </div>
+<div class="entry-content gallery-post-first gallery-post-page">
+ 
+<div pw:image='' class='pw-widget pw-size-large pw-horizontal' pw:url="http://www.squawka.com/news/jamie-carragher-praises-brendan-rodgers-brave-decision-to-start-jordan-ibe-against-everton/295826" pw:title="Jamie Carragher praises Brendan Rodgers&#8217; &#8220;brave&#8221; decision to start Jordon Ibe against Everton">
+<a class='pw-button-facebook'></a>
+<a class='pw-button-twitter'></a>
+<a class='pw-button-email'></a>
+<a class='pw-button-stumbleupon'></a>
+<a class='pw-button-digg'></a>
+</div><p><strong>Former Liverpool defender Jamie Carragher has praised Brendan Rodgers&#8217; &#8220;brave&#8221; decision to start young winger Jordon Ibe in the Merseyside derby against Everton, reports <a href="http://www.thesportreview.com/tsr/2015/02/jamie-carragher-liverpool-manager-brave-pick-jordon-ibe-derby/" target="_blank"><em>The Sport Review</em></a>.</strong></p>
+<p>Ibe had only started one league game for Liverpool before the game at Goodison Park, and he was a surprise inclusion at right wing-back ahead of Lazar Markovic. The 19-year-old didn&#8217;t seem daunted by the occasion at all, and he was very lively throughout the 0-0 draw, and his rasping drive that hit the post in the first-half was the closest either side came to breaking the deadlock.</p>
+<div id="attachment_295638" style="width: 508px" class="wp-caption alignnone"><a href="http://epl.squawka.com/everton-vs-liverpool/07-02-2015/english-barclays-premier-league/matches"><img class="size-full wp-image-295638" alt="Ibe's heat map against Everton" src="http://www.squawka.com/news/wp-content/uploads/2015/02/Screen-Shot-2015-02-08-at-14.13.50.png" width="498" height="398"/></a><p class="wp-caption-text">Ibe&#8217;s heat map against Everton</p></div>
+<p>Carragher spent his entire playing career at Anfield, and he made almost 750 appearances for the club in all competitions. He was very impressed with Ibe&#8217;s display against Everton, but he also credited Rodgers for having the conviction to play him in such a big match.</p>
+<p style="text-align: center;"><a href="http://www.squawka.com/news/he-could-be-better-than-sterling-twitter-reacts-to-jordon-ibes-performance-against-everton/295584" target="_blank"><span style="color: #339966;"><strong>“He could be better than Sterling” – Twitter reacts to Jordon Ibe’s performance against Everton</strong></span></a></p>
+<p>Writing on <a href="http://www.kicca.com/Carra23/posts/54d6933dcc10edc7a09f756a" target="_blank"><em>Kicca</em></a>, Carragher said: &#8220;A big well done to Jordan Ibe today but more importantly to Brendan Rodgers for being brave enough to play him in such a big game &amp; Alex Inglerhorpe &amp; the rest of the academy staff for the help in his development. People talk about giving youngsters a chance but few do; you can never throw that at Brendan Rodgers.&#8221;</p>
+<p>He was also quick to alert his fellow <em>Sky Sports</em> pundit and England coach Gary Neville to Ibe&#8217;s impressive display, joking that he could help the national team to win a game at Euro 2016 after a disappointing World Cup campaign.</p>
+<blockquote class="twitter-tweet" lang="en"><p>,<a href="https://twitter.com/GNev2">@GNev2</a> Gary Lfc look like they may be providing you with another player then hopefully we may win a game at the Euros!</p>
+<p>— Jamie Carragher (@Carra23) <a href="https://twitter.com/Carra23/status/564195147584659457">February 7, 2015</a></p></blockquote>
+<div id="attachment_295628" style="width: 810px" class="wp-caption alignnone"><a href="http://www.squawka.com/news/wp-content/uploads/2015/02/4532534.jpg"><img class="size-full wp-image-295628" alt="Ibe in action for Derby" src="http://www.squawka.com/news/wp-content/uploads/2015/02/4532534.jpg" width="800" height="532"/></a><p class="wp-caption-text">Ibe in action for Derby</p></div>
+<p>Ibe spent the first-half of the current campaign on loan at Derby, helping the Championship club in their bid to secure promotion to the top flight. He scored five goals and registered one assist in 20 league appearances for Steve McClaren&#8217;s side before being recalled last month.</p>
+<p style="text-align: center;"><span style="color: #ff0000;"><a href="http://www.squawka.com/players/jordon-ibe/stats#performance-score#liverpool-(current)#english-barclays-premier-league#8#season-2014/2015#126#all-matches#1-24#by-match" target="_blank"><span style="color: #ff0000;">Ibe has averaged 96% pass accuracy in the Premier League this season.</span></a></span></p>
+<p><iframe src="http://renderer.qmerce.com/interaction/54d1c9e9a2eb4c42433e855c" height="338" width="100%" frameborder="0" scrolling="no"></iframe></p>
+<div pw:image='' class='pw-widget pw-size-large pw-horizontal' pw:url="http://www.squawka.com/news/jamie-carragher-praises-brendan-rodgers-brave-decision-to-start-jordan-ibe-against-everton/295826" pw:title="Jamie Carragher praises Brendan Rodgers&#8217; &#8220;brave&#8221; decision to start Jordon Ibe against Everton">
+<a class='pw-button-facebook'></a>
+<a class='pw-button-twitter'></a>
+<a class='pw-button-email'></a>
+<a class='pw-button-stumbleupon'></a>
+<a class='pw-button-digg'></a>
+</div>
+<div id='jp-relatedposts' class='jp-relatedposts'>
+<h3 class="jp-relatedposts-headline"><em>Related Articles</em></h3>
+</div>  
+<div class="topics">
+<p><span class="title">Topics:</span> <a href="http://www.squawka.com/news/tag/brendan-rodgers" rel="tag">Brendan Rodgers</a>, <a href="http://www.squawka.com/news/tag/jamie-carragher" rel="tag">Jamie Carragher</a>, <a href="http://www.squawka.com/news/tag/jordon-ibe" rel="tag">Jordon Ibe</a></p>
+</div>
+<div class="topics teams">
+<p><span class="title">Related Teams:</span> <a href="http://www.squawka.com/news/teams/liverpool" rel="tag">Liverpool</a><br/></p>
+</div>
+<div class="mob-ad" id="mob-ad-lower">
+<div id="mob-ad-cont">
+ 
+ 
+<div id="5246323">
+ 
+<noscript><a href="http://adserver.adtech.de/adlink|3.0|1587.1|5246323|0|3055|ADTECH;loc=300;key=key1+key2+key3+key4;alias=" target="_blank"><img src="http://adserver.adtech.de/adserv|3.0|1587.1|5246323|0|3055|ADTECH;loc=300;key=key1+key2+key3+key4;alias=" border="0" width="320" height="50"></a></noscript>
+</div>
+</div>
+</div>
+</div>  
+<footer class="entry-meta">
+<div class="author-meta">
+<div class="left">
+<div class="author-image-clip">
+</div>
+</div>
+<div class="middle">
+ <h6>Daniel Anwar</h6> 
+<div class="author-bio">
+<div class="the-bio"> </div><a href="http://www.squawka.com/news/author/daniel-anwar" title="View more Squawka football news articles by Daniel Anwar">View more from Daniel Anwar &raquo;</a>
+</div>
+<div class="twitter-button">
+<a href="https://twitter.com/@dan_anwar" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @@dan_anwar</a>
+<script>
+                            !function (d, s, id) {
+                                var js, fjs = d.getElementsByTagName(s)[0];
+                                if (!d.getElementById(id)) {
+                                    js = d.createElement(s);
+                                    js.id = id;
+                                    js.src = "//platform.twitter.com/widgets.js";
+                                    fjs.parentNode.insertBefore(js, fjs);
+                                }
+                            }(document, "script", "twitter-wjs");
+                        </script>
+</div>
+</div>
+<div class="right">
+</div>
+</div> 
+</footer> 
+ 
+<div id="sq-ob-container">
+<div class="ob-mob">
+<div class="OUTBRAIN" data-widget-id="MB_1" data-src="http://www.squawka.com/news/jamie-carragher-praises-brendan-rodgers-brave-decision-to-start-jordan-ibe-against-everton/295826" data-ob-template="SquawkaLimited"></div>
+</div>
+<div class="ob-dt">
+<div class="OUTBRAIN" data-widget-id="AR_1" data-src="http://www.squawka.com/news/jamie-carragher-praises-brendan-rodgers-brave-decision-to-start-jordan-ibe-against-everton/295826" data-ob-template="SquawkaLimited"></div>
+</div>
+</div>
+</article> 
+<div id="house-rules">
+<h3>Comments</h3>
+<p>Please consult these rules when commenting. These rules outline what is acceptable and unacceptable content on Squawka News. Note that these rules are subject to change at any time. Just like football.</p>
+<a href="javascript:void(0)">See commenting rules</a>
+<div id="rules">
+<ol>
+<li>
+<h4>Language</h4>
+<p>Don't use swear words or profanity of any sort. Please refrain from insulting other users, everyone is entitled to their opinion and just because you shout the loudest, doesn't make you more correct or valid in your point of view. All insulting or offensive comments will be immediately removed.</p>
+</li>
+<li>
+<h4>No libel or other abuse</h4>
+<p>At no point should you be making comments which are:</p>
+<ul>
+<li>defamatory, false or misleading;</li>
+<li>insulting, threatening or abusive;</li>
+<li>obscene or of a sexual nature;</li>
+<li>offensive, racist, sexist, homophobic or discriminatory against any religions or other groups.</li>
+</ul>
+<p>We have an absolute zero tolerance policy on this. Football is the world's language.</p>
+</li>
+<li>
+<h4>Report abuse</h4>
+<p>If you see a comment not adhering to rules 1 & 2 please email <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="9df4f3fbf2ddeeece8fceaf6fcb3fef2f0">[email&#160;protected]</a><script cf-hash='f9e31' type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/* ]]> */</script> and this comment will be reviewed by a member of the Squawka editorial team.</p>
+</li>
+<li>
+<h4>No third party promotion</h4>
+<p>This comment section is here to let football fans talk about football, not to allow people to sell or push products. Any comment found peddling a third party will be immediately reviewed.</p>
+</li>
+<li>
+<h4>No linking or copyright infringement</h4>
+<p>You must not insert links to websites or submit content which would be an infringement of copyright.</p>
+</li>
+<li>
+<h4>Play the game/Respect the game</h4>
+<p>Please respect these rules when commenting on Squawka News; people will disagree from time to time but please try to see each other's point of view before getting all worked up, that helps no one.</p>
+</li>
+</ol>
+</div>
+</div>
+<script>
+  (function($) {
+    $(function() {
+      if (!$('#fb-root').size()) {
+        $('body').append('<div id="fb-root"></div>');
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk')); 
+      }
+    });
+    $.post('http://www.squawka.com/news/wp-admin/admin-ajax.php', {
+      action: 'fbc_ping',
+      post_id: '295826',
+      nonce: '0436a5203c'
+    });  
+  })(jQuery);
+</script>
+<a name="comments"></a>
+<style>#FatPandaFacebookComments{width:100%;}.fb-comments{width:85%!important;display:block!important;margin:0 auto;padding-bottom:20px;}.fb-comments *{width:100%!important;}</style>
+<div id="FatPandaFacebookComments">
+<noscript>
+<div class="facebook even thread-even depth-1" id="comment-196149">
+<div class="comment-author vcard">
+<cite class="fn"><a href='http://facebook.com/profile.php?id=617922330' rel='external nofollow' class='url'>Simon Connor</a></cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="http://www.squawka.com/news/jamie-carragher-praises-brendan-rodgers-brave-decision-to-start-jordan-ibe-against-everton/295826#comment-196149">
+February 8, 2015 at 10:15 pm</a> </div>
+<p>Carra was only saying the other week that Can wasn&#8217;t a defender. I wonder if he still thinks that after that majestic performance yesterday. Lets see how brave Rodgers is after we see Tuesday&#8217;s selection. Because yesterday he made one or two which was quite frankly, pathetic.</p>
+</div> 
+</noscript>
+<div class="fb-comments" data-colorscheme="light" data-href="http://www.squawka.com/news/jamie-carragher-praises-brendan-rodgers-brave-decision-to-start-jordan-ibe-against-everton/295826" data-num-posts="10" data-publish_feed="true"></div>
+</div>
+</div>
+<div id='related-right'>
+<div id="new-right-sidebar" role="complimentary">
+<div id="new-right-sidebar-container">
+<ul id="new-right-sidebar-widget-area">
+<li id="news-now-widget" class="widget">
+<div class="widget-content">
+<div id="newsnowlogo" title="Click here for more Football news from NewsNow" onclick="window.open('http://www.newsnow.co.uk/h/Sport/Football', 'newsnow')" style="width:300px;margin:0;padding:0;border:1px solid #ccc;background:#555;color:#fff;font-size:11px;line-height:14px;font-family:Verdana,Arial,Helvetica,Sans-serif;font-weight:bold;"><div style="margin:0;padding:0;border:1px solid #fff;background:#555;"><div style="margin:0;padding:0;border:0;width:160px;height:50px;float:left;"><img src="http://www.squawka.com/news/wp-content/themes/squawka-blog/images/newsnow_f_ab.gif" alt="As featured on NewsNow: Football news" style="display:block;margin:0;padding:0;border:0;width:160px;height:50px;"/></div><div style="padding:0;border:0;margin:0 0 0 160px;text-align:center;"><span style="margin:0;padding:0;border:0;display:inline-block;vertical-align:middle;text-align:center;width:120px;"><a id="newsnowlogo_a" href="http://www.newsnow.co.uk/h/Sport/Football" target="newsnow" style="color:#fff;text-decoration:underline;">Football</a> News 24/7</span><span style="margin:0;padding:0;border:0;display:inline-block;height:50px;width:1px;vertical-align:middle;line-height:50px;font-size:1px;">&nbsp;</span></div></div></div> <script type="text/javascript"> document.getElementById('newsnowlogo').style.cursor = 'pointer';
+                        document.getElementById('newsnowlogo_a').style.textDecoration = 'none';
+                        document.getElementById('newsnowlogo_a').style.borderBottom = '0 none';</script>
+</div>
+</li>
+<li>
+ 
+ 
+<div id="5246382">
+ 
+<noscript><a href="http://adserver.adtech.de/adlink|3.0|1587.1|5246382|0|529|ADTECH;loc=300;key=key1+key2+key3+key4;alias=" target="_blank"><img src="http://adserver.adtech.de/adserv|3.0|1587.1|5246382|0|529|ADTECH;loc=300;key=key1+key2+key3+key4;alias=" border="0" width="300" height="600"></a></noscript>
+</div>
+</li>
+<li>
+<div class="OUTBRAIN" data-widget-id="SB_1" data-src="http://www.squawka.com/news/jamie-carragher-praises-brendan-rodgers-brave-decision-to-start-jordan-ibe-against-everton/295826" data-ob-template="SquawkaLimited"></div>
+</li>
+<li>
+ 
+ 
+<div id="5246344">
+ 
+<noscript><a href="http://adserver.adtech.de/adlink|3.0|1587.1|5246344|0|170|ADTECH;loc=300;key=key1+key2+key3+key4;alias=" target="_blank"><img src="http://adserver.adtech.de/adserv|3.0|1587.1|5246344|0|170|ADTECH;loc=300;key=key1+key2+key3+key4;alias=" border="0" width="300" height="250"></a></noscript>
+</div>
+</li>
+<li>
+ 
+ 
+<div id="5246360">
+ 
+<noscript><a href="http://adserver.adtech.de/adlink|3.0|1587.1|5246360|0|170|ADTECH;loc=300;key=key1+key2+key3+key4;alias=" target="_blank"><img src="http://adserver.adtech.de/adserv|3.0|1587.1|5246360|0|170|ADTECH;loc=300;key=key1+key2+key3+key4;alias=" border="0" width="300" height="250"></a></noscript>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div> 
+</div> 
+<div id="article-under-ad" class="banner-728x90">
+ 
+ 
+<div id="5246388">
+ 
+<noscript><a href="http://adserver.adtech.de/adlink|3.0|1587.1|5246388|0|225|ADTECH;loc=300;key=key1+key2+key3+key4;alias=" target="_blank"><img src="http://adserver.adtech.de/adserv|3.0|1587.1|5246388|0|225|ADTECH;loc=300;key=key1+key2+key3+key4;alias=" border="0" width="728" height="90"></a></noscript>
+</div>
+</div> 
+ 
+<div id="promotion-floater"><div id="promo-head"></div><a id="promo-icon" target="_blank" href="javascript:void(0)"><img src="http://www.squawka.com/news/wp-content/uploads/2015/03/4571388.jpg"></a><a id="promo-text" target="_blank" href="javascript:(void)"><span>QUIZ: Footballer's beards</span>Can you name the player from the beard?</a><a id="promo-close" href="javascript:void(0)"></a><a id="promo-cta" target="_blank" href="http://po.st/NqN4h2">SHOW NOW</a></div> 
+</div> 
+</div> 
+</div> 
+<div class="OUTBRAIN" data-widget-id="TR_1" data-src="http://www.squawka.com/news/promotion_floater/squawka-team-of-the-week" data-ob-template="SquawkaLimited"></div>
+<footer id="sq-footer">
+<div class="sq-live-container">
+<div class="one-column">
+<h2><a href="http://www.squawka.com">Squawka.com</a></h2>
+<ul>
+<li><a href="http://www.squawka.com/news">News</a></li>
+<li><a href="http://www.squawka.com/match-fixtures">Fixtures</a></li>
+<li><a href="http://www.squawka.com/match-results">Results</a></li>
+<li><a href="http://www.squawka.com/football-stats">Stats</a></li>
+<li><a href="http://www.squawka.com/live-feed">Live Feed</a></li>
+<li><a href="http://www.squawka.com/team-directory">Find a team/player</a></li>
+</ul>
+</div>
+<div class="one-column">
+<h2>About Squawka</h2>
+<ul>
+<li><a href="http://www.squawka.com/frequently-asked-questions">Help &AMP; FAQs</a></li>
+<li><a href="http://www.squawka.com/about-us">About us</a></li>
+<li><a href="http://www.squawka.com/football-stats-definitions">Stats Definitions</a></li>
+ 
+ 
+<li><a href="http://www.squawka.com/contact-us">Contact Squawka</a></li>
+</ul>
+<ul>
+<li><a href="http://www.squawka.com/terms-and-conditions">Terms</a></li>
+<li><a href="http://www.squawka.com/privacy-policy">Privacy</a></li>
+<li><a href="http://www.squawka.com/privacy-policy">Cookies</a></li>
+</ul>
+</div>
+<div class="one-column" id="social-col">
+<h2>Squawka app</h2>
+<a href="https://itunes.apple.com/us/app/the-squawka-football-app/id702770635" class="footer-app-button">
+<span class="ios-app-button"></span>Available on the App Store
+</a>
+<a class="footer-app-button">
+<span class="android-app-button"></span>Coming soon<br>Google Play
+</a>
+<h2>Squawka on social media</h2>
+<a target="_blank" href="https://en-gb.facebook.com/SquawkaFootball" class="footer-icon footer-facebook-icon"></a>
+<a target="_blank" href="https://twitter.com/Squawka" class="footer-icon footer-twitter-icon"></a>
+<a target="_blank" href="https://plus.google.com/100198740555938973433" class="footer-icon footer-googlep-icon"></a>
+<a target="_blank" href="http://instagram.com/squawkafootball" class="footer-icon footer-instagram-icon"></a>
+<a target="_blank" href="http://pinterest.com/squawkafootball" class="footer-icon footer-pinterest-icon"></a>
+</div>
+<div class="sq-live-underline"></div>
+<div class="float-left">
+<a href="http://www.squawka.com" class="squawka-footer-logo"></a>
+</div>
+<div class="float-right">
+Data licensed from
+<br>
+<div class="footer-opta-image"></div>
+</div>
+</div>
+</footer>
+ 
+<div id="cookie-policy">
+<div id="cookie-contain">
+<p>This site uses cookies. By continuing to browse the site you are agreeing to our use of cookies. Read our <a href="http://www.squawka.com/privacy-policy">privacy policy</a></p>
+<a class="cookie-button" href="JavaScript:void(0)">Continue</a>
+</div>
+</div>
+ 
+<script src="http://www.squawka.com/news/wp-content/themes/squawka-blog/js/egl-signup.js?ver=2"></script>
+<script type="text/javascript" src="http://widgets.outbrain.com/outbrain.js"></script>
+<script type="text/javascript" src="http://as.ebz.io/api/choixPubJS.htm?pid=1123850&home=http://www.squawka.com/&screenLayer=1"></script>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script>
+    //ADTECH ADS
+    var refreshRate = 90000;//90 secs ads refresh
+
+    if( typeof WURFL != 'undefined' && WURFL.is_mobile ) //mobile
+    {
+        ADTECH.config.page = {
+                    protocol: 'http',
+                    server: 'adserver.adtech.de',
+                    network: '1587.1',
+                    siteid: '717243',
+                    params: {
+                            loc: '100'
+                            }
+                    };
+        // Placement: mnews Bottom  320x50 (5246323) // created at: Sep 30, 2014 11:10:06 AM -->
+        ADTECH.config.placements[5246323] = {
+                    sizeid: '3055',
+                    params: {
+                            alias: '',
+                            target: '_blank'
+                            }
+                    };
+        // Placement: mnews Top 320x50 (5246322) // created at: Sep 30, 2014 11:10:06 AM -->
+        ADTECH.config.placements[5246322] = {
+                    sizeid: '3055',
+                    params: {
+                            alias: '',
+                            target: '_blank'
+                            }
+                    };         
+
+        ADTECH.enqueueAd(5246322);
+        ADTECH.enqueueAd(5246323);
+
+        ADTECH.executeQueue();
+        /* //Ad refresh
+        window.setInterval(function()
+        {
+            ADTECH.enqueueAd(5246322);
+            ADTECH.enqueueAd(5246323);
+
+            ADTECH.executeQueue();
+        },refreshRate);
+        */
+        //remove non-mobile
+        head.ready(function(){
+            $('#big-vid-cont, #related-right').remove();
+        });
+    }
+    else{
+    
+        ADTECH.config.page = {
+                protocol: 'http',
+                server: 'adserver.adtech.de',
+                network: '1587.1',
+                siteid: '717256',
+                fif : { useFif :true },
+                params: {
+                        loc: '100'
+                }
+        };
+
+        // Placement: News Articles Bottom 300x250 (5246360) // created at: Sep 30, 2014 11:10:29 AM -->
+        ADTECH.config.placements[5246360] = {
+                    sizeid: '170',
+                    params: {
+                            alias: '',
+                            target: '_blank'
+                            }
+                    };
+
+        // Placement: News Articles Top 728x90 (5246381) // created at: Sep 30, 2014 11:10:30 AM -->
+        ADTECH.config.placements[5246381] = {
+                    sizeid: '225',
+                    params: {
+                            alias: '',
+                            target: '_blank'
+                            }
+                    };
+
+        // Placement: News Articles Bottom 728x90 (5246388) // created at: Sep 30, 2014 11:10:30 AM -->
+        ADTECH.config.placements[5246388] = {
+                    sizeid: '225',
+                    params: {
+                            alias: '',
+                            target: '_blank'
+                            }
+                    };
+        // Placement: News Articles Middle 300x250 (5246344) // created at: Sep 30, 2014 11:10:30 AM --> 
+        ADTECH.config.placements[5246344] = {
+                    sizeid: '170',
+                    params: {
+                            alias: '',
+                            target: '_blank'
+                            }
+                    };
+        // Placement: News Articles Top 300x600 (5246382) // created at: Sep 30, 2014 11:10:30 AM -->         
+        ADTECH.config.placements[5246382] = {
+                    sizeid: '529',
+                    params: {
+                            alias: '',
+                            target: '_blank'
+                            }
+                    };
+
+        ADTECH.enqueueAd(5246360);
+        ADTECH.enqueueAd(5246381);
+        ADTECH.enqueueAd(5246388);
+        ADTECH.enqueueAd(5246344);
+        ADTECH.enqueueAd(5246382);
+        
+        ADTECH.executeQueue();
+        /* //Ad refresh
+        window.setInterval(function()
+        {
+            ADTECH.enqueueAd(5246360);
+            ADTECH.enqueueAd(5246381);
+            ADTECH.enqueueAd(5246388);
+            ADTECH.enqueueAd(5246344);
+            ADTECH.enqueueAd(5246382);
+
+            ADTECH.executeQueue();
+        },refreshRate);
+        */
+
+        }
+    // Custom script for Google Analytics reading/scrolling tracking (custom variables)
+    jQuery(function($) {
+        // Debug flag
+        var debugMode = false;
+
+        // Default time delay before checking location
+        var callBackTime = 100;
+
+        // # px before tracking a reader
+        var readerLocation = 180;
+
+        // Set some flags for tracking & execution
+        var timer = 0;
+        var scroller = false;
+        var endContent = false;
+        var didComplete = false;
+
+        // Set some time variables to calculate reading time
+        var startTime = new Date();
+        var beginning = startTime.getTime();
+        var totalTime = 0;
+
+        // Get some information about the current page
+        var pageTitle = document.title;
+
+        // Track the aticle load
+        if (!debugMode) {
+            _gaq.push(['_trackEvent', 'Reading', 'ArticleLoaded', '', , true]);
+        } else {
+            alert('The page has loaded. Woohoo.');    
+        }
+
+        // Check the location and track user
+        function trackLocation() {
+            bottom = $(window).height() + $(window).scrollTop();
+            height = $(document).height();
+
+            // If user starts to scroll send an event
+            if (bottom > readerLocation && !scroller) {
+                currentTime = new Date();
+                scrollStart = currentTime.getTime();
+                timeToScroll = Math.round((scrollStart - beginning) / 1000);
+                if (!debugMode) {
+                    _gaq.push(['_trackEvent', 'Reading', 'StartReading', '', timeToScroll]);
+                } else {
+                    alert('started reading ' + timeToScroll);
+                }
+                scroller = true;
+            }
+
+            // If user has hit the bottom of the content send an event
+            if (bottom >= $('.entry-content').scrollTop() + $('.entry-content').innerHeight() && !endContent) {
+                currentTime = new Date();
+                contentScrollEnd = currentTime.getTime();
+                timeToContentEnd = Math.round((contentScrollEnd - scrollStart) / 1000);
+                if (!debugMode) {
+                    _gaq.push(['_trackEvent', 'Reading', 'ContentBottom', '', timeToContentEnd]);
+                } else {
+                    alert('end content section '+timeToContentEnd);
+                }
+                endContent = true;
+            }
+
+            // If user has hit the bottom of page send an event
+            if (bottom >= height && !didComplete) {
+                currentTime = new Date();
+                end = currentTime.getTime();
+                totalTime = Math.round((end - scrollStart) / 1000);
+                if (!debugMode) {
+                    if (totalTime < 60) {
+                        _gaq.push(['_setCustomVar', 1, 'ReaderType', 'Scanner', 2]);
+                    } else {
+                        _gaq.push(['_setCustomVar', 1, 'ReaderType', 'Reader', 2]);
+                    }
+                    _gaq.push(['_trackEvent', 'Reading', 'PageBottom', pageTitle, totalTime]);
+                } else {
+                    alert('bottom of page '+totalTime);
+                }
+                didComplete = true;
+            }
+        }
+
+        // Track the scrolling and track location
+        $(window).scroll(function() {
+            if (timer) {
+                clearTimeout(timer);
+            }
+
+            // Use a buffer so we don't call trackLocation too often.
+            timer = setTimeout(trackLocation, callBackTime);
+        });
+    });
+
+</script>
+ 
+<script type="text/javascript" src="http://cdn.permutive.com/squawka.permutive.js"></script>
+<script>
+  $(function(){
+    permutive.start();
+  })
+</script>
+ 
+<div style="display:none">
+</div>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201514'></script>
+<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?ver=2015Apraa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.squawka.com/news/wp-content/plugins/jetpack/modules/wpgroho.js?ver=4.1'></script>
+<script type='text/javascript' src='http://www.squawka.com/news/wp-content/themes/squawka-blog/js/skip-link-focus-fix.js?ver=20130115'></script>
+<script type='text/javascript' src='http://www.squawka.com/news/wp-includes/js/comment-reply.min.js?ver=4.1'></script>
+<script src="http://stats.wp.com/e-201514.js" type="text/javascript"></script>
+<script type="text/javascript">
+	st_go({v:'ext',j:'1:3.3',blog:'85373402',post:'295826',tz:'1'});
+	var load_cmc = function(){linktracker_init(85373402,295826,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"7ce5a65388","applicationID":"5117658","transactionName":"YFxQMRcHWEdYUhcPDFkWcwYRD1laFkIKCARbXA==","queueTime":0,"applicationTime":136,"atts":"TBtTR18dS0k=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-632.min.js"}</script></body>
+</html>

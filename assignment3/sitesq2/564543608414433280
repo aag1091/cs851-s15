@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Higher high -WT- by MASAKI YODA on Spotify</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQ8PU1FTGwcHXVdTAgA="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:9,3:7,4:11,5:3,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:9,3:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>
+    <meta name="google" value="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-itunes-app" content="app-id=324684580, app-argument=http://open.spotify.com/album/6Jrnzcnx2jKxMJCCsLsS0C/3QlXC7frmvxXRTUXAif7fG">
+
+    
+    <meta property="og:site_name" content="Spotify">
+    <meta property="fb:app_id" content="174829003346">
+    <meta property="og:title" content="Higher high -WT-">
+    <meta property="og:description" content="Higher high -WT-, an album by MASAKI YODA on Spotify">
+    <meta property="og:url" content="https://open.spotify.com/album/6Jrnzcnx2jKxMJCCsLsS0C">
+    <meta property="og:image" content="http://o.scdn.co/cover/fe5d49e5844e9aabfe687939f81bf31e2cfcd1e5">
+    <meta property="og:type" content="music.album">
+    <meta property="og:audio" content="spotify:album:6Jrnzcnx2jKxMJCCsLsS0C">
+    <meta property="og:audio:type" content="audio/vnd.facebook.bridge">
+    <meta property="music:musician" content="https://open.spotify.com/artist/6Wb2k0ttrSumI30XTLwDwV">
+    <meta property="music:release_date" content="2014-12-03">
+    <meta property="music:song" content="https://open.spotify.com/track/1zzu6vftWZwKnlF9zyUPvG">
+    <meta property="music:song:disc" content="1">
+    <meta property="music:song:track" content="1">
+    <meta property="music:song" content="https://open.spotify.com/track/77dVTzvT0mraYcSIpsVRSc">
+    <meta property="music:song:disc" content="1">
+    <meta property="music:song:track" content="2">
+    <meta property="music:song" content="https://open.spotify.com/track/3QlXC7frmvxXRTUXAif7fG">
+    <meta property="music:song:disc" content="1">
+    <meta property="music:song:track" content="3">
+    <meta property="music:song" content="https://open.spotify.com/track/2rGxWFXrpTbCio4z2AmIHI">
+    <meta property="music:song:disc" content="1">
+    <meta property="music:song:track" content="4">
+    <meta property="music:song" content="https://open.spotify.com/track/55vLWtnvaN3HSXz2czB1g5">
+    <meta property="music:song:disc" content="1">
+    <meta property="music:song:track" content="5">
+    <meta property="music:song" content="https://open.spotify.com/track/7kozEaXPY9xP0HluJMSYLg">
+    <meta property="music:song:disc" content="1">
+    <meta property="music:song:track" content="6">
+    <meta property="music:song" content="https://open.spotify.com/track/6900YvD9rCWSdbbjMyKWcq">
+    <meta property="music:song:disc" content="1">
+    <meta property="music:song:track" content="7">
+    <meta property="music:song" content="https://open.spotify.com/track/6TkH8OXWbO68G4fOKuhhn0">
+    <meta property="music:song:disc" content="1">
+    <meta property="music:song:track" content="8">
+    <meta property="music:song" content="https://open.spotify.com/track/5U6Gz2FBkSLvvNoUazFJu7">
+    <meta property="music:song:disc" content="1">
+    <meta property="music:song:track" content="9">
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://open.spotify.com/album/6Jrnzcnx2jKxMJCCsLsS0C">
+    <meta property="twitter:image" content="http://o.scdn.co/cover/fe5d49e5844e9aabfe687939f81bf31e2cfcd1e5">
+    <meta property="twitter:description" content="An album by MASAKI YODA on Spotify">
+    <meta property="twitter:title" content="❂ Higher high -WT-">
+    <meta property="twitter:site" content="@spotify">
+    <meta property="twitter:app:id:iphone" content="324684580">
+    <meta property="twitter:app:id:ipad" content="324684580">
+    <meta property="twitter:app:id:googleplay" content="com.spotify.music">
+    <meta property="twitter:app:name:iphone" content="Spotify">
+    <meta property="twitter:app:name:ipad" content="Spotify">
+    <meta property="twitter:app:name:googleplay" content="Spotify">
+    <meta property="twitter:app:url:iphone" content="spotify:album:6Jrnzcnx2jKxMJCCsLsS0C">
+    <meta property="twitter:app:url:ipad" content="spotify:album:6Jrnzcnx2jKxMJCCsLsS0C">
+    <meta property="twitter:app:url:googleplay" content="spotify:album:6Jrnzcnx2jKxMJCCsLsS0C">
+    <meta property="al:android:app_name" content="Spotify">
+    <meta property="al:android:package" content="com.spotify.music">
+    <meta property="al:android:url" content="spotify://album/6Jrnzcnx2jKxMJCCsLsS0C">
+    <meta property="al:ios:app_name" content="Spotify">
+    <meta property="al:ios:app_store_id" content="324684580">
+    <meta property="al:ios:url" content="spotify://album/6Jrnzcnx2jKxMJCCsLsS0C">
+    <meta property="description" content="Higher high -WT-, an album by MASAKI YODA on Spotify. Don&#x27;t have Spotify? Get it at Spotify.com &ndash; it&#x27;s free!">
+
+    <link rel="alternate" href="android-app://com.spotify.music/spotify/album/6Jrnzcnx2jKxMJCCsLsS0C" />
+    <link rel="stylesheet" media="screen" type="text/css" href="//open.spotify.com/static/m/style.cat.bad6b5b.css">
+    <link rel="icon" href="http://d2c87l0yth4zbw.cloudfront.net/i/_global/favicon.png">
+
+<!--[if lt IE 9]>
+    <script src="http://open.spotify.com/static/m/script.ie.65812f3.js"></script>
+<![endif]-->
+<!--[if IE]><link rel="shortcut icon" href="http://d2c87l0yth4zbw.cloudfront.net/i/_global/favicon.ico"><![endif]-->
+<style>
+  #bg {
+    background: url(//i.scdn.co/image/fe5d49e5844e9aabfe687939f81bf31e2cfcd1e5) center no-repeat;
+    background-size: cover;
+  }
+</style>
+</head>
+<body id="body" class="m-gb ">
+  <!-- Google Tag Manager -->
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-7BJJ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <script>
+  dataLayer = [];
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-7BJJ');
+  </script>
+    <!-- End Google Tag Manager -->
+
+
+  <div id="bg">
+    <div id="bg-overlay"></div>
+  </div>
+  <div id="cookie-notice" class="shown">
+    <a href="#" class="close">&times;</a>
+    <p>We - and our partners - use cookies to deliver our services and to show you ads based on your interests. By using our website, you agree to the use of cookies as described in our <a href="https://www.spotify.com/se/legal/privacy-policy/#cookies" target="_blank">Cookie Policy.</a></p>
+  </div>
+  <div id="main-header">
+    <div class="container">
+      <div class="row">
+        <a class="logo-link" href="//spotify.com">
+          <img id="header-logo" src="//open.spotify.com/static/images/logo-1x.png" srcset="//open.spotify.com/static/images/logo-1x.png 1x, //open.spotify.com/static/images/logo-2x.png 2x" alt="Spotify">
+          <img id="header-logo-small" src="//open.spotify.com/static/images/logo-white-1x.png" srcset="//open.spotify.com/static/images/logo-white-1x.png 1x, //open.spotify.com/static/images/logo-white-2x.png 2x" alt="Spotify">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container content-body album-body" itemscope itemtype="http://schema.org/MusicAlbum">
+    <meta itemprop="description" content="Higher high -WT-, an album by MASAKI YODA on Spotify">
+    			<meta itemprop="url" content="https://open.spotify.com/album/6Jrnzcnx2jKxMJCCsLsS0C" />
+    			<meta itemprop="url" content="android-app://com.spotify.music/spotify/album/6Jrnzcnx2jKxMJCCsLsS0C" />
+    			<div itemprop="potentialAction" itemscope itemtype="http://schema.org/ListenAction">
+    				<meta itemprop="target" content="https://open.spotify.com/album/6Jrnzcnx2jKxMJCCsLsS0C" />
+    				<meta itemprop="target" content="android-app://com.spotify.music/spotify/album/6Jrnzcnx2jKxMJCCsLsS0C" />
+    			</div>
+    <div class="header-owner row">
+      <div class="owner-info">
+        <a href="/artist/6Wb2k0ttrSumI30XTLwDwV">
+        <div class="media-object media-object-image media-object-simple media-object-artist media-object-link owner-image"
+          data-context data-uri="spotify:artist:6Wb2k0ttrSumI30XTLwDwV" data-contextmenu draggable="true">
+          <div class="mo-wrapper">
+            <div class="mo-image-wrapper">
+              <span>
+              <svg class="mo-placeholder" viewBox="0 0 10 10" preserveAspectRatio="xMidYMid meet">
+                <text class="playlist-placeholder" x="5" y="9.8">&#xf135;</text>
+                <text class="album-placeholder" x="5" y="9.8">&#xf101;</text>
+                <text class="artist-placeholder" x="5" y="9.8">&#xf103;</text>
+                <text class="user-placeholder" x="5" y="9.8">&#xf15d;</text>
+                <text class="genre-placeholder" x="5" y="9.8">&#xf109;</text>
+              </svg>
+              
+                <div class="mo-image-background-color">
+                    <div class="mo-image-background" style="background-image: url(//i.scdn.co/image/13d804c6af96e10e177b1c2abe5a14f05858439a)"></div>
+                </div>
+              
+                <div class="mo-image" style="background-image: url(//i.scdn.co/image/13d804c6af96e10e177b1c2abe5a14f05858439a)">
+                  <span class="mo-verified">
+                    <span class="spoticon-check-16"></span>
+                  </span>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+        </a>
+        <a href="/artist/6Wb2k0ttrSumI30XTLwDwV" class="owner-name hdr-l">MASAKI YODA</a>
+      </div>
+    </div>
+    <div class="row">
+      <header class="header header-album" data-uri="spotify:album:6Jrnzcnx2jKxMJCCsLsS0C">
+        <section class="h-main-content container clearfix">
+          <div class="h-media">
+            <div class="media-object media-object-image media-object-simple media-object-album media-object-link"
+              data-context data-uri="spotify:album:6Jrnzcnx2jKxMJCCsLsS0C" data-contextmenu draggable="true">
+              <div class="mo-wrapper">
+                <div class="mo-image-wrapper">
+                  <span>
+                  <svg class="mo-placeholder" viewBox="0 0 10 10" preserveAspectRatio="xMidYMid meet">
+                    <text class="playlist-placeholder" x="5" y="9.8">&#xf135;</text>
+                    <text class="album-placeholder" x="5" y="9.8">&#xf101;</text>
+                    <text class="artist-placeholder" x="5" y="9.8">&#xf103;</text>
+                    <text class="user-placeholder" x="5" y="9.8">&#xf15d;</text>
+                    <text class="genre-placeholder" x="5" y="9.8">&#xf109;</text>
+                  </svg>
+                  
+                  
+                    <div class="mo-image" style="background-image: url(//i.scdn.co/image/fe5d49e5844e9aabfe687939f81bf31e2cfcd1e5)">
+                      <span class="mo-verified">
+                        <span class="spoticon-check-16"></span>
+                      </span>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="h-data">
+            <span class="h-label">album &middot; 2014</span>
+            <h1 class="h-title">Higher high -WT-</h1>
+            <a href="/artist/6Wb2k0ttrSumI30XTLwDwV" class="button owner-action">MASAKI YODA</a>
+            <div class="h-controllers">
+              <button id="item-action" class="button button-primary">
+                <span id="item-action-text">Download Spotify</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </header>
+
+    </div>
+    <div class="tracklist-wrapper">
+        <table class="tracklist-album tracklist playable-list" data-uri="spotify:album:6Jrnzcnx2jKxMJCCsLsS0C"
+data-list="true"
+data-context="true"
+>
+          <thead class="tl-header">
+            <tr>
+              <th class="tl-number">#</th>
+                <th class="tl-name-with-featured">Song</th>
+                <th class="tl-explicit"></th>
+              <th class="tl-time
+" ></th>
+              <th class="tl-popularity"></th>
+            </tr>
+          </thead>
+          <tbody class="tl-body" data-list-items="true"
+data-scroll-container
+>
+                  <tr tabindex="0"
+                      aria-label="Noise and Tone by . Press Enter to play."
+                      data-list-item="true" data-uri="spotify:track:1zzu6vftWZwKnlF9zyUPvG"
+                      data-index="0"
+                      data-context-index="0"
+                      data-scroll-page-item="" draggable="true"
+                      data-log-data='{
+                        "index": 0,
+                        "target_uri": "spotify:track:1zzu6vftWZwKnlF9zyUPvG",
+                        "name": "Noise and Tone"
+                      }'
+                      class="tl-row
+                        
+                        
+                        
+                        
+                        
+                      "
+                      data-contextmenu>
+                    <td class="tl-cell tl-number">
+                      <span class="tl-number-wrap">1</span>
+                      <button type="button" data-button="play" data-log-click="play-button" class="button button-icon-only button-play"></button>
+                    </td>
+                      <td class="tl-cell tl-name-with-featured" colspan="2">
+                    <div class="tl-highlight  ">
+                      <strong class="tl-name-name">Noise and Tone</strong>
+                      
+                      <span class="tl-featuring">
+                        
+                      </span>
+                      <div class="tl-name-more text-muted">
+                        MASAKI YODA
+                      </div>
+                    </div>
+                    
+                    </td>
+                    <td class="tl-cell tl-time" data-log-context="time-cell">
+                      <span data-log-click="duration">4:36</span>
+                    </td>
+                    <td class="tl-cell tl-popularity">
+                      <div class="pop-meter">
+                        <div class="pop-meter-background"></div>
+                        <div class="pop-meter-overlay" style="width: 25%"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr tabindex="0"
+                      aria-label="Higher High by . Press Enter to play."
+                      data-list-item="true" data-uri="spotify:track:77dVTzvT0mraYcSIpsVRSc"
+                      data-index="1"
+                      data-context-index="1"
+                      data-scroll-page-item="" draggable="true"
+                      data-log-data='{
+                        "index": 1,
+                        "target_uri": "spotify:track:77dVTzvT0mraYcSIpsVRSc",
+                        "name": "Higher High"
+                      }'
+                      class="tl-row
+                        
+                        
+                        
+                        
+                        
+                      "
+                      data-contextmenu>
+                    <td class="tl-cell tl-number">
+                      <span class="tl-number-wrap">2</span>
+                      <button type="button" data-button="play" data-log-click="play-button" class="button button-icon-only button-play"></button>
+                    </td>
+                      <td class="tl-cell tl-name-with-featured" colspan="2">
+                    <div class="tl-highlight  ">
+                      <strong class="tl-name-name">Higher High</strong>
+                      
+                      <span class="tl-featuring">
+                        
+                      </span>
+                      <div class="tl-name-more text-muted">
+                        MASAKI YODA
+                      </div>
+                    </div>
+                    
+                    </td>
+                    <td class="tl-cell tl-time" data-log-context="time-cell">
+                      <span data-log-click="duration">4:48</span>
+                    </td>
+                    <td class="tl-cell tl-popularity">
+                      <div class="pop-meter">
+                        <div class="pop-meter-background"></div>
+                        <div class="pop-meter-overlay" style="width: 25%"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr tabindex="0"
+                      aria-label="For Happiness by . Press Enter to play."
+                      data-list-item="true" data-uri="spotify:track:3QlXC7frmvxXRTUXAif7fG"
+                      data-index="2"
+                      data-context-index="2"
+                      data-scroll-page-item="" draggable="true"
+                      data-log-data='{
+                        "index": 2,
+                        "target_uri": "spotify:track:3QlXC7frmvxXRTUXAif7fG",
+                        "name": "For Happiness"
+                      }'
+                      class="tl-row
+                        
+                        selected
+                        
+                        
+                        
+                      "
+                      data-contextmenu>
+                    <td class="tl-cell tl-number">
+                      <span class="tl-number-wrap">3</span>
+                      <button type="button" data-button="play" data-log-click="play-button" class="button button-icon-only button-play"></button>
+                    </td>
+                      <td class="tl-cell tl-name-with-featured" colspan="2">
+                    <div class="tl-highlight  ">
+                      <strong class="tl-name-name">For Happiness</strong>
+                      
+                      <span class="tl-featuring">
+                        
+                      </span>
+                      <div class="tl-name-more text-muted">
+                        MASAKI YODA
+                      </div>
+                    </div>
+                    
+                    </td>
+                    <td class="tl-cell tl-time" data-log-context="time-cell">
+                      <span data-log-click="duration">5:49</span>
+                    </td>
+                    <td class="tl-cell tl-popularity">
+                      <div class="pop-meter">
+                        <div class="pop-meter-background"></div>
+                        <div class="pop-meter-overlay" style="width: 25%"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr tabindex="0"
+                      aria-label="No Return by . Press Enter to play."
+                      data-list-item="true" data-uri="spotify:track:2rGxWFXrpTbCio4z2AmIHI"
+                      data-index="3"
+                      data-context-index="3"
+                      data-scroll-page-item="" draggable="true"
+                      data-log-data='{
+                        "index": 3,
+                        "target_uri": "spotify:track:2rGxWFXrpTbCio4z2AmIHI",
+                        "name": "No Return"
+                      }'
+                      class="tl-row
+                        
+                        
+                        
+                        
+                        
+                      "
+                      data-contextmenu>
+                    <td class="tl-cell tl-number">
+                      <span class="tl-number-wrap">4</span>
+                      <button type="button" data-button="play" data-log-click="play-button" class="button button-icon-only button-play"></button>
+                    </td>
+                      <td class="tl-cell tl-name-with-featured" colspan="2">
+                    <div class="tl-highlight  ">
+                      <strong class="tl-name-name">No Return</strong>
+                      
+                      <span class="tl-featuring">
+                        
+                      </span>
+                      <div class="tl-name-more text-muted">
+                        MASAKI YODA
+                      </div>
+                    </div>
+                    
+                    </td>
+                    <td class="tl-cell tl-time" data-log-context="time-cell">
+                      <span data-log-click="duration">4:03</span>
+                    </td>
+                    <td class="tl-cell tl-popularity">
+                      <div class="pop-meter">
+                        <div class="pop-meter-background"></div>
+                        <div class="pop-meter-overlay" style="width: 25%"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr tabindex="0"
+                      aria-label="Wheaer (Wheare) by . Press Enter to play."
+                      data-list-item="true" data-uri="spotify:track:55vLWtnvaN3HSXz2czB1g5"
+                      data-index="4"
+                      data-context-index="4"
+                      data-scroll-page-item="" draggable="true"
+                      data-log-data='{
+                        "index": 4,
+                        "target_uri": "spotify:track:55vLWtnvaN3HSXz2czB1g5",
+                        "name": "Wheaer (Wheare)"
+                      }'
+                      class="tl-row
+                        
+                        
+                        
+                        
+                        
+                      "
+                      data-contextmenu>
+                    <td class="tl-cell tl-number">
+                      <span class="tl-number-wrap">5</span>
+                      <button type="button" data-button="play" data-log-click="play-button" class="button button-icon-only button-play"></button>
+                    </td>
+                      <td class="tl-cell tl-name-with-featured" colspan="2">
+                    <div class="tl-highlight  ">
+                      <strong class="tl-name-name">Wheaer (Wheare)</strong>
+                      
+                      <span class="tl-featuring">
+                        
+                      </span>
+                      <div class="tl-name-more text-muted">
+                        MASAKI YODA
+                      </div>
+                    </div>
+                    
+                    </td>
+                    <td class="tl-cell tl-time" data-log-context="time-cell">
+                      <span data-log-click="duration">3:33</span>
+                    </td>
+                    <td class="tl-cell tl-popularity">
+                      <div class="pop-meter">
+                        <div class="pop-meter-background"></div>
+                        <div class="pop-meter-overlay" style="width: 25%"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr tabindex="0"
+                      aria-label="Practice4 by . Press Enter to play."
+                      data-list-item="true" data-uri="spotify:track:7kozEaXPY9xP0HluJMSYLg"
+                      data-index="5"
+                      data-context-index="5"
+                      data-scroll-page-item="" draggable="true"
+                      data-log-data='{
+                        "index": 5,
+                        "target_uri": "spotify:track:7kozEaXPY9xP0HluJMSYLg",
+                        "name": "Practice4"
+                      }'
+                      class="tl-row
+                        
+                        
+                        
+                        
+                        
+                      "
+                      data-contextmenu>
+                    <td class="tl-cell tl-number">
+                      <span class="tl-number-wrap">6</span>
+                      <button type="button" data-button="play" data-log-click="play-button" class="button button-icon-only button-play"></button>
+                    </td>
+                      <td class="tl-cell tl-name-with-featured" colspan="2">
+                    <div class="tl-highlight  ">
+                      <strong class="tl-name-name">Practice4</strong>
+                      
+                      <span class="tl-featuring">
+                        
+                      </span>
+                      <div class="tl-name-more text-muted">
+                        MASAKI YODA
+                      </div>
+                    </div>
+                    
+                    </td>
+                    <td class="tl-cell tl-time" data-log-context="time-cell">
+                      <span data-log-click="duration">5:00</span>
+                    </td>
+                    <td class="tl-cell tl-popularity">
+                      <div class="pop-meter">
+                        <div class="pop-meter-background"></div>
+                        <div class="pop-meter-overlay" style="width: 25%"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr tabindex="0"
+                      aria-label="What&#x27;s Up? by . Press Enter to play."
+                      data-list-item="true" data-uri="spotify:track:6900YvD9rCWSdbbjMyKWcq"
+                      data-index="6"
+                      data-context-index="6"
+                      data-scroll-page-item="" draggable="true"
+                      data-log-data='{
+                        "index": 6,
+                        "target_uri": "spotify:track:6900YvD9rCWSdbbjMyKWcq",
+                        "name": "What&#x27;s Up?"
+                      }'
+                      class="tl-row
+                        
+                        
+                        
+                        
+                        
+                      "
+                      data-contextmenu>
+                    <td class="tl-cell tl-number">
+                      <span class="tl-number-wrap">7</span>
+                      <button type="button" data-button="play" data-log-click="play-button" class="button button-icon-only button-play"></button>
+                    </td>
+                      <td class="tl-cell tl-name-with-featured" colspan="2">
+                    <div class="tl-highlight  ">
+                      <strong class="tl-name-name">What&#x27;s Up?</strong>
+                      
+                      <span class="tl-featuring">
+                        
+                      </span>
+                      <div class="tl-name-more text-muted">
+                        MASAKI YODA
+                      </div>
+                    </div>
+                    
+                    </td>
+                    <td class="tl-cell tl-time" data-log-context="time-cell">
+                      <span data-log-click="duration">4:27</span>
+                    </td>
+                    <td class="tl-cell tl-popularity">
+                      <div class="pop-meter">
+                        <div class="pop-meter-background"></div>
+                        <div class="pop-meter-overlay" style="width: 25%"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr tabindex="0"
+                      aria-label="Lha by . Press Enter to play."
+                      data-list-item="true" data-uri="spotify:track:6TkH8OXWbO68G4fOKuhhn0"
+                      data-index="7"
+                      data-context-index="7"
+                      data-scroll-page-item="" draggable="true"
+                      data-log-data='{
+                        "index": 7,
+                        "target_uri": "spotify:track:6TkH8OXWbO68G4fOKuhhn0",
+                        "name": "Lha"
+                      }'
+                      class="tl-row
+                        
+                        
+                        
+                        
+                        
+                      "
+                      data-contextmenu>
+                    <td class="tl-cell tl-number">
+                      <span class="tl-number-wrap">8</span>
+                      <button type="button" data-button="play" data-log-click="play-button" class="button button-icon-only button-play"></button>
+                    </td>
+                      <td class="tl-cell tl-name-with-featured" colspan="2">
+                    <div class="tl-highlight  ">
+                      <strong class="tl-name-name">Lha</strong>
+                      
+                      <span class="tl-featuring">
+                        
+                      </span>
+                      <div class="tl-name-more text-muted">
+                        MASAKI YODA
+                      </div>
+                    </div>
+                    
+                    </td>
+                    <td class="tl-cell tl-time" data-log-context="time-cell">
+                      <span data-log-click="duration">4:15</span>
+                    </td>
+                    <td class="tl-cell tl-popularity">
+                      <div class="pop-meter">
+                        <div class="pop-meter-background"></div>
+                        <div class="pop-meter-overlay" style="width: 25%"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr tabindex="0"
+                      aria-label="michisuu by . Press Enter to play."
+                      data-list-item="true" data-uri="spotify:track:5U6Gz2FBkSLvvNoUazFJu7"
+                      data-index="8"
+                      data-context-index="8"
+                      data-scroll-page-item="" draggable="true"
+                      data-log-data='{
+                        "index": 8,
+                        "target_uri": "spotify:track:5U6Gz2FBkSLvvNoUazFJu7",
+                        "name": "michisuu"
+                      }'
+                      class="tl-row
+                        
+                        
+                        
+                        
+                        
+                      "
+                      data-contextmenu>
+                    <td class="tl-cell tl-number">
+                      <span class="tl-number-wrap">9</span>
+                      <button type="button" data-button="play" data-log-click="play-button" class="button button-icon-only button-play"></button>
+                    </td>
+                      <td class="tl-cell tl-name-with-featured" colspan="2">
+                    <div class="tl-highlight  ">
+                      <strong class="tl-name-name">michisuu</strong>
+                      
+                      <span class="tl-featuring">
+                        
+                      </span>
+                      <div class="tl-name-more text-muted">
+                        MASAKI YODA
+                      </div>
+                    </div>
+                    
+                    </td>
+                    <td class="tl-cell tl-time" data-log-context="time-cell">
+                      <span data-log-click="duration">3:45</span>
+                    </td>
+                    <td class="tl-cell tl-popularity">
+                      <div class="pop-meter">
+                        <div class="pop-meter-background"></div>
+                        <div class="pop-meter-overlay" style="width: 24%"></div>
+                      </div>
+                    </td>
+                  </tr>
+          
+          </tbody>
+        </table>
+        <div class="col-sm-12 has-more-media-objects">
+        </div>
+      <div id="copyright" class="col-sm-12">
+        <div class="copyright text-muted">
+          <small>&copy; 2014 MARS PROJECT</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+
+    <div id="more" class="row">
+        <!--
+        -->
+    </div>
+  </div>
+    <script src="//open.spotify.com/static/m/script.landing.8e97c46.js"></script>
+
+  <script type="text/javascript">
+    (function() {
+      var env = new Spotify.Env({
+        autoplay: JSON.parse("false"),
+        context: {
+          uri: "spotify:album:6Jrnzcnx2jKxMJCCsLsS0C",
+          track: "spotify:track:3QlXC7frmvxXRTUXAif7fG",
+          type: "album"
+        },
+        strings: {
+          'Download Spotify': "Download Spotify",
+          'Play on Spotify': "Play on Spotify",
+          'View on Spotify': "View on Spotify",
+          'Follow on Spotify': "Follow on Spotify"
+        },
+        platform: "unknown",
+        isMobile: false,
+        downloadLinks: {"windows":"http:\/\/download.spotify.com\/SpotifySetup.exe","mac":"http:\/\/download.spotify.com\/SpotifyInstaller.zip","ios":"https:\/\/itunes.apple.com\/app\/id324684580","android":"http:\/\/play.google.com\/store\/apps\/details?id=com.spotify.music","kindlefire":"http:\/\/www.amazon.com\/Spotify-Kindle-Fire-Edition\/dp\/B008RBZA4A","blackberry":"http:\/\/appworld.blackberry.com\/webstore\/content\/118611","default":"http:\/\/www.spotify.com\/download"}
+      });
+
+      new Spotify.Landing({
+        env: env,
+        launcherElements: {
+          action: document.getElementById('item-action'),
+          actionText: document.getElementById('item-action-text'),
+          viewAllBtns: document.querySelectorAll('.view-more-media-objects')
+        },
+        remoteElements: {
+          remoteIframe: document.getElementById('remote')
+        }
+      });
+      var notice = document.getElementById('cookie-notice');
+      var closeButton = notice.querySelector('a.close');
+      if (notice && closeButton) {
+        Spotify.DOM.addListener(closeButton, 'click', function() {
+            Spotify.DOM.removeClass(notice, 'shown');
+            env.cookies.setCookie('cookieNoticeOpen', '1', '/');
+        });
+      }
+    })();
+  </script>
+
+  
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"74a85ac4f8","applicationID":"4796151","transactionName":"ZVZXNhFWDxFSVBZQDlwcdhcQQw4PHHAnbT5TX1cXDmgIBmxDEFgCWQ==","queueTime":0,"applicationTime":27,"atts":"SRFUQFlMHB8=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-632.min.js"}</script></body>
+</html>

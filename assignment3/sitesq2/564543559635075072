@@ -1,0 +1,344 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8"> 
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"XA4BV1JVGwYJUllRAwQ="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(4),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(5),"addEventListener"in window&&t(2),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(3),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:7,3:11,4:3,5:9,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1);t("loader").features.stn=!0,t(2),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(o){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=e(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=e(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var u=0;c>u;u++)n.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=l.info=NREUM.info;if(t&&t.licenseKey&&t.applicationID&&f&&f.body){s(h,function(e,n){e in t||(t[e]=n)}),l.proto="https"===p.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=f.createElement("script");e.src=l.proto+t.agent,f.body.appendChild(e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u="addEventListener",d="attachEvent",p=(""+location).split("?")[0],h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-593.min.js"},l=e.exports={offset:i(),origin:p,features:{}};f[u]?(f[u]("DOMContentLoaded",o,!1),c[u]("load",n,!1)):(f[d]("onreadystatechange",r),c[d]("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script><![endif]-->
+
+  <title>Getting Pounded By A Big Black Cock (BBC fucking White Dude) - XVIDEOS.COM</title>
+  <meta name="keywords" content="xvideos,xvideos.com, x videos,x video,porn,video,videos,,black,big,cock,white,gay,twink,dude" />
+  <meta name="description" content="XVIDEOS Getting Pounded By A Big Black Cock (BBC fucking White Dude) free">
+  <meta name="verify-v1" content="3Awl+ctS3GOag+hKJiSg9SQQ2MR/GwV8H/PAgMhGhcM=" />
+    
+  <meta http-equiv="pics-Label" content='(pics-1.1 "http://www.icra.org/pics/vocabularyv03/" l gen true for "http://xvideos.com" r (n 3 s 3 v 0 l 3 oa 0 ob 0 oc 0 od 0 oe 0 of 0 og 0 oh 0 c 3) gen true for "http://www.xvideos.com" r (n 3 s 3 v 0 l 3 oa 0 ob 0 oc 0 od 0 oe 0 of 0 og 0 oh 0 c 3))' />  
+  <link rel="meta" href="http://www.xvideos.com/labels.rdf" type="application/rdf xml" title="ICRA labels" />
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="XVideos" href="/rss/rss.xml">
+  <link rel="shortcut icon" href="http://static.xvideos.com/img/favicon_xvideos.ico">
+
+  <link rel="stylesheet" href="http://static.xvideos.com/v2/css/xv-styles.css?v=19">
+    <link rel="stylesheet" href="http://static.xvideos.com/v2/css/xv-video-styles.css?v=7">
+      
+  <script src="http://static.xvideos.com/v2/js/libs/modernizr-2.6.2.min.js"></script>
+  
+  <script type="text/javascript">
+    var master_url = "xvideos.com";
+	var id_cdn = 1;
+  </script>
+  <script src="http://static.xvideos.com/v2/js/script-head.js?v=4"></script>
+  <script src="http://static.xvideos.com/v2/js/mobile.js"></script>
+</head><body>
+  <script type="text/javascript">
+  var wpn_ad_configuration = [{"type":"square","nb_ban":2,"div_id":"wpn_ad_square"},{"type":"footer","nb_ban":1,"div_id":"wpn_ad_footer"}]
+  var wpn_ad_site = "xvideos";
+  var wpn_ad_category = "gay";
+  var wpn_ad_tracker = "";
+  </script>
+  <div id="page">
+    <header>
+      <div class="whiteStripe clearfix">
+        <a href="/" title="XVideos Home" id="mainLogo">
+          <img src="http://img100.xvideos.com/videos/thumbs/xvideos.gif" alt="XVideos Home" id="siteLogo" />
+          <h1 class="hidden">XVIDEOS.COM</h1>
+        </a>
+        <form action="/" method="get" id="searchForm">
+          <input type="text" name="k" value="" id="q" maxlength="2048" size="30" />
+          <input type="submit" value="Search" id="searchSubmit" />
+        </form>
+        <h2 class="secondary"><span class="redText">BIGGER</span> and <span class="redText">BETTER</span> than the others... <span class="redText">X</span><strong>VIDEOS.COM</strong></h2>
+      </div>
+      
+      <div class="redStripe clearfix" id="mainMenu">
+        <ul>
+          <li><a href="/">New Videos</a></li>
+          <li><a href="/best/">Best Videos</a></li>
+          <li><a href="/pornstars">Pornstars</a></li>
+          <li><a href="/channels">Channels</a></li>
+          <li><a href="/profileslist">Profiles</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="http://forum.xnxx.com/">Forum</a></li>
+          <li><a href="http://multi.xnxx.com/">Porn Pics</a></li>
+          <li><a rel="nofollow" href="http://www.ant.com/video-downloader/" target="_blank"><strong>Video Downloader</strong></a></li>
+        </ul>
+      </div>
+      
+      <div class="blackStripe clearfix" id="secondaryMenu">
+        <p>
+          <a href="http://upload.xvideos.com/account/create"><b>Create account</b></a> | <a href="http://upload.xvideos.com/account"><b>Log in</b></a>
+        </p>
+      </div>
+      
+    </header>
+    
+    <div id="main">
+      <!-- dispo - Sat, 28 Mar 15 20:42:43 +0000 Exist (set in array). Loaded ! Video exist and loaded. Video exist OK.  -->
+      
+            
+            
+      <h2>Getting Pounded By A Big Black Cock (BBC fucking White Dude) <span class="duration">- 35 sec</span></h2>
+      
+      <script language="javascript" type="text/javascript">
+        id_video = 10392141;
+      </script>
+    
+      <ul id="video-tags">
+                <li>Uploader: </li>
+        <li class="profile_name"><a href="/profiles/djohnsonbb">Djohnsonbb</a>.</li>
+                <li><em>Tagged: </em></li>
+                        <li><a href="/tags/black">black</a>, </li>
+                                <li><a href="/tags/big">big</a>, </li>
+                                <li><a href="/tags/cock">cock</a>, </li>
+                                <li><a href="/tags/white">white</a>, </li>
+                                <li><a href="/tags/gay">gay</a>, </li>
+                                <li><a href="/tags/twink">twink</a>, </li>
+                                <li><a href="/tags/dude">dude</a>, </li>
+                        <li>more <a href="/tags/"><strong>tags</strong></a>.</li>
+      </ul>
+      
+            
+      <div id="content">
+        
+        <div id="video-ad">
+          <div id="wpn_ad_square">
+            
+          </div>
+        </div>
+        
+        <!-- PLAYER FLASH -->
+        <!-- NEW VERSION -->
+        <div id="player" style="font-size:18px; color:black; font-weight: bold; background-color: #000000;">
+			
+			<embed type="application/x-shockwave-flash" id="flash-player-embed" wmode="transparent" src="http://static.xvideos.com/swf/xv-player.swf" quality="high" allowfullscreen="true" allowscriptaccess="always" flashvars="id_video=10392141&amp;theskin=default&amp;flv_url=http%3A%2F%2Fporn.im.80521c00.10392141.x.xvideos.com%2Fvideos%2Fflv%2F2%2Fe%2Fe%2Fxvideos.com_2ee7c2f2f36a0aa58c5e4a7edb4b030d.flv%3Fe%3D1428113879%26ri%3D1024%26rs%3D85%26h%3Da9a391d625c57daeab482678f3c99a59&amp;url_bigthumb=http://img100-141.xvideos.com/videos/thumbslll/2e/e7/c2/2ee7c2f2f36a0aa58c5e4a7edb4b030d/2ee7c2f2f36a0aa58c5e4a7edb4b030d.15.jpg&amp;key=ea8386016789e835b78d08400d387ef9-1428103079&amp;id_cdn=1&amp;height=480&amp;width=612&amp;related=House%2BBoy%2BPart%2B4%7C%2Fvideo6831373%2Fhouse_boy_part_4%7Chttp%3A%2F%2Fimg100-373.xvideos.com%2Fvideos%2Fthumbs%2Fef%2F9a%2Fd0%2Fef9ad0cfe4262fb315233937e72499e8%2Fef9ad0cfe4262fb315233937e72499e8.28.jpg%7C17+min%3BDouble%2BMonster%2BDick%2BDestruction%7C%2Fvideo1176896%2Fdouble_monster_dick_destruction%7Chttp%3A%2F%2Fimg100-896.xvideos.com%2Fvideos%2Fthumbs%2Fc4%2F21%2Fe5%2Fc421e50ccef89b140c6f2d2f0d3189ca%2Fc421e50ccef89b140c6f2d2f0d3189ca.21.jpg%7C4+min%3BYoung%2Btwink%2Bgets%2Bhis%2Bass%2Bpounded%2Bby%2Ba%2Bmature%2Bhunk%7C%2Fvideo2986468%2Fyoung_twink_gets_his_ass_pounded_by_a_mature_hunk%7Chttp%3A%2F%2Fimg100-468.xvideos.com%2Fvideos%2Fthumbs%2Fb1%2F24%2F9c%2Fb1249c59593d2a8ffff92f0a65c5d9ad%2Fb1249c59593d2a8ffff92f0a65c5d9ad.29.jpg%7C5+min%3BSuckin%2Ba%2Bbig%2BDick%2Bin%2Ba%2BPublic%2BToilet%2BUrinal%7C%2Fvideo410110%2Fsuckin_a_big_dick_in_a_public_toilet_urinal%7Chttp%3A%2F%2Fimg100-110.xvideos.com%2Fvideos%2Fthumbs%2F67%2F09%2F92%2F670992b8adf8dcffb47bdccf063e9dea%2F670992b8adf8dcffb47bdccf063e9dea.11.jpg%7C2+min%3BDude%2Bgetting%2Bhis%2Banus%2Bstuffed%2Bwith%2Bfat%2Bcock%7C%2Fvideo2112684%2Fdude_getting_his_anus_stuffed_with_fat_cock%7Chttp%3A%2F%2Fimg100-684.xvideos.com%2Fvideos%2Fthumbs%2Fa7%2F7a%2Fe3%2Fa77ae368577fdc59534002edf2e73258%2Fa77ae368577fdc59534002edf2e73258.30.jpg%7C33+min%3BTerrorized%2BTwink%7C%2Fvideo2112649%2Fterrorized_twink%7Chttp%3A%2F%2Fimg100-649.xvideos.com%2Fvideos%2Fthumbs%2F3b%2F7d%2Fa3%2F3b7da30c55e0ae63c90cfc958badcd7e%2F3b7da30c55e0ae63c90cfc958badcd7e.27.jpg%7C14+min%3BTwink%2Banal%2Bdestruction%7C%2Fvideo2079048%2Ftwink_anal_destruction%7Chttp%3A%2F%2Fimg100-048.xvideos.com%2Fvideos%2Fthumbs%2Fb3%2F61%2Fd6%2Fb361d61a5c893843473da90bea39f2a9%2Fb361d61a5c893843473da90bea39f2a9.20.jpg%7C16+min%3BA%2Bhot%2Bblonde%2B3d%2Bshemale%2Bis%2Bgetting%2Bher%2Basshole%2Bpounded%7C%2Fvideo4158981%2Fa_hot_blonde_3d_shemale_is_getting_her_asshole_pounded%7Chttp%3A%2F%2Fimg100-981.xvideos.com%2Fvideos%2Fthumbs%2F5b%2F94%2Fe3%2F5b94e3d6ec554aad045d07a8d5a4ed86%2F5b94e3d6ec554aad045d07a8d5a4ed86.5.jpg%7C6+min%3BRIU%2BLOVES%2BA%2BBAREBACK%2BDOUBLE-PENETRATION%7C%2Fvideo5721751%2Friu_loves_a_bareback_double-penetration%7Chttp%3A%2F%2Fimg100-751.xvideos.com%2Fvideos%2Fthumbs%2Fe2%2F22%2F23%2Fe222231901b9cabd73eb900e5d7e6712%2Fe222231901b9cabd73eb900e5d7e6712.25.jpg%7C27+min%3BSoccer%2Btwinks%2Blocker%2Broom%2Bthreesome%7C%2Fvideo5584578%2Fsoccer_twinks_locker_room_threesome%7Chttp%3A%2F%2Fimg100-578.xvideos.com%2Fvideos%2Fthumbs%2F67%2Fe1%2F31%2F67e13191693f53db458bab2084cc980b%2F67e13191693f53db458bab2084cc980b.15.jpg%7C24+min%3BHouse%2BBoy%2BPart%2B1%7C%2Fvideo6828745%2Fhouse_boy_part_1%7Chttp%3A%2F%2Fimg100-745.xvideos.com%2Fvideos%2Fthumbs%2F66%2F4f%2Fac%2F664fac7865d79ba2d73e5eb95ffd6917%2F664fac7865d79ba2d73e5eb95ffd6917.3.jpg%7C17+min%3BHorny%2Bboy%2BRicky%2BRaw%2Bgets%2Bpounded%2Bby%2B2%2Bblack%2Bschlongs%7C%2Fvideo6666358%2Fhorny_boy_ricky_raw_gets_pounded_by_2_black_schlongs%7Chttp%3A%2F%2Fimg100-358.xvideos.com%2Fvideos%2Fthumbs%2Fdc%2F74%2F9e%2Fdc749e53070e4f449bf8eda96edb6daf%2Fdc749e53070e4f449bf8eda96edb6daf.29.jpg%7C4+min%3BAsian%2BBodybuilder%2BFucked%2Bto%2BCum%7C%2Fvideo7292840%2Fasian_bodybuilder_fucked_to_cum%7Chttp%3A%2F%2Fimg100-840.xvideos.com%2Fvideos%2Fthumbs%2F0e%2Fed%2Fa5%2F0eeda5d2215f11d644b386901b25f656%2F0eeda5d2215f11d644b386901b25f656.29.jpg%7C27+sec%3BGreedy%2BBottom%7C%2Fvideo449795%2Fgreedy_bottom%7Chttp%3A%2F%2Fimg100-795.xvideos.com%2Fvideos%2Fthumbs%2F2f%2F71%2F90%2F2f7190402c228e4461a25361a2df1e6f%2F2f7190402c228e4461a25361a2df1e6f.12.jpg%7C3+min%3BSt8%2Bhunk..%2Bgood%2Bfucker..1st%2Btime%2Bgay%2Bsex%7C%2Fvideo6279356%2Fst8_hunk.._good_fucker..1st_time_gay_sex%7Chttp%3A%2F%2Fimg100-356.xvideos.com%2Fvideos%2Fthumbs%2Faa%2F4a%2F02%2Faa4a02b20e7521cf71b9351e3bc9678e%2Faa4a02b20e7521cf71b9351e3bc9678e.7.jpg%7C10+min%3BGetting%2Bpounded%2Bby%2Ba%2Bthick%2Bblack%2Bdude%7C%2Fvideo6585352%2Fgetting_pounded_by_a_thick_black_dude%7Chttp%3A%2F%2Fimg100-352.xvideos.com%2Fvideos%2Fthumbs%2Fd8%2F78%2F9b%2Fd8789ba0df356e7969d81df2f5ca6e80%2Fd8789ba0df356e7969d81df2f5ca6e80.20.jpg%7C1+min+21+sec%3BHumiliate%2BMe%2B1-1%7C%2Fvideo4590934%2Fhumiliate_me_1-1%7Chttp%3A%2F%2Fimg100-934.xvideos.com%2Fvideos%2Fthumbs%2F2f%2F10%2F6e%2F2f106ee1a572d9bc8dc38f3b28f9cea9%2F2f106ee1a572d9bc8dc38f3b28f9cea9.11.jpg%7C25+min%3BHouse%2BBoy%2BPart%2B5%7C%2Fvideo6831718%2Fhouse_boy_part_5%7Chttp%3A%2F%2Fimg100-718.xvideos.com%2Fvideos%2Fthumbs%2F68%2F16%2F34%2F68163408226538aa75d135a0c829f0c3%2F68163408226538aa75d135a0c829f0c3.4.jpg%7C17+min&amp;sponsor=%5B%5D&amp;linkurl=http%3A%2F%2Fwww.xvideos.com%2Fvideo10392141%2Fgetting_pounded_by_a_big_black_cock_bbc_fucking_white_dude_&amp;categories=gay" width="588" height="476">
+			</div>
+			
+			
+        <!-- END PLAYER FLASH -->
+        
+      </div> <!-- #content -->
+      
+      <div id="videoTabs" class="tabsContainer">
+        <ul class="tabButtons">
+          <li id="tabVote">
+            <span class="nb_views">
+               1,266 <br>
+              <span class="text">views</span>
+            </span>
+  
+            <span class="voteActions">
+				<!--Did you like this video ?-->
+				<a id="voteYes" class="button btnVote withThumb">&nbsp;&nbsp;&nbsp;</a><a id="voteNo" class="button btnVote withThumb">&nbsp;&nbsp;&nbsp;</a>
+			</span>
+            
+            <div class="ratingBarBlock">
+              <div class="ratingBar">
+                <div style="width:78.42%;" id="ratingBarGood"></div>
+              </div>
+              <div class="ratingCounts">
+                <span id="ratingTotal">3</span> Total
+              </div>
+            </div>
+            
+            <span id="rating">78.42%</span>
+  
+            
+            <script type="text/javascript" language="javascript">
+              vote_urls = {yes: 'http://www.xvideos.com/videovote/10392141/YES/1101011101110101100000001010001044097/', no: 'http://www.xvideos.com/videovote/10392141/NO/1011000011101000000000101011001185925/'};
+            </script>
+            
+          </li>
+          <li data-ref="tabComments" class="headtab closable" data-onshow="xvideos.comments.onShowTab">Comments <strong>(<span class="nbVideoComments">0</span>)</strong></li>
+		  <li data-ref="tabDownload" class="headtab closable" data-onShow="xvideos.video_download.onShowTab"><img src="http://static.xvideos.com/v2/img/download.png" height="14" width="14" /> Download</li>
+          <li data-ref="tabFavs" class="headtab closable" data-onshow="xvideos.favorites.onShowTab">Add to my favorites</li>
+          <li data-ref="tabShare" class="headtab closable">Share</li>
+          <li data-ref="tabEmbed" class="headtab closable">Embed</li>
+        </ul>
+        <div class="tabs">
+          
+          <div id="tabComments" class="tab">
+            				<div class="tabHeaderForm notLoggedIn">
+				<div class="leftCol">
+					<p><strong>You must be logged in to comment a video.</strong></p>
+					<form action="http://upload.xvideos.com/account/?redirect=%2Fvideo10392141%2Fgetting_pounded_by_a_big_black_cock_bbc_fucking_white_dude_%23_tabComments" method="POST">
+					<table>
+						<tr>
+						<th>Your login (email):</th>
+						<td><input type="text" name="login" id="comment__login_text" /></td>
+						</tr>
+						<tr>
+						<th>Your password:</th>
+						<td><input type="password" name="password" id="comment__password_text" /></td>
+						</tr>
+					</table>
+					<input type="submit" value="Login" name="log" />
+					<p class="forgot_password"><a href="http://upload.xvideos.com/account/lostpassword" target="_blank">Forgot username or password ?</a></p>
+					</form>
+				</div>
+				<div class="rightCol">
+					<p>Not yet a xvideos member? Here is what you can do with a FREE account:</p>
+					<ul>
+					<li>- Upload videos.</li>
+					<li>- Commenting.</li>
+					<li>- Add videos to your favorites.</li>
+					<li>- Create your profile page and make some new friends.</li>
+					</ul>
+					<div class="signup">
+					<a class="button" href="http://upload.xvideos.com/account/create" target="_blank">Sign Up Now For Free</a>
+					</div>
+				</div>
+				</div>
+            <h3 class="blackTitle">Comments (<span class="nbVideoComments">0</span>):</h3>
+            <div id="commentsContainer">
+              <div id="comments" class="nocomments"><div class="comment center">This video has not been commented yet.</div></div>
+            </div>
+          </div>
+          
+		  <div id="tabDownload" class="tab">
+            <div style="text-align: center;">
+              <span class="inlineLoader"><span class="text">Checking your download. Please wait...</span> <img src="http://static.xvideos.com/v2/img/xv-inline-ajax-loader.gif" /></span>
+            </div>
+          </div>
+
+          <div id="tabFavs" class="tab">
+            				<div class="tabHeaderForm notLoggedIn">
+				<div class="leftCol">
+					<p><strong>You must be logged in to add a favorite.</strong></p>
+					<form action="http://upload.xvideos.com/account/?redirect=%2Fvideo10392141%2Fgetting_pounded_by_a_big_black_cock_bbc_fucking_white_dude_%23_tabFavs" method="POST">
+					<table>
+						<tr>
+						<th>Your login (email):</th>
+						<td><input type="text" name="login" id="fav__login_text" /></td>
+						</tr>
+						<tr>
+						<th>Your password:</th>
+						<td><input type="password" name="password" id="fav__password_text" /></td>
+						</tr>
+					</table>
+					<input type="submit" value="Login" name="log" />
+					<p class="forgot_password"><a href="http://upload.xvideos.com/account/lostpassword" target="_blank">Forgot username or password ?</a></p>
+					</form>
+				</div>
+				<div class="rightCol">
+					<p>Not yet a xvideos member? Here is what you can do with a FREE account:</p>
+					<ul>
+					<li>- Upload videos.</li>
+					<li>- Commenting.</li>
+					<li>- Add videos to your favorites.</li>
+					<li>- Create your profile page and make some new friends.</li>
+					</ul>
+					<div class="signup">
+					<a class="button" href="http://upload.xvideos.com/account/create" target="_blank">Sign Up Now For Free</a>
+					</div>
+				</div>
+				</div>
+          </div>
+          <script language="javascript" type="text/javascript">
+            favs_signin_url = 'http://upload.xvideos.com/account/?redirect=%2Fvideo10392141%2Fgetting_pounded_by_a_big_black_cock_bbc_fucking_white_dude_%23_tabFavs';
+            favs_manage_url = 'http://upload.xvideos.com/account/managefavorites';
+            dl_signin_url = 'http://upload.xvideos.com/account/?redirect=%2Fvideo10392141%2Fgetting_pounded_by_a_big_black_cock_bbc_fucking_white_dude_%23_tabDownload';
+            dl_signup_url = 'http://upload.xvideos.com/account/create/?redirect=%2Fvideo10392141%2Fgetting_pounded_by_a_big_black_cock_bbc_fucking_white_dude_%23_tabDownload';
+          </script>
+          
+          <div id="tabShare" class="tab">
+            <h3 class="blackTitle">Share this video:</h3>
+  
+            <div id="shareButtons" class="addthis_toolbox addthis_default_style addthis_32x32_style">
+              <a class="addthis_button_preferred_1"></a>
+              <a class="addthis_button_preferred_2"></a>
+              <a class="addthis_button_preferred_3"></a>
+              <a class="addthis_button_preferred_4"></a>
+              <a class="addthis_button_preferred_5"></a>
+              <a class="addthis_button_preferred_6"></a>
+              <a class="addthis_button_preferred_7"></a>
+              <a class="addthis_button_preferred_8"></a>
+              <a class="addthis_button_preferred_9"></a>
+              <a class="addthis_button_preferred_10"></a>
+              <a class="addthis_button_preferred_11"></a>
+              <a class="addthis_button_compact"></a>
+              <a class="addthis_counter addthis_bubble_style"></a>
+            </div>
+          </div>
+          
+          <div id="tabEmbed" class="tab">
+            <h3 class="blackTitle">Embed this video to your site with this code:</h3>
+  
+            <input type="text" name="media_embed_code" id="mediaEmbedCodeInput" size="110" onclick="this.focus();this.select();" value="&lt;iframe src=&quot;http://flashservice.xvideos.com/embedframe/10392141&quot; frameborder=0 width=510 height=400 scrolling=no&gt;&lt;/iframe&gt;">
+          </div>
+        </div>
+      </div> <!-- #videoTabs -->
+      
+      <script>videoPageWriteRelated([[{id:6831373,u:"/video6831373/house_boy_part_4",i:"http://img100-373.xvideos.com/videos/thumbs/ef/9a/d0/ef9ad0cfe4262fb315233937e72499e8/ef9ad0cfe4262fb315233937e72499e8.28.jpg",t:"House Boy Part 4",d:"17 min",r:"100%"},{id:1176896,u:"/video1176896/double_monster_dick_destruction",i:"http://img100-896.xvideos.com/videos/thumbs/c4/21/e5/c421e50ccef89b140c6f2d2f0d3189ca/c421e50ccef89b140c6f2d2f0d3189ca.21.jpg",t:"Double Monster Dick Destruction",d:"4 min",r:"100%"},{id:2986468,u:"/video2986468/young_twink_gets_his_ass_pounded_by_a_mature_hunk",i:"http://img100-468.xvideos.com/videos/thumbs/b1/24/9c/b1249c59593d2a8ffff92f0a65c5d9ad/b1249c59593d2a8ffff92f0a65c5d9ad.29.jpg",t:"Young twink gets his ass pounded by a mat ...",d:"5 min",r:"100%"},{id:410110,u:"/video410110/suckin_a_big_dick_in_a_public_toilet_urinal",i:"http://img100-110.xvideos.com/videos/thumbs/67/09/92/670992b8adf8dcffb47bdccf063e9dea/670992b8adf8dcffb47bdccf063e9dea.11.jpg",t:"Suckin a big Dick in a Public Toilet Urinal",d:"2 min",r:"95%"},{id:2112684,u:"/video2112684/dude_getting_his_anus_stuffed_with_fat_cock",i:"http://img100-684.xvideos.com/videos/thumbs/a7/7a/e3/a77ae368577fdc59534002edf2e73258/a77ae368577fdc59534002edf2e73258.30.jpg",t:"Dude getting his anus stuffed with fat cock",d:"33 min",r:"98%"},{id:2112649,u:"/video2112649/terrorized_twink",i:"http://img100-649.xvideos.com/videos/thumbs/3b/7d/a3/3b7da30c55e0ae63c90cfc958badcd7e/3b7da30c55e0ae63c90cfc958badcd7e.27.jpg",t:"Terrorized Twink",d:"14 min",r:"99%"},{id:2079048,u:"/video2079048/twink_anal_destruction",i:"http://img100-048.xvideos.com/videos/thumbs/b3/61/d6/b361d61a5c893843473da90bea39f2a9/b361d61a5c893843473da90bea39f2a9.20.jpg",t:"Twink anal destruction",d:"16 min",r:"99%"},{id:4158981,u:"/video4158981/a_hot_blonde_3d_shemale_is_getting_her_asshole_pounded",i:"http://img100-981.xvideos.com/videos/thumbs/5b/94/e3/5b94e3d6ec554aad045d07a8d5a4ed86/5b94e3d6ec554aad045d07a8d5a4ed86.5.jpg",t:"A hot blonde 3d shemale is getting her as ...",d:"6 min",r:"73%"},{id:5721751,u:"/video5721751/riu_loves_a_bareback_double-penetration",i:"http://img100-751.xvideos.com/videos/thumbs/e2/22/23/e222231901b9cabd73eb900e5d7e6712/e222231901b9cabd73eb900e5d7e6712.25.jpg",t:"RIU LOVES A BAREBACK DOUBLE-PENETRATION",d:"27 min",r:"100%"},{id:5584578,u:"/video5584578/soccer_twinks_locker_room_threesome",i:"http://img100-578.xvideos.com/videos/thumbs/67/e1/31/67e13191693f53db458bab2084cc980b/67e13191693f53db458bab2084cc980b.15.jpg",t:"Soccer twinks locker room threesome",d:"24 min",r:"100%"}],[{id:6828745,u:"/video6828745/house_boy_part_1",i:"http://img100-745.xvideos.com/videos/thumbs/66/4f/ac/664fac7865d79ba2d73e5eb95ffd6917/664fac7865d79ba2d73e5eb95ffd6917.3.jpg",t:"House Boy Part 1",d:"17 min",r:"100%"},{id:6666358,u:"/video6666358/horny_boy_ricky_raw_gets_pounded_by_2_black_schlongs",i:"http://img100-358.xvideos.com/videos/thumbs/dc/74/9e/dc749e53070e4f449bf8eda96edb6daf/dc749e53070e4f449bf8eda96edb6daf.29.jpg",t:"Horny boy Ricky Raw gets pounded by 2 bla ...",d:"4 min",r:"100%"},{id:7292840,u:"/video7292840/asian_bodybuilder_fucked_to_cum",i:"http://img100-840.xvideos.com/videos/thumbs/0e/ed/a5/0eeda5d2215f11d644b386901b25f656/0eeda5d2215f11d644b386901b25f656.29.jpg",t:"Asian Bodybuilder Fucked to Cum",d:"27 sec",r:"100%"},{id:449795,u:"/video449795/greedy_bottom",i:"http://img100-795.xvideos.com/videos/thumbs/2f/71/90/2f7190402c228e4461a25361a2df1e6f/2f7190402c228e4461a25361a2df1e6f.12.jpg",t:"Greedy Bottom",d:"3 min",r:"100%"},{id:6279356,u:"/video6279356/st8_hunk.._good_fucker..1st_time_gay_sex",i:"http://img100-356.xvideos.com/videos/thumbs/aa/4a/02/aa4a02b20e7521cf71b9351e3bc9678e/aa4a02b20e7521cf71b9351e3bc9678e.7.jpg",t:"St8 hunk.. good fucker..1st time gay sex",d:"10 min",r:"100%"},{id:6585352,u:"/video6585352/getting_pounded_by_a_thick_black_dude",i:"http://img100-352.xvideos.com/videos/thumbs/d8/78/9b/d8789ba0df356e7969d81df2f5ca6e80/d8789ba0df356e7969d81df2f5ca6e80.20.jpg",t:"Getting pounded by a thick black dude",d:"1 min 21 sec",r:"82%"},{id:4590934,u:"/video4590934/humiliate_me_1-1",i:"http://img100-934.xvideos.com/videos/thumbs/2f/10/6e/2f106ee1a572d9bc8dc38f3b28f9cea9/2f106ee1a572d9bc8dc38f3b28f9cea9.11.jpg",t:"Humiliate Me 1-1",d:"25 min",r:"98%"},{id:6831718,u:"/video6831718/house_boy_part_5",i:"http://img100-718.xvideos.com/videos/thumbs/68/16/34/68163408226538aa75d135a0c829f0c3/68163408226538aa75d135a0c829f0c3.4.jpg",t:"House Boy Part 5",d:"17 min",r:"100%"}]]);</script>
+
+            
+    </div> <!-- #main -->
+    <!-- ||/video10392141/getting_pounded_by_a_big_black_cock_bbc_fucking_white_dude_|| -->
+    
+    <div id="ad-bottom">
+      <div id="wpn_ad_footer">
+        
+      </div>
+      <p>Ads by <a href="https://main.trafficfactory.biz/xvideos-signup">TrafficFactory.biz</a></p>
+    </div>
+
+    
+    <script language="javascript" type="text/javascript">
+      var script = document.createElement("script");
+      script.src = "/in.php?referer=" + escape(document.referrer);
+      script.type = "text/javascript";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    </script>
+            <footer>
+      <div class="botLinks">
+        <a href="http://info.xvideos.com/legal/tos/">Terms of service</a> - 
+        <a href="http://info.xvideos.com/">Upload Your Videos</a> - 
+        <a href="http://www.ant.com/video-downloader/" target="_blank">Download our videos</a> - 
+        <a href="http://info.xvideos.com/content/">Content removal</a> - 
+		<a href="http://info.xvideos.com/advertising/">Advertising</a> - 
+        <a href="/rss/rss.xml">RSS Updates</a> - 
+        <a href="/rss/del.xml">Deletes RSS</a> - 
+        <a href="http://info.xvideos.com/">More</a>...
+      </div>
+
+      <p class="slogan">XVideos.com - the best free porn videos on internet, 100% free.</p>
+    </footer>
+    
+  </div> <!-- #page  -->
+ 
+  <script type="text/javascript" src="http://static.xvideos.com/v2/js/ads.js?v=1"></script>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="http://static.xvideos.com/v2/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+  
+  <script src="http://static.xvideos.com/v2/js/script.js?v=15"></script>
+
+    <script src="http://static.xvideos.com/v2/js/script-video.js?v=10"></script>
+  <script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js#pubid=xa-501f7bd44d12cd79"></script>
+    
+    
+  
+  
+  
+  
+  <script type="text/javascript">  
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24038425-1']);
+    _gaq.push(['_trackPageview']);
+    _gaq.push(['_setSampleRate', '1']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();  
+  </script>
+  
+
+  <!-- Big array file is 312 sec old
+ -->
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"4d4409300d","applicationID":"5968345","transactionName":"MVAEZxYCVkYEV0JYCQgaM0ENTFFbAVFOHxYORQ==","queueTime":0,"applicationTime":14,"atts":"HRcHEV4YRUg=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-593.min.js"}</script></body>
+</html><!-- Gen By 241 --><!-- 
+ ID : 25dd5667bd349fd7c48d1dd317d41803
+O:8:"stdClass":3:{s:8:"sitename";s:7:"default";s:4:"type";s:5:"video";s:7:"idvideo";s:8:"10392141";}
+Time : 6 d 2 h 35 m 16 s
+-->

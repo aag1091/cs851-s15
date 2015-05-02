@@ -1,0 +1,721 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<!-- ...*iact1*** =:::: /nikken/ENG_nikken_showmenu.html - nn -->
+
+
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="http://www.nikkentechnologies.com/images/favicon_32x32.ico">
+<meta name="msapplication-TileImage" content="http://www.nikkentechnologies.com/images/nikken_144x144.png"/>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Nikken.com</title>
+	<link rel="stylesheet" type="text/css" href="http://test.x.nikkenusa.myvoffice.com/custom/nikken/assets/css/nikken-styles.css" />
+	<link rel="stylesheet" type="text/css" href="http://test.x.nikkenusa.myvoffice.com/custom/nikken/assets/css/autoship-styles.css" />
+	<link rel="stylesheet" type="text/css" href="http://test.x.nikkenusa.myvoffice.com/custom/nikken/assets/css/common.css" />
+    <!--[if IE 6]>
+    	<link rel="stylesheet" type="text/css" href="http://test.x.nikkenusa.myvoffice.com/custom/nikken/assets/css/ieonly.css">
+    <![endif]-->  
+	<link rel="stylesheet" type="text/css" href="http://test.x.nikkenusa.myvoffice.com/custom/nikken/assets/colorbox/colorbox.css" />
+    <link rel="stylesheet" type="text/css" href="https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/assets/css/bootstrap.min.css">
+	<script src="http://test.x.nikkenusa.myvoffice.com/custom/nikken/assets/js/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+	<script src="http://test.x.nikkenusa.myvoffice.com/custom/nikken/assets/colorbox/jquery.colorbox.js" type="text/javascript"></script>
+	
+    <script src="https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/assets/js/jquery-ui.js" type="text/javascript"></script>
+    <script src="https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/assets/js/jquery.cf.popover.min.js" type="text/javascript"></script>
+     <script src="https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/assets/js/jquery.ui.position.min.js" type="text/javascript"></script>
+
+	<script>
+		$(document).ready(function(){
+			//Hide dropdowns
+			$(".verticalNav4").hide();
+			$(".verticalNav4.myon").show();
+			//Examples of how to assign the ColorBox event to elements
+			$(".add-tocart").colorbox();	
+			$(".navplus").click(function () {
+	    		if ( $(this).hasClass("minus") ){
+					$(this).removeClass("minus");
+					$(this).attr("src","https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/images/plusicon.png");
+	    		}else{
+	    			$(this).addClass("minus");
+				$(this).attr("src","https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/images/minusicon.png");
+	    		}
+                        //$(this).siblings("ul").toggle();
+	    		$(this).parent().siblings("td").children("table").toggle();
+	    	});
+			var CartCountry = $(".skuTable:contains('C$'),.skuTable2:contains('C$')");
+            if (CartCountry.length > 0){$('#selectCanada').prop('checked', true);
+            }else{$('#selectUSA').prop('checked', true);}
+			
+			//Add pwp={name} to all links to keep the user on the pwp. 
+			//Otherwise, users will go to corp site (if not logged in.)
+			var FindConsult = $("#pwpBoxMain a[href*='find']");
+			if (FindConsult.length == 0){
+				$("a").attr('href', function(i, h) {
+				   return h + (h.indexOf('?') != -1 ? "&pwp=eyecu" : "?pwp=eyecu");
+				});
+			}
+
+            // 11-14
+            <!-- Black Friday - Shipping Promo - 11/14 -->
+            var pwpTst = 'eyecu';
+            console.log(pwpTst);
+            if( pwpTst != ""){
+                var pwpName = 'http://nikken.com/eyecu/esuite/corp/dPage?pageName=blackFriday';
+                //$("#myLink a").attr('href', pwpName);http://nikken.com/esuite/corp/dPage?pageName=blackFriday
+            }else{
+                var pwpName = 'http://nikken.com/esuite/corp/dPage?pageName=blackFriday';
+            }
+            $("#myLink a").attr('href', pwpName);
+            <!-- end Black Friday - Shipping Promo - 11/14 -->
+		});
+		function popUp(url, width, height) {
+		sealWin=window.open(url,"win","toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=1,width=" + width + ",height=" + height);
+		self.name = "mainWin"; }
+	</script>
+		<!--video lightbox-->
+<link rel="stylesheet" type="text/css"  href="https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/assets/css/prettyPhoto.css" media="screen" />
+<script type="text/javascript" src="https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/assets/css/jquery.prettyPhoto3.1.5.js"></script>
+    
+<script type="text/javascript">
+			$(document).ready(function(){
+				$("a[rel^='prettyPhoto']").prettyPhoto({social_tools:false});
+							//$("a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'normal',theme:'light_square',slideshow:3000, autoplay_slideshow: true});
+				//$("a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'fast',slideshow:10000, hideflash: true});
+					
+			});
+</script>
+<!--end video lightbox-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-3112720-19', 'nettrax.myvoffice.com');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body id="shop">
+
+	<div id="umbrella">
+
+        <ul class="floatRight">
+			<li><a href="https://secure.nikken.com/login/Login?ownerid=850472300&pwp=eyecu">Login</a> &nbsp;&nbsp;|&nbsp;&nbsp;</li>
+            <li><a href="Shop.cfm?CurrPage=FrontPage&NextPage=CartContents">View Cart</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</li>
+            
+            <li style="margin-left: 5px;">
+        		<form action="Shop.cfm?pid=18978690497993872" method="post" style="display: inline;" name="frmLang">
+        		&nbsp;<select name="LNG" onChange="frmLang.submit();">
+        		
+        		<option value="ENG" selected>English 
+        		<option value="SPN" >Español 
+        		<option value="FRE" >Français 
+        		</select>
+        		
+        		<input type="Hidden" name="CurrPage" value="FrontPage">
+        		
+        		<input type="Hidden" name="NextPage" value="CategoryDetail">
+			
+				<input type="hidden" name="CategoryID" value="732">
+			
+        		</form>
+        	</li>
+        </ul>
+
+	</div><!--end umbrella-->
+
+    
+    <div id="header-container">
+    
+        <div id="header-content"><!--header content -->
+    
+            <a href="http://www.nikken.com/eyecu"><img src="http://test.x.nikkenusa.myvoffice.com/custom/nikken/images/nikken_site_logo_wht.png" id="nikkenLogo" class="floatLeft" style="margin: 20px 15px 0 15px; height:36px; width:152px; "></a>
+    
+            <ul id="main-nav" class="floatLeft">
+                <li><a href="http://www.nikken.com/eyecu" id="homenav"><span>Home</span></a></li>
+                <li><a href="Shop.cfm?CurrPage=FrontPage&NextPage=FrontPage" id="shopnav"><span>Shop Now</span></a></li>
+                <li><a href="http://www.nikken.com/eyecu/join-nikken/" id="joinnav"><span>Join Nikken</span></a></li>
+                
+	<!-- end </ul> is in the pwpcontactinfo var -->		
+	
+                <li><a href="http://www.nikken.com/eyecu/my-story/" id="mystorynav"><span>My Story</span></a></li>
+                <li><a href="http://www.nikken.com/eyecu/my-favorites/" id="myproductsnav"><span>My Favorites</span></a></li>
+            </ul>
+
+	<div id="pwpBoxWrapper" class="floatRight">
+
+                <div id="pwpBoxMain">
+
+                    <img src="http://nikicprod.nikken.com/uploads/pages/578/66/CAM00649_-pi-_250x325.png" height="74" width="66" class="floatLeft">
+                    <div id="pwpInfo" class="floatLeft" style="margin-top: 0;">
+                        <p><span class="bold">Glenn D Adams</span><br />
+                        5127369954<br />
+                        <a href="http://www.nikken.com/esuite/home/eyecu/leads/collectNikkenLeads.soa?editmode=false">Click here to contact me</a></p>
+
+                        <p style="color: #fff; margin-bottom: 0;">Nikken Independent Consultant</p>
+
+                    </div>
+
+
+                    <div class="clear"></div>
+
+                </div><!--end pwpBoxMain-->
+
+                <div id="pwpBoxBottom"></div>
+
+            </div><!--end pwpBoxWrapper-->
+
+
+
+ 
+            <div class="clear"></div>
+           
+    
+        </div><!-- end header content -->
+        
+    </div><!--end header-container-->
+
+
+
+
+
+	<div id="page-container">
+    	
+    	<div class="cushion"></div>
+
+		<div class="center-content">
+        
+                 <div id="sidebar-nav" class="floatLeft">
+            
+            		
+                    <div id="shipTo" style="display: block; width: 240px; margin: 10px auto 10px auto; padding-bottom: 10px;"><!--ship to options-->
+                        <form action="Shop.cfm?CurrPage=FrontPage&NextPage=FrontPage" method="post" name="shipto">
+                        
+                        <div class="floatLeft" style="width: 120px;"><!--canada-->
+                            <div style="width: 62px; margin: 0 auto; display: block; position: relative;">
+                                <label for="selectCanada"><img src="https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/images/canada_choice.png" alt="Canada" style="cursor: pointer; margin-bottom: 3px;" /></label>
+                                <input type="radio" name="shiptocountry" value="CAN" id="selectCanada" onClick="if (this.value=='CAN') {jQuery.fn.colorbox({href:'NotExist_colorbox.cfm?&cc=CAN'});}else{document.shipto.submit();}" style="margin: -10px 0 0 0; position: absolute; top: 24px; left: 45px;" />
+                            </div>
+                            <label for="selectCanada"><h3 class="subhead9" style="margin: 0; text-align: center; font-size: 12px;">CAN cart</h3></label>
+                        </div><!--end canada-->
+                    
+                        <div class="floatRight" style="width: 120px;"><!--usa-->
+                            <div style="width: 62px; margin: 0 auto; display: block; position: relative;">
+                                <label for="selectUSA"><img src="https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/images/usa_choice.png" alt="USA" style="cursor: pointer; margin-bottom: 3px;" /></label>
+                                <input type="radio" name="shiptocountry" value="USA" checked="" id="selectUSA" onClick="if (this.value=='CAN') {jQuery.fn.colorbox({href:'NotExist_colorbox.cfm?&cc=CAN'});}else{document.shipto.submit();}"  style="margin: -10px 0 0 0; position: absolute; top: 24px; left: 45px;" />
+                            </div>
+                            <label for="selectUSA"><h3 class="subhead9" style="margin: 0; text-align: center; font-size: 12px;">USA cart</h3></label>
+                        </div><!--end usa-->
+                    
+                        </form>
+                    <div class="clear"></div>
+                    </div><!--end ship to options-->
+                    
+            
+                    <div class="liquid-round-white cartInfo" style="width: 240px; margin: 20px 8px 0 20px; padding: 0; background-color: #fff;"><!--shopping cart info-->
+                            <div class="whitetop"><span></span></div>
+                            <div id="cartsummarydiv" class="whitecenter-content">
+                                
+	<table><tr><td valign="top">
+                    <a href="https://nettrax.myvoffice.com/nikkenusa/ShoppingCart/Shop.cfm?CurrPage=FrontPage&NextPage=CartSummary&CategoryID=732&pid=18978690497993872"><img src="http://nikkenusa.myvoffice.com/custom/nikken//images/cart_graphic.png" class="floatLeft" /></a>
+	</td><td>
+
+                    <div class="floatLeft cartSummary">
+			
+                        <h4 class="verticalNav1" style="margin: 0 0 3px 0;">Cart Summary</h4>
+                        <p>(0 Items)&nbsp;&nbsp;|&nbsp;&nbsp;<span class="bold">Total: $           0.00</span></p>
+						
+                        <p class="bold" style="margin-top: 10px;"><a href="https://nettrax.myvoffice.com/nikkenusa/ShoppingCart/Shop.cfm?CurrPage=FrontPage&NextPage=CartSummary&CategoryID=732&pid=18978690497993872">View Cart / Checkout</a></p>
+			
+                    </div>
+	</td></tr></table>
+
+
+                    <div class="clear"></div>
+
+                            </div><!--end center content-->
+                            
+                    <div class="whitecenter-content"></div>
+                            <div class="whitebottom"><span></span></div>
+                        </div><!--end shopping cart info-->
+            
+              <!-- begin search box -->
+                        <div id="searcharea">
+                                <div id="search">
+                                    <span></span><form action="Shop.cfm?pid=18978690497993872" method="post" style="display:inline">
+		<input type="text" value="Search Products" maxlength="30" id="q_search" name="SearchFor" onClick="this.value=''"/>
+                <input type="image" src="http://nikkenusa.myvoffice.com/custom/nikken//images/searchprod_button.gif" id="submitbutton" name="Submit"  value="Submit"/>
+		<!---input type="text" name="SearchFor" size="22">
+		<input type="submit" name="Search" value="Go"><br/--->
+		<input type="hidden" name="SearchList" value="Desc,Name,Item">
+		<input type="hidden" name="CurrPage" value="FrontPage">
+		<input type="hidden" name="NextPage" value="Search">
+		</form>
+                                    </div>
+                                </div><!--end search box-->
+            
+            
+		    <div class="ViewAllProducts"><a href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=0">View All Products</a></div>
+                    <div id="verticalNav">
+                        <ul>
+                        <table cellpadding="0" cellspacing="0" border="0" width="240" class="verticalNav"><tr class="verticalNav1 regitem"><td class="verticalNav1 regitem" width="8"><div class="Category"><a href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=9&MainCategory=1&pid=18978690497993872">Rest & Relaxation</a></div><table cellpadding="0" cellspacing="0" border="0" width="240" class=""><tr class="verticalNav3"><td valign="top" width="10"><img src="../images/cleardot.gif" border="0" width="8" height="8" hspace="1" vspace="4"/></td><td class="verticalNav3"><a class="sidemenulevel2" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=561&pid=18978690497993872">Vital Day Pack</a></td></tr><tr class="verticalNav3"><td valign="top" width="10"><img class="navplus" src="https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/images/plusicon.png" border="0" width="8" height="8" hspace="1" vspace="4"/></td><td class="verticalNav3"><a class="sidemenulevel2" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=7&pid=18978690497993872">Kenko&trade; Sleep System</a><table cellpadding="0" cellspacing="0" border="0" width="230" class="verticalNav4"><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=549&pid=18978690497993872">Vital Sleep Pack (Kenko Dream&reg; Comforter)</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=550&pid=18978690497993872">Vital Sleep Pack (Kenko Dream&reg; Light Comforter)</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=646&pid=18978690497993872">Kenko PowerSleep&trade; Mask</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=16&pid=18978690497993872">Kenko Dream&reg; Comforter</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=27&pid=18978690497993872">Kenko Dream&reg; Light Comforter</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=496&pid=18978690497993872">Kenko&trade; Travel Comforter</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=533&pid=18978690497993872">Kenko Naturest&reg; Custom Pillow</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=551&pid=18978690497993872">Kenko Naturest&reg; Mattress Topper</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=626&pid=18978690497993872">Kenko Naturest&reg; Travel Pillow</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=726&pid=18978690497993872">Kenko Naturest&reg; Custom Pillowcase</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=680&pid=18978690497993872">Naturest&reg; Demo Kit</a></td></tr></table></td></tr><tr class="verticalNav3"><td valign="top" width="10"><img class="navplus" src="https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/images/plusicon.png" border="0" width="8" height="8" hspace="1" vspace="4"/></td><td class="verticalNav3"><a class="sidemenulevel2" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=48&pid=18978690497993872">Insoles</a><table cellpadding="0" cellspacing="0" border="0" width="230" class="verticalNav4"><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=50&pid=18978690497993872">Magsteps&reg;</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=691&pid=18978690497993872">Kenko mStrides&trade;</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=736&pid=18978690497993872">mSteps</a></td></tr></table></td></tr><tr class="verticalNav3"><td valign="top" width="10"><img class="navplus" src="https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/images/plusicon.png" border="0" width="8" height="8" hspace="1" vspace="4"/></td><td class="verticalNav3"><a class="sidemenulevel2" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=419&pid=18978690497993872">Jewelry</a><table cellpadding="0" cellspacing="0" border="0" width="230" class="verticalNav4"><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=565&pid=18978690497993872">Kenko PowerBand&trade; Wrist</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=567&pid=18978690497993872">Kenko PowerBand&trade; Neck</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=689&pid=18978690497993872">Marquesa&trade; Collection</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=715&pid=18978690497993872">Kenko Perfect Link&trade; II Necklace</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=731&pid=18978690497993872">TriPhase® Ambassador Watch</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=733&pid=18978690497993872">Kenko&trade; Rosebud Earrings</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=734&pid=18978690497993872">Alligator-print Ambassador watch strap</a></td></tr></table></td></tr><tr class="verticalNav3"><td valign="top" width="10"><img class="navplus" src="https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/images/plusicon.png" border="0" width="8" height="8" hspace="1" vspace="4"/></td><td class="verticalNav3"><a class="sidemenulevel2" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=85&pid=18978690497993872">Magnetic Support</a><table cellpadding="0" cellspacing="0" border="0" width="230" class="verticalNav4"><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=641&pid=18978690497993872">KenkoSeat&reg; II</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=649&pid=18978690497993872">Kenko MagFlex&trade;</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=650&pid=18978690497993872">Kenko MagDuo&trade;</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=55&pid=18978690497993872">MagCreator</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=578&pid=18978690497993872">Kenko&trade; PowerChip&trade;</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=714&pid=18978690497993872">Kenko PowerMini&trade;</a></td></tr></table></td></tr><tr class="verticalNav3"><td valign="top" width="10"><img class="navplus" src="https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/images/plusicon.png" border="0" width="8" height="8" hspace="1" vspace="4"/></td><td class="verticalNav3"><a class="sidemenulevel2" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=538&pid=18978690497993872">Support Wraps</a><table cellpadding="0" cellspacing="0" border="0" width="230" class="verticalNav4"><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=73&pid=18978690497993872">KenkoTherm&reg; Ankle Wrap</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=651&pid=18978690497993872">KenkoTherm&reg; Back Belt</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=75&pid=18978690497993872">KenkoTherm&reg; Elbow Wrap</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=76&pid=18978690497993872">KenkoTherm&reg; Knee Wrap</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=264&pid=18978690497993872">KenkoTherm&reg; Wrist Wrap</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=690&pid=18978690497993872">KenkoTherm&reg; Headband</a></td></tr></table></td></tr><tr class="verticalNav3"><td valign="top" width="10"><img src="../images/cleardot.gif" border="0" width="8" height="8" hspace="1" vspace="4"/></td><td class="verticalNav3"><a class="sidemenulevel2" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=83&pid=18978690497993872">CM Complex Cream</a></td></tr><tr class="verticalNav3"><td valign="top" width="10"><img src="../images/cleardot.gif" border="0" width="8" height="8" hspace="1" vspace="4"/></td><td class="verticalNav3"><a class="sidemenulevel2" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=517&pid=18978690497993872">Nikken&reg; Sport Socks</a></td></tr><tr class="verticalNav3"><td valign="top" width="10"><img src="../images/cleardot.gif" border="0" width="8" height="8" hspace="1" vspace="4"/></td><td class="verticalNav3"><a class="sidemenulevel2" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=735&pid=18978690497993872">Nikken ThermoWear - Seasonal - Limited Time Product</a></td></tr></table></td></tr><tr class="verticalNav1 regitem"><td class="verticalNav1 regitem" width="8"><div class="Category"><a href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=2&MainCategory=1&pid=18978690497993872">Environment</a></div><table cellpadding="0" cellspacing="0" border="0" width="240" class=""><tr class="verticalNav3"><td valign="top" width="10"><img src="../images/cleardot.gif" border="0" width="8" height="8" hspace="1" vspace="4"/></td><td class="verticalNav3"><a class="sidemenulevel2" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=562&pid=18978690497993872">Vital Environment Pack</a></td></tr><tr class="verticalNav3"><td valign="top" width="10"><img class="navplus" src="https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/images/plusicon.png" border="0" width="8" height="8" hspace="1" vspace="4"/></td><td class="verticalNav3"><a class="sidemenulevel2" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=134&pid=18978690497993872">Air Wellness&reg; Technology</a><table cellpadding="0" cellspacing="0" border="0" width="230" class="verticalNav4"><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=633&pid=18978690497993872">KenkoAir Purifier&trade;</a></td></tr></table></td></tr><tr class="verticalNav3"><td valign="top" width="10"><img class="navplus" src="https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/images/plusicon.png" border="0" width="8" height="8" hspace="1" vspace="4"/></td><td class="verticalNav3"><a class="sidemenulevel2" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=137&pid=18978690497993872">PiMag&reg; Water Technology</a><table cellpadding="0" cellspacing="0" border="0" width="230" class="verticalNav4"><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=557&pid=18978690497993872">PiMag&reg; Sport Bottle</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=579&pid=18978690497993872">PiMag&reg; Waterfall&reg;</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=660&pid=18978690497993872">PiMag&reg; MicroJet&trade; Shower System</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=138&pid=18978690497993872">Nikken Magna-Charger&trade;</a></td></tr></table></td></tr><tr class="verticalNav3"><td valign="top" width="10"><img src="../images/cleardot.gif" border="0" width="8" height="8" hspace="1" vspace="4"/></td><td class="verticalNav3"><a class="sidemenulevel2" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=580&pid=18978690497993872">KenkoLight&reg; II</a></td></tr></table></td></tr><tr class="verticalNav1 regitem"><td class="verticalNav1 regitem" width="8"><div class="Category"><a href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=95&MainCategory=1&pid=18978690497993872">Nutrition & Skin Care</a></div><table cellpadding="0" cellspacing="0" border="0" width="240" class=""><tr class="verticalNav3"><td valign="top" width="10"><img class="navplus minus" src="https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/images/minusicon.png" border="0" width="8" height="8" hspace="1" vspace="4"/></td><td class="verticalNav3"><a class="sidemenulevel2" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=96&pid=18978690497993872">Kenzen&reg; Organic-Based Nutrition</a><table cellpadding="0" cellspacing="0" border="0" width="230" class="verticalNav4 myon"><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=638&pid=18978690497993872">Kenzen&reg; Daily Essentials Plus with FREE Blender Cup!</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=498&pid=18978690497993872">Kenzen&reg; Mega Daily 4&reg;</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=492&pid=18978690497993872">Jade GreenZymes&reg;</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=118&pid=18978690497993872">Kenzen&reg; Ciaga<sup>V</sup>&trade;</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=504&pid=18978690497993872">Kenzen&reg; Digestion Complex 4-20&trade;</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=117&pid=18978690497993872">Lactoferrin Gold 1.8&reg;</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=553&pid=18978690497993872">Kenzen Bergisterol&reg; (2 pack)</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=502&pid=18978690497993872">Kenzen&reg; Omega Green + DHA&trade;</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=101&pid=18978690497993872">Kenzen&reg; Mental Clarity</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=410&pid=18978690497993872">OsteoDenx&reg;</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=526&pid=18978690497993872">CalDenx&reg;</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=99&pid=18978690497993872">Kenzen&reg; Joint</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=519&pid=18978690497993872">Bone Health Pack</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=97&pid=18978690497993872">Kenzen&reg; Immunity</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=103&pid=18978690497993872">Kenzen&reg; Liver Support</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=655&pid=18978690497993872">Kenzen&reg; Vital Balance&trade; Meal Replacement Mix</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=507&pid=18978690497993872">Kenzen&reg; Daily Essentials &mdash; NEW</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=554&pid=18978690497993872">Heart Health Pack</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=701&pid=18978690497993872">Weight Management Pack</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=702&pid=18978690497993872">Immunity Pack</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=719&pid=18978690497993872">Kenzen Daily Pack for Men</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=720&pid=18978690497993872">Kenzen Daily Pack for Women</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=732&pid=18978690497993872">Kenzen Ten4<sup>&trade;</sup></a></td></tr></table></td></tr><tr class="verticalNav3"><td valign="top" width="10"><img class="navplus" src="https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/images/plusicon.png" border="0" width="8" height="8" hspace="1" vspace="4"/></td><td class="verticalNav3"><a class="sidemenulevel2" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=516&pid=18978690497993872">True Elements&reg; Swiss Organic Skin Care</a><table cellpadding="0" cellspacing="0" border="0" width="230" class="verticalNav4"><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=499&pid=18978690497993872">True Elements&reg; Swiss Organic Skin Care Program</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=591&pid=18978690497993872">True Elements&reg; Daily Perfecting Cream</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=592&pid=18978690497993872">True Elements&reg; Foaming Face Wash</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=593&pid=18978690497993872">True Elements&reg; Pore Refining Toner</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=594&pid=18978690497993872">True Elements&reg; Intensive Night Cream</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=595&pid=18978690497993872">True Elements&reg; Exfoliating Masque</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=596&pid=18978690497993872">True Elements&reg; Contour Serum</a></td></tr></table></td></tr><tr class="verticalNav3"><td valign="top" width="10"><img class="navplus" src="https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/images/plusicon.png" border="0" width="8" height="8" hspace="1" vspace="4"/></td><td class="verticalNav3"><a class="sidemenulevel2" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=129&pid=18978690497993872">Pet Products</a><table cellpadding="0" cellspacing="0" border="0" width="230" class="verticalNav4"><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=82&pid=18978690497993872">Kenko&trade; PetPad</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=130&pid=18978690497993872">Kenzen&reg; Pet Joint Plus</a></td></tr></table></td></tr></table></td></tr><tr class="verticalNav1 regitem"><td class="verticalNav1 regitem" width="8"><div class="Category"><a href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=282&MainCategory=1&pid=18978690497993872">Business Tools</a></div><table cellpadding="0" cellspacing="0" border="0" width="240" class=""><tr class="verticalNav3"><td valign="top" width="10"><img src="../images/cleardot.gif" border="0" width="8" height="8" hspace="1" vspace="4"/></td><td class="verticalNav3"><a class="sidemenulevel2" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=206&pid=18978690497993872">2014 Product Catalog</a></td></tr></table></td></tr><tr class="verticalNav1 regitem"><td class="verticalNav1 regitem" width="8"><div class="Category"><a href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=438&MainCategory=1&pid=18978690497993872">Accessories & Replacements</a></div><table cellpadding="0" cellspacing="0" border="0" width="240" class=""><tr class="verticalNav3"><td valign="top" width="10"><img class="navplus" src="https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/images/plusicon.png" border="0" width="8" height="8" hspace="1" vspace="4"/></td><td class="verticalNav3"><a class="sidemenulevel2" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=418&pid=18978690497993872">Product-Related Accessories</a><table cellpadding="0" cellspacing="0" border="0" width="230" class="verticalNav4"><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=684&pid=18978690497993872">Air Wellness&reg; Traveler AC Adapter</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=612&pid=18978690497993872">Biaxial PowerMag&reg; AC Adapter</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=615&pid=18978690497993872">Demo Kit Carrying Bag</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=613&pid=18978690497993872">Nikken Magna-View&trade;</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=614&pid=18978690497993872">Nikken Sensor</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=713&pid=18978690497993872">Blender Cup</a></td></tr></table></td></tr><tr class="verticalNav3"><td valign="top" width="10"><img class="navplus" src="https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/images/plusicon.png" border="0" width="8" height="8" hspace="1" vspace="4"/></td><td class="verticalNav3"><a class="sidemenulevel2" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=598&pid=18978690497993872">Filters & Components</a><table cellpadding="0" cellspacing="0" border="0" width="230" class="verticalNav4"><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=462&pid=18978690497993872">Air Wellness&reg; Power5&trade; Pro Filter Pack</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=443&pid=18978690497993872">Air Wellness&reg; Power5&trade; Filter Pack</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=444&pid=18978690497993872">Air Wellness&reg; Traveler Replacement Filter</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=635&pid=18978690497993872">KenkoAir Purifier&trade; Filter Replacement Pack</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=439&pid=18978690497993872">PiMag&reg; Deluxe Countertop & Under Counter Water System Filter</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=683&pid=18978690497993872">PiMag&reg; Deluxe Countertop Diverter Valve</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=437&pid=18978690497993872">PiMag&reg; Aqua Pour&reg; Gravity Water Systems Components</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=440&pid=18978690497993872">PiMag&reg; Aqua Pour&reg; Express Filter & Carafe</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=662&pid=18978690497993872">PiMag&reg; MicroJet&trade; Replacement Filter Cartridges</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=441&pid=18978690497993872">PiMag&reg; Optimizer II Ring & Pitcher</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=543&pid=18978690497993872">PiMag&reg; Sport Bottle Filters/Spouts</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=442&pid=18978690497993872">PiMag&reg; Ultra Shower System Replacement Filter</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=616&pid=18978690497993872">PiMag&reg; Water Diverter Valve</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=369&pid=18978690497993872">PiMag&reg; Counter Top Replacement Filter Combo Pack</a></td></tr><tr class="class='navnone'"><td valign="top" width="10"></td><td class="class='navnone'"><a class="sidemenulevel3" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=622&pid=18978690497993872">PiMag&reg; Waterfall&trade; System Components</a></td></tr></table></td></tr></table></td></tr><tr class="verticalNav1 regitem"><td class="verticalNav1 regitem" width="8"><div class="Category"><a href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=259&MainCategory=1&pid=18978690497993872">While Supplies Last - All sales final</a></div><table cellpadding="0" cellspacing="0" border="0" width="240" class=""><tr class="verticalNav3"><td valign="top" width="10"><img src="../images/cleardot.gif" border="0" width="8" height="8" hspace="1" vspace="4"/></td><td class="verticalNav3"><a class="sidemenulevel2" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=629&pid=18978690497993872">Classic Collection Stainless Jewelry 33%-43% Off</a></td></tr><tr class="verticalNav3"><td valign="top" width="10"><img src="../images/cleardot.gif" border="0" width="8" height="8" hspace="1" vspace="4"/></td><td class="verticalNav3"><a class="sidemenulevel2" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=136&pid=18978690497993872">Air Wellness&reg; Traveler</a></td></tr><tr class="verticalNav3"><td valign="top" width="10"><img src="../images/cleardot.gif" border="0" width="8" height="8" hspace="1" vspace="4"/></td><td class="verticalNav3"><a class="sidemenulevel2" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=659&pid=18978690497993872">12 oz. Shaker Cup</a></td></tr><tr class="verticalNav3"><td valign="top" width="10"><img src="../images/cleardot.gif" border="0" width="8" height="8" hspace="1" vspace="4"/></td><td class="verticalNav3"><a class="sidemenulevel2" href="Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=730&pid=18978690497993872">Kenko PowerBand® - Save 40%</a></td></tr></table></td></tr></table>
+                        </ul>
+                    </div><!-- end vertical nav -->
+            
+                                       
+                    <!-- begin virtual catalogs --> 
+    <div style="margin-top: 30px;">
+    	<span style="margin-left: 35px; font-size:12px; font-weight: bold; color: #696969;font-family: PerspectiveSansSemibold, Arial, Helvetica, sans-serif;">Virtual Catalogs: </span> <br /> 
+        <div style="float: left; margin-left: 20px; font-size: 10px;">
+        <a href="http://library.nikken.com/?n=product-cn-catalogs" target="_blank" style="text-decoration: none; color: #666666;"><img src="http://www.mynikken.com/views/global/getting-started/images/icons/cn.png" width="55" border="0" /></a>
+        </div>
+        <div style="float: left; margin-left: 12px; font-size: 10px;">
+        <a href="http://library.nikken.com/?n=product-us-catalogs" target="_blank" style="text-decoration: none; color: #666666;"><img src="http://www.mynikken.com/views/global/getting-started/images/icons/us.png" width="55" border="0" /></a>
+        </div>
+    </div>
+    <!-- end virtual catalogs -->
+    <div class="clear"></div>
+    <!-- begin order form --> 
+    <div style="margin-top: 30px;">
+    	<span style="margin-left: 35px; font-size:12px; font-weight: bold; color: #696969;font-family: PerspectiveSansSemibold, Arial, Helvetica, sans-serif;">Mail/Fax Order Form: </span> <br /> 
+        <div style="float: left; margin-left: 20px; font-size: 10px;">
+        <a href="http://library.nikken.com/?n=canada-retail-order-form" target="_blank" style="text-decoration: none; color: #666666;"><img src="http://www.mynikken.com/views/global/getting-started/images/icons/cn.png" width="55" border="0" /></a>
+        </div>
+        <div style="float: left; margin-left: 12px; font-size: 10px;">
+        <a href="http://library.nikken.com/?n=retail-order-form" target="_blank" style="text-decoration: none; color: #666666;"><img src="http://www.mynikken.com/views/global/getting-started/images/icons/us.png" width="55" border="0" /></a>
+        </div>
+    </div>
+    <!-- end order form -->
+                                
+                     
+                        </div> <!-- end sidebar nav -->
+                    
+            
+            </div><!-- end sidebar nav -->
+
+		
+        	
+            <div id="main-content" class="floatLeft">
+            
+<!-- black friday - shiping promo - 11/14 
+            <div id="pBox" style="background-color: #f5f5f5; padding: 10px; border-radius: 4px; margin: 15px auto; text-align:center;">
+                <span id="myLink" style="color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><strong style="font-size: 16px;">FREE UPS GROUND SHIPPING</strong> through Sunday only! <a href="http://nikken.com/esuite/corp/dPage?pageName=blackFriday">Learn more</a></span>
+            </div>-->
+<!--./black friday - shipping promo-->
+
+
+
+<!-- free shipping promo till end of march - 3/15 -->
+     <!---<div id="pBox" style="background-color: #f5f5f5; padding: 10px; border-radius: 4px; margin: 15px auto; text-align:center;">
+            <span id="myLink2" style="color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><strong style="font-size: 16px; color:red;">FREE GROUND SHIPPING through March 31!</strong> <a href="http://www1.mynikken.com/news/2015/03/us/26/index_enC_us.html">Learn more</a></span>
+        </div> --->
+<!--free shipping promo-->
+
+            <!--shipping promo OLD OLD
+            <div id='PopUp' style='display: none; position: absolute; left: 100px; top: 50px; border: solid #ccc 1px; border-radius: 4px; padding: 10px; background-color: #fff; font-size: 13px; width: 300px; font-family: Arial, Helvetica, sans-serif; color: #454545; line-height: 18px;' onmouseover="document.getElementById('PopUp').style.display = 'none' ">
+	<Span id='PopUpText'>TEXT</Span>
+</div>
+<div align="right" style="background-color: #f5f5f5; padding: 10px; border-radius: 4px; margin: 15px 10px 0 0;">
+<span style="color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><strong style="font-size: 16px;">FREE GROUND SHIPPING</strong> THROUGH SATURDAY, NOVEMBER 30! 
+  <a href="javascript:void(null)" onmouseover="showPos(event, 'Free shipping offer excludes Kenko Naturest&reg; Mattress Toppers. Nikken Vital Sleep Packs are eligible for free ground shipping minus the Naturest Mattress Topper, which will ship separately via flat rate. Offer valid on orders shipped within the continental U.S. and Canada only. Online orders must be completed by 11:59 p.m. PT on 11/30/13 to qualify.');" style="color: #454545;">More info</a></span>
+</div>
+<!--./shipping promo-->
+
+                <div id="breadcrumbs">
+            <a href="Shop.cfm?NextPage=FrontPage&Currpage=FrontPage"><img src="http://test.x.nikkenusa.myvoffice.com/custom/nikken/images/breadcrumb_house.png" class="floatLeft" style="margin-right: 4px;" /></a>
+                    <img src="http://test.x.nikkenusa.myvoffice.com/custom/nikken/images/breadcrumb_arrow.png" class="floatLeft" style="margin-right: 10px;" />
+            <p class="floatLeft"><a href="Shop.cfm?NextPage=FrontPage&Currpage=FrontPage">Shop Home</a></p>
+             <img src='http://nikkenusa.myvoffice.com/custom/nikken//images/breadcrumb_arrow.png' class='floatLeft' style='margin-right: 10px;' /> <p class='floatLeft'><a href='Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=95&pid=18978690497993872'>Nutrition & Skin Care</a></p> <img src='http://nikkenusa.myvoffice.com/custom/nikken//images/breadcrumb_arrow.png' class='floatLeft' style='margin-right: 10px;' /> <p class='floatLeft'><a href='Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=96&pid=18978690497993872'>Kenzen&reg; Organic-Based Nutrition</a></p> <img src='http://nikkenusa.myvoffice.com/custom/nikken//images/breadcrumb_arrow.png' class='floatLeft' style='margin-right: 10px;' /> <p class='floatLeft'><a href='Shop.cfm?CurrPage=FrontPage&NextPage=CategoryDetail&CategoryID=732&pid=18978690497993872'>Kenzen Ten4<sup>&trade;</sup></a></p>
+                    <div class="clear"></div>
+    
+                </div><!-- end breadcrumbs -->
+                
+
+			
+                <div id="main-content-items">
+                
+
+<script>
+function PopupCenter(url, title, w, h) {
+    // Fixes dual-screen position                       Most browsers      Firefox
+    var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+    var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+
+    var left = ((screen.width / 2) - (w / 2)) + dualScreenLeft;
+    var top = ((screen.height / 2) - (h / 2)) + dualScreenTop;
+    var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+
+    // Puts focus on the newWindow
+    if (window.focus) {
+        newWindow.focus();
+    }
+}
+</script>
+
+
+	
+
+<script>
+function UpdateNextPage(frm,nextpagevar,id)
+{
+	frm.NextPage.value=nextpagevar;
+	
+	if (id == 'Checkout')
+		$.colorbox({html:'<p id="addcartprocessing" style="display: inline;" class="subhead1">Processing...<br></p>'});
+
+}
+
+function isNumber(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+</script>
+
+
+
+
+
+		<form name="ProductList" action="Shop.cfm?pid=18978690497993872" method="Post">
+		
+		
+		
+		
+		<script>
+$(document).ready(function() {
+     
+    //if add button is clicked
+    $('#AddProduct732').click(function () {  
+	 var poststr = "";     
+        obj=document.forms.ProductList;
+		qtyadded=0;
+	  //loop through all form fields creating the serialized data for the ajax hit. Data stored in variable poststr
+      for (i=0; i<obj.elements.length; i++) 
+      {
+	  
+	  //alert(obj.elements[i].type);
+        if (obj.elements[i].type == "checkbox") {
+           if (obj.elements[i].checked) {
+              poststr += obj.elements[i].name + "=" + 
+                   obj.elements[i].value + "&";
+           } else {
+              poststr += obj.elements[i].name + "=&";
+           }
+        } 
+	else if (obj.elements[i].type == "textarea") 
+	{ 
+			temp_var = obj.elements[i].value.replace(/\n/g,'<br>')
+			poststr += obj.elements[i].name + "=" + encodeURIComponent(temp_var) + "&";
+	} 
+	else if (obj.elements[i].type == "radio") 
+	{
+           if (obj.elements[i].checked) {
+              poststr += obj.elements[i].name + "=" + 
+                   obj.elements[i].value + "&";
+           }
+        }  
+	else if (obj.elements[i].type == "select") {
+  	    for (j=0; j<obj.elements[i].length; j++) {
+            	var sel = obj.elements[i][j];
+						if (sel.name.search(/ITEM_/i) != -1 && isNumber(sel.options[sel.selectedIndex].value))
+						{
+							qtyadded=qtyadded+Number(sel.options[sel.selectedIndex].value);
+							poststr += sel.name + "=" + sel.options[sel.selectedIndex].value + "&";
+						}
+            
+  	    }
+    }  
+	else if (obj.elements[i].type == "select-multiple" ) {
+	    var vals = '';
+  	    for (j=0; j<obj.elements[i].length; j++) {
+            	var sel = obj.elements[i][j];
+		if (sel.selected) {
+			if (vals != '') {
+				vals = vals + "," + sel.value;
+			} 
+			else 
+			{
+				vals = vals + sel.value;
+			}
+		}
+  	    }
+	    		if (vals != '') 
+				{
+						if (obj.elements[i].name.search(/ITEM_/i) != -1 && isNumber(vals))
+						{
+							qtyadded=qtyadded+Number(vals);
+						}
+            			poststr += obj.elements[i].name + "=" + vals + "&";
+	    		}
+	} 
+   else if (obj.elements[i].type == "select-one")
+   {
+      			var sel = document.getElementById(obj.elements[i].name);
+ 				if (obj.elements[i].name.search(/ITEM_/i) != -1 && isNumber(sel.options[sel.selectedIndex].value))
+				{
+						qtyadded=qtyadded+Number(sel.options[sel.selectedIndex].value);
+				}
+				poststr += obj.elements[i].name + "=" + encodeURIComponent(sel.options[sel.selectedIndex].value) + "&";
+   }
+	else 
+	{
+
+				if (obj.elements[i].name.search(/ITEM_/i) != -1 && isNumber(obj.elements[i].value))
+				{
+						qtyadded=qtyadded+Number(obj.elements[i].value);
+				}
+           		poststr += obj.elements[i].name + "=" + 
+                   	encodeURIComponent(obj.elements[i].value) + "&";
+        }
+      }
+
+	 if (qtyadded > 0 && obj.NextPage.value != 'MixMatchKit') //they've added a quantity so do the ajax to update the cart and update the cart summary
+	 {
+		//bring up the color box popup
+		//jQuery.fn.colorbox({href:'AddToCart_colorbox.cfm?pid=18978690497993872&CategoryID=732'});
+		jQuery.fn.colorbox({href:'AddToCart_colorbox.cfm?pid=18978690497993872'});
+
+        //start the ajax
+        $.ajax({
+
+            //this is the what we are hitting 
+            url: "Shop.cfm?AjaxAdd=1&template=mynikken_cartsummary&pid=18978690497993872",
+             
+            //POST method is used
+            type: "POST",
+ 
+            //pass the form data
+            data: poststr,    
+             
+            //Do not cache the page
+            cache: false,
+             
+            //success
+            success: function (html) {           
+
+				//remove the word processing and show the text that it has been added
+				document.getElementById('addcartprocessing').style.display='none';
+				document.getElementById('addcartcompleted').style.display='inline';
+				//show the checkout and continue buttons
+				document.getElementById('addcartcompletedbtns').style.display='inline';
+				//update the cart summary div layer with data returned
+				document.getElementById('cartsummarydiv').innerHTML=html;
+				//$.colorbox.resize();     
+				
+				//reset all the quantity boxes to empty
+				
+				if (document.getElementById('ITEM_1525__C732').type.search(/select_/i)) {$("#ITEM_1525__C732").val('');}
+				
+            }      
+        });
+	   }
+	   else //they didnt add any quantity so show error
+	   {
+	   		if (obj.NextPage.value != 'MixMatchKit')
+	   		{
+	   		//bring up the color box popup
+			//jQuery.fn.colorbox({href:'AddToCart_colorbox.cfm?NoItems=1&CategoryID=732&pid=18978690497993872'});
+			jQuery.fn.colorbox({href:'AddToCart_colorbox.cfm?NoItems=1&pid=18978690497993872'});
+	   		}  
+	   }
+		
+        //cancel the submit button default behaviours
+        if (obj.NextPage.value != 'MixMatchKit')
+        	return false;
+    });
+}); 
+		</script>
+		
+		
+<div class="productContainerWrapper"><!--container content-->
+    <div class="productContainerContent">
+    
+	<div style="margin: 0 0 0 12px; padding-bottom: 6px;">
+        <img src="LNG/ENG/ten4_drinkMix.jpg" class="productImages floatLeft" border="1" width=311 height=304>
+        <div class="productBuyInfo2 floatLeft"><!--product buying info-->
+            <h4 class="subhead1">Kenzen Ten4<sup>&trade;</sup></h4>
+            
+            <table class="skuTable2 floatLeft">
+                <tr>
+                    <th class="skuTableHead" style="width: 50px;">Sku</th>
+                    <th class="skuTableHead" style="width: 325px;">Description</th>
+                    <th class="skuTableHead" style="width: 80px;">Price</th>
+                    <th class="skuTableHead">Qty.</th>
+                </tr>
+				
+	<tr><td>15595</td><td>Powder Energy Tea Drink Mix-US (20 sticks)</td><td><nobr>US$          44.00</nobr></td><td><select id="ITEM_1525__C732" name="ITEM_1525__C732"><option></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option></select></td></tr>
+            </table>
+            
+            <div class="floatRight purchasingButtons"><!--purchasing buttons-->
+
+		   <div>
+           <input id="AddProduct732" type="image" value="Add Items" src="LNG/ENG/addcart_btn.png" border="0" name="Add">
+           <input type="image" value="Checkout" src="LNG/ENG/checkout_btn.png" border="0" name="PrelimCheckout" onclick="UpdateNextPage(this.form,'CartSummary','Checkout');">
+	       </div>
+
+            </div><!-- end purchasing buttons -->
+
+		
+            
+            <div class="clear"></div>
+            
+        </div><!--end product buying info-->
+            <div class="clear"></div>
+		
+			<style type="text/css">
+			<!--
+			#as-popupbox_15595 { 
+				width: 294px; 
+				padding: 26px; 
+				position:relative;
+				right:32%;
+				top:0px;
+				z-index:1000;
+				background-color:#fff;
+				-moz-border-radius: 6px;
+				-webkit-border-radius: 6px;
+				border-radius: 6px;
+				border:3px solid #000;
+			}
+			#as-popupbox_15595 p { font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #303030; line-height: 18px; }
+	
+			.as-header { font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; color: #000; }
+			.as-subhead { font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #aa1c00; line-height: 20px; }
+			.as-highlight { font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-style: italic; font-weight: bold; color: #303030; }
+			-->
+			</style>
+
+			<div id="as-popupbox_15595" style="display:none"><!--container-->
+			<a href="javascript:;" OnClick="document.getElementById('as-popupbox_15595').style.display='none';"><img src="evo/images/close.png" border="0"></a>
+			<hr size="1" noshade="noshade" color="#CCCCCC">
+			PH_AvailableAutoshipContent
+			</div>
+		 
+			<div id="as" style="position: relative;float:right;width:200px;margin-right:10px;margin-top:40px;">
+                        
+                        <div id="as-content" style="position: absolute; bottom: 0; right: 0;">
+			<a class="autoshippopover" href="#autoship-message"><img 
+			src="http://test.x.nikkenusa.myvoffice.com/custom/nikken/images/autoship-sm.png" 
+			width="32" height="30" alt="Autoship" style="margin-right: 5px;" border="0" />Available for Autoship</a>
+                        </div>
+			</div>
+ 			<div class="clear"></div>
+		
+    </div>
+					
+    </div><!--end product container content-->
+    <div class="productContainerBottom"></div>
+</div><!--end product container wrapper-->
+    
+<div id="productInfo">
+	<div id="productDescription">
+        <h4 class="subhead1">Product Description</h4>
+            <p><p>Wake up your body and mind the healthy way. Kenzen Ten4 is made with real ingredients – including what is known as “nature’s own energy drink,” naturally organic matcha green tea, and one of the most nutrient-dense superfruits, the New Zealand kiwi. Whether it’s 10 am or 4 pm, you’ll experience up to 6 hours of energy, a feeling that supercharges you mentally and physically.</p><p>Ten4 offers 80 mg of natural caffeine and is made with organic ingredients. It helps burn calories, boost metabolism and support mental alertness. With vitamins B6 and B12 for quick pickup and nutrient-rich kiwi, Kenzen Ten4 has only 25 calories, 5 grams of real organic cane sugar and a light tropical tea taste that you can enjoy any time of day. No artificial flavors, sweeteners, color or preservatives — it’s real energy, pure delight.</p></p>
+			<div class="AttachmentInfo floatLeft">
+			<ul>
+                <li><A target="_blank" href="http://library.nikken.com/document?n=kenzen-ten4-brochure&lng=en">Ten4 Brochure</A></li><li><A target="_blank" href="http://library.nikken.com/document?n=kenzen-ten4-factsheet&lng=en">Ten4 Fact Sheet</A></li>
+			</ul>
+			</div>
+			<div class="clear"></div>
+    </div><!--end product description-->
+        
+    <div id="productInfoModules">
+		
+    </div><!-- end productInfoModules -->
+	<div class="clear"></div>
+	
+    
+</div><!--end productInfo-->
+
+		<input type="Hidden" name="CurrPage" value="CategoryDetail">
+			<input type="Hidden" name="NextPage" value="CategoryDetail">
+		<input type="Hidden" name="CategoryID" value="732">
+		
+			<input type="Hidden" name="PageNum" value="1">
+		
+		</form>
+		                </div><!-- end main content items-->
+                
+                
+
+			</div><!-- end main content -->
+
+        	<div class="push"></div>
+
+    </div><!-- end page container -->  
+
+	<div id="autoship-message" class="popover">Enroll in Nikken Autoship to have your favorite products delivered to your door automatically, month after month – no worry, no fuss, no further action needed!<br /><br />You can customize the frequency of your Nikken Autoship order at intervals of every one, two, three or six months.</div>
+
+<script type="text/javascript">
+    $('.autoshippopover').popover({trigger:'hover'});
+</script>
+
+    <div id="footer">
+        <div id="affiliations" class="floatLeft">
+            <p style="font-size: 14px;">Certifications/Affiliations</p>
+            <img src="https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/images/ispa-sleep-assoc-logo.gif" />
+            <a href="http://www.dsa.ca/content/consumerprotection/codeofethics.php" target="_blank"><img src="https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/images/dsa-member-logo.gif" /></a>
+
+            <!-- test for BF 
+            <div id="pBox" style="background-color: #f5f5f5; padding: 0px; border-radius: 0px; margin: 5px; text-align:center;">
+                <span id="myLink" style="color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><a href="http://nikken.com/esuite/corp/dPage?pageName=blackFriday">__</a></span>
+            </div>-->
+        </div>
+        
+        <div id="footerLinks" class="floatLeft">
+            <ul>
+                <li><a href="http://www.nikken.com/eyecu/terms-of-use/">Terms and Conditions</a></li>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                <li><a href="http://www.nikken.com/eyecu/policy-and-procedure/">Privacy Policy</a></li>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                <li><a href="http://www.nikken.com/eyecu/sitemap/">Site Map</a></li>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                <li><a href="http://www.nikken.com/eyecu/contactus/">Contact Us</a></li>
+            </ul>
+        </div>
+        
+        <div id="micrositeLinks" class="floatLeft">
+            <h5>Nikken Microsites</h5>
+                <ul>
+                    <li><a href="http://ten4.nikken.com" target="_blank">Kenzen<sup>&reg;</sup> energy drink mix</a></li>
+                    <li><a href="http://www.mynikken.com/" target="_blank">myNikken.com</a></li>
+                    <li><a href="http://www.nikkenu.com/" target="_blank">Nikken University</a></li>
+                    <li><a href="http://www.nikkensleepcenter.com/" target="_blank">Nikken Sleep Center</a></li>
+                    <li><a href="http://www.nikkentechnologies.com/" target="_blank">Magnetic Technology</a></li>
+                    <li><a href="http://www.nikken.com/eyecu/company/!international-sites" target="_blank">Nikken International Sites</a></li>
+                </ul>
+        </div>
+        <div class="clear"></div>
+        
+        <div class="floatLeft">
+            <p style="font-weight: bold; margin: 20px 0 0 40px;">
+                ©
+                <script type="text/javascript">
+                    var d = new Date();
+                    document.write(d.getFullYear());
+                </script>
+                Nikken Inc. All rights reserved.
+            </p>
+        </div>
+    </div><!-- end footer -->		
+
+		
+<script>
+
+function myPopup() {
+window.open( "http://www1.mynikken.com/feedback?w=mynikken", "feedback", 
+"status = 1, height = 530, width = 390, resizable = 0" )
+}
+
+</script>
+
+<div style="position: fixed;bottom: 0px;right: 0px; z-index:9999;">
+<a href="javascript:myPopup();"><img src="https://nettrax.myvoffice.com/nikkenusa-iact-test/custom/nikken/images/Feedback5.png" alt="" border="0"/></a>
+</div>
+	
+
+
+
+</body>
+
+</html>

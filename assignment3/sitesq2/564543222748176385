@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<title></title>
+<script>
+var http_request = false;
+function makeRequest(url) {
+	var appVersion = navigator.appVersion;
+	if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+      http_request = new XMLHttpRequest();
+  } else if (window.ActiveXObject) { // IE
+      try {
+          http_request = new ActiveXObject("Msxml2.XMLHTTP");
+      } catch (e) {
+          try {
+              http_request = new ActiveXObject("Microsoft.XMLHTTP");
+          } catch (e) {}
+      }
+  }
+  if (!http_request) {
+      return false;
+  } 
+  http_request.onreadystatechange = function() { };
+  
+	var async = false;
+  http_request.open('GET', url, async);
+  http_request.send(null);
+}
+</script><script>
+
+/**
+ * Function called from index.phtml (ITL 2.5)
+ * hideFrame() hides the salesFrame to avoid the white flash (in the frame area)
+ * when the patron loads a new page
+ */
+function hideFrame() {
+	document.getElementById("salesFrame").style.display = "none";
+}
+
+function onUnloadHandler() {
+	makeRequest('unload.php?t=tix');
+	i = 0;
+	while (1) { // do not voluntarily release CPU until unload request has been received by the server
+		if (http_request.readyState > 3 || i > 100000) {
+			return true;
+		}
+		i++;
+	}
+}
+
+var timerId;
+function frameLoaded() {
+	document.title = salesFrame.document.title;
+
+	/**
+	 * Display the salesFrame.
+	 * The iFrame was disabled to avoid the disturbing white flashing in the frame area
+	 * when loading a new page.
+	 *
+	 * Using allowTransparency="true" and background-color:transparent; works only for IE, Firefox and Opera.
+	 *
+	 * This hack is for Webkit-based browsers such as Chrome and Safari.
+	 */
+	document.getElementById("salesFrame").style.display = "block";
+
+	if (parent) {
+		try {
+			parent.postMessage("VendiniFrameLoaded:", "*");
+		}
+		catch (e) {};
+	}
+}
+
+function sendEventInfo(eventName, eventDate) {
+	if (parent) {
+		try {
+			parent.postMessage("VendiniEventName:"+eventName, "*");
+			parent.postMessage("VendiniEventDate:"+eventDate, "*");
+		}
+		catch (e) {};
+	}
+}
+
+function resizeWindow(contentWidth, contentHeight) {
+	// resize window when sizes are shorter.
+	if (window.innerWidth < contentWidth
+			|| window.innerHeight < contentHeight) {
+		try {
+			window.resizeBy(window.innerWidth < contentWidth ? (contentWidth - window.innerWidth):0,
+										window.innerHeight < contentHeight ? (contentHeight - window.innerHeight):0);
+		}
+		catch (e) {
+			if (window.console) {
+				console.log('Error: ' +e.message);
+			}
+		}
+	}
+}
+
+</script>
+
+<style>
+<!--
+html, body, form, iframe {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+body.background {
+	margin: 0px;
+	padding: 0px;
+}
+
+#salesFrame {
+	overflow-x: hidden;
+	overflow-y:	auto;
+	width: 860px;
+	height: px;
+	padding: 0px;
+	margin: 0px;
+			background-color: transparent;
+		overflow: hidden;
+		/* Hide the frame until the page is loaded.*/
+	display: none;
+}
+
+.fill-height {
+	/* Make the div's height 100% (when rendering the page for ITL 2.5) */
+			height: 100%;
+	}
+-->
+
+#frameCell {
+	vertical-align: middle;
+	padding: 0px;
+	display: inline-block; /* Safari <6 hack to prevent the iframe disappearing on load */
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	#frameCell {
+		display: table-cell; /* Reset the above hack for IE10 (otherwise the cell height would be forced to 150px) */
+	}
+}
+
+</style>
+
+</head>
+<body class="background" onload="resizeWindow(860, 705);" onbeforeunload="onUnloadHandler();" height="100%" topmargin="0" leftmargin="0">
+<input type="hidden" id="sessionHash" value="" />
+<table height="100%" align="center" cellpadding="0" cellspacing="0" class="frameContainer">
+	<tr height="100%">
+		<td id="frameCell" height="100%">
+			<div id="frame-wrapper" class="fill-height">
+				<iframe src="/ticketLine/ITL?t=tix&amp;e=a5e470f04fd54019b1cdfb6a21d2a96e&amp;theme=ticketLine25"
+						allowTransparency="true"  scrolling="no"						frameborder="0" border="0" name="salesFrame" id="salesFrame" onload="frameLoaded()"></iframe>
+			</div>
+		</td>
+	</tr>
+</table>
+<script type="text/javascript">
+salesFrame.document.body.onload = frameLoaded;
+// check if we are in a permission restricted sub-window, open in a new window
+try {
+	window.top.location.hostname;
+}
+catch (e) {
+	document.cookie = "VendiniTestCookie=1;path=/";
+	if (document.cookie.search(/VendiniTestCookie/) == -1) {
+		// no cookies, probably in a foreign domain with strong browser security: re-open in a new window
+		var search = window.location.search.match(/e=([^&=])/);
+		window.open(window.location, search[1]);
+
+		var referrer = document.referrer.match(/^http:\/\/[^/]+/)
+		window.location = referrer[0]+'/sites/all/themes/siteline/js/lib/fancybox/close.html';
+	}
+}
+
+</script>
+</body>
+</html>
