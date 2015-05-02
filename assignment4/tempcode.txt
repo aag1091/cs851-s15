@@ -1,0 +1,9 @@
+def timefmt;  '%Y/%d/%m-%H:%M';  end
+
+def fetch_codelines(stat, fields)
+  return stat.values_at(*fields).map{|values| values['codelines'] }.sum
+end
+
+def ftime(timestamp)
+  Time.at(timestamp).strftime(timefmt)
+end
