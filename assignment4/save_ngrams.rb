@@ -31,9 +31,9 @@ tweets.each do |tweet|
   end
 end
 
-puts one_gram_change.inspect
-puts two_gram_change.inspect
-puts three_gram_change.inspect
+# puts one_gram_change.inspect
+# puts two_gram_change.inspect
+# puts three_gram_change.inspect
 
 Gnuplot.open do |gp|
   Gnuplot::Plot.new( gp ) do |plot|
@@ -46,13 +46,13 @@ Gnuplot.open do |gp|
     plot.autoscale "x"
     plot.autoscale "y"
     plot.title  "Plot for change in 1-gram of boilerpipe data"
-    plot.ylabel "% change (Jaccard Index) for 1-gram"
-    plot.xlabel "% population"
+    plot.xlabel "change (Jaccard Index) for 1-gram"
+    plot.ylabel "population"
     
     x,y = [], []
     one_gram_change.uniq.each_with_index do |link_change, index|
-      x += [(one_gram_change.count(link_change)/one_gram_change.count)]
-      y += [link_change]
+      y += [(one_gram_change.count(link_change)/one_gram_change.count)]
+      x += [link_change]
     end
 
     plot.data << Gnuplot::DataSet.new( [x, y] ) do |ds|
@@ -76,13 +76,13 @@ Gnuplot.open do |gp|
     plot.autoscale "x"
     plot.autoscale "y"
     plot.title  "Plot for change in 2-gram of boilerpipe data"
-    plot.ylabel "% change (Jaccard Index) for 2-gram"
-    plot.xlabel "% population"
+    plot.xlabel "change (Jaccard Index) for 2-gram"
+    plot.ylabel "population"
     
     x,y = [], []
     two_gram_change.uniq.each_with_index do |link_change, index|
-      x += [(two_gram_change.count(link_change).to_f/two_gram_change.count)]
-      y += [link_change]
+      y += [(two_gram_change.count(link_change).to_f/two_gram_change.count)]
+      x += [link_change]
     end
 
     plot.data << Gnuplot::DataSet.new( [x, y] ) do |ds|
@@ -105,13 +105,13 @@ Gnuplot.open do |gp|
     plot.autoscale "x"
     plot.autoscale "y"
     plot.title  "Plot for change in 3-gram of boilerpipe data"
-    plot.ylabel "% change (Jaccard Index) for 3-gram"
-    plot.xlabel "% population"
+    plot.xlabel "change (Jaccard Index) for 3-gram"
+    plot.ylabel "population"
     
     x,y = [], []
     three_gram_change.uniq.each_with_index do |link_change, index|
-      x += [((three_gram_change.select{|mc| mc == link_change}).count.to_f/three_gram_change.count)]
-      y += [link_change]
+      y += [((three_gram_change.select{|mc| mc == link_change}).count.to_f/three_gram_change.count)]
+      x += [link_change]
     end
 
     plot.data << Gnuplot::DataSet.new( [x, y] ) do |ds|
