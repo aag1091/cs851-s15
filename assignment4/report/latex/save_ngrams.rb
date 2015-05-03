@@ -19,15 +19,11 @@ tweets.each do |tweet|
         grams_new = FileNgrams.new(url_new, i+1).grams
         grams_old = FileNgrams.new(url_old, i+1).grams
       end
-      puts "*"*25
-      puts grams_new.count.inspect
-      puts grams_old.count.inspect
       change = JaccardIndex.new(grams_old, grams_new).jaccard_index
       one_gram_change << change if i == 0
       two_gram_change << change if i == 1
       three_gram_change << change if i == 2      
     end
-    puts "#{tweet} - #{one_gram_change.last}, #{two_gram_change.last}, #{three_gram_change.last}"
   end
 end
 

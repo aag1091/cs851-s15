@@ -8,15 +8,8 @@ class JaccardIndex
   end
 
   def jaccard_index
-    abcd = 1.0 - similarity
-    abcd = 0 if abcd.nan?
-    abcd 
-  end
-
-  def similarity
-    simi = (a1_n_a2.count.to_f/a1_u_a2.count.to_f)
-    simi = 0 if simi.nan?
-    simi
+    return 0 if (a1.nil? || a1.empty?) || (a1.nil? || a2.empty?)
+    (a1_u_a2 - a1_n_a2).count.to_f/a1_u_a2.count.to_f
   end
 
   def a1_u_a2
